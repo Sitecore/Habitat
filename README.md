@@ -11,10 +11,10 @@
 -   Using SIM (Sitecore Instance Manager) set up a website in the URL http://habitat/
 -   Copy all assemblies from the Sitecore bin folder to the /lib/Sitecore folder
 -   Open visual studio and copy the Habitat.Site.Common/App_Config/Include/z.Habitat.DevSettings.config.sample to z.Habitat.DevSettings.config
--   Change the seeting to fit with your configuration (see below)
+-   Change the setting to fit with your configuration (see below)
 -   Build the solution in Visual Studio
 -   Publish all projects using the Habitat publish settings
--   Open http://habitat/unicorn.aspx and synchronize the items to your project
+-   Open /unicorn.aspx(http://habitat/unicorn.aspx) and synchronize the items to your project
 
 ###Configuring your settings
 
