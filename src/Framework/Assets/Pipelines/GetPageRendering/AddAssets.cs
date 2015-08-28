@@ -7,37 +7,38 @@ using Habitat.Framework.SitecoreExtensions.Extensions;
 using Sitecore;
 using Sitecore.Data;
 using Sitecore.Data.Items;
+using Sitecore.Diagnostics;
 using Sitecore.Mvc.Pipelines.Response.GetPageRendering;
 using Sitecore.Mvc.Presentation;
 using Sitecore.Xml;
 
 namespace Habitat.Framework.Assets.Pipelines.GetPageRendering
 {
-    using Sitecore.Diagnostics;
-
     /// <summary>
-    /// Mvc.BuildPageDefinition pipeline processor to dynamically reference Cassette Bundles
+    ///     Mvc.BuildPageDefinition pipeline processor to dynamically reference Cassette Bundles
     /// </summary>
     public class AddAssets : GetPageRenderingProcessor
     {
         private IList<AssetRequirement> _defaultAssets;
-        private IList<AssetRequirement> DefaultAssets => this._defaultAssets ?? (this._defaultAssets = new List<AssetRequirement>());
+
+        private IList<AssetRequirement> DefaultAssets
+            => _defaultAssets ?? (_defaultAssets = new List<AssetRequirement>());
 
         public void AddAsset(XmlNode node)
         {
-            string assetTypeString = XmlUtil.GetAttribute("type", node, null);
-            string assetFile = XmlUtil.GetAttribute("file", node, null);
-            string scriptLocationString = XmlUtil.GetAttribute("location", node, null);
+            var assetTypeString = XmlUtil.GetAttribute("type", node, null);
+            var assetFile = XmlUtil.GetAttribute("file", node, null);
+            var scriptLocationString = XmlUtil.GetAttribute("location", node, null);
 
             if (string.IsNullOrWhiteSpace(assetTypeString) || string.IsNullOrWhiteSpace(assetFile))
             {
-                Sitecore.Diagnostics.Log.Warn($"Invalid asset in GetPageRendering.AddAssets pipeline: {node.OuterXml}", this);
+                Log.Warn($"Invalid asset in GetPageRendering.AddAssets pipeline: {node.OuterXml}", this);
                 return;
             }
             AssetType assetType;
             if (!Enum.TryParse(assetTypeString, true, out assetType))
             {
-                Sitecore.Diagnostics.Log.Warn($"Invalid asset type in GetPageRendering.AddAssets pipeline: {node.OuterXml}", this);
+                Log.Warn($"Invalid asset type in GetPageRendering.AddAssets pipeline: {node.OuterXml}", this);
                 return;
             }
             if (scriptLocationString != null)
@@ -45,21 +46,21 @@ namespace Habitat.Framework.Assets.Pipelines.GetPageRendering
                 ScriptLocation scriptLocation;
                 if (!Enum.TryParse(scriptLocationString, true, out scriptLocation))
                 {
-                    Sitecore.Diagnostics.Log.Warn($"Invalid script location in GetPageRendering.AddAssets pipeline: {node.OuterXml}", this);
+                    Log.Warn($"Invalid script location in GetPageRendering.AddAssets pipeline: {node.OuterXml}", this);
                     return;
                 }
-                this.DefaultAssets.Add(new AssetRequirement(assetType, assetFile, scriptLocation));
+                DefaultAssets.Add(new AssetRequirement(assetType, assetFile, scriptLocation));
             }
-            this.DefaultAssets.Add(new AssetRequirement(assetType, assetFile));
+            DefaultAssets.Add(new AssetRequirement(assetType, assetFile));
         }
 
         public override void Process(GetPageRenderingArgs args)
         {
-            this.AddDefaultAssetsFromConfiguration();
+            AddDefaultAssetsFromConfiguration();
 
-            this.AddPageAssets(PageContext.Current.Item);
+            AddPageAssets(PageContext.Current.Item);
 
-            this.AddRenderingAssets(args.PageContext.PageDefinition.Renderings);
+            AddRenderingAssets(args.PageContext.PageDefinition.Renderings);
         }
 
         private void AddRenderingAssets(IEnumerable<Rendering> renderings)
@@ -82,7 +83,8 @@ namespace Habitat.Framework.Assets.Pipelines.GetPageRendering
 
                 var javaScriptInline = renderingItem[Templates.RenderingAssets.Fields.InlineScript];
                 if (!string.IsNullOrEmpty(javaScriptInline))
-                    AssetRepository.Current.AddScript(javaScriptInline, renderingItem.ID.ToString(), ScriptLocation.Head, true);
+                    AssetRepository.Current.AddScript(javaScriptInline, renderingItem.ID.ToString(), ScriptLocation.Head,
+                        true);
 
                 var cssAssets = renderingItem[Templates.RenderingAssets.Fields.StylingFiles];
                 foreach (var cssAsset in cssAssets.Split(';', ',', '\n'))
@@ -96,15 +98,17 @@ namespace Habitat.Framework.Assets.Pipelines.GetPageRendering
 
         private void AddPageAssets(Item item)
         {
-            var styling = this.GetPageAssetValue(item, Templates.PageAssets.Fields.CssCode);
+            var styling = GetPageAssetValue(item, Templates.PageAssets.Fields.CssCode);
             if (!string.IsNullOrWhiteSpace(styling))
                 AssetRepository.Current.AddStyling(styling, styling.GetHashCode().ToString(), true);
-            var scriptBottom = this.GetPageAssetValue(item, Templates.PageAssets.Fields.JavascriptCodeBottom);
+            var scriptBottom = GetPageAssetValue(item, Templates.PageAssets.Fields.JavascriptCodeBottom);
             if (!string.IsNullOrWhiteSpace(scriptBottom))
-                AssetRepository.Current.AddScript(scriptBottom, scriptBottom.GetHashCode().ToString(), ScriptLocation.Body, true);
-            var scriptHead = this.GetPageAssetValue(item, Templates.PageAssets.Fields.JavascriptCodeTop);
+                AssetRepository.Current.AddScript(scriptBottom, scriptBottom.GetHashCode().ToString(),
+                    ScriptLocation.Body, true);
+            var scriptHead = GetPageAssetValue(item, Templates.PageAssets.Fields.JavascriptCodeTop);
             if (!string.IsNullOrWhiteSpace(scriptHead))
-                AssetRepository.Current.AddScript(scriptHead, scriptHead.GetHashCode().ToString(), ScriptLocation.Head, true);
+                AssetRepository.Current.AddScript(scriptHead, scriptHead.GetHashCode().ToString(), ScriptLocation.Head,
+                    true);
         }
 
         private string GetPageAssetValue(Item item, ID assetField)
@@ -121,13 +125,19 @@ namespace Habitat.Framework.Assets.Pipelines.GetPageRendering
 
         private static string GetInheritedPageAssetValue(Item item, ID assetField)
         {
-            var inheritedAssetItem = item.Axes.GetAncestors().FirstOrDefault(i => i.IsDerived(Templates.PageAssets.ID) && MainUtil.GetBool(item[Templates.PageAssets.Fields.InheritAssets], false) && string.IsNullOrWhiteSpace(item[assetField]));
+            var inheritedAssetItem =
+                item.Axes.GetAncestors()
+                    .FirstOrDefault(
+                        i =>
+                            i.IsDerived(Templates.PageAssets.ID) &&
+                            MainUtil.GetBool(item[Templates.PageAssets.Fields.InheritAssets], false) &&
+                            string.IsNullOrWhiteSpace(item[assetField]));
             return inheritedAssetItem?[assetField];
         }
 
         private void AddDefaultAssetsFromConfiguration()
         {
-            foreach (var asset in this.DefaultAssets)
+            foreach (var asset in DefaultAssets)
                 AssetRepository.Current.Add(asset, true);
         }
     }
