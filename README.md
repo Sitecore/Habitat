@@ -14,7 +14,7 @@
 -   Change the setting to fit with your configuration (see below)
 -   Build the solution in Visual Studio
 -   Publish all projects using the Habitat publish settings
--   Open /unicorn.aspx(http://habitat/unicorn.aspx) and synchronize the items to your project
+-   Open [/unicorn.aspx](http://habitat/unicorn.aspx) and synchronize the items to your project
 
 ###Configuring your settings
 
