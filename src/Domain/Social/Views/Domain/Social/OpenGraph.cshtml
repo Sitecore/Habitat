@@ -1,11 +1,9 @@
-﻿@using Sitecore.Links
-@using Sitecore.Mvc
-@using Sitecore.Mvc.Presentation
-@using Sitecore.Resources.Media
-@using Habitat.Framework.SitecoreExtensions.Extensions
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.Social
-@model RenderingModel
-<meta property="og:title" content="@Html.Sitecore().Field(Templates.OpenGraph.Fields.Title.ToString(), @Model.Item)" />
-<meta property="og:image" content="@Model.Item.ImageUrl(Templates.OpenGraph.Fields.Image, new MediaUrlOptions() {AbsolutePath = true})" />
-<meta property="og:description" content="@Html.Sitecore().Field(Templates.OpenGraph.Fields.Description.ToString(), @Model.Item)" />
-<meta property="og:url" content="@Model.Item.Url(new UrlOptions() {AlwaysIncludeServerUrl = true})" />
+@using Sitecore.Links
+@using Sitecore.Resources.Media
+@model Sitecore.Mvc.Presentation.RenderingModel
+<meta property="og:title" content="@Html.Sitecore().Field(Templates.OpenGraph.Fields.Title.ToString(), @Model.Item)"/>
+<meta property="og:image" content="@Model.Item.ImageUrl(Templates.OpenGraph.Fields.Image, new MediaUrlOptions {AbsolutePath = true})"/>
+<meta property="og:description" content="@Html.Sitecore().Field(Templates.OpenGraph.Fields.Description.ToString(), @Model.Item)"/>
+<meta property="og:url" content="@Model.Item.Url(new UrlOptions {AlwaysIncludeServerUrl = true})"/>
