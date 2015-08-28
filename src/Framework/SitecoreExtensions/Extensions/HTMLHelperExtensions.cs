@@ -1,8 +1,8 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using Habitat.Framework.SitecoreExtensions.Controls;
 using Sitecore.Data.Items;
 using Sitecore.Mvc.Helpers;
-using Habitat.SitecoreExtensions.Controls;
 
 namespace Habitat.Framework.SitecoreExtensions.Extensions
 {

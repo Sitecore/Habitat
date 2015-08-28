@@ -1,12 +1,11 @@
-﻿namespace Habitat.SitecoreExtensions.Controls
+﻿using System;
+using System.IO;
+using System.Web.UI;
+using Sitecore.Web.UI.WebControls;
+
+namespace Habitat.Framework.SitecoreExtensions.Controls
 {
-    using System;
-    using System.IO;
-    using System.Web.UI;
-
-    using Sitecore.Web.UI.WebControls;
-
-    /// <summary>
+  /// <summary>
     /// Edit frame class. 
     /// </summary>
     /// <remarks>

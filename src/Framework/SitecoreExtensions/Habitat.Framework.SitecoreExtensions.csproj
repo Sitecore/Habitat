@@ -112,14 +112,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\EditFrameRendering.cs" />
+    <Compile Include="Extensions\MVCFieldExtensions.cs" />
     <Compile Include="Extensions\SiteExtensions.cs" />
     <Compile Include="Extensions\FieldExtensions.cs" />
     <Compile Include="Extensions\RenderingExtensions.cs" />
     <Compile Include="Extensions\ItemExtensions.cs" />
     <Compile Include="Helpers\AnalyticsHelper.cs" />
     <Compile Include="Extensions\HTMLHelperExtensions.cs" />
+    <Compile Include="Model\File.cs" />
+    <Compile Include="Model\Image.cs" />
+    <Compile Include="Model\Link.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DatabaseRepository.cs" />
+    <Compile Include="Repositories\FileRepository.cs" />
+    <Compile Include="Repositories\ImageRepository.cs" />
+    <Compile Include="Repositories\ItemRepository.cs" />
+    <Compile Include="Repositories\LinkRepository.cs" />
     <Compile Include="Rules\Conditions\HasCampaignEverBeenTriggered.cs" />
+    <Compile Include="Services\XmlParserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Habitat.Framework.SitecoreExtensions.PerformanceTweaks.config">
