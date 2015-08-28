@@ -14,6 +14,7 @@
 -   Change the seeting to fit with your configuration (see below)
 -   Build the solution in Visual Studio
 -   Publish all projects using the Habitat publish settings
+-   Open http://habitat/unicorn.aspx and synchronize the items to your project
 
 ###Configuring your settings
 
