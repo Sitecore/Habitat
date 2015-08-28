@@ -1,0 +1,20 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Navigation
+@model Habitat.Navigation.Models.NavigationItem
+@{
+    if (Model == null)
+    {
+        return;
+    }
+}
+<nav class="secondarynav">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a href="@Model.Item.Url()">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), Model.Item)</a>
+        </div>
+        @if (Model.Children != null)
+        {
+            @Html.Partial("SecondaryMenuItems", Model.Children)
+        }
+    </div>
+</nav>

@@ -1,0 +1,24 @@
+﻿@using Sitecore
+@using Habitat.Metadata
+@model Sitecore.Mvc.Presentation.RenderingModel
+@*TODO: Fall back to Title / DisplayName etc*@
+@{
+    //TODO Mode to Controller Rendering
+    var siteMetadata = SiteMetadataService.GetSiteMetadata(Model.Item);
+    if (siteMetadata == null)
+    {
+        return;
+    }
+}
+<title>@Html.Sitecore().Field(Templates.PageMetadata.Fields.BrowserTitle.ToString(), Model.Item) @Html.Sitecore().Field(Templates.SiteMetadata.Fields.SiteBrowserTitle.ToString(), siteMetadata)</title>
+<meta name="keywords" content="@Html.Sitecore().Field(Templates.PageMetadata.Fields.Keywords.ToString(), Model.Item)">
+<meta name="description" content="@Html.Sitecore().Field(Templates.PageMetadata.Fields.Description.ToString(), Model.Item)">
+@{
+    if (!MainUtil.GetBool(Model.Item[Templates.PageMetadata.Fields.CanIndex], true))
+    {
+        <meta name="robots" content="noindex">
+    }
+}
+<!-- CUSTOM METADATA BEGIN-->
+@Html.Sitecore().Field(Templates.PageMetadata.Fields.CustomMetadata.ToString(), Model.Item)
+<!-- CUSTOM METADATA END-->

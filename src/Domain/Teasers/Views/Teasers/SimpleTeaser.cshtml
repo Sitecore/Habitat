@@ -1,0 +1,12 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Teasers
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+<div class="teaser">
+    <h4>@Html.Sitecore().Field(Templates.Teaser.Fields.Title.ToString(), Model.Item)</h4>
+    <p>@Html.Sitecore().Field(Templates.Teaser.Fields.Text.ToString(), Model.Item)</p>
+    <a href="@Model.Item.LinkFieldUrl(Templates.Teaser.Fields.Image)">
+        @Html.Sitecore().ImageField(Templates.Teaser.Fields.Image.ToString(), Model.Item, mw: 100)
+    </a>
+    @Html.Sitecore().Field(Templates.Teaser.Fields.Link.ToString(), Model.Item)
+</div>

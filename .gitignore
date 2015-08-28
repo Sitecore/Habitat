@@ -1,0 +1,22 @@
+[Oo]bj/
+[Bb]in/
+.nuget/
+_ReSharper.*
+packages/
+artifacts/
+*.user
+*.cache
+*.suo
+*.userprefs
+*DS_Store
+*.sln.ide
+lib/Sitecore/*
+!lib/Sitecore/readme.MD
+lib/System/*
+!lib/System/readme.MD
+.sonar
+vars.user.cmd
+/.vs
+
+#Individual developer settings - do not include in version control
+src/Website/App_Config/Include/*.DevSettings.config

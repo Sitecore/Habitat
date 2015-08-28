@@ -1,0 +1,27 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Navigation
+@model Habitat.Navigation.Models.NavigationItems
+
+@{
+    if (Model == null || Model.Items == null)
+    {
+        return;
+    }
+}
+<div class="list-group">
+    @foreach (var item in Model.Items)
+    {
+        <a class="list-group-item @(item.IsActive ? "active" : string.Empty)" href="@item.Item.Url()">
+            @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
+        </a>
+
+        if (item.IsActive && item.Children != null && item.Children.Items.Any())
+        {
+            <div class="list-group-item">
+                <div class="panel panel-default">
+                    @Html.Partial("SecondaryMenuItems", item.Children)
+                </div>
+            </div>
+        }
+    }
+</div>

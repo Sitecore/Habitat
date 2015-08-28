@@ -1,0 +1,31 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.StandardContent
+@model IEnumerable<Sitecore.Data.Items.Item>
+<div class="news latestnews">
+    <h4>Latest News</h4>
+    <ul class="news">
+        @foreach (var item in Model)
+        {
+            <li class="media">
+                <div class="media-left media-top">
+                    <a href="@item.Url()">
+                        @Html.Sitecore().ImageField(Templates.HasImage.Fields.Image.ToString(), item, mw: 100)
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading">
+                        <a href="@item.Url()">@Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString(), item)</a>
+                    </h4>
+                    <em class="date">
+                        @Html.Sitecore().Field(Habitat.News.Templates.NewsArticle.Fields.Date.ToString(), item, new
+                        {
+                            format = "MMMM dd, yyyy"
+                        })
+                    </em>
+                </div>
+            </li>
+        }
+    </ul>
+    @* TODO: Add Dictionary functionality to avoid hardcoding *@
+    <a href="@Html.Sitecore().CurrentRendering.Item.Url()">Read more >> </a>
+</div>

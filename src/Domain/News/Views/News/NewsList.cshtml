@@ -1,0 +1,29 @@
+﻿@using Sitecore.Data.Items
+@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.News
+@model IEnumerable<Item>
+<ul class="news">
+    @foreach (var item in Model)
+    {
+        <li class="media">
+            <div class="media-left media-top">
+                <a href="@item.Url()">
+                    @Html.Sitecore().ImageField(Habitat.StandardContent.Templates.HasImage.Fields.Image.ToString(), item, mw: 100)
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <a href="@item.Url()">@Html.Sitecore().Field(Habitat.StandardContent.Templates.HasTitle.Fields.Title.ToString(), item)</a>
+                </h4>
+                <em class="date">
+                    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new { format = "MMMM dd, yyyy" })
+                </em>
+                <p>
+                    @Html.Sitecore().Field(Habitat.StandardContent.Templates.HasSummary.Fields.Summary.ToString(), item)
+                </p>
+            </div>
+        </li>
+    }
+</ul>

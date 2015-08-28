@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {725A45E3-E307-4B95-B363-2782B059DF06}
+database: master
+path: /sitecore/content/Habitat
+parent: {0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+name: Habitat
+master: {00000000-0000-0000-0000-000000000000}
+template: {0643D9D4-F30B-4B07-91D0-289CC324C9CF}
+templatekey: Site Root
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 38
+
+{4A8822CC-B418-4452-AB0F-8BB6DF2F2114}
+----version----
+language: en
+version: 1
+revision: 9db565a5-759c-449b-b6e3-229406ef2f04
+
+----field----
+field: {E748D808-64C1-4DEC-9718-F35CF9689E4B}
+name: Logo
+key: logo
+content-length: 211
+
+<image mediapath="/Default Website/sc_logo" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/sc_logo" mediaid="{094AED03-02E7-4868-80CB-19926661FB77}" />
+----field----
+field: {02115632-FE1E-4B3D-9AD4-A4DDF1F782F0}
+name: Copyright
+key: copyright
+content-length: 91
+
+Copyright © 2015 <a href="http://sitecore.net" target="_blank">Sitecore Corporation A/S</a>
+----field----
+field: {235AE392-97AC-4822-BE38-837DA3E7724E}
+name: SiteBrowserTitle
+key: sitebrowsertitle
+content-length: 29
+
+ - Habitat Sitecore Framework
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150824T171748Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9db565a5-759c-449b-b6e3-229406ef2f04
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20150828T050815Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

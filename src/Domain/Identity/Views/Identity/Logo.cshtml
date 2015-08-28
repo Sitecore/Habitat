@@ -1,0 +1,16 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Identity
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+    var identity = IdentityService.GetIdentity(Model.Item);
+    if (identity == null)
+    {
+        return;
+    }
+}
+<div class="brand">
+    <a class="navbar-brand" href="/">
+        @Html.Sitecore().ImageField(Templates.Identity.Fields.Logo.ToString(), identity, mh:20)
+    </a>
+</div>

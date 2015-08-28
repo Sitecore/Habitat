@@ -1,0 +1,11 @@
+﻿@using Habitat.Identity
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+    var identity = IdentityService.GetIdentity(Model.Item);
+    if (identity == null)
+    {
+        return;
+    }
+}
+<div class="copyright">@Html.Sitecore().Field(Templates.Identity.Fields.Copyright.ToString(), identity)</div>

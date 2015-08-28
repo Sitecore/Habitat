@@ -1,0 +1,86 @@
+----item----
+version: 1
+id: {439EC71A-4231-45C8-B075-975BD41099A7}
+database: master
+path: /sitecore/content/Habitat/Home/News
+parent: {DAC24EDD-44FB-42EF-9ECD-1E8DAF706386}
+name: News
+master: {00000000-0000-0000-0000-000000000000}
+template: {A99866E5-08E7-44D8-8A52-F8E26BCD3714}
+templatekey: News List
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 38
+
+{B69277AD-E917-4B9F-9136-A12E0A3E462F}
+----version----
+language: en
+version: 1
+revision: 9746fdbd-270e-4f66-8067-4bf7a5345ecf
+
+----field----
+field: {C30A013F-3CC8-4961-9837-1C483277084A}
+name: Title
+key: title
+content-length: 4
+
+News
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 4
+
+News
+----field----
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
+content-length: 4
+
+News
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150824T175319Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9746fdbd-270e-4f66-8067-4bf7a5345ecf
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20150827T014132Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

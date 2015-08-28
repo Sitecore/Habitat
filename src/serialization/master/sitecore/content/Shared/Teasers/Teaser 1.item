@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {EF593C2A-F3F8-421A-9368-0E189A689DBD}
+database: master
+path: /sitecore/content/Shared/Teasers/Teaser 1
+parent: {6AA25831-0944-4A79-9AFF-7BAC39E03557}
+name: Teaser 1
+master: {00000000-0000-0000-0000-000000000000}
+template: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
+templatekey: Teaser
+
+----version----
+language: en
+version: 1
+revision: de76b47a-1242-4aa6-987b-e1819dbc8b82
+
+----field----
+field: {AE2FC28B-7A6B-41F4-8B21-7DEC7C5CB7FE}
+name: Title
+key: title
+content-length: 8
+
+Teaser 1
+----field----
+field: {475B6098-2AE5-4DDA-97D2-0217A8D4C454}
+name: Text
+key: text
+content-length: 232
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tincidunt ante. Nulla facilisi. Quisque semper tellus justo. Duis at varius ante. Aenean augue erat, sollicitudin id facilisis non, eleifend vitae ligula.</p>
+----field----
+field: {D5E80175-69E8-47CB-81B1-B7C8719706B2}
+name: Image
+key: image
+content-length: 207
+
+<image mediapath="/Default Website/cover" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/cover" mediaid="{04DAD0FD-DB66-4070-881F-17264CA257E1}" />
+----field----
+field: {CC6C0053-F2F7-4D07-81ED-A53229674348}
+name: Link
+key: link
+content-length: 148
+
+<link text="" linktype="internal" url="" anchor="" title="About Us" class="" querystring="" target="" id="{3A5D638D-5BDD-4DDD-BEAC-4A0C81C27E8A}" />
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150827T063224Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+de76b47a-1242-4aa6-987b-e1819dbc8b82
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20150827T063345Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
