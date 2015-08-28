@@ -49,14 +49,14 @@ namespace Habitat.Framework.SitecoreExtensions.Extensions
             return FieldRenderer.Render(item, field.Name);
         }
 
-        public static HtmlString MvcField(this Item item, ID fieldId)
+        public static HtmlString Field(this Item item, ID fieldId)
         {
             Assert.IsNotNull(item, "Item cannot be null");
             Assert.IsNotNull(fieldId, "FieldId cannot be null");
             return new HtmlString(RenderField(item, fieldId));
         }
 
-        public static HtmlString MvcField(this Item item, ID fieldId, object parameters)
+        public static HtmlString Field(this Item item, ID fieldId, object parameters)
         {
             return new HtmlString(BeginField(fieldId, item, parameters) + EndField().ToString());
         }

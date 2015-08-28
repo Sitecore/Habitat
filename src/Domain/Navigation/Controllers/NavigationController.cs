@@ -1,9 +1,8 @@
-﻿using Sitecore.Mvc.Presentation;
+﻿using System.Web.Mvc;
+using Sitecore.Mvc.Presentation;
 
 namespace Habitat.Navigation.Controllers
 {
-    using System.Web.Mvc;
-
     public class NavigationController : Controller
     {
         private readonly INavigationService _navigationService;
@@ -14,24 +13,24 @@ namespace Habitat.Navigation.Controllers
 
         public NavigationController(INavigationService navigationService)
         {
-            this._navigationService = navigationService;
+            _navigationService = navigationService;
         }
 
         public ActionResult Breadcrumb()
         {
-            var items = this._navigationService.GetBreadcrumb();
+            var items = _navigationService.GetBreadcrumb();
             return View("Breadcrumb", items);
         }
 
         public ActionResult PrimaryMenu()
         {
-            var items = this._navigationService.GetPrimaryMenu();
+            var items = _navigationService.GetPrimaryMenu();
             return View("PrimaryMenu", items);
         }
 
         public ActionResult SecondaryMenu()
         {
-            var item = this._navigationService.GetSecondaryMenuItem();
+            var item = _navigationService.GetSecondaryMenuItem();
             return View("SecondaryMenu", item);
         }
     }
