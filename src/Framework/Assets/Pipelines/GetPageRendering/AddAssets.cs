@@ -13,6 +13,8 @@ using Sitecore.Xml;
 
 namespace Habitat.Framework.Assets.Pipelines.GetPageRendering
 {
+    using Sitecore.Diagnostics;
+
     /// <summary>
     /// Mvc.BuildPageDefinition pipeline processor to dynamically reference Cassette Bundles
     /// </summary>
@@ -65,7 +67,10 @@ namespace Habitat.Framework.Assets.Pipelines.GetPageRendering
             foreach (var rendering in renderings)
             {
                 if (rendering.RenderingItem == null)
-                    throw new InvalidOperationException($"rendering.RenderingItem is null for {rendering.RenderingItemPath}");
+                {
+                    Log.Warn($"rendering.RenderingItem is null for {rendering.RenderingItemPath}", this);
+                    continue;
+                }
 
                 if (Context.PageMode.IsNormal && rendering.Caching.Cacheable)
                     AssetRepository.Current.Add(rendering.RenderingItem.ID);
