@@ -1,0 +1,14 @@
+﻿@using Habitat.Language.Infrastructure.Repositories
+<div class="collapse navbar-collapse" id="topNavbar">
+    <ul class="nav navbar-nav navbar-right">
+
+        @foreach (var language in LanguageRepository.GetCountries())
+        {
+            <li>
+                <a href="@language.Url" class="language-icon">
+                    <img src="@language.Icon" style="width: 25px"/>
+                </a>
+            </li>
+        }
+    </ul>
+</div>
