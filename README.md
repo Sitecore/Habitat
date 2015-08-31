@@ -17,18 +17,18 @@ The solution consists of the following modules:
 * Theme.Common
 
 Domain modules
-* [Article](tree/master/src/Domain/Article/readme.md)
-* [Identity](tree/master/src/Domain/Identity/readme.md)
-* [Metadata](tree/master/src/Domain/Metadata/readme.md)
-* [Navigation](tree/master/src/Domain/Navigation/readme.md)
-* [News](tree/master/src/Domain/News/readme.md)
-* [Social](tree/master/src/Domain/Social/readme.md)
-* [Teasers](tree/master/src/Domain/Teasers/readme.md)
+* [Article](/Sitecore/Habitat/tree/master/src/Domain/Article/readme.md)
+* [Identity](/Sitecore/Habitat/tree/master/src/Domain/Identity/readme.md)
+* [Metadata](/Sitecore/Habitat/tree/master/src/Domain/Metadata/readme.md)
+* [Navigation](/Sitecore/Habitat/tree/master/src/Domain/Navigation/readme.md)
+* [News](/Sitecore/Habitat/tree/master/src/Domain/News/readme.md)
+* [Social](/Sitecore/Habitat/tree/master/src/Domain/Social/readme.md)
+* [Teasers](/Sitecore/Habitat/tree/master/src/Domain/Teasers/readme.md)
 
 Framework modules
-* [Assets](tree/master/src/Framework/Assets/readme.md)
-* [SitecoreExtensions](tree/master/src/Framework/SitecoreExtensions/readme.md)
-* [Taxonomy](tree/master/src/Framework/Taxonomy/readme.md)
+* [Assets](/Sitecore/Habitat/tree/master/src/Framework/Assets/readme.md)
+* [SitecoreExtensions](/Sitecore/Habitat/tree/master/src/Framework/SitecoreExtensions/readme.md)
+* [Taxonomy](/tree/master/src/Framework/Taxonomy/readme.md)
 
 ##Getting started
 ---------------
