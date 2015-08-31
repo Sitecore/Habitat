@@ -1,33 +1,26 @@
 ----item----
 version: 1
-id: {28442A49-F6D9-4EFD-865D-9DF0B74B512B}
+id: {57930FE6-C782-429E-B095-1821340F9AE4}
 database: master
-path: /sitecore/templates/Sites/Common/Content Types/Teaser/__Standard Values
-parent: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
-name: __Standard Values
+path: /sitecore/templates/Domain/Media/_HasHighResImage/Media
+parent: {FAE0C913-1600-4EBA-95A9-4D6FD7407E25}
+name: Media
 master: {00000000-0000-0000-0000-000000000000}
-template: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
-templatekey: Teaser
+template: {E269FBB5-3750-427A-9149-7AA950B49301}
+templatekey: Template section
 
 ----version----
 language: en
 version: 1
-revision: 4326bc73-4a4b-47b9-8341-a8f7bfed56ad
+revision: 08d7c0b0-6b50-482a-ab24-d5ef45e63265
 
-----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20150827T062934Z
+20150831T121518Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -41,14 +34,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-4326bc73-4a4b-47b9-8341-a8f7bfed56ad
+08d7c0b0-6b50-482a-ab24-d5ef45e63265
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150831T115305Z
+20150831T121518Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

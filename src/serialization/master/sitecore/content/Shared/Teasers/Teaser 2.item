@@ -12,29 +12,36 @@ templatekey: Teaser
 ----version----
 language: en
 version: 1
-revision: 485d0d54-151f-4603-a48f-15f4bf7275d8
+revision: 3040885a-29f3-4cc5-a53f-2147be7dcc62
 
 ----field----
-field: {AE2FC28B-7A6B-41F4-8B21-7DEC7C5CB7FE}
+field: {C30A013F-3CC8-4961-9837-1C483277084A}
 name: Title
 key: title
 content-length: 8
 
 Teaser 2
 ----field----
-field: {475B6098-2AE5-4DDA-97D2-0217A8D4C454}
-name: Text
-key: text
-content-length: 309
+field: {AC3FD4DB-8266-476D-9635-67814D91E901}
+name: Summary
+key: summary
+content-length: 295
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis tincidunt ante. Nulla facilisi. Quisque semper tellus justo. Duis at varius ante. Aenean augue erat, sollicitudin id facilisis non, eleifend vitae ligula. Proin eu ornare neque. Donec dictum ex ipsum, sed molestie ipsum lacinia at.</p>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.  
 ----field----
-field: {CC6C0053-F2F7-4D07-81ED-A53229674348}
+field: {E8AB122C-6F54-4D4E-AEC6-F81ADDC558FC}
 name: Link
 key: link
-content-length: 151
+content-length: 140
 
-<link text="" linktype="internal" url="" anchor="" title="Our Offices" class="" querystring="" target="" id="{B6C764EB-FC71-45C0-83FC-E28DC20A68C3}" />
+<link text="" linktype="internal" url="" anchor="" title="" class="" querystring="" target="" id="{439EC71A-4231-45C8-B075-975BD41099A7}" />
+----field----
+field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
+name: Image
+key: image
+content-length: 207
+
+<image mediapath="/Default Website/cover" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/cover" mediaid="{04DAD0FD-DB66-4070-881F-17264CA257E1}" />
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-485d0d54-151f-4603-a48f-15f4bf7275d8
+3040885a-29f3-4cc5-a53f-2147be7dcc62
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150827T063411Z
+20150831T115507Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

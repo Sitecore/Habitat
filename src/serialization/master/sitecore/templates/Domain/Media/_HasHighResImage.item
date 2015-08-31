@@ -1,33 +1,40 @@
 ----item----
 version: 1
-id: {28442A49-F6D9-4EFD-865D-9DF0B74B512B}
+id: {FAE0C913-1600-4EBA-95A9-4D6FD7407E25}
 database: master
-path: /sitecore/templates/Sites/Common/Content Types/Teaser/__Standard Values
-parent: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
-name: __Standard Values
+path: /sitecore/templates/Domain/Media/_HasHighResImage
+parent: {4A2CCF0B-9C08-485B-9902-87CA2869BC8F}
+name: _HasHighResImage
 master: {00000000-0000-0000-0000-000000000000}
-template: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
-templatekey: Teaser
+template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
+templatekey: Template
 
+----field----
+field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
+name: __Base template
+key: __base template
+content-length: 38
+
+{1930BBEB-7805-471A-A3BE-4858AC7CF696}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 32
+
+Applications/32x32/form_blue.png
 ----version----
 language: en
 version: 1
-revision: 4326bc73-4a4b-47b9-8341-a8f7bfed56ad
+revision: a67e5e13-1450-4c41-aa4c-912d571c7ee3
 
-----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20150827T062934Z
+20150831T121437Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -41,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-4326bc73-4a4b-47b9-8341-a8f7bfed56ad
+a67e5e13-1450-4c41-aa4c-912d571c7ee3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150831T115305Z
+20150831T121553Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

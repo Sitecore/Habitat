@@ -5,4 +5,7 @@
   <File Include="Views\News\NewsDate.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{F366176E-2C2B-4AF2-B356-BCF8BD657C58}</Item>
   </File>
+  <File Include="Views\News\NewsTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}</Item>
+  </File>
 </Project>

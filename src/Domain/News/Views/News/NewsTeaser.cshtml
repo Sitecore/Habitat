@@ -1,0 +1,19 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.StandardContent
+@using Habitat.News
+@using Templates = Habitat.StandardContent.Templates
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+<div class="teaser news">
+    <h4>@Html.Sitecore().Field(Habitat.StandardContent.Templates.HasTitle.Fields.Title.ToString(), Model.Item)</h4>
+    <em class="date">
+        @Html.Sitecore().Field(Habitat.News.Templates.NewsArticle.Fields.Date.ToString(), new { format = "MMMM dd, yyyy" })
+    </em>
+    <a href="@Model.Item.Url()">
+        @Html.Sitecore().ImageField(Templates.HasImage.Fields.Image.ToString(), Model.Item, mw: 100)
+    </a>
+    <p>@Html.Sitecore().Field(Habitat.StandardContent.Templates.HasSummary.Fields.Summary.ToString(), Model.Item)</p>
+    <a href="@Model.Item.Url()">
+        Read more... @* TODO: Change to dictionary *@
+    </a>
+</div>
