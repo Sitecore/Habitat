@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Navigation")]
+[assembly: AssemblyTitle("Habitat.Article")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Habitat")]
-[assembly: AssemblyCopyright("Copyright © Sitecore 2015")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("16003e7f-0faf-4dee-b13d-dd327e965a98")]
+[assembly: Guid("da079e95-db53-4a66-ab35-2dab71d19276")]
 
 // Version information for an assembly consists of the following four values:
 //

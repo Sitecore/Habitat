@@ -1,0 +1,8 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Mvc.Presentation
+@using Habitat.Framework.SitecoreExtensions.Extensions
+@model RenderingModel
+
+<div class="article image">
+    @Html.Sitecore().ImageField("image", @Model.Item, mw:700, cssClass: "img-responsive")
+</div>
