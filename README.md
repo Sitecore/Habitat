@@ -13,8 +13,8 @@ Habitat is a Sitecore solution framework focusing on three aspects:
 ---------------
 The solution consists of the following modules:
 
-* [Site.Common](src/Sites/Common)
-* [Theme.Common](src/Themes/Common)
+* [Site.Common](src/Sites/Common/)
+* [Theme.Common](src/Themes/Common/)
 
 Domain modules
 * [Article](src/Domain/Article/)
