@@ -19,4 +19,4 @@ vars.user.cmd
 /.vs
 
 #Individual developer settings - do not include in version control
-src/Website/App_Config/Include/*.DevSettings.config
+src/Sites/**/*.DevSettings.config
