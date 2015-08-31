@@ -13,22 +13,22 @@ Habitat is a Sitecore solution framework focusing on three aspects:
 ---------------
 The solution consists of the following modules:
 
-* Site.Common
-* Theme.Common
+* [Site.Common](src/sites/common)
+* [Theme.Common](src/themes/common)
 
 Domain modules
-* [Article](src/Domain/Article/readme.md)
-* [Identity](src/Domain/Identity/readme.md)
-* [Metadata](src/Domain/Metadata/readme.md)
-* [Navigation](src/Domain/Navigation/readme.md)
-* [News](src/Domain/News/readme.md)
-* [Social](src/Domain/Social/readme.md)
-* [Teasers](src/Domain/Teasers/readme.md)
+* [Article](src/Domain/Article/)
+* [Identity](src/Domain/Identity/)
+* [Metadata](src/Domain/Metadata/)
+* [Navigation](src/Domain/Navigation/)
+* [News](src/Domain/News/)
+* [Social](src/Domain/Social/)
+* [Teasers](src/Domain/Teasers/)
 
 Framework modules
-* [Assets](src/Framework/Assets/readme.md)
-* [SitecoreExtensions](src/Framework/SitecoreExtensions/readme.md)
-* [Taxonomy](src/Framework/Taxonomy/readme.md)
+* [Assets](src/Framework/Assets/)
+* [SitecoreExtensions](src/Framework/SitecoreExtensions/)
+* [Taxonomy](src/Framework/Taxonomy/)
 
 ##Getting started
 ---------------
