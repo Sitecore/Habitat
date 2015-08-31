@@ -104,6 +104,7 @@
   <ItemGroup>
     <Content Include="README.md" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <Content Include="Views\Language\LanguageSelector.cshtml" />
     <None Include="Views\web.config" />
     <Content Include="packages.config" />
     <None Include="Web.config" />
@@ -114,9 +115,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Language\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
