@@ -114,7 +114,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web.config" />
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Repositories\IdentityRepository.cs" />
