@@ -102,6 +102,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <Content Include="README.md" />
     <None Include="Views\Web.config" />
     <Content Include="Views\Metadata\PageMetadata.cshtml" />
     <None Include="Web.Debug.config">

@@ -138,6 +138,7 @@
     <Content Include="App_Config\Include\Habitat.Framework.SitecoreExtensions.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="README.md" />
     <None Include="web.config" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />

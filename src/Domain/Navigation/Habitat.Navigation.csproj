@@ -103,6 +103,7 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Navigation\SecondaryMenuItems.cshtml" />
+    <Content Include="README.md" />
     <None Include="Views\Web.config" />
     <Content Include="Views\Navigation\PrimaryMenu.cshtml" />
     <Content Include="Views\Navigation\SecondaryMenu.cshtml" />

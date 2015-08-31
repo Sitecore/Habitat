@@ -106,6 +106,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <Content Include="README.md" />
     <None Include="Views\Web.config" />
     <Content Include="Views\Domain\Social\OpenGraph.cshtml" />
     <None Include="Web.config" />

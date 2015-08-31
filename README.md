@@ -17,18 +17,18 @@ The solution consists of the following modules:
 * Theme.Common
 
 Domain modules
-* [Article](src/domain/article/readme.md)
-* Identity
-* Metadata
-* Navigation
-* News
-* Social
-* Teasers
+* [Article](tree/master/src/Domain/Article/readme.md)
+* [Identity](tree/master/src/Domain/Identity/readme.md)
+* [Metadata](tree/master/src/Domain/Metadata/readme.md)
+* [Navigation](tree/master/src/Domain/Navigation/readme.md)
+* [News](tree/master/src/Domain/News/readme.md)
+* [Social](tree/master/src/Domain/Social/readme.md)
+* [Teasers](tree/master/src/Domain/Teasers/readme.md)
 
 Framework modules
-* Assets
-* SitecoreExtensions
-* Taxonomy
+* [Assets](tree/master/src/Framework/Assets/readme.md)
+* [SitecoreExtensions](tree/master/src/Framework/SitecoreExtensions/readme.md)
+* [Taxonomy](tree/master/src/Framework/Taxonomy/readme.md)
 
 ##Getting started
 ---------------

@@ -106,6 +106,7 @@
     <Content Include="Views\Article\Body.cshtml" />
     <Content Include="Views\Article\Title.cshtml" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <Content Include="README.md" />
     <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
