@@ -7,7 +7,7 @@ namespace Habitat.Framework.Assets.Models
 {
     internal class AssetRequirementList : ICacheable, IEnumerable<AssetRequirement>
     {
-        private readonly List<AssetRequirement> items = new List<AssetRequirement>();
+        private readonly List<AssetRequirement> _items = new List<AssetRequirement>();
 
         public AssetRequirementList()
         {
@@ -22,12 +22,12 @@ namespace Habitat.Framework.Assets.Models
 
         public long GetDataLength()
         {
-            return items.Sum(x => x.GetDataLength());
+            return _items.Sum(x => x.GetDataLength());
         }
 
         public IEnumerator<AssetRequirement> GetEnumerator()
         {
-            return items.GetEnumerator();
+            return _items.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -37,7 +37,7 @@ namespace Habitat.Framework.Assets.Models
 
         public void Add(AssetRequirement requirement)
         {
-            items.Add(requirement);
+            _items.Add(requirement);
         }
     }
 }

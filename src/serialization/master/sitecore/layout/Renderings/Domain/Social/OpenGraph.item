@@ -13,9 +13,9 @@ templatekey: View rendering
 field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
 name: Path
 key: path
-content-length: 37
+content-length: 30
 
-/Views/Domain/Social/OpenGraph.cshtml
+/Views/Social/OpenGraph.cshtml
 ----field----
 field: {308E88F5-CD6E-4F8F-BAFE-95A47DEDEFDC}
 name: Editable
@@ -26,7 +26,7 @@ content-length: 0
 ----version----
 language: en
 version: 1
-revision: 00e95a51-24c2-449a-96cb-45fd24418ed4
+revision: 7732299d-3e62-49a6-99a8-fb3a0edc47e6
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-00e95a51-24c2-449a-96cb-45fd24418ed4
+7732299d-3e62-49a6-99a8-fb3a0edc47e6
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150827T054200Z
+20150828T121613Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

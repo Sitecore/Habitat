@@ -1,4 +1,5 @@
-﻿@using Sitecore.Mvc
+﻿@using Habitat.Article
+@using Sitecore.Mvc
 @using Sitecore.Mvc.Presentation
 @model RenderingModel
 
@@ -7,11 +8,11 @@
     <div class="pageedit summary">
         <label>Summary:</label>
         <div>
-            @Html.Sitecore().Field("summary")
+            @Html.Sitecore().Field(Templates.HasSummary.Fields.Summary.ToString())
         </div>
     </div>
 }
 
 <div class="article body">
-    @Html.Sitecore().Field("Body")
+    @Html.Sitecore().Field(Templates.HasBody.Fields.Body.ToString())
 </div>

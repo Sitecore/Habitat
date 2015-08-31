@@ -108,7 +108,7 @@
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="README.md" />
     <None Include="Views\Web.config" />
-    <Content Include="Views\Domain\Social\OpenGraph.cshtml" />
+    <Content Include="Views\Social\OpenGraph.cshtml" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
