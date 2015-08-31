@@ -13,13 +13,20 @@ templatekey: View rendering
 field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
 name: Path
 key: path
-content-length: 30
+content-length: 39
 
-/Views/LanguageSelector.cshtml
+/Views/Language/LanguageSelector.cshtml
+----field----
+field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
+name: Open Properties after Add
+key: open properties after add
+content-length: 1
+
+-
 ----version----
 language: en
 version: 1
-revision: d2bc5eba-16b2-45af-87fb-d18ef8f8c2b0
+revision: 2ada503b-b2ef-457e-97c8-3b4d3491248f
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d2bc5eba-16b2-45af-87fb-d18ef8f8c2b0
+2ada503b-b2ef-457e-97c8-3b4d3491248f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150831T075102Z
+20150831T080244Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
