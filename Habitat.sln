@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.SitecoreExtensions", "src\Framework\SitecoreExtensions\Habitat.Framework.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
@@ -38,6 +38,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Theme.Common", "src\Themes\Common\Habitat.Theme.Common.csproj", "{98DE0D1D-26F1-4CCA-847C-4E0FC2DBA5FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Article", "src\Domain\Article\Habitat.Article.csproj", "{DA079E95-DB53-4A66-AB35-2DAB71D19276}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Language", "src\Domain\Language\Habitat.Language.csproj", "{9C84ABEC-34B7-41AD-B11B-33B9E1487E53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +145,12 @@ Global
 		{DA079E95-DB53-4A66-AB35-2DAB71D19276}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DA079E95-DB53-4A66-AB35-2DAB71D19276}.Release|x64.ActiveCfg = Release|Any CPU
 		{DA079E95-DB53-4A66-AB35-2DAB71D19276}.Release|x64.Build.0 = Release|Any CPU
+		{9C84ABEC-34B7-41AD-B11B-33B9E1487E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C84ABEC-34B7-41AD-B11B-33B9E1487E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C84ABEC-34B7-41AD-B11B-33B9E1487E53}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9C84ABEC-34B7-41AD-B11B-33B9E1487E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C84ABEC-34B7-41AD-B11B-33B9E1487E53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C84ABEC-34B7-41AD-B11B-33B9E1487E53}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -158,5 +166,6 @@ Global
 		{0D0B809C-03AB-4EE1-898F-CFE28CF5B245} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
 		{F7BD93E3-1864-4519-851F-CBA3666D7A74} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
 		{DA079E95-DB53-4A66-AB35-2DAB71D19276} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
+		{9C84ABEC-34B7-41AD-B11B-33B9E1487E53} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
 	EndGlobalSection
 EndGlobal
