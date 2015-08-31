@@ -120,7 +120,7 @@
   <ItemGroup>
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Models\NavigationItems.cs" />
-    <Compile Include="NavigationService.cs" />
+    <Compile Include="Repositories\NavigationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>

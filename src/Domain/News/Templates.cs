@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sitecore.Data;
+﻿using Sitecore.Data;
 
 namespace Habitat.News
 {
@@ -23,6 +18,5 @@ namespace Habitat.News
         {
             public static ID ID => new ID("{74889B26-061C-4D6A-8CDB-422665FC34EC}");
         }
-
     }
 }

@@ -1,9 +1,9 @@
-﻿namespace Habitat.Navigation.Models
-{
-    using System.Collections.Generic;
-    using Sitecore.Data.Items;
-    using Sitecore.Mvc.Presentation;
+﻿using System.Collections.Generic;
+using Sitecore.Data.Items;
+using Sitecore.Mvc.Presentation;
 
+namespace Habitat.Navigation.Models
+{
     public class NavigationItems : RenderingModel
     {
         public IList<NavigationItem> Items { get; set; }

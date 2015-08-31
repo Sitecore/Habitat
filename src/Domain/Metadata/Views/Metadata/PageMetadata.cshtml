@@ -1,10 +1,11 @@
 ﻿@using Sitecore
 @using Habitat.Metadata
+@using Habitat.Metadata.Repositories
 @model Sitecore.Mvc.Presentation.RenderingModel
 @*TODO: Fall back to Title / DisplayName etc*@
 @{
     //TODO Mode to Controller Rendering
-    var siteMetadata = SiteMetadataService.GetSiteMetadata(Model.Item);
+    var siteMetadata = MetadataRepository.Get(Model.Item);
     if (siteMetadata == null)
     {
         return;

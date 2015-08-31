@@ -1,37 +1,37 @@
-﻿using Sitecore.Mvc.Presentation;
+﻿using System.Web.Mvc;
+using Habitat.Navigation.Repositories;
+using Sitecore.Mvc.Presentation;
 
 namespace Habitat.Navigation.Controllers
 {
-    using System.Web.Mvc;
-
     public class NavigationController : Controller
     {
-        private readonly INavigationService _navigationService;
+        private readonly INavigationRepository _navigationRepository;
 
-        public NavigationController() : this(new NavigationService(RenderingContext.Current.Rendering.Item))
+        public NavigationController() : this(new NavigationRepository(RenderingContext.Current.Rendering.Item))
         {
         }
 
-        public NavigationController(INavigationService navigationService)
+        public NavigationController(INavigationRepository navigationRepository)
         {
-            this._navigationService = navigationService;
+            _navigationRepository = navigationRepository;
         }
 
         public ActionResult Breadcrumb()
         {
-            var items = this._navigationService.GetBreadcrumb();
+            var items = _navigationRepository.GetBreadcrumb();
             return View("Breadcrumb", items);
         }
 
         public ActionResult PrimaryMenu()
         {
-            var items = this._navigationService.GetPrimaryMenu();
+            var items = _navigationRepository.GetPrimaryMenu();
             return View("PrimaryMenu", items);
         }
 
         public ActionResult SecondaryMenu()
         {
-            var item = this._navigationService.GetSecondaryMenuItem();
+            var item = _navigationRepository.GetSecondaryMenuItem();
             return View("SecondaryMenu", item);
         }
     }

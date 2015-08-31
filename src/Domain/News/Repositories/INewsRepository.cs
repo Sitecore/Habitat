@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using Sitecore.Data.Items;
 
-namespace Habitat.News
+namespace Habitat.News.Repositories
 {
-    public interface INewsService
+    public interface INewsRepository
     {
-        IEnumerable<Item> GetNews();
+        IEnumerable<Item> Get();
         IEnumerable<Item> GetLatestNews(int count);
     }
 }

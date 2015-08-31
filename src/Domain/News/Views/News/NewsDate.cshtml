@@ -1,13 +1,11 @@
-﻿@using Sitecore.Mvc
-@using Sitecore.Mvc.Presentation
-@using Habitat.News
-@model RenderingModel
+﻿@using Habitat.News
+@model Sitecore.Mvc.Presentation.RenderingModel
 
 <div class="news date panel panel-default">
     <div class="panel-body">
         @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new
-{
-    format = "MMMM dd, yyyy"
-})
+        {
+            format = "MMMM dd, yyyy"
+        })
     </div>
 </div>

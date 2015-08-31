@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Sitecore.Data.Items;
 using Habitat.Framework.SitecoreExtensions.Extensions;
+using Sitecore.Data.Items;
 
-namespace Habitat.News.Controller
+namespace Habitat.News.Repositories
 {
-    internal class NewsService : INewsService
+    internal class NewsRepository : INewsRepository
     {
         public Item ContextItem { get; set; }
 
-        public NewsService(Item contextItem)
+        public NewsRepository(Item contextItem)
         {
             if (contextItem == null)
                 throw new ArgumentNullException(nameof(contextItem));
@@ -19,7 +19,7 @@ namespace Habitat.News.Controller
             this.ContextItem = contextItem;
         }
 
-        public IEnumerable<Item> GetNews()
+        public IEnumerable<Item> Get()
         {
             //TODO: Change to use buckets and search
             return this.ContextItem.Children.OrderByDescending(i => i[Templates.NewsArticle.Fields.Date]);
@@ -28,7 +28,7 @@ namespace Habitat.News.Controller
         public IEnumerable<Item> GetLatestNews(int count)
         {
             //TODO: Change to use buckets and search
-            return this.GetNews().Take(count);
+            return this.Get().Take(count);
         }
     }
 }

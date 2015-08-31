@@ -40,3 +40,8 @@ How can I contribute?
 ---------------------
 
 Contact [Thomas Eldblom](mailto:the@sitecore.net)
+
+For contributors
+----------------
+
+1. Use meaningful names (http://blog.goyello.com/2013/05/17/express-names-in-code-bad-vs-clean/)
