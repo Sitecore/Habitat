@@ -8,7 +8,7 @@
 ---------------
 
 -   Clone this repository to your local file system.
--   Using SIM (Sitecore Instance Manager) set up a website in the URL http://habitat/
+-   Using SIM (Sitecore Instance Manager) set up a clean Sitecore website in the URL http://habitat/
 -   Copy all assemblies from the Sitecore bin folder to the /lib/Sitecore folder
 -   Open visual studio and copy the Habitat.Site.Common/App_Config/Include/z.Habitat.DevSettings.config.sample to z.Habitat.DevSettings.config
 -   Change the setting to fit with your configuration (see below)
