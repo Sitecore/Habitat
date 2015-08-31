@@ -3,6 +3,32 @@
 
 ##What is the goal of this project?
 --------------------------------
+Habitat is a Sitecore solution framework focusing on three aspects:
+
+* Simplicity - *A consistent and discoverable architecture*
+* Flexibility - *Change and add quickly and without worry*
+* Extensibility - *Simply add new features without steep learning curve*
+
+##Index
+---------------
+The solution consists of the following modules:
+
+* Site.Common
+* Theme.Common
+
+Domain modules
+* [Article](src/domain/article/readme.md)
+* Identity
+* Metadata
+* Navigation
+* News
+* Social
+* Teasers
+
+Framework modules
+* Assets
+* SitecoreExtensions
+* Taxonomy
 
 ##Getting started
 ---------------
@@ -44,4 +70,6 @@ Contact [Thomas Eldblom](mailto:the@sitecore.net)
 For contributors
 ----------------
 
-1. Use meaningful names (http://blog.goyello.com/2013/05/17/express-names-in-code-bad-vs-clean/)
+1. Use [meaningful names](http://blog.goyello.com/2013/05/17/express-names-in-code-bad-vs-clean/)
+2. Write [clean code](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
+3. Be a [boy scout](http://deviq.com/boy-scout-rule/)
