@@ -106,6 +106,13 @@
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <None Include="Views\web.config" />
     <Content Include="packages.config" />
+    <None Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Language\" />
