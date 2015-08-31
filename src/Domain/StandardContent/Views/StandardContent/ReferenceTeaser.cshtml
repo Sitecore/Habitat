@@ -1,4 +1,5 @@
 ﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Framework.SitecoreExtensions.Repositories
 @using Habitat.StandardContent
 @model Sitecore.Mvc.Presentation.RenderingModel
 
@@ -9,6 +10,6 @@
         @Html.Sitecore().ImageField(Templates.HasImage.Fields.Image.ToString(), Model.Item, mw: 100)
     </a>
     <a href="@Model.Item.Url()">
-        Read more... @* TODO: Change to dictionary *@
+        @DictionaryRepository.Get("/R/Read more", "READ MORE");
     </a>
 </div>
