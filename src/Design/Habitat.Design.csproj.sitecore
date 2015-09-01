@@ -1,5 +1,0 @@
-﻿<Project>
-  <PropertyGroup>
-    <Site Server="habitat" UserName="sitecore\admin" IsRemoteSitecore="False" />
-  </PropertyGroup>
-</Project>
