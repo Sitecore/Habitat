@@ -10,13 +10,6 @@ template: {B69277AD-E917-4B9F-9136-A12E0A3E462F}
 templatekey: News Article
 
 ----field----
-field: {C464D2D7-3382-428A-BCDF-0963C60BA0E3}
-name: Date
-key: date
-content-length: 16
-
-20150824T175742Z
-----field----
 field: {5585A30D-B115-4753-93CE-422C3455DEB2}
 name: ShowInNavigation
 key: showinnavigation
@@ -24,12 +17,12 @@ content-length: 0
 
 
 ----field----
-field: {D79D9DDD-2774-42F4-94C3-50C892F6E13D}
-name: JavascriptCodeTop
-key: javascriptcodetop
-content-length: 0
+field: {C464D2D7-3382-428A-BCDF-0963C60BA0E3}
+name: NewsDate
+key: newsdate
+content-length: 16
 
-
+20150824T175742Z
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
@@ -40,45 +33,8 @@ content-length: 2
 ----version----
 language: en
 version: 1
-revision: 506eb7ca-b7a1-406d-8569-9bef52dd63a0
+revision: 5d075dfe-3c70-4c89-8151-713fefdccc8b
 
-----field----
-field: {C30A013F-3CC8-4961-9837-1C483277084A}
-name: Title
-key: title
-content-length: 12
-
-News article
-----field----
-field: {AC3FD4DB-8266-476D-9635-67814D91E901}
-name: Summary
-key: summary
-content-length: 348
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas.</p>
-<p>Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus.</p>
-----field----
-field: {D74F396D-5C5E-4916-BD0A-BFD58B6B1967}
-name: Body
-key: body
-content-length: 1366
-
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas. Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus. Sed consectetur, est ac venenatis consequat, nisi tellus euismod tortor, nec volutpat tortor lectus in nisi. Nulla facilisi. Phasellus ultricies rutrum odio, sed ultricies tortor ornare vel. Nunc a leo justo. Pellentesque elementum quam eget mauris gravida convallis at at sem. Integer vitae lectus dui. Quisque facilisis enim purus, et fringilla velit mollis eget. Nullam vitae nisi ullamcorper, congue quam ac, porttitor urna. Maecenas sed nisi rhoncus lacus consectetur commodo.</p>
-<p>Nam finibus ornare augue, eget ullamcorper erat. Vivamus a tortor blandit, fermentum mauris quis, ullamcorper ex. Donec et lacus in augue aliquet elementum. Mauris nec molestie neque. Suspendisse eu quam commodo, iaculis turpis vel, laoreet lacus. Nullam tempus ornare volutpat. Praesent imperdiet eleifend mi, sit amet eleifend urna dapibus eu. Duis euismod lectus eget metus convallis tristique. Quisque eget neque non nibh consectetur lobortis. Nam condimentum eros sed dui molestie, vel gravida sem accumsan. Mauris in purus dolor.</p>
-----field----
-field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
-name: Image
-key: image
-content-length: 207
-
-<image mediapath="/Default Website/cover" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/cover" mediaid="{04DAD0FD-DB66-4070-881F-17264CA257E1}" />
-----field----
-field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
-name: BrowserTitle
-key: browsertitle
-content-length: 12
-
-News article
 ----field----
 field: {1B483E91-D8C4-4D19-BA03-462074B55936}
 name: NavigationTitle
@@ -86,6 +42,36 @@ key: navigationtitle
 content-length: 7
 
 Article
+----field----
+field: {BD9ECD4A-C0B0-4233-A3CD-D995519AC87B}
+name: NewsTitle
+key: newstitle
+content-length: 12
+
+News article
+----field----
+field: {9D08271A-1672-44DD-B7EF-0A6EC34FCBA7}
+name: NewsSummary
+key: newssummary
+content-length: 348
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas.</p>
+<p>Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus.</p>
+----field----
+field: {801612C7-5E98-4E3C-80D2-A34D0EEBCBDA}
+name: NewsBody
+key: newsbody
+content-length: 1366
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas. Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus. Sed consectetur, est ac venenatis consequat, nisi tellus euismod tortor, nec volutpat tortor lectus in nisi. Nulla facilisi. Phasellus ultricies rutrum odio, sed ultricies tortor ornare vel. Nunc a leo justo. Pellentesque elementum quam eget mauris gravida convallis at at sem. Integer vitae lectus dui. Quisque facilisis enim purus, et fringilla velit mollis eget. Nullam vitae nisi ullamcorper, congue quam ac, porttitor urna. Maecenas sed nisi rhoncus lacus consectetur commodo.</p>
+<p>Nam finibus ornare augue, eget ullamcorper erat. Vivamus a tortor blandit, fermentum mauris quis, ullamcorper ex. Donec et lacus in augue aliquet elementum. Mauris nec molestie neque. Suspendisse eu quam commodo, iaculis turpis vel, laoreet lacus. Nullam tempus ornare volutpat. Praesent imperdiet eleifend mi, sit amet eleifend urna dapibus eu. Duis euismod lectus eget metus convallis tristique. Quisque eget neque non nibh consectetur lobortis. Nam condimentum eros sed dui molestie, vel gravida sem accumsan. Mauris in purus dolor.</p>
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 12
+
+News article
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -99,14 +85,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-506eb7ca-b7a1-406d-8569-9bef52dd63a0
+5d075dfe-3c70-4c89-8151-713fefdccc8b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150828T115837Z
+20150901T120553Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

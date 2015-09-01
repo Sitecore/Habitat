@@ -1,0 +1,44 @@
+----item----
+version: 1
+id: {DB7775FA-27D8-44E4-9E6C-08ADE58EF4ED}
+database: master
+path: /sitecore/layout/Renderings/Habitat/Domain/News
+parent: {DA61AD50-8FDB-4252-A68F-B4470B1C9FE8}
+name: News
+master: {00000000-0000-0000-0000-000000000000}
+template: {7EE0975B-0698-493E-B3A2-0B2EF33D0522}
+templatekey: Rendering Folder
+
+----version----
+language: en
+version: 1
+revision: 4b754fd4-cb33-4f3a-bd82-1f7945c30564
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150824T174140Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4b754fd4-cb33-4f3a-bd82-1f7945c30564
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20150824T174140Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

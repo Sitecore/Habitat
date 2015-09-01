@@ -44,35 +44,6 @@ content-length: 207
 
 <image mediapath="/Default Website/cover" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/cover" mediaid="{04DAD0FD-DB66-4070-881F-17264CA257E1}" />
 ----field----
-field: {63DDA48B-B0CB-45A7-9A1B-B26DDB41009B}
-name: MediaTitle
-key: mediatitle
-content-length: 29
-
-This is a title for the media
-----field----
-field: {302C9F8D-F703-4F76-A4AB-73D222648232}
-name: MediaDescription
-key: mediadescription
-content-length: 101
-
-<p>This is a description for the media item</p>
-<p>with a <a href="http://sitecore.net">link</a></p>
-----field----
-field: {9F51DEAD-AD6E-41C2-9759-7BE17EB474A4}
-name: MediaImage
-key: mediaimage
-content-length: 207
-
-<image mediapath="/Default Website/cover" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/cover" mediaid="{04DAD0FD-DB66-4070-881F-17264CA257E1}" />
-----field----
-field: {4FF62B0A-D73B-4436-BEA2-023154F2FFC4}
-name: MediaThumbnail
-key: mediathumbnail
-content-length: 211
-
-<image mediapath="/Default Website/sc_logo" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/sc_logo" mediaid="{094AED03-02E7-4868-80CB-19926661FB77}" />
-----field----
 field: {1B483E91-D8C4-4D19-BA03-462074B55936}
 name: NavigationTitle
 key: navigationtitle

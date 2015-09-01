@@ -1,0 +1,21 @@
+﻿@using Habitat.News
+@model Sitecore.Mvc.Presentation.RenderingModel
+<div class="news">
+    <h1>
+        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), Model.Item)
+    </h1>
+    <div class="image">
+        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Image.ToString(), Model.Item)
+    </div>
+    <div class="body">
+        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Body.ToString(), Model.Item)
+    </div>
+    <div class="date panel panel-default">
+        <div class="panel-body">
+            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new
+   {
+       format = "MMMM dd, yyyy"
+   })
+        </div>
+    </div>
+</div>

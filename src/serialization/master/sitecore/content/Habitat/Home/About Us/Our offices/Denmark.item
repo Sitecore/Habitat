@@ -22,16 +22,16 @@ content-length: 7
 
 Denmark
 ----field----
-field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
-name: BrowserTitle
-key: browsertitle
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
 content-length: 7
 
 Denmark
 ----field----
-field: {1B483E91-D8C4-4D19-BA03-462074B55936}
-name: NavigationTitle
-key: navigationtitle
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
 content-length: 7
 
 Denmark

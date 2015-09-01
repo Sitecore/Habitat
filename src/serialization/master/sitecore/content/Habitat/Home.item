@@ -22,19 +22,19 @@ version: 1
 revision: 14285db6-3899-4b44-a5f4-cc116be4536f
 
 ----field----
-field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
-name: BrowserTitle
-key: browsertitle
-content-length: 16
-
-Ye Olde Homepage
-----field----
 field: {1B483E91-D8C4-4D19-BA03-462074B55936}
 name: NavigationTitle
 key: navigationtitle
 content-length: 4
 
 Home
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 16
+
+Ye Olde Homepage
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner

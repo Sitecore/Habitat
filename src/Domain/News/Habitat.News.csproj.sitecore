@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Site Server="habitat" UserName="sitecore\admin" IsRemoteSitecore="False" />
   </PropertyGroup>
-  <File Include="Views\News\NewsDate.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+  <File Include="Views\News\NewsArticle.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{F366176E-2C2B-4AF2-B356-BCF8BD657C58}</Item>
   </File>
   <File Include="Views\News\NewsTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
