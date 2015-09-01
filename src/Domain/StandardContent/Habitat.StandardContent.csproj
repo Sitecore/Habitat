@@ -101,10 +101,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="Views\StandardContent\Summary.cshtml" />
-    <Content Include="Views\StandardContent\Image.cshtml" />
-    <Content Include="Views\StandardContent\Body.cshtml" />
-    <Content Include="Views\StandardContent\Title.cshtml" />
+    <Content Include="Views\StandardContent\PageSummary.cshtml" />
+    <Content Include="Views\StandardContent\PageImage.cshtml" />
+    <Content Include="Views\StandardContent\PageBody.cshtml" />
+    <Content Include="Views\StandardContent\PageTitle.cshtml" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="README.md" />
     <Content Include="Views\StandardContent\TitleImageSummaryTeaser.cshtml" />

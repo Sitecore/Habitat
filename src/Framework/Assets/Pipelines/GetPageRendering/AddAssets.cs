@@ -67,33 +67,56 @@ namespace Habitat.Framework.Assets.Pipelines.GetPageRendering
         {
             foreach (var rendering in renderings)
             {
-                if (rendering.RenderingItem == null)
-                {
-                    Log.Warn($"rendering.RenderingItem is null for {rendering.RenderingItemPath}", this);
-                    continue;
-                }
+                var renderingItem = GetRenderingItem(rendering);
+                if (renderingItem == null)
+                    return;
 
-                if (Context.PageMode.IsNormal && rendering.Caching.Cacheable)
-                    AssetRepository.Current.Add(rendering.RenderingItem.ID);
-                var renderingItem = rendering.RenderingItem.InnerItem;
-
-                var javaScriptAssets = renderingItem[Templates.RenderingAssets.Fields.ScriptFiles];
-                foreach (var javaScriptAsset in javaScriptAssets.Split(';', ',', '\n'))
-                    AssetRepository.Current.AddScript(javaScriptAsset, true);
-
-                var javaScriptInline = renderingItem[Templates.RenderingAssets.Fields.InlineScript];
-                if (!string.IsNullOrEmpty(javaScriptInline))
-                    AssetRepository.Current.AddScript(javaScriptInline, renderingItem.ID.ToString(), ScriptLocation.Head,
-                        true);
-
-                var cssAssets = renderingItem[Templates.RenderingAssets.Fields.StylingFiles];
-                foreach (var cssAsset in cssAssets.Split(';', ',', '\n'))
-                    AssetRepository.Current.AddStyling(cssAsset, true);
-
-                var cssInline = renderingItem[Templates.RenderingAssets.Fields.InlineStyling];
-                if (!string.IsNullOrEmpty(cssInline))
-                    AssetRepository.Current.AddStyling(cssInline, renderingItem.ID.ToString(), true);
+                AddScriptAssetsFromRendering(renderingItem);
+                AddInlineScriptFromRendering(renderingItem);
+                AddStylingAssetsFromRendering(renderingItem);
+                AddInlineStylingFromAssets(renderingItem);
             }
+        }
+
+        private static void AddInlineStylingFromAssets(Item renderingItem)
+        {
+            var cssInline = renderingItem[Templates.RenderingAssets.Fields.InlineStyling];
+            if (!string.IsNullOrEmpty(cssInline))
+                AssetRepository.Current.AddStyling(cssInline, renderingItem.ID.ToString(), true);
+        }
+
+        private static void AddStylingAssetsFromRendering(Item renderingItem)
+        {
+            var cssAssets = renderingItem[Templates.RenderingAssets.Fields.StylingFiles];
+            foreach (var cssAsset in cssAssets.Split(';', ',', '\n'))
+                AssetRepository.Current.AddStyling(cssAsset, true);
+        }
+
+        private static void AddInlineScriptFromRendering(Item renderingItem)
+        {
+            var javaScriptInline = renderingItem[Templates.RenderingAssets.Fields.InlineScript];
+            if (!string.IsNullOrEmpty(javaScriptInline))
+                AssetRepository.Current.AddScript(javaScriptInline, renderingItem.ID.ToString(), ScriptLocation.Body, true);
+        }
+
+        private static void AddScriptAssetsFromRendering(Item renderingItem)
+        {
+            var javaScriptAssets = renderingItem[Templates.RenderingAssets.Fields.ScriptFiles];
+            foreach (var javaScriptAsset in javaScriptAssets.Split(';', ',', '\n'))
+                AssetRepository.Current.AddScript(javaScriptAsset, true);
+        }
+
+        private Item GetRenderingItem(Rendering rendering)
+        {
+            if (rendering.RenderingItem == null)
+            {
+                Log.Warn($"rendering.RenderingItem is null for {rendering.RenderingItemPath}", this);
+                return null;
+            }
+
+            if (Context.PageMode.IsNormal && rendering.Caching.Cacheable)
+                AssetRepository.Current.Add(rendering.RenderingItem.ID);
+            return rendering.RenderingItem.InnerItem;
         }
 
         private void AddPageAssets(Item item)

@@ -2,9 +2,9 @@
 version: 1
 id: {9F51DEAD-AD6E-41C2-9759-7BE17EB474A4}
 database: master
-path: /sitecore/templates/Domain/Media/_HasHighResImage/Media/HighResImage
+path: /sitecore/templates/Domain/Media/_HasMediaImage/Media/MediaImage
 parent: {57930FE6-C782-429E-B095-1821340F9AE4}
-name: HighResImage
+name: MediaImage
 master: {00000000-0000-0000-0000-000000000000}
 template: {455A3E98-A627-4B40-8035-E683A0331AC7}
 templatekey: Template field
@@ -30,11 +30,25 @@ key: unversioned
 content-length: 0
 
 
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+300
 ----version----
 language: en
 version: 1
-revision: 58e4b443-3d14-40d5-b1e8-2d280372d8c1
+revision: a54a8379-7d21-495a-86c2-f1290fdc08da
 
+----field----
+field: {19A69332-A23E-4E70-8D16-B2640CB24CC8}
+name: Title
+key: title
+content-length: 21
+
+High-resolution image
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-58e4b443-3d14-40d5-b1e8-2d280372d8c1
+a54a8379-7d21-495a-86c2-f1290fdc08da
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150831T121541Z
+20150901T000720Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

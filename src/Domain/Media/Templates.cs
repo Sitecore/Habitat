@@ -4,13 +4,34 @@ namespace Habitat.Media
 {
     public struct Templates
     {
-        public struct HasHighResImage
+        public struct HasMedia
+        {
+            public static ID ID = new ID("{A44E450E-BA3F-4FAF-9C53-C63241CC34EB}");
+
+            public struct Fields
+            {
+                public static ID Title = new ID("{63DDA48B-B0CB-45A7-9A1B-B26DDB41009B}");
+                public static ID Description = new ID("{302C9F8D-F703-4F76-A4AB-73D222648232}");
+                public static ID Thumbnail = new ID("{4FF62B0A-D73B-4436-BEA2-023154F2FFC4}");
+            }
+        }
+
+        public struct HasMediaImage
         {
             public static ID ID = new ID("{FAE0C913-1600-4EBA-95A9-4D6FD7407E25}");
 
             public struct Fields
             {
-                public static ID HighResImage = new ID("{9F51DEAD-AD6E-41C2-9759-7BE17EB474A4}");
+                public static ID Image = new ID("{9F51DEAD-AD6E-41C2-9759-7BE17EB474A4}");
+            }
+        }
+        public struct HasMediaVideo
+        {
+            public static ID ID = new ID("{5A1B724B-B396-4C48-A833-655CD19018E1}");
+
+            public struct Fields
+            {
+                public static ID Image = new ID("{2628705D-9434-4448-978C-C3BF166FA1EB}");
             }
         }
     }

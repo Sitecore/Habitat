@@ -29,7 +29,7 @@
 
             if (AssetRepository.Current.Items.Any(x => x.Inline != null))
             {
-                sb.AppendLine("<script>\njQuery2(document).ready(function() {");
+                sb.AppendLine("<script>\njQuery(document).ready(function() {");
 
                 foreach (var item in AssetRepository.Current.Items.Where(x => x.Type == AssetType.JavaScript && x.Inline != null && x.Location == location))
                 {

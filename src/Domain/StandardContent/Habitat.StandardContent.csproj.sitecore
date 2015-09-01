@@ -2,16 +2,16 @@
   <PropertyGroup>
     <Site Server="habitat" UserName="sitecore\admin" IsRemoteSitecore="False" />
   </PropertyGroup>
-  <File Include="Views\StandardContent\Title.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+  <File Include="Views\StandardContent\PageTitle.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{45B8E1D9-D522-49E0-B9B7-04C965CC7089}</Item>
   </File>
-  <File Include="Views\StandardContent\Body.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+  <File Include="Views\StandardContent\PageBody.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{914673DC-FC44-4660-B6EB-FF421FAAC2F9}</Item>
   </File>
-  <File Include="Views\StandardContent\Image.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+  <File Include="Views\StandardContent\PageImage.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{359A65BB-0A2C-44E5-8C34-DF3ACDBB42A7}</Item>
   </File>
-  <File Include="Views\StandardContent\Summary.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+  <File Include="Views\StandardContent\PageSummary.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{616956DF-9471-4934-9CAE-AAAF342A7E1C}</Item>
   </File>
   <File Include="Views\StandardContent\TitleImageSummaryTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
