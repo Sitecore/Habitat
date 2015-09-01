@@ -182,9 +182,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\z.Habitat.DevSettings.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Global.asax" />
     <Content Include="App_Config\Include\Serialization.config">
       <SubType>Designer</SubType>
@@ -195,6 +192,7 @@
     <Content Include="App_Config\Include\z.Habitat.DevSettings.config.sample" />
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\DynamicPlaceholders\DynamicPlaceholders.config" />
+    <None Include="App_Config\Include\z.Habitat.DevSettings.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Website\Layouts\Default.cshtml" />
