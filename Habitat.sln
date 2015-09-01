@@ -49,6 +49,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{A31E9118
 		gulpfile.js = gulpfile.js
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Media", "src\Domain\Media\Habitat.Media.csproj", "{1417B162-F987-4CBD-8642-CA4C4119E705}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -165,6 +167,14 @@ Global
 		{DA079E95-DB53-4A66-AB35-2DAB71D19276}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DA079E95-DB53-4A66-AB35-2DAB71D19276}.Release|x64.ActiveCfg = Release|Any CPU
 		{DA079E95-DB53-4A66-AB35-2DAB71D19276}.Release|x64.Build.0 = Release|Any CPU
+		{1417B162-F987-4CBD-8642-CA4C4119E705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1417B162-F987-4CBD-8642-CA4C4119E705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1417B162-F987-4CBD-8642-CA4C4119E705}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1417B162-F987-4CBD-8642-CA4C4119E705}.Debug|x64.Build.0 = Debug|Any CPU
+		{1417B162-F987-4CBD-8642-CA4C4119E705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1417B162-F987-4CBD-8642-CA4C4119E705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1417B162-F987-4CBD-8642-CA4C4119E705}.Release|x64.ActiveCfg = Release|Any CPU
+		{1417B162-F987-4CBD-8642-CA4C4119E705}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -182,5 +192,6 @@ Global
 		{80213F24-577F-4F0B-A3B8-62485EA4D2F3} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
 		{ACA65632-EE93-422B-B25E-8E31969694F5} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
 		{DA079E95-DB53-4A66-AB35-2DAB71D19276} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
+		{1417B162-F987-4CBD-8642-CA4C4119E705} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
 	EndGlobalSection
 EndGlobal
