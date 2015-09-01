@@ -1,40 +1,40 @@
 ----item----
 version: 1
-id: {5A1B724B-B396-4C48-A833-655CD19018E1}
+id: {9CBF0427-C6B9-42CE-90C6-3D10A48ED3C8}
 database: master
-path: /sitecore/templates/Domain/Media/_HasMediaVideo
-parent: {4A2CCF0B-9C08-485B-9902-87CA2869BC8F}
-name: _HasMediaVideo
+path: /sitecore/templates/Sites/Common/Content Types/Media/Media Folder/__Standard Values
+parent: {920A1781-559F-4E1C-BB2E-6B9A2113FE6B}
+name: __Standard Values
 master: {00000000-0000-0000-0000-000000000000}
-template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
-templatekey: Template
+template: {920A1781-559F-4E1C-BB2E-6B9A2113FE6B}
+templatekey: Media Folder
 
 ----field----
-field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
-name: __Base template
-key: __base template
-content-length: 77
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 116
 
-{1930BBEB-7805-471A-A3BE-4858AC7CF696}|{A44E450E-BA3F-4FAF-9C53-C63241CC34EB}
-----field----
-field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
-name: __Icon
-key: __icon
-content-length: 32
-
-Applications/32x32/form_blue.png
+{F0369E1A-9030-4A05-A09C-EF09B664ED27}|{F1C095E2-B3E0-46D0-B838-02A9E8B880D9}|{920A1781-559F-4E1C-BB2E-6B9A2113FE6B}
 ----version----
 language: en
 version: 1
-revision: b4c62faf-b728-4e48-bda4-1634ce904fa6
+revision: caac32a8-e64b-4b57-8949-584ed0ab1a29
 
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20150831T235500Z
+20150901T053932Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b4c62faf-b728-4e48-bda4-1634ce904fa6
+caac32a8-e64b-4b57-8949-584ed0ab1a29
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150901T053653Z
+20150901T054336Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

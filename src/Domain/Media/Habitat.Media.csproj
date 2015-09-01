@@ -112,6 +112,7 @@
     <Content Include="Views\Media\LightboxImage.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\Media\LightboxVideo.cshtml" />
     <None Include="Web.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <None Include="Web.Debug.config">

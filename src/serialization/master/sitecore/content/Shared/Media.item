@@ -1,25 +1,18 @@
 ----item----
 version: 1
-id: {2628705D-9434-4448-978C-C3BF166FA1EB}
+id: {EA13174A-B43E-4F68-B474-B41188771A9E}
 database: master
-path: /sitecore/templates/Domain/Media/_HasMediaVideo/Media/MediaVideo
-parent: {4BE0F42E-CF10-4E64-A277-C0D49249689E}
-name: MediaVideo
+path: /sitecore/content/Shared/Media
+parent: {75BC9EE3-894A-4E87-BCDE-2A7443807F60}
+name: Media
 master: {00000000-0000-0000-0000-000000000000}
-template: {455A3E98-A627-4B40-8035-E683A0331AC7}
-templatekey: Template field
+template: {920A1781-559F-4E1C-BB2E-6B9A2113FE6B}
+templatekey: Media Folder
 
-----field----
-field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
-name: Type
-key: type
-content-length: 4
-
-link
 ----version----
 language: en
 version: 1
-revision: faa69c26-a6f6-4a2e-b80c-1abc55926936
+revision: b8f0aa8c-fa0f-48df-b66b-a18e3e04b0a7
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -27,21 +20,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20150831T235527Z
+20150901T054311Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-faa69c26-a6f6-4a2e-b80c-1abc55926936
+b8f0aa8c-fa0f-48df-b66b-a18e3e04b0a7
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150831T235538Z
+20150901T054311Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

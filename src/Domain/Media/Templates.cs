@@ -31,7 +31,7 @@ namespace Habitat.Media
 
             public struct Fields
             {
-                public static ID Image = new ID("{2628705D-9434-4448-978C-C3BF166FA1EB}");
+                public static ID VideoLink = new ID("{2628705D-9434-4448-978C-C3BF166FA1EB}");
             }
         }
     }
