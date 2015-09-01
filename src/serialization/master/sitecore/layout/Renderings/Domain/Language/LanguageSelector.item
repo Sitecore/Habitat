@@ -20,13 +20,13 @@ content-length: 39
 field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
 name: Open Properties after Add
 key: open properties after add
-content-length: 1
+content-length: 0
 
--
+
 ----version----
 language: en
 version: 1
-revision: 2ada503b-b2ef-457e-97c8-3b4d3491248f
+revision: 8d977efd-2df7-4974-917c-c0f9cdf1e5a3
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-2ada503b-b2ef-457e-97c8-3b4d3491248f
+8d977efd-2df7-4974-917c-c0f9cdf1e5a3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150831T080244Z
+20150831T140914Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
