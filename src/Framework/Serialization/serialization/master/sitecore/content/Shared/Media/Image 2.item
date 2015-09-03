@@ -2,9 +2,9 @@
 version: 1
 id: {69CF65FB-F46E-4038-BBFB-66695B9178E4}
 database: master
-path: /sitecore/content/Shared/Media/New Image
+path: /sitecore/content/Shared/Media/Image 2
 parent: {EA13174A-B43E-4F68-B474-B41188771A9E}
-name: New Image
+name: Image 2
 master: {00000000-0000-0000-0000-000000000000}
 template: {F0369E1A-9030-4A05-A09C-EF09B664ED27}
 templatekey: Image
@@ -12,15 +12,15 @@ templatekey: Image
 ----version----
 language: en
 version: 1
-revision: cd49a77c-8862-4fb4-a345-efd2e2fb6c7f
+revision: a6f3f054-254b-4353-8f8b-00a61b295576
 
 ----field----
 field: {63DDA48B-B0CB-45A7-9A1B-B26DDB41009B}
 name: MediaTitle
 key: mediatitle
-content-length: 16
+content-length: 21
 
-This is an image
+This is ALSO an image
 ----field----
 field: {302C9F8D-F703-4F76-A4AB-73D222648232}
 name: MediaDescription
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-cd49a77c-8862-4fb4-a345-efd2e2fb6c7f
+a6f3f054-254b-4353-8f8b-00a61b295576
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150902T072053Z
+20150903T052418Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

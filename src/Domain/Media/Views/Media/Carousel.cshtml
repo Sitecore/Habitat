@@ -1,32 +1,38 @@
-﻿@using Habitat.Framework.SitecoreExtensions.Extensions
-@using Habitat.Media
+﻿@using Habitat.Media
+@using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.Media.Infrastructure.Repositories
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+@{ var carouselId = "Carousel_" + Guid.NewGuid().ToString("N");}
+<div id="@carouselId" class="carousel" data-ride="carousel">
     <ol class="carousel-indicators">
-        @for (var ci = 0; ci < CarouselElementsRepository.Get(Model.Item).Count(); ci++)
-        {
-            <li data-target="#myCarousel" data-slide-to="@ci" class="@CarouselElementsRepository.Get(Model.Item, "btn btn-lg btn-primary").ToArray()[ci].Active"></li>
+        @{ 
+            var index = 0;
+            foreach (var item in CarouselElementsRepository.Get(Model.Item))
+            {
+                <li data-target="#@carouselId" data-slide-to="@index" class="@item.Active"></li>
+                index++;
+            }
         }
     </ol>
     <div class="carousel-inner" role="listbox">
-        @foreach (var element in CarouselElementsRepository.Get(Model.Item, "btn btn-lg btn-primary"))
+        @foreach (var element in CarouselElementsRepository.Get(Model.Item))
         {
             <div class="item @element.Active">
                 @Html.Sitecore().ImageField(Templates.HasMediaImage.Fields.Image.ToString(), element.Item)
                 <div class="container">
-                    <div class="carousel-caption carousel-caption-lg">
+                    <div class="carousel-caption">
                         <h1 class="resizable">@element.Item[Templates.HasMedia.Fields.Title]</h1>
-                        <p></p>
-                        <p>@element.Item[Templates.HasMedia.Fields.Description]</p>
-                        <p></p>
-                        @*<p>
-                            @imageSpot.Link
-                        </p>*@
+                        <p>@Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item)</p>
                     </div>
                 </div>
             </div>
         }
     </div>
+    <a class="left carousel-control" href="#@carouselId" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="right carousel-control" href="#@carouselId" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    </a>
 </div>

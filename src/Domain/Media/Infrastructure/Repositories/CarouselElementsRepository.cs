@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Habitat.Framework.SitecoreExtensions.Extensions;
 using Habitat.Media.Infrastructure.Models;
 using Sitecore.Data.Items;
@@ -7,30 +8,17 @@ namespace Habitat.Media.Infrastructure.Repositories
 {
     public class CarouselElementsRepository
     {
-        public static IEnumerable<CarouselElement> Get(Item item, string linkClass = "", string imageClass = "",
-            string textClass = "")
+        public static IEnumerable<CarouselElement> Get(Item item)
         {
             var active = "active";
-            foreach (var child in item.GetMultiListValues(Templates.HasMediaSelector.Fields.MediaSelector))
+            foreach (var child in item.GetMultiListValues(Templates.HasMediaSelector.Fields.MediaSelector).Where(i => i.IsDerived(Templates.HasMediaImage.ID)))
             {
-                if (child.IsDerived(Templates.HasMediaImage.ID))
+                yield return new CarouselElement
                 {
-                    //ImageSpot imageSpot = ImageSpotRepository.Get(child, linkClass, imageClass, textClass);
-                    //yield return new CarouselElement
-                    //{
-                    //    Active = active,
-                    //    Image = imageSpot.Image,
-                    //    Text = imageSpot.Text,
-                    //    Link = imageSpot.Link,
-                    //    Title = imageSpot.Title
-                    //};
-                    yield return new CarouselElement
-                    {
-                        Item = child,
-                        Active = active
-                    };
-                    active = "false";
-                }
+                    Item = child,
+                    Active = active
+                };
+                active = "false";
             }
         }
     }

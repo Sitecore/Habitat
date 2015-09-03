@@ -19,4 +19,4 @@ vars.user.cmd
 /.vs
 
 #Individual developer settings - do not include in version control
-/src/Project/**/*.DevSettings.config
+/src/**/z.Habitat.DevSettings.config
