@@ -13,13 +13,13 @@ templatekey: Teaser Folder
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
 name: __Masters
 key: __masters
-content-length: 77
+content-length: 116
 
-{C7D9D293-4EF8-4380-8E10-C4632E729F39}|{29D4B405-39EB-487D-9D6B-3F8467AB167D}
+{C7D9D293-4EF8-4380-8E10-C4632E729F39}|{29D4B405-39EB-487D-9D6B-3F8467AB167D}|{DD8B4585-DEA7-4E5C-97FE-EBA0B0CD5FFB}
 ----version----
 language: en
 version: 1
-revision: b9fc893d-aef8-4941-a927-067e9236a16f
+revision: 40e48a46-dd63-499d-b88d-b2952af7d428
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-b9fc893d-aef8-4941-a927-067e9236a16f
+40e48a46-dd63-499d-b88d-b2952af7d428
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150827T063214Z
+20150902T101953Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

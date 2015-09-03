@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var gmsbuild = require('gulp-msbuild');
 var foreach = require('gulp-foreach');
 var rename = require('gulp-rename');
+var watch = require('gulp-watch');
 var config = require('./gulp-config.js')();
 
 gulp.task('Publish', ['Build'], function () {
