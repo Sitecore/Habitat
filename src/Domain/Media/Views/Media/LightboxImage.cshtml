@@ -1,8 +1,6 @@
-﻿@using Sitecore.Mvc
-@using Sitecore.Mvc.Presentation
-@using Habitat.Framework.SitecoreExtensions.Extensions
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.Media
-@model RenderingModel
+@model Sitecore.Mvc.Presentation.RenderingModel
 
 @{
     const int thumbnailWidth = 200;
@@ -18,7 +16,7 @@
 }
 
 <div class="article image">
-    <a href="@Model.Item.ImageUrl(Templates.HasMediaImage.Fields.Image)" data-type="image" data-title="@Model.Item[Habitat.Media.Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" class="lightbox">
+    <a href="@Model.Item.ImageUrl(Templates.HasMediaImage.Fields.Image)" data-type="image" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" class="lightbox">
         @thumbnail
     </a>
 </div>

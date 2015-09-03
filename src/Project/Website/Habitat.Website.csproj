@@ -191,6 +191,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="README.md" />
+    <Content Include="Views\Website\Sublayouts\1 Column.cshtml" />
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

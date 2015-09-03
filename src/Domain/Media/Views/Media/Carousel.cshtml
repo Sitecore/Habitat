@@ -1,0 +1,32 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Media
+@using Habitat.Media.Infrastructure.Repositories
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <ol class="carousel-indicators">
+        @for (var ci = 0; ci < CarouselElementsRepository.Get(Model.Item).Count(); ci++)
+        {
+            <li data-target="#myCarousel" data-slide-to="@ci" class="@CarouselElementsRepository.Get(Model.Item, "btn btn-lg btn-primary").ToArray()[ci].Active"></li>
+        }
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        @foreach (var element in CarouselElementsRepository.Get(Model.Item, "btn btn-lg btn-primary"))
+        {
+            <div class="item @element.Active">
+                @Html.Sitecore().ImageField(Templates.HasMediaImage.Fields.Image.ToString(), element.Item)
+                <div class="container">
+                    <div class="carousel-caption carousel-caption-lg">
+                        <h1 class="resizable">@element.Item[Templates.HasMedia.Fields.Title]</h1>
+                        <p></p>
+                        <p>@element.Item[Templates.HasMedia.Fields.Description]</p>
+                        <p></p>
+                        @*<p>
+                            @imageSpot.Link
+                        </p>*@
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
