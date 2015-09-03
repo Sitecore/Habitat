@@ -132,13 +132,16 @@
     <Compile Include="Services\XmlParserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Habitat.Framework.SitecoreExtensions.PerformanceTweaks.config">
+    <Content Include="App_Config\Include\Habitat\Habitat.Framework.SitecoreExtensions.PerformanceTweaks.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Habitat.Framework.SitecoreExtensions.config">
+    <Content Include="App_Config\Include\Habitat\Habitat.Framework.SitecoreExtensions.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="README.md" />
+    <Content Include="App_Config\Include\Habitat\Habitat.Framework.SitecoreExtensions.Serialization.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="web.config" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />

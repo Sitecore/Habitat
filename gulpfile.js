@@ -7,14 +7,14 @@ var config = require('./gulp-config.js')();
 
 gulp.task('Publish', ['Build'], function () {
     console.log('Publishing solution!!');
-    gulp.src('./src/**/*.csproj')
+        gulp.src('./src/**/*.csproj')
         .pipe(foreach(function (stream, file) {
             console.log(file);
             return stream
             .pipe(gmsbuild({
                 targets: ['Clean', 'Build'],
                 configuration: 'Debug',
-                logCommand: true,
+                logCommand: false,
                 verbosity: 'normal',
                 properties: { DeployOnBuild: 'true', DeployDefaultTarget: 'WebPublish', WebPublishMethod: 'FileSystem', DeleteExistingFiles: 'false', publishUrl: config.websiteRoot }
                 }));
@@ -27,7 +27,7 @@ gulp.task('Full-Build', ['Copy-Sitecore-Lib'], function () {
         .pipe(gmsbuild({
             targets: ['Clean', 'Build'],
             configuration: 'Debug',
-            logCommand: true,
+            logCommand: false,
             verbosity: 'normal'
         }));
     console.log('Done building');
@@ -39,7 +39,7 @@ gulp.task('Build', function () {
       .pipe(gmsbuild({
           targets: ['Clean', 'Build'],
           configuration: 'Debug',
-          logCommand: true,
+          logCommand: false,
           verbosity: 'normal'
       }));
 });

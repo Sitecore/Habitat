@@ -1,0 +1,86 @@
+----item----
+version: 1
+id: {44428794-05A4-4BE6-90D6-7D0BF128D17E}
+database: master
+path: /sitecore/system/Tasks/Schedules/Content Testing/Rebuild Suggested Tests Index
+parent: {28D3AE32-CA9C-4755-9D9D-F02CE5873AEE}
+name: Rebuild Suggested Tests Index
+master: {00000000-0000-0000-0000-000000000000}
+template: {70244923-FA84-477C-8CBD-62F39642C42B}
+templatekey: Schedule
+
+----field----
+field: {62E64DBB-0A39-4DD7-BA05-7BD08C5404E0}
+name: Command
+key: command
+content-length: 38
+
+{645D548F-EEA0-46BE-BB35-543B29F60FC1}
+----field----
+field: {70893EF5-98E6-4721-844A-C364D0D9E48E}
+name: Items
+key: items
+content-length: 0
+
+
+----field----
+field: {50BE51F8-746D-4DC2-9C3B-B14ABC5CE9B7}
+name: Schedule
+key: schedule
+content-length: 29
+
+20140101|99990101|127|1.00:00
+----field----
+field: {B1E16562-F3F9-4DDD-84CA-6E099950ECC0}
+name: Last run
+key: last run
+content-length: 16
+
+20150903T040602Z
+----version----
+language: en
+version: 1
+revision: 431e440f-9e88-4d65-a3f1-1d72e5e06000
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140807T114654
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+431e440f-9e88-4d65-a3f1-1d72e5e06000
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20150903T040602Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous
