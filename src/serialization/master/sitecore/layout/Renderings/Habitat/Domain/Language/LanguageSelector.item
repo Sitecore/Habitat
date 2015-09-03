@@ -16,13 +16,6 @@ key: path
 content-length: 39
 
 /Views/Language/LanguageSelector.cshtml
-----field----
-field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
-name: Open Properties after Add
-key: open properties after add
-content-length: 0
-
-
 ----version----
 language: en
 version: 1

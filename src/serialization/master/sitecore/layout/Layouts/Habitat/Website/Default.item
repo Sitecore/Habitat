@@ -16,13 +16,6 @@ key: path
 content-length: 37
 
 /Views/Website/Layouts/Default.cshtml
-----field----
-field: {E9CC5A73-3C8A-4D7D-92AC-3B88C18A996A}
-name: Model
-key: model
-content-length: 0
-
-
 ----version----
 language: en
 version: 1

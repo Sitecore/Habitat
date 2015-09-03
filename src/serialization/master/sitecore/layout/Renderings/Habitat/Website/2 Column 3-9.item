@@ -17,13 +17,6 @@ content-length: 45
 
 /Views/Website/Sublayouts/2 Column 3-9.cshtml
 ----field----
-field: {F4069D71-74D7-4422-941D-54B517CF3001}
-name: Placeholder
-key: placeholder
-content-length: 0
-
-
-----field----
 field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
 name: Open Properties after Add
 key: open properties after add

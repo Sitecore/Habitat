@@ -17,20 +17,6 @@ content-length: 5
 
 Image
 ----field----
-field: {BE351A73-FCB0-4213-93FA-C302D8AB4F51}
-name: Shared
-key: shared
-content-length: 0
-
-
-----field----
-field: {39847666-389D-409B-95BD-F2016F11EED5}
-name: Unversioned
-key: unversioned
-content-length: 0
-
-
-----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
