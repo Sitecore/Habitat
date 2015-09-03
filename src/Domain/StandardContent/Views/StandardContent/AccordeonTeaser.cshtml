@@ -1,40 +1,71 @@
-﻿<div class="c-content-accordion-1 c-accordion-blue">
+﻿@using Habitat.StandardContent
+@using Habitat.StandardContent.Infrastructure.Repositories
+@using Habitat.StandardContent.Infrastructure.Services
+@using Sitecore.Data.Items
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@functions
+{
+
+    private string GetFrontendHeadingValue(int i)
+    {
+        return string.Concat("heading", HumanFriendlyIntegerService.IntegerToWritten(i + 1), "-3");
+    }
+
+    private string GetFrontendCollapseValue(int i)
+    {
+        return string.Concat("collapse", HumanFriendlyIntegerService.IntegerToWritten(i + 1), "-3");
+    }
+
+    private string GetCollapsed(int i)
+    {
+        return i > 0 ? "collapsed" : "";
+    }
+
+    private string GetAreaExpanded(int i)
+    {
+        return i > 0 ? "true" : "false";
+    }
+
+    private string GetIn(int i)
+    {
+        return i > 0 ? "in" : "";
+    }
+
+    private List<Item> _accordeonElements;
+    private List<Item> AccordeonElements
+    {
+        get
+        {
+            if (_accordeonElements==null || !_accordeonElements.Any())
+            {
+                _accordeonElements = AccordeonElementsRespository.Get(Model.Item).ToList();
+                return _accordeonElements;
+            }
+            return _accordeonElements;
+        }
+    }
+
+}
+
+<div class="c-content-accordion-1 c-accordion-blue">
     <div class="panel-group" id="accordion-3" role="tablist">
-        <div class="panel">
-            <div class="panel-heading" role="tab" id="headingOne-3">
-                <h4 class="panel-title">
-                    <a class="c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion-100" href="#collapseOne-3" aria-expanded="true" aria-controls="collapseOne-3">CUSTOMISIBLE CAMPAIGN AVAILABLE</a>
-                </h4>
-            </div>
-            <div id="collapseOne-3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne-3">
-                <div class="panel-body c-font-18">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+        @for (var i = 0; i < AccordeonElements.Count(); i++)
+        {
+            <div class="panel">
+                <div class="panel-heading" role="tab" id="@GetFrontendHeadingValue(i)">
+                    <h4 class="panel-title">
+                        <a class="@GetCollapsed(i) c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion-100" href="#@GetFrontendCollapseValue(i)" aria-expanded="@GetAreaExpanded(i)" aria-controls="@GetFrontendCollapseValue(i)">
+                            @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString(), AccordeonElements[i])
+                        </a>
+                    </h4>
+                </div>
+                <div id="@GetFrontendCollapseValue(i)" class="panel-collapse collapse @GetIn(i)" role="tabpanel" aria-labelledby="@GetFrontendHeadingValue(i)">
+                    <div class="panel-body c-font-18">
+                        @Html.Sitecore().Field(Templates.HasSummary.Fields.Summary.ToString(), AccordeonElements[i])
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="panel">
-            <div class="panel-heading" role="tab" id="headingTwo-3">
-                <h4 class="panel-title">
-                    <a class="collapsed c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion-3" href="#collapseTwo-3" aria-expanded="false" aria-controls="collapseTwo-3">DEDICATED SUPPORT FOR YOUR STAFF</a>
-                </h4>
-            </div>
-            <div id="collapseTwo-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo-3">
-                <div class="panel-body c-font-18">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-                </div>
-            </div>
-        </div>
-        <div class="panel">
-            <div class="panel-heading" role="tab" id="headingThree-3">
-                <h4 class="panel-title">
-                    <a class="collapsed c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion-3" href="#collapseThree-3" aria-expanded="false" aria-controls="collapseThree-3">AWESOME FEATURES FOR EVERYONE</a>
-                </h4>
-            </div>
-            <div id="collapseThree-3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree-3">
-                <div class="panel-body c-font-18">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </div>

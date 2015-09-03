@@ -1,40 +1,40 @@
 ----item----
 version: 1
-id: {9AC6B528-888A-4006-AEFF-BC81E7202F14}
+id: {20A56D46-F5E3-4DB8-8B96-081575363D44}
 database: master
-path: /sitecore/templates/Habitat/Website/Content Types/Teaser Folder/__Standard Values
-parent: {29D4B405-39EB-487D-9D6B-3F8467AB167D}
-name: __Standard Values
+path: /sitecore/templates/Habitat/Domain/StandardContent/_HasAccordeon
+parent: {45744E23-A486-4BCA-B333-E7B24B210CC7}
+name: _HasAccordeon
 master: {00000000-0000-0000-0000-000000000000}
-template: {29D4B405-39EB-487D-9D6B-3F8467AB167D}
-templatekey: Teaser Folder
+template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
+templatekey: Template
 
 ----field----
-field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
-name: __Masters
-key: __masters
-content-length: 116
+field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
+name: __Base template
+key: __base template
+content-length: 38
 
-{C7D9D293-4EF8-4380-8E10-C4632E729F39}|{29D4B405-39EB-487D-9D6B-3F8467AB167D}|{F5F30CDC-9003-4015-84EC-C3A7E3E50D5E}
+{1930BBEB-7805-471A-A3BE-4858AC7CF696}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 32
+
+Applications/32x32/form_blue.png
 ----version----
 language: en
 version: 1
-revision: 9f018a48-5bba-476a-b79c-a7922276136e
+revision: 2e094615-5db0-44f7-ac01-4c15280b6622
 
-----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
-content-length: 14
-
-sitecore\admin
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20150827T063159Z
+20150903T121339Z
 ----field----
 field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
 name: __Created by
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-9f018a48-5bba-476a-b79c-a7922276136e
+2e094615-5db0-44f7-ac01-4c15280b6622
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150903T121752Z
+20150903T121516Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
