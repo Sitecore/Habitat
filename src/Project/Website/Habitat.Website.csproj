@@ -61,10 +61,6 @@
       <HintPath>..\..\..\packages\DynamicPlaceholders.Mvc.1.0.0.0\lib\net45\DynamicPlaceholders.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Kamsar.WebConsole, Version=1.2.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Kamsar.WebConsole.1.2.2.0\lib\net40\Kamsar.WebConsole.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -76,10 +72,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Analytics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -170,29 +162,25 @@
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Unicorn, Version=2.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Unicorn.2.0.4\lib\net45\Unicorn.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Global.asax" />
-    <Content Include="App_Config\Include\Serialization.config">
+    <Content Include="App_Config\Include\Habitat\Habitat.Website.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Habitat.Site.Common.config">
+    <Content Include="App_Config\Include\Habitat\z.Habitat.DevSettings.config.sample">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\z.Habitat.DevSettings.config.sample" />
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\DynamicPlaceholders\DynamicPlaceholders.config" />
-    <Content Include="App_Config\Include\z.Habitat.DevSettings.config" />
+    <Content Include="App_Config\Include\Habitat\z.Habitat.DevSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Config\Include\Habitat\Habitat.Website.Serialization.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Website\Layouts\Default.cshtml" />

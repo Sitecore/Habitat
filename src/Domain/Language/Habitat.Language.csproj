@@ -49,7 +49,6 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\..\..\spitfire\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
       <HintPath>..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Mvc">
