@@ -19,39 +19,15 @@ namespace Habitat.Framework.Assets.Pipelines.GetPageRendering
     /// </summary>
     public class AddAssets : GetPageRenderingProcessor
     {
-        private IList<AssetRequirement> _defaultAssets;
+        private IList<Asset> _defaultAssets;
 
-        private IList<AssetRequirement> DefaultAssets
-            => _defaultAssets ?? (_defaultAssets = new List<AssetRequirement>());
+        private IList<Asset> DefaultAssets => _defaultAssets ?? (_defaultAssets = new List<Asset>());
 
         public void AddAsset(XmlNode node)
         {
-            var assetTypeString = XmlUtil.GetAttribute("type", node, null);
-            var assetFile = XmlUtil.GetAttribute("file", node, null);
-            var scriptLocationString = XmlUtil.GetAttribute("location", node, null);
-
-            if (string.IsNullOrWhiteSpace(assetTypeString) || string.IsNullOrWhiteSpace(assetFile))
-            {
-                Log.Warn($"Invalid asset in GetPageRendering.AddAssets pipeline: {node.OuterXml}", this);
-                return;
-            }
-            AssetType assetType;
-            if (!Enum.TryParse(assetTypeString, true, out assetType))
-            {
-                Log.Warn($"Invalid asset type in GetPageRendering.AddAssets pipeline: {node.OuterXml}", this);
-                return;
-            }
-            if (scriptLocationString != null)
-            {
-                ScriptLocation scriptLocation;
-                if (!Enum.TryParse(scriptLocationString, true, out scriptLocation))
-                {
-                    Log.Warn($"Invalid script location in GetPageRendering.AddAssets pipeline: {node.OuterXml}", this);
-                    return;
-                }
-                DefaultAssets.Add(new AssetRequirement(assetType, assetFile, scriptLocation));
-            }
-            DefaultAssets.Add(new AssetRequirement(assetType, assetFile));
+            var asset = AssetRepository.Current.CreateFromConfiguration(node);
+            if (asset != null)
+                DefaultAssets.Add(asset);
         }
 
         public override void Process(GetPageRenderingArgs args)
@@ -126,12 +102,10 @@ namespace Habitat.Framework.Assets.Pipelines.GetPageRendering
                 AssetRepository.Current.AddStyling(styling, styling.GetHashCode().ToString(), true);
             var scriptBottom = GetPageAssetValue(item, Templates.PageAssets.Fields.JavascriptCodeBottom);
             if (!string.IsNullOrWhiteSpace(scriptBottom))
-                AssetRepository.Current.AddScript(scriptBottom, scriptBottom.GetHashCode().ToString(),
-                    ScriptLocation.Body, true);
+                AssetRepository.Current.AddScript(scriptBottom, scriptBottom.GetHashCode().ToString(), ScriptLocation.Body, true);
             var scriptHead = GetPageAssetValue(item, Templates.PageAssets.Fields.JavascriptCodeTop);
             if (!string.IsNullOrWhiteSpace(scriptHead))
-                AssetRepository.Current.AddScript(scriptHead, scriptHead.GetHashCode().ToString(), ScriptLocation.Head,
-                    true);
+                AssetRepository.Current.AddScript(scriptHead, scriptHead.GetHashCode().ToString(), ScriptLocation.Head, true);
         }
 
         private string GetPageAssetValue(Item item, ID assetField)
@@ -148,13 +122,7 @@ namespace Habitat.Framework.Assets.Pipelines.GetPageRendering
 
         private static string GetInheritedPageAssetValue(Item item, ID assetField)
         {
-            var inheritedAssetItem =
-                item.Axes.GetAncestors()
-                    .FirstOrDefault(
-                        i =>
-                            i.IsDerived(Templates.PageAssets.ID) &&
-                            MainUtil.GetBool(item[Templates.PageAssets.Fields.InheritAssets], false) &&
-                            string.IsNullOrWhiteSpace(item[assetField]));
+            var inheritedAssetItem = item.Axes.GetAncestors().FirstOrDefault(i => i.IsDerived(Templates.PageAssets.ID) && MainUtil.GetBool(item[Templates.PageAssets.Fields.InheritAssets], false) && string.IsNullOrWhiteSpace(item[assetField]));
             return inheritedAssetItem?[assetField];
         }
 

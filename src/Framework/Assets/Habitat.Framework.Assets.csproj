@@ -74,7 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssetRepository.cs" />
-    <Compile Include="Models\AssetRequirement.cs" />
+    <Compile Include="Models\Asset.cs" />
     <Compile Include="Models\AssetRequirementCache.cs" />
     <Compile Include="Models\AssetRequirementList.cs" />
     <Compile Include="Models\ScriptLocation.cs" />

@@ -8,7 +8,7 @@
     @Html.Sitecore().Placeholder("head")
 
     <!-- Latest compiled and minified JavaScript -->
-    @RenderAssetsService.Current.RenderScript()
+    @RenderAssetsService.Current.RenderScript(ScriptLocation.Head)
     @RenderAssetsService.Current.RenderStyles()
 </head>
 <body>

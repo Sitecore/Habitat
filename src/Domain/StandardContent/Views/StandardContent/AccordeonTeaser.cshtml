@@ -6,6 +6,7 @@
 
 @functions
 {
+    //TODO: Move to ControllerRendering
 
     private string GetFrontendHeadingValue(int i)
     {
@@ -33,11 +34,12 @@
     }
 
     private List<Item> _accordeonElements;
+
     private List<Item> AccordeonElements
     {
         get
         {
-            if (_accordeonElements==null || !_accordeonElements.Any())
+            if (_accordeonElements == null || !_accordeonElements.Any())
             {
                 _accordeonElements = AccordeonElementsRespository.Get(Model.Item).ToList();
                 return _accordeonElements;
@@ -46,22 +48,25 @@
         }
     }
 
+    private string _accordionID;
+
+    public string AccordionID => (_accordionID ?? (_accordionID = $"accordion-{Guid.NewGuid().ToString("N")}"));
 }
 
-<div class="c-content-accordion-1 c-accordion-blue">
-    <div class="panel-group" id="accordion-3" role="tablist">
+<div class="accordion">
+    <div class="panel-group" id="@AccordionID" role="tablist">
         @for (var i = 0; i < AccordeonElements.Count(); i++)
         {
             <div class="panel">
                 <div class="panel-heading" role="tab" id="@GetFrontendHeadingValue(i)">
                     <h4 class="panel-title">
-                        <a class="@GetCollapsed(i) c-font-bold c-font-19" data-toggle="collapse" data-parent="#accordion-100" href="#@GetFrontendCollapseValue(i)" aria-expanded="@GetAreaExpanded(i)" aria-controls="@GetFrontendCollapseValue(i)">
+                        <a class="@GetCollapsed(i)" data-toggle="collapse" data-parent="#@AccordionID" href="#@GetFrontendCollapseValue(i)" aria-expanded="@GetAreaExpanded(i)" aria-controls="@GetFrontendCollapseValue(i)">
                             @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString(), AccordeonElements[i])
                         </a>
                     </h4>
                 </div>
                 <div id="@GetFrontendCollapseValue(i)" class="panel-collapse collapse @GetIn(i)" role="tabpanel" aria-labelledby="@GetFrontendHeadingValue(i)">
-                    <div class="panel-body c-font-18">
+                    <div class="panel-body">
                         @Html.Sitecore().Field(Templates.HasSummary.Fields.Summary.ToString(), AccordeonElements[i])
                     </div>
                 </div>

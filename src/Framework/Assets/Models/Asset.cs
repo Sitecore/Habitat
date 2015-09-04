@@ -1,8 +1,8 @@
 namespace Habitat.Framework.Assets.Models
 {
-    internal class AssetRequirement
+    internal class Asset
     {
-        public AssetRequirement(AssetType type, string file, ScriptLocation location = ScriptLocation.Body, string inline = null, string addOnceToken = null)
+        public Asset(AssetType type, string file, ScriptLocation location = ScriptLocation.Body, string inline = null, string addOnceToken = null)
         {
             this.Type = type;
             this.File = file;

@@ -18,7 +18,7 @@ namespace Habitat.Media.Infrastructure.Repositories
                     Item = child,
                     Active = active
                 };
-                active = "false";
+                active = "";
             }
         }
     }

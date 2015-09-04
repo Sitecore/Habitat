@@ -1,49 +1,42 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Xml;
 using Sitecore;
 using Sitecore.Data;
 using Sitecore.Mvc.Presentation;
 using Habitat.Framework.Assets.Models;
+using Sitecore.Diagnostics;
+using Sitecore.Xml;
 
 namespace Habitat.Framework.Assets
 {
     /// <summary>A Repository for all assets required by renderings</summary>
     public class AssetRepository
     {
-        /// <summary>Sitecore CustomCache object which holds the requirements for cacheable renderings</summary>
-        private static readonly AssetRequirementCache Cache = new AssetRequirementCache(StringUtil.ParseSizeString("10MB"));
-
+        private static readonly AssetRequirementCache _cache = new AssetRequirementCache(StringUtil.ParseSizeString("10MB"));
         private static AssetRepository _current;
-
-        /// <summary>The requirements which have been found in renderings executed on this page request</summary>
-        private readonly List<AssetRequirement> items = new List<AssetRequirement>();
-
-        /// <summary>A list of rendering IDs which have been executed on this page request</summary>
-        private readonly List<ID> seenRenderings = new List<ID>();
+        private readonly List<Asset> _items = new List<Asset>();
+        private readonly List<ID> _seenRenderings = new List<ID>();
 
         public static AssetRepository Current => _current ?? (_current = new AssetRepository());
 
-        /// <summary>The requirements which have been found in renderings executed on this page request</summary>
-        internal IEnumerable<AssetRequirement> Items => this.items;
+        internal IEnumerable<Asset> Items => this._items;
 
-        internal void Add(AssetRequirement requirement, bool preventAddToCache = false)
+        internal void Add(Asset requirement, bool preventAddToCache = false)
         {
-            // If this code block should only be added once per page, check that now.
             if (requirement.AddOnceToken != null)
             {
-                if (this.items.Any(x => x.AddOnceToken != null && x.AddOnceToken == requirement.AddOnceToken))
+                if (this._items.Any(x => x.AddOnceToken != null && x.AddOnceToken == requirement.AddOnceToken))
                     return;
             }
 
-            // If requirement is a file, check it hasn't been added already.
             if (requirement.File != null)
             {
-                if (this.items.Any(x => x.File != null && x.File == requirement.File))
+                if (this._items.Any(x => x.File != null && x.File == requirement.File))
                     return;
             }
 
-            // If rendering is cacheable it requires special attention. We need to make sure asset references
-            // are also cached so we can process them elsewhere in the rendering pipeline.
             if (!preventAddToCache)
             {
                 if (RenderingContext.Current != null)
@@ -55,36 +48,32 @@ namespace Habitat.Framework.Assets
 
                         var renderingId = rendering.RenderingItem.ID;
 
-                        // Check if this is the first time we've seen this rendering during this page request
-                        // If so, start from fresh with a new list of requirements
-                        if (!this.seenRenderings.Contains(renderingId))
+                        if (!this._seenRenderings.Contains(renderingId))
                         {
-                            this.seenRenderings.Add(renderingId);
+                            this._seenRenderings.Add(renderingId);
                             cachedRequirements = new AssetRequirementList();
                         }
                         else
-                            cachedRequirements = Cache.Get(renderingId) ?? new AssetRequirementList();
+                            cachedRequirements = _cache.Get(renderingId) ?? new AssetRequirementList();
 
                         cachedRequirements.Add(requirement);
-                        Cache.Set(renderingId, cachedRequirements);
+                        _cache.Set(renderingId, cachedRequirements);
                     }
                 }
             }
 
             // Passed the checks, add the requirement.
-            this.items.Add(requirement);
+            this._items.Add(requirement);
         }
 
-        /// <summary>Add requirements which would otherwise have been missed because of rendering caching</summary>
-        /// <param name="renderingID">The Sitecore ID of the rendering</param>
         public void Add(ID renderingID)
         {
             // Check if rendering has already been executed in this page request
             // and if so, no need to add it again.
-            if (this.seenRenderings.Contains(renderingID))
+            if (this._seenRenderings.Contains(renderingID))
                 return;
 
-            var list = Cache.Get(renderingID);
+            var list = _cache.Get(renderingID);
 
             if (list != null)
             {
@@ -93,36 +82,75 @@ namespace Habitat.Framework.Assets
             }
         }
 
-        /// <summary>
-        ///     Adds a script file to the list of assets on the page
-        /// </summary>
         public void AddScript(string file, bool preventAddToCache = false)
         {
-            this.Add(new AssetRequirement(AssetType.JavaScript, file), preventAddToCache);
+            this.Add(new Asset(AssetType.JavaScript, file), preventAddToCache);
         }
 
-        /// <summary>
-        ///     Adds inline script to the list of assets on the page
-        /// </summary>
         public void AddScript(string script, string addOnceToken, ScriptLocation location, bool preventAddToCache = false)
         {
-            this.Add(new AssetRequirement(AssetType.JavaScript, null, location, script, script.GetHashCode().ToString()), preventAddToCache);
+            this.Add(new Asset(AssetType.JavaScript, null, location, script, script.GetHashCode().ToString()), preventAddToCache);
         }
 
-        /// <summary>
-        ///     Adds a css file to the list of assets on the page
-        /// </summary>
         public void AddStyling(string file, bool preventAddToCache = false)
         {
-            this.Add(new AssetRequirement(AssetType.Css, file), preventAddToCache);
+            this.Add(new Asset(AssetType.Css, file), preventAddToCache);
         }
 
-        /// <summary>
-        ///     Adds inline styling to the list of assets on the page
-        /// </summary>
         public void AddStyling(string styling, string addOnceToken, bool preventAddToCache = false)
         {
-            this.Add(new AssetRequirement(AssetType.Css, null, ScriptLocation.Head, styling, styling.GetHashCode().ToString()), preventAddToCache);
+            this.Add(new Asset(AssetType.Css, null, ScriptLocation.Head, styling, styling.GetHashCode().ToString()), preventAddToCache);
         }
+
+        internal Asset CreateFromConfiguration(XmlNode node)
+        {
+            var assetTypeString = XmlUtil.GetAttribute("type", node, null);
+            var assetFile = XmlUtil.GetAttribute("file", node, null);
+            var scriptLocationString = XmlUtil.GetAttribute("location", node, null);
+            var innerValue = node.InnerXml;
+
+            if (string.IsNullOrWhiteSpace(assetTypeString))
+            {
+                Log.Warn($"Invalid asset in GetPageRendering.AddAssets pipeline: {node.OuterXml}", this);
+                return null;
+            }
+            AssetType assetType;
+            if (!Enum.TryParse(assetTypeString, true, out assetType))
+            {
+                Log.Warn($"Invalid asset type in GetPageRendering.AddAssets pipeline: {node.OuterXml}", this);
+                return null;
+            }
+
+            ScriptLocation? scriptLocation = null;
+            if (scriptLocationString != null)
+            {
+                ScriptLocation location;
+                if (!Enum.TryParse(scriptLocationString, true, out location))
+                {
+                    Log.Warn($"Invalid script location in GetPageRendering.AddAssets pipeline: {node.OuterXml}", this);
+                    return null;
+                }
+                scriptLocation = location;
+            }
+
+            Asset asset = null;
+            if (!string.IsNullOrEmpty(assetFile))
+            {
+                if (scriptLocation.HasValue)
+                    asset = new Asset(assetType, assetFile, scriptLocation.Value);
+                else
+                    asset = new Asset(assetType, assetFile);
+            }
+            else if (!string.IsNullOrEmpty(innerValue))
+            {
+                if (scriptLocation.HasValue)
+                    asset = new Asset(assetType, null, inline: innerValue, addOnceToken: innerValue.GetHashCode().ToString(), location: scriptLocation.Value);
+                else
+                    asset = new Asset(assetType, null, inline: innerValue, addOnceToken: innerValue.GetHashCode().ToString());
+            }
+
+            return asset;
+        }
+
     }
 }

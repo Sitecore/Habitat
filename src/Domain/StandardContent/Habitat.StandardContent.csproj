@@ -54,7 +54,6 @@
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Mvc">
       <HintPath>..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
@@ -125,7 +124,6 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
     <Compile Include="Infrastructure\Repositories\AccordeonElementsRespository.cs" />
     <Compile Include="Infrastructure\Services\HumanFriendlyIntegerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

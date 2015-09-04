@@ -5,9 +5,9 @@ using Sitecore.Caching;
 
 namespace Habitat.Framework.Assets.Models
 {
-    internal class AssetRequirementList : ICacheable, IEnumerable<AssetRequirement>
+    internal class AssetRequirementList : ICacheable, IEnumerable<Asset>
     {
-        private readonly List<AssetRequirement> _items = new List<AssetRequirement>();
+        private readonly List<Asset> _items = new List<Asset>();
 
         public AssetRequirementList()
         {
@@ -25,7 +25,7 @@ namespace Habitat.Framework.Assets.Models
             return _items.Sum(x => x.GetDataLength());
         }
 
-        public IEnumerator<AssetRequirement> GetEnumerator()
+        public IEnumerator<Asset> GetEnumerator()
         {
             return _items.GetEnumerator();
         }
@@ -35,7 +35,7 @@ namespace Habitat.Framework.Assets.Models
             return GetEnumerator();
         }
 
-        public void Add(AssetRequirement requirement)
+        public void Add(Asset requirement)
         {
             _items.Add(requirement);
         }
