@@ -1,0 +1,19 @@
+.c-content-panel {
+	padding: 0;
+	border: 1px solid lighten(#eee, 1%);
+	margin-bottom: 30px;
+
+	.c-label {
+		display: inline-block;
+		position: absolute;
+		background: #eee;
+		padding: 2px 6px;
+		font-size: 14px;
+		font-weight: 500;
+		color: lighten($general-head-font-color, 10%);
+	}
+
+	.c-body {
+		padding: 40px 20px 20px 20px;
+	}
+}

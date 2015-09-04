@@ -1,0 +1,52 @@
+// FEATURE 5
+
+// BEGIN: General Mode
+
+.c-content-feature-5 {
+
+	.c-content-title-1 {
+		margin-top: 25px;
+	}
+	
+	.c-text {
+		position: relative;
+		background-color: #ffffff;
+		width: 40%;
+		padding: 25px;
+		z-index: 1;
+	}
+
+	.c-photo {
+		position: absolute;
+		top: 0;
+		right: 65px;
+	}
+}
+
+// END
+
+// BEGIN: Mobile Mode
+
+@media (max-width: $screen-md-max) {
+	/* 991px */
+
+	.c-content-feature-5 {
+
+		.c-content-title-1 {
+			margin: 0;
+		}
+
+		.c-text {
+			position: static;
+			width: 100%;
+			z-index: auto;
+		}
+
+		.c-photo {
+			position: static;
+			margin: 20px 0px;
+		}
+	}
+}
+
+// END

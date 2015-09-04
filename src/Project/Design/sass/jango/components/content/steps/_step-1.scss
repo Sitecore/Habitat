@@ -1,0 +1,193 @@
+// Step 1
+
+// BEGIN: General Mode
+
+@mixin c-content-step-1($icon-color, $line-color, $title-color, $description-color) {
+
+	> .c-icon {
+		color: $icon-color;
+
+		> .c-hr {
+			&:before, &:after {
+				border-color: $line-color;
+			}
+		}
+	}
+
+	> .c-description {
+		color: $general-font-color;
+	}
+}
+
+.c-content-step-1 {
+	text-align: center;
+	padding-bottom: 20px;
+
+	> .c-icon {
+		padding-bottom: 30px;
+
+		> .c-hr {
+			display: inline-block;
+
+			&:before, &:after {
+				border-top: 1px solid black;
+				display: block;
+				height: 1px;
+				content: " ";
+				width: 38%;
+				position: absolute;
+				left: 0;
+				top: 2.2em;
+			}
+
+			&:after {
+				right: 0;
+				left: auto;
+			}
+
+			&.c-hr-first {
+				&:before {
+					width: 34%;
+					left: 4%;
+				}
+			}
+
+			&.c-hr-last {
+				&:after {
+					width: 34%;
+					right: 4%;
+				}
+			}
+
+			> i {
+				font-size: 4.2em;
+			}
+		}
+	}
+
+	> .c-title {
+		  margin-top: 20px;
+	}
+
+	> .c-description {
+		padding: 0px 60px;
+		margin:20px 0 30px 0;
+	}
+
+	&.c-opt-1 {
+		@include c-content-step-1(darken(#9dabc3, 10%), darken(#f7f7f7, 40%), #ff6b57, #9aaab3); 
+	}
+}
+
+@mixin c-title-step-1($title-color, $title-color-bold, $sub-title-color) {
+	> h4 {
+		color: $title-color;
+		> span {
+			color: $title-color-bold;
+		}
+	}
+	> p {
+		color: $sub-title-color;
+	}
+}
+
+.c-title-step-1 {
+	> h4 {
+		margin: 15px 0;
+	}
+
+	> p {
+		margin-bottom: 68px;
+	}
+
+	&.c-opt-title-1 {
+		@include c-title-step-1(#455055, #455055, #a0b0b8);
+	}
+}
+
+// END
+
+// BEGIN: Mobile Mode
+
+@media (max-width: $screen-sm-max) {
+	/* 991px */
+
+	.c-content-step-1 {
+		padding-bottom: 60px;
+
+		> .c-icon {
+
+			> .c-hr {
+
+				&:after {
+					width: 34%;
+					right: 4%;
+				}
+
+				&.c-hr-first {
+					&:after {
+						width: 38%;
+						right: 0;
+						left: auto;
+					}
+				}
+
+				&.c-hr-last {
+					&:before {
+						width: 41%;
+						left: 2%;
+					}
+					&:after {
+						width: 42%;
+						right: 2%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	/* 766px */
+
+	.c-content-step-1 {
+		padding-bottom: 60px;
+
+		> .c-icon {
+
+			> .c-hr {
+
+				&:before {
+					width: 34%;
+					left: 4%;
+				}
+
+				&.c-hr-first {
+					&:after {
+						width: 35%;
+						right: 4%;
+					}
+				}
+
+				&.c-hr-last {
+					&:before {
+						width: 35%;
+						left: 4%;
+					}
+					&:after {
+						width: 35%;
+						right: 4%;
+					}
+				}
+			}
+		}
+
+		> .c-explore {
+			padding-bottom: 60px;
+		}
+
+	}
+
+}
+
+// END

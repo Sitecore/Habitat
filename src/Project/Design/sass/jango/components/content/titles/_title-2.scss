@@ -1,0 +1,139 @@
+// TITLE 1
+
+.c-content-title-2 {
+	margin-bottom: 20px;
+	
+	> .c-line {
+		height:2px;
+		background-color: lighten($general-head-font-color, 30%);
+		@include opacity(0.8);
+
+		&.c-line-short {
+			width: 180px;
+			margin: 0 auto;
+		}
+
+		&.c-dot {
+			height: 1px;
+			position: relative;
+
+			&:after {
+				background-color: lighten($general-head-font-color, 30%); 
+				left: 50%;
+				display: inline-block;
+				position: absolute;
+				content: '';
+				width: 10px;
+				height: 10px;
+				top: -4px;
+				margin-left: -5px;
+				border-radius: 10px !important;
+			}
+
+			&.c-dot-left:after {
+				left: 0;
+			}
+
+			&.c-dot-right:after {
+				left: auto;
+				right: 0;
+			}
+
+			&.c-dot-square:after {
+				border-radius: 0 !important;
+			}
+		}
+	}
+
+	> h3 { 
+		font-size:30px;
+		color: $general-head-font-color;
+		font-weight:500; 
+		margin:0 0 30px 0;
+
+		> i {
+			font-size: 22px; 
+			color: lighten($general-head-font-color, 30%);
+		}
+	}
+	
+	> p {
+		font-size:17px;
+		font-weight: 400;
+		color: $general-font-color;
+		margin: 30px 0;
+
+		&.c-font-uppercase {
+			font-size: 15px;
+		}
+	}
+
+	> hr {
+		margin-bottom: 30px;
+	}
+
+	&.c-title-md {
+
+		> .c-line-left,
+		> .c-line-center {
+			margin-bottom: 20px;
+		}	
+
+		> h3 { 
+			font-size:22px;
+			margin-bottom: 22px;
+
+			> i {
+				font-size: 18px; 
+				color: lighten($general-head-font-color, 30%);
+			}
+
+			&.c-font-uppercase {
+				font-size: 20px;
+			}
+		}
+
+		> p {
+			font-size:17px;
+			margin: 20px 0;
+
+			&.c-font-uppercase {
+				font-size: 14px;
+			}
+		}
+	}
+
+	&.c-title-sm {
+
+		> .c-line-left,
+		> .c-line-center {
+			margin-bottom: 15px;
+		}	
+
+		> h3 { 
+			font-size:18px;
+			margin-bottom: 15px;
+
+			> i {
+				font-size: px; 
+				color: lighten($general-head-font-color, 30%);
+			}
+
+			&.c-font-uppercase {
+				font-size: 14px;
+			}
+		}
+
+		> p {
+			font-size: 16px;
+			margin: 15px 0;
+
+			&.c-font-uppercase {
+				font-size: 14px;
+			}
+		}
+	}
+
+}
+
+// END 

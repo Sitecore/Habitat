@@ -1,0 +1,183 @@
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+.c-layout-footer-7 {
+	margin: 0;
+	background-color: #2e3336;
+
+	.c-input {
+		background-color: #2e3336;
+		border-color: #3f464d;
+		color: #58626d;
+	}
+
+	.c-prefooter {
+		padding: 70px 0 35px 0;
+	}
+
+	.c-postfooter {
+		padding: 30px 0;
+		background-color: #292e31;
+	}
+
+	.c-content-title-1 {
+		.c-title {
+			color: #d5dfe5;
+			margin-bottom: 25px;
+		}
+	}
+
+	.c-head {
+		margin: 5px auto;
+
+		.c-left {
+
+			.socicon {
+				margin-top: 3px;
+
+				.socicon-btn {
+					width: auto;
+					height: auto;
+					padding: 13px;
+					background-color: #2a2e31;
+
+					& + .socicon-btn {
+						margin-left: 5px;
+					}
+				}
+			}
+		}
+
+		.c-right {
+			float: right;
+
+			.socicon-btn {
+				margin: 0;
+			}
+
+			.c-title {
+				float: left;
+				margin: 20px 30px 0;
+				color: #d5dfe5;
+			}
+
+			.c-icons {
+				float: left;
+
+				> .socicon-btn {
+					width: auto;
+					height: auto;
+					padding: 13px;
+					float: left;
+					margin-left: -1px;
+					border-color: #353b3e;
+
+					&:hover {
+						background-color: #32383b;
+					}
+				}
+			}
+		}
+
+	}
+
+	.c-body {
+
+		.c-twitter {
+			width: 340px;
+			color: #b1c4d0;
+		}
+
+		.c-links {
+			float: left;
+			padding: 0;
+
+			> li {
+				list-style-type: none;
+				line-height: 30px;
+
+				> a {
+					color: #b1c4d0;
+
+					&:hover {
+						color: #e7eef3;
+					}
+				}
+			}
+
+			& + .c-links {
+				padding-left: 50px;
+			}
+		}
+
+		.c-address {
+			margin: 0;
+			color: #7e8b93;
+		}
+	}
+
+	.c-foot {
+		padding-bottom: 5px;
+
+		.c-text {
+			margin: 0;
+		}
+	}
+
+	.c-copyright {
+		font-size: 15px;
+		margin: 0;
+	}
+
+	.c-line {
+		width: 100%;
+		height: 1px;
+		background-color: #393f42;
+		margin: 40px auto;
+	}
+}
+
+@media (max-width: $screen-sm-max) {
+	/* 991px */
+	.c-layout-footer-7 {
+
+		.c-head {
+
+			.c-right {
+				float: none;
+				margin-top: 30px;
+
+				> .c-title {
+					display: none;
+				}
+			}
+		}
+
+		.c-body {
+
+			.c-links, .c-twitter {
+				margin-bottom: 40px;
+			}
+
+			.c-twitter {
+				width: 100%;
+			}
+		}
+
+		.c-foot {
+
+			.c-text {
+				margin-bottom: 40px;
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	/* 767px */
+}

@@ -1,0 +1,190 @@
+// Tab 3
+
+// BEGIN: General Mode
+
+@mixin c-content-tab-3($tab-color, $tab-active-color, $tab-text-color, $tab-active-text-color, $item-title-color, $item-icon-color, $item-content-color) {
+
+	.nav {
+
+		> li {
+
+			> a {
+				color: $tab-text-color;
+				background-color: $tab-color;
+
+				&:hover {
+					background-color: $tab-active-color;
+				}
+			}
+
+			&.active {
+
+				> a {
+					color: #32c5d2;
+					background-color: $tab-active-color;
+				}
+			}
+		}
+	}
+
+	> .c-tab-content {
+		background-color: $tab-active-color;
+
+		ul.c-items {
+
+			> li {
+
+				> h4 {
+					color: $item-title-color;
+
+					> i {
+						color: darken($item-icon-color, 20%);
+					}
+				}
+
+				> p {
+					color: $item-content-color;
+				}
+			}
+		}
+	}
+}
+
+.c-content-tab-3 {
+
+	$pad-left: -13px;
+
+	.nav {
+		text-align: center;
+		width:1170px;
+		margin:auto;
+
+		> li {
+			float: left;
+			display: inline-block;
+
+			> a {
+				border-radius: 0px;
+				padding: 20px 50px;
+			}
+
+			+ li {
+				margin-left: 2px;
+
+				> .c-separator {
+					top: 20px;
+					left: -2px;
+					width: 2px;
+					height: 21px;
+					position: absolute;
+				}
+			}
+
+			&.active {
+				> .c-separator {
+					visibility: hidden;
+				}
+
+				& + li {
+					> .c-separator {
+						visibility: hidden;
+					}
+				}
+			}
+		}
+	}
+
+	> .c-tab-content {
+		padding: 85px 0 60px 0;
+
+		ul.c-items {
+			margin: 0;
+			padding: 0;
+
+			> li {
+				margin: 0 0 0 $pad-left;
+				list-style: none;
+
+				+ li {
+					padding-top: 25px;
+				}
+
+				> h4 {
+					margin: 0 0 15px;
+
+					> i {
+						margin-right: 10px;
+					}
+				}
+			}
+		}
+
+		.btn {
+			margin: 32px 0 0 $pad-left;
+		}
+
+		ul.c-photos {
+			margin-right: -30px;
+
+			> li {
+				list-style: none;
+
+				+ li {
+					margin-bottom: 20px;
+				}
+			}
+		}
+
+	}
+
+	&.c-opt-1 {
+		@include c-content-tab-3(#edf1f5, #ffffff, darken(#9fb0c5, 10%), #31b4da, #5f6f77, #c1d4e6, darken(#9aaab3, 10%));
+	}
+}
+
+// END
+
+// BEGIN: Mobile Mode
+
+@media (max-width: $screen-sm-max) { /* 991px */
+
+	$pad-left: -28px;
+
+	.c-content-tab-3 {
+		.nav {
+			> li {
+				width: 100%;
+				border-bottom: 1px solid #fff;
+
+				> .c-separator {
+					display: none;
+				}
+				+ li {
+					margin: 0;
+				}
+
+				> a {
+					text-align:left; 
+				}
+			}
+		}
+
+		> .c-tab-content {
+			padding: 25px 0 20px 0;
+			.c-photos {
+				margin: 50px $pad-left 0;
+				padding: 0;
+
+				+ .c-photos {
+					margin: 0 $pad-left 0;
+
+					> li + li {
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// END

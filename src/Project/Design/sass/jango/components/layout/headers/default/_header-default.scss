@@ -1,0 +1,86 @@
+// Header 
+$layout_full_page:                                                              'no';  // yes or no
+$header_class:																	'default';
+$header_desktop-bg-color:														none;
+$header_desktop-navbar-bg:														none;
+$header_desktop_border:															0;
+$header_min_desktop_border:														0;
+$header_min_desktop_shadow:														none;
+
+// Brand
+$brand-link-font-color:  														#ebedf2;
+$brand-link-font-color-on-hover:  												#ff6b57;
+
+// Quick Search
+$quick-search_desktop_input-font-color:  										#ffffff;     
+$quick-search_desktop_input-placeholder-color:									lighten($quick-search_desktop_input-font-color, 10%);	
+$quick-search_desktop_icon-font-color:											lighten($quick-search_desktop_input-font-color, 10%);
+
+// Mega Menu
+$mega-menu_desktop_primary-link-font-color:										#ffffff; 
+$mega-menu_desktop_primary-link-font-color-on-hover:							#ffffff;
+$mega-menu_desktop_primary-link-font-color-on-active:							#ffffff;
+
+$mega-menu_desktop_min-header-bg-color:											rgba(#000000, 0.7);
+$mega-menu_desktop_min-header-primary-link-font-color:							#ffffff;  
+
+@import  'theme/_header';
+
+@media (min-width: $screen-md-min) { /* 992px */
+	.c-layout-header.c-layout-header-default {
+		.c-navbar {
+			.c-mega-menu {
+				> .nav.navbar-nav {
+					> li {   
+						&:focus,
+						&:active,
+						&:hover,
+						&.c-active {					
+							> a:not(.btn):not(.c-btn-icon):not(.c-quick-sidebar-toggler) { 
+								position: relative;
+								color: $mega-menu_desktop_primary-link-font-color !important;
+
+								&:before {
+									transition: $header_transition;
+									
+									position: absolute;
+									top: 32px;
+									content: '';
+									width: 15px;
+									height: 2px;
+									display: block;
+									background: $mega-menu_desktop_primary-link-font-color-on-hover; 
+								
+									.c-page-on-scroll & {
+										top: 14px;
+										transition: $header_transition;
+									}
+								}
+
+								> i {
+									color: $mega-menu_desktop_primary-link-font-color !important;   
+								}
+							}
+
+							> a.c-btn-icon { 
+								color: $mega-menu_desktop_primary-link-font-color; 
+							}
+
+							> .c-search-toggler > i {
+								color: $mega-menu_desktop_primary-link-font-color !important;
+							}
+
+							> .c-quick-sidebar-toggler > .c-line {
+								background: $mega-menu_desktop_primary-link-font-color !important;
+							}
+						}	
+					}
+				}
+			}
+		}
+
+		&.c-bordered {
+			border-bottom: 1px solid rgba(#fff, 0.15);
+		}
+	}
+}

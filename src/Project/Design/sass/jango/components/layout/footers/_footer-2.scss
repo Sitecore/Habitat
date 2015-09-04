@@ -1,0 +1,175 @@
+.c-layout-footer.c-layout-footer-2 {
+	padding: 100px 0;
+	margin: 0;
+	background-image: url(../img/content/backgrounds/bg_footer_1.jpg);
+	background-repeat: no-repeat;           
+    background-position: right bottom;               
+    background-size:cover; 
+
+    &.c-opt-2{
+    	padding: 80px 0;
+    }
+
+	.c-container{
+		margin-bottom: 80px;
+		overflow:auto;
+
+		&.c-first {
+			padding-right:50px;
+		}
+
+		&.c-last {
+			padding-left:50px;
+		}
+
+		> .c-content-title-1{
+
+			> h3 {
+				font-size:24px;
+				color:#ffffff;
+			}
+
+			> .c-line-left{
+				margin-bottom: 30px;
+			}
+
+			> p {
+				margin-bottom:30px;
+				text-transform: none;
+
+				&.c-ask{
+					color:#616a73;
+				}
+			}
+		}
+
+		> .c-links {
+			padding: 0 0 10px 0;
+			@include clearfix();
+
+			.c-nav {
+				padding: 0;
+				margin: 0 40px 0 0;
+				display: inline-block;
+				float: left;
+				list-style: none;
+
+				> li {
+					padding: 4px 0 10px 0;
+					> a {
+						color: #b1bcc9;
+						font-size: 14px;
+						font-weight: 600;
+						text-transform: uppercase;
+
+						&:hover {
+							color: lighten(#b1bcc9, 20%);
+						}
+					}
+				}
+			}
+		}
+
+		> .c-socials {
+			float: left;
+			list-style: none;
+			padding: 0;  
+			margin: 0;
+
+			> li {
+				display: inline-block;
+				padding: 0 6px; 
+
+				> a {
+
+					> i {
+						display: inline-block;
+						padding: 10px;
+						background: #11111c;
+						color: #555555;
+						font-size: 18px;
+						font-weight: bold;
+					}
+
+					&:hover {
+						> i {
+							background: darken(#2b3036, 5%);
+							color: lighten(#64707e, 5%);
+						}
+					}
+				}
+
+				&:first-child{
+					padding-left:0;
+				}
+			}
+		}
+
+		form {
+			margin-bottom: 20px;
+
+			.input-group {
+				width: 350px;
+
+				.form-control {
+					background: none;   
+					color: #eee;
+				}
+			}
+		}		
+
+		&:last-child{
+			margin-bottom: 0;
+		}	
+	}
+
+	.c-copyright {
+		color: #a4aeb8;
+		padding: 0;
+		margin: 140px 0 -60px 0;
+	}
+
+}
+
+@media (max-width: $screen-sm-max) { /* 991px */
+	.c-layout-footer.c-layout-footer-2 {
+		background-image: url(../img/content/backgrounds/bg_footer_1-1.jpg);
+		
+		.row{
+
+			> div{
+				margin-bottom: 80px;
+
+				&:last-child{
+					margin-bottom: 0;
+				}	
+			}
+		}
+
+		.c-container{
+
+			&.c-left{
+				padding:0;
+			}
+
+			&.c-right{
+				padding:0;
+			}
+
+			&.c-last {
+				padding-left:0;
+			}
+
+			form {
+
+				.form-control{
+					width:250px;
+				}
+			}
+		}
+
+		.c-copyright{
+			margin-top:60px;
+		}
+	}
+}

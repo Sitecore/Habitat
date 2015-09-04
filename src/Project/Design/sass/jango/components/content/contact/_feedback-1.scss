@@ -1,0 +1,168 @@
+// Feedback 1
+ 
+// BEGIN: General Mode
+
+.c-content-feedback-1 {
+	@include reset-padmar(); // call mixing reset default padding and margin
+	width: 100%;
+
+	> .row{
+
+		> div {
+
+			.c-content-title-1{
+
+				> .c-line-left{
+					margin-bottom:30px;
+				}
+
+				> p {
+					margin-bottom: 30px;
+					font-weight: 300;
+				}
+			}
+
+			> .c-container{
+				background-size:auto;
+				padding:30px;
+				margin: 0 30px 60px 0;
+
+				> .c-inverse{
+
+					> h3{
+						color:#ffffff;
+					}
+
+					> .c-line-left{
+						background-color: #ffffff;
+					}
+
+					> p{
+						color: #ffffff;
+					}
+				}
+
+				&:last-child{
+					margin-bottom:0;
+
+					p {
+						margin-bottom: 0;
+					}  
+				}
+			}
+
+			> .c-contact{
+				margin-left:30px;
+			}
+
+			form {
+				margin-bottom: 20px;
+
+				.input-group {
+					width: 340px;
+				}
+			}	
+		}
+	}
+
+	.input-group {
+		border: 0;  
+
+		.input-group-addon,
+		.btn {
+			border: 0;
+		}
+	}
+
+	&.c-option-2{
+		padding: 60px 0;
+		
+		> .c-content-title-1{
+
+			> h3{
+				margin-left: -18px;
+			}
+
+			> .c-left{
+				margin-bottom: 0;
+				left: -7.5px;
+				background-color: #ffffff;
+			}
+
+			> .c-right{
+				display: block;
+				text-align: center;
+				position: relative;
+				left: 7.5px;
+				top: -3px;
+			}
+
+			> .c-line-center{
+				position:relative;
+				display:block;
+				text-align: center;
+				width:15px;
+			}
+
+			> p{
+				margin-left:18px;
+
+				> span{
+					color: #7f8b96;
+				}
+
+			}
+		}
+
+	}
+  
+}
+
+// END
+
+
+// BEGIN: Mobile Mode
+
+@media (max-width: $screen-sm-max) { /* 991px */
+	.c-content-feedback-1 {
+
+		>.row{
+
+			> div{
+
+				>.c-container{
+					margin-right:0;
+					margin-bottom:40px;
+				}
+
+				> .c-contact{
+					padding:40px 30px 0 30px;
+					margin:0;
+				}
+
+				form {
+					.input-group {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		&.c-option-2{
+
+			> .row{
+
+				> div{
+
+					> .c-contact{
+						padding: 30px;
+						margin-top:40px;
+						background-color: #ffffff;
+					}
+				}
+			}
+		}
+	}
+}
+
+// END

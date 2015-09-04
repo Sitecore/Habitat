@@ -1,0 +1,13 @@
+//	BEGIN: General Mode
+
+.c-layout-revo-slider {
+	@include clearfix();
+
+	.c-video-hint {
+		> i {
+			position: relative;
+			top: 2px;
+			font-size: 14px;      
+		}
+	}
+}

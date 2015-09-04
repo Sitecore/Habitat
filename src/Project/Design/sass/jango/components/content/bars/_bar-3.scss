@@ -1,0 +1,53 @@
+// Bar 3
+ 
+// BEGIN: General Mode
+
+.c-content-bar-3 {
+	@include reset-padmar(); // call mixing reset default padding and margin
+	width: 100%;
+
+	.c-content-title-1 {
+
+		> h3 {
+			padding: 0;
+			color:#ffffff;
+			font-weight: 500;
+			margin: 0 0 25px 0;
+		}
+
+		> p {
+			padding: 0;
+			color: $general-font-color;
+			text-transform: uppercase;
+			margin: 0;
+			font-size:16px;
+		}
+	}
+}
+
+// END
+
+
+// BEGIN: Mobile Mode
+
+@media (max-width: $screen-sm-max) { /* 991px */
+	.c-content-bar-3 {
+
+		> .c-content-title-1 {
+			margin-bottom:40px;
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) { /* <= 767px */
+
+	.c-content-bar-3 {
+		text-align: center;
+
+		> .c-content-title-1 {
+			text-align: center;
+		}
+	}
+}
+
+// END

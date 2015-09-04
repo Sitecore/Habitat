@@ -48,8 +48,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\base\css\components.css" />
+    <Content Include="assets\base\css\components.min.css">
+      <DependentUpon>components.css</DependentUpon>
+    </Content>
     <Content Include="assets\base\css\custom.css" />
     <Content Include="assets\base\css\plugins.css" />
+    <Content Include="assets\base\css\plugins.min.css">
+      <DependentUpon>plugins.css</DependentUpon>
+    </Content>
     <Content Include="assets\base\css\themes\blue1.css" />
     <Content Include="assets\base\css\themes\blue2.css" />
     <Content Include="assets\base\css\themes\blue3.css" />
@@ -983,7 +989,6 @@
     <Content Include="obj\sass\jango\themes\yellow1.css" />
     <Content Include="obj\sass\jango\themes\yellow2.css" />
     <Content Include="obj\sass\jango\themes\yellow3.css" />
-    <Content Include="assets\base\css\custom.scss" />
     <Content Include="assets\base\img\content\stock3\Thumbs.db" />
     <Content Include="assets\plugins\animate\README.md" />
     <Content Include="assets\plugins\bootstrap-hover-dropdown\LICENSE" />
@@ -1138,6 +1143,38 @@
     <Content Include="assets\plugins\socicon\font\socicon.woff" />
     <Content Include="assets\plugins\socicon\font\socicon.woff2" />
     <Content Include="assets\plugins\socicon\readme.md" />
+    <Content Include="sass\jango\components.css">
+      <DependentUpon>components.scss</DependentUpon>
+    </Content>
+    <Content Include="sass\jango\components.min.css">
+      <DependentUpon>components.css</DependentUpon>
+    </Content>
+    <Content Include="sass\jango\themes\blue1.css" />
+    <Content Include="sass\jango\themes\blue2.css" />
+    <Content Include="sass\jango\themes\blue3.css" />
+    <Content Include="sass\jango\themes\brown1.css" />
+    <Content Include="sass\jango\themes\brown2.css" />
+    <Content Include="sass\jango\themes\brown3.css" />
+    <Content Include="sass\jango\themes\dark1.css" />
+    <Content Include="sass\jango\themes\dark2.css" />
+    <Content Include="sass\jango\themes\dark3.css" />
+    <Content Include="sass\jango\themes\default.css" />
+    <Content Include="sass\jango\themes\green1.css" />
+    <Content Include="sass\jango\themes\green2.css" />
+    <Content Include="sass\jango\themes\green3.css" />
+    <Content Include="sass\jango\themes\purple1.css" />
+    <Content Include="sass\jango\themes\purple2.css" />
+    <Content Include="sass\jango\themes\purple3.css" />
+    <Content Include="sass\jango\themes\red1.css" />
+    <Content Include="sass\jango\themes\red2.css" />
+    <Content Include="sass\jango\themes\red3.css" />
+    <Content Include="sass\jango\themes\yellow1.css" />
+    <Content Include="sass\jango\themes\yellow2.css" />
+    <Content Include="sass\jango\themes\yellow3.css" />
+    <None Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="README.md" />
     <Content Include="obj\sass\jango\components.scss" />
@@ -1300,6 +1337,167 @@
     <Content Include="obj\sass\jango\_colors.scss" />
     <Content Include="obj\sass\jango\_mixins.scss" />
     <Content Include="obj\sass\jango\_settings.scss" />
+    <Content Include="sass\jango\components.scss" />
+    <Content Include="sass\jango\components\content\accordions\_accordion-1.scss" />
+    <Content Include="sass\jango\components\content\apps\_app-1.scss" />
+    <Content Include="sass\jango\components\content\bars\_bar-1.scss" />
+    <Content Include="sass\jango\components\content\bars\_bar-2.scss" />
+    <Content Include="sass\jango\components\content\bars\_bar-3.scss" />
+    <Content Include="sass\jango\components\content\bars\_bar-4.scss" />
+    <Content Include="sass\jango\components\content\bars\_bar-5.scss" />
+    <Content Include="sass\jango\components\content\base\_boxes.scss" />
+    <Content Include="sass\jango\components\content\base\_checkboxes.scss" />
+    <Content Include="sass\jango\components\content\base\_colors.scss" />
+    <Content Include="sass\jango\components\content\base\_line-icons.scss" />
+    <Content Include="sass\jango\components\content\base\_lists.scss" />
+    <Content Include="sass\jango\components\content\base\_loaders.scss" />
+    <Content Include="sass\jango\components\content\base\_navs.scss" />
+    <Content Include="sass\jango\components\content\base\_overlays.scss" />
+    <Content Include="sass\jango\components\content\base\_paginations.scss" />
+    <Content Include="sass\jango\components\content\base\_panels.scss" />
+    <Content Include="sass\jango\components\content\base\_radios.scss" />
+    <Content Include="sass\jango\components\content\base\_toggler.scss" />
+    <Content Include="sass\jango\components\content\base\_vertical-center.scss" />
+    <Content Include="sass\jango\components\content\blog\_blog-post-1.scss" />
+    <Content Include="sass\jango\components\content\blog\_blog-post-card-1.scss" />
+    <Content Include="sass\jango\components\content\blog\_recent-posts-1.scss" />
+    <Content Include="sass\jango\components\content\contact\_contact-1.scss" />
+    <Content Include="sass\jango\components\content\contact\_feedback-1.scss" />
+    <Content Include="sass\jango\components\content\features\_feature-1.scss" />
+    <Content Include="sass\jango\components\content\features\_feature-10.scss" />
+    <Content Include="sass\jango\components\content\features\_feature-11.scss" />
+    <Content Include="sass\jango\components\content\features\_feature-2.scss" />
+    <Content Include="sass\jango\components\content\features\_feature-3.scss" />
+    <Content Include="sass\jango\components\content\features\_feature-4.scss" />
+    <Content Include="sass\jango\components\content\features\_feature-5.scss" />
+    <Content Include="sass\jango\components\content\features\_feature-6.scss" />
+    <Content Include="sass\jango\components\content\features\_feature-7.scss" />
+    <Content Include="sass\jango\components\content\features\_feature-8.scss" />
+    <Content Include="sass\jango\components\content\features\_feature-9.scss" />
+    <Content Include="sass\jango\components\content\media\_media-1.scss" />
+    <Content Include="sass\jango\components\content\media\_media-2.scss" />
+    <Content Include="sass\jango\components\content\misc\_client-logos-1.scss" />
+    <Content Include="sass\jango\components\content\misc\_client-logos-slider-1.scss" />
+    <Content Include="sass\jango\components\content\misc\_person-1.scss" />
+    <Content Include="sass\jango\components\content\misc\_subscribe-form-1.scss" />
+    <Content Include="sass\jango\components\content\pricing\_pricing-1.scss" />
+    <Content Include="sass\jango\components\content\pricing\_pricing-2.scss" />
+    <Content Include="sass\jango\components\content\pricing\_pricing-3.scss" />
+    <Content Include="sass\jango\components\content\products\_product-1.scss" />
+    <Content Include="sass\jango\components\content\stats\_counter-1.scss" />
+    <Content Include="sass\jango\components\content\steps\_step-1.scss" />
+    <Content Include="sass\jango\components\content\tabs\_tab-1.scss" />
+    <Content Include="sass\jango\components\content\tabs\_tab-2.scss" />
+    <Content Include="sass\jango\components\content\tabs\_tab-3.scss" />
+    <Content Include="sass\jango\components\content\tabs\_tab-4.scss" />
+    <Content Include="sass\jango\components\content\testimonials\_testimonial-1.scss" />
+    <Content Include="sass\jango\components\content\testimonials\_testimonial-2.scss" />
+    <Content Include="sass\jango\components\content\testimonials\_testimonial-3.scss" />
+    <Content Include="sass\jango\components\content\testimonials\_testimonial-4.scss" />
+    <Content Include="sass\jango\components\content\tiles\_tile-1.scss" />
+    <Content Include="sass\jango\components\content\titles\_divider.scss" />
+    <Content Include="sass\jango\components\content\titles\_label.scss" />
+    <Content Include="sass\jango\components\content\titles\_title-1.scss" />
+    <Content Include="sass\jango\components\content\titles\_title-2.scss" />
+    <Content Include="sass\jango\components\content\titles\_title-3.scss" />
+    <Content Include="sass\jango\components\content\user\_login-form.scss" />
+    <Content Include="sass\jango\components\content\_main.scss" />
+    <Content Include="sass\jango\components\layout\base\_page.scss" />
+    <Content Include="sass\jango\components\layout\breadcrumbs\_breadcrumbs-1.scss" />
+    <Content Include="sass\jango\components\layout\footers\_footer-1.scss" />
+    <Content Include="sass\jango\components\layout\footers\_footer-2.scss" />
+    <Content Include="sass\jango\components\layout\footers\_footer-3.scss" />
+    <Content Include="sass\jango\components\layout\footers\_footer-4.scss" />
+    <Content Include="sass\jango\components\layout\footers\_footer-6.scss" />
+    <Content Include="sass\jango\components\layout\footers\_footer-7.scss" />
+    <Content Include="sass\jango\components\layout\footers\_go2top.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\base\_header-mobile.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\base\_header.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\base\_mega-menu-mobile.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\base\_mega-menu.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\base\_topbar.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\theme\_header-mobile.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\theme\_header.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\theme\_mega-menu-mobile.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\theme\_mega-menu.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\theme\_topbar.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_header-2.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_header-3.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_header-4.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_header-5.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_header-6.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_header-dark-mobile.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_header-default-mobile.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_header-default.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_mega-menu-dark-mobile.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_mega-menu-dark.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_mega-menu-light-mobile.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_mega-menu-light.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_topbar-dark.scss" />
+    <Content Include="sass\jango\components\layout\headers\default\_topbar-light.scss" />
+    <Content Include="sass\jango\components\layout\sidebars\_quick-sidebar.scss" />
+    <Content Include="sass\jango\components\layout\sidebars\_sidebar-menu.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_base.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_slider-1.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_slider-10.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_slider-11.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_slider-12.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_slider-2.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_slider-3.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_slider-4.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_slider-5.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_slider-6.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_slider-7.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_slider-8.scss" />
+    <Content Include="sass\jango\components\layout\sliders\revo-slider\_slider-9.scss" />
+    <Content Include="sass\jango\components\layout\_main.scss" />
+    <Content Include="sass\jango\custom.scss" />
+    <Content Include="sass\jango\plugins.scss" />
+    <Content Include="sass\jango\plugins\bootstrap\_buttons.scss" />
+    <Content Include="sass\jango\plugins\bootstrap\_dropdowns.scss" />
+    <Content Include="sass\jango\plugins\bootstrap\_inputs.scss" />
+    <Content Include="sass\jango\plugins\bootstrap\_misc.scss" />
+    <Content Include="sass\jango\plugins\bootstrap\_mixins.scss" />
+    <Content Include="sass\jango\plugins\bootstrap\_modals.scss" />
+    <Content Include="sass\jango\plugins\bootstrap\_tables.scss" />
+    <Content Include="sass\jango\plugins\bootstrap\_tabs.scss" />
+    <Content Include="sass\jango\plugins\_bootstrap-social.scss" />
+    <Content Include="sass\jango\plugins\_bootstrap.scss" />
+    <Content Include="sass\jango\plugins\_cubeportfolio.scss" />
+    <Content Include="sass\jango\plugins\_fancybox.scss" />
+    <Content Include="sass\jango\plugins\_icons.scss" />
+    <Content Include="sass\jango\plugins\_owl-carousel.scss" />
+    <Content Include="sass\jango\plugins\_revo-slider.scss" />
+    <Content Include="sass\jango\plugins\_socicon.scss" />
+    <Content Include="sass\jango\themes\blue1.scss" />
+    <Content Include="sass\jango\themes\blue2.scss" />
+    <Content Include="sass\jango\themes\blue3.scss" />
+    <Content Include="sass\jango\themes\brown1.scss" />
+    <Content Include="sass\jango\themes\brown2.scss" />
+    <Content Include="sass\jango\themes\brown3.scss" />
+    <Content Include="sass\jango\themes\dark1.scss" />
+    <Content Include="sass\jango\themes\dark2.scss" />
+    <Content Include="sass\jango\themes\dark3.scss" />
+    <Content Include="sass\jango\themes\default.scss" />
+    <Content Include="sass\jango\themes\green1.scss" />
+    <Content Include="sass\jango\themes\green2.scss" />
+    <Content Include="sass\jango\themes\green3.scss" />
+    <Content Include="sass\jango\themes\purple1.scss" />
+    <Content Include="sass\jango\themes\purple2.scss" />
+    <Content Include="sass\jango\themes\purple3.scss" />
+    <Content Include="sass\jango\themes\red1.scss" />
+    <Content Include="sass\jango\themes\red2.scss" />
+    <Content Include="sass\jango\themes\red3.scss" />
+    <Content Include="sass\jango\themes\yellow1.scss" />
+    <Content Include="sass\jango\themes\yellow2.scss" />
+    <Content Include="sass\jango\themes\yellow3.scss" />
+    <Content Include="sass\jango\themes\_base-components.scss" />
+    <Content Include="sass\jango\themes\_base-plugins.scss" />
+    <Content Include="sass\jango\_base.scss" />
+    <Content Include="sass\jango\_colors.scss" />
+    <Content Include="sass\jango\_mixins.scss" />
+    <Content Include="sass\jango\_settings.scss" />
+    <Content Include="sass\Habitat.scss" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1344,6 +1542,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\sass\jango\components\content\persons\" />
+    <Folder Include="sass\jango\components\content\persons\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

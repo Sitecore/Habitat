@@ -1,0 +1,75 @@
+// Owl Carousel Customizations
+
+.owl-theme {
+    .owl-controls {
+        .owl-page span {
+            width: 12px;
+            height: 12px;
+            margin: 5px 7px;
+        } 
+    }
+
+    &.owl-bordered {
+        margin-top: 30px;
+
+        .owl-controls {
+            margin-top: 20px;
+        }
+
+        .owl-wrapper-outer {
+            border: 1px solid $general-border-color;   
+        }
+
+        .owl-item {
+            border-right: 1px solid $general-border-color;
+
+            &:last-child {
+                border-right: 0;
+            }
+        }
+    }
+}
+
+.owl-theme:not(.owl-single):not(.owl-bordered) {
+    margin-left: -30px;
+    width: calc(100% + 60px);  
+    
+    .owl-wrapper { 
+        .owl-item {
+            padding: 0 30px;
+        }
+    }
+}
+
+.owl-theme.owl-theme-white {
+    .owl-pagination {
+        .owl-page {
+            span {
+                background: #ffffff;
+                @include opacity(0.5);
+            }
+
+            &.active {
+                span {
+                    background: #ffffff;
+                    @include opacity(1);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $screen-xs-max) { /* 767px */
+
+    .owl-theme:not(.owl-single):not(.owl-bordered) {
+        margin-left: -10px;
+        width: calc(100% + 20px);  
+        
+        .owl-wrapper { 
+
+            .owl-item {
+                padding: 0 10px;
+            }
+        }
+    }
+}

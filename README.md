@@ -33,6 +33,11 @@ Framework modules
 ##Getting started
 ---------------
 
+###Habitat uses the following:
+* Gulp [gulpjs.com](http://gulpjs.com/)
+* Sass [sass-lang.com](http://sass-lang.com/install)
+* Node (npm) [npmjs.com](https://www.npmjs.com/)
+
 -   Clone this repository to your local file system.
 -   Using SIM (Sitecore Instance Manager) set up a clean Sitecore website in the URL http://habitat/
 -   Copy all assemblies from the Sitecore bin folder to the /lib/Sitecore folder
