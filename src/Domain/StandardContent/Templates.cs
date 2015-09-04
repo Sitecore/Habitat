@@ -4,6 +4,8 @@ namespace Habitat.StandardContent
 {
     public struct Templates
     {
+        public static readonly ID Teaser = new ID("{C7D9D293-4EF8-4380-8E10-C4632E729F39}");
+
         public struct HasSummary
         {
             public static ID ID = new ID("{A28A44A6-0DF1-49BF-83AD-CD21ABB9AF7E}");
@@ -11,6 +13,16 @@ namespace Habitat.StandardContent
             public struct Fields
             {
                 public static readonly ID Summary = new ID("{AC3FD4DB-8266-476D-9635-67814D91E901}");
+            }
+        }
+
+        public struct HasAccordeon
+        {
+            public static ID ID = new ID("{C7D9D293-4EF8-4380-8E10-C4632E729F39}");
+
+            public struct Fields
+            {
+                public static readonly ID AccordeonSelector = new ID("{9E942565-677F-491C-A0AC-6B930E37342A}");
             }
         }
 

@@ -1,14 +1,5 @@
 ﻿<Project>
   <PropertyGroup>
-    <Site Server="habitat" UserName="sitecore\admin" IsRemoteSitecore="True" />
+    <Site Server="habitat" UserName="sitecore\admin" IsRemoteSitecore="False" />
   </PropertyGroup>
-  <File Include="Views\Website\Layouts\Default.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{ED043C36-CD48-4EDF-A288-EC404EE1CD42}</Item>
-  </File>
-  <File Include="Views\Website\Sublayouts\2 Column 3-9.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{C7047B52-FF60-42CC-B2B6-ECD31B2C201C}</Item>
-  </File>
-  <File Include="Views\Website\Sublayouts\3 Column.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{C5F1D941-AF1C-49AC-AB2B-8A085CC7700B}</Item>
-  </File>
 </Project>

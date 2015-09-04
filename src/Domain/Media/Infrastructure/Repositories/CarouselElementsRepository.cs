@@ -6,7 +6,7 @@ using Sitecore.Data.Items;
 
 namespace Habitat.Media.Infrastructure.Repositories
 {
-    public class CarouselElementsRepository
+    public static class CarouselElementsRepository
     {
         public static IEnumerable<CarouselElement> Get(Item item)
         {
