@@ -1,10 +1,13 @@
-﻿<!DOCTYPE html>
-@using Habitat.Framework.Assets
+﻿@using Habitat.Framework.Assets
 @using Habitat.Framework.Assets.Models
-<html>
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
 <head>
-    <meta name="viewport" content="width=device-width" />
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     @Html.Sitecore().Placeholder("head")
 
     <!-- Latest compiled and minified JavaScript -->
@@ -13,24 +16,24 @@
 </head>
 <body>
 
-<header>
-    <nav class="navbar navbar-default">
-        <div class="container">
-            @Html.Sitecore().Placeholder("header")
-        </div>
-    </nav>
-</header>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container">
+                @Html.Sitecore().Placeholder("header")
+            </div>
+        </nav>
+    </header>
 
-<div class="container">
-    @Html.Sitecore().Placeholder("content")
-</div>
-
-<footer>
     <div class="container">
-        @Html.Sitecore().Placeholder("footer")
-    </div>        
-</footer>
+        @Html.Sitecore().Placeholder("content")
+    </div>
 
-@RenderAssetsService.Current.RenderScript(ScriptLocation.Body)
+    <footer>
+        <div class="container">
+            @Html.Sitecore().Placeholder("footer")
+        </div>
+    </footer>
+
+    @RenderAssetsService.Current.RenderScript(ScriptLocation.Body)
 </body>
 </html>
