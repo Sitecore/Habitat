@@ -1,0 +1,99 @@
+// BEGIN: Desktop mode
+
+@media (min-width: $screen-md-min) { /* 992px */
+	// Base header
+	.c-layout-header {
+		//	Topbar
+		.c-navbar {		
+			// Main markup
+			.c-mega-menu.c-mega-menu-#{$mega-menu_class} {  
+				> .nav.navbar-nav {				
+					> li {
+						// dropdown menu
+						> .dropdown-menu {
+							background: $mega-menu_desktop_primary-dropdown-menu-bg-color;
+							box-shadow: $mega-menu_desktop_primary-dropdown-menu-box-shadow; 
+							border: $mega-menu_desktop_primary-dropdown-menu-border;  
+						}
+
+						// general dropdown menu
+						.dropdown-menu {
+							border-radius: 0;
+
+							> li {
+								> h3 {
+									color: $mega-menu_desktop_inner-dropdown-menu-head-color;
+								}
+									
+								> a {
+									color: $mega-menu_desktop_inner-dropdown-menu-link-color;
+
+									&:hover,
+									&:focus {
+										background: none;
+										color: $mega-menu_desktop_inner-dropdown-menu-link-color;
+									}
+								}
+
+								&.c-active > a,
+								&:hover > a {
+									background: $mega-menu_desktop_inner-dropdown-menu-link-bg-color-on-active;
+									color: $mega-menu_desktop_inner-dropdown-menu-link-color-on-active;
+								}
+							}
+						}  
+						// classic dropdown menu
+						> .dropdown-menu.c-menu-type-classic {
+							.dropdown-menu {
+								background: $mega-menu_desktop_primary-dropdown-menu-bg-color;
+							}
+						}
+
+						// mega dropdown menu
+						> .dropdown-menu.c-menu-type-mega {
+							// set separator border for inline dropdown menus
+							> .row {
+								> div {
+									border-right: 1px solid $mega-menu_desktop_separator-border-color;
+								}
+							}
+
+							// mega menu tabs
+							.nav.nav-tabs {
+								border-bottom: 1px solid $mega-menu_desktop_inner-tab-border-color; 
+								> li {
+									> a {
+										color: $mega-menu_desktop_inner-tab-link-color;
+									}
+
+									&:hover {  
+										> a {
+											color: $mega-menu_desktop_inner-tab-link-color-on-active;
+										}
+									}
+
+									&.active {
+										> a {
+											color: $mega-menu_desktop_inner-tab-link-color-on-active;
+										}
+										border-bottom: 1px solid $mega-menu_desktop_inner-tab-link-color-on-active;  
+									}
+								}						
+							}
+
+							// mega menu adjusted list mode(instead of bootstrap grid system)
+							> li {
+								// set separator border for inline dropdown menus
+		    					.dropdown-menu.c-menu-type-inline {
+									border-right: 1px solid $mega-menu_desktop_separator-border-color;  
+								}
+							}
+						}
+					}
+				}     	
+			}
+		}
+	}
+}
+
+// END

@@ -1,0 +1,19 @@
+.c-layout-go2top {	
+	display: inline-block;
+	position: fixed;
+	bottom: 20px;
+	right: 10px;	
+	cursor: pointer;
+
+	> i { 
+		@include opacity(0.5);
+		color: #89939e;
+		font-size: 38px;
+		font-weight: 300;
+	}
+
+	&:hover {
+		@include opacity(0.8);
+	}
+}
+

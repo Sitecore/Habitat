@@ -1,0 +1,101 @@
+// Card 3 & 4
+
+// BEGIN: General Mode
+
+.c-content-feature-11 {
+	@include reset-padmar(); // call mixing reset default padding and margin
+
+	.c-grid{
+		padding-right:35px;
+
+		> .c-grid-row{
+			display:table;
+			padding:0;
+			width:100%;
+
+			&:last-child{
+				margin:0;
+			}
+
+			> li{
+				display: table-cell;
+				width: 50%;
+				padding-right:10px;
+
+				> .c-card{
+					padding: 40px; 
+					text-align: left;
+
+					> h3 {
+						margin: 0 0 20px 0;
+						color:$general-head-font-color;
+					}
+
+					> p {
+						margin:0;
+						line-height:22px;
+						color:$general-font-color;
+					}
+				}
+
+				> .c-bg-opacity-1 {
+					background-color: rgba(255,255,255,0.7);
+				}
+
+				> .c-bg-opacity-2 {
+					background-color: rgba(255,255,255,0.04);
+				}
+			}
+
+		}
+	}
+
+	.c-video{
+		padding-left:45px;
+	}
+	
+	
+
+}
+// END
+
+// BEGIN: Mobile Mode
+
+@media (max-width: $screen-sm-max) { /* 991px */
+	.c-content-feature-11 {
+		
+		.c-grid{
+			padding:0 15px;
+
+			> .c-grid-row{
+				margin:0;
+
+				> li{
+					display:block;
+					width:100%;
+					padding:0 0 10px 0;
+
+					> .c-card {
+						padding: 30px;
+					}
+
+					&:last-child {
+						padding:0 0 10px 0;
+					}
+
+				}
+
+			}
+		}
+
+		.c-video{
+			padding:10px 15px 0 15px ;
+		}
+
+		
+
+	}
+	
+}
+
+// END

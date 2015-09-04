@@ -1,0 +1,782 @@
+
+Version 4.6.4 SkyWood (26th November 2014)BUGFIXESFixed Firefox HTML5 Video PlaybackFixed Thumbnail Vertical Offset Positions in Resized Screens
+
+
+Version 4.6.3 SkyWood (7th September 2014)
+
+NEW FEATURES
+Added "revkill" as Method to remove the Slider from the Page silently if needed.
+Added 9Grid Sync Example
+Added Alternative Image Source for IE8 and Mobile Devices if needed. See s27.Alternative-for-ie8.html example
+Added "slideatend" event that triggers if the slide is at the end
+Added new Custom Controls for HTML5 Video Player to avoid Chrome "unclickable" buttons issue
+Added Rotating Loop Animation on Layers
+New fallback options for iOS4 and IE8 added in the Slider Settings (Alternative Image and/or simplyfied output)
+Added option to redraw Slider on browser tab focus
+
+CHANGES
+Videos on mobile devices available again
+
+BUGFIXES
+IE8 - Line Heigh "Auto" broke the full Slider. In case "auto" is set, the Font size +4px will be calculated for Line Height
+z-index Bug for First Layer in case Dotted Overlay exists
+SSL Compatibility with VIMEO Videos in the Backend
+Chrome's max-width fallback from % to px. Slide accept now only px values !
+Transition Speed had no Influence on real transitions.
+Max transition can now have the same value as the Max delay of the Slide is.
+Fixed missing Box Slide, Paper Cut and Box Fade transitions
+Fixed an issue where the Slide Link was not working correctly
+Link to Another Slide in Random Mode Bug linked to the wrong Slide Bug is fixed
+Undefined poster image on HTML5 videos fixed
+Fixed Vimeo/YouTube timings (delaying issues)
+Fixed KenBurn dotted overlay
+Fixed problem with loop animations
+Fixed navigation style issues
+Fixed Pan Zoom for mobile issues
+Fixed a bug where videos restarted on resize
+Fixed HTML5 video markup output
+Fixed a bug where hide slider on mobile did not work on certain devices
+Fixed a bug with speed parameters
+Fixed boxfade and boxslide animations
+Fixed a bug where the first layer z-index was always placed behind the dotted overlay
+SSL compatibility with Vimeo API in the backend added
+
+
+
+Version 4.6 SkyWood (18th August 2014)
+
+NEW FEATURES
+Option to disable each video on mobile
+Option to disable Pan Zoom on Mobile
+Option to disable Parallax on Mobile
+New Offset option for the  Scroll Below Function
+New Option to set Slider Min Height.  Content will be vertical centered in case content container is smaller then min height of Slider
+
+
+CHANGES
+Alternative First Slide wins now, even if Random Slides is enabled
+Vimeo, YouTube and HTML5 Video can be added now via options instead of embeding iFrame to avoid Preloads and slow site loading
+Added Loop HTML5 Video always, none or only till Slider Timer reach the End
+Using now tp-videolayer class for Videos to identificate Video Layers better
+Class "current-sr-slide-visible" added to the Slide "li" tag which is currently Visible
+New Option - swipe_treshold : 75  -  The number of pixels that the user must move their finger by before it is considered a swipe.
+New Option swipe_min_touches : 1 - Min Finger (touch) used for swipe
+New Option drag_block_vertical:false - on (“on”) Scroll Below Slider on Vertical Swipe
+Removed swipe_min_touches and swipe_velocity.
+Engine Changed from hammer.js to touchswipe
+
+
+BUGFIXES
+YouTube Force Rewind fix
+YouTube Mute in Second Loop fix
+Added backwards compatibility for inline CSS with WordPress versions under 3.7
+Ken Burns Dotted Overlay was not visible
+IE8 Console Group Issue - Slider was not visible in IE8
+Looping Issues if Slides has been manually hanged after Loop Stopped
+Browser Tab Change  -> Broken ELements fixed. Option for Slide Change on Blur Tab / Browser also available.
+Navigation Style Preview1- Preview4 Styling issues
+Power2 Error at some Animation
+Mouse Over on Loaded PArallax Slider issue - Slider will always play parallax effect, even if Mouse was already hovering the slider at laod
+IE8 and other Old MObile Devices Fall Back on simple Transitions. CAn be forced now
+HTML5, YouTube and Vimeo Video Playback fixes
+
+
+Version 4.5.95 SkyWood (16th July 2014)
+
+CHANGES
+Changed Animation Engine, improved Animation technology. Reduced file size, and added Timeline based transitions
+
+BUGFIXES
+Fixed Flickering effects on mobile devices
+Fixed stuttering on animation with many layers
+Fixed Ken Burn animation failures after few Transition types
+Added Safari 3d Back to Transitions
+Fixed some broken Slide Transitions
+Fixed IE8 transition failres, fall back always on Fade
+
+
+
+Version 4.5.9 SkyWood (7th July 2014)
+
+NEW FEATURES
+Now also Split Animated Text content can be Rotated
+Added feature to allow Looped Animation and Rotated Content
+
+BUGFIXES
+Fixed Vimeo First Auto Play issue
+Fixed unseletable elements in Locked Mode
+Fixed Output Failure if Rotated and Looped Animation has been selected
+
+
+
+
+Version 4.5.7 SkyWood (2nd July 2014)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		IMPORTAN CHANGE!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+From version 4.5.7 Deprecated (from 4.6 File will not be available any more !)
+jquery.themepunch.plugins.min.js
+
+Please use now:
+jquery.themepunch.tools.min.js
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+CHANGES
+
+Updated GreenSock Engine to 12.1
+Protected Mode for GreenSock for ThemePunch Plugins added. No more conflict between any other plugins / themes and ThemePunch Tools
+Lag Smoothing Enabled
+
+BUGFIXES
+
+Bug fixed where Parallax Mode for Mobile Disabled breaks the 2nd and further Slider Positions
+
+
+##########################################################################################
+
+Version 4.5.6 SkyWood (25th June 2014)
+
+NEW FEATURES
+
+Added option parallaxDisableOnMobile  to enable or disable parallax function on Mobile Devices (on/off)
+
+Added Additional Offset Container Option to reduce / Raise the size of FullScreen Container.  Can be set via px and % values.  Option name: fullScreenOffset
+
+Added Two new Slide transitions: Parallax Vertical and Parallax Horizontal  (parallax vertical , parallax horizontal)
+
+
+
+##########################################################################################
+
+
+Version 4.5.5 SkyWood (20th June 2014)
+
+BUG FIX
+
+Fixed Static Layer and Lazy Load issues
+
+
+
+##########################################################################################
+
+
+
+Version 4.5.3 SkyWood (12th June 2014)
+
+BUG FIX
+
+jQuery Bug Fix
+
+
+
+##########################################################################################
+
+
+Version 4.5.2 SkyWood (10th June 2014)
+
+NEW FEATURES
+
+data-parallaxoffset attribute is now available and updated on Scroll.  This value can be interesting for Developers to read current Parallax Offsets of the elements with the jQuery selector .tp-parallax-container  (Possible usage for Blur, Fade, Rotation effects based on the values)
+
+BUG FIX
+
+Static Layers Bugs like Layers stucked together and start and end slide issues has been fixed.
+Auto Play only First Time on Videos (YouTube and Vimeo) did not work well.
+
+
+
+
+##########################################################################################
+
+Version 4.5.01 SkyWood (06th June 2014)
+
+CHANGES
+
+WordPress Version and jQuery Version updated on the same level
+
+
+
+##########################################################################################
+
+Version 4.5.0 SkyWood (05th June 2014)
+
+NEW FEATURES
+
+Added Static Layers
+Loop Effect now available. Choose between four loop types for each layer
+Parallax Effect now available:
+Parallax on Mouse Movement Added
+Parallax on Scroll Added with Background fixed or Scrolled Options
+PArallax on Mobile Device Tilt
+New navigation types called preview1, preview2, preview3, preview4 and custom
+Added Performance Boost optional, where Outgoing Layers first animated before next slide is played. Helps if many layers added to one Slide
+Reburn of Pan Zoom Effect on FullScreen, FullWidth and Boxed layout with a complete new Engine
+
+
+BUGFIXES
+
+Visible Last slide at Loading fixed
+Visible Navigation Elements on Load fixed
+
+
+
+##########################################################################################
+
+version 4.3.7 SkyWood (16th April 2014)
+
+BUG FIX
+Doubble start of Pan Zoom Effect after Slide Change has been fixed.
+
+
+
+##########################################################################################
+
+version 4.3.6 SkyWood (16th April 2014)
+
+CHANGES
+Ken Burns and Pan Zoom Effect Engine Change. Animation based on Img rotations and Zooms, Transitions instead of Background animation. Due this change the Aniamtions become really Smooth and Clean.
+
+##########################################################################################
+
+
+
+Version 4.3.5 SkyWood (09th April 2014)
+
+BUGFIXES
+Fixed Click and Taps bugs on Elements in Slider viewing Slider in Mobile Devices
+Fixed Positions of Videos after leaving Fullscreen Video Playback
+Fixed Element Transitions by clicking Next/previous Slider before Elements has been shown. Currently Not Visible Elements will not show up suddenly any more
+
+##########################################################################################
+
+
+Version 4.3.4 SkyWood (07th April 2014)
+
+CHANGES
+Added Swipe Up & Down to scroll below or above the slider on Mobile Devices
+
+##########################################################################################
+
+
+
+Version 4.3.2 SkyWood (25th March 2014)
+
+NEW FEATURES
+Added Option keyboardNavigation to allow Navigation with left/right arrows
+
+CHANGES
+Removed video-js plugin and added Browser Native HTML5 Video Player
+
+BUGFIXES
+Fixed HTML5 Video Loading issues
+Fixed Android Device Swipe Feature
+
+##########################################################################################
+
+
+Version 4.3.1 SkyWood (21th March 2014)
+
+CHANGES
+Updated Documentation and Added New Function to Caption Editor which allows you to create also Splitted Animation Examples with the Editor
+
+##########################################################################################
+
+Version 4.3.0 SkyWood (18th March 2014)
+
+BUGFIXES
+Fixed Slider Loading Issue if Touch Option set to Disabled
+
+##########################################################################################
+
+Version 4.2.7 SkyWood (18th March 2014)
+
+NEW FEATURES
+Added Options like Swipe Velocity, Swipe Min/Max Touches
+Added Drag Block Vertical option to prevent verticall scroll if needed. Default (false)
+
+BUGFIXES
+BugFix for FireFox Timer Line - Visibilty of Timer was ignored in Firefox and IE
+BugFix for checking for new updates
+BugFix for event manager, dates will now be correctly translated if they are not english
+
+##########################################################################################
+
+Version 4.2.6 SkyWood (17th March 2014)
+
+NEW FEATURES
+New Slider Setting option: Hide Mobile Nav After in Mobile Visibility Tab (hideNavDelayOnMobile) default is hideNavDelayOnMobile:1500 to hide on Mobile automatically the navigation elements
+
+CHANGES
+Calculation of forceFullScreenAlign Positions. Resized Positions are More exact
+Added Hide Slider under "window width" for all type of Slider Layouts. Slider is stopped / started depends on the Window size also
+
+BUGFIXES
+
+YouTube iOS Fix for Replaying videos on 2nd Call
+StopOnHover set to 1 Bug has been fixed
+
+##########################################################################################
+
+Version 4.2.5 SkyWood (12th March 2014)
+
+BUGFIXES
+Slide Link zIndex issues and Slide Link Resizing issues fixed
+Individual Slide Timer has been fixed. Broken since version 4.2.4
+
+##########################################################################################
+
+Version 4.2.4 SkyWood (10th March 2014)
+
+CHANGES
+Improved Plugin Processes, Removed Script Intervals and Timers for Better CPU Management (30-50% less CPU Usage)
+
+##########################################################################################
+
+Version 4.2.2 SkyWood (28th February 2014)
+
+BUGFIXES
+Fixed HTML5 Video Js Load sequence. If plugin loaded later then Meta, event triggering will not work.
+
+##########################################################################################
+
+Version 4.2.1 SkyWood (27th February 2014)
+
+BUGFIXES
+
+Fixed YouTube Api, changed youtube api load to permanent Https
+Fixed HTML5 Video Preload. A Waiting process added for Video JS and Stream preloads
+Fixed Vimeo API Preloads
+Fixed "Unclickable" Notice for Auto Updates and Premium Support
+
+##########################################################################################
+
+Version 4.2 SkyWood (25th February 2014)
+
+NEW FEATURES
+
+Added Char, Word and Line Based Text animation to improve the Visual Experience on the Layer Animations
+Added 5 Different Loader Spinner with Live Preview Selector
+Added multilevel animations
+
+CHANGES
+
+Improved Loading Speed. Slider loads over 1-2 sec quicker than before.
+Improved Lazy Loading, to load Images and Layer images on demand. Intelligent Preloading of next slide Elements.
+Auto Thumbnail Function, small copy of Slider Image, or Colorer BG used as Default.
+
+BUGFIXES
+
+Fixed YouTube Api
+Fixed Overlapping layers if Mixed Align Mode used in Slide
+Fixed Pause/Resume function if Navigation elements has been hovered.
+Fixed Custom Animation Settings
+
+##########################################################################################
+
+version 4.1.2:
+
+- Bug Fix: Http / Https loading of API’S in the right format depending on the current URL
+- Bug Fix: Issue solved with the HTML5 Video Sizing
+- Big Fix: YOuTube Api does not work without the origin=http://yourdomain any more !!
+
+##########################################################################################
+
+version 4.1:
+
+- Feature: New API Method: rev redraw for Redrawing the current Slide in case, slider is included some animated container.
+- Bug fix: Fixed FF and IE10 Animation issues
+- Bug fix: Fixed Wrong calculated Center positions if Caption has CSS3 Animations associated
+
+version 4.1:
+- Introducing: Ken Burns Effect, with start and end parameters like, align, zoom, speed, easing.
+- Introducing: HTML5 Full Covered Video Background
+- Introducing: New Dotted Layouts for Background and HTML5 Video Elements  (twoxtwo, threexthree, twoxtwowhite, threexthreewhite)
+- Bug fix: IE8 FullScreen Images, and Aligned Images fixed due Image instead of Background Image
+- Bug fix: Animation issues by out animations
+- Added data-volume="mute" for html5, youtube and vimeo videos
+- Added data-forcerewind to rewind videos every time Slide is activated
+
+##########################################################################################
+
+version 4.0.6:
+- Bug fix: Force Fullwidth Offsets
+- Bug fix: Added FF Protection for 3d Animated Elements
+- Bug fix: Update GreenSock Engine with Protection for FF25 Aniamtions
+- Bug fix: IE8 HALO Effect Solved
+
+##########################################################################################
+
+version 4.0.5 (08.11.2013)
+- Thumbnail Issues Fixed,l if more than 25 slides added to Slider
+
+version 4.0 (04.11.2013)
+- New Engine for Transitions and Caption Animations via GreenSock
+- Introducing Main Image Manipulation like
+	- background repeat, repeat-x, repeat-y, no-repeat
+	- background position: %,% or via aligns like left,top  / center,center /right,bottom   (left,center,right and (top,center,bottom)
+	- background sizing: cover, contain and normal
+- Introducing new Flat transitions (over 40+)
+- Introducing new customin and customout Caption Animations
+- Introducing force fullwidth option, to break boxed containers also
+- Introducing FullScreen Offset Containers (unlimited list of COntainers which reduce Fullscreen height of Container Dynamically)
+- Introducing Skew Animations on Captions
+- Introducing AutoHeight to Increate height of Container linear, no max-height any more
+- Added new Styles for Captions
+- Introducing Hide Thumbs on Mobile,  Hide Bullets on Mobile, Hide Arrows On Mobile and hide Thumbs Under Resolution options
+- Linear Downscaling of Thumbnails on Mobile view in case its needed
+- New Live Guide Documentation
+- Added New Custom Caption Creator
+- Added New Live Main Slide Creator (returns li with transition, slots and speed)
+- Added Video Thumbnails
+- Fixed some IE8 Bugs
+- Fixed some IE10 Bugs
+- Modificated Video Handling
+
+##########################################################################################
+
+version 3.0.8 (06.08.2013)
+- bug fix: fullwidth image scaling issue has been fixed by Lazy Loading
+- bug fix: Papercut transition failure has been fixed.
+
+##########################################################################################
+
+version 3.0.5 (01.07.2013)
+
+- change: fullscreen video is playing now in full Slider.
+- change: Playing video only stops the current slider, no influence on other slider
+
+##########################################################################################
+
+version 3.0.4 (26.06.2013)
+
+-bug fix: Video Does not Auto Start after 2nd Loop.
+
+##########################################################################################
+
+version 3.0.2 (25.06.2013)
+
+- cahnge: fullwidth Video goes in real Fullwidth also at FullWidth (AutoResponse Sliders)
+
+
+
+version 3.0 (16.06.2013)
+
+- Change: Merged tools and plugin js files in one file. No need to load both any more !
+
+- Change: Changed name of "large" button to "default" in setting.css file
+
+- Feature: jQuery 2.0 and 1.10 Support
+
+- Added: Examples like LazyLoad, Aligns, Fullscreen, Fullscreen-with-offsets, html5,vimeo and youtube videos
+
+- Feature: HTML5 Video (videoJS) and added data- options like
+           - data-autoplay="true",
+           - data-nextslideatend="true"/"false",
+           - option added to laod the HTML5 js files via videoJsPath:"rs-plugin/videojs/"
+
+- Feature: Shadow now available also in fullwidth mode.
+- Feature: Navigation Position Anywhere also in FullWidht Mode, even outside the Container
+
+- Feature: Lazy Loading function (see Example Lazy Load)
+
+- Feature: Horizontal and Vertical Aligns (top,center,bottom, left,center,right) for Captions
+- Feature: Horizontal and Vertical Offsets for Aligns ( Only works with Aligns together voffset and hoffset)
+
+- Feature: FullScreen function (option fullScreen:"on" / "off")
+
+- Feature: Fullscreen Offset Container (option fullScreenOffsetContainer:"#header")
+           i.e. the height of fullscreen slider will be decreased with the height of the #header to fit perfect in the screen !)
+
+- Feature: Function to use more then one Transition type per slide  (use transition="fade,slide,paper-cut").
+           In every new loop the next transition typ will be picked. Once the last transition typ reached, it starts the first again
+
+- Feature: New function to "scroll page under"
+           a,  Use the "tp-scrollbelowslider" class for inside captions with the data-scrolloffset="xx" data field, to increase/decrease the offset position where to scroll
+           b,  Use the API revscroll(offset) for external scroll function
+
+- Feature: Function to resize rekursive all Element inside the caption containers.
+           Add class tp-resizeme to the container inside the tp-caption and every item within (included the same container) will be responsive resized.
+           Only needed if more than one depth exist in the container !
+
+- Feature: Function to create "corners" on the captions. Use within the caption simple the
+           <div class="frontcorner"></div>
+           <div class="backcorner"></div>
+           <div class="frontcornertop"></div>
+           <div class="backcornertop"></div>  containers
+
+- Feature: Changed Caption Animation from jQuery animation against CSS Animations. Imrpoved speed and techink.
+
+- New Documentation, With updated data- values
+
+- bug fix: Fixed Transition issues with timing and layout.  Fullwidth transitions are going to stay in box, and timed well
+- bug fix: when only one slide exist, and randomrotate animation spped is larger then in animation it broke the caption. Fix is added now.
+- bug fix: Issues at resizing the containers, where captions moved out of the Container
+
+
+
+version 2.3.9 & 2.3.91
+----------------------
+- bug fix: more then one Slider on the same page influence the Caption Behaviour.  Issue is fixed in this release.
+- bug fix: safary browser on pc failure on a slider with links.
+
+
+version 2.3.8
+----------------------
+- Added new Function: setting data-x and data-y at simple caption to "center" it will position in each resolution the content of that caption to vertical and/or horizontal to the center
+- bug fix: Fullwidth Banner Horizontal Position Failure at aspect ration 1:1 to image ratio has been fixed.
+
+
+version 2.3.7
+----------------------
+- bug fix: fixed IE10 Crash with some Transition
+
+
+version 2.3.6
+----------------------
+- bug fix: fixed bug with the deeplink
+
+
+version 2.3.5
+----------------------
+-feature: deeplink available. i.e. http:/themepunch.revslider.com/index.html#slide1  will link to slide 1. http:/themepunch.revslider.com/index.html#slide3 to slide 3 etc...  http:/themepunch.revslider.com/index.html#slide999 will link always to the last slide.
+
+-bug fix: Loop,amount of loop, and stop at slide was not working well. Issue is fixed in this verison.
+
+-bug fix: fixed fullwidthcentering
+
+
+version 2.3
+----------------------
+- Added new Function: First start transition per slide can be different than  the transitions on the same slide in the following loops. use data-fstransition, data-fsmasterspeed and data-fsslotamount for this.
+
+- Added new function: new option to start with a different slide at loading option -> startWithSlide: 0-x
+
+- Added new function: style="background-color:#hex" in img section will allow you to color the background of the slide. Use transparent.png files next to the colored bg.
+
+- changed one value in option navigationArrows				// nexttobullets, solo (old name verticalcentered), none  - Old name still working for backwards compatibility
+
+- added new options:
+
+	navigationHAlign:"center"  		// left,center,right	-	Horizontal Align of Bullets / Thumbnails
+	navigationVAlign:"top"			// top,center,bottom	-	Vertical Align of Bullets / Thumbnails
+	navigationHOffset:0,			// -600 to 600			-	Offset from current Horizontal position of Bullets / Thumbnails negative and positive direction
+	navigationVOffset:20,			// -600 to 600			-	Offset from current Vertical  position of Bullets / Thumbnails negative and positive direction
+
+	soloArrowLeftHalign:"left"		// left,center,right	-	Horizontal Align of left Arrow (only if arrow is not next to bullets)
+	soloArrowLeftValign:"center"	// top,center,bottom	-	Vertical Align of left Arrow (only if arrow is not next to bullets)
+	soloArrowLeftHOffset:20,		// -600 to 600			-	Offset from current Horizontal position of of left Arrow  negative and positive direction
+	soloArrowLeftVOffset:0,			// -600 to 600			-	Offset from current Vertical  position of of left Arrow  negative and positive direction
+
+	soloArrowRightHalign:"right"	// left,center,right	-	Horizontal Align of right Arrow (only if arrow is not next to bullets)
+	soloArrowRightValign:"center"	// top,center,bottom	-	Vertical Align of right Arrow (only if arrow is not next to bullets)
+	soloArrowRightHOffset:20		// -600 to 600			-	Offset from current Horizontal position of right Arrow  negative and positive direction
+	soloArrowRightVOffset:0			// -600 to 600			-	Offset from current Vertical  position of right Arrow  negative and positive direction
+
+
+version 2.2.4
+----------------------
+- Bug Fixed: IE9 Odd Rotation effect at animating the slides. Issue is resolved in this version
+
+
+version 2.2.3
+----------------------
+- Bug Fixed: IE8 Caption does not disappear at fadeout changed. IE8 Filter added again, some cases it can add an odd halo effect at animationg the png images.
+
+
+version 2.2.2
+----------------------
+- Added Features: Event like onbeforeswap, onafterswap and onloaded can be used now. (See our example 04 for more details).
+
+
+version 2.2.1
+----------------------
+- Bug Fixed: FF Bug with YT Player has been fixed in this Version.
+
+
+version 2.2.0
+----------------------
+- Support for jQuery 1.9.0 has been added
+
+
+version 2.1.8
+----------------------
+- bug fix: fade effect in IE8 was not animated since ie8 needs static position instead of relative or absolute by fading
+- added new api features like revlastslide, revcurrentslide
+
+
+version 2.1.7
+----------------------
+- Bug Fix: Loading of Content was visible during the Loading sequenze
+- Added new function to remove event listenres, and timeouts in case markup has been removed.
+- Added new parameter: data-slideindex front/back (set via slide <li>) to manage if the full screen slide link is under or over the captions.
+
+
+version 2.1.6
+----------------------
+- Bug Fixed: Link to _blank page crashed the Slider.
+- Bug Fixed: Loading Images should be hidden.
+
+version 2.1.4
+----------------------
+- Added new Functions like fullwidthcentering for <img> (Main background Image in Slider) for Fullwidth Slides. Values can be on // off.  If Slider is set to fullwidth and this value is set to "on" than Main Image will be vertical centered instead of aligned to the top.
+
+
+version 2.1.1
+----------------------
+- Bug Fxied: Animation Turn Back (end animation type)
+- Bug fixed: Navigation Subpixeling rounded, so no pixel failure at Big Arrows
+
+
+version 2.1
+----------------------
+- addition as Main Option - hideCaptionAtLimit:600,					// It Defines if a caption should be shown under a Width Limit ( Basod on The Width of Banner ! ) You need to define the captions which should be shown seperately with  data-captionhidden="on/off"
+- addition as Main Option - hideAllCaptionAtLilmit:400,				// Hide all The Captions if Width of Browser is less then this value
+- addition as Main Option - hideSliderAtLimit:400,					// under this Limit the Slider will be hidden, timer is stopped
+- addition as Caption option - data-captionhidden="on/off"			// Turns of Caption visibility Seperately if hideCaptionAtLimit is set.
+- added new option for linktoslide per Main Slide also.  data-link need to be set to "slide" and data-linktoslide should be set to the Order Nr. of Slide you want to link
+
+
+version 2.0.5
+----------------------
+- bug fix: Caption out animation was not working well for fadeout
+- bug fix: Box Slide broke the whole item. Now it works well.
+
+version 2.0.1
+----------------------
+- bug fix: Full Slider Link fixed
+
+
+version 2.0
+----------------------
+- Added new Feature to Set End time and speed of Captions
+- Set different End and Start Transitions of Captions
+- Set link per Captions
+- Video Playback stops Countdown Fixed
+- Use Inside Api to Link inside the Slider ( go prev / next slide, or to jump slide)
+- New Bullets
+- New Arrows
+- New Example Files
+- Fixed Video Issues
+- Fixed Transition Issues
+- Fixes UI Compatibility
+
+
+version 1.5.3
+----------------------
+- Added transformZ(10) for Slot Holders for better and smoother Animation in Android and Google Chrome
+
+
+version 1.5.1
+----------------------
+- Bug Fix: More than one Image inside one Caption was not resized well. Thanks for Carlos Yakimov the Issue is solved here.
+- Bug Fix: IsoTope CSS3 Transition Conflict has been solved.
+- Bug fix: IE9 / IE8 FullScreen Link did not worked well. Issue is solved in this update.
+
+version 1.5
+----------------------
+- new tp-bottom class added forthe tp-bannertimer class, to put the timer on the bottom instead of the top position
+- new Transitions like papercut, flyin, 3dcurtain (vertical and horizontal), cube, turnoff has been added
+- new Transition Preview HTML Exmple has been added
+- IE9 and IE8 Transitions reduced to None CSS3 Transitions (in case one is selected, a random transition will be shown)
+- FullScreen Video (iframe captions with class fullscreenvideo and fade) has been added
+- new Examples has been added
+
+
+version 1.4.5
+----------------------
+- minor bugs has been repaired
+version 1.4.3
+-  jQery UI 1.9.0 and jQuery 1.8.2 Compatibility
+-  IE8  both Navigation same Time Bug Repaired
+
+
+version 1.4.2
+----------------------
+- ul/li Lists can be added now in Captions
+- jQuery 1.72 and jQuery 1.8 Compatibility mode is stable now
+- new Powerfull animation library (transition.js) has been added for better and smoother Transitions
+- Chrome and FF Failures has been repaired
+- IE8 Halo Errors has been repaired. (some animation with opacity has only two phase animation now, and some CPU Heavy animation is automatically replaced with simple animations instead in IE8)
+- feature: shuffle mode  shuffle:"on/off" to randomize the list elements at start
+- feature: API with function like next, prev, maxslide, pause,resume, show, event handling (event name : revolution.slide.changed  data.slideIndex = new slide index)
+- fixed bug if YouTube Player inserted in slide 1 and loadig time takes longer.
+- fixed bug transition fade speed settings
+- fixed some transparent issues
+
+
+version 1.4.1
+----------------------
+- fixed some small bug with "stop slider" functionality
+
+
+version 1.4
+----------------------
+- Firefox 15.0.x Version Bug. CSS Animate does not work well, animation changed to jQuery Animation.
+- Feature added: stopAtSlide:1 option added. If value is between 1 - Max Amount of Slides than Slider will stop at Slide after looped as many time as stopAfterLoops has been set. (-1 of any of the options  will never stop the Autoplay)
+- Feature added: stopAfterLoops:0 option added. Value -1 - 99999	Stop Timer if All slides has been played "x" times. It will stop at The slide which is defined via stopAtSlide:x, if set to -1 slide never stop automaticly
+- Feature changed : slidehorizontal and slidevertical will always slide the items left/right or up/down depending on the Navigation direction has been pressed. (basic direction is always to the left and to the top)
+- New Transparent Plugin added: In case Transparent Animation has to be played, a new plugin has beed added,  where all not uses Captions will be removed from stage. (Use Plugin only in Transparent Mode)
+
+
+version 1.3.5
+----------------------
+- Bug: jQuery Length error by removing slots from screen has been repaired.
+
+
+version 1.3.3
+----------------------
+- Bug: With only One Slide the slider breaks. Bug solved.  With only one Slide no Bullets and no Navigation Arrows are visible !!
+
+
+version 1.3.2
+----------------------
+- Bug: Vimeo and Youtube Api Loading issue if no captions defined has been fixed
+- Bug: Fade Transitions (simple, vertical and horizontal) Trash clen up has been rewritten for cleaning Memory after transition.
+
+
+Version 1.3.1
+----------------------
+- Bug: Vimeo API breaks Slider if Froogaloop not loaded - Repaired.
+- Added: YouTube and Vimeo api only loaded if there is any iframe with these videos.
+
+
+version 1.3
+----------------------
+- Feature added: Use data-masterspeed attribute in the slides <li> to defined different slide transition speed. (Default:300, min: 100 max 2000)
+- Background Image can be used for Banner now : If you wish to use a Background image in the Banner (good for preloading i.e.) set simple for the <div> with banner the style  ->  style="background:url(images/image1.jpg) no-repeat"  (this is a place holder, not needed, but some of The customer asked how to do so)
+
+
+version 1.2.3
+----------------------
+- feature:	Vimeo and Youtube API added. Slider Countdown is stopped during the Playback.
+-bug: 	Some transition could not be skipped as first Slide. Bug is fixed.
+
+
+version 1.2.1
+----------------------
+- feature :	slidehorizontal, slidevertical Transitions added (depending on direction it slides left / right or up/down the slides)
+
+
+
+version 1.2
+----------------------
+- Feature added: Random Transitions with random Slots can be used now
+- Bug Repaired: IE8 Thumbnail Hover shows only white Box
+- Hardened: If Container has no height, default grid height will be set automatically by loading
+
+
+version 1.1.5
+----------------------
+- fix for Bootstraps : In case Bootstrap Theme is used, a img full-width:none !important overwrite bootstrap responsivity.
+
+
+version 1.1.4
+----------------------
+- workaround: JS Plugin resize the height of the Holder Container in case no default height has been set
+
+
+version 1.0 - 27.06.2012
+	first release
+

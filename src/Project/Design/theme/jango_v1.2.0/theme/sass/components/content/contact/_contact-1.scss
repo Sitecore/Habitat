@@ -1,0 +1,103 @@
+// Contact 1
+ 
+// BEGIN: General Mode
+
+.c-content-contact-1 {
+	@include reset-padmar(); // call mixing reset default padding and margin
+	width: 100%;
+
+	// END
+
+	&:before{
+		background-color:rgba(255,255,255,0.5);
+	}
+
+	&:after{
+		background-color:rgba(255,255,255,0.5);	
+	}
+
+	> .row {
+			
+		.c-body {
+			position: relative;
+			z-index: 100;
+			background: #ffffff;
+			margin: 40px 0;
+			padding:60px 40px;
+
+			> .c-section {
+				margin-bottom: 15px;
+				text-align: right;
+
+				> h3 {
+					font-size:30px;
+					color: $general-head-font-color;
+					font-weight:bold;
+					margin:0 0 30px 0;
+					text-transform: uppercase;
+				}
+
+				> p {
+					font-size:16px;
+					line-height:24px;
+					color:#7f8c97;
+					font-weight: 300;
+				}				
+
+				> p,
+				> .c-content-iconlist-1 {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+}
+
+// FULL WIDTH GMAPS CONTROLLER
+.c-content-contact-1-gmap {
+	display: block;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	position: absolute;
+	width: 100%;
+}
+
+// BEGIN: Mobile Mode
+
+@media (max-width: $screen-sm-max) { /* 991px */
+
+	.c-content-contact-1-gmap { 
+		display: block;
+		position: static;
+		width: 100%;
+		height: 300px !important;
+	}
+
+	.c-content-contact-1 {
+
+		> .row{
+
+			> div {
+				width:100%;
+
+				.c-body {
+					position: static;
+					display: block;
+					padding: 30px 20px 10px 20px;
+					background: #fafafa;
+					margin: 0;
+					text-align:left;
+
+					@include clearfix();
+				}
+
+			}
+
+		}
+		
+	}
+}
+
+// END

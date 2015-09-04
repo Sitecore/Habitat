@@ -1,0 +1,86 @@
+// Owlcarousel
+
+.owl-carousel.c-theme {
+	.owl-pagination {
+		.owl-page {
+			span {
+				background: #e1e1e1;
+			}
+
+			&.active {
+				span {
+					background:$base-color;
+				}
+			}
+		}
+	}
+}
+
+// Cubeportfolio
+
+// filter buttons
+.cbp-l-filters-button,
+.cbp-l-filters-buttonCenter {
+
+	.cbp-filter-counter {
+		background-color: $base-color;
+
+		&:before {
+			border-top: 4px solid $base-color;
+		}
+	}
+}
+
+// Text filters
+.cbp-l-filters-alignCenter,
+.cbp-l-filters-text {
+	.cbp-filter-item {
+
+		&.cbp-filter-item-active {
+			color: $base-color;
+		}
+	}	
+
+	.cbp-filter-counter {
+		background: none repeat scroll 0 0 $base-color;
+
+		&:before {
+	 		border-top: 4px solid $base-color;
+		}	  
+	}
+}
+
+// Faq
+
+.cbp-l-filters-underline .cbp-filter-item.cbp-filter-item-active {
+  	border-bottom-color: $base-color;
+}
+
+// Project
+ .cbp-l-project-desc-title,
+ .cbp-l-project-details-title {
+ 	&:before {
+	  	background: $base-color;
+	}
+ }
+
+
+ // Revo Slider
+.tp-bullets.round.c-theme {
+	.bullet {
+		margin-right: 5px;
+
+		&.selected {
+			background: $base-color;
+		}
+	}
+} 
+
+.tp-banner-container.c-theme {
+	.tparrows {
+		&.circle {
+			background-image: url(../../img/content/line-icons/#{$theme-name}.png);
+		}
+	}
+}
+

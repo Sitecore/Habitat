@@ -1,0 +1,69 @@
+//CORE MIXINS
+
+// Clearfix
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Opacity
+
+@mixin opacity($value, $important: '') {
+  opacity: $value#{$important};
+  filter: alpha(opacity=#{$value * 100})#{$important};
+}
+
+// Border radius.
+
+@mixin border-radius($radius, $important: '') {
+  -webkit-border-radius: $radius#{$important};
+  -moz-border-radius: $radius#{$important};
+  -ms-border-radius: $radius#{$important};  
+  -o-border-radius: $radius#{$important};  
+  border-radius: $radius#{$important}; 
+}
+
+// Placeholder text
+
+@mixin placeholder($color: $input-color-placeholder) {
+  &::-moz-placeholder           { color: $color; } // See https://github.com/twbs/bootstrap/pull/11526
+  &:-moz-placeholder            { color: $color; } // See https://github.com/twbs/bootstrap/pull/11526
+  &:-ms-input-placeholder       { color: $color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+// Drop shadows
+// By default set to: none
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: none; // iOS <4.3 & Android <4.1
+          box-shadow: none;
+}
+
+// Inline block
+
+@mixin inline-block() {
+    display: inline-block;
+
+    &.c-pull-left {
+      float: left;
+    }
+
+    &.c-pull-right {
+      float: right;
+    }
+}
+
+// Set padding and margin to 0
+
+@mixin reset-padmar() {
+    padding: 0;
+    margin: 0;  
+}

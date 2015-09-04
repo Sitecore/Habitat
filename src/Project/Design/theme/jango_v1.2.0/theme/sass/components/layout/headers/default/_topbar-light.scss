@@ -1,0 +1,28 @@
+// Top Menu
+$topbar_class:																'light';
+$topbar_bg-color:															none;
+$topbar_collapse-bg-color:													#ffffff;
+$topbar_border:																1px solid rgba(#8797ae, 0.15);
+$topbar_font-color: 														#8797ae;
+$topbar_font-color-on-hover: 												darken($topbar_font-color, 20%);
+
+$topbar_icon-font-color:													#8797ae;
+$topbar_icon-font-color-on-hover:											darken($topbar_icon-font-color, 20%);
+
+$topbar_language-bar-bg-color:												#f6f8fa;
+$topbar_language-bar-bg-color-on-hover:										$topbar_language-bar-bg-color;  
+$topbar_language-bar-font-color:                                            darken($topbar_font-color, 10%);
+$topbar_language-bar-font-color-on-hover:                                   darken($topbar_language-bar-font-color, 15%); 
+
+$topbar_language-menu-bg-color: 											$topbar_language-bar-bg-color;
+$topbar_language-menu-link-font-color:										darken($topbar_language-menu-bg-color, 45%);
+$topbar_language-menu-link-font-color-on-hover:								darken($topbar_language-menu-bg-color, 50%); 
+$topbar_language-menu-link-bg-color-on-hover:								darken($topbar_language-menu-bg-color, 4%);   
+
+@import  'theme/_topbar';       
+
+.c-layout-header {
+	.c-topbar-#{$topbar_class}.c-solid-bg {		
+		background: $topbar_collapse-bg-color;
+	}
+}

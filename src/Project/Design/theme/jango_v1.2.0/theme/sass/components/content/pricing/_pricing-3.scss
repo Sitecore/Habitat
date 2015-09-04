@@ -1,0 +1,263 @@
+// Pricing 1
+
+// BEGIN: General Mode
+
+@mixin content-pricing-2($icon-color, $title-color, $price-color, $items-color,
+$content-bg-color, $content-bg-border-color,
+$content-bg-opacity: 0) {
+
+	&.c-bg-outline {
+		border: 2px solid $content-bg-border-color;
+	}
+
+	@if ($content-bg-opacity > 0) {
+		background: rgba($content-bg-color, $content-bg-opacity);
+	} @else {
+		background: $content-bg-color;
+	}
+
+	> .c-icon {
+		> i {
+			color: $icon-color;
+		}
+	}
+
+	> .c-title {
+		color: $title-color;
+	}
+
+	> .c-price {
+		color: $price-color;
+	}
+
+	> .c-items {
+		color: $items-color;
+	}
+}
+
+.c-content-pricing-2 {
+	text-align: center;
+	padding: 50px 0;
+	margin-bottom: 20px;
+
+	> .c-icon {
+		margin-bottom: 43px;
+	}
+
+	> .c-title {
+		margin-bottom: 5px;
+	}
+
+	> .c-price {
+		margin-bottom: 33px;
+	}
+
+	> .c-items {
+		> ul {
+			list-style: none;
+			padding: 0px;
+			margin-bottom: 38px;
+
+			> li {
+				padding: 4px 0;
+				font-size: 16px;
+			}
+		}
+	}
+
+	&.c-padding-first {
+		margin-right: -15px;
+	}
+
+	&.c-featured-no-padding, &.c-featured-extra-padding, &.c-featured-overlap {
+		margin-top: -30px;
+		padding: 80px 0;
+		border-radius: 3px;
+		position: relative;
+		z-index: 1;
+	}
+
+	&.c-featured-no-padding {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	&.c-featured-extra-padding {
+		margin-left: -13px;
+		margin-right: -13px;
+	}
+
+	&.c-featured-overlap {
+		margin-left: -17px;
+		margin-right: -17px;
+	}
+
+	&.c-padding-last {
+		margin-left: -15px;
+	}
+
+	&.c-opt-1 {
+		@include content-pricing-2(
+				#c8d1e1, #5f6f77, #8d9db6, #aab5c6,
+				#f8f8f8, transparent);
+	}
+
+	&.c-opt-1-featured {
+		@include content-pricing-2(
+				#ffb1a7, #ffffff, #ffd5cf, #ffd5cf,
+				#ff6b57, transparent);
+	}
+
+	&.c-opt-2 {
+		@include content-pricing-2(
+				#505477, #ffffff, #969ab9, #969ab9,
+				#3e4265, transparent);
+	}
+
+	&.c-opt-2-featured {
+		@include content-pricing-2(
+				#ff6b57, #ffffff, #22afd7, #969ab9,
+				#414567, transparent);
+	}
+
+	&.c-opt-3 {
+		@include content-pricing-2(
+				#c8d1e1, #5f6f77, #8d9db6, #aab5c6,
+				#ffffff, #dce2e7);
+	}
+
+	&.c-opt-3-featured {
+		@include content-pricing-2(
+				#53b0bb, #5f6f77, #8d9db6, #aab5c6,
+				#ffffff, #53b0bb);
+	}
+
+	&.c-opt-4 {
+		@include content-pricing-2(
+				#808ca4, #ffffff, #b5bdcc, #b5bdcc,
+				#ffffff, transparent,
+				0.05);
+	}
+
+	&.c-opt-4-featured {
+		@include content-pricing-2(
+				#22afd7, #ffffff, #b5bdcc, #b5bdcc,
+				#ffffff, transparent,
+				0.07);
+	}
+
+	&.c-opt-5 {
+		@include content-pricing-2(
+				#8d98a3, #3d4e5e, #8d98a3, #afb6bc,
+				#fafafa, #fafafa);
+	}
+
+	&.c-opt-5-featured {
+		@include content-pricing-2(
+				#30363b, #fbfefe, #525960, #525960,
+				#22272c, #2a333c);
+	}
+}
+
+@mixin c-title-pricing-2($title-color, $title-color-bold, $sub-title-color) {
+	> h4 {
+		color: $title-color;
+
+		> span {
+			color: $title-color-bold;
+		}
+	}
+
+	> p {
+		color: $sub-title-color;
+	}
+}
+
+.c-title-pricing-2 {
+	> h4 {
+		margin: 15px 0;
+	}
+
+	> p {
+		margin-bottom: 100px;
+	}
+
+	&.c-opt-title-1 {
+		@include c-title-pricing-2(#455055, #22afd7, #a0b0b8);
+	}
+	&.c-opt-title-2 {
+		@include c-title-pricing-2(#fbfefe, #22afd7, #969ab9);
+	}
+	&.c-opt-title-3 {
+		@include c-title-pricing-2(#455055, #53b0bb, #a0b0b8);
+	}
+	&.c-opt-title-4 {
+		@include c-title-pricing-2(#ffffff, #ffffff, #b5bdcc);
+	}
+	&.c-opt-title-5 {
+		@include c-title-pricing-2(#3d4e5e, #3d4e5e, #a0b0b8);
+	}
+}
+
+// END
+
+// BEGIN: Mobile Mode
+
+@media (max-width: $screen-sm-max) {
+	/* 991px */
+
+	.c-content-pricing-2 {
+
+		&.c-bg-outline {
+		}
+
+		&.c-padding-first {
+			margin-right: -15px;
+			margin-top: 0px;
+		}
+
+		&.c-featured-no-padding, &.c-featured-extra-padding, &.c-featured-overlap {
+			border-radius: 0px;
+			margin: 0px 0px 0px -10px;
+			padding: 50px 0;
+		}
+
+		&.c-featured-overlap {
+			padding: 52px 0;
+		}
+
+		&.c-padding-last {
+			margin-left: 0px;
+			margin-top: 5px;
+		}
+
+	}
+
+}
+
+@media (max-width: $screen-xs-max) {
+	/* 766px */
+
+	.c-content-pricing-2 {
+
+		&.c-padding-first {
+			margin: 0px;
+		}
+
+		&.c-featured-no-padding, &.c-featured-extra-padding, &.c-featured-overlap {
+			margin-top: 5px;
+			margin-left: 0px;
+			border-radius: 0px;
+			padding: 50px 0;
+		}
+
+		&.c-padding-last {
+			margin-left: 0px;
+			margin-top: 5px;
+		}
+
+	}
+
+}
+
+// END

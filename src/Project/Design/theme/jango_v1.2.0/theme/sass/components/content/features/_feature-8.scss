@@ -1,0 +1,150 @@
+// Card 10 & 11
+
+// BEGIN: General Mode
+
+.c-content-feature-8 {
+	@include reset-padmar(); // call mixing reset default padding and margin
+
+	h3{
+		color:$general-head-font-color;
+	}
+
+	p{
+		color:$general-font-color;
+	}
+
+	> .c-grid{
+		display:table;
+		padding:0;
+		width:100%;
+
+		> li{
+			display: table-cell;
+			width: 50%;
+			padding:0 5px 0 0;
+			float:left;
+
+			> .c-card{ 
+				padding: 80px;  
+
+				&.c-bg-opacity-1{
+					background-color:rgba(255,255,255,0.1);
+				}
+
+				&.c-bg-opacity-2{
+					background-color:rgba(255,255,255,0.8);
+				}
+				
+				> h3 {
+					margin: 0 0 20px 0;
+				}
+
+				> p {
+					margin:0;
+					line-height:22px;
+				}
+			}
+ 
+			&:last-child{
+				padding:0 0 0 5px;
+			}
+		}
+		
+	}
+
+	// OPTION 2
+
+	&.c-opt-1{
+
+		> .c-grid{
+
+			> li{
+
+				> .c-img{
+					background-color:#7e8daa;
+					padding: 128px 80px 129px 80px;
+
+					h3{
+						margin:0;
+					}
+
+				}
+			}
+		}
+	}
+
+	// END
+
+
+	// OPTION 3
+
+	&.c-opt-2{
+
+		> .c-grid{
+
+			> li{
+
+				> .c-img{
+					background-color:#7e8daa;
+					padding: 156px 80px;
+					position:relative;
+
+					h3{
+						margin:0;
+						letter-spacing: 0.5px;
+						position:absolute;
+						bottom:20px;
+						right:20px;
+					}
+
+				}
+			}
+		}
+	}
+
+	// END
+	 
+}
+
+
+// BEGIN: Mobile Mode
+@media (max-width: $screen-md-max) { /* 991px */
+	.c-content-feature-8 {
+
+		> .c-grid{
+
+			> li{
+
+				> .c-card{ 
+					padding: 70px;  
+				}
+			}
+		}
+
+	}
+}
+
+@media (max-width: $screen-sm-max) { /* 991px */
+	.c-content-feature-8 {
+
+		> .c-grid{
+
+			> li{
+				padding:0 0 10px 0;
+				width:100%;
+
+				&:last-child{
+					padding:0 0 10px 0;
+				}
+
+			}
+
+		}
+
+		> .c-img{
+			padding:0 0 10px 0;
+		}
+	}
+}
+
+// END

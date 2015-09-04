@@ -1,0 +1,115 @@
+.c-content-blog-post-card-1  {
+
+	.c-body { 
+		padding: 20px 0;
+
+		.c-title {
+			font-size: 19px;
+			font-weight: 500;
+			color: $general-head-font-color; 
+			margin-bottom: 10px;
+		}
+
+		.c-author {
+			font-size: 14px;
+			font-weight: 400;
+			color: $general-font-color; 
+			margin-bottom: 10px;
+		}
+
+		.c-panel {
+			padding: 5px 0;
+			border-top: 1px solid $general-border-color;
+
+			@include clearfix();
+
+			.c-comments {
+				float: left;
+				display: inline-block;
+				font-size: 15px;
+				color: $general-font-color;
+				font-weight: 400;
+				margin: 6px 10px 3px 0;
+
+				i {
+					position: relative;
+					top: 2px;
+					color: lighten($general-font-color, 20%);
+				}
+			}
+
+			.c-tags {
+				padding: 0;
+				margin: 3px 0px 5px 0;
+				float: right;
+				display: inline-block;
+
+				> li {
+					font-size: 13px;
+					text-transform: uppercase;
+					display: inline-block;
+					list-style: none;
+					padding: 2px 6px 1px 6px;
+					margin: 0 2px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+
+			.c-author {
+				display: inline-block;
+			}
+		}
+
+		p {
+			display: block;
+			clear: both;
+			padding: 10px 0 0 0;
+			color: $general-font-color; 
+		}
+	}
+
+	&.c-option-2 {
+
+		.c-body {
+			padding: 30px;
+			background: #fff;
+			p {
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	&.c-bordered {
+		border: 1px solid $general-border-color;
+	}
+}
+
+.c-content-blog-post-card-1-grid {
+	padding-right: 40px;
+
+	.c-content-blog-post-card-1 {
+		margin-bottom: 30px;
+	}
+
+	.c-pagination {
+		margin-top: 30px;
+		text-align: center;
+	}
+}
+
+.c-content-blog-post-card-1-slider {
+	.c-content-label {
+		padding: 6px 10px 2px 10px;
+		position: absolute;
+		top: 30px;
+		left: 40px;
+		z-index: 10;
+	}
+
+	.owl-controls {
+		margin-top: 60px;
+	}
+}

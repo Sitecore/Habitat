@@ -1,0 +1,42 @@
+// BEGIN: General Mode
+
+.c-content-bar-4 {
+	@include reset-padmar(); // call mixing reset default padding and margin
+	width: 100%;
+	text-align:center;
+
+	> h3 {
+		display: inline-block;
+		color: #ffffff;
+		font-weight: 500;
+		font-size: 40px;
+		line-height: 50px;
+		margin: 100px auto 40px auto;
+		padding: 40px;			
+		border: 2px solid rgba(#ffffff, 0.15);
+	}
+
+	&.c-opt-2 {
+
+		> h3{
+			margin-top: 30px;
+			margin-bottom: 0;
+		}
+
+		> .row{
+
+			> div {
+
+				> p {
+					color:#ffffff;
+					text-transform: uppercase;
+					font-size:16px;
+					line-height: 25px;
+					padding:40px;
+				}
+			}
+		}
+	}
+}
+
+// END 

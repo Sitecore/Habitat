@@ -1,0 +1,28 @@
+.btn-social {
+	padding-left: 40px;
+
+	>:first-child {
+		font-size: 18px;
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: #fff;
+	}
+
+	&.btn-md {
+		>:first-child {
+			padding-top: 4px;
+			width: 40px;
+			font-size: 20px; 
+		}
+	}
+
+	&.btn-lg {
+		>:first-child {
+			width: 44px;
+			font-size: 22px;
+		}
+	}
+}

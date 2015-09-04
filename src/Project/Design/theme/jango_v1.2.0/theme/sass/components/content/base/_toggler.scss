@@ -1,0 +1,37 @@
+$general-toggler-color: #f8f9fa;
+
+.c-content-toggler {
+	padding: 5px 7px;
+	display: none;
+	outline: none;
+	background: $general-toggler-color;
+
+	> .c-line { 
+		width: 15px;  
+		display: block;
+		height: 2px; 
+		padding: 0px;
+		margin: 3px 0;  
+		background-color: darken($general-toggler-color, 30%);
+
+		&:first-child {  
+			margin-top: 3px;
+		}
+	}
+
+	&:active,
+	&:focus,
+	&:hover {
+		background: darken($general-toggler-color, 5%); 
+
+		> .c-line { 
+			background-color: darken($general-toggler-color, 35%);
+		}	 
+	}
+}
+
+@media (max-width: $screen-sm-max) { /* 991px */  
+	.c-content-toggler {
+		display: inline-block;
+	}
+}

@@ -1,0 +1,40 @@
+ .c-content-recent-posts-1 {
+ 	padding: 0;
+ 	margin: 0;
+
+ 	> li {
+ 		padding: 15px;
+ 		list-style: none;
+ 		border: 1px solid $general-border-color;
+ 		border-bottom: 0;
+
+ 		&:last-child {
+ 			border-bottom: 1px solid $general-border-color;
+ 		}
+
+ 		> .c-image {
+ 			width: 60px;
+ 			display: inline-block;
+ 			margin-right: 10px;
+ 			float: left;
+ 			> img {
+
+ 			}
+ 		}
+
+ 		> .c-post {
+ 			padding: 5px 0;
+
+ 			.c-title { 				
+ 				font-weight: 400;
+ 			}
+
+ 			.c-date {
+ 				font-size: 15px;
+ 				color: $general-font-color;
+ 			}
+ 		}
+
+ 		@include clearfix;
+ 	}
+ }

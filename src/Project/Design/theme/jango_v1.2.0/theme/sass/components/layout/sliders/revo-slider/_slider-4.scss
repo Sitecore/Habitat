@@ -1,0 +1,59 @@
+//	BEGIN: General Mode
+
+.c-layout-revo-slider-4 {
+	
+	.c-action-btn.c-btn-border-2x {
+		padding: 9px 24px 7px 24px;
+		font-size: 16px;    
+	}
+	
+	.c-block-text {
+		display: inline-block;
+		padding: 40px;
+	}
+
+	.c-main-title-circle {
+		background: rgba(#000, 0.05); 
+		padding: 380px 260px 380px 260px;
+		letter-spacing: 1px;
+		line-height: 68px;
+		border-radius: 600px;   
+
+		&.c-light-bg {
+			background: rgba(#fff, 0.3); 
+		}
+	}  
+
+	.c-main-title-square {
+		background: rgba(#000, 0.11); 
+		padding: 300px 300px;
+		letter-spacing: 1px;
+		line-height: 68px;
+	}
+}
+
+@media (max-width: $screen-sm-max) { /* 991px */
+
+	.c-layout-revo-slider-4 {
+		.c-main-title-circle {
+			padding: 180px 160px 180px 160px;
+			line-height: 25px;
+			font-size: 22px;
+			border-radius: 300px;
+		}
+
+		.c-main-title-square {
+			background: rgba(#000, 0.11); 
+			padding: 300px 300px;
+			line-height: 25px;
+			font-size: 22px;
+		}
+
+		.c-action-btn {
+			margin-top: 20px;
+			padding: 8px 22px 7px 22px;
+			font-size: 14px;
+		}
+	}
+
+}
