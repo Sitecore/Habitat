@@ -10,9 +10,10 @@ namespace Habitat.Language.Infrastructure.Factories
         {
             return new Models.Language
             {
-                Name = language.CultureInfo.DisplayName,
+                Name = language.CultureInfo.NativeName,
                 Url = GetItemUrlByLanguage(language),
-                Icon = string.Concat("/~/icon/", language.GetIcon(Context.Database))
+                Icon = string.Concat("/~/icon/", language.GetIcon(Context.Database)),
+                TwoLetterCode = language.CultureInfo.TwoLetterISOLanguageName
             };
         }
 

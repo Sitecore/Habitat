@@ -18,7 +18,7 @@ namespace Habitat.Framework.Assets
         /// Renders the JavaScript requirements to the page
         /// </summary>
         /// <returns>The rendered JavaScript code</returns>
-        public HtmlString RenderScript(ScriptLocation location = ScriptLocation.Head)
+        public HtmlString RenderScript(ScriptLocation location)
         {
             var sb = new StringBuilder();
             var assets = AssetRepository.Current.Items.Where(x => (x.Type == AssetType.JavaScript || x.Type == AssetType.Raw) && x.Location == location);

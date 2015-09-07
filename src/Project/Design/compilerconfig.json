@@ -1,14 +1,6 @@
 ﻿[
   {
-    "outputFile": "assets/base/css/components.css",
-    "inputFile": "sass/jango/components.scss"
-  },
-  {
-    "outputFile": "assets/base/css/custom.css",
-    "inputFile": "sass/jango/custom.scss"
-  },
-  {
-    "outputFile": "assets/base/css/plugins.css",
-    "inputFile": "sass/jango/plugins.scss"
+    "outputFile": "assets/habitat.css",
+    "inputFile": "sass/habitat.scss"
   }
 ]

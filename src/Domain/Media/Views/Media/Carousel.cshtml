@@ -1,38 +1,32 @@
 ﻿@using Habitat.Media
 @using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.Media.Infrastructure.Repositories
+@using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-@{ var carouselId = "Carousel_" + Guid.NewGuid().ToString("N");}
-<div id="@carouselId" class="carousel" data-ride="carousel">
-    <ol class="carousel-indicators">
-        @{ 
-            var index = 0;
-            foreach (var item in CarouselElementsRepository.Get(Model.Item))
-            {
-                <li data-target="#@carouselId" data-slide-to="@index" class="@item.Active"></li>
-                index++;
-            }
-        }
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        @foreach (var element in CarouselElementsRepository.Get(Model.Item))
-        {
-            <div class="item @element.Active">
-                @Html.Sitecore().ImageField(Templates.HasMediaImage.Fields.Image.ToString(), element.Item)
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1 class="resizable">@element.Item[Templates.HasMedia.Fields.Title]</h1>
-                        <p>@Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item)</p>
-                    </div>
-                </div>
-            </div>
-        }
+<section class="c-layout-revo-slider c-layout-revo-slider-4">
+    <div class="tp-banner-container c-theme">
+        <div class="tp-banner">
+            <ul>
+                @foreach (var element in CarouselElementsRepository.Get(Model.Item))
+                {
+                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000">
+                        @* TODO: make this work: @element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions()) 
+                        *@
+                        <img src="/assets/base/img/content/stock/01.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"/>
+                        <div class="caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-customin="x:0;y:0;z:0;rotationX:0.5;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-easing="Back.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
+                            <h3 class="c-main-title-circle c-font-48 c-font-bold c-font-center c-font-uppercase c-font-white c-block">
+                                @Html.Sitecore().Field(Templates.HasMedia.Fields.Title.ToString(), element.Item)
+                            </h3>
+                        </div>
+                        <div class="caption lft" data-x="center" data-y="center" data-voffset="110" data-speed="900" data-start="2000" data-easing="easeOutExpo">
+                            <div class="c-font-32 c-font-center c-font-white c-block">
+                                @Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item)
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
     </div>
-    <a class="left carousel-control" href="#@carouselId" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    </a>
-    <a class="right carousel-control" href="#@carouselId" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    </a>
-</div>
+</section>

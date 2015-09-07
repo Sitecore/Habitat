@@ -1,5 +1,5 @@
 ﻿/*********************************
-COMPONENTS 
+JANGO
 *********************************/
 /***
 General reset
@@ -10257,4 +10257,11 @@ h1 {
     width: 100%; }
   .c-content-app-1 > .c-diagram > .c-box.c-app-right {
     width: 100%; } }
+
+/*********************************
+HABITAT
+*********************************/
+/* TOP BAR */
+.c-topbar {
+  height: 100px !important; }
 

@@ -1,13 +1,13 @@
 ----item----
 version: 1
-id: {439EC71A-4231-45C8-B075-975BD41099A7}
+id: {257187A7-897A-42F5-BC2A-A37B0E1C0496}
 database: master
-path: /sitecore/content/Habitat/Home/News
+path: /sitecore/content/Habitat/Home/Team
 parent: {DAC24EDD-44FB-42EF-9ECD-1E8DAF706386}
-name: News
+name: Team
 master: {00000000-0000-0000-0000-000000000000}
-template: {A99866E5-08E7-44D8-8A52-F8E26BCD3714}
-templatekey: News List
+template: {8EE208F9-A6A6-41E2-88A0-C188737A178C}
+templatekey: Section
 
 ----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
@@ -15,18 +15,11 @@ name: __Sortorder
 key: __sortorder
 content-length: 3
 
-300
-----field----
-field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
-name: __Masters
-key: __masters
-content-length: 38
-
-{B69277AD-E917-4B9F-9136-A12E0A3E462F}
+400
 ----version----
 language: en
 version: 1
-revision: 4e9eb02c-5238-4e55-8613-867d9b78c3a9
+revision: 645e256f-1e81-4c76-bfd1-5f7af3821679
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
@@ -34,21 +27,21 @@ name: Title
 key: title
 content-length: 4
 
-News
+Team
 ----field----
 field: {1B483E91-D8C4-4D19-BA03-462074B55936}
 name: NavigationTitle
 key: navigationtitle
 content-length: 4
 
-News
+Team
 ----field----
 field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
 name: BrowserTitle
 key: browsertitle
 content-length: 4
 
-News
+Team
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -62,21 +55,14 @@ name: __Created
 key: __created
 content-length: 16
 
-20150824T175319Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
+20150907T045359Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-4e9eb02c-5238-4e55-8613-867d9b78c3a9
+645e256f-1e81-4c76-bfd1-5f7af3821679
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated

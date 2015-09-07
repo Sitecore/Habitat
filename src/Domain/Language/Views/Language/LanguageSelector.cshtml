@@ -1,12 +1,27 @@
-﻿@using Habitat.Language.Infrastructure.Repositories
-<ul class="language nav navbar-nav navbar-right">
+﻿@model Sitecore.Mvc.Presentation.RenderingModel
+@using Habitat.Language.Infrastructure.Repositories
 
-    @foreach (var language in LanguageRepository.GetCountries())
+@{
+    var activeLanguage = LanguageRepository.GetActive();
+    var languages = LanguageRepository.GetAll().ToArray();
+    if (languages.Length <= 1)
     {
-        <li>
-            <a href="@language.Url" class="language-icon">
-                <img src="@language.Icon" title="@language.Name" height="20"/>
-            </a>
-        </li>
+        return;
     }
+}
+<ul class="c-ext c-theme-ul">
+    <li class="c-lang dropdown c-last">
+        <a href="#">
+            @activeLanguage.TwoLetterCode
+        </a>
+        <ul class="dropdown-menu pull-right" role="menu">
+
+            @foreach (var language in languages)
+            {
+                <li>
+                    <a href="@language.Url">@language.Name</a>
+                </li>
+            }
+        </ul>
+    </li>
 </ul>

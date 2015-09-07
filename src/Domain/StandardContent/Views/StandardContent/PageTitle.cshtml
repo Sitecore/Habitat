@@ -1,6 +1,9 @@
 ﻿@using Habitat.StandardContent
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-<h1>
-    @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString())
-</h1>
+<div class="c-page-title c-pull-left">
+    <h1 class="c-font-uppercase c-font-bold">
+        @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString())
+    </h1>
+</div>
+

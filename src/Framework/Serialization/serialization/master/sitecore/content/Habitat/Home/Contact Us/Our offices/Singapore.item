@@ -2,7 +2,7 @@
 version: 1
 id: {D20ECD08-0AAC-43D5-9B2B-61F72C058B6A}
 database: master
-path: /sitecore/content/Habitat/Home/About Us/Our offices/Singapore
+path: /sitecore/content/Habitat/Home/Contact Us/Our offices/Singapore
 parent: {B6C764EB-FC71-45C0-83FC-E28DC20A68C3}
 name: Singapore
 master: {00000000-0000-0000-0000-000000000000}
