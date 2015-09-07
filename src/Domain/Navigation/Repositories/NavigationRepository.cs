@@ -112,7 +112,7 @@ namespace Habitat.Navigation.Repositories
             if (level > maxLevel || !parentItem.HasChildren)
                 return null;
             var childItems =
-                parentItem.Children.Where(i => MainUtil.GetBool(i[Templates.Navigable.Fields.ShowInNavigation], true))
+                parentItem.Children.Where(i => i.IsDerived(Templates.Navigable.ID) && MainUtil.GetBool(i[Templates.Navigable.Fields.ShowInNavigation], true))
                     .Select(i => CreateNavigationItem(i, level, maxLevel));
             return new NavigationItems
             {
