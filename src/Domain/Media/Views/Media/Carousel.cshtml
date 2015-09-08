@@ -11,9 +11,8 @@
                 @foreach (var element in CarouselElementsRepository.Get(Model.Item))
                 {
                     <li data-transition="fade" data-slotamount="1" data-masterspeed="1000">
-                        @* TODO: make this work: @element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions()) 
-                        *@
-                        <img src="/assets/base/img/content/stock/01.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"/>
+                        @*NOTE: because of a bug in the revolution slider, an additional ' has been added to the image URL*@
+                        <img src="'@element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions())'" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"/>
                         <div class="caption customin customout" data-x="center" data-y="center" data-hoffset="" data-voffset="-50" data-speed="500" data-start="1000" data-customin="x:0;y:0;z:0;rotationX:0.5;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" data-easing="Back.easeOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="600">
                             <h3 class="c-main-title-circle c-font-48 c-font-bold c-font-center c-font-uppercase c-font-white c-block">
                                 @Html.Sitecore().Field(Templates.HasMedia.Fields.Title.ToString(), element.Item)
