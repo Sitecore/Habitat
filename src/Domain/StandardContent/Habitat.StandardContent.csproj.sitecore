@@ -26,4 +26,7 @@
   <File Include="Views\StandardContent\ReferenceTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{07AB411C-F894-4144-B069-48EF67431D32}</Item>
   </File>
+  <File Include="Views\StandardContent\SectionTitle.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{87301C10-7EB4-4D75-A8CD-A284B5DE0D1B}</Item>
+  </File>
 </Project>

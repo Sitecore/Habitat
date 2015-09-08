@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {F366176E-2C2B-4AF2-B356-BCF8BD657C58}
+id: {87301C10-7EB4-4D75-A8CD-A284B5DE0D1B}
 database: master
-path: /sitecore/layout/Renderings/Habitat/Domain/News/NewsDate
-parent: {DB7775FA-27D8-44E4-9E6C-08ADE58EF4ED}
-name: NewsDate
+path: /sitecore/layout/Renderings/Habitat/Domain/StandardContent/SectionTitle
+parent: {D5D2AB0A-3909-4E22-AF15-3BEF1E97A0C0}
+name: SectionTitle
 master: {00000000-0000-0000-0000-000000000000}
 template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
 templatekey: View rendering
@@ -13,20 +13,13 @@ templatekey: View rendering
 field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
 name: Path
 key: path
-content-length: 30
+content-length: 42
 
-/Views/News/NewsArticle.cshtml
-----field----
-field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
-name: Open Properties after Add
-key: open properties after add
-content-length: 1
-
--
+/Views/StandardContent/SectionTitle.cshtml
 ----version----
 language: en
 version: 1
-revision: 2ba767ab-2493-4099-8981-5bae5d9d93a0
+revision: 58f82d83-6477-4a19-9823-5af69e3dd56e
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,21 +27,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20150824T174304Z
+20150908T044137Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-2ba767ab-2493-4099-8981-5bae5d9d93a0
+58f82d83-6477-4a19-9823-5af69e3dd56e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150901T114309Z
+20150908T044137Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

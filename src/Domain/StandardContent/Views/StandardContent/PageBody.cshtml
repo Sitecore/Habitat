@@ -1,16 +1,20 @@
 ﻿@using Habitat.StandardContent
 @model Sitecore.Mvc.Presentation.RenderingModel
 
+@if (!Sitecore.Context.PageMode.IsPageEditor && !Html.Sitecore().HasValue(Templates.HasBody.Fields.Body.ToString())) { return; }
+
 @if (Sitecore.Context.PageMode.IsPageEditor)
 {
-    <div class="pageedit summary">
-        <label>Summary:</label>
+    <div class="c-margin-b-40 c-padding-10 c-border">
+        <label class="c-content-label c-font-uppercase c-font-bold c-theme-bg c-margin-b-10">
+            Summary
+        </label>
         <div>
-            @Html.Sitecore().Field(Templates.HasSummary.Fields.Summary.ToString())
+            !!!!!@Html.Sitecore().Field(Templates.HasSummary.Fields.Summary.ToString())
         </div>
     </div>
 }
 
-<div class="article body">
+<div class="c-margin-b-40">
     @Html.Sitecore().Field(Templates.HasBody.Fields.Body.ToString())
 </div>

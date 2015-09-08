@@ -8,20 +8,25 @@
 <ul class="c-content-recent-posts-1">
     @foreach (var item in Model)
     {
-    <li>
-        <div class="c-image">
-            @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), item, mw: 60)
-        </div>
-        <div class="c-post">
-            <a href="@item.Url()" class="c-title">@Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), item)</a>
-            <div class="c-date">
-                @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new { format = "MMMM dd, yyyy" })
+        <li>
+            <div class="c-image">
+                @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), item, mw: 60)
             </div>
-        </div>
-    </li>
+            <div class="c-post">
+                <a href="@item.Url()" class="c-title">@Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), item)</a>
+                <div class="c-date">
+                    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
+                    {
+                        format = "MMMM dd, yyyy"
+                    })
+                </div>
+            </div>
+        </li>
     }
 </ul>
-<a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-md c-btn-border-1x c-theme-btn c-btn-uppercase c-btn-square c-btn-bold c-read-more hide">
-    @* TODO: Add Dictionary functionality to avoid hardcoding *@
-    Read more
-</a>
+<div class="c-margin-t-10">
+    <a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-md c-btn-border-1x c-theme-btn c-btn-uppercase c-btn-square c-btn-bold c-read-more">
+        @* TODO: Add Dictionary functionality to avoid hardcoding *@
+        Read more
+    </a>
+</div>

@@ -1,21 +1,32 @@
-﻿@using Habitat.News
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.News
 @model Sitecore.Mvc.Presentation.RenderingModel
-<div class="news">
-    <h1>
-        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), Model.Item)
-    </h1>
-    <div class="image">
-        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Image.ToString(), Model.Item)
-    </div>
-    <div class="body">
-        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Body.ToString(), Model.Item)
-    </div>
-    <div class="date panel panel-default">
-        <div class="panel-body">
-            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new
-   {
-       format = "MMMM dd, yyyy"
-   })
+<div class="c-content-blog-post-1-view">
+    <div class="c-content-blog-post-1">
+        <div class="c-media">
+            @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), Model.Item, mw: 817)
+        </div>
+        <div class="c-title c-font-bold c-font-uppercase">
+            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), Model.Item)
+        </div>
+        <div class="c-panel c-margin-b-30">
+            <div class="c-date c-font-uppercase">
+                @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new { format = "MMMM dd, yyyy" })
+            </div>
+            <ul class="c-tags c-theme-ul-bg">
+                <li>
+                    ux
+                </li>
+                <li>
+                    marketing
+                </li>
+                <li>
+                    events
+                </li>
+            </ul>
+        </div>
+        <div class="c-desc">
+            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Body.ToString(), Model.Item)
         </div>
     </div>
 </div>

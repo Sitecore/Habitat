@@ -26,15 +26,15 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 4e9eb02c-5238-4e55-8613-867d9b78c3a9
+revision: 5ac5b304-1ce0-4fbb-a97a-9a1cdd02bd4c
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
 name: Title
 key: title
-content-length: 4
+content-length: 11
 
-News
+Latest News
 ----field----
 field: {1B483E91-D8C4-4D19-BA03-462074B55936}
 name: NavigationTitle
@@ -76,14 +76,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-4e9eb02c-5238-4e55-8613-867d9b78c3a9
+5ac5b304-1ce0-4fbb-a97a-9a1cdd02bd4c
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150907T045406Z
+20150908T044344Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

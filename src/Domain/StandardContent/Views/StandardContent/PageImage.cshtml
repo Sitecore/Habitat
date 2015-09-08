@@ -2,6 +2,8 @@
 @using Habitat.StandardContent
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-<div class="article image">
-    @Html.Sitecore().ImageField(Templates.HasImage.Fields.Image.ToString(), @Model.Item, mw: 700, cssClass: "img-responsive")
+@if (!Sitecore.Context.PageMode.IsPageEditor && !Html.Sitecore().HasValue(Templates.HasImage.Fields.Image.ToString())) { return; }
+
+<div class="c-margin-b-40">
+    @Html.Sitecore().ImageField(Templates.HasImage.Fields.Image.ToString(), @Model.Item, mw: 840, cssClass: "img-responsive")
 </div>
