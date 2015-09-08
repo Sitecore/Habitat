@@ -1,20 +1,13 @@
 ----item----
 version: 1
-id: {844A7337-2020-4C2E-912E-7651930FE179}
+id: {B415F846-5EED-409C-B6D8-C23BAB52D502}
 database: master
-path: /sitecore/content/Habitat/Home/News/News article 2
+path: /sitecore/content/Habitat/Home/News/News/News article
 parent: {439EC71A-4231-45C8-B075-975BD41099A7}
-name: News article 2
+name: News article
 master: {00000000-0000-0000-0000-000000000000}
 template: {B69277AD-E917-4B9F-9136-A12E0A3E462F}
 templatekey: News Article
-
-----field----
-field: {5585A30D-B115-4753-93CE-422C3455DEB2}
-name: ShowInNavigation
-key: showinnavigation
-content-length: 0
-
 
 ----field----
 field: {C464D2D7-3382-428A-BCDF-0963C60BA0E3}
@@ -29,26 +22,26 @@ name: __Sortorder
 key: __sortorder
 content-length: 2
 
-50
+25
 ----version----
 language: en
 version: 1
-revision: 5d075dfe-3c70-4c89-8151-713fefdccc8b
+revision: 32debe0a-9f8e-42a5-ba35-a08d9500817e
 
-----field----
-field: {1B483E91-D8C4-4D19-BA03-462074B55936}
-name: NavigationTitle
-key: navigationtitle
-content-length: 7
-
-Article
 ----field----
 field: {BD9ECD4A-C0B0-4233-A3CD-D995519AC87B}
 name: NewsTitle
 key: newstitle
-content-length: 12
+content-length: 14
 
-News article
+News article 1
+----field----
+field: {3437EAAC-6EE8-460B-A33D-DA1F714B5A93}
+name: NewsImage
+key: newsimage
+content-length: 207
+
+<image mediapath="/Default Website/cover" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/cover" mediaid="{04DAD0FD-DB66-4070-881F-17264CA257E1}" />
 ----field----
 field: {9D08271A-1672-44DD-B7EF-0A6EC34FCBA7}
 name: NewsSummary
@@ -85,14 +78,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-5d075dfe-3c70-4c89-8151-713fefdccc8b
+32debe0a-9f8e-42a5-ba35-a08d9500817e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150901T120553Z
+20150908T041134Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
