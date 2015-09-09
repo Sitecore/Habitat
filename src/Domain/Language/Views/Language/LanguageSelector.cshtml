@@ -9,18 +9,14 @@
         return;
     }
 }
-<ul class="c-ext c-theme-ul">
-    <li class="c-lang dropdown c-last">
-        <a href="#" class="icon-globe c-font-grey-4">
-        </a>
-        <ul class="dropdown-menu pull-right" role="menu">
-
-            @foreach (var language in languages)
+<li>
+    <a href="javascript:;" class="c-link dropdown-toggle"><i class="fa fa-globe"></i><span class="c-arrow c-toggler"></span></a>
+    <ul class="dropdown-menu c-menu-type-classic c-pull-left">
+        @foreach (var language in languages)
             {
-                <li>
-                    <a href="@language.Url">@language.Name</a>
-                </li>
-            }
-        </ul>
-    </li>
-</ul>
+            <li>
+                <a href="@language.Url">@language.Name</a>
+            </li>
+        }
+    </ul>
+</li>
