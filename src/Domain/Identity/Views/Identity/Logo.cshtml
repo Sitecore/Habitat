@@ -10,8 +10,6 @@
         return;
     }
 }
-<div class="brand">
-    <a class="navbar-brand" href="/">
-        @Html.Sitecore().ImageField(Templates.Identity.Fields.Logo.ToString(), identity, mh:20)
-    </a>
-</div>
+<a href="/" class="c-logo">
+    @Html.Sitecore().ImageField(Templates.Identity.Fields.Logo.ToString(), identity, mh:20)
+</a>

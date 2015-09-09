@@ -1,6 +1,12 @@
 ﻿@using Habitat.StandardContent
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-<h1>
-    @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString())
-</h1>
+@if (!Sitecore.Context.PageMode.IsPageEditor && !Html.Sitecore().HasValue(Templates.HasTitle.Fields.Title.ToString())) { return; }
+
+<div class="c-content-title-1">
+    <h3 class="c-font-uppercase c-center c-font-bold">
+        @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString())
+    </h3>
+    <div class="c-line-center">
+    </div>
+</div>

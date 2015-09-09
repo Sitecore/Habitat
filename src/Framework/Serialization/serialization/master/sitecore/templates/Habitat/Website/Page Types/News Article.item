@@ -13,9 +13,9 @@ templatekey: Template
 field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
 name: __Base template
 key: __base template
-content-length: 194
+content-length: 155
 
-{2F75C8AF-35FC-4A88-B585-7595203F442C}|{91962B60-25F6-428F-8D10-02AA1E49D6A5}|{D88CCD80-D851-470D-AF11-701FF23504E7}|{BDD24F35-05E8-4466-8798-7D3DD6A6C991}|{A1CBA309-D22B-46D5-80F8-2972C185363F}
+{2F75C8AF-35FC-4A88-B585-7595203F442C}|{91962B60-25F6-428F-8D10-02AA1E49D6A5}|{D88CCD80-D851-470D-AF11-701FF23504E7}|{BDD24F35-05E8-4466-8798-7D3DD6A6C991}
 ----field----
 field: {F7D48A55-2158-4F02-9356-756654404F73}
 name: __Standard values
@@ -33,7 +33,7 @@ Network/16x16/news.png
 ----version----
 language: en
 version: 1
-revision: d4f4803a-5744-458d-9272-83f2c85e726f
+revision: 303de17c-254f-436c-9232-76c7125e1898
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d4f4803a-5744-458d-9272-83f2c85e726f
+303de17c-254f-436c-9232-76c7125e1898
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150901T120936Z
+20150907T060708Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -2,7 +2,7 @@
 version: 1
 id: {A2586AC7-CDF3-40C9-BFC5-9C7CBBC7C592}
 database: master
-path: /sitecore/content/Habitat/Home/About Us/Our offices/United States
+path: /sitecore/content/Habitat/Home/Contact Us/Our offices/United States
 parent: {B6C764EB-FC71-45C0-83FC-E28DC20A68C3}
 name: United States
 master: {00000000-0000-0000-0000-000000000000}

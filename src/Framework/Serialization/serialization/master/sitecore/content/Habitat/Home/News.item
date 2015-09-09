@@ -1,25 +1,25 @@
 ----item----
 version: 1
-id: {439EC71A-4231-45C8-B075-975BD41099A7}
+id: {A95E6CB1-4D2D-4DD6-BF9E-046FE1CD81DD}
 database: master
 path: /sitecore/content/Habitat/Home/News
 parent: {DAC24EDD-44FB-42EF-9ECD-1E8DAF706386}
 name: News
 master: {00000000-0000-0000-0000-000000000000}
-template: {A99866E5-08E7-44D8-8A52-F8E26BCD3714}
-templatekey: News List
+template: {8EE208F9-A6A6-41E2-88A0-C188737A178C}
+templatekey: Section
 
 ----field----
-field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
-name: __Masters
-key: __masters
-content-length: 38
+field: {5585A30D-B115-4753-93CE-422C3455DEB2}
+name: ShowInNavigation
+key: showinnavigation
+content-length: 1
 
-{B69277AD-E917-4B9F-9136-A12E0A3E462F}
+1
 ----version----
 language: en
 version: 1
-revision: 9746fdbd-270e-4f66-8067-4bf7a5345ecf
+revision: 7a4613ce-2af2-413c-a34d-fe7fe2bc0616
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
@@ -55,28 +55,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20150824T175319Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
+20150907T045428Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-9746fdbd-270e-4f66-8067-4bf7a5345ecf
+7a4613ce-2af2-413c-a34d-fe7fe2bc0616
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150827T014132Z
+20150908T041215Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

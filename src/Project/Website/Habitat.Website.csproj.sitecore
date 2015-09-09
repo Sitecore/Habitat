@@ -2,4 +2,10 @@
   <PropertyGroup>
     <Site Server="habitat" UserName="sitecore\admin" IsRemoteSitecore="False" />
   </PropertyGroup>
+  <File Include="Views\Website\Sublayouts\PageHeading.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{A2216CA7-B205-4042-A345-72117D0086C3}</Item>
+  </File>
+  <File Include="Views\Website\Sublayouts\PageSidebar.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{EADA94FA-315F-4DF2-AC49-13346DFDAF12}</Item>
+  </File>
 </Project>

@@ -1,26 +1,40 @@
 ﻿@using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.News
+@using Sitecore.Resources.Media
 @model IEnumerable<Sitecore.Data.Items.Item>
-<ul class="news">
+<div class="c-content-blog-post-1-list">
     @foreach (var item in Model)
     {
-        <li class="media">
-            <div class="media-left media-top">
-                <a href="@item.Url()">
-                    @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), item, mw: 100)
-                </a>
-            </div>
-            <div class="media-body">
-                <h4 class="media-heading">
-                    <a href="@item.Url()">@Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), item)</a>
-                </h4>
-                <em class="date">
-                    @Html.Sitecore().Field(Habitat.News.Templates.NewsArticle.Fields.Date.ToString(), item, new {format = "MMMM dd, yyyy"})
-                </em>
-                <p>
+        <div class="c-content-blog-post-1">
+            <div class="c-media">
+                @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), item, mh: 360)
+                <div class="c-title c-font-bold c-font-uppercase">
+                    <a href="@item.Url()">
+                        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), item)
+                    </a>
+                </div>
+                <div class="c-desc">
                     @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary.ToString(), item)
-                </p>
+                </div>
+                <div class="c-panel">
+                    <div class="c-date">
+                        <span class="c-font-uppercase">
+                            @Html.Sitecore().Field(Habitat.News.Templates.NewsArticle.Fields.Date.ToString(), item, new { format = "MMMM dd, yyyy" })
+                        </span>
+                    </div>
+                    <ul class="c-tags c-theme-ul-bg">
+                        <li>
+                            ux
+                        </li>
+                        <li>
+                            web
+                        </li>
+                        <li>
+                            html
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </li>
+        </div>
     }
-</ul>
+</div>

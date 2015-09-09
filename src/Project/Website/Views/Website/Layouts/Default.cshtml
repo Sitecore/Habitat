@@ -2,7 +2,9 @@
 @using Habitat.Framework.Assets.Models
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]-->
-<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,25 +16,68 @@
     @RenderAssetsService.Current.RenderScript(ScriptLocation.Head)
     @RenderAssetsService.Current.RenderStyles()
 </head>
-<body>
 
-    <header>
-        <nav class="navbar navbar-default">
+<body class="c-layout-header-fixed c-layout-header-6-topbar">
+    <!-- BEGIN: LAYOUT/HEADERS/HEADER-2 -->
+    <!-- BEGIN: HEADER 2 -->
+    <header class="c-layout-header c-layout-header-6" data-minimize-offset="80">
+        <div class="c-topbar">
             <div class="container">
-                @Html.Sitecore().Placeholder("header")
+                <nav class="c-top-menu">
+                    @Html.Sitecore().Placeholder("topbarright")
+                </nav>
+                <div class="c-brand">
+                    @Html.Sitecore().Placeholder("topbarleft")
+                </div>
             </div>
-        </nav>
+        </div>
+        <div class="c-navbar">
+            <div class="container">
+                <div class="c-navbar-wrapper clearfix">
+                    @Html.Sitecore().Placeholder("navbar")
+                </div>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
+    <div class="c-layout-page">
         @Html.Sitecore().Placeholder("content")
     </div>
 
-    <footer>
+    <a name="footer"></a>
+    <footer class="c-layout-footer c-layout-footer-6 c-bg-grey-1">
         <div class="container">
-            @Html.Sitecore().Placeholder("footer")
+            <div class="c-prefooter c-bg-white">
+                <div class="c-body">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            @Html.Sitecore().Placeholder("footercolumn1")
+                        </div>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                            @Html.Sitecore().Placeholder("footercolumn2")
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            @Html.Sitecore().Placeholder("footercolumn3")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c-postfooter c-bg-dark-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="c-copyright c-font-grey">
+                            @Html.Sitecore().Placeholder("postfooter")
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+    <div class="c-layout-go2top">
+        <i class="icon-arrow-up"></i>
+    </div>
 
     @RenderAssetsService.Current.RenderScript(ScriptLocation.Body)
 </body>

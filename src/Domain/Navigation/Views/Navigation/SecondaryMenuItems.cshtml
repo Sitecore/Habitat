@@ -8,20 +8,23 @@
         return;
     }
 }
-<div class="list-group">
+
+<ul class="c-dropdown-menu">
     @foreach (var item in Model.Items)
     {
-        <a class="list-group-item @(item.IsActive ? "active" : string.Empty)" href="@item.Item.Url()">
-            @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
-        </a>
+        var hasChildren = item.IsActive && item.Children != null && item.Children.Items.Any();
+        var activeClass = (item.IsActive ? " c-active" : string.Empty);
+        <li class="c-dropdown @(hasChildren ? "c-expanded" : "") @activeClass">
+            <a href="@item.Item.Url()">
+                @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
+            </a>
 
-        if (item.IsActive && item.Children != null && item.Children.Items.Any())
-        {
-            <div class="list-group-item">
-                <div class="panel panel-default">
+            @{
+                if (hasChildren)
+                {
                     @Html.Partial("SecondaryMenuItems", item.Children)
-                </div>
-            </div>
-        }
+                }
+            } 
+        </li>
     }
-</div>
+</ul>

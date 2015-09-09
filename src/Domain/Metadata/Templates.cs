@@ -14,7 +14,6 @@ namespace Habitat.Metadata
                 public static readonly ID Description = new ID("{BB7A38C0-323C-4F81-8EB9-288ABF7C4638}");
                 public static readonly ID Keywords = new ID("{4B16F930-73C9-4643-BB1B-00F06E60A073}");
                 public static readonly ID CanIndex = new ID("{683D7237-206A-488F-9DEE-4A4E41FB161D}");
-                public static readonly ID CustomMetadata = new ID("{167ABA77-5172-42AF-9F9E-00299113839E}");
             }
         }
 

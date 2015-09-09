@@ -5,4 +5,7 @@
   <File Include="Views\Social\OpenGraph.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{3389CAFC-000C-41E5-921C-92821B3DB7B5}</Item>
   </File>
+  <File Include="Views\Social\SocialLinks.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{D7866BEE-0BD4-4198-8A91-225EAF58EFA5}</Item>
+  </File>
 </Project>

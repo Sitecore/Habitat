@@ -2,9 +2,9 @@
 version: 1
 id: {3A5D638D-5BDD-4DDD-BEAC-4A0C81C27E8A}
 database: master
-path: /sitecore/content/Habitat/Home/About Us
+path: /sitecore/content/Habitat/Home/Contact Us
 parent: {DAC24EDD-44FB-42EF-9ECD-1E8DAF706386}
-name: About Us
+name: Contact Us
 master: {00000000-0000-0000-0000-000000000000}
 template: {94A8C8E9-690B-4E65-98E7-F95800222767}
 templatekey: Article
@@ -15,19 +15,19 @@ name: __Sortorder
 key: __sortorder
 content-length: 3
 
-200
+500
 ----version----
 language: en
 version: 1
-revision: a8248e8e-a5da-4e83-a748-1a96b761e72d
+revision: 9bc9b7df-6f49-407c-9786-fdcf60f9047d
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
 name: Title
 key: title
-content-length: 8
+content-length: 10
 
-About Us
+Contact Us
 ----field----
 field: {D74F396D-5C5E-4916-BD0A-BFD58B6B1967}
 name: Body
@@ -47,16 +47,16 @@ content-length: 207
 field: {1B483E91-D8C4-4D19-BA03-462074B55936}
 name: NavigationTitle
 key: navigationtitle
-content-length: 8
+content-length: 10
 
-About Us
+Contact Us
 ----field----
 field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
 name: BrowserTitle
 key: browsertitle
-content-length: 8
+content-length: 10
 
-About Us
+Contact Us
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -77,14 +77,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-a8248e8e-a5da-4e83-a748-1a96b761e72d
+9bc9b7df-6f49-407c-9786-fdcf60f9047d
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150901T001655Z
+20150907T045405Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

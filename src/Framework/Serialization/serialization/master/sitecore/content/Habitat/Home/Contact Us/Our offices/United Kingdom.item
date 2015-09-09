@@ -2,7 +2,7 @@
 version: 1
 id: {B42FCF9A-4AEA-4F37-A859-92A691755B82}
 database: master
-path: /sitecore/content/Habitat/Home/About Us/Our offices/United Kingdom
+path: /sitecore/content/Habitat/Home/Contact Us/Our offices/United Kingdom
 parent: {B6C764EB-FC71-45C0-83FC-E28DC20A68C3}
 name: United Kingdom
 master: {00000000-0000-0000-0000-000000000000}

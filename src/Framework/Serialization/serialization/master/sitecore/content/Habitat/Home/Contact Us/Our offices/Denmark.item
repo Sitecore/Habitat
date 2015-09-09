@@ -2,7 +2,7 @@
 version: 1
 id: {3A2F961F-C284-4B59-99D5-3AD74B244B14}
 database: master
-path: /sitecore/content/Habitat/Home/About Us/Our offices/Denmark
+path: /sitecore/content/Habitat/Home/Contact Us/Our offices/Denmark
 parent: {B6C764EB-FC71-45C0-83FC-E28DC20A68C3}
 name: Denmark
 master: {00000000-0000-0000-0000-000000000000}
