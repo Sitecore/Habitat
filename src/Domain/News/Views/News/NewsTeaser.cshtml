@@ -1,4 +1,5 @@
 ﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Framework.SitecoreExtensions.Repositories
 @using Habitat.News
 @model Sitecore.Mvc.Presentation.RenderingModel
 
@@ -12,6 +13,6 @@
     </a>
     <p>@Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary.ToString(), Model.Item)</p>
     <a href="@Model.Item.Url()">
-        Read more... @* TODO: Change to dictionary *@
+        @DictionaryRepository.Get("/R/Read more", "READ MORE")
     </a>
 </div>

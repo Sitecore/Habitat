@@ -965,7 +965,6 @@
     <Content Include="assets\plugins\socicon\svg\socicon_zynga.svg" />
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Habitat\z.Habitat.Design.config" />
-    <Content Include="assets\base\img\content\stock3\Thumbs.db" />
     <Content Include="assets\plugins\animate\README.md" />
     <Content Include="assets\plugins\bootstrap-hover-dropdown\LICENSE" />
     <Content Include="assets\plugins\bootstrap-hover-dropdown\README.md" />
@@ -1347,10 +1346,10 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Folder Include="sass\components\content\persons\" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
