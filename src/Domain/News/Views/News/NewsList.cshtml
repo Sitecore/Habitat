@@ -1,13 +1,13 @@
 ﻿@using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.News
-@using Sitecore.Resources.Media
 @model IEnumerable<Sitecore.Data.Items.Item>
+
 <div class="c-content-blog-post-1-list">
     @foreach (var item in Model)
     {
         <div class="c-content-blog-post-1">
             <div class="c-media">
-                @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), item, mh: 360)
+                @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), item, 360)
                 <div class="c-title c-font-bold c-font-uppercase">
                     <a href="@item.Url()">
                         @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), item)
@@ -19,7 +19,7 @@
                 <div class="c-panel">
                     <div class="c-date">
                         <span class="c-font-uppercase">
-                            @Html.Sitecore().Field(Habitat.News.Templates.NewsArticle.Fields.Date.ToString(), item, new { format = "MMMM dd, yyyy" })
+                            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new {format = "MMMM dd, yyyy"})
                         </span>
                     </div>
                     <ul class="c-tags c-theme-ul-bg">

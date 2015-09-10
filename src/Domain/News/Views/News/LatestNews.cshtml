@@ -1,4 +1,5 @@
 ﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Framework.SitecoreExtensions.Repositories
 @using Habitat.News
 @model IEnumerable<Sitecore.Data.Items.Item>
 <div class="c-content-title-1 c-theme c-title-md">
@@ -26,7 +27,6 @@
 </ul>
 <div class="c-margin-t-10">
     <a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-md c-btn-border-1x c-theme-btn c-btn-uppercase c-btn-square c-btn-bold c-read-more">
-        @* TODO: Add Dictionary functionality to avoid hardcoding *@
-        Read more
+        @DictionaryRepository.Get("/R/Read more", "***READ MORE***")
     </a>
 </div>

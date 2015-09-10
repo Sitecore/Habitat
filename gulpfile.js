@@ -3,6 +3,7 @@ var gmsbuild = require('gulp-msbuild');
 var foreach = require('gulp-foreach');
 var rename = require('gulp-rename');
 var watch = require('gulp-watch');
+
 var config = require('./gulp-config.js')();
 
 gulp.task('Publish', ['Build'], function () {
@@ -49,4 +50,13 @@ gulp.task('Copy-Sitecore-Lib', function () {
     gulp.src(config.sitecoreLibraries + '/**/*')
         .pipe(gulp.dest('./lib/Sitecore'));
     console.log('Finished copying sitecore libraries', 'color:red');
+});
+
+gulp.task('File-Watcher', function () {
+    gulp.watch('./src/**/*.cshtml', function (event) {
+        if (event.type === 'changed') {
+            console.log('publish this file '+event.path );
+        }
+        console.log("published " + event.path);
+    });
 });

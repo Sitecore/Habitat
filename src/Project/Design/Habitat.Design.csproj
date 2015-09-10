@@ -48,14 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\base\css\components.css" />
-    <Content Include="assets\base\css\components.min.css">
-      <DependentUpon>components.css</DependentUpon>
-    </Content>
-    <Content Include="assets\base\css\custom.css" />
+    <Content Include="assets\base\css\habitat.css" />
     <Content Include="assets\base\css\plugins.css" />
-    <Content Include="assets\base\css\plugins.min.css">
-      <DependentUpon>plugins.css</DependentUpon>
-    </Content>
     <Content Include="assets\base\css\themes\blue1.css" />
     <Content Include="assets\base\css\themes\blue2.css" />
     <Content Include="assets\base\css\themes\blue3.css" />
@@ -971,7 +965,6 @@
     <Content Include="assets\plugins\socicon\svg\socicon_zynga.svg" />
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Habitat\z.Habitat.Design.config" />
-    <Content Include="assets\base\img\content\stock3\Thumbs.db" />
     <Content Include="assets\plugins\animate\README.md" />
     <Content Include="assets\plugins\bootstrap-hover-dropdown\LICENSE" />
     <Content Include="assets\plugins\bootstrap-hover-dropdown\README.md" />
@@ -984,7 +977,6 @@
     <Content Include="assets\plugins\counterup\LICENSE" />
     <Content Include="assets\plugins\counterup\README.md" />
     <Content Include="assets\plugins\cubeportfolio\img\cbp-sprite.psd" />
-    <Content Include="assets\plugins\cubeportfolio\img\Thumbs.db" />
     <Content Include="assets\plugins\fancybox\CHANGELOG.md" />
     <Content Include="assets\plugins\fancybox\README.md" />
     <Content Include="assets\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
@@ -1024,16 +1016,12 @@
     <Content Include="assets\plugins\revo-slider\assets\arrows.psd" />
     <Content Include="assets\plugins\revo-slider\assets\bullets.psd" />
     <Content Include="assets\plugins\revo-slider\assets\small_arrows.psd" />
-    <Content Include="assets\plugins\revo-slider\css\.DS_Store" />
     <Content Include="assets\plugins\revo-slider\font\revicons.eot" />
     <Content Include="assets\plugins\revo-slider\font\revicons.ttf" />
     <Content Include="assets\plugins\revo-slider\font\revicons.woff" />
-    <Content Include="assets\plugins\revo-slider\images\.DS_Store" />
-    <Content Include="assets\plugins\revo-slider\js\.DS_Store" />
     <Content Include="assets\plugins\simple-line-icons\fonts\Simple-Line-Icons.eot" />
     <Content Include="assets\plugins\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
     <Content Include="assets\plugins\simple-line-icons\fonts\Simple-Line-Icons.woff" />
-    <Content Include="assets\plugins\socicon\.DS_Store" />
     <Content Include="assets\plugins\socicon\eps\socicon_500px.eps" />
     <Content Include="assets\plugins\socicon\eps\socicon_8tracks.eps" />
     <Content Include="assets\plugins\socicon\eps\socicon_amazon.eps" />
@@ -1118,13 +1106,14 @@
     <Content Include="assets\plugins\socicon\eps\socicon_youtube.eps" />
     <Content Include="assets\plugins\socicon\eps\socicon_zerply.eps" />
     <Content Include="assets\plugins\socicon\eps\socicon_zynga.eps" />
-    <Content Include="assets\plugins\socicon\font\.DS_Store" />
     <Content Include="assets\plugins\socicon\font\.empty" />
     <Content Include="assets\plugins\socicon\font\socicon.eot" />
     <Content Include="assets\plugins\socicon\font\socicon.ttf" />
     <Content Include="assets\plugins\socicon\font\socicon.woff" />
     <Content Include="assets\plugins\socicon\font\socicon.woff2" />
     <Content Include="assets\plugins\socicon\readme.md" />
+    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <Content Include="README.md" />
     <Content Include="sass\themes\blue1.css" />
     <Content Include="sass\themes\blue2.css" />
     <Content Include="sass\themes\blue3.css" />
@@ -1360,6 +1349,7 @@
   <ItemGroup>
     <Folder Include="sass\components\content\persons\" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
