@@ -10,6 +10,13 @@ template: {B69277AD-E917-4B9F-9136-A12E0A3E462F}
 templatekey: News Article
 
 ----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 0
+
+
+----field----
 field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
 name: __Renderings
 key: __renderings
@@ -36,7 +43,7 @@ content-length: 1718
 ----version----
 language: en
 version: 1
-revision: 591a8c52-8f5e-4719-8d05-76d634fc12e6
+revision: 6478abd2-6182-4c81-9761-ed26fa8de462
 
 ----field----
 field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
@@ -58,14 +65,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-591a8c52-8f5e-4719-8d05-76d634fc12e6
+6478abd2-6182-4c81-9761-ed26fa8de462
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150908T051756Z
+20150910T050344Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

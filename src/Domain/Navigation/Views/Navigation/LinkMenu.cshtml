@@ -1,0 +1,33 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Navigation
+@model Habitat.Navigation.Models.NavigationItems
+
+@{
+    if (Model == null || Model.Items == null)
+    {
+        return;
+    }
+}
+
+<ul class="c-links c-theme-ul">
+    @foreach (var item in Model.Items)
+    {
+        if (item.Item.Fields[Templates.LinkMenuItem.Fields.DividerBefore].IsChecked())
+        {
+            <li class="c-divider">
+            </li>
+        }
+        <li>
+            <a href="@item.Url" target="@item.Target" title="@item.Item[Templates.Navigable.Fields.NavigationTitle]">
+                @if (item.Item.Fields[Templates.LinkMenuItem.Fields.Icon].HasValue)
+                {
+                    <i class="fa fa-@item.Item[Templates.LinkMenuItem.Fields.Icon]"></i>
+                }
+                else
+                {
+                    @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
+                }
+            </a>
+        </li>
+    }
+</ul>

@@ -1,5 +1,11 @@
-﻿@using Habitat.Framework.Assets
+﻿@inherits System.Web.Mvc.WebViewPage
+@using Sitecore.Mvc.Analytics.Extensions
+@using Habitat.Framework.Assets
 @using Habitat.Framework.Assets.Models
+@using Sitecore.Mvc;
+@{
+    Layout = null;
+}
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]-->
 <!--[if !IE]><!-->
@@ -10,11 +16,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    @Html.Sitecore().Placeholder("head")
+    @if (!Sitecore.Context.PageMode.IsPageEditor)
+    {
+        @Html.Sitecore().Placeholder("head")
+    }
 
     <!-- Latest compiled and minified JavaScript -->
     @RenderAssetsService.Current.RenderScript(ScriptLocation.Head)
     @RenderAssetsService.Current.RenderStyles()
+    @Html.Sitecore().VisitorIdentification()
 </head>
 
 <body class="c-layout-header-fixed c-layout-header-6-topbar">
@@ -47,12 +57,11 @@
             </div>
         </div>
     </header>
-
     <div class="c-layout-page">
         @Html.Sitecore().Placeholder("content")
     </div>
 
-    <a name="footer"></a>
+    <!-- TODO: Split footer into seperate sublayout with multiple options -->
     <footer class="c-layout-footer c-layout-footer-6 c-bg-grey-1">
         <div class="container">
             <div class="c-prefooter c-bg-white">
@@ -75,14 +84,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="c-copyright c-font-grey">
-                            @Html.Sitecore().Placeholder("postfooter")
-                        </p>
+                        @Html.Sitecore().Placeholder("postfooter")
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+
     <div class="c-layout-go2top">
         <i class="icon-arrow-up"></i>
     </div>

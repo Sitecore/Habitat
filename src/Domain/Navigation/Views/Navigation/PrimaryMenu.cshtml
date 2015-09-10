@@ -6,7 +6,7 @@
         @foreach (var item in Model.Items)
         {
             <li class="@(item.IsActive ? "c-active" : string.Empty)">
-                <a href="@item.Item.Url()" class="c-link">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)</a>
+                <a href="@item.Url" target="@item.Target" class="c-link">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)</a>
             </li>
         }
         @Html.Sitecore().Placeholder("primarymenuitems")

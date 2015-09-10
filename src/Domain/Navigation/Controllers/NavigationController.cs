@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
 using Habitat.Navigation.Repositories;
 using Sitecore.Mvc.Presentation;
+using static System.String;
 
 namespace Habitat.Navigation.Controllers
 {
@@ -34,5 +35,15 @@ namespace Habitat.Navigation.Controllers
             var item = _navigationRepository.GetSecondaryMenuItem();
             return View("SecondaryMenu", item);
         }
+
+        public ActionResult LinkMenu()
+        {
+            if (IsNullOrEmpty(RenderingContext.Current.Rendering.DataSource))
+                return null;
+            var item = RenderingContext.Current.Rendering.Item;
+            var items = _navigationRepository.GetLinkMenuItems(item);
+            return View("LinkMenu", items);
+        }
+
     }
 }

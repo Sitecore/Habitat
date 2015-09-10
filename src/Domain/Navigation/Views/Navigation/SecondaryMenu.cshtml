@@ -20,7 +20,7 @@
 
 <ul class="c-sidebar-menu collapse" id="sidebar-menu-1">
     <li class="c-dropdown c-open c-active">
-        <a href="@Model.Item.Url()">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), Model.Item)</a>
+        <a href="@Model.Url" target="@Model.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), Model.Item)</a>
         @if (Model.Children != null)
         {
             @Html.Partial("SecondaryMenuItems", Model.Children)

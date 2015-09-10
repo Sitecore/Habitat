@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {0CF58F14-D0F8-4C41-9896-3D69048A0B19}
+database: master
+path: /sitecore/layout/Renderings/Habitat/Domain/Social/TwitterFeed
+parent: {D44C5A79-5C36-4A93-9DE4-7E59345DF572}
+name: TwitterFeed
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 32
+
+/Views/Social/TwitterFeed.cshtml
+----version----
+language: en
+version: 1
+revision: b89229ea-c4b1-42df-a9e6-adfc0e58e463
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150910T030357Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b89229ea-c4b1-42df-a9e6-adfc0e58e463
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20150910T030357Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

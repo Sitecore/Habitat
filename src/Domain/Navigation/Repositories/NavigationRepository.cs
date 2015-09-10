@@ -14,6 +14,7 @@ namespace Habitat.Navigation.Repositories
         NavigationItems GetBreadcrumb();
         NavigationItems GetPrimaryMenu();
         NavigationItem GetSecondaryMenuItem();
+        NavigationItems GetLinkMenuItems(Item menuItem);
     }
 
     public class NavigationRepository : INavigationRepository
@@ -71,6 +72,13 @@ namespace Habitat.Navigation.Repositories
             return rootItem == null ? null : CreateNavigationItem(rootItem, 0, 2);
         }
 
+        public NavigationItems GetLinkMenuItems(Item menuRoot)
+        {
+            if (menuRoot == null)
+                throw new ArgumentNullException(nameof(menuRoot));
+            return GetChildNavigationItems(menuRoot, 0, 0);
+        }
+
         private Item GetSecondaryMenuRoot()
         {
             return FindActivePrimaryMenuItem();
@@ -102,6 +110,8 @@ namespace Habitat.Navigation.Repositories
             return new NavigationItem
             {
                 Item = item,
+                Url = (item.IsDerived(Templates.Link.ID) ? item.LinkFieldUrl(Templates.Link.Fields.Link) : item.Url()),
+                Target = (item.IsDerived(Templates.Link.ID) ? item.LinkFieldTarget(Templates.Link.Fields.Link) : ""),
                 IsActive = IsItemActive(item),
                 Children = GetChildNavigationItems(item, level + 1, maxLevel)
             };

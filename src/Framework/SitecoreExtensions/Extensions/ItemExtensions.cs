@@ -98,6 +98,11 @@ namespace Habitat.Framework.SitecoreExtensions.Extensions
             var linkUrl = new LinkUrl();
             return linkUrl.GetUrl(item, fieldID.ToString());
         }
+        public static string LinkFieldTarget(this Item item, ID fieldID)
+        {
+            XmlField field = item.Fields[fieldID];
+            return field?.GetAttribute("target");
+        }
 
         public static bool IsDerived(this Item item, ID templateId)
         {

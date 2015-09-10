@@ -8,4 +8,7 @@
   <File Include="Views\Identity\Copyright.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{7DAE9F23-890F-4E06-99A7-CCEDB74D3D8E}</Item>
   </File>
+  <File Include="Views\Identity\Contact.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{3EA717CF-354E-45B1-9A21-BD1D044EA4E2}</Item>
+  </File>
 </Project>
