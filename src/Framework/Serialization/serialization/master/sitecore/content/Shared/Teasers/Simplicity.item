@@ -2,9 +2,9 @@
 version: 1
 id: {EF593C2A-F3F8-421A-9368-0E189A689DBD}
 database: master
-path: /sitecore/content/Shared/Teasers/Teaser 1
+path: /sitecore/content/Shared/Teasers/Simplicity
 parent: {6AA25831-0944-4A79-9AFF-7BAC39E03557}
-name: Teaser 1
+name: Simplicity
 master: {00000000-0000-0000-0000-000000000000}
 template: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
 templatekey: Teaser
@@ -12,36 +12,37 @@ templatekey: Teaser
 ----version----
 language: en
 version: 1
-revision: 985d1402-d5ca-4667-85b9-4367ab0321ff
+revision: 25352410-dba8-4783-95ea-5253dcb31543
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
 name: Title
 key: title
-content-length: 8
+content-length: 10
 
-Teaser 1
+Simplicity
 ----field----
 field: {AC3FD4DB-8266-476D-9635-67814D91E901}
 name: Summary
 key: summary
-content-length: 200
+content-length: 178
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu
+Sitecore Habitat makes it simple and easy to build, adapt and change Sitecore solutions. 
+By providing a simple and consistent architecture, changes can be made with confidence.
 ----field----
 field: {E8AB122C-6F54-4D4E-AEC6-F81ADDC558FC}
 name: Link
 key: link
-content-length: 140
+content-length: 158
 
-<link text="" linktype="internal" url="" anchor="" title="" class="" querystring="" target="" id="{3A5D638D-5BDD-4DDD-BEAC-4A0C81C27E8A}" />
+<link text="Read more" linktype="internal" url="" anchor="" title="Read more" class="" querystring="" target="" id="{3A5D638D-5BDD-4DDD-BEAC-4A0C81C27E8A}" />
 ----field----
 field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
 name: Image
 key: image
-content-length: 207
+content-length: 172
 
-<image mediapath="/Default Website/cover" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/cover" mediaid="{04DAD0FD-DB66-4070-881F-17264CA257E1}" />
+<image mediapath="" alt="Man using Laptop" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{CE7D371D-B5FA-4429-A148-DAC72EC694A2}" />
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -55,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-985d1402-d5ca-4667-85b9-4367ab0321ff
+25352410-dba8-4783-95ea-5253dcb31543
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150831T115327Z
+20150911T011707Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

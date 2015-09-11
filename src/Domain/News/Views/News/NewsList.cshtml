@@ -7,7 +7,7 @@
     {
         <div class="c-content-blog-post-1">
             <div class="c-media">
-                @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), item, 360)
+                @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), item, mw: 818)
                 <div class="c-title c-font-bold c-font-uppercase">
                     <a href="@item.Url()">
                         @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), item)

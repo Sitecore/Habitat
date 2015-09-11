@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {B415F846-5EED-409C-B6D8-C23BAB52D502}
+id: {88D7F189-43AF-4704-94EA-DAA482F9DBA5}
 database: master
-path: /sitecore/content/Habitat/Home/News/News/News article
+path: /sitecore/content/Habitat/Home/News/News/Best In Class
 parent: {439EC71A-4231-45C8-B075-975BD41099A7}
-name: News article
+name: Best In Class
 master: {00000000-0000-0000-0000-000000000000}
 template: {B69277AD-E917-4B9F-9136-A12E0A3E462F}
 templatekey: News Article
@@ -15,33 +15,26 @@ name: NewsDate
 key: newsdate
 content-length: 16
 
-20150824T175742Z
-----field----
-field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
-name: __Sortorder
-key: __sortorder
-content-length: 2
-
-25
+20150924T175742Z
 ----version----
 language: en
 version: 1
-revision: 32debe0a-9f8e-42a5-ba35-a08d9500817e
+revision: 8b9dc57e-2b73-4348-8170-9ef348bf7d7f
 
 ----field----
 field: {BD9ECD4A-C0B0-4233-A3CD-D995519AC87B}
 name: NewsTitle
 key: newstitle
-content-length: 14
+content-length: 39
 
-News article 1
+Sitecore XP rated Best In Class - again
 ----field----
 field: {3437EAAC-6EE8-460B-A33D-DA1F714B5A93}
 name: NewsImage
 key: newsimage
-content-length: 207
+content-length: 159
 
-<image mediapath="/Default Website/cover" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/cover" mediaid="{04DAD0FD-DB66-4070-881F-17264CA257E1}" />
+<image mediapath="" alt="178" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{739BCA32-6346-4B62-B8BF-34E93528822A}" />
 ----field----
 field: {9D08271A-1672-44DD-B7EF-0A6EC34FCBA7}
 name: NewsSummary
@@ -78,14 +71,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-32debe0a-9f8e-42a5-ba35-a08d9500817e
+8b9dc57e-2b73-4348-8170-9ef348bf7d7f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150908T041134Z
+20150911T021655Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -2,9 +2,9 @@
 version: 1
 id: {6086F621-4A0E-4724-9D6F-EA7BA8139F57}
 database: master
-path: /sitecore/content/Shared/Teasers/Teaser 2
+path: /sitecore/content/Shared/Teasers/Flexibility
 parent: {6AA25831-0944-4A79-9AFF-7BAC39E03557}
-name: Teaser 2
+name: Flexibility
 master: {00000000-0000-0000-0000-000000000000}
 template: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
 templatekey: Teaser
@@ -12,36 +12,36 @@ templatekey: Teaser
 ----version----
 language: en
 version: 1
-revision: 3040885a-29f3-4cc5-a53f-2147be7dcc62
+revision: 18a085c1-b7e3-4e67-9435-d38fd8ab1714
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
 name: Title
 key: title
-content-length: 8
+content-length: 11
 
-Teaser 2
+Flexibility
 ----field----
 field: {AC3FD4DB-8266-476D-9635-67814D91E901}
 name: Summary
 key: summary
-content-length: 295
+content-length: 134
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.  
+"The only thing constant in life is Change". Sitecore Habitat makes it easy and safe to change and adapt to new business requirements.
 ----field----
 field: {E8AB122C-6F54-4D4E-AEC6-F81ADDC558FC}
 name: Link
 key: link
-content-length: 140
+content-length: 158
 
-<link text="" linktype="internal" url="" anchor="" title="" class="" querystring="" target="" id="{439EC71A-4231-45C8-B075-975BD41099A7}" />
+<link text="Read more" linktype="internal" url="" anchor="" title="Read more" class="" querystring="" target="" id="{439EC71A-4231-45C8-B075-975BD41099A7}" />
 ----field----
 field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
 name: Image
 key: image
-content-length: 207
+content-length: 170
 
-<image mediapath="/Default Website/cover" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/cover" mediaid="{04DAD0FD-DB66-4070-881F-17264CA257E1}" />
+<image mediapath="" alt="Woman on Phone" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{EEAA66A4-9936-478F-BD5F-AFAF09641366}" />
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-3040885a-29f3-4cc5-a53f-2147be7dcc62
+18a085c1-b7e3-4e67-9435-d38fd8ab1714
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150831T115507Z
+20150911T011742Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
