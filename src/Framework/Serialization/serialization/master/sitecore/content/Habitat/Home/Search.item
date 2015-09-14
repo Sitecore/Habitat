@@ -1,75 +1,68 @@
 ----item----
 version: 1
-id: {DAC24EDD-44FB-42EF-9ECD-1E8DAF706386}
+id: {9AA07D42-E9B5-4B52-A0E2-4FDF08C203EE}
 database: master
-path: /sitecore/content/Habitat/Home
-parent: {725A45E3-E307-4B95-B363-2782B059DF06}
-name: Home
+path: /sitecore/content/Habitat/Home/Search
+parent: {DAC24EDD-44FB-42EF-9ECD-1E8DAF706386}
+name: Search
 master: {00000000-0000-0000-0000-000000000000}
-template: {4A8822CC-B418-4452-AB0F-8BB6DF2F2114}
-templatekey: Home
+template: {92168572-385B-45F0-B40F-3D987AD20E5C}
+templatekey: Search Results
 
-----field----
-field: {5585A30D-B115-4753-93CE-422C3455DEB2}
-name: ShowInNavigation
-key: showinnavigation
-content-length: 1
-
-1
 ----version----
 language: en
 version: 1
-revision: fcb7a8ee-a6d5-4c75-bfe8-c4915b1d90f3
+revision: 4caa0a9f-28f1-47e6-b881-9c652066700b
 
+----field----
+field: {C30A013F-3CC8-4961-9837-1C483277084A}
+name: Title
+key: title
+content-length: 6
+
+Search
 ----field----
 field: {1B483E91-D8C4-4D19-BA03-462074B55936}
 name: NavigationTitle
 key: navigationtitle
-content-length: 4
+content-length: 6
 
-Home
+Search
+----field----
+field: {0EE2F208-1FEE-42FC-8051-6696D49A92BF}
+name: OpenGraphTitle
+key: opengraphtitle
+content-length: 14
+
+Search Results
 ----field----
 field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
 name: BrowserTitle
 key: browsertitle
-content-length: 16
-
-Ye Olde Homepage
-----field----
-field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
-name: __Owner
-key: __owner
 content-length: 14
 
-sitecore\admin
+Search Results
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
 key: __created
 content-length: 16
 
-20150823T123346Z
-----field----
-field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
-name: __Created by
-key: __created by
-content-length: 14
-
-sitecore\admin
+20150911T033505Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-fcb7a8ee-a6d5-4c75-bfe8-c4915b1d90f3
+4caa0a9f-28f1-47e6-b881-9c652066700b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150914T105533Z
+20150911T042131Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

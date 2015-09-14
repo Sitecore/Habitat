@@ -1,0 +1,20 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Sitecore.Data.Items
+@using Sitecore.Mvc.Presentation
+@model Habitat.Search.Models.SearchResults
+<div class="search-results">
+    @foreach (var result in Model.Results)
+    {
+        var item = result.GetItem();
+        <div class="row c-margin-b-20">
+            <h3 class="c-title c-font-bold c-font-22 c-font-dark">
+                @result.Title
+            </h3>
+            <h9><span class="label label-default c-font-slim c-theme-bg">@result.ContentType</span></h9>
+            <div class="c-desc c-font-16 c-font-thin">
+                @result.Description
+                <a href="@item.Url()">read more...</a>
+            </div>
+        </div>
+    }
+</div>

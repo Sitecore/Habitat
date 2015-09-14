@@ -1,4 +1,13 @@
-﻿<form class="c-quick-search" action="#">
-    <input type="text" name="query" placeholder="Type to search..." value="" class="form-control" autocomplete="off">
-    <span class="c-theme-link">×</span>
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Search
+@model Habitat.Search.Models.SearchResults
+
+<form action="@Model.ConfigurationItem.Url()">
+    <div class="input-group">
+        <input type="text" name="query" placeholder="@Model.ConfigurationItem[Templates.SearchResults.Fields.SearchBoxTitle]" value="@Model.Query" class="form-control c-square c-theme-border" autocomplete="off" />
+        <span class="input-group-btn">
+            <button class="btn c-theme-btn c-theme-border c-btn-square" type="submit"><i class="fa fa-search"></i></button>
+        </span>
+    </div>
 </form>
+

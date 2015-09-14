@@ -53,17 +53,19 @@ namespace Habitat.Navigation.Repositories
         {
             var navItems = GetChildNavigationItems(NavigationRoot, 0, 0);
 
-            if (MainUtil.GetBool(NavigationRoot[Templates.NavigationRoot.Fields.IncludeRootInPrimaryMenu], false))
-            {
-                if (NavigationRoot.IsDerived(Templates.Navigable.ID))
-                {
-                    var navigationItem = CreateNavigationItem(NavigationRoot, 0, 0);
-                    //Root navigation item is only active when we are actually on the root item
-                    navigationItem.IsActive = ContextItem.ID == NavigationRoot.ID;
-                    navItems.Items.Insert(0, navigationItem);
-                }
-            }
+            if (!IncludeInNavigation(NavigationRoot))
+                return navItems;
+
+            var navigationItem = CreateNavigationItem(NavigationRoot, 0, 0);
+            //Root navigation item is only active when we are actually on the root item
+            navigationItem.IsActive = ContextItem.ID == NavigationRoot.ID;
+            navItems.Items.Insert(0, navigationItem);
             return navItems;
+        }
+
+        private bool IncludeInNavigation(Item item)
+        {
+            return item.IsDerived(Templates.Navigable.ID) && MainUtil.GetBool(item[Templates.Navigable.Fields.ShowInNavigation], false);
         }
 
         public NavigationItem GetSecondaryMenuItem()
@@ -98,7 +100,7 @@ namespace Habitat.Navigation.Repositories
             var item = ContextItem;
             while (item != null)
             {
-                if (item.IsDerived(Templates.Navigable.ID))
+                if (IncludeInNavigation(item))
                     yield return CreateNavigationItem(item, 0);
 
                 item = item.Parent;
@@ -121,9 +123,7 @@ namespace Habitat.Navigation.Repositories
         {
             if (level > maxLevel || !parentItem.HasChildren)
                 return null;
-            var childItems =
-                parentItem.Children.Where(i => i.IsDerived(Templates.Navigable.ID) && MainUtil.GetBool(i[Templates.Navigable.Fields.ShowInNavigation], true))
-                    .Select(i => CreateNavigationItem(i, level, maxLevel));
+            var childItems = parentItem.Children.Where(IncludeInNavigation).Select(i => CreateNavigationItem(i, level, maxLevel));
             return new NavigationItems
             {
                 Items = childItems.ToList()

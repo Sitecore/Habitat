@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {7127C7A9-5C67-49C2-A6F3-45D9A966D1B2}
+id: {D460006D-1069-414C-AD24-4821EBA45F70}
 database: master
-path: /sitecore/layout/Renderings/Habitat/Domain/Search/SearchBox
+path: /sitecore/layout/Renderings/Habitat/Domain/Search/SearchResults
 parent: {5A852BFA-9F18-4B9C-B0AF-A60913872B2D}
-name: SearchBox
+name: SearchResults
 master: {00000000-0000-0000-0000-000000000000}
 template: {2A3E91A0-7987-44B5-AB34-35C2D9DE83B9}
 templatekey: Controller rendering
@@ -20,9 +20,9 @@ Habitat.Search.Controllers.SearchController, Habitat.Search
 field: {DED9E431-3604-4921-A4B3-A6EC7636A5B6}
 name: Controller Action
 key: controller action
-content-length: 9
+content-length: 13
 
-SearchBox
+SearchResults
 ----field----
 field: {94069F66-609C-48B0-8281-521C30FB269D}
 name: Open Properties after Add
@@ -33,7 +33,7 @@ content-length: 1
 ----version----
 language: en
 version: 1
-revision: 840309a3-5da4-42a4-86f1-912f3e4abb33
+revision: a364118a-9f36-4a9d-bd61-d43927cb6012
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-840309a3-5da4-42a4-86f1-912f3e4abb33
+a364118a-9f36-4a9d-bd61-d43927cb6012
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150911T045821Z
+20150911T032940Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

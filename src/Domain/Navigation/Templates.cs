@@ -7,11 +7,6 @@ namespace Habitat.Navigation
         public struct NavigationRoot
         {
             public static readonly ID ID = new ID("{F9F4FC05-98D0-4C62-860F-F08AE7F0EE25}");
-
-            public struct Fields
-            {
-                public static readonly ID IncludeRootInPrimaryMenu = new ID("{B7362C78-C726-45A7-8675-C115B3338A92}");
-            }
         }
 
         public struct Navigable

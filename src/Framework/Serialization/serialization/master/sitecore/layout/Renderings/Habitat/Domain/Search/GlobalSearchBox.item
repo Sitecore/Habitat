@@ -1,30 +1,23 @@
 ----item----
 version: 1
-id: {7127C7A9-5C67-49C2-A6F3-45D9A966D1B2}
+id: {5974A2E8-6453-48CF-A7C9-FE721BB124AC}
 database: master
-path: /sitecore/layout/Renderings/Habitat/Domain/Search/SearchBox
+path: /sitecore/layout/Renderings/Habitat/Domain/Search/GlobalSearchBox
 parent: {5A852BFA-9F18-4B9C-B0AF-A60913872B2D}
-name: SearchBox
+name: GlobalSearchBox
 master: {00000000-0000-0000-0000-000000000000}
-template: {2A3E91A0-7987-44B5-AB34-35C2D9DE83B9}
-templatekey: Controller rendering
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
 
 ----field----
-field: {E64AD073-DFCC-4D20-8C0B-FE5AA6226CD7}
-name: Controller
-key: controller
-content-length: 59
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 36
 
-Habitat.Search.Controllers.SearchController, Habitat.Search
+/Views/Search/GlobalSearchBox.cshtml
 ----field----
-field: {DED9E431-3604-4921-A4B3-A6EC7636A5B6}
-name: Controller Action
-key: controller action
-content-length: 9
-
-SearchBox
-----field----
-field: {94069F66-609C-48B0-8281-521C30FB269D}
+field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
 name: Open Properties after Add
 key: open properties after add
 content-length: 1
@@ -33,7 +26,7 @@ content-length: 1
 ----version----
 language: en
 version: 1
-revision: 840309a3-5da4-42a4-86f1-912f3e4abb33
+revision: 7ad190e1-f95e-47b1-8be6-038dbcfd4218
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,21 +34,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20150911T032830Z
+20150909T035951Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-840309a3-5da4-42a4-86f1-912f3e4abb33
+7ad190e1-f95e-47b1-8be6-038dbcfd4218
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150911T045821Z
+20150911T042412Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

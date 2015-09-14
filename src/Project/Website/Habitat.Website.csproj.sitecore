@@ -8,4 +8,7 @@
   <File Include="Views\Website\Sublayouts\PageSidebar.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{EADA94FA-315F-4DF2-AC49-13346DFDAF12}</Item>
   </File>
+  <File Include="Views\Website\Sublayouts\2 Column 9-3.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{CB27D488-5DF8-48B9-B096-D68B2DA637E3}</Item>
+  </File>
 </Project>
