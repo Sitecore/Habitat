@@ -126,8 +126,7 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="README.md" />
-    <Content Include="Views\Search\GlobalSearchBox.cshtml" />
-    <Content Include="Views\Search\GlobalSearchToggle.cshtml" />
+    <Content Include="Views\Search\GlobalSearch.cshtml" />
     <Content Include="Views\Search\SearchResults.cshtml" />
     <Content Include="Views\Search\SearchBox.cshtml" />
     <None Include="Web.config" />

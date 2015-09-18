@@ -38,27 +38,27 @@
     public string AccordionID => (_accordionID ?? (_accordionID = $"accordion-{Guid.NewGuid().ToString("N")}"));
 }
 
-<div class="c-content-accordion-1 c-theme">
-    <div class="panel-group" id="@AccordionID" role="tablist">
-        @for (var i = 0; i < AccordeonElements.Count(); i++)
-        {
-            <div class="panel">
-                <div class="panel-heading" role="tab" id="@GetFrontendHeadingValue(i)">
-                    <h4 class="panel-title">
-                        <a class="collapsed c-font-bold c-font-19 c-font-uppercase" data-toggle="collapse" data-parent="#@AccordionID" href="#@GetFrontendCollapseValue(i)" aria-expanded="false" aria-controls="@GetFrontendCollapseValue(i)">
-                            @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString(), AccordeonElements[i])
-                        </a>
-                    </h4>
+<div class="panel-group" id="@AccordionID" role="tablist" aria-multiselectable="true">
+    @for (var i = 0; i < AccordeonElements.Count(); i++)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="@GetFrontendHeadingValue(i)">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#@AccordionID" href="#@GetFrontendCollapseValue(i)" aria-expanded="false" aria-controls="@GetFrontendCollapseValue(i)">
+                        @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString(), AccordeonElements[i])
+                    </a>
+                </h4>
+            </div>
+            <div id="@GetFrontendCollapseValue(i)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@GetFrontendHeadingValue(i)">
+                <div class="panel-body">
+                    <p>
+                        @Html.Sitecore().Field(Templates.HasSummary.Fields.Summary.ToString(), AccordeonElements[i])
+                    </p>
                 </div>
-                <div id="@GetFrontendCollapseValue(i)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@GetFrontendHeadingValue(i)">
-                    <div class="panel-body c-font-18">
-                        <p>
-                            @Html.Sitecore().Field(Templates.HasSummary.Fields.Summary.ToString(), AccordeonElements[i])
-                        </p>
-                        @Html.Sitecore().Field(Templates.HasLink.Fields.Link.ToString(), AccordeonElements[i], new {@class = "btn btn-default c-btn-uppercase btn-md c-btn-bold c-btn-square"})
-                    </div>
+                <div class="panel-footer">
+                    @Html.Sitecore().Field(Templates.HasLink.Fields.Link.ToString(), AccordeonElements[i], new { @class = "btn btn-info" })
                 </div>
             </div>
-        }
-    </div>
+        </div>
+    }
 </div>

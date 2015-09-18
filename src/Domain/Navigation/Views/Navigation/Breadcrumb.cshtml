@@ -2,17 +2,13 @@
 @using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.Navigation
 @model Habitat.Navigation.Models.NavigationItems
-<ul class="c-page-breadcrumbs c-theme-nav c-pull-right c-fonts-regular">
+<ol class="breadcrumb">
     @{ var index = 0;}
     @foreach (var item in Model.Items)
     {
-        if (index != 0)
-        {
-            <li>/</li>
-        }
         <li class="@(item.IsActive ? "active" : string.Empty)">
             <a href="@item.Item.Url()">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)</a>
         </li>
-        index++; 
+        index++;
     }
-</ul>
+</ol>

@@ -2,10 +2,7 @@
   <PropertyGroup>
     <Site Server="habitat" UserName="sitecore\admin" IsRemoteSitecore="False" />
   </PropertyGroup>
-  <File Include="Views\Search\GlobalSearchBox.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{5974A2E8-6453-48CF-A7C9-FE721BB124AC}</Item>
-  </File>
-  <File Include="Views\Search\GlobalSearchToggle.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+  <File Include="Views\Search\GlobalSearch.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{8C3A2CFC-18FB-4BF5-8584-50EA88978ED6}</Item>
   </File>
   <File Include="Views\Search\SearchBox.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">

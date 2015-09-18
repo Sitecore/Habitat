@@ -112,7 +112,6 @@
     <Content Include="Views\StandardContent\TitleSummaryTeaser.cshtml" />
     <Content Include="Views\StandardContent\ReferenceTeaser.cshtml" />
     <Content Include="Views\StandardContent\AccordeonTeaser.cshtml" />
-    <Content Include="Views\StandardContent\SectionTitle.cshtml" />
     <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

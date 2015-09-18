@@ -2,24 +2,17 @@
 @using Habitat.StandardContent
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-<div class="c-content-feature-5">
-    <div class="c-content-title-1">
-        <h3 class="c-left c-font-dark c-font-uppercase c-font-bold">Jango ?<br>Learn More
+
+<div class="thumbnail">
+    <div class="caption">
+       <a href="@Model.Item.LinkFieldUrl(Templates.HasLink.Fields.Link)">
+            @Html.Sitecore().ImageField(Templates.HasImage.Fields.Image.ToString(), Model.Item, mw: 500, cssClass: "img-responsive")
+        </a>
+        <h3 class="teaser-heading">
+            @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString(), Model.Item)
         </h3>
-        <div class="c-line-left c-theme-bg">
-        </div>
+        <p class="read-more">
+            @Html.Sitecore().Field(Templates.HasLink.Fields.Link.ToString(), Model.Item, new { @class = "btn btn-info" })
+        </p>
     </div>
-    <div class="c-text c-font-16 c-font-sbold c-font-uppercase">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-    </div>
-    <button type="submit" class="btn c-btn-uppercase btn-md c-btn-sbold c-btn-square c-theme-btn">EXPLORE</button>
-    <img class="c-photo img-responsive" style="width: 310px" src="assets/base/img/content/stock3/40.jpg" alt="">
-</div>
-
-
-<div class="teaser">
-    <h4>@Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString(), Model.Item)</h4>
-    <a href="@Model.Item.LinkFieldUrl(Templates.HasLink.Fields.Link)">
-        @Html.Sitecore().ImageField(Templates.HasImage.Fields.Image.ToString(), Model.Item, mw: 100)
-    </a>
 </div>

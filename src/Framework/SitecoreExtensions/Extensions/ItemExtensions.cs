@@ -73,7 +73,7 @@ namespace Habitat.Framework.SitecoreExtensions.Extensions
                 return item;
             }
 
-            return item.Axes.GetAncestors().FirstOrDefault(i => i.IsDerived(templateID));
+            return item.Axes.GetAncestors().Reverse().FirstOrDefault(i => i.IsDerived(templateID));
         }
 
         public static IList<Item> GetAncestorsAndSelfOfTemplate(this Item item, ID templateID)

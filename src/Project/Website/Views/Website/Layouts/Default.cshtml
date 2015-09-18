@@ -27,73 +27,33 @@
     @Html.Sitecore().VisitorIdentification()
 </head>
 
-<body class="c-layout-header-fixed c-layout-header-6-topbar">
-    <!-- BEGIN: LAYOUT/HEADERS/HEADER-2 -->
-    <!-- BEGIN: HEADER 2 -->
-    <header class="c-layout-header c-layout-header-6 c-navbar-fluid" data-minimize-offset="80">
-        <div class="c-topbar">
+<body>
+    <header>
+        <div class="topbar">
             <div class="container">
-                <nav class="c-top-menu">
-                    @Html.Sitecore().Placeholder("topbarright")
-                </nav>
-                <div class="c-brand">
-                    @Html.Sitecore().Placeholder("topbarleft")
-                    <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
-                        <span class="c-line"></span>
-                        <span class="c-line"></span>
-                        <span class="c-line"></span>
-                    </button>
-                    <button class="c-search-toggler" type="button">
-                        <i class="fa fa-search"></i>
-                    </button>
+                <div class="row">
+                    <div class="col-sm-6">
+                        @Html.Sitecore().Placeholder("topbarleft")
+                    </div>
+                    <div class="col-sm-6">
+                        @Html.Sitecore().Placeholder("topbarright")
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="c-navbar">
-            <div class="container">
-                <div class="c-navbar-wrapper clearfix">
-                    @Html.Sitecore().Placeholder("navbar")
-                </div>
+        <div class="navbar">
+            <div class="container-fluid">
+                @Html.Sitecore().Placeholder("navbar")
             </div>
         </div>
     </header>
-    <div class="c-layout-page">
+    <div class="page-layout">
         @Html.Sitecore().Placeholder("content")
     </div>
 
-    <!-- TODO: Split footer into seperate sublayout with multiple options -->
-    <footer class="c-layout-footer c-layout-footer-6 c-bg-grey-1">
-        <div class="container">
-            <div class="c-prefooter c-bg-white">
-                <div class="c-body">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            @Html.Sitecore().Placeholder("footercolumn1")
-                        </div>
-                        <div class="col-md-5 col-sm-6 col-xs-12">
-                            @Html.Sitecore().Placeholder("footercolumn2")
-                        </div>
-                        <div class="col-md-3 col-sm-12">
-                            @Html.Sitecore().Placeholder("footercolumn3")
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="c-postfooter c-bg-dark-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        @Html.Sitecore().Placeholder("postfooter")
-                    </div>
-                </div>
-            </div>
-        </div>
+    <footer>
+        @Html.Sitecore().Placeholder("footer")
     </footer>
-
-    <div class="c-layout-go2top">
-        <i class="icon-arrow-up"></i>
-    </div>
 
     @RenderAssetsService.Current.RenderScript(ScriptLocation.Body)
 </body>

@@ -1,17 +1,7 @@
-/*********************************
-JANGO
-*********************************/
-@import '_settings';
-@import '_colors';              
-@import '_mixins';                  
-@import '_base';                  
-@import 'components/layout/_main';          
-@import 'components/content/_main';                               
+body {
+  font-family: "Roboto", "Helvetica", sans-serif;
+}
 
-/*********************************
-HABITAT
-*********************************/
-/* TOP BAR */
-.c-layout-header.c-layout-header-6 .c-topbar .c-top-menu > .c-links > li {
-    //min-height: 34px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Ubuntu", "Helvetica", sans-serif;
 }

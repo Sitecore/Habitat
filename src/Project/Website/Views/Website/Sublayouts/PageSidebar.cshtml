@@ -1,8 +1,10 @@
 ﻿<div class="container">
-    <div class="c-layout-sidebar-menu c-theme">
-        @Html.Sitecore().Placeholder("sidebar")
-    </div>
-    <div class="c-layout-sidebar-content ">
-        @Html.Sitecore().Placeholder("sidebarcontent")
+    <div class="row">
+        <div class="col-lg-3">
+            @Html.Sitecore().Placeholder("sidebar")
+        </div>
+        <div class="col-lg-9">
+            @Html.Sitecore().Placeholder("sidebarcontent")
+        </div>
     </div>
 </div>

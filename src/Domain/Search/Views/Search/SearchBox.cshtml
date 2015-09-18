@@ -4,9 +4,9 @@
 
 <form action="@Model.ConfigurationItem.Url()">
     <div class="input-group">
-        <input type="text" name="query" placeholder="@Model.ConfigurationItem[Templates.SearchResults.Fields.SearchBoxTitle]" value="@Model.Query" class="form-control c-square c-theme-border" autocomplete="off" />
+        <input type="text" name="query" placeholder="@Model.ConfigurationItem[Templates.SearchResults.Fields.SearchBoxTitle]" value="@Model.Query" class="form-control" autocomplete="off" />
         <span class="input-group-btn">
-            <button class="btn c-theme-btn c-theme-border c-btn-square" type="submit"><i class="fa fa-search"></i></button>
+            <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
         </span>
     </div>
 </form>

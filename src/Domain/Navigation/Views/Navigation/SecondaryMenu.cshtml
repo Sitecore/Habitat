@@ -8,23 +8,14 @@
     }
 }
 
-<div class="c-sidebar-menu-toggler">
-    <h3 class="c-title c-font-uppercase c-font-bold">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), Model.Item)</h3>
-    <a href="javascript:;" class="c-content-toggler" data-toggle="collapse" data-target="#sidebar-menu-1">
-        <span class="c-line"></span>
-        <span class="c-line"></span>
-        <span class="c-line"></span>
-    </a>
-</div>
-
-
-<ul class="c-sidebar-menu collapse" id="sidebar-menu-1">
-    <li class="c-dropdown c-open c-active">
+<nav class="secondarymenu panel panel-default">
+    <div class="panel-heading">
         <a href="@Model.Url" target="@Model.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), Model.Item)</a>
+    </div>
+    <div class="panel-body">
         @if (Model.Children != null)
         {
             @Html.Partial("SecondaryMenuItems", Model.Children)
         }
-    </li>
-</ul>
-
+    </div>
+</nav>
