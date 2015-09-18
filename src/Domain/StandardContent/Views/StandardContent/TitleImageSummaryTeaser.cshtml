@@ -11,7 +11,9 @@
         <h3 class="teaser-heading">
             @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString(), Model.Item)
         </h3>
-        @Html.Sitecore().Field(Templates.HasSummary.Fields.Summary.ToString(), Model.Item)
+        <p>
+            @Html.Sitecore().Field(Templates.HasSummary.Fields.Summary.ToString(), Model.Item)
+        </p>
         <p class="read-more">
             @Html.Sitecore().Field(Templates.HasLink.Fields.Link.ToString(), Model.Item, new
    {
