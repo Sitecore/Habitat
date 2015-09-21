@@ -2,7 +2,7 @@
 version: 1
 id: {B415F846-5EED-409C-B6D8-C23BAB52D502}
 database: master
-path: /sitecore/content/Habitat/Home/News/News/New version
+path: /sitecore/content/Habitat/Home/About Habitat/News/New version
 parent: {439EC71A-4231-45C8-B075-975BD41099A7}
 name: New version
 master: {00000000-0000-0000-0000-000000000000}
@@ -26,7 +26,7 @@ content-length: 2
 ----version----
 language: en
 version: 1
-revision: 70156c0d-2352-4756-a60b-f94a791fe744
+revision: cc6ecca8-09c7-433f-82dd-60c86d035255
 
 ----field----
 field: {BD9ECD4A-C0B0-4233-A3CD-D995519AC87B}
@@ -39,9 +39,9 @@ Sitecore releases new feature packed version
 field: {3437EAAC-6EE8-460B-A33D-DA1F714B5A93}
 name: NewsImage
 key: newsimage
-content-length: 159
+content-length: 166
 
-<image mediapath="" alt="074" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{3ADD8F31-32C9-48B6-B797-F5A578F1FC66}" />
+<image mediapath="" alt="074" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{3ADD8F31-32C9-48B6-B797-F5A578F1FC66}" ></image>
 ----field----
 field: {9D08271A-1672-44DD-B7EF-0A6EC34FCBA7}
 name: NewsSummary
@@ -78,14 +78,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-70156c0d-2352-4756-a60b-f94a791fe744
+cc6ecca8-09c7-433f-82dd-60c86d035255
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150911T021450Z
+20150921T035942Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -93,3 +93,10 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

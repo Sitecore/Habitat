@@ -1,10 +1,13 @@
-﻿<div class="container">
+﻿@using Sitecore
+@using Constants = Habitat.Website.Constants
+@model Sitecore.Mvc.Presentation.RenderingModel
+<div class="container@(MainUtil.GetBool(Model.Rendering.Parameters[Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
     <div class="row">
         <div class="col-md-6">
-            @Html.Sitecore().Placeholder("2column66-left")
+            @Html.Sitecore().Placeholder("col-wide-1")
         </div>
         <div class="col-md-6">
-            @Html.Sitecore().Placeholder("2column66-right")
+            @Html.Sitecore().Placeholder("col-wide-2")
         </div>
     </div>
 </div>

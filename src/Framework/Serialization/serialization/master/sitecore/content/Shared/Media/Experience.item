@@ -12,7 +12,7 @@ templatekey: Video
 ----version----
 language: en
 version: 1
-revision: 58a00f6f-5e52-420e-b1f3-a3285a95c516
+revision: 99ac041d-96ba-434f-ab53-7ecd6356fdfe
 
 ----field----
 field: {2628705D-9434-4448-978C-C3BF166FA1EB}
@@ -39,9 +39,9 @@ Fully Leveraging the power of Sitecore
 field: {4FF62B0A-D73B-4436-BEA2-023154F2FFC4}
 name: MediaThumbnail
 key: mediathumbnail
-content-length: 176
+content-length: 183
 
-<image mediapath="" alt="Experience Marketing" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{34D324E5-FBC8-41D5-B38B-EC0B3AE6BFD2}" />
+<image mediapath="" alt="Experience Marketing" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{34D324E5-FBC8-41D5-B38B-EC0B3AE6BFD2}" ></image>
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-58a00f6f-5e52-420e-b1f3-a3285a95c516
+99ac041d-96ba-434f-ab53-7ecd6356fdfe
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150911T003253Z
+20150921T055351Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -70,3 +70,10 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

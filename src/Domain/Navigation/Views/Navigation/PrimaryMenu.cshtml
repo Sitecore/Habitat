@@ -16,12 +16,36 @@
             <ul class="nav navbar-nav primary-nav">
                 @foreach (var item in Model.Items)
                 {
-                    <li class="@(item.IsActive ? "active" : string.Empty)">
-                        <a href="@item.Url" target="@item.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)</a>
+                    var hasChildren = item.Children != null && item.Children.Items.Any();
+                    var cssClass = (item.IsActive ? "active" : string.Empty);
+
+                    <li class="@cssClass">
+                        @if (hasChildren)
+                        {
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                @foreach (var subitem in item.Children.Items)
+                                {
+                                    <li class="@(subitem.IsActive ? "active" : string.Empty)">
+                                        <a href="@subitem.Url" target="@subitem.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), subitem.Item)</a>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <a href="@item.Url" target="@item.Target">
+                                @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
+                            </a>
+                        }
                     </li>
                 }
             </ul>
-            <ul class="nav navbar-nav primary-nav-additional pull-right">
+
+            <ul class="nav navbar-nav primary-nav-additional navbar-right">
                 @Html.Sitecore().Placeholder("primarymenuitems")
             </ul>
         </div>

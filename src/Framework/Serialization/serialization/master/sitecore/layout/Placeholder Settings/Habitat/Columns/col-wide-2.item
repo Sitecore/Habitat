@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {42332C9E-A35C-43F3-BC15-29F6F28BEBEE}
+database: master
+path: /sitecore/layout/Placeholder Settings/Habitat/Columns/col-wide-2
+parent: {D046E7A5-9EE2-4CBA-8484-C601561F66D9}
+name: col-wide-2
+master: {00000000-0000-0000-0000-000000000000}
+template: {5C547D4E-7111-4995-95B0-6B561751BF2E}
+templatekey: Placeholder
+
+----field----
+field: {7256BDAB-1FD2-49DD-B205-CB4873D2917C}
+name: Placeholder Key
+key: placeholder key
+content-length: 10
+
+col-wide-2
+----field----
+field: {E391B526-D0C5-439D-803E-17512EAE6222}
+name: Allowed Controls
+key: allowed controls
+content-length: 194
+
+{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}|{07AB411C-F894-4144-B069-48EF67431D32}|{FDFCD088-3C9E-49C4-97FF-2DDE5D339BA0}|{E47303E0-90FD-4E81-B2B5-CA4E8C1C36B4}|{781C6B36-4B02-46EA-8ADC-B92A11877F10}
+----version----
+language: en
+version: 1
+revision: 3a829676-58c3-45b5-88ad-7320523a67ea
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150921T020150Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3a829676-58c3-45b5-88ad-7320523a67ea
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20150921T053014Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

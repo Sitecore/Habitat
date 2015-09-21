@@ -12,7 +12,7 @@ templatekey: Image
 ----version----
 language: en
 version: 1
-revision: ae8b86ed-9508-4290-9c66-bd8cfab3d390
+revision: 79fb34ec-db8e-4734-a988-4457fc266877
 
 ----field----
 field: {63DDA48B-B0CB-45A7-9A1B-B26DDB41009B}
@@ -39,9 +39,9 @@ content-length: 166
 field: {4FF62B0A-D73B-4436-BEA2-023154F2FFC4}
 name: MediaThumbnail
 key: mediathumbnail
-content-length: 172
+content-length: 179
 
-<image mediapath="" alt="Man using Laptop" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{CE7D371D-B5FA-4429-A148-DAC72EC694A2}" />
+<image mediapath="" alt="Man using Laptop" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{CE7D371D-B5FA-4429-A148-DAC72EC694A2}" ></image>
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-ae8b86ed-9508-4290-9c66-bd8cfab3d390
+79fb34ec-db8e-4734-a988-4457fc266877
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150911T001035Z
+20150921T055604Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -70,3 +70,10 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

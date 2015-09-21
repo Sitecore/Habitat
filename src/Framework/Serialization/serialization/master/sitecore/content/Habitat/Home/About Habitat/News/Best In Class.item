@@ -2,7 +2,7 @@
 version: 1
 id: {88D7F189-43AF-4704-94EA-DAA482F9DBA5}
 database: master
-path: /sitecore/content/Habitat/Home/News/News/Best In Class
+path: /sitecore/content/Habitat/Home/About Habitat/News/Best In Class
 parent: {439EC71A-4231-45C8-B075-975BD41099A7}
 name: Best In Class
 master: {00000000-0000-0000-0000-000000000000}
@@ -19,7 +19,7 @@ content-length: 16
 ----version----
 language: en
 version: 1
-revision: 8b9dc57e-2b73-4348-8170-9ef348bf7d7f
+revision: 374f9c27-cf14-4971-ba2a-427a4b484923
 
 ----field----
 field: {BD9ECD4A-C0B0-4233-A3CD-D995519AC87B}
@@ -32,9 +32,9 @@ Sitecore XP rated Best In Class - again
 field: {3437EAAC-6EE8-460B-A33D-DA1F714B5A93}
 name: NewsImage
 key: newsimage
-content-length: 159
+content-length: 166
 
-<image mediapath="" alt="178" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{739BCA32-6346-4B62-B8BF-34E93528822A}" />
+<image mediapath="" alt="178" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{739BCA32-6346-4B62-B8BF-34E93528822A}" ></image>
 ----field----
 field: {9D08271A-1672-44DD-B7EF-0A6EC34FCBA7}
 name: NewsSummary
@@ -71,14 +71,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-8b9dc57e-2b73-4348-8170-9ef348bf7d7f
+374f9c27-cf14-4971-ba2a-427a4b484923
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150911T021655Z
+20150921T035942Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -86,3 +86,10 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

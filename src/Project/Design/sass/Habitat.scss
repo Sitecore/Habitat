@@ -1,7 +1,58 @@
+/****************
+    GENERAL
+****************/
 body {
-  font-family: "Roboto", "Helvetica", sans-serif;
+  font-family: "Roboto", "Helvetica", sans-serif; 
+  font-weight: 300;
+    font-size: 1.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200;
+}
+
+/****************
+    FOOTER
+****************/
+
+footer {
+    .prefooter {
+        .nav-pills {
+            >li {
+                width: 49%;
+            }
+        }
+    }
+}
+
+/****************
+    MEDIA
+****************/
+.carousel {
+    .carousel-inner {
+        img { 
+            width: 100%; 
+        }
+    }
+}
+
+.lightbox {
+    &.thumbnail {
+        position:relative;
+        .overlay {
+            top:0;
+            left:0;
+            position: absolute;
+            padding-top: 10px;
+            padding-left: 10px;
+            font-size: 2rem;
+            color: white;
+        }
+        a:hover {
+            .overlay {
+                color: silver;
+            } 
+        }
+    }
 }

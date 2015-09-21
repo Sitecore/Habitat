@@ -17,6 +17,27 @@ content-length: 44
 
 /Views/Website/Sublayouts/PageSidebar.cshtml
 ----field----
+field: {7D24E54F-5C16-4314-90C9-6051AA1A7DA1}
+name: Parameters Template
+key: parameters template
+content-length: 38
+
+{4654D5F0-9B39-426A-992D-1D42E356FB0A}
+----field----
+field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
+name: Open Properties after Add
+key: open properties after add
+content-length: 1
+
+1
+----field----
+field: {308E88F5-CD6E-4F8F-BAFE-95A47DEDEFDC}
+name: Editable
+key: editable
+content-length: 0
+
+
+----field----
 field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
 name: __Sortorder
 key: __sortorder
@@ -26,7 +47,7 @@ content-length: 1
 ----version----
 language: en
 version: 1
-revision: e728aff6-6a32-4c62-80d6-f03319cca59a
+revision: bb9af6e5-8958-4588-8645-bcb4c4070eed
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-e728aff6-6a32-4c62-80d6-f03319cca59a
+bb9af6e5-8958-4588-8645-bcb4c4070eed
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150907T051023Z
+20150921T023556Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

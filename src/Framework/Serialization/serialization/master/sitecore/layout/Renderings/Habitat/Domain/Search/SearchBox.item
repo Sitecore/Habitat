@@ -30,10 +30,24 @@ key: open properties after add
 content-length: 1
 
 -
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 38
+
+{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+----field----
+field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
+name: Datasource Template
+key: datasource template
+content-length: 38
+
+{14E452CA-064D-48A8-9FF2-2744D10437A1}
 ----version----
 language: en
 version: 1
-revision: 840309a3-5da4-42a4-86f1-912f3e4abb33
+revision: 0e8eb5b8-a787-481f-af68-78d2f088691f
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-840309a3-5da4-42a4-86f1-912f3e4abb33
+0e8eb5b8-a787-481f-af68-78d2f088691f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150911T045821Z
+20150921T035319Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

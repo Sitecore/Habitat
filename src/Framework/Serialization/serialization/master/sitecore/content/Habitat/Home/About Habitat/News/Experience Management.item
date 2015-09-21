@@ -2,7 +2,7 @@
 version: 1
 id: {844A7337-2020-4C2E-912E-7651930FE179}
 database: master
-path: /sitecore/content/Habitat/Home/News/News/Experience Management
+path: /sitecore/content/Habitat/Home/About Habitat/News/Experience Management
 parent: {439EC71A-4231-45C8-B075-975BD41099A7}
 name: Experience Management
 master: {00000000-0000-0000-0000-000000000000}
@@ -26,7 +26,7 @@ content-length: 2
 ----version----
 language: en
 version: 1
-revision: 05a8d946-47fc-4e41-b7ef-4c2c0dc48e36
+revision: e685aa49-35eb-436e-b354-53fa8038dff2
 
 ----field----
 field: {BD9ECD4A-C0B0-4233-A3CD-D995519AC87B}
@@ -39,14 +39,14 @@ New praise for world class experience management platform
 field: {3437EAAC-6EE8-460B-A33D-DA1F714B5A93}
 name: NewsImage
 key: newsimage
-content-length: 159
+content-length: 166
 
-<image mediapath="" alt="087" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{C73FFEB7-8E5D-4F43-9381-0D9DC4B1BD62}" />
+<image mediapath="" alt="087" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{C73FFEB7-8E5D-4F43-9381-0D9DC4B1BD62}" ></image>
 ----field----
 field: {9D08271A-1672-44DD-B7EF-0A6EC34FCBA7}
 name: NewsSummary
 key: newssummary
-content-length: 348
+content-length: 347
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas.</p>
 <p>Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus.</p>
@@ -78,14 +78,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-05a8d946-47fc-4e41-b7ef-4c2c0dc48e36
+e685aa49-35eb-436e-b354-53fa8038dff2
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150911T021556Z
+20150921T054518Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -93,3 +93,10 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

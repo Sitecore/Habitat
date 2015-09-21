@@ -1,4 +1,7 @@
-﻿<div class="container prefooter">
+﻿@using Sitecore
+@using Constants = Habitat.Website.Constants
+@model Sitecore.Mvc.Presentation.RenderingModel
+<div class="prefooter container@(MainUtil.GetBool(Model.Rendering.Parameters[Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
     <div class="row">
         <div class="col-md-4 col-sm-6 col-xs-12">
             @Html.Sitecore().Placeholder("footercolumn1")
@@ -6,7 +9,7 @@
         <div class="col-md-5 col-sm-6 col-xs-12">
             @Html.Sitecore().Placeholder("footercolumn2")
         </div>
-        <div class="col-md-3 col-sm-12">
+        <div class="col-md-3 col-sm-12 col-xs-12">
             @Html.Sitecore().Placeholder("footercolumn3")
         </div>
     </div>

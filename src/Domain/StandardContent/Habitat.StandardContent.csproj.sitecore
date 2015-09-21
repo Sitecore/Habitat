@@ -26,4 +26,7 @@
   <File Include="Views\StandardContent\ReferenceTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{07AB411C-F894-4144-B069-48EF67431D32}</Item>
   </File>
+  <File Include="Views\StandardContent\Jumbotron.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{A25C9850-AAB7-46A6-84B7-0DFAB32FC357}</Item>
+  </File>
 </Project>

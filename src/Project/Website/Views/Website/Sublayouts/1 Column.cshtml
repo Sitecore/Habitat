@@ -1,5 +1,10 @@
-﻿<div class="row">
-    <div class="col-md-12">
-        @Html.Sitecore().Placeholder("column")
+﻿@using Sitecore
+@using Constants = Habitat.Website.Constants
+@model Sitecore.Mvc.Presentation.RenderingModel
+<div class="container@(MainUtil.GetBool(Model.Rendering.Parameters[Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
+    <div class="row">
+        <div class="col-md-12">
+            @Html.Sitecore().DynamicPlaceholder("col-huge")
+        </div>
     </div>
 </div>

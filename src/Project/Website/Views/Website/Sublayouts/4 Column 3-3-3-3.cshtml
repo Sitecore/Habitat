@@ -1,0 +1,19 @@
+﻿@using Sitecore
+@using Constants = Habitat.Website.Constants
+@model Sitecore.Mvc.Presentation.RenderingModel
+<div class="container@(MainUtil.GetBool(Model.Rendering.Parameters[Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
+    <div class="row">
+        <div class="col-sm-3">
+            @Html.Sitecore().DynamicPlaceholder("col-narrow-1")
+        </div>
+        <div class="col-sm-3">
+            @Html.Sitecore().DynamicPlaceholder("col-narrow-2")
+        </div>
+        <div class="col-sm-3">
+            @Html.Sitecore().DynamicPlaceholder("col-narrow-3")
+        </div>
+        <div class="col-sm-3">
+            @Html.Sitecore().DynamicPlaceholder("col-narrow-4")
+        </div>
+    </div>
+</div>

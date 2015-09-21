@@ -8,15 +8,6 @@ using Sitecore.Data.Items;
 
 namespace Habitat.Navigation.Repositories
 {
-    public interface INavigationRepository
-    {
-        Item GetNavigationRoot(Item contextItem);
-        NavigationItems GetBreadcrumb();
-        NavigationItems GetPrimaryMenu();
-        NavigationItem GetSecondaryMenuItem();
-        NavigationItems GetLinkMenuItems(Item menuItem);
-    }
-
     public class NavigationRepository : INavigationRepository
     {
         public Item ContextItem { get; }
@@ -51,16 +42,21 @@ namespace Habitat.Navigation.Repositories
 
         public NavigationItems GetPrimaryMenu()
         {
-            var navItems = GetChildNavigationItems(NavigationRoot, 0, 0);
+            var navItems = GetChildNavigationItems(NavigationRoot, 0, 1);
 
+            AddRootToPrimaryMenu(navItems);
+            return navItems;
+        }
+
+        private void AddRootToPrimaryMenu(NavigationItems navItems)
+        {
             if (!IncludeInNavigation(NavigationRoot))
-                return navItems;
+                return;
 
             var navigationItem = CreateNavigationItem(NavigationRoot, 0, 0);
             //Root navigation item is only active when we are actually on the root item
             navigationItem.IsActive = ContextItem.ID == NavigationRoot.ID;
             navItems.Items.Insert(0, navigationItem);
-            return navItems;
         }
 
         private bool IncludeInNavigation(Item item)

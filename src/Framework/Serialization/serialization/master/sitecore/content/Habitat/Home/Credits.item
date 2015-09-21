@@ -19,7 +19,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: af96d203-ffb4-48b2-b589-b08689275d5b
+revision: 05c2c70c-564c-4668-9802-cbe580b419e0
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
@@ -43,6 +43,13 @@ content-length: 7
 
 Credits
 ----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 607
+
+<r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{10E18E57-A49A-4E80-8C5C-72075525FEF0}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{AD50901F-DA3E-48F3-9519-D6C21C978925}" s:id="{A25C9850-AAB7-46A6-84B7-0DFAB32FC357}" s:ph="/page-layout/col-huge_049e860a-18f7-44ab-a4df-071fbdec0363" /><r uid="{049E860A-18F7-44AB-A4DF-071FBDEC0363}" p:before="r[@uid='{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}']" s:ds="" s:id="{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}" s:par="ContainerIsFluid" s:ph="page-layout" /></d></r>
+----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
 key: __owner
@@ -62,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-af96d203-ffb4-48b2-b589-b08689275d5b
+05c2c70c-564c-4668-9802-cbe580b419e0
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150907T045406Z
+20150921T054010Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -77,3 +84,10 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

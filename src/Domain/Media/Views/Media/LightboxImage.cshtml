@@ -3,7 +3,7 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @{
-    const int thumbnailWidth = 200;
+    const int thumbnailWidth = 275;
     var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail.ToString(), @Model.Item, mw: thumbnailWidth, cssClass: "img-responsive");
     if (thumbnail == null || string.IsNullOrWhiteSpace(thumbnail.ToString()))
     {
@@ -15,8 +15,9 @@
     }
 }
 
-<div class="article image">
-    <a href="@Model.Item.ImageUrl(Templates.HasMediaImage.Fields.Image)" data-type="image" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" class="lightbox">
+<div class="thumbnail lightbox">
+    <a href="@Model.Item.ImageUrl(Templates.HasMediaImage.Fields.Image)" data-type="image" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" class="lightbox" data-gallery="page">
         @thumbnail
+        <span class="fa fa-search overlay"></span>
     </a>
 </div>

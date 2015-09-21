@@ -16,10 +16,38 @@ key: path
 content-length: 45
 
 /Views/StandardContent/AccordeonTeaser.cshtml
+----field----
+field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
+name: Open Properties after Add
+key: open properties after add
+content-length: 0
+
+
+----field----
+field: {308E88F5-CD6E-4F8F-BAFE-95A47DEDEFDC}
+name: Editable
+key: editable
+content-length: 0
+
+
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 38
+
+{6AA25831-0944-4A79-9AFF-7BAC39E03557}
+----field----
+field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
+name: Datasource Template
+key: datasource template
+content-length: 74
+
+/sitecore/templates/Habitat/Project/Website/Content Types/Accordeon Teaser
 ----version----
 language: en
 version: 1
-revision: 4ab4a41d-eb01-4294-af0d-81f03f01459e
+revision: a7e59312-ba61-4684-af93-20ef7f4d7cf1
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-4ab4a41d-eb01-4294-af0d-81f03f01459e
+a7e59312-ba61-4684-af93-20ef7f4d7cf1
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150903T115944Z
+20150921T053523Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

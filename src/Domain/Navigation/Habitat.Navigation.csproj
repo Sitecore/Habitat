@@ -128,6 +128,7 @@
   <ItemGroup>
     <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Models\NavigationItems.cs" />
+    <Compile Include="Repositories\INavigationRepository.cs" />
     <Compile Include="Repositories\NavigationRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates.cs" />

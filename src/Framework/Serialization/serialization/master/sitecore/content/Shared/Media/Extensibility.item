@@ -12,7 +12,7 @@ templatekey: Image
 ----version----
 language: en
 version: 1
-revision: 78ca2f08-f3b3-45dc-8dea-9c1e8eb55b11
+revision: d70338b0-9587-4a62-93d1-dedc6ef6f5cc
 
 ----field----
 field: {63DDA48B-B0CB-45A7-9A1B-B26DDB41009B}
@@ -39,9 +39,9 @@ content-length: 168
 field: {4FF62B0A-D73B-4436-BEA2-023154F2FFC4}
 name: MediaThumbnail
 key: mediathumbnail
-content-length: 168
+content-length: 175
 
-<image mediapath="" alt="Blonde Woman" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{6538AC44-2966-4C23-9570-85C2CB963DD5}" />
+<image mediapath="" alt="Blonde Woman" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="" mediaid="{6538AC44-2966-4C23-9570-85C2CB963DD5}" ></image>
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-78ca2f08-f3b3-45dc-8dea-9c1e8eb55b11
+d70338b0-9587-4a62-93d1-dedc6ef6f5cc
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150911T001301Z
+20150921T020832Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -70,3 +70,10 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />
