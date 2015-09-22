@@ -1,16 +1,53 @@
+$font-family-sans-serif: "Roboto", "Helvetica", sans-serif;
+$headings-font-family: 'Source Sans Pro', sans-serif;
+$font-size-base: 16px;
+$headings-font-weight: 600px;
+
+@import 'bootstrap/_bootstrap.scss';
+
 /****************
     GENERAL
 ****************/
-body {
-  font-family: "Roboto", "Helvetica", sans-serif; 
+body { 
   font-weight: 300;
-    font-size: 1.5rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 200;
+/****************
+    NAVIGATION
+****************/
+.navbar {
+    background: none;
+    border: none;
+    box-shadow: none;
+    .nav {
+        li {
+            >a{
+                text-transform: uppercase;
+                font-weight: 600;
+                color: $gray-light;
+            }
+            >a:hover {
+                color: $brand-primary;
+                background: none;
+                box-shadow: none;
+            }
+            &.active, &.open {
+                >a, >a:hover, >a:focus {
+                    background: none;
+                    box-shadow: none;
+                    color: $brand-primary;
+                }
+            }
+        }
+    }
+    .primary-nav {
+        @extend .navbar-right;
+    }
+    .primary-nav-additional {
+        @extend .navbar-right;
+    }
 }
+
 
 /****************
     FOOTER

@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="App_Config\Include\z.Habitat.Framework.Search.config">
+    <Content Include="App_Config\Include\z.Habitat.Framework.Indexing.config">
       <SubType>Designer</SubType>
     </Content>
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />

@@ -33,7 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Identity", "src\dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Search", "src\Domain\Search\Habitat.Search.csproj", "{55B9C026-E106-4185-8213-9CDD53B44E1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Search", "src\Framework\Search\Habitat.Framework.Search.csproj", "{80213F24-577F-4F0B-A3B8-62485EA4D2F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Indexing", "src\Framework\Search\Habitat.Framework.Indexing.csproj", "{80213F24-577F-4F0B-A3B8-62485EA4D2F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Language", "src\Domain\Language\Habitat.Language.csproj", "{ACA65632-EE93-422B-B25E-8E31969694F5}"
 EndProject

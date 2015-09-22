@@ -52,10 +52,11 @@ gulp.task('Copy-Sitecore-Lib', function () {
     console.log('Finished copying sitecore libraries', 'color:red');
 });
 
-gulp.task('File-Watcher', function () {
-    gulp.watch('./src/**/*.cshtml', function (event) {
+gulp.task('Auto-Publish-Design', function () {
+    gulp.watch('./src/project/design/**/*.css', function (event) {
         if (event.type === 'changed') {
-            console.log('publish this file '+event.path );
+            console.log('publish this file ' + event.path);
+            gulp.src(event.path, { base: './src/project/design' }).pipe(gulp.dest(config.websiteRoot));
         }
         console.log("published " + event.path);
     });
