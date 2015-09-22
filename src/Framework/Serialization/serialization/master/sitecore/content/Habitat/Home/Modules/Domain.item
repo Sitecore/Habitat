@@ -12,15 +12,22 @@ templatekey: Section
 ----version----
 language: en
 version: 1
-revision: 5b119ca0-37f0-4811-a13c-e84e4e655b54
+revision: d449bb4a-2dc3-48ba-b6ad-f861a1230729
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
 name: Title
 key: title
-content-length: 6
+content-length: 14
 
-Domain
+Domain Modules
+----field----
+field: {AC3FD4DB-8266-476D-9635-67814D91E901}
+name: Summary
+key: summary
+content-length: 183
+
+Domain modules are the functionality of the website such as navigation, search, content, accounts, etc. The bulk of the business logic and presentation elements sits in these modules.
 ----field----
 field: {1B483E91-D8C4-4D19-BA03-462074B55936}
 name: NavigationTitle
@@ -62,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-5b119ca0-37f0-4811-a13c-e84e4e655b54
+d449bb4a-2dc3-48ba-b6ad-f861a1230729
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150921T055146Z
+20150921T071657Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

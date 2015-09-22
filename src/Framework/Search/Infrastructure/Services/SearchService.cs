@@ -3,7 +3,7 @@ using System.Linq;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.Linq;
 
-namespace Habitat.Framework.Search.Infrastructure.Services
+namespace Habitat.Framework.Indexing.Infrastructure.Services
 {
     internal class SearchService
     {

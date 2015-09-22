@@ -12,7 +12,7 @@ templatekey: Section
 ----version----
 language: en
 version: 1
-revision: 79af78fb-46cc-4d0e-ac43-2da1e4d3928b
+revision: 364dcec4-ea83-4651-a678-7c855883805b
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
@@ -21,6 +21,13 @@ key: title
 content-length: 7
 
 Modules
+----field----
+field: {AC3FD4DB-8266-476D-9635-67814D91E901}
+name: Summary
+key: summary
+content-length: 81
+
+Habitat has a range of modules which covers the basics of a Sitecore website.<br>
 ----field----
 field: {1B483E91-D8C4-4D19-BA03-462074B55936}
 name: NavigationTitle
@@ -35,6 +42,13 @@ key: browsertitle
 content-length: 7
 
 Modules
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 1155
+
+<r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{543C9250-5B00-42AB-B87A-DA812F2DB4D1}" p:before="r[@uid='{A6A53193-B956-49C8-B86B-293376EBA56D}']" s:ds="{1A3560FC-9E54-4E65-BEAD-E349F3B80DD7}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-3_fc352fda-d6f9-4d39-aa97-aab58ea26c30" /><r uid="{A6A53193-B956-49C8-B86B-293376EBA56D}" p:before="r[@uid='{EC8861EB-68C5-4B52-AB6E-291CA9D374F8}']" s:ds="{F7434DF7-E32E-4F8C-A50E-27C476F4DC32}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-2_fc352fda-d6f9-4d39-aa97-aab58ea26c30" /><r uid="{EC8861EB-68C5-4B52-AB6E-291CA9D374F8}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{1D6429FC-35E3-4202-849A-984328EAE560}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-1_fc352fda-d6f9-4d39-aa97-aab58ea26c30" /><r uid="{FC352FDA-D6F9-4D39-AA97-AAB58EA26C30}" p:before="r[@uid='{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}']" s:ds="" s:id="{7074CA39-734D-4953-A3D5-B7D09C37CE3B}" s:par="ContainerIsFluid" s:ph="page-layout" /></d></r>
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -55,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-79af78fb-46cc-4d0e-ac43-2da1e4d3928b
+364dcec4-ea83-4651-a678-7c855883805b
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150921T053253Z
+20150921T071316Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -70,3 +84,10 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

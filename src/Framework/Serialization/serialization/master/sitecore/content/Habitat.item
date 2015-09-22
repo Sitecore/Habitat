@@ -19,7 +19,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 9db565a5-759c-449b-b6e3-229406ef2f04
+revision: 545d3da1-e85c-426e-8984-4cc68fbedf07
 
 ----field----
 field: {E748D808-64C1-4DEC-9718-F35CF9689E4B}
@@ -27,7 +27,7 @@ name: Logo
 key: logo
 content-length: 211
 
-<image mediapath="/Default Website/sc_logo" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/sc_logo" mediaid="{094AED03-02E7-4868-80CB-19926661FB77}" />
+<image mediapath="/Default Website/sc_logo" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/sc_logo" mediaid="{461A93BF-5471-4AF2-BF36-D638F5660CB5}" />
 ----field----
 field: {02115632-FE1E-4B3D-9AD4-A4DDF1F782F0}
 name: Copyright
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-9db565a5-759c-449b-b6e3-229406ef2f04
+545d3da1-e85c-426e-8984-4cc68fbedf07
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150828T050815Z
+20150921T070831Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

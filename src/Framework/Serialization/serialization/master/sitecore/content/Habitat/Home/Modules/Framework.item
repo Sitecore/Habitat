@@ -12,15 +12,22 @@ templatekey: Section
 ----version----
 language: en
 version: 1
-revision: 29988f1e-e247-49fe-8862-98162ffbef96
+revision: e037d54e-0923-4b6a-8bcd-91432f48cf60
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
 name: Title
 key: title
-content-length: 9
+content-length: 17
 
-Framework
+Framework Modules
+----field----
+field: {AC3FD4DB-8266-476D-9635-67814D91E901}
+name: Summary
+key: summary
+content-length: 138
+
+Framework modules are the foundation of the solution. This is commonly shared functionality such as Dictionaries, Asset handling and more.
 ----field----
 field: {1B483E91-D8C4-4D19-BA03-462074B55936}
 name: NavigationTitle
@@ -55,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-29988f1e-e247-49fe-8862-98162ffbef96
+e037d54e-0923-4b6a-8bcd-91432f48cf60
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150921T052553Z
+20150921T071657Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -70,3 +77,10 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

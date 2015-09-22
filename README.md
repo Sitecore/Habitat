@@ -9,6 +9,8 @@ Habitat is a Sitecore solution framework focusing on three aspects:
 * Flexibility - *Change and add quickly and without worry*
 * Extensibility - *Simply add new features without steep learning curve*
 
+Architecture Introduction: [YouTube Link](https://youtu.be/2CELqflPhm0)
+
 ##Index
 ---------------
 The solution consists of the following modules:

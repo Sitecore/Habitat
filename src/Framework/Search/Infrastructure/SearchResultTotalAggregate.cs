@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Habitat.Framework.Search.Infrastructure
+namespace Habitat.Framework.Indexing.Infrastructure
 {
     internal class SearchResultTotalAggregate
     {

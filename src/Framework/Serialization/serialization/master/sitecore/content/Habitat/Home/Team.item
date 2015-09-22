@@ -19,7 +19,7 @@ content-length: 3
 ----version----
 language: en
 version: 1
-revision: 645e256f-1e81-4c76-bfd1-5f7af3821679
+revision: 4ba68ed2-a94a-408f-b49d-0b8806329c41
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
@@ -43,6 +43,13 @@ content-length: 4
 
 Team
 ----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 1363
+
+<r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{619C1F10-7A8B-4B1C-B660-BF12717F062B}" p:before="r[@uid='{D7DA6DAB-9B25-41DB-98FD-4E286339FFCD}']" s:ds="{6086F621-4A0E-4724-9D6F-EA7BA8139F57}" s:id="{A25C9850-AAB7-46A6-84B7-0DFAB32FC357}" s:ph="/page-layout/col-huge_0c2b398a-75a3-4c6d-9fb3-c6333e814c73" /><r uid="{D7DA6DAB-9B25-41DB-98FD-4E286339FFCD}" p:before="r[@uid='{1B7223E0-4474-4DD6-8B85-BB614D4B0B7F}']" s:ds="{6086F621-4A0E-4724-9D6F-EA7BA8139F57}" s:id="{E47303E0-90FD-4E81-B2B5-CA4E8C1C36B4}" s:ph="/page-layout/col-narrow-2_57569317-d520-45b2-8eb6-25798964576f" /><r uid="{1B7223E0-4474-4DD6-8B85-BB614D4B0B7F}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{439EC71A-4231-45C8-B075-975BD41099A7}" s:id="{BDD730EB-F808-4C65-B94A-D2F03672EAFB}" s:ph="/page-layout/col-narrow-1_57569317-d520-45b2-8eb6-25798964576f" /><r uid="{0C2B398A-75A3-4C6D-9FB3-C6333E814C73}" p:before="r[@uid='{57569317-D520-45B2-8EB6-25798964576F}']" s:ds="" s:id="{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}" s:par="ContainerIsFluid=1" s:ph="page-layout" /><r uid="{57569317-D520-45B2-8EB6-25798964576F}" p:before="r[@uid='{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}']" s:ds="" s:id="{7074CA39-734D-4953-A3D5-B7D09C37CE3B}" s:par="ContainerIsFluid=1" s:ph="page-layout" /></d></r>
+----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
 key: __owner
@@ -62,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-645e256f-1e81-4c76-bfd1-5f7af3821679
+4ba68ed2-a94a-408f-b49d-0b8806329c41
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150907T045406Z
+20150921T113734Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
@@ -77,3 +84,10 @@ key: __updated by
 content-length: 14
 
 sitecore\admin
+----field----
+field: {001DD393-96C5-490B-924A-B0F25CD9EFD8}
+name: __Lock
+key: __lock
+content-length: 5
+
+<r />

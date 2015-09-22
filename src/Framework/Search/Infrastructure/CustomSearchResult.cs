@@ -6,7 +6,7 @@ using Sitecore.ContentSearch.SearchTypes;
 using Sitecore.Data;
 using Sitecore.Links;
 
-namespace Habitat.Framework.Search.Infrastructure
+namespace Habitat.Framework.Indexing.Infrastructure
 {
     public class CustomSearchResult : SearchResultItem
     {
