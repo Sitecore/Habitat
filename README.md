@@ -47,6 +47,8 @@ Framework modules
 ##Getting started
 ---------------
 
+[Watch a Getting Started video here](https://youtu.be/SIh4bLGTaLE)
+
 > **Please note** that the project assumes the following settings:
 > 
 > *Source location:* C:\projects\Habitat\  
