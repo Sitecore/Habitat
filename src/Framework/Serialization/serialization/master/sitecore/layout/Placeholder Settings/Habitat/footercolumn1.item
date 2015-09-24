@@ -3,7 +3,7 @@ version: 1
 id: {269D1093-8F64-4B87-AA17-2AD453FD3B09}
 database: master
 path: /sitecore/layout/Placeholder Settings/Habitat/footercolumn1
-parent: {0E6B7B12-33B9-41F1-A242-B10EAAFDE9D3}
+parent: {FCE2D1A9-D038-4CB6-8063-733346D55766}
 name: footercolumn1
 master: {00000000-0000-0000-0000-000000000000}
 template: {5C547D4E-7111-4995-95B0-6B561751BF2E}
