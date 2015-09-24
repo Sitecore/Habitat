@@ -7,20 +7,24 @@ var watch = require("gulp-watch");
 
 var config = require("./gulp-config.js")();
 
-gulp.task("Publish", ["Build"], function() {
-    console.log("Publishing solution!!");
-    gulp.src("./src/**/*.csproj")
-        .pipe(foreach(function(stream, file) {
-            console.log(file);
-            return stream
-                .pipe(gmsbuild({
-                    targets: ["Clean", "Build"],
-                    configuration: "Debug",
-                    logCommand: false,
-                    verbosity: "normal",
-                    properties: { DeployOnBuild: "true", DeployDefaultTarget: "WebPublish", WebPublishMethod: "FileSystem", DeleteExistingFiles: "false", publishUrl: config.websiteRoot }
-                }));
-        }));
+gulp.task("Publish", function() {
+    var publishProjects = function(location) {
+        gulp.src(location + "/**/*.csproj")
+            .pipe(foreach(function (stream) {
+                return stream.pipe(gmsbuild({
+                        targets: ["Clean", "Build"], 
+                        configuration: "Debug",
+                        logCommand: false,
+                        verbosity: "normal",
+                        properties: { DeployOnBuild: "true", DeployDefaultTarget: "WebPublish", WebPublishMethod: "FileSystem", DeleteExistingFiles: "false", publishUrl: config.websiteRoot }
+                    }));
+            }));
+    };
+
+    console.log("Publishing solution");
+    publishProjects("./src/Framework");
+    publishProjects("./src/Domain");
+    publishProjects("./src/Project");
 });
 
 gulp.task("Full-Build", ["Copy-Sitecore-Lib"], function() {
