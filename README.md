@@ -60,6 +60,7 @@ Framework modules
 
 * Visual Studio **2015**
 * ASP.NET MVC
+* NuGet
 * Web Essentials
 * Gulp [gulpjs.com](http://gulpjs.com/)
 * Sass [sass-lang.com](http://sass-lang.com/install)
