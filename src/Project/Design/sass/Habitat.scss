@@ -1,7 +1,16 @@
-$font-family-sans-serif: "Roboto", "Helvetica", sans-serif;
-$headings-font-family: 'Source Sans Pro', sans-serif;
+$font-family-sans-serif: 'Source Sans Pro', sans-serif;
 $font-size-base: 16px;
-$headings-font-weight: 600px;
+$headings-font-weight: 600;
+$border-radius-base: 0;
+$border-radius-large: 0;
+$border-radius-small: 0;
+
+$brand-primary:         #428bca;
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
 
 @import 'bootstrap/_bootstrap.scss';
 
@@ -11,6 +20,14 @@ $headings-font-weight: 600px;
 body { 
   font-weight: 300;
 }
+
+ .container-fluid >.row >.col-md-12 {
+    >.jumbotron, >.carousel
+    {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+ }
 
 /****************
     NAVIGATION
@@ -54,6 +71,8 @@ body {
 ****************/
 
 footer {
+    background-color: $well-bg;
+    padding-top: $line-height-computed;
     .prefooter {
         .nav-pills {
             >li {
@@ -67,6 +86,7 @@ footer {
     MEDIA
 ****************/
 .carousel {
+    margin-bottom: $line-height-computed;
     .carousel-inner {
         img { 
             width: 100%; 

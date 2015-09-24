@@ -9,7 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		gulp-config.js = gulp-config.js
+		gulpfile.js = gulpfile.js
 		LICENSE = LICENSE
+		publishsettings.targets = publishsettings.targets
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -39,12 +42,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Language", "src\Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.StandardContent", "src\Domain\StandardContent\Habitat.StandardContent.csproj", "{DA079E95-DB53-4A66-AB35-2DAB71D19276}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{A31E9118-9A2E-49A6-B194-1EACCC39FBDC}"
-	ProjectSection(SolutionItems) = preProject
-		gulp-config.js = gulp-config.js
-		gulpfile.js = gulpfile.js
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Media", "src\Domain\Media\Habitat.Media.csproj", "{1417B162-F987-4CBD-8642-CA4C4119E705}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{9A8FD752-FF60-4789-8251-E1D8FF290F3F}"
@@ -54,6 +51,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Website", "src\Project\Website\Habitat.Website.csproj", "{86CADB26-5817-46B6-88C7-76D5753722C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Serialization", "src\Framework\Serialization\Habitat.Framework.Serialization.csproj", "{007CD5DC-0030-460D-91A3-3DDEA9AB472F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Accounts", "src\Domain\Accounts\Habitat.Accounts.csproj", "{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -187,6 +186,14 @@ Global
 		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Release|x64.ActiveCfg = Release|Any CPU
 		{007CD5DC-0030-460D-91A3-3DDEA9AB472F}.Release|x64.Build.0 = Release|Any CPU
+		{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}.Debug|x64.Build.0 = Debug|Any CPU
+		{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}.Release|x64.ActiveCfg = Release|Any CPU
+		{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -206,6 +213,8 @@ Global
 		{DA079E95-DB53-4A66-AB35-2DAB71D19276} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
 		{1417B162-F987-4CBD-8642-CA4C4119E705} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
 		{98DE0D1D-26F1-4CCA-847C-4E0FC2DBA5FC} = {9A8FD752-FF60-4789-8251-E1D8FF290F3F}
+		{86CADB26-5817-46B6-88C7-76D5753722C3} = {9A8FD752-FF60-4789-8251-E1D8FF290F3F}
 		{007CD5DC-0030-460D-91A3-3DDEA9AB472F} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
+		{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
 	EndGlobalSection
 EndGlobal

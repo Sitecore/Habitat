@@ -1,5 +1,4 @@
-#Habitat
-========
+#Sitecore Habitat
 
 ##What is the goal of this project?
 --------------------------------
@@ -9,11 +8,13 @@ Habitat is a Sitecore solution framework focusing on three aspects:
 * Flexibility - *Change and add quickly and without worry*
 * Extensibility - *Simply add new features without steep learning curve*
 
-Architecture Introduction: [Video](https://youtu.be/2CELqflPhm0)  
-Introduction to Modules: [Video](https://youtu.be/DgPrikqFe4s)  
-Introduction to Layers: [Video](https://youtu.be/XKLpTMuQT4Y)
+Video introductions:  
 
-##Index
+1. Architecture Introduction: [Video](https://youtu.be/2CELqflPhm0)  
+2. Introduction to Modules: [Video](https://youtu.be/DgPrikqFe4s)  
+3. Introduction to Layers: [Video](https://youtu.be/XKLpTMuQT4Y)
+
+##Modules
 ---------------
 The solution consists of the following modules:
 
@@ -46,22 +47,36 @@ Framework modules
 ##Getting started
 ---------------
 
+> **Please note** that the project assumes the following settings:
+> 
+> *Source location:* C:\projects\Habitat\  
+> *Website location:* C:\websites\Habitat\  
+> *Website URL:* http://habitat  
+>
+> To change these settings see the "Configuring your settings" below
+
+
 ###Habitat uses the following:
 
+* Visual Studio **2015**
+* ASP.NET MVC
+* Web Essentials
 * Gulp [gulpjs.com](http://gulpjs.com/)
 * Sass [sass-lang.com](http://sass-lang.com/install)
 * Node (npm) [npmjs.com](https://www.npmjs.com/)
 
 ###To install:
 
-1.   Clone this repository to your local file system.
-2.  Using SIM (Sitecore Instance Manager) set up a clean Sitecore website in the URL http://habitat/
-3.  Copy all assemblies from the Sitecore bin folder to the /lib/Sitecore folder
-4.  Open visual studio and copy the Habitat.Website/App_Config/Include/z.Habitat.DevSettings.config.sample to z.Habitat.DevSettings.config
-5.  Change the setting to fit with your configuration (see below)
-6.  Build the solution in Visual Studio
-7.  Publish all projects using the Habitat publish settings
-8.  Open [/unicorn.aspx](http://habitat/unicorn.aspx) and synchronize the items to your project
+1.  Clone this repository to your local file system.
+2.  Set up a clean Sitecore website in the URL http://habitat/ and the location C:\Websites\Habitat (We recommend using [Sitecore Instance Manager](https://marketplace.sitecore.net/Modules/S/Sitecore_Instance_Manager.aspx))
+3.  Copy all assemblies from the Sitecore bin folder in your clean install (C:\Websites\Habitat\Website\bin), to /lib/Sitecore folder in the source repository (C:\Projects\Habitat\lib\Sitecore)
+4.  Rebuild the solution in Visual Studio
+5.  Open the Visual Studio 2015 Task Runner Explorer (View | Other Windows | Task Runner Explorer)
+6.  Run the Publish task
+7.  Open [/unicorn.aspx](http://habitat/unicorn.aspx) and synchronize the items to your project
+8.  Be productive
+
+###Gulp
 
 The project is configured to run Gulp theough the taskrunner in Visual Studio 2015. 
 
@@ -70,16 +85,11 @@ The project is configured to run Gulp theough the taskrunner in Visual Studio 20
 
 ###Configuring your settings
 
-Please note that the project assumes the following settings:
-
-*Source location:* C:\projects\Habitat\  
-*Website location:* C:\websites\Habitat\
-
 To change these settings modify the following files:
 
-* Habitat.Website/App_Config/Include/z.Habitat.DevSettings.config.sample  
-* Build/gulp.config.js  
-* Build/publishsettings.targets  
+* /Project/Habitat.Website/App_Config/Include/z.Habitat.DevSettings.config.sample  
+* /Solution Items/gulp.config.js  
+* /Solution Items/publishsettings.targets  
 
 Resources
 ---------
