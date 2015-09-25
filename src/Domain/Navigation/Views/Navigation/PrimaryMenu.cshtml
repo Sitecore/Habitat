@@ -18,6 +18,10 @@
                 {
                     var hasChildren = item.Children != null && item.Children.Items.Any();
                     var cssClass = (item.IsActive ? "active" : string.Empty);
+                    if (hasChildren)
+                    {
+                        cssClass += " dropdown";
+                    }
 
                     <li class="@cssClass">
                         @if (hasChildren)

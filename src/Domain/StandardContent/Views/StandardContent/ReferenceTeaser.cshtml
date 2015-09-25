@@ -3,6 +3,7 @@
 @using Habitat.StandardContent
 @model Sitecore.Mvc.Presentation.RenderingModel
 
+@if (Model.Item == null) { return; } 
 
 <div class="panel panel-default teaser">
     <div class="panel-heading">

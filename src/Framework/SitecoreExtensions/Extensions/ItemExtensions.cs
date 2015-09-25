@@ -95,6 +95,13 @@ namespace Habitat.Framework.SitecoreExtensions.Extensions
 
         public static string LinkFieldUrl(this Item item, ID fieldID)
         {
+            if (item == null)
+                throw new ArgumentNullException(nameof(item));
+            if (ID.IsNullOrEmpty(fieldID))
+                throw new ArgumentNullException(nameof(fieldID));
+            var field = item.Fields[fieldID];
+            if (field == null)
+                return String.Empty;
             var linkUrl = new LinkUrl();
             return linkUrl.GetUrl(item, fieldID.ToString());
         }

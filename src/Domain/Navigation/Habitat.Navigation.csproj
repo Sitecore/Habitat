@@ -108,7 +108,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
-    <Content Include="Views\Navigation\SecondaryMenuItems.cshtml" />
+    <Content Include="Views\Navigation\_SecondaryMenuItems.cshtml" />
     <Content Include="README.md" />
     <Content Include="Views\Navigation\LinkMenu.cshtml" />
     <None Include="Views\Web.config" />
