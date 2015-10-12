@@ -60,7 +60,7 @@ Framework modules
 
 ###Habitat uses the following:
 
-* Sitecore XP 8.1
+* Sitecore XP 8.1 
 * Visual Studio **2015**
 * ASP.NET MVC
 * NuGet
