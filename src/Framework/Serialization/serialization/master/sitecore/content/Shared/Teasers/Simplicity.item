@@ -12,7 +12,7 @@ templatekey: Teaser
 ----version----
 language: en
 version: 1
-revision: 7452ebb2-3ef9-4a90-8265-534d96ebb3f7
+revision: e7187e90-5598-4bde-a08f-7f15354e1a12
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
@@ -25,7 +25,7 @@ Simplicity
 field: {AC3FD4DB-8266-476D-9635-67814D91E901}
 name: Summary
 key: summary
-content-length: 178
+content-length: 177
 
 Sitecore Habitat makes it simple and easy to build, adapt and change Sitecore solutions. 
 By providing a simple and consistent architecture, changes can be made with confidence.
@@ -33,9 +33,9 @@ By providing a simple and consistent architecture, changes can be made with conf
 field: {E8AB122C-6F54-4D4E-AEC6-F81ADDC558FC}
 name: Link
 key: link
-content-length: 158
+content-length: 147
 
-<link text="Read more" linktype="internal" url="" anchor="" title="Read more" class="" querystring="" target="" id="{3A5D638D-5BDD-4DDD-BEAC-4A0C81C27E8A}" />
+<link text="Read more" linktype="internal" class="" title="Read more" target='Custom' querystring="" id="{5AE93342-3CEE-4804-BE04-8643DCCD71AA}" />
 ----field----
 field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
 name: Image
@@ -56,14 +56,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-7452ebb2-3ef9-4a90-8265-534d96ebb3f7
+e7187e90-5598-4bde-a08f-7f15354e1a12
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150921T054518Z
+20151009T064349Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

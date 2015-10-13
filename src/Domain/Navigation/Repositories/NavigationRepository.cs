@@ -111,6 +111,7 @@ namespace Habitat.Navigation.Repositories
                 Url = (item.IsDerived(Templates.Link.ID) ? item.LinkFieldUrl(Templates.Link.Fields.Link) : item.Url()),
                 Target = (item.IsDerived(Templates.Link.ID) ? item.LinkFieldTarget(Templates.Link.Fields.Link) : ""),
                 IsActive = IsItemActive(item),
+                IsCurrent = IsItemCurrent(item),
                 Children = GetChildNavigationItems(item, level + 1, maxLevel)
             };
         }
@@ -129,6 +130,10 @@ namespace Habitat.Navigation.Repositories
         private bool IsItemActive(Item item)
         {
             return ContextItem.ID == item.ID || ContextItem.Axes.GetAncestors().Any(a => a.ID == item.ID);
+        }
+        private bool IsItemCurrent(Item item)
+        {
+            return ContextItem.ID == item.ID;
         }
     }
 }

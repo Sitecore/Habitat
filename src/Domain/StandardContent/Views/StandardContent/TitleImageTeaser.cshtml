@@ -3,7 +3,7 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 
-<div class="thumbnail">
+<div class="thumbnail teaser">
     <a href="@Model.Item.LinkFieldUrl(Templates.HasLink.Fields.Link)">
         @Html.Sitecore().ImageField(Templates.HasImage.Fields.Image.ToString(), Model.Item, mw: 500, cssClass: "img-responsive")
     </a>
@@ -11,8 +11,9 @@
         <h3 class="teaser-heading">
             @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString(), Model.Item)
         </h3>
+        <hr/>
         <p class="read-more">
-            @Html.Sitecore().Field(Templates.HasLink.Fields.Link.ToString(), Model.Item, new { @class = "btn btn-info" })
+            @Html.Sitecore().Field(Templates.HasLink.Fields.Link.ToString(), Model.Item, new { @class = "btn btn-default" })
         </p>
     </div>
 </div>

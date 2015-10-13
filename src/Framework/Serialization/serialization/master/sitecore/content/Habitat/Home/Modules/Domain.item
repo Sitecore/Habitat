@@ -12,7 +12,7 @@ templatekey: Section
 ----version----
 language: en
 version: 1
-revision: d449bb4a-2dc3-48ba-b6ad-f861a1230729
+revision: de5470dc-3ea7-4b4e-8db8-e36a9719e740
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
@@ -46,9 +46,9 @@ Domain
 field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
 name: __Final Renderings
 key: __final renderings
-content-length: 611
+content-length: 883
 
-<r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{B3FEAC60-0F29-4A93-83FE-F848FBFD36F8}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{F7718FED-DE86-4BFD-A952-023C41B385FD}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-1_7e47ad66-ec96-4030-b658-9b64486ec136" /><r uid="{7E47AD66-EC96-4030-B658-9B64486EC136}" p:before="r[@uid='{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}']" s:ds="" s:id="{DE648E12-A568-4919-802E-A688EBC9B9F3}" s:par="ContainerIsFluid" s:ph="page-layout" /></d></r>
+<r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{8E084FF5-7B98-442E-B601-2B875CE701B4}" p:before="r[@uid='{B3FEAC60-0F29-4A93-83FE-F848FBFD36F8}']" s:ds="{EA258531-D346-4200-B673-471CF1544506}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-2_7e47ad66-ec96-4030-b658-9b64486ec136" /><r uid="{B3FEAC60-0F29-4A93-83FE-F848FBFD36F8}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{F7718FED-DE86-4BFD-A952-023C41B385FD}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-1_7e47ad66-ec96-4030-b658-9b64486ec136" /><r uid="{7E47AD66-EC96-4030-B658-9B64486EC136}" p:before="r[@uid='{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}']" s:ds="" s:id="{DE648E12-A568-4919-802E-A688EBC9B9F3}" s:par="ContainerIsFluid" s:ph="page-layout" /></d></r>
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -69,14 +69,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-d449bb4a-2dc3-48ba-b6ad-f861a1230729
+de5470dc-3ea7-4b4e-8db8-e36a9719e740
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150921T071657Z
+20151008T042137Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

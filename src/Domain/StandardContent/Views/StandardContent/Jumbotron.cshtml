@@ -4,13 +4,18 @@
 
 
 <div class="jumbotron" style="background-image: url('@Model.Item.ImageUrl(Templates.HasImage.Fields.Image)')">
-    <h1>
-        @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString(), Model.Item)
-    </h1>
-    <p>
-        @Html.Sitecore().Field(Templates.HasSummary.Fields.Summary.ToString(), Model.Item)
-    </p>
-    <p>
-        @Html.Sitecore().Field(Templates.HasLink.Fields.Link.ToString(), Model.Item, new { @class = "btn btn-primary btn-lg" })
-    </p>
+    <div class="container">
+        <h1>
+            @Html.Sitecore().Field(Templates.HasTitle.Fields.Title.ToString(), Model.Item)
+        </h1>
+        <p>
+            @Html.Sitecore().Field(Templates.HasSummary.Fields.Summary.ToString(), Model.Item)
+        </p>
+        <p>
+            @Html.Sitecore().Field(Templates.HasLink.Fields.Link.ToString(), Model.Item, new
+       {
+           @class = "btn btn-primary btn-lg"
+       })
+        </p>
+    </div>
 </div>

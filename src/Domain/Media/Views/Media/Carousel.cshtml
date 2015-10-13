@@ -31,9 +31,9 @@
                     <img src="'@element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions())'" alt="" class="img-responsive" />
                 }
                 <div class="carousel-caption">
-                    <h3>
+                    <h2>
                         @Html.Sitecore().Field(Templates.HasMedia.Fields.Title.ToString(), element.Item)
-                    </h3>
+                    </h2>
                     <div>
                         @Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item)
                     </div>

@@ -38,7 +38,7 @@
     public string AccordionID => (_accordionID ?? (_accordionID = $"accordion-{Guid.NewGuid().ToString("N")}"));
 }
 
-<div class="panel-group" id="@AccordionID" role="tablist" aria-multiselectable="true">
+<div class="panel-group teaser" id="@AccordionID" role="tablist" aria-multiselectable="true">
     @for (var i = 0; i < AccordeonElements.Count(); i++)
     {
         <div class="panel panel-default">

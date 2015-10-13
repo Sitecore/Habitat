@@ -1,40 +1,40 @@
 ----item----
 version: 1
-id: {A2586AC7-CDF3-40C9-BFC5-9C7CBBC7C592}
+id: {B16765BA-7B3E-4C5B-9937-BFC985F2550C}
 database: master
-path: /sitecore/content/Habitat/Home/Contact Us/Our offices/United States
-parent: {B6C764EB-FC71-45C0-83FC-E28DC20A68C3}
-name: United States
+path: /sitecore/content/Habitat/Home/About Habitat/Architecture
+parent: {762684E7-480B-41D6-82DE-8549BABE95E3}
+name: Architecture
 master: {00000000-0000-0000-0000-000000000000}
-template: {94A8C8E9-690B-4E65-98E7-F95800222767}
-templatekey: Article
+template: {8EE208F9-A6A6-41E2-88A0-C188737A178C}
+templatekey: Section
 
 ----version----
 language: en
 version: 1
-revision: 622467ff-815e-4796-8068-95ee96fdffb0
+revision: 7f30db45-77fc-4164-aeee-2ae1b816adaa
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
 name: Title
 key: title
-content-length: 13
+content-length: 12
 
-United States
+Architecture
 ----field----
 field: {1B483E91-D8C4-4D19-BA03-462074B55936}
 name: NavigationTitle
 key: navigationtitle
-content-length: 13
+content-length: 12
 
-United States
+Architecture
 ----field----
 field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
 name: BrowserTitle
 key: browsertitle
-content-length: 13
+content-length: 12
 
-United States
+Architecture
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -48,21 +48,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20150827T034435Z
+20151009T064159Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-622467ff-815e-4796-8068-95ee96fdffb0
+7f30db45-77fc-4164-aeee-2ae1b816adaa
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150827T034435Z
+20151009T064159Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

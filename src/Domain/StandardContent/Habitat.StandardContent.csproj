@@ -120,6 +120,23 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Website\Layouts\Default.cshtml" />
+    <Content Include="Website\Sublayouts\1 Column.cshtml" />
+    <Content Include="Website\Sublayouts\2 Column 3-9.cshtml" />
+    <Content Include="Website\Sublayouts\2 Column 4-8.cshtml" />
+    <Content Include="Website\Sublayouts\2 Column 6-6.cshtml" />
+    <Content Include="Website\Sublayouts\2 Column 8-4.cshtml" />
+    <Content Include="Website\Sublayouts\2 Column 9-3.cshtml" />
+    <Content Include="Website\Sublayouts\3 Column 3-3-6.cshtml" />
+    <Content Include="Website\Sublayouts\3 Column 4-4-4.cshtml" />
+    <Content Include="Website\Sublayouts\3 Column 6-3-3.cshtml" />
+    <Content Include="Website\Sublayouts\4 Column 3-3-3-3.cshtml" />
+    <Content Include="Website\Sublayouts\Footer.cshtml" />
+    <Content Include="Website\Sublayouts\Inner 2 Column 4-8.cshtml" />
+    <Content Include="Website\Sublayouts\Inner 2 Column 6-6.cshtml" />
+    <Content Include="Website\Sublayouts\Inner 2 Column 8-4.cshtml" />
+    <Content Include="Website\Sublayouts\PageHeading.cshtml" />
+    <Content Include="Website\Sublayouts\PageSidebar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.config" />

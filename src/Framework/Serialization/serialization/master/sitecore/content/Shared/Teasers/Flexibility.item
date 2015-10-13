@@ -12,7 +12,7 @@ templatekey: Teaser
 ----version----
 language: en
 version: 1
-revision: c8da35ca-7dc6-47bb-a2d5-aeeadebdb28b
+revision: b3d6ea60-8efb-4d1f-8638-4427e3f72cc9
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
@@ -32,9 +32,9 @@ content-length: 134
 field: {E8AB122C-6F54-4D4E-AEC6-F81ADDC558FC}
 name: Link
 key: link
-content-length: 190
+content-length: 147
 
-<link id="{439EC71A-4231-45C8-B075-975BD41099A7}" querystring="" target="" text="Read more" anchor="" url="/Habitat/Home/About Habitat/News" title="Read more" class="" linktype="internal" />
+<link text="Read more" linktype="internal" class="" title="Read more" target='Custom' querystring="" id="{8FB91A10-D14D-4D37-85BF-8203C1C89C34}" />
 ----field----
 field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
 name: Image
@@ -55,14 +55,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-c8da35ca-7dc6-47bb-a2d5-aeeadebdb28b
+b3d6ea60-8efb-4d1f-8638-4427e3f72cc9
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150921T035942Z
+20151009T064338Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

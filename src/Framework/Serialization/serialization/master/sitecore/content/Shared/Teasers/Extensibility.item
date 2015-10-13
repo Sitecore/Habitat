@@ -12,7 +12,7 @@ templatekey: Teaser
 ----version----
 language: en
 version: 1
-revision: a78d1149-d0db-4377-97ec-43456c660fa2
+revision: e756e61c-5499-49ad-8fda-ea23daca4424
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
@@ -25,9 +25,9 @@ Extensibility
 field: {E8AB122C-6F54-4D4E-AEC6-F81ADDC558FC}
 name: Link
 key: link
-content-length: 97
+content-length: 129
 
-<link linktype="internal" querystring="" target="" id="{86B2E20E-ECFC-45E2-8735-9A6FCAE83C95}" />
+<link text="" linktype="internal" class="" title="" target='Custom' querystring="" id="{340146A4-809E-4BC1-BCF2-9B0EBD23F271}" />
 ----field----
 field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
 name: Image
@@ -48,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-a78d1149-d0db-4377-97ec-43456c660fa2
+e756e61c-5499-49ad-8fda-ea23daca4424
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150921T054518Z
+20151009T064322Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -59,7 +59,6 @@
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -127,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Models\NavigationItem.cs" />
     <Compile Include="Models\NavigationItems.cs" />
     <Compile Include="Repositories\INavigationRepository.cs" />
     <Compile Include="Repositories\NavigationRepository.cs" />

@@ -2,7 +2,7 @@
 @using Habitat.Framework.SitecoreExtensions.Repositories
 @using Habitat.News
 @model IEnumerable<Sitecore.Data.Items.Item>
-<div class="panel panel-default">
+<div class="panel panel-default teaser">
     <div class="panel-heading">
         <h3>Latest News</h3>
     </div>
@@ -29,7 +29,7 @@
         </ul>
     </div>
     <div class="panel-footer">
-        <a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-info">
+        <a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-default">
             @DictionaryRepository.Get("/R/Read more", "***READ MORE***")
         </a>
     </div>

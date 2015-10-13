@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {B42FCF9A-4AEA-4F37-A859-92A691755B82}
+id: {340146A4-809E-4BC1-BCF2-9B0EBD23F271}
 database: master
-path: /sitecore/content/Habitat/Home/Contact Us/Our offices/United Kingdom
-parent: {B6C764EB-FC71-45C0-83FC-E28DC20A68C3}
-name: United Kingdom
+path: /sitecore/content/Habitat/Home/About Habitat/Fundamentals/Extensibilty
+parent: {5DEEFBDD-6C01-4C49-962C-911736BE4178}
+name: Extensibilty
 master: {00000000-0000-0000-0000-000000000000}
 template: {94A8C8E9-690B-4E65-98E7-F95800222767}
 templatekey: Article
@@ -12,29 +12,29 @@ templatekey: Article
 ----version----
 language: en
 version: 1
-revision: f3ed6bea-7c43-4d29-a0e7-6cface3ff776
+revision: e01bc7b6-7870-4294-ac19-1145dbf68e83
 
 ----field----
 field: {C30A013F-3CC8-4961-9837-1C483277084A}
 name: Title
 key: title
-content-length: 14
+content-length: 12
 
-United Kingdom
+Extensibilty
 ----field----
 field: {1B483E91-D8C4-4D19-BA03-462074B55936}
 name: NavigationTitle
 key: navigationtitle
-content-length: 14
+content-length: 12
 
-United Kingdom
+Extensibilty
 ----field----
 field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
 name: BrowserTitle
 key: browsertitle
-content-length: 14
+content-length: 12
 
-United Kingdom
+Extensibilty
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -48,21 +48,21 @@ name: __Created
 key: __created
 content-length: 16
 
-20150827T034427Z
+20151009T064235Z
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-f3ed6bea-7c43-4d29-a0e7-6cface3ff776
+e01bc7b6-7870-4294-ac19-1145dbf68e83
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150827T034427Z
+20151009T064235Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

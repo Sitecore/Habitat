@@ -20,44 +20,16 @@ content-length: 28
 field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
 name: Open Properties after Add
 key: open properties after add
-content-length: 1
+content-length: 0
 
--
+
 ----field----
 field: {11421560-0BCB-403A-B099-8595C34341FD}
 name: JavaScript inline
 key: javascript inline
-content-length: 1027
+content-length: 0
 
- var slider = $('.c-layout-revo-slider .tp-banner');
-    var cont = $('.c-layout-revo-slider .tp-banner-container');
-    var height = (App.getViewPort().width < App.getBreakpoint('md') ? 1024 : 620);
-    var api = slider.show().revolution({
-        delay: 7000,
-        startwidth:1170,
-        startheight: height,
-        navigationType: "hide",
-        navigationArrows: "solo",
-        touchenabled: "on",
-        onHoverStop: "off",
-        keyboardNavigation: "off",
-        navigationStyle: "circle",
-        navigationHAlign: "center",
-        navigationVAlign: "center",
-        fullScreenAlignForce:"off",
-        shadow: 0,
-        fullWidth: "on",
-        fullScreen: "off",
-        spinner: "spinner2",
-        forceFullWidth: "on",
-        hideTimerBar:"on",
-        hideThumbsOnMobile: "on",
-        hideNavDelayOnMobile: 1500,
-        hideBulletsOnMobile: "on",
-        hideArrowsOnMobile: "on",
-        hideThumbsUnderResolution: 0,
-        videoJsPath: "rs-plugin/videojs/"
-    });
+
 ----field----
 field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
 name: Datasource Location
@@ -75,7 +47,7 @@ content-length: 38
 ----version----
 language: en
 version: 1
-revision: 799173f2-4565-4d4d-99ec-6b124929fc1f
+revision: 2409f974-3889-4a37-b7bc-e4d4b3705c30
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -90,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-799173f2-4565-4d4d-99ec-6b124929fc1f
+2409f974-3889-4a37-b7bc-e4d4b3705c30
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 16
 
-20150921T053727Z
+20151007T035138Z
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
