@@ -60,6 +60,7 @@ Framework modules
 
 ###Habitat uses the following:
 
+* Sitecore XP 8.1 
 * Visual Studio **2015**
 * ASP.NET MVC
 * NuGet
@@ -73,7 +74,7 @@ Framework modules
 ###To install:
 
 1.  Clone this repository to your local file system.
-2.  Set up a clean Sitecore website in the URL http://habitat/ and the location C:\Websites\Habitat (We recommend using [Sitecore Instance Manager](https://marketplace.sitecore.net/Modules/S/Sitecore_Instance_Manager.aspx))
+2.  Set up a clean Sitecore 8.1 website in the URL http://habitat/ and the location C:\Websites\Habitat (We recommend using [Sitecore Instance Manager](https://marketplace.sitecore.net/Modules/S/Sitecore_Instance_Manager.aspx))
 3.  Copy all assemblies from the Sitecore bin folder in your clean install (C:\Websites\Habitat\Website\bin), to /lib/Sitecore folder in the source repository (C:\Projects\Habitat\lib\Sitecore)
 4.  Rebuild the solution in Visual Studio 2015
 5.  Open the Visual Studio 2015 Task Runner Explorer (View | Other Windows | Task Runner Explorer)
