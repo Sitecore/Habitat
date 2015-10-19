@@ -1,0 +1,25 @@
+﻿---
+ID: 69cf65fb-f46e-4038-bbfb-66695b9178e4
+Parent: ea13174a-b43e-4f68-b474-b41188771a9e
+Template: f0369e1a-9030-4a05-a09c-ef09b664ed27
+Path: /sitecore/content/Shared/Media/Flexibility
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150901T054400Z
+    - ID: 302c9f8d-f703-4f76-a4ab-73d222648232
+      # MediaDescription
+      Value: Change and add quickly and without worry
+    - ID: 4ff62b0a-d73b-4436-bea2-023154f2ffc4
+      # MediaThumbnail
+      Value: "<image mediapath=\"\" alt=\"Woman on Phone\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"\" mediaid=\"{EEAA66A4-9936-478F-BD5F-AFAF09641366}\" />"
+    - ID: 63dda48b-b0cb-45a7-9a1b-b26ddb41009b
+      # MediaTitle
+      Value: Flexibility
+    - ID: 9f51dead-ad6e-41c2-9759-7be17eb474a4
+      # MediaImage
+      Value: "<image mediapath=\"\" alt=\"Woman on Phone\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"\" mediaid=\"{EEAA66A4-9936-478F-BD5F-AFAF09641366}\" />"

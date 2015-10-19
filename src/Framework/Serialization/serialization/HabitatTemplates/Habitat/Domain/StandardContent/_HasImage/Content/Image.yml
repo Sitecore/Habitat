@@ -1,0 +1,26 @@
+﻿---
+ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+Parent: cfa8988e-704b-40c1-a8c8-e367e63d455f
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Habitat/Domain/StandardContent/_HasImage/Content/Image
+SharedFields:
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  # Type
+  Value: Image
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 300
+- ID: dca13350-3ec5-408a-a190-d8fc9f63dcd1
+  # Is Displayed in Search Results
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+      # Title
+      Value: Image - Default image shown when showing this item in listings
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20130920T135753

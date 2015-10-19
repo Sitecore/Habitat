@@ -1,0 +1,27 @@
+﻿---
+ID: 725a45e3-e307-4b95-b363-2782b059df06
+Parent: 0de95ae4-41ab-4d01-9eb0-67441b7c2450
+Template: 0643d9d4-f30b-4b07-91d0-289cc324c9cf
+Path: /sitecore/content/Habitat
+SharedFields:
+- ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
+  # __Masters
+  Type: TreelistEx
+  Value: {4A8822CC-B418-4452-AB0F-8BB6DF2F2114}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 02115632-fe1e-4b3d-9ad4-a4ddf1f782f0
+      # Copyright
+      Value: "Copyright © 2015 <a href=\"http://sitecore.net\" target=\"_blank\">Sitecore Corporation A/S</a>"
+    - ID: 235ae392-97ac-4822-be38-837da3e7724e
+      # SiteBrowserTitle
+      Value:  - Habitat Sitecore Framework
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150824T171748Z
+    - ID: e748d808-64c1-4dec-9718-f35cf9689e4b
+      # Logo
+      Value: "<image mediapath=\"/Default Website/sc_logo\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Default Website/sc_logo\" mediaid=\"{461A93BF-5471-4AF2-BF36-D638F5660CB5}\" />"

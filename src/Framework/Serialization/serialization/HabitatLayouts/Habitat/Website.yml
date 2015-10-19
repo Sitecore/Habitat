@@ -1,0 +1,17 @@
+﻿---
+ID: 962cb6d1-4c7b-4bb5-be34-dcee6e038eb2
+Parent: ef072af6-ef9c-4957-854b-ecc2ef7b3f94
+Template: 93227c5d-4fef-474d-94c0-f252ec8e8219
+Path: /sitecore/layout/Layouts/Habitat/Website
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150825T151506Z

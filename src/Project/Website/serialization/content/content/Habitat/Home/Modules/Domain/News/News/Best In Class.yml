@@ -1,0 +1,36 @@
+﻿---
+ID: 88d7f189-43af-4704-94ea-daa482f9dba5
+Parent: 439ec71a-4231-45c8-b075-975bd41099a7
+Template: b69277ad-e917-4b9f-9136-a12e0a3e462f
+Path: /sitecore/content/Habitat/Home/Modules/Domain/News/News/Best In Class
+SharedFields:
+- ID: c464d2d7-3382-428a-bcdf-0963c60ba0e3
+  # NewsDate
+  Value: 20150924T175742Z
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150824T175742Z
+    - ID: 3437eaac-6ee8-460b-a33d-da1f714b5a93
+      # NewsImage
+      Value: "<image mediapath=\"\" alt=\"178\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"\" mediaid=\"{739BCA32-6346-4B62-B8BF-34E93528822A}\" ></image>"
+    - ID: 801612c7-5e98-4e3c-80d2-a34d0eebcbda
+      # NewsBody
+      Value: |
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas. Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus. Sed consectetur, est ac venenatis consequat, nisi tellus euismod tortor, nec volutpat tortor lectus in nisi. Nulla facilisi. Phasellus ultricies rutrum odio, sed ultricies tortor ornare vel. Nunc a leo justo. Pellentesque elementum quam eget mauris gravida convallis at at sem. Integer vitae lectus dui. Quisque facilisis enim purus, et fringilla velit mollis eget. Nullam vitae nisi ullamcorper, congue quam ac, porttitor urna. Maecenas sed nisi rhoncus lacus consectetur commodo.</p>
+        <p>Nam finibus ornare augue, eget ullamcorper erat. Vivamus a tortor blandit, fermentum mauris quis, ullamcorper ex. Donec et lacus in augue aliquet elementum. Mauris nec molestie neque. Suspendisse eu quam commodo, iaculis turpis vel, laoreet lacus. Nullam tempus ornare volutpat. Praesent imperdiet eleifend mi, sit amet eleifend urna dapibus eu. Duis euismod lectus eget metus convallis tristique. Quisque eget neque non nibh consectetur lobortis. Nam condimentum eros sed dui molestie, vel gravida sem accumsan. Mauris in purus dolor.</p>
+    - ID: 9d08271a-1672-44dd-b7ef-0a6ec34fcba7
+      # NewsSummary
+      Value: |
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas.</p>
+        <p>Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus.</p>
+    - ID: bd9ecd4a-c0b0-4233-a3cd-d995519ac87b
+      # NewsTitle
+      Value: Sitecore XP rated Best In Class - again
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      # BrowserTitle
+      Value: News article

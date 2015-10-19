@@ -1,0 +1,13 @@
+﻿---
+ID: fb1e4810-6d89-4f1e-a47b-70478fe32da7
+Parent: 0f916de7-60ac-4833-b480-865f26f1dd56
+Template: ac7394d5-2aa7-4fdb-a7d8-b1b87f9fa661
+Path: /sitecore/content/Habitat/Global/Links/Footer Menu/Left
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150910T105348Z

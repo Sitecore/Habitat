@@ -1,0 +1,19 @@
+﻿---
+ID: 0818bf37-ff4b-471f-99eb-7c5d37dfbb91
+Parent: fb1e4810-6d89-4f1e-a47b-70478fe32da7
+Template: 390333c8-751b-4332-84a3-6360b969a19f
+Path: /sitecore/content/Habitat/Global/Links/Footer Menu/Left/Knowledge Base
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: Knowledge Base
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150910T105654Z
+    - ID: fe71c30e-f07d-4052-8594-c3028cd76e1f
+      # Link
+      Value: "<link text=\"\" linktype=\"external\" url=\"kb.sitecore.net\" anchor=\"\" title=\"\" class=\"\" querystring=\"\" target=\"_blank\" id=\"\" />"

@@ -1,0 +1,17 @@
+﻿---
+ID: 1d365086-f844-4fd8-a42b-5efe27fec24e
+Parent: 571fe53b-aee0-4958-ab58-c5b546aed49e
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Habitat/Framework/Search/_SearchResult/Search/ShowInSearchResults
+SharedFields:
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  # Type
+  Value: Checkbox
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150914T012320Z

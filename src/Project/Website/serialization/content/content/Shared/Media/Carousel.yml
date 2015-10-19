@@ -1,0 +1,24 @@
+﻿---
+ID: 6b3e2125-9402-4abe-be65-1dc375b2111e
+Parent: ea13174a-b43e-4f68-b474-b41188771a9e
+Template: c18d3794-d126-4548-bfc8-89358de6e9c1
+Path: /sitecore/content/Shared/Media/Carousel
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150902T071953Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
+    - ID: 72ea8682-24d2-4beb-951c-3e2164974105
+      # MediaSelector
+      Type: Multilist
+      Value: |
+        {12CFA7C1-B5BD-4C99-B6F4-221423F2E0E1}
+        {69CF65FB-F46E-4038-BBFB-66695B9178E4}
+        {EC545DC1-F12B-4B22-8FEB-7F0A4211C0E8}
+        {98D1970C-E669-448F-9E2A-DE9087A46F58}

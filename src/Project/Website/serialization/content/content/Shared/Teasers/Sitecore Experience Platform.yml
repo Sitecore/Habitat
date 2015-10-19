@@ -1,0 +1,22 @@
+﻿---
+ID: ad50901f-da3e-48f3-9519-d6c21c978925
+Parent: 6aa25831-0944-4a79-9aff-7bac39e03557
+Template: c7d9d293-4ef8-4380-8e10-c4632e729f39
+Path: /sitecore/content/Shared/Teasers/Sitecore Experience Platform
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150921T053847Z
+    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+      # Summary
+      Value: Put your customers at the center of everything you do, creating customers for life.
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      # Title
+      Value: Sitecore® Experience Platform™
+    - ID: e8ab122c-6f54-4d4e-aec6-f81addc558fc
+      # Link
+      Value: "<link linktype=\"external\" text=\"Visit Sitecore.net\" url=\"http://www.sitecore.net\" anchor=\"\" target=\"_blank\" />"

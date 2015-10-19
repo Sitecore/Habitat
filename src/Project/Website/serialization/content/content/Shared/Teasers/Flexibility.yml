@@ -1,0 +1,25 @@
+﻿---
+ID: 6086f621-4a0e-4724-9d6f-ea7ba8139f57
+Parent: 6aa25831-0944-4a79-9aff-7bac39e03557
+Template: c7d9d293-4ef8-4380-8e10-c4632e729f39
+Path: /sitecore/content/Shared/Teasers/Flexibility
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150827T063230Z
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      # Image
+      Value: "<image mediapath=\"\" alt=\"Woman on Phone\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"\" mediaid=\"{EEAA66A4-9936-478F-BD5F-AFAF09641366}\" ></image>"
+    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+      # Summary
+      Value: "\"The only thing constant in life is Change\". Sitecore Habitat makes it easy and safe to change and adapt to new business requirements."
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      # Title
+      Value: Flexibility
+    - ID: e8ab122c-6f54-4d4e-aec6-f81addc558fc
+      # Link
+      Value: "<link text=\"Read more\" linktype=\"internal\" class=\"\" title=\"Read more\" target='Custom' querystring=\"\" id=\"{8FB91A10-D14D-4D37-85BF-8203C1C89C34}\" />"

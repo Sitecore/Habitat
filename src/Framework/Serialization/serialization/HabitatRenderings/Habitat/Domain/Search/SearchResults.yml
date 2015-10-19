@@ -1,0 +1,23 @@
+﻿---
+ID: d460006d-1069-414c-ad24-4821eba45f70
+Parent: 5a852bfa-9f18-4b9c-b0af-a60913872b2d
+Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
+Path: /sitecore/layout/Renderings/Habitat/Domain/Search/SearchResults
+SharedFields:
+- ID: 94069f66-609c-48b0-8281-521c30fb269d
+  # Open Properties after Add
+  Value: -
+- ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
+  # Controller Action
+  Value: SearchResults
+- ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
+  # Controller
+  Value: Habitat.Search.Controllers.SearchController, Habitat.Search
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150911T032830Z
