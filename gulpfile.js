@@ -19,13 +19,19 @@ var publishProjects = function(location) {
         }));
 };
 
-gulp.task("Publish-All-Projects", function () {
+gulp.task("02-Publish-Framework-Projects", function () {
     publishProjects("./src/Framework");
+});
+
+gulp.task("03-Publish-Domain-Projects", function () {
     publishProjects("./src/Domain");
+});
+
+gulp.task("04-Publish-Project-Projects", function () {
     publishProjects("./src/Project");
 });
 
-gulp.task("Copy-Sitecore-Lib", function() {
+gulp.task("01-Copy-Sitecore-Lib", function () {
     console.log("Copying Sitecore Libraries");
     gulp.src(config.sitecoreLibraries + "/**/*")
         .pipe(gulp.dest("./lib/Sitecore"));
