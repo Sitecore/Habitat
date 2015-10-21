@@ -1,0 +1,17 @@
+﻿---
+ID: 80e30dd8-8021-45f5-9fe1-23d2702cc206
+Parent: c3941047-1196-45df-93fe-12c20a5edde8
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Habitat/Domain/Search/_SearchResults/Search/SearchBoxTitle
+SharedFields:
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  # Type
+  Value: Single-Line Text
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150911T024805Z

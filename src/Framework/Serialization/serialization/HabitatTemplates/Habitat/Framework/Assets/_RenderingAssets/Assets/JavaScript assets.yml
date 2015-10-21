@@ -1,0 +1,26 @@
+﻿---
+ID: e514a1eb-ddba-44f7-8528-82ca2280f778
+Parent: 6e3289bf-a73f-45ac-a86f-e253ecc10d15
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Habitat/Framework/Assets/_RenderingAssets/Assets/JavaScript assets
+SharedFields:
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  # Type
+  Value: Multi-Line Text
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 100
+- ID: be351a73-fcb0-4213-93fa-c302d8ab4f51
+  # Shared
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+      # Title
+      Value: JavaScript assets - JavaScript files that should be referenced when this rendering is displayed. Separate by commas, semi-colons or newlines.
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20140507T093519

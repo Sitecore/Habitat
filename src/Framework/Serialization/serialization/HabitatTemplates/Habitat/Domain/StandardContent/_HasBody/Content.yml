@@ -1,0 +1,16 @@
+﻿---
+ID: c5495452-b2a1-4697-baef-6602c08e7db7
+Parent: f15afc99-281e-48df-b333-91033622651a
+Template: e269fbb5-3750-427a-9149-7aa950b49301
+Path: /sitecore/templates/Habitat/Domain/StandardContent/_HasBody/Content
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20140105T212626
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\steve

@@ -1,0 +1,19 @@
+﻿---
+ID: 4a1e242e-fd29-4529-bee0-3a9b1cac30ab
+Parent: 6aa25831-0944-4a79-9aff-7bac39e03557
+Template: c7d9d293-4ef8-4380-8e10-c4632e729f39
+Path: /sitecore/content/Shared/Teasers/Lighboxes
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150921T055523Z
+    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+      # Summary
+      Value: Lightboxes show a thumbnail of an image and a larger version with a description when clicked. They come in a image and video version.
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      # Title
+      Value: Lightboxes

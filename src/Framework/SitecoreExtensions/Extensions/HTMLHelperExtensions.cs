@@ -11,9 +11,9 @@ namespace Habitat.Framework.SitecoreExtensions.Extensions
     /// </summary>
     public static class HtmlHelperExtensions
     {
-        public static HtmlString ImageField(this SitecoreHelper helper, string fieldName, Item item, int? mh = null, int? mw = null, string cssClass = null, bool disableWebEditing = false)
+        public static HtmlString ImageField(this SitecoreHelper helper, string fieldName, Item item, int mh = 0, int mw = 0, string cssClass = null, bool disableWebEditing = false)
         {
-            return helper.Field(fieldName, item, new { mh, mw, DisableWebEdit = disableWebEditing, @class = cssClass });
+            return helper.Field(fieldName, item, new { mh, mw, DisableWebEdit = disableWebEditing, @class = (cssClass ?? "") });
         }
 
         public static EditFrameRendering BeginEditFrame<T>(this HtmlHelper<T> helper, string dataSource, string buttons)

@@ -1,0 +1,17 @@
+﻿---
+ID: 8c3a2cfc-18fb-4bf5-8584-50ea88978ed6
+Parent: 5a852bfa-9f18-4b9c-b0af-a60913872b2d
+Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+Path: /sitecore/layout/Renderings/Habitat/Domain/Search/GlobalSearch
+SharedFields:
+- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+  # Path
+  Value: /Views/Search/GlobalSearch.cshtml
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150909T041424Z

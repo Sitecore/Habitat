@@ -129,7 +129,6 @@
     <Compile Include="Repositories\ImageRepository.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
     <Compile Include="Repositories\LinkRepository.cs" />
-    <Compile Include="Rules\Conditions\HasCampaignEverBeenTriggered.cs" />
     <Compile Include="Services\XmlParserService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -140,9 +139,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="README.md" />
-    <Content Include="App_Config\Include\Habitat\Habitat.Framework.SitecoreExtensions.Serialization.config">
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="web.config" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
@@ -153,9 +149,7 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Rules\Actions\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v14.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
@@ -166,7 +160,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59119/</IISUrl>
+          <IISUrl>http://localhost:61398/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

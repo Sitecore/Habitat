@@ -1,6 +1,6 @@
 ﻿<Project>
   <PropertyGroup>
-    <Site Server="habitat" UserName="sitecore\admin" IsRemoteSitecore="False" />
+    <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
   </PropertyGroup>
   <File Include="Views\Media\LightboxImage.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{F49C9252-47F3-406B-B311-E26EE4D1149B}</Item>

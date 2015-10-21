@@ -1,0 +1,17 @@
+﻿---
+ID: f5868b5d-ce4d-4cad-93dc-1c4e973c2fa8
+Parent: c589ceac-df14-4b2f-a8a5-351d2ff7c648
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Habitat/Framework/Taxonomy/_Taggable/Taxonomy/Tags
+SharedFields:
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  # Type
+  Value: FilteredMultilistEx
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150826T051405Z

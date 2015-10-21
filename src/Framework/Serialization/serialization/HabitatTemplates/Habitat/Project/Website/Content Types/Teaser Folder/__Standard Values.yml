@@ -1,0 +1,24 @@
+﻿---
+ID: 9ac6b528-888a-4006-aeff-bc81e7202f14
+Parent: 29d4b405-39eb-487d-9d6b-3f8467ab167d
+Template: 29d4b405-39eb-487d-9d6b-3f8467ab167d
+Path: /sitecore/templates/Habitat/Project/Website/Content Types/Teaser Folder/__Standard Values
+SharedFields:
+- ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
+  # __Masters
+  Type: TreelistEx
+  Value: |
+    {C7D9D293-4EF8-4380-8E10-C4632E729F39}
+    {29D4B405-39EB-487D-9D6B-3F8467AB167D}
+    {F5F30CDC-9003-4015-84EC-C3A7E3E50D5E}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150827T063159Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

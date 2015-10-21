@@ -1,0 +1,16 @@
+﻿---
+ID: 6aa25831-0944-4a79-9aff-7bac39e03557
+Parent: 75bc9ee3-894a-4e87-bcde-2a7443807f60
+Template: 29d4b405-39eb-487d-9d6b-3f8467ab167d
+Path: /sitecore/content/Shared/Teasers
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150827T063033Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

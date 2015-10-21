@@ -1,0 +1,17 @@
+﻿---
+ID: 826fd862-075d-49c3-9e8c-85adc3f8a154
+Parent: 340cf634-7720-4720-8331-3e710ab46ecb
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Habitat/Framework/Taxonomy/_Tag/Tag/Title
+SharedFields:
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  # Type
+  Value: Single-Line Text
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150911T072811Z

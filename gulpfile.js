@@ -1,53 +1,28 @@
 /// <binding />
 var gulp = require("gulp");
-var gmsbuild = require("gulp-msbuild");
+var msbuild = require("gulp-msbuild");
 var foreach = require("gulp-foreach");
 var rename = require("gulp-rename");
 var watch = require("gulp-watch");
-
 var config = require("./gulp-config.js")();
 
-gulp.task("Publish", function() {
-    var publishProjects = function(location) {
-        gulp.src(location + "/**/*.csproj")
-            .pipe(foreach(function (stream) {
-                return stream.pipe(gmsbuild({
-                        targets: ["Clean", "Build"], 
-                        configuration: "Debug",
-                        logCommand: false,
-                        verbosity: "normal",
-                        properties: { DeployOnBuild: "true", DeployDefaultTarget: "WebPublish", WebPublishMethod: "FileSystem", DeleteExistingFiles: "false", publishUrl: config.websiteRoot }
-                    }));
+var publishProjects = function(location) {
+    gulp.src(location + "/**/*.csproj")
+        .pipe(foreach(function (stream, file) {
+            return stream.pipe(msbuild({
+                targets: ["Clean", "Build"], 
+                configuration: "Debug",
+                logCommand: false,
+                verbosity: "normal",
+                properties: { DeployOnBuild: "true", DeployDefaultTarget: "WebPublish", WebPublishMethod: "FileSystem", DeleteExistingFiles: "false", publishUrl: config.websiteRoot }
             }));
-    };
+        }));
+};
 
-    console.log("Publishing solution");
+gulp.task("Publish-All-Projects", function () {
     publishProjects("./src/Framework");
     publishProjects("./src/Domain");
     publishProjects("./src/Project");
-});
-
-gulp.task("Full-Build", ["Copy-Sitecore-Lib"], function() {
-    console.log("Starting Full Build !!");
-    gulp.src(config.solutionName + ".sln")
-        .pipe(gmsbuild({
-            targets: ["Clean", "Build"],
-            configuration: "Debug",
-            logCommand: false,
-            verbosity: "normal"
-        }));
-    console.log("Done building");
-});
-
-gulp.task("Build", function() {
-    console.log("Building solution");
-    gulp.src(config.solutionName + ".sln")
-        .pipe(gmsbuild({
-            targets: ["Clean", "Build"],
-            configuration: "Debug",
-            logCommand: false,
-            verbosity: "normal"
-        }));
 });
 
 gulp.task("Copy-Sitecore-Lib", function() {
