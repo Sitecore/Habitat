@@ -90,7 +90,7 @@ The solution consists of the following modules:
 * [News](src/Domain/News/)
 * [Search](src/Domain/Search/)
 * [Social](src/Domain/Social/)
-* [ContentPage](src/Domain/ContentPage/)
+* [PageContent](src/Domain/PageContent/)
 
 ###Framework modules
 
