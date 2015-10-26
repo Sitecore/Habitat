@@ -20,14 +20,14 @@ namespace Habitat.Search.Controllers
             return View("SearchResults", GetSearchResults(query));
         }
 
-        public ActionResult SearchBox()
-        {
-            return View("SearchBox", GetSearchSettings());
-        }
-
         public ActionResult GlobalSearch()
         {
             return View("GlobalSearch", GetSearchSettings());
+        }
+
+        public ActionResult SearchSettings(string query)
+        {
+            return View("SearchSettings", GetSearchSettings(query));
         }
 
         private ISearchResults GetSearchResults(string queryText)
@@ -47,9 +47,9 @@ namespace Habitat.Search.Controllers
             return QueryRepository.Get(queryText);
         }
 
-        private SearchSettings GetSearchSettings()
+        private SearchSettings GetSearchSettings(string query = null)
         {
-            return SearchSettingsRepository.Get();
+            return SearchSettingsRepository.Get(query);
         }
     }
 }

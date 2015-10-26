@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 using Habitat.Framework.SitecoreExtensions.Extensions;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
@@ -9,8 +10,11 @@ namespace Habitat.Search.Models
 {
     internal class SearchSettingsRepository
     {
-        public static SearchSettings Get()
+        public static SearchSettings Get(string query)
         {
+            if (query == null)
+                query = HttpContext.Current == null ? "" : HttpContext.Current.Request["query"];
+
             var configurationItem = RenderingContext.Current.Rendering.Item;
             if (configurationItem == null || !configurationItem.IsDerived(Templates.SearchResults.ID))
                 return null;
@@ -18,11 +22,15 @@ namespace Habitat.Search.Models
             return new SearchSettings
             {
                 ConfigurationItem = configurationItem,
-                Query = HttpContext.Current == null ? "" : HttpContext.Current.Request["query"],
+                Query = query,
                 SearchBoxTitle = configurationItem[Templates.SearchResults.Fields.SearchBoxTitle],
                 SearchResultsUrl = configurationItem.Url(),
                 Root = GetRootItem(configurationItem)
             };
+        }
+        public static SearchSettings Get()
+        {
+            return Get(null);
         }
 
         private static Item GetRootItem(Item configurationItem)
@@ -34,5 +42,6 @@ namespace Habitat.Search.Models
             }
             return rootItem ?? (Sitecore.Context.Site.GetRoot());
         }
+
     }
 }
