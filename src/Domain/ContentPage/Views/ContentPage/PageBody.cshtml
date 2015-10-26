@@ -1,0 +1,20 @@
+﻿@using Habitat.ContentPage
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@if (!Sitecore.Context.PageMode.IsPageEditor && !Html.Sitecore().HasValue(Templates.HasPageContent.Fields.Body.ToString())) { return; }
+
+<div class="article body">
+    @if (Sitecore.Context.PageMode.IsPageEditor)
+    {
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                Summary
+            </div>
+            <div class="panel-body">
+                @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary.ToString())
+            </div>
+        </div>
+    }
+
+    @Html.Sitecore().Field(Templates.HasPageContent.Fields.Body.ToString())
+</div>

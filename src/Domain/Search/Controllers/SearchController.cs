@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Habitat.Framework.Indexing;
+using Habitat.Framework.Indexing.Models;
 using Habitat.Framework.SitecoreExtensions.Extensions;
 using Habitat.Search.Models;
 using Sitecore.Data.Items;
@@ -18,20 +20,36 @@ namespace Habitat.Search.Controllers
             return View("SearchResults", GetSearchResults(query));
         }
 
-        public ActionResult SearchBox(string query)
+        public ActionResult SearchBox()
         {
-            return View("SearchBox", GetSearchResults(query));
+            return View("SearchBox", GetSearchSettings());
         }
 
-        private SearchResults GetSearchResults(string query)
+        public ActionResult GlobalSearch()
         {
-            var results = this.HttpContext.Items["SearchResults"] as SearchResults;
+            return View("GlobalSearch", GetSearchSettings());
+        }
+
+        private ISearchResults GetSearchResults(string queryText)
+        {
+            var results = this.HttpContext.Items["SearchResults"] as ISearchResults;
             if (results != null)
                 return results;
 
-            results = new SearchService(RenderingContext.Current.Rendering.Item).Search(query);
+            var query = CreateQuery(queryText);
+            results = SearchServiceRepository.Get().Search(query);
             this.HttpContext.Items.Add("SearchResults", results);
             return results;
+        }
+
+        private IQuery CreateQuery(string queryText)
+        {
+            return QueryRepository.Get(queryText);
+        }
+
+        private SearchSettings GetSearchSettings()
+        {
+            return SearchSettingsRepository.Get();
         }
     }
 }

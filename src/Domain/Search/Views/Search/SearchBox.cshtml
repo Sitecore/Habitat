@@ -1,10 +1,10 @@
 ﻿@using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.Search
-@model Habitat.Search.Models.SearchResults
+@model Habitat.Search.Models.SearchSettings
 
-<form action="@Model.ConfigurationItem.Url()">
+<form action="@Model.SearchResultsUrl">
     <div class="input-group">
-        <input type="text" name="query" placeholder="@Model.ConfigurationItem[Templates.SearchResults.Fields.SearchBoxTitle]" value="@Model.Query" class="form-control" autocomplete="off" />
+        <input type="text" name="query" placeholder="@Model.SearchBoxTitle" value="@Model.Query" class="form-control" autocomplete="off" />
         <span class="input-group-btn">
             <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
         </span>

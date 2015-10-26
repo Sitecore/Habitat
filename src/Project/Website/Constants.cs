@@ -11,6 +11,7 @@ namespace Habitat.Website
         public struct LayoutParameters
         {
             public static string IsFluid => "ContainerIsFluid";
+            public static string UseStaticPlaceholderNames => "UseStaticPlaceholderNames";
         }
     }
 }

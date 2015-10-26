@@ -1,10 +1,12 @@
-﻿@using Sitecore
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Sitecore
 @using Constants = Habitat.Website.Constants
 @model Sitecore.Mvc.Presentation.RenderingModel
+@{ var useStaticPlaceholderNames = MainUtil.GetBool(Model.Rendering.Parameters[Constants.LayoutParameters.UseStaticPlaceholderNames], false);}
 <div class="container@(MainUtil.GetBool(Model.Rendering.Parameters[Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
     <div class="row">
         <div class="col-md-12">
-            @Html.Sitecore().DynamicPlaceholder("col-huge")
+            @Html.Sitecore().DynamicPlaceholder("col-huge", useStaticPlaceholderNames)
         </div>
     </div>
 </div>

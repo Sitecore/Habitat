@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sitecore.Data;
+﻿using Sitecore.Data;
 
-namespace Habitat.Framework.Search
+namespace Habitat.Framework.Indexing
 {
-    public class Templates
+    internal struct Templates
     {
-        public struct SearchResult
+        internal struct IndexedItem
         {
-            public static ID ID = new ID("{14E452CA-064D-48A8-9FF2-2744D10437A1}");
+            public static ID ID = new ID("{8FD6C8B6-A9A4-4322-947E-90CE3D94916D}");
 
             public struct Fields
             {
-                public static readonly ID SearchBoxTitle = new ID("{80E30DD8-8021-45F5-9FE1-23D2702CC206}");
+                public static readonly ID IncludeInSearchResults = new ID("{8D5C486E-A0E3-4DBE-9A4A-CDFF93594BDA}");
+                public const string IncludeInSearchResults_FieldName = "IncludeInSearchResults";
             }
         }
     }

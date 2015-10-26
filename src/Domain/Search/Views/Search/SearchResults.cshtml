@@ -1,22 +1,26 @@
 ﻿@using Habitat.Framework.SitecoreExtensions.Extensions
 @using Sitecore.Data.Items
 @using Sitecore.Mvc.Presentation
-@model Habitat.Search.Models.SearchResults
+@using Habitat.Framework.Indexing.Models;
+@using Habitat.Framework.SitecoreExtensions.Repositories
+@model ISearchResults
 <div class="search-results">
     @foreach (var result in Model.Results)
     {
-        var item = result.GetItem();
+        var item = result.Item;
         <div class="result">
             <h3>
-                @result.Title
+                <a href="@result.Url">@Html.Raw(result.Title)</a>
             </h3>
             <div class="tags">
                 <span class="label label-default">@result.ContentType</span>
             </div>
-            <div class="description">
-                @result.Description
-                <a href="@item.Url()">read more...</a>
-            </div>
+            @if (!string.IsNullOrWhiteSpace(result.Description)) {
+                <div class="description">
+                    @Html.Raw(result.Description)
+                </div>
+            }
+            <a class="btn btn-default" href="@result.Url">@DictionaryRepository.Get("/search/results/read more", "Read more...")</a>
         </div>
     }
 </div>
