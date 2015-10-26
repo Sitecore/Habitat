@@ -1,0 +1,65 @@
+﻿@using System
+@using System.Collections.Generic
+@using Habitat.Teasers
+@using Habitat.Teasers.Repositories
+@using Habitat.Teasers.Services
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@functions
+{
+    //TODO: Move to ControllerRendering
+
+    private string GetFrontendHeadingValue(int i)
+    {
+        return string.Concat("heading", HumanFriendlyIntegerService.IntegerToWritten(i + 1), "-3");
+    }
+
+    private string GetFrontendCollapseValue(int i)
+    {
+        return string.Concat("collapse", HumanFriendlyIntegerService.IntegerToWritten(i + 1), "-3");
+    }
+
+    private List<Item> _accordeonElements;
+
+    private List<Item> AccordeonElements
+    {
+        get
+        {
+            if (_accordeonElements == null || !_accordeonElements.Any())
+            {
+                _accordeonElements = AccordeonElementsRespository.Get(Model.Item).ToList();
+                return _accordeonElements;
+            }
+            return _accordeonElements;
+        }
+    }
+
+    private string _accordionID;
+
+    public string AccordionID => (_accordionID ?? (_accordionID = $"accordion-{Guid.NewGuid().ToString("N")}"));
+}
+
+<div class="panel-group teaser" id="@AccordionID" role="tablist" aria-multiselectable="true">
+    @for (var i = 0; i < AccordeonElements.Count(); i++)
+    {
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="@GetFrontendHeadingValue(i)">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#@AccordionID" href="#@GetFrontendCollapseValue(i)" aria-expanded="false" aria-controls="@GetFrontendCollapseValue(i)">
+                        @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), AccordeonElements[i])
+                    </a>
+                </h4>
+            </div>
+            <div id="@GetFrontendCollapseValue(i)" class="panel-collapse collapse" role="tabpanel" aria-labelledby="@GetFrontendHeadingValue(i)">
+                <div class="panel-body">
+                    <p>
+                        @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), AccordeonElements[i])
+                    </p>
+                </div>
+                <div class="panel-footer">
+                    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), AccordeonElements[i], new { @class = "btn btn-info" })
+                </div>
+            </div>
+        </div>
+    }
+</div>

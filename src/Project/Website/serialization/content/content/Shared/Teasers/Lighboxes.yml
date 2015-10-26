@@ -8,12 +8,15 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: 0f6b5546-e0ab-4487-81de-640c1aa1b65b
+      # TeaserImage
+      Value: "<image mediapath=\"\" alt=\"Experience Marketing\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"\" mediaid=\"{34D324E5-FBC8-41D5-B38B-EC0B3AE6BFD2}\" />"
+    - ID: 13d97a52-7c4e-407c-960d-fadde8a3c1b1
+      # TeaserSummary
+      Value: Lightboxes are used to make media pop out
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20150921T055523Z
-    - ID: ac3fd4db-8266-476d-9635-67814d91e901
-      # Summary
-      Value: Lightboxes show a thumbnail of an image and a larger version with a description when clicked. They come in a image and video version.
-    - ID: c30a013f-3cc8-4961-9837-1c483277084a
-      # Title
+    - ID: 4a59d072-5b41-4a79-a157-2b2ccac10f2b
+      # TeaserTitle
       Value: Lightboxes

@@ -3,6 +3,10 @@ ID: b16765ba-7b3e-4c5b-9937-bfc985f2550c
 Parent: 762684e7-480b-41d6-82de-8549babe95e3
 Template: 8ee208f9-a6a6-41e2-88a0-c188737a178c
 Path: /sitecore/content/Habitat/Home/About Habitat/Architecture
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 100
 Languages:
 - Language: en
   Versions:
