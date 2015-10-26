@@ -17,4 +17,7 @@
   <File Include="Views\PageContent\ReferenceTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{07AB411C-F894-4144-B069-48EF67431D32}</Item>
   </File>
+  <File Include="Views\PageContent\ChildPageList.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{84924ABF-F983-4AF5-9002-EA0237A53DA9}</Item>
+  </File>
 </Project>

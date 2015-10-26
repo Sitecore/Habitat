@@ -1,8 +1,12 @@
 ﻿---
-ID: 8a80477e-7cb4-4cee-a035-b48ac118abe8
-Parent: dac24edd-44fb-42ef-9ecd-1e8daf706386
+ID: 7e3ada9c-ec42-47b0-b7c2-7554b2e7612f
+Parent: 762684e7-480b-41d6-82de-8549babe95e3
 Template: 8ee208f9-a6a6-41e2-88a0-c188737a178c
-Path: /sitecore/content/Habitat/Home/Modules
+Path: /sitecore/content/Habitat/Home/About Habitat/Working with Habitat
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 200
 Languages:
 - Language: en
   Versions:
@@ -10,16 +14,13 @@ Languages:
     Fields:
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       # NavigationTitle
-      Value: Modules
+      Value: Working with Habitat
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20150920T232050Z
-    - ID: ac3fd4db-8266-476d-9635-67814d91e901
-      # Summary
-      Value: Habitat has a range of modules which covers the basics of a Sitecore website.<br>
+      Value: 20151026T042213Z
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       # Title
-      Value: Modules
+      Value: Working with Habitat
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
       # BrowserTitle
-      Value: Modules
+      Value: Working with Habitat
