@@ -1,15 +1,15 @@
 ﻿---
-ID: 04c5299e-a260-497d-a436-7dbc51c330b2
+ID: d7dbd862-653a-4e80-b9fd-16f79a097032
 Parent: d046e7a5-9ee2-4cba-8484-c601561f66d9
 Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
-Path: /sitecore/layout/Placeholder Settings/Habitat/Columns/col-narrow-4
+Path: /sitecore/layout/Placeholder Settings/Habitat/Columns/col-narrow-5
 SharedFields:
 - ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
   # Placeholder Key
-  Value: col-narrow-4
+  Value: col-narrow-5
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder
-  Value: 400
+  Value: 500
 - ID: e391b526-d0c5-439d-803e-17512eae6222
   # Allowed Controls
   Type: TreelistEx
@@ -20,7 +20,6 @@ SharedFields:
     {69B9C355-004B-4268-BB1E-2F725B8752B7}
     {BDD730EB-F808-4C65-B94A-D2F03672EAFB}
     {96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}
-    {7127C7A9-5C67-49C2-A6F3-45D9A966D1B2}
     {0CF58F14-D0F8-4C41-9896-3D69048A0B19}
     {DDC6F993-6689-432E-90C7-B2865947DFD5}
     {07AB411C-F894-4144-B069-48EF67431D32}

@@ -56,7 +56,7 @@ namespace Habitat.Navigation.Repositories
             var navigationItem = CreateNavigationItem(NavigationRoot, 0, 0);
             //Root navigation item is only active when we are actually on the root item
             navigationItem.IsActive = ContextItem.ID == NavigationRoot.ID;
-            navItems.Items.Insert(0, navigationItem);
+            navItems?.Items?.Insert(0, navigationItem);
         }
 
         private bool IncludeInNavigation(Item item)
