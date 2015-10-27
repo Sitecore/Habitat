@@ -19,7 +19,7 @@
 	<sonar.jdbc.username>sa</sonar.jdbc.username>
 	<sonar.jdbc.password>10Philpot</sonar.jdbc.password>
 	<!-- set these to match your local environment -->
-	<sonar.cs.fxcop.fxCopCmdPath>C:/Program Files (x86)/Microsoft Visual Studio 14.0/Team Tools/Static Analysis Tools/FxCop/FxCopCmd.exec:/</sonar.cs.fxcop.fxCopCmdPath>
+	<sonar.cs.fxcop.fxCopCmdPath>C:/Program Files (x86)/Microsoft Visual Studio 14.0/Team Tools/Static Analysis Tools/FxCop/FxCopCmd.exe</sonar.cs.fxcop.fxCopCmdPath>
 	<sonar.cs.fxcop.directories>C:/Websites/_dev/Habitat/lib/Sitecore</sonar.cs.fxcop.directories>
 	<sonar.resharper.inspectCodePath>C:/ReSharperCLT/inspectcode.exe</sonar.resharper.inspectCodePath>
 	<sonar.stylecop.styleCopDllPath>C:/DEV/StyleCop.dll</sonar.stylecop.styleCopDllPath>	 
