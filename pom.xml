@@ -46,11 +46,16 @@
     <finalName>Habitat</finalName>
   </build>
 </project>
-<!-- need to install stylecop https://stylecop.codeplex.com/-->
-<!-- resharper clt https://www.jetbrains.com/resharper/features/command-line.html 
-<!-- maven3 https://maven.apache.org/download.cgi?Preferred=ftp://mirror.reverse.net/pub/apache/ -->
-<!-- set the properties as indicated above -->
-<!-- then open a command line as administrator -->
+<!-- To get it running locally without a build server you do need to install some stuff -->
+<!-- Download maven3 https://maven.apache.org/download.cgi?Preferred=ftp://mirror.reverse.net/pub/apache/ -->
+<!-- You may also need a java sdk http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html
+<!-- You might also have to set the following environment variables to match the installs above-->
+<!-- JAVA_HOME c:\progra~1\Java\JDK1.7.0_79 -->
+<!-- MAVEN_HOME c:\Test\maven3\bin -->
+<!-- set the properties as indicated above for fxcop, resharper and stylecop to match your local environment, install links below if you dont have them -->
+<!-- Stylecop https://stylecop.codeplex.com/-->
+<!-- Resharper clt https://www.jetbrains.com/resharper/features/command-line.html 
+<!-- Then open a command line as administrator and enter: -->
 <!-- cd C:\Websites\_dev\Habitat -->
 <!-- C:\Test\maven3\bin\mvn clean sonar:sonar -->
-<!-- then go here to check the results:  http://sitecoreci.cloudapp.net:9000/ -->
+<!-- Then go here to check the results:  http://sitecoreci.cloudapp.net:9000/ -->
