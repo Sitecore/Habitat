@@ -3,7 +3,7 @@
 @model Habitat.Navigation.Models.NavigationItems
 
 @{
-    if (Model == null || Model.Items == null)
+    if (Model?.Items == null)
     {
         return;
     }
