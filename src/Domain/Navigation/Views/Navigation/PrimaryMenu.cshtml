@@ -1,5 +1,6 @@
 ﻿@using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.Navigation
+@using Habitat.Navigation.Models
 @model Habitat.Navigation.Models.NavigationItems
 <nav class="navbar navbar-default">
     <div class="container">
@@ -14,38 +15,41 @@
         </div>
         <div class="collapse navbar-collapse" id="primary-navigation">
             <ul class="nav navbar-nav primary-nav">
-                @foreach (var item in Model.Items)
+                @if (Model?.Items != null)
                 {
-                    var hasChildren = item.Children != null && item.Children.Items.Any();
-                    var cssClass = (item.IsActive ? "active" : string.Empty);
-                    if (hasChildren)
-                    {
-                        cssClass += " dropdown";
-                    }
+                    foreach (var item in Model.Items)
+                     {
+                         var hasChildren = item.Children != null && item.Children.Items.Any();
+                         var cssClass = (item.IsActive ? "active" : string.Empty);
+                         if (hasChildren)
+                         {
+                             cssClass += " dropdown";
+                         }
 
-                    <li class="@cssClass">
-                        @if (hasChildren)
-                        {
-                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                @foreach (var subitem in item.Children.Items)
-                                {
-                                    <li class="@(subitem.IsActive ? "active" : string.Empty)">
-                                        <a href="@subitem.Url" target="@subitem.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), subitem.Item)</a>
-                                    </li>
-                                }
-                            </ul>
-                        }
-                        else
-                        {
-                            <a href="@item.Url" target="@item.Target">
-                                @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
-                            </a>
-                        }
-                    </li>
+                         <li class="@cssClass">
+                             @if (hasChildren)
+                             {
+                                 <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                     @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
+                                     <span class="caret"></span>
+                                 </a>
+                                 <ul class="dropdown-menu">
+                                     @foreach (var subitem in item.Children.Items)
+                                     {
+                                         <li class="@(subitem.IsActive ? "active" : string.Empty)">
+                                             <a href="@subitem.Url" target="@subitem.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), subitem.Item)</a>
+                                         </li>
+                                     }
+                                 </ul>
+                             }
+                             else
+                             {
+                                 <a href="@item.Url" target="@item.Target">
+                                     @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
+                                 </a>
+                             }
+                         </li>
+                     }
                 }
                 @Html.Sitecore().Placeholder("primarymenuitems")
             </ul>
