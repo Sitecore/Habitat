@@ -10,7 +10,7 @@ var util = require("gulp-util");
 var config = require("./gulp-config.js")();
 
 var publishProjects = function(location) {
-    gulp.src(location + "/**/*.csproj")
+  gulp.src([location + "/**/*.csproj", '!'+location + "/**/*Tests.csproj"])
         .pipe(foreach(function (stream, file) {
             return stream
                 .pipe(debug({title: "Building project:"}))
@@ -20,7 +20,10 @@ var publishProjects = function(location) {
                 logCommand: false,
                 verbosity: "minimal",
                 maxcpucount: 0,
-                properties: { DeployOnBuild: "true", DeployDefaultTarget: "WebPublish", WebPublishMethod: "FileSystem", DeleteExistingFiles: "false", publishUrl: config.websiteRoot }
+                toolsVersion:14.0,
+                properties: {
+                   DeployOnBuild: "true", DeployDefaultTarget: "WebPublish", WebPublishMethod: "FileSystem", DeleteExistingFiles: "false", publishUrl: config.websiteRoot
+                }
             }));
         }));
 };
@@ -100,4 +103,27 @@ gulp.task("Publish-All-Views", function () {
             return stream;
         })
     );
+});
+
+var publishSolution = function (location) {
+  gulp.src(location + "*.sln")
+      .pipe(foreach(function (stream, file) {
+        return stream
+            .pipe(debug({ title: "Building project:" }))
+            .pipe(msbuild({
+              targets: ["Clean", "Build"],
+              configuration: "Debug",
+              logCommand: false,
+              verbosity: "minimal",
+              maxcpucount: 0,
+              toolsVersion: 14.0,
+              properties: {
+                DeployOnBuild: "true", DeployDefaultTarget: "WebPublish", WebPublishMethod: "FileSystem", DeleteExistingFiles: "false", publishUrl: config.websiteRoot
+              }
+            }));
+      }));
+};
+
+gulp.task("Publish-Solution", function () {
+  publishSolution("./");
 });
