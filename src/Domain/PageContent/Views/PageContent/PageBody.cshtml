@@ -1,7 +1,10 @@
 ﻿@using Habitat.PageContent
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-@if (!Sitecore.Context.PageMode.IsPageEditor && !Html.Sitecore().HasValue(Templates.HasPageContent.Fields.Body.ToString())) { return; }
+@if (!Sitecore.Context.PageMode.IsPageEditor && !Html.Sitecore().HasValue(Templates.HasPageContent.Fields.Body.ToString()))
+{
+    return;
+}
 
 <div class="article body">
     @if (Sitecore.Context.PageMode.IsPageEditor)
@@ -15,6 +18,6 @@
             </div>
         </div>
     }
-
+    
     @Html.Sitecore().Field(Templates.HasPageContent.Fields.Body.ToString())
 </div>

@@ -10,6 +10,12 @@ SharedFields:
   Value: |
     {94A8C8E9-690B-4E65-98E7-F95800222767}
     {8FF3D369-A508-4D2F-84A5-9B6C6BF5E537}
+- ID: a4879e42-0270-458d-9c19-a20af3c2b765
+  # __Presets
+  Type: Treelist
+  Value: |
+    {2A507E75-D068-4618-9F98-5C3A1D6D3A01}
+    {1C15E081-9842-4DA2-ACF3-E7ED7D5B0651}
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
   # __Renderings
   Type: layout

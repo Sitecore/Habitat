@@ -20,6 +20,8 @@ namespace Habitat.Framework.Indexing.Infrastructure
         protected Expression<Func<SearchResultItem, bool>> GetFreeTextPredicate(string[] fieldNames, IQuery query)
         {
             var predicate = PredicateBuilder.False<SearchResultItem>();
+            if (string.IsNullOrWhiteSpace(query.QueryText))
+                return predicate;
             return fieldNames.Aggregate(predicate, (current, fieldName) => current.Or(i => i[fieldName].Contains(query.QueryText)));
         }
     }

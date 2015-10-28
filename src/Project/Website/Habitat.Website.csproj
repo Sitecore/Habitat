@@ -49,14 +49,6 @@
     <ExcludeFilesFromDeployment>bin\Sitecore.*.dll</ExcludeFilesFromDeployment>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DynamicPlaceholders, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\DynamicPlaceholders.1.0.0.0\lib\net45\DynamicPlaceholders.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DynamicPlaceholders.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\DynamicPlaceholders.Mvc.1.0.0.0\lib\net45\DynamicPlaceholders.Mvc.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -174,7 +166,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="packages.config" />
-    <Content Include="App_Config\Include\DynamicPlaceholders\DynamicPlaceholders.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Website\Layouts\Default.cshtml" />
