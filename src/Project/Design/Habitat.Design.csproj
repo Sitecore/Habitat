@@ -106,12 +106,10 @@
     <Content Include="fonts\Bootstrap\glyphicons-halflings-regular.woff2" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
-    <Content Include="README.md" />
     <None Include="compilerconfig.json" />
     <Content Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </Content>
-    <Content Include="README.md" />
     <Content Include="sass\habitat.scss" />
     <Content Include="sass\bootstrap\bootstrap\mixins\_alerts.scss" />
     <Content Include="sass\bootstrap\bootstrap\mixins\_background-variant.scss" />

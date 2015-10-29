@@ -142,7 +142,6 @@
     <Content Include="App_Config\Include\Habitat\Habitat.Framework.SitecoreExtensions.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="README.md" />
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Sitecore.Support.MvcDynamicPlaceholders.config" />
     <None Include="web.config" />
