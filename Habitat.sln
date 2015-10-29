@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		gulpfile.js = gulpfile.js
 		LICENSE = LICENSE
 		package.json = package.json
+		package.xml = package.xml
 		publishsettings.targets = publishsettings.targets
 		README.md = README.md
 		src\Project\Website\App_Config\Include\Habitat\z.Habitat.DevSettings.config = src\Project\Website\App_Config\Include\Habitat\z.Habitat.DevSettings.config
