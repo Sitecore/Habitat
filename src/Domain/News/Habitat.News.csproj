@@ -112,7 +112,6 @@
     </Content>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
-    <Content Include="README.md" />
     <Content Include="Views\News\NewsTeaser.cshtml" />
     <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">

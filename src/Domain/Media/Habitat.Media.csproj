@@ -109,7 +109,6 @@
   <ItemGroup>
     <Content Include="Content\Media\ekko-lightbox.css" />
     <Content Include="Content\Media\ekko-lightbox.min.css" />
-    <Content Include="README.md" />
     <Content Include="Scripts\Media\ekko-lightbox.js" />
     <Content Include="Scripts\Media\ekko-lightbox.min.js" />
     <Content Include="Views\Media\LightboxImage.cshtml" />

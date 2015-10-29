@@ -106,7 +106,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
-    <Content Include="README.md" />
     <Content Include="Views\Social\SocialLinks.cshtml" />
     <Content Include="Views\Social\TwitterFeed.cshtml" />
     <None Include="Views\Web.config" />
