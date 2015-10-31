@@ -1,0 +1,29 @@
+﻿---
+ID: d1aad687-8b93-44c8-9011-8e8ce2dd281f
+Parent: 5a852bfa-9f18-4b9c-b0af-a60913872b2d
+Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
+Path: /sitecore/layout/Renderings/Habitat/Domain/Search/SearchSettings
+SharedFields:
+- ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
+  # Datasource Template
+  Value: {14E452CA-064D-48A8-9FF2-2744D10437A1}
+- ID: 94069f66-609c-48b0-8281-521c30fb269d
+  # Open Properties after Add
+  Value: -
+- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  # Datasource Location
+  Value: {0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+- ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
+  # Controller Action
+  Value: SearchSettings
+- ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
+  # Controller
+  Value: Habitat.Search.Controllers.SearchController, Habitat.Search
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150911T032830Z

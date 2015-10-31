@@ -1,0 +1,16 @@
+﻿---
+ID: 49567788-6193-4b6f-bfee-4605cd263c61
+Parent: 59d216d1-035c-4497-97b4-e3c5e9f1c06b
+Template: e269fbb5-3750-427a-9149-7aa950b49301
+Path: /sitecore/templates/Habitat/Domain/Accounts/_AccountsSettings/Accounts
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150923T062441Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

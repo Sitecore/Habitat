@@ -1,0 +1,23 @@
+﻿---
+ID: 72ea8682-24d2-4beb-951c-3e2164974105
+Parent: 38ad55a5-0632-4c72-85a6-890911fc0d99
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Habitat/Domain/Media/_HasMediaSelector/Media/MediaSelector
+SharedFields:
+- ID: 1eb8ae32-e190-44a6-968d-ed904c794ebf
+  # Source
+  Value: query:/sitecore/content/Shared/Media//*[@@templateid='{F0369E1A-9030-4A05-A09C-EF09B664ED27}' or @@templateid='{F1C095E2-B3E0-46D0-B838-02A9E8B880D9}']
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  # Type
+  Value: Multilist
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150902T071444Z

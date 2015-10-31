@@ -117,6 +117,7 @@
     <Content Include="Views\Media\LightboxVideo.cshtml" />
     <Content Include="Views\Media\Carousel.cshtml" />
     <Content Include="packages.config" />
+    <Content Include="App_Config\Include\Habitat\Habitat.Media.Serialization.config" />
     <None Include="Web.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <None Include="Web.Debug.config">

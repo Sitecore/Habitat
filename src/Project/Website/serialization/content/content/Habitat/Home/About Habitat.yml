@@ -4,9 +4,6 @@ Parent: dac24edd-44fb-42ef-9ecd-1e8daf706386
 Template: 8ee208f9-a6a6-41e2-88a0-c188737a178c
 Path: /sitecore/content/Habitat/Home/About Habitat
 SharedFields:
-- ID: 8d5c486e-a0e3-4dbe-9a4a-cdff93594bda
-  # IncludeInSearchResults
-  Value: 1
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder
   Value: 0

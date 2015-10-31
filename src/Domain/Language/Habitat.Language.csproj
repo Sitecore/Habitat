@@ -108,6 +108,7 @@
   <ItemGroup>
     <Content Include="README.md" />
     <Content Include="packages.config" />
+    <Content Include="App_Config\Include\Habitat\Habitat.Language.Serialization.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Language\LanguageSelector.cshtml" />
     <None Include="Views\web.config" />
