@@ -38,7 +38,7 @@ $row-spacing: 2 * $line-height-computed;
     General
 ****************/
 body { 
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .container-fluid >.row >.col-md-12 {
@@ -446,6 +446,19 @@ footer {
                     margin-right: 4px;
                     color: $text-color;
                 }
+        }
+    }
+}
+
+.latest-news {
+    ul.media-list {
+        .media {
+            .media-left, .media-right {
+                img {
+                    border-radius: 50%;
+                }
+            }
+
         }
     }
 }

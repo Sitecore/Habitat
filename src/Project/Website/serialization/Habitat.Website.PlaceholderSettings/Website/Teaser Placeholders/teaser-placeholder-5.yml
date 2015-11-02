@@ -1,0 +1,17 @@
+﻿---
+ID: 2a219ebb-6973-46df-b852-ad94a29aa581
+Parent: a150435d-da28-46b2-a576-542f4ee053dc
+Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
+Path: /sitecore/layout/Placeholder Settings/Habitat/Project/Website/Teaser Placeholders/teaser-placeholder-5
+SharedFields:
+- ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
+  # Placeholder Key
+  Value: teaser-placeholder-5
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151026T055550Z

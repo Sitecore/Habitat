@@ -101,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="App_Config\Include\Habitat\Habitat.Identity.Serialization.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Identity\Logo.cshtml" />
     <Content Include="Views\Web.config" />
@@ -108,6 +109,7 @@
     <Content Include="Views\Identity\Contact.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
