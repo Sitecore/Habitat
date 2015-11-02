@@ -14,9 +14,12 @@ Languages:
       Value: |
         <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
           <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{8D96E4DE-53DC-4682-BF61-A9F700EAE98E}" p:before="r[@uid='{6B5DF276-8ACA-4FC0-BBC1-A0E4C2E757A6}']" s:ds="{439EC71A-4231-45C8-B075-975BD41099A7}" s:id="{BDD730EB-F808-4C65-B94A-D2F03672EAFB}" s:ph="/page-layout/sidebarcontent/col-narrow-1_6875e0cc-fb06-49ca-98c3-939edf453dfc" />
+            <r uid="{6B5DF276-8ACA-4FC0-BBC1-A0E4C2E757A6}" p:before="r[@uid='{77597299-08C8-4792-B2B8-6445D2712A4F}']" s:ds="{B415F846-5EED-409C-B6D8-C23BAB52D502}" s:id="{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}" s:ph="/page-layout/sidebarcontent/col-wide-1_6875e0cc-fb06-49ca-98c3-939edf453dfc" />
+            <r uid="{77597299-08C8-4792-B2B8-6445D2712A4F}" p:before="r[@uid='{1EB93BB4-BE61-4924-87E8-4108E4711261}']" s:ds="{B415F846-5EED-409C-B6D8-C23BAB52D502}" s:id="{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}" s:ph="/page-layout/sidebarcontent/col-wide-1_dc521682-15b5-4fe3-91a8-676e7e1c3cf3" />
             <r uid="{1EB93BB4-BE61-4924-87E8-4108E4711261}" p:before="r[@uid='{F4A61C67-000E-45CC-936B-672FC5FA9E1D}']" s:ds="{439EC71A-4231-45C8-B075-975BD41099A7}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/sidebarcontent/col-wide-2" />
             <r uid="{F4A61C67-000E-45CC-936B-672FC5FA9E1D}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{844A7337-2020-4C2E-912E-7651930FE179}" s:id="{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}" s:ph="/page-layout/sidebarcontent/col-wide-1" />
-            <r uid="{DC521682-15B5-4FE3-91A8-676E7E1C3CF3}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{6875E0CC-FB06-49CA-98C3-939EDF453DFC}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{45CE489D-FA30-473E-9751-142BD06CCB33}" s:ph="/page-layout/sidebarcontent" />
           </d>
         </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
@@ -34,3 +37,8 @@ Languages:
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
       # BrowserTitle
       Value: News
+    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+      # Body
+      Value: |
+        The News module contains features related to news content, i.e. articles and lists.<br />
+        <a href="~/link.aspx?_id=439EC71A423145C8B075975BD41099A7&amp;_z=z">See the news list here.&nbsp;</a>
