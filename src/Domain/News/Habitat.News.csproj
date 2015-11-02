@@ -111,6 +111,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="packages.config" />
+    <Content Include="App_Config\Include\Habitat\Habitat.News.Serialization.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\News\NewsTeaser.cshtml" />
     <None Include="Views\Web.config" />

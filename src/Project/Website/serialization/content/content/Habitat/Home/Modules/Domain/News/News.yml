@@ -4,10 +4,6 @@ Parent: ea258531-d346-4200-b673-471cf1544506
 Template: a99866e5-08e7-44d8-8a52-f8e26bcd3714
 Path: /sitecore/content/Habitat/Home/Modules/Domain/News/News
 SharedFields:
-- ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
-  # __Masters
-  Type: TreelistEx
-  Value: {B69277AD-E917-4B9F-9136-A12E0A3E462F}
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder
   Value: 300
@@ -22,9 +18,6 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20150824T175319Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
-      Value: sitecore\admin
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
       # Summary
       Value: Click here for an example of the a News List.&nbsp;

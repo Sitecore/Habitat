@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="App_Config\Include\Habitat\Habitat.Social.Serialization.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Social\SocialLinks.cshtml" />
     <Content Include="Views\Social\TwitterFeed.cshtml" />

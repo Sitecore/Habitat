@@ -1,0 +1,16 @@
+﻿---
+ID: 1b59149d-7ed3-4d58-86a9-32eded8c0368
+Parent: fce2d1a9-d038-4cb6-8063-733346d55766
+Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+Path: /sitecore/layout/Placeholder Settings/Habitat/Domain
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151030T173251Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

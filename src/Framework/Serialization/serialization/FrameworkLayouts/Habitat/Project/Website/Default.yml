@@ -1,0 +1,20 @@
+﻿---
+ID: ed043c36-cd48-4edf-a288-ec404ee1cd42
+Parent: 962cb6d1-4c7b-4bb5-be34-dcee6e038eb2
+Template: 3a45a723-64ee-4919-9d41-02fd40fd1466
+Path: /sitecore/layout/Layouts/Habitat/Project/Website/Default
+SharedFields:
+- ID: a036b2bc-ba04-44f6-a75f-bae6cd242abf
+  # Path
+  Value: /Views/Website/Layouts/Default.cshtml
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150824T172943Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

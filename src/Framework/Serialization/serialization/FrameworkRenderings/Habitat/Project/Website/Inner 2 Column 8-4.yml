@@ -1,0 +1,17 @@
+﻿---
+ID: 45ce489d-fa30-473e-9751-142bd06ccb33
+Parent: 5150f78a-0061-4609-9c6c-c5b3bc6d7ebc
+Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+Path: /sitecore/layout/Renderings/Habitat/Project/Website/Inner 2 Column 8-4
+SharedFields:
+- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+  # Path
+  Value: /Views/Website/Sublayouts/Inner 2 Column 8-4.cshtml
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151008T043653Z
