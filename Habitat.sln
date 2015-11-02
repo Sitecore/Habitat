@@ -97,8 +97,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Website.Tests", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Teasers.Tests", "src\Domain\Tests\Habitat.Teasers.Tests\Habitat.Teasers.Tests.csproj", "{984266D0-1626-45B2-81AA-E4D2FCEE2E2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Serialization", "src\Domain\Serialization\Habitat.Serialization.csproj", "{EDF063A2-2DC2-47EA-9B1B-7AA9246C4FFC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -377,14 +375,6 @@ Global
 		{984266D0-1626-45B2-81AA-E4D2FCEE2E2A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{984266D0-1626-45B2-81AA-E4D2FCEE2E2A}.Release|x64.ActiveCfg = Release|Any CPU
 		{984266D0-1626-45B2-81AA-E4D2FCEE2E2A}.Release|x64.Build.0 = Release|Any CPU
-		{EDF063A2-2DC2-47EA-9B1B-7AA9246C4FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EDF063A2-2DC2-47EA-9B1B-7AA9246C4FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EDF063A2-2DC2-47EA-9B1B-7AA9246C4FFC}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{EDF063A2-2DC2-47EA-9B1B-7AA9246C4FFC}.Debug|x64.Build.0 = Debug|Any CPU
-		{EDF063A2-2DC2-47EA-9B1B-7AA9246C4FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EDF063A2-2DC2-47EA-9B1B-7AA9246C4FFC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EDF063A2-2DC2-47EA-9B1B-7AA9246C4FFC}.Release|x64.ActiveCfg = Release|Any CPU
-		{EDF063A2-2DC2-47EA-9B1B-7AA9246C4FFC}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -427,6 +417,5 @@ Global
 		{01A61CA8-1B15-4982-BB7E-0C2D2ECE3071} = {9A8FD752-FF60-4789-8251-E1D8FF290F3F}
 		{58B11CEE-0B4A-4F09-9D9C-B0923AE281E3} = {01A61CA8-1B15-4982-BB7E-0C2D2ECE3071}
 		{984266D0-1626-45B2-81AA-E4D2FCEE2E2A} = {6C9ABA71-CF6B-47A6-A052-051E59352CE3}
-		{EDF063A2-2DC2-47EA-9B1B-7AA9246C4FFC} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
 	EndGlobalSection
 EndGlobal

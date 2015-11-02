@@ -116,6 +116,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="packages.config" />
+    <Content Include="App_Config\Include\Habitat\Habitat.Framework.Indexing.Serialization.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
