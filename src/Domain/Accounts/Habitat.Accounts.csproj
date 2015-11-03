@@ -133,6 +133,8 @@
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Templates.cs" />
+    <Compile Include="Texts\Captions.cs" />
+    <Compile Include="Texts\Errors.cs" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

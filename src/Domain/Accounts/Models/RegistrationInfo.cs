@@ -1,30 +1,30 @@
 ﻿namespace Habitat.Accounts.Models
 {
   using System.ComponentModel.DataAnnotations;
-  using Habitat.Accounts.Attributes;
+  using global::Habitat.Accounts.Attributes;
+  using Texts;
 
   public class RegistrationInfo
   {
-    [Display(Name = "Email address")]
-    [Required(ErrorMessage = "The email address is required")]
-    [EmailAddress(ErrorMessage = "Invalid Email Address")]
+    [Display(Name = "Email", ResourceType = typeof(Captions))]
+    [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Errors))]
+    [EmailAddress(ErrorMessage = "EmailAddress", ErrorMessageResourceType = typeof(Errors))]
     [DataType(DataType.EmailAddress)]
     public string Email { get; set; }
 
-    [Display(Name = "Login")]
-    [Required(ErrorMessage = "The login is required")]
+    [Display(Name = "Login", ResourceType = typeof(Captions))]
+    [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Errors))]
     public string UserName { get; set; }
 
-    [Display(Name = "Password")]
-    [Required(ErrorMessage = "The password is required")]
-    [PasswordMinLength(ErrorMessage = "Minimum password length is {1}")]
+    [Display(Name = "Password", ResourceType = typeof(Captions))]
+    [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Errors))]
+    [PasswordMinLength(ErrorMessageResourceName = "MinimumPasswordLength", ErrorMessageResourceType = typeof(Errors))]
     [DataType(DataType.Password)]
     public string Password { get; set; }
 
-    [Display(Name = "Confirm password")]   
-    [Required(ErrorMessage = "The password is required")]
+    [Display(Name = "ConfirmPassword", ResourceType = typeof(Captions))]
     [DataType(DataType.Password)]
-    [Compare("Password")]
+    [Compare("Password", ErrorMessageResourceName = "ConfirmPasswordMismatch", ErrorMessageResourceType = typeof(Errors))]
     public string ConfirmPassword { get; set; }
   }
 }

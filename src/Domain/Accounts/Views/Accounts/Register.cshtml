@@ -2,10 +2,11 @@
 
 @using (Html.BeginForm("Register", "Accounts", FormMethod.Post))
 {
-<div class="form-group">
-    @Html.LabelFor(x => x.Email)
-    @Html.EditorFor(x => x.Email, new { @class = "form-control", id = "registerEmail" })
-</div>
+    @Html.ValidationSummary()
+    <div class="form-group">
+        @Html.LabelFor(x => x.Email)
+        @Html.EditorFor(x => x.Email, new { @class = "form-control", id = "registerEmail" })
+    </div>
     <div class="form-group">
         @Html.LabelFor(x => x.UserName)
         @Html.EditorFor(x => x.UserName, new { @class = "form-control", id = "registerName" })
