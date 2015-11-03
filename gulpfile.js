@@ -144,7 +144,9 @@ gulp.task("CI-Enumerate-Files", function () {
   config.websiteRoot = websiteRootBackup;
   return gulp.src(path.resolve("./temp") + "/**/*.*", { base: "temp" })
     .pipe(foreach(function (stream, file) {
-      items.push(file.relative.replace(/\\/g,"//"));
+      var item = "/" + file.relative.replace(/\\/g,"/");
+      console.log("Added to the package:" + item)
+      items.push(item);
       return stream;
     }));
 });
