@@ -13,6 +13,11 @@ var path = require("path");
 var config = require("./gulp-config.js")();
 var items = [];
 var websiteRootBackup = config.websiteRoot;
+var ciIgnore  = [
+  "compilerconfig.json.defaults",
+  "packages.config",
+  "README.md"]
+
 
 var publishProjects = function (location, dest) {
   dest = dest || config.websiteRoot;
@@ -144,7 +149,8 @@ gulp.task("CI-Enumerate-Files", function () {
   config.websiteRoot = websiteRootBackup;
   return gulp.src(path.resolve("./temp") + "/**/*.*", { base: "temp" })
     .pipe(foreach(function (stream, file) {
-      items.push(file.relative);
+      if(ciIgnore.filter(function(el){return file.relative.indexOf(el)>-1;}).length==0)    
+        items.push(file.relative);
       return stream;
     }));
 });
