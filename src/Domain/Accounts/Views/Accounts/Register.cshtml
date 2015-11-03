@@ -1,19 +1,23 @@
-﻿<form>
+﻿@model Habitat.Accounts.Models.RegistrationInfo
+
+@using (Html.BeginForm("Register", "Accounts", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(x => x.Email)
+    @Html.EditorFor(x => x.Email, new { @class = "form-control", id = "registerEmail" })
+</div>
     <div class="form-group">
-        <label for="registerEmail">E-mail</label>
-        <input type="email" class="form-control" id="registerEmail" placeholder="E-mail">
+        @Html.LabelFor(x => x.UserName)
+        @Html.EditorFor(x => x.UserName, new { @class = "form-control", id = "registerName" })
     </div>
     <div class="form-group">
-        <label for="registerName">Name</label>
-        <input type="email" class="form-control" id="registerName" placeholder="Name">
+        @Html.LabelFor(x => x.Password)
+        @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "registerPassword" })
     </div>
     <div class="form-group">
-        <label for="registerPassword">Password</label>
-        <input type="password" class="form-control" id="registerPassword" placeholder="Password">
+        @Html.LabelFor(x => x.ConfirmPassword)
+        @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control", id = "registerConfirmPassword" })
     </div>
-    <div class="form-group">
-        <label for="registerPassword">Confirm Password</label>
-        <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Confirm Password">
-    </div>
-    <button type="submit" class="btn btn-default">Register</button>
-</form>
+
+    <input type="submit" class="btn btn-default" value="Register" />
+}
