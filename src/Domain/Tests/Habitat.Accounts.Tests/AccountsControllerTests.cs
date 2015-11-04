@@ -13,7 +13,7 @@ using Xunit;
 
 namespace Habitat.Accounts.Tests
 {
-  public class AccountControllerTests
+  public class AccountsControllerTests
   {
     [Theory]
     [AutoDbData]

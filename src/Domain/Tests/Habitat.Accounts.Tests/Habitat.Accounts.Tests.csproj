@@ -97,7 +97,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountControllerTests.cs" />
+    <Compile Include="AccountsControllerTests.cs" />
     <Compile Include="AutoDbDataAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

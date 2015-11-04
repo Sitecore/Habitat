@@ -27,6 +27,7 @@ namespace Habitat.Accounts.Controllers
       return this.View();
     }
 
+    
     public ActionResult Register(RegistrationInfo registrationInfo)
     {
       if (!this.ModelState.IsValid)
@@ -57,7 +58,6 @@ namespace Habitat.Accounts.Controllers
     [HttpPost]
     public ActionResult Logout()
     {
-
       accountRepository.Logout();
       return this.Redirect(Sitecore.Context.Site.StartPath);
     }
