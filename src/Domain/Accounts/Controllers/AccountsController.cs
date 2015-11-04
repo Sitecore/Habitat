@@ -1,4 +1,6 @@
-﻿namespace Habitat.Accounts.Controllers
+﻿using System.Net;
+
+namespace Habitat.Accounts.Controllers
 {
   using System.Web.Mvc;
   using System.Web.Security;
@@ -51,5 +53,14 @@
 
       return this.Redirect(Sitecore.Context.Site.StartPath);
     }
+
+    [HttpPost]
+    public ActionResult Logout()
+    {
+
+      accountRepository.Logout();
+      return this.Redirect(Sitecore.Context.Site.StartPath);
+    }
+
   }
 }

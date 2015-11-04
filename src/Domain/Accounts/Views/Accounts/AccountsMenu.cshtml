@@ -26,9 +26,12 @@
                     <a href="/details" class="btn btn-default">Edit details</a>
                 </div>
             </li>
-            <li>
-                <a href="/register">Log out</a>
-            </li>
+          <li>
+            @using (Html.BeginForm("Logout", "Accounts", FormMethod.Post))
+            {
+              <input type="submit" value="Logout"/>
+            }
+          </li>
         }
     </ul>
 </li>
