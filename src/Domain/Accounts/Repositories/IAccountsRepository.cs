@@ -8,7 +8,6 @@
 
   public interface IAccountsRepository
   {
-    bool Login(string userName, string password);
 
   }
 }

@@ -130,9 +130,10 @@
     <Content Include="Scripts\Accounts.js" />
     <Content Include="Views\Accounts\Login.cshtml" />
     <Content Include="Views\Accounts\AccountsMenu.cshtml" />
-    <Content Include="Views\Accounts\Register.cshtml" />
     <Content Include="Views\Accounts\ForgotPassword.cshtml" />
     <Content Include="Views\Accounts\AccountsDetails.cshtml" />
+    <Content Include="Views\Accounts\Register.cshtml" />
+    <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -154,7 +155,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\IAccountsRepository.cs" />
+    <Compile Include="Attributes\PasswordMinLengthAttribute.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
+    <Compile Include="Models\RegistrationInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AccountRepository.cs" />
+    <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Templates.cs" />
+    <Compile Include="Texts\Captions.cs" />
+    <Compile Include="Texts\Errors.cs" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
