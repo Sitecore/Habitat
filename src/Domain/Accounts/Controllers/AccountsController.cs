@@ -4,6 +4,7 @@
   using System.Web.Security;
   using Models;
   using Repositories;
+  using Sitecore;
   using Sitecore.Diagnostics;
 
   public class AccountsController : Controller
@@ -25,8 +26,14 @@
       return this.View();
     }
 
+    [HttpPost]
     public ActionResult Register(RegistrationInfo registrationInfo)
     {
+      if (Context.IsLoggedIn)
+      {
+        return this.Redirect(Context.Site.StartPath);
+      }
+
       if (!this.ModelState.IsValid)
       {
         return this.View(registrationInfo);

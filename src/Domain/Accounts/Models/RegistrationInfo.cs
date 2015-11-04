@@ -8,7 +8,7 @@
   {
     [Display(Name = "Email", ResourceType = typeof(Captions))]
     [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Errors))]
-    [EmailAddress(ErrorMessage = "EmailAddress", ErrorMessageResourceType = typeof(Errors))]
+    [EmailAddress(ErrorMessageResourceName = "EmailAddress", ErrorMessageResourceType = typeof(Errors))]
     [DataType(DataType.EmailAddress)]
     public string Email { get; set; }
 

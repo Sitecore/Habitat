@@ -11,5 +11,7 @@
     public static string Password => Translate.Text("Password");
 
     public static string ConfirmPassword => Translate.Text("Confirm password");
+
+    public static string Register => Translate.Text("Register");
   }
 }
