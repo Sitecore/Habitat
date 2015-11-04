@@ -4,14 +4,14 @@
       <PackageName>Habitat package</PackageName>
       <Author>Sitecore</Author>
       <Version>1.0.0.0</Version>
-      <Revision />
-      <License />
-      <Comment />
-      <Attributes />
-      <Readme />
-      <Publisher />
-      <PostStep />
-      <PackageID />
+      <Revision/>
+      <License/>
+      <Comment/>
+      <Attributes/>
+      <Readme/>
+      <Publisher/>
+      <PostStep/>
+      <PackageID/>
     </metadata>
   </Metadata>
   <SaveProject>True</SaveProject>
@@ -36,50 +36,62 @@
       </Converter>
       <Include>
         <ItemNameFilter>
-          <Pattern />
+          <Pattern/>
           <FilterSearchType>Simple</FilterSearchType>
         </ItemNameFilter>
         <ItemDateFilter>
           <FilterType>CreatedFilter</FilterType>
-          <NotOlderThan />
-          <ActionDateTo />
-          <ActionDateFrom />
+          <NotOlderThan/>
+          <ActionDateTo/>
+          <ActionDateFrom/>
         </ItemDateFilter>
         <ItemDateFilter>
           <FilterType>ModifiedFilter</FilterType>
           <NotOlderThan>1</NotOlderThan>
-          <ActionDateTo />
-          <ActionDateFrom />
+          <ActionDateTo/>
+          <ActionDateFrom/>
         </ItemDateFilter>
         <ItemPublishFilter>
-          <PublishDate />
+          <PublishDate/>
           <CheckWorkflow>True</CheckWorkflow>
         </ItemPublishFilter>
         <ItemTemplateFilter>
-          <Templates />
+          <Templates/>
         </ItemTemplateFilter>
         <ItemUserFilter>
           <FilterType>Created</FilterType>
-          <Accounts />
+          <Accounts/>
         </ItemUserFilter>
         <ItemUserFilter>
           <FilterType>Modified</FilterType>
-          <Accounts />
+          <Accounts/>
         </ItemUserFilter>
         <ItemLanguageFilter>
-          <Languages />
+          <Languages/>
         </ItemLanguageFilter>
       </Include>
-      <Exclude />
+      <Exclude/>
       <Name>Habitat items</Name>
     </items>
+    <xfiles>
+      <Entries></Entries>
+      <Converter>
+        <FileToEntryConverter>
+          <Root>/</Root>
+          <Transforms/>
+        </FileToEntryConverter>
+      </Converter>
+      <Include/>
+      <Exclude/>
+      <Name>habitat files</Name>
+    </xfiles>
   </Sources>
   <Converter>
     <TrivialConverter>
-      <Transforms />
+      <Transforms/>
     </TrivialConverter>
   </Converter>
-  <Include />
-  <Exclude />
-  <Name />
+  <Include/>
+  <Exclude/>
+  <Name/>
 </project>
