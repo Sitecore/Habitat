@@ -6,5 +6,6 @@
   {
     void RegisterUser(RegistrationInfo registrationInfo);
     bool Exists(string userName);
+    void Logout();
   }
 }

@@ -1,4 +1,5 @@
-﻿@using Sitecore.Mvc
+﻿@using Habitat.Accounts.Texts
+@using Sitecore.Mvc
 <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
         <i class="fa fa-user"></i>
@@ -26,9 +27,12 @@
                     <a href="/details" class="btn btn-default">Edit details</a>
                 </div>
             </li>
-            <li>
-                <a href="/register">Log out</a>
-            </li>
+          <li>
+            @using (Html.BeginForm("Logout", "Accounts", FormMethod.Post))
+            {
+              <input type="submit" value="@Captions.Logout"/>
+            }
+          </li>
         }
     </ul>
 </li>

@@ -16,6 +16,11 @@ namespace Habitat.Accounts.Repositories
       return User.Exists(domainName);
     }
 
+    public void Logout()
+    {
+      AuthenticationManager.Logout();
+    }
+
     public void RegisterUser(RegistrationInfo registrationInfo)
     {
       Assert.IsNotNullOrEmpty(registrationInfo.UserName, "UserName");
