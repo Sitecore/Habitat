@@ -23,11 +23,11 @@ namespace Habitat.Accounts.Repositories
 
     public void RegisterUser(RegistrationInfo registrationInfo)
     {
-      Assert.IsNotNullOrEmpty(registrationInfo.UserName, "UserName");
-      Assert.IsNotNullOrEmpty(registrationInfo.Password, "Password");
-      Assert.IsNotNullOrEmpty(registrationInfo.Email, "Email");
+      Assert.IsNotNullOrEmpty(registrationInfo.Email, nameof(registrationInfo.Email));
+      Assert.IsNotNullOrEmpty(registrationInfo.Password, nameof(registrationInfo.Password));
+      Assert.IsNotNullOrEmpty(registrationInfo.Email, nameof(registrationInfo.ConfirmPassword));
 
-      var domainName = Context.Domain.GetFullName(registrationInfo.UserName);
+      var domainName = Context.Domain.GetFullName(registrationInfo.Email);
       Membership.CreateUser(domainName, registrationInfo.Password, registrationInfo.Email);
       AuthenticationManager.Login(domainName, registrationInfo.Password, true);
     }

@@ -123,6 +123,7 @@
     <Compile Include="Extensions\ItemExtensions.cs" />
     <Compile Include="Helpers\AnalyticsHelper.cs" />
     <Compile Include="Extensions\HTMLHelperExtensions.cs" />
+    <Compile Include="HtmlHelpers\ValidationHelpers.cs" />
     <Compile Include="Model\File.cs" />
     <Compile Include="Model\Image.cs" />
     <Compile Include="Model\Link.cs" />

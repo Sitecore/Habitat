@@ -12,10 +12,6 @@
     [DataType(DataType.EmailAddress)]
     public string Email { get; set; }
 
-    [Display(Name = "Login", ResourceType = typeof(Captions))]
-    [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Errors))]
-    public string UserName { get; set; }
-
     [Display(Name = "Password", ResourceType = typeof(Captions))]
     [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Errors))]
     [PasswordMinLength(ErrorMessageResourceName = "MinimumPasswordLength", ErrorMessageResourceType = typeof(Errors))]

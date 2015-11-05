@@ -40,9 +40,9 @@ namespace Habitat.Accounts.Controllers
           return this.View(registrationInfo);
         }
 
-        if (this.accountRepository.Exists(registrationInfo.UserName))
+        if (this.accountRepository.Exists(registrationInfo.Email))
         {
-          this.ModelState.AddModelError("UserName", "User with specified login already exists");
+          this.ModelState.AddModelError(nameof(registrationInfo.Email), "User with specified login already exists");
 
           return this.View(registrationInfo);
         }
@@ -53,8 +53,8 @@ namespace Habitat.Accounts.Controllers
         }
         catch (MembershipCreateUserException ex)
         {
-          Log.Error($"Can't create user with name {registrationInfo.UserName}", ex, this);
-          this.ModelState.AddModelError("Register", ex.Message);
+          Log.Error($"Can't create user with {registrationInfo.Email}", ex, this);
+          this.ModelState.AddModelError(nameof(registrationInfo.Email), ex.Message);
 
           return this.View(registrationInfo);
         }

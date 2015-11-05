@@ -1,24 +1,31 @@
 ﻿@using Habitat.Accounts.Texts
+@using Habitat.Framework.SitecoreExtensions.HtmlHelpers
 @model Habitat.Accounts.Models.RegistrationInfo
 
 @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
 {
   @Html.Sitecore().FormHandler()
-    @Html.ValidationSummary()
-    <div class="form-group">
-        @Html.LabelFor(x => x.Email)
+    <div class="form-group @Html.ValidationErrorFor(x=>x.Email,"has-error")">
+        @Html.LabelFor(x => x.Email,new {@class= "control-label" })
+        
+        @Html.ValidationMessageFor(x => x.Email,"", new { @class= "help-block" })
+        
         @Html.TextBoxFor(x => x.Email, new { @class = "form-control", id = "registerEmail" })
     </div>
-    <div class="form-group">
-        @Html.LabelFor(x => x.UserName)
-        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", id = "registerName" })
+    
+    <div class="form-group @Html.ValidationErrorFor(x=>x.Password,"has-error")">
+        @Html.LabelFor(x => x.Password, new { @class = "control-label" })
+        
+        @Html.ValidationMessageFor(x => x.Password, "", new { @class = "help-block" })
+        
+        @Html.PasswordFor(x => x.Password, new {@class = "form-control", id = "registerPassword"})
     </div>
-    <div class="form-group">
-        @Html.LabelFor(x => x.Password)
-        @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "registerPassword" })
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(x => x.ConfirmPassword)
+    
+    <div class="form-group @Html.ValidationErrorFor(x=>x.ConfirmPassword,"has-error")">
+        @Html.LabelFor(x => x.ConfirmPassword, new { @class = "control-label" })
+        
+        @Html.ValidationMessageFor(x => x.ConfirmPassword, "", new { @class = "help-block" })
+        
         @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control", id = "registerConfirmPassword" })
     </div>
 

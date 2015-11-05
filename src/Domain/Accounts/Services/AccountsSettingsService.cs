@@ -3,7 +3,6 @@ using Habitat.Framework.SitecoreExtensions.Extensions;
 using Sitecore.Data;
 using Sitecore.Data.Fields;
 using Sitecore.Data.Items;
-using Sitecore.Links;
 
 namespace Habitat.Accounts.Services
 {
