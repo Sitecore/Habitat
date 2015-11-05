@@ -1,61 +1,24 @@
-﻿using System.Net;
-
-namespace Habitat.Accounts.Controllers
+﻿namespace Habitat.Accounts.Controllers
 {
+  using System.Net;
   using System.Web.Mvc;
   using System.Web.Security;
   using Models;
   using Repositories;
   using Sitecore;
   using Sitecore.Diagnostics;
+  using Sitecore.Publishing.Pipelines.Publish;
 
   public class AccountsController : Controller
   {
     private readonly IAccountRepository accountRepository;
-namespace Habitat.Accounts.Controllers
-{
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Net;
-  using System.Net.Http;
-  using System.Net.Http.Headers;
-  using System.Text;
-  using System.Web.Http;
-  using System.Web.Http.Results;
-  using Habitat.Accounts.Models;
-  using Habitat.Accounts.Repositories;
-  using Sitecore.Globalization;
 
     public AccountsController() : this(new AccountRepository())
     {
     }
-  public class AccountsController : ApiController
-  {
-    private readonly IAccountsRepository _accountsRepository;
 
     public AccountsController(IAccountRepository accountRepository)
-    public AccountsController():this(new AccountRepository())
     {
-    }
-
-    public AccountsController(IAccountsRepository accountsRepository)
-    {
-      this._accountsRepository = accountsRepository;
-    }
-
-
-    [HttpPost]
-    public LoginResult Login([FromBody]LoginCredentials credentials)
-    {
-      var loginResult = this._accountsRepository.Login(credentials.UserName, credentials.Password);
-
-      var result = new LoginResult {IsAuthenticated = loginResult, ValidationMessage = Translate.Text("Username or password is not valid.")};
-
-      return result;
-    }
-  }
-}
       this.accountRepository = accountRepository;
     }
 
@@ -96,6 +59,45 @@ namespace Habitat.Accounts.Controllers
       }
 
       return this.Redirect(Sitecore.Context.Site.StartPath);
+    }
+
+
+    [HttpGet]
+    public ActionResult Login()
+    {
+      if (Sitecore.Context.User.IsAuthenticated)
+      {
+        this.Response.Redirect("/");
+      }
+
+      return this.View();
+    }
+
+    [HttpPost]
+    public ActionResult Login(LoginInfo loginInfo)
+    {
+      if (!this.ModelState.IsValid)
+      {
+        return this.View(loginInfo);
+      }
+
+      var result = this.accountRepository.Login(loginInfo.Email, loginInfo.Password);
+      if (result)
+      {
+        var redirectUrl = loginInfo.ReturnUrl;
+        if (string.IsNullOrEmpty(redirectUrl))
+        {
+          redirectUrl = "/";
+        }
+
+        this.Response.Redirect(redirectUrl);
+      }
+      else
+      {
+        this.ModelState.AddModelError("UserName", "Username or password is not valid.");
+      }
+
+      return this.View(loginInfo);
     }
 
     [HttpPost]

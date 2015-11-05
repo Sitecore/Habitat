@@ -147,18 +147,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccountsApiController.cs" />
+    <Compile Include="Models\LoginInfo.cs" />
     <Compile Include="WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Models\LoginCredentials.cs" />
     <Compile Include="Models\LoginResult.cs" />
     <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\IAccountsRepository.cs" />
     <Compile Include="Attributes\PasswordMinLengthAttribute.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Models\RegistrationInfo.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Templates.cs" />
