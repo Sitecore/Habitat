@@ -1,4 +1,6 @@
 ﻿using System.Net;
+using Habitat.Framework.SitecoreExtensions.Extensions;
+using Sitecore.Links;
 
 namespace Habitat.Accounts.Controllers
 {
@@ -52,14 +54,14 @@ namespace Habitat.Accounts.Controllers
         this.ModelState.AddModelError("Register", ex.Message);
       }
 
-      return this.Redirect(Sitecore.Context.Site.StartPath);
+      return this.Redirect(Sitecore.Context.Site.GetRoot().Url());
     }
 
     [HttpPost]
     public ActionResult Logout()
     {
       accountRepository.Logout();
-      return this.Redirect(Sitecore.Context.Site.StartPath);
+      return this.Redirect(Sitecore.Context.Site.GetRoot().Url());
     }
 
   }
