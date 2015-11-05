@@ -57,6 +57,9 @@
       <HintPath>..\..\..\..\packages\AutoFixture.Xunit2.3.36.9\lib\net45\Ploeh.AutoFixture.Xunit2.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.Analytics">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.FakeDb, Version=0.31.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.FakeDb.0.31.5\lib\net45\Sitecore.FakeDb.dll</HintPath>
       <Private>True</Private>
@@ -116,6 +119,9 @@
       <Project>{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}</Project>
       <Name>Habitat.Accounts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

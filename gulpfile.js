@@ -1,4 +1,3 @@
-/// <binding AfterBuild='Publish-Assemblies' ProjectOpened='Auto-Publish-Css, Auto-Publish-Views' />
 var gulp = require("gulp");
 var msbuild = require("gulp-msbuild");
 var debug = require("gulp-debug");
@@ -46,7 +45,7 @@ var deleteFolderRecursive = function (path) {
       }
     });
     fs.rmdirSync(path);
-  }
+  } 
 };
 
 gulp.task("01-Copy-Sitecore-Lib", function () {
