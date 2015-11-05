@@ -1,7 +1,7 @@
 ﻿namespace Habitat.Accounts.Models
 {
   using System.ComponentModel.DataAnnotations;
-  using global::Habitat.Accounts.Attributes;
+  using Attributes;
   using Texts;
 
   public class RegistrationInfo
