@@ -1,15 +1,17 @@
-﻿@model Habitat.Accounts.Models.RegistrationInfo
+﻿@using Habitat.Accounts.Texts
+@model Habitat.Accounts.Models.RegistrationInfo
 
-@using (Html.BeginForm("Register", "Accounts", FormMethod.Post))
+@using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
 {
+  @Html.Sitecore().FormHandler()
     @Html.ValidationSummary()
     <div class="form-group">
         @Html.LabelFor(x => x.Email)
-        @Html.EditorFor(x => x.Email, new { @class = "form-control", id = "registerEmail" })
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", id = "registerEmail" })
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.UserName)
-        @Html.EditorFor(x => x.UserName, new { @class = "form-control", id = "registerName" })
+        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", id = "registerName" })
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Password)
@@ -20,5 +22,5 @@
         @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control", id = "registerConfirmPassword" })
     </div>
 
-    <input type="submit" class="btn btn-default" value="Register" />
+    <input type="submit" class="btn btn-default" value="@Captions.Register" />
 }
