@@ -7,6 +7,9 @@ SharedFields:
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   # Path
   Value: /Views/Accounts/AccountsMenu.cshtml
+- ID: e514a1eb-ddba-44f7-8528-82ca2280f778
+  # JavaScript assets
+  Value: /scripts/accounts/accounts.js
 Languages:
 - Language: en
   Versions:

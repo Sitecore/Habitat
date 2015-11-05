@@ -5,6 +5,7 @@
   public static class Captions
   {
     public static string Email => Translate.Text("Email");
+    public static string E_mail => Translate.Text("E-mail");
 
     public static string Login => Translate.Text("Login");
 
