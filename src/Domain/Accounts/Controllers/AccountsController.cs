@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using Habitat.Accounts.Texts;
 using Habitat.Framework.SitecoreExtensions.Extensions;
 using Sitecore.Links;
 
@@ -42,7 +43,7 @@ namespace Habitat.Accounts.Controllers
 
         if (this.accountRepository.Exists(registrationInfo.Email))
         {
-          this.ModelState.AddModelError(nameof(registrationInfo.Email), "User with specified login already exists");
+          this.ModelState.AddModelError(nameof(registrationInfo.Email), Errors.UserAlreadyExists);
 
           return this.View(registrationInfo);
         }

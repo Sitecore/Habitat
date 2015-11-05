@@ -11,5 +11,7 @@
     public static string MinimumPasswordLength => Translate.Text("Minimum password length is {1}");
 
     public static string ConfirmPasswordMismatch => Translate.Text("Wrong confirm password");
+
+    public static string UserAlreadyExists => Translate.Text("User with specified login already exists");
   }
 }

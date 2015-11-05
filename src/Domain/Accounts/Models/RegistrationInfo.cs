@@ -6,21 +6,21 @@
 
   public class RegistrationInfo
   {
-    [Display(Name = "Email", ResourceType = typeof(Captions))]
-    [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Errors))]
-    [EmailAddress(ErrorMessageResourceName = "EmailAddress", ErrorMessageResourceType = typeof(Errors))]
+    [Display(Name = nameof(Email), ResourceType = typeof(Captions))]
+    [Required(ErrorMessageResourceName = nameof(Errors.Required), ErrorMessageResourceType = typeof(Errors))]
+    [EmailAddress(ErrorMessageResourceName = nameof(Errors.EmailAddress), ErrorMessageResourceType = typeof(Errors))]
     [DataType(DataType.EmailAddress)]
     public string Email { get; set; }
 
-    [Display(Name = "Password", ResourceType = typeof(Captions))]
-    [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Errors))]
-    [PasswordMinLength(ErrorMessageResourceName = "MinimumPasswordLength", ErrorMessageResourceType = typeof(Errors))]
+    [Display(Name = nameof(Password), ResourceType = typeof(Captions))]
+    [Required(ErrorMessageResourceName = nameof(Errors.Required), ErrorMessageResourceType = typeof(Errors))]
+    [PasswordMinLength(ErrorMessageResourceName = nameof(Errors.MinimumPasswordLength), ErrorMessageResourceType = typeof(Errors))]
     [DataType(DataType.Password)]
     public string Password { get; set; }
 
-    [Display(Name = "ConfirmPassword", ResourceType = typeof(Captions))]
+    [Display(Name = nameof(ConfirmPassword), ResourceType = typeof(Captions))]
     [DataType(DataType.Password)]
-    [Compare("Password", ErrorMessageResourceName = "ConfirmPasswordMismatch", ErrorMessageResourceType = typeof(Errors))]
+    [Compare(nameof(Password), ErrorMessageResourceName = nameof(Errors.ConfirmPasswordMismatch), ErrorMessageResourceType = typeof(Errors))]
     public string ConfirmPassword { get; set; }
   }
 }
