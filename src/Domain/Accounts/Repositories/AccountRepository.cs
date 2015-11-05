@@ -21,6 +21,13 @@ namespace Habitat.Accounts.Repositories
       AuthenticationManager.Logout();
     }
 
+    public string RestorePassword(string userName)
+    {
+      var domainName = Context.Domain.GetFullName(userName);
+      var user = Membership.GetUser(domainName);
+      return user.ResetPassword();
+    }
+
     public void RegisterUser(RegistrationInfo registrationInfo)
     {
       Assert.IsNotNullOrEmpty(registrationInfo.Email, nameof(registrationInfo.Email));
