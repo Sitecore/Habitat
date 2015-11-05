@@ -1,0 +1,21 @@
+﻿---
+ID: c83831aa-23a8-49b4-bedd-00f6077dbf1f
+Parent: d046e7a5-9ee2-4cba-8484-c601561f66d9
+Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
+Path: /sitecore/layout/Placeholder Settings/Habitat/Project/Website/Columns/col-centered-1
+SharedFields:
+- ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
+  # Placeholder Key
+  Value: col-centered-1
+- ID: e391b526-d0c5-439d-803e-17512eae6222
+  # Allowed Controls
+  Type: TreelistEx
+  Value: {B683EFB4-161D-4FDF-9A90-CC8637766C9C}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151104T151126Z

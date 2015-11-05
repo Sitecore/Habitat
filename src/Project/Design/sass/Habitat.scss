@@ -83,6 +83,14 @@ a {
     }
 }
 
+/***************
+    Accounts
+****************/
+.accounts-details{
+  color: white;
+}
+
+
 /****************
     Buttons
 ****************/
@@ -98,6 +106,27 @@ a {
 .btn-default:hover, .btn-default:focus {
     background-color: $btn-primary-bg;
     color: $btn-primary-color;
+}
+
+.dropdown{
+  input[type="submit"] {
+     text-transform: uppercase;    
+     background:none;
+     border:none; 
+     padding-top:    5px;
+     padding-right: 20px;
+     font: inherit;
+     float: right;
+     cursor: pointer;
+     padding-top: 5px;
+     padding-bottom: 5px;
+     line-height: 24px;
+     color: #eeeeee;
+     text-align: right;
+  }
+  input[type="submit"]:hover {
+     color: $brand-primary;
+  }
 }
 
 /****************
@@ -189,7 +218,7 @@ a {
             }
         }
         li {
-            >a{
+            >a {
                 text-transform: uppercase;
                 font-weight: 600;
                 color: $gray-light;
