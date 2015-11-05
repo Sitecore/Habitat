@@ -67,6 +67,7 @@ namespace Habitat.Accounts.Controllers
     public ActionResult Logout()
     {
       accountRepository.Logout();
+
       return this.Redirect(Sitecore.Context.Site.GetRoot().Url());
     }
 

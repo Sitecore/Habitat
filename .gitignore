@@ -19,3 +19,6 @@ vars.user.cmd
 /.vs
 /target
 node_modules/
+temp/
+*.ncrunchproject
+*.ncrunchsolution
