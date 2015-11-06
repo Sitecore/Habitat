@@ -1,19 +1,13 @@
-﻿using System.Net;
-using Habitat.Framework.SitecoreExtensions.Extensions;
-using Sitecore.Links;
-
-namespace Habitat.Accounts.Controllers
-{
-  using System.Web.Mvc;
-  using System.Web.Security;
+﻿using System;
+using System.Web.Mvc;
+using System.Web.Security;
 using Habitat.Accounts.Models;
 using Habitat.Accounts.Repositories;
 using Habitat.Accounts.Services;
 using Habitat.Accounts.Texts;
 using Habitat.Framework.SitecoreExtensions.Extensions;
-  using Sitecore;
-  using Sitecore.Diagnostics;
-  using Sitecore.Publishing.Pipelines.Publish;
+using Sitecore;
+using Sitecore.Diagnostics;
 
 namespace Habitat.Accounts.Controllers
 {
@@ -43,39 +37,38 @@ namespace Habitat.Accounts.Controllers
     {
       if (!Context.IsLoggedIn)
       {
-      if (!this.ModelState.IsValid)
-      {
-        return this.View(registrationInfo);
-      }
+        if (!this.ModelState.IsValid)
+        {
+          return this.View(registrationInfo);
+        }
 
         if (this.accountRepository.Exists(registrationInfo.Email))
-      {
+        {
           this.ModelState.AddModelError(nameof(registrationInfo.Email), Errors.UserAlreadyExists);
 
-        return this.View(registrationInfo);
-      }
+          return this.View(registrationInfo);
+        }
 
-      try
-      {
-        this.accountRepository.RegisterUser(registrationInfo);
-      }
-      catch (MembershipCreateUserException ex)
-      {
+        try
+        {
+          this.accountRepository.RegisterUser(registrationInfo);
+        }
+        catch (MembershipCreateUserException ex)
+        {
           Log.Error($"Can't create user with {registrationInfo.Email}", ex, this);
           this.ModelState.AddModelError(nameof(registrationInfo.Email), ex.Message);
 
           return this.View(registrationInfo);
-      }
+        }
       }
 
       return this.Redirect(Context.Site.GetRoot().Url());
     }
 
-
     [HttpGet]
     public ActionResult Login()
     {
-      if (Sitecore.Context.User.IsAuthenticated)
+      if (Context.User.IsAuthenticated)
       {
         this.Response.Redirect("/");
       }
@@ -144,7 +137,7 @@ namespace Habitat.Accounts.Controllers
         var newPassword = this.accountRepository.RestorePassword(model.Email);
         this.notificationService.SendPassword(model.Email, newPassword);
         return this.View("ForgotPasswordSuccess");
-    }
+      }
       catch (Exception ex)
       {
         Log.Error($"Can't reset password for user {model.Email}", ex, this);
