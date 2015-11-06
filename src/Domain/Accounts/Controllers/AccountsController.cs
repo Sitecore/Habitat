@@ -1,28 +1,29 @@
-﻿using System.Net;
+﻿using System;
+using System.Web.Mvc;
+using System.Web.Security;
+using Habitat.Accounts.Models;
+using Habitat.Accounts.Repositories;
+using Habitat.Accounts.Services;
 using Habitat.Accounts.Texts;
 using Habitat.Framework.SitecoreExtensions.Extensions;
-using Sitecore.Links;
+using Sitecore;
+using Sitecore.Diagnostics;
 
 namespace Habitat.Accounts.Controllers
 {
-  using System.Web.Mvc;
-  using System.Web.Security;
-  using Models;
-  using Repositories;
-  using Sitecore;
-  using Sitecore.Diagnostics;
-
   public class AccountsController : Controller
   {
     private readonly IAccountRepository accountRepository;
+    private readonly INotificationService notificationService;
 
-    public AccountsController() : this(new AccountRepository())
+    public AccountsController() : this(new AccountRepository(), new NotificationService())
     {
     }
 
-    public AccountsController(IAccountRepository accountRepository)
+    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService)
     {
       this.accountRepository = accountRepository;
+      this.notificationService = notificationService;
     }
 
     [HttpGet]
@@ -61,16 +62,51 @@ namespace Habitat.Accounts.Controllers
         }
       }
 
-      return this.Redirect(Sitecore.Context.Site.GetRoot().Url());
+      return this.Redirect(Context.Site.GetRoot().Url());
     }
 
     [HttpPost]
     public ActionResult Logout()
     {
-      accountRepository.Logout();
+      this.accountRepository.Logout();
 
-      return this.Redirect(Sitecore.Context.Site.GetRoot().Url());
+      return this.Redirect(Context.Site.GetRoot().Url());
     }
 
+    [HttpGet]
+    public ActionResult ForgotPassword()
+    {
+      return this.View();
+    }
+
+    [HttpPost]
+    public ActionResult ForgotPassword(PasswordResetInfo model)
+    {
+      if (!this.ModelState.IsValid)
+      {
+        return this.View(model);
+      }
+
+      if (!this.accountRepository.Exists(model.Email))
+      {
+        this.ModelState.AddModelError(nameof(model.Email), Errors.UserDoesNotExist);
+
+        return this.View(model);
+      }
+
+      try
+      {
+        var newPassword = this.accountRepository.RestorePassword(model.Email);
+        this.notificationService.SendPassword(model.Email, newPassword);
+        return this.View("ForgotPasswordSuccess");
+      }
+      catch (Exception ex)
+      {
+        Log.Error($"Can't reset password for user {model.Email}", ex, this);
+        this.ModelState.AddModelError(nameof(model.Email), ex.Message);
+
+        return this.View(model);
+      }
+    }
   }
 }

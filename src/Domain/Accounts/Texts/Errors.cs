@@ -1,4 +1,6 @@
-﻿namespace Habitat.Accounts.Texts
+﻿using System;
+
+namespace Habitat.Accounts.Texts
 {
   using Sitecore.Globalization;
 
@@ -13,5 +15,7 @@
     public static string ConfirmPasswordMismatch => Translate.Text("Wrong confirm password");
 
     public static string UserAlreadyExists => Translate.Text("User with specified login already exists");
+
+    public static string UserDoesNotExist => Translate.Text("User with specified email does not exist");
   }
 }

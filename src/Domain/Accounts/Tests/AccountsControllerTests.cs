@@ -5,6 +5,7 @@ using FluentAssertions;
 using Habitat.Accounts.Controllers;
 using Habitat.Accounts.Models;
 using Habitat.Accounts.Repositories;
+using Habitat.Accounts.Services;
 using Habitat.Accounts.Texts;
 using Moq;
 using Ploeh.AutoFixture.Xunit2;
@@ -24,7 +25,7 @@ namespace Habitat.Accounts.Tests
   {
     [Theory]
     [AutoDbData]
-    public void LogoutShouldCallSitecoreLogout(Database db, [Content]DbItem item, Mock<IAccountRepository> repo)
+    public void LogoutShouldCallSitecoreLogout(Database db, [Content]DbItem item, Mock<IAccountRepository> repo, Mock<INotificationService> ns)
     {
 
       var fakeSite = new FakeSiteContext(new StringDictionary
@@ -35,7 +36,7 @@ namespace Habitat.Accounts.Tests
       fakeSite.Database = db;
       using (new SiteContextSwitcher(fakeSite))
       {
-        var ctrl = new AccountsController(repo.Object);
+        var ctrl = new AccountsController(repo.Object,ns.Object);
         ctrl.Logout();
         repo.Verify(x => x.Logout(), Times.Once());
       }
@@ -43,7 +44,7 @@ namespace Habitat.Accounts.Tests
 
     [Theory]
     [AutoDbData]
-    public void LogoutShouldRedirectUserToHomePage(Database db, [Content]DbItem item, Mock<IAccountRepository> repo)
+    public void LogoutShouldRedirectUserToHomePage(Database db, [Content]DbItem item, Mock<IAccountRepository> repo, Mock<INotificationService> ns)
     {
       var fakeSite = new FakeSiteContext(new StringDictionary
       {
@@ -55,16 +56,24 @@ namespace Habitat.Accounts.Tests
 
       using (new SiteContextSwitcher(fakeSite))
       {
-        var ctrl = new AccountsController(repo.Object);
+        var ctrl = new AccountsController(repo.Object, ns.Object);
         var result = ctrl.Logout();
         result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
       }
     }
 
     [Theory, AutoDbData]
-    public void RegisterShouldReturnViewWithoudModel([Frozen] Mock<IAccountRepository> repo, [NoAutoProperties] AccountsController controller)
+    public void RegisterShouldReturnViewWithoutModel([Frozen] Mock<IAccountRepository> repo, [NoAutoProperties] AccountsController controller)
     {
       var result = controller.Register();
+      result.Should().BeOfType<ViewResult>().Which.Model.Should().BeNull();
+    }
+
+
+    [Theory, AutoDbData]
+    public void ForgotPasswordShouldReturnViewWithoutModel([Frozen] Mock<IAccountRepository> repo, [NoAutoProperties] AccountsController controller)
+    {
+      var result = controller.ForgotPassword();
       result.Should().BeOfType<ViewResult>().Which.Model.Should().BeNull();
     }
 
@@ -96,6 +105,40 @@ namespace Habitat.Accounts.Tests
       result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(registrationInfo);
     }
 
+
+    [Theory, AutoDbData]
+    public void ForgotPasswordShouldReturnModelIfItsNotValid(PasswordResetInfo model, [Frozen]Mock<IAccountRepository> repo, [NoAutoProperties]AccountsController controller)
+    {
+      repo.Setup(x => x.RestorePassword(It.IsAny<string>())).Returns("new password");
+      repo.Setup(x => x.Exists(It.IsAny<string>())).Returns(true);
+      controller.ModelState.AddModelError("Error", "Error");
+      var result = controller.ForgotPassword(model);
+      result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
+    }
+
+    [Theory, AutoDbData]
+    public void ForgotPasswordShouldReturnModelIfUserNotExist(PasswordResetInfo model, [Frozen]Mock<IAccountRepository> repo)
+    { 
+      repo.Setup(x => x.RestorePassword(It.IsAny<string>())).Returns("new password");
+      repo.Setup(x => x.Exists(It.IsAny<string>())).Returns(false);
+      var controller = new AccountsController(repo.Object, null);
+      var result = controller.ForgotPassword(model);
+      result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
+      result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(model.Email))
+         .WhichValue.Errors.Should().Contain(x => x.ErrorMessage == Errors.UserDoesNotExist);
+    }
+
+    [Theory, AutoDbData]
+    public void ForgotPasswordShouldReturnSuccesViewResult(PasswordResetInfo model, [Frozen]Mock<IAccountRepository> repo, [NoAutoProperties]AccountsController controller)
+    {
+      repo.Setup(x => x.RestorePassword(It.IsAny<string>())).Returns("new password");
+      repo.Setup(x => x.Exists(It.IsAny<string>())).Returns(true);
+      var result = controller.ForgotPassword(model);
+      result.Should().BeOfType<ViewResult>().Which.ViewName.Should().BeEquivalentTo("forgotpasswordsuccess");
+    }
+
+
+
     [Theory, AutoDbData]
     public void RegisterShouldReturnModelWithErrorIfSameUserExists(RegistrationInfo registrationInfo, [Frozen]Mock<IAccountRepository> repo, [NoAutoProperties]AccountsController controller)
     {
@@ -109,10 +152,10 @@ namespace Habitat.Accounts.Tests
     }
 
     [Theory, AutoDbData]
-    public void RegisterShouldReturnErrorIfRegistrationThrowsMembershipException(RegistrationInfo registrationInfo, MembershipCreateUserException exception, [Frozen]Mock<IAccountRepository> repo)
+    public void RegisterShouldReturnErrorIfRegistrationThrowsMembershipException(RegistrationInfo registrationInfo, MembershipCreateUserException exception, [Frozen]Mock<IAccountRepository> repo,[Frozen]Mock<INotificationService> notifyService)
     {
       repo.Setup(x => x.RegisterUser(It.IsAny<RegistrationInfo>())).Throws(exception);
-      var controller = new AccountsController(repo.Object);
+      var controller = new AccountsController(repo.Object, notifyService.Object);
 
       var result = controller.Register(registrationInfo);
       result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(registrationInfo);
@@ -121,10 +164,10 @@ namespace Habitat.Accounts.Tests
     }
 
     [Theory, AutoDbData]
-    public void RegisterShouldCallRegisterUserAndRedirectToHomePage(Database db, [Content] DbItem item, RegistrationInfo registrationInfo, [Frozen]Mock<IAccountRepository> repo)
+    public void RegisterShouldCallRegisterUserAndRedirectToHomePage(Database db, [Content] DbItem item, RegistrationInfo registrationInfo, [Frozen]Mock<IAccountRepository> repo, [Frozen]Mock<INotificationService> notifyService)
     {
       repo.Setup(x => x.Exists(It.IsAny<string>())).Returns(false);
-      var controller = new AccountsController(repo.Object);
+      var controller = new AccountsController(repo.Object, notifyService.Object);
 
       var fakeSite = new FakeSiteContext(new StringDictionary
       {

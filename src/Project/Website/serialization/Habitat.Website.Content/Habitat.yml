@@ -28,3 +28,6 @@ Languages:
     - ID: e748d808-64c1-4dec-9718-f35cf9689e4b
       # Logo
       Value: "<image mediapath=\"/Default Website/sc_logo\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Default Website/sc_logo\" mediaid=\"{461A93BF-5471-4AF2-BF36-D638F5660CB5}\" />"
+    - ID: f3cd2bb8-472b-4df0-87c0-a13098e391ca
+      # ForgotPasswordPage
+      Value: /sitecore/content/Habitat/Home/ForgotPassword
