@@ -1,0 +1,44 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Repositories
+@model Habitat.Demo.Models.ContactInformation
+<div id="contact-details" class="panel panel-primary">
+  <div class="panel-heading">
+    <h3>
+      @DictionaryRepository.Get("/Demo/ContactDetails/Title", "Contact")
+    </h3>
+    <div class="stats">
+      <span title="@DictionaryRepository.Get("/Demo/ContactDetails/NoOfVisits", "Number of Visits")" data-toggle="tooltip" data-placement="top">
+        <span class="glyphicon glyphicon glyphicon-random" aria-hidden="true"></span>
+        <span class="badge">@Model.NoOfVisits</span>
+      </span>
+      <span title="@DictionaryRepository.Get("/Demo/ContactDetails/EngagementValue", "Engagement Value")" data-toggle="tooltip" data-placement="top">
+        <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+        <span class="badge">@Model.EngagementValue</span>
+      </span>
+      <span title="@DictionaryRepository.Get("/Demo/ContactDetails/ContactID", "ContactID"): @Model.Id.ToString()" data-toggle="tooltip" data-placement="top">
+        <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#contactDetailsClassification" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/contactDetails/Classification", "Classification")
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="contactDetailsClassification">
+        <div class="panel-body">
+          <ul class="list-unstyled">
+            <li>@Model.Classification</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script language="javascript">
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  })
+</script>

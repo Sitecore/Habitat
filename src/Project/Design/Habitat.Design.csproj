@@ -105,6 +105,7 @@
     <Content Include="fonts\Bootstrap\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\Bootstrap\glyphicons-halflings-regular.woff2" />
     <Content Include="packages.config" />
+    <Content Include="scripts\Design\Habitat.Design.js" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <None Include="compilerconfig.json" />
     <Content Include="compilerconfig.json.defaults">
