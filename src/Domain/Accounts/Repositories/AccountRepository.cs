@@ -30,9 +30,10 @@ namespace Habitat.Accounts.Repositories
 
     public void RegisterUser(RegistrationInfo registrationInfo)
     {
-      Assert.IsNotNullOrEmpty(registrationInfo.Email, nameof(registrationInfo.Email));
-      Assert.IsNotNullOrEmpty(registrationInfo.Password, nameof(registrationInfo.Password));
-      Assert.IsNotNullOrEmpty(registrationInfo.Email, nameof(registrationInfo.ConfirmPassword));
+      Assert.ArgumentNotNull(registrationInfo, nameof(registrationInfo));
+      Assert.ArgumentNotNullOrEmpty(registrationInfo.Email, nameof(registrationInfo.Email));
+      Assert.ArgumentNotNullOrEmpty(registrationInfo.Password, nameof(registrationInfo.Password));
+      Assert.ArgumentNotNullOrEmpty(registrationInfo.ConfirmPassword, nameof(registrationInfo.ConfirmPassword));
 
       var domainName = Context.Domain.GetFullName(registrationInfo.Email);
       Membership.CreateUser(domainName, registrationInfo.Password, registrationInfo.Email);
