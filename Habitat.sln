@@ -121,27 +121,27 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.SitecoreE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Taxonomy.Tests", "src\Framework\Taxonomy\Tests\Habitat.Framework.Taxonomy.Tests.csproj", "{30C2C08C-0099-4B05-83B4-CDF15EDE33E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Accounts.Specflow", "Habitat.Accounts.Specflow\Habitat.Accounts.Specflow.csproj", "{CF95188D-0E98-44FA-BB40-D1EA083A09FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Accounts.Specflow", "src\Domain\Accounts\Specflow\Habitat.Accounts.Specflow.csproj", "{CF95188D-0E98-44FA-BB40-D1EA083A09FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Identity.Specflow", "Habitat.Identity.Specflow\Habitat.Identity.Specflow.csproj", "{A9C70681-4676-4EC8-96D4-4E2FC47ECDFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Identity.Specflow", "src\Domain\Identity\Specflow\Habitat.Identity.Specflow.csproj", "{A9C70681-4676-4EC8-96D4-4E2FC47ECDFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Language.Specflow", "Habitat.Language.Specflow\Habitat.Language.Specflow.csproj", "{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Language.Specflow", "src\Domain\Language\Specflow\Habitat.Language.Specflow.csproj", "{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Mdia.Specflow", "Habitat.Mdia.Specflow\Habitat.Mdia.Specflow.csproj", "{98EDAD96-F400-4898-AA14-F63327D17F18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Mdia.Specflow", "src\Domain\Media\Specflow\Habitat.Mdia.Specflow.csproj", "{98EDAD96-F400-4898-AA14-F63327D17F18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Metadata.Specflow", "Habitat.Metadata.Specflow\Habitat.Metadata.Specflow.csproj", "{22B66A8A-9155-4961-B439-7CC2C0665AED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Metadata.Specflow", "src\Domain\Metadata\Specflow\Habitat.Metadata.Specflow.csproj", "{22B66A8A-9155-4961-B439-7CC2C0665AED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Navigation.Specflow", "Habitat.Navigation.Specflow\Habitat.Navigation.Specflow.csproj", "{D4D07783-3669-45A4-9F2D-4CFDA40D2144}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Navigation.Specflow", "src\Domain\Navigation\Specflow\Habitat.Navigation.Specflow.csproj", "{D4D07783-3669-45A4-9F2D-4CFDA40D2144}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.News.Specflow", "Habitat.News.Specflow\Habitat.News.Specflow.csproj", "{5B22786A-92C7-4F00-B678-A0A9A5B6E554}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.News.Specflow", "src\Domain\News\Specflow\Habitat.News.Specflow.csproj", "{5B22786A-92C7-4F00-B678-A0A9A5B6E554}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.PageContent.Specflow", "Habitat.PageContent.Specflow\Habitat.PageContent.Specflow.csproj", "{FE72E154-7858-45BC-AB72-2C55CB8EE996}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.PageContent.Specflow", "src\Domain\PageContent\Specflow\Habitat.PageContent.Specflow.csproj", "{FE72E154-7858-45BC-AB72-2C55CB8EE996}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Search.Specflow", "Habitat.Search.Specflow\Habitat.Search.Specflow.csproj", "{029A386B-9895-4127-A6D3-416EED3D5B16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Search.Specflow", "src\Domain\Search\Specflow\Habitat.Search.Specflow.csproj", "{029A386B-9895-4127-A6D3-416EED3D5B16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Social.Specflow", "Habitat.Social.Specflow\Habitat.Social.Specflow.csproj", "{5E3D01C4-286E-4AD0-96C3-74D0993F890F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Social.Specflow", "src\Domain\Social\Specflow\Habitat.Social.Specflow.csproj", "{5E3D01C4-286E-4AD0-96C3-74D0993F890F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Teasers.Specflow", "Habitat.Teasers.Specflow\Habitat.Teasers.Specflow.csproj", "{7A0D4342-60CC-498F-B0AB-4C19902C7FC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Teasers.Specflow", "src\Domain\Teasers\Specflow\Habitat.Teasers.Specflow.csproj", "{7A0D4342-60CC-498F-B0AB-4C19902C7FC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
