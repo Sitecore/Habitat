@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Habitat.Accounts.Models
+﻿namespace Habitat.Accounts.Models
 {
   public class LoginResult
   {

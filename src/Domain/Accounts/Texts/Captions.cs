@@ -1,26 +1,27 @@
-﻿namespace Habitat.Accounts.Texts
+﻿using Habitat.Framework.SitecoreExtensions.Repositories;
+
+namespace Habitat.Accounts.Texts
 {
   using Sitecore.Globalization;
 
   public static class Captions
   {
-    public static string Email => Translate.Text("Email");
-    public static string E_mail => Translate.Text("E-mail");
+    public static string Email => DictionaryRepository.Get("/Accounts/Captions/Email", "E-mail");
+    
+    public static string Login => DictionaryRepository.Get("/Accounts/Captions/Login", "Login");
 
-    public static string Login => Translate.Text("Login");
+    public static string Logout => DictionaryRepository.Get("/Accounts/Captions/Logout", "Logout");
 
-    public static string Logout => Translate.Text("Logout");
+    public static string Password => DictionaryRepository.Get("/Accounts/Captions/Password", "Password");
 
-    public static string Password => Translate.Text("Password");
+    public static string ConfirmPassword => DictionaryRepository.Get("/Accounts/Captions/ConfirmPassword", "Confirm password");
 
-    public static string ConfirmPassword => Translate.Text("Confirm password");
+    public static string Register => DictionaryRepository.Get("/Accounts/Captions/Register", "Register");
 
-    public static string Register => Translate.Text("Register");
+    public static string ResetPassword => DictionaryRepository.Get("/Accounts/Captions/ResetPassword", "Reset password");
 
-    public static string ResetPassword => Translate.Text("Reset password");
+    public static string ResetPasswordInfo => DictionaryRepository.Get("/Accounts/Captions/ResetPasswordInfo", "The new password will be sent to your e-mail.");
 
-    public static string ResetPasswordInfo => Translate.Text("The new password will be sent to your e-mail.");
-
-    public static string ResetPasswordSuccess => Translate.Text("Your password has been reset.");
+    public static string ResetPasswordSuccess => DictionaryRepository.Get("/Accounts/Captions/ResetPasswordSuccess", "Your password has been reset.");
   }
 }
