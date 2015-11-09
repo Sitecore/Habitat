@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Sitecore.Analytics;
 using Sitecore.Analytics.Model.Entities;
 using Sitecore.Analytics.Tracking;
@@ -12,17 +14,9 @@ namespace Habitat.Demo.Models
     public string Classification => Tracker.DefinitionItems.VisitorClassifications[Tracker.Current.Contact.System.Classification].Header;
     public int EngagementValue => Tracker.Current.Contact.System.Value;
     public Guid Id => Tracker.Current.Contact.ContactId;
-
-    public IContactSystemInfo Per => GetFacet("SystemInfo");
-
-    private IContactSystemInfo GetFacet(string facetName)
+    public IEnumerable<string> Classifications
     {
-      throw new NotImplementedException();
-    }
-
-    private KeyBehaviorCache GetKeyBehaviourCache()
-    {
-      return Tracker.Current.Contact.GetKeyBehaviorCache();
+      get { return Tracker.DefinitionItems.VisitorClassifications.Select(c => c.Header); }
     }
   }
 }

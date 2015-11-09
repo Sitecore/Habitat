@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Habitat.Framework.SitecoreExtensions.Extensions;
 using Habitat.Framework.SitecoreExtensions.Repositories;
 using Sitecore;
 using Sitecore.Analytics;
 using Sitecore.Analytics.Automation.Data;
+using Sitecore.Analytics.Data.Items;
 using Sitecore.Analytics.Tracking;
 using Sitecore.CES.DeviceDetection;
 using Sitecore.Common;
+using Sitecore.Data.Fields;
+using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
+using Sitecore.Resources.Media;
 using Convert = System.Convert;
 
 namespace Habitat.Demo.Models
@@ -18,9 +23,7 @@ namespace Habitat.Demo.Models
     private DeviceInformation _deviceInformation;
     private bool _isDeviceLookupDone;
     public string PageCount => Convert.ToString(Tracker.Current.Interaction.PageCount);
-
     public string EngagementValue => Convert.ToString(Tracker.Current.Interaction.Value);
-
     public bool HasCampaign
     {
       get
@@ -44,14 +47,10 @@ namespace Habitat.Demo.Models
         return campaign?.Name;
       }
     }
-
     public bool HasGeoIp => Tracker.Current.Interaction.GeoData.Latitude.HasValue;
-
     public string City => Tracker.Current.Interaction.HasGeoIpData ? Tracker.Current.Interaction.GeoData.City : null;
-
     public string PostalCode => Tracker.Current.Interaction.HasGeoIpData ? Tracker.Current.Interaction.GeoData.PostalCode : null;
     public DeviceInformation Device => _isDeviceLookupDone ? _deviceInformation : (_deviceInformation = GetDeviceInformation());
-
     private DeviceInformation GetDeviceInformation()
     {
       _isDeviceLookupDone = true;
@@ -73,29 +72,43 @@ namespace Habitat.Demo.Models
       if (!Tracker.IsActive)
         return Enumerable.Empty<PatternMatch>();
 
-      return Enumerable.Empty<PatternMatch>();
-      /*
-      
-      MultilistField profiles = SiteConfiguration.GetSiteConfigurationItem().Fields["Visible Profiles"];
-      foreach (Item visibleProfile in profiles.GetItems())
+      var patternMatches = new List<PatternMatch>();
+      foreach (var visibleProfile in GetSiteProfiles())
       {
-        Item visibleProfileItem = Context.Database.GetItem(visibleProfile.ID);
-        if (visibleProfileItem != null)
-        {
-          // show the pattern match if there is one.
-          var userPattern = Tracker.Current.Interaction.Profiles[visibleProfileItem.Name];
-          // load the details about the matching pattern
-          if (userPattern?.PatternId == null)
-            continue;
-          var matchingPattern = Context.Database.GetItem(userPattern.PatternId.Value.ToID());
-          if (matchingPattern == null)
-            continue;
-          var image = new MediaItem(((ImageField) matchingPattern.Fields["Image"]).MediaItem);
-          var src = StringUtil.EnsurePrefix('/', MediaManager.GetMediaUrl(image));
-          patternMatches.Add(new PatternMatch(visibleProfileItem["Name"], matchingPattern.Name, src));
-        }
+        var matchingPattern = GetMatchingPatternForContact(visibleProfile);
+        if (matchingPattern == null)
+          continue;
+        patternMatches.Add(CreatePatternMatch(matchingPattern, visibleProfile));
       }
-      */
+      return patternMatches;
+    }
+
+    private static PatternMatch CreatePatternMatch(PatternCardItem matchingPattern, ProfileItem visibleProfile)
+    {
+      var image = matchingPattern.Image.MediaItem;
+      var src = StringUtil.EnsurePrefix('/', MediaManager.GetMediaUrl(image));
+      var patternMatch = new PatternMatch(visibleProfile.NameField, matchingPattern.Name, src);
+      return patternMatch;
+    }
+
+    private PatternCardItem GetMatchingPatternForContact(ProfileItem visibleProfile)
+    {
+      var userPattern = Tracker.Current.Interaction.Profiles[visibleProfile.Name];
+      if (userPattern?.PatternId == null)
+        return null;
+      var matchingPattern = Context.Database.GetItem(userPattern.PatternId.Value.ToID());
+      if (matchingPattern == null)
+        return null;
+      return new PatternCardItem(matchingPattern);
+    }
+
+    private IEnumerable<ProfileItem> GetSiteProfiles()
+    {
+      var settingsItem = Sitecore.Context.Site.GetContextItem(Templates.ProfilingSettings.ID);
+      if (settingsItem == null)
+        return Enumerable.Empty<ProfileItem>();
+      MultilistField profiles = settingsItem.Fields[Templates.ProfilingSettings.Fields.SiteProfiles];
+      return profiles.GetItems().Select(i => new ProfileItem(i));
     }
 
     public IEnumerable<PageLink> LoadPages()

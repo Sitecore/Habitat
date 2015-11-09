@@ -595,10 +595,10 @@ th {
 .glyphicon-magnet:before {
   content: "\e112"; }
 
-.glyphicon-chevron-up:before {
+.glyphicon-chevron-up:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title.collapsed .expand-icon:before {
   content: "\e113"; }
 
-.glyphicon-chevron-down:before {
+.glyphicon-chevron-down:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title .expand-icon:before {
   content: "\e114"; }
 
 .glyphicon-retweet:before {
@@ -1204,13 +1204,13 @@ h6, .h6 {
     font-size: 75%; }
 
 h1, .h1 {
-  font-size: 36px; }
+  font-size: 28px; }
 
 h2, .h2 {
-  font-size: 32px; }
+  font-size: 24px; }
 
 h3, .h3 {
-  font-size: 30px; }
+  font-size: 22px; }
 
 h4, .h4 {
   font-size: 22px; }
@@ -1438,7 +1438,9 @@ blockquote {
 
 .blockquote-reverse,
 blockquote.pull-right,
-.page-header-container blockquote.breadcrumb {
+.page-header-container blockquote.breadcrumb,
+#sidebar > .panel-group > .panel > .panel-heading blockquote.stats,
+#sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon {
   padding-right: 15px;
   padding-left: 0;
   border-right: 5px solid #eeeeee;
@@ -1449,22 +1451,22 @@ blockquote.pull-right,
   .blockquote-reverse .newslist > .media-list .media .metadata > .panel-body > .date:before, .newslist > .media-list .media
   .blockquote-reverse .metadata > .panel-body > .date:before,
   .blockquote-reverse .small:before,
-  blockquote.pull-right footer:before, .page-header-container blockquote.breadcrumb footer:before,
-  blockquote.pull-right small:before, .page-header-container blockquote.breadcrumb small:before,
+  blockquote.pull-right footer:before, .page-header-container blockquote.breadcrumb footer:before, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats footer:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon footer:before,
+  blockquote.pull-right small:before, .page-header-container blockquote.breadcrumb small:before, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats small:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon small:before,
   blockquote.pull-right .newslist > .media-list .media .metadata > .panel-body > .date:before, .newslist > .media-list .media
-  blockquote.pull-right .metadata > .panel-body > .date:before, .page-header-container blockquote.breadcrumb .newslist > .media-list .media .metadata > .panel-body > .date:before, .newslist > .media-list .media .page-header-container blockquote.breadcrumb .metadata > .panel-body > .date:before,
-  blockquote.pull-right .small:before, .page-header-container blockquote.breadcrumb .small:before {
+  blockquote.pull-right .metadata > .panel-body > .date:before, .page-header-container blockquote.breadcrumb .newslist > .media-list .media .metadata > .panel-body > .date:before, .newslist > .media-list .media .page-header-container blockquote.breadcrumb .metadata > .panel-body > .date:before, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .newslist > .media-list .media .metadata > .panel-body > .date:before, .newslist > .media-list .media #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .metadata > .panel-body > .date:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .newslist > .media-list .media .metadata > .panel-body > .date:before, .newslist > .media-list .media #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .metadata > .panel-body > .date:before,
+  blockquote.pull-right .small:before, .page-header-container blockquote.breadcrumb .small:before, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .small:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .small:before {
     content: ''; }
   .blockquote-reverse footer:after,
   .blockquote-reverse small:after,
   .blockquote-reverse .newslist > .media-list .media .metadata > .panel-body > .date:after, .newslist > .media-list .media
   .blockquote-reverse .metadata > .panel-body > .date:after,
   .blockquote-reverse .small:after,
-  blockquote.pull-right footer:after, .page-header-container blockquote.breadcrumb footer:after,
-  blockquote.pull-right small:after, .page-header-container blockquote.breadcrumb small:after,
+  blockquote.pull-right footer:after, .page-header-container blockquote.breadcrumb footer:after, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats footer:after, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon footer:after,
+  blockquote.pull-right small:after, .page-header-container blockquote.breadcrumb small:after, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats small:after, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon small:after,
   blockquote.pull-right .newslist > .media-list .media .metadata > .panel-body > .date:after, .newslist > .media-list .media
-  blockquote.pull-right .metadata > .panel-body > .date:after, .page-header-container blockquote.breadcrumb .newslist > .media-list .media .metadata > .panel-body > .date:after, .newslist > .media-list .media .page-header-container blockquote.breadcrumb .metadata > .panel-body > .date:after,
-  blockquote.pull-right .small:after, .page-header-container blockquote.breadcrumb .small:after {
+  blockquote.pull-right .metadata > .panel-body > .date:after, .page-header-container blockquote.breadcrumb .newslist > .media-list .media .metadata > .panel-body > .date:after, .newslist > .media-list .media .page-header-container blockquote.breadcrumb .metadata > .panel-body > .date:after, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .newslist > .media-list .media .metadata > .panel-body > .date:after, .newslist > .media-list .media #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .metadata > .panel-body > .date:after, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .newslist > .media-list .media .metadata > .panel-body > .date:after, .newslist > .media-list .media #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .metadata > .panel-body > .date:after,
+  blockquote.pull-right .small:after, .page-header-container blockquote.breadcrumb .small:after, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .small:after, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .small:after {
     content: '\00A0 \2014'; }
 
 address {
@@ -3208,7 +3210,7 @@ tbody.collapse.in {
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box; }
-  .dropdown-menu.pull-right, .page-header-container .dropdown-menu.breadcrumb {
+  .dropdown-menu.pull-right, .page-header-container .dropdown-menu.breadcrumb, #sidebar > .panel-group > .panel > .panel-heading .dropdown-menu.stats, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title .dropdown-menu.expand-icon {
     right: 0;
     left: auto; }
   .dropdown-menu .divider {
@@ -3276,7 +3278,7 @@ tbody.collapse.in {
   top: 0;
   z-index: 990; }
 
-.pull-right > .dropdown-menu, .page-header-container .breadcrumb > .dropdown-menu {
+.pull-right > .dropdown-menu, .page-header-container .breadcrumb > .dropdown-menu, #sidebar > .panel-group > .panel > .panel-heading .stats > .dropdown-menu, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title .expand-icon > .dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -4535,12 +4537,15 @@ a.thumbnail.active {
 
 .media-right,
 .media > .pull-right, .page-header-container
-.media > .breadcrumb {
+.media > .breadcrumb, #sidebar > .panel-group > .panel > .panel-heading
+.media > .stats, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title
+.media > .expand-icon {
   padding-left: 10px; }
 
 .media-left,
 .media > .pull-left, .page-header-container
-.media > .section-title {
+.media > .section-title, #sidebar > .panel-group > .panel > .panel-heading
+.media > .panel-title {
   padding-right: 10px; }
 
 .media-left,
@@ -5653,10 +5658,10 @@ button.close {
   margin-left: auto;
   margin-right: auto; }
 
-.pull-right, .page-header-container .breadcrumb {
+.pull-right, .page-header-container .breadcrumb, #sidebar > .panel-group > .panel > .panel-heading .stats, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title .expand-icon {
   float: right !important; }
 
-.pull-left, .page-header-container .section-title {
+.pull-left, .page-header-container .section-title, #sidebar > .panel-group > .panel > .panel-heading .panel-title {
   float: left !important; }
 
 .hide {
@@ -5871,7 +5876,129 @@ a {
   transition: all 0.2s ease-out 0s; }
 
 /****************
-    Sidebar
+    Buttons
+****************/
+.btn {
+  font-size: 16px;
+  text-transform: uppercase; }
+
+.btn-lg, .btn-group-lg > .btn {
+  font-size: 18px; }
+
+.btn-default:hover, .btn-default:focus {
+  background-color: #125687;
+  color: #fff; }
+
+/****************
+    Page Header
+****************/
+.page-header-container {
+  background-color: #eeeeee;
+  padding: 25px 0;
+  margin-bottom: 24px; }
+  .page-header-container .page-header {
+    margin: 0;
+    border: 0; }
+  .page-header-container .section-title {
+    text-transform: uppercase; }
+    .page-header-container .section-title h1 {
+      font-size: 22px;
+      margin: 0;
+      padding: 0; }
+  .page-header-container .breadcrumb {
+    margin: 0;
+    padding: 0;
+    background-color: inherit; }
+
+/****************
+    FOOTER
+****************/
+footer {
+  background-color: #f5f5f5;
+  padding-top: 24px; }
+  footer .prefooter .nav-pills > li {
+    width: 49%; }
+
+.article {
+  margin-bottom: 24px; }
+
+.teaser {
+  margin-bottom: 48px; }
+  .teaser.thumbnail > .caption h1, .teaser.thumbnail > .caption h2, .teaser.thumbnail > .caption h3, .teaser.thumbnail > .caption h1, .teaser.thumbnail > .caption h2, .teaser.thumbnail > .caption h3, .teaser.thumbnail > .caption h1, .teaser.thumbnail > .caption h2, .teaser.thumbnail > .caption h3 {
+    text-align: center;
+    text-transform: uppercase; }
+  .teaser.thumbnail > .caption hr {
+    border: none;
+    width: 30px;
+    height: 3px;
+    margin: 0 auto 30px;
+    background: #125687 none repeat scroll 0 0; }
+  .teaser.thumbnail > .caption p {
+    text-align: center; }
+  .teaser.panel {
+    border: none;
+    box-shadow: none; }
+    .teaser.panel .panel-heading {
+      padding: 0;
+      background: none;
+      border: none; }
+      .teaser.panel .panel-heading h1, .teaser.panel .panel-heading h2, .teaser.panel .panel-heading h3, .teaser.panel .panel-heading h1, .teaser.panel .panel-heading h2, .teaser.panel .panel-heading h3, .teaser.panel .panel-heading h1, .teaser.panel .panel-heading h2, .teaser.panel .panel-heading h3 {
+        margin-top: 0;
+        margin-bottom: 24px;
+        text-transform: uppercase; }
+    .teaser.panel .panel-body {
+      padding: 0;
+      background: none;
+      border: none; }
+    .teaser.panel .panel-footer {
+      padding: 0;
+      background: none;
+      border: none;
+      margin-top: 24px; }
+  .teaser h1 a, .teaser h2 a, .teaser h3 a, .teaser h1 a, .teaser h2 a, .teaser h3 a, .teaser h1 a, .teaser h2 a, .teaser h3 a {
+    color: #333333; }
+  .teaser h1 a:hover, .teaser h1 a:focus, .teaser h2 a:hover, .teaser h2 a:focus, .teaser h3 a:hover, .teaser h3 a:focus, .teaser h1 a:hover, .teaser h1 a:focus, .teaser h2 a:hover, .teaser h2 a:focus, .teaser h3 a:hover, .teaser h3 a:focus, .teaser h1 a:hover, .teaser h1 a:focus, .teaser h2 a:hover, .teaser h2 a:focus, .teaser h3 a:hover, .teaser h3 a:focus {
+    color: #125687;
+    text-decoration: none; }
+
+#sidebar .panel {
+  border: 0; }
+
+#sidebar .panel-title {
+  font-weight: 200;
+  font-size: 20px;
+  display: block;
+  width: 100%; }
+
+#sidebar > .panel-group > .panel > .panel-heading {
+  height: 40px; }
+  #sidebar > .panel-group > .panel > .panel-heading .panel-title {
+    text-transform: uppercase; }
+  #sidebar > .panel-group > .panel > .panel-heading .stats {
+    font-size: 14px;
+    color: #eeeeee;
+    vertical-align: top; }
+    #sidebar > .panel-group > .panel > .panel-heading .stats .badge {
+      font-size: 12px;
+      vertical-align: top;
+      background-color: #eeeeee; }
+    #sidebar > .panel-group > .panel > .panel-heading .stats .glyphicon {
+      padding-left: 2px;
+      padding-right: 4px; }
+
+#sidebar > .panel-group > .panel .panel-group {
+  margin-bottom: 5px; }
+  #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title .expand-icon {
+    color: #777777;
+    font-size: 14px;
+    display: block;
+    padding-top: 5px; }
+  #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title .badge {
+    background-color: #777777;
+    padding-bottom: 2px; }
+
+/****************
+  Sidebar display
 ****************/
 #sidebar-wrapper {
   z-index: 1000;
@@ -5900,41 +6027,10 @@ a {
     color: #1e8fe1; }
   #sidebar-wrapper.toggled {
     right: 250px; }
-
-/****************
-    Page Header
-****************/
-.page-header-container {
-  background-color: #eeeeee;
-  padding: 25px 0;
-  margin-bottom: 24px; }
-  .page-header-container .page-header {
-    margin: 0;
-    border: 0; }
-  .page-header-container .section-title {
-    text-transform: uppercase; }
-    .page-header-container .section-title h1 {
-      font-size: 22px;
-      margin: 0;
-      padding: 0; }
-  .page-header-container .breadcrumb {
-    margin: 0;
-    padding: 0;
-    background-color: inherit; }
-
-/****************
-    Buttons
-****************/
-.btn {
-  font-size: 16px;
-  text-transform: uppercase; }
-
-.btn-lg, .btn-group-lg > .btn {
-  font-size: 18px; }
-
-.btn-default:hover, .btn-default:focus {
-  background-color: #125687;
-  color: #fff; }
+    #sidebar-wrapper.toggled #sidebar {
+      -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); }
 
 /****************
     NAVIGATION
@@ -6025,15 +6121,6 @@ a {
       display: block; } }
 
 /****************
-    FOOTER
-****************/
-footer {
-  background-color: #f5f5f5;
-  padding-top: 24px; }
-  footer .prefooter .nav-pills > li {
-    width: 49%; }
-
-/****************
     MEDIA
 ****************/
 .carousel {
@@ -6072,51 +6159,6 @@ footer {
     color: inherit; }
   .lightbox.thumbnail a:hover .overlay {
     color: silver; }
-
-/****************
-    Standard Content
-****************/
-.article {
-  margin-bottom: 24px; }
-
-.teaser {
-  margin-bottom: 48px; }
-  .teaser.thumbnail > .caption h1, .teaser.thumbnail > .caption h2, .teaser.thumbnail > .caption h3, .teaser.thumbnail > .caption h1, .teaser.thumbnail > .caption h2, .teaser.thumbnail > .caption h3, .teaser.thumbnail > .caption h1, .teaser.thumbnail > .caption h2, .teaser.thumbnail > .caption h3 {
-    text-align: center;
-    text-transform: uppercase; }
-  .teaser.thumbnail > .caption hr {
-    border: none;
-    width: 30px;
-    height: 3px;
-    margin: 0 auto 30px;
-    background: #125687 none repeat scroll 0 0; }
-  .teaser.thumbnail > .caption p {
-    text-align: center; }
-  .teaser.panel {
-    border: none;
-    box-shadow: none; }
-    .teaser.panel .panel-heading {
-      padding: 0;
-      background: none;
-      border: none; }
-      .teaser.panel .panel-heading h1, .teaser.panel .panel-heading h2, .teaser.panel .panel-heading h3, .teaser.panel .panel-heading h1, .teaser.panel .panel-heading h2, .teaser.panel .panel-heading h3, .teaser.panel .panel-heading h1, .teaser.panel .panel-heading h2, .teaser.panel .panel-heading h3 {
-        margin-top: 0;
-        margin-bottom: 24px;
-        text-transform: uppercase; }
-    .teaser.panel .panel-body {
-      padding: 0;
-      background: none;
-      border: none; }
-    .teaser.panel .panel-footer {
-      padding: 0;
-      background: none;
-      border: none;
-      margin-top: 24px; }
-  .teaser h1 a, .teaser h2 a, .teaser h3 a, .teaser h1 a, .teaser h2 a, .teaser h3 a, .teaser h1 a, .teaser h2 a, .teaser h3 a {
-    color: #333333; }
-  .teaser h1 a:hover, .teaser h1 a:focus, .teaser h2 a:hover, .teaser h2 a:focus, .teaser h3 a:hover, .teaser h3 a:focus, .teaser h1 a:hover, .teaser h1 a:focus, .teaser h2 a:hover, .teaser h2 a:focus, .teaser h3 a:hover, .teaser h3 a:focus, .teaser h1 a:hover, .teaser h1 a:focus, .teaser h2 a:hover, .teaser h2 a:focus, .teaser h3 a:hover, .teaser h3 a:focus {
-    color: #125687;
-    text-decoration: none; }
 
 /********************
     NEWS

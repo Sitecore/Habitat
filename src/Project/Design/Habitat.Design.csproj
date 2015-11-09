@@ -183,6 +183,12 @@
     <Content Include="sass\bootstrap\bootstrap\_variables.scss" />
     <Content Include="sass\bootstrap\bootstrap\_wells.scss" />
     <Content Include="sass\bootstrap\_bootstrap.scss" />
+    <Content Include="sass\News.scss" />
+    <Content Include="sass\Demo.scss" />
+    <Content Include="sass\Navigation.scss" />
+    <Content Include="sass\Media.scss" />
+    <Content Include="sass\PageContent.scss" />
+    <Content Include="sass\Teasers.scss" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
