@@ -141,6 +141,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Social.Specflow", "src\Domain\Social\Specflow\Habitat.Social.Specflow.csproj", "{5E3D01C4-286E-4AD0-96C3-74D0993F890F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Teasers.Specflow", "src\Domain\Teasers\Specflow\Habitat.Teasers.Specflow.csproj", "{7A0D4342-60CC-498F-B0AB-4C19902C7FC8}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Demo", "src\Domain\Demo\Habitat.Demo.csproj", "{4DD516F2-D9E5-4775-B840-E00A71DD7E87}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{CA21CE04-607F-4AF6-8A70-3F1E82C42B11}"
