@@ -1,22 +1,19 @@
 ﻿namespace Habitat.Accounts.Repositories
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Web;
   using System.Web.Security;
   using Models;
   using Sitecore;
   using Sitecore.Diagnostics;
   using Sitecore.Security.Accounts;
   using Sitecore.Security.Authentication;
+
   public class AccountRepository : IAccountRepository
   {
     public bool Exists(string userName)
     {
-      var domainName = Context.Domain.GetFullName(userName);
+      var fullName = Context.Domain.GetFullName(userName);
 
-      return User.Exists(domainName);
+      return User.Exists(fullName);
     }
     
     public bool Login(string userName, string password)
@@ -46,13 +43,18 @@
     public void RegisterUser(RegistrationInfo registrationInfo)
     {
       Assert.ArgumentNotNull(registrationInfo, nameof(registrationInfo));
-      Assert.ArgumentNotNullOrEmpty(registrationInfo.Email, nameof(registrationInfo.Email));
-      Assert.ArgumentNotNullOrEmpty(registrationInfo.Password, nameof(registrationInfo.Password));
-      Assert.ArgumentNotNullOrEmpty(registrationInfo.ConfirmPassword, nameof(registrationInfo.ConfirmPassword));
+      Assert.ArgumentNotNullOrEmpty(registrationInfo.Email, "registrationInfo.Email");
+      Assert.ArgumentNotNullOrEmpty(registrationInfo.Password, "registrationInfo.Password");
+      Assert.ArgumentNotNullOrEmpty(registrationInfo.ConfirmPassword, "registrationInfo.ConfirmPassword");
 
-      var domainName = Context.Domain.GetFullName(registrationInfo.Email);
-      Membership.CreateUser(domainName, registrationInfo.Password, registrationInfo.Email);
-      AuthenticationManager.Login(domainName, registrationInfo.Password, true);
+      var fullName = Context.Domain.GetFullName(registrationInfo.Email);
+      Assert.IsNotNullOrEmpty(fullName,"Can't retrieve full userName");
+
+      var user = User.Create(fullName, registrationInfo.Password);
+      user.Profile.Email = registrationInfo.Email;
+      user.Profile.Save();
+
+      AuthenticationManager.Login(user);
     }
   }
 }

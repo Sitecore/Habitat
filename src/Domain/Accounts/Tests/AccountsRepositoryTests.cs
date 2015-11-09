@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Security;
 using FluentAssertions;
@@ -18,6 +19,7 @@ using Sitecore.FakeDb.AutoFixture;
 using Sitecore.FakeDb.Security.Accounts;
 using Sitecore.FakeDb.Sites;
 using Sitecore.Globalization;
+using Sitecore.Security.Accounts;
 using Sitecore.Security.Authentication;
 using Sitecore.Security.Domains;
 using Sitecore.Shell.Framework.Commands.Masters;
@@ -101,31 +103,38 @@ namespace Habitat.Accounts.Tests
     }
 
     [Theory, AutoDbData]
-    public void RegisterShouldCreateUserWithEmailAndPassword(Mock<FakeMembershipUser> user, Mock<MembershipProvider> membershipProvider, RegistrationInfo registrationInfo, AccountRepository repository)
+    public void RegisterShouldCreateUserWithEmailAndPassword(Mock<FakeMembershipUser> user, Mock<MembershipProvider> membershipProvider, Mock<AuthenticationProvider> authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository)
     {
+      user.Setup(x => x.ProviderName).Returns("fake");
+      user.Setup(x => x.UserName).Returns("name");
       MembershipCreateStatus status;
       membershipProvider.Setup(x => x.CreateUser(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<object>(), out status)).Returns(user.Object);
-
-      using (new Switcher<Domain, Domain>(new Domain("somedomain")))
-      using (new Sitecore.FakeDb.Security.Web.MembershipSwitcher(membershipProvider.Object))
-      {
-        repository.RegisterUser(registrationInfo);
-        membershipProvider.Verify(x => x.CreateUser($@"somedomain\{registrationInfo.Email}", registrationInfo.Password, registrationInfo.Email, It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<object>(), out status), Times.Once());
-      }
-    }
-
-    [Theory, AutoDbData]
-    public void RegisterShouldCreateLoginUser(Mock<FakeMembershipUser> user, Mock<MembershipProvider> membershipProvider, Mock<AuthenticationProvider> authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository)
-    {
-      MembershipCreateStatus status;
-      membershipProvider.Setup(x => x.CreateUser(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<object>(), out status)).Returns(user.Object);
+      membershipProvider.Setup(x => x.GetUser(It.IsAny<string>(), It.IsAny<bool>())).Returns(user.Object);
 
       using (new Switcher<Domain, Domain>(new Domain("somedomain")))
       using (new Sitecore.FakeDb.Security.Web.MembershipSwitcher(membershipProvider.Object))
       using (new Sitecore.Security.Authentication.AuthenticationSwitcher(authenticationProvider.Object))
       {
         repository.RegisterUser(registrationInfo);
-        authenticationProvider.Verify(x => x.Login($@"somedomain\{registrationInfo.Email}", registrationInfo.Password, It.IsAny<bool>()));
+        membershipProvider.Verify(x => x.CreateUser($@"somedomain\{registrationInfo.Email}", registrationInfo.Password, It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<object>(), out status), Times.Once());
+      }
+    }
+
+    [Theory, AutoDbData]
+    public void RegisterShouldCreateLoginUser(Mock<FakeMembershipUser> user, Mock<MembershipProvider> membershipProvider, Mock<AuthenticationProvider> authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository)
+    {
+      user.Setup(x => x.ProviderName).Returns("fake");
+      user.Setup(x => x.UserName).Returns("name");
+      MembershipCreateStatus status;
+      membershipProvider.Setup(x => x.CreateUser(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<object>(), out status)).Returns(user.Object);
+      membershipProvider.Setup(x => x.GetUser(It.IsAny<string>(), It.IsAny<bool>())).Returns(user.Object);
+
+      using (new Switcher<Domain, Domain>(new Domain("somedomain")))
+      using (new Sitecore.FakeDb.Security.Web.MembershipSwitcher(membershipProvider.Object))
+      using (new Sitecore.Security.Authentication.AuthenticationSwitcher(authenticationProvider.Object))
+      {
+        repository.RegisterUser(registrationInfo);
+        authenticationProvider.Verify(x => x.Login(It.Is<User>(u=>u.Name == $@"somedomain\{registrationInfo.Email}")));
       }
     }
   }
