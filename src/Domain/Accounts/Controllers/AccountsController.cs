@@ -68,9 +68,12 @@ namespace Habitat.Accounts.Controllers
     [HttpGet]
     public ActionResult Login()
     {
-      if (Context.User.IsAuthenticated)
+      if (Context.PageMode.IsNormal)
       {
-        this.Response.Redirect("/");
+        if (Context.User.IsAuthenticated)
+        {
+          this.Response.Redirect("/");
+        }
       }
 
       return this.View();
