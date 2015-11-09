@@ -1,17 +1,10 @@
 ﻿namespace Habitat.Accounts.Controllers
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Web;
-  using System.Net.Http;
-  using System.Net.Http.Headers;
-  using System.Text;
   using System.Web.Http;
-  using System.Web.Http.Results;
-  using Habitat.Accounts.Models;
-  using Habitat.Accounts.Repositories;
+  using Models;
+  using Repositories;
   using Sitecore.Globalization;
+
   public class AccountsApiController: ApiController
   {
     private readonly IAccountRepository _accountsRepository;

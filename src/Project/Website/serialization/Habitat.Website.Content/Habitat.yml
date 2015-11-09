@@ -22,6 +22,12 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20150824T171748Z
+    - ID: 2a84eca4-68bb-4451-b4ac-98ea71a5a3dc
+      # SiteProfiles
+      Type: Multilist
+      Value: |
+        {BA06B827-C6F2-4748-BD75-AA178B770E83}
+        {B5BDEE45-C945-476F-9EE6-3B8A9255C17E}
     - ID: 365254c4-1c1c-493a-9710-671574717898
       # FogotPasswordMailTemplate
       Value: Forgot Password Mail

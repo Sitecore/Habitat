@@ -1,11 +1,12 @@
 ﻿namespace Habitat.Accounts.Repositories
 {
   using System.Web.Security;
-  using Models;
+  using Habitat.Accounts.Models;
   using Sitecore;
   using Sitecore.Diagnostics;
   using Sitecore.Security.Accounts;
   using Sitecore.Security.Authentication;
+  using Sitecore.Security.Domains;
 
   public class AccountRepository : IAccountRepository
   {
@@ -19,13 +20,13 @@
     public bool Login(string userName, string password)
     {
       string accountName = string.Empty;
-      var domain = Sitecore.Security.Domains.Domain.GetDomain("extranet");
+      var domain = Sitecore.Context.Site.Domain;
       if (domain != null)
       {
         accountName = domain.GetFullName(userName);
       }            
 
-      return Sitecore.Security.Authentication.AuthenticationManager.Login(accountName, password);
+      return AuthenticationManager.Login(accountName, password);
     }
 
     public void Logout()

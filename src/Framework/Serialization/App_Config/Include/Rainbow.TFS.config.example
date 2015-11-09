@@ -1,0 +1,21 @@
+<!--
+	Rainbow.TFS.config.example
+
+	This file configures the Rainbow serialization library to generate file names that are compliant with Team Foundation Server,
+	which does not like '$' in file names (e.g. a branch template usually has an item named '$name')
+	
+	This configuration ships disabled, in order to maintain backwards compatibility with items serialized with Rainbow 1.0.0 and
+	enable maximum item name readability for those lucky enough to not be using TFS.
+	
+	http://github.com/kamsar/Rainbow
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+	<sitecore>
+		<settings>
+			<!-- see Rainbow.config for docs, if this isn't clear -->
+			<setting name="Rainbow.SFS.ExtraInvalidFilenameCharacters">
+				<patch:attribute name="value">$</patch:attribute>
+			</setting>
+		</settings>
+	</sitecore>
+</configuration>
