@@ -31,7 +31,7 @@ namespace Habitat.Navigation.Repositories
         {
             var items = new NavigationItems
             {
-                Items = GetNavigationHierarchy().Reverse().ToList()
+                Items = GetNavigationHierarchy(true).Reverse().ToList()
             };
 
             for (var i = 0; i < items.Items.Count - 1; i++)
@@ -59,9 +59,9 @@ namespace Habitat.Navigation.Repositories
             navItems?.Items?.Insert(0, navigationItem);
         }
 
-        private bool IncludeInNavigation(Item item)
+        private bool IncludeInNavigation(Item item, bool forceShowInMenu = false)
         {
-            return item.IsDerived(Templates.Navigable.ID) && MainUtil.GetBool(item[Templates.Navigable.Fields.ShowInNavigation], false);
+            return item.IsDerived(Templates.Navigable.ID) && (forceShowInMenu || MainUtil.GetBool(item[Templates.Navigable.Fields.ShowInNavigation], false));
         }
 
         public NavigationItem GetSecondaryMenuItem()
@@ -91,12 +91,12 @@ namespace Habitat.Navigation.Repositories
             return activePrimaryMenuItem?.Item;
         }
 
-        private IEnumerable<NavigationItem> GetNavigationHierarchy()
+        private IEnumerable<NavigationItem> GetNavigationHierarchy(bool forceShowInMenu = false)
         {
             var item = ContextItem;
             while (item != null)
             {
-                if (IncludeInNavigation(item))
+                if (IncludeInNavigation(item, forceShowInMenu))
                     yield return CreateNavigationItem(item, 0);
 
                 item = item.Parent;
@@ -119,7 +119,7 @@ namespace Habitat.Navigation.Repositories
         {
             if (level > maxLevel || !parentItem.HasChildren)
                 return null;
-            var childItems = parentItem.Children.Where(IncludeInNavigation).Select(i => CreateNavigationItem(i, level, maxLevel));
+            var childItems = parentItem.Children.Where(item => IncludeInNavigation(item)).Select(i => CreateNavigationItem(i, level, maxLevel));
             return new NavigationItems
             {
                 Items = childItems.ToList()

@@ -5,7 +5,7 @@
 	to only load items that are new on disk into Sitecore. This can be handy if you want to only deploy some content items
 	once and thereafter cede control over them to content editors.
 
-	Configuration definition patches should be present on all environments Unicorn is present on.
+	Enabled configuration definition patches should be present on all environments Unicorn is present on.
 
 	See Unicorn.config for commentary on how configurations operate, or https://github.com/kamsar/Unicorn/blob/master/README.md
 -->
@@ -24,9 +24,10 @@
 					<evaluator type="Unicorn.Evaluators.NewItemOnlyEvaluator, Unicorn" singleInstance="true"/>
 
 					<!--
-						Note: when using custom evaluators keep transparent sync OFF for those configurations (the line below).
-						The transparent sync operates by reading from the serialization store directly.
+						Note: when using custom evaluators keep Transparent Sync OFF for those configurations (the line below).
+						Transparent Sync operates by reading from the serialization store directly.
 						In other words transparent sync always acts like SerializedAsMasterEvaluator because disk is LITERALLY the master.
+						See https://github.com/kamsar/Unicorn/wiki/The-Transparent-Sync-Guide
 					-->
 					<dataProviderConfiguration enableTransparentSync="false" type="Unicorn.Data.DataProvider.DefaultUnicornDataProviderConfiguration, Unicorn" />
 
