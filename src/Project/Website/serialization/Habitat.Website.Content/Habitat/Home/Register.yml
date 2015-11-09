@@ -14,6 +14,7 @@ Languages:
       Value: |
         <r xmlns:p="p" xmlns:s="s" p:p="1">
           <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{41F269C4-BEC1-4ECA-ACB4-4CF63697F531}" p:before="r[@uid='{D67920C6-8EED-4CB4-9A58-8AB11B1E9773}']" s:id="{B683EFB4-161D-4FDF-9A90-CC8637766C9C}" s:ph="/page-layout/col-narrow-2_3fedd2ab-9a72-49c5-a3c8-e835a17df069" />
             <r uid="{D67920C6-8EED-4CB4-9A58-8AB11B1E9773}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:id="{B683EFB4-161D-4FDF-9A90-CC8637766C9C}" s:ph="/page-layout/col-centered-1" />
           </d>
         </r>
