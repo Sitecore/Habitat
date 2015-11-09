@@ -105,6 +105,7 @@
     <Content Include="fonts\Bootstrap\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\Bootstrap\glyphicons-halflings-regular.woff2" />
     <Content Include="packages.config" />
+    <Content Include="scripts\Design\Habitat.Design.js" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <None Include="compilerconfig.json" />
     <Content Include="compilerconfig.json.defaults">
@@ -182,6 +183,13 @@
     <Content Include="sass\bootstrap\bootstrap\_variables.scss" />
     <Content Include="sass\bootstrap\bootstrap\_wells.scss" />
     <Content Include="sass\bootstrap\_bootstrap.scss" />
+    <Content Include="sass\News.scss" />
+    <Content Include="sass\Demo.scss" />
+    <Content Include="sass\Navigation.scss" />
+    <Content Include="sass\Media.scss" />
+    <Content Include="sass\PageContent.scss" />
+    <Content Include="sass\Teasers.scss" />
+    <Content Include="sass\Accounts.scss" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

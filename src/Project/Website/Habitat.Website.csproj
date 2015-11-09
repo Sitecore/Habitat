@@ -165,6 +165,7 @@
     <Content Include="App_Config\Include\Habitat\Habitat.Website.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="favicon.ico" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Web.config" />
