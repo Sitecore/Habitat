@@ -129,10 +129,11 @@ namespace Habitat.Accounts.Tests
     }
 
     [Theory, AutoDbData]
-    public void ForgotPasswordShouldReturnSuccesViewResult(PasswordResetInfo model, [Frozen]Mock<IAccountRepository> repo, [NoAutoProperties]AccountsController controller)
+    public void ForgotPasswordShouldReturnSuccesViewResult(PasswordResetInfo model, Mock<IAccountRepository> repo, Mock<INotificationService> ns)
     {
       repo.Setup(x => x.RestorePassword(It.IsAny<string>())).Returns("new password");
       repo.Setup(x => x.Exists(It.IsAny<string>())).Returns(true);
+      var controller = new AccountsController(repo.Object, ns.Object);
       var result = controller.ForgotPassword(model);
       result.Should().BeOfType<ViewResult>().Which.ViewName.Should().BeEquivalentTo("forgotpasswordsuccess");
     }
