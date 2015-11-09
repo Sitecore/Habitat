@@ -16,7 +16,7 @@ namespace Habitat.Accounts.Controllers
     private readonly IAccountRepository accountRepository;
     private readonly INotificationService notificationService;
 
-    public AccountsController() : this(new AccountRepository(), new NotificationService())
+    public AccountsController() : this(new AccountRepository(), new NotificationService(new AccountsSettingsService()))
     {
     }
 
