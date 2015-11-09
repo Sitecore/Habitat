@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Security;
 using FluentAssertions;
@@ -19,6 +20,7 @@ using Sitecore.FakeDb.AutoFixture;
 using Sitecore.FakeDb.Security.Accounts;
 using Sitecore.FakeDb.Sites;
 using Sitecore.Globalization;
+using Sitecore.Security.Accounts;
 using Sitecore.Security.Authentication;
 using Sitecore.Security.Domains;
 using Sitecore.Shell.Framework.Commands.Masters;
@@ -122,6 +124,8 @@ namespace Habitat.Accounts.Tests
     [Theory, AutoDbData]
     public void RegisterShouldCreateUserWithEmailAndPassword(FakeMembershipUser user, MembershipProvider membershipProvider, RegistrationInfo registrationInfo, AccountRepository repository)
     {
+      user.Setup(x => x.ProviderName).Returns("fake");
+      user.Setup(x => x.UserName).Returns("name");
       MembershipCreateStatus status;
       membershipProvider.CreateUser(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>(), Arg.Any<bool>(), Arg.Any<object>(), out status).Returns(user);
 
@@ -136,6 +140,8 @@ namespace Habitat.Accounts.Tests
     [Theory, AutoDbData]
     public void RegisterShouldCreateLoginUser(FakeMembershipUser user, MembershipProvider membershipProvider, AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository)
     {
+      user.Setup(x => x.ProviderName).Returns("fake");
+      user.Setup(x => x.UserName).Returns("name");
       MembershipCreateStatus status;
       membershipProvider.CreateUser(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>(), Arg.Any<bool>(), Arg.Any<object>(), out status).Returns(user);
 
