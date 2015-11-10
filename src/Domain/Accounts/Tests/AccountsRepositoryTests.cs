@@ -175,5 +175,18 @@
         }
       }
     }
+
+    [Theory]
+    [AutoDbData]
+    public void LogoutShouldLogoutUser(User user, MembershipProvider membershipProvider, RegistrationInfo registrationInfo, AccountRepository repository)
+    {
+      var authenticationProvider = Substitute.For<AuthenticationProvider>();
+      authenticationProvider.GetActiveUser().Returns(user);
+      using (new AuthenticationSwitcher(authenticationProvider))
+      {
+          repository.Logout();
+          authenticationProvider.Received(1).Logout();
+      }
+    }
   }
 }

@@ -111,6 +111,113 @@
       }
     }
 
+    [Theory]
+    [AutoDbData]
+    public void LoginShouldReturnViewWithoutModel([Frozen] IAccountRepository repo, [NoAutoProperties] AccountsController controller)
+    {
+      var fakeSite = new FakeSiteContext(new StringDictionary
+      {
+        {
+          "displayMode", "normal"
+        }
+      }) as SiteContext;
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        var result = controller.Login();
+        result.Should().BeOfType<ViewResult>().Which.Model.Should().BeNull();
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void LoginShouldRedirectToReturnUrlIfLoggedIn([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
+    {
+      var controller = new AccountsController(repo, service, accountSetting);
+      repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x=>true);
+      var result = controller.Login(info);
+      result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be(info.ReturnUrl);
+    }
+
+
+    [Theory]
+    [AutoDbData]
+    public void LoginShouldRedirectToRootIfReturnUrlNotSet(Database db, [Content] DbItem item, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
+    {
+      accountSetting.GetPageLinkOrDefault(Arg.Any<Item>(), Arg.Any<ID>(), Arg.Any<Item>()).Returns("/");
+      var fakeSite = new FakeSiteContext(new StringDictionary
+      {
+        {
+          "rootPath", "/sitecore/content"
+        },
+        {
+          "startItem", item.Name
+        }
+      }) as SiteContext;
+      fakeSite.Database = db;
+      Language.Current = Language.Invariant;
+
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        info.ReturnUrl = null;
+        var controller = new AccountsController(repo, service, accountSetting);
+        repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => true);
+        var result = controller.Login(info);
+        result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void LoginShouldAddModelStateErrorIfNotLoggedIn(Database db, [Content] DbItem item, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, [Frozen]IAccountsSettingsService accountSetting)
+    {
+      accountSetting.GetPageLinkOrDefault(Arg.Any<Item>(), Arg.Any<ID>(), Arg.Any<Item>()).Returns("/");
+      var fakeSite = new FakeSiteContext(new StringDictionary
+      {
+        {
+          "rootPath", "/sitecore/content"
+        },
+        {
+          "startItem", item.Name
+        }
+      }) as SiteContext;
+      fakeSite.Database = db;
+      Language.Current = Language.Invariant;
+
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        info.ReturnUrl = null;
+        info.Email = null;
+        info.Password = null;
+        var controller = new AccountsController(repo, service, accountSetting);
+        repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => true);
+        var result = controller.Login(info);
+        result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void LoginShouldReturnViewModelIfModelStateNotValid([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
+    {
+      var controller = new AccountsController(repo, service, accountSetting);
+      controller.ModelState.AddModelError("Error", "Error");
+      var result = controller.Login(info);
+      result.Should().BeOfType<ViewResult>();
+    }
+
+
+
+
+    [Theory]
+    [AutoDbData]
+    public void ShouldAddErrorToModelStateIfNotLoggedIn([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
+    {
+      repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => false);
+      var controller = new AccountsController(repo, service, accountSetting);
+      var result = controller.Login(info);
+      controller.ModelState.IsValid.Should().BeFalse();
+      controller.ModelState.Keys.Should().Contain("invalidCredentials");
+    }
 
     [Theory]
     [AutoDbData]
@@ -128,6 +235,10 @@
         result.Should().BeOfType<ViewResult>().Which.Model.Should().BeNull();
       }
     }
+
+
+
+
 
     [Theory]
     [AutoDbData]
@@ -195,6 +306,27 @@
       }
     }
 
+
+    [Theory]
+    [AutoDbData]
+    public void ForgotPasswordShouldReturnSuccessView([Frozen] IAccountRepository repo, INotificationService ns, PasswordResetInfo model, IAccountsSettingsService accountSetting)
+    {
+      var fakeSite = new FakeSiteContext(new StringDictionary
+      {
+        {
+          "displayMode", "normal"
+        }
+      }) as SiteContext;
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        var controller = new AccountsController(repo, ns, accountSetting);
+        repo.RestorePassword(Arg.Any<string>()).Returns("new password");
+        repo.Exists(Arg.Any<string>()).Returns(true);
+        var result = controller.ForgotPassword(model);
+        result.Should().BeOfType<ViewResult>().Which.ViewName.Should().Be("InfoMessage");
+      }
+    }
+
     [Theory]
     [AutoDbData]
     public void ForgotPasswordShouldReturnModelIfUserNotExist(PasswordResetInfo model, [Frozen] IAccountRepository repo)
@@ -240,7 +372,6 @@
       }
 
     }
-
 
 
     [Theory]
