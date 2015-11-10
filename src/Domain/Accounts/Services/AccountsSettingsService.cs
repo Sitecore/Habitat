@@ -11,13 +11,7 @@
 
   public class AccountsSettingsService : IAccountsSettingsService
   {
-    public static AccountsSettingsService Instance
-    {
-      get
-      {
-        return new AccountsSettingsService();
-      }
-    }
+    public static AccountsSettingsService Instance => new AccountsSettingsService();
 
     public string GetPageLink(Item contextItem, ID fieldID)
     {
