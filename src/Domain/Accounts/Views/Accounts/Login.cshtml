@@ -1,4 +1,6 @@
-﻿@using Sitecore.Mvc
+﻿@using Habitat.Accounts
+@using Habitat.Accounts.Services
+@using Sitecore.Mvc
 @using Habitat.Accounts.Texts
 @using Habitat.Framework.SitecoreExtensions.HtmlHelpers
 @model Habitat.Accounts.Models.LoginInfo
@@ -24,5 +26,5 @@
     </label>
 </div>
 <input type="submit" class="btn btn-default" value="@Captions.Login" />
-<button type="button" class="btn btn-link">Forgot you password?</button>
+<a href="@AccountsSettingsService.Instance.GetPageLink(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)" class="btn btn-link">Forgot you password?</a>
 }

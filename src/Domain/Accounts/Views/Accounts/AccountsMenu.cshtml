@@ -62,7 +62,7 @@
                         <input type="checkbox" id="loginRemember"> Remember me
                     </label>
                 </div>
-                <button type="button" class="btn btn-link">Forgot your password?</button>
+                <a href="@AccountsSettingsService.Instance.GetPageLink(Model.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)" class="btn btn-link">Forgot your password?</a>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

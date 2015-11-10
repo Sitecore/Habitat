@@ -127,37 +127,63 @@
     [AutoDbData]
     public void ForgotPasswordShouldReturnModelIfItsNotValid(PasswordResetInfo model, [Frozen] IAccountRepository repo, [NoAutoProperties] AccountsController controller)
     {
-      repo.RestorePassword(Arg.Any<string>()).Returns("new password");
-      repo.Exists(Arg.Any<string>()).Returns(true);
-      controller.ModelState.AddModelError("Error", "Error");
-      var result = controller.ForgotPassword(model);
-      result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
+      var fakeSite = new FakeSiteContext(new StringDictionary
+      {
+        {
+          "displayMode", "normal"
+        }
+      }) as SiteContext;
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        repo.RestorePassword(Arg.Any<string>()).Returns("new password");
+        repo.Exists(Arg.Any<string>()).Returns(true);
+        controller.ModelState.AddModelError("Error", "Error");
+        var result = controller.ForgotPassword(model);
+        result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
+      }
     }
 
     [Theory]
     [AutoDbData]
     public void ForgotPasswordShouldReturnModelIfUserNotExist(PasswordResetInfo model, [Frozen] IAccountRepository repo)
     {
-      repo.RestorePassword(Arg.Any<string>()).Returns("new password");
-      repo.Exists(Arg.Any<string>()).Returns(false);
-      var controller = new AccountsController(repo, null);
-      var result = controller.ForgotPassword(model);
-      result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
-      result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(model.Email))
-        .WhichValue.Errors.Should().Contain(x => x.ErrorMessage == Errors.UserDoesNotExist);
+      var fakeSite = new FakeSiteContext(new StringDictionary
+      {
+        {
+          "displayMode", "normal"
+        }
+      }) as SiteContext;
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        repo.RestorePassword(Arg.Any<string>()).Returns("new password");
+        repo.Exists(Arg.Any<string>()).Returns(false);
+        var controller = new AccountsController(repo, null);
+        var result = controller.ForgotPassword(model);
+        result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
+        result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(model.Email))
+          .WhichValue.Errors.Should().Contain(x => x.ErrorMessage == Errors.UserDoesNotExist);
+      }
     }
 
     [Theory]
     [AutoDbData]
     public void ForgotPasswordShouldReturnSuccesViewResult(PasswordResetInfo model, IAccountRepository repo, INotificationService ns)
     {
-      repo.RestorePassword(Arg.Any<string>()).Returns("new password");
-      repo.Exists(Arg.Any<string>()).Returns(true);
-      var controller = new AccountsController(repo, ns);
-      var result = controller.ForgotPassword(model);
-      result.Should().BeOfType<ViewResult>().Which.ViewName.Should().BeEquivalentTo("forgotpasswordsuccess");
+      var fakeSite = new FakeSiteContext(new StringDictionary
+      {
+        {
+          "displayMode", "normal"
+        }
+      }) as SiteContext;
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        repo.RestorePassword(Arg.Any<string>()).Returns("new password");
+        repo.Exists(Arg.Any<string>()).Returns(true);
+        var controller = new AccountsController(repo, ns);
+        var result = controller.ForgotPassword(model);
+        result.Should().BeOfType<ViewResult>().Which.ViewName.Should().BeEquivalentTo("forgotpasswordsuccess");
+      }
     }
-
 
     [Theory]
     [AutoDbData]

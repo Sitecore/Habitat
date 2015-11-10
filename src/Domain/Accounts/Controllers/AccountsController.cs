@@ -68,6 +68,13 @@
     [HttpGet]
     public ActionResult Login()
     {
+      this.RedirectAuthenticatedUser();
+
+      return this.View();
+    }
+
+    private void RedirectAuthenticatedUser()
+    {
       if (Context.PageMode.IsNormal)
       {
         if (Context.User.IsAuthenticated)
@@ -75,8 +82,6 @@
           this.Response.Redirect("/");
         }
       }
-
-      return this.View();
     }
 
     [HttpPost]
@@ -123,6 +128,8 @@
     [HttpPost]
     public ActionResult ForgotPassword(PasswordResetInfo model)
     {
+      this.RedirectAuthenticatedUser();
+
       if (!this.ModelState.IsValid)
       {
         return this.View(model);
