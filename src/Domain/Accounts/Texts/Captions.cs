@@ -1,13 +1,11 @@
-﻿using Habitat.Framework.SitecoreExtensions.Repositories;
-
-namespace Habitat.Accounts.Texts
+﻿namespace Habitat.Accounts.Texts
 {
-  using Sitecore.Globalization;
+  using Habitat.Framework.SitecoreExtensions.Repositories;
 
   public static class Captions
   {
     public static string Email => DictionaryRepository.Get("/Accounts/Captions/Email", "E-mail");
-    
+
     public static string Login => DictionaryRepository.Get("/Accounts/Captions/Login", "Login");
 
     public static string Logout => DictionaryRepository.Get("/Accounts/Captions/Logout", "Logout");

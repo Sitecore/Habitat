@@ -1,8 +1,8 @@
 namespace Habitat.Framework.Assets.Models
 {
-    public enum ScriptLocation
-    {
-        Head,
-        Body
-    }
+  public enum ScriptLocation
+  {
+    Head,
+    Body
+  }
 }

@@ -1,12 +1,12 @@
-﻿using Habitat.Framework.Indexing;
-
-namespace Habitat.Search.Models
+﻿namespace Habitat.Search.Models
 {
-    internal class SearchServiceRepository
+  using Habitat.Framework.Indexing;
+
+  internal class SearchServiceRepository
+  {
+    public static SearchService Get()
     {
-        public static SearchService Get()
-        {
-            return new SearchService(SearchSettingsRepository.Get());
-        }
+      return new SearchService(SearchSettingsRepository.Get());
     }
+  }
 }

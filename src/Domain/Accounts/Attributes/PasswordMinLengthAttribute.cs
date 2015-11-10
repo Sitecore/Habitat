@@ -4,8 +4,8 @@
   using System.ComponentModel.DataAnnotations;
   using System.Web.Security;
 
-  [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
-  public class PasswordMinLengthAttribute: MinLengthAttribute
+  [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+  public class PasswordMinLengthAttribute : MinLengthAttribute
   {
     public PasswordMinLengthAttribute() : base(Membership.MinRequiredPasswordLength)
     {

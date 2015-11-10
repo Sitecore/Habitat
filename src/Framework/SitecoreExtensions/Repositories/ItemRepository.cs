@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Habitat.Framework.SitecoreExtensions.Repositories
+﻿namespace Habitat.Framework.SitecoreExtensions.Repositories
 {
-  class ItemRepository
+  internal class ItemRepository
   {
   }
 }

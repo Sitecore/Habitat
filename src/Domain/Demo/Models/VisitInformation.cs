@@ -1,35 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Habitat.Framework.SitecoreExtensions.Extensions;
-using Habitat.Framework.SitecoreExtensions.Repositories;
-using Sitecore;
-using Sitecore.Analytics;
-using Sitecore.Analytics.Automation.Data;
-using Sitecore.Analytics.Data.Items;
-using Sitecore.Analytics.Tracking;
-using Sitecore.CES.DeviceDetection;
-using Sitecore.Common;
-using Sitecore.Data.Fields;
-using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
-using Sitecore.Resources.Media;
-using Convert = System.Convert;
-
-namespace Habitat.Demo.Models
+﻿namespace Habitat.Demo.Models
 {
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using Habitat.Framework.SitecoreExtensions.Extensions;
+  using Sitecore;
+  using Sitecore.Analytics;
+  using Sitecore.Analytics.Automation.Data;
+  using Sitecore.Analytics.Data.Items;
+  using Sitecore.Analytics.Tracking;
+  using Sitecore.CES.DeviceDetection;
+  using Sitecore.Common;
+  using Sitecore.Data.Fields;
+  using Sitecore.Diagnostics;
+  using Sitecore.Resources.Media;
+
   public class VisitInformation
   {
     private DeviceInformation _deviceInformation;
     private bool _isDeviceLookupDone;
-    public string PageCount => Convert.ToString(Tracker.Current.Interaction.PageCount);
-    public string EngagementValue => Convert.ToString(Tracker.Current.Interaction.Value);
+    public string PageCount => System.Convert.ToString(Tracker.Current.Interaction.PageCount);
+    public string EngagementValue => System.Convert.ToString(Tracker.Current.Interaction.Value);
+
     public bool HasCampaign
     {
       get
       {
         if (!Tracker.Current.Interaction.CampaignId.HasValue)
+        {
           return false;
+        }
 
         var campaign = Context.Database.GetItem(Tracker.Current.Interaction.CampaignId.Value.ToID());
         return campaign != null;
@@ -41,43 +41,53 @@ namespace Habitat.Demo.Models
       get
       {
         if (!Tracker.Current.Interaction.CampaignId.HasValue)
+        {
           return null;
+        }
 
         var campaign = Context.Database.GetItem(Tracker.Current.Interaction.CampaignId.Value.ToID());
         return campaign?.Name;
       }
     }
+
     public bool HasGeoIp => Tracker.Current.Interaction.GeoData.Latitude.HasValue;
     public string City => Tracker.Current.Interaction.HasGeoIpData ? Tracker.Current.Interaction.GeoData.City : null;
     public string PostalCode => Tracker.Current.Interaction.HasGeoIpData ? Tracker.Current.Interaction.GeoData.PostalCode : null;
-    public DeviceInformation Device => _isDeviceLookupDone ? _deviceInformation : (_deviceInformation = GetDeviceInformation());
+    public DeviceInformation Device => this._isDeviceLookupDone ? this._deviceInformation : (this._deviceInformation = this.GetDeviceInformation());
+
     private DeviceInformation GetDeviceInformation()
     {
-      _isDeviceLookupDone = true;
-      if (!DeviceDetectionManager.IsEnabled || String.IsNullOrEmpty(Tracker.Current.Interaction.UserAgent))
+      this._isDeviceLookupDone = true;
+      if (!DeviceDetectionManager.IsEnabled || string.IsNullOrEmpty(Tracker.Current.Interaction.UserAgent))
+      {
         return null;
+      }
       return DeviceDetectionManager.GetDeviceInformation(Tracker.Current.Interaction.UserAgent);
     }
 
-    public IEnumerable<PatternMatch> PatternMatches => LoadPatterns();
+    public IEnumerable<PatternMatch> PatternMatches => this.LoadPatterns();
 
-    public IEnumerable<PageLink> PagesViewed => LoadPages();
+    public IEnumerable<PageLink> PagesViewed => this.LoadPages();
 
-    public IEnumerable<string> GoalsList => LoadGoals();
+    public IEnumerable<string> GoalsList => this.LoadGoals();
 
-    public IEnumerable<string> EngagementStates => LoadEngagementStates();
+    public IEnumerable<string> EngagementStates => this.LoadEngagementStates();
 
     public IEnumerable<PatternMatch> LoadPatterns()
     {
       if (!Tracker.IsActive)
+      {
         return Enumerable.Empty<PatternMatch>();
+      }
 
       var patternMatches = new List<PatternMatch>();
-      foreach (var visibleProfile in GetSiteProfiles())
+      foreach (var visibleProfile in this.GetSiteProfiles())
       {
-        var matchingPattern = GetMatchingPatternForContact(visibleProfile);
+        var matchingPattern = this.GetMatchingPatternForContact(visibleProfile);
         if (matchingPattern == null)
+        {
           continue;
+        }
         patternMatches.Add(CreatePatternMatch(matchingPattern, visibleProfile));
       }
       return patternMatches;
@@ -95,30 +105,36 @@ namespace Habitat.Demo.Models
     {
       var userPattern = Tracker.Current.Interaction.Profiles[visibleProfile.Name];
       if (userPattern?.PatternId == null)
+      {
         return null;
+      }
       var matchingPattern = Context.Database.GetItem(userPattern.PatternId.Value.ToID());
       if (matchingPattern == null)
+      {
         return null;
+      }
       return new PatternCardItem(matchingPattern);
     }
 
     private IEnumerable<ProfileItem> GetSiteProfiles()
     {
-      var settingsItem = Sitecore.Context.Site.GetContextItem(Templates.ProfilingSettings.ID);
+      var settingsItem = Context.Site.GetContextItem(Templates.ProfilingSettings.ID);
       if (settingsItem == null)
+      {
         return Enumerable.Empty<ProfileItem>();
+      }
       MultilistField profiles = settingsItem.Fields[Templates.ProfilingSettings.Fields.SiteProfiles];
       return profiles.GetItems().Select(i => new ProfileItem(i));
     }
 
     public IEnumerable<PageLink> LoadPages()
     {
-      return Tracker.Current.Interaction.GetPages().Select(CreatePageLink).Reverse();
+      return Tracker.Current.Interaction.GetPages().Select(this.CreatePageLink).Reverse();
     }
 
     private PageLink CreatePageLink(IPageContext page)
     {
-      return new PageLink(CleanPageName(page), page.Url.Path, false);
+      return new PageLink(this.CleanPageName(page), page.Url.Path, false);
     }
 
     public IEnumerable<string> LoadGoals()
@@ -153,10 +169,14 @@ namespace Habitat.Demo.Models
     {
       var pageName = p.Url.Path.Replace("/en", "/").Replace("//", "/").Remove(0, 1).Replace(".aspx", "");
       if (pageName == string.Empty || pageName == "en")
+      {
         pageName = "Home";
+      }
       if (pageName.Contains("/"))
+      {
         pageName = "..." + pageName.Substring(pageName.LastIndexOf("/", StringComparison.Ordinal));
-      return pageName.Length < 27 ? $"{pageName} ({(p.Duration/1000.0).ToString("f2")}s)" : $"{pageName.Substring(0, 26)}... ({(p.Duration/1000.0).ToString("f2")}s)";
+      }
+      return pageName.Length < 27 ? $"{pageName} ({(p.Duration / 1000.0).ToString("f2")}s)" : $"{pageName.Substring(0, 26)}... ({(p.Duration / 1000.0).ToString("f2")}s)";
     }
   }
 }
