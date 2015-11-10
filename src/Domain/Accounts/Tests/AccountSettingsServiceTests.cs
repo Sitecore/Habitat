@@ -83,9 +83,24 @@
 
     [Theory]
     [AutoDbData]
+    public void GetForgotPasswordMailTemplateShouldThrowExceptionWhenMailTemplateNotfound(Db db)
+    {
+      var fakeSite = BuildUpSiteContext(db, from: null);
+      db.GetItem("/sitecore/content/siteroot").DeleteChildren();
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        var settings = new AccountsSettingsService();
+        Action act = () => settings.GetForgotPasswordMailTemplate();
+        act.ShouldThrow<ItemNotFoundException>();
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
     public void GetForgotPasswordMailTemplateShouldNotThrowExceptionWhenBodyIsEmpty(Db db)
     {
       var fakeSite = BuildUpSiteContext(db, null);
+      
       using (new SiteContextSwitcher(fakeSite))
       {
         var settings = new AccountsSettingsService();

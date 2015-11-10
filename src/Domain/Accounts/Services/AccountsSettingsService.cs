@@ -53,7 +53,7 @@
 
       if (mailTemplateItem == null)
       {
-        throw new ItemNullException($"Could not find mail template item with {link.TargetID} ID");
+        throw new ItemNotFoundException($"Could not find mail template item with {link.TargetID} ID");
       }
 
       var fromMail = mailTemplateItem.Fields[Templates.MailTemplate.Fields.From];
