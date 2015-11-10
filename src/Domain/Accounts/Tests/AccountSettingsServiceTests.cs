@@ -4,9 +4,12 @@
   using FluentAssertions;
   using Habitat.Accounts.Services;
   using Habitat.Accounts.Tests.Extensions;
+  using Habitat.Framework.SitecoreExtensions.Extensions;
+  using NSubstitute;
   using Sitecore;
   using Sitecore.Collections;
   using Sitecore.Data;
+  using Sitecore.Data.Items;
   using Sitecore.Exceptions;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.Sites;
@@ -150,6 +153,38 @@
       }) as SiteContext;
       Context.Item = db.GetItem(template);
       return fakeSite;
+    }
+
+    [Theory, AutoDbData]
+    public void GetPageLinkOrDefaultShouldThrowIfDefaultIsNull(Item item, ID id, AccountsSettingsService accountSettingsService)
+    {
+      //var accountSettingsService = Substitute.ForPartsOf<AccountsSettingsService>();
+      //accountSettingsService
+      accountSettingsService.Invoking(x => x.GetPageLinkOrDefault(item, id, null)).ShouldThrow<ArgumentNullException>();
+    }
+
+    [Theory, AutoDbData]
+    public void GetPageLinkOrDefaultShouldReturnDefault(Item item,ID id, Item defaultItem)
+    {
+      var accountSettingsService = Substitute.ForPartsOf<AccountsSettingsService>();
+      accountSettingsService.When(x => x.GetPageLink(item, id)).DoNotCallBase();
+      accountSettingsService.GetPageLink(Arg.Any<Item>(), Arg.Any<ID>()).Returns(x => { throw new Exception(); });
+
+      var result = accountSettingsService.GetPageLinkOrDefault(item, id, defaultItem);
+
+      result.Should().Be(defaultItem.Url());
+    }
+
+    [Theory, AutoDbData]
+    public void GetPageLinkOrDefaultShouldReturnGetPageLinkResult(Item item, ID id, Item defaultItem, string returnUrl)
+    {
+      var accountSettingsService = Substitute.ForPartsOf<AccountsSettingsService>();
+      accountSettingsService.When(x => x.GetPageLink(item, id)).DoNotCallBase();
+      accountSettingsService.GetPageLink(Arg.Any<Item>(), Arg.Any<ID>()).Returns(x => returnUrl);
+
+      var result = accountSettingsService.GetPageLinkOrDefault(item, id, defaultItem);
+
+      result.Should().Be(returnUrl);
     }
   }
 }

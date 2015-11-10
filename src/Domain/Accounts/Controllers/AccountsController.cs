@@ -15,54 +15,58 @@
   {
     private readonly IAccountRepository accountRepository;
     private readonly INotificationService notificationService;
+    private readonly IAccountsSettingsService accountsSettingsService;
 
-    public AccountsController() : this(new AccountRepository(), new NotificationService(new AccountsSettingsService()))
+    public AccountsController() : this(new AccountRepository(), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService())
     {
     }
 
-    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService)
+    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService , IAccountsSettingsService accountsSettingsService)
     {
       this.accountRepository = accountRepository;
       this.notificationService = notificationService;
+      this.accountsSettingsService = accountsSettingsService;
     }
 
     [HttpGet]
     public ActionResult Register()
     {
+      var redirect = this.RedirectAuthenticatedUser();
+      if (redirect != null) return redirect;
+
       return this.View();
     }
 
     [HttpPost]
     public ActionResult Register(RegistrationInfo registrationInfo)
     {
-      if (!Context.IsLoggedIn)
+      var redirect = this.RedirectAuthenticatedUser();
+      if (redirect != null) return redirect;
+
+      if (!this.ModelState.IsValid)
       {
-        if (!this.ModelState.IsValid)
-        {
-          return this.View(registrationInfo);
-        }
-
-        if (this.accountRepository.Exists(registrationInfo.Email))
-        {
-          this.ModelState.AddModelError(nameof(registrationInfo.Email), Errors.UserAlreadyExists);
-
-          return this.View(registrationInfo);
-        }
-
-        try
-        {
-          this.accountRepository.RegisterUser(registrationInfo);
-        }
-        catch (MembershipCreateUserException ex)
-        {
-          Log.Error($"Can't create user with {registrationInfo.Email}", ex, this);
-          this.ModelState.AddModelError(nameof(registrationInfo.Email), ex.Message);
-
-          return this.View(registrationInfo);
-        }
+        return this.View(registrationInfo);
       }
 
-      return this.Redirect(Context.Site.GetRoot().Url());
+      if (this.accountRepository.Exists(registrationInfo.Email))
+      {
+        this.ModelState.AddModelError(nameof(registrationInfo.Email), Errors.UserAlreadyExists);
+
+        return this.View(registrationInfo);
+      }
+
+      try
+      {
+        this.accountRepository.RegisterUser(registrationInfo);
+        return this.View("InfoMessage", new InfoMessage(Captions.RegisterSuccess));
+      }
+      catch (MembershipCreateUserException ex)
+      {
+        Log.Error($"Can't create user with {registrationInfo.Email}", ex, this);
+        this.ModelState.AddModelError(nameof(registrationInfo.Email), ex.Message);
+
+        return this.View(registrationInfo);
+      }
     }
 
     [HttpGet]
@@ -80,7 +84,8 @@
       {
         if (Context.User.IsAuthenticated)
         {
-          return this.Redirect("/");
+          var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRoot());
+          return this.Redirect(link);
         }
       }
       return null;
@@ -100,7 +105,7 @@
         var redirectUrl = loginInfo.ReturnUrl;
         if (string.IsNullOrEmpty(redirectUrl))
         {
-          redirectUrl = "/";
+          redirectUrl = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRoot());
         }
 
         return new RedirectResult(redirectUrl);
@@ -122,6 +127,9 @@
     [HttpGet]
     public ActionResult ForgotPassword()
     {
+      var redirect = this.RedirectAuthenticatedUser();
+      if (redirect != null) return redirect;
+
       return this.View();
     }
 
@@ -129,7 +137,7 @@
     public ActionResult ForgotPassword(PasswordResetInfo model)
     {
       var redirect = this.RedirectAuthenticatedUser();
-      if (redirect !=null) return redirect;
+      if (redirect != null) return redirect;
 
       if (!this.ModelState.IsValid)
       {
@@ -147,7 +155,7 @@
       {
         var newPassword = this.accountRepository.RestorePassword(model.Email);
         this.notificationService.SendPassword(model.Email, newPassword);
-        return this.View("ForgotPasswordSuccess");
+        return this.View("InfoMessage", new InfoMessage(Captions.ResetPasswordSuccess));
       }
       catch (Exception ex)
       {

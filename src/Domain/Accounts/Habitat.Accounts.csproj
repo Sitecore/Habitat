@@ -137,7 +137,7 @@
     <Content Include="Views\Accounts\ForgotPassword.cshtml" />
     <Content Include="Views\Accounts\AccountsDetails.cshtml" />
     <Content Include="Views\Accounts\Register.cshtml" />
-    <Content Include="Views\Accounts\ForgotPasswordSuccess.cshtml" />
+    <Content Include="Views\Accounts\InfoMessage.cshtml" />
     <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -153,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountsApiController.cs" />
+    <Compile Include="Models\InfoMessage.cs" />
     <Compile Include="Models\LoginInfo.cs" />
     <Compile Include="Services\IAccountsSettingsService.cs" />
     <Compile Include="WebApiConfig.cs" />
