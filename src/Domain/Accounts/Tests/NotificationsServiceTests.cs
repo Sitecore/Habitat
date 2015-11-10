@@ -1,18 +1,15 @@
-﻿using System.Linq;
-using System.Net.Mail;
-using System.Web.ModelBinding;
-using System.Web.UI.WebControls;
-using FluentAssertions;
-using Habitat.Accounts.Services;
-using Habitat.Accounts.Tests.Extensions;
-using Habitat.Accounts.Tests.FixtureContext;
-using netDumbster.smtp;
-using NSubstitute;
-using Ploeh.AutoFixture.Xunit2;
-using Xunit;
-
-namespace Habitat.Accounts.Tests
+﻿namespace Habitat.Accounts.Tests
 {
+  using System.Linq;
+  using System.Net.Mail;
+  using FluentAssertions;
+  using Habitat.Accounts.Services;
+  using Habitat.Accounts.Tests.Extensions;
+  using Habitat.Accounts.Tests.FixtureContext;
+  using netDumbster.smtp;
+  using NSubstitute;
+  using Xunit;
+
   public class NotificationServiceTests : IClassFixture<SmptWrapper>
   {
     public NotificationServiceTests(SmptWrapper fixture)
@@ -30,9 +27,7 @@ namespace Habitat.Accounts.Tests
       this.SentMail(settings, msg);
       this.SmtpServer.ReceivedEmailCount.Should().Be(1);
     }
-
     
-
     [Theory]
     [AutoEmailData]
     public void SendPasswordShouldUseSubjectFromSettings(IAccountsSettingsService settings, MailMessage msg)
@@ -60,7 +55,6 @@ namespace Habitat.Accounts.Tests
       sentMail.MessageParts.First().BodyData.Should().BeEquivalentTo("fake body expectedpassword");
     }
 
-
     [Theory]
     [AutoEmailData]
     public void SendPasswordShouldIgnoreOtherKeysToInsertPassword(IAccountsSettingsService settings, MailMessage msg)
@@ -80,7 +74,7 @@ namespace Habitat.Accounts.Tests
 
     [Theory]
     [AutoEmailData]
-    public void SendPasswordShouldSetAddressTo(IAccountsSettingsService settings,MailMessage msg)
+    public void SendPasswordShouldSetAddressTo(IAccountsSettingsService settings, MailMessage msg)
     {
       msg.To.Clear();
       var sentMail = this.SentMail(settings, msg, "fake@sitecore.net");

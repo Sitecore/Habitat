@@ -1,15 +1,19 @@
-﻿using System;
-using System.Net.Mail;
-using Habitat.Framework.SitecoreExtensions.Extensions;
-using Sitecore.Data;
-using Sitecore.Data.Fields;
-using Sitecore.Data.Items;
-
-namespace Habitat.Accounts.Services
+﻿namespace Habitat.Accounts.Services
 {
+  using System;
+  using System.Net.Mail;
+  using Habitat.Framework.SitecoreExtensions.Extensions;
+  using Sitecore;
+  using Sitecore.Data;
+  using Sitecore.Data.Fields;
+  using Sitecore.Data.Items;
+  using Sitecore.Exceptions;
+
   public class AccountsSettingsService : IAccountsSettingsService
   {
-    public string GetPageLink(Item contextItem,ID fieldID)
+    public static AccountsSettingsService Instance => new AccountsSettingsService();
+
+    public string GetPageLink(Item contextItem, ID fieldID)
     {
       var item = GetSettingsItem(contextItem);
 
@@ -19,7 +23,7 @@ namespace Habitat.Accounts.Services
       }
 
       InternalLinkField link = item.Fields[fieldID];
-      
+
       if (link.TargetItem == null)
       {
         throw new Exception($"{link.InnerField.Name} link isn't set");
@@ -33,15 +37,36 @@ namespace Habitat.Accounts.Services
       Item item = null;
 
       if (contextItem != null)
+      {
         item = contextItem.GetAncestorOrSelfOfTemplate(Templates.AccountsSettings.ID);
-      item = item ?? Sitecore.Context.Site.GetContextItem(Templates.AccountsSettings.ID);
+      }
+      item = item ?? Context.Site.GetContextItem(Templates.AccountsSettings.ID);
 
       return item;
     }
 
     public MailMessage GetForgotPasswordMailTemplate()
     {
-     return new MailMessage();
+      var settingsItem = GetSettingsItem(null);
+      InternalLinkField link = settingsItem.Fields[Templates.AccountsSettings.Fields.FogotPasswordMailTemplate];
+      var mailTemplateItem = link.TargetItem;
+
+      var fromMail = mailTemplateItem.Fields[Templates.MailTemplate.Fields.From];
+
+      if (!fromMail.HasValue || string.IsNullOrEmpty(fromMail.Value))
+      {
+        throw new InvalidValueException("'From' field in mail template should be set");
+      }
+
+      var body = mailTemplateItem.Fields[Templates.MailTemplate.Fields.Body];
+      var subject = mailTemplateItem.Fields[Templates.MailTemplate.Fields.Subject];
+
+      return new MailMessage
+      {
+        From = new MailAddress(fromMail.Value),
+        Body = body.Value,
+        Subject = subject.Value
+      };
     }
   }
 }
