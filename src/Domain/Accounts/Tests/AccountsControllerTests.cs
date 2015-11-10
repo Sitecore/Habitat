@@ -77,6 +77,81 @@
       result.Should().BeOfType<ViewResult>().Which.Model.Should().BeNull();
     }
 
+    [Theory]
+    [AutoDbData]
+    public void LoginShouldReturnViewWithoutModel([Frozen] IAccountRepository repo, [NoAutoProperties] AccountsController controller)
+    {
+      var fakeSite = new FakeSiteContext(new StringDictionary
+      {
+        {
+          "displayMode", "normal"
+        }
+      }) as SiteContext;
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        var result = controller.Login();
+        result.Should().BeOfType<ViewResult>().Which.Model.Should().BeNull();
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void LoginShouldRedirectToReturnUrlIfLoggedIn([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service)
+    {
+      var controller = new AccountsController(repo, service);
+      repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x=>true);
+      var result = controller.Login(info);
+      result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be(info.ReturnUrl);
+    }
+
+
+    [Theory]
+    [AutoDbData]
+    public void LoginShouldRedirectToRootIfReturnUrlNotSet([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service)
+    {
+      info.ReturnUrl = null;
+      var controller = new AccountsController(repo, service);
+      repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => true);
+      var result = controller.Login(info);
+      result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void LoginShouldAddModelStateErrorIfNotLoggedIn([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service)
+    {
+      info.ReturnUrl = null;
+      info.Email = null;
+      info.Password = null;
+      var controller = new AccountsController(repo, service);
+      repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => true);
+      var result = controller.Login(info);
+      result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void LoginShouldReturnViewModelIfModelStateNotValid([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service)
+    {
+      var controller = new AccountsController(repo, service);
+      controller.ModelState.AddModelError("Error", "Error");
+      var result = controller.Login(info);
+      result.Should().BeOfType<ViewResult>();
+    }
+
+
+
+
+    [Theory]
+    [AutoDbData]
+    public void ShouldAddErrorToModelStateIfNotLoggedIn([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service)
+    {
+      repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => false);
+      var controller = new AccountsController(repo, service);
+      var result = controller.Login(info);
+      controller.ModelState.IsValid.Should().BeFalse();
+      controller.ModelState.Keys.Should().Contain("invalidCredentials");
+    }
 
     [Theory]
     [AutoDbData]

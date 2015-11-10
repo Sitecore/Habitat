@@ -103,12 +103,10 @@
           redirectUrl = "/";
         }
 
-        this.Response.Redirect(redirectUrl);
+        return new RedirectResult(redirectUrl);
       }
-      else
-      {
-        this.ModelState.AddModelError("invalidCredentials", "Username or password is not valid.");
-      }
+
+      this.ModelState.AddModelError("invalidCredentials", "Username or password is not valid.");
 
       return this.View(loginInfo);
     }
