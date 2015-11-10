@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using Sitecore.Mvc.Presentation;
-
-namespace Habitat.Navigation.Models
+﻿namespace Habitat.Navigation.Models
 {
-    public class NavigationItems : RenderingModel
-    {
-        public IList<NavigationItem> Items { get; set; }
-    }
+  using System.Collections.Generic;
+  using Sitecore.Mvc.Presentation;
+
+  public class NavigationItems : RenderingModel
+  {
+    public IList<NavigationItem> Items { get; set; }
+  }
 }

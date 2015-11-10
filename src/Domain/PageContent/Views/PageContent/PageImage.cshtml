@@ -2,8 +2,11 @@
 @using Habitat.PageContent
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-@if (!Sitecore.Context.PageMode.IsPageEditor && !Html.Sitecore().HasValue(Templates.HasPageContent.Fields.Image.ToString())) { return; }
+@if (!Sitecore.Context.PageMode.IsPageEditor && !Html.Sitecore().HasValue(Templates.HasPageContent.Fields.Image.ToString()))
+{
+  return;
+}
 
 <div class="article image">
-    @Html.Sitecore().ImageField(Templates.HasPageContent.Fields.Image.ToString(), @Model.Item, mw: 1000, cssClass: "img-responsive")
+  @Html.Sitecore().ImageField(Templates.HasPageContent.Fields.Image.ToString(), @Model.Item, mw: 1000, cssClass: "img-responsive")
 </div>

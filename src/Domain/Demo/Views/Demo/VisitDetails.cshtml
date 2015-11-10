@@ -33,7 +33,7 @@
             {
               <div>
                 <div class="image-wrapper">
-                  <img src="@item.Image" alt="@item.PatternName" />
+                  <img src="@item.Image" alt="@item.PatternName"/>
                 </div>
                 <h4>@item.Profile</h4>
                 <h5>@item.PatternName</h5>
@@ -120,7 +120,9 @@
           <ul class="list-unstyled">
             @foreach (var item in Model.PagesViewed)
             {
-              <li><a href="@item.Url">@item.Title</a></li>
+              <li>
+                <a href="@item.Url">@item.Title</a>
+              </li>
             }
           </ul>
         </div>
@@ -173,7 +175,7 @@
   </div>
 </div>
 <script language="javascript">
-  $(function () {
+  $(function() {
     $('[data-toggle="tooltip"]').tooltip();
   })
 </script>

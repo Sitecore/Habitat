@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Habitat.Website
+﻿namespace Habitat.Website
 {
-    public struct Constants
+  public struct Constants
+  {
+    public struct LayoutParameters
     {
-        public struct LayoutParameters
-        {
-            public static string IsFluid => "ContainerIsFluid";
-            public static string UseStaticPlaceholderNames => "UseStaticPlaceholderNames";
-        }
+      public static string IsFluid => "ContainerIsFluid";
+      public static string UseStaticPlaceholderNames => "UseStaticPlaceholderNames";
     }
+  }
 }

@@ -1,16 +1,16 @@
-﻿using System;
-using System.Web.Mvc;
-using System.Web.Security;
-using Habitat.Accounts.Models;
-using Habitat.Accounts.Repositories;
-using Habitat.Accounts.Services;
-using Habitat.Accounts.Texts;
-using Habitat.Framework.SitecoreExtensions.Extensions;
-using Sitecore;
-using Sitecore.Diagnostics;
-
-namespace Habitat.Accounts.Controllers
+﻿namespace Habitat.Accounts.Controllers
 {
+  using System;
+  using System.Web.Mvc;
+  using System.Web.Security;
+  using Habitat.Accounts.Models;
+  using Habitat.Accounts.Repositories;
+  using Habitat.Accounts.Services;
+  using Habitat.Accounts.Texts;
+  using Habitat.Framework.SitecoreExtensions.Extensions;
+  using Sitecore;
+  using Sitecore.Diagnostics;
+
   public class AccountsController : Controller
   {
     private readonly IAccountRepository accountRepository;

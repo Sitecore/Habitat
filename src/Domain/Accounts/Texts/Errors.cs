@@ -1,9 +1,6 @@
-﻿using System;
-using Habitat.Framework.SitecoreExtensions.Repositories;
-
-namespace Habitat.Accounts.Texts
+﻿namespace Habitat.Accounts.Texts
 {
-  using Sitecore.Globalization;
+  using Habitat.Framework.SitecoreExtensions.Repositories;
 
   public static class Errors
   {
@@ -15,7 +12,7 @@ namespace Habitat.Accounts.Texts
 
     public static string ConfirmPasswordMismatch => DictionaryRepository.Get("/Accounts/Errors/ConfirmPasswordMismatch", "Wrong confirm password");
 
-    public static string UserAlreadyExists =>DictionaryRepository.Get("/Accounts/Errors/UserAlreadyExists", "User with specified login already exists");
+    public static string UserAlreadyExists => DictionaryRepository.Get("/Accounts/Errors/UserAlreadyExists", "User with specified login already exists");
 
     public static string UserDoesNotExist => DictionaryRepository.Get("/Accounts/Errors/UserDoesNotExist", "User with specified email does not exist");
   }
