@@ -4,6 +4,9 @@ Parent: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Template: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Path: /sitecore/templates/Habitat/Project/Website/Page Types/ServicePage/__Standard Values
 SharedFields:
+- ID: 5585a30d-b115-4753-93ce-422c3455deb2
+  # ShowInNavigation
+  Value: 
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
   # __Renderings
   Type: layout
