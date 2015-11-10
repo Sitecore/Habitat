@@ -100,7 +100,7 @@ namespace Habitat.Accounts.Controllers
       }
       else
       {
-        this.ModelState.AddModelError("UserName", "Username or password is not valid.");
+        this.ModelState.AddModelError("invalidCredentials", "Username or password is not valid.");
       }
 
       return this.View(loginInfo);

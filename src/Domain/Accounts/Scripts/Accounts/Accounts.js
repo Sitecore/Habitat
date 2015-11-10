@@ -7,7 +7,7 @@
             url:"/api/AccountsApi/Login",
             method:"POST",
             data: {
-                username: usernameField.val(),
+                email: usernameField.val(),
                 password: passwordField.val()
             }
 			,

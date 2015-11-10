@@ -1,5 +1,6 @@
 ﻿namespace Habitat.Accounts.Controllers
 {
+  using System.Linq;
   using System.Web.Http;
   using Models;
   using Repositories;
@@ -23,9 +24,17 @@
     [HttpPost]
     public LoginResult Login([FromBody]LoginCredentials credentials)
     {
-      var loginResult = this._accountsRepository.Login(credentials.UserName, credentials.Password);
-
-      var result = new LoginResult { IsAuthenticated = loginResult, ValidationMessage = Translate.Text("Username or password is not valid.") };
+      var validationMessage = Translate.Text("Username or password is not valid.");
+      var result = new LoginResult {IsAuthenticated = false, ValidationMessage = validationMessage};
+      if (this.ModelState.IsValid)
+      {
+        var loginResult = this._accountsRepository.Login(credentials.Email, credentials.Password);
+        result.IsAuthenticated = loginResult;
+      }
+      else
+      {
+        result.ValidationMessage = this.ModelState.Values.First().Errors.First().ErrorMessage;
+      }
 
       return result;
     }
