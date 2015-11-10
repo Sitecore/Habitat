@@ -167,7 +167,7 @@
 
     [Theory]
     [AutoDbData]
-    public void ForgotPasswordShouldReturnSuccesViewResult(PasswordResetInfo model, IAccountRepository repo, INotificationService ns)
+    public void ForgotPasswordShouldRedirectLoggedUser(PasswordResetInfo model, IAccountRepository repo, INotificationService ns)
     {
       var fakeSite = new FakeSiteContext(new StringDictionary
       {
@@ -177,13 +177,18 @@
       }) as SiteContext;
       using (new SiteContextSwitcher(fakeSite))
       {
-        repo.RestorePassword(Arg.Any<string>()).Returns("new password");
-        repo.Exists(Arg.Any<string>()).Returns(true);
-        var controller = new AccountsController(repo, ns);
-        var result = controller.ForgotPassword(model);
-        result.Should().BeOfType<ViewResult>().Which.ViewName.Should().BeEquivalentTo("forgotpasswordsuccess");
+        using (new UserSwitcher(@"extranet\fake", true))
+        {
+          repo.RestorePassword(Arg.Any<string>()).Returns("new password");
+          repo.Exists(Arg.Any<string>()).Returns(true);
+          var controller = new AccountsController(repo, ns);
+          var result = controller.ForgotPassword(model);
+          result.Should().BeOfType<RedirectResult>();
+        }
       }
     }
+
+
 
     [Theory]
     [AutoDbData]

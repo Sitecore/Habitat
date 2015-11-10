@@ -68,20 +68,22 @@
     [HttpGet]
     public ActionResult Login()
     {
-      this.RedirectAuthenticatedUser();
+      var redirect = this.RedirectAuthenticatedUser();
+      if (redirect != null) return redirect;
 
       return this.View();
     }
 
-    private void RedirectAuthenticatedUser()
+    private ActionResult RedirectAuthenticatedUser()
     {
       if (Context.PageMode.IsNormal)
       {
         if (Context.User.IsAuthenticated)
         {
-          this.Response.Redirect("/");
+          return this.Redirect("/");
         }
       }
+      return null;
     }
 
     [HttpPost]
@@ -128,7 +130,8 @@
     [HttpPost]
     public ActionResult ForgotPassword(PasswordResetInfo model)
     {
-      this.RedirectAuthenticatedUser();
+      var redirect = this.RedirectAuthenticatedUser();
+      if (redirect !=null) return redirect;
 
       if (!this.ModelState.IsValid)
       {
