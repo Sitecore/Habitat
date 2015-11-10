@@ -51,6 +51,11 @@
       InternalLinkField link = settingsItem.Fields[Templates.AccountsSettings.Fields.FogotPasswordMailTemplate];
       var mailTemplateItem = link.TargetItem;
 
+      if (mailTemplateItem == null)
+      {
+        throw new ItemNullException($"Could not find mail template item with {link.TargetID} ID");
+      }
+
       var fromMail = mailTemplateItem.Fields[Templates.MailTemplate.Fields.From];
 
       if (!fromMail.HasValue || string.IsNullOrEmpty(fromMail.Value))

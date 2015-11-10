@@ -104,9 +104,7 @@
         {
           new DbField("FogotPasswordMailTemplate", Templates.AccountsSettings.Fields.FogotPasswordMailTemplate)
           {
-            {
-              "en", template.ToString()
-            }
+            Value = template.ToString()
           }
         },
         Children =
@@ -126,8 +124,6 @@
         }
       });
 
-      Context.Item = db.GetItem(template);
-
       var fakeSite = new FakeSiteContext(new StringDictionary
       {
         {
@@ -137,6 +133,7 @@
           "database", "master"
         }
       }) as SiteContext;
+      Context.Item = db.GetItem(template);
       return fakeSite;
     }
   }
