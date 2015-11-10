@@ -31,6 +31,9 @@ Languages:
             </r>
           </d>
         </r>
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: Login
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151105T104238Z
