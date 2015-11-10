@@ -52,6 +52,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Log out.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Log out.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.feature.cs">
       <AutoGen>True</AutoGen>
@@ -61,6 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Log out.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Log out.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="Register.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
