@@ -1,10 +1,10 @@
-﻿using System.Xml;
-using Habitat.Framework.SitecoreExtensions.Model;
-using Habitat.Framework.SitecoreExtensions.Services;
-using Sitecore.Data.Items;
-
-namespace Habitat.Framework.SitecoreExtensions.Repositories
+﻿namespace Habitat.Framework.SitecoreExtensions.Repositories
 {
+  using System.Xml;
+  using Habitat.Framework.SitecoreExtensions.Model;
+  using Habitat.Framework.SitecoreExtensions.Services;
+  using Sitecore.Data.Items;
+
   internal class FileRepository : XmlParserService
   {
     public static File Get(string xml)
@@ -23,11 +23,15 @@ namespace Habitat.Framework.SitecoreExtensions.Repositories
         Source = src
       };
       if (string.IsNullOrEmpty(file.MediaId))
+      {
         return file;
+      }
       var mediaItemFromMediaId = DatabaseRepository.GetActiveDatabase().GetItem(file.MediaId);
 
       if (mediaItemFromMediaId == null)
+      {
         return file;
+      }
 
       var mediaItem = new MediaItem(mediaItemFromMediaId);
       file.Title = string.IsNullOrEmpty(mediaItem.Title)

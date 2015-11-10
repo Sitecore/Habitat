@@ -1,33 +1,35 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Sitecore.Data.Items;
-
-namespace Habitat.Teasers.Models
+﻿namespace Habitat.Teasers.Models
 {
-    public class AccordeonModel
+  using System;
+  using System.Collections.Generic;
+  using Sitecore.Data.Items;
+
+  public class AccordeonModel
+  {
+    public AccordeonModel(Item item)
     {
-        public AccordeonModel(Item item)
-        {
-            Id = $"accordion-{Guid.NewGuid().ToString("N")}";
-        }
-
-        public string Id { get; private set; }
-
-        public IEnumerable<AccordeonElement> Elements => new[] {new AccordeonElement("Test1"), new AccordeonElement("Test2"), new AccordeonElement("Test3")};
+      this.Id = $"accordion-{Guid.NewGuid().ToString("N")}";
     }
 
-    public class AccordeonElement
-    {
-        public AccordeonElement(string title)
-        {
-            Title = title;
-            HeaderId = $"accordion-header-{Guid.NewGuid().ToString("N")}";
-            PanelId = $"accordion-panel-{Guid.NewGuid().ToString("N")}";
-        }
+    public string Id { get; private set; }
 
-        public string HeaderId { get; private set; }
-        public string PanelId { get; private set; }
-        public string Title { get; private set; }
+    public IEnumerable<AccordeonElement> Elements => new[]
+    {
+      new AccordeonElement("Test1"), new AccordeonElement("Test2"), new AccordeonElement("Test3")
+    };
+  }
+
+  public class AccordeonElement
+  {
+    public AccordeonElement(string title)
+    {
+      this.Title = title;
+      this.HeaderId = $"accordion-header-{Guid.NewGuid().ToString("N")}";
+      this.PanelId = $"accordion-panel-{Guid.NewGuid().ToString("N")}";
     }
+
+    public string HeaderId { get; private set; }
+    public string PanelId { get; private set; }
+    public string Title { get; private set; }
+  }
 }

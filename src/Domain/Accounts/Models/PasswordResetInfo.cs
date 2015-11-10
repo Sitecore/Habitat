@@ -1,8 +1,7 @@
 ﻿namespace Habitat.Accounts.Models
 {
   using System.ComponentModel.DataAnnotations;
-  using Attributes;
-  using Texts;
+  using Habitat.Accounts.Texts;
 
   public class PasswordResetInfo
   {

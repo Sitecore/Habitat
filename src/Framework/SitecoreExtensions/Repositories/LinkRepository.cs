@@ -1,17 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Xml;
-using Habitat.Framework.SitecoreExtensions.Model;
-using Habitat.Framework.SitecoreExtensions.Services;
-using Sitecore;
-using Sitecore.Data;
-using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
-using Sitecore.Links;
-using Sitecore.Resources.Media;
-
-namespace Habitat.Framework.SitecoreExtensions.Repositories
+﻿namespace Habitat.Framework.SitecoreExtensions.Repositories
 {
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Xml;
+  using Habitat.Framework.SitecoreExtensions.Model;
+  using Habitat.Framework.SitecoreExtensions.Services;
+  using Sitecore;
+  using Sitecore.Data;
+  using Sitecore.Data.Items;
+  using Sitecore.Diagnostics;
+  using Sitecore.Links;
+  using Sitecore.Resources.Media;
+
   public class LinkRepository : XmlParserService
   {
     public static Link GetLinkFromXml(string xml)
@@ -31,7 +31,9 @@ namespace Habitat.Framework.SitecoreExtensions.Repositories
       var url = GetUrl(node);
       var attributeValue6 = GetAttribute(node, "id");
       if (!string.IsNullOrEmpty(querystring))
+      {
         url += querystring.StartsWith("?") ? querystring : "?" + querystring;
+      }
       return new Link
       {
         Target = (string.IsNullOrEmpty(target) ? "_self" : target),
@@ -47,9 +49,13 @@ namespace Habitat.Framework.SitecoreExtensions.Repositories
     private static IEnumerable<KeyValuePair<string, string>> ParseQueryString(string queryString)
     {
       if (string.IsNullOrEmpty(queryString))
+      {
         return null;
+      }
       if (queryString[0] == 63 && queryString.Length > 1)
+      {
         queryString = queryString.Substring(1, queryString.Length - 1);
+      }
       return
         queryString.Split('&')
           .Select(queryPart => queryPart.Split('='))
@@ -73,7 +79,9 @@ namespace Habitat.Framework.SitecoreExtensions.Repositories
           : "#BROKENLINK";
       }
       else
+      {
         str = GetAttribute(node, "url");
+      }
       return str;
     }
   }

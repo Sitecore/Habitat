@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\AutoEmailDataAttribute.cs" />
+    <Compile Include="AccountSettingsServiceTests.cs" />
     <Compile Include="NotificationsServiceTests.cs" />
     <Compile Include="AccountsRepositoryTests.cs" />
     <Compile Include="AccountsControllerTests.cs" />

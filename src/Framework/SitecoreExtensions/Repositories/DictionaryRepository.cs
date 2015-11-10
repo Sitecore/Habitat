@@ -1,10 +1,9 @@
-﻿using System;
-using Sitecore;
-using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
-
-namespace Habitat.Framework.SitecoreExtensions.Repositories
+﻿namespace Habitat.Framework.SitecoreExtensions.Repositories
 {
+  using System;
+  using Sitecore;
+  using Sitecore.Diagnostics;
+
   public static class DictionaryRepository
   {
     private static string DictionaryRoot
@@ -18,7 +17,9 @@ namespace Habitat.Framework.SitecoreExtensions.Repositories
 
         var dictionaryPath = Context.Site.Properties["dictionaryPath"];
         if (!string.IsNullOrEmpty(dictionaryPath))
+        {
           return dictionaryPath;
+        }
         return string.Empty;
       }
     }
@@ -30,8 +31,8 @@ namespace Habitat.Framework.SitecoreExtensions.Repositories
         return defaultValue;
       }
 
-      string pathToDictionaryKey = string.Concat(DictionaryRoot, relativePath);
-      Item dictionaryItem = Context.Database.GetItem(pathToDictionaryKey, Context.Language);
+      var pathToDictionaryKey = string.Concat(DictionaryRoot, relativePath);
+      var dictionaryItem = Context.Database.GetItem(pathToDictionaryKey, Context.Language);
 
       if (dictionaryItem == null)
       {
