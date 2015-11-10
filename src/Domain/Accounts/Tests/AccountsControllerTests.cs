@@ -86,6 +86,10 @@
       result.Should().BeOfType<ViewResult>().Which.Model.Should().BeNull();
     }
 
+
+
+
+
     [Theory]
     [AutoDbData]
     public void RegisterShouldRedirectToHomePageIfUserLoggedIn(Database db, [Content] DbItem item, RegistrationInfo registrationInfo, [Frozen] IAccountRepository repo, [NoAutoProperties] AccountsController controller)
@@ -143,6 +147,27 @@
       }
     }
 
+
+    [Theory]
+    [AutoDbData]
+    public void ForgotPasswordShouldReturnSuccessView([Frozen] IAccountRepository repo, INotificationService ns, PasswordResetInfo model)
+    {
+      var fakeSite = new FakeSiteContext(new StringDictionary
+      {
+        {
+          "displayMode", "normal"
+        }
+      }) as SiteContext;
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        var controller = new AccountsController(repo, ns);
+        repo.RestorePassword(Arg.Any<string>()).Returns("new password");
+        repo.Exists(Arg.Any<string>()).Returns(true);
+        var result = controller.ForgotPassword(model);
+        result.Should().BeOfType<ViewResult>().Which.ViewName.Should().Be("ForgotPasswordSuccess");
+      }
+    }
+
     [Theory]
     [AutoDbData]
     public void ForgotPasswordShouldReturnModelIfUserNotExist(PasswordResetInfo model, [Frozen] IAccountRepository repo)
@@ -187,7 +212,6 @@
         }
       }
     }
-
 
 
     [Theory]
