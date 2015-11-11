@@ -6,8 +6,7 @@
   {
     public static void Register(HttpConfiguration config)
     {
-      config.Routes.MapHttpRoute("HabitatAccounts", "api/{controller}/{action}"
-        );
+      config.Routes.MapHttpRoute("HabitatAccountsApi", "api/{controller}/{action}");
     }
   }
 }

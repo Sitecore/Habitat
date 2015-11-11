@@ -3,6 +3,7 @@
   using System.Web.Mvc;
   using System.Web.Security;
   using FluentAssertions;
+  using FluentAssertions.Specialized;
   using Habitat.Accounts.Controllers;
   using Habitat.Accounts.Models;
   using Habitat.Accounts.Repositories;
@@ -68,6 +69,25 @@
         var result = ctrl.Logout();
         result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
       }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void LoginDialogShouldReturnViewIfNotValid(IAccountRepository repo, [NoAutoProperties] AccountsController controller, LoginInfo info)
+    {
+      var result = controller.LoginDialog(info);
+      result.Should().BeOfType<ViewResult>();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void LoginDialogShouldRedirectIfLoggedIn(Database db, [Content] DbItem item, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
+    {
+      var controller = new AccountsController(repo, service, accountSetting);
+      repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => true);
+      var result = controller.LoginDialog(info);
+      result.Should().BeOfType<JsonResult>();
+      ((result as JsonResult).Data as LoginResult).RedirectUrl.Should().BeEquivalentTo(info.ReturnUrl);
     }
 
     [Theory]

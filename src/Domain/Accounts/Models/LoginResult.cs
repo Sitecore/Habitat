@@ -2,8 +2,6 @@
 {
   public class LoginResult
   {
-    public string ValidationMessage { get; set; }
-
-    public bool IsAuthenticated { get; set; }
+    public string RedirectUrl { get; set; }
   }
 }

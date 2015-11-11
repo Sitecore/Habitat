@@ -151,7 +151,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountsApiControllerTests .cs" />
     <Compile Include="Extensions\AutoEmailDataAttribute.cs" />
     <Compile Include="AccountSettingsServiceTests.cs" />
     <Compile Include="NotificationsServiceTests.cs" />

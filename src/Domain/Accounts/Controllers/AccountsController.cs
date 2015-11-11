@@ -94,6 +94,11 @@
     [HttpPost]
     public ActionResult Login(LoginInfo loginInfo)
     {
+      return this.Login(loginInfo, redirectUrl => new RedirectResult(redirectUrl));
+    }
+
+    protected virtual ActionResult Login(LoginInfo loginInfo, Func<string, ActionResult> redirectAction)
+    {
       if (!this.ModelState.IsValid)
       {
         return this.View(loginInfo);
@@ -108,12 +113,18 @@
           redirectUrl = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRoot());
         }
 
-        return new RedirectResult(redirectUrl);
+        return redirectAction(redirectUrl);
       }
 
       this.ModelState.AddModelError("invalidCredentials", "Username or password is not valid.");
 
       return this.View(loginInfo);
+    }
+
+    [HttpPost]
+    public ActionResult LoginDialog(LoginInfo loginInfo)
+    {
+      return this.Login(loginInfo, redirectUrl => this.Json(new LoginResult {RedirectUrl = redirectUrl}));
     }
 
     [HttpPost]
