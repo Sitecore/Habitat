@@ -98,6 +98,50 @@
       }
     }
 
+    [Theory]
+    [AutoDbData]
+    public void LoginShouldReturnTrueIfUserIsLoggedIn(FakeMembershipUser user, AuthenticationProvider authenticationProvider, AccountRepository repo)
+    {
+      authenticationProvider.Login(@"somedomain\John", Arg.Any<string>(), Arg.Any<bool>()).Returns(true);
+
+      var context = new FakeSiteContext(new StringDictionary
+      {
+        {
+          "domain", "somedomain"
+        }
+      });
+      using (new Switcher<Domain, Domain>(new Domain("somedomain")))
+      {
+        using (new AuthenticationSwitcher(authenticationProvider))
+        {
+          var loginResult = repo.Login("John", "somepassword");
+          loginResult.Should().BeTrue();
+        }
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void LoginShouldReturnFalseIfUserIsNotLoggedIn(FakeMembershipUser user, AuthenticationProvider authenticationProvider, AccountRepository repo)
+    {
+      authenticationProvider.Login(@"somedomain\John", Arg.Any<string>(), Arg.Any<bool>()).Returns(false);
+
+      var context = new FakeSiteContext(new StringDictionary
+      {
+        {
+          "domain", "somedomain"
+        }
+      });
+      using (new Switcher<Domain, Domain>(new Domain("somedomain")))
+      {
+        using (new AuthenticationSwitcher(authenticationProvider))
+        {
+          var loginResult = repo.Login("John", "somepassword");
+          loginResult.Should().BeFalse();
+        }
+      }
+    }
+
     public static IEnumerable<object[]> RegistrationInfosArgumentNull
     {
       get

@@ -19,7 +19,7 @@
     public bool Login(string userName, string password)
     {
       var accountName = string.Empty;
-      var domain = Context.Site.Domain;
+      var domain = Context.Domain;
       if (domain != null)
       {
         accountName = domain.GetFullName(userName);

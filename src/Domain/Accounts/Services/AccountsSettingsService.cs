@@ -7,13 +7,14 @@
   using Sitecore.Data;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
+  using Sitecore.Diagnostics;
   using Sitecore.Exceptions;
 
   public class AccountsSettingsService : IAccountsSettingsService
   {
     public static AccountsSettingsService Instance => new AccountsSettingsService();
 
-    public string GetPageLink(Item contextItem, ID fieldID)
+    public virtual string GetPageLink(Item contextItem, ID fieldID)
     {
       var item = GetSettingsItem(contextItem);
 
@@ -30,6 +31,20 @@
       }
 
       return link.TargetItem.Url();
+    }
+
+    public virtual string GetPageLinkOrDefault(Item contextItem, ID field, Item defaultItem)
+    {
+      Assert.ArgumentNotNull(defaultItem, "defaultItem");
+      try
+      {
+        return this.GetPageLink(contextItem, field);
+      }
+      catch (Exception ex)
+      {
+        Log.Warn(ex.Message, ex, this);
+        return defaultItem.Url();
+      }
     }
 
     private static Item GetSettingsItem(Item contextItem)
