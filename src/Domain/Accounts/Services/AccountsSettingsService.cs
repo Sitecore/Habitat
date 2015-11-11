@@ -73,7 +73,7 @@
 
       var fromMail = mailTemplateItem.Fields[Templates.MailTemplate.Fields.From];
 
-      if (!fromMail.HasValue || string.IsNullOrEmpty(fromMail.Value))
+      if (string.IsNullOrEmpty(fromMail.Value))
       {
         throw new InvalidValueException("'From' field in mail template should be set");
       }

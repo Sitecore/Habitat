@@ -452,6 +452,7 @@
     [AutoDbData]
     public void RegisterShouldCallRegisterUserAndRedirectToHomePage(Database db, [Content] DbItem item, RegistrationInfo registrationInfo, [Frozen] IAccountRepository repo, [Frozen] INotificationService notifyService, [Frozen] IAccountsSettingsService accountsSettingsService)
     {
+      accountsSettingsService.GetPageLinkOrDefault(Arg.Any<Item>(), Arg.Any<ID>(), Arg.Any<Item>()).Returns("/redirect");
       repo.Exists(Arg.Any<string>()).Returns(false);
       var controller = new AccountsController(repo, notifyService, accountsSettingsService);
 
@@ -470,7 +471,7 @@
       using (new SiteContextSwitcher(fakeSite))
       {
         var result = controller.Register(registrationInfo);
-        result.Should().BeOfType<ViewResult>().Which.Model.Should().BeOfType<InfoMessage>().Which.Message.Should().Be(Captions.RegisterSuccess);
+        result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/redirect");
 
         repo.Received(1).RegisterUser(registrationInfo);
       }
