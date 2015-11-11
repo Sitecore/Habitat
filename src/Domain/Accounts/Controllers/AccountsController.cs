@@ -58,7 +58,8 @@
       try
       {
         this.accountRepository.RegisterUser(registrationInfo);
-        return this.View("InfoMessage", new InfoMessage(Captions.RegisterSuccess));
+        var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRoot());
+        return this.Redirect(link);
       }
       catch (MembershipCreateUserException ex)
       {
