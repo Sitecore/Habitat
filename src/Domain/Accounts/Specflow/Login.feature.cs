@@ -178,7 +178,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k"});
 #line 43
- testRunner.When("Actor entered following data into fields", ((string)(null)), table5, "When ");
+ testRunner.When("Actor enteres following data into fields", ((string)(null)), table5, "When ");
 #line 46
  testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -235,7 +235,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "m"});
 #line 64
- testRunner.When("Actor entered following data into fields", ((string)(null)), table9, "When ");
+ testRunner.When("Actor enteres following data into fields", ((string)(null)), table9, "When ");
 #line 67
  testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -283,7 +283,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov1@sitecore.net",
                         "k"});
 #line 81
- testRunner.When("Actor entered following data into fields", ((string)(null)), table12, "When ");
+ testRunner.When("Actor enteres following data into fields", ((string)(null)), table12, "When ");
 #line 84
  testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -331,7 +331,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov1@sitecore.net",
                         "k1"});
 #line 98
- testRunner.When("Actor entered following data into fields", ((string)(null)), table15, "When ");
+ testRunner.When("Actor enteres following data into fields", ((string)(null)), table15, "When ");
 #line 101
  testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -377,7 +377,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k"});
 #line 114
- testRunner.When("Actor entered following data into fields", ((string)(null)), table18, "When ");
+ testRunner.When("Actor enteres following data into fields", ((string)(null)), table18, "When ");
 #line 117
  testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
