@@ -132,7 +132,7 @@ Scenario: Accounts_Login form_UC8_Click Cancel button on login form
 	Then Actor presented with following data in fields
 	| E-mail | Password |
 	|        |          |
-
+	
 
 @NeedImplementation
 Scenario: Accounts_Login page_UC9_Open Login page

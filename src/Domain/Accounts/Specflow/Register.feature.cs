@@ -78,7 +78,7 @@ namespace Habitat.Accounts.Specflow
         public virtual void Accounts_Register_UC1_OpenRegisterPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Register_UC1_Open Register page", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5
@@ -86,11 +86,11 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
  testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 7
- testRunner.And("User selects REGISTER from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects Register from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
  testRunner.Then("Page URL ends on /register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 9
- testRunner.And("Register title presents on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Register title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field name"});
@@ -99,9 +99,9 @@ this.ScenarioSetup(scenarioInfo);
             table1.AddRow(new string[] {
                         "Password"});
             table1.AddRow(new string[] {
-                        "Confirm password"});
+                        "ConfirmPassword"});
 #line 10
- testRunner.And("Register fields present on Register page", ((string)(null)), table1, "And ");
+ testRunner.And("Register fields present on page", ((string)(null)), table1, "And ");
 #line 15
  testRunner.And("Register button presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -114,7 +114,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_Register_UC2_RegisterANewUser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Register_UC2_Register a new user", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 19
 this.ScenarioSetup(scenarioInfo);
 #line 20
@@ -123,7 +123,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
-                        "Confirm password"});
+                        "ConfirmPassword"});
             table2.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k",
@@ -133,7 +133,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 24
  testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
- testRunner.Then("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Habitat website is opened on Main Page /en", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Button name"});
@@ -160,7 +160,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_Register_UC3_InvalidEmail()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Register_UC3_Invalid email", new string[] {
-                        "InDesign"});
+                        "Ready"});
 #line 36
 this.ScenarioSetup(scenarioInfo);
 #line 37
@@ -169,7 +169,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
-                        "Confirm password"});
+                        "ConfirmPassword"});
             table5.AddRow(new string[] {
                         "kov$sitecore.net",
                         "k",
@@ -182,11 +182,11 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email field error message"});
             table6.AddRow(new string[] {
-                        ""});
+                        "Invalid email address"});
 #line 42
  testRunner.Then("System shows following message for the Email field", ((string)(null)), table6, "Then ");
 #line 45
- testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Page URL ends on /register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -197,14 +197,14 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_Register_UC4_NotUniqueEmail()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Register_UC4_Not unique email", new string[] {
-                        "InDesign"});
+                        "Bug35795"});
 #line 49
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
-                        "Confirm password"});
+                        "ConfirmPassword"});
             table7.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k",
@@ -230,11 +230,11 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email field error message"});
             table9.AddRow(new string[] {
-                        ""});
+                        "User with specified login already exists"});
 #line 58
  testRunner.Then("System shows following message for the Email field", ((string)(null)), table9, "Then ");
 #line 61
- testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Page URL ends on /register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -245,7 +245,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_Register_UC5_IncorrectConfirmPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Register_UC5_Incorrect confirm password", new string[] {
-                        "InDesign"});
+                        "Ready"});
 #line 65
 this.ScenarioSetup(scenarioInfo);
 #line 66
@@ -254,7 +254,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
-                        "Confirm password"});
+                        "ConfirmPassword"});
             table10.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k",
@@ -267,33 +267,31 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Password field error message"});
             table11.AddRow(new string[] {
-                        ""});
+                        "Wrong confirm password"});
 #line 71
  testRunner.Then("System shows following message for the Email field", ((string)(null)), table11, "Then ");
 #line 74
- testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Page URL ends on /register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Register")]
-        [Xunit.TraitAttribute("Description", "Accounts_Register_UC6_One of the required fields is empty")]
-        public virtual void Accounts_Register_UC6_OneOfTheRequiredFieldsIsEmpty()
+        [Xunit.TraitAttribute("Description", "Accounts_Register_UC6_One(email) of the required fields is empty")]
+        public virtual void Accounts_Register_UC6_OneEmailOfTheRequiredFieldsIsEmpty()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Register_UC6_One of the required fields is empty", new string[] {
-                        "InDesign"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Register_UC6_One(email) of the required fields is empty", new string[] {
+                        "Ready"});
 #line 78
 this.ScenarioSetup(scenarioInfo);
 #line 79
  testRunner.Given("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Email",
                         "Password",
-                        "Confirm password"});
+                        "ConfirmPassword"});
             table12.AddRow(new string[] {
-                        "",
                         "k",
                         "k"});
 #line 80
@@ -304,11 +302,11 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Required field error message"});
             table13.AddRow(new string[] {
-                        ""});
+                        "E-mail is required"});
 #line 84
  testRunner.Then("System shows following message for the Email field", ((string)(null)), table13, "Then ");
 #line 87
- testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Page URL ends on /register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -319,33 +317,24 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_Register_UC7_AllOffTheRequiredFieldsAreEmpty()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Register_UC7_all off the required fields are empty", new string[] {
-                        "InDesign"});
+                        "Ready"});
 #line 90
 this.ScenarioSetup(scenarioInfo);
 #line 91
  testRunner.Given("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 92
+ testRunner.When("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Email",
-                        "Password",
-                        "Confirm password"});
-            table14.AddRow(new string[] {
-                        "",
-                        "",
-                        ""});
-#line 92
- testRunner.When("Actor enters following data in to the register fields", ((string)(null)), table14, "When ");
-#line 95
- testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Required field error message"});
-            table15.AddRow(new string[] {
-                        ""});
-#line 96
- testRunner.Then("System shows following message for the Email field", ((string)(null)), table15, "Then ");
-#line 99
- testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            table14.AddRow(new string[] {
+                        "E-mail is required"});
+            table14.AddRow(new string[] {
+                        "Password is required"});
+#line 93
+ testRunner.Then("System shows following message for the Email field", ((string)(null)), table14, "Then ");
+#line 97
+ testRunner.And("Page URL ends on /register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
