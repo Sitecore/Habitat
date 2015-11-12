@@ -1,5 +1,6 @@
 ﻿namespace Habitat.Accounts.Tests
 {
+  using System;
   using System.Web.Mvc;
   using System.Web.Security;
   using FluentAssertions;
@@ -11,6 +12,7 @@
   using Habitat.Accounts.Tests.Extensions;
   using Habitat.Accounts.Texts;
   using NSubstitute;
+  using NSubstitute.ExceptionExtensions;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Collections;
   using Sitecore.Data;
@@ -329,7 +331,7 @@
 
     [Theory]
     [AutoDbData]
-    public void ForgotPasswordShouldReturnSuccessView([Frozen] IAccountRepository repo, INotificationService ns, PasswordResetInfo model, IAccountsSettingsService accountSetting)
+    public void ForgotPasswordShouldReturnSuccessView([Frozen] IAccountRepository repo, INotificationService ns, PasswordResetInfo model, IAccountsSettingsService accountSetting, InfoMessage info)
     {
       var fakeSite = new FakeSiteContext(new StringDictionary
       {
@@ -344,6 +346,28 @@
         repo.Exists(Arg.Any<string>()).Returns(true);
         var result = controller.ForgotPassword(model);
         result.Should().BeOfType<ViewResult>().Which.ViewName.Should().Be("InfoMessage");
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void ForgotPasswordShoudCatchAndReturnViewWithError(PasswordResetInfo model, [Frozen] IAccountRepository repo, INotificationService notificationService, IAccountsSettingsService settingService)
+    {
+      var fakeSite = new FakeSiteContext(new StringDictionary
+      {
+        {
+          "displayMode", "normal"
+        }
+      }) as SiteContext;
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        repo.RestorePassword(Arg.Any<string>()).ThrowsForAnyArgs(new Exception("Error"));
+        repo.Exists(Arg.Any<string>()).Returns(true);
+        var controller = new AccountsController(repo, notificationService, settingService);
+        var result = controller.ForgotPassword(model);
+        result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
+        result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(model.Email))
+          .WhichValue.Errors.Should().Contain(x => x.ErrorMessage == "Error");
       }
     }
 
