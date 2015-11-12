@@ -40,7 +40,7 @@ namespace Habitat.Search.Models
             {
                 rootItem = ((ReferenceField) configurationItem.Fields[Templates.SearchResults.Fields.Root]).TargetItem;
             }
-            return rootItem ?? (Sitecore.Context.Site.GetRoot());
+            return rootItem ?? (Sitecore.Context.Site.GetRootItem());
         }
 
     }

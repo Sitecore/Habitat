@@ -125,9 +125,12 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Demo\VisitDetails.cshtml" />
     <Content Include="Views\Demo\ContactDetails.cshtml" />
+    <Content Include="Views\Demo\DemoContent.cshtml" />
+    <Content Include="Views\Demo\EmptyLayout.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\DemoContent.cs" />
     <Compile Include="Models\ContactInformation.cs" />
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Models\PageLink.cs" />

@@ -62,7 +62,7 @@ namespace Habitat.Accounts.Controllers
         }
       }
 
-      return this.Redirect(Context.Site.GetRoot().Url());
+      return this.Redirect(Context.Site.GetRootItem().Url());
     }
 
     [HttpGet]
@@ -111,7 +111,7 @@ namespace Habitat.Accounts.Controllers
     {
       this.accountRepository.Logout();
 
-      return this.Redirect(Context.Site.GetRoot().Url());
+      return this.Redirect(Context.Site.GetRootItem().Url());
     }
 
     [HttpGet]
