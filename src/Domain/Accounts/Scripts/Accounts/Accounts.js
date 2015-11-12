@@ -4,26 +4,21 @@
   var passwordField = logincontrol.find("#loginPassword");
   $.ajax(
   {
-    url: "/api/AccountsApi/Login",
+    url: "api/Accounts/LoginDialog",
     method: "POST",
     data: {
                 email: usernameField.val(),
       password: passwordField.val()
     },
-    success: function(data) {
-      if (data.IsAuthenticated) {
-        window.location.href = window.location.href;
-      } else {
-        var group = usernameField.parent();
-        var isValidationPresent = group.find("#validationHelp");
-        if (isValidationPresent) {
-          isValidationPresent.remove();
+    success: function (data) {
+        if (data.RedirectUrl != null && data.RedirectUrl != undefined) {
+            window.location.href = window.location.href;
+        } else {
+            var body = logincontrol.find(".modal-body");
+            var parent = body.parent();
+            body.remove();
+            parent.html(data);
         }
-        var help = $("<span id='validationHelp' class='help-block'></span>");
-        help.text(data.ValidationMessage);
-        usernameField.parent().append(help);
-        passwordField.val("");
-      }
     }
   });
 }

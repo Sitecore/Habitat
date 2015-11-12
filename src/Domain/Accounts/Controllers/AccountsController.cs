@@ -21,7 +21,7 @@
     {
     }
 
-    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService , IAccountsSettingsService accountsSettingsService)
+    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService)
     {
       this.accountRepository = accountRepository;
       this.notificationService = notificationService;
@@ -32,7 +32,10 @@
     public ActionResult Register()
     {
       var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null) return redirect;
+      if (redirect != null)
+      {
+        return redirect;
+      }
 
       return this.View();
     }
@@ -41,7 +44,10 @@
     public ActionResult Register(RegistrationInfo registrationInfo)
     {
       var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null) return redirect;
+      if (redirect != null)
+      {
+        return redirect;
+      }
 
       if (!this.ModelState.IsValid)
       {
@@ -58,7 +64,7 @@
       try
       {
         this.accountRepository.RegisterUser(registrationInfo);
-        var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRoot());
+        var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
         return this.Redirect(link);
       }
       catch (MembershipCreateUserException ex)
@@ -74,7 +80,10 @@
     public ActionResult Login()
     {
       var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null) return redirect;
+      if (redirect != null)
+      {
+        return redirect;
+      }
 
       return this.View();
     }
@@ -85,7 +94,7 @@
       {
         if (Context.User.IsAuthenticated)
         {
-          var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRoot());
+          var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
           return this.Redirect(link);
         }
       }
@@ -94,6 +103,11 @@
 
     [HttpPost]
     public ActionResult Login(LoginInfo loginInfo)
+    {
+      return this.Login(loginInfo, redirectUrl => new RedirectResult(redirectUrl));
+    }
+
+    protected virtual ActionResult Login(LoginInfo loginInfo, Func<string, ActionResult> redirectAction)
     {
       if (!this.ModelState.IsValid)
       {
@@ -106,10 +120,10 @@
         var redirectUrl = loginInfo.ReturnUrl;
         if (string.IsNullOrEmpty(redirectUrl))
         {
-          redirectUrl = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRoot());
+          redirectUrl = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
         }
 
-        return new RedirectResult(redirectUrl);
+        return redirectAction(redirectUrl);
       }
 
       this.ModelState.AddModelError("invalidCredentials", "Username or password is not valid.");
@@ -118,18 +132,30 @@
     }
 
     [HttpPost]
+    public ActionResult LoginDialog(LoginInfo loginInfo)
+    {
+      return this.Login(loginInfo, redirectUrl => this.Json(new LoginResult
+                                                            {
+                                                              RedirectUrl = redirectUrl
+                                                            }));
+    }
+
+    [HttpPost]
     public ActionResult Logout()
     {
       this.accountRepository.Logout();
 
-      return this.Redirect(Context.Site.GetRoot().Url());
+      return this.Redirect(Context.Site.GetRootItem().Url());
     }
 
     [HttpGet]
     public ActionResult ForgotPassword()
     {
       var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null) return redirect;
+      if (redirect != null)
+      {
+        return redirect;
+      }
 
       return this.View();
     }
@@ -138,7 +164,10 @@
     public ActionResult ForgotPassword(PasswordResetInfo model)
     {
       var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null) return redirect;
+      if (redirect != null)
+      {
+        return redirect;
+      }
 
       if (!this.ModelState.IsValid)
       {

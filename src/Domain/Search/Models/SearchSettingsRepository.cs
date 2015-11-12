@@ -23,18 +23,13 @@
       }
 
       return new SearchSettings
-      {
-        ConfigurationItem = configurationItem,
-        Query = query,
-        SearchBoxTitle = configurationItem[Templates.SearchResults.Fields.SearchBoxTitle],
-        SearchResultsUrl = configurationItem.Url(),
-        Root = GetRootItem(configurationItem)
-      };
-    }
-
-    public static SearchSettings Get()
-    {
-      return Get(null);
+             {
+               ConfigurationItem = configurationItem,
+               Query = query,
+               SearchBoxTitle = configurationItem[Templates.SearchResults.Fields.SearchBoxTitle],
+               SearchResultsUrl = configurationItem.Url(),
+               Root = GetRootItem(configurationItem)
+             };
     }
 
     private static Item GetRootItem(Item configurationItem)
@@ -44,7 +39,12 @@
       {
         rootItem = ((ReferenceField)configurationItem.Fields[Templates.SearchResults.Fields.Root]).TargetItem;
       }
-      return rootItem ?? (Context.Site.GetRoot());
+      return rootItem ?? Context.Site.GetRootItem();
+    }
+
+    public static SearchSettings Get()
+    {
+      return Get(null);
     }
   }
 }

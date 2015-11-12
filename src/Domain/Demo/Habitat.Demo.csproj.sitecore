@@ -2,4 +2,10 @@
   <PropertyGroup>
     <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
   </PropertyGroup>
+  <File Include="Views\Demo\EmptyLayout.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{BA43C26B-3A61-4F96-A83A-60193978B66C}</Item>
+  </File>
+  <File Include="Views\Demo\DemoContent.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{B883E272-70D8-419A-8AF8-819356D839AD}</Item>
+  </File>
 </Project>
