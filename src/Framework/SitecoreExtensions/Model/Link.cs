@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace Habitat.Framework.SitecoreExtensions.Model
+﻿namespace Habitat.Framework.SitecoreExtensions.Model
 {
+  using System.Collections.Generic;
+
   public class Link
   {
     public string Url { get; set; }

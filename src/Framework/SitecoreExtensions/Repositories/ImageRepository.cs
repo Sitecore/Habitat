@@ -1,18 +1,20 @@
-﻿using System;
-using System.Xml;
-using Habitat.Framework.SitecoreExtensions.Model;
-using Habitat.Framework.SitecoreExtensions.Services;
-using Sitecore.Data.Items;
-
-namespace Habitat.Framework.SitecoreExtensions.Repositories
+﻿namespace Habitat.Framework.SitecoreExtensions.Repositories
 {
+  using System;
+  using System.Xml;
+  using Habitat.Framework.SitecoreExtensions.Model;
+  using Habitat.Framework.SitecoreExtensions.Services;
+  using Sitecore.Data.Items;
+
   internal class ImageRepository : XmlParserService
   {
     public static Image Get(string xml)
     {
       var xmlDocument = ValidateAndReturnXmlDocument(xml);
       if (xmlDocument == null)
+      {
         throw new Exception("Xml document has invalid value or is null : " + xml);
+      }
       return GetFromXml(xmlDocument.FirstChild);
     }
 
@@ -36,20 +38,32 @@ namespace Habitat.Framework.SitecoreExtensions.Repositories
       };
 
       if (!string.IsNullOrEmpty(width))
+      {
         image.Width = int.Parse(width);
+      }
       if (!string.IsNullOrEmpty(height))
+      {
         image.Height = int.Parse(height);
+      }
       if (!string.IsNullOrEmpty(vspace))
+      {
         image.VerticalSpace = int.Parse(vspace);
+      }
       if (!string.IsNullOrEmpty(hspace))
+      {
         image.HorisontalSpace = int.Parse(hspace);
+      }
 
       if (string.IsNullOrEmpty(image.MediaId))
+      {
         return image;
+      }
 
       var mediaIdItem = DatabaseRepository.GetActiveDatabase().GetItem(image.MediaId);
       if (mediaIdItem == null)
+      {
         return image;
+      }
 
       var mediaItem = new MediaItem(mediaIdItem);
       image.Title = string.IsNullOrEmpty(mediaItem.Title)
@@ -58,7 +72,9 @@ namespace Habitat.Framework.SitecoreExtensions.Repositories
       image.Extension = mediaItem.Extension;
       image.FileSize = mediaItem.Size;
       if (string.IsNullOrEmpty(image.AlternateText))
+      {
         image.AlternateText = mediaItem.Alt;
+      }
       return image;
     }
   }

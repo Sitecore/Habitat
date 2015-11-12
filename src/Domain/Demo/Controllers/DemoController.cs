@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+using System.Web.Mvc;
 using Habitat.Demo.Models;
 using Habitat.Framework.SitecoreExtensions.Extensions;
 using Sitecore.Analytics;
@@ -7,6 +7,10 @@ using Sitecore.Mvc.Presentation;
 
 namespace Habitat.Demo.Controllers
 {
+  using System.Web.Mvc;
+  using Habitat.Demo.Models;
+  using Sitecore.Mvc.Controllers;
+
   public class DemoController : SitecoreController
   {
     public ActionResult VisitDetails()
@@ -32,8 +36,8 @@ namespace Habitat.Demo.Controllers
 
     public ActionResult EndVisit()
     {
-      Session.Abandon();
-      return Redirect("/");
+      this.Session.Abandon();
+      return this.Redirect("/");
     }
   }
 }

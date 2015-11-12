@@ -3,12 +3,12 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @{
-    var identity = IdentityRepository.Get(Model.Item);
-    if (identity == null)
-    {
-        return;
-    }
+  var identity = IdentityRepository.Get(Model.Item);
+  if (identity == null)
+  {
+    return;
+  }
 }
 <div class="copyright well text-muted text-center">
-    @Html.Sitecore().Field(Templates.Identity.Fields.Copyright.ToString(), identity)
+  @Html.Sitecore().Field(Templates.Identity.Fields.Copyright.ToString(), identity)
 </div>

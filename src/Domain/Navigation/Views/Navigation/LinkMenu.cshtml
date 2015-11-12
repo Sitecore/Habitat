@@ -3,33 +3,33 @@
 @model Habitat.Navigation.Models.NavigationItems
 
 @{
-    if (Model?.Items == null)
-    {
-        return;
-    }
+  if (Model?.Items == null)
+  {
+    return;
+  }
 }
 
 <nav>
-    <ul class="nav nav-pills">
-        @foreach (var item in Model.Items)
-        {
-            var liclass = "";
-            if (item.Item.Fields[Templates.LinkMenuItem.Fields.DividerBefore].IsChecked())
-            {
-                liclass = "divider";
-            }
-            <li class="@liclass">
-                <a href="@item.Url" target="@item.Target" title="@item.Item[Templates.Navigable.Fields.NavigationTitle]">
-                    @if (!String.IsNullOrWhiteSpace(item.Item[Templates.LinkMenuItem.Fields.Icon]))
-                {
-                        <i class="fa fa-@item.Item[Templates.LinkMenuItem.Fields.Icon]"></i>
-                    }
-                    else
-                    {
-                        @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
-                    }
-                </a>
-            </li>
-        }
-    </ul>
+  <ul class="nav nav-pills">
+    @foreach (var item in Model.Items)
+    {
+      var liclass = "";
+      if (item.Item.Fields[Templates.LinkMenuItem.Fields.DividerBefore].IsChecked())
+      {
+        liclass = "divider";
+      }
+      <li class="@liclass">
+        <a href="@item.Url" target="@item.Target" title="@item.Item[Templates.Navigable.Fields.NavigationTitle]">
+          @if (!string.IsNullOrWhiteSpace(item.Item[Templates.LinkMenuItem.Fields.Icon]))
+          {
+            <i class="fa fa-@item.Item[Templates.LinkMenuItem.Fields.Icon]"></i>
+          }
+          else
+          {
+            @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
+          }
+        </a>
+      </li>
+    }
+  </ul>
 </nav>

@@ -1,7 +1,7 @@
-﻿using Sitecore.Data;
-
-namespace Habitat.Demo
+﻿namespace Habitat.Demo
 {
+  using Sitecore.Data;
+
   public struct Templates
   {
     public struct ProfilingSettings

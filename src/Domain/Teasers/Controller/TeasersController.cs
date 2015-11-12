@@ -1,15 +1,15 @@
-﻿using System.Web.Mvc;
-using Habitat.Teasers.Models;
-using Sitecore.Mvc.Presentation;
-
-namespace Habitat.Teasers.Controller
+﻿namespace Habitat.Teasers.Controller
 {
-    public class TeasersController : System.Web.Mvc.Controller
+  using System.Web.Mvc;
+  using Habitat.Teasers.Models;
+  using Sitecore.Mvc.Presentation;
+
+  public class TeasersController : Controller
+  {
+    public ActionResult AccordeonTeaser()
     {
-        public ActionResult AccordeonTeaser()
-        {
-            AccordeonModel model = new AccordeonModel(RenderingContext.Current.Rendering.Item);
-            return View("AccordeonTeaser", model);
-        }
+      var model = new AccordeonModel(RenderingContext.Current.Rendering.Item);
+      return this.View("AccordeonTeaser", model);
     }
+  }
 }

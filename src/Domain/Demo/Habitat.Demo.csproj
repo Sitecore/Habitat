@@ -120,6 +120,12 @@
     </Content>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -127,7 +133,9 @@
     <Content Include="Views\Demo\ContactDetails.cshtml" />
     <Content Include="Views\Demo\DemoContent.cshtml" />
     <Content Include="Views\Demo\EmptyLayout.cshtml" />
-    <None Include="Web.config" />
+    <None Include="Web.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\DemoContent.cs" />

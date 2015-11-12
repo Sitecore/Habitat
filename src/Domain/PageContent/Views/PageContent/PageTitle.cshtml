@@ -3,16 +3,15 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @{
-    var section = Model.Item.GetAncestorOrSelfOfTemplate(Templates.HasPageContent.ID);
-    if (section == null)
-    {
-        return;
-    }
+  var section = Model.Item.GetAncestorOrSelfOfTemplate(Templates.HasPageContent.ID);
+  if (section == null)
+  {
+    return;
+  }
 }
 
 <div class="section-title">
-    <h1>
-        @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title.ToString(), @section)
-    </h1>
+  <h1>
+    @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title.ToString(), @section)
+  </h1>
 </div>
-

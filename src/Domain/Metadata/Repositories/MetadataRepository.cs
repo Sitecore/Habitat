@@ -1,14 +1,15 @@
-﻿using Habitat.Framework.SitecoreExtensions.Extensions;
-using Sitecore.Data.Items;
-
-namespace Habitat.Metadata.Repositories
+﻿namespace Habitat.Metadata.Repositories
 {
-    public static class MetadataRepository
+  using Habitat.Framework.SitecoreExtensions.Extensions;
+  using Sitecore;
+  using Sitecore.Data.Items;
+
+  public static class MetadataRepository
+  {
+    public static Item Get(Item contextItem)
     {
-        public static Item Get(Item contextItem)
-        {
-            return contextItem.GetAncestorOrSelfOfTemplate(Templates.SiteMetadata.ID) 
-                ?? Sitecore.Context.Site.GetContextItem(Templates.SiteMetadata.ID);
-        }
+      return contextItem.GetAncestorOrSelfOfTemplate(Templates.SiteMetadata.ID)
+             ?? Context.Site.GetContextItem(Templates.SiteMetadata.ID);
     }
+  }
 }

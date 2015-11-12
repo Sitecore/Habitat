@@ -1,10 +1,7 @@
-﻿using System;
-using System.Net.Mail;
-using Habitat.Accounts.Texts;
-using Sitecore;
-
-namespace Habitat.Accounts.Services
+﻿namespace Habitat.Accounts.Services
 {
+  using Sitecore;
+
   public class NotificationService : INotificationService
   {
     private readonly IAccountsSettingsService siteSettings;
@@ -16,7 +13,7 @@ namespace Habitat.Accounts.Services
 
     public void SendPassword(string email, string newPassword)
     {
-      var mail = siteSettings.GetForgotPasswordMailTemplate();
+      var mail = this.siteSettings.GetForgotPasswordMailTemplate();
       mail.To.Add(email);
       mail.Body = mail.Body.Replace("$password$", newPassword);
 

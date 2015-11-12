@@ -1,26 +1,23 @@
-﻿@using Habitat.Framework.SitecoreExtensions.Extensions
-@using Sitecore.Data.Items
-@using Sitecore.Mvc.Presentation
-@using Habitat.Framework.Indexing.Models;
-@using Habitat.Framework.SitecoreExtensions.Repositories
-@model ISearchResults
+﻿@using Habitat.Framework.SitecoreExtensions.Repositories
+@model Habitat.Framework.Indexing.Models.ISearchResults
 <div class="search-results">
-    @foreach (var result in Model.Results)
-    {
-        var item = result.Item;
-        <div class="result">
-            <h3>
-                <a href="@result.Url">@Html.Raw(result.Title)</a>
-            </h3>
-            <div class="tags">
-                <span class="label label-default">@result.ContentType</span>
-            </div>
-            @if (!string.IsNullOrWhiteSpace(result.Description)) {
-                <div class="description">
-                    @Html.Raw(result.Description)
-                </div>
-            }
-            <a class="btn btn-default" href="@result.Url">@DictionaryRepository.Get("/search/results/read more", "Read more...")</a>
+  @foreach (var result in Model.Results)
+  {
+    var item = result.Item;
+    <div class="result">
+      <h3>
+        <a href="@result.Url">@Html.Raw(result.Title)</a>
+      </h3>
+      <div class="tags">
+        <span class="label label-default">@result.ContentType</span>
+      </div>
+      @if (!string.IsNullOrWhiteSpace(result.Description))
+      {
+        <div class="description">
+          @Html.Raw(result.Description)
         </div>
-    }
+      }
+      <a class="btn btn-default" href="@result.Url">@DictionaryRepository.Get("/search/results/read more", "Read more...")</a>
+    </div>
+  }
 </div>

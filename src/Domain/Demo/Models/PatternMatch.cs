@@ -8,9 +8,9 @@ namespace Habitat.Demo.Models
 
     public PatternMatch(string profile, string pattern, string image)
     {
-      Profile = profile;
-      PatternName = pattern;
-      Image = image;
+      this.Profile = profile;
+      this.PatternName = pattern;
+      this.Image = image;
     }
 
     public string Profile { get; set; }

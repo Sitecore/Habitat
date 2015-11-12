@@ -6,7 +6,6 @@
   using Sitecore.Diagnostics;
   using Sitecore.Security.Accounts;
   using Sitecore.Security.Authentication;
-  using Sitecore.Security.Domains;
 
   public class AccountRepository : IAccountRepository
   {
@@ -16,15 +15,15 @@
 
       return User.Exists(fullName);
     }
-    
+
     public bool Login(string userName, string password)
     {
-      string accountName = string.Empty;
-      var domain = Sitecore.Context.Site.Domain;
+      var accountName = string.Empty;
+      var domain = Context.Domain;
       if (domain != null)
       {
         accountName = domain.GetFullName(userName);
-      }            
+      }
 
       return AuthenticationManager.Login(accountName, password);
     }
@@ -49,7 +48,7 @@
       Assert.ArgumentNotNullOrEmpty(registrationInfo.ConfirmPassword, "registrationInfo.ConfirmPassword");
 
       var fullName = Context.Domain.GetFullName(registrationInfo.Email);
-      Assert.IsNotNullOrEmpty(fullName,"Can't retrieve full userName");
+      Assert.IsNotNullOrEmpty(fullName, "Can't retrieve full userName");
 
       var user = User.Create(fullName, registrationInfo.Password);
       user.Profile.Email = registrationInfo.Email;
@@ -59,4 +58,3 @@
     }
   }
 }
-    

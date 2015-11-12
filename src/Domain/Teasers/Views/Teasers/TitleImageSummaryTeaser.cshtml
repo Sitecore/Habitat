@@ -4,22 +4,22 @@
 
 
 <div class="thumbnail teaser">
-    <a href="@Model.Item.LinkFieldUrl(Templates.TeaserContent.Fields.Link)">
-        @Html.Sitecore().ImageField(Templates.TeaserContent.Fields.Image.ToString(), Model.Item, mw: 500, cssClass: "img-responsive")
-    </a>
-    <div class="caption">
-        <h3 class="teaser-heading">
-            @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
-        </h3>
-        <hr/>
-        <p>
-            @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
-        </p>
-        <p class="read-more">
-            @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
-   {
-       @class = "btn btn-default"
-   })
-        </p>
-    </div>
+  <a href="@Model.Item.LinkFieldUrl(Templates.TeaserContent.Fields.Link)">
+    @Html.Sitecore().ImageField(Templates.TeaserContent.Fields.Image.ToString(), Model.Item, mw: 500, cssClass: "img-responsive")
+  </a>
+  <div class="caption">
+    <h3 class="teaser-heading">
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
+    </h3>
+    <hr/>
+    <p>
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
+    </p>
+    <p class="read-more">
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
+      {
+        @class = "btn btn-default"
+      })
+    </p>
+  </div>
 </div>
