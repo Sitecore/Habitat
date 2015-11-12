@@ -37,6 +37,9 @@ Languages:
     - ID: b128e2b3-3865-4f1c-a147-5f248676d3f5
       # AfterLoginPage
       Value: /sitecore/content/Habitat/Home
+    - ID: dfc0f9eb-5fd4-45dd-9f6e-c728174a92d3
+      # UserProfile
+      Value: {14523428-879D-491C-9DF0-1417E82A4311}
     - ID: e748d808-64c1-4dec-9718-f35cf9689e4b
       # Logo
       Value: "<image mediapath=\"/Default Website/sc_logo\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Default Website/sc_logo\" mediaid=\"{461A93BF-5471-4AF2-BF36-D638F5660CB5}\" />"

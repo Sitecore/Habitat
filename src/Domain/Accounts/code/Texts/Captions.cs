@@ -18,6 +18,8 @@
 
     public static string Register => DictionaryRepository.Get("/Accounts/Captions/Register", "Register");
 
+    public static string Update => DictionaryRepository.Get("/Accounts/Captions/Update", "Update");
+
     public static string ResetPassword => DictionaryRepository.Get("/Accounts/Captions/ResetPassword", "Reset password");
 
     public static string ResetPasswordInfo => DictionaryRepository.Get("/Accounts/Captions/ResetPasswordInfo", "The new password will be sent to your e-mail.");
@@ -27,6 +29,8 @@
     public static string RegisterSuccess => DictionaryRepository.Get("/Accounts/Captions/RegisterSuccess", "Registration was successfully completed");
     public static string RememberMe => DictionaryRepository.Get("/Accounts/Captions/RememberMe", "Remember me");
     public static string ForgotYourPassword => DictionaryRepository.Get("/Accounts/Captions/ForgotYourPassword", "Forgot your password?");
+
+    public static string Interests => DictionaryRepository.Get("/Accounts/Captions/Interests", "Interests");
     public static string Cancel => DictionaryRepository.Get("/Accounts/Captions/Cancel", "Cancel");
   }
 }

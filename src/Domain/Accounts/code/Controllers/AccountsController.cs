@@ -195,5 +195,21 @@
         return this.View(model);
       }
     }
+
+    [HttpGet]
+    public ActionResult EditProfile()
+    {
+      // Get Profile
+
+      return this.View();
+    }
+
+    [HttpPost]
+    public ActionResult EditProfile(EditProfile editProfile)
+    {
+      // do some stuff
+
+      return this.View();
+    }
   }
 }

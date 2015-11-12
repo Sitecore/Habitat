@@ -137,6 +137,7 @@
     <Content Include="Views\Accounts\Register.cshtml" />
     <Content Include="Views\Accounts\InfoMessage.cshtml" />
     <Content Include="Views\Accounts\LoginDialog.cshtml" />
+    <Content Include="Views\Accounts\EditProfile.cshtml" />
     <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -153,7 +154,9 @@
   <ItemGroup>
     <Compile Include="Models\InfoMessage.cs" />
     <Compile Include="Models\LoginInfo.cs" />
+    <Compile Include="Models\EditProfile.cs" />
     <Compile Include="Services\IAccountsSettingsService.cs" />
+    <Compile Include="Services\UserProfileService.cs" />
     <Compile Include="WebApiConfig.cs" />
     <Compile Include="Models\LoginResult.cs" />
     <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
