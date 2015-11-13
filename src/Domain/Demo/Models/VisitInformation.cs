@@ -60,7 +60,7 @@
       this._isDeviceLookupDone = true;
       if (!DeviceDetectionManager.IsEnabled || !DeviceDetectionManager.IsReady || string.IsNullOrEmpty(Tracker.Current.Interaction.UserAgent))
       {
-        return null;
+        return new DeviceInformation();
       }
       
       return DeviceDetectionManager.GetDeviceInformation(Tracker.Current.Interaction.UserAgent);
