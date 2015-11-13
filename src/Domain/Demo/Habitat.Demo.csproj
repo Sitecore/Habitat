@@ -148,7 +148,7 @@
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Framework\SitecoreExtensions\Habitat.Framework.SitecoreExtensions.csproj">
+    <ProjectReference Include="..\..\Framework\SitecoreExtensions\code\Habitat.Framework.SitecoreExtensions.csproj">
       <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
       <Name>Habitat.Framework.SitecoreExtensions</Name>
     </ProjectReference>

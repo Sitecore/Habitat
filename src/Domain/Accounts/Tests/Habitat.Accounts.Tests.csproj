@@ -166,7 +166,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\Habitat.Framework.SitecoreExtensions.csproj">
+    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Habitat.Framework.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Habitat.Framework.SitecoreExtensions</Name>
     </ProjectReference>

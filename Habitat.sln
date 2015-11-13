@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.SitecoreExtensions", "src\Framework\SitecoreExtensions\Habitat.Framework.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.SitecoreExtensions", "src\Framework\SitecoreExtensions\code\Habitat.Framework.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{F347A85D-6FF5-4927-B5CF-54D81954E6A2}"
 	ProjectSection(SolutionItems) = preProject
@@ -16,12 +16,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		package.xml = package.xml
 		publishsettings.targets = publishsettings.targets
 		README.md = README.md
-		src\Project\Website\App_Config\Include\Habitat\z.Habitat.DevSettings.config = src\Project\Website\App_Config\Include\Habitat\z.Habitat.DevSettings.config
+		src\Project\Website\code\App_Config\Include\Habitat\z.Habitat.DevSettings.config = src\Project\Website\code\App_Config\Include\Habitat\z.Habitat.DevSettings.config
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{755F9E42-1707-4E1A-AE6D-3FD8A25118C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Assets", "src\Framework\Assets\Habitat.Framework.Assets.csproj", "{7E46FF93-EE05-412C-AC47-2A59A13DA73C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Assets", "src\Framework\Assets\code\Habitat.Framework.Assets.csproj", "{7E46FF93-EE05-412C-AC47-2A59A13DA73C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{D2CBE02E-6AA7-4343-9A01-891F971A17F5}"
 EndProject
@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Metadata", "src\dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Navigation", "src\domain\Navigation\Habitat.Navigation.csproj", "{16003E7F-0FAF-4DEE-B13D-DD327E965A98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Taxonomy", "src\Framework\Taxonomy\Habitat.Framework.Taxonomy.csproj", "{C353B05E-1D24-4806-B1C3-C55DA60CB15D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Taxonomy", "src\Framework\Taxonomy\code\Habitat.Framework.Taxonomy.csproj", "{C353B05E-1D24-4806-B1C3-C55DA60CB15D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Social", "src\domain\Social\Habitat.Social.csproj", "{B018C183-6976-4766-B2C0-0CBA4C064AED}"
 EndProject
@@ -45,15 +45,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Media", "src\Domain
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{9A8FD752-FF60-4789-8251-E1D8FF290F3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Design", "src\Project\Design\Habitat.Design.csproj", "{98DE0D1D-26F1-4CCA-847C-4E0FC2DBA5FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Design", "src\Project\Design\code\Habitat.Design.csproj", "{98DE0D1D-26F1-4CCA-847C-4E0FC2DBA5FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Website", "src\Project\Website\Habitat.Website.csproj", "{86CADB26-5817-46B6-88C7-76D5753722C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Website", "src\Project\Website\code\Habitat.Website.csproj", "{86CADB26-5817-46B6-88C7-76D5753722C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Serialization", "src\Framework\Serialization\Habitat.Framework.Serialization.csproj", "{007CD5DC-0030-460D-91A3-3DDEA9AB472F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Serialization", "src\Framework\Serialization\code\Habitat.Framework.Serialization.csproj", "{007CD5DC-0030-460D-91A3-3DDEA9AB472F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Accounts", "src\Domain\Accounts\Habitat.Accounts.csproj", "{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Indexing", "src\Framework\Indexing\Habitat.Framework.Indexing.csproj", "{80213F24-577F-4F0B-A3B8-62485EA4D2F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Indexing", "src\Framework\Indexing\code\Habitat.Framework.Indexing.csproj", "{80213F24-577F-4F0B-A3B8-62485EA4D2F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Teasers", "src\Domain\Teasers\Habitat.Teasers.csproj", "{64C1C1EF-71CB-47BD-92F9-4E50CE35BD9F}"
 EndProject
