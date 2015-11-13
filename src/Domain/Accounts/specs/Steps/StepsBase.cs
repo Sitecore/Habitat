@@ -6,34 +6,42 @@ using TechTalk.SpecFlow;
 
 namespace Habitat.Accounts.Specflow.Steps
 {
-    [Binding]
-    public class StepsBase
+  using System.Threading;
+
+  [Binding]
+  public class StepsBase
+  {
+    [BeforeStep()]
+    public static void Timeout()
     {
-        public static IWebDriver Driver
-        {
-            get { return FeatureContext.Current.Get<IWebDriver>(); }
-            set { FeatureContext.Current.Set(value); }
-        }
-
-        [BeforeFeature]
-        public static void Setup()
-        {
-            Driver = new FirefoxDriver();
-        }
-
-        public Site Site => new Site();
-
-        [AfterFeature]
-        public static void TeardownTest()
-        {
-            try
-            {
-                Driver.Quit();
-            }
-            catch (Exception)
-            {
-                // Ignore errors if unable to close the browser
-            }
-        }
+#warning shitcode
+      Thread.Sleep(500);
     }
+    public static IWebDriver Driver
+    {
+      get { return FeatureContext.Current.Get<IWebDriver>(); }
+      set { FeatureContext.Current.Set(value); }
+    }
+
+    [BeforeFeature]
+    public static void Setup()
+    {
+      Driver = new FirefoxDriver();
+    }
+
+    public Site Site => new Site();
+
+    [AfterFeature]
+    public static void TeardownTest()
+    {
+      try
+      {
+        Driver.Quit();
+      }
+      catch (Exception)
+      {
+        // Ignore errors if unable to close the browser
+      }
+    }
+  }
 }
