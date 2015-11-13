@@ -7,6 +7,9 @@ SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type
   Value: Internal Link
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 100
 Languages:
 - Language: en
   Versions:

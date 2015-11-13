@@ -22,6 +22,18 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20150824T171748Z
+    - ID: 365254c4-1c1c-493a-9710-671574717898
+      # FogotPasswordMailTemplate
+      Value: /sitecore/content/Habitat/Global/Registration/Forgot Password Mail
+    - ID: 71962360-10d8-4b98-bb8d-57660ce11127
+      # RegisterPage
+      Value: /sitecore/content/Habitat/Home/Register
+    - ID: b128e2b3-3865-4f1c-a147-5f248676d3f5
+      # AfterLoginPage
+      Value: /sitecore/content/Habitat/Home
     - ID: e748d808-64c1-4dec-9718-f35cf9689e4b
       # Logo
       Value: "<image mediapath=\"/Default Website/sc_logo\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Default Website/sc_logo\" mediaid=\"{461A93BF-5471-4AF2-BF36-D638F5660CB5}\" />"
+    - ID: f3cd2bb8-472b-4df0-87c0-a13098e391ca
+      # ForgotPasswordPage
+      Value: /sitecore/content/Habitat/Home/ForgotPassword

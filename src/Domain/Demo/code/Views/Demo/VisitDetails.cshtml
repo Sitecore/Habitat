@@ -1,0 +1,181 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Repositories
+@model Habitat.Demo.Models.VisitInformation
+<div id="visit-details" class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      @DictionaryRepository.Get("/Demo/VisitDetails/Title", "This Visit")
+      <div class="stats">
+        <span title="@DictionaryRepository.Get("/Demo/VisitDetails/PagesViewed", "Pages Viewed")" data-toggle="tooltip" data-placement="left">
+          <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+          <span class="badge">@Model.PageCount</span>
+        </span>
+        <span title="@DictionaryRepository.Get("/Demo/VisitDetails/EngagementValue", "Engagement Value")" data-toggle="tooltip" data-placement="left">
+          <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+          <span class="badge">@Model.EngagementValue</span>
+        </span>
+      </div>
+    </h3>
+  </div>
+
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#visitDetailsPatterns" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/VisitDetails/Patterns", "Patterns")
+          <span class="badge">@Model.PatternMatches.Count()</span>
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="visitDetailsPatterns" class="panel-collapse collapse">
+        <div class="panel-body">
+          <div class="patternwrapper">
+            @foreach (var item in Model.PatternMatches)
+            {
+              <div>
+                <div class="image-wrapper">
+                  <img src="@item.Image" alt="@item.PatternName"/>
+                </div>
+                <h4>@item.Profile</h4>
+                <h5>@item.PatternName</h5>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#visitDetailsCampaign" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/VisitDetails/Campaign", "Campaign")
+          <span class="badge">@(Model.Campaign == null ? 0 : 1)</span>
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="visitDetailsCampaign">
+        <div class="panel-body">
+          <ul class="list-unstyled">
+            <li>@Model.Campaign</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#visitDetailsGeoIp" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/VisitDetails/GeoIP", "Geo IP Location")
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="visitDetailsGeoIp">
+        <div class="panel-body">
+          <dl>
+            <dt>@DictionaryRepository.Get("/Demo/VisitDetails/GeoIP/City", "City")</dt>
+            <dd>@Model.City</dd>
+            <dt>@DictionaryRepository.Get("/Demo/VisitDetails/GeoIP/PostalCode", "Postal Code")</dt>
+            <dd>@Model.PostalCode</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#visitDetailsDevice" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/VisitDetails/Device", "Device")
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="visitDetailsDevice">
+        <div class="panel-body">
+          <dl>
+            <dt>@DictionaryRepository.Get("/Demo/VisitDetails/Device/Type", "Device Type")</dt>
+            <dd>@Model.Device.DeviceType</dd>
+            <dt>@DictionaryRepository.Get("/Demo/VisitDetails/Device/Vendor", "Vendor")</dt>
+            <dd>@Model.Device.DeviceVendor</dd>
+            <dt>@DictionaryRepository.Get("/Demo/VisitDetails/Device/OS", "Operating System")</dt>
+            <dd>@Model.Device.DeviceOperatingSystemModel (@Model.Device.DeviceOperatingSystemVendor)</dd>
+            <dt>@DictionaryRepository.Get("/Demo/VisitDetails/Device/Browser", "Browser")</dt>
+            <dd>@Model.Device.Browser</dd>
+            <dt>@DictionaryRepository.Get("/Demo/VisitDetails/Device/DisplayHeight", "Display Height")</dt>
+            <dd>
+              @(Model.Device.HardwareDisplayHeight > 0 ? @Model.Device.HardwareDisplayHeight + " px" : @DictionaryRepository.Get("/Demo/VisitDetails/Device/UnknownValue", "Unknown"))
+            </dd>
+            <dt>@DictionaryRepository.Get("/Demo/VisitDetails/Device/DisplayWidth", "Display Width")</dt>
+            <dd>
+              @(Model.Device.HardwareDisplayWidth > 0 ? @Model.Device.HardwareDisplayWidth + " px" : @DictionaryRepository.Get("/Demo/VisitDetails/Device/UnknownValue", "Unknown"))
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#visitDetailsPages" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/VisitDetails/Pages", "Pages")
+          <span class="badge">@Model.PagesViewed.Count()</span>
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="visitDetailsPages">
+        <div class="panel-body">
+          <ul class="list-unstyled">
+            @foreach (var item in Model.PagesViewed)
+            {
+              <li>
+                <a href="@item.Url">@item.Title</a>
+              </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#collapseGoals" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/VisitDetails/Goals", "Goals")
+          <span class="badge">@Model.GoalsList.Count()</span>
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="collapseGoals">
+        <div class="panel-body">
+          <ul class="list-unstyled">
+            @foreach (var item in Model.GoalsList)
+            {
+              <li>@item</li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#collapseEngagement" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/VisitDetails/Engagement", "Engagement")
+          <span class="badge">@Model.EngagementStates.Count()</span>
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="collapseEngagement">
+        <div class="panel-body">
+          <ul class="list-unstyled">
+            @foreach (var item in Model.EngagementStates)
+            {
+              <li>@item</li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <a href="@Url.Action("EndVisit")" class="btn btn-danger" title="@DictionaryRepository.Get("/Demo/VisitDetails/EndVisit/Description", "End the current visit and submits it to the Sitecore Experience Database")">
+      <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+      @DictionaryRepository.Get("/Demo/VisitDetails/EndVisit", "End Visit")
+    </a>
+  </div>
+</div>
+<script language="javascript">
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  })
+</script>

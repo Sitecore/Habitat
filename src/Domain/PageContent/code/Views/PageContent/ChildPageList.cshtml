@@ -1,0 +1,26 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.PageContent
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+<div class="container">
+<div class="row">
+@{
+  var index = 0;
+  foreach (var item in Model.Item.Children.Where(i => i.IsDerived(Templates.HasPageContent.ID)))
+  {
+    using (Html.Sitecore().SwitchContextItem(item))
+    {
+      <div class="col-sm-4">
+        @Html.Sitecore().ViewRendering("/Views/PageContent/ReferenceTeaser")
+      </div>
+    }
+    index++;
+    if (index % 3 == 0)
+    {
+      @:</div>
+      @:<div class="row">
+    }
+  }
+}
+  </div>
+</div>

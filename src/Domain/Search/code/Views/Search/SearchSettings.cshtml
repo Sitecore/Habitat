@@ -1,0 +1,32 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Repositories
+@model Habitat.Search.Models.SearchSettings
+
+<form action="@Model.SearchResultsUrl" method="GET">
+  <div class="input-group">
+    <input type="text" name="query" placeholder="@Model.SearchBoxTitle" value="@Model.Query" class="form-control" autocomplete="off"/>
+    <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+        </span>
+  </div>
+  <h3>@DictionaryRepository.Get("/search/facets/ContentTypes", "Content Types")</h3>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="1" name="type" checked/>
+      Show all
+    </label>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="2" name="type">
+      Content Type 1
+    </label>
+
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="">
+      Content Type 2
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">@DictionaryRepository.Get("/search/facets/Update", "Update")</button>
+</form>

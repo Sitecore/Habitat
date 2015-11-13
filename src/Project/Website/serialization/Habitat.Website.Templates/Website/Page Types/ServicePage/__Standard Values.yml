@@ -4,6 +4,9 @@ Parent: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Template: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Path: /sitecore/templates/Habitat/Project/Website/Page Types/ServicePage/__Standard Values
 SharedFields:
+- ID: 5585a30d-b115-4753-93ce-422c3455deb2
+  # ShowInNavigation
+  Value: 
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
   # __Renderings
   Type: layout
@@ -28,7 +31,7 @@ SharedFields:
         <r id="{0CF58F14-D0F8-4C41-9896-3D69048A0B19}" ph="footercolumn2" uid="{84124EE2-E678-4144-8316-0D6874866604}" />
         <r id="{3EA717CF-354E-45B1-9A21-BD1D044EA4E2}" ph="footercolumn3" uid="{47F5A079-6F63-4219-BC45-1A221B200906}" />
         <r id="{7DAE9F23-890F-4E06-99A7-CCEDB74D3D8E}" ph="postfooter" uid="{A3BAD4D4-8E21-4B30-8C4C-B04163653D62}" />
-        <r ds="" id="{2454BA09-3628-4196-9823-9390F805A5C4}" par="ContainerIsFluid&amp;UseStaticPlaceholderNames=1" ph="page-layout" uid="{B77E9E20-6D90-41B5-B2AA-AFEDB9596FC2}" />
+        <r ds="" id="{7074CA39-734D-4953-A3D5-B7D09C37CE3B}" par="ContainerIsFluid&amp;UseStaticPlaceholderNames=1" ph="page-layout" uid="{3FEDD2AB-9A72-49C5-A3C8-E835A17DF069}" />
       </d>
     </r>
 Languages:
@@ -36,6 +39,9 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: $name
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151104T131924Z

@@ -1,0 +1,19 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Media
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+  const int thumbnailWidth = 275;
+  var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail.ToString(), @Model.Item, mw: thumbnailWidth, cssClass: "img-responsive");
+  if (thumbnail == null || string.IsNullOrWhiteSpace(thumbnail.ToString()))
+  {
+    return;
+  }
+}
+
+<div class="thumbnail lightbox">
+  <a href="@Model.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink)" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" class="lightbox" data-gallery="page">
+    @thumbnail
+    <span class="fa fa-play-circle overlay"></span>
+  </a>
+</div>

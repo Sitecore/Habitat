@@ -1,0 +1,30 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Framework.SitecoreExtensions.Repositories
+@using Habitat.News
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+<div class="thumbnail teaser">
+  <a href="@Model.Item.Url()">
+    @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), Model.Item, mw: 750)
+  </a>
+  <div class="caption">
+    <h3>
+      <a href="@Html.Sitecore().CurrentRendering.Item.Url()">
+        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), Model.Item)
+      </a>
+    </h3>
+    <hr/>
+    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary.ToString(), Model.Item)
+    <p class="date text-muted">
+      @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new
+      {
+        format = "MMMM dd, yyyy"
+      })
+    </p>
+    <p class="read-more">
+      <a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-default">
+        @DictionaryRepository.Get("/R/Read more", "***READ MORE***")
+      </a>
+    </p>
+  </div>
+</div>
