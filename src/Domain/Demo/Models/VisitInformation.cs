@@ -58,10 +58,11 @@
     private DeviceInformation GetDeviceInformation()
     {
       this._isDeviceLookupDone = true;
-      if (!DeviceDetectionManager.IsEnabled || string.IsNullOrEmpty(Tracker.Current.Interaction.UserAgent))
+      if (!DeviceDetectionManager.IsEnabled || !DeviceDetectionManager.IsReady || string.IsNullOrEmpty(Tracker.Current.Interaction.UserAgent))
       {
         return null;
       }
+      
       return DeviceDetectionManager.GetDeviceInformation(Tracker.Current.Interaction.UserAgent);
     }
 
