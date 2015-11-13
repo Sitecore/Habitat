@@ -11,17 +11,15 @@ namespace Habitat.Accounts.Tests.Extensions
   internal class AutoDbDataAttribute : AutoDataAttribute
   {
     public AutoDbDataAttribute()
-      : base(new Fixture().Customize(new AutoDbCustomization()))
+      : base(new Fixture().Customize(new AutoNSubstituteCustomization()))
     {
-      this.Fixture.Customizations.Add(new AutoNSubstituteCustomization().Builder);
+      this.Fixture.Customize(new AutoDbCustomization());
       this.Fixture.Register(() =>
       {
         var user = Substitute.ForPartsOf<FakeMembershipUser>();
         user.ProviderName.Returns("fake");
         return user;
       });
-
-      this.Fixture.Register(() => Substitute.For<MembershipProvider>());
     }
   }
 }
