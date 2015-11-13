@@ -27,5 +27,17 @@ namespace Habitat.Accounts.Specflow.Infrastructure
         public IEnumerable<IWebElement> AccountErrorMessages
             =>
                 Driver.FindElements(By.CssSelector(".field-validation-error.help-block"));
+
+        public IEnumerable<IWebElement> LoginFormFields
+            =>
+                Driver.FindElements(By.CssSelector("#loginEmail, #loginPassword"));
+
+        public IWebElement LoginPageTitle => Driver.FindElement(By.CssSelector("#myModalLabel"));
+
+        public IEnumerable<IWebElement> LoginFormButtons => Driver.FindElements(By.CssSelector(".btn.btn-default, .btn.btn-primary"));
+
+        public IEnumerable<IWebElement> LoginFormErrorMessages
+            =>
+                Driver.FindElements(By.CssSelector(".field-validation-error"));
     }
 }

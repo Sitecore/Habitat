@@ -15,26 +15,8 @@ using Xunit;
 namespace Habitat.Accounts.Specflow.Steps
 {
     [Binding]
-    public class CommonSteps : StepsBase
+    class CommonSteps : StepsBase
     {
-        [Given(@"Habitat website is opened on Main Page")]
-
-        public void GivenHabitatWebsiteIsOpenedOnMainPage()
-        {
-            Driver.Navigate().GoToUrl(Settings.BaseUrl);
-        }
-
-        [When(@"Actor moves cursor over the User icon")]
-        public void WhenActorMovesCursorOverTheUserIcon()
-        {
-            Site.UserIcon.MoveToElement();
-
-#warning hack for selenium hover behavoiur
-            var dropdown = Site.UserIcon.FindElement(By.XPath("../../ul"));
-            var js = Driver as IJavaScriptExecutor;
-            js?.ExecuteScript("arguments[0].style.display='block'", dropdown);
-        }
-
         [When(@"User selects (.*) from drop-down menu")]
         public void WhenUserSelectsREGISTERFromDrop_DownMenu(string linkText)
         {
@@ -130,10 +112,30 @@ namespace Habitat.Accounts.Specflow.Steps
             Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
             WhenActorEntersFollowingDataInToTheRegisterFields(table);
             Site.SubmitButton.Click();
-            WhenActorMovesCursorOverTheUserIcon();
+            new SiteNavigation().WhenActorMovesCursorOverTheUserIcon();
             WhenUserSelectsREGISTERFromDrop_DownMenu("Logout");
         }
 
+        [Given(@"User with following data is registered in Habitat")]
+        public void GivenUserWithFollowingDataIsRegisteredInHabitat(Table table)
+        {
+            Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
+            WhenActorEntersFollowingDataInToTheRegisterFields(table);
+            Site.SubmitButton.Click();
+        }
+        [Given(@"User was logged out from the Habitat")]
+        public void GivenUserWasLoggedOutFromTheHabitat()
+        {
+            new SiteNavigation().WhenActorMovesCursorOverTheUserIcon(); 
+            Site.SubmitButton.Click();
+        }
+
+        [Given(@"User clicks (.*) from drop-down menu")]
+        [When(@"User clicks (.*) from drop-down menu")]
+        public void WhenUserClicksLoginFromDrop_DownMenu(string linkText)
+        {
+            Driver.FindElement(By.LinkText(linkText.ToUpperInvariant())).Click();
+        }
 
     }
 }

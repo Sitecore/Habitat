@@ -90,8 +90,10 @@
       <DependentUpon>Register.feature</DependentUpon>
     </Compile>
     <Compile Include="Steps\CommonSteps.cs" />
+    <Compile Include="Steps\LoginSteps.cs" />
     <Compile Include="Steps\RegisterPage.cs" />
     <Compile Include="Steps\Settings.cs" />
+    <Compile Include="Steps\SiteNavigation.cs" />
     <Compile Include="Steps\StepsBase.cs" />
   </ItemGroup>
   <ItemGroup>
