@@ -1,0 +1,41 @@
+code {
+	border: 1px solid darken($general-border-color, 10%);
+	border-radius: 2px;
+}
+
+.close {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	color: $general-head-font-color; 
+	font-size: 28px;
+	outline: none !important;
+	@include opacity(0.5);
+
+	-webkit-transition: back 0.2s ease-out;
+    -moz-transition:all 0.2s ease-out;
+    -o-transition:all 0.2s ease-out;
+    -ms-transition:all 0.2s ease-out;
+
+	&:hover {
+		@include opacity(0.8);		
+		-webkit-transition: back 0.2s ease-out;
+    -moz-transition:all 0.2s ease-out;
+    -o-transition:all 0.2s ease-out;
+    -ms-transition:all 0.2s ease-out;
+    
+	}
+}
+
+label {
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.badge {
+	font-weight: 400;
+	padding: 4px 7px;
+}
+
+.pager li>a, .pager li > span { 
+	border-radius: 20px;
+}

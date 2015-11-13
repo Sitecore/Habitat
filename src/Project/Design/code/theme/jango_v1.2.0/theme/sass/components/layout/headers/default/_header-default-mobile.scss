@@ -1,0 +1,29 @@
+// Header 
+$header_class:																	'default-mobile';
+$header_mobile-bg-color:														#ffffff;
+$header_mobile-border:															0; 
+$header_min_mobile_shadow:														0px 3px 9px -4px rgba(0,0,0,0.25);
+$header_min_mobile_border:														1px solid #eeeeee;
+
+// Brand
+$brand_mobile-link-font-color:  												darken(#f8f9fa, 30%);
+$brand_mobile-link-font-color-on-hover:  										lighten($brand_mobile-link-font-color, 10%);
+$brand_mobile_toggler_bg-color:													darken(#f8f9fa, 1%);
+$brand_mobile_toggler_line-bg-color:											darken($brand_mobile_toggler_bg-color, 20%);
+
+// Quick Search
+$quick-search_mobile-input-font-color:  										#677581;  
+$quick-search_mobile-input-placeholder-color:									lighten($quick-search_mobile-input-font-color, 10%);
+$quick-search_mobile-icon-font-color:											lighten($quick-search_mobile-input-font-color, 10%);  
+
+@import  'theme/_header-mobile';    
+
+@media (max-width: $screen-sm-max) { /* 991px */
+	.c-layout-header.c-layout-header-default-mobile.c-header-transparent-dark {
+  		background: $header_mobile-bg-color;
+
+  		&.c-mega-menu-shown {
+  			background: $header_mobile-bg-color;
+  		} 
+	} 
+}

@@ -1,0 +1,27 @@
+// BEGIN PAGE CONTAINER
+
+.c-layout-page {	
+	@include clearfix();	
+}
+
+.c-layout-page-loading {
+	* {
+		visibility: hidden;
+	}
+
+	.c-content-loader {
+		visibility: visible; 
+		display: block;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+	}
+}
+
+// END
+
+@media (min-width: $screen-md-min) {
+	.container-fluid {
+  		padding: 0 60px;
+	}
+}

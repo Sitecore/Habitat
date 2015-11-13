@@ -1,0 +1,216 @@
+$sidebar-width:   270px;
+$sidebar-menu-arrow-color: lighten(#8b949c, 10%); 
+$sidebar-menu-default-hover-bg: #f9fbfc;
+$sidebar-menu-option2-bg: #f8f9fa;
+$sidebar-menu-border-color: #eaeef1;
+
+.c-layout-sidebar-menu {
+  	float:left;
+  	width: $sidebar-width;
+  	border-top: 0;
+  	margin: 30px 0 40px 0;  	
+
+    .c-sidebar-menu-toggler {
+        display: none;
+    }
+
+  	.c-sidebar-menu {
+        height: auto;
+  		border: 1px solid $sidebar-menu-border-color;
+  		list-style: none;
+  		padding: 0 0;
+
+        &.collapse {
+            display: block;
+        }
+
+  		> li {
+  			position: relative;  
+  			padding: 0;
+  			margin: 0;
+
+  			> a {
+  				display: block;
+                color: lighten($general-head-font-color, 15%);
+  				padding: 12px 30px 12px 25px; 
+                font-weight: 700;
+  			}
+
+            &.c-active {
+                > a {
+                    transition: all 0.2s;
+                    background-color: $sidebar-menu-default-hover-bg; 
+                }
+            }
+
+            &:hover,
+            &.c-open {
+                > a {
+                    transition: all 0.2s;
+                    background-color: $sidebar-menu-default-hover-bg;
+                }
+            }
+        }
+
+  		li {
+            .c-dropdown-menu {
+      			list-style: none;
+    		  	padding: 0;  
+    		  	display: none;
+    		  	transition: all 0.3s;
+
+    		  	li {
+    		  		padding: 0;
+    		  		margin: 0;
+
+      			    > a {
+    					display: block;
+    					padding: 5px 20px 5px 40px; 
+                        color: $general-head-font-color;
+                        
+                        > i {
+                            font-size: 14px;
+                            margin-right: 5px;
+                            margin-top: 1px;
+                            @include opacity(0.6);
+                        }
+    				}
+
+    				&:last-child > a {
+    	  				border-top: 0;
+    	  			}
+
+    	  			> .c-dropdown-menu > li > a {
+    	  				padding-left: 60px;
+    	  			}
+
+    				> .c-dropdown-menu > li > .c-dropdown-menu > li > a {
+    					padding-left: 80px;
+    				}
+
+                    > .c-dropdown-menu > li > .c-dropdown-menu > li > .c-dropdown-menu > li > a {
+                        padding-left: 100px;
+                    }
+      			}
+      		} 
+
+  			&.c-dropdown {
+  				position: relative;
+
+  				> a {
+  					.c-arrow {
+                        transition: all 0.2s;
+  						font-family: fontawesome;
+  						position: absolute;
+  						right: 10px;
+  						display: inline-block;
+                        font-weight: 300;
+                        margin-top: -1px;
+                        color: $sidebar-menu-arrow-color;
+                        width: 30px;
+                        text-align: center;     
+  						
+  						&:before {
+  							content: "\f105";
+  						}
+  					}
+  				}
+
+                &.c-expanded,
+  				&.c-open {
+  					> a {
+
+  						.c-arrow {
+  							&:before {
+  								content: "\f107";
+  							}
+  						}
+  					}
+
+  					> .c-dropdown-menu {
+  						display: block;
+  						transition: all 0.3s;
+  					}
+  				}
+  			}
+
+  			&:last-child > a {
+  				border-top: 0;
+  			}
+  		} 
+  	}
+
+    .c-sidebar-menu.c-option-2 {
+        background-color: $sidebar-menu-option2-bg;
+        border: 0; 
+
+        > li {
+
+            &:hover,
+            &.c-open {
+                > a {
+                    transition: all 0.2s;
+                    background-color: darken($sidebar-menu-option2-bg, 3%);
+                }
+            }
+        }
+    }
+}
+
+.c-layout-sidebar-content {
+  overflow:hidden;
+  padding: 30px 0 30px 30px;
+}
+
+.c-layout-sidebar-menu.c-align-right {
+    float:right;  
+}
+
+.c-layout-sidebar-content.c-align-left {
+    padding: 30px 40px 30px 0;
+}
+
+@media (max-width: $screen-sm-max) { /* 991px */
+
+	.c-layout-sidebar-menu {
+		width: 100%;
+		float: none;
+        display: block;
+        margin: 0;
+
+        .c-sidebar-menu-toggler {
+            display: block;
+            margin: 30px 0 20px 0;
+
+            .c-title {
+                display: inline-block;
+                font-size: 18px;
+                margin: 8px 0 5px 0;
+                color: $general-head-font-color;
+            }
+
+            .c-content-toggler {
+                float: right;
+                clear: both;
+            }
+        }
+
+        .c-sidebar-menu { 
+            margin-top: 10px;
+
+            &.collapse {
+                display: none;
+            }
+
+            &.collapse.in {
+                display: block;
+            }
+        }
+	}	
+
+	.c-layout-sidebar-content {
+  		overflow:visible;
+  		padding: 10px 0 30px 0;
+	}
+
+}

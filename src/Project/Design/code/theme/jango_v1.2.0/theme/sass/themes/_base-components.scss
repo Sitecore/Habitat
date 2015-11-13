@@ -1,0 +1,439 @@
+// THEME COLOR BASE
+
+// Global 
+
+a {
+	color: $general-head-font-color;
+
+	&:active,
+	&:hover,
+	&:focus {
+		color: $text-font-color; 
+	}
+}
+
+// General Links
+
+.c-theme-link {
+
+	&:focus,
+	&:active,
+	&:hover {
+		color: $link-font-color-on-hover !important; 
+	
+		> i {
+			color: $link-font-color-on-active !important;			
+		}
+	}  
+
+	&.c-active {
+		color: $link-font-color-on-active !important;  	
+
+		> i {
+			color: $link-font-color-on-active !important;			
+		}	
+	}	
+}
+
+// General Nav
+
+.c-theme-nav {
+	li {	
+		&:focus,
+		&:active,
+		&:hover {
+			> a:not(.btn) {
+				color: $link-font-color-on-hover !important;
+			}
+
+			> .c-quick-sidebar-toggler {
+				> .c-line {
+					background: $link-font-color-on-hover !important;
+				}
+			}
+		}  
+
+		&.c-active {
+			color: $link-font-color-on-active !important;
+			
+			> a:not(.btn) {
+				color: $link-font-color-on-active !important;
+			}		
+
+			> .c-quick-sidebar-toggler {
+				> .c-line {
+					background: $link-font-color-on-hover !important;
+				}
+			}
+		}	
+	}	
+
+	// mega menu tabs
+	> li > .dropdown-menu.c-menu-type-mega > .nav.nav-tabs > li {
+		&:hover {  
+			> a {
+				color: $link-font-color-on-active !important;
+			}
+		}
+
+		&.active {
+			> a {
+				color: $link-font-color-on-active !important;
+			}
+			border-bottom: 1px solid $link-font-color-on-active !important; 
+		}
+	}
+
+	&.nav.nav-tabs > li {
+		&:hover {  
+			> a {
+				color: $link-font-color-on-active !important;
+			}
+		}
+
+		&.active {
+			> a {
+				color: $link-font-color-on-active !important;
+			}
+			border-bottom: 1px solid $link-font-color-on-active !important; 
+		}
+	}
+}
+
+// General UL
+
+.c-theme-ul {
+	> li {	
+		&:focus,
+		&:active,
+		&:hover {
+			> a:not(.btn) {
+				color: $link-font-color-on-hover !important;
+
+				> i {
+					color: $link-font-color-on-hover !important;
+				}
+			}
+
+			> button {
+				> .c-line {
+					background: $link-font-color-on-hover !important;
+				}
+			}
+		}    
+
+		&.active,
+		&.c-active {
+			color: $link-font-color-on-active !important;
+			
+			> a:not(.btn) {
+				color: $link-font-color-on-active !important;
+
+				> i {
+					color: $link-font-color-on-hover !important;
+				}
+			}	
+		}	
+	}	
+}
+
+.c-theme-ul-bg {
+	> li {
+		color: #ffffff;
+		background: $base-color !important;
+	}
+}
+
+// General Links
+
+.c-theme-font,
+.c-theme-color {
+	color: $text-font-color !important;
+
+	> i {
+		color: $text-font-color !important;			
+	}
+}
+
+// General background
+
+.c-theme-bg {
+	background: $base-color !important;
+
+	&.c-theme-darken {
+		background: darken($base-color, 10%) !important;		
+	}
+}
+
+.c-theme-bg-after {
+	&:after {
+		background: $base-color !important;
+	}	
+}
+
+.c-theme-bg-before {
+	&:before {
+		background: $base-color !important;
+	}	
+}
+
+.c-theme-border-after {
+	&:after {
+		border-color: $base-color !important;
+	}	
+}
+
+.c-theme-border-before {
+	&:before {
+		border-color: $base-color !important;
+	}	
+}
+
+.c-theme-bg-on-hover:hover {
+	background: $base-color !important;
+}
+
+.c-theme-border {
+	border-color: $base-color !important;
+}
+
+.c-theme-on-hover:hover {
+	color: $base-color !important;
+}
+
+.c-theme-bg-parent-hover:hover {
+	.c-theme-bg-on-parent-hover {
+		background: $base-color !important;
+	}
+}
+
+// General border
+.c-theme-border {
+	border-color: $base-color;
+}
+
+// Social Icons component
+.c-content-iconlist-1.c-theme > li:hover i {
+	color: #fff;
+	background: $base-color;
+}
+
+// Sidebar Menu 1
+.c-content-ver-nav {
+	.c-menu.c-theme {
+
+		> li {
+			&:before {
+				color: $base-color;
+			}
+		}
+
+		&.c-arrow-dot {
+			> li {
+				&:before {
+					background: $base-color;
+				}
+			}
+		}
+	}
+}
+
+// Pagination 1
+
+.c-content-pagination.c-theme {
+	> li {
+		&:hover {
+			> a {
+				border-color: $base-color;
+				background: $base-color;
+				color: #fff;
+
+				> i {
+					color: #fff;
+				}
+			}
+		}
+
+		&.c-active {
+			> span,
+			> a {
+				border-color: $base-color;
+				background: $base-color;
+				color: #fff;
+
+				> i {
+					color: #fff;
+				}
+			}
+		}		
+	}
+}
+
+// Buttons 
+
+.c-theme-btn {
+
+	&.btn {
+		// button-variant($color, $background, $border, $color-hover, $background-hover, $border-hover)
+		@include button-variant(#ffffff, $base-color, $base-color, #ffffff, darken($base-color, 8%), darken($base-color, 8%));
+	}
+
+	&.c-btn-border-1x {
+		border-color: $base-color;
+		border-width: 1px;
+
+		@include button-variant($base-color, none, $base-color, #ffffff, $base-color, $base-color);
+	}
+	
+	&.c-btn-border-2x {
+		border-color: $base-color;
+		border-width: 2px;
+
+		@include button-variant($base-color, none, $base-color, #ffffff, $base-color, $base-color);
+	}
+}
+
+// Form Controls 
+
+.c-theme.form-control {
+	&:focus,
+	&:active,
+	&.active {
+		border-color: $base-color !important;
+	}
+}
+
+// Custom line icons 
+
+.c-content-line-icon.c-theme {
+	background-image: url(../../img/content/line-icons/#{$theme-name}.png);
+}
+
+// Lists
+
+.c-content-list-1.c-theme {
+
+	&.c-separator-dot > li:before,
+	> li:before {
+		background: $base-color;
+	} 
+}
+
+// Tab 1
+
+.c-content-tab-1.c-theme {	
+	.nav,
+	.nav.nav-justified {
+		> li {
+			&:hover,
+			&:focus,
+			&:active, 
+			&.active {
+
+				> a {
+					border-bottom-color: $base-color;
+				}
+			}
+		}
+	}
+}
+
+// Tab 2
+
+.c-content-tab-2.c-theme {
+	> ul > li {
+		&.active, 
+		&:hover {
+			> a {
+				> .c-title {
+					color: $base-color;
+				}
+				
+				> .c-content-line-icon { 
+					background-image: url(../../img/content/line-icons/#{$theme-name}.png);
+				}
+			}
+		}
+	}
+}
+
+// Accordion 1 
+
+.c-content-accordion-1.c-theme {
+	.panel {
+		> .panel-heading {
+			> .panel-title {
+				> a {
+					background-color: $base-color;
+
+					&.collapsed {
+						background-color: #ffffff;
+
+						&:hover, 
+						&:focus {					
+							background-color: $base-color;  
+						}
+					}
+				}
+			}
+		}
+
+		> .panel-collapse {
+			> .panel-body {
+				background-color: $base-color;
+			}
+		}
+	}
+}
+
+// One page sidebar nav
+.c-mega-menu-onepage-dots.c-theme .c-onepage-dots-nav > li.c-onepage-link {
+	&:hover,
+	&.c-active,    
+	&.active {
+		> a {
+			background: rgba($base-color, 0.9);
+		}
+	}
+}  
+
+// Sidebar menu
+.c-layout-sidebar-menu.c-theme {
+	.c-sidebar-menu {
+
+		li {
+			&.c-active {
+				> a {
+					transition: all 0.2s;
+					color: $base-color;
+
+					> .c-arrow {
+						color: $base-color;
+					}
+				}
+			}
+
+			.c-dropdown-menu > li:hover {
+				> a {
+					color: $base-color;
+				}
+			}
+		}
+	}
+
+	.c-sidebar-menu.c-option-2 {
+		> li {  
+        	&.c-active {
+            	> a {
+            		transition: all 0.2s;
+            		color: #ffffff;
+                	background-color: $base-color;
+
+                	> .c-arrow {
+						color: #ffffff;
+					}
+            	}
+        	}
+    	}
+    }
+}

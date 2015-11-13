@@ -1,0 +1,153 @@
+// TILE 1
+
+// BEGIN: General Mode
+
+@mixin arrow-color($color, $invert: false) {
+	@if ($invert) {
+		&.c-arrow-left:after {
+			border-right-color: transparent;
+			border-bottom-color: $color;
+		}
+
+		&.c-arrow-right:after {
+			border-left-color: transparent;
+			border-top-color: $color;
+		}
+
+	} @else {
+		&.c-arrow-left:after {
+			border-right-color: $color;
+		}
+
+		&.c-arrow-right:after {
+			border-left-color: $color;
+		}
+	}
+}
+
+.c-content-tile-1 {
+	overflow: hidden;
+
+	.c-tile-content {
+		overflow: hidden;
+
+		&.c-arrow-left, &.c-arrow-right {
+			position: relative;
+
+			&:after {
+				top: calc(50% - 13px);
+				border: solid transparent;
+				content: " ";
+				position: absolute;
+				pointer-events: none;
+				border-width: 13px;
+				z-index: 99;
+			}
+		}
+
+		&.c-arrow-left:after {
+			right: 0;
+			border-right-color: #ffffff;
+		}
+
+		&.c-arrow-right:after {
+			left: 0;
+			border-left-color: #ffffff;
+		}
+
+		// arrow colors
+		&.c-arrow-green {
+			@include arrow-color(#32c5d2)
+		}
+
+		&.c-arrow-red-2 {
+			@include arrow-color(#e7505a)
+		}
+
+		&.c-arrow-brown-2 {
+			@include arrow-color(#7a6a61)
+		}
+
+		&.c-arrow-blue-3 {
+			@include arrow-color(#57bfe1)
+		}
+
+		.btn {
+			margin: 10px 0;
+		}
+	}
+
+	.c-wrapper {
+		padding: 10%;
+
+		.c-tile-title {
+			color: $general-head-font-color;
+			margin-top: 0;
+			font-size: 20px;
+		}
+
+		.c-tile-body {
+			color: $general-font-color;
+			font-size: 17px;
+		}
+	}
+
+	.c-image {
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+}
+
+// END
+
+// BEGIN: Mobile Mode
+
+@media (max-width: $screen-xs-max) { /* 767px */
+	.c-content-tile-1 {
+
+		.c-tile-content {
+
+			&.c-arrow-left, &.c-arrow-right {
+				&:after {
+					left: calc(50% - 13px);
+				}
+			}
+
+			&.c-arrow-left:after {
+				bottom: 0;
+				border-bottom-color: #ffffff;
+				right: auto;
+				top: auto;
+				border-right-color: transparent;
+			}
+
+			&.c-arrow-right:after {
+				top: 0;
+				border-top-color: #ffffff;
+				border-left-color: transparent;
+			}
+
+			&.c-arrow-green {
+				@include arrow-color(#32c5d2, true)
+			}
+
+			&.c-arrow-red-2 {
+				@include arrow-color(#e7505a, true)
+			}
+
+			&.c-arrow-brown-2 {
+				@include arrow-color(#7a6a61, true)
+			}
+
+			&.c-arrow-blue-3 {
+				@include arrow-color(#57bfe1, true)
+			}
+
+		}
+	}
+}
+
+// END

@@ -1,0 +1,156 @@
+// Card 8 & 9
+
+// BEGIN: General Mode
+.c-content-feature-9 {
+	@include reset-padmar(); // call mixing reset default padding and margin
+	width: 100%;
+	padding:20px 0;
+
+	h3{
+		color: $general-head-font-color;
+	}
+
+	p{
+		color:$general-font-color;
+	}
+	
+	> .c-list {
+		display:table;
+		width:100%;
+		padding:0;
+		position:relative;
+
+	  	> li {
+	  		display: table-cell;
+	    	width: 33.33333%;
+	    	padding: 0 5px 0 0;
+	    	position:relative;
+
+	    	> .c-card {
+	    		padding: 40px;
+	  			margin-right: 2px;
+	  			position:relative;
+
+				> i{
+					width:54px;
+					height:54px;
+					border-radius: 27px;
+					text-align:center;
+					padding:14px;
+					position:absolute;
+					z-index:5;
+				}
+
+				> .c-float-left{
+					float:left;
+					margin-right:22px;
+				}
+
+				> .c-content-left{
+					padding-left:76px;
+				}
+
+				.c-content{
+
+					>h3{
+						margin:0 0 15px 0;
+					}
+				}
+
+				> .c-bg-opacity-4 {
+					background-color: rgba(255,191,182,0.2);
+				}
+	    	}
+
+			> .c-bg-opacity-2 {
+				background-color: rgba(255,255,255,0.63);
+			}
+
+			> .c-bg-opacity-3 {
+				background-color: rgba(255,191,182,0.11);
+			}
+
+			> .c-border-bottom {
+				width:95%;
+				height:1px;
+				position:absolute;
+				bottom:-1px;
+				margin-left:2.5%;
+			}
+
+			> .c-mobile{
+				display:none;
+			}
+
+	    	&:last-child  {
+	    		padding: 0 0 0 5px;
+	    	}
+
+	  	}
+
+	  	> .c-border-middle{
+			height:90%;
+			width:1px;
+			position:absolute;
+			margin-top:0.5%;
+			top:0;
+	  	}
+
+	}
+	
+
+}
+
+// END
+
+
+
+
+// BEGIN: Mobile Mode
+
+@media (max-width: $screen-sm-max) { /* 991px */
+	.c-content-feature-9 {
+
+		> .c-list{
+
+			> li {				
+				display: block;
+				width: 100%;
+				padding:0 15px 10px 15px;
+
+				> .c-card {
+					padding: 40px 20px;
+					margin-right: 0;
+					margin-bottom: 2px;
+
+				}
+
+				> .c-border-bottom {
+					width:100%;
+					height:1px;
+					position: inherit;
+					bottom:0;
+					margin-left:0;
+				}
+
+				> .c-mobile{
+					display:block;
+				}
+
+				&:last-child{
+					padding: 0 15px;
+				}
+			}	
+
+			> .c-border-middle{
+				display:none;
+			}
+
+		}
+	
+
+	}
+
+}
+
+// END

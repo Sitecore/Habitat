@@ -1,0 +1,473 @@
+/***
+General reset
+***/
+
+/* Set default body */
+
+body { 
+    color: $general-font-color; 
+    font-family: $general-font-family;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-weight: 300;
+    font-size: $general-font-size;  
+}
+
+a {
+    outline: none !important;
+
+    -webkit-transition: back 0.2s ease-out;
+    -moz-transition:all 0.2s ease-out;
+    -o-transition:all 0.2s ease-out;
+    -ms-transition:all 0.2s ease-out;
+}
+
+a:focus,
+a:hover,
+a:active { 
+    outline: none !important;
+    text-decoration: none;
+}
+
+/*
+ Internet Explorer 10 doesn't differentiate device width from viewport width, and thus doesn't 
+ properly apply the media queries in Bootstrap's CSS. To address this, 
+ you can optionally include the following CSS and JavaScript to work around this problem until Microsoft issues a fix.
+*/
+
+@-webkit-viewport { 
+    width: device-width; 
+}
+
+@-moz-viewport { 
+    width: device-width; 
+}
+
+@-ms-viewport { 
+    width: device-width; 
+}
+
+@-o-viewport { 
+    width: device-width; 
+}
+
+@viewport { 
+    width: device-width; 
+}
+
+/*
+ Internet Explorer 10 doesn't differentiate device width from viewport width, 
+ and thus doesn't properly apply the media queries in Bootstrap's CSS. To address this, following CSS code applied 
+*/
+
+@-ms-viewport { 
+    width: auto !important; 
+}
+
+// Titles 
+
+h6 {
+    color: $general-head-font-color;
+    font-size: 12px;
+    margin: 5px 0;  
+}
+
+h5 {
+    color: $general-head-font-color;
+    font-size: 14px;
+    margin: 7px 0;
+}
+
+h4 {
+    color: $general-head-font-color;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+h3 {
+    color: $general-head-font-color;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+h2 {
+    color: $general-head-font-color;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+h1 {
+    color: $general-head-font-color;
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+// General Classes
+
+.c-reset {
+    padding: 0;
+    margin: 0;
+}
+
+.c-hide {
+    display: none;
+}
+
+.c-overflow-hide {
+    overflow: hidden;
+}
+
+/* linkify buttons */
+.c-link { 
+    background: 0;
+    border: 0;
+    outline: none;
+}
+
+.c-border {
+    border: 1px solid $general-border-color;
+}
+
+.c-no-border {
+    border: 0 !important;
+}
+
+.c-shadow {
+    box-shadow: 0px 3px 18px -5px rgba(0,0,0,0.3);
+}
+
+.c-square {
+    @include border-radius(0);
+}
+
+// Margin & Padding Classes
+
+// remove space for bootstrap grid system
+.c-bs-grid-reset-space {   
+    .row,
+    div[class*="col-"] {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.c-margin-t-5 {
+    margin-top: 5px;
+}
+
+.c-margin-t-8 {
+    margin-top: 8px;
+}
+
+.c-margin-t-10 {
+    margin-top: 10px !important;
+}
+
+.c-margin-t-15 {
+    margin-top: 15px !important;
+}
+
+.c-margin-t-20 {
+    margin-top: 20px;
+}
+
+.c-margin-t-25 {
+    margin-top: 25px;
+}
+
+.c-margin-t-30 {
+    margin-top: 30px;
+}
+
+.c-margin-t-40 {
+    margin-top: 40px;
+}
+
+.c-margin-t-50 {
+    margin-top: 50px;
+}
+
+.c-margin-t-60 {
+    margin-top: 60px;
+}
+
+.c-margin-t-80 {
+    margin-top: 80px;
+}
+
+.c-margin-b-5 {
+    margin-bottom: 5px !important;   
+}
+
+.c-margin-b-10 {
+    margin-bottom: 10px;   
+}
+
+.c-margin-b-15 {
+    margin-bottom: 15px !important;
+}
+
+.c-margin-b-20 {
+    margin-bottom: 20px;   
+}
+
+.c-margin-b-25 {
+    margin-bottom: 25px;   
+}
+
+.c-margin-b-30 {
+    margin-bottom: 30px;   
+}
+
+.c-margin-b-40 {
+    margin-bottom: 40px;   
+}
+
+.c-margin-b-50 {
+    margin-bottom: 50px;   
+}
+
+.c-margin-b-60  {
+    margin-bottom: 60px;
+}
+
+.c-margin-b-80  {
+    margin-bottom: 80px;
+}
+
+.c-margin-b-100{
+    margin-bottom: 100px;
+}
+
+.c-margin-r-40{
+    margin-right:40px;
+}
+
+.c-padding-10 {
+    padding: 10px;
+}
+
+.c-padding-20 {
+    padding: 20px;
+}
+
+// Fonts Classes
+
+.c-center,
+.c-font-center {
+    text-align: center;  
+}
+
+.c-right,
+.c-font-right {
+    text-align: right;
+}
+
+.c-font-thin {
+    font-weight: 300 !important;   
+}
+
+.c-font-slim {
+    font-weight: 400 !important;
+}
+
+.c-font-sbold {
+    font-weight: 500 !important;
+}
+
+.c-font-bold {
+    font-weight: 600 !important;
+}
+
+.c-font-uppercase {
+    text-transform: uppercase;
+}
+
+.c-font-lowercase {
+    text-transform: initial !important;
+} 
+
+.c-font-title {
+    color: $general-head-font-color !important;
+}
+
+.c-font-subtitle {
+   color: $general-font-color !important;   
+}
+
+@for $i from 10 through 90 {
+    .c-font-#{$i} { 
+        font-size: #{$i}px; 
+    }
+}  
+
+@for $i from 10 through 40 {
+    .c-line-height-#{$i} { 
+        line-height: #{$i}px;
+    }   
+}
+
+// Colors Classes
+
+/* Font Colors */
+
+@each $name, $colors in $component-colors {
+.c-font-#{$name} {
+    color: map-get($colors, color) !important;
+
+    small {
+        color: map-get($colors, color) !important;  
+    }  
+}
+
+.c-font-#{$name}-hover:hover {
+    color: map-get($colors, color) !important;
+}
+}
+
+/* Background Colors */  
+
+@each $name, $colors in $component-colors {
+.c-bg-#{$name} {
+    background-color: map-get($colors, color) !important;
+
+    &.c-bg-opacity {
+        /* RGBa with 0.04 opacity */
+        background-color: rgba(map-get($colors, color), 0.04) !important;
+    }
+
+    &.c-bg-opacity-2 {                                                          
+        /* RGBa with 0.4 opacity */                                            
+        background-color: rgba(map-get($colors, color), 0.4) !important;        
+    }
+
+    &.c-bg-#{$name}-font {
+        color: map-get($colors, inverse) !important;
+    }
+}
+
+.c-bg-#{$name}-hover:hover {
+    background-color: map-get($colors, color) !important;
+}
+
+.c-border-#{$name}-hover:hover {
+    border-color: map-get($colors, color) !important;
+}
+
+.c-bg-after-#{$name} {
+    &:after {
+        background-color: map-get($colors, color) !important;
+    }
+}
+
+.c-bg-before-#{$name} {
+    &:before {
+        background-color: map-get($colors, color) !important;
+    }
+}
+}
+
+/* Border Colors */
+
+@each $name, $colors in $component-colors {
+.c-border-#{$name} {
+    border-color: map-get($colors, color) !important;
+}
+
+.c-border-left-#{$name} {
+    border-left-color: map-get($colors, color) !important;
+}
+
+.c-border-right-#{$name} {
+    border-right-color: map-get($colors, color) !important;
+}
+
+.c-border-after-#{$name}:after,    
+.c-border-before-#{$name}:before {
+    border-color: map-get($colors, color) !important;
+}
+}
+  
+// Background images
+
+.c-bg-img-center {
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size:cover;
+}
+
+.c-bg-img-top {                             
+    background-repeat: no-repeat;           
+    background-position: top;               
+    background-size:cover;                  
+}
+
+.c-bg-img-bottom-right{
+    background-repeat: no-repeat;           
+    background-position: right bottom;               
+    background-size:cover; 
+}
+
+.c-bg-img-top-center{
+    background-repeat: no-repeat;           
+    background-position: top center;               
+    background-size:cover; 
+}
+
+.c-bg-none,
+.c-bg-transparent {
+    background: none;
+}
+
+.c-pos-relative{
+    position: relative;
+}
+
+.c-bg-parallax {
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-color: transparent;
+    min-height: 100%;
+}
+
+// Opacity
+.c-opacity-0 {
+    @include opacity(0);
+}
+
+.c-opacity-01 {
+    @include opacity(0.1);
+}
+
+.c-opacity-02 {
+    @include opacity(0.2);
+}
+
+.c-opacity-03 {
+    @include opacity(0.2);
+}
+
+.c-opacity-04 {
+    @include opacity(0.4);
+}
+
+.c-opacity-05 {
+    @include opacity(0.5);
+}
+
+.c-opacity-06 {
+    @include opacity(0.6);
+}
+
+.c-opacity-07 {
+    @include opacity(0.7);
+}
+
+.c-opacity-08 {
+    @include opacity(0.8);
+}
+
+.c-opacity-1 {
+    @include opacity(1);
+}

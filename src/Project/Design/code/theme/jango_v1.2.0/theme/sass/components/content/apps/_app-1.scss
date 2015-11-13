@@ -1,0 +1,155 @@
+// Parallax 1
+
+// BEGIN: General Mode
+
+.c-content-app-1 {
+	@include reset-padmar(); // call mixing reset default padding and margin
+	width: 100%;
+
+	> .c-diagram{
+		width:100%;
+		position:relative;
+		min-height:420px;
+		margin-top:150px;
+
+		> .c-wireframe{
+			position: absolute;
+			width:207px;
+			height:420px;
+			left:50%;
+			margin-left:-103.5px;
+		}
+
+		> .c-lines-1{
+			position:absolute;
+			height: 368px;
+  			width: 428px;
+  			left: 50%;
+  			margin-left: -224px;
+  			top: -60px;
+		}
+
+		> .c-lines-2{
+			position:absolute;
+			height: 362px;
+  			width: 422px;
+  			left: 50%;
+  			margin-left: -220px;
+  			top: -56px;
+		}
+
+		> .c-phone-img{
+			position:absolute;
+			background-color:#ffffff;
+			width: 182px;
+			height: 324px;
+			left: 50%;
+			margin-left: -91px;
+			top: 48px;
+		}
+
+		> .c-box{
+			width:250px;
+
+			> h3{
+				font-weight:bold;
+				letter-spacing:1px;
+			}
+		}
+
+		> .c-point-1{
+			position: absolute;
+			left: 50%;
+  			margin-left: -450px;
+  			top: 7px;
+  			text-align: right;
+		}
+
+		> .c-point-2{
+			position: absolute;
+			left: 50%;
+ 			margin-left: 180px;
+  			top: -67px;
+		}
+
+		> .c-point-3{
+			position: absolute;
+			left: 50%;
+  			margin-left: -490px;
+  			top: 280px;
+  			text-align: right;
+		}
+
+		> .c-point-4{
+			position: absolute;
+			left: 50%;
+  			margin-left: 220px;
+  			top: 180px;
+		}
+	}
+}
+
+
+// END
+
+// BEGIN: Mobile Mode
+
+@media (max-width: $screen-sm-max) { /* 991px */
+	.c-content-app-1 {
+
+		> .c-diagram{
+			margin-top:60px;
+
+			> .c-lines-1{
+				display:none;
+			}
+
+			> .c-lines-2{
+				display:none;
+			}
+
+			> .c-wireframe{
+				position:relative;
+				margin:auto;
+				top:auto;
+				left:auto;
+			}
+
+			> .c-box{
+				position:relative;
+				margin:auto;
+				top:auto;
+				left:auto;
+				padding: 40px 0;
+  				text-align: left;
+
+  				&.c-app-left{
+  					width:48%;
+  					float:left;
+  				}
+  				&.c-app-right{
+  					width:48%;
+  					float:right;
+  				}
+			}
+		}
+	}
+}
+
+@media (max-width: $screen-xs-max) { /* 767px */
+	.c-content-app-1{
+		>.c-diagram{
+			>.c-box{
+				&.c-app-left{
+					width:100%;
+				}
+				&.c-app-right{
+					width:100%;
+				}
+			}
+		}
+
+	}
+}
+
+// END

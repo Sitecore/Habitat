@@ -1,0 +1,24 @@
+/*********************
+THEME COLOR - DEFAULT
+*********************/
+
+@import '../_settings'; 
+@import '../_mixins';
+@import '../plugins/bootstrap/_mixins'; 
+@import '../_colors';  
+
+// Base color
+$theme-name: 					brown2;
+$base-color: 					map-get($theme-colors, $theme-name);
+
+// Link Settings
+$link-font-color-on-hover:   	$base-color;
+$link-font-color-on-active:   	$base-color;
+   
+// Text Settings
+$text-font-color:   			$base-color;
+
+@import '_base-components';
+@import '_base-plugins';        
+    
+           

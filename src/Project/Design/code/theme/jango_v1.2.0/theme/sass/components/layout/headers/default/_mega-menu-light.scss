@@ -1,0 +1,32 @@
+// BEGIN: Mega Menu
+
+$mega-menu_class:																'light';
+
+// Desktop Mode
+$mega-menu_desktop_separator-border-color:										lighten(#000000, 95%);  
+$mega-menu_desktop_primary-dropdown-menu-bg-color:                  			lighten(#394048, 72%);
+$mega-menu_desktop_primary-dropdown-menu-box-shadow:							0px 3px 9px -5px rgba(0,0,0,0.25); 
+$mega-menu_desktop_primary-dropdown-menu-border:								0;  
+
+$mega-menu_desktop_inner-dropdown-menu-head-color:         						#000000;
+$mega-menu_desktop_inner-dropdown-menu-link-color:                  			darken(#434b53, 5%);   
+$mega-menu_desktop_inner-dropdown-menu-link-color-on-active:        			#000000;
+$mega-menu_desktop_inner-dropdown-menu-link-bg-color-on-active:     			lighten($mega-menu_desktop_inner-dropdown-menu-link-color-on-active, 95%);
+
+$mega-menu_desktop_inner-tab-link-color:                   						#434b53;   
+$mega-menu_desktop_inner-tab-link-color-on-active:         						#000000;
+$mega-menu_desktop_inner-tab-border-color:										$mega-menu_desktop_separator-border-color;
+
+// Mobile Mode
+
+$mega-menu_mobile_bg-color:                      								#3b434c;
+$mega-menu_mobile_link-border-color:											lighten($mega-menu_mobile_bg-color, 3%);	
+
+$mega-menu_mobile_primary-link-font-color:            							#ebedf2;
+$mega-menu_mobile_primary-link-font-color-on-active:     						#ff6b57;
+
+$mega-menu_mobile_inner-dropdown-menu-head-color:         						#cbd2d9;
+$mega-menu_mobile_inner-dropdown-menu-link-color:                   			#98a2ac;     
+$mega-menu_mobile_inner-dropdown-menu-link-color-on-active:         			#ff6b57;
+
+@import  'theme/mega-menu';

@@ -1,0 +1,100 @@
+// Inputs
+
+.form-control {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	box-shadow: none;
+	outline: none;
+	font-weight: 300;
+	background: white;
+
+	.input-group-lg &,
+	&.input-lg {
+		font-weight: 300;  
+		font-size: 14px;
+	}
+
+	&:active,
+	&:focus {
+		 box-shadow: none !important;
+	}
+
+	border-color: $general-input-border-color;
+
+	&.c-square {
+		border-radius: 0 !important;
+	}
+
+	&.c-border-2px {
+		border-color: lighten($general-input-border-color, 25%);
+		border-width: 2px;
+	} 
+
+	&:focus,
+	&:active,
+	&.active {
+		border-color: darken($general-input-border-color, 20%);
+
+		&.c-border-2px {
+			border-color: darken(lighten($general-input-border-color, 25%), 20%);
+			border-width: 2px;
+		}
+	}
+
+	&.form-control-transparent {
+		background: none;
+	}
+}
+
+.input-group {
+	.input-group-btn > .btn,
+	.input-group-addon {
+		border-color: $general-input-border-color;
+	}
+
+	&.c-square {
+		.input-group-btn > .btn, 
+		.input-group-addon {
+			border-radius: 0 !important;
+		}
+	}
+
+	&.c-border-2px {
+		.input-group-btn > .btn,
+		.input-group-addon {
+			border-color: lighten($general-input-border-color, 25%);
+			border-width: 2px;
+		}
+	} 
+}
+
+.help-block {
+	color: lighten($general-font-color, 5%);
+	font-size: 15px;
+}
+
+label.control-label {
+	padding-top: 5px;
+	font-weight: 300;
+	color: darken($general-font-color, 20%);
+}
+
+.checkbox,
+.radio,
+.c-checkbox,
+.c-radio {
+	label {
+		color: darken($general-font-color, 10%);
+		font-weight: 300; 
+	}
+}
+
+// Feedback states
+.has-success {
+  @include form-control-validation($brand-success, $brand-success, lighen($brand-success, 30%));
+}
+.has-warning {
+  @include form-control-validation($brand-warning, $brand-warning, lighen($brand-warning, 30%));
+}
+.has-error {
+  @include form-control-validation($brand-danger, $brand-danger, lighen($brand-danger, 30%));
+}
