@@ -57,16 +57,16 @@
       <HintPath>..\..\..\..\packages\NSubstitute.1.9.2.0\lib\net45\NSubstitute.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ploeh.AutoFixture, Version=3.30.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\AutoFixture.3.30.0\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+    <Reference Include="Ploeh.AutoFixture, Version=3.36.9.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\AutoFixture.3.36.9\lib\net40\Ploeh.AutoFixture.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ploeh.AutoFixture.AutoNSubstitute, Version=3.30.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\AutoFixture.AutoNSubstitute.3.30.0\lib\net40\Ploeh.AutoFixture.AutoNSubstitute.dll</HintPath>
+    <Reference Include="Ploeh.AutoFixture.AutoNSubstitute, Version=3.36.9.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\AutoFixture.AutoNSubstitute.3.36.9\lib\net40\Ploeh.AutoFixture.AutoNSubstitute.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ploeh.AutoFixture.Xunit2, Version=3.30.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\AutoFixture.Xunit2.3.30.0\lib\net45\Ploeh.AutoFixture.Xunit2.dll</HintPath>
+    <Reference Include="Ploeh.AutoFixture.Xunit2, Version=3.36.9.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\AutoFixture.Xunit2.3.36.9\lib\net45\Ploeh.AutoFixture.Xunit2.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Analytics">
@@ -166,11 +166,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\Habitat.Framework.SitecoreExtensions.csproj">
+    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Habitat.Framework.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Habitat.Framework.SitecoreExtensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Accounts\Habitat.Accounts.csproj">
+    <ProjectReference Include="..\code\Habitat.Accounts.csproj">
       <Project>{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}</Project>
       <Name>Habitat.Accounts</Name>
     </ProjectReference>

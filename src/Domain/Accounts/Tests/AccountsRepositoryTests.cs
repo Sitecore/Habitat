@@ -18,6 +18,7 @@
   using Sitecore.Security.Authentication;
   using Sitecore.Security.Domains;
   using Xunit;
+  using Ploeh.AutoFixture.AutoNSubstitute;
 
   public class AccountsRepositoryTests
   {
@@ -199,7 +200,7 @@
 
     [Theory]
     [AutoDbData]
-    public void RegisterShouldCreateLoginUser(FakeMembershipUser user, MembershipProvider membershipProvider, AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository)
+    public void RegisterShouldCreateLoginUser(FakeMembershipUser user, [Substitute]MembershipProvider membershipProvider, [Substitute]AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository)
     {
       user.ProviderName.Returns("fake");
       user.UserName.Returns("name");

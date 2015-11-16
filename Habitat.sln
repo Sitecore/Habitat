@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.SitecoreExtensions", "src\Framework\SitecoreExtensions\Habitat.Framework.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.SitecoreExtensions", "src\Framework\SitecoreExtensions\code\Habitat.Framework.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{F347A85D-6FF5-4927-B5CF-54D81954E6A2}"
 	ProjectSection(SolutionItems) = preProject
@@ -16,52 +16,52 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		package.xml = package.xml
 		publishsettings.targets = publishsettings.targets
 		README.md = README.md
-		src\Project\Website\App_Config\Include\Habitat\z.Habitat.DevSettings.config = src\Project\Website\App_Config\Include\Habitat\z.Habitat.DevSettings.config
+		src\Project\Website\code\App_Config\Include\Habitat\z.Habitat.DevSettings.config = src\Project\Website\code\App_Config\Include\Habitat\z.Habitat.DevSettings.config
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{755F9E42-1707-4E1A-AE6D-3FD8A25118C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Assets", "src\Framework\Assets\Habitat.Framework.Assets.csproj", "{7E46FF93-EE05-412C-AC47-2A59A13DA73C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Assets", "src\Framework\Assets\code\Habitat.Framework.Assets.csproj", "{7E46FF93-EE05-412C-AC47-2A59A13DA73C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{D2CBE02E-6AA7-4343-9A01-891F971A17F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.News", "src\Domain\News\Habitat.News.csproj", "{1AAD6F22-9B6D-4688-8EA5-1AE7044031F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.News", "src\Domain\News\code\Habitat.News.csproj", "{1AAD6F22-9B6D-4688-8EA5-1AE7044031F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Metadata", "src\domain\Metadata\Habitat.Metadata.csproj", "{2BBD157C-AD28-4055-A208-48A2DA93BD04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Metadata", "src\domain\Metadata\code\Habitat.Metadata.csproj", "{2BBD157C-AD28-4055-A208-48A2DA93BD04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Navigation", "src\domain\Navigation\Habitat.Navigation.csproj", "{16003E7F-0FAF-4DEE-B13D-DD327E965A98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Navigation", "src\domain\Navigation\code\Habitat.Navigation.csproj", "{16003E7F-0FAF-4DEE-B13D-DD327E965A98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Taxonomy", "src\Framework\Taxonomy\Habitat.Framework.Taxonomy.csproj", "{C353B05E-1D24-4806-B1C3-C55DA60CB15D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Taxonomy", "src\Framework\Taxonomy\code\Habitat.Framework.Taxonomy.csproj", "{C353B05E-1D24-4806-B1C3-C55DA60CB15D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Social", "src\domain\Social\Habitat.Social.csproj", "{B018C183-6976-4766-B2C0-0CBA4C064AED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Social", "src\domain\Social\code\Habitat.Social.csproj", "{B018C183-6976-4766-B2C0-0CBA4C064AED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Identity", "src\domain\Identity\Habitat.Identity.csproj", "{0D0B809C-03AB-4EE1-898F-CFE28CF5B245}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Identity", "src\domain\Identity\code\Habitat.Identity.csproj", "{0D0B809C-03AB-4EE1-898F-CFE28CF5B245}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Search", "src\Domain\Search\Habitat.Search.csproj", "{55B9C026-E106-4185-8213-9CDD53B44E1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Search", "src\Domain\Search\code\Habitat.Search.csproj", "{55B9C026-E106-4185-8213-9CDD53B44E1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Language", "src\Domain\Language\Habitat.Language.csproj", "{ACA65632-EE93-422B-B25E-8E31969694F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Language", "src\Domain\Language\code\Habitat.Language.csproj", "{ACA65632-EE93-422B-B25E-8E31969694F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Media", "src\Domain\Media\Habitat.Media.csproj", "{1417B162-F987-4CBD-8642-CA4C4119E705}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Media", "src\Domain\Media\code\Habitat.Media.csproj", "{1417B162-F987-4CBD-8642-CA4C4119E705}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{9A8FD752-FF60-4789-8251-E1D8FF290F3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Design", "src\Project\Design\Habitat.Design.csproj", "{98DE0D1D-26F1-4CCA-847C-4E0FC2DBA5FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Design", "src\Project\Design\code\Habitat.Design.csproj", "{98DE0D1D-26F1-4CCA-847C-4E0FC2DBA5FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Website", "src\Project\Website\Habitat.Website.csproj", "{86CADB26-5817-46B6-88C7-76D5753722C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Website", "src\Project\Website\code\Habitat.Website.csproj", "{86CADB26-5817-46B6-88C7-76D5753722C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Serialization", "src\Framework\Serialization\Habitat.Framework.Serialization.csproj", "{007CD5DC-0030-460D-91A3-3DDEA9AB472F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Serialization", "src\Framework\Serialization\code\Habitat.Framework.Serialization.csproj", "{007CD5DC-0030-460D-91A3-3DDEA9AB472F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Accounts", "src\Domain\Accounts\Habitat.Accounts.csproj", "{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Accounts", "src\Domain\Accounts\code\Habitat.Accounts.csproj", "{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Indexing", "src\Framework\Indexing\Habitat.Framework.Indexing.csproj", "{80213F24-577F-4F0B-A3B8-62485EA4D2F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Indexing", "src\Framework\Indexing\code\Habitat.Framework.Indexing.csproj", "{80213F24-577F-4F0B-A3B8-62485EA4D2F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Teasers", "src\Domain\Teasers\Habitat.Teasers.csproj", "{64C1C1EF-71CB-47BD-92F9-4E50CE35BD9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Teasers", "src\Domain\Teasers\code\Habitat.Teasers.csproj", "{64C1C1EF-71CB-47BD-92F9-4E50CE35BD9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.PageContent", "src\Domain\PageContent\Habitat.PageContent.csproj", "{DA079E95-DB53-4A66-AB35-2DAB71D19276}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.PageContent", "src\Domain\PageContent\code\Habitat.PageContent.csproj", "{DA079E95-DB53-4A66-AB35-2DAB71D19276}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accounts", "Accounts", "{C7886F90-3A67-4889-8ACC-F07D42CFDBF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Accounts.Tests", "src\Domain\Accounts\Tests\Habitat.Accounts.Tests.csproj", "{0049EB56-74D3-4F39-B0CE-2295E0747F09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Accounts.Tests", "src\Domain\Accounts\tests\Habitat.Accounts.Tests.csproj", "{0049EB56-74D3-4F39-B0CE-2295E0747F09}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{6F4B31B8-5677-448B-8A72-957E8AA47F52}"
 EndProject
@@ -83,25 +83,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Social", "Social", "{F5F33F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Teasers", "Teasers", "{8AE5D37C-D340-4D66-8BAE-48A7ED60BCE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Identity.Tests", "src\Domain\Identity\Tests\Habitat.Identity.Tests.csproj", "{3E361E0D-0A47-4195-8BCB-ABA95E197CD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Identity.Tests", "src\Domain\Identity\tests\Habitat.Identity.Tests.csproj", "{3E361E0D-0A47-4195-8BCB-ABA95E197CD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Language.Tests", "src\Domain\Language\Tests\Habitat.Language.Tests.csproj", "{B65AC070-F56C-4C2C-9D0E-E76CEF7E8928}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Language.Tests", "src\Domain\Language\tests\Habitat.Language.Tests.csproj", "{B65AC070-F56C-4C2C-9D0E-E76CEF7E8928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Media.Tests", "src\Domain\Media\Tests\Habitat.Media.Tests.csproj", "{097A482B-CD89-4BA9-939F-B232D35AF8E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Media.Tests", "src\Domain\Media\tests\Habitat.Media.Tests.csproj", "{097A482B-CD89-4BA9-939F-B232D35AF8E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Metadata.Tests", "src\Domain\Metadata\Tests\Habitat.Metadata.Tests.csproj", "{76232CCE-4D3F-4332-8C34-2D7807EE3954}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Metadata.Tests", "src\Domain\Metadata\tests\Habitat.Metadata.Tests.csproj", "{76232CCE-4D3F-4332-8C34-2D7807EE3954}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Navigation.Tests", "src\Domain\Navigation\Tests\Habitat.Navigation.Tests.csproj", "{BE2F2700-095F-4B07-9553-02FF39BF92D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Navigation.Tests", "src\Domain\Navigation\tests\Habitat.Navigation.Tests.csproj", "{BE2F2700-095F-4B07-9553-02FF39BF92D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.News.Tests", "src\Domain\News\Tests\Habitat.News.Tests.csproj", "{ADF3A6FF-9E94-400D-8A03-DE9C3A778186}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.News.Tests", "src\Domain\News\tests\Habitat.News.Tests.csproj", "{ADF3A6FF-9E94-400D-8A03-DE9C3A778186}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.PageContent.Tests", "src\Domain\PageContent\Tests\Habitat.PageContent.Tests.csproj", "{FD62BBE5-5908-4201-A1F4-65875E89585E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.PageContent.Tests", "src\Domain\PageContent\tests\Habitat.PageContent.Tests.csproj", "{FD62BBE5-5908-4201-A1F4-65875E89585E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Search.Tests", "src\Domain\Search\Tests\Habitat.Search.Tests.csproj", "{DD250492-DDBC-4236-B57B-42D673935F69}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Search.Tests", "src\Domain\Search\tests\Habitat.Search.Tests.csproj", "{DD250492-DDBC-4236-B57B-42D673935F69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Social.Tests", "src\Domain\Social\Tests\Habitat.Social.Tests.csproj", "{2E2DBCC9-77F1-445D-B211-BD1E2289FB84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Social.Tests", "src\Domain\Social\tests\Habitat.Social.Tests.csproj", "{2E2DBCC9-77F1-445D-B211-BD1E2289FB84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Teasers.Tests", "src\Domain\Teasers\Tests\Habitat.Teasers.Tests.csproj", "{984266D0-1626-45B2-81AA-E4D2FCEE2E2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Teasers.Tests", "src\Domain\Teasers\tests\Habitat.Teasers.Tests.csproj", "{984266D0-1626-45B2-81AA-E4D2FCEE2E2A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{4CEA4907-CB04-49A7-869D-FE39C479DF58}"
 EndProject
@@ -113,39 +113,43 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SitecoreExtensions", "Sitec
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Taxonomy", "Taxonomy", "{740A74F7-12FF-461E-B4B1-BC9ADB93B88E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Assets.Tests", "src\Framework\Assets\Tests\Habitat.Framework.Assets.Tests.csproj", "{E60740E9-6382-4378-8DA6-49F99057E8D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Assets.Tests", "src\Framework\Assets\tests\Habitat.Framework.Assets.Tests.csproj", "{E60740E9-6382-4378-8DA6-49F99057E8D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Indexing.Tests", "src\Framework\Indexing\Tests\Habitat.Framework.Indexing.Tests.csproj", "{3ECFDA25-B8AE-43F5-9CA9-4AFDF1F96901}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Indexing.Tests", "src\Framework\Indexing\tests\Habitat.Framework.Indexing.Tests.csproj", "{3ECFDA25-B8AE-43F5-9CA9-4AFDF1F96901}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.SitecoreExtensions.Tests", "src\Framework\SitecoreExtensions\Tests\Habitat.Framework.SitecoreExtensions.Tests.csproj", "{85F735B7-9BEE-43C3-94DF-539CE267F0B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.SitecoreExtensions.Tests", "src\Framework\SitecoreExtensions\tests\Habitat.Framework.SitecoreExtensions.Tests.csproj", "{85F735B7-9BEE-43C3-94DF-539CE267F0B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Taxonomy.Tests", "src\Framework\Taxonomy\Tests\Habitat.Framework.Taxonomy.Tests.csproj", "{30C2C08C-0099-4B05-83B4-CDF15EDE33E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Taxonomy.Tests", "src\Framework\Taxonomy\tests\Habitat.Framework.Taxonomy.Tests.csproj", "{30C2C08C-0099-4B05-83B4-CDF15EDE33E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Accounts.Specflow", "src\Domain\Accounts\Specflow\Habitat.Accounts.Specflow.csproj", "{CF95188D-0E98-44FA-BB40-D1EA083A09FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Accounts.Specflow", "src\Domain\Accounts\specs\Habitat.Accounts.Specflow.csproj", "{CF95188D-0E98-44FA-BB40-D1EA083A09FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Identity.Specflow", "src\Domain\Identity\Specflow\Habitat.Identity.Specflow.csproj", "{A9C70681-4676-4EC8-96D4-4E2FC47ECDFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Identity.Specflow", "src\Domain\Identity\specs\Habitat.Identity.Specflow.csproj", "{A9C70681-4676-4EC8-96D4-4E2FC47ECDFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Language.Specflow", "src\Domain\Language\Specflow\Habitat.Language.Specflow.csproj", "{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Language.Specflow", "src\Domain\Language\specs\Habitat.Language.Specflow.csproj", "{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Mdia.Specflow", "src\Domain\Media\Specflow\Habitat.Mdia.Specflow.csproj", "{98EDAD96-F400-4898-AA14-F63327D17F18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Mdia.Specflow", "src\Domain\Media\specs\Habitat.Mdia.Specflow.csproj", "{98EDAD96-F400-4898-AA14-F63327D17F18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Metadata.Specflow", "src\Domain\Metadata\Specflow\Habitat.Metadata.Specflow.csproj", "{22B66A8A-9155-4961-B439-7CC2C0665AED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Metadata.Specflow", "src\Domain\Metadata\specs\Habitat.Metadata.Specflow.csproj", "{22B66A8A-9155-4961-B439-7CC2C0665AED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Navigation.Specflow", "src\Domain\Navigation\Specflow\Habitat.Navigation.Specflow.csproj", "{D4D07783-3669-45A4-9F2D-4CFDA40D2144}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Navigation.Specflow", "src\Domain\Navigation\specs\Habitat.Navigation.Specflow.csproj", "{D4D07783-3669-45A4-9F2D-4CFDA40D2144}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.News.Specflow", "src\Domain\News\Specflow\Habitat.News.Specflow.csproj", "{5B22786A-92C7-4F00-B678-A0A9A5B6E554}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.News.Specflow", "src\Domain\News\specs\Habitat.News.Specflow.csproj", "{5B22786A-92C7-4F00-B678-A0A9A5B6E554}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.PageContent.Specflow", "src\Domain\PageContent\Specflow\Habitat.PageContent.Specflow.csproj", "{FE72E154-7858-45BC-AB72-2C55CB8EE996}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.PageContent.Specflow", "src\Domain\PageContent\specs\Habitat.PageContent.Specflow.csproj", "{FE72E154-7858-45BC-AB72-2C55CB8EE996}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Search.Specflow", "src\Domain\Search\Specflow\Habitat.Search.Specflow.csproj", "{029A386B-9895-4127-A6D3-416EED3D5B16}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Search.Specflow", "src\Domain\Search\specs\Habitat.Search.Specflow.csproj", "{029A386B-9895-4127-A6D3-416EED3D5B16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Social.Specflow", "src\Domain\Social\Specflow\Habitat.Social.Specflow.csproj", "{5E3D01C4-286E-4AD0-96C3-74D0993F890F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Social.Specflow", "src\Domain\Social\specs\Habitat.Social.Specflow.csproj", "{5E3D01C4-286E-4AD0-96C3-74D0993F890F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Teasers.Specflow", "src\Domain\Teasers\Specflow\Habitat.Teasers.Specflow.csproj", "{7A0D4342-60CC-498F-B0AB-4C19902C7FC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Teasers.Specflow", "src\Domain\Teasers\specs\Habitat.Teasers.Specflow.csproj", "{7A0D4342-60CC-498F-B0AB-4C19902C7FC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Demo", "src\Domain\Demo\Habitat.Demo.csproj", "{4DD516F2-D9E5-4775-B840-E00A71DD7E87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Demo", "src\Domain\Demo\code\Habitat.Demo.csproj", "{4DD516F2-D9E5-4775-B840-E00A71DD7E87}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{CA21CE04-607F-4AF6-8A70-3F1E82C42B11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Website", "Website", "{E5ADCE9F-29A4-42D7-A316-2A1AD6E23E3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Website.Tests", "src\Project\Website\tests\Habitat.Website.Tests.csproj", "{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -513,6 +517,14 @@ Global
 		{4DD516F2-D9E5-4775-B840-E00A71DD7E87}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4DD516F2-D9E5-4775-B840-E00A71DD7E87}.Release|x64.ActiveCfg = Release|Any CPU
 		{4DD516F2-D9E5-4775-B840-E00A71DD7E87}.Release|x64.Build.0 = Release|Any CPU
+		{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1}.Debug|x64.Build.0 = Debug|Any CPU
+		{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1}.Release|x64.ActiveCfg = Release|Any CPU
+		{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -530,7 +542,7 @@ Global
 		{ACA65632-EE93-422B-B25E-8E31969694F5} = {3BB5C2EE-694B-49F4-989F-8484FD0A3F75}
 		{1417B162-F987-4CBD-8642-CA4C4119E705} = {836F4115-EB6C-468A-AE65-6F123B0376E8}
 		{98DE0D1D-26F1-4CCA-847C-4E0FC2DBA5FC} = {9A8FD752-FF60-4789-8251-E1D8FF290F3F}
-		{86CADB26-5817-46B6-88C7-76D5753722C3} = {9A8FD752-FF60-4789-8251-E1D8FF290F3F}
+		{86CADB26-5817-46B6-88C7-76D5753722C3} = {E5ADCE9F-29A4-42D7-A316-2A1AD6E23E3E}
 		{007CD5DC-0030-460D-91A3-3DDEA9AB472F} = {BF8EAE6B-0DFD-45EC-A419-1EC760FE9E49}
 		{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5} = {C7886F90-3A67-4889-8ACC-F07D42CFDBF0}
 		{80213F24-577F-4F0B-A3B8-62485EA4D2F3} = {641F22ED-9C6A-4ADA-A9E7-7CA6A67E39B1}
@@ -580,5 +592,7 @@ Global
 		{7A0D4342-60CC-498F-B0AB-4C19902C7FC8} = {8AE5D37C-D340-4D66-8BAE-48A7ED60BCE8}
 		{4DD516F2-D9E5-4775-B840-E00A71DD7E87} = {CA21CE04-607F-4AF6-8A70-3F1E82C42B11}
 		{CA21CE04-607F-4AF6-8A70-3F1E82C42B11} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
+		{E5ADCE9F-29A4-42D7-A316-2A1AD6E23E3E} = {9A8FD752-FF60-4789-8251-E1D8FF290F3F}
+		{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1} = {E5ADCE9F-29A4-42D7-A316-2A1AD6E23E3E}
 	EndGlobalSection
 EndGlobal
