@@ -4,9 +4,9 @@ Parent: 9ce7afd3-6b9f-4955-9b00-164b9c91ecd2
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
 Path: /sitecore/layout/Renderings/Habitat/Domain/Navigation/SecondaryMenu
 SharedFields:
-- ID: 94069f66-609c-48b0-8281-521c30fb269d
-  # Open Properties after Add
-  Value: -
+- ID: 308e88f5-cd6e-4f8f-bafe-95a47dedefdc
+  # Editable
+  Value: 1
 - ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
   # Controller Action
   Value: SecondaryMenu

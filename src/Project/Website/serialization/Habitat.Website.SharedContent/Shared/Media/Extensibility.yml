@@ -16,7 +16,7 @@ Languages:
       Value: Add new features, simply and without a steep learning curve
     - ID: 4ff62b0a-d73b-4436-bea2-023154f2ffc4
       # MediaThumbnail
-      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{9038ED94-C574-418F-A817-B6A52F8CD3B0}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"Blonde Woman\" vspace=\"\" />"
+      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{9038ED94-C574-418F-A817-B6A52F8CD3B0}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"Blonde Woman\" vspace=\"\" ></image>"
     - ID: 63dda48b-b0cb-45a7-9a1b-b26ddb41009b
       # MediaTitle
       Value: Extensibility

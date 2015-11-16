@@ -16,7 +16,7 @@ Languages:
       Value: Change and add quickly and without worry
     - ID: 4ff62b0a-d73b-4436-bea2-023154f2ffc4
       # MediaThumbnail
-      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{2F3504A7-DA19-42CE-8985-6A5DC110F52E}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"Woman on Phone\" vspace=\"\" />"
+      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{2F3504A7-DA19-42CE-8985-6A5DC110F52E}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"Woman on Phone\" vspace=\"\" ></image>"
     - ID: 63dda48b-b0cb-45a7-9a1b-b26ddb41009b
       # MediaTitle
       Value: Flexibility

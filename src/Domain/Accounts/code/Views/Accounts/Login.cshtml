@@ -3,6 +3,7 @@
 @using Sitecore.Mvc
 @using Habitat.Accounts.Texts
 @using Habitat.Framework.SitecoreExtensions.HtmlHelpers
+@using Habitat.Framework.SitecoreExtensions.Repositories
 @model Habitat.Accounts.Models.LoginInfo
 
 @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
@@ -22,9 +23,9 @@
 </div>
 <div class="checkbox">
     <label>
-        <input type="checkbox" id="loginRemember"> Remember me
+        <input type="checkbox" id="loginRemember">@Captions.RememberMe
     </label>
 </div>
 <input type="submit" class="btn btn-default" value="@Captions.Login" />
-<a href="@AccountsSettingsService.Instance.GetPageLink(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)" class="btn btn-link">Forgot you password?</a>
+<a href="@AccountsSettingsService.Instance.GetPageLink(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)" class="btn btn-link">@Captions.ForgotYourPassword</a>
 }

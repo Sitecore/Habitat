@@ -28,6 +28,9 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151008T041914Z
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      # Image
+      Value: "<image mediaid=\"{E8F78F17-7440-4D1C-A29B-A0AD2F80CC88}\" />"
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
       # Summary
       Value: The News module contains news functionality including lists, articles and teasers.
@@ -40,5 +43,5 @@ Languages:
     - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
       # Body
       Value: |
-        The News module contains features related to news content, i.e. articles and lists.<br />
+        The News module contains features related to news content, i.e. articles and lists.<br>
         <a href="~/link.aspx?_id=439EC71A423145C8B075975BD41099A7&amp;_z=z">See the news list here.&nbsp;</a>

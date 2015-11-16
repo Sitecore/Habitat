@@ -5,7 +5,7 @@
   <File Include="Views\Website\Sublayouts\PageHeading.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{A2216CA7-B205-4042-A345-72117D0086C3}</Item>
   </File>
-  <File Include="Views\Website\Sublayouts\PageSidebar.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+  <File Include="Views\Website\Sublayouts\PageSidebarLeft.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{EADA94FA-315F-4DF2-AC49-13346DFDAF12}</Item>
   </File>
   <File Include="Views\Website\Sublayouts\2 Column 9-3.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
@@ -49,5 +49,11 @@
   </File>
   <File Include="Views\Website\Sublayouts\Inner 2 Column 8-4.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{45CE489D-FA30-473E-9751-142BD06CCB33}</Item>
+  </File>
+  <File Include="Views\Website\Sublayouts\PageSidebarRight.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{CF750731-1275-4CC7-A9E6-809515CB4DD1}</Item>
+  </File>
+  <File Include="Views\Website\Sublayouts\Inner 1 Column.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{03112E88-1499-4132-9D5F-E213AFD2019C}</Item>
   </File>
 </Project>

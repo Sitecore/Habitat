@@ -23,5 +23,8 @@
     public static string ResetPasswordSuccess => DictionaryRepository.Get("/Accounts/Captions/ResetPasswordSuccess", "Your password has been reset.");
 
     public static string RegisterSuccess => DictionaryRepository.Get("/Accounts/Captions/RegisterSuccess", "Registration was successfully completed");
+    public static string RememberMe => DictionaryRepository.Get("/Accounts/Captions/RememberMe", "Remember me");
+    public static string ForgotYourPassword => DictionaryRepository.Get("/Accounts/Captions/ForgotYourPassword", "Forgot your password?");
+    public static string Cancel => DictionaryRepository.Get("/Accounts/Captions/Cancel", "Cancel");
   }
 }

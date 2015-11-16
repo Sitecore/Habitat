@@ -6233,11 +6233,6 @@ footer {
     min-height: 40px; }
     .newslist > .media-list .media .metadata > .panel-body {
       padding: 5px 5px 5px 10px; }
-      .newslist > .media-list .media .metadata > .panel-body > .labels .label {
-        border-radius: 0;
-        margin-right: 5px;
-        text-transform: uppercase;
-        font-weight: 300; }
 
 .newslist > nav {
   text-align: center; }

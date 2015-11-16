@@ -27,6 +27,9 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151009T013423Z
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      # Image
+      Value: "<image mediaid=\"{D556FE4B-1253-452C-83DD-C3E1998304B0}\" />"
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       # Title
       Value: Architecture Introduction
