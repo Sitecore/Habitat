@@ -1,0 +1,22 @@
+﻿---
+ID: fd46936d-1f9e-4e0c-98d8-0bc99dd8e6ec
+Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
+Template: 94a8c8e9-690b-4e65-98e7-f95800222767
+Path: /sitecore/content/Habitat/Home/Modules/Domain/Language
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: Language
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151116T023610Z
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      # Title
+      Value: Language
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      # BrowserTitle
+      Value: Language

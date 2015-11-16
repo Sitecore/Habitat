@@ -107,6 +107,24 @@
     <Content Include="fonts\Bootstrap\glyphicons-halflings-regular.woff2" />
     <Content Include="packages.config" />
     <Content Include="scripts\Design\Habitat.Design.js" />
+    <Content Include="fonts\Habitat\Roboto-Black.ttf" />
+    <Content Include="fonts\Habitat\Roboto-BlackItalic.ttf" />
+    <Content Include="fonts\Habitat\Roboto-Bold.ttf" />
+    <Content Include="fonts\Habitat\Roboto-BoldItalic.ttf" />
+    <Content Include="fonts\Habitat\Roboto-Italic.ttf" />
+    <Content Include="fonts\Habitat\Roboto-Light.ttf" />
+    <Content Include="fonts\Habitat\Roboto-LightItalic.ttf" />
+    <Content Include="fonts\Habitat\Roboto-Medium.ttf" />
+    <Content Include="fonts\Habitat\Roboto-MediumItalic.ttf" />
+    <Content Include="fonts\Habitat\Roboto-Regular.ttf" />
+    <Content Include="fonts\Habitat\Roboto-Thin.ttf" />
+    <Content Include="fonts\Habitat\Roboto-ThinItalic.ttf" />
+    <Content Include="fonts\Habitat\Roboto-Condensed-Bold-Italic.woff" />
+    <Content Include="fonts\Habitat\Roboto-Condensed-Bold.woff" />
+    <Content Include="fonts\Habitat\Roboto-Condensed-Italic.woff" />
+    <Content Include="fonts\Habitat\Roboto-Condensed-Light-Italic.woff" />
+    <Content Include="fonts\Habitat\Roboto-Condensed-Light.woff" />
+    <Content Include="fonts\Habitat\Roboto-Condensed.woff" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <None Include="compilerconfig.json" />
     <Content Include="compilerconfig.json.defaults">
@@ -191,6 +209,7 @@
     <Content Include="sass\PageContent.scss" />
     <Content Include="sass\Teasers.scss" />
     <Content Include="sass\Accounts.scss" />
+    <Content Include="sass\Fonts.scss" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

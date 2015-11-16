@@ -14,6 +14,9 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151009T064227Z
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      # Image
+      Value: "<image mediaid=\"{08E01453-5709-43F0-9F2F-9B7A65BA5666}\" ></image>"
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       # Title
       Value: Simplicity

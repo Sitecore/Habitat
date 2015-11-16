@@ -152,10 +152,6 @@
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Habitat.Framework.SitecoreExtensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Framework\Taxonomy\code\Habitat.Framework.Taxonomy.csproj">
-      <Project>{c353b05e-1d24-4806-b1c3-c55da60cb15d}</Project>
-      <Name>Habitat.Framework.Taxonomy</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -4,6 +4,7 @@
 @using Sitecore.Mvc
 @using Habitat.Accounts.Texts
 @using Habitat.Framework.SitecoreExtensions.HtmlHelpers
+@using Habitat.Framework.SitecoreExtensions.Repositories
 @model Habitat.Accounts.Models.LoginInfo
 
 <div class="modal-body">
@@ -20,12 +21,12 @@
     </div>
     <div class="checkbox">
         <label>
-            <input type="checkbox" id="loginRemember"> Remember me
+            <input type="checkbox" id="loginRemember">@Captions.RememberMe
         </label>
     </div>
-    <a href="@AccountsSettingsService.Instance.GetPageLink(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)" class="btn btn-link">Forgot you password?</a>
+    <a href="@AccountsSettingsService.Instance.GetPageLink(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)" class="btn btn-link">@Captions.ForgotYourPassword</a>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">@Captions.Cancel</button>
     <button type="button" class="btn btn-primary" onclick="login('loginModal')">@Captions.Login</button>
 </div>
