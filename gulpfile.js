@@ -130,6 +130,25 @@ gulp.task("Auto-Publish-Views", function() {
   );
 });
 
+gulp.task("Auto-Publish-Assemblies", function () {
+  var root = "./src";
+  var roots = [root + "/**/code/bin"];
+  var files = "/**/Habitat.*.{dll,pdb}";;
+  var destination = config.websiteRoot + "/bin/";
+  gulp.src(roots, { base: root }).pipe(
+    foreach(function (stream, rootFolder) {
+      gulp.watch(rootFolder.path + files, function (event) {
+        if (event.type === "changed") {
+          console.log("publish this file " + event.path);
+          gulp.src(event.path, { base: rootFolder.path }).pipe(gulp.dest(destination));
+        }
+        console.log("published " + event.path);
+      });
+      return stream;
+    })
+  );
+});
+
 /*****************************
  CI stuff
 *****************************/
