@@ -9,7 +9,7 @@ using TechTalk.SpecFlow;
 
 namespace Habitat.Accounts.Specflow.Steps
 {
-    class SiteNavigation: StepsBase
+   public class SiteNavigation: StepsBase
     {
         [Given(@"Habitat website is opened on Main Page")]
 
@@ -21,10 +21,10 @@ namespace Habitat.Accounts.Specflow.Steps
         [When(@"Actor moves cursor over the User icon")]
         public void WhenActorMovesCursorOverTheUserIcon()
         {
-            Site.UserIcon.MoveToElement();
+            this.Site.UserIcon.MoveToElement();
 
 #warning hack for selenium hover behavoiur
-            var dropdown = Site.UserIcon.FindElement(By.XPath("../../ul"));
+            var dropdown = this.Site.UserIcon.FindElement(By.XPath("../../ul"));
             var js = Driver as IJavaScriptExecutor;
             js?.ExecuteScript("arguments[0].style.display='block'", dropdown);
         }

@@ -19,7 +19,7 @@ namespace Habitat.Accounts.Specflow.Steps
         [When(@"Actor clicks (.*) button")]
         public void WhenActorClicksRegisterButton(string btn)
         {
-            Site.SubmitButton.Click();
+            this.Site.SubmitButton.Click();
         }
 
         [Then(@"System shows following message for the Email field")]
@@ -30,7 +30,7 @@ namespace Habitat.Accounts.Specflow.Steps
             foreach (var textMessage in textMessages)
             {
                 var found = false;
-                foreach (var webElement in Site.AccountErrorMessages)
+                foreach (var webElement in this.Site.AccountErrorMessages)
                 {
                     found = webElement.Text == textMessage;
                     if (found)

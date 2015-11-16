@@ -31,6 +31,8 @@ namespace Habitat.Accounts.Specflow.Steps
 
     public Site Site => new Site();
 
+    public SiteNavigation SiteNavigation => new SiteNavigation();
+
     [AfterFeature]
     public static void TeardownTest()
     {
