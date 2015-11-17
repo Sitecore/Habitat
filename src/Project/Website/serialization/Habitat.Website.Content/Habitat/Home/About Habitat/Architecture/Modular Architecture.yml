@@ -3,6 +3,19 @@ ID: 86b2e20e-ecfc-45e2-8735-9a6fcae83c95
 Parent: b16765ba-7b3e-4c5b-9937-bfc985f2550c
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/About Habitat/Architecture/Modular Architecture
+SharedFields:
+- ID: b0a67b2a-8b07-4e0b-8809-69f751709806
+  # __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}" name="Focus" presets="architecture|100||">
+        <key name="Background" value="9" />
+        <key name="Practical" value="2" />
+        <key name="Process" value="6" />
+        <key name="Scope" value="3" />
+      </profile>
+    </tracking>
 Languages:
 - Language: en
   Versions:

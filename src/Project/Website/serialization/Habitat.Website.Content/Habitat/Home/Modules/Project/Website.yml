@@ -9,17 +9,17 @@ SharedFields:
   Type: Tracking
   Value: |
     <tracking>
-      <profile id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}" name="Focus">
-        <key name="Background" value="2" />
-        <key name="Practical" value="7" />
-        <key name="Process" value="4" />
-        <key name="Scope" value="7" />
+      <profile id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}" name="Focus" presets="development|100||">
+        <key name="Background" value="0" />
+        <key name="Practical" value="8" />
+        <key name="Process" value="2" />
+        <key name="Scope" value="5" />
       </profile>
       <profile id="{BA06B827-C6F2-4748-BD75-AA178B770E83}" name="Function">
-        <key name="Building Trust" value="2" />
+        <key name="Building Trust" value="0" />
         <key name="Call to Action" value="0" />
-        <key name="Create Desire" value="2" />
-        <key name="Define Concept" value="8" />
+        <key name="Create Desire" value="0" />
+        <key name="Define Concept" value="0" />
       </profile>
     </tracking>
 Languages:
