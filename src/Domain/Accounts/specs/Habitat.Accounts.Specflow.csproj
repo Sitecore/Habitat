@@ -71,6 +71,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Edit user profile.feature</DependentUpon>
     </Compile>
+    <Compile Include="Forgot Password.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Forgot Password.feature</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\SeleniumExtensions.cs" />
     <Compile Include="Infrastructure\Site.cs" />
     <Compile Include="Log out.feature.cs">
@@ -106,6 +111,10 @@
     <None Include="Edit user profile.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Edit user profile.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Forgot Password.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Forgot Password.feature.cs</LastGenOutput>
     </None>
     <None Include="Log out.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
