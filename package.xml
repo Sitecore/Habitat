@@ -10,7 +10,7 @@
       <Attributes/>
       <Readme/>
       <Publisher/>
-      <PostStep/>
+      <PostStep>Habitat.Website.Installer.PostStep, Habitat.Website</PostStep>
       <PackageID/>
     </metadata>
   </Metadata>
