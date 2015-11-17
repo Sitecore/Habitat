@@ -8,8 +8,7 @@
   {
     public static Item Get(Item contextItem)
     {
-      return contextItem.GetAncestorOrSelfOfTemplate(Templates.Identity.ID)
-             ?? Context.Site.GetContextItem(Templates.Identity.ID);
+      return contextItem.GetAncestorOrSelfOfTemplate(Templates.Identity.ID) ?? Context.Site.GetContextItem(Templates.Identity.ID);
     }
   }
 }

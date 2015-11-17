@@ -35,7 +35,7 @@ gulp.task("02-Publish-All-Projects", function(callback) {
 var publishProjects = function(location, dest) {
   dest = dest || config.websiteRoot;
   console.log("publish to " + dest + " folder");
-  return gulp.src([location + "/**/*.csproj", "!" + location + "/**/*Tests.csproj"])
+  return gulp.src([location + "/**/*.csproj", "!" + location + "/**/*Tests.csproj", "!" + location + "/**/*Specflow.csproj"])
     .pipe(foreach(function(stream, file) {
       return stream
         .pipe(debug({ title: "Building project:" }))

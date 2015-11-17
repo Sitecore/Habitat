@@ -22,6 +22,12 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20150824T171748Z
+    - ID: 2a84eca4-68bb-4451-b4ac-98ea71a5a3dc
+      # SiteProfiles
+      Type: Multilist
+      Value: |
+        {24DFF2CF-B30A-4B75-8967-2FE3DED82271}
+        {BA06B827-C6F2-4748-BD75-AA178B770E83}
     - ID: 365254c4-1c1c-493a-9710-671574717898
       # FogotPasswordMailTemplate
       Value: /sitecore/content/Habitat/Global/Registration/Forgot Password Mail
