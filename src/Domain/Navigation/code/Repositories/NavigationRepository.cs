@@ -3,6 +3,7 @@
   using System;
   using System.Collections.Generic;
   using System.Linq;
+  using System.Runtime.Remoting.Contexts;
   using Habitat.Framework.SitecoreExtensions.Extensions;
   using Habitat.Navigation.Models;
   using Sitecore;
@@ -26,7 +27,7 @@
     public Item GetNavigationRoot(Item contextItem)
     {
       return contextItem.GetAncestorOrSelfOfTemplate(Templates.NavigationRoot.ID) ??
-             Context.Site.GetContextItem(Templates.NavigationRoot.ID);
+             Sitecore.Context.Site.GetContextItem(Templates.NavigationRoot.ID);
     }
 
     public NavigationItems GetBreadcrumb()

@@ -4,6 +4,9 @@ Parent: dac24edd-44fb-42ef-9ecd-1e8daf706386
 Template: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Path: /sitecore/content/Habitat/Home/Login
 SharedFields:
+- ID: 5585a30d-b115-4753-93ce-422c3455deb2
+  # ShowInNavigation
+  Value: 0
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder
   Value: 700
