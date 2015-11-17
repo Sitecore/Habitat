@@ -10,6 +10,7 @@
     <div class="form-group @Html.ValidationErrorFor(x => x.FirstName, "has-error")">
         @Html.LabelFor(x => x.FirstName, new {@class = "control-label"})
 
+        @Html.Text
         @Html.ValidationMessageFor(x => x.FirstName, "", new {@class = "help-block"})
 
         @Html.TextBoxFor(x => x.FirstName, new {@class = "form-control", id = "firstName"})

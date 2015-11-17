@@ -34,7 +34,7 @@
       return processor;
     }
 
-    public IEnumerable<string> GetInterests()
+    public virtual IEnumerable<string> GetInterests()
     {
       var item = GetSettingsItem(null);
       ReferenceField interestsFolder = item.Fields[Templates.ProfileSettigs.Fields.InterestsFolder];

@@ -1,49 +1,25 @@
 ﻿namespace Habitat.Accounts.Models
 {
   using System.Collections.Generic;
-  using System.Linq;
-  using Sitecore.Platform;
+  using System.ComponentModel.DataAnnotations;
+  using Habitat.Accounts.Texts;
 
   public class EditProfile
   {
-
-
-    public EditProfile(IEnumerable<string> interestTypes)
-    {
-      this.InterestTypes = interestTypes;
-    }
-
-    public EditProfile(IDictionary<string,string> properties, IEnumerable<string> interestTypes)
-    {
-      this.InterestTypes = interestTypes;
-
-      this.FirstName = properties["FirstName"];
-      this.LastName = properties["LastName"];
-      this.PhoneNumber = properties["PhoneNumber"];
-      this.Interest = properties["Interest"];
-    }
-
+    [Display(Name = nameof(Captions.FirstName), ResourceType = typeof(Captions))]
     public string FirstName { get; set; }
 
+    [Display(Name = nameof(Captions.LastName), ResourceType = typeof(Captions))]
     public string LastName { get; set; }
 
+    [Display(Name = nameof(Captions.PhoneNumber), ResourceType = typeof(Captions))]
+    [RegularExpression(@"^\+?(\(\d+\)-?)?\d+(-?\d+)+", ErrorMessageResourceName = nameof(Errors.PhoneNumberFormat), ErrorMessageResourceType = typeof(Errors))]
+    [MaxLength(20, ErrorMessageResourceName = nameof(Errors.MaxLength), ErrorMessageResourceType = typeof(Errors))]
     public string PhoneNumber { get; set; }
 
+    [Display(Name = nameof(Captions.Interests), ResourceType = typeof(Captions))]
     public string Interest { get; set; }
     
     public IEnumerable<string> InterestTypes { get; set; }
-
-    public IDictionary<string, string> GetProperties()
-    {
-      return new Dictionary<string, string>()
-      {
-        ["FirstName"] = this.FirstName,
-        ["LastName"] = this.LastName,
-        ["FirstName"] = this.PhoneNumber,
-        ["PhoneNumber"] = this.Interest,
-        ["Name"] = this.FirstName,
-        ["FullName"] = $"{this.FirstName} {this.LastName}",
-      };
-    }
   }
 }

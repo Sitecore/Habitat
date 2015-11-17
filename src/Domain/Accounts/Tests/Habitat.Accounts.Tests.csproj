@@ -152,6 +152,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\RedirectUnauthenticatedTests.cs" />
+    <Compile Include="Attributes\ValidateModelTests.cs" />
     <Compile Include="Extensions\AutoEmailDataAttribute.cs" />
     <Compile Include="AccountSettingsServiceTests.cs" />
     <Compile Include="NotificationsServiceTests.cs" />

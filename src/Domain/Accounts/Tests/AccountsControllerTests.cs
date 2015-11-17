@@ -12,7 +12,9 @@
   using Habitat.Accounts.Tests.Extensions;
   using Habitat.Accounts.Texts;
   using NSubstitute;
+  using NSubstitute.Core;
   using NSubstitute.ExceptionExtensions;
+  using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Collections;
   using Sitecore.Data;
@@ -446,10 +448,12 @@
 
     [Theory]
     [AutoDbData]
-    public void RegisterShouldReturnErrorIfRegistrationThrowsMembershipException(Database db, [Content] DbItem item, RegistrationInfo registrationInfo, MembershipCreateUserException exception, [Frozen] IAccountRepository repo, [Frozen] INotificationService notifyService, [Frozen] IAccountsSettingsService accountsSettingsService)
+    public void RegisterShouldReturnErrorIfRegistrationThrowsMembershipException(Database db, [Content] DbItem item, Item profileItem, RegistrationInfo registrationInfo, MembershipCreateUserException exception, [Frozen] IAccountRepository repo, [Frozen] INotificationService notifyService, [Frozen] IAccountsSettingsService accountsSettingsService, [Frozen] IUserProfileService userProfileService)
     {
       repo.When(x => x.RegisterUser(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>())).Do(x => { throw new MembershipCreateUserException(); });
-      var controller = new AccountsController(repo, notifyService, accountsSettingsService, null);
+      userProfileService.GetUserDefaultProfile().Returns(profileItem);
+
+      var controller = new AccountsController(repo, notifyService, accountsSettingsService, userProfileService);
 
       var fakeSite = new FakeSiteContext(new StringDictionary
       {
@@ -474,11 +478,13 @@
 
     [Theory]
     [AutoDbData]
-    public void RegisterShouldCallRegisterUserAndRedirectToHomePage(Database db, [Content] DbItem item, RegistrationInfo registrationInfo, [Frozen] IAccountRepository repo, [Frozen] INotificationService notifyService, [Frozen] IAccountsSettingsService accountsSettingsService)
+    public void RegisterShouldCallRegisterUserAndRedirectToHomePage(Database db, [Content] DbItem item, Item profileItem, RegistrationInfo registrationInfo, [Frozen] IAccountRepository repo, [Frozen] INotificationService notifyService, [Frozen] IAccountsSettingsService accountsSettingsService, [Frozen] IUserProfileService userProfileService)
     {
       accountsSettingsService.GetPageLinkOrDefault(Arg.Any<Item>(), Arg.Any<ID>(), Arg.Any<Item>()).Returns("/redirect");
       repo.Exists(Arg.Any<string>()).Returns(false);
-      var controller = new AccountsController(repo, notifyService, accountsSettingsService, null);
+      userProfileService.GetUserDefaultProfile().Returns(profileItem);
+
+      var controller = new AccountsController(repo, notifyService, accountsSettingsService, userProfileService);
 
       var fakeSite = new FakeSiteContext(new StringDictionary
       {

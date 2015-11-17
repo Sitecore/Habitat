@@ -6,6 +6,7 @@
   using FluentAssertions;
   using Habitat.Accounts.Models;
   using Habitat.Accounts.Repositories;
+  using Habitat.Accounts.Services;
   using Habitat.Accounts.Tests.Extensions;
   using NSubstitute;
   using Ploeh.AutoFixture;
@@ -200,7 +201,7 @@
 
     [Theory]
     [AutoDbData]
-    public void RegisterShouldCreateLoginUser(FakeMembershipUser user, [Substitute]MembershipProvider membershipProvider, [Substitute]AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository)
+    public void RegisterShouldCreateLoginUser(FakeMembershipUser user, [Substitute]MembershipProvider membershipProvider, [Substitute]AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository, string profileId)
     {
       user.ProviderName.Returns("fake");
       user.UserName.Returns("name");
@@ -214,7 +215,7 @@
         {
           using (new AuthenticationSwitcher(authenticationProvider))
           {
-            repository.RegisterUser(registrationInfo.Email, registrationInfo.Password, userProfile);
+            repository.RegisterUser(registrationInfo.Email, registrationInfo.Password, profileId);
             authenticationProvider.Received(1).Login(Arg.Is<User>(u => u.Name == $@"somedomain\{registrationInfo.Email}"));
           }
         }

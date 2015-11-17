@@ -9,7 +9,7 @@
   {
     public void OnAuthorization(AuthorizationContext filterContext)
     {
-      if (Context.User.IsAuthenticated)
+      if (!Context.User.IsAuthenticated)
       {
         filterContext.Result = new RedirectResult(Context.Site.GetRootItem().Url());
       }

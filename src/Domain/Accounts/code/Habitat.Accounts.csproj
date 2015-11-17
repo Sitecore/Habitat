@@ -152,7 +152,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\RedirectAuthenticatedAttribute.cs" />
     <Compile Include="Attributes\RedirectUnauthenticatedAttribute.cs" />
     <Compile Include="Attributes\ValidateModelAttribute.cs" />
     <Compile Include="Models\InfoMessage.cs" />

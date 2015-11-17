@@ -24,7 +24,7 @@
     {
     }
 
-    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService, IUserProfileService userProfileService)
+    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService,IUserProfileService  userProfileService)
     {
       this.accountRepository = accountRepository;
       this.notificationService = notificationService;
@@ -33,27 +33,17 @@
     }
 
     [HttpGet]
+    [RedirectAuthenticated]
     public ActionResult Register()
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       return this.View();
     }
 
     [HttpPost]
+    [RedirectAuthenticated]
     [ValidateModel]
     public ActionResult Register(RegistrationInfo registrationInfo)
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       if (this.accountRepository.Exists(registrationInfo.Email))
       {
         this.ModelState.AddModelError(nameof(registrationInfo.Email), Errors.UserAlreadyExists);
@@ -64,7 +54,7 @@
       try
       {
         var profileItem = this.userProfileService.GetUserDefaultProfile();
-        this.accountRepository.RegisterUser(registrationInfo.Email, registrationInfo.Password, profileItem.ID.ToString());
+        this.accountRepository.RegisterUser(registrationInfo.Email,registrationInfo.Password, profileItem.ID.ToString());
 
         var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
         return this.Redirect(link);
@@ -79,28 +69,10 @@
     }
 
     [HttpGet]
+    [RedirectAuthenticated]
     public ActionResult Login()
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       return this.View();
-    }
-
-    private ActionResult RedirectAuthenticatedUser()
-    {
-      if (Context.PageMode.IsNormal)
-      {
-        if (Context.User.IsAuthenticated)
-        {
-          var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
-          return this.Redirect(link);
-        }
-      }
-      return null;
     }
 
     [HttpPost]
@@ -130,13 +102,12 @@
     }
 
     [HttpPost]
-    [ValidateModel]
     public ActionResult LoginDialog(LoginInfo loginInfo)
     {
       return this.Login(loginInfo, redirectUrl => this.Json(new LoginResult
-      {
-        RedirectUrl = redirectUrl
-      }));
+                                                            {
+                                                              RedirectUrl = redirectUrl
+                                                            }));
     }
 
     [HttpPost]
@@ -148,27 +119,17 @@
     }
 
     [HttpGet]
+    [RedirectAuthenticated]
     public ActionResult ForgotPassword()
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       return this.View();
     }
 
     [HttpPost]
     [ValidateModel]
+    [RedirectAuthenticated]
     public ActionResult ForgotPassword(PasswordResetInfo model)
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       if (!this.accountRepository.Exists(model.Email))
       {
         this.ModelState.AddModelError(nameof(model.Email), Errors.UserDoesNotExist);
@@ -195,39 +156,40 @@
     [RedirectUnauthenticated]
     public ActionResult EditProfile()
     {
+      var interests = this.userProfileService.GetInterests();
       if (Context.PageMode.IsPageEditor)
       {
-        return this.View(this.userProfileService.GetEmptyProfile());
+        return this.View(new EditProfile(interests));
       }
 
-      if (this.userProfileService.GetUserDefaultProfile().ID.ToString() != Context.User.Profile.ProfileItemId)
+      var siteProfileId = this.userProfileService.GetUserDefaultProfile().ID.ToString();
+      if (siteProfileId != Sitecore.Context.User.Profile.ProfileItemId)
       {
-        return this.View("InfoMessage", new InfoMessage(Errors.ProfileMismatch, InfoMessage.MessageType.Error));
+        return null;
       }
 
       var profile = this.userProfileService.GetProfile(Context.User.Profile);
 
-      return this.View(profile);
+      return this.View(new EditProfile(profile, interests));
     }
 
     [HttpPost]
     [RedirectUnauthenticated]
     [ValidateModel]
-    public virtual ActionResult EditProfile(object profileModel)
+    public virtual ActionResult EditProfile(EditProfile editProfile)
     {
-      if (this.userProfileService.GetUserDefaultProfile().ID.ToString() != Context.User.Profile.ProfileItemId)
+      this.ValidateModel(editProfile);
+      var interests = this.userProfileService.GetInterests().ToList();
+      if (!interests.Contains(editProfile.Interest))
       {
-        return this.View("InfoMessage", new InfoMessage(Errors.ProfileMismatch, InfoMessage.MessageType.Error));
+        this.ModelState.AddModelError(nameof(editProfile.Interest),Errors.WrongInterest);
+        editProfile.InterestTypes = interests;
+        return this.View(editProfile);
       }
 
-      if (!this.userProfileService.ValidateProfile(profileModel, this.ModelState))
-      {
-        this.View(profileModel);
-      }
+      this.userProfileService.SetProfile(Context.User.Profile, editProfile.GetProperties());
 
-      this.userProfileService.SetProfile(Context.User.Profile, profileModel);
-
-      return this.View("InfoMessage", new InfoMessage(Captions.EditProfileSuccess));
+      return this.View();
     }
   }
 }

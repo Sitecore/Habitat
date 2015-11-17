@@ -1,12 +1,12 @@
 ﻿namespace Habitat.Accounts.Services
 {
   using System.Collections.Generic;
-  using System.Web.Mvc;
+  using System.ComponentModel.DataAnnotations;
 
   public interface IProfileProcessor
   {
-    ModelStateDictionary Validate(IDictionary<string, string> properties);
-
-    IDictionary<string, string> Process(IDictionary<string, string> properties);
+    IDictionary<string, string> GetProperties(object profileModel);
+    object GetModel(IDictionary<string, string> properties);
+    IEnumerable<ValidationResult> ValidateModel(object profileModel);
   }
 }

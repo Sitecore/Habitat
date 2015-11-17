@@ -1,6 +1,8 @@
 ﻿namespace Habitat.Accounts.Services
 {
   using System.Collections.Generic;
+  using System.Linq;
+  using System.Runtime.Remoting;
   using System.Web.Mvc;
   using Sitecore.Data.Items;
   using Sitecore.Security;
@@ -9,6 +11,10 @@
   {
     private readonly IProfileSettingsService profileSettingsService;
     private readonly IUserProfileProvider userProfileProvider;
+    private IProfileProcessor profileProcessor;
+
+    protected IProfileProcessor ProfileProcessor => this.profileProcessor ?? (this.profileProcessor = this.profileSettingsService.GetUserProfileProcessor());
+
 
     public UserProfileService(): this(new ProfileSettingsService(), new UserProfileProvider())
     {
@@ -20,34 +26,46 @@
       this.userProfileProvider = userProfileProvider;
     }
 
-    public Item GetUserDefaultProfile()
+    public virtual Item GetUserDefaultProfile()
     {
       return this.profileSettingsService.GetUserDefaultProfile();
     }
 
-    public IEnumerable<string> GetInterests()
+    public virtual object GetEmptyProfile()
     {
-      return this.profileSettingsService.GetInterests();
+      return this.ProfileProcessor.GetModel(new Dictionary<string, string>());
     }
 
-    public IDictionary<string, string> GetProfile(UserProfile userProfile)
+    public virtual object GetProfile(UserProfile userProfile)
     {
-      return this.userProfileProvider.GetCustomProperties(userProfile);
+      return this.ProfileProcessor.GetModel(this.userProfileProvider.GetCustomProperties(userProfile));
     }
 
-    public ModelStateDictionary Validate(IDictionary<string, string> properties)
+    public virtual void SetProfile(UserProfile userProfile, object profileModel)
     {
-      var processor = this.profileSettingsService.GetUserProfileProcessor();
-
-      return processor.Validate(properties);
-    }
-
-    public void SetProfile(UserProfile userProfile, IDictionary<string, string> properties)
-    {
-      var processor = this.profileSettingsService.GetUserProfileProcessor();
-      properties = processor.Process(properties);
-
+      var properties = this.ProfileProcessor.GetProperties(profileModel);
+       
       this.userProfileProvider.SetCustomProfile(userProfile, properties);
+    }
+
+    public virtual bool ValidateProfile(object profileModel, ModelStateDictionary modelState)
+    {
+      var validationResults = this.ProfileProcessor.ValidateModel(profileModel);
+
+      if (validationResults != null && validationResults.Any())
+      {
+        foreach (var validationResult in validationResults)
+        {
+          foreach (var memberName in validationResult.MemberNames)
+          {
+            modelState.AddModelError(memberName, validationResult.ErrorMessage);
+          }
+        }
+
+        return false;
+      }
+
+      return true;
     }
   }
 }
