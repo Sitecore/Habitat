@@ -57,6 +57,26 @@ var publishProjects = function(location, dest) {
     }));
 };
 
+gulp.task("Apply-Xml-Transform", function () {
+  return gulp.src("./src/Project/**/*Website.csproj")
+    .pipe(foreach(function (stream, file) {
+      return stream
+        .pipe(debug({ title: "Applying transform project:" }))
+        .pipe(msbuild({
+          targets: ["ApplyTransform"],
+          configuration: "Debug",
+          logCommand: true,
+          verbosity: "normal",
+          maxcpucount: 0,
+          toolsVersion: 14.0,
+          properties: {
+            WebConfigToTransform: config.websiteRoot+"\\web.config"
+          }
+        }));
+    }));
+
+});
+
 gulp.task("Publish-Framework-Projects", function() {
   return publishProjects("./src/Framework");
 });
@@ -68,6 +88,8 @@ gulp.task("Publish-Domain-Projects", function() {
 gulp.task("Publish-Project-Projects", function() {
   return publishProjects("./src/Project");
 });
+
+
 
 gulp.task("Publish-Assemblies", function() {
   var root = "./src";
