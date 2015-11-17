@@ -66,6 +66,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Edit user profile.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Edit user profile.feature</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\SeleniumExtensions.cs" />
     <Compile Include="Infrastructure\Site.cs" />
     <Compile Include="Log out.feature.cs">
@@ -98,6 +103,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Edit user profile.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Edit user profile.feature.cs</LastGenOutput>
+    </None>
     <None Include="Log out.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Log out.feature.cs</LastGenOutput>

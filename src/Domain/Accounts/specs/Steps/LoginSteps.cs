@@ -12,14 +12,14 @@ namespace Habitat.Accounts.Specflow.Steps
         [Then(@"(.*) title presents on Login form")]
         public void ThenLoginTitlePresentsOnLoginForm(string title)
         {
-            Site.LoginPageTitle.Text.ShouldBeEquivalentTo(title);
+            this.Site.LoginPageTitle.Text.ShouldBeEquivalentTo(title);
         }
 
         [Then(@"Following fields present on Login form")]
         public void ThenFollowingFieldsPresentOnLoginForm(Table table)
         {
             var fields = table.Rows.Select(x => x.Values.First());
-            var elements = Site.LoginFormFields.Select(el => el.GetAttribute("name"));
+            var elements = this.Site.LoginFormFields.Select(el => el.GetAttribute("name"));
             elements.Should().Contain(fields);
         }
 
@@ -27,14 +27,13 @@ namespace Habitat.Accounts.Specflow.Steps
         public void ThenFollowingButtonsPresentOnLoginForm(Table table)
         {
             var buttons = table.Rows.Select(x => x.Values.First());
-            var elements = Site.LoginFormButtons.Select(el => el.GetAttribute("text"));
+            var elements = this.Site.LoginFormButtons.Select(el => el.GetAttribute("text"));
         }
 
         [When(@"User clicks (.*) button on Login form")]
         public void WhenUserClicksLoginButtonOnLoginForm(string btn)
         {
-            var elements =
-                Site.LoginFormButtons.First(el => el.Text.Equals(btn, StringComparison.InvariantCultureIgnoreCase));
+            var elements = this.Site.LoginFormButtons.First(el => el.Text.Equals(btn, StringComparison.InvariantCultureIgnoreCase));
             elements.Click();
         }
 
@@ -46,7 +45,7 @@ namespace Habitat.Accounts.Specflow.Steps
             foreach (var textMessage in textMessages)
             {
                 var found = false;
-                foreach (var webElement in Site.LoginFormErrorMessages)
+                foreach (var webElement in this.Site.LoginFormErrorMessages)
                 {
                     found = webElement.Text == textMessage;
                     if (found)
@@ -64,7 +63,7 @@ namespace Habitat.Accounts.Specflow.Steps
             var row = table.Rows.First();
             foreach (var key in row.Keys)
             {
-                Site.LoginFormFields.GetField(key).SendKeys(row[key]);
+                this.Site.LoginFormFields.GetField(key).SendKeys(row[key]);
             }
         }
 
@@ -74,7 +73,7 @@ namespace Habitat.Accounts.Specflow.Steps
             var row = table.Rows.First();
             foreach (var key in row.Keys)
             {
-                Site.LoginFormFields.GetField(key).SendKeys(row[key]);
+                this.Site.LoginFormFields.GetField(key).SendKeys(row[key]);
             }
         }
 
