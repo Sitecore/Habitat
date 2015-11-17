@@ -1,0 +1,34 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.News
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+<div class="news">
+  <h2>
+    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), Model.Item)
+  </h2>
+
+  <div class="well">
+    <span class="text-muted">
+            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new
+            {
+              format = "MMMM dd, yyyy"
+            })
+        </span>
+    @* TODO: Read from Taxonomy *@
+    <ul class="tags pull-right">
+      <li class="label label-info">
+        tag 1
+      </li>
+      <li class="label label-info">
+        tag 2
+      </li>
+      <li class="label label-info">
+        tag 3
+      </li>
+    </ul>
+  </div>
+  @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), Model.Item, mw: 1000, cssClass: "img-responsive image")
+  <div class="body">
+    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Body.ToString(), Model.Item)
+  </div>
+</div>

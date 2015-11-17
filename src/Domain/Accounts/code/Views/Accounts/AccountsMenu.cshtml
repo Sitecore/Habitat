@@ -1,0 +1,55 @@
+﻿@using Habitat.Accounts
+@using Habitat.Accounts.Models
+@using Habitat.Accounts.Services
+@using Habitat.Accounts.Texts
+@model Sitecore.Mvc.Presentation.RenderingModel
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-user"></i>
+    </a>
+    <ul class="dropdown-menu">
+        @if (!(Sitecore.Context.IsLoggedIn && Sitecore.Context.PageMode.IsNormal))
+        {
+        <li>
+            <a href="#" data-toggle="modal" data-target="#loginModal">Login</a>
+        </li>
+            <li>
+                <a href="@AccountsSettingsService.Instance.GetPageLink(Model.Item, Templates.AccountsSettings.Fields.RegisterPage)">Register</a>
+            </li>
+        }
+        else
+        {
+        <li>
+            <div class="accounts-details">
+                <dl class="dl-horizontal">
+                    <dt>Name</dt>
+                    <dd>Thomas Eldblom</dd>
+                    <dt>E-mail</dt>
+                    <dd>the@sitecore.net</dd>
+                </dl>
+                <a href="/details" class="btn btn-default">Edit details</a>
+            </div>
+        </li>
+            <li>
+                @using (Html.BeginForm("Logout", "Accounts", FormMethod.Post))
+                {
+                <input type="submit" value="@Captions.Logout" />
+                }
+            </li>
+        }
+    </ul>
+</li>
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <form class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">@Captions.Login</h4>
+            </div>
+            @Html.Partial("../Accounts/LoginDialog", new LoginInfo())
+        </form>
+    </div>
+</div>

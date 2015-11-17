@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ploeh.AutoFixture;
-using Ploeh.AutoFixture.Xunit2;
-using Sitecore.FakeDb.AutoFixture;
-
-namespace Habitat.Framework.SitecoreExtensions.Tests.Common
+﻿namespace Habitat.Framework.SitecoreExtensions.Tests.Common
 {
+  using Ploeh.AutoFixture;
+  using Ploeh.AutoFixture.Xunit2;
+  using Sitecore.FakeDb.AutoFixture;
+
   internal class AutoDbDataAttribute : AutoDataAttribute
   {
     public AutoDbDataAttribute()

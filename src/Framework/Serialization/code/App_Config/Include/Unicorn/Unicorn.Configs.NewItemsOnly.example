@@ -1,0 +1,41 @@
+<!--
+	Unicorn.Configs.NewItemsOnly.config
+
+	This is an example of how to configure a Unicorn configuration that overrides the default sync behavior
+	to only load items that are new on disk into Sitecore. This can be handy if you want to only deploy some content items
+	once and thereafter cede control over them to content editors.
+
+	Enabled configuration definition patches should be present on all environments Unicorn is present on.
+
+	See Unicorn.config for commentary on how configurations operate, or https://github.com/kamsar/Unicorn/blob/master/README.md
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+	<sitecore>
+		<unicorn>
+			<configurations>
+				<!--
+						This is an example of how to configure a Unicorn configuration that overrides the default Evaluator
+						(the code that decides what to do when item differences are found) so that instead of having the disk be the master
+						and all changes syncing to that state, only brand new items are synced. Existing items, deleted items, or changed items
+						are ignored because we've overridden the default Evaluator.
+				-->
+				<configuration name="Sample New Items Only Configuration">
+					<!-- swap the evaluator to the different implementation (see <defaults> in Unicorn.config for a full list of things you can replace like this) -->
+					<evaluator type="Unicorn.Evaluators.NewItemOnlyEvaluator, Unicorn" singleInstance="true"/>
+
+					<!--
+						Note: when using custom evaluators keep Transparent Sync OFF for those configurations (the line below).
+						Transparent Sync operates by reading from the serialization store directly.
+						In other words transparent sync always acts like SerializedAsMasterEvaluator because disk is LITERALLY the master.
+						See https://github.com/kamsar/Unicorn/wiki/The-Transparent-Sync-Guide
+					-->
+					<dataProviderConfiguration enableTransparentSync="false" type="Unicorn.Data.DataProvider.DefaultUnicornDataProviderConfiguration, Unicorn" />
+
+					<predicate type="Unicorn.Predicates.SerializationPresetPredicate, Unicorn" singleInstance="true">
+						<include database="master" path="/sitecore/content/global-settings" />
+					</predicate>
+				</configuration>
+			</configurations>
+		</unicorn>
+	</sitecore>
+</configuration>

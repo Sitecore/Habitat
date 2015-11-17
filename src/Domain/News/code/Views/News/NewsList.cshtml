@@ -1,0 +1,79 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.News
+@model IEnumerable<Sitecore.Data.Items.Item>
+<div class="newslist">
+  <ol class="media-list">
+
+    @foreach (var item in Model)
+    {
+      <li class="media">
+        <div class="media-left">
+          <a href="#">
+            @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), item, mw: 150, cssClass: "img-responsive img-thumbnail")
+          </a>
+        </div>
+        <div class="media-body">
+          <h3 class="media-heading">
+            <a href="@item.Url()">
+              @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), item)
+            </a>
+          </h3>
+          <div class="description">
+            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary.ToString(), item)
+          </div>
+          <div class="metadata panel panel-default">
+            <div class="panel-body">
+              <span class="date text-muted">
+                                @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
+                                {
+                                  format = "MMMM dd, yyyy"
+                                })
+                            </span>
+              <span class="labels pull-right">
+                                <span class="label label-info">
+                                    ux
+                                </span>
+                                <span class="label label-info">
+                                    topic
+                                </span>
+                                <span class="label label-info">
+                                    sitecore
+                                </span>
+                            </span>
+            </div>
+          </div>
+        </div>
+      </li>
+    }
+  </ol>
+
+  <nav>
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="active">
+        <a href="#">1</a>
+      </li>
+      <li>
+        <a href="#">2</a>
+      </li>
+      <li>
+        <a href="#">3</a>
+      </li>
+      <li>
+        <a href="#">4</a>
+      </li>
+      <li>
+        <a href="#">5</a>
+      </li>
+      <li>
+        <a href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
