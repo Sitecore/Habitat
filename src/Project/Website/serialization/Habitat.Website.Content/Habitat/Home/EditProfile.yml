@@ -1,0 +1,19 @@
+﻿---
+ID: a2c07e48-9c6a-466e-b55d-baac62e4dfc7
+Parent: dac24edd-44fb-42ef-9ecd-1e8daf706386
+Template: 6ef8f8a0-c567-495b-9e00-8775a268a486
+Path: /sitecore/content/Habitat/Home/EditProfile
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: Edit profile
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151116T093230Z
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      # Title
+      Value: EditProfile

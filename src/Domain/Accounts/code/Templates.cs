@@ -1,6 +1,7 @@
 ﻿namespace Habitat.Accounts
 {
   using Sitecore.Data;
+  using Sitecore.Security;
 
   public class Templates
   {
@@ -28,6 +29,28 @@
         public static readonly ID From = new ID("{8605948C-60FB-46B8-8AAA-4C52561B53BC}");
         public static readonly ID Subject = new ID("{0F45DF05-546F-462D-97C0-BA4FB2B02564}");
         public static readonly ID Body = new ID("{1519CCAD-ED26-4F60-82CA-22079AF44D16}");
+      }
+    }
+
+    public struct Interest
+    {
+       public static ID ID = new ID("{C9B1855E-CA80-4414-B5BA-956CB67DC5A9}");
+
+      public struct Fields
+      {
+        public static readonly ID Title = new ID("{1FBE5200-2C62-4A32-BA84-CFFE3CF665D3}");
+      }
+    }
+
+    public struct ProfileSettigs
+    {
+      public static ID ID = new ID("{2D9AA1E4-3359-4F02-9EAA-5CF972FD990D}");
+
+      public struct Fields
+      {
+        public static readonly ID UserProfile = new ID("{378B7D87-5775-4EB6-86B7-282D5359B1C6}");
+        public static readonly ID UserProfileProcessor = new ID("{A14EFDEA-2B47-4508-B6F7-D56F78B402C2}");
+        public static readonly ID InterestsFolder = new ID("{021AA3F7-206F-4ACC-9538-F6D7FE86B168}");
       }
     }
   }

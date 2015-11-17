@@ -15,5 +15,9 @@
     public static string UserAlreadyExists => DictionaryRepository.Get("/Accounts/Errors/UserAlreadyExists", "User with specified login already exists");
 
     public static string UserDoesNotExist => DictionaryRepository.Get("/Accounts/Errors/UserDoesNotExist", "User with specified email does not exist");
+
+    public static string WrongInterest => DictionaryRepository.Get("/Accounts/Errors/WrongInterest", "Wrong interest has been selected");
+
+    public static string PhoneNumberFormat => DictionaryRepository.Get("/Accounts/Errors/PhoneNumberFormat", "Phone number has incorrect format");
   }
 }

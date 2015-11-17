@@ -43,7 +43,7 @@
       fakeSite.Database = db;
       using (new SiteContextSwitcher(fakeSite))
       {
-        var ctrl = new AccountsController(repo, ns, acc);
+        var ctrl = new AccountsController(repo, ns, acc, null);
         ctrl.Logout();
         repo.Received(1).Logout();
       }
@@ -67,7 +67,7 @@
 
       using (new SiteContextSwitcher(fakeSite))
       {
-        var ctrl = new AccountsController(repo, ns, acc);
+        var ctrl = new AccountsController(repo, ns, acc, null);
         var result = ctrl.Logout();
         result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
       }
@@ -85,7 +85,7 @@
     [AutoDbData]
     public void LoginDialogShouldRedirectIfLoggedIn(Database db, [Content] DbItem item, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
     {
-      var controller = new AccountsController(repo, service, accountSetting);
+      var controller = new AccountsController(repo, service, accountSetting, null);
       repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => true);
       var result = controller.LoginDialog(info);
       result.Should().BeOfType<JsonResult>();
@@ -154,7 +154,7 @@
     [AutoDbData]
     public void LoginShouldRedirectToReturnUrlIfLoggedIn([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
     {
-      var controller = new AccountsController(repo, service, accountSetting);
+      var controller = new AccountsController(repo, service, accountSetting, null);
       repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x=>true);
       var result = controller.Login(info);
       result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be(info.ReturnUrl);
@@ -181,7 +181,7 @@
       using (new SiteContextSwitcher(fakeSite))
       {
         info.ReturnUrl = null;
-        var controller = new AccountsController(repo, service, accountSetting);
+        var controller = new AccountsController(repo, service, accountSetting, null);
         repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => true);
         var result = controller.Login(info);
         result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
@@ -210,7 +210,7 @@
         info.ReturnUrl = null;
         info.Email = null;
         info.Password = null;
-        var controller = new AccountsController(repo, service, accountSetting);
+        var controller = new AccountsController(repo, service, accountSetting, null);
         repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => true);
         var result = controller.Login(info);
         result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
@@ -221,7 +221,7 @@
     [AutoDbData]
     public void LoginShouldReturnViewModelIfModelStateNotValid([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
     {
-      var controller = new AccountsController(repo, service, accountSetting);
+      var controller = new AccountsController(repo, service, accountSetting, null);
       controller.ModelState.AddModelError("Error", "Error");
       var result = controller.Login(info);
       result.Should().BeOfType<ViewResult>();
@@ -235,7 +235,7 @@
     public void ShouldAddErrorToModelStateIfNotLoggedIn([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
     {
       repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => false);
-      var controller = new AccountsController(repo, service, accountSetting);
+      var controller = new AccountsController(repo, service, accountSetting, null);
       var result = controller.Login(info);
       controller.ModelState.IsValid.Should().BeFalse();
       controller.ModelState.Keys.Should().Contain("invalidCredentials");
@@ -341,7 +341,7 @@
       }) as SiteContext;
       using (new SiteContextSwitcher(fakeSite))
       {
-        var controller = new AccountsController(repo, ns, accountSetting);
+        var controller = new AccountsController(repo, ns, accountSetting, null);
         repo.RestorePassword(Arg.Any<string>()).Returns("new password");
         repo.Exists(Arg.Any<string>()).Returns(true);
         var result = controller.ForgotPassword(model);
@@ -363,7 +363,7 @@
       {
         repo.RestorePassword(Arg.Any<string>()).ThrowsForAnyArgs(new Exception("Error"));
         repo.Exists(Arg.Any<string>()).Returns(true);
-        var controller = new AccountsController(repo, notificationService, settingService);
+        var controller = new AccountsController(repo, notificationService, settingService, null);
         var result = controller.ForgotPassword(model);
         result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
         result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(model.Email))
@@ -385,7 +385,7 @@
       {
         repo.RestorePassword(Arg.Any<string>()).Returns("new password");
         repo.Exists(Arg.Any<string>()).Returns(false);
-        var controller = new AccountsController(repo, null, null);
+        var controller = new AccountsController(repo, null, null, null);
         var result = controller.ForgotPassword(model);
         result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
         result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(model.Email))
@@ -448,8 +448,8 @@
     [AutoDbData]
     public void RegisterShouldReturnErrorIfRegistrationThrowsMembershipException(Database db, [Content] DbItem item, RegistrationInfo registrationInfo, MembershipCreateUserException exception, [Frozen] IAccountRepository repo, [Frozen] INotificationService notifyService, [Frozen] IAccountsSettingsService accountsSettingsService)
     {
-      repo.When(x => x.RegisterUser(Arg.Any<RegistrationInfo>())).Do(x => { throw new MembershipCreateUserException(); });
-      var controller = new AccountsController(repo, notifyService, accountsSettingsService);
+      repo.When(x => x.RegisterUser(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>())).Do(x => { throw new MembershipCreateUserException(); });
+      var controller = new AccountsController(repo, notifyService, accountsSettingsService, null);
 
       var fakeSite = new FakeSiteContext(new StringDictionary
       {
@@ -478,7 +478,7 @@
     {
       accountsSettingsService.GetPageLinkOrDefault(Arg.Any<Item>(), Arg.Any<ID>(), Arg.Any<Item>()).Returns("/redirect");
       repo.Exists(Arg.Any<string>()).Returns(false);
-      var controller = new AccountsController(repo, notifyService, accountsSettingsService);
+      var controller = new AccountsController(repo, notifyService, accountsSettingsService, null);
 
       var fakeSite = new FakeSiteContext(new StringDictionary
       {
@@ -497,7 +497,7 @@
         var result = controller.Register(registrationInfo);
         result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/redirect");
 
-        repo.Received(1).RegisterUser(registrationInfo);
+        repo.Received(1).RegisterUser(registrationInfo.Email, registrationInfo.Password, Arg.Any<string>());
       }
     }
   }

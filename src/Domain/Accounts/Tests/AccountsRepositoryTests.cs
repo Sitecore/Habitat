@@ -175,12 +175,12 @@
     public void RegisterShouldThrowArgumentException(RegistrationInfo registrationInfo)
     {
       var repository = new AccountRepository();
-      repository.Invoking(x => x.RegisterUser(registrationInfo)).ShouldThrow<ArgumentNullException>();
+      repository.Invoking(x => x.RegisterUser(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>())).ShouldThrow<ArgumentNullException>();
     }
 
     [Theory]
     [AutoDbData]
-    public void RegisterShouldCreateUserWithEmailAndPassword(FakeMembershipUser user, MembershipProvider membershipProvider, RegistrationInfo registrationInfo, AccountRepository repository)
+    public void RegisterShouldCreateUserWithEmailAndPassword(FakeMembershipUser user, MembershipProvider membershipProvider, RegistrationInfo registrationInfo, string userProfile, AccountRepository repository)
     {
       user.ProviderName.Returns("fake");
       user.UserName.Returns("name");
@@ -192,7 +192,7 @@
       {
         using (new MembershipSwitcher(membershipProvider))
         {
-          repository.RegisterUser(registrationInfo);
+          repository.RegisterUser(registrationInfo.Email,registrationInfo.Password, userProfile);
           membershipProvider.Received(1).CreateUser($@"somedomain\{registrationInfo.Email}", registrationInfo.Password, Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>(), Arg.Any<bool>(), Arg.Any<object>(), out status);
         }
       }
@@ -214,7 +214,7 @@
         {
           using (new AuthenticationSwitcher(authenticationProvider))
           {
-            repository.RegisterUser(registrationInfo);
+            repository.RegisterUser(registrationInfo.Email, registrationInfo.Password, userProfile);
             authenticationProvider.Received(1).Login(Arg.Is<User>(u => u.Name == $@"somedomain\{registrationInfo.Email}"));
           }
         }

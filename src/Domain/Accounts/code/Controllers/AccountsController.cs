@@ -1,8 +1,10 @@
 ﻿namespace Habitat.Accounts.Controllers
 {
   using System;
+  using System.Linq;
   using System.Web.Mvc;
   using System.Web.Security;
+  using Habitat.Accounts.Attributes;
   using Habitat.Accounts.Models;
   using Habitat.Accounts.Repositories;
   using Habitat.Accounts.Services;
@@ -16,44 +18,32 @@
     private readonly IAccountRepository accountRepository;
     private readonly INotificationService notificationService;
     private readonly IAccountsSettingsService accountsSettingsService;
+    private readonly IUserProfileService userProfileService;
 
-    public AccountsController() : this(new AccountRepository(), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService())
+    public AccountsController() : this(new AccountRepository(), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService())
     {
     }
 
-    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService)
+    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService,IUserProfileService  userProfileService)
     {
       this.accountRepository = accountRepository;
       this.notificationService = notificationService;
       this.accountsSettingsService = accountsSettingsService;
+      this.userProfileService = userProfileService;
     }
 
     [HttpGet]
+    [RedirectAuthenticated]
     public ActionResult Register()
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       return this.View();
     }
 
     [HttpPost]
+    [RedirectAuthenticated]
+    [ValidateModel]
     public ActionResult Register(RegistrationInfo registrationInfo)
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
-      if (!this.ModelState.IsValid)
-      {
-        return this.View(registrationInfo);
-      }
-
       if (this.accountRepository.Exists(registrationInfo.Email))
       {
         this.ModelState.AddModelError(nameof(registrationInfo.Email), Errors.UserAlreadyExists);
@@ -63,7 +53,9 @@
 
       try
       {
-        this.accountRepository.RegisterUser(registrationInfo);
+        var profileItem = this.userProfileService.GetUserDefaultProfile();
+        this.accountRepository.RegisterUser(registrationInfo.Email,registrationInfo.Password, profileItem.ID.ToString());
+
         var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
         return this.Redirect(link);
       }
@@ -77,31 +69,14 @@
     }
 
     [HttpGet]
+    [RedirectAuthenticated]
     public ActionResult Login()
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       return this.View();
     }
 
-    private ActionResult RedirectAuthenticatedUser()
-    {
-      if (Context.PageMode.IsNormal)
-      {
-        if (Context.User.IsAuthenticated)
-        {
-          var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
-          return this.Redirect(link);
-        }
-      }
-      return null;
-    }
-
     [HttpPost]
+    [ValidateModel]
     public ActionResult Login(LoginInfo loginInfo)
     {
       return this.Login(loginInfo, redirectUrl => new RedirectResult(redirectUrl));
@@ -109,11 +84,6 @@
 
     protected virtual ActionResult Login(LoginInfo loginInfo, Func<string, ActionResult> redirectAction)
     {
-      if (!this.ModelState.IsValid)
-      {
-        return this.View(loginInfo);
-      }
-
       var result = this.accountRepository.Login(loginInfo.Email, loginInfo.Password);
       if (result)
       {
@@ -149,31 +119,17 @@
     }
 
     [HttpGet]
+    [RedirectAuthenticated]
     public ActionResult ForgotPassword()
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       return this.View();
     }
 
     [HttpPost]
+    [ValidateModel]
+    [RedirectAuthenticated]
     public ActionResult ForgotPassword(PasswordResetInfo model)
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
-      if (!this.ModelState.IsValid)
-      {
-        return this.View(model);
-      }
-
       if (!this.accountRepository.Exists(model.Email))
       {
         this.ModelState.AddModelError(nameof(model.Email), Errors.UserDoesNotExist);
@@ -197,17 +153,41 @@
     }
 
     [HttpGet]
+    [RedirectUnauthenticated]
     public ActionResult EditProfile()
     {
-      // Get Profile
+      var interests = this.userProfileService.GetInterests();
+      if (Context.PageMode.IsPageEditor)
+      {
+        return this.View(new EditProfile(interests));
+      }
 
-      return this.View();
+      var siteProfileId = this.userProfileService.GetUserDefaultProfile().ID.ToString();
+      if (siteProfileId != Sitecore.Context.User.Profile.ProfileItemId)
+      {
+        return null;
+      }
+
+      var profile = this.userProfileService.GetProfile(Context.User.Profile);
+
+      return this.View(new EditProfile(profile, interests));
     }
 
     [HttpPost]
-    public ActionResult EditProfile(EditProfile editProfile)
+    [RedirectUnauthenticated]
+    [ValidateModel]
+    public virtual ActionResult EditProfile(EditProfile editProfile)
     {
-      // do some stuff
+      this.ValidateModel(editProfile);
+      var interests = this.userProfileService.GetInterests().ToList();
+      if (!interests.Contains(editProfile.Interest))
+      {
+        this.ModelState.AddModelError(nameof(editProfile.Interest),Errors.WrongInterest);
+        editProfile.InterestTypes = interests;
+        return this.View(editProfile);
+      }
+
+      this.userProfileService.SetProfile(Context.User.Profile, editProfile.GetProperties());
 
       return this.View();
     }

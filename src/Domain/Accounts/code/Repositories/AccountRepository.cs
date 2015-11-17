@@ -40,18 +40,17 @@
       return user.ResetPassword();
     }
 
-    public void RegisterUser(RegistrationInfo registrationInfo)
+    public void RegisterUser(string email, string password, string profileId)
     {
-      Assert.ArgumentNotNull(registrationInfo, nameof(registrationInfo));
-      Assert.ArgumentNotNullOrEmpty(registrationInfo.Email, "registrationInfo.Email");
-      Assert.ArgumentNotNullOrEmpty(registrationInfo.Password, "registrationInfo.Password");
-      Assert.ArgumentNotNullOrEmpty(registrationInfo.ConfirmPassword, "registrationInfo.ConfirmPassword");
+      Assert.ArgumentNotNullOrEmpty(email, "email");
+      Assert.ArgumentNotNullOrEmpty(password, "password");
+      Assert.ArgumentNotNullOrEmpty(profileId, "profileId");
 
-      var fullName = Context.Domain.GetFullName(registrationInfo.Email);
+      var fullName = Context.Domain.GetFullName(email);
       Assert.IsNotNullOrEmpty(fullName, "Can't retrieve full userName");
 
-      var user = User.Create(fullName, registrationInfo.Password);
-      user.Profile.Email = registrationInfo.Email;
+      var user = User.Create(fullName, password);
+      user.Profile.Email = email;
       user.Profile.Save();
 
       AuthenticationManager.Login(user);
