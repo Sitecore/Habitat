@@ -96,8 +96,11 @@
 
     private static PatternMatch CreatePatternMatch(PatternCardItem matchingPattern, ProfileItem visibleProfile)
     {
-      var image = matchingPattern.Image.MediaItem;
-      var src = StringUtil.EnsurePrefix('/', MediaManager.GetMediaUrl(image));
+      var src = matchingPattern.Image.ImageUrl(new MediaUrlOptions()
+                                               {
+                                                 Width = 50,
+                                                 MaxWidth = 50
+                                               });
       var patternMatch = new PatternMatch(visibleProfile.NameField, matchingPattern.Name, src);
       return patternMatch;
     }

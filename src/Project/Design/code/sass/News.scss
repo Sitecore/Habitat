@@ -35,15 +35,6 @@
           > .date {
             @extend small;
           }
-
-          > .labels {
-            .label {
-              border-radius: 0;
-              margin-right: 5px;
-              text-transform: uppercase;
-              font-weight: 300;
-            }
-          }
         }
       }
     }

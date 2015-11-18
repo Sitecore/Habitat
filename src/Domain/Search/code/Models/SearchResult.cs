@@ -9,8 +9,5 @@
     public string Description { get; set; }
 
     public string ContentType { get; set; }
-
-    [IndexField(BuiltinFields.Semantics)]
-    public string Tags { get; set; }
   }
 }
