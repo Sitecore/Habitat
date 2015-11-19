@@ -202,9 +202,9 @@ gulp.task("CI-Prepare-Package-Files", function (callback) {
     config.websiteRoot + "\\App_Config\\Include\\Rainbow*",
     config.websiteRoot + "\\App_Config\\Include\\Unicorn\\*",
     config.websiteRoot + "\\App_Config\\Include\\Habitat\\*Serialization.config",
-    "!" + config.websiteRoot + "\\bin\\{Sitecore.Support}*dll"
-
+    "!" + config.websiteRoot + "\\bin\\Sitecore.Support*dll"
   ];
+  console.log(excludeList);
 
   return gulp.src(excludeList, { read: false }).pipe(rimraf({ force: true }));
 });
