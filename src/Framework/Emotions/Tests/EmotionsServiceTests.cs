@@ -6,9 +6,8 @@
     using System.Linq;
     using System.Threading.Tasks;
     using FluentAssertions;
-    using Habitat.Framework.Emotions.Enums;
-    using Habitat.Framework.Emotions.Models;
-    using Habitat.Framework.Emotions.Services;
+    using Habitat.Framework.ProjectOxfordAI.Enums;
+    using Habitat.Framework.ProjectOxfordAI.Services;
     using NSubstitute;
     using Xunit;
 

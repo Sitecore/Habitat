@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.Emotions.Services
+﻿namespace Habitat.Framework.ProjectOxfordAI.Services
 {
     using System;
     using System.Collections.Generic;
@@ -6,12 +6,11 @@
     using System.Linq;
     using System.Reflection;
     using System.Threading.Tasks;
-    using Habitat.Framework.Emotions.Enums;
-    using Habitat.Framework.Emotions.Models;
+    using Habitat.Framework.ProjectOxfordAI.Enums;
+    using Habitat.Framework.ProjectOxfordAI.Models;
     using Microsoft.ProjectOxford.Emotion;
     using Microsoft.ProjectOxford.Emotion.Contract;
-    using Newtonsoft.Json;
-
+   
     public class EmotionsService : IEmotionsService, IDisposable
     {
         private readonly string subscriptionKey; 

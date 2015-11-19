@@ -1,6 +1,6 @@
-﻿namespace Habitat.Framework.Emotions.Models
+﻿namespace Habitat.Framework.ProjectOxfordAI.Models
 {
-    using Habitat.Framework.Emotions.Enums;
+    using Habitat.Framework.ProjectOxfordAI.Enums;
 
     public class EmotionRank
     {

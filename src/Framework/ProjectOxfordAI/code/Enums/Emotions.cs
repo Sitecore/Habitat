@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Habitat.Framework.Emotions.Enums
+namespace Habitat.Framework.ProjectOxfordAI.Enums
 {
     [Flags]
     public enum Emotions

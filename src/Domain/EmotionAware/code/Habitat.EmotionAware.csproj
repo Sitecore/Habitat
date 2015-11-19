@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Habitat.EmotionAware</RootNamespace>
     <AssemblyName>Habitat.EmotionAware</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -123,9 +123,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\Emotions\code\Habitat.Framework.Emotions.csproj">
-      <Project>{6cd879e2-f535-4645-ab7d-6bfa366da8d7}</Project>
-      <Name>Habitat.Framework.Emotions</Name>
+    <ProjectReference Include="..\..\..\Framework\ProjectOxfordAI\code\Habitat.Framework.ProjectOxfordAI.csproj">
+      <Project>{65621632-4095-4065-a414-cce507675ea9}</Project>
+      <Name>Habitat.Framework.ProjectOxfordAI</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
