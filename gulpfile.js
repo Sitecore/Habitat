@@ -6,6 +6,7 @@ var rename = require("gulp-rename");
 var watch = require("gulp-watch");
 var newer = require("gulp-newer");
 var util = require("gulp-util");
+var rimrafDir = require("gulp-rimraf");
 var rimraf = require("gulp-rimraf");
 var runSequence = require("run-sequence");
 var fs = require("fs");
@@ -191,7 +192,7 @@ gulp.task("CI-Publish", function (callback) {
 gulp.task("CI-Prepare-Package-Files", function (callback) {
   var foldersToExclude = [config.websiteRoot + "\\App_config\\include\\Unicorn"];
   foldersToExclude.forEach(function (item, index, array) {
-    rimraf(config.websiteRoot + item);
+    rimrafDir.sync(config.websiteRoot + item);
   });
 
   var excludeList = [
@@ -241,23 +242,9 @@ gulp.task("CI-Update-Xml", function (cb) {
   });
 });
 
-var deleteFolderRecursive = function (path) {
-  if (fs.existsSync(path)) {
-    fs.readdirSync(path).forEach(function (file, index) {
-      var curPath = path + "/" + file;
-      if (fs.lstatSync(curPath).isDirectory()) { // recurse
-        deleteFolderRecursive(curPath);
-      } else { // delete file
-        fs.unlinkSync(curPath);
-      }
-    });
-    fs.rmdirSync(path);
-  }
-};
 
 gulp.task("CI-Clean", function (callback) {
-  deleteFolderRecursive(path.resolve("./temp"));
-  callback();
+  rimrafDir(path.resolve("./temp"),callback);
 });
 
 gulp.task("CI-Do-magic", function (callback) {
