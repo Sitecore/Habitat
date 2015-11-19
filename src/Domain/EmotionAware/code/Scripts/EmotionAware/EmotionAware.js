@@ -53,16 +53,14 @@ Habitat.EmotionAware = {
             for (var i = 0; i < faces.length; i++) {
                 var face = faces[i];
 
-                if (face.height > 35) {
-                    if (localMediaStream) {
+                if (face.height <= 35)
+                    continue;
 
-                        // "image/webp" works in Chrome.
-                        // Other browsers will fall back to image/png.
-                        document.querySelector('img').src = canvas.toDataURL('image/jpeg', 0.5);
-                        $("#stringBase").val(canvas.toDataURL('image/jpeg', 0.5));
-                        callback(canvas.toDataURL('image/jpeg', 0.5).substring(canvas.toDataURL('image/jpeg', 0.5).lastIndexOf(',')));
-                        return true;
-                    }
+                if (localMediaStream) {
+                    document.querySelector('img').src = canvas.toDataURL('image/jpeg', 0.5);
+                    $("#stringBase").val(canvas.toDataURL('image/jpeg', 0.5));
+                    callback(canvas.toDataURL('image/jpeg', 0.5).substring(canvas.toDataURL('image/jpeg', 0.5).lastIndexOf(',')));
+                    return true;
                 }
             }
 
