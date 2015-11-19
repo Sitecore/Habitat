@@ -6,7 +6,7 @@ var rename = require("gulp-rename");
 var watch = require("gulp-watch");
 var newer = require("gulp-newer");
 var util = require("gulp-util");
-var rimrafDir = require("gulp-rimraf");
+var rimrafDir = require("rimraf");
 var rimraf = require("gulp-rimraf");
 var runSequence = require("run-sequence");
 var fs = require("fs");
@@ -244,7 +244,8 @@ gulp.task("CI-Update-Xml", function (cb) {
 
 
 gulp.task("CI-Clean", function (callback) {
-  rimrafDir(path.resolve("./temp"),callback);
+  rimrafDir.sync(path.resolve("./temp"));
+  callback();
 });
 
 gulp.task("CI-Do-magic", function (callback) {
