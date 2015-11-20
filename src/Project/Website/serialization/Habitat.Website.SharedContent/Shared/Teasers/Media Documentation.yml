@@ -1,0 +1,22 @@
+﻿---
+ID: fa333fc7-7f62-499b-8cea-e2cb837f208d
+Parent: 6aa25831-0944-4a79-9aff-7bac39e03557
+Template: c7d9d293-4ef8-4380-8e10-c4632e729f39
+Path: /sitecore/content/Shared/Teasers/Media Documentation
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 0f6b5546-e0ab-4487-81de-640c1aa1b65b
+      # TeaserImage
+      Value: "<image mediaid=\"{280645B5-681E-49C6-912E-5BF2A20D5330}\" />"
+    - ID: 13d97a52-7c4e-407c-960d-fadde8a3c1b1
+      # TeaserSummary
+      Value: This modules provides basic functionality for handling images and video. See below for an example of components provided.
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151116T045207Z
+    - ID: 4a59d072-5b41-4a79-a157-2b2ccac10f2b
+      # TeaserTitle
+      Value: Media module

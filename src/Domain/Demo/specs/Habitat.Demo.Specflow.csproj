@@ -63,6 +63,11 @@
       <DependentUpon>Mockup of External page.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Show Tracking Information.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Show Tracking Information.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -71,9 +76,19 @@
       <LastGenOutput>Mockup of External page.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Show Tracking Information.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Show Tracking Information.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Accounts\specs\Habitat.Accounts.Specflow.csproj">
+      <Project>{cf95188d-0e98-44fa-bb40-d1ea083a09fb}</Project>
+      <Name>Habitat.Accounts.Specflow</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

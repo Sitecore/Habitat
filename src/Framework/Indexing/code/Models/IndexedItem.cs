@@ -9,9 +9,6 @@
     [IndexField(Constants.IndexFields.HasPresentation)]
     public bool HasPresentation { get; set; }
 
-    [IndexField(BuiltinFields.Semantics)]
-    public string Tags { get; set; }
-
     [IndexField(Templates.IndexedItem.Fields.IncludeInSearchResults_FieldName)]
     public bool ShowInSearchResults { get; set; }
 
