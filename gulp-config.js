@@ -1,8 +1,9 @@
-module.exports = function() {
+module.exports = function () {
     var config = {
-        websiteRoot: "D:\\_Projects\\habitat.local\\Website",
-        sitecoreLibraries: "D:\\_Projects\\habitat.local\\Website\\bin",
-        solutionName: "Habitat"
+    websiteRoot: "C:\\websites\\Habitat.local\\Website",
+    sitecoreLibraries: "C:\\websites\\Habitat.local\\Website\\bin",
+    solutionName: "Habitat",
+    buildConfiguration: "Debug"
     }
     return config;
 }
