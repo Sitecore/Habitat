@@ -34,8 +34,8 @@ namespace Habitat.Accounts.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Login", "\r\nIn order to access secure pages\r\nAs a website visitor\r\nI want to be able to log" +
-                    " in", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Login", "\nIn order to access secure pages\nAs a website visitor\nI want to be able to log in" +
+                    "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -705,6 +705,56 @@ this.ScenarioSetup(scenarioInfo);
                         "Username or password is not valid."});
 #line 234
  testRunner.Then("System shows following error message for the Login form", ((string)(null)), table39, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Login")]
+        [Xunit.TraitAttribute("Description", "Accounts_Login page_UC16_Login form fails on Forgot Password page")]
+        public virtual void Accounts_LoginPage_UC16_LoginFormFailsOnForgotPasswordPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login page_UC16_Login form fails on Forgot Password page", new string[] {
+                        "Bug35888"});
+#line 240
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Email",
+                        "Password"});
+            table40.AddRow(new string[] {
+                        "kov@sitecore.net",
+                        "k"});
+#line 241
+    testRunner.Given("User is registered in Habitat", ((string)(null)), table40, "Given ");
+#line 244
+ testRunner.And("Habitat website is opened on Forgot Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 245
+ testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 246
+ testRunner.And("User clicks Login from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
+                        "E-mail",
+                        "Password"});
+            table41.AddRow(new string[] {
+                        "kov@sitecore.net",
+                        "k"});
+#line 247
+ testRunner.When("Actor enteres following data into fields", ((string)(null)), table41, "When ");
+#line 250
+ testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 251
+ testRunner.Then("Habitat website openes on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Button name"});
+            table42.AddRow(new string[] {
+                        "Logout"});
+            table42.AddRow(new string[] {
+                        "Edit details"});
+#line 252
+ testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table42, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
