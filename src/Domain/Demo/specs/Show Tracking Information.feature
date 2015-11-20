@@ -180,9 +180,9 @@ Scenario: Demo_Show Tracking Information_UC6_Patterns_Focus Architect
 	| FOCUS   | ARCHITECT | 
 
 
-@Need Implimentation
+@NeedImplementation 
 Scenario: Demo_Show Tracking Information_UC7_Campaigns
-	Given Habitat website is opened on /?sc_camp=9AC6AD85B15A4A5BB14337185A19364E
+	Given Habitat website is opened on http://habitat.test5ua1.dk.sitecore.net?sc_camp=9AC6AD85B15A4A5BB14337185A19364E
 	When User clicks on <Info-sign> in the right down corner 
 	And User expands Campaigns section
 	Then Following Campaigns section contains
@@ -197,7 +197,7 @@ Scenario: Demo_Show Tracking Information_UC8_Geo IP Location
 	Then <I have no idea how to test it now>
 
 
-@NeedImplementation
+@NeedImplementation 
 Scenario: Demo_Show Tracking Information_UC9_Device
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner 
@@ -237,7 +237,7 @@ Scenario: Demo_Show Tracking Information_UC10_Pages_Click link to page
 	And Contact Us title presents on page
 
 
-@NeedImplemantation 
+@NeedImplementation 
 Scenario: Demo_Show Tracking Information_UC11_Goals_Goals archived 
 	Given Habitat website is opened on Main Page
 	When Actor moves cursor over the User icon
@@ -250,12 +250,12 @@ Scenario: Demo_Show Tracking Information_UC11_Goals_Goals archived
 	| Home Page (10)       |
 
 
-Register?sc_camp=9AC6AD85B15A4A5BB14337185A19364E
 
 
-@Need Implimentation
+
+@NeedImplementation 
 Scenario: Demo_Show Tracking Information_UC12_Engagement          
-	Given Habitat website is opened on /Register?sc_camp=9AC6AD85B15A4A5BB14337185A19364E
+	Given Habitat website is opened on http://habitat.test5ua1.dk.sitecore.net/Register?sc_camp=9AC6AD85B15A4A5BB14337185A19364E>
 	When User clicks on <Info-sign> in the right down corner 
 	And User expands Engagement section
 	Then Following Engagement section contains
