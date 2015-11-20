@@ -4,6 +4,8 @@
 
   public static class Captions
   {
+    public static string Name => DictionaryRepository.Get("/Accounts/Captions/Email", "Name");
+
     public static string Email => DictionaryRepository.Get("/Accounts/Captions/Email", "E-mail");
 
     public static string Login => DictionaryRepository.Get("/Accounts/Captions/Login", "Login");
