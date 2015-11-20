@@ -1,9 +1,9 @@
 ﻿@using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
-
+@*TODO: Page editor mode*@
 @{
-  const int thumbnailWidth = 275;
+  const int thumbnailWidth = 750;
   var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail.ToString(), @Model.Item, mw: thumbnailWidth, cssClass: "img-responsive");
   if (thumbnail == null || string.IsNullOrWhiteSpace(thumbnail.ToString()))
   {

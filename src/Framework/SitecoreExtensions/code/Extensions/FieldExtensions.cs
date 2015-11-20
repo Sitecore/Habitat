@@ -7,19 +7,14 @@
 
   public static class FieldExtensions
   {
-    public static string ImageUrl(this ImageField imageField, MediaUrlOptions options = null)
+    public static string ImageUrl(this ImageField imageField)
     {
       if (imageField?.MediaItem == null)
       {
         throw new ArgumentNullException(nameof(imageField));
       }
 
-      if (options != null)
-      {
-        return HashingUtils.ProtectAssetUrl(MediaManager.GetMediaUrl(imageField.MediaItem, options));
-      }
-
-      options = MediaUrlOptions.Empty;
+      var options = MediaUrlOptions.Empty;
       int width, height;
 
       if (int.TryParse(imageField.Width, out width))
@@ -31,7 +26,17 @@
       {
         options.Height = height;
       }
-      return HashingUtils.ProtectAssetUrl(MediaManager.GetMediaUrl(imageField.MediaItem, options));
+      return imageField.ImageUrl(options);
+    }
+
+    public static string ImageUrl(this ImageField imageField, MediaUrlOptions options)
+    {
+      if (imageField?.MediaItem == null)
+      {
+        throw new ArgumentNullException(nameof(imageField));
+      }
+
+      return options == null ? imageField.ImageUrl() : HashingUtils.ProtectAssetUrl(MediaManager.GetMediaUrl(imageField.MediaItem, options));
     }
 
     public static bool IsChecked(this Field checkboxField)

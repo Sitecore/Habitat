@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Habitat.Accounts.Specflow</RootNamespace>
     <AssemblyName>Habitat.Accounts.Specflow</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -100,11 +101,13 @@
       <DependentUpon>Register.feature</DependentUpon>
     </Compile>
     <Compile Include="Steps\CommonSteps.cs" />
+    <Compile Include="Infrastructure\ContextExtensions.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
     <Compile Include="Steps\RegisterPage.cs" />
     <Compile Include="Steps\Settings.cs" />
     <Compile Include="Steps\SiteNavigation.cs" />
     <Compile Include="Steps\StepsBase.cs" />
+    <Compile Include="Infrastructure\TestCleanupAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -124,7 +127,9 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Page after login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Page after login.feature.cs</LastGenOutput>

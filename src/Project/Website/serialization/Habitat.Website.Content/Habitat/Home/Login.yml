@@ -4,12 +4,22 @@ Parent: dac24edd-44fb-42ef-9ecd-1e8daf706386
 Template: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Path: /sitecore/content/Habitat/Home/Login
 SharedFields:
+- ID: 5585a30d-b115-4753-93ce-422c3455deb2
+  # ShowInNavigation
+  Value: 0
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 700
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
   # __Renderings
   Type: layout
   Value: |
     <r xmlns:p="p" xmlns:s="s" p:p="1">
       <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r uid="{47F5A079-6F63-4219-BC45-1A221B200906}">
+          <p:d />
+        </r>
+        <r uid="{3FEDD2AB-9A72-49C5-A3C8-E835A17DF069}" s:par="UseStaticPlaceholderNames=1" />
         <r uid="{89F31AC1-CB0B-4754-8B53-8EB29A5BDE61}" p:before="r[@uid='{A680096B-5220-4253-8276-448FECCE4866}']" s:id="{3F7AD288-FA57-441F-AD79-CA60DC0C0A8D}" s:ph="sidebarcontent" />
         <r uid="{A680096B-5220-4253-8276-448FECCE4866}" s:id="{5899FE6B-2AD7-4243-B1F9-3BC664CF0A7C}" s:ph="/page-layout/col-narrow-2" />
       </d>
@@ -25,10 +35,14 @@ Languages:
       Value: |
         <r xmlns:p="p" xmlns:s="s" p:p="1">
           <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-            <r uid="{B859CE64-8C5C-46BE-AAA0-BF38059DB286}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="" s:id="{A2216CA7-B205-4042-A345-72117D0086C3}" s:par="ContainerIsFluid&amp;UseStaticPlaceholderNames" s:ph="page-layout" />
+            <r uid="{B859CE64-8C5C-46BE-AAA0-BF38059DB286}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="" s:id="{A2216CA7-B205-4042-A345-72117D0086C3}" s:par="" s:ph="page-layout" />
             <r uid="{1DF746C3-2D29-43E6-9DE2-05622DED6F97}">
               <p:d />
             </r>
+            <r uid="{47F5A079-6F63-4219-BC45-1A221B200906}">
+              <p:d />
+            </r>
+            <r uid="{3FEDD2AB-9A72-49C5-A3C8-E835A17DF069}" s:par="UseStaticPlaceholderNames=1" />
           </d>
         </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936

@@ -1,15 +1,15 @@
 ﻿@using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
-
+@*TODO: Page editor mode*@
 @{
-  const int thumbnailWidth = 275;
-  var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail.ToString(), @Model.Item, mw: thumbnailWidth, cssClass: "img-responsive");
-  if (thumbnail == null || string.IsNullOrWhiteSpace(thumbnail.ToString()))
+  const int ThumbnailWidth = 750;
+  var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail.ToString(), @Model.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
+  if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
   {
-    thumbnail = Html.Sitecore().ImageField(Templates.HasMediaImage.Fields.Image.ToString(), @Model.Item, mw: thumbnailWidth, cssClass: "img-responsive");
+    thumbnail = Html.Sitecore().ImageField(Templates.HasMediaImage.Fields.Image.ToString(), @Model.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
   }
-  if (thumbnail == null || string.IsNullOrWhiteSpace(thumbnail.ToString()))
+  if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
   {
     return;
   }
