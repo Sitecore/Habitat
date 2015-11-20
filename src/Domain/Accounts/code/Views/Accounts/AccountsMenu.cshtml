@@ -22,10 +22,13 @@
         <li>
             <div class="accounts-details">
                 <dl class="dl-horizontal">
-                    <dt>Name</dt>
-                    <dd>Thomas Eldblom</dd>
-                    <dt>E-mail</dt>
-                    <dd>the@sitecore.net</dd>
+                    @if (!String.IsNullOrEmpty(Sitecore.Context.User.Profile.FullName))
+                    {
+                        <dt>@Captions.Name</dt>
+                        <dd>@Sitecore.Context.User.Profile.FullName</dd>
+                    }
+                    <dt>@Captions.Email</dt>
+                    <dd>@Sitecore.Context.User.Profile.Email</dd>
                 </dl>
                 <a href="/details" class="btn btn-default">Edit details</a>
             </div>
