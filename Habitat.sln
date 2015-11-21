@@ -145,7 +145,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Website", "Website", "{E5AD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Website.Tests", "src\Project\Website\tests\Habitat.Website.Tests.csproj", "{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Emotions", "Emotions", "{8BB8AE4B-1998-48DF-A0F2-40F21BD94C8A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectOxfordAI", "ProjectOxfordAI", "{8BB8AE4B-1998-48DF-A0F2-40F21BD94C8A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.EmotionAware", "src\Domain\EmotionAware\code\Habitat.EmotionAware.csproj", "{DE8BD32A-6FA4-415B-BB38-866DEC40A595}"
 EndProject

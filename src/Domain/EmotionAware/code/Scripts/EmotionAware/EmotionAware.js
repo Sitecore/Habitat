@@ -10,6 +10,8 @@ Habitat.EmotionAware = {
 
     DomReady: function () {
         this.CreateImageStreamFromVisitor(function (faceStream) {
+
+
             alert(faceStream);
         });
 
