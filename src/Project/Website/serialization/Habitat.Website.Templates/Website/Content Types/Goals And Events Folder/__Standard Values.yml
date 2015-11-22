@@ -1,0 +1,25 @@
+﻿---
+ID: 7821ee21-895e-4c4e-9002-b41fd4ec7dd9
+Parent: 89f2323a-6ba5-4b01-a961-45a8396bffa2
+Template: 89f2323a-6ba5-4b01-a961-45a8396bffa2
+Path: /sitecore/templates/Habitat/Project/Website/Content Types/Goals And Events Folder/__Standard Values
+SharedFields:
+- ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
+  # __Masters
+  Type: TreelistEx
+  Value: |
+    {475E9026-333F-432D-A4DC-52E03B75CB6B}
+    {DB6E13B8-786C-4DD6-ACF2-3E5E6A959905}
+    {738A454A-0ED3-4D5B-B036-F16022AA6B54}
+    {059CFBDF-49FC-4F14-A4E5-B63E1E1AFB1E}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151122T131703Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

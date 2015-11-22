@@ -52,6 +52,9 @@
     <Reference Include="Sitecore.Analytics">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Core">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Analytics.Model">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
@@ -107,7 +110,7 @@
     <Content Include="Scripts\EmotionAware\EmotionAware_Original.js" />
     <Content Include="Scripts\EmotionAware\EmotionAware.js" />
     <Content Include="Scripts\EmotionAware\FaceDetector.js" />
-    <None Include="App_Config\Include\Habitat\Habitat.EmotionAware.Serialization.config.disabled">
+    <None Include="App_Config\Include\Habitat\Habitat.EmotionAware.Serialization.config">
       <SubType>Designer</SubType>
     </None>
     <Content Include="App_Config\Include\Habitat\Habitat.EmotionAware.config" />
@@ -115,10 +118,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EmotionAwareController.cs" />
-    <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AnalyticsRepository.cs" />
+    <Compile Include="Repositories\IAnalyticsRepository.cs" />
+    <Compile Include="Services\EmotionAnalyticsService.cs" />
     <Compile Include="Services\EmotionImageService.cs" />
+    <Compile Include="Services\IEmotionAnalyticsService.cs" />
     <Compile Include="Services\IEmotionImageService.cs" />
+    <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -143,6 +150,10 @@
     <ProjectReference Include="..\..\..\Framework\ProjectOxfordAI\code\Habitat.Framework.ProjectOxfordAI.csproj">
       <Project>{65621632-4095-4065-a414-cce507675ea9}</Project>
       <Name>Habitat.Framework.ProjectOxfordAI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Habitat.Framework.SitecoreExtensions.csproj">
+      <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
+      <Name>Habitat.Framework.SitecoreExtensions</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

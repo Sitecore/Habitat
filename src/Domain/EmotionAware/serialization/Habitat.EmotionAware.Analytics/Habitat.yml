@@ -1,0 +1,17 @@
+﻿---
+ID: 66961093-322a-40b8-9f42-8f88e328e6e4
+Parent: 0cb97a9f-cafb-42a0-8be1-89ab9ae32bd9
+Template: 89f2323a-6ba5-4b01-a961-45a8396bffa2
+Path: /sitecore/system/Marketing Control Panel/Goals/Habitat
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 50
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151122T132041Z

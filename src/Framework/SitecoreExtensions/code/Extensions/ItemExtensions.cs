@@ -75,6 +75,7 @@
       return item.Axes.GetAncestors().Reverse().FirstOrDefault(i => i.IsDerived(templateID));
     }
 
+
     public static IList<Item> GetAncestorsAndSelfOfTemplate(this Item item, ID templateID)
     {
       if (item == null)
@@ -90,6 +91,23 @@
 
       returnValue.AddRange(item.Axes.GetAncestors().Where(i => i.IsDerived(templateID)));
       return returnValue;
+    }
+
+    public static IList<Item> GetDescendantsOrSelfOfTemplate(this Item item, ID templateID)
+    {
+        if (item == null)
+        {
+            throw new ArgumentNullException(nameof(item));
+        }
+
+        var returnValue = new List<Item>();
+        if (item.IsDerived(templateID))
+        {
+            returnValue.Add(item);
+        }
+
+        returnValue.AddRange(item.Axes.GetDescendants().Where(i => i.IsDerived(templateID)));
+        return returnValue;
     }
 
     public static string LinkFieldUrl(this Item item, ID fieldID)

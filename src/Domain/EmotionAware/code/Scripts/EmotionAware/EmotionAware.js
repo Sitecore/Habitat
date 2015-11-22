@@ -16,7 +16,8 @@ Habitat.EmotionAware = {
                  url: "/api/EmotionAware/RegisterEmotion",
                  method: "POST",
                  data: {
-                     emotionImageStream: faceStream
+                     emotionImageStream: faceStream,
+                     pageUrl: window.location.pathname
                  },
                  success: function (data) {
                      console.log(data.Message);
