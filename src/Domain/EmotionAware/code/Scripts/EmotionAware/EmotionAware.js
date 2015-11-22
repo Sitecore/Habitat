@@ -10,9 +10,19 @@ Habitat.EmotionAware = {
 
     DomReady: function () {
         this.CreateImageStreamFromVisitor(function (faceStream) {
+            console.log("Registering emotion");
+            $.ajax(
+             {
+                 url: "/api/EmotionAware/RegisterEmotion",
+                 method: "POST",
+                 data: {
+                     emotionImageStream: faceStream
+                 },
+                 success: function (data) {
+                     console.log(data.Message);
+                 }
+             });
 
-
-            alert(faceStream);
         });
 
     },
@@ -59,9 +69,7 @@ Habitat.EmotionAware = {
                     continue;
 
                 if (localMediaStream) {
-                    document.querySelector('img').src = canvas.toDataURL('image/jpeg', 0.5);
-                    $("#stringBase").val(canvas.toDataURL('image/jpeg', 0.5));
-                    callback(canvas.toDataURL('image/jpeg', 0.5).substring(canvas.toDataURL('image/jpeg', 0.5).lastIndexOf(',')));
+                    callback(canvas.toDataURL('image/jpeg', 0.5).substring(canvas.toDataURL('image/jpeg', 0.5).lastIndexOf(',')+1));
                     return true;
                 }
             }

@@ -25,7 +25,7 @@
         {
             EmotionServiceClient emotionServiceClient = new EmotionServiceClient(this.subscriptionKey);
 
-            Emotion[] emotions = await emotionServiceClient.RecognizeAsync(imageStream);
+            Emotion[] emotions = await emotionServiceClient.RecognizeAsync(imageStream).ConfigureAwait(false);
 
             Emotion emotion = emotions.FirstOrDefault();
 

@@ -102,19 +102,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\EmotionAware\Adapter.js" />
     <Content Include="Scripts\EmotionAware\CcvImageProcessor.js" />
     <Content Include="Scripts\EmotionAware\EmotionAware_Original.js" />
     <Content Include="Scripts\EmotionAware\EmotionAware.js" />
     <Content Include="Scripts\EmotionAware\FaceDetector.js" />
-    <Content Include="App_Config\Include\Habitat\Habitat.EmotionAware.config" />
     <None Include="App_Config\Include\Habitat\Habitat.EmotionAware.Serialization.config.disabled">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="App_Config\Include\Habitat\Habitat.EmotionAware.config" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EmotionAwareController.cs" />
-    <Compile Include="Pipelines\RegisterRoutes.cs" />
+    <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\EmotionImageService.cs" />
     <Compile Include="Services\IEmotionImageService.cs" />
@@ -135,6 +136,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Assets\code\Habitat.Framework.Assets.csproj">
+      <Project>{7e46ff93-ee05-412c-ac47-2a59a13da73c}</Project>
+      <Name>Habitat.Framework.Assets</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Framework\ProjectOxfordAI\code\Habitat.Framework.ProjectOxfordAI.csproj">
       <Project>{65621632-4095-4065-a414-cce507675ea9}</Project>
       <Name>Habitat.Framework.ProjectOxfordAI</Name>

@@ -74,6 +74,9 @@
       <HintPath>..\..\..\..\packages\Sitecore.FakeDb.AutoFixture.0.33.0\lib\net45\Sitecore.FakeDb.AutoFixture.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
