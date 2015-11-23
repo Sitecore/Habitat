@@ -14,6 +14,9 @@ using Xunit;
 
 namespace Habitat.Accounts.Specflow.Steps
 {
+  using System.ServiceModel;
+  using Habitat.Accounts.Specflow.TestsHelperService;
+
   [Binding]
   class CommonSteps : StepsBase
   {
@@ -129,7 +132,7 @@ namespace Habitat.Accounts.Specflow.Steps
         {
           ContextExtensions.CleanupPool.Add(new TestCleanupAction()
           {
-            ActionType = ActionType.RemoveRole,
+            ActionType = ActionType.RemoveUser,
             Payload = email
           });
         });
@@ -151,14 +154,15 @@ namespace Habitat.Accounts.Specflow.Steps
     [AfterScenario()]
     public void Cleanup()
     {
-      ScenarioContext.Current.Get<List<TestCleanupAction>>().ForEach(this.CleanupExecute);
+      ContextExtensions.CleanupPool.ForEach(this.CleanupExecute);
     }
 
     private void CleanupExecute(TestCleanupAction payload)
     {
-      if (payload.ActionType == ActionType.RemoveRole)
+      if (payload.ActionType == ActionType.RemoveUser)
       {
-        //do remove user
+        ContextExtensions.HelperService.DeleteUser(payload.Payload);
+
       }
 
       throw new NotSupportedException($"Action type '{payload.ActionType}' is not supported");
@@ -168,6 +172,6 @@ namespace Habitat.Accounts.Specflow.Steps
 
   internal enum ActionType
   {
-    RemoveRole
+    RemoveUser
   }
 }
