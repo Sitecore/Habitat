@@ -1,14 +1,18 @@
 ﻿namespace Habitat.Accounts.Services
 {
   using System;
+  using System.Collections.Generic;
+  using System.Linq;
   using System.Net.Mail;
   using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore;
+  using Sitecore.Configuration;
   using Sitecore.Data;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
   using Sitecore.Exceptions;
+  using Sitecore.Reflection;
 
   public class AccountsSettingsService : IAccountsSettingsService
   {
@@ -46,6 +50,8 @@
         return defaultItem.Url();
       }
     }
+
+    
 
     private static Item GetSettingsItem(Item contextItem)
     {

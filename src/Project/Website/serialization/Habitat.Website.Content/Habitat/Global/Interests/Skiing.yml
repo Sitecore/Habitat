@@ -1,0 +1,16 @@
+﻿---
+ID: 8bf3f0d1-6041-4ca9-9042-b04975ef535d
+Parent: a74ee096-f225-4568-8d81-2f71abbc8118
+Template: 4176bfc2-7814-4fa5-abcf-7fa0714bf05f
+Path: /sitecore/content/Habitat/Global/Interests/Skiing
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 1fbe5200-2c62-4a32-ba84-cffe3cf665d3
+      # Title
+      Value: Skiing
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151112T140113Z
