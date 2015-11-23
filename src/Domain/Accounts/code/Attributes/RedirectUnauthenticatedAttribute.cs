@@ -5,7 +5,7 @@
   using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore;
 
-  public class RedirectUnauthenticatedAttribute: Attribute, IAuthorizationFilter
+  public class RedirectUnauthenticatedAttribute: ActionFilterAttribute, IAuthorizationFilter
   {
     public void OnAuthorization(AuthorizationContext filterContext)
     {
