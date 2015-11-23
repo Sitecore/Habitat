@@ -34,9 +34,6 @@ Languages:
     - ID: 989351f9-6c42-4623-bc83-dbefb398a56b
       # InterestsFolder
       Value: {A74EE096-F225-4568-8D81-2F71ABBC8118}
-    - ID: a14efdea-2b47-4508-b6f7-d56f78b402c2
-      # UserProfileProcessor
-      Value: Habitat.Accounts.Services.UserProfileProcessor, Habitat.Accounts
     - ID: b128e2b3-3865-4f1c-a147-5f248676d3f5
       # AfterLoginPage
       Value: /sitecore/content/Habitat/Home

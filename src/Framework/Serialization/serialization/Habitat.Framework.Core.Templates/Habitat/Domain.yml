@@ -1,8 +1,8 @@
 ﻿---
-ID: 894144c3-d26e-4b41-bae8-e94223645e0a
-Parent: 6d04aab0-2de3-4068-9b30-3a4fc7ce46ad
+ID: 6d04aab0-2de3-4068-9b30-3a4fc7ce46ad
+Parent: ac143ebf-fe8d-49f9-9811-b63e7f89bbf7
 Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
-Path: /sitecore/templates/Habitat/Domain/Accounts
+Path: /sitecore/templates/Habitat/Domain
 Languages:
 - Language: en
   Versions:
@@ -10,4 +10,4 @@ Languages:
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20151111T154924Z
+      Value: 20151123T135632Z

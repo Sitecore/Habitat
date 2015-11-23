@@ -17,6 +17,3 @@ Languages:
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
       # __Created by
       Value: sitecore\admin
-    - ID: a14efdea-2b47-4508-b6f7-d56f78b402c2
-      # UserProfileProcessor
-      Value: Habitat.Accounts.Services.UserProfileProvider, Habitat.Accounts
