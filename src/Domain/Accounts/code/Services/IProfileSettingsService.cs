@@ -7,6 +7,5 @@ namespace Habitat.Accounts.Services
   {
     IEnumerable<string> GetInterests();
     Item GetUserDefaultProfile();
-    IProfileProcessor GetUserProfileProcessor();
   }
 }

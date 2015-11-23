@@ -44,13 +44,17 @@
     {
       Assert.ArgumentNotNullOrEmpty(email, "email");
       Assert.ArgumentNotNullOrEmpty(password, "password");
-      Assert.ArgumentNotNullOrEmpty(profileId, "profileId");
 
       var fullName = Context.Domain.GetFullName(email);
       Assert.IsNotNullOrEmpty(fullName, "Can't retrieve full userName");
 
       var user = User.Create(fullName, password);
       user.Profile.Email = email;
+      if (!string.IsNullOrEmpty(profileId))
+      {
+        user.Profile.ProfileItemId = profileId;
+      }
+
       user.Profile.Save();
 
       AuthenticationManager.Login(user);

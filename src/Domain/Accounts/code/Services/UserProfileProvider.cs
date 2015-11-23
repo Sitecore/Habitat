@@ -8,6 +8,7 @@
   using Sitecore.Data.Templates;
   using Sitecore.Diagnostics;
   using Sitecore.Security;
+  using Sitecore.SecurityModel;
 
   public class UserProfileProvider : IUserProfileProvider
   {
@@ -40,15 +41,19 @@
 
     protected Template GetProfileTemplate(string profileItemId)
     {
-      ID profileId;
-      if (ID.TryParse(profileItemId, out profileId))
+      using (new SecurityDisabler())
       {
-        var database = Database.GetDatabase(Settings.ProfileItemDatabase);
-        var item = database?.GetItem(profileId);
+        ID profileId;
 
-        if (item != null)
+        if (ID.TryParse(profileItemId, out profileId))
         {
-          return TemplateManager.GetTemplate(item);
+          var database = Database.GetDatabase(Settings.ProfileItemDatabase);
+          var item = database?.GetItem(profileId);
+
+          if (item != null)
+          {
+            return TemplateManager.GetTemplate(item);
+          }
         }
       }
 

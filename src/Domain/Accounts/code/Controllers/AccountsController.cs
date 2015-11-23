@@ -63,8 +63,7 @@
 
       try
       {
-        var profileItem = this.userProfileService.GetUserDefaultProfile();
-        this.accountRepository.RegisterUser(registrationInfo.Email, registrationInfo.Password, profileItem.ID.ToString());
+        this.accountRepository.RegisterUser(registrationInfo.Email, registrationInfo.Password, this.userProfileService.GetUserDefaultProfileId());
 
         var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
         return this.Redirect(link);
@@ -195,12 +194,12 @@
     [RedirectUnauthenticated]
     public ActionResult EditProfile()
     {
-      if (Context.PageMode.IsPageEditor)
+      if (!Context.PageMode.IsNormal)
       {
         return this.View(this.userProfileService.GetEmptyProfile());
       }
 
-      if (this.userProfileService.GetUserDefaultProfile().ID.ToString() != Context.User.Profile.ProfileItemId)
+      if (this.userProfileService.GetUserDefaultProfileId() != Context.User.Profile.ProfileItemId)
       {
         return this.View("InfoMessage", new InfoMessage(Errors.ProfileMismatch, InfoMessage.MessageType.Error));
       }
@@ -212,20 +211,20 @@
 
     [HttpPost]
     [RedirectUnauthenticated]
-    [ValidateModel]
-    public virtual ActionResult EditProfile(object profileModel)
+    public virtual ActionResult EditProfile(EditProfile profile)
     {
-      if (this.userProfileService.GetUserDefaultProfile().ID.ToString() != Context.User.Profile.ProfileItemId)
+      if (this.userProfileService.GetUserDefaultProfileId() != Context.User.Profile.ProfileItemId)
       {
         return this.View("InfoMessage", new InfoMessage(Errors.ProfileMismatch, InfoMessage.MessageType.Error));
       }
 
-      if (!this.userProfileService.ValidateProfile(profileModel, this.ModelState))
+      if (!this.userProfileService.ValidateProfile(profile, this.ModelState))
       {
-        this.View(profileModel);
+        profile.InterestTypes = this.userProfileService.GetInterests();
+        return this.View(profile);
       }
 
-      this.userProfileService.SetProfile(Context.User.Profile, profileModel);
+      this.userProfileService.SetProfile(Context.User.Profile, profile);
 
       return this.View("InfoMessage", new InfoMessage(Captions.EditProfileSuccess));
     }

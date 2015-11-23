@@ -2,8 +2,9 @@
 {
   using System.Collections.Generic;
   using System.Linq;
-  using System.Runtime.Remoting;
   using System.Web.Mvc;
+  using Habitat.Accounts.Models;
+  using Habitat.Accounts.Texts;
   using Sitecore.Data.Items;
   using Sitecore.Security;
 
@@ -11,10 +12,14 @@
   {
     private readonly IProfileSettingsService profileSettingsService;
     private readonly IUserProfileProvider userProfileProvider;
-    private IProfileProcessor profileProcessor;
 
-    protected IProfileProcessor ProfileProcessor => this.profileProcessor ?? (this.profileProcessor = this.profileSettingsService.GetUserProfileProcessor());
+    protected Item profile;
+    protected virtual Item Profile => this.profile ?? (this.profile = this.profileSettingsService.GetUserDefaultProfile());
 
+    protected virtual string FirstName => this.Profile.Fields[Templates.UserProfile.Fields.FirstName].Name;
+    protected virtual string LastName => this.Profile.Fields[Templates.UserProfile.Fields.LastName].Name;
+    protected virtual string PhoneNumber => this.Profile.Fields[Templates.UserProfile.Fields.PhoneNumber].Name;
+    protected virtual string Interest => this.Profile.Fields[Templates.UserProfile.Fields.Interest].Name;
 
     public UserProfileService(): this(new ProfileSettingsService(), new UserProfileProvider())
     {
@@ -26,46 +31,74 @@
       this.userProfileProvider = userProfileProvider;
     }
 
-    public virtual Item GetUserDefaultProfile()
+    public virtual string GetUserDefaultProfileId()
     {
-      return this.profileSettingsService.GetUserDefaultProfile();
+      return this.profileSettingsService.GetUserDefaultProfile()?.ID?.ToString();
     }
 
-    public virtual object GetEmptyProfile()
+    public virtual EditProfile GetEmptyProfile()
     {
-      return this.ProfileProcessor.GetModel(new Dictionary<string, string>());
+      return new EditProfile()
+      {
+        InterestTypes = this.profileSettingsService.GetInterests()
+      };
     }
 
-    public virtual object GetProfile(UserProfile userProfile)
+    public virtual EditProfile GetProfile(UserProfile userProfile)
     {
-      return this.ProfileProcessor.GetModel(this.userProfileProvider.GetCustomProperties(userProfile));
+      var properties = this.userProfileProvider.GetCustomProperties(userProfile);
+
+      var model = new EditProfile();
+      if (properties.ContainsKey(this.FirstName))
+      {
+        model.FirstName = properties[this.FirstName];
+      }
+      if (properties.ContainsKey(this.LastName))
+      {
+        model.LastName = properties[this.LastName];
+      }
+      if (properties.ContainsKey(this.PhoneNumber))
+      {
+        model.PhoneNumber = properties[this.PhoneNumber];
+      }
+      if (properties.ContainsKey(this.Interest))
+      {
+        model.Interest = properties[this.Interest];
+      }
+
+      model.InterestTypes = this.profileSettingsService.GetInterests();
+
+      return model;
     }
 
-    public virtual void SetProfile(UserProfile userProfile, object profileModel)
+    public virtual void SetProfile(UserProfile userProfile, EditProfile model)
     {
-      var properties = this.ProfileProcessor.GetProperties(profileModel);
-       
+      var properties = new Dictionary<string, string>()
+      {
+        [this.FirstName] = model.FirstName,
+        [this.LastName] = model.LastName,
+        [this.PhoneNumber] = model.PhoneNumber,
+        [this.Interest] = model.Interest,
+        ["Name"] = model.FirstName,
+        ["FullName"] = $"{model.FirstName} {model.LastName}",
+      };
+
       this.userProfileProvider.SetCustomProfile(userProfile, properties);
     }
 
-    public virtual bool ValidateProfile(object profileModel, ModelStateDictionary modelState)
+    public virtual bool ValidateProfile(EditProfile model, ModelStateDictionary modelState)
     {
-      var validationResults = this.ProfileProcessor.ValidateModel(profileModel);
-
-      if (validationResults != null && validationResults.Any())
+      if (!this.profileSettingsService.GetInterests().Contains(model.Interest))
       {
-        foreach (var validationResult in validationResults)
-        {
-          foreach (var memberName in validationResult.MemberNames)
-          {
-            modelState.AddModelError(memberName, validationResult.ErrorMessage);
-          }
-        }
-
-        return false;
+        modelState.AddModelError("Interest", Errors.WrongInterest);
       }
 
-      return true;
+      return modelState.IsValid;
+    }
+
+    public IEnumerable<string> GetInterests()
+    {
+      return this.profileSettingsService.GetInterests();
     }
   }
 }

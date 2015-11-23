@@ -151,21 +151,13 @@
         var fixture = new Fixture();
         return new List<object[]>
         {
-          new RegistrationInfo[]
+          new[]
           {
-            null
+            null,fixture.Create<string>(),fixture.Create<string>()
           },
           new[]
           {
-            fixture.Build<RegistrationInfo>().With(x => x.Email, null).Create()
-          },
-          new[]
-          {
-            fixture.Build<RegistrationInfo>().With(x => x.Password, null).Create()
-          },
-          new[]
-          {
-            fixture.Build<RegistrationInfo>().With(x => x.ConfirmPassword, null).Create()
+            fixture.Create<string>(),null,fixture.Create<string>()
           }
         };
       }
@@ -173,10 +165,10 @@
 
     [Theory]
     [MemberData(nameof(RegistrationInfosArgumentNull))]
-    public void RegisterShouldThrowArgumentException(RegistrationInfo registrationInfo)
+    public void RegisterShouldThrowArgumentException(string email, string password, string profileId)
     {
       var repository = new AccountRepository();
-      repository.Invoking(x => x.RegisterUser(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>())).ShouldThrow<ArgumentNullException>();
+      repository.Invoking(x => x.RegisterUser(email,password, profileId)).ShouldThrow<ArgumentNullException>();
     }
 
     [Theory]

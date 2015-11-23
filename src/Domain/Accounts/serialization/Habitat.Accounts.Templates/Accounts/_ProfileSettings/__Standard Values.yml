@@ -1,0 +1,22 @@
+﻿---
+ID: 2280e2aa-1f13-4253-b886-f9ac6964a451
+Parent: 2d9aa1e4-3359-4f02-9eaa-5cf972fd990d
+Template: 2d9aa1e4-3359-4f02-9eaa-5cf972fd990d
+Path: /sitecore/templates/Habitat/Domain/Accounts/_ProfileSettings/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151117T170010Z
+    - ID: 378b7d87-5775-4eb6-86b7-282d5359b1c6
+      # UserProfile
+      Value: {14523428-879D-491C-9DF0-1417E82A4311}
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
+    - ID: a14efdea-2b47-4508-b6f7-d56f78b402c2
+      # UserProfileProcessor
+      Value: Habitat.Accounts.Services.UserProfileProvider, Habitat.Accounts

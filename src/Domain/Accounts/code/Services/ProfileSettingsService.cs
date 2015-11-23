@@ -4,34 +4,26 @@
   using System.Linq;
   using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore;
+  using Sitecore.Configuration;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
-  using Sitecore.Reflection;
+  using Sitecore.SecurityModel;
 
   public class ProfileSettingsService : IProfileSettingsService
   {
     public virtual Item GetUserDefaultProfile()
     {
-      var item = GetSettingsItem(Context.Item);
-      Assert.IsNotNull(item, "Page with accounts settings isn't specified");
-      ReferenceField profileField = item.Fields[Templates.ProfileSettigs.Fields.UserProfile];
-      Assert.IsNotNull(profileField.TargetItem, "Default user profile isn't specified");
-
-      return profileField.TargetItem;
-    }
-
-    public virtual IProfileProcessor GetUserProfileProcessor()
-    {
-      var item = GetSettingsItem(Context.Item);
-      Assert.IsNotNull(item, "Page with accounts settings isn't specified");
-      var processorField = item.Fields[Templates.ProfileSettigs.Fields.UserProfileProcessor];
-      Assert.IsNotNullOrEmpty(processorField.Value, "Default user profile isn't specified");
-
-      var processor = ReflectionUtil.CreateObject(processorField.Value) as IProfileProcessor;
-      Assert.IsNotNull(processor, $"Can't create instance of user profile with type name: {processorField.Value}");
-
-      return processor;
+      using (new SecurityDisabler())
+      {
+        var item = GetSettingsItem(Context.Item);
+        Assert.IsNotNull(item, "Page with profile settings isn't specified");
+        var database = Sitecore.Data.Database.GetDatabase(Settings.ProfileItemDatabase);
+        var profileField = item.Fields[Templates.ProfileSettigs.Fields.UserProfile];
+        var targetItem = database.GetItem(profileField.Value);
+        
+        return targetItem;
+      }
     }
 
     public virtual IEnumerable<string> GetInterests()
@@ -39,7 +31,7 @@
       var item = GetSettingsItem(null);
       ReferenceField interestsFolder = item.Fields[Templates.ProfileSettigs.Fields.InterestsFolder];
 
-      return interestsFolder.TargetItem.GetChildrenDerivedFrom(Templates.Interest.ID).Select(i => i.Fields[Templates.Interest.Fields.Title].Value);
+      return interestsFolder?.TargetItem?.GetChildrenDerivedFrom(Templates.Interest.ID)?.Select(i => i.Fields[Templates.Interest.Fields.Title].Value) ?? Enumerable.Empty<string>();
     }
 
     private static Item GetSettingsItem(Item contextItem)

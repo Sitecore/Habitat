@@ -158,13 +158,11 @@
     <Compile Include="Models\LoginInfo.cs" />
     <Compile Include="Models\EditProfile.cs" />
     <Compile Include="Services\IAccountsSettingsService.cs" />
-    <Compile Include="Services\IProfileProcessor.cs" />
     <Compile Include="Services\IProfileSettingsService.cs" />
     <Compile Include="Services\IUserProfileProvider.cs" />
     <Compile Include="Services\IUserProfileService.cs" />
     <Compile Include="Services\ProfileSettingsService.cs" />
     <Compile Include="Services\UserProfileProvider.cs" />
-    <Compile Include="Services\UserProfileProcessor.cs" />
     <Compile Include="Services\UserProfileService.cs" />
     <Compile Include="WebApiConfig.cs" />
     <Compile Include="Models\LoginResult.cs" />
