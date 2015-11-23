@@ -30,7 +30,7 @@
                     <dt>@Captions.Email</dt>
                     <dd>@Sitecore.Context.User.Profile.Email</dd>
                 </dl>
-                <a href="/details" class="btn btn-default">Edit details</a>
+                <a href="@AccountsSettingsService.Instance.GetPageLink(Model.Item, Templates.AccountsSettings.Fields.AccountsDetailsPage)" class="btn btn-default">@Captions.EditDetails</a>
             </div>
         </li>
             <li>

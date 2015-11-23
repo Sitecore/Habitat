@@ -1,6 +1,7 @@
 ﻿namespace Habitat.Accounts
 {
   using Sitecore.Data;
+  using Sitecore.Security;
 
   public class Templates
   {
@@ -28,6 +29,40 @@
         public static readonly ID From = new ID("{8605948C-60FB-46B8-8AAA-4C52561B53BC}");
         public static readonly ID Subject = new ID("{0F45DF05-546F-462D-97C0-BA4FB2B02564}");
         public static readonly ID Body = new ID("{1519CCAD-ED26-4F60-82CA-22079AF44D16}");
+      }
+    }
+
+    public struct Interest
+    {
+       public static ID ID = new ID("{C9B1855E-CA80-4414-B5BA-956CB67DC5A9}");
+
+      public struct Fields
+      {
+        public static readonly ID Title = new ID("{1FBE5200-2C62-4A32-BA84-CFFE3CF665D3}");
+      }
+    }
+
+    public struct ProfileSettigs
+    {
+      public static ID ID = new ID("{2D9AA1E4-3359-4F02-9EAA-5CF972FD990D}");
+
+      public struct Fields
+      {
+        public static readonly ID UserProfile = new ID("{378B7D87-5775-4EB6-86B7-282D5359B1C6}");
+        public static readonly ID InterestsFolder = new ID("{021AA3F7-206F-4ACC-9538-F6D7FE86B168}");
+      }
+    }
+
+    public struct UserProfile
+    {
+      public static ID ID = new ID("{696D276B-786A-4D1E-B8BB-8E139DB7BE7C}");
+
+      public struct Fields
+      {
+        public static readonly ID FirstName = new ID("{E7BC8A3E-3201-4556-B2FF-FF4DB04DB081}");
+        public static readonly ID LastName = new ID("{EE21278F-4F83-4A10-8890-66B957F3D312}");
+        public static readonly ID PhoneNumber = new ID("{F7A1605F-7BBB-4BC7-BBB4-9E0546648E1D}");
+        public static readonly ID Interest = new ID("{A5D0B0AD-CE4E-4E06-B821-F30416B7DEC9}");
       }
     }
   }

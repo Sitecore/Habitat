@@ -1,0 +1,13 @@
+﻿---
+ID: 894144c3-d26e-4b41-bae8-e94223645e0a
+Parent: 00642681-67fe-475d-9045-a902c4bf8abd
+Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+Path: /sitecore/templates/Habitat/Domain/Accounts
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151111T154924Z
