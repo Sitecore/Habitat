@@ -13,6 +13,7 @@ Scenario: Demo_Show Google search engine mockup
 	| Goggle page buttons |
 	| Google Search       |
 	| I'm feeling Lucky   |
+
 	
 	@NeedImplementation
 Scenario: Demo_Show predefined keyword
@@ -34,12 +35,22 @@ Show that the campaign is triggered on the website
 	| Sitecore Habitat |
 	And link with following parametr is present on the page
 	| Text                                            |
-	|  ?sc_camp={0BFFAF94-F523-452A-9F2A-1FA3292D4647}|
+	| ?sc_camp={0BFFAF94-F523-452A-9F2A-1FA3292D4647} |
+
 
 	@NeedImplementation
 Scenario: Demo_Campaign is triggered on the website
-	Given 
-	When 
-	Then 
+	Given link with following parametr is clicked 
+	| Text                                            |
+	| ?sc_camp={0BFFAF94-F523-452A-9F2A-1FA3292D4647} |
+	When Actor clicks info icon in the bottom right corner
+	Then flyout with following sections is opened
+	| Section Name  |
+	| Contact       |
+	| This visist   |
+	And Camapign drop-down  contains following text
+	| Text                     |
+	| Facebook Content Messages|
+
 	
 	
