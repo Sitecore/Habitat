@@ -12,7 +12,7 @@ Scenario: Accounts_Login form_UC1_Open Login form
 	Then Login title presents on Login form
 	And Following fields present on Login form
 	| Field name |
-	| Email     |
+	| Email      |
 	| Password   |         	
 	And Following buttons present on Login Form
 	| Login Form Buttons |
@@ -62,7 +62,7 @@ Scenario: Accounts_Login form_UC4_Enter correct username and incorrect password
 	And User clicks Login from drop-down menu
 	When Actor enteres following data into fields
 	| Email              |Password |
-	| kov@sitecore.net    |m        |
+	| kov@sitecore.net   |m        |
 	And User clicks Login button on Login form
 	Then System shows following error message for the Login form
     | Login form error message           |
@@ -79,7 +79,7 @@ Scenario: Accounts_Login form_UC5_Enter incorrect username and correct password
 	And User clicks Login from drop-down menu
 	When Actor enteres following data into fields
 	| Email               |Password |
-	| kov1@sitecore.net    |k        |
+	| kov1@sitecore.net   |k        |
 	And User clicks Login button on Login form
 	Then System shows following error message for the Login form
     | Login form error message          |
@@ -96,7 +96,7 @@ Scenario: Accounts_Login form_UC6_Enter incorrect username and password
 	And User clicks Login from drop-down menu
 	When Actor enteres following data into fields
 	| Email               |Password  |
-	| kov1@sitecore.net    |k1        |
+	| kov1@sitecore.net   |k1        |
 	And User clicks Login button on Login form
 	Then System shows following error message for the Login form
     | Login form error message          |
@@ -140,7 +140,7 @@ Scenario: Accounts_Login page_UC9_Open Login page
 	And Page URL ends on /Login
 	And Following fields present on Login page
 	| Field name |
-	| Email     |
+	| Email      |
 	| Password   |         
 	And Login button presents
 	And Forgot your password? link presents
@@ -151,7 +151,7 @@ Scenario: Aссounts_Login page_UC10_Check required fields
 	Given Habitat website is opened on Login page
 	When Actor enters data in to the following login fields
 	| Email | Password |
-	|        |          |
+	|       |          |
 	And User clicks Login button
 	Then System shows following error message for the Login form
     | Required fields error message |
@@ -163,11 +163,11 @@ Scenario: Aссounts_Login page_UC10_Check required fields
 Scenario: Accounts_Login page_UC11_Enter correct Username and Password
 	Given User is registered in Habitat
 	| Email            | Password |
-	| kov@sitecore.net  | k        |
+	| kov@sitecore.net | k        |
 	And Habitat website is opened on Login page
 	When Actor enteres following data into fields
 	| Email              |Password |
-	| kov@sitecore.net    |k        |
+	| kov@sitecore.net   |k        |
 	And Actor clicks Login button
 	Then Habitat website openes on Main Page
 	And Following buttons present under User drop-drop down menu
@@ -180,11 +180,11 @@ Scenario: Accounts_Login page_UC11_Enter correct Username and Password
 Scenario: Accounts_Login page_UC12_Enter correct username and incorrect password
 	Given User is registered in Habitat
 	| Email            | Password |
-	| kov@sitecore.net  | k        | 
+	| kov@sitecore.net | k        | 
 	And Habitat website is opened on Login page
 	When Actor enteres following data into fields
 	| Email              |Password |
-	| kov@sitecore.net    |m        |
+	| kov@sitecore.net   |m        |
 	And Actor clicks Login button
 	Then System shows following message for the Login form
     | Login page error message          |
@@ -199,7 +199,7 @@ Scenario: Accounts_Login page_UC13_Enter incorrect username and correct password
 	And Habitat website is opened on Login page
 	When Actor enteres following data into fields
 	| Email             |Password |
-	| kov1@sitecore.net  |k        |
+	| kov1@sitecore.net |k        |
 	And Actor clicks Login button
 	Then System shows following error message for the Login form
     | Login form error message          |
@@ -214,7 +214,7 @@ Scenario: Accounts_Login page_UC14_Enter incorrect username and password
 	And Habitat website is opened on Login page
 	When Actor enteres following data into fields
 	| Email               |Password  |
-	| kov1@sitecore.net    |k1        |
+	| kov1@sitecore.net   |k1        |
 	And Actor clicks Login button
 	Then System shows following error message for the Login form
     | Login form error message          |
@@ -228,14 +228,35 @@ Scenario: Accounts_Login page_UC15_Login with username and password of recently 
 	| kov@sitecore.net | k        |    
 	And Habitat website is opened on Login page
 	When Actor enteres following data into fields
-	| Email           |Password |
+	| Email            |Password |
 	| kov@sitecore.net |k        |
 	And Actor clicks Login button
 	Then System shows following error message for the Login form
     | Login form error message          |
     | Username or password is not valid.|
 
-	
+
+@Bug35888
+Scenario: Accounts_Login page_UC16_Login form fails on Forgot Password page
+    Given User is registered in Habitat
+	| Email            | Password |
+	| kov@sitecore.net | k        |
+	And Habitat website is opened on Forgot Password page
+	When Actor moves cursor over the User icon
+	And User clicks Login from drop-down menu
+	When Actor enteres following data into fields
+	| E-mail           |Password |
+	| kov@sitecore.net |k        |
+	And Actor clicks Login button
+	Then Habitat website openes on Main Page
+	And Following buttons present under User drop-drop down menu
+	| Button name |
+	| Logout      |
+	| Edit details|
+
+
+
+	 
 
 
 
