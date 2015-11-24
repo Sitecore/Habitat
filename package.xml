@@ -74,7 +74,7 @@
       <Name>Habitat items</Name>
     </items>
     <xfiles>
-      <Entries />
+      <Entries></Entries>
       <Converter>
         <FileToEntryConverter>
           <Root>/</Root>
