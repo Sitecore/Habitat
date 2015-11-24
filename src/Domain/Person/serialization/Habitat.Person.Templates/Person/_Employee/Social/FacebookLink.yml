@@ -1,0 +1,17 @@
+﻿---
+ID: d31889c0-e34c-4904-a6f3-f3d92d314aa9
+Parent: 636cfcdf-6be6-41df-a2d9-528acecdb2d2
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Habitat/Domain/Person/_Employee/Social/FacebookLink
+SharedFields:
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  # Type
+  Value: General Link
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151124T095639Z

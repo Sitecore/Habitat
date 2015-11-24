@@ -1,0 +1,43 @@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Sitecore.Mvc
+@model Habitat.Person.Models.Employee
+
+<div class="item">
+    <div class="c-content-person-1 c-option-2">
+        <div class="c-caption c-content-overlay">
+            <div class="c-overlay-wrapper">
+                <div class="c-overlay-content">
+                    <a href="#"><i class="icon-link"></i></a>
+                    <a href="assets/base/img/content/team/team10.jpg" data-lightbox="fancybox" data-fancybox-group="gallery-2">
+                        <i class="icon-magnifier"></i>
+                    </a>
+                </div>
+            </div>
+            @Html.Sitecore().ImageField(Templates.Person.Fields.Picture.ToString(), Model.Person.Item, cssClass: "img-responsive c-overlay-object");
+        </div>
+        <div class="c-body">
+            <div class="c-head">
+                <div class="c-name c-font-uppercase c-font-bold">
+                    @Model.Person.Name
+                </div>
+                <ul class="c-socials c-theme-ul">
+                    <li>
+                        <a href="@Model.TwitterLink"><i class="icon-social-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="@Model.FacebookLink"><i class="icon-social-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="@Model.LinkedInLink"><i class="icon-social-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="c-position">
+                @Model.Person.Title
+            </div>
+            <p>
+                @Model.Description
+            </p>
+        </div>
+    </div>
+</div>

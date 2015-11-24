@@ -1,0 +1,17 @@
+﻿<Project>
+  <PropertyGroup>
+    <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
+  </PropertyGroup>
+  <File Include="Views\Employee\EmployeeTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{5264BC97-423A-4392-A06C-0FEC24510D71}</Item>
+  </File>
+  <File Include="Views\Quote\Quote.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{B8FC8E3C-3A9C-4CD8-840F-91757457C1D8}</Item>
+  </File>
+  <File Include="Views\Person\PersonPhoto.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{3CE9E2EF-CE0D-497C-96B1-0944EDF02671}</Item>
+  </File>
+  <File Include="Views\Employee\EmployeeDetails.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{0A1996B9-FF65-45B7-A618-77DBADCF420A}</Item>
+  </File>
+</Project>
