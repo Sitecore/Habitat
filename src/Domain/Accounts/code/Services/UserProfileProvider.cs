@@ -33,7 +33,14 @@
 
       foreach (var property in properties)
       {
-        userProfile[property.Key] = property.Value;
+        if (property.Value == null)
+        {
+          userProfile[property.Key] = string.Empty;
+        }
+        else
+        {
+          userProfile[property.Key] = property.Value;
+        }
       }
 
       userProfile.Save();

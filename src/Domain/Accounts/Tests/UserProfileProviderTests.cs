@@ -36,6 +36,15 @@
     }
 
     [Theory, AutoDbDataWithExtension(typeof(UserProfileCustomization))]
+    public void SetCustomProfileShouldSetEmptyProperties([CoreDb]Db db, UserProfileProvider userProfileProvider, UserProfile userProfile, IDictionary<string, string> properties, string nullKey)
+    {
+      properties.Add(nullKey, null);
+
+      userProfileProvider.SetCustomProfile(userProfile, properties);
+      userProfile.Received()[nullKey] = string.Empty;
+    }
+
+    [Theory, AutoDbDataWithExtension(typeof(UserProfileCustomization))]
     public void SetCustomProfileShouldSaveProfile([CoreDb]Db db, UserProfileProvider userProfileProvider, UserProfile userProfile, IDictionary<string, string> properties)
     {
       userProfileProvider.SetCustomProfile(userProfile, properties);
