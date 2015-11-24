@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Policy;
-using System.Text;
-using System.Threading.Tasks;
-using FluentAssertions;
-using Habitat.Accounts.Specflow.Infrastructure;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Interactions;
-using TechTalk.SpecFlow;
-using Xunit;
-
-namespace Habitat.Accounts.Specflow.Steps
+﻿namespace Habitat.Accounts.Specflow.Steps
 {
-  using System.ServiceModel;
-  using Habitat.Accounts.Specflow.TestsHelperService;
+  using System;
+  using System.Linq;
+  using FluentAssertions;
+  using Habitat.Accounts.Specflow.Infrastructure;
+  using OpenQA.Selenium;
+  using TechTalk.SpecFlow;
 
   [Binding]
-  class CommonSteps : StepsBase
+  internal class CommonSteps : StepsBase
   {
     [When(@"User selects (.*) from drop-down menu")]
     public void WhenUserSelectsRegisterFromDropDownMenu(string linkText)
@@ -37,7 +27,6 @@ namespace Habitat.Accounts.Specflow.Steps
     public void ThenRegisterTitlePresentsOnPage(string title)
     {
       this.Site.PageTitle.Text.Should().BeEquivalentTo(title);
-
     }
 
     [Then(@"(.*) button presents")]
@@ -57,7 +46,6 @@ namespace Habitat.Accounts.Specflow.Steps
     [Then(@"Following buttons present under User drop-drop down menu")]
     public void ThenFollowingButtonsPresentUnderUserDropDropDownMenu(Table table)
     {
-
       var buttons = table.Rows.Select(x => x.Values.First());
       //1
       foreach (var button in buttons)
@@ -75,9 +63,8 @@ namespace Habitat.Accounts.Specflow.Steps
       }
       //2
       //            buttons.All(b => Site.DropDownButtons.Any(x => x.Text == b)).Should().BeTrue();
-
-
     }
+
     [Then(@"Following buttons is no longer present under User drop-drop down menu")]
     public void ThenFollowingButtonsIsNoLongerPresentUnderUserDropDropDownMenu(Table table)
     {
@@ -96,8 +83,6 @@ namespace Habitat.Accounts.Specflow.Steps
         }
         found.Should().BeFalse();
       }
-
-
     }
 
     [When(@"Actor enters following data in to the register fields")]
@@ -109,6 +94,7 @@ namespace Habitat.Accounts.Specflow.Steps
         this.Site.FormFields.GetField(key).SendKeys(row[key]);
       }
     }
+
     [Given(@"User with following data is registered")]
     public void GivenUserWithFollowingDataIsRegistered(Table table)
     {
@@ -130,13 +116,14 @@ namespace Habitat.Accounts.Specflow.Steps
         .Select(row => row["Email"]).ToList()
         .ForEach(email =>
         {
-          ContextExtensions.CleanupPool.Add(new TestCleanupAction()
+          ContextExtensions.CleanupPool.Add(new TestCleanupAction
           {
             ActionType = ActionType.RemoveUser,
             Payload = email
           });
         });
     }
+
     [Given(@"User was logged out from the Habitat")]
     public void GivenUserWasLoggedOutFromTheHabitat()
     {
@@ -151,7 +138,7 @@ namespace Habitat.Accounts.Specflow.Steps
       Driver.FindElement(By.LinkText(linkText.ToUpperInvariant())).Click();
     }
 
-    [AfterScenario()]
+    [AfterScenario]
     public void Cleanup()
     {
       ContextExtensions.CleanupPool.ForEach(this.CleanupExecute);
@@ -162,11 +149,9 @@ namespace Habitat.Accounts.Specflow.Steps
       if (payload.ActionType == ActionType.RemoveUser)
       {
         ContextExtensions.HelperService.DeleteUser(payload.Payload);
-
       }
 
       throw new NotSupportedException($"Action type '{payload.ActionType}' is not supported");
-
     }
   }
 
