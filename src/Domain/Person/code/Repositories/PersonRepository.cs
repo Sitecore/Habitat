@@ -28,10 +28,9 @@
         {
             return new Person
             {
-                //Item = this.contextItem,
-                Name = this.contextItem.GetString(Templates.Person.Fields.Name),
-                Title = this.contextItem.GetString(Templates.Person.Fields.Title),
-                Picture = this.contextItem.GetImage(Templates.Person.Fields.Picture)
+                Name = this.contextItem.Field(Templates.Person.Fields.Name),
+                Title = this.contextItem.Field(Templates.Person.Fields.Title),
+                Picture = this.contextItem.Field(Templates.Person.Fields.Picture)
             };
         }
     }

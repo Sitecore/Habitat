@@ -5,9 +5,11 @@
     using Models;
     using Sitecore.Data.Items;
 
-    internal class QuoteRepository : IQuoteRepository
+    public class QuoteRepository : IQuoteRepository
     {
         private readonly Item contextItem;
+
+        public object Parameters { get; set; }
 
         public QuoteRepository(Item contextItem)
         {
@@ -34,8 +36,8 @@
             return new Quote
             {
                 Person = new PersonRepository(this.contextItem).Get(),
-                Company = this.contextItem.GetString(Templates.Quote.Fields.Company),
-                Quotation = this.contextItem.GetString(Templates.Quote.Fields.Quote)
+                Company = this.contextItem.Field(Templates.Quote.Fields.Company),
+                Quotation = this.contextItem.Field(Templates.Quote.Fields.Quote)
             };
         }
     }

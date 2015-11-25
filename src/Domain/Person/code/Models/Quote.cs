@@ -1,11 +1,12 @@
 ﻿namespace Habitat.Person.Models
 {
+    using System.Web;
     using Sitecore.Mvc.Presentation;
 
     public class Quote : RenderingModel
     {
         public Person Person { get; set; }
-        public string Company { get; set; }
-        public string Quotation { get; set; }
+        public HtmlString Company { get; set; }
+        public HtmlString Quotation { get; set; }
     }
 }

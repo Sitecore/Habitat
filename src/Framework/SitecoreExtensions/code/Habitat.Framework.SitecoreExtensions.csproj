@@ -134,6 +134,7 @@
     <Compile Include="Repositories\ImageRepository.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
     <Compile Include="Repositories\LinkRepository.cs" />
+    <Compile Include="Services\FieldRendererService.cs" />
     <Compile Include="Services\XmlParserService.cs" />
   </ItemGroup>
   <ItemGroup>

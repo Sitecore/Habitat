@@ -1,12 +1,24 @@
-﻿@model Habitat.Person.Models.Quote
-<div>
-    @Model.Person.Name
+﻿@using Habitat.Person.Models
+@using Habitat.Person.Repositories
+@functions{
 
-    @Model.Person.Title
+    private Quote GetQuote()
+    {
+        var quote = new QuoteRepository(Html.Sitecore().CurrentItem);
 
-    @Model.Company
+        var model = quote.Get();
+        return model;
+    }
+}
 
-    @Model.Person.Picture
-
-    @Model.Quotation
+<div class="media">
+    <div class="media-left">
+        <a href="#">
+    @GetQuote().Person.Picture
+        </a>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">@GetQuote().Person.Name, @GetQuote().Person.Title, @GetQuote().Company</h4>
+        @GetQuote().Quotation
+    </div>
 </div>
