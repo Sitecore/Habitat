@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Habitat.Accounts.Specflow.Steps
+﻿namespace Habitat.Accounts.Specflow.Steps
 {
-    static class Settings
-    {
-        public static String BaseUrl => ConfigurationManager.AppSettings["baseUrl"];
-        public static String RegisterPageUrl => ConfigurationManager.AppSettings["registerUrl"];
+  using System.Configuration;
 
-        public static String LoginPageUrl => ConfigurationManager.AppSettings["loginPageUrl"];
+  internal static class Settings
+  {
+    public static string BaseUrl => ConfigurationManager.AppSettings["baseUrl"];
+    public static string RegisterPageUrl => ConfigurationManager.AppSettings["registerUrl"];
 
-        public static String EditUserProfileUrl => ConfigurationManager.AppSettings["editUserProfileUrl"];
+    public static string LoginPageUrl => ConfigurationManager.AppSettings["loginPageUrl"];
 
-        public static String ContactUsPageUrl => ConfigurationManager.AppSettings["contactUsPageUrl"];
-    }
+    public static string EditUserProfileUrl => ConfigurationManager.AppSettings["editUserProfileUrl"];
+
+    public static string ContactUsPageUrl => ConfigurationManager.AppSettings["contactUsPageUrl"];
+
+    public static string TestHelperService => BaseUrl + ConfigurationManager.AppSettings["testsProxyUrl"];
+  }
 }
