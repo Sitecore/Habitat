@@ -1,6 +1,15 @@
 ﻿@model Habitat.Person.Models.Person
-<div>
-    @Model.Picture
-    @Model.Name
-    @Model.Title
-</div> 
+<h2>Person photo</h2>
+
+<div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+        @Model.Picture
+        <div class="caption">
+            <h3>
+                @Model.Name
+            </h3>
+            <p>@Model.Title</p>
+            @*<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>*@
+        </div>
+    </div>
+</div>

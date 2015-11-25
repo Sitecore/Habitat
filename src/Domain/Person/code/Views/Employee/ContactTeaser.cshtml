@@ -1,24 +1,55 @@
 ﻿@model Habitat.Person.Models.Employee
+<h2>Contact teaser</h2>
+<div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+        @Model.Person.Picture
+        <div class="caption">
+            <h3>
+                @Model.Person.Name
+            </h3>
+            <p>@Model.Person.Title</p>
+            @*<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>*@
+            <p>@Model.Description</p>
 
-<div>
-
-    @Model.Person.Name
-
-    @Model.Person.Title
-
-    @Model.Person.Picture
-
-    @Model.Description
-
-    @Model.FacebookLink
-
-    @Model.TwitterLink
-
-    @Model.LinkedInLink
-
-    @Model.BlogLink
-
-    @Model.Telephone
-
-    @Model.Mobile
+            <ul class="c-socials c-theme-ul">
+                <li>
+                    <a href="@Model.TwitterLink">
+                        <i class="icon-social-twitter"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Model.FacebookLink">
+                        <i class="icon-social-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Model.LinkedInLink">
+                        <i class="icon-social-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="@Model.BlogLink">
+                        <i class="icon-social-tumblr"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="c-socials">
+                <li>
+                    <i class="icon-call-in">
+                        @Model.Telephone
+                    </i>
+                </li>
+                <li>
+                    <i class="icon-call-out">
+                        @Model.Mobile
+                    </i>
+                </li>
+                <li>
+                    <i class="icon-envelope">
+                        @Model.Email
+                    </i>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
