@@ -4,11 +4,13 @@ namespace Habitat.Search.Models
 
   public static class QueryRepository
   {
-    public static IQuery Get(string queryText)
+    public static IQuery Get(SearchQuery query)
     {
       return new Query
       {
-        QueryText = queryText
+        QueryText = query.Query,
+        IndexOfFirstResult = query.Page == 0 ? 0 : (query.Page - 1) * query.ResultsOnPage,
+        NoOfResults = query.ResultsOnPage == 0 ? 0 : query.ResultsOnPage
       };
     }
   }
