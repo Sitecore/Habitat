@@ -1,12 +1,18 @@
 ﻿@using System.Web.Mvc.Html
+@using Habitat.Accounts.Models
 @using Habitat.Accounts.Texts
+@using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.Framework.SitecoreExtensions.HtmlHelpers
 @using Sitecore.Mvc.Configuration
 @model Habitat.Accounts.Models.EditProfile
 
 @using (Html.BeginRouteForm(MvcSettings.SitecoreRouteName, FormMethod.Post))
 {
-    @Html.Sitecore().FormHandler()
+    var info = Session.GetAndRemove("EditProfileMessage") as InfoMessage;
+    if (info != null)
+    {
+        Html.RenderPartial("InfoMessage", info);
+    }
     <div class="form-group @Html.ValidationErrorFor(x => x.FirstName, "has-error")">
         @Html.LabelFor(x => x.FirstName, new {@class = "control-label"})
 

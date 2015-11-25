@@ -10,4 +10,7 @@
 
     };
 }
-<div class="alert @alerts[Model.Type]">@Model.Message</div>
+@if (Model != null)
+{
+    <div class="alert @alerts[Model.Type]">@Model.Message</div>
+}
