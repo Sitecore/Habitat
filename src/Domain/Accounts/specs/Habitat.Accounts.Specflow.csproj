@@ -100,6 +100,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Register.feature</DependentUpon>
     </Compile>
+    <Compile Include="Show user info on popup.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Show user info on popup.feature</DependentUpon>
+    </Compile>
     <Compile Include="Steps\CommonSteps.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
     <Compile Include="Steps\RegisterPage.cs" />
@@ -133,6 +138,10 @@
     <None Include="Register.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Register.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Show user info on popup.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Show user info on popup.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

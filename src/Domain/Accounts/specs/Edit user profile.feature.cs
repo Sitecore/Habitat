@@ -114,11 +114,11 @@ this.ScenarioSetup(scenarioInfo);
             table1.AddRow(new string[] {
                         "Teltov",
                         "Konstantin",
-                        ""});
+                        "+38(067)3333333"});
 #line 15
  testRunner.When("User inputs data in to the fields", ((string)(null)), table1, "When ");
 #line 18
- testRunner.And("User selects <> from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects <Swiming> from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
  testRunner.And("User clicks Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
@@ -140,8 +140,8 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "Teltov",
                         "Konstantin",
-                        "",
-                        ""});
+                        "+38(067)3333333",
+                        "Swiming"});
 #line 25
  testRunner.Then("Following User info presents", ((string)(null)), table2, "Then ");
 #line hidden
@@ -166,8 +166,8 @@ this.ScenarioSetup(scenarioInfo);
             table3.AddRow(new string[] {
                         "Teltov",
                         "Konstantin",
-                        "",
-                        ""});
+                        "+38(067)3333333",
+                        "Swiming"});
 #line 32
  testRunner.Given("Habitat user was created and registered with following info", ((string)(null)), table3, "Given ");
 #line 35
@@ -180,11 +180,11 @@ this.ScenarioSetup(scenarioInfo);
             table4.AddRow(new string[] {
                         "Maximov",
                         "Stas",
-                        ""});
+                        "+38(067)8888888"});
 #line 36
  testRunner.When("User inputs data in to the fields", ((string)(null)), table4, "When ");
 #line 39
- testRunner.And("User selects <> from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects <Skiing> from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
  testRunner.And("User clicks Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
@@ -206,8 +206,8 @@ this.ScenarioSetup(scenarioInfo);
             table5.AddRow(new string[] {
                         "Maximov",
                         "Stas",
-                        "",
-                        ""});
+                        "+38(067)8888888",
+                        "Skiing"});
 #line 46
  testRunner.Then("Following User info presents", ((string)(null)), table5, "Then ");
 #line hidden
@@ -284,8 +284,8 @@ this.ScenarioSetup(scenarioInfo);
             table9.AddRow(new string[] {
                         "Teltov",
                         "Konstantin",
-                        "",
-                        ""});
+                        "+38(067)3333333",
+                        "Swiming"});
 #line 73
  testRunner.Given("Habitat user was created and registered with following info", ((string)(null)), table9, "Given ");
 #line 76
@@ -318,8 +318,8 @@ this.ScenarioSetup(scenarioInfo);
             table11.AddRow(new string[] {
                         "Maximov",
                         "Konstantin",
-                        "",
-                        ""});
+                        "+38(067)3333333",
+                        "Swiming"});
 #line 86
  testRunner.Then("Following User info presents", ((string)(null)), table11, "Then ");
 #line hidden
@@ -328,10 +328,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Edit user profile")]
-        [Xunit.TraitAttribute("Description", "Account_Edit user profile_UC6_Phone field validation")]
-        public virtual void Account_EditUserProfile_UC6_PhoneFieldValidation()
+        [Xunit.TraitAttribute("Description", "Account_Edit user profile_UC6_Phone validation_Two plus symbols in the begining")]
+        public virtual void Account_EditUserProfile_UC6_PhoneValidation_TwoPlusSymbolsInTheBegining()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC6_Phone field validation", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC6_Phone validation_Two plus symbols in the begining", new string[] {
                         "InDesign"});
 #line 92
 this.ScenarioSetup(scenarioInfo);
@@ -341,82 +341,141 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Phone number"});
             table12.AddRow(new string[] {
-                        "<wrong phone format>"});
+                        "++380673333333"});
 #line 94
  testRunner.When("User inputs data in to the fields", ((string)(null)), table12, "When ");
 #line 97
  testRunner.And("User clicks Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 98
- testRunner.Then("System shows following error message for the Edit Profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.FactAttribute()]
-        [Xunit.TraitAttribute("FeatureTitle", "Edit user profile")]
-        [Xunit.TraitAttribute("Description", "Account_Edit user profile_UC7_See already updated user info in Edit Profile")]
-        public virtual void Account_EditUserProfile_UC7_SeeAlreadyUpdatedUserInfoInEditProfile()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC7_See already updated user info in Edit Profile", new string[] {
-                        "InDesign"});
-#line 102
-this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Last Name",
-                        "First Name",
-                        "Phone number",
-                        "Interests"});
+                        "Error message"});
             table13.AddRow(new string[] {
-                        "Teltov",
-                        "Konstantin",
-                        "",
-                        ""});
-#line 103
- testRunner.Given("Habitat user was created and registered with following info", ((string)(null)), table13, "Given ");
-#line 106
- testRunner.When("Habitat website is opened on Edit Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Last Name",
-                        "First Name",
-                        "Phone number",
-                        "Interests"});
-            table14.AddRow(new string[] {
-                        "Teltov",
-                        "Konstantin",
-                        "",
-                        ""});
-#line 107
- testRunner.Then("Following info presents on Edit Profile page", ((string)(null)), table14, "Then ");
+                        "Phone number should contain only +, ( ) and digits"});
+#line 98
+ testRunner.Then("System shows following error message for the Edit Profile", ((string)(null)), table13, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Edit user profile")]
-        [Xunit.TraitAttribute("Description", "Account_Edit user profile_UC8_Empty user profile is saved")]
-        public virtual void Account_EditUserProfile_UC8_EmptyUserProfileIsSaved()
+        [Xunit.TraitAttribute("Description", "Account_Edit user profile_UC6_Phone validation_Brackets without number")]
+        public virtual void Account_EditUserProfile_UC6_PhoneValidation_BracketsWithoutNumber()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC8_Empty user profile is saved", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC6_Phone validation_Brackets without number", new string[] {
                         "InDesign"});
-#line 114
+#line 103
 this.ScenarioSetup(scenarioInfo);
-#line 115
+#line 104
  testRunner.Given("Habitat website is opened on Edit Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Phone number"});
+            table14.AddRow(new string[] {
+                        "+()380673333333"});
+#line 105
+ testRunner.When("User inputs data in to the fields", ((string)(null)), table14, "When ");
+#line 108
+ testRunner.And("User clicks Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Error message"});
+            table15.AddRow(new string[] {
+                        "Phone number should contain only +, ( ) and digits"});
+#line 109
+ testRunner.Then("System shows following error message for the Edit Profile", ((string)(null)), table15, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Edit user profile")]
+        [Xunit.TraitAttribute("Description", "Account_Edit user profile_UC6_Phone validation_Digits in phone field")]
+        public virtual void Account_EditUserProfile_UC6_PhoneValidation_DigitsInPhoneField()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC6_Phone validation_Digits in phone field", new string[] {
+                        "InDesign"});
+#line 115
+this.ScenarioSetup(scenarioInfo);
 #line 116
- testRunner.When("User clicks Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Habitat website is opened on Edit Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Phone number"});
+            table16.AddRow(new string[] {
+                        "+38067Kostia"});
 #line 117
- testRunner.And("User opens Sitecore by Admin user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
- testRunner.And("User opens User Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 119
- testRunner.And("User clicks on <kov@sitecore.net> in user names list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User inputs data in to the fields", ((string)(null)), table16, "When ");
 #line 120
- testRunner.And("User presses Edit button on the ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Error message"});
+            table17.AddRow(new string[] {
+                        "Phone number should contain only +, ( ) and digits"});
 #line 121
+ testRunner.Then("System shows following error message for the Edit Profile", ((string)(null)), table17, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Edit user profile")]
+        [Xunit.TraitAttribute("Description", "Account_Edit user profile_UC6_Phone validation_Phone number lenght should be less" +
+            " than 20")]
+        public virtual void Account_EditUserProfile_UC6_PhoneValidation_PhoneNumberLenghtShouldBeLessThan20()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC6_Phone validation_Phone number lenght should be less" +
+                    " than 20", new string[] {
+                        "InDesign"});
+#line 127
+this.ScenarioSetup(scenarioInfo);
+#line 128
+ testRunner.Given("Habitat website is opened on Edit Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Phone number"});
+            table18.AddRow(new string[] {
+                        "+38067333333333333331"});
+#line 129
+ testRunner.When("User inputs data in to the fields", ((string)(null)), table18, "When ");
+#line 132
+ testRunner.And("User clicks Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Error message"});
+            table19.AddRow(new string[] {
+                        "Phone number lenght should be less than 20"});
+#line 133
+ testRunner.Then("System shows following error message for the Edit Profile", ((string)(null)), table19, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Edit user profile")]
+        [Xunit.TraitAttribute("Description", "Account_Edit user profile_UC7_Empty user profile is saved")]
+        public virtual void Account_EditUserProfile_UC7_EmptyUserProfileIsSaved()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC7_Empty user profile is saved", new string[] {
+                        "InDesign"});
+#line 139
+this.ScenarioSetup(scenarioInfo);
+#line 140
+ testRunner.Given("Habitat website is opened on Edit Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 141
+ testRunner.When("User clicks Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 142
+ testRunner.And("User opens Sitecore by Admin user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 143
+ testRunner.And("User opens User Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 144
+ testRunner.And("User clicks on <kov@sitecore.net> in user names list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 145
+ testRunner.And("User presses Edit button on the ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 146
  testRunner.And("User selects Profile tab on Edit User popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
+#line 147
  testRunner.Then("No any user profile fields present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
