@@ -1,6 +1,5 @@
 ﻿namespace Habitat.Person
 {
-    using System.Runtime.InteropServices.ComTypes;
     using Sitecore.Data;
 
     public struct Templates
@@ -35,14 +34,12 @@
             public struct Fields
             {
                 public static readonly ID Description = new ID("{0CC9785E-54FE-4FAE-93E4-D0D2AE75F339}");
-
                 public static readonly ID Telephone = new ID("{8D0E8EE3-21C4-4AE2-A2F1-53D3F3EBE501}");
                 public static readonly ID Mobile = new ID("{25B4CEE3-A61A-4DC3-BB52-775DD509DBB5}");
                 public static readonly ID Email = new ID("{5978B330-1D46-4065-8751-F74BF17D815E}");
-
-                public static readonly ID FacebookLink= new ID("{D31889C0-E34C-4904-A6F3-F3D92D314AA9}");
-                public static readonly ID LinkedInLink= new ID("{2B13DFAB-3450-45EF-93F4-BEAA6F544FA6}");
-                public static readonly ID TwitterLink= new ID("{6DE98EF7-1209-40A3-A63E-16DBEF015211}");
+                public static readonly ID FacebookLink = new ID("{D31889C0-E34C-4904-A6F3-F3D92D314AA9}");
+                public static readonly ID LinkedInLink = new ID("{2B13DFAB-3450-45EF-93F4-BEAA6F544FA6}");
+                public static readonly ID TwitterLink = new ID("{6DE98EF7-1209-40A3-A63E-16DBEF015211}");
                 public static readonly ID BlogLink = new ID("{69A846D9-4C7F-435C-A8DC-87E2D7359CFA}");
             }
         }

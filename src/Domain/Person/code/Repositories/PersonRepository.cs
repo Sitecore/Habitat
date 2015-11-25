@@ -28,10 +28,10 @@
         {
             return new Person
             {
-                Item = this.contextItem,
+                //Item = this.contextItem,
                 Name = this.contextItem.GetString(Templates.Person.Fields.Name),
                 Title = this.contextItem.GetString(Templates.Person.Fields.Title),
-                Image = this.contextItem.GetImage(Templates.Person.Fields.Picture)
+                Picture = this.contextItem.GetImage(Templates.Person.Fields.Picture)
             };
         }
     }

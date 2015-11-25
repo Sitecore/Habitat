@@ -96,7 +96,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EmployeeController.cs" />
@@ -115,14 +115,16 @@
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
+    <None Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="packages.config" />
     <Content Include="Views\Employee\EmployeeTeaser.cshtml" />
     <Content Include="Views\Quote\Quote.cshtml" />
     <Content Include="Views\Person\PersonPhoto.cshtml" />
     <Content Include="Views\Employee\EmployeeDetails.cshtml" />
     <Content Include="Views\Employee\ContactTeaser.cshtml" />
-    <Content Include="App_Config\Include\Habitat.Person.Serialization.config" />
+    <Content Include="App_Config\Include\Habitat\Habitat.Person.Serialization.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

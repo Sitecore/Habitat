@@ -4,9 +4,12 @@ Parent: 918adf7b-f0e9-422c-8dee-757215ce3407
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
 Path: /sitecore/layout/Renderings/Habitat/Domain/Person/Quote
 SharedFields:
-- ID: 94069f66-609c-48b0-8281-521c30fb269d
-  # Open Properties after Add
-  Value: -
+- ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
+  # Datasource Template
+  Value: /sitecore/templates/Habitat/Project/Website/Content Types/Quote
+- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  # Datasource Location
+  Value: /sitecore/content/Habitat/Global/Persons
 - ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
   # Controller Action
   Value: Quote

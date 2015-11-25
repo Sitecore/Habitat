@@ -12,6 +12,19 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
+      # __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
+          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{0B23D267-BEC8-4B64-83DA-99C9EF1810B6}" p:before="r[@uid='{062FD28B-923B-4174-B857-68747729B8F2}']" s:ds="{779041C8-F089-4E63-A054-D718F42EE16D}" s:id="{A1AD34DD-535E-47AF-A911-34C57CCC26F6}" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{062FD28B-923B-4174-B857-68747729B8F2}" p:before="r[@uid='{5BB7AED3-0D02-4993-A383-A150AA71EC4C}']" s:ds="{4491B85E-33DC-4C8B-9CFD-D1757B39D6B1}" s:id="{B6F11192-7C7B-4DE2-9F85-140692B2470B}" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{5BB7AED3-0D02-4993-A383-A150AA71EC4C}" p:before="r[@uid='{A8270FDD-44BE-4F3D-809E-E3052F7E5D77}']" s:ds="{1B7DDA03-1076-4EE1-BEAB-137857A8EAC8}" s:id="{7B7DD1F9-A0DB-45D9-9A3F-B704BB28903E}" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{A8270FDD-44BE-4F3D-809E-E3052F7E5D77}" p:before="r[@uid='{C3C22E6F-B850-4363-B775-76CEF297C5DD}']" s:ds="{1B7DDA03-1076-4EE1-BEAB-137857A8EAC8}" s:id="{907018D8-CC53-4D34-AD67-3FDF0A25832A}" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{C3C22E6F-B850-4363-B775-76CEF297C5DD}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:ds="{1B7DDA03-1076-4EE1-BEAB-137857A8EAC8}" s:id="{EBB6DC33-F281-49BE-B273-29ECCD6085A8}" s:ph="/page-layout/sidebarcontent" />
+          </d>
+        </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       # NavigationTitle
       Value: Team

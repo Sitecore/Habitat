@@ -104,7 +104,9 @@
     <Content Include="App_Config\Include\Habitat\Habitat.Metadata.Serialization.config" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
-    <None Include="Views\Web.config" />
+    <None Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Views\Metadata\PageMetadata.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
