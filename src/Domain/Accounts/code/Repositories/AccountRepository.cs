@@ -42,8 +42,8 @@
 
     public void RegisterUser(string email, string password, string profileId)
     {
-      Assert.ArgumentNotNullOrEmpty(email, "email");
-      Assert.ArgumentNotNullOrEmpty(password, "password");
+      Assert.ArgumentNotNullOrEmpty(email, nameof(email));
+      Assert.ArgumentNotNullOrEmpty(password, nameof(password));
 
       var fullName = Context.Domain.GetFullName(email);
       Assert.IsNotNullOrEmpty(fullName, "Can't retrieve full userName");
