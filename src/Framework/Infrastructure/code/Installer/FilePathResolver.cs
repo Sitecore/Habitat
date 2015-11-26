@@ -1,6 +1,5 @@
-﻿namespace Habitat.Website.Installer
+﻿namespace Habitat.Framework.Infrastructure.Installer
 {
-  using System.Web;
   using System.Web.Hosting;
 
   public class FilePathResolver:IFilePathResolver

@@ -1,7 +1,7 @@
 ﻿namespace Habitat.Website.Tests
 {
   using System.Web;
-  using Habitat.Website.Installer;
+  using Habitat.Framework.Infrastructure.Installer;
   using NSubstitute;
   using Xunit;
 

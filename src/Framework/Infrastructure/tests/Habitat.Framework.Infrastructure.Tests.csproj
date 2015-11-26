@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1}</ProjectGuid>
+    <ProjectGuid>{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Habitat.Website.Tests</RootNamespace>
@@ -86,20 +86,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoSububstituteDataAttribute.cs" />
+    <Compile Include="PostStepTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XdtTransformEngineTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\code\Habitat.Website.csproj">
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Project\Website\code\Habitat.Website.csproj">
       <Project>{86CADB26-5817-46B6-88C7-76D5753722C3}</Project>
       <Name>Habitat.Website</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <ProjectReference Include="..\code\Habitat.Framework.Infrastructure.csproj">
+      <Project>{622EBD86-43A5-4857-965C-1724F714012A}</Project>
+      <Name>Habitat.Framework.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

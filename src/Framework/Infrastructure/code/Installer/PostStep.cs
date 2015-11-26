@@ -1,4 +1,4 @@
-﻿namespace Habitat.Website.Installer
+﻿namespace Habitat.Framework.Infrastructure.Installer
 {
   using System.Collections.Specialized;
   using Sitecore.Install.Framework;
@@ -20,8 +20,8 @@
 
     public void Run(ITaskOutput output, NameValueCollection metaData)
     {
-      var webConfig = filePathResolver.MapPath("~/web.config");
-      var webConfigTransform = filePathResolver.MapPath("~/web.config.transform");
+      var webConfig = this.filePathResolver.MapPath("~/web.config");
+      var webConfigTransform = this.filePathResolver.MapPath("~/web.config.transform");
       if (webConfigTransform == null)
       {
         return;

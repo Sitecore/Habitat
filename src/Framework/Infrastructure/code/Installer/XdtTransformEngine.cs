@@ -1,4 +1,4 @@
-﻿namespace Habitat.Website.Installer
+﻿namespace Habitat.Framework.Infrastructure.Installer
 {
   using Microsoft.Web.XmlTransform;
 

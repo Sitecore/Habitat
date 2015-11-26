@@ -4,7 +4,7 @@
   using System.Linq;
   using System.Xml.Linq;
   using FluentAssertions;
-  using Habitat.Website.Installer;
+  using Habitat.Framework.Infrastructure.Installer;
   using Xunit;
 
   public class XdtTransformEngineTests
