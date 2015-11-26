@@ -12,7 +12,7 @@ Languages:
       # __Final Renderings
       Type: Layout
       Value: |
-        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
+        <r xmlns:p="p" xmlns:s="s" p:p="1">
           <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r uid="{A99B70AC-A17D-42F7-89D9-1F7FBAE7A337}" p:before="r[@uid='{5FD69110-9DDD-4D33-847E-8374B6F95BDC}']" s:ds="{844A7337-2020-4C2E-912E-7651930FE179}" s:id="{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}" s:ph="/page-layout/col-narrow-2_e0710d5f-c5a8-4e12-bc23-14faa69486b5" />
             <r uid="{5FD69110-9DDD-4D33-847E-8374B6F95BDC}" p:before="r[@uid='{11848E87-8FC0-42E2-9180-D2DDC50F3E34}']" s:ds="{8A80477E-7CB4-4CEE-A035-B48AC118ABE8}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-wide-1_e0710d5f-c5a8-4e12-bc23-14faa69486b5" />
@@ -24,7 +24,6 @@ Languages:
             <r uid="{6D6BAA73-DFEE-4585-B961-4AB9A843C5C4}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{6B3E2125-9402-4ABE-BE65-1DC375B2111E}" s:id="{E86BFEB1-F3FC-4E37-B693-A5550D6789EE}" s:ph="/page-layout/col-huge_56552e8a-9180-44aa-a713-d30aceeeb6fd" />
             <r uid="{56552E8A-9180-44AA-A713-D30ACEEEB6FD}" s:ds="" s:par="ContainerIsFluid=1" />
             <r uid="{E0710D5F-C5A8-4E12-BC23-14FAA69486B5}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:ds="" s:id="{B21C8A38-51BC-4866-9589-6062D6390247}" s:par="ContainerIsFluid" s:ph="page-layout" />
-            <r uid="{84124EE2-E678-4144-8316-0D6874866604}" s:ds="{98E48045-DFC7-4A70-9BED-5C40AB6558A6}" />
           </d>
         </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
