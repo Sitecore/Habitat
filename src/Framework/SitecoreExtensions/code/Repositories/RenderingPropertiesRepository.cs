@@ -16,7 +16,10 @@ namespace Habitat.Framework.SitecoreExtensions.Repositories
       if (currentContext != null)
       {
         var parameters = currentContext.Properties["Parameters"];
-        Sitecore.Reflection.ReflectionUtil.SetProperties(obj, parameters);
+        if (parameters != null)
+        {
+          Sitecore.Reflection.ReflectionUtil.SetProperties(obj, parameters);
+        }
       }
 
       return (T)obj;
