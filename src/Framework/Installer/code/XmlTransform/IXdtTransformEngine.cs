@@ -1,4 +1,4 @@
-namespace Habitat.Framework.Infrastructure.Installer
+namespace Habitat.Framework.Installer.XmlTransform
 {
   public interface IXdtTransformEngine
   {

@@ -1,6 +1,7 @@
-﻿namespace Habitat.Framework.Infrastructure.Installer
+﻿namespace Habitat.Framework.Installer
 {
   using System.Collections.Specialized;
+  using Habitat.Framework.Installer.XmlTransform;
   using Sitecore.Install.Framework;
 
   public class PostStep : IPostStep

@@ -1,10 +1,10 @@
-﻿namespace Habitat.Website.Tests
+﻿namespace Habitat.Framework.Installer.Tests
 {
   using System.IO;
   using System.Linq;
   using System.Xml.Linq;
   using FluentAssertions;
-  using Habitat.Framework.Infrastructure.Installer;
+  using Habitat.Framework.Installer.XmlTransform;
   using Xunit;
 
   public class XdtTransformEngineTests

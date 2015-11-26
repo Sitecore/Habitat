@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Framework.Infrastructure</RootNamespace>
-    <AssemblyName>Habitat.Framework.Infrastructure</AssemblyName>
+    <RootNamespace>Habitat.Framework.Installer</RootNamespace>
+    <AssemblyName>Habitat.Framework.Installer</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -157,11 +157,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Installer\FilePathResolver.cs" />
-    <Compile Include="Installer\IFilePathResolver.cs" />
-    <Compile Include="Installer\IXdtTransformEngine.cs" />
-    <Compile Include="Installer\PostStep.cs" />
-    <Compile Include="Installer\XdtTransformEngine.cs" />
+    <Compile Include="XmlTransform\FilePathResolver.cs" />
+    <Compile Include="XmlTransform\IFilePathResolver.cs" />
+    <Compile Include="XmlTransform\IXdtTransformEngine.cs" />
+    <Compile Include="PostStep.cs" />
+    <Compile Include="XmlTransform\XdtTransformEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

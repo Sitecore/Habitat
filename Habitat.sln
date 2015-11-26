@@ -147,11 +147,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Website.Tests", "sr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{2980DEC7-AE7C-4194-BC83-CD15D4F82AA9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F82B7F7C-BDA9-4204-97E1-456E406A251A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{F82B7F7C-BDA9-4204-97E1-456E406A251A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Infrastructure", "src\Framework\Infrastructure\code\Habitat.Framework.Infrastructure.csproj", "{622EBD86-43A5-4857-965C-1724F714012A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Installer", "src\Framework\Installer\code\Habitat.Framework.Installer.csproj", "{622EBD86-43A5-4857-965C-1724F714012A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Infrastructure.Tests", "src\Framework\Infrastructure\tests\Habitat.Framework.Infrastructure.Tests.csproj", "{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Installer.Tests", "src\Framework\Installer\tests\Habitat.Framework.Installer.Tests.csproj", "{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

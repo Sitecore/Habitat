@@ -1,4 +1,4 @@
-﻿namespace Habitat.Website.Tests
+﻿namespace Habitat.Framework.Installer.Tests
 {
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Xunit2;
