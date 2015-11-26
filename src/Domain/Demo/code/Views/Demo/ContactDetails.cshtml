@@ -34,27 +34,6 @@
         </div>
       </div>
     </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <a href="#contactDetailsClassification" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
-          @DictionaryRepository.Get("/Demo/contactDetails/Classification", "Classification")
-          <span class="expand-icon glyphicon" aria-hidden="true"></span>
-        </a>
-      </div>
-      <div class="panel-collapse collapse" id="contactDetailsClassification">
-        <div class="panel-body">
-          <ul class="list-unstyled">
-            @foreach (var classification in Model.Classifications)
-            {
-              <li>
-                <span class="glyphicon @(classification == Model.Classification ? "glyphicon-check" : "glyphicon-unchecked")"></span>
-                @classification
-              </li>
-            }
-          </ul>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 <script language="javascript">

@@ -1,0 +1,20 @@
+﻿---
+ID: 099e4085-150c-4073-88d9-8b159d9a8b01
+Parent: e18a334c-6c3a-480f-9fe7-f33f6ad59f6b
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Habitat/Domain/Social/_TwitterFeed/Twitter Feed/FeedTitle
+SharedFields:
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  # Type
+  Value: Single-Line Text
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151123T155554Z

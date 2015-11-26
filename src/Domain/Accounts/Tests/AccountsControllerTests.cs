@@ -3,6 +3,7 @@
   using System;
   using System.Collections.Generic;
   using System.Reflection;
+  using System.Web;
   using System.Web.Mvc;
   using System.Web.Security;
   using FluentAssertions;
@@ -623,7 +624,7 @@
 
     [Theory]
     [AutoDbData]
-    public void EditProfilePostShouldUpdateProfile(FakeSiteContext siteContext, string profileItemId, [Substitute] EditProfile editProfile, IUserProfileService userProfileService)
+    public void EditProfilePostShouldUpdateProfile(FakeSiteContext siteContext, string profileItemId, [Substitute] EditProfile editProfile, [Frozen]IUserProfileService userProfileService)
     {
       var user = Substitute.For<User>("extranet/John", true);
       user.Profile.Returns(Substitute.For<UserProfile>());
@@ -634,10 +635,17 @@
       using (new SiteContextSwitcher(siteContext))
       using (new UserSwitcher(user))
       {
-        var accounController = new AccountsController(null, null, null, userProfileService);
-        var result = accounController.EditProfile(editProfile);
+        var accountsController = new AccountsController(null, null, null, userProfileService);
+        accountsController.ControllerContext = Substitute.For<ControllerContext>();
+        accountsController.ControllerContext.HttpContext.Returns(Substitute.For<HttpContextBase>());
+        accountsController.ControllerContext.HttpContext.Session.Returns(Substitute.For<HttpSessionStateBase>());
+        accountsController.ControllerContext.HttpContext.Request.Returns(Substitute.For<HttpRequestBase>());
+        accountsController.ControllerContext.HttpContext.Request.RawUrl.Returns("/");
+
+        var result = accountsController.EditProfile(editProfile);
         userProfileService.Received(1).SetProfile(user.Profile, editProfile);
-        result.Should().BeOfType<ViewResult>().Which.Model.Should().BeOfType<InfoMessage>().Which.Type.Should().Be(InfoMessage.MessageType.Info);
+        accountsController.Session["EditProfileMessage"].Should().BeOfType<InfoMessage>().Which.Type.Should().Be(InfoMessage.MessageType.Info);
+        result.Should().BeOfType<RedirectResult>();
       }
     }
   }
