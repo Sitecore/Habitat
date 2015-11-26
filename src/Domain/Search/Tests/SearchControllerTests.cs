@@ -1,6 +1,8 @@
 ﻿namespace Habitat.Search.Tests
 {
+  using System.Collections.Generic;
   using System.Runtime.InteropServices.ComTypes;
+  using System.Web;
   using System.Web.Mvc;
   using FluentAssertions;
   using Habitat.Accounts.Tests.Extensions;
@@ -42,13 +44,32 @@
 
     [Theory]
     [AutoDbData]
-    public void ShouldReturnSearchResults(ISearchResults searchResults, [Substitute] SearchService service, ISearchServiceRepository serviceRepository, ISearchSettingsRepository settingsRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
+    public void ShouldReturnSearchResults([Substitute]ControllerContext controllerContext,[Substitute] HttpContextBase context,ISearchResults searchResults, [Substitute] SearchService service, ISearchServiceRepository serviceRepository, ISearchSettingsRepository settingsRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
     {
       service.Search(Arg.Any<IQuery>()).Returns(searchResults);
       serviceRepository.Get().Returns(service);
       var controller = new SearchController(serviceRepository, settingsRepository, queryRepository, renderingPropertiesRepository);
+      controller.ControllerContext = controllerContext;
+      controller.ControllerContext.HttpContext = context;
       var result = controller.SearchResults(query) as ViewResult;
       result.Model.Should().As<ISearchResults>();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void ShouldReturnGlobalSearch(ISearchResults searchResults, [Substitute] SearchService service, ISearchServiceRepository serviceRepository, ISearchSettingsRepository settingsRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
+    {
+      service.Search(Arg.Any<IQuery>()).Returns(searchResults);
+      serviceRepository.Get().Returns(service);
+      var controller = new SearchController(serviceRepository, settingsRepository, queryRepository, renderingPropertiesRepository);
+      var result = controller.GlobalSearch() as ViewResult;
+      result.Model.Should().As<ISearchResults>();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void SearchResultModelCanBeInitialized(SearchSettings settings, [NoAutoProperties]SearchResults results)
+    {
     }
   }
 }
