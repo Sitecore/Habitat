@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\PagedSearchResults.cs" />
+    <Compile Include="Models\PagingSettings.cs" />
     <Compile Include="Repositories\QueryRepository.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Models\SearchQuery.cs" />

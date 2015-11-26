@@ -132,8 +132,10 @@
     <Compile Include="Repositories\DictionaryRepository.cs" />
     <Compile Include="Repositories\FileRepository.cs" />
     <Compile Include="Repositories\ImageRepository.cs" />
+    <Compile Include="Repositories\IRenderingPropertiesRepository.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
     <Compile Include="Repositories\LinkRepository.cs" />
+    <Compile Include="Repositories\RenderingPropertiesRepository.cs" />
     <Compile Include="Services\XmlParserService.cs" />
   </ItemGroup>
   <ItemGroup>

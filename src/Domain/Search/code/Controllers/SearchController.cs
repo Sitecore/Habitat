@@ -5,24 +5,28 @@
   using System.Web.Mvc;
   using Habitat.Framework.Indexing;
   using Habitat.Framework.Indexing.Models;
+  using Habitat.Framework.SitecoreExtensions.Repositories;
   using Habitat.Search.Models;
   using Habitat.Search.Repositories;
+  using Sitecore.Mvc.Presentation;
 
   public class SearchController : Controller
   {
     private readonly ISearchServiceRepository searchServiceRepository;
     private readonly ISearchSettingsRepository searchSettingsRepository;
     private readonly QueryRepository queryRepository;
+    private readonly IRenderingPropertiesRepository renderingPropertiesRepository;
 
-    public SearchController(): this(new SearchServiceRepository(), new SearchSettingsRepository(), new QueryRepository())
+    public SearchController(): this(new SearchServiceRepository(), new SearchSettingsRepository(), new QueryRepository(), new RenderingPropertiesRepository())
     {
     }
 
-    public SearchController(ISearchServiceRepository serviceRepository, ISearchSettingsRepository settingsRepository, QueryRepository queryRepository)
+    public SearchController(ISearchServiceRepository serviceRepository, ISearchSettingsRepository settingsRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       this.searchServiceRepository = serviceRepository;
       this.queryRepository = queryRepository;
       this.searchSettingsRepository = settingsRepository;
+      this.renderingPropertiesRepository = renderingPropertiesRepository;
     }
 
     [HttpGet]
@@ -43,10 +47,10 @@
 
     public ActionResult PagedSearchResults(string query, int? page)
     {
+      var pagingSettings =  this.renderingPropertiesRepository.Get<PagingSettings>();
       var pageNumber = page ?? 1;
-      var resultsonpage = 4;
-      var results = this.GetSearchResults(new SearchQuery { Query = query, Page = pageNumber, ResultsOnPage = resultsonpage});
-      var pageble = new PagedSearchResults(pageNumber, results.TotalNumberOfResults, 3, 4);
+      var results = this.GetSearchResults(new SearchQuery { Query = query, Page = pageNumber, ResultsOnPage = pagingSettings.ResultsOnPage });
+      var pageble = new PagedSearchResults(pageNumber, results.TotalNumberOfResults, pagingSettings.PagesToShow, pagingSettings.ResultsOnPage);
       pageble.Query = query;
       pageble.Results = results;
       return this.View(pageble);

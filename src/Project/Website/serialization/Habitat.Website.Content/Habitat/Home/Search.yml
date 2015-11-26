@@ -4,9 +4,6 @@ Parent: dac24edd-44fb-42ef-9ecd-1e8daf706386
 Template: 92168572-385b-45f0-b40f-3d987ad20e5c
 Path: /sitecore/content/Habitat/Home/Search
 SharedFields:
-- ID: 5585a30d-b115-4753-93ce-422c3455deb2
-  # ShowInNavigation
-  Value: 0
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
   # __Renderings
   Type: layout
@@ -16,7 +13,7 @@ SharedFields:
         <r uid="{4FADDAEC-C720-440F-88DA-01BF2E3A08B4}">
           <p:d />
         </r>
-        <r uid="{ADB769BD-9CFE-4872-BBC6-CB1D23326EB7}" p:before="r[@uid='{D5246E1F-971A-4B7A-8FE1-FB0AC840AD59}']" s:ds="" s:id="{E52D0AE8-2989-44E5-BEA1-EA30C17B2080}" s:par="" s:ph="col-wide-1" />
+        <r uid="{ADB769BD-9CFE-4872-BBC6-CB1D23326EB7}" p:before="r[@uid='{D5246E1F-971A-4B7A-8FE1-FB0AC840AD59}']" s:ds="" s:id="{E52D0AE8-2989-44E5-BEA1-EA30C17B2080}" s:par="ResultsOnPage=4&amp;PagesToShow=5" s:ph="col-wide-1" />
       </d>
     </r>
 Languages:

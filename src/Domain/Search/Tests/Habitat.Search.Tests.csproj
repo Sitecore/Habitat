@@ -140,6 +140,10 @@
       <Project>{80213F24-577F-4F0B-A3B8-62485EA4D2F3}</Project>
       <Name>Habitat.Framework.Indexing</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Habitat.Framework.SitecoreExtensions.csproj">
+      <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
+      <Name>Habitat.Framework.SitecoreExtensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\code\Habitat.Search.csproj">
       <Project>{55B9C026-E106-4185-8213-9CDD53B44E1B}</Project>
       <Name>Habitat.Search</Name>
