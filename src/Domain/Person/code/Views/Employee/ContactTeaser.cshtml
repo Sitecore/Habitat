@@ -1,47 +1,47 @@
 ﻿@model Habitat.Person.Models.Employee
-<h2>Contact teaser</h2>
-<div class="col-sm-6 col-md-4">
-    <div class="thumbnail text-center">
-        @Model.Person.Picture
-        <div class="caption">
-            <h3>
-                @Model.Person.Name
-            </h3>
-            <p>@Model.Person.Title</p>
-            @*<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>*@
-            <p>@Model.Description</p>
+<div class="row">
+    <h2>Contact teaser</h2>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail text-center">
+            @Model.Person.Picture
+            <div class="caption">
+                <h3>
+                    @Model.Person.Name
+                </h3>
+                <p>@Model.Person.Title</p>
+                <p>@Model.Description</p>
 
-            <ul class="c-socials list-inline">
-                <li>
-                    <a href="@Model.TwitterLink">
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="@Model.FacebookLink">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="@Model.LinkedInLink">
-                        <i class="fa fa-linkedin"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="@Model.BlogLink">
-                        <i class="fa fa-book"></i>
-                    </a>
-                </li>
-            </ul>
-            <ul class="c-socials list-inline">
-                <li>
-                    <i class="fa fa-phone">
-                        @Model.Telephone
-                    </i>
-                </li>
-                <li>
-                    <i class="fa fa-mobile">
-                        @Model.Mobile
+                <ul class="c-socials list-inline">
+                    <li>
+                        <a href="@Model.TwitterLink">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Model.FacebookLink">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Model.LinkedInLink">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Model.BlogLink">
+                            <i class="fa fa-book"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="c-socials list-inline">
+                    <li>
+                        <i class="fa fa-phone">
+                            @Model.Telephone
+                        </i>
+                    </li>
+                    <li>
+                        <i class="fa fa-mobile">
+                            @Model.Mobile
                     </i>
                 </li>
                 <li>
@@ -52,4 +52,5 @@
             </ul>
         </div>
     </div>
+</div>
 </div>

@@ -1,14 +1,16 @@
 ﻿@model Habitat.Person.Models.Employee
-<h2>Employee teaser</h2>
-<div class="col-sm-6 col-md-4">
-    <div class="thumbnail text-center">
-        @Model.Person.Picture
-        <div class="caption">
-            <h3>
-                @Model.Person.Name
-            </h3>
-            <p>@Model.Person.Title</p>
-            <p>@Model.Description</p>
+<div class="row">
+    <h2>Employee teaser</h2>
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail text-center">
+            @Model.Person.Picture
+            <div class="caption">
+                <h3>
+                    @Model.Person.Name
+                </h3>
+                <p>@Model.Person.Title</p>
+                <p>@Model.Description</p>
+            </div>
         </div>
     </div>
 </div>
