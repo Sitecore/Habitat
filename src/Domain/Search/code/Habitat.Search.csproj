@@ -115,11 +115,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\PagedSearchResults.cs" />
-    <Compile Include="Models\QueryRepository.cs" />
+    <Compile Include="Repositories\QueryRepository.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Models\SearchQuery.cs" />
-    <Compile Include="Models\SearchServiceRepository.cs" />
-    <Compile Include="Models\SearchSettingsRepository.cs" />
+    <Compile Include="Repositories\ISearchServiceRepository.cs" />
+    <Compile Include="Repositories\ISearchSettingsRepository.cs" />
+    <Compile Include="Repositories\SearchServiceRepository.cs" />
+    <Compile Include="Repositories\SearchSettingsRepository.cs" />
     <Compile Include="Models\SearchSettings.cs" />
     <Compile Include="Templates.cs" />
     <Compile Include="Models\SearchResult.cs" />
@@ -147,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Framework\Indexing\code\Habitat.Framework.Indexing.csproj">

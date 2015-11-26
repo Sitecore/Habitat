@@ -18,5 +18,7 @@ namespace Habitat.Framework.Indexing.Models
     int FirstPage { get;}
 
     int LastPage { get;}
+
+    ISearchResults Results { get; set; }
   }
 }

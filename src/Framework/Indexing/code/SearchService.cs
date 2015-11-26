@@ -27,7 +27,7 @@
     }
 
 
-    public ISearchResults Search(IQuery query)
+    public virtual ISearchResults Search(IQuery query)
     {
       using (var context = ContentSearchManager.GetIndex(this.IndexName).CreateSearchContext())
       {

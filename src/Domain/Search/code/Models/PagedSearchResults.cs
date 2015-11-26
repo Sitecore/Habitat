@@ -7,7 +7,7 @@ namespace Habitat.Search.Models
 {
   using Habitat.Framework.Indexing.Models;
 
-  public class PagedSearchResults :SearchResults, IPageble
+  public class PagedSearchResults : IPageble
   {
     public const int DefaultResultsOnPage = 4;
 
@@ -86,6 +86,10 @@ namespace Habitat.Search.Models
         return lastPage;
       }
     }
+
+    public ISearchResults Results { get; set; }
+
+    public string Query { get; set; }
 
     public int Page { get; set; }
 

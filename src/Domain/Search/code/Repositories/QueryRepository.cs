@@ -1,10 +1,11 @@
-namespace Habitat.Search.Models
+namespace Habitat.Search.Repositories
 {
   using Habitat.Framework.Indexing.Models;
+  using Habitat.Search.Models;
 
-  public static class QueryRepository
+  public class QueryRepository
   {
-    public static IQuery Get(SearchQuery query)
+    public IQuery Get(SearchQuery query)
     {
       return new Query
       {
