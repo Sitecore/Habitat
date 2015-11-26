@@ -36,5 +36,18 @@
       var searchSettings = repository.Get();
       searchSettings.Should().BeOfType<SearchSettings>();
     }
+
+    [Theory]
+    [AutoDbData]
+    public void ShouldReturnNullIfNotSearchResult(Item item)
+    {
+      var context = new RenderingContext();
+      context.Rendering = new Rendering();
+      context.Rendering.Item = item;
+      ContextService.Get().Push(context);
+      var repository = new SearchSettingsRepository();
+      var searchSettings = repository.Get();
+      searchSettings.Should().BeNull();
+    }
   }
 }
