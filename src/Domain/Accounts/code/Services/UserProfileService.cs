@@ -88,7 +88,7 @@
 
     public virtual bool ValidateProfile(EditProfile model, ModelStateDictionary modelState)
     {
-      if (!this.profileSettingsService.GetInterests().Contains(model.Interest))
+      if (!this.profileSettingsService.GetInterests().Contains(model.Interest) && !string.IsNullOrEmpty(model.Interest))
       {
         modelState.AddModelError("Interest", Errors.WrongInterest);
       }

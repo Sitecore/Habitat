@@ -1,12 +1,18 @@
 ﻿@using System.Web.Mvc.Html
+@using Habitat.Accounts.Models
 @using Habitat.Accounts.Texts
+@using Habitat.Framework.SitecoreExtensions.Extensions
 @using Habitat.Framework.SitecoreExtensions.HtmlHelpers
 @using Sitecore.Mvc.Configuration
 @model Habitat.Accounts.Models.EditProfile
 
 @using (Html.BeginRouteForm(MvcSettings.SitecoreRouteName, FormMethod.Post))
 {
-    @Html.Sitecore().FormHandler()
+    var info = Session.GetAndRemove("EditProfileMessage") as InfoMessage;
+    if (info != null)
+    {
+        Html.RenderPartial("InfoMessage", info);
+    }
     <div class="form-group @Html.ValidationErrorFor(x => x.FirstName, "has-error")">
         @Html.LabelFor(x => x.FirstName, new {@class = "control-label"})
 
@@ -31,12 +37,12 @@
         @Html.TextBoxFor(x => x.PhoneNumber, new {@class = "form-control", id = "phoneNumber"})
     </div>
 
-    <div class="form-group @Html.ValidationErrorFor(x => x.LastName, "has-error")">
-        @Html.LabelFor(x => x.LastName, new {@class = "control-label"})
+    <div class="form-group @Html.ValidationErrorFor(x => x.Interest, "has-error")">
+        @Html.LabelFor(x => x.Interest, new {@class = "control-label"})
 
-        @Html.ValidationMessageFor(x => x.LastName, "", new {@class = "help-block"})
+        @Html.ValidationMessageFor(x => x.Interest, "", new {@class = "help-block"})
 
-        @Html.DropDownListFor(x=>x.Interest,new SelectList(Model.InterestTypes),Model.Interest, new { @class ="form-control", id = "interests"})
+        @Html.DropDownListFor(x=>x.Interest,new SelectList(Model.InterestTypes),"", new { @class ="form-control", id = "interests"})
     </div>
 
     <input type="submit" class="btn btn-default" value="@Captions.Update" />

@@ -3,6 +3,22 @@ ID: a2c07e48-9c6a-466e-b55d-baac62e4dfc7
 Parent: dac24edd-44fb-42ef-9ecd-1e8daf706386
 Template: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Path: /sitecore/content/Habitat/Home/EditProfile
+SharedFields:
+- ID: 5585a30d-b115-4753-93ce-422c3455deb2
+  # ShowInNavigation
+  Value: 0
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 800
+- ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
+  # __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
+      <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r uid="{3FEDD2AB-9A72-49C5-A3C8-E835A17DF069}" s:ds="" s:par="ContainerIsFluid&amp;UseStaticPlaceholderNames" />
+      </d>
+    </r>
 Languages:
 - Language: en
   Versions:
@@ -12,8 +28,9 @@ Languages:
       # __Final Renderings
       Type: Layout
       Value: |
-        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
+        <r xmlns:p="p" xmlns:s="s" p:p="1">
           <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{47BF5E57-8F16-4B9A-AB6D-56E7D553F897}" p:before="r[@uid='{D31D1765-F3F9-40B2-BBD4-6D743EAF9F73}']" s:id="{9B05C591-03CE-4684-9D8A-CCCE99C399ED}" s:ph="/page-layout/col-narrow-2_3fedd2ab-9a72-49c5-a3c8-e835a17df069" />
             <r uid="{D31D1765-F3F9-40B2-BBD4-6D743EAF9F73}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:id="{9B05C591-03CE-4684-9D8A-CCCE99C399ED}" s:ph="/page-layout/col-narrow-2" />
           </d>
         </r>

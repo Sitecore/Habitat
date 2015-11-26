@@ -30,7 +30,6 @@
 
     public static string EditProfileSuccess => DictionaryRepository.Get("/Accounts/Captions/EditProfileSuccess", "Profile was successfully updated");
 
-    public static string RememberMe => DictionaryRepository.Get("/Accounts/Captions/RememberMe", "Remember me");
     public static string ForgotYourPassword => DictionaryRepository.Get("/Accounts/Captions/ForgotYourPassword", "Forgot your password?");
 
     public static string Interests => DictionaryRepository.Get("/Accounts/Captions/Interests", "Interests");

@@ -226,7 +226,8 @@
 
       this.userProfileService.SetProfile(Context.User.Profile, profile);
 
-      return this.View("InfoMessage", new InfoMessage(Captions.EditProfileSuccess));
+      Session["EditProfileMessage"] = new InfoMessage(Captions.EditProfileSuccess);
+      return this.Redirect(Request.RawUrl);
     }
   }
 }
