@@ -13,7 +13,7 @@ Languages:
       Value: 20150901T054452Z
     - ID: 2628705d-9434-4448-978c-c3bf166fa1eb
       # MediaVideoLink
-      Value: "<link text=\"Youtube link\" linktype=\"external\" url=\"https://youtu.be/xapXt8H7h0A\" anchor=\"\" target=\"\" />"
+      Value: "<link id=\"{B0CF0C13-99F5-4FE0-85C0-1FE6495BF04A}\" target=\"\" text=\"Youtube link\" url=\"/Habitat/Videos/Sitecore Experience\" linktype=\"media\" />"
     - ID: 302c9f8d-f703-4f76-a4ab-73d222648232
       # MediaDescription
       Value: Fully Leveraging the power of Sitecore
