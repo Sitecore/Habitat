@@ -1,40 +1,39 @@
 ﻿@model Habitat.Person.Models.Employee
 <h2>Employee details</h2>
 <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-
-
+    <div class="thumbnail text-center">
         @Model.Person.Picture
         @*@Html.Sitecore().PictureField(Templates.Person.Fields.Picture.ToString(), Model.Person.Item, cssClass: "img-responsive c-overlay-object");*@
         <div class="c-body">
             <div class="c-head">
                 <div class="c-name c-font-uppercase c-font-bold">
-                    @Model.Person.Name
+                    <h3>@Model.Person.Name</h3>
                 </div>
-                <ul class="c-socials c-theme-ul">
+
+                <div class="c-position">
+                    @Model.Person.Title
+                </div>
+                <p>
+                    @Model.Description
+                </p>
+                <ul class="c-socials list-inline">
                     <li>
                         <a href="@Model.TwitterLink">
-                            <i class="icon-social-twitter"></i>
+                            <i class="fa fa-twitter"></i>
                         </a>
                     </li>
                     <li>
                         <a href="@Model.FacebookLink">
-                            <i class="icon-social-facebook"></i>
+                            <i class="fa fa-facebook-official"></i>
                         </a>
                     </li>
                     <li>
                         <a href="@Model.LinkedInLink">
-                            <i class="icon-social-linkedin"></i>
+                            <i class="fa fa-linkedin"></i>
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="c-position">
-                @Model.Person.Title
-            </div>
-            <p>
-                @Model.Description
-            </p>
         </div>
     </div>
 </div>
