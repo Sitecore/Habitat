@@ -12,12 +12,12 @@
         @Html.LabelFor(x => x.Email, new { @class = "control-label" })
         @Html.ValidationMessageFor(x => x.Email, "", new { @class = "help-block" })
         @Html.ValidationMessage("invalidCredentials", new { @class = "help-block" })
-        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", id = "loginEmail", @placeholder = "E-mail" })
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", id = "popupLoginEmail", @placeholder = "E-mail" })
     </div>
     <div class="form-group @Html.ValidationErrorFor(x=>x.Password, "has-error")">
         @Html.LabelFor(x => x.Password, new { @class = "control-label" })
         @Html.ValidationMessageFor(x => x.Password, "", new { @class = "help-block" })
-        @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "loginPassword", @placeholder = "Password" })
+        @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "popupLoginPassword", @placeholder = "Password" })
     </div>
     <a href="@AccountsSettingsService.Instance.GetPageLink(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)" class="btn btn-link">@Captions.ForgotYourPassword</a>
 </div>
