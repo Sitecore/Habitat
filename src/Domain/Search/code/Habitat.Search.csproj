@@ -114,10 +114,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\QueryRepository.cs" />
+    <Compile Include="Models\PagedSearchResults.cs" />
+    <Compile Include="Models\PagingSettings.cs" />
+    <Compile Include="Repositories\QueryRepository.cs" />
     <Compile Include="Controllers\SearchController.cs" />
-    <Compile Include="Models\SearchServiceRepository.cs" />
-    <Compile Include="Models\SearchSettingsRepository.cs" />
+    <Compile Include="Models\SearchQuery.cs" />
+    <Compile Include="Repositories\ISearchServiceRepository.cs" />
+    <Compile Include="Repositories\ISearchSettingsRepository.cs" />
+    <Compile Include="Repositories\SearchServiceRepository.cs" />
+    <Compile Include="Repositories\SearchSettingsRepository.cs" />
     <Compile Include="Models\SearchSettings.cs" />
     <Compile Include="Templates.cs" />
     <Compile Include="Models\SearchResult.cs" />
@@ -134,6 +139,7 @@
     <Content Include="Views\Search\GlobalSearch.cshtml" />
     <Content Include="Views\Search\SearchResults.cshtml" />
     <Content Include="Views\Search\SearchSettings.cshtml" />
+    <Content Include="Views\Search\PagedSearchResults.cshtml" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -142,7 +148,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Framework\Indexing\code\Habitat.Framework.Indexing.csproj">
       <Project>{80213f24-577f-4f0b-a3b8-62485ea4d2f3}</Project>

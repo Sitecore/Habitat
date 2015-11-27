@@ -137,6 +137,7 @@
     <Compile Include="Infrastructure\FallbackIndexContentProvider.cs" />
     <Compile Include="Infrastructure\HasPresentationComputedField.cs" />
     <Compile Include="Models\IndexedItem.cs" />
+    <Compile Include="Models\IPageble.cs" />
     <Compile Include="Models\IQuery.cs" />
     <Compile Include="Models\ISearchResult.cs" />
     <Compile Include="Models\ISearchResults.cs" />

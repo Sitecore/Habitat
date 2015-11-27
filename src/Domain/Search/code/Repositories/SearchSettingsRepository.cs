@@ -1,15 +1,16 @@
-﻿namespace Habitat.Search.Models
+﻿namespace Habitat.Search.Repositories
 {
   using System.Web;
   using Habitat.Framework.SitecoreExtensions.Extensions;
+  using Habitat.Search.Models;
   using Sitecore;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Mvc.Presentation;
 
-  internal class SearchSettingsRepository
+  public class SearchSettingsRepository : ISearchSettingsRepository
   {
-    public static SearchSettings Get(string query)
+    public virtual SearchSettings Get(string query)
     {
       if (query == null)
       {
@@ -32,7 +33,7 @@
              };
     }
 
-    private static Item GetRootItem(Item configurationItem)
+    private  Item GetRootItem(Item configurationItem)
     {
       Item rootItem = null;
       if (configurationItem.Fields[Templates.SearchResults.Fields.Root].HasValue)
@@ -42,9 +43,9 @@
       return rootItem ?? Context.Site.GetRootItem();
     }
 
-    public static SearchSettings Get()
+    public SearchSettings Get()
     {
-      return Get(null);
+      return this.Get(null);
     }
   }
 }
