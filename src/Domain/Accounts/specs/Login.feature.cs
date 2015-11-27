@@ -34,8 +34,8 @@ namespace Habitat.Accounts.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Login", "\nIn order to access secure pages\nAs a website visitor\nI want to be able to log in" +
-                    "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Login", "\r\nIn order to access secure pages\r\nAs a website visitor\r\nI want to be able to log" +
+                    " in", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,7 +79,7 @@ namespace Habitat.Accounts.Specflow
         public virtual void Accounts_LoginForm_UC1_OpenLoginForm()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login form_UC1_Open Login form", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 9
@@ -118,7 +118,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Aссounts_LoginForm_UC2_CheckRequiredFields()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Aссounts_Login form_UC2_Check required fields", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 23
 this.ScenarioSetup(scenarioInfo);
 #line 24
@@ -148,7 +148,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_LoginForm_UC3_EnterCorrectUsernameAndPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login form_UC3_Enter correct Username and Password", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 35
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -205,18 +205,20 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_LoginForm_UC4_EnterCorrectUsernameAndIncorrectPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login form_UC4_Enter correct username and incorrect password", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 56
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
-                        "Password"});
+                        "Password",
+                        "ConfirmPassword"});
             table8.AddRow(new string[] {
-                        "kov@sitecore.net",
+                        "kov10@sitecore.net",
+                        "k",
                         "k"});
 #line 57
- testRunner.Given("User is registered in Habitat", ((string)(null)), table8, "Given ");
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table8, "Given ");
 #line 60
  testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 61
@@ -251,18 +253,20 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_LoginForm_UC5_EnterIncorrectUsernameAndCorrectPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login form_UC5_Enter incorrect username and correct password", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 73
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
-                        "Password"});
+                        "Password",
+                        "ConfirmPassword"});
             table11.AddRow(new string[] {
-                        "kov@sitecore.net",
+                        "kov10@sitecore.net",
+                        "k",
                         "k"});
 #line 74
-    testRunner.Given("User is registered in Habitat", ((string)(null)), table11, "Given ");
+    testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table11, "Given ");
 #line 77
  testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 78
@@ -284,7 +288,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Login form error message"});
             table13.AddRow(new string[] {
-                        "Username or password is not valid"});
+                        "Username or password is not valid."});
 #line 84
  testRunner.Then("System shows following error message for the Login form", ((string)(null)), table13, "Then ");
 #line hidden
@@ -297,20 +301,20 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_LoginForm_UC6_EnterIncorrectUsernameAndPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login form_UC6_Enter incorrect username and password", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 90
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
-                        "Confirm password"});
+                        "ConfirmPassword"});
             table14.AddRow(new string[] {
-                        "kov@sitecore.net",
+                        "kov10@sitecore.net",
                         "k",
                         "k"});
 #line 91
-    testRunner.Given("User is registered in Habitat", ((string)(null)), table14, "Given ");
+    testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table14, "Given ");
 #line 94
  testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 95
@@ -332,7 +336,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Login form error message"});
             table16.AddRow(new string[] {
-                        "Username or password is not valid"});
+                        "Username or password is not valid."});
 #line 101
  testRunner.Then("System shows following error message for the Login form", ((string)(null)), table16, "Then ");
 #line hidden
@@ -347,39 +351,43 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login form_UC7_Login with username and password of recently removed user" +
                     "", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 107
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
-                        "Password"});
+                        "Password",
+                        "ConfirmPassword"});
             table17.AddRow(new string[] {
-                        "kov@sitecore.net",
+                        "kov10@sitecore.net",
+                        "k",
                         "k"});
 #line 108
-    testRunner.Given("User is recently deleted from Habitat", ((string)(null)), table17, "Given ");
+    testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table17, "Given ");
 #line 111
- testRunner.And("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User was deleted from the System", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 112
+ testRunner.And("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
  testRunner.And("User clicks Login from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                        "E-mail",
+                        "Email",
                         "Password"});
             table18.AddRow(new string[] {
-                        "kov@sitecore.net",
+                        "kov10@sitecore.net",
                         "k"});
-#line 113
+#line 114
  testRunner.When("Actor enteres following data into fields", ((string)(null)), table18, "When ");
-#line 116
+#line 117
  testRunner.And("User clicks Login button on Login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Login form error message"});
             table19.AddRow(new string[] {
-                        "Username or password is not valid"});
-#line 117
+                        "Username or password is not valid."});
+#line 118
  testRunner.Then("System shows following error message for the Login form", ((string)(null)), table19, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -391,35 +399,35 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_LoginForm_UC8_ClickCancelButtonOnLoginForm()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login form_UC8_Click Cancel button on login form", new string[] {
-                        "NeedImplementation"});
-#line 122
-this.ScenarioSetup(scenarioInfo);
+                        "Ready"});
 #line 123
+this.ScenarioSetup(scenarioInfo);
+#line 124
     testRunner.Given("Login form is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
             table20.AddRow(new string[] {
-                        "kov@sitecore.net",
+                        "kov10@sitecore.net",
                         "k"});
-#line 124
- testRunner.When("Actor enters following data into fields", ((string)(null)), table20, "When ");
-#line 127
- testRunner.And("Actor clicks Cancel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.When("Actor enteres following data into fields", ((string)(null)), table20, "When ");
 #line 128
- testRunner.And("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Cancel button on Login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 129
- testRunner.And("User clicks Login from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Then("Page URL ends on /", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
-                        "E-mail",
-                        "Password"});
+                        "Button name"});
             table21.AddRow(new string[] {
-                        "",
-                        ""});
+                        "Login"});
+            table21.AddRow(new string[] {
+                        "Register"});
 #line 130
- testRunner.Then("Actor presented with following data in fields", ((string)(null)), table21, "Then ");
+ testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table21, "And ");
+#line 134
+ testRunner.And("Login popup is no longer presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -430,17 +438,15 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_LoginPage_UC9_OpenLoginPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login page_UC9_Open Login page", new string[] {
-                        "NeedImplementation"});
-#line 136
-this.ScenarioSetup(scenarioInfo);
-#line 137
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+                        "Ready"});
 #line 138
- testRunner.When("Actor moves to any secure page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 139
- testRunner.Then("Login title presents on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 140
- testRunner.And("Page URL ends on /Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Actor navigates to Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 141
+ testRunner.Then("LOGIN title presents on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field name"});
@@ -448,12 +454,22 @@ this.ScenarioSetup(scenarioInfo);
                         "Email"});
             table22.AddRow(new string[] {
                         "Password"});
-#line 141
+#line 142
  testRunner.And("Following fields present on Login page", ((string)(null)), table22, "And ");
-#line 145
- testRunner.And("Login button presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Login Page Buttons"});
+            table23.AddRow(new string[] {
+                        "Login"});
 #line 146
- testRunner.And("Forgot your password? link presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Following buttons present on Login Page", ((string)(null)), table23, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Login page link name"});
+            table24.AddRow(new string[] {
+                        "Forgot your password?"});
+#line 149
+ testRunner.And("Following links present on Login Page", ((string)(null)), table24, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -464,31 +480,22 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Aссounts_LoginPage_UC10_CheckRequiredFields()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Aссounts_Login page_UC10_Check required fields", new string[] {
-                        "NeedImplementation"});
-#line 150
-this.ScenarioSetup(scenarioInfo);
-#line 151
- testRunner.Given("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Email",
-                        "Password"});
-            table23.AddRow(new string[] {
-                        "",
-                        ""});
-#line 152
- testRunner.When("Actor enters data in to the following login fields", ((string)(null)), table23, "When ");
+                        "Ready"});
 #line 155
- testRunner.And("User clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Required fields error message"});
-            table24.AddRow(new string[] {
-                        "E-mail is required"});
-            table24.AddRow(new string[] {
-                        "Password is required"});
+this.ScenarioSetup(scenarioInfo);
 #line 156
- testRunner.Then("System shows following error message for the Login form", ((string)(null)), table24, "Then ");
+ testRunner.Given("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 157
+ testRunner.When("User clicks Login button on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Required fields error message"});
+            table25.AddRow(new string[] {
+                        "E-mail is required"});
+            table25.AddRow(new string[] {
+                        "Password is required"});
+#line 158
+ testRunner.Then("System shows following error message for the Login page", ((string)(null)), table25, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -499,42 +506,58 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_LoginPage_UC11_EnterCorrectUsernameAndPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login page_UC11_Enter correct Username and Password", new string[] {
-                        "NeedImplementation"});
-#line 163
+                        "Ready"});
+#line 165
 this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Email",
-                        "Password"});
-            table25.AddRow(new string[] {
-                        "kov@sitecore.net",
-                        "k"});
-#line 164
- testRunner.Given("User is registered in Habitat", ((string)(null)), table25, "Given ");
-#line 167
- testRunner.And("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
-                        "Password"});
+                        "Password",
+                        "ConfirmPassword"});
             table26.AddRow(new string[] {
                         "kov@sitecore.net",
+                        "k",
                         "k"});
-#line 168
- testRunner.When("Actor enteres following data into fields", ((string)(null)), table26, "When ");
-#line 171
- testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 172
- testRunner.Then("Habitat website openes on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 166
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table26, "Given ");
+#line 169
+ testRunner.And("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Button name"});
+                        "Email",
+                        "Password"});
             table27.AddRow(new string[] {
-                        "Logout"});
-            table27.AddRow(new string[] {
-                        "Edit details"});
+                        "kov@sitecore.net",
+                        "k"});
+#line 170
+ testRunner.When("Actor enteres following data into Login page fields", ((string)(null)), table27, "When ");
 #line 173
- testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table27, "And ");
+ testRunner.And("User clicks Login button on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 174
+ testRunner.Then("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Button name"});
+            table28.AddRow(new string[] {
+                        "Login"});
+            table28.AddRow(new string[] {
+                        "Register"});
+#line 175
+ testRunner.And("Following buttons is no longer present under User drop-drop down menu", ((string)(null)), table28, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Button name"});
+            table29.AddRow(new string[] {
+                        "Logout"});
+#line 179
+ testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table29, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Link name"});
+            table30.AddRow(new string[] {
+                        "Edit details"});
+#line 182
+ testRunner.And("Following links present under User drop-drop down menu", ((string)(null)), table30, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -545,38 +568,40 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_LoginPage_UC12_EnterCorrectUsernameAndIncorrectPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login page_UC12_Enter correct username and incorrect password", new string[] {
-                        "NeedImplementation"});
-#line 180
+                        "Ready"});
+#line 188
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
-                        "Password"});
-            table28.AddRow(new string[] {
+                        "Password",
+                        "ConfirmPassword"});
+            table31.AddRow(new string[] {
                         "kov@sitecore.net",
+                        "k",
                         "k"});
-#line 181
- testRunner.Given("User is registered in Habitat", ((string)(null)), table28, "Given ");
-#line 184
+#line 189
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table31, "Given ");
+#line 192
  testRunner.And("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table29.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "kov@sitecore.net",
                         "m"});
-#line 185
- testRunner.When("Actor enteres following data into fields", ((string)(null)), table29, "When ");
-#line 188
- testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 193
+ testRunner.When("Actor enteres following data into Login page fields", ((string)(null)), table32, "When ");
+#line 196
+ testRunner.And("User clicks Login button on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "Login page error message"});
-            table30.AddRow(new string[] {
+            table33.AddRow(new string[] {
                         "Username or password is not valid."});
-#line 189
- testRunner.Then("System shows following message for the Login form", ((string)(null)), table30, "Then ");
+#line 197
+ testRunner.Then("System shows following error message for the Login page", ((string)(null)), table33, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -587,38 +612,40 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_LoginPage_UC13_EnterIncorrectUsernameAndCorrectPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login page_UC13_Enter incorrect username and correct password", new string[] {
-                        "NeedImplementation"});
-#line 195
+                        "Ready"});
+#line 203
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
-                        "Password"});
-            table31.AddRow(new string[] {
+                        "Password",
+                        "ConfirmPassword"});
+            table34.AddRow(new string[] {
                         "kov@sitecore.net",
+                        "k",
                         "k"});
-#line 196
-    testRunner.Given("User is registered in Habitat", ((string)(null)), table31, "Given ");
-#line 199
+#line 204
+    testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table34, "Given ");
+#line 207
  testRunner.And("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table32.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "kov1@sitecore.net",
                         "k"});
-#line 200
- testRunner.When("Actor enteres following data into fields", ((string)(null)), table32, "When ");
-#line 203
- testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 208
+ testRunner.When("Actor enteres following data into Login page fields", ((string)(null)), table35, "When ");
+#line 211
+ testRunner.And("User clicks Login button on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                         "Login form error message"});
-            table33.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "Username or password is not valid."});
-#line 204
- testRunner.Then("System shows following error message for the Login form", ((string)(null)), table33, "Then ");
+#line 212
+ testRunner.Then("System shows following error message for the Login form", ((string)(null)), table36, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -629,38 +656,40 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_LoginPage_UC14_EnterIncorrectUsernameAndPassword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login page_UC14_Enter incorrect username and password", new string[] {
-                        "NeedImplementation"});
-#line 210
+                        "Ready"});
+#line 218
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
-                        "Password"});
-            table34.AddRow(new string[] {
+                        "Password",
+                        "ConfirmPassword"});
+            table37.AddRow(new string[] {
                         "kov@sitecore.net",
+                        "k",
                         "k"});
-#line 211
-    testRunner.Given("User is registered in Habitat", ((string)(null)), table34, "Given ");
-#line 214
+#line 219
+    testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table37, "Given ");
+#line 222
  testRunner.And("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table35.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "kov1@sitecore.net",
                         "k1"});
-#line 215
- testRunner.When("Actor enteres following data into fields", ((string)(null)), table35, "When ");
-#line 218
- testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 223
+ testRunner.When("Actor enteres following data into Login page fields", ((string)(null)), table38, "When ");
+#line 226
+ testRunner.And("User clicks Login button on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                         "Login form error message"});
-            table36.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "Username or password is not valid."});
-#line 219
- testRunner.Then("System shows following error message for the Login form", ((string)(null)), table36, "Then ");
+#line 227
+ testRunner.Then("System shows following error message for the Login form", ((string)(null)), table39, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -673,38 +702,42 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login page_UC15_Login with username and password of recently removed use" +
                     "r", new string[] {
-                        "NeedImplementation"});
-#line 225
+                        "Ready"});
+#line 233
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
-                        "Password"});
-            table37.AddRow(new string[] {
-                        "kov@sitecore.net",
+                        "Password",
+                        "ConfirmPassword"});
+            table40.AddRow(new string[] {
+                        "kov10@sitecore.net",
+                        "k",
                         "k"});
-#line 226
-    testRunner.Given("User is recently deleted from Habitat", ((string)(null)), table37, "Given ");
-#line 229
+#line 234
+    testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table40, "Given ");
+#line 237
+ testRunner.And("User was deleted from the System", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 238
  testRunner.And("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table38.AddRow(new string[] {
+            table41.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 230
- testRunner.When("Actor enteres following data into fields", ((string)(null)), table38, "When ");
-#line 233
- testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 239
+ testRunner.When("Actor enteres following data into Login page fields", ((string)(null)), table41, "When ");
+#line 242
+ testRunner.And("User clicks Login button on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
                         "Login form error message"});
-            table39.AddRow(new string[] {
+            table42.AddRow(new string[] {
                         "Username or password is not valid."});
-#line 234
- testRunner.Then("System shows following error message for the Login form", ((string)(null)), table39, "Then ");
+#line 243
+ testRunner.Then("System shows following error message for the Login form", ((string)(null)), table42, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -715,46 +748,48 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void Accounts_LoginPage_UC16_LoginFormFailsOnForgotPasswordPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login page_UC16_Login form fails on Forgot Password page", new string[] {
-                        "Bug35888"});
-#line 240
+                        "Ready"});
+#line 249
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
-                        "Password"});
-            table40.AddRow(new string[] {
+                        "Password",
+                        "ConfirmPassword"});
+            table43.AddRow(new string[] {
                         "kov@sitecore.net",
+                        "k",
                         "k"});
-#line 241
-    testRunner.Given("User is registered in Habitat", ((string)(null)), table40, "Given ");
-#line 244
+#line 250
+    testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table43, "Given ");
+#line 253
  testRunner.And("Habitat website is opened on Forgot Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 245
+#line 254
  testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 246
+#line 255
  testRunner.And("User clicks Login from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
-                        "E-mail",
+            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Email",
                         "Password"});
-            table41.AddRow(new string[] {
+            table44.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 247
- testRunner.When("Actor enteres following data into fields", ((string)(null)), table41, "When ");
-#line 250
- testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 251
- testRunner.Then("Habitat website openes on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 256
+ testRunner.When("Actor enteres following data into Login form fields", ((string)(null)), table44, "When ");
+#line 259
+ testRunner.And("User clicks Login button on Login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 260
+ testRunner.Then("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
                         "Button name"});
-            table42.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "Logout"});
-            table42.AddRow(new string[] {
+            table45.AddRow(new string[] {
                         "Edit details"});
-#line 252
- testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table42, "And ");
+#line 261
+ testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table45, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

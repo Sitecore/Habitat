@@ -14,5 +14,8 @@
     public static string ContactUsPageUrl => ConfigurationManager.AppSettings["contactUsPageUrl"];
 
     public static string TestHelperService => BaseUrl + ConfigurationManager.AppSettings["testsProxyUrl"];
+
+    public static string ForgotPasswordPageUrl => ConfigurationManager.AppSettings["forgotPasswordUrl"];
+    public static string EndSessionUrl => ConfigurationManager.AppSettings["endSessionUrl"];
   }
 }

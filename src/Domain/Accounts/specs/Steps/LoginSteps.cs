@@ -12,10 +12,17 @@ namespace Habitat.Accounts.Specflow.Steps
         [Then(@"(.*) title presents on Login form")]
         public void ThenLoginTitlePresentsOnLoginForm(string title)
         {
+            this.Site.LoginFormTitle.Text.ShouldBeEquivalentTo(title);
+        }
+
+      [Then(@"(.*) title presents on Login page")]
+      public void ThenLoginTitlePresentsOnLoginPage(string title)
+        {
             this.Site.LoginPageTitle.Text.ShouldBeEquivalentTo(title);
         }
 
-        [Then(@"Following fields present on Login form")]
+
+    [Then(@"Following fields present on Login form")]
         public void ThenFollowingFieldsPresentOnLoginForm(Table table)
         {
             var fields = table.Rows.Select(x => x.Values.First());
@@ -28,6 +35,7 @@ namespace Habitat.Accounts.Specflow.Steps
         {
             var buttons = table.Rows.Select(x => x.Values.First());
             var elements = this.Site.LoginFormButtons.Select(el => el.GetAttribute("text"));
+            elements.Should().Contain(buttons);
         }
 
         [When(@"User clicks (.*) button on Login form")]
@@ -77,6 +85,68 @@ namespace Habitat.Accounts.Specflow.Steps
             }
         }
 
+        [Then(@"Following fields present on Login page")]
+        public void ThenFollowingFieldsPresentOnLoginPage(Table table)
+        {
+            var fields = table.Rows.Select(x => x.Values.First());
+            var elements = this.Site.LoginPageFields.Select(el => el.GetAttribute("name"));
+            elements.Should().Contain(fields);
+        }
 
+        [Then(@"Following buttons present on Login Page")]
+        public void ThenFollowingButtonsPresentOnLoginPage(Table table)
+        {
+            var buttons = table.Rows.Select(x => x.Values.First());
+            var elements = this.Site.LoginPageButtons.Select(el => el.GetAttribute("value"));
+            elements.Should().Contain(buttons);
+        }
+
+        [Then(@"Following links present on Login Page")]
+        public void ThenFollowingLinksPresentOnLoginPage(Table table)
+        {
+            var links = table.Rows.Select(x => x.Values.First());
+            var elements = this.Site.LoginPageLinks.Select(el => el.Text);
+          links.All(x => elements.Contains(x, StringComparer.InvariantCultureIgnoreCase)).Should().BeTrue();
+        }
+
+        [When(@"User clicks (.*) button on Login page")]
+        public void WhenUserClicksLoginButtonOnLoginPage(string btn)
+        {
+            var elements = this.Site.LoginPageButtons.First(el => el.GetAttribute("value").Contains(btn));
+            elements.Click();
+        }
+
+        [Then(@"System shows following error message for the Login page")]
+            public void ThenSystemShowsFollowingErrorMessageForTheLoginPage(Table table)
+        {
+            var textMessages = table.Rows.Select(x => x.Values.First());
+
+            foreach (var textMessage in textMessages)
+            {
+                var found = false;
+                foreach (var webElement in this.Site.LoginPageErrorMessages)
+                {
+                    found = webElement.Text == textMessage;
+                    if (found)
+                    {
+                        break;
+                    }
+                }
+               found.Should().BeTrue();
+            }
+        }
+
+    [When(@"Actor enteres following data into Login page fields")]
+    public void WhenActorEnteresFollowingDataIntoLoginPageFields(Table table)
+    {
+      var row = table.Rows.First();
+      foreach (var key in row.Keys)
+      {
+        this.Site.LoginPageFields.GetField(key).SendKeys(row[key]);
+      }
     }
+
+
+
+  }
 }

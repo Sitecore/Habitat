@@ -112,6 +112,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Show user info on popup.feature</DependentUpon>
     </Compile>
+    <Compile Include="Steps\ActionType.cs" />
     <Compile Include="Steps\CommonSteps.cs" />
     <Compile Include="Infrastructure\ContextExtensions.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
@@ -122,7 +123,9 @@
     <Compile Include="Infrastructure\TestCleanupAction.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Edit user profile.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Edit user profile.feature.cs</LastGenOutput>

@@ -78,44 +78,42 @@ namespace Habitat.Accounts.Specflow
         public virtual void Accounts_LogOut_UC1_SimpleLogOut()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Log out_UC1_Simple log out", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
-                        "Confirm password"});
+                        "ConfirmPassword"});
             table1.AddRow(new string[] {
-                        "kov@sitecore.net",
+                        "kov10@sitecore.net",
                         "k",
                         "k"});
 #line 6
- testRunner.Given("User is registered in Habitat", ((string)(null)), table1, "Given ");
+ testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table1, "Given ");
 #line 9
- testRunner.And("User kov@sitecore.net is logged to Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 10
  testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.And("User clicks Log out on User Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("User selects LOG OUT from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
- testRunner.Then("Visitor presents at Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Button name"});
             table2.AddRow(new string[] {
-                        "Login"});
-            table2.AddRow(new string[] {
-                        "Register"});
-#line 13
- testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table2, "And ");
+                        "Logout"});
+#line 12
+ testRunner.And("Following buttons is no longer present under User drop-drop down menu", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Button name"});
             table3.AddRow(new string[] {
-                        "Logout"});
-#line 17
- testRunner.And("Following buttons is no longer present under User drop-drop down menu", ((string)(null)), table3, "And ");
+                        "Login"});
+            table3.AddRow(new string[] {
+                        "Register"});
+#line 15
+ testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table3, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -127,45 +125,43 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Log out_UC2_Session expired", new string[] {
                         "NeedImplementation"});
-#line 23
+#line 22
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
-                        "Confirm password"});
+                        "ConfirmPassword"});
             table4.AddRow(new string[] {
-                        "kov@sitecore.net",
+                        "kov10@sitecore.net",
                         "k",
                         "k"});
-#line 24
- testRunner.Given("User is registered in Habitat", ((string)(null)), table4, "Given ");
-#line 27
- testRunner.And("User kov@sitecore.net is logged to Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
+#line 23
+ testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table4, "Given ");
+#line 26
  testRunner.And("Session was expired", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
+#line 27
  testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 30
- testRunner.And("User selects LOG OUT from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 31
- testRunner.Then("Visitor presents at Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 28
+ testRunner.And("User clicks Log out on User Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.Then("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Button name"});
             table5.AddRow(new string[] {
-                        "Login"});
-            table5.AddRow(new string[] {
-                        "Register"});
-#line 32
- testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table5, "And ");
+                        "Logout"});
+#line 30
+ testRunner.And("Following buttons is no longer present under User drop-drop down menu", ((string)(null)), table5, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Button name"});
             table6.AddRow(new string[] {
-                        "Logout"});
-#line 36
- testRunner.And("Following buttons is no longer present under User drop-drop down menu", ((string)(null)), table6, "And ");
+                        "Login"});
+            table6.AddRow(new string[] {
+                        "Register"});
+#line 33
+ testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table6, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

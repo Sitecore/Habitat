@@ -1,41 +1,39 @@
 ﻿Feature: Log out
 	
 
-@NeedImplementation 
+@Ready 
 Scenario: Accounts_Log out_UC1_Simple log out
-	Given User is registered in Habitat
-	| Email            |Password | Confirm password |
-	| kov@sitecore.net |k        | k                |
-	And User kov@sitecore.net is logged to Habitat
+	Given User with following data is registered in Habitat
+	| Email              | Password | ConfirmPassword |
+	| kov10@sitecore.net | k        | k               |
 	When Actor moves cursor over the User icon
-	And User selects LOG OUT from drop-down menu
-	Then Visitor presents at Home page
+	And User clicks Log out on User Icon 
+	Then Habitat Main page presents
+	And Following buttons is no longer present under User drop-drop down menu
+    | Button name |
+    | Logout      |
 	And Following buttons present under User drop-drop down menu
-	| Button name |	
-	| Login       |
-	| Register    |	
-	And Following buttons is no longer present under User drop-drop down menu 
 	| Button name |
-	| Logout      |
+	| Login       |
+	| Register    |
 
 
 @NeedImplementation 
 Scenario: Accounts_Log out_UC2_Session expired
-	Given User is registered in Habitat
-	| Email            |Password | Confirm password |
-	| kov@sitecore.net |k        | k                |
-	And User kov@sitecore.net is logged to Habitat
-	And  Session was expired
+	Given User with following data is registered in Habitat
+	| Email              | Password | ConfirmPassword |
+	| kov10@sitecore.net | k        | k               |
+	And Session was expired
 	When Actor moves cursor over the User icon
-	And User selects LOG OUT from drop-down menu
-	Then Visitor presents at Home page
+	And User clicks Log out on User Icon
+	Then Habitat Main page presents
+	And Following buttons is no longer present under User drop-drop down menu
+    | Button name |
+    | Logout      |
 	And Following buttons present under User drop-drop down menu
-	| Button name |	
-	| Login       |
-	| Register    |	
-	And Following buttons is no longer present under User drop-drop down menu 
 	| Button name |
-	| Logout      |
+	| Login       |
+	| Register    |
 
 
 	 
