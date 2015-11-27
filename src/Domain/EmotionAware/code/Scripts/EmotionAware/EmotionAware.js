@@ -11,7 +11,7 @@ Habitat.EmotionAware = {
     DomReady: function () {
         this.CreateImageStreamFromVisitor(function (faceStream) {
             console.log("Registering emotion");
-            $.ajax(
+            jQuery.ajax(
              {
                  url: "/api/EmotionAware/RegisterEmotion",
                  method: "POST",

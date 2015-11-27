@@ -1,4 +1,5 @@
-﻿namespace Habitat.Framework.ProjectOxfordAI.Tests { 
+﻿namespace Habitat.Framework.ProjectOxfordAI.Tests
+{
 
   using Ploeh.AutoFixture;
   using Ploeh.AutoFixture.Xunit2;

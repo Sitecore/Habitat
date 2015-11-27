@@ -107,7 +107,6 @@
   <ItemGroup>
     <Content Include="Scripts\EmotionAware\Adapter.js" />
     <Content Include="Scripts\EmotionAware\CcvImageProcessor.js" />
-    <Content Include="Scripts\EmotionAware\EmotionAware_Original.js" />
     <Content Include="Scripts\EmotionAware\EmotionAware.js" />
     <Content Include="Scripts\EmotionAware\FaceDetector.js" />
     <None Include="App_Config\Include\Habitat\Habitat.EmotionAware.Serialization.config">
@@ -118,8 +117,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EmotionAwareController.cs" />
+    <Compile Include="Models\EmotionAwareSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\EmotionAwareSettingsRepository.cs" />
     <Compile Include="Repositories\AnalyticsRepository.cs" />
+    <Compile Include="Repositories\IEmotionAwareSettingsRepository.cs" />
     <Compile Include="Repositories\IAnalyticsRepository.cs" />
     <Compile Include="Services\EmotionAnalyticsService.cs" />
     <Compile Include="Services\EmotionImageService.cs" />
@@ -139,9 +141,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\Framework\Assets\code\Habitat.Framework.Assets.csproj">
       <Project>{7e46ff93-ee05-412c-ac47-2a59a13da73c}</Project>

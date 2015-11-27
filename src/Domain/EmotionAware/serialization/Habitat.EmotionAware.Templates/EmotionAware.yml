@@ -1,0 +1,16 @@
+﻿---
+ID: 7dea0919-3fce-4fba-9146-138e34b84b23
+Parent: 8f343079-3cc5-4ef7-bc27-32addb46f45e
+Template: 0437fee2-44c9-46a6-abe9-28858d9fee8c
+Path: /sitecore/templates/Habitat/Domain/EmotionAware
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151122T130402Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

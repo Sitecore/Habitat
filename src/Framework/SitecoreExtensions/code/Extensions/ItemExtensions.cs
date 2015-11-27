@@ -379,5 +379,15 @@
       var versionItem = item.Database.GetItem(item.ID, language, version);
       return versionItem != null && versionItem.HasVersionedRenderings();
     }
+
+    /// <summary>
+    ///   Determines whether the specified Item is within the hierarchy of the current Site.
+    /// </summary>
+    /// <param name="item"> The item. </param>
+    /// <returns> <c>true</c> if the specified Item is within the hierarchy of the current Site; otherwise, <c>false</c> . </returns>
+    public static bool IsStandardValuesItem(this Item item)
+    {
+      return item.Name.Equals("__standard values", StringComparison.InvariantCultureIgnoreCase);
+    }
   }
 }

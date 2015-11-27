@@ -1,15 +1,13 @@
 ﻿namespace Habitat.EmotionAware.Controllers
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using System.Web.Mvc;
-    using Habitat.EmotionAware.Services;
-    using Habitat.Framework.ProjectOxfordAI.Enums;
-  
-  
-public class EmotionAwareController : Controller
-{
+  using System.Threading.Tasks;
+  using System.Web.Mvc;
+  using Habitat.EmotionAware.Services;
+  using Habitat.Framework.ProjectOxfordAI.Enums;
+
+
+  public class EmotionAwareController : Controller
+  {
 
     private readonly IEmotionImageService emotionImageService;
     private readonly IEmotionAnalyticsService emotionAnalyticsService;
@@ -21,26 +19,29 @@ public class EmotionAwareController : Controller
 
     public EmotionAwareController(IEmotionImageService emotionImageService, IEmotionAnalyticsService emotionAnalyticsService)
     {
-        this.emotionImageService = emotionImageService;
-        this.emotionAnalyticsService = emotionAnalyticsService;
+      this.emotionImageService = emotionImageService;
+      this.emotionAnalyticsService = emotionAnalyticsService;
     }
 
 
     [HttpPost]
     public ActionResult RegisterEmotion(string emotionImageStream, string pageUrl)
     {
-        if (string.IsNullOrWhiteSpace(emotionImageStream))
-            return this.Json(new { Success = false, Message = "No image was received" });
+      if (string.IsNullOrWhiteSpace(emotionImageStream))
+        return this.Json(new { Success = false, Message = "No image was received" });
 
-        Emotions emotion = Task.Run(() => this.emotionImageService.GetEmotionFromImage(emotionImageStream)).Result;
+      Emotions emotion = Task.Run(() => this.emotionImageService.GetEmotionFromImage(emotionImageStream)).Result;
 
-        this.emotionAnalyticsService.RegisterEmotionOnCurrentContact(emotion);
+      if (emotion == Emotions.None)
+        return this.Json(new { Success = false, Message = "No emotion was detected" });
 
-        this.emotionAnalyticsService.RegisterGoal(emotion.ToString(), pageUrl);
+      this.emotionAnalyticsService.RegisterEmotionOnCurrentContact(emotion);
 
-        return this.Json(new { Success = true, Message = emotion.ToString() });
+      this.emotionAnalyticsService.RegisterGoal(emotion.ToString(), pageUrl);
+
+      return this.Json(new { Success = true, Message = emotion.ToString() });
     }
 
 
-}
+  }
 }

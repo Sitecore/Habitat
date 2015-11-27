@@ -28,6 +28,9 @@ Languages:
     - ID: 365254c4-1c1c-493a-9710-671574717898
       # FogotPasswordMailTemplate
       Value: /sitecore/content/Habitat/Global/Registration/Forgot Password Mail
+    - ID: 5eaef7ff-f42a-46cd-9fa6-68b429729037
+      # EmotionAwareSettingsProjectOxfordEmotionsServiceSubscriptionKey
+      Value: 2b7889bbf1b242d7af21fa589af49542
     - ID: 71962360-10d8-4b98-bb8d-57660ce11127
       # RegisterPage
       Value: /sitecore/content/Habitat/Home/Register

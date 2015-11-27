@@ -1,0 +1,32 @@
+﻿---
+ID: 5eaef7ff-f42a-46cd-9fa6-68b429729037
+Parent: cea28cb3-6606-4cd7-ad3f-09d5a3cf9a82
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Habitat/Domain/EmotionAware/_EmoitionAwareSettings/Emotion Aware/EmotionAwareSettingsSubscriptionKey
+SharedFields:
+- ID: 56776edf-261c-4abc-9fe7-70c618795239
+  # __Help link
+  Value: "<link text=\"Get subscription key\" linktype=\"external\" url=\"https://www.projectoxford.ai/\" anchor=\"\" target=\"_blank\" />"
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  # Type
+  Value: Single-Line Text
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+      # Title
+      Value: Emotion service subscription key
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151127T134631Z
+    - ID: 9541e67d-ce8c-4225-803d-33f7f29f09ef
+      # __Short description
+      Value: In order to get subscription, please follow link
+    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+      # __Display name
+      Value: Emotion service subscription key
