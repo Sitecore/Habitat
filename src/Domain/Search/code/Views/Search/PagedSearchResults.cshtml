@@ -4,14 +4,14 @@
 @{
   var prevButtonAttributes = "";
   var nextButtonAttributes = "";
-  var nextPageUrl = $"/Search?query={Model.Query}&page={Model.Page + 1}";
+  var nextPageUrl = $"{Request.Url.AbsolutePath}?query={Model.Query}&page={Model.Page + 1}";
   if (Model.Page == Model.LastPage)
   {
       nextPageUrl = "#";
       nextButtonAttributes = "class=disabled";
   }
 
-  var prevPageUrl = $"/Search?query={Model.Query}&page={Model.Page - 1}";
+  var prevPageUrl = $"{Request.Url.AbsolutePath}?query={Model.Query}&page={Model.Page - 1}";
   if (Model.Page == Model.FirstPage)
   {
       prevPageUrl = "#";
@@ -30,11 +30,11 @@
         {
             if (Model.Page == i)
             {
-            <li class="active"><a href="/Search?query=@Model.Query&page=@i">@i</a></li>
+            <li class="active"><a href="@Request.Url.AbsolutePath?query=@Model.Query&page=@i">@i</a></li>
             }
             else
             {
-            <li><a href="/Search?query=@Model.Query&page=@i">@i</a></li>
+            <li><a href="@Request.Url.AbsolutePath?query=@Model.Query&page=@i">@i</a></li>
             }
 
         }
