@@ -23,7 +23,7 @@
 
         public EmotionAnalyticsService() : this(new AnalyticsRepository())
         {
-            this.emotionGoals = this.analyticsRepository.GetGoalsByCategoryFolder("Emotions").ToList();
+            //this.emotionGoals = this.analyticsRepository.GetGoalsByCategoryFolder("Emotions").ToList();
         }
 
         public EmotionAnalyticsService(IAnalyticsRepository analyticsRepository)

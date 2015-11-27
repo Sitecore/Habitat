@@ -68,7 +68,7 @@ Habitat.EmotionAware = {
 
                 if (face.height <= 35)
                     continue;
-
+                //Face is found, now it's to 
                 if (localMediaStream) {
                     callback(canvas.toDataURL('image/jpeg', 0.5).substring(canvas.toDataURL('image/jpeg', 0.5).lastIndexOf(',')+1));
                     return true;
@@ -80,6 +80,7 @@ Habitat.EmotionAware = {
 
         }
 
+        //Here it will take a "picture" and try to find a face, if not then let's continue the loop
         function processWebcamVideo() {
 
             var startTime = +new Date(),
@@ -104,11 +105,9 @@ Habitat.EmotionAware = {
             }
         }
 
+        //Here we will find face/s
+        //ccv is in a seperate js file 
         function detectFaces() {
-            // What do these parameters mean?
-            // I couldn't find any documentation, and used what was found here:
-            // https://github.com/liuliu/ccv/blob/unstable/js/index.html
-
             return ccv.detect_objects({ canvas: (ccv.pre(canvas)), cascade: cascade, interval: 2, min_neighbors: 1 });
         }
 

@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Habitat.Framework.ProjectOxfordAI.Enums
+﻿namespace Habitat.Framework.ProjectOxfordAI.Enums
 {
+    using System;
+
     [Flags]
     public enum Emotions
     {
