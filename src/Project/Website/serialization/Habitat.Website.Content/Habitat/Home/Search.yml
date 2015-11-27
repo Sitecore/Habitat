@@ -3,28 +3,11 @@ ID: 9aa07d42-e9b5-4b52-a0e2-4fdf08c203ee
 Parent: dac24edd-44fb-42ef-9ecd-1e8daf706386
 Template: 92168572-385b-45f0-b40f-3d987ad20e5c
 Path: /sitecore/content/Habitat/Home/Search
-SharedFields:
-- ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
-  # __Renderings
-  Type: layout
-  Value: |
-    <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
-      <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-        <r uid="{4FADDAEC-C720-440F-88DA-01BF2E3A08B4}">
-          <p:d />
-        </r>
-        <r uid="{ADB769BD-9CFE-4872-BBC6-CB1D23326EB7}" p:before="r[@uid='{D5246E1F-971A-4B7A-8FE1-FB0AC840AD59}']" s:ds="" s:id="{E52D0AE8-2989-44E5-BEA1-EA30C17B2080}" s:par="ResultsOnPage=4&amp;PagesToShow=5" s:ph="col-wide-1" />
-      </d>
-    </r>
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
-      # __Final Renderings
-      Type: Layout
-      Value: "<r xmlns:p=\"p\" xmlns:s=\"s\" p:p=\"1\" s:xsd=\"http://www.w3.org/2001/XMLSchema\" />"
     - ID: 0ee2f208-1fee-42fc-8051-6696d49a92bf
       # OpenGraphTitle
       Value: Search Results
