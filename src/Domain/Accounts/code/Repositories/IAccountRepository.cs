@@ -12,7 +12,7 @@
     /// <returns>New generated password</returns>
     string RestorePassword(string userName);
 
-    void RegisterUser(RegistrationInfo registrationInfo);
+    void RegisterUser(string email, string password, string profileId);
     bool Exists(string userName);
     void Logout();
     bool Login(string userName, string password);

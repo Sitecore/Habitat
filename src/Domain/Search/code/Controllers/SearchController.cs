@@ -1,14 +1,38 @@
 ﻿namespace Habitat.Search.Controllers
 {
+  using System.Collections.Generic;
+  using System.Linq;
   using System.Web.Mvc;
+  using Habitat.Framework.Indexing;
   using Habitat.Framework.Indexing.Models;
+  using Habitat.Framework.SitecoreExtensions.Repositories;
   using Habitat.Search.Models;
+  using Habitat.Search.Repositories;
+  using Sitecore.Mvc.Presentation;
 
   public class SearchController : Controller
   {
+    private readonly ISearchServiceRepository searchServiceRepository;
+    private readonly ISearchSettingsRepository searchSettingsRepository;
+    private readonly QueryRepository queryRepository;
+    private readonly IRenderingPropertiesRepository renderingPropertiesRepository;
+
+    public SearchController(): this(new SearchServiceRepository(), new SearchSettingsRepository(), new QueryRepository(), new RenderingPropertiesRepository())
+    {
+    }
+
+    public SearchController(ISearchServiceRepository serviceRepository, ISearchSettingsRepository settingsRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository)
+    {
+      this.searchServiceRepository = serviceRepository;
+      this.queryRepository = queryRepository;
+      this.searchSettingsRepository = settingsRepository;
+      this.renderingPropertiesRepository = renderingPropertiesRepository;
+    }
+
+    [HttpGet]
     public ActionResult SearchResults(string query)
     {
-      return this.View("SearchResults", this.GetSearchResults(query));
+      return this.View("SearchResults", this.GetSearchResults(new SearchQuery {Query = query}));
     }
 
     public ActionResult GlobalSearch()
@@ -21,28 +45,48 @@
       return this.View("SearchSettings", this.GetSearchSettings(query));
     }
 
-    private ISearchResults GetSearchResults(string queryText)
+    public ActionResult PagedSearchResults(string query, int? page)
     {
-      var results = this.HttpContext.Items["SearchResults"] as ISearchResults;
+      var pagingSettings =  this.renderingPropertiesRepository.Get<PagingSettings>();
+      var pageNumber = page ?? 1;
+      var results = this.GetSearchResults(new SearchQuery { Query = query, Page = pageNumber, ResultsOnPage = pagingSettings.ResultsOnPage });
+      var pageble = new PagedSearchResults(pageNumber, results.TotalNumberOfResults, pagingSettings.PagesToShow, pagingSettings.ResultsOnPage);
+      pageble.Query = query;
+      pageble.Results = results;
+      return this.View(pageble);
+    }
+
+    private ISearchResults GetSearchResults(SearchQuery searchQuery)
+    {
+      ISearchResults results = null;
+      if (this.HttpContext != null)
+      {
+        results = this.HttpContext.Items["SearchResults"] as ISearchResults;
+      }
+
       if (results != null)
       {
         return results;
       }
 
-      var query = this.CreateQuery(queryText);
-      results = SearchServiceRepository.Get().Search(query);
-      this.HttpContext.Items.Add("SearchResults", results);
+      var query = this.CreateQuery(searchQuery);
+      results = this.searchServiceRepository.Get().Search(query);
+      if (this.HttpContext != null)
+      {
+        this.HttpContext.Items.Add("SearchResults", results);
+      }
+
       return results;
     }
 
-    private IQuery CreateQuery(string queryText)
+    private IQuery CreateQuery(SearchQuery query)
     {
-      return QueryRepository.Get(queryText);
+      return this.queryRepository.Get(query);
     }
 
     private SearchSettings GetSearchSettings(string query = null)
     {
-      return SearchSettingsRepository.Get(query);
+      return this.searchSettingsRepository.Get(query);
     }
   }
 }

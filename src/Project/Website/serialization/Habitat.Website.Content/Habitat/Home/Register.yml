@@ -19,7 +19,6 @@ SharedFields:
         <r uid="{47F5A079-6F63-4219-BC45-1A221B200906}">
           <p:d />
         </r>
-        <r uid="{3FEDD2AB-9A72-49C5-A3C8-E835A17DF069}" s:par="UseStaticPlaceholderNames=1" />
         <r uid="{F57684CD-F181-4D99-83F8-869BD554234E}" s:id="{B683EFB4-161D-4FDF-9A90-CC8637766C9C}" s:ph="/page-layout/col-narrow-2" />
       </d>
     </r>

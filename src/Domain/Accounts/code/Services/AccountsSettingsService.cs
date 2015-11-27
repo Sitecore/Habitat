@@ -2,7 +2,7 @@
 {
   using System;
   using System.Net.Mail;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
+  using Framework.SitecoreExtensions.Extensions;
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Fields;
@@ -35,7 +35,7 @@
 
     public virtual string GetPageLinkOrDefault(Item contextItem, ID field, Item defaultItem)
     {
-      Assert.ArgumentNotNull(defaultItem, "defaultItem");
+      Assert.ArgumentNotNull(defaultItem, nameof(defaultItem));
       try
       {
         return this.GetPageLink(contextItem, field);
@@ -46,6 +46,8 @@
         return defaultItem.Url();
       }
     }
+
+    
 
     private static Item GetSettingsItem(Item contextItem)
     {
