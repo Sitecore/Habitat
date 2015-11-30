@@ -5,14 +5,24 @@
   using Habitat.Framework.SitecoreExtensions.Extensions;
   using Habitat.Media.Infrastructure.Models;
   using Sitecore.Data.Items;
+  using Sitecore.Mvc.Extensions;
 
   public static class CarouselElementsRepository
   {
     public static IEnumerable<CarouselElement> Get(Item item)
     {
       var active = "active";
-      foreach (var child in item.GetMultiListValues(Templates.HasMediaSelector.Fields.MediaSelector).Where(i => i.IsDerived(Templates.HasMedia.ID)))
+      var multiListValues = item.GetMultiListValues(Templates.HasMediaSelector.Fields.MediaSelector);
+      var mediaItems = multiListValues.Where(i => i.IsDerived(Templates.HasMedia.ID));
+      foreach (var child in mediaItems)
       {
+        if (child.IsDerived(Templates.HasMediaVideo.ID) 
+          && (child[Templates.HasMediaVideo.Fields.VideoLink].IsEmptyOrNull()
+          && child[Templates.HasMedia.Fields.Thumbnail].IsEmptyOrNull()))
+        {
+          continue;
+        }
+
         yield return new CarouselElement
         {
           Item = child,

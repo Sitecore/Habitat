@@ -12,14 +12,15 @@
   <ol class="carousel-indicators">
     @for (var i = 0; i < elements.Length; i++)
     {
-      <li data-target="#@carouselId" data-slide-to="@i" class="@(i == 0 ? "active" : "")"></li>
+      <li data-target="#@carouselId" data-slide-to="@i" class="@elements[i].Active"></li>
     }
   </ol>
 
   <div class="carousel-inner" role="listbox">
     @foreach (var element in elements)
     {
-      <div class="item @(elements.First() == element ? "active" : "")">
+
+      <div class="item @element.Active">
         @if (element.Item.IsDerived(Templates.HasMediaVideo.ID))
         {
          <video class="img-responsive" muted
