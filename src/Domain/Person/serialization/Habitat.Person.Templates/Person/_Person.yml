@@ -1,0 +1,24 @@
+﻿---
+ID: 7aca6ecf-1a80-4e35-97f5-dbaa8e3ec617
+Parent: e6197898-5ed7-47f5-a15c-b221b9e6866c
+Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+Path: /sitecore/templates/Habitat/Domain/Person/_Person
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: Applications/32x32/form_blue.png
+- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+  # __Base template
+  Type: tree list
+  Value: {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151124T094351Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

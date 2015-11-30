@@ -1,0 +1,14 @@
+﻿
+@model Habitat.Person.Models.Quote
+<h2>Quote</h2>
+<div class="media">
+    <div class="media-left">
+        <a href="#">
+    @Model.Person.Picture
+        </a>
+    </div>
+    <div class="media-body">
+        <h4 class="media-heading">@Model.Person.Name, @Model.Person.Title, @Model.Company</h4>
+        @Model.Quotation
+    </div>
+</div>

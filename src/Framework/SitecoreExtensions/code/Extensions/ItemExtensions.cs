@@ -4,8 +4,10 @@
   using System.Collections.Generic;
   using System.Globalization;
   using System.Linq;
+  using System.Web;
   using Habitat.Framework.SitecoreExtensions.Model;
   using Habitat.Framework.SitecoreExtensions.Repositories;
+  using Habitat.Framework.SitecoreExtensions.Services;
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Fields;
@@ -44,7 +46,7 @@
       return imageField?.MediaItem == null ? string.Empty : imageField.ImageUrl(options);
     }
 
-    public static string MediaUrl(this Item item, ID mediaFieldId, MediaUrlOptions options = null)
+  public static string MediaUrl(this Item item, ID mediaFieldId, MediaUrlOptions options = null)
     {
       if (item == null)
       {
@@ -52,7 +54,7 @@
       }
 
       var imageField = (LinkField)item.Fields[mediaFieldId];
-      return MediaManager.GetMediaUrl(imageField.TargetItem)??string.Empty;
+      return MediaManager.GetMediaUrl(imageField.TargetItem) ?? string.Empty;
     }
 
     public static Item[] TargetItems(this Item item, string fieldName)
@@ -71,7 +73,7 @@
       return mf == null ? new Item[0] : mf.GetItems();
     }
 
-    public static Item GetAncestorOrSelfOfTemplate(this Item item, ID templateID)
+      public static Item GetAncestorOrSelfOfTemplate(this Item item, ID templateID)
     {
       if (item == null)
       {
@@ -360,6 +362,18 @@
     {
       var versionItem = item.Database.GetItem(item.ID, language, version);
       return versionItem != null && versionItem.HasVersionedRenderings();
+    }
+
+    public static HtmlString Field(this Item item, ID fieldId)
+    {
+      Assert.IsNotNull(item, "Item cannot be null");
+      Assert.IsNotNull(fieldId, "FieldId cannot be null");
+      return new HtmlString(FieldRendererService.RenderField(item, fieldId));
+    }
+
+    public static HtmlString Field(this Item item, ID fieldId, object parameters)
+    {
+      return new HtmlString(FieldRendererService.BeginField(fieldId, item, parameters) + FieldRendererService.EndField().ToString());
     }
   }
 }

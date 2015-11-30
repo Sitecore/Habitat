@@ -137,6 +137,7 @@
     <Compile Include="Repositories\ItemRepository.cs" />
     <Compile Include="Repositories\LinkRepository.cs" />
     <Compile Include="Repositories\RenderingPropertiesRepository.cs" />
+    <Compile Include="Services\FieldRendererService.cs" />
     <Compile Include="Services\XmlParserService.cs" />
   </ItemGroup>
   <ItemGroup>
