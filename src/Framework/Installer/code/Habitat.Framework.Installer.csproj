@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{86CADB26-5817-46B6-88C7-76D5753722C3}</ProjectGuid>
+    <ProjectGuid>{622EBD86-43A5-4857-965C-1724F714012A}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Website</RootNamespace>
-    <AssemblyName>Habitat.Website</AssemblyName>
+    <RootNamespace>Habitat.Framework.Installer</RootNamespace>
+    <AssemblyName>Habitat.Framework.Installer</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -157,44 +157,17 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
+    <Compile Include="XmlTransform\FilePathResolver.cs" />
+    <Compile Include="XmlTransform\IFilePathResolver.cs" />
+    <Compile Include="XmlTransform\IXdtTransformEngine.cs" />
+    <Compile Include="PostStep.cs" />
+    <Compile Include="XmlTransform\XdtTransformEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Habitat\Habitat.Website.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\Habitat\z.Habitat.DevSettings.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\Habitat\Habitat.Website.Serialization.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="favicon.ico" />
     <Content Include="web.config.transform" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\Website\Layouts\Default.cshtml" />
-    <Content Include="Views\Website\Sublayouts\3 Column 4-4-4.cshtml" />
-    <Content Include="Views\Website\Sublayouts\PageSidebarLeft.cshtml" />
-    <Content Include="Views\Website\Sublayouts\PageSidebarRight.cshtml" />
-    <Content Include="Views\Website\Sublayouts\Inner 1 Column.cshtml" />
-    <Content Include="Views\Website\Sublayouts\1 Column.cshtml" />
-    <Content Include="Views\Website\Sublayouts\2 Column 6-6.cshtml" />
-    <Content Include="Views\Website\Sublayouts\PageHeading.cshtml" />
-    <Content Include="Views\Website\Sublayouts\Footer.cshtml" />
-    <Content Include="Views\Website\Sublayouts\2 Column 9-3.cshtml" />
-    <Content Include="Views\Website\Sublayouts\2 Column 3-9.cshtml" />
-    <Content Include="Views\Website\Sublayouts\2 Column 4-8.cshtml" />
-    <Content Include="Views\Website\Sublayouts\2 Column 8-4.cshtml" />
-    <Content Include="Views\Website\Sublayouts\4 Column 3-3-3-3.cshtml" />
-    <Content Include="Views\Website\Sublayouts\3 Column 3-3-6.cshtml" />
-    <Content Include="Views\Website\Sublayouts\3 Column 6-3-3.cshtml" />
-    <Content Include="Views\Website\Sublayouts\Inner 2 Column 6-6.cshtml" />
-    <Content Include="Views\Website\Sublayouts\Inner 2 Column 8-4.cshtml" />
-    <Content Include="Views\Website\Sublayouts\Inner 2 Column 4-8.cshtml" />
-    <Content Include="Views\Website\Sublayouts\6 Column 2-2-2-2-2-2.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

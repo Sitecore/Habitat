@@ -1,6 +1,7 @@
-﻿namespace Habitat.Website.Installer
+﻿namespace Habitat.Framework.Installer
 {
   using System.Collections.Specialized;
+  using Habitat.Framework.Installer.XmlTransform;
   using Sitecore.Install.Framework;
 
   public class PostStep : IPostStep
@@ -20,8 +21,8 @@
 
     public void Run(ITaskOutput output, NameValueCollection metaData)
     {
-      var webConfig = filePathResolver.MapPath("~/web.config");
-      var webConfigTransform = filePathResolver.MapPath("~/web.config.transform");
+      var webConfig = this.filePathResolver.MapPath("~/web.config");
+      var webConfigTransform = this.filePathResolver.MapPath("~/web.config.transform");
       if (webConfigTransform == null)
       {
         return;
