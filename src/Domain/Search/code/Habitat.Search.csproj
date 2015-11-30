@@ -128,6 +128,7 @@
     <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\SearchResults.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Text\Captions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

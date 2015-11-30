@@ -19,6 +19,8 @@
   }
 }
 @Html.Partial("../Search/SearchResults", Model.Results)
+@if (Model.TotalResults > 0)
+{
 <nav>
     <ul class="pagination">
         <li @prevButtonAttributes>
@@ -45,3 +47,4 @@
         </li>
     </ul>
 </nav>
+}
