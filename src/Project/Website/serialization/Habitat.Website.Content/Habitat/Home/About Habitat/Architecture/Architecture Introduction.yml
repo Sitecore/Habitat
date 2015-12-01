@@ -3,6 +3,19 @@ ID: 9ac1e982-476d-4567-93c4-ee0fce56cecb
 Parent: b16765ba-7b3e-4c5b-9937-bfc985f2550c
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/About Habitat/Architecture/Architecture Introduction
+SharedFields:
+- ID: b0a67b2a-8b07-4e0b-8809-69f751709806
+  # __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}" name="Focus" presets="architecture|100||">
+        <key name="Background" value="9" />
+        <key name="Practical" value="2" />
+        <key name="Process" value="6" />
+        <key name="Scope" value="3" />
+      </profile>
+    </tracking>
 Languages:
 - Language: en
   Versions:
@@ -19,6 +32,10 @@ Languages:
             <r uid="{94AF685E-2B81-4D78-BD1B-912E1643D9CA}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{EF593C2A-F3F8-421A-9368-0E189A689DBD}" s:id="{A25C9850-AAB7-46A6-84B7-0DFAB32FC357}" s:par="" s:ph="/page-layout/col-huge_d66d0697-26e3-4aca-baa7-254849130f65" />
             <r uid="{D66D0697-26E3-4ACA-BAA7-254849130F65}" p:before="r[@uid='{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}']" s:ds="" s:id="{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}" s:par="ContainerIsFluid=1" s:ph="page-layout" />
             <r uid="{E32852CC-E7E8-40A4-9139-8291AA9F71BF}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{47F5A079-6F63-4219-BC45-1A221B200906}">
+              <p:d />
+            </r>
+            <r uid="{A3BAD4D4-8E21-4B30-8C4C-B04163653D62}" p:before="*[1=2]" />
           </d>
         </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
@@ -27,6 +44,9 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151009T013423Z
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      # Image
+      Value: "<image mediaid=\"{D556FE4B-1253-452C-83DD-C3E1998304B0}\" />"
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       # Title
       Value: Architecture Introduction

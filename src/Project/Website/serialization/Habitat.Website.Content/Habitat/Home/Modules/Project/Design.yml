@@ -4,6 +4,18 @@ Parent: 8d8edb18-b641-4277-bad3-9c6cf89f9fe3
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/Modules/Project/Design
 SharedFields:
+- ID: b0a67b2a-8b07-4e0b-8809-69f751709806
+  # __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}" name="Focus" presets="development|100||">
+        <key name="Background" value="0" />
+        <key name="Practical" value="8" />
+        <key name="Process" value="2" />
+        <key name="Scope" value="5" />
+      </profile>
+    </tracking>
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder
   Value: 200

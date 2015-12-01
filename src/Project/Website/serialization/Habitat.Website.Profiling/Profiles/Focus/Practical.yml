@@ -1,0 +1,65 @@
+﻿---
+ID: 5fdd9829-e689-454d-9abc-8f95ae68744c
+Parent: 24dff2cf-b30a-4b75-8967-2fe3ded82271
+Template: 44ab5107-3c73-42f0-a427-bec549f944b9
+Path: /sitecore/system/Marketing Control Panel/Profiles/Focus/Practical
+SharedFields:
+- ID: 12e2c64a-5f08-4948-86c8-55ae06afeef8
+  # MaxValue
+  Value: 10
+- ID: 271d7b0f-446c-4f24-bfe7-e33c20bf7a41
+  # MinValue
+  Value: 0
+- ID: 2e1a9aab-f7c1-49ee-b032-28b98d3688d6
+  # Name
+  Value: Practical
+Languages:
+- Language: da
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151003T031141Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
+    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+      # __Display name
+      Value: Praktisk
+- Language: de-DE
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151003T030855Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
+    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+      # __Display name
+      Value: Praktisch
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20081227T142523
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
+- Language: ja-JP
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151003T031019Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
+    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+      # __Display name
+      Value: 実用的

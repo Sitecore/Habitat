@@ -6,6 +6,7 @@
   using FluentAssertions;
   using Habitat.Accounts.Models;
   using Habitat.Accounts.Repositories;
+  using Habitat.Accounts.Services;
   using Habitat.Accounts.Tests.Extensions;
   using NSubstitute;
   using Ploeh.AutoFixture;
@@ -150,21 +151,13 @@
         var fixture = new Fixture();
         return new List<object[]>
         {
-          new RegistrationInfo[]
+          new[]
           {
-            null
+            null,fixture.Create<string>(),fixture.Create<string>()
           },
           new[]
           {
-            fixture.Build<RegistrationInfo>().With(x => x.Email, null).Create()
-          },
-          new[]
-          {
-            fixture.Build<RegistrationInfo>().With(x => x.Password, null).Create()
-          },
-          new[]
-          {
-            fixture.Build<RegistrationInfo>().With(x => x.ConfirmPassword, null).Create()
+            fixture.Create<string>(),null,fixture.Create<string>()
           }
         };
       }
@@ -172,15 +165,15 @@
 
     [Theory]
     [MemberData(nameof(RegistrationInfosArgumentNull))]
-    public void RegisterShouldThrowArgumentException(RegistrationInfo registrationInfo)
+    public void RegisterShouldThrowArgumentException(string email, string password, string profileId)
     {
       var repository = new AccountRepository();
-      repository.Invoking(x => x.RegisterUser(registrationInfo)).ShouldThrow<ArgumentNullException>();
+      repository.Invoking(x => x.RegisterUser(email,password, profileId)).ShouldThrow<ArgumentNullException>();
     }
 
     [Theory]
     [AutoDbData]
-    public void RegisterShouldCreateUserWithEmailAndPassword(FakeMembershipUser user, MembershipProvider membershipProvider, RegistrationInfo registrationInfo, AccountRepository repository)
+    public void RegisterShouldCreateUserWithEmailAndPassword(FakeMembershipUser user, MembershipProvider membershipProvider, RegistrationInfo registrationInfo, string userProfile, AccountRepository repository)
     {
       user.ProviderName.Returns("fake");
       user.UserName.Returns("name");
@@ -192,7 +185,7 @@
       {
         using (new MembershipSwitcher(membershipProvider))
         {
-          repository.RegisterUser(registrationInfo);
+          repository.RegisterUser(registrationInfo.Email,registrationInfo.Password, userProfile);
           membershipProvider.Received(1).CreateUser($@"somedomain\{registrationInfo.Email}", registrationInfo.Password, Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>(), Arg.Any<bool>(), Arg.Any<object>(), out status);
         }
       }
@@ -200,7 +193,7 @@
 
     [Theory]
     [AutoDbData]
-    public void RegisterShouldCreateLoginUser(FakeMembershipUser user, [Substitute]MembershipProvider membershipProvider, [Substitute]AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository)
+    public void RegisterShouldCreateLoginUser(FakeMembershipUser user, [Substitute]MembershipProvider membershipProvider, [Substitute]AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository, string profileId)
     {
       user.ProviderName.Returns("fake");
       user.UserName.Returns("name");
@@ -214,7 +207,7 @@
         {
           using (new AuthenticationSwitcher(authenticationProvider))
           {
-            repository.RegisterUser(registrationInfo);
+            repository.RegisterUser(registrationInfo.Email, registrationInfo.Password, profileId);
             authenticationProvider.Received(1).Login(Arg.Is<User>(u => u.Name == $@"somedomain\{registrationInfo.Email}"));
           }
         }

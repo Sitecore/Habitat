@@ -1,0 +1,14 @@
+﻿---
+ID: ac143ebf-fe8d-49f9-9811-b63e7f89bbf7
+Parent: 3c1715fe-6a13-4fcf-845f-de308ba9741d
+Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+Path: /sitecore/templates/Habitat
+BranchID: 30235f43-6242-4107-87ab-5267e34edf0c
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151123T135552Z

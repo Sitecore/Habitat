@@ -1,0 +1,31 @@
+﻿---
+ID: 5ea96321-8cc5-4e1d-80bf-8e3901692b49
+Parent: a0f38085-e3b3-45cd-93c6-3fbe85e29255
+Template: 4a6a7e36-2481-438f-a9ba-0453ecc638fa
+Path: /sitecore/system/Marketing Control Panel/Profiles/Focus/Pattern Cards/Developer
+SharedFields:
+- ID: 6da71ad3-5849-4482-9317-d21390e5a348
+  # Pattern
+  Value: |
+    <tracking>
+      <profile id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}" name="Focus">
+        <key name="Background" value="0" />
+        <key name="Practical" value="8" />
+        <key name="Process" value="3" />
+        <key name="Scope" value="6" />
+      </profile>
+    </tracking>
+- ID: 98535f26-6c9d-4fd7-a7e2-392c7cb82d65
+  # Image
+  Value: "<image mediaid=\"{40EA01F7-1897-4ED0-8721-76511278B6A5}\" />"
+- ID: fe732790-2ddb-4657-a882-c2fce1fbf0c9
+  # Name
+  Value: Module
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151117T002523Z

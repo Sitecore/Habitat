@@ -7,10 +7,6 @@ SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
   # __Icon
   Value: People/32x32/palm.png
-- ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
-  # __Masters
-  Type: TreelistEx
-  Value: {E269FBB5-3750-427A-9149-7AA950B49301}
 - ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
   # __Base template
   Type: tree list

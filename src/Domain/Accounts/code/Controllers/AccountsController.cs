@@ -1,8 +1,10 @@
 ﻿namespace Habitat.Accounts.Controllers
 {
   using System;
+  using System.Linq;
   using System.Web.Mvc;
   using System.Web.Security;
+  using Habitat.Accounts.Attributes;
   using Habitat.Accounts.Models;
   using Habitat.Accounts.Repositories;
   using Habitat.Accounts.Services;
@@ -16,16 +18,18 @@
     private readonly IAccountRepository accountRepository;
     private readonly INotificationService notificationService;
     private readonly IAccountsSettingsService accountsSettingsService;
+    private readonly IUserProfileService userProfileService;
 
-    public AccountsController() : this(new AccountRepository(), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService())
+    public AccountsController() : this(new AccountRepository(), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService())
     {
     }
 
-    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService)
+    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService, IUserProfileService userProfileService)
     {
       this.accountRepository = accountRepository;
       this.notificationService = notificationService;
       this.accountsSettingsService = accountsSettingsService;
+      this.userProfileService = userProfileService;
     }
 
     [HttpGet]
@@ -41,17 +45,13 @@
     }
 
     [HttpPost]
+    [ValidateModel]
     public ActionResult Register(RegistrationInfo registrationInfo)
     {
       var redirect = this.RedirectAuthenticatedUser();
       if (redirect != null)
       {
         return redirect;
-      }
-
-      if (!this.ModelState.IsValid)
-      {
-        return this.View(registrationInfo);
       }
 
       if (this.accountRepository.Exists(registrationInfo.Email))
@@ -63,7 +63,8 @@
 
       try
       {
-        this.accountRepository.RegisterUser(registrationInfo);
+        this.accountRepository.RegisterUser(registrationInfo.Email, registrationInfo.Password, this.userProfileService.GetUserDefaultProfileId());
+
         var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
         return this.Redirect(link);
       }
@@ -102,6 +103,7 @@
     }
 
     [HttpPost]
+    [ValidateModel]
     public ActionResult Login(LoginInfo loginInfo)
     {
       return this.Login(loginInfo, redirectUrl => new RedirectResult(redirectUrl));
@@ -109,11 +111,6 @@
 
     protected virtual ActionResult Login(LoginInfo loginInfo, Func<string, ActionResult> redirectAction)
     {
-      if (!this.ModelState.IsValid)
-      {
-        return this.View(loginInfo);
-      }
-
       var result = this.accountRepository.Login(loginInfo.Email, loginInfo.Password);
       if (result)
       {
@@ -132,12 +129,13 @@
     }
 
     [HttpPost]
+    [ValidateModel]
     public ActionResult LoginDialog(LoginInfo loginInfo)
     {
       return this.Login(loginInfo, redirectUrl => this.Json(new LoginResult
-                                                            {
-                                                              RedirectUrl = redirectUrl
-                                                            }));
+      {
+        RedirectUrl = redirectUrl
+      }));
     }
 
     [HttpPost]
@@ -161,17 +159,13 @@
     }
 
     [HttpPost]
+    [ValidateModel]
     public ActionResult ForgotPassword(PasswordResetInfo model)
     {
       var redirect = this.RedirectAuthenticatedUser();
       if (redirect != null)
       {
         return redirect;
-      }
-
-      if (!this.ModelState.IsValid)
-      {
-        return this.View(model);
       }
 
       if (!this.accountRepository.Exists(model.Email))
@@ -194,6 +188,46 @@
 
         return this.View(model);
       }
+    }
+
+    [HttpGet]
+    [RedirectUnauthenticated]
+    public ActionResult EditProfile()
+    {
+      if (!Context.PageMode.IsNormal)
+      {
+        return this.View(this.userProfileService.GetEmptyProfile());
+      }
+
+      if (this.userProfileService.GetUserDefaultProfileId() != Context.User.Profile.ProfileItemId)
+      {
+        return this.View("InfoMessage", new InfoMessage(Errors.ProfileMismatch, InfoMessage.MessageType.Error));
+      }
+
+      var profile = this.userProfileService.GetProfile(Context.User.Profile);
+
+      return this.View(profile);
+    }
+
+    [HttpPost]
+    [RedirectUnauthenticated]
+    public virtual ActionResult EditProfile(EditProfile profile)
+    {
+      if (this.userProfileService.GetUserDefaultProfileId() != Context.User.Profile.ProfileItemId)
+      {
+        return this.View("InfoMessage", new InfoMessage(Errors.ProfileMismatch, InfoMessage.MessageType.Error));
+      }
+
+      if (!this.userProfileService.ValidateProfile(profile, this.ModelState))
+      {
+        profile.InterestTypes = this.userProfileService.GetInterests();
+        return this.View(profile);
+      }
+
+      this.userProfileService.SetProfile(Context.User.Profile, profile);
+
+      Session["EditProfileMessage"] = new InfoMessage(Captions.EditProfileSuccess);
+      return this.Redirect(Request.RawUrl);
     }
   }
 }

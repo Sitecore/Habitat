@@ -12,23 +12,27 @@
   <ol class="carousel-indicators">
     @for (var i = 0; i < elements.Length; i++)
     {
-      <li data-target="#@carouselId" data-slide-to="@i" class="@(i == 0 ? "active" : "")"></li>
+      <li data-target="#@carouselId" data-slide-to="@i" class="@elements[i].Active"></li>
     }
   </ol>
 
   <div class="carousel-inner" role="listbox">
     @foreach (var element in elements)
     {
-      <div class="item @(elements.First() == element ? "active" : "")">
+
+      <div class="item @element.Active">
         @if (element.Item.IsDerived(Templates.HasMediaVideo.ID))
         {
-                    @* TODO Work out how to deal with videos *@
-          <img src="'@element.Item.ImageUrl(Templates.HasMedia.Fields.Thumbnail, new MediaUrlOptions())'" alt="" class="img-responsive"/>
+         <video class="img-responsive" muted
+                 src="@element.Item.MediaUrl(Templates.HasMediaVideo.Fields.VideoLink)"
+                 poster="@element.Item.ImageUrl(Templates.HasMedia.Fields.Thumbnail, new MediaUrlOptions())">
+          </video>
         }
         else
         {
-                    @*NOTE: because of a bug in the revolution slider, an additional ' has been added to the image URL*@
-          <img src="'@element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions())'" alt="" class="img-responsive"/>
+          @*NOTE: because of a bug in the revolution slider, an additional ' has been added to the image URL*@
+
+          <img src="'@element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions())'" alt="" class="img-responsive" />
         }
         <div class="carousel-caption">
           <h2>
@@ -40,8 +44,9 @@
         </div>
       </div>
     }
-  </div>
 
+
+  </div>
   <!-- Controls -->
   <a class="left carousel-control" href="#@carouselId" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

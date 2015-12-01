@@ -3,6 +3,22 @@ ID: 8fb91a10-d14d-4d37-85bf-8203c1c89c34
 Parent: 5deefbdd-6c01-4c49-962c-911736be4178
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/About Habitat/Fundamentals/Flexibility
+SharedFields:
+- ID: b0a67b2a-8b07-4e0b-8809-69f751709806
+  # __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}" name="Focus" presets="architecture|100||">
+        <key name="Background" value="9" />
+        <key name="Practical" value="2" />
+        <key name="Process" value="6" />
+        <key name="Scope" value="3" />
+      </profile>
+    </tracking>
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 0
 Languages:
 - Language: en
   Versions:
@@ -16,7 +32,7 @@ Languages:
       Value: 20151009T064251Z
     - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
       # Image
-      Value: "<image mediaid=\"{EEAA66A4-9936-478F-BD5F-AFAF09641366}\" />"
+      Value: "<image mediaid=\"{40EA01F7-1897-4ED0-8721-76511278B6A5}\" ></image>"
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
       # Summary
       Value: Change and add quickly and without worry.<br>

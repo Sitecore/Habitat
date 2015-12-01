@@ -1,10 +1,10 @@
 ﻿function login(componentid) {
   var logincontrol = $("#" + componentid);
-  var usernameField = logincontrol.find("#loginEmail");
-  var passwordField = logincontrol.find("#loginPassword");
+  var usernameField = logincontrol.find("#popupLoginEmail");
+  var passwordField = logincontrol.find("#popupLoginPassword");
   $.ajax(
   {
-    url: "api/Accounts/LoginDialog",
+    url: "/api/Accounts/LoginDialog",
     method: "POST",
     data: {
                 email: usernameField.val(),

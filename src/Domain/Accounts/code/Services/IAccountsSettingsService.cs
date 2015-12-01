@@ -1,5 +1,6 @@
 ﻿namespace Habitat.Accounts.Services
 {
+  using System.Collections.Generic;
   using System.Net.Mail;
   using Sitecore.Data;
   using Sitecore.Data.Items;

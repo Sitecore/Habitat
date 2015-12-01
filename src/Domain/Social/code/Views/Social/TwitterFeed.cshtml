@@ -1,20 +1,23 @@
-﻿@* TODO: Hardcoded *@
+﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Framework.SitecoreExtensions.Repositories
+@using Habitat.Social
+@using Habitat.Social.Models
+@using Sitecore.Configuration
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{
+    var repository = new RenderingPropertiesRepository();
+    var twitterFeedProperties = repository.Get<TwitterFeedRenderingProperties>();
+}
 <div class="panel panel-default news-teaser">
-  <div class="panel-heading">
-    <h3>Latest Tweets</h3>
-  </div>
-  <div class="panel-body">
-    <a class="twitter-timeline" href="https://twitter.com/sitecorehabitat" data-widget-id="641815052882804737" data-tweet-limit="2" data-chrome="noheader nofooter noscrollbar noborders transparent">Tweets by @@sitecorehabitat</a>
-    <script>
-      !function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-          js = d.createElement(s);
-          js.id = id;
-          js.src = p + "://platform.twitter.com/widgets.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        }
-      }(document, "script", "twitter-wjs");
-    </script>
-  </div>
+    @{if (Model?.Item != null)
+      {
+        <div class="panel-heading">
+            <h3>@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</h3>
+        </div>
+        <div class="panel-body">
+            <a class="twitter-timeline" href="@Model.Item.LinkFieldUrl(Templates.TwitterFeed.Fields.TwitterUrl)" data-widget-id="@Model.Item.Fields[Templates.TwitterFeed.Fields.WidgetId].Value"
+               data-tweet-limit="@twitterFeedProperties.TweetsToShow" data-chrome="noheader nofooter noscrollbar noborders transparent">@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</a>
+
+        </div>
+      }}
 </div>

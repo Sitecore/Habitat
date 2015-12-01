@@ -44,6 +44,17 @@
       return imageField?.MediaItem == null ? string.Empty : imageField.ImageUrl(options);
     }
 
+    public static string MediaUrl(this Item item, ID mediaFieldId, MediaUrlOptions options = null)
+    {
+      if (item == null)
+      {
+        throw new ArgumentNullException(nameof(item));
+      }
+
+      var imageField = (LinkField)item.Fields[mediaFieldId];
+      return imageField.TargetItem == null ? String.Empty : (MediaManager.GetMediaUrl(imageField.TargetItem) ?? string.Empty);
+    }
+
     public static Item[] TargetItems(this Item item, string fieldName)
     {
       if (item == null)
