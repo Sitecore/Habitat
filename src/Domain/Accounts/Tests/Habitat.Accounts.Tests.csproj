@@ -76,6 +76,9 @@
     <Reference Include="Sitecore.Analytics.Core">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.DataAccess">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Analytics.Model">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
