@@ -175,15 +175,15 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC3_Contact_Identification", new string[] {
                         "NeedImplementation"});
-#line 44
+#line 43
 this.ScenarioSetup(scenarioInfo);
-#line 45
+#line 44
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 46
+#line 45
  testRunner.When("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 47
+#line 46
  testRunner.And("User expands Identification section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 47
  testRunner.Then("Contact ID term with it\'s ID presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -196,23 +196,23 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC3_Contact_Identification_new session", new string[] {
                         "NeedImplementation"});
-#line 52
+#line 51
 this.ScenarioSetup(scenarioInfo);
-#line 53
+#line 52
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 54
+#line 53
  testRunner.When("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 55
+#line 54
  testRunner.And("User records Contact ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
+#line 55
  testRunner.And("User cleans up browser cookies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
+#line 56
  testRunner.And("User refreshes browser page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 58
+#line 57
  testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
+#line 58
  testRunner.And("User expands Identification section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 60
+#line 59
  testRunner.Then("New Contact ID presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -227,13 +227,13 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC4_Contact_Classification_List of the available c" +
                     "heck boxes(Unclassified)", new string[] {
                         "NeedImplementation"});
-#line 64
+#line 63
 this.ScenarioSetup(scenarioInfo);
-#line 66
+#line 65
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 67
+#line 66
  testRunner.When("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 68
+#line 67
  testRunner.And("User expands Classification section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -284,7 +284,7 @@ this.ScenarioSetup(scenarioInfo);
             table3.AddRow(new string[] {
                         "Bot - Malicious",
                         "unchecked"});
-#line 69
+#line 68
  testRunner.Then("Following check boxes present in list", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -299,7 +299,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC4_Contact_Classification_Existing customer check" +
                     "ed", new string[] {
                         "InDesign"});
-#line 89
+#line 88
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -310,11 +310,11 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 91
+#line 90
  testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table4, "Given ");
-#line 94
+#line 93
  testRunner.When("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 95
+#line 94
  testRunner.And("User expands Classification section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -365,7 +365,7 @@ this.ScenarioSetup(scenarioInfo);
             table5.AddRow(new string[] {
                         "Bot - Malicious",
                         "unchecked"});
-#line 96
+#line 95
  testRunner.Then("Following check boxes present in list", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -378,11 +378,11 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC5_This Visit_First Visit", new string[] {
                         "NeedImplementation"});
-#line 117
+#line 115
 this.ScenarioSetup(scenarioInfo);
-#line 118
+#line 116
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 119
+#line 117
  testRunner.When("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -391,7 +391,7 @@ this.ScenarioSetup(scenarioInfo);
             table6.AddRow(new string[] {
                         "1",
                         "10"});
-#line 120
+#line 118
  testRunner.Then("Following This Visit section contains", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -404,15 +404,15 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC5_This Visit_Few Visits", new string[] {
                         "NeedImplementation"});
-#line 126
+#line 124
 this.ScenarioSetup(scenarioInfo);
-#line 128
+#line 126
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 129
+#line 127
  testRunner.When("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 130
+#line 128
  testRunner.And("User clicks END VISIT button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 131
+#line 129
  testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -421,7 +421,7 @@ this.ScenarioSetup(scenarioInfo);
             table7.AddRow(new string[] {
                         "1",
                         "10"});
-#line 132
+#line 130
  testRunner.Then("Following This Visit section contains", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -434,17 +434,17 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC5_This Visit_Few Visits and pages", new string[] {
                         "NeedImplementation"});
-#line 138
+#line 136
 this.ScenarioSetup(scenarioInfo);
-#line 140
+#line 138
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 141
+#line 139
  testRunner.When("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 142
+#line 140
  testRunner.And("User clicks END VISIT button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 143
+#line 141
  testRunner.And("User selects CONTACT US navigation menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 144
+#line 142
  testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -453,7 +453,7 @@ this.ScenarioSetup(scenarioInfo);
             table8.AddRow(new string[] {
                         "2",
                         "10"});
-#line 145
+#line 143
  testRunner.Then("Following This Visit section contains", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -466,25 +466,25 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC6_Patterns_Focus Developer", new string[] {
                         "NeedImplementation"});
-#line 152
+#line 149
 this.ScenarioSetup(scenarioInfo);
-#line 153
+#line 150
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 154
+#line 151
  testRunner.When("Actor moves cursor over the Modules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 155
+#line 152
  testRunner.And("User selects PROJECT navigation menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 156
+#line 153
  testRunner.And("User selects default image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 157
+#line 154
  testRunner.And("User clicks on Website list-group-item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 158
+#line 155
  testRunner.And("User clicks on Design list-group-item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 159
+#line 156
  testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 160
+#line 157
  testRunner.And("User expands Patterns section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 161
+#line 158
  testRunner.Then("Following image presents: http://habitat.test5ua1.dk.sitecore.net/-/media/Habitat" +
                     "/Images/Square/Habitat-067-square.jpg?mw=50&w=50&hash=EDC92E237DDCFE910A6CD27BCA" +
                     "2530938E06AE6D", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -495,7 +495,7 @@ this.ScenarioSetup(scenarioInfo);
             table9.AddRow(new string[] {
                         "FOCUS",
                         "DEVELOPER"});
-#line 162
+#line 159
  testRunner.And("Following Patterns section contains", ((string)(null)), table9, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -508,25 +508,25 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC6_Patterns_Focus Architect", new string[] {
                         "NeedImplementation"});
-#line 168
+#line 165
 this.ScenarioSetup(scenarioInfo);
-#line 169
+#line 166
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 170
+#line 167
  testRunner.When("Actor moves cursor over the ABOUT HABITAT", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 171
+#line 168
  testRunner.And("User selects Fundamentals navigation menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 172
+#line 169
  testRunner.And("User clicks on Flexibility link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 173
+#line 170
  testRunner.And("User clicks on Extensibility link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 174
+#line 171
  testRunner.And("User clicks on Cimplicity link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 175
+#line 172
  testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 176
+#line 173
  testRunner.And("User expands Patterns section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 177
+#line 174
  testRunner.Then("Following image presents: http://habitat.test5ua1.dk.sitecore.net/-/media/Habitat" +
                     "/Images/Square/Habitat-080-square.jpg?mw=50&w=50&hash=2C014C2D7867CA453275963843" +
                     "0D9EAD55038059", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -537,7 +537,7 @@ this.ScenarioSetup(scenarioInfo);
             table10.AddRow(new string[] {
                         "FOCUS",
                         "ARCHITECT"});
-#line 178
+#line 175
  testRunner.And("Following Patterns section contains", ((string)(null)), table10, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -550,21 +550,21 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC7_Campaigns", new string[] {
                         "NeedImplementation"});
-#line 184
+#line 181
 this.ScenarioSetup(scenarioInfo);
-#line 185
+#line 182
  testRunner.Given("Habitat website is opened on http://habitat.test5ua1.dk.sitecore.net?sc_camp=9AC6" +
                     "AD85B15A4A5BB14337185A19364E", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 186
+#line 183
  testRunner.When("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 187
+#line 184
  testRunner.And("User expands Campaigns section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Campaign name"});
             table11.AddRow(new string[] {
                         "Habitat Test Campaign"});
-#line 188
+#line 185
  testRunner.Then("Following Campaigns section contains", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -577,15 +577,15 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC8_Geo IP Location", new string[] {
                         "InDesign"});
-#line 193
+#line 190
 this.ScenarioSetup(scenarioInfo);
-#line 194
+#line 191
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 195
+#line 192
  testRunner.When("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 196
+#line 193
  testRunner.And("User expands Geo IP Location section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 197
+#line 194
  testRunner.Then("<I have no idea how to test it now>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -598,13 +598,13 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC9_Device", new string[] {
                         "NeedImplementation"});
-#line 201
+#line 198
 this.ScenarioSetup(scenarioInfo);
-#line 202
+#line 199
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 203
+#line 200
  testRunner.When("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 204
+#line 201
  testRunner.And("User expands Device section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -621,7 +621,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Unidentified",
                         "Unknown",
                         "Unknown"});
-#line 205
+#line 202
  testRunner.Then("Following Device section contains", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -634,19 +634,19 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC10_Pages_Shown pages", new string[] {
                         "NeedImplemantation"});
-#line 213
+#line 208
 this.ScenarioSetup(scenarioInfo);
-#line 214
+#line 209
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 215
+#line 210
  testRunner.When("User selects CONTACT US navigation menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 216
+#line 211
  testRunner.And("User selects PROJECT navigation menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 217
+#line 212
  testRunner.And("User selects default image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 218
+#line 213
  testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 219
+#line 214
  testRunner.And("User expands Pages section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -659,7 +659,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Contact-Us"});
             table13.AddRow(new string[] {
                         "Home"});
-#line 220
+#line 215
  testRunner.Then("Following Pages section contains", ((string)(null)), table13, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -672,23 +672,23 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC10_Pages_Click link to page", new string[] {
                         "NeedImplemantation"});
-#line 229
+#line 224
 this.ScenarioSetup(scenarioInfo);
-#line 230
+#line 225
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 231
+#line 226
  testRunner.When("User selects CONTACT US navigation menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 232
+#line 227
  testRunner.And("User selects HOME navigation menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 233
+#line 228
  testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 234
+#line 229
  testRunner.And("User expands Pages section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 235
+#line 230
  testRunner.And("User selects Contact Us from the Pages section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 236
+#line 231
  testRunner.Then("Page URL ends on /Contact-Us", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 237
+#line 232
  testRunner.And("Contact Us title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -701,17 +701,17 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC11_Goals_Goals archived", new string[] {
                         "NeedImplementation"});
-#line 241
+#line 236
 this.ScenarioSetup(scenarioInfo);
-#line 242
+#line 237
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 243
+#line 238
  testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 244
+#line 239
  testRunner.And("User selects Register from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 245
+#line 240
  testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 246
+#line 241
  testRunner.And("User expands Goals section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -720,7 +720,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Register page (20)"});
             table14.AddRow(new string[] {
                         "Home Page (10)"});
-#line 247
+#line 242
  testRunner.Then("Following Goals section contains", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -733,22 +733,43 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_UC12_Engagement", new string[] {
                         "NeedImplementation"});
-#line 257
+#line 249
 this.ScenarioSetup(scenarioInfo);
-#line 258
+#line 250
  testRunner.Given("Habitat website is opened on http://habitat.test5ua1.dk.sitecore.net/Register?sc_" +
                     "camp=9AC6AD85B15A4A5BB14337185A19364E>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 259
+#line 251
  testRunner.When("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 260
+#line 252
  testRunner.And("User expands Engagement section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Engagement plan name"});
             table15.AddRow(new string[] {
                         "Register Page Open"});
-#line 261
+#line 253
  testRunner.Then("Following Engagement section contains", ((string)(null)), table15, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Show Tracking Information")]
+        [Xunit.TraitAttribute("Description", "Demo_Show Tracking Information_Bug36059_Tracking information panel is empty in Ex" +
+            "perience Editor")]
+        public virtual void Demo_ShowTrackingInformation_Bug36059_TrackingInformationPanelIsEmptyInExperienceEditor()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Tracking Information_Bug36059_Tracking information panel is empty in Ex" +
+                    "perience Editor", new string[] {
+                        "NeedImplementation"});
+#line 259
+this.ScenarioSetup(scenarioInfo);
+#line 260
+ testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 261
+ testRunner.When("Admin launches <Experience Editor>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 262
+ testRunner.Then("there is no <Info-sign> in the right down corner of the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
