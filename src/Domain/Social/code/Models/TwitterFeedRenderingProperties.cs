@@ -7,22 +7,22 @@ namespace Habitat.Social.Models
 {
   public class TwitterFeedRenderingProperties
   {
-    private int twittsToShow;
-    private const int DefaultTwittsToShow = 2;
-    public int TwittsToShow
+    private int tweetsToShow;
+    private const int DefaultTweetsToShow = 2;
+    public int TweetsToShow
     {
       get
       {
-        if (twittsToShow == 0)
+        if (tweetsToShow == 0)
         {
-          this.twittsToShow = DefaultTwittsToShow;
+          this.tweetsToShow = DefaultTweetsToShow;
         }
 
-        return this.twittsToShow;
+        return this.tweetsToShow;
       }
       set
       {
-        this.twittsToShow = value;
+        this.tweetsToShow = value;
       }
     }
   }

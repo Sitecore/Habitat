@@ -16,7 +16,7 @@
         </div>
         <div class="panel-body">
             <a class="twitter-timeline" href="@Model.Item.LinkFieldUrl(Templates.TwitterFeed.Fields.TwitterUrl)" data-widget-id="@Model.Item.Fields[Templates.TwitterFeed.Fields.WidgetId].Value"
-               data-tweet-limit="@twitterFeedProperties.TwittsToShow" data-chrome="noheader nofooter noscrollbar noborders transparent">@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</a>
+               data-tweet-limit="@twitterFeedProperties.TweetsToShow" data-chrome="noheader nofooter noscrollbar noborders transparent">@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</a>
 
         </div>
       }}

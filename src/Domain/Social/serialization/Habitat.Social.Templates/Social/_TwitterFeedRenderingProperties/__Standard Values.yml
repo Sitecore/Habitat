@@ -3,11 +3,18 @@ ID: 300a5935-6031-41e8-a66f-1fb4bfae860d
 Parent: 9eee8077-990f-4fde-95fb-c7b9819df913
 Template: 9eee8077-990f-4fde-95fb-c7b9819df913
 Path: /sitecore/templates/Habitat/Domain/Social/_TwitterFeedRenderingProperties/__Standard Values
+SharedFields:
+- ID: 3094d236-5985-4c4f-ae6a-e30740885532
+  # Caching
+  Value: 0|0|0|0|0|0|0|0
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
+    - ID: 084d873d-194d-456b-a1d8-328c048e5582
+      # TweetsToShow
+      Value: 2
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151201T122927Z
