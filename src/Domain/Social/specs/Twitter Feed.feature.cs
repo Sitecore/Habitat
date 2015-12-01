@@ -18,9 +18,7 @@ namespace Habitat.Social.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Twitter Feed")]
-    public partial class TwitterFeedFeature
+    public partial class TwitterFeedFeature : Xunit.IUseFixture<TwitterFeedFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,8 +26,12 @@ namespace Habitat.Social.Specflow
 #line 1 "Twitter Feed.feature"
 #line hidden
         
-        [NUnit.Framework.TestFixtureSetUpAttribute()]
-        public virtual void FeatureSetup()
+        public TwitterFeedFeature()
+        {
+            this.TestInitialize();
+        }
+        
+        public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Twitter Feed", "\nIn order visitors can follow twitter posts on the website\nAs an editor\nI want to" +
@@ -37,19 +39,16 @@ namespace Habitat.Social.Specflow
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.TestFixtureTearDownAttribute()]
-        public virtual void FeatureTearDown()
+        public static void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -65,9 +64,18 @@ namespace Habitat.Social.Specflow
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Social_UC1_Twitter feed presents on the page")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        public virtual void SetFixture(TwitterFeedFeature.FixtureData fixtureData)
+        {
+        }
+        
+        void System.IDisposable.Dispose()
+        {
+            this.ScenarioTearDown();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
+        [Xunit.TraitAttribute("Description", "Social_UC1_Twitter feed presents on the page")]
         public virtual void Social_UC1_TwitterFeedPresentsOnThePage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_UC1_Twitter feed presents on the page", new string[] {
@@ -89,9 +97,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Social_UC2_Add twitter rendering on the page")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
+        [Xunit.TraitAttribute("Description", "Social_UC2_Add twitter rendering on the page")]
         public virtual void Social_UC2_AddTwitterRenderingOnThePage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_UC2_Add twitter rendering on the page", new string[] {
@@ -127,9 +135,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Social_UC3_Remove twitter rendering from page")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
+        [Xunit.TraitAttribute("Description", "Social_UC3_Remove twitter rendering from page")]
         public virtual void Social_UC3_RemoveTwitterRenderingFromPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_UC3_Remove twitter rendering from page", new string[] {
@@ -150,9 +158,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Social_UC4_Edit rendering title")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
+        [Xunit.TraitAttribute("Description", "Social_UC4_Edit rendering title")]
         public virtual void Social_UC4_EditRenderingTitle()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_UC4_Edit rendering title", new string[] {
@@ -196,9 +204,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Social_UC5_Make sure latest posts are shown on the page")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
+        [Xunit.TraitAttribute("Description", "Social_UC5_Make sure latest posts are shown on the page")]
         public virtual void Social_UC5_MakeSureLatestPostsAreShownOnThePage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_UC5_Make sure latest posts are shown on the page", new string[] {
@@ -226,9 +234,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Social_UC6_Add new datasource")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
+        [Xunit.TraitAttribute("Description", "Social_UC6_Add new datasource")]
         public virtual void Social_UC6_AddNewDatasource()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_UC6_Add new datasource", new string[] {
@@ -268,6 +276,22 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("<TwitterFeed1> datasource available in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        public class FixtureData : System.IDisposable
+        {
+            
+            public FixtureData()
+            {
+                TwitterFeedFeature.FeatureSetup();
+            }
+            
+            void System.IDisposable.Dispose()
+            {
+                TwitterFeedFeature.FeatureTearDown();
+            }
         }
     }
 }

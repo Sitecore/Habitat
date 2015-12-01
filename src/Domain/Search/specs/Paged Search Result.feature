@@ -1,9 +1,7 @@
 ﻿Feature: Paged Search Result
-
 	In order to find the content I am searching for
 	As a website visitor
 	I want to be able to browse through multiple pages of search results
-
 
 	@NeedImplementation
 Scenario: Search_Paged Search Results_UC1_Open search result page

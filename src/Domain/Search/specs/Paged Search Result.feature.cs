@@ -18,9 +18,7 @@ namespace Habitat.Search.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Paged Search Result")]
-    public partial class PagedSearchResultFeature
+    public partial class PagedSearchResultFeature : Xunit.IUseFixture<PagedSearchResultFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,28 +26,29 @@ namespace Habitat.Search.Specflow
 #line 1 "Paged Search Result.feature"
 #line hidden
         
-        [NUnit.Framework.TestFixtureSetUpAttribute()]
-        public virtual void FeatureSetup()
+        public PagedSearchResultFeature()
+        {
+            this.TestInitialize();
+        }
+        
+        public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Paged Search Result", "\nIn order to find the content I am searching for\nAs a website visitor\nI want to b" +
-                    "e able to browse through multiple pages of search results", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Paged Search Result", "In order to find the content I am searching for\nAs a website visitor\nI want to be" +
+                    " able to browse through multiple pages of search results", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.TestFixtureTearDownAttribute()]
-        public virtual void FeatureTearDown()
+        public static void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -65,223 +64,248 @@ namespace Habitat.Search.Specflow
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search_Paged Search Results_UC1_Open search result page")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        public virtual void SetFixture(PagedSearchResultFeature.FixtureData fixtureData)
+        {
+        }
+        
+        void System.IDisposable.Dispose()
+        {
+            this.ScenarioTearDown();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Paged Search Result")]
+        [Xunit.TraitAttribute("Description", "Search_Paged Search Results_UC1_Open search result page")]
         public virtual void Search_PagedSearchResults_UC1_OpenSearchResultPage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search_Paged Search Results_UC1_Open search result page", new string[] {
                         "NeedImplementation"});
-#line 9
+#line 7
 this.ScenarioSetup(scenarioInfo);
-#line 10
+#line 8
  testRunner.Given("Term <T1> was presented on 2 pages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 11
+#line 9
  testRunner.And("User has entered <T1> into search box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
+#line 10
  testRunner.When("User clicks search link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 13
+#line 11
  testRunner.Then("Title <Search> presents on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 14
+#line 12
  testRunner.And("URL ends with Search?query=T1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search_Paged Search Results_UC2_No search results")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Paged Search Result")]
+        [Xunit.TraitAttribute("Description", "Search_Paged Search Results_UC2_No search results")]
         public virtual void Search_PagedSearchResults_UC2_NoSearchResults()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search_Paged Search Results_UC2_No search results", new string[] {
                         "NeedImplementation"});
-#line 18
+#line 16
 this.ScenarioSetup(scenarioInfo);
-#line 19
+#line 17
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 20
+#line 18
  testRunner.When("User user hovers over <search-icon>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 21
+#line 19
  testRunner.And("User clicks search link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 22
+#line 20
  testRunner.Then("Title <Search> presents on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Text"});
             table1.AddRow(new string[] {
                         "No results found"});
-#line 23
+#line 21
  testRunner.And("following text is under page title", ((string)(null)), table1, "And ");
-#line 26
+#line 24
  testRunner.And("search box on the right side of the page is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search_Paged Search Results_UC3_Change default number of results on the page")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Paged Search Result")]
+        [Xunit.TraitAttribute("Description", "Search_Paged Search Results_UC3_Change default number of results on the page")]
         public virtual void Search_PagedSearchResults_UC3_ChangeDefaultNumberOfResultsOnThePage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search_Paged Search Results_UC3_Change default number of results on the page", new string[] {
                         "NeedImplementation"});
-#line 30
+#line 28
 this.ScenarioSetup(scenarioInfo);
-#line 31
+#line 29
  testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 32
+#line 30
  testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
+#line 31
  testRunner.And("Search Results page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
+#line 32
  testRunner.And("<Control Properties> dialog for <PagedSearchResults> rendering is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
+#line 33
  testRunner.When("Admin changes <ResultsOnPage> field value to <5>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 36
+#line 34
  testRunner.And("Admin publishes site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 37
+#line 35
  testRunner.And("Admin logs out from Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
+#line 36
  testRunner.And("Actor hovers over <search-icon>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
+#line 37
  testRunner.And("Actor enters <T1> search term", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 40
+#line 38
  testRunner.And("Actor clicks search link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 41
+#line 39
  testRunner.Then("number of results on the <Search> page is equal to <5>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search_Paged Search Results_UC4_Change default number of pages to show")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Paged Search Result")]
+        [Xunit.TraitAttribute("Description", "Search_Paged Search Results_UC4_Change default number of pages to show")]
         public virtual void Search_PagedSearchResults_UC4_ChangeDefaultNumberOfPagesToShow()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search_Paged Search Results_UC4_Change default number of pages to show", new string[] {
                         "NeedImplementation"});
-#line 45
+#line 43
 this.ScenarioSetup(scenarioInfo);
-#line 46
+#line 44
  testRunner.Given("Term <T2> was presented on 5 pages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 47
+#line 45
  testRunner.And("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 48
+#line 46
  testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 49
+#line 47
  testRunner.And("Search Results page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
+#line 48
  testRunner.And("<Control Properties> dialog for <PagedSearchResults> rendering is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
+#line 49
  testRunner.When("Admin changes <PagesToShow> field value to <3>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 52
+#line 50
  testRunner.And("Admin publishes site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
+#line 51
  testRunner.And("Admin logs out from Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
+#line 52
  testRunner.And("Actor hovers over <search-icon>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
+#line 53
  testRunner.And("Actor enters <T2> search term", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
+#line 54
  testRunner.And("Actor clicks search link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
+#line 55
  testRunner.Then("number of pages on the <Search> page is equal to <3>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search_Paged Search Results_UC5_Next button")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Paged Search Result")]
+        [Xunit.TraitAttribute("Description", "Search_Paged Search Results_UC5_Next button")]
         public virtual void Search_PagedSearchResults_UC5_NextButton()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search_Paged Search Results_UC5_Next button", new string[] {
                         "NeedImplementation"});
-#line 61
+#line 59
 this.ScenarioSetup(scenarioInfo);
-#line 62
+#line 60
  testRunner.Given("Term <T3> was presented on 3 pages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 63
+#line 61
  testRunner.And("User has entered <T3> into search box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
+#line 62
  testRunner.And("User clicked search link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
+#line 63
  testRunner.When("User clicks <Next> link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 66
+#line 64
  testRunner.Then("2d page is highlighted and search results is updated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search_Paged Search Results_UC6_Previous button")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Paged Search Result")]
+        [Xunit.TraitAttribute("Description", "Search_Paged Search Results_UC6_Previous button")]
         public virtual void Search_PagedSearchResults_UC6_PreviousButton()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search_Paged Search Results_UC6_Previous button", new string[] {
                         "NeedImplementation"});
-#line 70
+#line 68
 this.ScenarioSetup(scenarioInfo);
-#line 71
+#line 69
  testRunner.Given("Term <T3> was presented on 3 pages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 72
+#line 70
  testRunner.And("Search for <T3> is performed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
+#line 71
  testRunner.And("<2> page is highlighted in the paged search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
+#line 72
  testRunner.When("User clicks <Prev> link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 75
+#line 73
  testRunner.Then("1st page is highlighted and search results is updated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search_Paged Search Results_UC7_Check that the last page is last")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Paged Search Result")]
+        [Xunit.TraitAttribute("Description", "Search_Paged Search Results_UC7_Check that the last page is last")]
         public virtual void Search_PagedSearchResults_UC7_CheckThatTheLastPageIsLast()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search_Paged Search Results_UC7_Check that the last page is last", new string[] {
                         "NeedImplementation"});
-#line 79
+#line 77
 this.ScenarioSetup(scenarioInfo);
-#line 80
+#line 78
  testRunner.Given("Term <T3> was presented on 3 pages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 81
+#line 79
  testRunner.And("User has entered <T3> into search box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
+#line 80
  testRunner.And("User clicked search link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 83
+#line 81
  testRunner.When("User highlights 3d page in the paged search results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
+#line 82
  testRunner.And("User clicks <Next> link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
+#line 83
  testRunner.Then("<Next> link is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Search_Paged Search Results_UC8_Check that the first page is first")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Paged Search Result")]
+        [Xunit.TraitAttribute("Description", "Search_Paged Search Results_UC8_Check that the first page is first")]
         public virtual void Search_PagedSearchResults_UC8_CheckThatTheFirstPageIsFirst()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Search_Paged Search Results_UC8_Check that the first page is first", new string[] {
                         "NeedImplementation"});
-#line 89
+#line 87
 this.ScenarioSetup(scenarioInfo);
-#line 90
+#line 88
  testRunner.Given("Term <T3> was presented on 3 pages", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 91
+#line 89
  testRunner.And("User has entered <T3> into search box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
+#line 90
  testRunner.And("User clicked search link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 93
+#line 91
  testRunner.When("User clicks <Prev> link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 94
+#line 92
  testRunner.Then("<Prev> link is disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        public class FixtureData : System.IDisposable
+        {
+            
+            public FixtureData()
+            {
+                PagedSearchResultFeature.FeatureSetup();
+            }
+            
+            void System.IDisposable.Dispose()
+            {
+                PagedSearchResultFeature.FeatureTearDown();
+            }
         }
     }
 }
