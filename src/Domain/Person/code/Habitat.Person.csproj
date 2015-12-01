@@ -52,6 +52,7 @@
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Mvc">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
@@ -96,22 +97,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Person\EmployeeContactLinks.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\EmployeeController.cs" />
-    <Compile Include="Controllers\QuoteController.cs" />
-    <Compile Include="Controllers\PersonController.cs" />
-    <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\Quote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\EmployeeRepository.cs" />
-    <Compile Include="Repositories\IEmployeeRepository.cs" />
-    <Compile Include="Repositories\IPersonRepository.cs" />
-    <Compile Include="Repositories\IQuoteRepository.cs" />
-    <Compile Include="Repositories\PersonRepository.cs" />
-    <Compile Include="Repositories\QuoteRepository.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -119,11 +109,11 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="packages.config" />
-    <Content Include="Views\Employee\EmployeeTeaser.cshtml" />
-    <Content Include="Views\Quote\Quote.cshtml" />
+    <Content Include="Views\Person\EmployeeTeaser.cshtml" />
+    <Content Include="Views\Person\Quote.cshtml" />
     <Content Include="Views\Person\PersonPhoto.cshtml" />
-    <Content Include="Views\Employee\EmployeeDetails.cshtml" />
-    <Content Include="Views\Employee\ContactTeaser.cshtml" />
+    <Content Include="Views\Person\EmployeeDetails.cshtml" />
+    <Content Include="Views\Person\EmployeeContactTeaser.cshtml" />
     <Content Include="App_Config\Include\Habitat\Habitat.Person.Serialization.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <None Include="Web.Debug.config">
@@ -138,7 +128,7 @@
     <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Habitat.Framework.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Habitat.Framework.SitecoreExtensions</Name>
-      <Private>False</Private>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

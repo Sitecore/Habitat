@@ -46,7 +46,7 @@
       return imageField?.MediaItem == null ? string.Empty : imageField.ImageUrl(options);
     }
 
-  public static string MediaUrl(this Item item, ID mediaFieldId, MediaUrlOptions options = null)
+    public static string MediaUrl(this Item item, ID mediaFieldId, MediaUrlOptions options = null)
     {
       if (item == null)
       {
@@ -73,7 +73,7 @@
       return mf == null ? new Item[0] : mf.GetItems();
     }
 
-      public static Item GetAncestorOrSelfOfTemplate(this Item item, ID templateID)
+    public static Item GetAncestorOrSelfOfTemplate(this Item item, ID templateID)
     {
       if (item == null)
       {
@@ -153,8 +153,12 @@
       }
 
       var itemTemplate = TemplateManager.GetTemplate(item);
-      return itemTemplate != null &&
-             (itemTemplate.ID == templateItem.ID || itemTemplate.DescendsFrom(templateItem.ID));
+      return itemTemplate != null && (itemTemplate.ID == templateItem.ID || itemTemplate.DescendsFrom(templateItem.ID));
+    }
+
+    public static bool FieldHasValue(this Item item, ID fieldID)
+    {
+      return item.Fields[fieldID] != null && item.Fields[fieldID].HasValue && !string.IsNullOrWhiteSpace(item.Fields[fieldID].Value);
     }
 
     public static string GetString(this Item item, string fieldName)
@@ -319,18 +323,12 @@
 
     public static Item[] GetReferrersAsItems(this Item item)
     {
-      return Globals.LinkDatabase.GetReferrers(item)
-        .Select(i => i.GetSourceItem())
-        .Where(i => i != null)
-        .ToArray();
+      return Globals.LinkDatabase.GetReferrers(item).Select(i => i.GetSourceItem()).Where(i => i != null).ToArray();
     }
 
     public static Item[] GetReferencesAsItems(this Item item)
     {
-      return Globals.LinkDatabase.GetReferences(item)
-        .Select(i => i.GetTargetItem())
-        .Where(i => i != null)
-        .ToArray();
+      return Globals.LinkDatabase.GetReferences(item).Select(i => i.GetTargetItem()).Where(i => i != null).ToArray();
     }
 
     public static bool HasVersionedRenderings(this Item item)

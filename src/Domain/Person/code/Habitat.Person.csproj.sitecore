@@ -2,16 +2,22 @@
   <PropertyGroup>
     <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
   </PropertyGroup>
-  <File Include="Views\Employee\EmployeeTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{5264BC97-423A-4392-A06C-0FEC24510D71}</Item>
+  <File Include="Views\Person\EmployeeTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{7B7DD1F9-A0DB-45D9-9A3F-B704BB28903E}</Item>
   </File>
-  <File Include="Views\Quote\Quote.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{B8FC8E3C-3A9C-4CD8-840F-91757457C1D8}</Item>
+  <File Include="Views\Person\Quote.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{A1AD34DD-535E-47AF-A911-34C57CCC26F6}</Item>
   </File>
   <File Include="Views\Person\PersonPhoto.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{3CE9E2EF-CE0D-497C-96B1-0944EDF02671}</Item>
+    <Item DatabaseName="master">{B6F11192-7C7B-4DE2-9F85-140692B2470B}</Item>
   </File>
-  <File Include="Views\Employee\EmployeeDetails.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{0A1996B9-FF65-45B7-A618-77DBADCF420A}</Item>
+  <File Include="Views\Person\EmployeeDetails.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{907018D8-CC53-4D34-AD67-3FDF0A25832A}</Item>
+  </File>
+  <File Include="Views\Person\EmployeeContactLinks.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{C6E4CC96-91AC-4074-AD62-7DAE344F995D}</Item>
+  </File>
+  <File Include="Views\Person\EmployeeContactTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{EBB6DC33-F281-49BE-B273-29ECCD6085A8}</Item>
   </File>
 </Project>

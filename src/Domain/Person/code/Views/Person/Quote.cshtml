@@ -1,0 +1,16 @@
+﻿@using Habitat.Person
+@using Habitat.Framework.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+<blockquote>
+  @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 64)
+  <p>
+    @Model.Item.Field(Templates.Quote.Fields.Quote)
+  </p>
+  <footer>
+    <cite>
+      <span class="name">@Model.Item.Field(Templates.Person.Fields.Name)</span>
+      <span class="title">@Model.Item.Field(Templates.Person.Fields.Title)</span>
+      <span class="company">@Model.Item.Field(Templates.Quote.Fields.Company)</span>
+    </cite>
+  </footer>
+</blockquote>

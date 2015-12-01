@@ -1,17 +1,7 @@
-﻿@model Habitat.Person.Models.Person
-<div class="row">
-    <h2>Person photo</h2>
+﻿@using Habitat.Person
+@using Habitat.Framework.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
 
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail text-center">
-            @Model.Picture
-            <div class="caption">
-                <h3>
-                    @Model.Name
-                </h3>
-                <p>@Model.Title</p>
-                @*<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>*@
-            </div>
-        </div>
-    </div>
+<div class="thumbnail">
+  @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 750, cssClass: "img-responsive")
 </div>

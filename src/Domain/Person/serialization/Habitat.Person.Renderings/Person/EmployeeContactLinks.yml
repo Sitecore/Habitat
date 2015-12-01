@@ -1,15 +1,15 @@
 ﻿---
-ID: b6f11192-7c7b-4de2-9f85-140692b2470b
+ID: c6e4cc96-91ac-4074-ad62-7dae344f995d
 Parent: 918adf7b-f0e9-422c-8dee-757215ce3407
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
-Path: /sitecore/layout/Renderings/Habitat/Domain/Person/PersonPhoto
+Path: /sitecore/layout/Renderings/Habitat/Domain/Person/EmployeeContactLinks
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template
-  Value: /sitecore/templates/Habitat/Project/Website/Content Types/Person
+  Value: /sitecore/templates/Habitat/Project/Website/Page Types/Employee
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   # Path
-  Value: /Views/Person/PersonPhoto.cshtml
+  Value: /Views/Person/EmployeeContactLinks.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   # Datasource Location
   Value: /sitecore/content/Habitat/Global/Persons
@@ -23,4 +23,4 @@ Languages:
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20151124T105157Z
+      Value: 20151124T104542Z

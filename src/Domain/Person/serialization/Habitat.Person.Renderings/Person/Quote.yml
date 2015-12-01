@@ -1,21 +1,21 @@
 ﻿---
 ID: a1ad34dd-535e-47af-a911-34c57ccc26f6
 Parent: 918adf7b-f0e9-422c-8dee-757215ce3407
-Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
+Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Habitat/Domain/Person/Quote
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template
   Value: /sitecore/templates/Habitat/Project/Website/Content Types/Quote
+- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+  # Path
+  Value: /Views/Person/Quote.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   # Datasource Location
   Value: /sitecore/content/Habitat/Global/Persons
-- ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
-  # Controller Action
-  Value: Quote
-- ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
-  # Controller
-  Value: Habitat.Person.Controllers.QuoteController, Habitat.Person
+- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
+  # Open Properties after Add
+  Value: -
 Languages:
 - Language: en
   Versions:
