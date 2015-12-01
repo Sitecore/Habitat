@@ -49,6 +49,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sitecore.ContentSearch">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
@@ -98,9 +101,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Person\EmployeeContactLinks.cshtml" />
+    <Content Include="App_Config\Include\Habitat\Habitat.Person.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Indexing\PersonIndexContentProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
@@ -125,6 +132,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Indexing\code\Habitat.Framework.Indexing.csproj">
+      <Project>{80213F24-577F-4F0B-A3B8-62485EA4D2F3}</Project>
+      <Name>Habitat.Framework.Indexing</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Habitat.Framework.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Habitat.Framework.SitecoreExtensions</Name>

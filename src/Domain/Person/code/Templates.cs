@@ -14,6 +14,9 @@
         public static readonly ID Title = new ID("{76972FCD-4BB0-4255-864E-077745EFDF50}");
         public static readonly ID Picture = new ID("{C9BAF3EB-8CFA-4BF6-9B19-51D38DB5FC38}");
         public static readonly ID Summary = new ID("{B897023C-15D2-49F3-8974-06FA5FB7AD00}");
+        public static string Title_FieldName = "Title";
+        public static string Summary_FieldName = "Summary";
+        public static string Name_FieldName = "Name";
       }
     }
 
@@ -42,6 +45,7 @@
         public static readonly ID LinkedInLink = new ID("{2B13DFAB-3450-45EF-93F4-BEAA6F544FA6}");
         public static readonly ID TwitterLink = new ID("{6DE98EF7-1209-40A3-A63E-16DBEF015211}");
         public static readonly ID BlogLink = new ID("{69A846D9-4C7F-435C-A8DC-87E2D7359CFA}");
+        public static string Biography_FieldName = "Biography";
       }
     }
   }
