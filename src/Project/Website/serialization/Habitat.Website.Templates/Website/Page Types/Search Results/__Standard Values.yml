@@ -4,6 +4,9 @@ Parent: 92168572-385b-45f0-b40f-3d987ad20e5c
 Template: 92168572-385b-45f0-b40f-3d987ad20e5c
 Path: /sitecore/templates/Habitat/Project/Website/Page Types/Search Results/__Standard Values
 SharedFields:
+- ID: 5585a30d-b115-4753-93ce-422c3455deb2
+  # ShowInNavigation
+  Value: 
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
   # __Renderings
   Type: layout
@@ -24,6 +27,7 @@ SharedFields:
         <r id="{E6BA23C6-08F7-43D0-BE00-BB2129D6F288}" ph="pageheading" uid="{20E3883C-C16D-41D7-B5D3-C4AC60D8386D}" />
         <r id="{CB27D488-5DF8-48B9-B096-D68B2DA637E3}" par="UseStaticPlaceholderNames=1" ph="page-layout" uid="{CBFB049F-39B0-497B-866C-257BAF9CAD52}" />
         <r ds="" id="{E52D0AE8-2989-44E5-BEA1-EA30C17B2080}" par="ResultsOnPage=4&amp;PagesToShow=5" ph="col-wide-1" uid="{CA705768-C9DF-484D-BD9E-3BFDD112E926}" />
+        <r id="{D1AAD687-8B93-44C8-9011-8E8CE2DD281F}" ph="col-narrow-1" uid="{6BAFDBAC-C731-4874-AEC9-20DBAACCF95B}" />
         <r id="{299FD8EA-2CFD-4A69-9CA4-7EA24CD34A46}" ph="footer" uid="{E2040FB7-4151-456D-9315-5973E4EB4D9D}" />
         <r ds="{FB1E4810-6D89-4F1E-A47B-70478FE32DA7}" id="{69B9C355-004B-4268-BB1E-2F725B8752B7}" ph="footercolumn1" uid="{0E0C6DCA-1A29-4975-84D7-E99498A64A72}" />
         <r ds="{B4D87E66-D2C5-4C06-8F9A-08AEAF38055A}" id="{69B9C355-004B-4268-BB1E-2F725B8752B7}" ph="footercolumn1" uid="{0E0C6DCA-1A29-4975-84D7-E99498A64A72}" />
