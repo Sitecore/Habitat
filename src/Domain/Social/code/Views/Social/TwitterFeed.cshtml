@@ -1,7 +1,13 @@
 ﻿@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Framework.SitecoreExtensions.Repositories
 @using Habitat.Social
+@using Habitat.Social.Models
 @using Sitecore.Configuration
 @model Sitecore.Mvc.Presentation.RenderingModel
+@{
+    var repository = new RenderingPropertiesRepository();
+    var twitterFeedProperties = repository.Get<TwitterFeedRenderingProperties>();
+}
 <div class="panel panel-default news-teaser">
     @{if (Model?.Item != null)
       {
@@ -10,7 +16,7 @@
         </div>
         <div class="panel-body">
             <a class="twitter-timeline" href="@Model.Item.LinkFieldUrl(Templates.TwitterFeed.Fields.TwitterUrl)" data-widget-id="@Model.Item.Fields[Templates.TwitterFeed.Fields.WidgetId].Value"
-               data-tweet-limit="2" data-chrome="noheader nofooter noscrollbar noborders transparent">@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</a>
+               data-tweet-limit="@twitterFeedProperties.TwittsToShow" data-chrome="noheader nofooter noscrollbar noborders transparent">@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</a>
 
         </div>
       }}
