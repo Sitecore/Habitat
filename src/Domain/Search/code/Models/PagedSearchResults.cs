@@ -23,7 +23,7 @@ namespace Habitat.Search.Models
       this.ResultsOnPage = resultsOnPage;
     }
 
-    public int TotalPagesCount
+    public virtual int TotalPagesCount
     {
       get
       {
@@ -46,7 +46,7 @@ namespace Habitat.Search.Models
 
         if (this.TotalPagesCount - this.Page < this.visiblePagesCount / 2)
         {
-          firstPage -= ((this.visiblePagesCount / 2) - this.TotalPagesCount + this.Page);
+          firstPage -= ((this.visiblePagesCount / 2) - this.TotalPagesCount + this.Page - 1 + (this.VisiblePagesCount % 2));
         }
 
         if (firstPage < 1)
@@ -71,7 +71,7 @@ namespace Habitat.Search.Models
     {
       get
       {
-        var lastPage = this.Page + (visiblePagesCount / 2);
+        var lastPage = this.Page + (visiblePagesCount / 2) - 1 + (this.VisiblePagesCount % 2);
 
         if ( this.Page - (this.VisiblePagesCount / 2) < 1)
         {

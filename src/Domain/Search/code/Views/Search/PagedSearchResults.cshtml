@@ -5,14 +5,14 @@
   var prevButtonAttributes = "";
   var nextButtonAttributes = "";
   var nextPageUrl = $"{Request.Url.AbsolutePath}?query={Model.Query}&page={Model.Page + 1}";
-  if (Model.Page == Model.LastPage)
+  if (Model.Page >= Model.TotalPagesCount)
   {
       nextPageUrl = "#";
       nextButtonAttributes = "class=disabled";
   }
 
   var prevPageUrl = $"{Request.Url.AbsolutePath}?query={Model.Query}&page={Model.Page - 1}";
-  if (Model.Page == Model.FirstPage)
+  if (Model.Page <= 1)
   {
       prevPageUrl = "#";
       prevButtonAttributes = "class=disabled";
