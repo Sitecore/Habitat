@@ -107,6 +107,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Show user info on popup.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Show user info on popup.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\ActionType.cs" />
     <Compile Include="Steps\CommonSteps.cs" />
     <Compile Include="Infrastructure\ContextExtensions.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
@@ -117,7 +123,9 @@
     <Compile Include="Infrastructure\TestCleanupAction.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Edit user profile.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Edit user profile.feature.cs</LastGenOutput>
@@ -134,9 +142,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="packages.config" />
     <None Include="Page after login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Page after login.feature.cs</LastGenOutput>
@@ -146,6 +152,10 @@
       <LastGenOutput>Register.feature.cs</LastGenOutput>
     </None>
     <None Include="Service References\TestHelperService\tests.wsdl" />
+    <None Include="Show user info on popup.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Show user info on popup.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

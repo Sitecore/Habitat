@@ -34,8 +34,8 @@ namespace Habitat.Accounts.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Forgot Password", "\nIn order to be able to login \nAs a site visitor\nI want to be able to restore pas" +
-                    "sword", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Forgot Password", "\r\nIn order to be able to login \r\nAs a site visitor\r\nI want to be able to restore " +
+                    "password", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

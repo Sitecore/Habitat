@@ -28,5 +28,17 @@ namespace Habitat.Accounts.Specflow.Steps
             var js = Driver as IJavaScriptExecutor;
             js?.ExecuteScript("arguments[0].style.display='block'", dropdown);
         }
-    }
+    [Given(@"Habitat website is opened on Login page")]
+    [When(@"Actor navigates to Login page")]
+        public void WhenActorNavigatesToLoginPage()
+        {
+            Driver.Navigate().GoToUrl(Settings.LoginPageUrl);
+        }
+        [Given(@"Habitat website is opened on Forgot Password page")]
+        public void GivenHabitatWebsiteIsOpenedOnForgotPasswordPage()
+        {
+            Driver.Navigate().GoToUrl(Settings.ForgotPasswordPageUrl);
+        }
+
+  }
 }

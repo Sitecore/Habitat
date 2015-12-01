@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{98EDAD96-F400-4898-AA14-F63327D17F18}</ProjectGuid>
+    <ProjectGuid>{47B8566D-0BA3-4427-81DB-38C7BBE38768}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Media.Specflow</RootNamespace>
-    <AssemblyName>Habitat.Media.Specflow</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <RootNamespace>Habitat.Website.Specflow</RootNamespace>
+    <AssemblyName>Habitat.Website.Specflow</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,8 +43,8 @@
       <HintPath>..\..\..\..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebDriver, Version=2.48.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Selenium.WebDriver.2.48.2\lib\net40\WebDriver.dll</HintPath>
+    <Reference Include="WebDriver, Version=2.48.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Selenium.WebDriver.2.48.1\lib\net40\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="xunit, Version=1.7.0.1540, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
@@ -59,23 +58,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Video in Media Carousel.feature.cs">
-      <DependentUpon>Video in Media Carousel.feature</DependentUpon>
+    <Compile Include="WFFM forms integration.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>WFFM forms integration.feature</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Video in Media Carousel.feature">
+    <None Include="WFFM forms integration.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Video in Media Carousel.feature.cs</LastGenOutput>
+      <LastGenOutput>WFFM forms integration.feature.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="TestData\Media Carousel\HabitatTest.jpg" />
-    <Content Include="TestData\Media Carousel\Sitecore CMS.mp4" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
