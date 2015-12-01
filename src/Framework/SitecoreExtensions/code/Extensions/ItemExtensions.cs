@@ -54,7 +54,7 @@
       }
 
       var imageField = (LinkField)item.Fields[mediaFieldId];
-      return MediaManager.GetMediaUrl(imageField.TargetItem) ?? string.Empty;
+      return imageField.TargetItem == null ? String.Empty : (MediaManager.GetMediaUrl(imageField.TargetItem) ?? string.Empty);
     }
 
     public static Item[] TargetItems(this Item item, string fieldName)

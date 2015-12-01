@@ -158,11 +158,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="Installer\FilePathResolver.cs" />
-    <Compile Include="Installer\IFilePathResolver.cs" />
-    <Compile Include="Installer\IXdtTransformEngine.cs" />
-    <Compile Include="Installer\PostStep.cs" />
-    <Compile Include="Installer\XdtTransformEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
