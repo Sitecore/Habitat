@@ -1,0 +1,20 @@
+﻿---
+ID: 0cd23ef9-1269-4060-b734-fc8122a13fbf
+Parent: 74210e6b-383b-441f-ba0a-4ce00fbaa920
+Template: 6d1cd897-1936-4a3a-a511-289a94c2a7b1
+Path: /sitecore/content/Shared/Dictionary/F/Follow Me
+SharedFields:
+- ID: 580c75a8-c01a-4580-83cb-987776ceb3af
+  # Key
+  Value: Follow Me
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151126T163838Z
+    - ID: 2ba3454a-9a9c-4cdf-a9f8-107fd484eb6e
+      # Phrase
+      Value: Follow Me

@@ -1,0 +1,28 @@
+﻿@using Habitat.Person
+@using Habitat.Framework.SitecoreExtensions.Extensions
+@using Habitat.Framework.SitecoreExtensions.Repositories
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+<div class="panel panel-default teaser employee-teaser">
+  <div class="panel-heading">
+    <h3 class="teaser-heading">
+      @Model.Item.Field(Templates.Person.Fields.Name)
+    </h3>
+    <p class="title text-muted">
+      @Model.Item.Field(Templates.Person.Fields.Title)
+    </p>
+  </div>
+  <div class="panel-body">
+    <div class="teaser-image">
+      <a href="@Model.Item.Url()">
+        @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 750, cssClass: "img-responsive")
+      </a>
+    </div>
+    <p>@Model.Item.Field(Templates.Person.Fields.Summary)</p>
+  </div>
+  <div class="panel-footer">
+    <a href="@Model.Item.Url()" class="btn btn-default">
+      @DictionaryRepository.Get("/Person/EmployeeTeaser/Read more", "Read more")
+    </a>
+  </div>
+</div>

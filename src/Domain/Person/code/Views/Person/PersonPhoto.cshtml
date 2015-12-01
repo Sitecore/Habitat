@@ -1,0 +1,7 @@
+﻿@using Habitat.Person
+@using Habitat.Framework.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+<div class="thumbnail">
+  @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 750, cssClass: "img-responsive")
+</div>

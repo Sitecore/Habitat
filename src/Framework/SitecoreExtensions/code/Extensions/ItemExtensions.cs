@@ -4,8 +4,10 @@
   using System.Collections.Generic;
   using System.Globalization;
   using System.Linq;
+  using System.Web;
   using Habitat.Framework.SitecoreExtensions.Model;
   using Habitat.Framework.SitecoreExtensions.Repositories;
+  using Habitat.Framework.SitecoreExtensions.Services;
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Fields;
@@ -151,8 +153,12 @@
       }
 
       var itemTemplate = TemplateManager.GetTemplate(item);
-      return itemTemplate != null &&
-             (itemTemplate.ID == templateItem.ID || itemTemplate.DescendsFrom(templateItem.ID));
+      return itemTemplate != null && (itemTemplate.ID == templateItem.ID || itemTemplate.DescendsFrom(templateItem.ID));
+    }
+
+    public static bool FieldHasValue(this Item item, ID fieldID)
+    {
+      return item.Fields[fieldID] != null && item.Fields[fieldID].HasValue && !string.IsNullOrWhiteSpace(item.Fields[fieldID].Value);
     }
 
     public static string GetString(this Item item, string fieldName)
@@ -317,18 +323,12 @@
 
     public static Item[] GetReferrersAsItems(this Item item)
     {
-      return Globals.LinkDatabase.GetReferrers(item)
-        .Select(i => i.GetSourceItem())
-        .Where(i => i != null)
-        .ToArray();
+      return Globals.LinkDatabase.GetReferrers(item).Select(i => i.GetSourceItem()).Where(i => i != null).ToArray();
     }
 
     public static Item[] GetReferencesAsItems(this Item item)
     {
-      return Globals.LinkDatabase.GetReferences(item)
-        .Select(i => i.GetTargetItem())
-        .Where(i => i != null)
-        .ToArray();
+      return Globals.LinkDatabase.GetReferences(item).Select(i => i.GetTargetItem()).Where(i => i != null).ToArray();
     }
 
     public static bool HasVersionedRenderings(this Item item)
@@ -360,6 +360,18 @@
     {
       var versionItem = item.Database.GetItem(item.ID, language, version);
       return versionItem != null && versionItem.HasVersionedRenderings();
+    }
+
+    public static HtmlString Field(this Item item, ID fieldId)
+    {
+      Assert.IsNotNull(item, "Item cannot be null");
+      Assert.IsNotNull(fieldId, "FieldId cannot be null");
+      return new HtmlString(FieldRendererService.RenderField(item, fieldId));
+    }
+
+    public static HtmlString Field(this Item item, ID fieldId, object parameters)
+    {
+      return new HtmlString(FieldRendererService.BeginField(fieldId, item, parameters) + FieldRendererService.EndField().ToString());
     }
   }
 }
