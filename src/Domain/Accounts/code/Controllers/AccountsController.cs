@@ -20,7 +20,7 @@
     private readonly IAccountsSettingsService accountsSettingsService;
     private readonly IUserProfileService userProfileService;
 
-    public AccountsController() : this(new AccountRepository(), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService())
+    public AccountsController() : this(new AccountRepository(new AccountTrackerService()), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService())
     {
     }
 
