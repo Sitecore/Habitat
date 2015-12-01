@@ -150,6 +150,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Person", "Person", "{18A4B060-7586-4321-806B-0325FAA01373}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Person", "src\Domain\Person\code\Habitat.Person.csproj", "{452C63B5-6019-4EC2-9A9B-9B5DD3241485}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{F82B7F7C-BDA9-4204-97E1-456E406A251A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Installer", "src\Framework\Installer\code\Habitat.Framework.Installer.csproj", "{622EBD86-43A5-4857-965C-1724F714012A}"
