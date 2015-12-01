@@ -4,6 +4,9 @@ Parent: 977284ed-b7ec-449c-b730-42379f1753bc
 Template: 475e9026-333f-432d-a4dc-52e03b75cb6b
 Path: /sitecore/system/Marketing Control Panel/Goals/Habitat/Emotions/Happiness
 SharedFields:
+- ID: 33ae0e84-74a0-437f-ab2b-859dfa96f6c9
+  # Points
+  Value: 10
 - ID: a4f985d9-98b3-4b52-aaaf-4344f6e747c6
   # __Workflow
   Value: {689E2994-4656-4C58-9112-7826CB46EE69}
@@ -13,6 +16,9 @@ SharedFields:
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder
   Value: 50
+- ID: e4d0faf3-61e7-44d4-a921-ce5c606a8da8
+  # IsSystem
+  Value: false
 Languages:
 - Language: en
   Versions:
@@ -23,4 +29,10 @@ Languages:
       Value: 20151122T132103Z
     - ID: 3e431de1-525e-47a3-b6b0-1ccbec3a8c98
       # __Workflow state
-      Value: {39156DC0-21C6-4F64-B641-31E85C8F5DFE}
+      Value: {EDCBB550-BED3-490F-82B8-7B2F14CCD26E}
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: 
+    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+      # __Display name
+      Value: Happiness

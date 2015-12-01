@@ -10,6 +10,9 @@ SharedFields:
 - ID: ac6ba888-4213-43bd-b787-d8da2b6b881f
   # Name
   Value: Fear
+- ID: e4d0faf3-61e7-44d4-a921-ce5c606a8da8
+  # IsSystem
+  Value: false
 Languages:
 - Language: en
   Versions:
@@ -20,4 +23,10 @@ Languages:
       Value: 20151122T132230Z
     - ID: 3e431de1-525e-47a3-b6b0-1ccbec3a8c98
       # __Workflow state
-      Value: {39156DC0-21C6-4F64-B641-31E85C8F5DFE}
+      Value: {EDCBB550-BED3-490F-82B8-7B2F14CCD26E}
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: 
+    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+      # __Display name
+      Value: Fear

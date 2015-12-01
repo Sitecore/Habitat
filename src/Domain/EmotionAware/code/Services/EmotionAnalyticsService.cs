@@ -1,12 +1,9 @@
 ﻿namespace Habitat.EmotionAware.Services
 {
   using Habitat.EmotionAware.Repositories;
-  using System;
   using System.Collections.Generic;
   using System.Linq;
-  using System.Web;
   using Habitat.Framework.ProjectOxfordAI.Enums;
-  using Habitat.SitecoreExtensions.Helpers;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Data.Items;
   using Sitecore.Analytics.Model;
