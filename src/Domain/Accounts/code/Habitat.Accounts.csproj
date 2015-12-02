@@ -64,6 +64,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Core, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Analytics.Model, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
@@ -170,12 +174,16 @@
     <Compile Include="Services\IAccountsSettingsService.cs" />
     <Compile Include="Services\IContactProfileProvider.cs" />
     <Compile Include="Services\IContactProfileService.cs" />
+    <Compile Include="Services\AccountTrackerService.cs" />
+    <Compile Include="Services\IAccountsSettingsService.cs" />
+    <Compile Include="Services\IAccountTrackerService.cs" />
     <Compile Include="Services\IProfileSettingsService.cs" />
     <Compile Include="Services\IUserProfileProvider.cs" />
     <Compile Include="Services\IUserProfileService.cs" />
     <Compile Include="Services\ProfileSettingsService.cs" />
     <Compile Include="Services\UserProfileProvider.cs" />
     <Compile Include="Services\UserProfileService.cs" />
+    <Compile Include="ConfigSettings.cs" />
     <Compile Include="WebApiConfig.cs" />
     <Compile Include="Models\LoginResult.cs" />
     <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
