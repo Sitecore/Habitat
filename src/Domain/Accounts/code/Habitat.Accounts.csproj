@@ -171,7 +171,6 @@
     <Compile Include="Models\EditProfile.cs" />
     <Compile Include="Services\ContactProfileProvider.cs" />
     <Compile Include="Services\ContactProfileService.cs" />
-    <Compile Include="Services\IAccountsSettingsService.cs" />
     <Compile Include="Services\IContactProfileProvider.cs" />
     <Compile Include="Services\IContactProfileService.cs" />
     <Compile Include="Services\AccountTrackerService.cs" />
