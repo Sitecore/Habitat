@@ -3,7 +3,6 @@
   using System;
   using System.Collections.Generic;
   using System.Linq;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Automation.Data;
@@ -13,6 +12,7 @@
   using Sitecore.Common;
   using Sitecore.Data.Fields;
   using Sitecore.Diagnostics;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
   using Sitecore.Resources.Media;
 
   public class VisitInformation

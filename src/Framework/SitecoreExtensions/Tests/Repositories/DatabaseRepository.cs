@@ -1,8 +1,8 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.Tests.Repositories
+﻿namespace Sitecore.Framework.SitecoreExtensions.Tests.Repositories
 {
   using FluentAssertions;
-  using Habitat.Framework.SitecoreExtensions.Repositories;
-  using Habitat.Framework.SitecoreExtensions.Tests.Common;
+  using Sitecore.Framework.SitecoreExtensions.Repositories;
+  using Sitecore.Framework.SitecoreExtensions.Tests.Common;
   using Xunit;
 
   public class DatabaseRepositoryTests

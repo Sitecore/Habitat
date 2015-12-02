@@ -1,14 +1,14 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.Repositories
+﻿namespace Sitecore.Framework.SitecoreExtensions.Repositories
 {
   using System.Collections.Generic;
   using System.Linq;
   using System.Xml;
-  using Habitat.Framework.SitecoreExtensions.Model;
-  using Habitat.Framework.SitecoreExtensions.Services;
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
+  using Sitecore.Framework.SitecoreExtensions.Model;
+  using Sitecore.Framework.SitecoreExtensions.Services;
   using Sitecore.Links;
   using Sitecore.Resources.Media;
 

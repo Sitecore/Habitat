@@ -1,13 +1,13 @@
-﻿namespace Habitat.Framework.Indexing.Infrastructure
+﻿namespace Sitecore.Framework.Indexing.Infrastructure
 {
   using System;
   using System.Collections.Generic;
   using System.Linq.Expressions;
-  using Habitat.Framework.Indexing.Models;
   using Sitecore;
   using Sitecore.ContentSearch.Linq.Utilities;
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.Data;
+  using Sitecore.Framework.Indexing.Models;
 
   public class FallbackIndexContentProvider : IndexContentProviderBase
   {

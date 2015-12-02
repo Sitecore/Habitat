@@ -1,9 +1,8 @@
-﻿using static System.String;
-
-namespace Habitat.Navigation.Controllers
+﻿namespace Sitecore.Feature.Navigation.Controllers
 {
+  using System;
   using System.Web.Mvc;
-  using Habitat.Navigation.Repositories;
+  using Sitecore.Feature.Navigation.Repositories;
   using Sitecore.Mvc.Presentation;
 
   public class NavigationController : Controller
@@ -39,7 +38,7 @@ namespace Habitat.Navigation.Controllers
 
     public ActionResult LinkMenu()
     {
-      if (IsNullOrEmpty(RenderingContext.Current.Rendering.DataSource))
+      if (String.IsNullOrEmpty(RenderingContext.Current.Rendering.DataSource))
       {
         return null;
       }

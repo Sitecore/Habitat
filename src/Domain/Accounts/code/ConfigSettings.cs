@@ -1,4 +1,4 @@
-﻿namespace Habitat.Accounts
+﻿namespace Sitecore.Feature.Accounts
 {
   using Sitecore.Configuration;
   using Sitecore.Data;

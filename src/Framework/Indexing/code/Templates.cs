@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.Indexing
+﻿namespace Sitecore.Framework.Indexing
 {
   using Sitecore.Data;
 

@@ -1,4 +1,4 @@
-﻿namespace Habitat.Navigation
+﻿namespace Sitecore.Feature.Navigation
 {
   using Sitecore.Data;
 

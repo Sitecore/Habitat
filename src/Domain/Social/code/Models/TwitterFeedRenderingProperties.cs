@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Habitat.Social.Models
+﻿namespace Sitecore.Feature.Social.Models
 {
   public class TwitterFeedRenderingProperties
   {

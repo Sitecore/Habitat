@@ -7,8 +7,8 @@
     <ProjectGuid>{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Framework.Installer.Tests</RootNamespace>
-    <AssemblyName>Habitat.Framework.Installer.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Framework.Installer.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Framework.Installer.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

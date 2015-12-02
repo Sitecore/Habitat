@@ -1,4 +1,4 @@
-﻿namespace Habitat.Social
+﻿namespace Sitecore.Feature.Social
 {
   using Sitecore.Data;
 

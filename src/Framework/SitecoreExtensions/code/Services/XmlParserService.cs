@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.Services
+﻿namespace Sitecore.Framework.SitecoreExtensions.Services
 {
   using System;
   using System.Xml;

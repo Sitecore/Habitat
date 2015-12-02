@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.Controls
+﻿namespace Sitecore.Framework.SitecoreExtensions.Controls
 {
   using System;
   using System.IO;

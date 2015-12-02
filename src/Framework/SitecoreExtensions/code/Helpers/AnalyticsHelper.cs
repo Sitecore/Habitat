@@ -1,4 +1,4 @@
-﻿namespace Habitat.SitecoreExtensions.Helpers
+﻿namespace Sitecore.Framework.SitecoreExtensions.Helpers
 {
   using Sitecore;
   using Sitecore.Analytics;

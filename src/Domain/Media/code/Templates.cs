@@ -1,4 +1,4 @@
-﻿namespace Habitat.Media
+﻿namespace Sitecore.Feature.Media
 {
   using Sitecore.Data;
 

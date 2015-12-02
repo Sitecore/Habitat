@@ -1,9 +1,8 @@
-﻿namespace Habitat.Accounts.Attributes
+﻿namespace Sitecore.Feature.Accounts.Attributes
 {
-  using System;
   using System.Web.Mvc;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
 
   public class RedirectUnauthenticatedAttribute: ActionFilterAttribute, IAuthorizationFilter
   {

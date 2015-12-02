@@ -1,14 +1,10 @@
-﻿namespace Habitat.Search.Controllers
+﻿namespace Sitecore.Feature.Search.Controllers
 {
-  using System.Collections.Generic;
-  using System.Linq;
   using System.Web.Mvc;
-  using Habitat.Framework.Indexing;
-  using Habitat.Framework.Indexing.Models;
-  using Habitat.Framework.SitecoreExtensions.Repositories;
-  using Habitat.Search.Models;
-  using Habitat.Search.Repositories;
-  using Sitecore.Mvc.Presentation;
+  using Sitecore.Feature.Search.Models;
+  using Sitecore.Feature.Search.Repositories;
+  using Sitecore.Framework.Indexing.Models;
+  using Sitecore.Framework.SitecoreExtensions.Repositories;
 
   public class SearchController : Controller
   {

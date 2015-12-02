@@ -1,4 +1,4 @@
-﻿namespace Habitat.Navigation.Models
+﻿namespace Sitecore.Feature.Navigation.Models
 {
   using System.Collections.Generic;
   using Sitecore.Mvc.Presentation;

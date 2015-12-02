@@ -1,15 +1,14 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.Tests.Extensions
+﻿namespace Sitecore.Framework.SitecoreExtensions.Tests.Extensions
 {
   using System;
   using FluentAssertions;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
-  using Habitat.Framework.SitecoreExtensions.Tests.Common;
   using NSubstitute;
   using Sitecore.Data;
-  using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Framework.SitecoreExtensions.Tests.Common;
   using Xunit;
 
   public class ItemExtensionsTests

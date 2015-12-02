@@ -1,4 +1,4 @@
-﻿namespace Habitat.Language.Infrastructure.Factories
+﻿namespace Sitecore.Feature.Language.Infrastructure.Factories
 {
   using Sitecore;
   using Sitecore.Globalization;

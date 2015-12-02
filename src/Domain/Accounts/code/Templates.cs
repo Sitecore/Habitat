@@ -1,7 +1,6 @@
-﻿namespace Habitat.Accounts
+﻿namespace Sitecore.Feature.Accounts
 {
   using Sitecore.Data;
-  using Sitecore.Security;
 
   public class Templates
   {

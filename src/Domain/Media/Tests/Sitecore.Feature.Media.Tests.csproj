@@ -8,8 +8,8 @@
     <ProjectGuid>{097A482B-CD89-4BA9-939F-B232D35AF8E1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Media.Tests</RootNamespace>
-    <AssemblyName>Habitat.Media.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Media.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Media.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

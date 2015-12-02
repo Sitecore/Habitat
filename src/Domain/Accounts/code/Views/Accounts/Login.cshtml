@@ -1,10 +1,9 @@
-﻿@using Habitat.Accounts
-@using Habitat.Accounts.Services
+﻿@using Sitecore.Feature.Accounts
+@using Sitecore.Feature.Accounts.Services
+@using Sitecore.Feature.Accounts.Texts
+@using Sitecore.Framework.SitecoreExtensions.HtmlHelpers
 @using Sitecore.Mvc
-@using Habitat.Accounts.Texts
-@using Habitat.Framework.SitecoreExtensions.HtmlHelpers
-@using Habitat.Framework.SitecoreExtensions.Repositories
-@model Habitat.Accounts.Models.LoginInfo
+@model Sitecore.Feature.Accounts.Models.LoginInfo
 
 @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
 {

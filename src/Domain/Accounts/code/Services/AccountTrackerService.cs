@@ -1,4 +1,4 @@
-﻿namespace Habitat.Accounts.Services
+﻿namespace Sitecore.Feature.Accounts.Services
 {
   using Sitecore.Analytics;
   using Sitecore.Analytics.Data.Items;

@@ -1,10 +1,7 @@
-﻿namespace Habitat.Accounts.Tests
+﻿namespace Sitecore.Feature.Accounts.Tests
 {
   using System;
   using FluentAssertions;
-  using Habitat.Accounts.Services;
-  using Habitat.Accounts.Tests.Extensions;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using NSubstitute;
   using Sitecore;
   using Sitecore.Collections;
@@ -13,6 +10,9 @@
   using Sitecore.Exceptions;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.Sites;
+  using Sitecore.Feature.Accounts.Services;
+  using Sitecore.Feature.Accounts.Tests.Extensions;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
   using Sitecore.Sites;
   using Xunit;
 
@@ -62,7 +62,7 @@
     [AutoDbData]
     public void GetForgotPasswordMailTemplateShouldThrowExceptionWhenFromAddressIsEmpty(Db db)
     {
-      var fakeSite = BuildUpSiteContext(db, from: null);
+      var fakeSite = BuildUpSiteContext(db, @from: null);
       using (new SiteContextSwitcher(fakeSite))
       {
         var settings = new AccountsSettingsService();
@@ -88,7 +88,7 @@
     [AutoDbData]
     public void GetForgotPasswordMailTemplateShouldThrowExceptionWhenMailTemplateNotfound(Db db)
     {
-      var fakeSite = BuildUpSiteContext(db, from: null);
+      var fakeSite = BuildUpSiteContext(db, @from: null);
       db.GetItem("/sitecore/content/siteroot").DeleteChildren();
       using (new SiteContextSwitcher(fakeSite))
       {

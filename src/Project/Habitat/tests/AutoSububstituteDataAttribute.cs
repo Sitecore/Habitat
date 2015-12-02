@@ -1,4 +1,4 @@
-﻿namespace Habitat.Website.Tests
+﻿namespace Sitecore.Habitat.Website.Tests
 {
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Xunit2;

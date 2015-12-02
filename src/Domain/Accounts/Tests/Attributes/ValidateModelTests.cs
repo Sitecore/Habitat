@@ -1,12 +1,11 @@
-﻿namespace Habitat.Accounts.Tests.Attributes
+﻿namespace Sitecore.Feature.Accounts.Tests.Attributes
 {
   using System.Web.Mvc;
   using FluentAssertions;
-  using Habitat.Accounts.Attributes;
-  using Habitat.Accounts.Tests.Extensions;
-  using NSubstitute;
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Xunit2;
+  using Sitecore.Feature.Accounts.Attributes;
+  using Sitecore.Feature.Accounts.Tests.Extensions;
   using Xunit;
 
   public class ValidateModelTests

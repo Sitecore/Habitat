@@ -7,8 +7,8 @@
     <ProjectGuid>{7A0D4342-60CC-498F-B0AB-4C19902C7FC8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Teasers.Specflow</RootNamespace>
-    <AssemblyName>Habitat.Teasers.Specflow</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Teasers.Specflow</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Teasers.Specflow</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

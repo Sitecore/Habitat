@@ -1,18 +1,11 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.Tests
+﻿namespace Sitecore.Framework.SitecoreExtensions.Tests
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
   using FluentAssertions;
-  using Habitat.Framework.SitecoreExtensions.Repositories;
-  using Habitat.Framework.SitecoreExtensions.Tests.Common;
-  using NSubstitute;
+  using Sitecore.Framework.SitecoreExtensions.Repositories;
+  using Sitecore.Framework.SitecoreExtensions.Tests.Common;
   using Sitecore.Mvc.Common;
   using Sitecore.Mvc.Presentation;
   using Xunit;
-  using Ploeh.AutoFixture.AutoNSubstitute;
 
   public class RenderingPropertiesRepositoryTests
   {

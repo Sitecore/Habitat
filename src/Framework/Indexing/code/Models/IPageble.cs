@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Habitat.Framework.Indexing.Models
+﻿namespace Sitecore.Framework.Indexing.Models
 {
   public interface IPageble
   {

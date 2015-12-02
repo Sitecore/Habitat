@@ -1,6 +1,6 @@
-﻿namespace Habitat.Accounts.Texts
+﻿namespace Sitecore.Feature.Accounts.Texts
 {
-  using Habitat.Framework.SitecoreExtensions.Repositories;
+  using Sitecore.Framework.SitecoreExtensions.Repositories;
 
   public static class Captions
   {

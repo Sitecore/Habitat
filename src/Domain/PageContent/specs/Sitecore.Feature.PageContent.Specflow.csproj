@@ -7,8 +7,8 @@
     <ProjectGuid>{FE72E154-7858-45BC-AB72-2C55CB8EE996}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.PageContent.Specflow</RootNamespace>
-    <AssemblyName>Habitat.PageContent.Specflow</AssemblyName>
+    <RootNamespace>Sitecore.Feature.PageContent.Specflow</RootNamespace>
+    <AssemblyName>Sitecore.Feature.PageContent.Specflow</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

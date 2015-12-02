@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.Indexing
+﻿namespace Sitecore.Framework.Indexing
 {
   internal struct Constants
   {

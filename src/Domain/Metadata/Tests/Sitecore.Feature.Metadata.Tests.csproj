@@ -8,8 +8,8 @@
     <ProjectGuid>{76232CCE-4D3F-4332-8C34-2D7807EE3954}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Metadata.Tests</RootNamespace>
-    <AssemblyName>Habitat.Metadata.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Metadata.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Metadata.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

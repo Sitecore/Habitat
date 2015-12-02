@@ -1,8 +1,8 @@
-namespace Habitat.Framework.Indexing.Models
+namespace Sitecore.Framework.Indexing.Models
 {
   using System;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore.Data.Items;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
 
   internal class SearchResult : ISearchResult
   {

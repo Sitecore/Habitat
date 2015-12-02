@@ -8,8 +8,8 @@
     <ProjectGuid>{ADF3A6FF-9E94-400D-8A03-DE9C3A778186}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.News.Tests</RootNamespace>
-    <AssemblyName>Habitat.News.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.News.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.News.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

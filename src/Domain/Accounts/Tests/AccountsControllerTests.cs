@@ -1,4 +1,4 @@
-﻿namespace Habitat.Accounts.Tests
+﻿namespace Sitecore.Feature.Accounts.Tests
 {
   using System;
   using System.Collections.Generic;
@@ -7,14 +7,9 @@
   using System.Web.Mvc;
   using System.Web.Security;
   using FluentAssertions;
-  using Habitat.Accounts.Controllers;
-  using Habitat.Accounts.Models;
-  using Habitat.Accounts.Repositories;
-  using Habitat.Accounts.Services;
-  using Habitat.Accounts.Tests.Extensions;
-  using Habitat.Accounts.Texts;
   using NSubstitute;
   using NSubstitute.ExceptionExtensions;
+  using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Collections;
   using Sitecore.Data;
@@ -22,12 +17,17 @@
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.FakeDb.Sites;
+  using Sitecore.Feature.Accounts.Controllers;
+  using Sitecore.Feature.Accounts.Models;
+  using Sitecore.Feature.Accounts.Repositories;
+  using Sitecore.Feature.Accounts.Services;
+  using Sitecore.Feature.Accounts.Tests.Extensions;
+  using Sitecore.Feature.Accounts.Texts;
   using Sitecore.Globalization;
   using Sitecore.Security;
   using Sitecore.Security.Accounts;
   using Sitecore.Sites;
   using Xunit;
-  using Ploeh.AutoFixture.AutoNSubstitute;
 
   public class AccountsControllerTests
   {

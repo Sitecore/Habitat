@@ -7,8 +7,8 @@
     <ProjectGuid>{029A386B-9895-4127-A6D3-416EED3D5B16}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Search.Specflow</RootNamespace>
-    <AssemblyName>Habitat.Search.Specflow</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Search.Specflow</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Search.Specflow</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

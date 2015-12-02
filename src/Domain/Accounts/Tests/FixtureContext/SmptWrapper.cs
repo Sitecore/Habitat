@@ -1,4 +1,4 @@
-namespace Habitat.Accounts.Tests.FixtureContext
+namespace Sitecore.Feature.Accounts.Tests.FixtureContext
 {
   using System;
   using netDumbster.smtp;

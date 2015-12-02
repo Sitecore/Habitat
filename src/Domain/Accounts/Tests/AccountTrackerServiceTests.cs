@@ -1,9 +1,7 @@
-﻿namespace Habitat.Accounts.Tests
+﻿namespace Sitecore.Feature.Accounts.Tests
 {
   using System;
   using FluentAssertions;
-  using Habitat.Accounts.Services;
-  using Habitat.Accounts.Tests.Extensions;
   using NSubstitute;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Data.Items;
@@ -11,6 +9,8 @@
   using Sitecore.Data.Items;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
+  using Sitecore.Feature.Accounts.Services;
+  using Sitecore.Feature.Accounts.Tests.Extensions;
   using Xunit;
 
   public class AccountTrackerServiceTests

@@ -1,4 +1,4 @@
-﻿namespace Habitat.Teasers.Models
+﻿namespace Sitecore.Feature.Teasers.Models
 {
   using System;
   using System.Collections.Generic;

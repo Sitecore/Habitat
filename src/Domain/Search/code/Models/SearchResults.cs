@@ -1,4 +1,4 @@
-﻿namespace Habitat.Search.Models
+﻿namespace Sitecore.Feature.Search.Models
 {
   using System.Collections.Generic;
   using Sitecore.Data.Items;

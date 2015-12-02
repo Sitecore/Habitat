@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.Extensions
+﻿namespace Sitecore.Framework.SitecoreExtensions.Extensions
 {
   using System.Web;
   using Sitecore.Diagnostics;

@@ -1,6 +1,5 @@
-﻿namespace Habitat.Search.Models
+﻿namespace Sitecore.Feature.Search.Models
 {
-  using Sitecore.ContentSearch;
   using Sitecore.ContentSearch.SearchTypes;
 
   public class SearchResult : SearchResultItem

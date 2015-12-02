@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using Sitecore.Security;
-
-namespace Habitat.Accounts.Services
+﻿namespace Sitecore.Feature.Accounts.Services
 {
-  using Habitat.Accounts.Models;
-  using Sitecore.Data.Items;
+  using System.Collections.Generic;
+  using System.Web.Mvc;
+  using Sitecore.Feature.Accounts.Models;
+  using Sitecore.Security;
 
   public interface IUserProfileService
   {

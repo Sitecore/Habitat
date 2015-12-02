@@ -1,14 +1,12 @@
-﻿namespace Habitat.Media.Tests.Repositories
+﻿namespace Sitecore.Feature.Media.Tests.Repositories
 {
-  using System.Collections.Generic;
   using System.Linq;
   using FluentAssertions;
-  using Habitat.Media.Infrastructure.Models;
-  using Habitat.Media.Infrastructure.Repositories;
-  using Habitat.Media.Tests.Infrastructure;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.FakeDb.AutoFixture;
+  using Sitecore.Feature.Media.Infrastructure.Repositories;
+  using Sitecore.Feature.Media.Tests.Infrastructure;
   using Xunit;
 
   public class CarouselElementsRepositoryTests

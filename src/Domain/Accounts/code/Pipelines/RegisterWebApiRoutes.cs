@@ -1,6 +1,5 @@
-﻿namespace Habitat.Accounts.Pipelines
+﻿namespace Sitecore.Feature.Accounts.Pipelines
 {
-  using System.Web.Http;
   using System.Web.Mvc;
   using System.Web.Routing;
   using Sitecore.Pipelines;

@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.Installer.Tests
+﻿namespace Sitecore.Framework.Installer.Tests
 {
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Xunit2;

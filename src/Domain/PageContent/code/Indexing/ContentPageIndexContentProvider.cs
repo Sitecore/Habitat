@@ -1,13 +1,13 @@
-﻿namespace Habitat.PageContent.Indexing
+﻿namespace Sitecore.Feature.PageContent.Indexing
 {
   using System;
   using System.Collections.Generic;
   using System.Linq.Expressions;
-  using Habitat.Framework.Indexing.Infrastructure;
-  using Habitat.Framework.Indexing.Models;
-  using Habitat.Framework.SitecoreExtensions.Repositories;
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.Data;
+  using Sitecore.Framework.Indexing.Infrastructure;
+  using Sitecore.Framework.Indexing.Models;
+  using Sitecore.Framework.SitecoreExtensions.Repositories;
   using Sitecore.Web.UI.WebControls;
 
   public class PageContentIndexContentProvider : IndexContentProviderBase

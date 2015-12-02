@@ -1,14 +1,14 @@
-﻿using System.Web;
-using System.Web.Mvc;
-using Habitat.Framework.SitecoreExtensions.Controls;
-using Sitecore.Data;
-using Sitecore.Data.Items;
-using Sitecore.Diagnostics;
-using Sitecore.Mvc.Helpers;
-using Sitecore.Support;
-
-namespace Habitat.Framework.SitecoreExtensions.Extensions
+﻿namespace Sitecore.Framework.SitecoreExtensions.Extensions
 {
+  using System.Web;
+  using System.Web.Mvc;
+  using Sitecore.Data;
+  using Sitecore.Data.Items;
+  using Sitecore.Diagnostics;
+  using Sitecore.Framework.SitecoreExtensions.Controls;
+  using Sitecore.Mvc.Helpers;
+  using Sitecore.Support;
+
   /// <summary>
   ///   HTML Helper extensions
   /// </summary>

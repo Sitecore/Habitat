@@ -1,14 +1,14 @@
-﻿namespace Habitat.Framework.Assets.Pipelines.GetPageRendering
+﻿namespace Sitecore.Framework.Assets.Pipelines.GetPageRendering
 {
   using System.Collections.Generic;
   using System.Linq;
   using System.Xml;
-  using Habitat.Framework.Assets.Models;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
+  using Sitecore.Framework.Assets.Models;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
   using Sitecore.Mvc.Pipelines.Response.GetPageRendering;
   using Sitecore.Mvc.Presentation;
 

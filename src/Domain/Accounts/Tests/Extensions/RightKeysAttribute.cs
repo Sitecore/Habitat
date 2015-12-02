@@ -1,10 +1,11 @@
-﻿namespace Habitat.Accounts.Tests.Extensions
+﻿namespace Sitecore.Feature.Accounts.Tests.Extensions
 {
   using System;
   using System.Collections.Generic;
   using System.Reflection;
   using Ploeh.AutoFixture;
   using Ploeh.AutoFixture.Xunit2;
+
   public class RightKeysAttribute: CustomizeAttribute
   {
     private readonly object[] keys;

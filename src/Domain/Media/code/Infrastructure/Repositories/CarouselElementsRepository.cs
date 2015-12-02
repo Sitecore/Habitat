@@ -1,10 +1,10 @@
-﻿namespace Habitat.Media.Infrastructure.Repositories
+﻿namespace Sitecore.Feature.Media.Infrastructure.Repositories
 {
   using System.Collections.Generic;
   using System.Linq;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
-  using Habitat.Media.Infrastructure.Models;
   using Sitecore.Data.Items;
+  using Sitecore.Feature.Media.Infrastructure.Models;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
   using Sitecore.Mvc.Extensions;
 
   public static class CarouselElementsRepository

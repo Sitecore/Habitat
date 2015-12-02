@@ -1,6 +1,6 @@
-﻿namespace Habitat.Search.Repositories
+﻿namespace Sitecore.Feature.Search.Repositories
 {
-  using Habitat.Framework.Indexing;
+  using Sitecore.Framework.Indexing;
 
   public class SearchServiceRepository : ISearchServiceRepository
   {

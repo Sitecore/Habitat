@@ -1,6 +1,6 @@
-﻿namespace Habitat.Search.Texts
+﻿namespace Sitecore.Feature.Search.Text
 {
-  using Habitat.Framework.SitecoreExtensions.Repositories;
+  using Sitecore.Framework.SitecoreExtensions.Repositories;
 
   public static class Captions
   {

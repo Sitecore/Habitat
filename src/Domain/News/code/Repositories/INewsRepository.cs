@@ -1,4 +1,4 @@
-﻿namespace Habitat.News.Repositories
+﻿namespace Sitecore.Feature.News.Repositories
 {
   using System.Collections.Generic;
   using Sitecore.Data.Items;

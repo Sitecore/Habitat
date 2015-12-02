@@ -1,22 +1,19 @@
-﻿namespace Habitat.Search.Tests
+﻿namespace Sitecore.Feature.Search.Tests
 {
-  using System.Collections.Generic;
-  using System.Runtime.InteropServices.ComTypes;
   using System.Web;
   using System.Web.Mvc;
   using FluentAssertions;
-  using Habitat.Accounts.Tests.Extensions;
-  using Habitat.Framework.Indexing;
-  using Habitat.Framework.Indexing.Models;
-  using Habitat.Framework.SitecoreExtensions.Repositories;
-  using Habitat.Search.Controllers;
-  using Habitat.Search.Models;
-  using Habitat.Search.Repositories;
   using NSubstitute;
-  using NSubstitute.Core.Arguments;
-  using Ploeh.AutoFixture.Xunit2;
-  using Xunit;
   using Ploeh.AutoFixture.AutoNSubstitute;
+  using Ploeh.AutoFixture.Xunit2;
+  using Sitecore.Feature.Search.Controllers;
+  using Sitecore.Feature.Search.Models;
+  using Sitecore.Feature.Search.Repositories;
+  using Sitecore.Feature.Search.Tests.Extensions;
+  using Sitecore.Framework.Indexing;
+  using Sitecore.Framework.Indexing.Models;
+  using Sitecore.Framework.SitecoreExtensions.Repositories;
+  using Xunit;
 
   public class SearchControllerTests
   {

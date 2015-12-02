@@ -1,7 +1,5 @@
-﻿namespace Habitat.Accounts.Repositories
+﻿namespace Sitecore.Feature.Accounts.Repositories
 {
-  using Habitat.Accounts.Models;
-
   public interface IAccountRepository
   {
     /// <summary>

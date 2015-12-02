@@ -1,8 +1,7 @@
-﻿namespace Habitat.Framework.Installer.Tests
+﻿namespace Sitecore.Framework.Installer.Tests
 {
-  using Habitat.Framework.Installer;
-  using Habitat.Framework.Installer.XmlTransform;
   using NSubstitute;
+  using Sitecore.Framework.Installer.XmlTransform;
   using Xunit;
 
   public class PostStepTests

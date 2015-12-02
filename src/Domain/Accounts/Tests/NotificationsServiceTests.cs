@@ -1,13 +1,13 @@
-﻿namespace Habitat.Accounts.Tests
+﻿namespace Sitecore.Feature.Accounts.Tests
 {
   using System.Linq;
   using System.Net.Mail;
   using FluentAssertions;
-  using Habitat.Accounts.Services;
-  using Habitat.Accounts.Tests.Extensions;
-  using Habitat.Accounts.Tests.FixtureContext;
   using netDumbster.smtp;
   using NSubstitute;
+  using Sitecore.Feature.Accounts.Services;
+  using Sitecore.Feature.Accounts.Tests.Extensions;
+  using Sitecore.Feature.Accounts.Tests.FixtureContext;
   using Xunit;
 
   public class NotificationServiceTests : IClassFixture<SmptWrapper>

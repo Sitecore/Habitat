@@ -1,17 +1,17 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.Extensions
+﻿namespace Sitecore.Framework.SitecoreExtensions.Extensions
 {
   using System;
   using System.Collections.Generic;
   using System.Globalization;
   using System.Linq;
-  using Habitat.Framework.SitecoreExtensions.Model;
-  using Habitat.Framework.SitecoreExtensions.Repositories;
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Data.Managers;
   using Sitecore.Diagnostics;
+  using Sitecore.Framework.SitecoreExtensions.Model;
+  using Sitecore.Framework.SitecoreExtensions.Repositories;
   using Sitecore.Globalization;
   using Sitecore.Links;
   using Sitecore.Resources.Media;

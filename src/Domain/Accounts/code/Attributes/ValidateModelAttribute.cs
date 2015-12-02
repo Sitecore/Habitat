@@ -1,6 +1,7 @@
-﻿namespace Habitat.Accounts.Attributes
+﻿namespace Sitecore.Feature.Accounts.Attributes
 {
   using System.Web.Mvc;
+
   public class ValidateModelAttribute: ActionFilterAttribute
   {
     public override void OnActionExecuting(ActionExecutingContext filterContext)

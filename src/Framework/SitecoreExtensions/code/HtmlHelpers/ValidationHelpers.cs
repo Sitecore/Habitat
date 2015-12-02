@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.HtmlHelpers
+﻿namespace Sitecore.Framework.SitecoreExtensions.HtmlHelpers
 {
   using System;
   using System.Linq.Expressions;

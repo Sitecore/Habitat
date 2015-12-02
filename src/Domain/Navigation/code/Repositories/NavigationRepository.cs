@@ -1,13 +1,12 @@
-﻿namespace Habitat.Navigation.Repositories
+﻿namespace Sitecore.Feature.Navigation.Repositories
 {
   using System;
   using System.Collections.Generic;
   using System.Linq;
-  using System.Runtime.Remoting.Contexts;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
-  using Habitat.Navigation.Models;
   using Sitecore;
   using Sitecore.Data.Items;
+  using Sitecore.Feature.Navigation.Models;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
 
   public class NavigationRepository : INavigationRepository
   {

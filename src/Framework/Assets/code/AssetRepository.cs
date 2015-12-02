@@ -1,13 +1,13 @@
-﻿namespace Habitat.Framework.Assets
+﻿namespace Sitecore.Framework.Assets
 {
   using System;
   using System.Collections.Generic;
   using System.Linq;
   using System.Xml;
-  using Habitat.Framework.Assets.Models;
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Diagnostics;
+  using Sitecore.Framework.Assets.Models;
   using Sitecore.Mvc.Presentation;
   using Sitecore.Xml;
 

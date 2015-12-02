@@ -1,10 +1,10 @@
-﻿namespace Habitat.Teasers.Repositories
+﻿namespace Sitecore.Feature.Teasers.Repositories
 {
   using System.Collections.Generic;
   using System.Linq;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
 
   public static class AccordeonElementsRespository
   {

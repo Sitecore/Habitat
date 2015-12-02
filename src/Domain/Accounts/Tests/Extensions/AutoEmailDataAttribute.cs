@@ -1,4 +1,4 @@
-namespace Habitat.Accounts.Tests.Extensions
+namespace Sitecore.Feature.Accounts.Tests.Extensions
 {
   using System.Net.Mail;
   using Ploeh.AutoFixture;

@@ -1,4 +1,4 @@
-﻿namespace Habitat.News
+﻿namespace Sitecore.Feature.News
 {
   using Sitecore.Data;
 

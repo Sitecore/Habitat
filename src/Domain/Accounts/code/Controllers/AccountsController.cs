@@ -1,17 +1,16 @@
-﻿namespace Habitat.Accounts.Controllers
+﻿namespace Sitecore.Feature.Accounts.Controllers
 {
   using System;
-  using System.Linq;
   using System.Web.Mvc;
   using System.Web.Security;
-  using Habitat.Accounts.Attributes;
-  using Habitat.Accounts.Models;
-  using Habitat.Accounts.Repositories;
-  using Habitat.Accounts.Services;
-  using Habitat.Accounts.Texts;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore;
   using Sitecore.Diagnostics;
+  using Sitecore.Feature.Accounts.Attributes;
+  using Sitecore.Feature.Accounts.Models;
+  using Sitecore.Feature.Accounts.Repositories;
+  using Sitecore.Feature.Accounts.Services;
+  using Sitecore.Feature.Accounts.Texts;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
 
   public class AccountsController : Controller
   {

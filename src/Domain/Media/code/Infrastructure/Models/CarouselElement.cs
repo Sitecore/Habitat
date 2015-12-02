@@ -1,4 +1,4 @@
-﻿namespace Habitat.Media.Infrastructure.Models
+﻿namespace Sitecore.Feature.Media.Infrastructure.Models
 {
   using Sitecore.Data.Items;
 

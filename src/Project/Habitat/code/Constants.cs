@@ -1,4 +1,4 @@
-﻿namespace Habitat.Website
+﻿namespace Sitecore.Habitat.Website
 {
   public struct Constants
   {

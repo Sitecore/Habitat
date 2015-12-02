@@ -1,4 +1,4 @@
-﻿namespace Habitat.Search
+﻿namespace Sitecore.Feature.Search
 {
   using Sitecore.Data;
 

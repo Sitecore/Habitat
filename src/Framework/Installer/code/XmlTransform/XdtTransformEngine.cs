@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.Installer.XmlTransform
+﻿namespace Sitecore.Framework.Installer.XmlTransform
 {
   using Microsoft.Web.XmlTransform;
 

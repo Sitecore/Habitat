@@ -1,10 +1,10 @@
-﻿namespace Habitat.Framework.Installer.Tests
+﻿namespace Sitecore.Framework.Installer.Tests
 {
   using System.IO;
   using System.Linq;
   using System.Xml.Linq;
   using FluentAssertions;
-  using Habitat.Framework.Installer.XmlTransform;
+  using Sitecore.Framework.Installer.XmlTransform;
   using Xunit;
 
   public class XdtTransformEngineTests

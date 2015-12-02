@@ -1,14 +1,9 @@
-﻿namespace Habitat.Search.Tests
+﻿namespace Sitecore.Feature.Search.Tests
 {
   using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
   using FluentAssertions;
-  using Habitat.Accounts.Tests.Extensions;
-  using Habitat.Search.Models;
-  using Ploeh.AutoFixture.Xunit2;
+  using Sitecore.Feature.Search.Models;
+  using Sitecore.Feature.Search.Tests.Extensions;
   using Xunit;
 
   public class PagedSearchResultsTests

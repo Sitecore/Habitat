@@ -1,12 +1,11 @@
-﻿using System;
-using Sitecore;
-using Sitecore.Data;
-using Sitecore.Data.Items;
-using Sitecore.Links;
-using Sitecore.Sites;
-
-namespace Habitat.Framework.SitecoreExtensions.Extensions
+﻿namespace Sitecore.Framework.SitecoreExtensions.Extensions
 {
+  using System;
+  using Sitecore;
+  using Sitecore.Data;
+  using Sitecore.Data.Items;
+  using Sitecore.Sites;
+
   public static class SiteExtensions
   {
     public static Item GetContextItem(this SiteContext site, ID derivedFromTemplateID)

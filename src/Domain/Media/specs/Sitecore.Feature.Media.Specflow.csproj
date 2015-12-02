@@ -7,8 +7,8 @@
     <ProjectGuid>{98EDAD96-F400-4898-AA14-F63327D17F18}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Media.Specflow</RootNamespace>
-    <AssemblyName>Habitat.Media.Specflow</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Media.Specflow</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Media.Specflow</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

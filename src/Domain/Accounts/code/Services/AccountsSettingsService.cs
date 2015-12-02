@@ -1,14 +1,14 @@
-﻿namespace Habitat.Accounts.Services
+﻿namespace Sitecore.Feature.Accounts.Services
 {
   using System;
   using System.Net.Mail;
-  using Framework.SitecoreExtensions.Extensions;
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
   using Sitecore.Exceptions;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
 
   public class AccountsSettingsService : IAccountsSettingsService
   {

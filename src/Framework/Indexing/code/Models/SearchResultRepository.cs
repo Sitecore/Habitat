@@ -1,10 +1,10 @@
-namespace Habitat.Framework.Indexing.Models
+namespace Sitecore.Framework.Indexing.Models
 {
   using System.Linq;
-  using Habitat.Framework.Indexing.Infrastructure;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.Data.Items;
+  using Sitecore.Framework.Indexing.Infrastructure;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
 
   public class SearchResultRepository
   {

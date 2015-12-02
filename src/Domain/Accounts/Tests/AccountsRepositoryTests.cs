@@ -1,26 +1,26 @@
-﻿namespace Habitat.Accounts.Tests
+﻿namespace Sitecore.Feature.Accounts.Tests
 {
   using System;
   using System.Collections.Generic;
   using System.Web.Security;
   using FluentAssertions;
-  using Habitat.Accounts.Models;
-  using Habitat.Accounts.Repositories;
-  using Habitat.Accounts.Services;
-  using Habitat.Accounts.Tests.Extensions;
   using NSubstitute;
   using Ploeh.AutoFixture;
+  using Ploeh.AutoFixture.AutoNSubstitute;
+  using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Collections;
   using Sitecore.Common;
   using Sitecore.FakeDb.Security.Accounts;
   using Sitecore.FakeDb.Security.Web;
   using Sitecore.FakeDb.Sites;
+  using Sitecore.Feature.Accounts.Models;
+  using Sitecore.Feature.Accounts.Repositories;
+  using Sitecore.Feature.Accounts.Services;
+  using Sitecore.Feature.Accounts.Tests.Extensions;
   using Sitecore.Security.Accounts;
   using Sitecore.Security.Authentication;
   using Sitecore.Security.Domains;
   using Xunit;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Ploeh.AutoFixture.Xunit2;
 
   public class AccountsRepositoryTests
   {

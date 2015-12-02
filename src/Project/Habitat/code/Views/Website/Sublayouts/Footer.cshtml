@@ -1,6 +1,6 @@
 ﻿@using Sitecore
 @model Sitecore.Mvc.Presentation.RenderingModel
-<div class="prefooter container@(MainUtil.GetBool(Model.Rendering.Parameters[Habitat.Website.Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
+<div class="prefooter container@(MainUtil.GetBool(Model.Rendering.Parameters[Sitecore.Habitat.Website.Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
   <div class="row">
     <div class="col-md-4 col-sm-6 col-xs-12">
       @Html.Sitecore().Placeholder("footercolumn1")

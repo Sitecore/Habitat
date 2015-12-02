@@ -1,4 +1,4 @@
-namespace Habitat.Framework.Assets.Models
+namespace Sitecore.Framework.Assets.Models
 {
   using Sitecore.Caching;
   using Sitecore.Data;

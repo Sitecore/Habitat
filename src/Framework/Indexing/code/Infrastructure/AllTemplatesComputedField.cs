@@ -4,7 +4,7 @@
 
 #endregion
 
-namespace Habitat.Framework.Indexing.Infrastructure
+namespace Sitecore.Framework.Indexing.Infrastructure
 {
   using System.Collections.Generic;
   using Sitecore;

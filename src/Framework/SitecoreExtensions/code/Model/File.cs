@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.Model
+﻿namespace Sitecore.Framework.SitecoreExtensions.Model
 {
   public class File
   {

@@ -1,4 +1,4 @@
-namespace Habitat.Media.Tests.Repositories
+namespace Sitecore.Feature.Media.Tests.Infrastructure
 {
   using Sitecore.FakeDb;
 

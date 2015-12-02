@@ -1,10 +1,10 @@
-﻿namespace Habitat.News.Repositories
+﻿namespace Sitecore.Feature.News.Repositories
 {
   using System;
   using System.Collections.Generic;
   using System.Linq;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore.Data.Items;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
 
   internal class NewsRepository : INewsRepository
   {

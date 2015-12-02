@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Habitat.Framework.SitecoreExtensions.Extensions;
 using Sitecore.Configuration;
 using Sitecore.Data.Items;
 using Sitecore.Text;
 
 namespace Habitat.Demo.Models
 {
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
+
   public class DemoContent
   {
     public Item Item { get; set; }

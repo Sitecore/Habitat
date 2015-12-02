@@ -1,13 +1,13 @@
-﻿namespace Habitat.Accounts.Services
+﻿namespace Sitecore.Feature.Accounts.Services
 {
   using System.Collections.Generic;
   using System.Linq;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore;
   using Sitecore.Configuration;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
   using Sitecore.SecurityModel;
 
   public class ProfileSettingsService : IProfileSettingsService

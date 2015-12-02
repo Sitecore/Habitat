@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Habitat.Search.Models
+﻿namespace Sitecore.Feature.Search.Models
 {
   public class PagingSettings
   {

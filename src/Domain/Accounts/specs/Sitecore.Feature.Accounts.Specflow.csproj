@@ -7,8 +7,8 @@
     <ProjectGuid>{CF95188D-0E98-44FA-BB40-D1EA083A09FB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Accounts.Specflow</RootNamespace>
-    <AssemblyName>Habitat.Accounts.Specflow</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Accounts.Specflow</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Accounts.Specflow</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

@@ -7,8 +7,8 @@
     <ProjectGuid>{5E3D01C4-286E-4AD0-96C3-74D0993F890F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Social.Specflow</RootNamespace>
-    <AssemblyName>Habitat.Social.Specflow</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Social.Specflow</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Social.Specflow</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

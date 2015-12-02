@@ -1,4 +1,4 @@
-﻿namespace Habitat.Identity
+﻿namespace Sitecore.Feature.Identity
 {
   using Sitecore.Data;
 

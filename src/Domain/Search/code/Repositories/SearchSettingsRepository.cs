@@ -1,11 +1,11 @@
-﻿namespace Habitat.Search.Repositories
+﻿namespace Sitecore.Feature.Search.Repositories
 {
   using System.Web;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
-  using Habitat.Search.Models;
   using Sitecore;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
+  using Sitecore.Feature.Search.Models;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
   using Sitecore.Mvc.Presentation;
 
   public class SearchSettingsRepository : ISearchSettingsRepository

@@ -1,7 +1,7 @@
-namespace Habitat.Search.Models
+namespace Sitecore.Feature.Search.Models
 {
-  using Habitat.Framework.Indexing.Models;
   using Sitecore.Data.Items;
+  using Sitecore.Framework.Indexing.Models;
 
   public class SearchSettings : ISearchSettings
   {

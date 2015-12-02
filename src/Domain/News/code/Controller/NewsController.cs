@@ -1,8 +1,8 @@
-﻿namespace Habitat.News.Controller
+﻿namespace Sitecore.Feature.News.Controller
 {
   using System.Web.Mvc;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
-  using Habitat.News.Repositories;
+  using Sitecore.Feature.News.Repositories;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
   using Sitecore.Mvc.Presentation;
 
   public class NewsController : Controller

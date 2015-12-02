@@ -8,8 +8,8 @@
     <ProjectGuid>{BE2F2700-095F-4B07-9553-02FF39BF92D6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Navigation.Tests</RootNamespace>
-    <AssemblyName>Habitat.Navigation.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Navigation.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Navigation.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

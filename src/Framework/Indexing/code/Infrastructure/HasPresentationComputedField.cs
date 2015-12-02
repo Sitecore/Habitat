@@ -4,7 +4,7 @@
 
 #endregion
 
-namespace Habitat.Framework.Indexing.Infrastructure
+namespace Sitecore.Framework.Indexing.Infrastructure
 {
   using Sitecore.ContentSearch;
   using Sitecore.ContentSearch.ComputedFields;

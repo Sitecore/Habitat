@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.Tests.Extensions
+﻿namespace Sitecore.Framework.SitecoreExtensions.Tests.Extensions
 {
   using Sitecore.Data;
   using Sitecore.FakeDb;

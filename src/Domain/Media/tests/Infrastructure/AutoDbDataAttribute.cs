@@ -1,4 +1,4 @@
-﻿namespace Habitat.Media.Tests.Infrastructure
+﻿namespace Sitecore.Feature.Media.Tests.Infrastructure
 {
   using Ploeh.AutoFixture;
   using Ploeh.AutoFixture.Xunit2;

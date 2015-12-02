@@ -1,4 +1,4 @@
-﻿namespace Habitat.PageContent
+﻿namespace Sitecore.Feature.PageContent
 {
   using Sitecore.Data;
 

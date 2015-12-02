@@ -1,15 +1,15 @@
-﻿namespace Habitat.Accounts.Tests.Attributes
+﻿namespace Sitecore.Feature.Accounts.Tests.Attributes
 {
   using System.Web.Mvc;
   using FluentAssertions;
-  using Habitat.Accounts.Attributes;
-  using Habitat.Accounts.Tests.Extensions;
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Sitecore.Collections;
   using Sitecore.Data;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.FakeDb.Sites;
+  using Sitecore.Feature.Accounts.Attributes;
+  using Sitecore.Feature.Accounts.Tests.Extensions;
   using Sitecore.Globalization;
   using Sitecore.Sites;
   using Xunit;

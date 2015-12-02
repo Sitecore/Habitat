@@ -1,7 +1,7 @@
-namespace Habitat.Navigation.Repositories
+namespace Sitecore.Feature.Navigation.Repositories
 {
-  using Habitat.Navigation.Models;
   using Sitecore.Data.Items;
+  using Sitecore.Feature.Navigation.Models;
 
   public interface INavigationRepository
   {

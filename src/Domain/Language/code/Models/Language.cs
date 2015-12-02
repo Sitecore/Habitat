@@ -1,4 +1,4 @@
-﻿namespace Habitat.Language.Models
+﻿namespace Sitecore.Feature.Language.Models
 {
   public class Language
   {

@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.Repositories
+﻿namespace Sitecore.Framework.SitecoreExtensions.Repositories
 {
   internal class ItemRepository
   {

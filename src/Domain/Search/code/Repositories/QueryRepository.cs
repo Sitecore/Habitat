@@ -1,7 +1,7 @@
-namespace Habitat.Search.Repositories
+namespace Sitecore.Feature.Search.Repositories
 {
-  using Habitat.Framework.Indexing.Models;
-  using Habitat.Search.Models;
+  using Sitecore.Feature.Search.Models;
+  using Sitecore.Framework.Indexing.Models;
 
   public class QueryRepository
   {

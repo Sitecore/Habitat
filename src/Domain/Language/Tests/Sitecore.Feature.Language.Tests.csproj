@@ -8,8 +8,8 @@
     <ProjectGuid>{B65AC070-F56C-4C2C-9D0E-E76CEF7E8928}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Language.Tests</RootNamespace>
-    <AssemblyName>Habitat.Language.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Language.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Language.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

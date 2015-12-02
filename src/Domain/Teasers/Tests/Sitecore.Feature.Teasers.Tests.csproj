@@ -8,8 +8,8 @@
     <ProjectGuid>{984266D0-1626-45B2-81AA-E4D2FCEE2E2A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Teasers.Tests</RootNamespace>
-    <AssemblyName>Habitat.Teasers.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Teasers.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Teasers.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

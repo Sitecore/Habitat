@@ -8,8 +8,8 @@
     <ProjectGuid>{2E2DBCC9-77F1-445D-B211-BD1E2289FB84}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Social.Tests</RootNamespace>
-    <AssemblyName>Habitat.Social.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Social.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Social.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

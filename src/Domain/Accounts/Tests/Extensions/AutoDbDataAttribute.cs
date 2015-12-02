@@ -1,4 +1,4 @@
-namespace Habitat.Accounts.Tests.Extensions
+namespace Sitecore.Feature.Accounts.Tests.Extensions
 {
   using NSubstitute;
   using Ploeh.AutoFixture;
@@ -6,7 +6,6 @@ namespace Habitat.Accounts.Tests.Extensions
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.FakeDb.Security.Accounts;
-  using Sitecore.FakeDb.Sites;
 
   public class AutoDbDataAttribute : AutoDataAttribute
   {

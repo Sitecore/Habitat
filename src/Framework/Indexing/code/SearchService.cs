@@ -1,11 +1,9 @@
-﻿namespace Habitat.Framework.Indexing
+﻿namespace Sitecore.Framework.Indexing
 {
   using System;
   using System.Collections.Generic;
   using System.Linq;
   using System.Linq.Expressions;
-  using Habitat.Framework.Indexing.Infrastructure;
-  using Habitat.Framework.Indexing.Models;
   using Sitecore;
   using Sitecore.ContentSearch;
   using Sitecore.ContentSearch.Linq;
@@ -14,6 +12,8 @@
   using Sitecore.ContentSearch.Utilities;
   using Sitecore.Data;
   using Sitecore.Data.Items;
+  using Sitecore.Framework.Indexing.Infrastructure;
+  using Sitecore.Framework.Indexing.Models;
 
   public class SearchService
   {

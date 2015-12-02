@@ -1,4 +1,4 @@
-﻿namespace Habitat.Teasers.Services
+﻿namespace Sitecore.Feature.Teasers.Services
 {
   public static class HumanFriendlyIntegerService
   {

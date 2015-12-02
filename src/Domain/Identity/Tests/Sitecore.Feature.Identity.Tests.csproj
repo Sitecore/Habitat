@@ -8,8 +8,8 @@
     <ProjectGuid>{3E361E0D-0A47-4195-8BCB-ABA95E197CD2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Identity.Tests</RootNamespace>
-    <AssemblyName>Habitat.Identity.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Identity.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Identity.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

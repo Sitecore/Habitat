@@ -1,4 +1,4 @@
-﻿namespace Habitat.Accounts.Tests.Extensions
+﻿namespace Sitecore.Feature.Search.Tests.Extensions
 {
   using System;
   using Ploeh.AutoFixture;

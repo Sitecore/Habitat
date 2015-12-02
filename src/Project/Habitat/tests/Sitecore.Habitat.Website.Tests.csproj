@@ -7,8 +7,8 @@
     <ProjectGuid>{94A5F3F9-FEF2-45AF-B44D-8443C5BF69C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Website.Tests</RootNamespace>
-    <AssemblyName>Habitat.Website.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Habitat.Website.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Habitat.Website.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

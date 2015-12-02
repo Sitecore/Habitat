@@ -8,8 +8,8 @@
     <ProjectGuid>{FD62BBE5-5908-4201-A1F4-65875E89585E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.PageContent.Tests</RootNamespace>
-    <AssemblyName>Habitat.PageContent.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.PageContent.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.PageContent.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

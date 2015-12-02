@@ -1,14 +1,9 @@
-﻿namespace Habitat.Search.Tests
+﻿namespace Sitecore.Feature.Search.Tests
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
   using FluentAssertions;
-  using Habitat.Accounts.Tests.Extensions;
-  using Habitat.Framework.Indexing;
-  using Habitat.Search.Repositories;
+  using Sitecore.Feature.Search.Repositories;
+  using Sitecore.Feature.Search.Tests.Extensions;
+  using Sitecore.Framework.Indexing;
   using Xunit;
 
   public class SearchServiceRepositoryTests

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Habitat.Search.Repositories
+﻿namespace Sitecore.Feature.Search.Repositories
 {
-  using Habitat.Search.Models;
+  using Sitecore.Feature.Search.Models;
 
   public interface ISearchSettingsRepository
   {

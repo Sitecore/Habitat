@@ -1,4 +1,4 @@
-﻿namespace Habitat.Metadata
+﻿namespace Sitecore.Feature.Metadata
 {
   using Sitecore.Data;
 

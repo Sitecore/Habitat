@@ -1,8 +1,8 @@
-﻿namespace Habitat.Identity.Repositories
+﻿namespace Sitecore.Feature.Identity.Repositories
 {
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore;
   using Sitecore.Data.Items;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
 
   public static class IdentityRepository
   {

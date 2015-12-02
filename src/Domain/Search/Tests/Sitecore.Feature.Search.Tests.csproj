@@ -8,8 +8,8 @@
     <ProjectGuid>{DD250492-DDBC-4236-B57B-42D673935F69}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Search.Tests</RootNamespace>
-    <AssemblyName>Habitat.Search.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Search.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Search.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

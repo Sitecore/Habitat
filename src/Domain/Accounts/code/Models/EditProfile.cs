@@ -1,8 +1,8 @@
-﻿namespace Habitat.Accounts.Models
+﻿namespace Sitecore.Feature.Accounts.Models
 {
   using System.Collections.Generic;
   using System.ComponentModel.DataAnnotations;
-  using Habitat.Accounts.Texts;
+  using Sitecore.Feature.Accounts.Texts;
 
   public class EditProfile
   {

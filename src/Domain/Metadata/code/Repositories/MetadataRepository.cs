@@ -1,8 +1,8 @@
-﻿namespace Habitat.Metadata.Repositories
+﻿namespace Sitecore.Feature.Metadata.Repositories
 {
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore;
   using Sitecore.Data.Items;
+  using Sitecore.Framework.SitecoreExtensions.Extensions;
 
   public static class MetadataRepository
   {

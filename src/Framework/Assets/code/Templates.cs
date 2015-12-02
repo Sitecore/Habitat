@@ -1,4 +1,4 @@
-﻿namespace Habitat.Framework.Assets
+﻿namespace Sitecore.Framework.Assets
 {
   using Sitecore.Data;
 

@@ -1,4 +1,4 @@
-namespace Habitat.Framework.Indexing.Models
+namespace Sitecore.Framework.Indexing.Models
 {
   using System;
   using Sitecore.Data.Items;

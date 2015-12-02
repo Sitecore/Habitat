@@ -1,4 +1,4 @@
-namespace Habitat.Framework.Assets.Models
+namespace Sitecore.Framework.Assets.Models
 {
   internal enum AssetType
   {

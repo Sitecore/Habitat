@@ -1,9 +1,9 @@
-﻿namespace Habitat.Accounts.Repositories
+﻿namespace Sitecore.Feature.Accounts.Repositories
 {
   using System.Web.Security;
-  using Habitat.Accounts.Services;
   using Sitecore;
   using Sitecore.Diagnostics;
+  using Sitecore.Feature.Accounts.Services;
   using Sitecore.Security.Accounts;
   using Sitecore.Security.Authentication;
 

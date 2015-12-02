@@ -1,15 +1,15 @@
-﻿namespace Habitat.Accounts.Tests
+﻿namespace Sitecore.Feature.Accounts.Tests
 {
   using System.Collections.Generic;
   using System.Linq;
   using FluentAssertions;
-  using Habitat.Accounts.Services;
-  using Habitat.Accounts.Tests.Extensions;
   using Sitecore;
   using Sitecore.Collections;
   using Sitecore.Data;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.Sites;
+  using Sitecore.Feature.Accounts.Services;
+  using Sitecore.Feature.Accounts.Tests.Extensions;
   using Sitecore.Sites;
   using Xunit;
 

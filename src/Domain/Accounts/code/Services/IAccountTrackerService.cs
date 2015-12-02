@@ -1,7 +1,7 @@
-﻿using Sitecore.Data;
-
-namespace Habitat.Accounts.Services
+﻿namespace Sitecore.Feature.Accounts.Services
 {
+  using Sitecore.Data;
+
   public interface IAccountTrackerService
   {
     void TrackLogin();

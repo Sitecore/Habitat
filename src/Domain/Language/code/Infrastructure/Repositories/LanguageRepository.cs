@@ -1,10 +1,10 @@
-﻿namespace Habitat.Language.Infrastructure.Repositories
+﻿namespace Sitecore.Feature.Language.Infrastructure.Repositories
 {
   using System.Collections.Generic;
   using System.Linq;
-  using Habitat.Language.Infrastructure.Factories;
-  using Habitat.Language.Models;
   using Sitecore;
+  using Sitecore.Feature.Language.Infrastructure.Factories;
+  using Sitecore.Feature.Language.Models;
 
   public static class LanguageRepository
   {

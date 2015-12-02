@@ -1,8 +1,8 @@
-﻿namespace Habitat.Accounts.Tests.Extensions
+﻿namespace Sitecore.Feature.Accounts.Tests.Extensions
 {
-  using System.Collections;
   using System.Collections.Generic;
   using Ploeh.AutoFixture;
+
   public class RightKeysCustomization<TKey,TValue> : ICustomization
   {
     private readonly TKey[] keys;

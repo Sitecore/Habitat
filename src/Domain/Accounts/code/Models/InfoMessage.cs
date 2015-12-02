@@ -1,4 +1,4 @@
-﻿namespace Habitat.Accounts.Models
+﻿namespace Sitecore.Feature.Accounts.Models
 {
   public class InfoMessage
   {

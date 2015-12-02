@@ -1,9 +1,9 @@
-﻿namespace Habitat.Framework.SitecoreExtensions.Repositories
+﻿namespace Sitecore.Framework.SitecoreExtensions.Repositories
 {
   using System.Xml;
-  using Habitat.Framework.SitecoreExtensions.Model;
-  using Habitat.Framework.SitecoreExtensions.Services;
   using Sitecore.Data.Items;
+  using Sitecore.Framework.SitecoreExtensions.Model;
+  using Sitecore.Framework.SitecoreExtensions.Services;
 
   internal class FileRepository : XmlParserService
   {
