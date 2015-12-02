@@ -1,7 +1,7 @@
 ﻿namespace Habitat.Accounts.Repositories
 {
   using System.Web.Security;
-  using Habitat.Accounts.Models;
+  using Habitat.Accounts.Services;
   using Sitecore;
   using Sitecore.Diagnostics;
   using Sitecore.Security.Accounts;
@@ -9,6 +9,13 @@
 
   public class AccountRepository : IAccountRepository
   {
+    private readonly IAccountTrackerService accountTrackerService;
+
+    public AccountRepository(IAccountTrackerService accountTrackerService)
+    {
+      this.accountTrackerService = accountTrackerService;
+    }
+
     public bool Exists(string userName)
     {
       var fullName = Context.Domain.GetFullName(userName);
@@ -25,7 +32,14 @@
         accountName = domain.GetFullName(userName);
       }
 
-      return AuthenticationManager.Login(accountName, password);
+      var result =  AuthenticationManager.Login(accountName, password);
+
+      if (result)
+      {
+        accountTrackerService.TrackLogin();
+      }
+
+      return result;
     }
 
     public void Logout()
@@ -57,7 +71,11 @@
 
       user.Profile.Save();
 
+      accountTrackerService.TrackRegister();
+
       AuthenticationManager.Login(user);
+
+      accountTrackerService.TrackLogin();
     }
   }
 }
