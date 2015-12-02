@@ -5,7 +5,7 @@
 	I want to be able to add a twitter feed on pages
 
 @NeedImplementation
-Scenario: Social_UC1_Twitter feed presents on the page
+Scenario: Social_Twitter Feed_UC1_Twitter feed presents on the page
 	Given Habitat website is opened on main page
 	When Actor scroll down the page
 	Then block with following title is present on the page
@@ -14,7 +14,7 @@ Scenario: Social_UC1_Twitter feed presents on the page
 
 
 @NeedImplementation
-Scenario: Social_UC2_Add twitter rendering on the page
+Scenario: Social_Twitter Feed_UC2_Add twitter rendering on the page
 	Given Admin user is logged into Habitat
 	And Experience Editor application is opened
 	And Button <Add a new component> is clicked
@@ -30,7 +30,7 @@ Scenario: Social_UC2_Add twitter rendering on the page
 
 
 @NeedImplementation
-Scenario: Social_UC3_Remove twitter rendering from page
+Scenario: Social_Twitter Feed_UC3_Remove twitter rendering from page
 	Given Admin user is logged into Habitat
 	And Experience Editor application is opened
 	And TwitterFeed component is present on the page
@@ -39,7 +39,7 @@ Scenario: Social_UC3_Remove twitter rendering from page
 
 
 @NeedImplementation
-Scenario: Social_UC4_Edit rendering title
+Scenario: Social_Twitter Feed_UC4_Edit rendering title
 	Given Admin user is logged into Habitat
 	And Experience Editor application is opened
 	And TwitterFeed component is present on the page
@@ -56,7 +56,7 @@ Scenario: Social_UC4_Edit rendering title
 
 
 @NeedImplementation
-Scenario: Social_UC5_Make sure latest posts are shown on the page
+Scenario: Social_Twitter Feed_UC5_Make sure latest posts are shown on the page
 	Given @sitecorehabitat account is registered on twitter.com
 	| Username         | Password   |
 	| @sitecorehabitat | Sitecore54 |
@@ -67,7 +67,7 @@ Scenario: Social_UC5_Make sure latest posts are shown on the page
 
 
 	@NeedImplementation
-Scenario: Social_UC6_Add new datasource
+Scenario: Social_Twitter Feed_UC6_Add new datasource
 	Given Admin user is logged into Habitat
 	And Content Editor application is opened
 	And /sitecore/content/Shared/Social/Twitter feeds item is selected
@@ -83,5 +83,15 @@ Scenario: Social_UC6_Add new datasource
 	And Admin selects TwitterFeed rendering on the <Select a Rendering> dialog 
 	And Admin clicks Select button
 	Then <TwitterFeed1> datasource available in the list
+
+	@NeedImplementation
+Scenario: Social_Twitter Feed_Bug36084_ Place settinfg for configuration number of tweets on Control Properties dialog
+	Given Admin user is logged into Habitat
+	And Experience Editor application is opened
+	And <TwitterFeed> component with <2> tweets on it is present in the bottom of the page
+	And <Control Properties> dialog for <TwitterFeed> rendering is opened
+	When Admin changes <TweetsToShow> field value to <4>
+	And Admin saves changes on the item
+	Then <TwitterFeed> component with <4> tweets on it is present in the bottom of the page
 
 

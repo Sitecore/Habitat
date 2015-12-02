@@ -75,10 +75,10 @@ namespace Habitat.Social.Specflow
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
-        [Xunit.TraitAttribute("Description", "Social_UC1_Twitter feed presents on the page")]
-        public virtual void Social_UC1_TwitterFeedPresentsOnThePage()
+        [Xunit.TraitAttribute("Description", "Social_Twitter Feed_UC1_Twitter feed presents on the page")]
+        public virtual void Social_TwitterFeed_UC1_TwitterFeedPresentsOnThePage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_UC1_Twitter feed presents on the page", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_UC1_Twitter feed presents on the page", new string[] {
                         "NeedImplementation"});
 #line 8
 this.ScenarioSetup(scenarioInfo);
@@ -99,10 +99,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
-        [Xunit.TraitAttribute("Description", "Social_UC2_Add twitter rendering on the page")]
-        public virtual void Social_UC2_AddTwitterRenderingOnThePage()
+        [Xunit.TraitAttribute("Description", "Social_Twitter Feed_UC2_Add twitter rendering on the page")]
+        public virtual void Social_TwitterFeed_UC2_AddTwitterRenderingOnThePage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_UC2_Add twitter rendering on the page", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_UC2_Add twitter rendering on the page", new string[] {
                         "NeedImplementation"});
 #line 17
 this.ScenarioSetup(scenarioInfo);
@@ -137,10 +137,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
-        [Xunit.TraitAttribute("Description", "Social_UC3_Remove twitter rendering from page")]
-        public virtual void Social_UC3_RemoveTwitterRenderingFromPage()
+        [Xunit.TraitAttribute("Description", "Social_Twitter Feed_UC3_Remove twitter rendering from page")]
+        public virtual void Social_TwitterFeed_UC3_RemoveTwitterRenderingFromPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_UC3_Remove twitter rendering from page", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_UC3_Remove twitter rendering from page", new string[] {
                         "NeedImplementation"});
 #line 33
 this.ScenarioSetup(scenarioInfo);
@@ -160,10 +160,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
-        [Xunit.TraitAttribute("Description", "Social_UC4_Edit rendering title")]
-        public virtual void Social_UC4_EditRenderingTitle()
+        [Xunit.TraitAttribute("Description", "Social_Twitter Feed_UC4_Edit rendering title")]
+        public virtual void Social_TwitterFeed_UC4_EditRenderingTitle()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_UC4_Edit rendering title", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_UC4_Edit rendering title", new string[] {
                         "NeedImplementation"});
 #line 42
 this.ScenarioSetup(scenarioInfo);
@@ -206,10 +206,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
-        [Xunit.TraitAttribute("Description", "Social_UC5_Make sure latest posts are shown on the page")]
-        public virtual void Social_UC5_MakeSureLatestPostsAreShownOnThePage()
+        [Xunit.TraitAttribute("Description", "Social_Twitter Feed_UC5_Make sure latest posts are shown on the page")]
+        public virtual void Social_TwitterFeed_UC5_MakeSureLatestPostsAreShownOnThePage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_UC5_Make sure latest posts are shown on the page", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_UC5_Make sure latest posts are shown on the page", new string[] {
                         "NeedImplementation"});
 #line 59
 this.ScenarioSetup(scenarioInfo);
@@ -236,10 +236,10 @@ this.ScenarioSetup(scenarioInfo);
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
-        [Xunit.TraitAttribute("Description", "Social_UC6_Add new datasource")]
-        public virtual void Social_UC6_AddNewDatasource()
+        [Xunit.TraitAttribute("Description", "Social_Twitter Feed_UC6_Add new datasource")]
+        public virtual void Social_TwitterFeed_UC6_AddNewDatasource()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_UC6_Add new datasource", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_UC6_Add new datasource", new string[] {
                         "NeedImplementation"});
 #line 70
 this.ScenarioSetup(scenarioInfo);
@@ -274,6 +274,37 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("Admin clicks Select button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 85
  testRunner.Then("<TwitterFeed1> datasource available in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Twitter Feed")]
+        [Xunit.TraitAttribute("Description", "Social_Twitter Feed_Bug36084_ Place settinfg for configuration number of tweets o" +
+            "n Control Properties dialog")]
+        public virtual void Social_TwitterFeed_Bug36084_PlaceSettinfgForConfigurationNumberOfTweetsOnControlPropertiesDialog()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_Bug36084_ Place settinfg for configuration number of tweets o" +
+                    "n Control Properties dialog", new string[] {
+                        "NeedImplementation"});
+#line 88
+this.ScenarioSetup(scenarioInfo);
+#line 89
+ testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 90
+ testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 91
+ testRunner.And("<TwitterFeed> component with <2> tweets on it is present in the bottom of the pag" +
+                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
+ testRunner.And("<Control Properties> dialog for <TwitterFeed> rendering is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.When("Admin changes <TweetsToShow> field value to <4>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 94
+ testRunner.And("Admin saves changes on the item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+ testRunner.Then("<TwitterFeed> component with <4> tweets on it is present in the bottom of the pag" +
+                    "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
