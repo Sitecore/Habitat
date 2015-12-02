@@ -236,8 +236,6 @@
         this.contactProfileService.SetProfile(profile);
       }
 
-      var contactProfileProvider = new ContactProfileProvider();
-
       Session["EditProfileMessage"] = new InfoMessage(Captions.EditProfileSuccess);
       return this.Redirect(Request.RawUrl);
     }

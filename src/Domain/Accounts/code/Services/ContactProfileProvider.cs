@@ -21,6 +21,20 @@ namespace Habitat.Accounts.Services
   public class ContactProfileProvider : IContactProfileProvider
   {
     private Contact contact;
+
+    private ContactManager contactManager;
+
+    public ContactProfileProvider()
+    {
+      try
+      {
+        this.contactManager = Factory.CreateObject("tracking/contactManager", true) as ContactManager;
+      }
+      catch
+      {
+        Sitecore.Diagnostics.Log.Error("Contact manager cannot be created", this);
+      }
+    }
     public Contact Contact
     {
       get
@@ -32,8 +46,7 @@ namespace Habitat.Accounts.Services
 
         if (this.contact == null)
         {
-          var contactManager = Factory.CreateObject("tracking/contactManager", true) as ContactManager;
-          this.contact = contactManager.CreateContact(ID.NewID);
+          this.contact = this.contactManager.CreateContact(ID.NewID);
         }
 
         return this.contact;
@@ -52,7 +65,7 @@ namespace Habitat.Accounts.Services
 
     public Contact Flush()
     {
-      return null;
+      return this.contactManager.FlushContactToXdb2(this.Contact);
     }
 
     protected T GetFacet<T>(string facetName) where T : class, IFacet
