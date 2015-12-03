@@ -109,10 +109,10 @@
     <Content Include="Views\PageContent\PageImage.cshtml" />
     <Content Include="Views\PageContent\PageBody.cshtml" />
     <Content Include="Views\PageContent\PageTitle.cshtml" />
-    <Content Include="App_Config\Include\Habitat\Habitat.PageContent.config">
+    <Content Include="App_Config\Include\Feature\Feature.PageContent.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Habitat\Habitat.PageContent.Serialization.config" />
+    <Content Include="App_Config\Include\Feature\Feature.PageContent.Serialization.config" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\PageContent\ReferenceTeaser.cshtml" />
@@ -134,11 +134,11 @@
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\Indexing\code\Sitecore.Foundation.Indexing.csproj">
+    <ProjectReference Include="..\..\..\foundation\Indexing\code\Sitecore.Foundation.Indexing.csproj">
       <Project>{80213F24-577F-4F0B-A3B8-62485EA4D2F3}</Project>
       <Name>Sitecore.Foundation.Indexing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
+    <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>

@@ -161,13 +161,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Habitat\Habitat.Website.config">
+    <Content Include="App_Config\Include\Project\Habitat.Website.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Habitat\z.Habitat.DevSettings.config">
+    <Content Include="App_Config\Include\Project\z.Habitat.DevSettings.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Habitat\Habitat.Website.Serialization.config">
+    <Content Include="App_Config\Include\Project\Habitat.Website.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="favicon.ico" />
@@ -198,11 +198,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\Assets\code\Sitecore.Foundation.Assets.csproj">
+    <ProjectReference Include="..\..\..\foundation\Assets\code\Sitecore.Foundation.Assets.csproj">
       <Project>{7E46FF93-EE05-412C-AC47-2A59A13DA73C}</Project>
       <Name>Sitecore.Foundation.Assets</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
+    <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
       <Private>True</Private>

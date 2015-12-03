@@ -106,7 +106,7 @@
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Habitat\Habitat.Social.Serialization.config" />
+    <Content Include="App_Config\Include\Feature\Feature.Social.Serialization.config" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Social\SocialLinks.cshtml" />
@@ -122,7 +122,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
+    <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>

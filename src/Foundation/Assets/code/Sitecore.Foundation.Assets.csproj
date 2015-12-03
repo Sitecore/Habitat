@@ -121,8 +121,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Habitat\Habitat.Framework.Assets.config" />
-    <Content Include="App_Config\Include\Habitat\Habitat.Framework.Assets.Serialization.config">
+    <Content Include="App_Config\Include\Foundation\Foundation.Assets.config" />
+    <Content Include="App_Config\Include\Foundation\Foundation.Assets.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />

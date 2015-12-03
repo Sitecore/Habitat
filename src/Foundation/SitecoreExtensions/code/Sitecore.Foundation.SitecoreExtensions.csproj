@@ -140,10 +140,10 @@
     <Compile Include="Services\XmlParserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Habitat\Habitat.Framework.SitecoreExtensions.PerformanceTweaks.config">
+    <Content Include="App_Config\Include\Foundation\Foundation.SitecoreExtensions.PerformanceTweaks.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Habitat\Habitat.Framework.SitecoreExtensions.config">
+    <Content Include="App_Config\Include\Foundation\Foundation.SitecoreExtensions.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="packages.config" />

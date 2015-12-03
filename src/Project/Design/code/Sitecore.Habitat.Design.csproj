@@ -65,7 +65,7 @@
     <Content Include="assets\plugins\simple-line-icons\simple-line-icons.css" />
     <Content Include="assets\plugins\simple-line-icons\simple-line-icons.min.css" />
     <Content Include="fonts\Bootstrap\glyphicons-halflings-regular.svg" />
-    <Content Include="App_Config\Include\Habitat\z.Habitat.Design.config" />
+    <Content Include="App_Config\Include\Project\z.Habitat.Design.config" />
     <Content Include="assets\plugins\animate\README.md" />
     <Content Include="assets\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="assets\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />

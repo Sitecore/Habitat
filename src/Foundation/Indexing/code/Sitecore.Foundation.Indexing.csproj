@@ -113,13 +113,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Habitat\Habitat.Framework.Indexing.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="App_Config\Include\Habitat\Habitat.Framework.Indexing.Serialization.config">
+    <Content Include="App_Config\Include\Foundation\Foundation.Indexing.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="packages.config" />
+    <Content Include="App_Config\Include\Foundation\Foundation.Indexing.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
