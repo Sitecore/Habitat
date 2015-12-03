@@ -1,7 +1,7 @@
 namespace Sitecore.Feature.Search.Repositories
 {
   using Sitecore.Feature.Search.Models;
-  using Sitecore.Framework.Indexing.Models;
+  using Sitecore.Foundation.Indexing.Models;
 
   public class QueryRepository
   {

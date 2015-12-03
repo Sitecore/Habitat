@@ -2,7 +2,7 @@
 {
   using Sitecore;
   using Sitecore.Data.Items;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public static class MetadataRepository
   {

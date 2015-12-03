@@ -1,10 +1,10 @@
-namespace Sitecore.Framework.Indexing.Models
+namespace Sitecore.Foundation.Indexing.Models
 {
   using System.Linq;
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.Data.Items;
-  using Sitecore.Framework.Indexing.Infrastructure;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.Indexing.Infrastructure;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class SearchResultRepository
   {

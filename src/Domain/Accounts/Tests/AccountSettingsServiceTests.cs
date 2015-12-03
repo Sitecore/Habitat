@@ -12,7 +12,7 @@
   using Sitecore.FakeDb.Sites;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Sites;
   using Xunit;
 

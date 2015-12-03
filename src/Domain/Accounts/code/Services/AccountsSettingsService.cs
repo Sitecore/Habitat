@@ -8,7 +8,7 @@
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
   using Sitecore.Exceptions;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class AccountsSettingsService : IAccountsSettingsService
   {

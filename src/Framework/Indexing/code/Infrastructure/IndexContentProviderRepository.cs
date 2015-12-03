@@ -4,7 +4,7 @@
 
 #endregion
 
-namespace Sitecore.Framework.Indexing.Infrastructure
+namespace Sitecore.Foundation.Indexing.Infrastructure
 {
   using System.Collections.Generic;
   using Sitecore.Configuration;

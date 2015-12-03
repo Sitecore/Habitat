@@ -4,7 +4,7 @@
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.Data.Items;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   internal class NewsRepository : INewsRepository
   {

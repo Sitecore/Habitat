@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Helpers
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Helpers
 {
   using Sitecore;
   using Sitecore.Analytics;

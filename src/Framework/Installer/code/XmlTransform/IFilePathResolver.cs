@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.Installer.XmlTransform
+﻿namespace SitecoreFoundation.Installer.XmlTransform
 {
   public interface IFilePathResolver
   {

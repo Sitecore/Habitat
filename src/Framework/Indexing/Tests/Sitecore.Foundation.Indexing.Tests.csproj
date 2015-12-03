@@ -8,8 +8,8 @@
     <ProjectGuid>{3ECFDA25-B8AE-43F5-9CA9-4AFDF1F96901}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.Framework.Indexing.Tests</RootNamespace>
-    <AssemblyName>Sitecore.Framework.Indexing.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Foundation.Indexing.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Foundation.Indexing.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

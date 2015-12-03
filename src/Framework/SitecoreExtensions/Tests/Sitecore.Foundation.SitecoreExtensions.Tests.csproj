@@ -8,8 +8,8 @@
     <ProjectGuid>{85F735B7-9BEE-43C3-94DF-539CE267F0B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.Framework.SitecoreExtensions.Tests</RootNamespace>
-    <AssemblyName>Sitecore.Framework.SitecoreExtensions.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Foundation.SitecoreExtensions.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Foundation.SitecoreExtensions.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -131,9 +131,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\code\Sitecore.Framework.SitecoreExtensions.csproj">
+    <ProjectReference Include="..\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
-      <Name>Sitecore.Framework.SitecoreExtensions</Name>
+      <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

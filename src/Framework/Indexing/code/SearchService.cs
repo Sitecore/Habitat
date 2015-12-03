@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.Indexing
+﻿namespace Sitecore.Foundation.Indexing
 {
   using System;
   using System.Collections.Generic;
@@ -12,8 +12,8 @@
   using Sitecore.ContentSearch.Utilities;
   using Sitecore.Data;
   using Sitecore.Data.Items;
-  using Sitecore.Framework.Indexing.Infrastructure;
-  using Sitecore.Framework.Indexing.Models;
+  using Sitecore.Foundation.Indexing.Infrastructure;
+  using Sitecore.Foundation.Indexing.Models;
 
   public class SearchService
   {

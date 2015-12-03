@@ -1,11 +1,11 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Extensions
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Extensions
 {
   using System.Web;
   using System.Web.Mvc;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
-  using Sitecore.Framework.SitecoreExtensions.Controls;
+  using Sitecore.Foundation.SitecoreExtensions.Controls;
   using Sitecore.Mvc.Helpers;
   using Sitecore.Support;
 

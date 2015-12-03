@@ -12,7 +12,7 @@
   using Sitecore.Common;
   using Sitecore.Data.Fields;
   using Sitecore.Diagnostics;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Resources.Media;
 
   public class VisitInformation

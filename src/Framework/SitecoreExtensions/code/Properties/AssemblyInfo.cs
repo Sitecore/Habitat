@@ -42,4 +42,4 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: InternalsVisibleTo("Sitecore.Framework.SitecoreExtensions.Tests")]
+[assembly: InternalsVisibleTo("Sitecore.Foundation.SitecoreExtensions.Tests")]

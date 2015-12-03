@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Extensions
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Extensions
 {
   using System;
   using System.Collections.Generic;
@@ -10,8 +10,8 @@
   using Sitecore.Data.Items;
   using Sitecore.Data.Managers;
   using Sitecore.Diagnostics;
-  using Sitecore.Framework.SitecoreExtensions.Model;
-  using Sitecore.Framework.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.SitecoreExtensions.Model;
+  using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Globalization;
   using Sitecore.Links;
   using Sitecore.Resources.Media;

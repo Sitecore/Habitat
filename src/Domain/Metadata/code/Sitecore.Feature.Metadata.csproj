@@ -122,9 +122,9 @@
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Sitecore.Framework.SitecoreExtensions.csproj">
+    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
-      <Name>Sitecore.Framework.SitecoreExtensions</Name>
+      <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

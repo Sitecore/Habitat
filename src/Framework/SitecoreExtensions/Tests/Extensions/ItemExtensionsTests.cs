@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Tests.Extensions
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests.Extensions
 {
   using System;
   using FluentAssertions;
@@ -7,8 +7,8 @@
   using Sitecore.Data.Items;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
-  using Sitecore.Framework.SitecoreExtensions.Tests.Common;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Tests.Common;
   using Xunit;
 
   public class ItemExtensionsTests

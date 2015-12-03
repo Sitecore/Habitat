@@ -2,7 +2,7 @@
 {
   using System.Web.Mvc;
   using Sitecore;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class RedirectUnauthenticatedAttribute: ActionFilterAttribute, IAuthorizationFilter
   {

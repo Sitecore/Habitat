@@ -1,8 +1,8 @@
-namespace Sitecore.Framework.Indexing.Models
+namespace Sitecore.Foundation.Indexing.Models
 {
   using System;
   using Sitecore.Data.Items;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   internal class SearchResult : ISearchResult
   {

@@ -5,9 +5,9 @@
   using System.Linq.Expressions;
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.Data;
-  using Sitecore.Framework.Indexing.Infrastructure;
-  using Sitecore.Framework.Indexing.Models;
-  using Sitecore.Framework.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.Indexing.Infrastructure;
+  using Sitecore.Foundation.Indexing.Models;
+  using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Web.UI.WebControls;
 
   public class PageContentIndexContentProvider : IndexContentProviderBase

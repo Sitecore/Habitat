@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.Indexing.Infrastructure
+﻿namespace Sitecore.Foundation.Indexing.Infrastructure
 {
   using System;
   using System.Collections.Generic;
@@ -8,7 +8,7 @@
   using Sitecore.ContentSearch.Linq.Utilities;
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.Data;
-  using Sitecore.Framework.Indexing.Models;
+  using Sitecore.Foundation.Indexing.Models;
 
   public abstract class IndexContentProviderBase : ProviderBase
   {

@@ -161,13 +161,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\Indexing\code\Sitecore.Framework.Indexing.csproj">
+    <ProjectReference Include="..\..\..\Framework\Indexing\code\Sitecore.Foundation.Indexing.csproj">
       <Project>{80213F24-577F-4F0B-A3B8-62485EA4D2F3}</Project>
-      <Name>Sitecore.Framework.Indexing</Name>
+      <Name>Sitecore.Foundation.Indexing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Sitecore.Framework.SitecoreExtensions.csproj">
+    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
-      <Name>Sitecore.Framework.SitecoreExtensions</Name>
+      <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\code\Sitecore.Feature.Search.csproj">
       <Project>{55B9C026-E106-4185-8213-9CDD53B44E1B}</Project>

@@ -10,7 +10,7 @@
   using Sitecore.Feature.Accounts.Repositories;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Texts;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class AccountsController : Controller
   {

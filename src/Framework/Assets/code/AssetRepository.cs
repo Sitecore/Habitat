@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.Assets
+﻿namespace Sitecore.Foundation.Assets
 {
   using System;
   using System.Collections.Generic;
@@ -7,7 +7,7 @@
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Diagnostics;
-  using Sitecore.Framework.Assets.Models;
+  using Sitecore.Foundation.Assets.Models;
   using Sitecore.Mvc.Presentation;
   using Sitecore.Xml;
 

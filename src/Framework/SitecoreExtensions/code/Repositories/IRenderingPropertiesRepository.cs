@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Repositories
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Repositories
 {
   public interface IRenderingPropertiesRepository
   {

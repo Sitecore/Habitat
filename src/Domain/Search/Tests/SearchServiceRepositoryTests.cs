@@ -3,7 +3,7 @@
   using FluentAssertions;
   using Sitecore.Feature.Search.Repositories;
   using Sitecore.Feature.Search.Tests.Extensions;
-  using Sitecore.Framework.Indexing;
+  using Sitecore.Foundation.Indexing;
   using Xunit;
 
   public class SearchServiceRepositoryTests

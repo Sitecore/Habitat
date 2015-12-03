@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.Indexing
+﻿namespace Sitecore.Foundation.Indexing
 {
   internal struct Constants
   {

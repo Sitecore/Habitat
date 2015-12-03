@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.Assets.Pipelines.GetPageRendering
+﻿namespace Sitecore.Foundation.Assets.Pipelines.GetPageRendering
 {
   using System.Collections.Generic;
   using System.Linq;
@@ -7,8 +7,8 @@
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
-  using Sitecore.Framework.Assets.Models;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.Assets.Models;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Mvc.Pipelines.Response.GetPageRendering;
   using Sitecore.Mvc.Presentation;
 

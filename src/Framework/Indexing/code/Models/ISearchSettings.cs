@@ -1,4 +1,4 @@
-namespace Sitecore.Framework.Indexing.Models
+namespace Sitecore.Foundation.Indexing.Models
 {
   using Sitecore.Data.Items;
 

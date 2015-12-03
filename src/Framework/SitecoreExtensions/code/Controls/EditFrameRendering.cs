@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Controls
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Controls
 {
   using System;
   using System.IO;

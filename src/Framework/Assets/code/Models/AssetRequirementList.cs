@@ -1,4 +1,4 @@
-namespace Sitecore.Framework.Assets.Models
+namespace Sitecore.Foundation.Assets.Models
 {
   using System.Collections;
   using System.Collections.Generic;

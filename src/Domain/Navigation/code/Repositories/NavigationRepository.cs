@@ -6,7 +6,7 @@
   using Sitecore;
   using Sitecore.Data.Items;
   using Sitecore.Feature.Navigation.Models;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class NavigationRepository : INavigationRepository
   {

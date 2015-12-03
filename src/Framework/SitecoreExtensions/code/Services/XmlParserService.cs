@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Services
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Services
 {
   using System;
   using System.Xml;

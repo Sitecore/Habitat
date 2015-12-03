@@ -7,7 +7,7 @@ using Sitecore.Text;
 
 namespace Habitat.Demo.Models
 {
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class DemoContent
   {

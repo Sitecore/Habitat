@@ -1,7 +1,8 @@
-﻿namespace Sitecore.Framework.Installer.Tests
+﻿namespace Sitecore.Foundation.Installer.Tests
 {
   using NSubstitute;
-  using Sitecore.Framework.Installer.XmlTransform;
+  using SitecoreFoundation.Installer;
+  using SitecoreFoundation.Installer.XmlTransform;
   using Xunit;
 
   public class PostStepTests

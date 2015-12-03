@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Extensions
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Extensions
 {
   using System.Web;
   using Sitecore.Diagnostics;

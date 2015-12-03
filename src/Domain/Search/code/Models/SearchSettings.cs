@@ -1,7 +1,7 @@
 namespace Sitecore.Feature.Search.Models
 {
   using Sitecore.Data.Items;
-  using Sitecore.Framework.Indexing.Models;
+  using Sitecore.Foundation.Indexing.Models;
 
   public class SearchSettings : ISearchSettings
   {

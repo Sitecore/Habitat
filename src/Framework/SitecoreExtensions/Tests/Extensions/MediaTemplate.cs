@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Tests.Extensions
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests.Extensions
 {
   using Sitecore.Data;
   using Sitecore.FakeDb;

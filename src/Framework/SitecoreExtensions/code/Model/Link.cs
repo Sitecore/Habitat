@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Model
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Model
 {
   using System.Collections.Generic;
 

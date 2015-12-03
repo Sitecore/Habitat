@@ -8,7 +8,7 @@ namespace Habitat.Demo.Controllers
 {
   using System.Web.Mvc;
   using Habitat.Demo.Models;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Mvc.Controllers;
 
   public class DemoController : SitecoreController

@@ -1,10 +1,10 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Repositories
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Repositories
 {
   using System;
   using System.Xml;
   using Sitecore.Data.Items;
-  using Sitecore.Framework.SitecoreExtensions.Model;
-  using Sitecore.Framework.SitecoreExtensions.Services;
+  using Sitecore.Foundation.SitecoreExtensions.Model;
+  using Sitecore.Foundation.SitecoreExtensions.Services;
 
   internal class ImageRepository : XmlParserService
   {

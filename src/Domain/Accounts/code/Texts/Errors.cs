@@ -1,6 +1,6 @@
 ﻿namespace Sitecore.Feature.Accounts.Texts
 {
-  using Sitecore.Framework.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.SitecoreExtensions.Repositories;
 
   public static class Errors
   {

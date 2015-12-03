@@ -4,7 +4,7 @@
   using System.Linq;
   using Sitecore.Data.Items;
   using Sitecore.Feature.Media.Infrastructure.Models;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Mvc.Extensions;
 
   public static class CarouselElementsRepository

@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Repositories
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Repositories
 {
   using System.Collections.Generic;
   using System.Linq;
@@ -7,8 +7,8 @@
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
-  using Sitecore.Framework.SitecoreExtensions.Model;
-  using Sitecore.Framework.SitecoreExtensions.Services;
+  using Sitecore.Foundation.SitecoreExtensions.Model;
+  using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Links;
   using Sitecore.Resources.Media;
 

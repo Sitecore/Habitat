@@ -4,7 +4,7 @@
   using System.Linq;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public static class AccordeonElementsRespository
   {

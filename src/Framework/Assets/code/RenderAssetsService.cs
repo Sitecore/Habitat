@@ -1,9 +1,9 @@
-﻿namespace Sitecore.Framework.Assets
+﻿namespace Sitecore.Foundation.Assets
 {
   using System.Linq;
   using System.Text;
   using System.Web;
-  using Sitecore.Framework.Assets.Models;
+  using Sitecore.Foundation.Assets.Models;
 
   /// <summary>
   ///   A service which helps add the required JavaScript at the end of a page, and CSS at the top of a page.

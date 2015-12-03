@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.HtmlHelpers
+﻿namespace Sitecore.Foundation.SitecoreExtensions.HtmlHelpers
 {
   using System;
   using System.Linq.Expressions;

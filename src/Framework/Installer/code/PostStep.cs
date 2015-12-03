@@ -1,8 +1,8 @@
-﻿namespace Sitecore.Framework.Installer
+﻿namespace SitecoreFoundation.Installer
 {
   using System.Collections.Specialized;
-  using Sitecore.Framework.Installer.XmlTransform;
   using Sitecore.Install.Framework;
+  using SitecoreFoundation.Installer.XmlTransform;
 
   public class PostStep : IPostStep
   {

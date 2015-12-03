@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Framework.Assets
+﻿namespace Sitecore.Foundation.Assets
 {
   using Sitecore.Data;
 

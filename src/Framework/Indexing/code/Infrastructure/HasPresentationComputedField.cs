@@ -4,7 +4,7 @@
 
 #endregion
 
-namespace Sitecore.Framework.Indexing.Infrastructure
+namespace Sitecore.Foundation.Indexing.Infrastructure
 {
   using Sitecore.ContentSearch;
   using Sitecore.ContentSearch.ComputedFields;

@@ -10,9 +10,9 @@
   using Sitecore.Feature.Search.Models;
   using Sitecore.Feature.Search.Repositories;
   using Sitecore.Feature.Search.Tests.Extensions;
-  using Sitecore.Framework.Indexing;
-  using Sitecore.Framework.Indexing.Models;
-  using Sitecore.Framework.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.Indexing;
+  using Sitecore.Foundation.Indexing.Models;
+  using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Xunit;
 
   public class SearchControllerTests

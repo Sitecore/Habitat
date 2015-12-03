@@ -1,8 +1,8 @@
-﻿namespace Sitecore.Framework.SitecoreExtensions.Tests
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests
 {
   using FluentAssertions;
-  using Sitecore.Framework.SitecoreExtensions.Repositories;
-  using Sitecore.Framework.SitecoreExtensions.Tests.Common;
+  using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.SitecoreExtensions.Tests.Common;
   using Sitecore.Mvc.Common;
   using Sitecore.Mvc.Presentation;
   using Xunit;

@@ -5,7 +5,7 @@
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Feature.Search.Models;
-  using Sitecore.Framework.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Mvc.Presentation;
 
   public class SearchSettingsRepository : ISearchSettingsRepository
