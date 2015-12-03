@@ -96,7 +96,7 @@ gulp.task("Publish-Project-Projects", function () {
 
 gulp.task("Publish-Assemblies", function () {
   var root = "./src";
-  var binFiles = root + "/**/bin/Habitat.*.{dll,pdb}";
+  var binFiles = root + "/**/bin/Sitecore.{Feature,Framework,Habitat}.*.{dll,pdb}";
   var destination = config.websiteRoot + "/bin/";
   return gulp.src(binFiles, { base: root })
     .pipe(rename({ dirname: "" }))
@@ -158,7 +158,7 @@ gulp.task("Auto-Publish-Views", function () {
 gulp.task("Auto-Publish-Assemblies", function () {
   var root = "./src";
   var roots = [root + "/**/code/bin"];
-  var files = "/**/Habitat.*.{dll,pdb}";;
+  var files = "/**/Sitecore.{Feature,Framework,Habitat}.*.{dll,pdb}";;
   var destination = config.websiteRoot + "/bin/";
   gulp.src(roots, { base: root }).pipe(
     foreach(function (stream, rootFolder) {

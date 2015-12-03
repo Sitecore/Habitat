@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		package.xml = package.xml
 		publishsettings.targets = publishsettings.targets
 		README.md = README.md
-		src\Project\Website\code\App_Config\Include\Habitat\z.Habitat.DevSettings.config = src\Project\Website\code\App_Config\Include\Habitat\z.Habitat.DevSettings.config
+		src\Project\Habitat\code\App_Config\Include\Habitat\z.Habitat.DevSettings.config = src\Project\Habitat\code\App_Config\Include\Habitat\z.Habitat.DevSettings.config
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{755F9E42-1707-4E1A-AE6D-3FD8A25118C0}"
