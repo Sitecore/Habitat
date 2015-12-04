@@ -1,4 +1,4 @@
-﻿namespace Habitat.Demo
+﻿namespace Sitecore.Feature.Demo
 {
   using Sitecore.Data;
 

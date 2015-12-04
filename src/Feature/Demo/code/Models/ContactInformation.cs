@@ -1,4 +1,4 @@
-namespace Habitat.Demo.Models
+namespace Sitecore.Feature.Demo.Models
 {
   using System;
   using System.Collections.Generic;

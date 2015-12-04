@@ -6,7 +6,7 @@ Path: /sitecore/layout/Renderings/Feature/News/NewsTeaser
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template
-  Value: /sitecore/templates/Habitat/Domain/News/_NewsArticle
+  Value: /sitecore/templates/Feature/News/_NewsArticle
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   # Path
   Value: /Views/News/NewsTeaser.cshtml

@@ -12,7 +12,7 @@ SharedFields:
   Value: GlobalSearch
 - ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
   # Controller
-  Value: Habitat.Search.Controllers.SearchController, Habitat.Search
+  Value: Sitecore.Feature.Search.Controllers.SearchController, Sitecore.Feature.Search
 Languages:
 - Language: en
   Versions:

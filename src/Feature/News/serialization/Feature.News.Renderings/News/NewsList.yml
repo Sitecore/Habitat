@@ -12,7 +12,7 @@ SharedFields:
   Value: NewsList
 - ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
   # Controller
-  Value: Habitat.News.Controller.NewsController, Habitat.News
+  Value: Sitecore.Feature.News.Controller.NewsController, Sitecore.Feature.News
 Languages:
 - Language: en
   Versions:

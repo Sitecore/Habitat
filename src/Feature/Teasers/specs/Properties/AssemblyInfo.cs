@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("Habitat.Teasers.Specflow")]
+[assembly: AssemblyTitle("Sitecore.Feature.Teasers.Specflow")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Habitat.Teasers.Specflow")]
+[assembly: AssemblyProduct("Sitecore.Feature.Teasers.Specflow")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

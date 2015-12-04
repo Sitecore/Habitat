@@ -1,13 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Sitecore.Configuration;
-using Sitecore.Data.Items;
-using Sitecore.Text;
-
-namespace Habitat.Demo.Models
+namespace Sitecore.Feature.Demo.Models
 {
+  using System.Linq;
+  using Sitecore.Configuration;
+  using Sitecore.Data.Items;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
+  using Sitecore.Text;
 
   public class DemoContent
   {

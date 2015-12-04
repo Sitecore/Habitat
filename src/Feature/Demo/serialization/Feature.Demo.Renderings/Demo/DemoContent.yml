@@ -12,7 +12,7 @@ SharedFields:
   Value: DemoContent
 - ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
   # Controller
-  Value: Habitat.Demo.Controllers.DemoController,Habitat.Demo
+  Value: Sitecore.Feature.Demo.Controllers.DemoController,Sitecore.Feature.Demo
 Languages:
 - Language: en
   Versions:

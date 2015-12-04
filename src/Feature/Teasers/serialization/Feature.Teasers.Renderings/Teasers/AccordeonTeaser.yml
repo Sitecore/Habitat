@@ -6,10 +6,7 @@ Path: /sitecore/layout/Renderings/Feature/Teasers/AccordeonTeaser
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template
-  Value: /sitecore/templates/Habitat/Project/Website/Content Types/Accordeon Teaser
-- ID: 94069f66-609c-48b0-8281-521c30fb269d
-  # Open Properties after Add
-  Value: -
+  Value: {20A56D46-F5E3-4DB8-8B96-081575363D44}
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   # Datasource Location
   Value: {6AA25831-0944-4A79-9AFF-7BAC39E03557}
@@ -18,7 +15,7 @@ SharedFields:
   Value: AccordeonTeaser
 - ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
   # Controller
-  Value: Habitat.Teasers.Controller.TeasersController, Habitat.Teasers
+  Value: Sitecore.Feature.Teasers.Controller.TeasersController, Sitecore.Feature.Teasers
 Languages:
 - Language: en
   Versions:

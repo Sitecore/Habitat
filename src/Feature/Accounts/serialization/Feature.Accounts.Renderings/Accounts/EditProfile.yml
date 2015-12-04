@@ -9,7 +9,7 @@ SharedFields:
   Value: EditProfile
 - ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
   # Controller
-  Value: Habitat.Accounts.Controllers.AccountsController, Habitat.Accounts
+  Value: Sitecore.Feature.Accounts.Controllers.AccountsController, Sitecore.Feature.Accounts
 Languages:
 - Language: en
   Versions:
