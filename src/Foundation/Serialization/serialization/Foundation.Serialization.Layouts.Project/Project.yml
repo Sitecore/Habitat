@@ -3,6 +3,10 @@ ID: da04b275-8838-4a3a-afee-817cf1fdd2eb
 Parent: 75cc5ce4-8979-4008-9d3c-806477d57619
 Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
 Path: /sitecore/layout/Layouts/Project
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: applications/32x32/folder_window.png
 Languages:
 - Language: en
   Versions:

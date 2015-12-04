@@ -3,6 +3,10 @@ ID: fdcc1875-89ce-424f-b23e-3c0b1be0ae5b
 Parent: 3c1715fe-6a13-4fcf-845f-de308ba9741d
 Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
 Path: /sitecore/templates/Project
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: applications/32x32/folder_window.png
 Languages:
 - Language: en
   Versions:
