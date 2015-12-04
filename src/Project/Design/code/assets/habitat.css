@@ -6256,3 +6256,10 @@ footer {
 .accounts-details {
   color: white; }
 
+/****************
+    FOOTER
+****************/
+.map-container {
+  width: 100%;
+  height: 500px; }
+

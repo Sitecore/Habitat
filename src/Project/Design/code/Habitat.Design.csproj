@@ -210,6 +210,7 @@
     <Content Include="sass\Teasers.scss" />
     <Content Include="sass\Accounts.scss" />
     <Content Include="sass\Fonts.scss" />
+    <Content Include="sass\Maps.scss" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

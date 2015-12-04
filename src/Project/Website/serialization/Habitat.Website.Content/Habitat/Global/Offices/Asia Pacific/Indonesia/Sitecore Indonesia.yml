@@ -1,0 +1,31 @@
+﻿---
+ID: bd488399-f725-4168-a9fb-cfe5a2fb09c9
+Parent: 2f47dbe6-bdf6-47d5-8b37-3ed12c1677c9
+Template: 61bb468b-6d7c-4b83-9140-de7018cc9f2c
+Path: /sitecore/content/Habitat/Global/Offices/Asia Pacific/Indonesia/Sitecore Indonesia
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 0295c01d-214c-4c23-afc2-3f0b4e88b643
+      # OfficeAddress
+      Value: |
+        Menara BCA, 45th floor
+        Jl. MH Thamrin No.1
+        Jakarta 10310 Indonesia
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151203T151254Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
+    - ID: 67ebbb8d-88bb-41a5-96ef-cedb7b9b637e
+      # OfficeLatitude
+      Value: -6.196587
+    - ID: 73c04a83-beb9-4b24-9116-f9bc51a5baad
+      # OfficeLongitude
+      Value: 106.8224224
+    - ID: f12c22bb-e57d-4fab-96e1-1229e4e7ff0e
+      # OfficeName
+      Value: Sitecore Indonesia

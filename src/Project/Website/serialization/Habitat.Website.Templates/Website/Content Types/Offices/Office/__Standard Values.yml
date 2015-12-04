@@ -1,0 +1,19 @@
+﻿---
+ID: 7990e15e-940b-493b-b292-8101b0159f7a
+Parent: 61bb468b-6d7c-4b83-9140-de7018cc9f2c
+Template: 61bb468b-6d7c-4b83-9140-de7018cc9f2c
+Path: /sitecore/templates/Habitat/Project/Website/Content Types/Offices/Office/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151204T064156Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
+    - ID: f12c22bb-e57d-4fab-96e1-1229e4e7ff0e
+      # OfficeName
+      Value: $name

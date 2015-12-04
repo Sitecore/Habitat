@@ -1,0 +1,30 @@
+﻿---
+ID: b6d6585c-ed57-491f-9f39-e508bb3ff08c
+Parent: c41550c8-68b5-4cb0-9789-cf5c3455b5dc
+Template: 61bb468b-6d7c-4b83-9140-de7018cc9f2c
+Path: /sitecore/content/Habitat/Global/Offices/Asia Pacific/Japan/Sitecore Japan
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 0295c01d-214c-4c23-afc2-3f0b4e88b643
+      # OfficeAddress
+      Value: |
+        METLIFE Building 3rd floor
+        2-11-16 Minamiaoyama
+        Minato-ku
+        Tokyo 107-0062
+        Japan
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151204T064214Z
+    - ID: 67ebbb8d-88bb-41a5-96ef-cedb7b9b637e
+      # OfficeLatitude
+      Value: 35.6714795
+    - ID: 73c04a83-beb9-4b24-9116-f9bc51a5baad
+      # OfficeLongitude
+      Value: 139.7213126
+    - ID: f12c22bb-e57d-4fab-96e1-1229e4e7ff0e
+      # OfficeName
+      Value: Sitecore Japan
