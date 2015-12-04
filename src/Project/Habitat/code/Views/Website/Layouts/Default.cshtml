@@ -1,5 +1,5 @@
-﻿@using Sitecore.Framework.Assets
-@using Sitecore.Framework.Assets.Models
+﻿@using Sitecore.Foundation.Assets
+@using Sitecore.Foundation.Assets.Models
 @using Sitecore.Mvc.Analytics.Extensions
 @inherits WebViewPage
 @{
@@ -17,7 +17,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     @if (!Sitecore.Context.PageMode.IsPageEditor)
     {
-    @Sitecore.Web.UI.XslControls.Html.Sitecore().Placeholder("head")
+    @Html.Sitecore().Placeholder("head")
     }
     <!-- Latest compiled and minified JavaScript -->
     @RenderAssetsService.Current.RenderScript(ScriptLocation.Head)
