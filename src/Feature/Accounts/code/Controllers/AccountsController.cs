@@ -18,17 +18,19 @@
     private readonly INotificationService notificationService;
     private readonly IAccountsSettingsService accountsSettingsService;
     private readonly IUserProfileService userProfileService;
+    private readonly IContactProfileService contactProfileService;
 
-    public AccountsController() : this(new AccountRepository(new AccountTrackerService()), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService())
+    public AccountsController() : this(new AccountRepository(new AccountTrackerService()), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService(), new ContactProfileService())
     {
     }
 
-    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService, IUserProfileService userProfileService)
+    public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService, IUserProfileService userProfileService, IContactProfileService contactProfileService)
     {
       this.accountRepository = accountRepository;
       this.notificationService = notificationService;
       this.accountsSettingsService = accountsSettingsService;
       this.userProfileService = userProfileService;
+      this.contactProfileService = contactProfileService;
     }
 
     [HttpGet]
@@ -63,6 +65,10 @@
       try
       {
         this.accountRepository.RegisterUser(registrationInfo.Email, registrationInfo.Password, this.userProfileService.GetUserDefaultProfileId());
+        if (this.contactProfileService != null)
+        {
+          this.contactProfileService.SetPreferredEmail(registrationInfo.Email);
+        }
 
         var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
         return this.Redirect(link);
@@ -224,6 +230,10 @@
       }
 
       this.userProfileService.SetProfile(Context.User.Profile, profile);
+      if (this.contactProfileService != null)
+      {
+        this.contactProfileService.SetProfile(profile);
+      }
 
       Session["EditProfileMessage"] = new InfoMessage(Captions.EditProfileSuccess);
       return this.Redirect(Request.RawUrl);

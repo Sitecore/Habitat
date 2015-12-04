@@ -165,6 +165,8 @@
     <Compile Include="AccountTrackerServiceTests.cs" />
     <Compile Include="Attributes\RedirectUnauthenticatedTests.cs" />
     <Compile Include="Attributes\ValidateModelTests.cs" />
+    <Compile Include="ContactProfileProviderTests.cs" />
+    <Compile Include="ContactProfileServiceTests.cs" />
     <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="Extensions\CoreDbAttribute.cs" />
     <Compile Include="Extensions\CoreDbCustomization.cs" />
