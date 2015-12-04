@@ -18,7 +18,7 @@ namespace Sitecore.Foundation.Indexing.Infrastructure
     private static void Initialize()
     {
       IndexContentProviderBase defaultProvider;
-      All = Factory.GetProviders<IndexContentProviderBase, ProviderCollectionBase<IndexContentProviderBase>>("habitat/indexing", out defaultProvider);
+      All = Factory.GetProviders<IndexContentProviderBase, ProviderCollectionBase<IndexContentProviderBase>>("solutionFramework/indexing", out defaultProvider);
       Default = defaultProvider;
     }
 
