@@ -2,7 +2,7 @@
 ID: 425b7f03-fe2d-4ff0-b403-74286aed4451
 Parent: 18baf6b0-e0d6-4cce-9184-a4849343e7e4
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Navigation/_LinkMenuItem/Navigation
+Path: /sitecore/templates/Feature/Navigation/_LinkMenuItem/Navigation
 Languages:
 - Language: en
   Versions:

@@ -2,7 +2,7 @@
 ID: 89d988bc-a9a7-43f5-a9fd-a05b0b164720
 Parent: 5c48308a-0749-4895-9aa3-7d9b11ec3ab3
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Habitat/Domain/Social/_TwitterFeed
+Path: /sitecore/templates/Feature/Social/_TwitterFeed
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
   # __Icon

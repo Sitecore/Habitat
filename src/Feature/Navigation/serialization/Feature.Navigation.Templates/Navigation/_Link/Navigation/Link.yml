@@ -2,7 +2,7 @@
 ID: fe71c30e-f07d-4052-8594-c3028cd76e1f
 Parent: cfeb0c9f-abd0-424a-bbf9-6500d0db88b1
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Navigation/_Link/Navigation/Link
+Path: /sitecore/templates/Feature/Navigation/_Link/Navigation/Link
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type

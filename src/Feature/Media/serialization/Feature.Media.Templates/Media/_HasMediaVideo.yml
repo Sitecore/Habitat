@@ -2,7 +2,7 @@
 ID: 5a1b724b-b396-4c48-a833-655cd19018e1
 Parent: 4a2ccf0b-9c08-485b-9902-87ca2869bc8f
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Habitat/Domain/Media/_HasMediaVideo
+Path: /sitecore/templates/Feature/Media/_HasMediaVideo
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
   # __Icon

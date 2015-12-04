@@ -2,7 +2,7 @@
 ID: fec0e62a-01fd-40e5-88f3-e5229fe79527
 Parent: 4534144f-68bb-4fb5-9da3-664ca5dd8e9d
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Habitat/Domain/Teasers/_TeaserContent
+Path: /sitecore/templates/Feature/Teasers/_TeaserContent
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
   # __Icon

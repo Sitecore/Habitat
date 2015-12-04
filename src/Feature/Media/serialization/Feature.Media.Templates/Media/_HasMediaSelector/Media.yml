@@ -2,7 +2,7 @@
 ID: 38ad55a5-0632-4c72-85a6-890911fc0d99
 Parent: ae4635af-cfbf-4bf6-9b50-00be23a910c0
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Media/_HasMediaSelector/Media
+Path: /sitecore/templates/Feature/Media/_HasMediaSelector/Media
 Languages:
 - Language: en
   Versions:

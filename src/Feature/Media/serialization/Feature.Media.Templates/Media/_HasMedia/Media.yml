@@ -2,7 +2,7 @@
 ID: c020b004-8e30-4b03-9f7d-dfdc9d672066
 Parent: a44e450e-ba3f-4faf-9c53-c63241cc34eb
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Media/_HasMedia/Media
+Path: /sitecore/templates/Feature/Media/_HasMedia/Media
 SharedFields:
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder

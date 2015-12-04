@@ -2,7 +2,7 @@
 ID: 02fa4119-b106-4dd2-99a5-1eb86439e548
 Parent: 359ad0b9-20b5-49e7-a430-891d6e67bc5c
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Demo/_LinkToken/Demo
+Path: /sitecore/templates/Feature/Demo/_LinkToken/Demo
 Languages:
 - Language: en
   Versions:

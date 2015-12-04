@@ -2,7 +2,7 @@
 ID: 96efeffc-4d53-4f29-913e-84edbfbe4dab
 Parent: db7775fa-27d8-44e4-9e6c-08ade58ef4ed
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
-Path: /sitecore/layout/Renderings/Habitat/Domain/News/NewsTeaser
+Path: /sitecore/layout/Renderings/Feature/News/NewsTeaser
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template

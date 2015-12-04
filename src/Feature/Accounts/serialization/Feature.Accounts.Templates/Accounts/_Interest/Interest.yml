@@ -2,7 +2,7 @@
 ID: a5efe032-021d-46fd-a1e6-d0d3c123c46c
 Parent: c9b1855e-ca80-4414-b5ba-956cb67dc5a9
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Accounts/_Interest/Interest
+Path: /sitecore/templates/Feature/Accounts/_Interest/Interest
 Languages:
 - Language: en
   Versions:

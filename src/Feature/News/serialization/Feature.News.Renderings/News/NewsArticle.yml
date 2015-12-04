@@ -2,7 +2,7 @@
 ID: f366176e-2c2b-4af2-b356-bcf8bd657c58
 Parent: db7775fa-27d8-44e4-9e6c-08ade58ef4ed
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
-Path: /sitecore/layout/Renderings/Habitat/Domain/News/NewsArticle
+Path: /sitecore/layout/Renderings/Feature/News/NewsArticle
 SharedFields:
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   # Path

@@ -2,7 +2,7 @@
 ID: f93150f8-b16a-43e9-a830-fe91bad2a959
 Parent: d1d3e60f-e571-48d2-84cf-b053ee660c13
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Search/_PagedSearchResultsParameters/Paging
+Path: /sitecore/templates/Feature/Search/_PagedSearchResultsParameters/Paging
 Languages:
 - Language: en
   Versions:

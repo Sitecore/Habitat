@@ -2,7 +2,7 @@
 ID: c3941047-1196-45df-93fe-12c20a5edde8
 Parent: 14e452ca-064d-48a8-9ff2-2744d10437a1
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Search/_SearchResults/Search
+Path: /sitecore/templates/Feature/Search/_SearchResults/Search
 Languages:
 - Language: en
   Versions:

@@ -2,7 +2,7 @@
 ID: 20a56d46-f5e3-4db8-8b96-081575363d44
 Parent: 4534144f-68bb-4fb5-9da3-664ca5dd8e9d
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Habitat/Domain/Teasers/_Accordeon
+Path: /sitecore/templates/Feature/Teasers/_Accordeon
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
   # __Icon

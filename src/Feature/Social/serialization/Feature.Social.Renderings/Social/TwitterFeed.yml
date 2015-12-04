@@ -2,7 +2,7 @@
 ID: 0cf58f14-d0f8-4c41-9896-3d69048a0b19
 Parent: d44c5a79-5c36-4a93-9de4-7e59345df572
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
-Path: /sitecore/layout/Renderings/Habitat/Domain/Social/TwitterFeed
+Path: /sitecore/layout/Renderings/Feature/Social/TwitterFeed
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template

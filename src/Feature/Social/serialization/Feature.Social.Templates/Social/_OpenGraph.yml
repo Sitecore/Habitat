@@ -2,7 +2,7 @@
 ID: bdd24f35-05e8-4466-8798-7d3dd6a6c991
 Parent: 5c48308a-0749-4895-9aa3-7d9b11ec3ab3
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Habitat/Domain/Social/_OpenGraph
+Path: /sitecore/templates/Feature/Social/_OpenGraph
 SharedFields:
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder

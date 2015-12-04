@@ -2,7 +2,7 @@
 ID: 9f51dead-ad6e-41c2-9759-7be17eb474a4
 Parent: 57930fe6-c782-429e-b095-1821340f9ae4
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Media/_HasMediaImage/Media/MediaImage
+Path: /sitecore/templates/Feature/Media/_HasMediaImage/Media/MediaImage
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type

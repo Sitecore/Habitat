@@ -2,7 +2,7 @@
 ID: a25c9850-aab7-46a6-84b7-0dfab32fc357
 Parent: a781e01f-0c9e-4751-8c08-12a32ec063e3
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
-Path: /sitecore/layout/Renderings/Habitat/Domain/Teasers/Jumbotron
+Path: /sitecore/layout/Renderings/Feature/Teasers/Jumbotron
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template

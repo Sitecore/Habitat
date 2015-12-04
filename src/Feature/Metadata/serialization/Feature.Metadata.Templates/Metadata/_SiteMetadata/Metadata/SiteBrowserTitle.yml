@@ -2,7 +2,7 @@
 ID: 235ae392-97ac-4822-be38-837da3e7724e
 Parent: e19d3ff4-18be-4d45-bf5b-24899eaf624b
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Metadata/_SiteMetadata/Metadata/SiteBrowserTitle
+Path: /sitecore/templates/Feature/Metadata/_SiteMetadata/Metadata/SiteBrowserTitle
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type

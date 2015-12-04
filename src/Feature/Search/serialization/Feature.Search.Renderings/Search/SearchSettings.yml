@@ -2,7 +2,7 @@
 ID: d1aad687-8b93-44c8-9011-8e8ce2dd281f
 Parent: 5a852bfa-9f18-4b9c-b0af-a60913872b2d
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
-Path: /sitecore/layout/Renderings/Habitat/Domain/Search/SearchSettings
+Path: /sitecore/layout/Renderings/Feature/Search/SearchSettings
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template

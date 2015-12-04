@@ -2,7 +2,7 @@
 ID: bdd730eb-f808-4c65-b94a-d2f03672eafb
 Parent: db7775fa-27d8-44e4-9e6c-08ade58ef4ed
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
-Path: /sitecore/layout/Renderings/Habitat/Domain/News/LatestNews
+Path: /sitecore/layout/Renderings/Feature/News/LatestNews
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template

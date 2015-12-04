@@ -2,7 +2,7 @@
 ID: 4be0f42e-cf10-4e64-a277-c0d49249689e
 Parent: 5a1b724b-b396-4c48-a833-655cd19018e1
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Media/_HasMediaVideo/Media
+Path: /sitecore/templates/Feature/Media/_HasMediaVideo/Media
 Languages:
 - Language: en
   Versions:

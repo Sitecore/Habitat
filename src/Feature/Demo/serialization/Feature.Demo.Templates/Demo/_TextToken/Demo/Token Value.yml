@@ -2,7 +2,7 @@
 ID: 7b9f4fe3-6285-4969-9784-b96d49973161
 Parent: 00ccda77-fb89-44fc-9530-d1eaa41d88b7
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Demo/_TextToken/Demo/Token Value
+Path: /sitecore/templates/Feature/Demo/_TextToken/Demo/Token Value
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type

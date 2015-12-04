@@ -2,7 +2,7 @@
 ID: 0e03b0c2-fd98-4729-9e95-2b3c9170685f
 Parent: bdd24f35-05e8-4466-8798-7d3dd6a6c991
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Social/_OpenGraph/Facebook Open Graph
+Path: /sitecore/templates/Feature/Social/_OpenGraph/Facebook Open Graph
 SharedFields:
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder

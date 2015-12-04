@@ -2,7 +2,7 @@
 ID: a12d5346-87ee-484d-83c5-f1e8e1b99666
 Parent: 0e03b0c2-fd98-4729-9e95-2b3c9170685f
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Social/_OpenGraph/Facebook Open Graph/OpenGraphDescription
+Path: /sitecore/templates/Feature/Social/_OpenGraph/Facebook Open Graph/OpenGraphDescription
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type

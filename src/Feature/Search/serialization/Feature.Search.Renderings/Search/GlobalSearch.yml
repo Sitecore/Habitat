@@ -2,7 +2,7 @@
 ID: 8c3a2cfc-18fb-4bf5-8584-50ea88978ed6
 Parent: 5a852bfa-9f18-4b9c-b0af-a60913872b2d
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
-Path: /sitecore/layout/Renderings/Habitat/Domain/Search/GlobalSearch
+Path: /sitecore/layout/Renderings/Feature/Search/GlobalSearch
 SharedFields:
 - ID: 94069f66-609c-48b0-8281-521c30fb269d
   # Open Properties after Add

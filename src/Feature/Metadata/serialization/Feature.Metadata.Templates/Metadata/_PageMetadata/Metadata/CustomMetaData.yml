@@ -2,7 +2,7 @@
 ID: 167aba77-5172-42af-9f9e-00299113839e
 Parent: 480c27f8-fbd9-4273-a61e-28253a1aa0e6
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Metadata/_PageMetadata/Metadata/CustomMetaData
+Path: /sitecore/templates/Feature/Metadata/_PageMetadata/Metadata/CustomMetaData
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type

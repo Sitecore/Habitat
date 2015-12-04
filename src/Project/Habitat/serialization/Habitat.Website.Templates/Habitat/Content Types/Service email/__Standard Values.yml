@@ -1,0 +1,19 @@
+﻿---
+ID: 05c5a2a1-a0f9-45eb-9fd6-4fbd35cec698
+Parent: 6db3ba22-5715-4529-a527-35b3af083ae4
+Template: 6db3ba22-5715-4529-a527-35b3af083ae4
+Path: /sitecore/templates/Project/Habitat/Content Types/Service email/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 0f45df05-546f-462d-97c0-ba4fb2b02564
+      # Subject
+      Value: $name
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151112T103923Z
+    - ID: 8605948c-60fb-46b8-8aaa-4c52561b53bc
+      # From
+      Value: no_reply@sitecore.net

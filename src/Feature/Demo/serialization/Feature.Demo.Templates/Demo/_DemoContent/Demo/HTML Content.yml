@@ -2,7 +2,7 @@
 ID: 0bc0aedf-a6d0-4f74-933c-bd1779cd40b2
 Parent: 63f46290-a2e0-4504-8af7-2d83b15c368e
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Demo/_DemoContent/Demo/HTML Content
+Path: /sitecore/templates/Feature/Demo/_DemoContent/Demo/HTML Content
 SharedFields:
 - ID: a791f095-2521-4b4d-bef9-21dda221f608
   # __Style

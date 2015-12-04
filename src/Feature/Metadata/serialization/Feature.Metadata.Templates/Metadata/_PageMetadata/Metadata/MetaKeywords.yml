@@ -2,7 +2,7 @@
 ID: 4b16f930-73c9-4643-bb1b-00f06e60a073
 Parent: 480c27f8-fbd9-4273-a61e-28253a1aa0e6
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Metadata/_PageMetadata/Metadata/MetaKeywords
+Path: /sitecore/templates/Feature/Metadata/_PageMetadata/Metadata/MetaKeywords
 SharedFields:
 - ID: 1eb8ae32-e190-44a6-968d-ed904c794ebf
   # Source

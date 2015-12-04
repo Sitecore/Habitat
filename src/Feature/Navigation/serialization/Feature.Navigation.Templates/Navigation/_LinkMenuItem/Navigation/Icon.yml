@@ -2,7 +2,7 @@
 ID: 2c24649e-4460-4114-b026-886cfbe1a96d
 Parent: 425b7f03-fe2d-4ff0-b403-74286aed4451
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Navigation/_LinkMenuItem/Navigation/Icon
+Path: /sitecore/templates/Feature/Navigation/_LinkMenuItem/Navigation/Icon
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type

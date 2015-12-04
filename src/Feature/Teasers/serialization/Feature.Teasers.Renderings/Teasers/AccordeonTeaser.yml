@@ -2,7 +2,7 @@
 ID: ddc6f993-6689-432e-90c7-b2865947dfd5
 Parent: a781e01f-0c9e-4751-8c08-12a32ec063e3
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
-Path: /sitecore/layout/Renderings/Habitat/Domain/Teasers/AccordeonTeaser
+Path: /sitecore/layout/Renderings/Feature/Teasers/AccordeonTeaser
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template

@@ -2,7 +2,7 @@
 ID: e86bfeb1-f3fc-4e37-b693-a5550d6789ee
 Parent: c41e1360-7356-4397-9126-cf27db1f600e
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
-Path: /sitecore/layout/Renderings/Habitat/Domain/Media/Carousel
+Path: /sitecore/layout/Renderings/Feature/Media/Carousel
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template

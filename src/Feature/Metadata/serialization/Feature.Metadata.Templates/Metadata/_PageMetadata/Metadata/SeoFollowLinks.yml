@@ -2,7 +2,7 @@
 ID: 0dca829c-9fce-41f5-9990-c6182fefe905
 Parent: 480c27f8-fbd9-4273-a61e-28253a1aa0e6
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Metadata/_PageMetadata/Metadata/SeoFollowLinks
+Path: /sitecore/templates/Feature/Metadata/_PageMetadata/Metadata/SeoFollowLinks
 SharedFields:
 - ID: 39847666-389d-409b-95bd-f2016f11eed5
   # Unversioned

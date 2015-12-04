@@ -2,7 +2,7 @@
 ID: fcc7e3b4-46ab-4a51-975f-a6b259b3d214
 Parent: f93150f8-b16a-43e9-a830-fe91bad2a959
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Search/_PagedSearchResultsParameters/Paging/ResultsOnPage
+Path: /sitecore/templates/Feature/Search/_PagedSearchResultsParameters/Paging/ResultsOnPage
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type

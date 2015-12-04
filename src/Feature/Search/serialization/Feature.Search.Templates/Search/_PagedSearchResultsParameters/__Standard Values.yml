@@ -2,7 +2,7 @@
 ID: 6912dbc9-587b-448c-a49d-0fb43f446301
 Parent: d1d3e60f-e571-48d2-84cf-b053ee660c13
 Template: d1d3e60f-e571-48d2-84cf-b053ee660c13
-Path: /sitecore/templates/Habitat/Domain/Search/_PagedSearchResultsParameters/__Standard Values
+Path: /sitecore/templates/Feature/Search/_PagedSearchResultsParameters/__Standard Values
 SharedFields:
 - ID: 3094d236-5985-4c4f-ae6a-e30740885532
   # Caching

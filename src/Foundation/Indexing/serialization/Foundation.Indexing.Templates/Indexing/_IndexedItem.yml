@@ -2,7 +2,7 @@
 ID: 8fd6c8b6-a9a4-4322-947e-90ce3d94916d
 Parent: 7681cf47-9d26-476f-a395-42c0c8d4f18f
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Habitat/Framework/Indexing/_IndexedItem
+Path: /sitecore/templates/Foundation/Indexing/_IndexedItem
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
   # __Icon

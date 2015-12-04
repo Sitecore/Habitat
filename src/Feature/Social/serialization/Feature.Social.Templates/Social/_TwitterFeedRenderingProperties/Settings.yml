@@ -2,7 +2,7 @@
 ID: 663a7141-3cca-4115-a062-d7a91c7b8f31
 Parent: 9eee8077-990f-4fde-95fb-c7b9819df913
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Social/_TwitterFeedRenderingProperties/Settings
+Path: /sitecore/templates/Feature/Social/_TwitterFeedRenderingProperties/Settings
 Languages:
 - Language: en
   Versions:

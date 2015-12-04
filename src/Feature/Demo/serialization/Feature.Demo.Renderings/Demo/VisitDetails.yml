@@ -2,7 +2,7 @@
 ID: 24d6d94b-ff87-4a6c-9aa0-4cbf21488c05
 Parent: db86a052-120c-4d95-a6cd-078fcc0cdb39
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
-Path: /sitecore/layout/Renderings/Habitat/Domain/Demo/VisitDetails
+Path: /sitecore/layout/Renderings/Feature/Demo/VisitDetails
 SharedFields:
 - ID: 94069f66-609c-48b0-8281-521c30fb269d
   # Open Properties after Add

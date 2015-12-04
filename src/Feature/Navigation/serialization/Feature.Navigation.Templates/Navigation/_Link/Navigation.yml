@@ -2,7 +2,7 @@
 ID: cfeb0c9f-abd0-424a-bbf9-6500d0db88b1
 Parent: a16b74e9-01b8-439c-b44e-42b3fb2ee14b
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Navigation/_Link/Navigation
+Path: /sitecore/templates/Feature/Navigation/_Link/Navigation
 SharedFields:
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder

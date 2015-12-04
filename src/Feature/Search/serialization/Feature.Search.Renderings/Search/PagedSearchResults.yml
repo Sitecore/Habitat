@@ -2,7 +2,7 @@
 ID: e52d0ae8-2989-44e5-bea1-ea30c17b2080
 Parent: 5a852bfa-9f18-4b9c-b0af-a60913872b2d
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
-Path: /sitecore/layout/Renderings/Habitat/Domain/Search/PagedSearchResults
+Path: /sitecore/layout/Renderings/Feature/Search/PagedSearchResults
 SharedFields:
 - ID: 13f89250-ad6b-4548-882e-118a12c18094
   # Parameters Template

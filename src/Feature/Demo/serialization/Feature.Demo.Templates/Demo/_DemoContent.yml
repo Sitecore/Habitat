@@ -2,7 +2,7 @@
 ID: 1224b40e-7b6c-42b3-a6d0-c40a6c61345c
 Parent: cc5890af-54a1-4f8f-9298-a064d631e132
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Habitat/Domain/Demo/_DemoContent
+Path: /sitecore/templates/Feature/Demo/_DemoContent
 SharedFields:
 - ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
   # __Base template

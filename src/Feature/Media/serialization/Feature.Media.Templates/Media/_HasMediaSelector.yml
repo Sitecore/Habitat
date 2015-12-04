@@ -2,7 +2,7 @@
 ID: ae4635af-cfbf-4bf6-9b50-00be23a910c0
 Parent: 4a2ccf0b-9c08-485b-9902-87ca2869bc8f
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Habitat/Domain/Media/_HasMediaSelector
+Path: /sitecore/templates/Feature/Media/_HasMediaSelector
 SharedFields:
 - ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
   # __Base template

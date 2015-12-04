@@ -2,7 +2,7 @@
 ID: 00ccda77-fb89-44fc-9530-d1eaa41d88b7
 Parent: 327d6873-a384-435a-be87-7e869782b243
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Demo/_TextToken/Demo
+Path: /sitecore/templates/Feature/Demo/_TextToken/Demo
 Languages:
 - Language: en
   Versions:

@@ -2,7 +2,7 @@
 ID: fb720a81-d755-4abc-8b48-115d1fb54e6c
 Parent: 2d9aa1e4-3359-4f02-9eaa-5cf972fd990d
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Accounts/_ProfileSettings/Profile
+Path: /sitecore/templates/Feature/Accounts/_ProfileSettings/Profile
 Languages:
 - Language: en
   Versions:

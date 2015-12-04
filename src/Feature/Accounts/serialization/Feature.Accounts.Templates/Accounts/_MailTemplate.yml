@@ -2,7 +2,7 @@
 ID: 26df8f38-7e1b-43d2-85dd-68df05fa276b
 Parent: 51745b37-cc61-45c0-982c-bfd80bfd42f0
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Habitat/Domain/Accounts/_MailTemplate
+Path: /sitecore/templates/Feature/Accounts/_MailTemplate
 SharedFields:
 - ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
   # __Base template

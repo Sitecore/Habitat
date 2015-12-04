@@ -2,7 +2,7 @@
 ID: 6ecd54a6-fd59-4ec3-ae87-0dbd90fe43bb
 Parent: 26df8f38-7e1b-43d2-85dd-68df05fa276b
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Accounts/_MailTemplate/Email Content
+Path: /sitecore/templates/Feature/Accounts/_MailTemplate/Email Content
 Languages:
 - Language: en
   Versions:

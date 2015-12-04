@@ -2,7 +2,7 @@
 ID: 2a513d39-d7c7-4c12-bc60-88e737a965b0
 Parent: 696d276b-786a-4d1e-b8bb-8e139db7be7c
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Accounts/_UserProfile/Data
+Path: /sitecore/templates/Feature/Accounts/_UserProfile/Data
 SharedFields:
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder

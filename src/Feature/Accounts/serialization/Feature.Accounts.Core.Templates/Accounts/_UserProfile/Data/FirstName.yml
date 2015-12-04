@@ -2,7 +2,7 @@
 ID: e7bc8a3e-3201-4556-b2ff-ff4db04db081
 Parent: 2a513d39-d7c7-4c12-bc60-88e737a965b0
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Accounts/_UserProfile/Data/FirstName
+Path: /sitecore/templates/Feature/Accounts/_UserProfile/Data/FirstName
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type

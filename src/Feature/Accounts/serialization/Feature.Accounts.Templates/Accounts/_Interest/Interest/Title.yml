@@ -2,7 +2,7 @@
 ID: 1fbe5200-2c62-4a32-ba84-cffe3cf665d3
 Parent: a5efe032-021d-46fd-a1e6-d0d3c123c46c
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Accounts/_Interest/Interest/Title
+Path: /sitecore/templates/Feature/Accounts/_Interest/Interest/Title
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type

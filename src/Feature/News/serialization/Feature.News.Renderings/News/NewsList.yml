@@ -2,7 +2,7 @@
 ID: 6d309fc1-d6b1-43b1-a31c-1fecb7b9303f
 Parent: db7775fa-27d8-44e4-9e6c-08ade58ef4ed
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
-Path: /sitecore/layout/Renderings/Habitat/Domain/News/NewsList
+Path: /sitecore/layout/Renderings/Feature/News/NewsList
 SharedFields:
 - ID: 94069f66-609c-48b0-8281-521c30fb269d
   # Open Properties after Add

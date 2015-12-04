@@ -2,7 +2,7 @@
 ID: ffb0b2a3-c070-49b7-b5d0-2a7790012fd1
 Parent: 2f75c8af-35fc-4a88-b585-7595203f442c
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/News/_NewsArticle/News
+Path: /sitecore/templates/Feature/News/_NewsArticle/News
 Languages:
 - Language: en
   Versions:

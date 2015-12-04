@@ -2,7 +2,7 @@
 ID: fdfcd088-3c9e-49c4-97ff-2dde5d339ba0
 Parent: a781e01f-0c9e-4751-8c08-12a32ec063e3
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
-Path: /sitecore/layout/Renderings/Habitat/Domain/Teasers/TitleImageSummaryTeaser
+Path: /sitecore/layout/Renderings/Feature/Teasers/TitleImageSummaryTeaser
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template

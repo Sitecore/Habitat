@@ -2,7 +2,7 @@
 ID: 4e645fb2-01b3-41bc-8fd7-f1ef7fe280ff
 Parent: 01628dcb-611f-495e-a1da-e89027ab7035
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Demo/_CampaignToken/Demo
+Path: /sitecore/templates/Feature/Demo/_CampaignToken/Demo
 Languages:
 - Language: en
   Versions:

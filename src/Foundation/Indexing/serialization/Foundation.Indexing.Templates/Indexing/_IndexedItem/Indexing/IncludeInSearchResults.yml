@@ -2,7 +2,7 @@
 ID: 8d5c486e-a0e3-4dbe-9a4a-cdff93594bda
 Parent: f453cfa9-dbd9-4dc7-8410-b39cba98f75f
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Framework/Indexing/_IndexedItem/Indexing/IncludeInSearchResults
+Path: /sitecore/templates/Foundation/Indexing/_IndexedItem/Indexing/IncludeInSearchResults
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type

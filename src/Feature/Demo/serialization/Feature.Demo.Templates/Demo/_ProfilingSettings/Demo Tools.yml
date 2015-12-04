@@ -2,7 +2,7 @@
 ID: 492b36fe-85e8-4cbc-b130-0b19cbe7bd91
 Parent: c6d4ddd5-b912-4c1a-a3a3-e1d90e4d0939
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Demo/_ProfilingSettings/Demo Tools
+Path: /sitecore/templates/Feature/Demo/_ProfilingSettings/Demo Tools
 Languages:
 - Language: en
   Versions:

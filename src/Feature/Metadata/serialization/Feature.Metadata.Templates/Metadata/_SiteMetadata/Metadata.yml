@@ -2,7 +2,7 @@
 ID: e19d3ff4-18be-4d45-bf5b-24899eaf624b
 Parent: cf38e914-9298-47cc-9205-210553e79f97
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Metadata/_SiteMetadata/Metadata
+Path: /sitecore/templates/Feature/Metadata/_SiteMetadata/Metadata
 Languages:
 - Language: en
   Versions:

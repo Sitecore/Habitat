@@ -2,7 +2,7 @@
 ID: d1d3e60f-e571-48d2-84cf-b053ee660c13
 Parent: f01ecd05-6d91-447f-ba10-3b6347ff3cf6
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Habitat/Domain/Search/_PagedSearchResultsParameters
+Path: /sitecore/templates/Feature/Search/_PagedSearchResultsParameters
 SharedFields:
 - ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
   # __Base template
