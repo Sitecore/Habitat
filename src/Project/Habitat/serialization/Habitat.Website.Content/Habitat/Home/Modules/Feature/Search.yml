@@ -1,8 +1,8 @@
 ﻿---
-ID: 8eac162b-96bc-43f1-95d6-99b83745b2f4
+ID: 83458bd1-1b73-4ea4-aabb-8e6aa4b40ef1
 Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
-Path: /sitecore/content/Habitat/Home/Modules/Domain/Demo
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Search
 Languages:
 - Language: en
   Versions:
@@ -10,13 +10,13 @@ Languages:
     Fields:
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       # NavigationTitle
-      Value: Demo
+      Value: Search
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20151116T023552Z
+      Value: 20151116T023644Z
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       # Title
-      Value: Demo
+      Value: Search
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
       # BrowserTitle
-      Value: Demo
+      Value: Search

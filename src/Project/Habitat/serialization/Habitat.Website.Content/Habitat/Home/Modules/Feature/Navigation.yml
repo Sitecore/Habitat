@@ -1,8 +1,8 @@
 ﻿---
-ID: 29118c22-b3c0-43e8-8e12-a80bc99e008f
+ID: 876b43b4-6eff-4e82-8450-5974b95ef94c
 Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
-Path: /sitecore/content/Habitat/Home/Modules/Domain/Social
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Navigation
 Languages:
 - Language: en
   Versions:
@@ -10,13 +10,13 @@ Languages:
     Fields:
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       # NavigationTitle
-      Value: Social
+      Value: Navigation
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20151116T023652Z
+      Value: 20151116T023626Z
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       # Title
-      Value: Social
+      Value: Navigation
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
       # BrowserTitle
-      Value: Social
+      Value: Navigation

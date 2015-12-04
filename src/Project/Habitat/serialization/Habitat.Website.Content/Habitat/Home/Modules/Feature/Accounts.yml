@@ -2,7 +2,7 @@
 ID: 06ec763e-5dd8-4c4e-9c8e-781b3f42c19b
 Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
-Path: /sitecore/content/Habitat/Home/Modules/Domain/Accounts
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Accounts
 Languages:
 - Language: en
   Versions:
