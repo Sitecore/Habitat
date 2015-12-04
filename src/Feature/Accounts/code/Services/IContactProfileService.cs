@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Habitat.Accounts.Services
+﻿namespace Sitecore.Feature.Accounts.Services
 {
-  using Habitat.Accounts.Models;
+  using Sitecore.Feature.Accounts.Models;
 
   public interface IContactProfileService
   {

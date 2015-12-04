@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Habitat.Accounts.Tests
+﻿namespace Sitecore.Feature.Accounts.Tests
 {
   using FluentAssertions;
-  using Habitat.Accounts.Services;
-  using Habitat.Accounts.Tests.Extensions;
   using NSubstitute;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Tracking;
+  using Sitecore.Feature.Accounts.Services;
+  using Sitecore.Feature.Accounts.Tests.Extensions;
   using Xunit;
 
   public class ContactProfileProviderTests

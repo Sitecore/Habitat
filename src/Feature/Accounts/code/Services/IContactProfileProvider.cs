@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Habitat.Accounts.Services
+﻿namespace Sitecore.Feature.Accounts.Services
 {
-  using Models;
   using Sitecore.Analytics.Model.Entities;
   using Sitecore.Analytics.Tracking;
 

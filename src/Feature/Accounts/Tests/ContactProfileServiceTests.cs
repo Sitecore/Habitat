@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Habitat.Accounts.Tests
+﻿namespace Sitecore.Feature.Accounts.Tests
 {
   using FluentAssertions;
-  using Habitat.Accounts.Models;
-  using Habitat.Accounts.Services;
-  using Habitat.Accounts.Tests.Extensions;
   using NSubstitute;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Analytics.Model.Entities;
+  using Sitecore.Feature.Accounts.Models;
+  using Sitecore.Feature.Accounts.Services;
+  using Sitecore.Feature.Accounts.Tests.Extensions;
   using Xunit;
 
   public class ContactProfileServiceTests
@@ -36,7 +30,7 @@ namespace Habitat.Accounts.Tests
 
     [Theory]
     [AutoDbData]
-    public void ShouldSetPreferredEmail([Frozen] IContactProfileProvider contactProfileProvider, [NoAutoProperties] [Greedy] ContactProfileService contactProfileService, string email, IEmailAddress emailAddress)
+    public void ShouldSetPreferredEmail([Frozen] IContactProfileProvider contactProfileProvider, [Greedy] ContactProfileService contactProfileService, string email, IEmailAddress emailAddress)
     {
       contactProfileService.SetPreferredEmail(emailAddress.SmtpAddress);
       contactProfileProvider.Emails.Entries[contactProfileProvider.Emails.Preferred].SmtpAddress.ShouldBeEquivalentTo(emailAddress.SmtpAddress);

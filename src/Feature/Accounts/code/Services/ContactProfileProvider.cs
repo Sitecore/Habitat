@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Habitat.Accounts.Services
+﻿namespace Sitecore.Feature.Accounts.Services
 {
-  using System.Runtime.CompilerServices;
-  using System.Web.DynamicData;
-  using Habitat.Accounts.Models;
-  using Sitecore;
   using Sitecore.Analytics;
-  using Sitecore.Analytics.Data;
   using Sitecore.Analytics.Model.Entities;
   using Sitecore.Analytics.Model.Framework;
   using Sitecore.Analytics.Tracking;
-  using Sitecore.Analytics.Tracking.SharedSessionState;
   using Sitecore.Configuration;
   using Sitecore.Data;
 

@@ -1,10 +1,7 @@
-﻿namespace Habitat.Accounts.Services
+﻿namespace Sitecore.Feature.Accounts.Services
 {
-  using Habitat.Accounts.Models;
   using Sitecore;
-  using Sitecore.Analytics.Tracking;
-  using Sitecore.Configuration;
-  using Sitecore.Shell.Framework.Commands;
+  using Sitecore.Feature.Accounts.Models;
 
   public class ContactProfileService : IContactProfileService
   {
@@ -31,7 +28,10 @@
         {
           emails.Entries[PrimaryEmailKey].SmtpAddress = Context.User.Profile.Email;
         }
-        emails.Entries.Create(PrimaryEmailKey).SmtpAddress = Context.User.Profile.Email;
+        else
+        {
+          emails.Entries.Create(PrimaryEmailKey).SmtpAddress = Context.User.Profile.Email;
+        }
       }
 
       this.contactProfileProvider.Flush();
@@ -47,7 +47,10 @@
         {
           phones.Entries[PrimaryPhoneKey].Number = phone;
         }
-        phones.Entries.Create(PrimaryPhoneKey).Number = phone;
+        else
+        {
+          phones.Entries.Create(PrimaryPhoneKey).Number = phone;
+        }
       }
     }
 
