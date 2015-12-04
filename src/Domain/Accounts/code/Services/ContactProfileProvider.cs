@@ -39,6 +39,11 @@ namespace Habitat.Accounts.Services
     {
       get
       {
+        if (!Tracker.IsActive)
+        {
+          return null;
+        }
+
         if (this.contact == null)
         {
           this.contact = Tracker.Current.Contact;
