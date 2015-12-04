@@ -222,7 +222,7 @@ gulp.task("CI-Enumerate-Files", function () {
 });
 
 
-gulp.task("CI-Update-Xml", function (cb) {
+gulp.task("CI-Update-Xml", function(callback) {
   var destination = path.resolve("./package.xml");
 
   //TODO: find a tool to modify XML instead of string replacement
@@ -238,7 +238,7 @@ gulp.task("CI-Update-Xml", function (cb) {
       return console.log(err);
     }
     var result = data.replace("<Entries></Entries>", str);
-    fs.writeFile(destination, result, "utf8", cb);
+    fs.writeFile(destination, result, "utf8", callback);
   });
 });
 
