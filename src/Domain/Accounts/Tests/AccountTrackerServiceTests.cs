@@ -5,8 +5,11 @@
   using Habitat.Accounts.Services;
   using Habitat.Accounts.Tests.Extensions;
   using NSubstitute;
+  using Ploeh.AutoFixture.AutoNSubstitute;
+  using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Data.Items;
+  using Sitecore.Analytics.Tracking;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.FakeDb;
@@ -60,6 +63,19 @@
       {
         accountTrackerService.TrackRegister();
         tracker.CurrentPage.Received(1).Register(Arg.Is<PageEventItem>(x => x.ID == ConfigSettings.RegisterGoalId));
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void ShouldCallTrackerIdentify([NoAutoProperties] AccountTrackerService trackerService, string contactIdentifier, ITracker tracker, [Substitute] Session session)
+    {
+      tracker.IsActive.Returns(true);
+      tracker.Session.Returns(session);
+      using (new TrackerSwitcher(tracker))
+      {
+        trackerService.IdentifyContact(contactIdentifier);
+        tracker.Session.Received().Identify(contactIdentifier);
       }
     }
   }

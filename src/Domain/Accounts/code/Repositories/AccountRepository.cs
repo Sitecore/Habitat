@@ -3,6 +3,7 @@
   using System.Web.Security;
   using Habitat.Accounts.Services;
   using Sitecore;
+  using Sitecore.Analytics;
   using Sitecore.Diagnostics;
   using Sitecore.Security.Accounts;
   using Sitecore.Security.Authentication;
@@ -37,6 +38,7 @@
       if (result)
       {
         accountTrackerService.TrackLogin();
+        accountTrackerService.IdentifyContact(accountName);
       }
 
       return result;
