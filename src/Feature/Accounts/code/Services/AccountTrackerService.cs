@@ -17,6 +17,14 @@
       this.TrackPageEvent(ConfigSettings.RegisterGoalId);
     }
 
+    public void IdentifyContact(string identifier)
+    {
+      if (Tracker.Current != null && Tracker.Current.IsActive)
+      {
+        Tracker.Current.Session.Identify(identifier);
+      }
+    }
+
     public virtual void TrackPageEvent(ID pageEventItemId)
     {
       Assert.ArgumentNotNull(pageEventItemId, nameof(pageEventItemId));

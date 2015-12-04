@@ -7,5 +7,7 @@
     void TrackLogin();
     void TrackPageEvent(ID pageEventItemId);
     void TrackRegister();
+
+    void IdentifyContact(string identifier);
   }
 }

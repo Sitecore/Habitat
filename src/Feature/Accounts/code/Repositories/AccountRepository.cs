@@ -2,6 +2,7 @@
 {
   using System.Web.Security;
   using Sitecore;
+  using Sitecore.Analytics;
   using Sitecore.Diagnostics;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Security.Accounts;
@@ -37,6 +38,7 @@
       if (result)
       {
         accountTrackerService.TrackLogin();
+        accountTrackerService.IdentifyContact(accountName);
       }
 
       return result;
