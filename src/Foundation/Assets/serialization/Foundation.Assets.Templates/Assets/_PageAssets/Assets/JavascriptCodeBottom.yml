@@ -2,7 +2,7 @@
 ID: b3ba9ea9-d0a1-49df-9f4b-28fa5d353dc8
 Parent: 570a9c1e-1791-4496-9a15-b21beaf97b0a
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Framework/Assets/_PageAssets/Assets/JavascriptCodeBottom
+Path: /sitecore/templates/Foundation/Assets/_PageAssets/Assets/JavascriptCodeBottom
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type

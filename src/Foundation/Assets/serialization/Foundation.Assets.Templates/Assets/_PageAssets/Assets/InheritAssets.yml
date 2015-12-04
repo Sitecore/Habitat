@@ -2,7 +2,7 @@
 ID: f19e8a50-9950-4861-9e66-9598a1898e71
 Parent: 570a9c1e-1791-4496-9a15-b21beaf97b0a
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Framework/Assets/_PageAssets/Assets/InheritAssets
+Path: /sitecore/templates/Foundation/Assets/_PageAssets/Assets/InheritAssets
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type
