@@ -2,6 +2,7 @@
 {
   using Sitecore;
   using Sitecore.Feature.Accounts.Models;
+  using Sitecore.Foundation.SitecoreExtensions.Services;
 
   public class ContactProfileService : IContactProfileService
   {

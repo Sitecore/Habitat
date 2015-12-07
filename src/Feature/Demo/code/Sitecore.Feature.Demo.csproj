@@ -118,8 +118,10 @@
     <Content Include="App_Config\Include\Feature\Feature.Demo.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Content\Site.css" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <Content Include="Views\Demo\KeyBehaviourCacheList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -138,11 +140,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\BehaviorProfile.cs" />
     <Compile Include="Models\DemoContent.cs" />
     <Compile Include="Models\ContactInformation.cs" />
     <Compile Include="Controllers\DemoController.cs" />
+    <Compile Include="Models\KeyBehaviorCacheEntryModel.cs" />
     <Compile Include="Models\PageLink.cs" />
     <Compile Include="Models\PatternMatch.cs" />
+    <Compile Include="Models\Score.cs" />
     <Compile Include="Models\VisitInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates.cs" />
@@ -153,6 +158,7 @@
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

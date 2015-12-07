@@ -1,4 +1,7 @@
-﻿@using Sitecore.Foundation.SitecoreExtensions.Repositories
+﻿@using Sitecore.Feature.Demo.Models
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.Mvc.Extensions
 @model Sitecore.Feature.Demo.Models.ContactInformation
 <div id="contact-details" class="panel panel-primary">
   <div class="panel-heading">
@@ -35,9 +38,194 @@
       </div>
     </div>
   </div>
+
+
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#contactPersonalData" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/contactDetails/PersonalData", "Personal Data")
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="contactPersonalData">
+        <div class="panel-body">
+          <dl class="list-unstyled">
+            @if (Model.Picture != null && Model.Picture.Picture.Length > 0)
+            {
+              <dt>@DictionaryRepository.Get("/Demo/contactDetails/Picture", "Picture")</dt>
+              <dd>
+                <img class="img-thumbnail" src="data:image;base64,@System.Convert.ToBase64String(Model.Picture.Picture)" />
+              </dd>
+            }
+            @if (@Model.PersonalInfo != null && !@Model.PersonalInfo.IsEmpty)
+            {
+              foreach (var prop in @Model.PersonalInfo.GetType().GetProperties())
+              {
+                var val = prop.GetValue(@Model.PersonalInfo);
+                if (val == null || val.ToString().IsEmptyOrNull() || prop.Name.Equals("IsEmpty"))
+                {
+                  continue;
+                }
+
+                <dt>@prop.Name</dt>
+                <dd>@val</dd>
+              }
+            }
+            @if (Model.Addresses != null && !Model.Addresses.IsEmpty && Model.Addresses.Entries != null)
+            {
+
+              <dt>@DictionaryRepository.Get("/Demo/contactDetails/Addresses", "Addresses")</dt>
+              <dd>
+                <dl style="margin-left: 10px">
+                  @foreach (var key in Model.Addresses.Entries.Keys)
+                  {
+                    var preferred = Model.Addresses.Entries[key];
+                    <dt>@key</dt>
+                    <dd>@preferred.Country</dd>
+                    <dd>@preferred.City</dd>
+                    <dd>@preferred.StateProvince</dd>
+                    <dd>@preferred.StreetLine1</dd>
+                    <dd>@preferred.StreetLine2</dd>
+                    <dd>@preferred.StreetLine3</dd>
+                    <dd>@preferred.StreetLine4</dd>
+                    <dd>@preferred.PostalCode</dd>
+                  }
+                </dl>
+              </dd>
+            }
+            @if (Model.PhoneNumbers != null && !Model.PhoneNumbers.IsEmpty && Model.PhoneNumbers.Entries != null)
+            {
+              <dt>@DictionaryRepository.Get("/Demo/contactDetails/PhoneNumbers", "Phone Numbers")</dt>
+
+              foreach (var key in Model.PhoneNumbers.Entries.Keys)
+              {
+                var value = Model.PhoneNumbers.Entries[key];
+                <dd>@value.CountryCode @value.Extension @value.Number </dd>
+              }
+            }
+          </dl>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#contactCommunication" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/contactDetails/Communication", "Communication")
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="contactCommunication">
+        <div class="panel-body">
+          <dl class="list-unstyled">
+            <dt>@DictionaryRepository.Get("/Demo/contactDetails/CommunicationRevoked", "Communication Revoked")</dt>
+            <dd>@Model.CommunicationProfile.CommunicationRevoked</dd>
+            <dt>@DictionaryRepository.Get("/Demo/contactDetails/ConsentRevoked", "Consent Revoked") </dt>
+            <dd>@Model.CommunicationProfile.ConsentRevoked</dd>
+
+
+            @if (Model.Emails != null && !Model.Emails.IsEmpty && Model.Emails.Entries != null)
+            {
+              <dt>@DictionaryRepository.Get("/Demo/contactDetails/EmailAddresses", "Email Addresses") </dt>
+              foreach (var key in Model.Emails.Entries.Keys)
+              {
+
+                var val = Model.Emails.Entries[key];
+                <dd>@val.SmtpAddress</dd>
+              }
+            }
+
+            <dt>@DictionaryRepository.Get("/Demo/contactDetails/PreferenceLanguage", "Preference Language") </dt>
+            <dd>@Model.Preferences.Language</dd>
+          </dl>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#contactBehavoiur" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/contactDetails/BehaviourProfiles", "Behaviour Profiles")
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="contactBehavoiur">
+        <div class="panel-body">
+
+
+          @foreach (var entry in Model.BehaviorProfiles.Where(x => x.NumberOfTimesScored > 0))
+          {
+            <div class="panel-group" aria-expanded="false">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <a href="#@entry.Id" data-toggle="collapse" class="panel-title collapsed" aria-expanded="false">
+                    @entry.Name
+                    <span class="expand-icon glyphicon" aria-hidden="true"></span>
+                  </a>
+                </div>
+                <div class="panel-collapse collapse" id="@entry.Id" aria-expanded="false" style="height: 79px;">
+                  <div class="panel-body">
+
+                    <dl>
+                      <dt>Id</dt>
+                      <dd>@entry.Id</dd>
+                      <dt>
+                        @DictionaryRepository.Get("/Demo/contactDetails/NumberOfTimesScored", "Number Of Times Scored")
+                      </dt>
+                      <dd>@entry.NumberOfTimesScored</dd>
+                      <dt>@DictionaryRepository.Get("/Demo/contactDetails/Scores", "Scores")</dt>
+                      @foreach (var score in entry.Scores.Select(x => $"{x.Name}: {x.Value}"))
+                      {
+                        <dd>@score</dd>
+                      }
+                    </dl>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#contactKeyBehaviorCache" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/ContactDetails/KeyBehaviorCache", "Key Behavior Cache")
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="contactKeyBehaviorCache">
+        <div class="panel-body">
+
+
+          @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel() { Entries = Model.KeyBehaviorCache.Campaigns, Title = DictionaryRepository.Get("/Demo/ContactDetails/Campaigns", "Campaigns") })
+          @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel() { Entries = Model.KeyBehaviorCache.Channels, Title = DictionaryRepository.Get("/Demo/ContactDetails/Channels", "Channels") })
+          @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel() { Entries = Model.KeyBehaviorCache.Goals, Title = DictionaryRepository.Get("/Demo/ContactDetails/Goals", "Goals") })
+          @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel() { Entries = Model.KeyBehaviorCache.CustomValues, Title = DictionaryRepository.Get("/Demo/ContactDetails/CustomValues", "Custom Values") })
+          @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel() { Entries = Model.KeyBehaviorCache.Outcomes, Title = DictionaryRepository.Get("/Demo/ContactDetails/Outcomes", "Outcomes") })
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </div>
 <script language="javascript">
-  $(function() {
+  $(function () {
     $('[data-toggle="tooltip"]').tooltip();
   })
 </script>

@@ -1,0 +1,28 @@
+﻿@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model  Sitecore.Feature.Demo.Models.KeyBehaviorCacheEntryModel
+@if (@Model != null && @Model.Entries != null && @Model.Entries.Length > 0)
+{
+  <div class="panel-group" aria-expanded="false">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <a href="#@(Model.ElementId)" data-toggle="collapse" class="panel-title collapsed" aria-expanded="false">
+          @Model.Title
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="@(Model.ElementId)" aria-expanded="false" style="height: 79px;">
+        <div class="panel-body">
+          @foreach (var entry in @Model.Entries)
+          {
+            <dt>
+              @entry.Id.GetItemDisplayName()
+            </dt>
+            <dd>
+              @entry.DateTime
+            </dd>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+}
