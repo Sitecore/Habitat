@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Feature.Accounts.Services
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Services
 {
   using Sitecore.Analytics.Model.Entities;
   using Sitecore.Analytics.Tracking;
