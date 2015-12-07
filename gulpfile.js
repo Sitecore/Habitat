@@ -81,11 +81,11 @@ gulp.task("Apply-Xml-Transform", function () {
 });
 
 gulp.task("Publish-Framework-Projects", function () {
-  return publishProjects("./src/Framework");
+  return publishProjects("./src/Foundation");
 });
 
 gulp.task("Publish-Domain-Projects", function () {
-  return publishProjects("./src/Domain");
+  return publishProjects("./src/Feature");
 });
 
 gulp.task("Publish-Project-Projects", function () {
@@ -96,7 +96,7 @@ gulp.task("Publish-Project-Projects", function () {
 
 gulp.task("Publish-Assemblies", function () {
   var root = "./src";
-  var binFiles = root + "/**/bin/Habitat.*.{dll,pdb}";
+  var binFiles = root + "/**/bin/Sitecore.{Feature,Foundation,Habitat}.*.{dll,pdb}";
   var destination = config.websiteRoot + "/bin/";
   return gulp.src(binFiles, { base: root })
     .pipe(rename({ dirname: "" }))
@@ -158,7 +158,7 @@ gulp.task("Auto-Publish-Views", function () {
 gulp.task("Auto-Publish-Assemblies", function () {
   var root = "./src";
   var roots = [root + "/**/code/bin"];
-  var files = "/**/Habitat.*.{dll,pdb}";;
+  var files = "/**/Sitecore.{Feature,Foundation,Habitat}.*.{dll,pdb}";;
   var destination = config.websiteRoot + "/bin/";
   gulp.src(roots, { base: root }).pipe(
     foreach(function (stream, rootFolder) {
@@ -202,7 +202,8 @@ gulp.task("CI-Prepare-Package-Files", function (callback) {
     config.websiteRoot + "\\App_Config\\Include\\Rainbow*",
     config.websiteRoot + "\\App_Config\\Include\\Unicorn\\*",
     config.websiteRoot + "\\App_Config\\Include\\Habitat\\*Serialization.config",
-    "!" + config.websiteRoot + "\\bin\\Sitecore.Support*dll"
+    "!" + config.websiteRoot + "\\bin\\Sitecore.Support*dll",
+    "!" + config.websiteRoot + "\\bin\\Sitecore.{Feature,Foundation,Habitat}*dll"
   ];
   console.log(excludeList);
 

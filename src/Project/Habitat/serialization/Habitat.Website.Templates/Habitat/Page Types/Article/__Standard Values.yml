@@ -1,0 +1,67 @@
+﻿---
+ID: d5830167-eac2-415e-8c95-250ffc9bf445
+Parent: 94a8c8e9-690b-4e65-98e7-f95800222767
+Template: 94a8c8e9-690b-4e65-98e7-f95800222767
+Path: /sitecore/templates/Project/Habitat/Page Types/Article/__Standard Values
+SharedFields:
+- ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
+  # __Masters
+  Type: TreelistEx
+  Value: |
+    {94A8C8E9-690B-4E65-98E7-F95800222767}
+    {8FF3D369-A508-4D2F-84A5-9B6C6BF5E537}
+- ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
+  # __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{ED043C36-CD48-4EDF-A288-EC404EE1CD42}">
+        <r id="{E7AE3F87-CF66-40F2-A9F5-33ECF08BC777}" ph="head" uid="{E6CA18D8-321D-4105-9C38-0622E94BE400}" />
+        <r id="{3389CAFC-000C-41E5-921C-92821B3DB7B5}" ph="head" uid="{EF51B238-7CE2-4E39-AB87-D05424735160}" />
+        <r ds="{DC450599-7C22-4D86-A901-CC8EEC8992C9}" id="{69B9C355-004B-4268-BB1E-2F725B8752B7}" ph="topbarleft" uid="{05FFB7B4-377C-4C00-9520-0ED7735CADCA}" />
+        <r id="{53B085DB-6824-4941-9F28-9011CB151832}" ph="navbar" uid="{FBDB4313-35B5-4C26-A586-17F48FD2DC41}" />
+        <r id="{A47C8288-7D4C-45FF-B75F-4AEDBF58A02D}" ph="primarymenuheader" uid="{7BD25BD6-C6C4-4FBE-9828-D29A39A2FEC9}" />
+        <r id="{2695013C-DD51-410B-9983-F271F16C727D}" ph="primarymenuitems" uid="{3555E24E-FBE9-4D81-AAC7-50408AA45EF0}" />
+        <r ds="{9AA07D42-E9B5-4B52-A0E2-4FDF08C203EE}" id="{8C3A2CFC-18FB-4BF5-8584-50EA88978ED6}" ph="primarymenuitems" uid="{9C8A45F2-7008-42C1-8B8A-80A88825C1D8}" />
+        <r id="{28BD7068-7FF6-4CE6-98E6-85CFE9967E14}" ph="primarymenuitems" uid="{79242576-4E0A-4CBF-BC2B-8B0C47FE9B64}" />
+        <r ds="{575BB28A-B341-40E0-84F4-940DEEFB1B98}" id="{69B9C355-004B-4268-BB1E-2F725B8752B7}" ph="topbarright" uid="{630F4515-1F19-49A8-B986-D46ADD5CE024}" />
+        <r id="{A2216CA7-B205-4042-A345-72117D0086C3}" ph="page-layout" uid="{1DF746C3-2D29-43E6-9DE2-05622DED6F97}" />
+        <r id="{45B8E1D9-D522-49E0-B9B7-04C965CC7089}" ph="pageheading" uid="{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}" />
+        <r id="{E6BA23C6-08F7-43D0-BE00-BB2129D6F288}" ph="pageheading" uid="{20E3883C-C16D-41D7-B5D3-C4AC60D8386D}" />
+        <r id="{EADA94FA-315F-4DF2-AC49-13346DFDAF12}" ph="page-layout" uid="{66422117-69C1-4B62-9323-482F16C4F244}" />
+        <r id="{359A65BB-0A2C-44E5-8C34-DF3ACDBB42A7}" ph="sidebar" uid="{EB352679-4420-46AE-95B0-7CA976C24194}" />
+        <r id="{3F7AD288-FA57-441F-AD79-CA60DC0C0A8D}" ph="sidebar" uid="{A85893F9-5DF5-4C28-AC0F-67AD85D29661}" />
+        <r id="{914673DC-FC44-4660-B6EB-FF421FAAC2F9}" ph="sidebarcontent" uid="{565F9960-4E47-4DA4-9406-0A29DD09911F}" />
+        <r id="{299FD8EA-2CFD-4A69-9CA4-7EA24CD34A46}" ph="footer" uid="{E2040FB7-4151-456D-9315-5973E4EB4D9D}" />
+        <r ds="{FB1E4810-6D89-4F1E-A47B-70478FE32DA7}" id="{69B9C355-004B-4268-BB1E-2F725B8752B7}" ph="footercolumn1" uid="{0E0C6DCA-1A29-4975-84D7-E99498A64A72}" />
+        <r ds="{B4D87E66-D2C5-4C06-8F9A-08AEAF38055A}" id="{69B9C355-004B-4268-BB1E-2F725B8752B7}" ph="footercolumn1" uid="{0E0C6DCA-1A29-4975-84D7-E99498A64A72}" />
+        <r ds="{98E48045-DFC7-4A70-9BED-5C40AB6558A6}" id="{0CF58F14-D0F8-4C41-9896-3D69048A0B19}" par="" ph="footercolumn2" uid="{84124EE2-E678-4144-8316-0D6874866604}" />
+        <r ds="{D24907F7-1A25-43DC-A5A2-FCB1E55EBBB6}" id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" ph="footercolumn3" uid="{47F5A079-6F63-4219-BC45-1A221B200906}" />
+        <r id="{7DAE9F23-890F-4E06-99A7-CCEDB74D3D8E}" ph="postfooter" uid="{A3BAD4D4-8E21-4B30-8C4C-B04163653D62}" />
+        <r id="{A6CFB41B-C613-4A2B-A5EE-4A374015914D}" ph="page-sidebar" uid="{A1AC1D8A-E47C-4766-8D0F-89BB3BBC9A81}" />
+        <r id="{24D6D94B-FF87-4A6C-9AA0-4CBF21488C05}" ph="page-sidebar" uid="{A1AC1D8A-E47C-4766-8D0F-89BB3BBC9A81}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: $name
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150824T175451Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      # Image
+      Value: "<image mediaid=\"{88032F9C-B464-44CB-B76D-513D60B9C127}\" />"
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      # Title
+      Value: $name
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      # BrowserTitle
+      Value: $name

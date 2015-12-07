@@ -1,0 +1,43 @@
+﻿@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@model Sitecore.Feature.Demo.Models.ContactInformation
+<div id="contact-details" class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      @DictionaryRepository.Get("/Demo/ContactDetails/Title", "Contact")
+      <span class="stats">
+        <span title="@DictionaryRepository.Get("/Demo/ContactDetails/NoOfVisits", "Number of Visits")" data-toggle="tooltip" data-placement="left">
+          <span class="glyphicon glyphicon glyphicon-random" aria-hidden="true"></span>
+          <span class="badge">@Model.NoOfVisits</span>
+        </span>
+        <span title="@DictionaryRepository.Get("/Demo/ContactDetails/EngagementValue", "Engagement Value")" data-toggle="tooltip" data-placement="left">
+          <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+          <span class="badge">@Model.EngagementValue</span>
+        </span>
+      </span>
+    </h3>
+  </div>
+
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <a href="#contactDetailsIdentification" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+          @DictionaryRepository.Get("/Demo/contactDetails/Identification", "Identification")
+          <span class="expand-icon glyphicon" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="panel-collapse collapse" id="contactDetailsIdentification">
+        <div class="panel-body">
+          <dl class="list-unstyled">
+            <dt>@DictionaryRepository.Get("/Demo/ContactDetails/ContactID", "Contact ID")</dt>
+            <dd>@Model.Id.ToString()</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script language="javascript">
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  })
+</script>
