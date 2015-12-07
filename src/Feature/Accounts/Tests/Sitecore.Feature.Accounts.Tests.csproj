@@ -165,7 +165,6 @@
     <Compile Include="AccountTrackerServiceTests.cs" />
     <Compile Include="Attributes\RedirectUnauthenticatedTests.cs" />
     <Compile Include="Attributes\ValidateModelTests.cs" />
-    <Compile Include="ContactProfileProviderTests.cs" />
     <Compile Include="ContactProfileServiceTests.cs" />
     <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="Extensions\CoreDbAttribute.cs" />
@@ -185,7 +184,9 @@
     <Compile Include="UserProfileServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="App_Config\FieldTypes.config" />
     <None Include="packages.config" />
   </ItemGroup>

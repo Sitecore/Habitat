@@ -10,7 +10,7 @@
     public AutoDbDataAttribute()
       : base(new Fixture().Customize(new AutoDbCustomization()))
     {
-      Fixture.Customizations.Add(new AutoNSubstituteCustomization().Builder);
+      Fixture.Customize(new AutoNSubstituteCustomization());
 
     }
   }

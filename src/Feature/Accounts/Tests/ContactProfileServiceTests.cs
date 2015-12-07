@@ -7,6 +7,7 @@
   using Sitecore.Feature.Accounts.Models;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Services;
   using Xunit;
 
   public class ContactProfileServiceTests

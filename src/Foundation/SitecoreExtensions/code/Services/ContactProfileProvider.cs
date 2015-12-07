@@ -1,5 +1,6 @@
-﻿namespace Sitecore.Feature.Accounts.Services
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Services
 {
+  using System.Collections.Generic;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Model.Entities;
   using Sitecore.Analytics.Model.Framework;
@@ -47,15 +48,22 @@
       }
     }
 
+    public IContactPicture Picture => this.GetFacet<IContactPicture>("Picture");
+
+    public IContactPreferences Preferences => this.GetFacet<IContactPreferences>("Preferences");
+
+    public IKeyBehaviorCache KeyBehaviorCache => this.Contact?.Attachments["KeyBehaviorCache"] as IKeyBehaviorCache;
+
     public IContactPersonalInfo PersonalInfo => this.GetFacet<IContactPersonalInfo>("Personal");
 
-    public IContactAddresses Adresses { get; }
+    public IContactAddresses Addresses => this.GetFacet<IContactAddresses>("Addresses");
 
     public IContactEmailAddresses Emails => this.GetFacet<IContactEmailAddresses>("Emails");
 
     public IContactCommunicationProfile CommunicationProfile => this.GetFacet<IContactCommunicationProfile>("Communication Profile");
 
     public IContactPhoneNumbers PhoneNumbers => this.GetFacet<IContactPhoneNumbers>("Phone Numbers");
+    public IEnumerable<IBehaviorProfileContext> BehaviorProfiles =>  this.Contact.BehaviorProfiles.Profiles;
 
     public Contact Flush()
     {
