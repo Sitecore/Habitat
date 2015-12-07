@@ -1,0 +1,45 @@
+﻿---
+ID: 8b32ebbc-9772-48d3-808c-704e66b2ec2c
+Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
+Template: 94a8c8e9-690b-4e65-98e7-f95800222767
+Path: /sitecore/content/Habitat/Home/Modules/Domain/Maps
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
+      # __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
+          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{77597299-08C8-4792-B2B8-6445D2712A4F}" p:before="r[@uid='{1EB93BB4-BE61-4924-87E8-4108E4711261}']" s:ds="{B415F846-5EED-409C-B6D8-C23BAB52D502}" s:id="{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}" s:ph="/page-layout/sidebarcontent/col-wide-1_dc521682-15b5-4fe3-91a8-676e7e1c3cf3" />
+            <r uid="{1EB93BB4-BE61-4924-87E8-4108E4711261}" p:before="r[@uid='{F4A61C67-000E-45CC-936B-672FC5FA9E1D}']" s:ds="{439EC71A-4231-45C8-B075-975BD41099A7}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/sidebarcontent/col-wide-2" />
+            <r uid="{F4A61C67-000E-45CC-936B-672FC5FA9E1D}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{844A7337-2020-4C2E-912E-7651930FE179}" s:id="{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}" s:ph="/page-layout/sidebarcontent/col-wide-1" />
+            <r uid="{C1BC7AD2-3591-4A00-AC1C-766A5279FF6A}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{03112E88-1499-4132-9D5F-E213AFD2019C}" s:ph="/page-layout/sidebarcontent" />
+          </d>
+        </r>
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: Maps
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151008T041914Z
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      # Image
+      Value: "<image mediapath=\"\" alt=\"Habitat-073-square\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"\" mediaid=\"{B049BE67-52D1-4589-941C-3BFAB95EA2FC}\" />"
+    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+      # Summary
+      Value: The Maps module contains office locator functionality.
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      # Title
+      Value: Maps
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      # BrowserTitle
+      Value: Maps
+    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+      # Body
+      Value: |
+        <p>The Maps&nbsp;module features  functionalities such as markers, map points locator, etc.</p>
+        <a href="~/link.aspx?_id=21AA2C74E0E24D2CB702D30BCC156D21&amp;_z=z">See the example here. </a>

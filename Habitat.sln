@@ -153,9 +153,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Installer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Installer.Tests", "src\Framework\Installer\tests\Habitat.Framework.Installer.Tests.csproj", "{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Office", "Office", "{6D6721F4-AF10-4FFF-9C82-796C6EAF9585}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maps", "Maps", "{6D6721F4-AF10-4FFF-9C82-796C6EAF9585}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Office", "src\Domain\Office\code\Habitat.Office.csproj", "{19CE4259-BD16-4239-AC7C-22220FB26575}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Maps", "src\Domain\Maps\code\Habitat.Maps.csproj", "{19CE4259-BD16-4239-AC7C-22220FB26575}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
