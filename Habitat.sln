@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.SitecoreExtensions", "src\Framework\SitecoreExtensions\code\Habitat.Framework.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
@@ -156,6 +156,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Installer", "src\Framework\Installer\code\Habitat.Framework.Installer.csproj", "{622EBD86-43A5-4857-965C-1724F714012A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Framework.Installer.Tests", "src\Framework\Installer\tests\Habitat.Framework.Installer.Tests.csproj", "{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Person.Tests", "src\Domain\Person\tests\Habitat.Person.Tests.csproj", "{931B6ABB-1791-44F8-9727-4110FB59C961}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -539,6 +541,14 @@ Global
 		{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}.Release|x64.ActiveCfg = Release|Any CPU
 		{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}.Release|x64.Build.0 = Release|Any CPU
+		{931B6ABB-1791-44F8-9727-4110FB59C961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{931B6ABB-1791-44F8-9727-4110FB59C961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{931B6ABB-1791-44F8-9727-4110FB59C961}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{931B6ABB-1791-44F8-9727-4110FB59C961}.Debug|x64.Build.0 = Debug|Any CPU
+		{931B6ABB-1791-44F8-9727-4110FB59C961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{931B6ABB-1791-44F8-9727-4110FB59C961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{931B6ABB-1791-44F8-9727-4110FB59C961}.Release|x64.ActiveCfg = Release|Any CPU
+		{931B6ABB-1791-44F8-9727-4110FB59C961}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -611,5 +621,6 @@ Global
 		{F82B7F7C-BDA9-4204-97E1-456E406A251A} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
 		{622EBD86-43A5-4857-965C-1724F714012A} = {F82B7F7C-BDA9-4204-97E1-456E406A251A}
 		{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D} = {F82B7F7C-BDA9-4204-97E1-456E406A251A}
+		{931B6ABB-1791-44F8-9727-4110FB59C961} = {18A4B060-7586-4321-806B-0325FAA01373}
 	EndGlobalSection
 EndGlobal
