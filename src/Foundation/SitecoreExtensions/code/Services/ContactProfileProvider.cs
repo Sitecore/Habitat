@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Services
 {
+  using System.Collections.Generic;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Model.Entities;
   using Sitecore.Analytics.Model.Framework;
@@ -62,6 +63,7 @@
     public IContactCommunicationProfile CommunicationProfile => this.GetFacet<IContactCommunicationProfile>("Communication Profile");
 
     public IContactPhoneNumbers PhoneNumbers => this.GetFacet<IContactPhoneNumbers>("Phone Numbers");
+    public IEnumerable<IBehaviorProfileContext> BehaviorProfiles =>  this.Contact.BehaviorProfiles.Profiles;
 
     public Contact Flush()
     {

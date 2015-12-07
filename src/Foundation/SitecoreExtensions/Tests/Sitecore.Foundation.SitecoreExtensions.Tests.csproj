@@ -66,6 +66,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Model, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.FakeDb, Version=0.35.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.FakeDb.0.35.0\lib\net45\Sitecore.FakeDb.dll</HintPath>
       <Private>True</Private>
@@ -120,6 +124,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RenderingPropertiesRepositoryTests.cs" />
     <Compile Include="Repositories\DatabaseRepository.cs" />
+    <Compile Include="Services\ContactProfileProviderTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
