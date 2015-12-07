@@ -130,10 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Indexing\NewsIndexContentProvider.cs" />
+    <Compile Include="Query.cs" />
     <Compile Include="Repositories\INewsRepository.cs" />
     <Compile Include="Controller\NewsController.cs" />
     <Compile Include="Repositories\NewsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchSettings.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>

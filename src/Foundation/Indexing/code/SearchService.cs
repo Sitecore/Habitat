@@ -36,7 +36,14 @@
         queryable = SetQueryRoot(queryable, root);
         queryable = this.FilterOnPresentationOnly(queryable);
         queryable = FilterOnLanguage(queryable);
-        queryable = this.FilterOnTemplates(queryable);
+        if (this.Settings.Tempaltes != null && this.Settings.Tempaltes.Any())
+        {
+          queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Tempaltes));
+        }
+        else
+        {
+          queryable = this.FilterOnTemplates(queryable);
+        }
         queryable = this.AddContentPredicates(queryable, query);
         queryable = AddFacets(queryable);
         if (query.IndexOfFirstResult > 0)
@@ -48,8 +55,25 @@
           queryable = queryable.Take(query.NoOfResults);
         }
         var results = queryable.GetResults();
-
         return SearchResultsRepository.Create(results, query);
+      }
+    }
+
+    public List<SearchHit<SearchResultItem>> FindAll()
+    {
+      using (var context = ContentSearchManager.GetIndex(this.IndexName).CreateSearchContext())
+      {
+        var root = this.Settings.Root;
+        var queryable = context.GetQueryable<SearchResultItem>();
+        queryable = SetQueryRoot(queryable, root);
+        queryable = queryable.Where(PredicateBuilder.True<SearchResultItem>());
+        if (this.Settings.Tempaltes != null && this.Settings.Tempaltes.Any())
+        {
+          queryable = queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Tempaltes));
+        }
+        
+        var results = queryable.GetResults().Hits.ToList();
+        return results;
       }
     }
 
