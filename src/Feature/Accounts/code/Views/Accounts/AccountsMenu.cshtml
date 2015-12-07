@@ -22,7 +22,7 @@
         <li>
             <div class="accounts-details">
                 <dl class="dl-horizontal">
-                    @if (!String.IsNullOrEmpty(Sitecore.Context.User.Profile.FullName))
+                    @if (!string.IsNullOrWhiteSpace(Sitecore.Context.User.Profile.FullName))
                     {
                     <dt>@Captions.Name</dt>
                         <dd>@Sitecore.Context.User.Profile["FirstName"]<br/>@Sitecore.Context.User.Profile["LastName"]</dd>
