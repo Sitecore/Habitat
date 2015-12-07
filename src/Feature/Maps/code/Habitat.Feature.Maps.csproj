@@ -135,9 +135,9 @@
     <Folder Include="Content\Media\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Framework\SitecoreExtensions\code\Habitat.Framework.SitecoreExtensions.csproj">
+    <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
-      <Name>Habitat.Framework.SitecoreExtensions</Name>
+      <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

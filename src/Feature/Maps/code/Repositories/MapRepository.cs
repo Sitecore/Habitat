@@ -1,8 +1,8 @@
 ﻿namespace Habitat.Maps.Repositories
 {
   using System.Collections.Generic;
-  using Habitat.Framework.SitecoreExtensions.Extensions;
   using Sitecore.Data.Items;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class MapRepository : IMapRepository
   {
