@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Repositories
 {
+  using Sitecore.Analytics.Data.Items;
   using Sitecore.Mvc.Presentation;
 
   public class RenderingPropertiesRepository : IRenderingPropertiesRepository
@@ -13,7 +14,14 @@
         var parameters = currentContext.Properties["Parameters"];
         if (parameters != null)
         {
-          Sitecore.Reflection.ReflectionUtil.SetProperties(obj, parameters);
+          try
+          {
+            Sitecore.Reflection.ReflectionUtil.SetProperties(obj, parameters);
+          }
+          catch (Exception e)
+          {
+              Sitecore.Diagnostics.Log.Error(e.Message, this); 
+          }
         }
       }
 

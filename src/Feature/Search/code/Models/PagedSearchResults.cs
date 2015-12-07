@@ -5,6 +5,7 @@
   public class PagedSearchResults : IPageble
   {
     public const int DefaultResultsOnPage = 4;
+    public const int DefaultPagesToShow = 5;
 
     
     private int resultsOnPage;
@@ -13,9 +14,9 @@
     public PagedSearchResults(int page, int totalResults, int pagesToShow, int resultsOnPage)
     {
       this.Page = page;
-      this.visiblePagesCount = pagesToShow;
+      this.visiblePagesCount = pagesToShow <= 1 ? DefaultPagesToShow : pagesToShow;
       this.TotalResults = totalResults;
-      this.ResultsOnPage = resultsOnPage;
+      this.ResultsOnPage = resultsOnPage <= 1 ? DefaultResultsOnPage : resultsOnPage;
     }
 
     public virtual int TotalPagesCount
