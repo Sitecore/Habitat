@@ -23,6 +23,17 @@
   /// </summary>
   public static class ItemExtensions
   {
+
+    public static string DisplayName(this ID itemId)
+    {
+      return DatabaseRepository.GetActiveDatabase().GetItem(itemId)?.DisplayName;
+    }
+
+    public static string DisplayName(this Guid itemId)
+    {
+      return DisplayName(new ID(itemId));
+    }
+
     public static string Url(this Item item, UrlOptions options = null)
     {
       if (item == null)

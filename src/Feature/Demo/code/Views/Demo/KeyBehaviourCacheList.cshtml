@@ -12,15 +12,17 @@
       </div>
       <div class="panel-collapse collapse" id="@(Model.ElementId)" aria-expanded="false" style="height: 79px;">
         <div class="panel-body">
-          @foreach (var entry in @Model.Entries)
-          {
-            <dt>
-              @entry.Id.GetItemDisplayName()
-            </dt>
-            <dd>
-              @entry.DateTime
-            </dd>
-          }
+          <dl>
+            @foreach (var entry in @Model.Entries)
+            {
+              <dt>
+                @entry.Id.DisplayName()
+              </dt>
+              <dd>
+                @entry.DateTime
+              </dd>
+            }
+          </dl>
         </div>
       </div>
     </div>

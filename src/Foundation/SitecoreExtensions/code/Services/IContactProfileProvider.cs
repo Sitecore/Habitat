@@ -7,7 +7,7 @@
   {
     IContactPersonalInfo PersonalInfo { get; }
 
-    IContactAddresses Adresses { get; }
+    IContactAddresses Addresses { get; }
 
     IContactEmailAddresses Emails { get; }
 
@@ -17,6 +17,9 @@
 
     Contact Flush();
 
-    Contact Contact{ get; }
+    Contact Contact { get; }
+    IContactPicture Picture { get; }
+    IContactPreferences Preferences { get; }
+    IKeyBehaviorCache KeyBehaviorCache { get; }
   }
 }

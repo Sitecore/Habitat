@@ -47,9 +47,15 @@
       }
     }
 
+    public IContactPicture Picture => this.GetFacet<IContactPicture>("Picture");
+
+    public IContactPreferences Preferences => this.GetFacet<IContactPreferences>("Preferences");
+
+    public IKeyBehaviorCache KeyBehaviorCache => this.Contact?.Attachments["KeyBehaviorCache"] as IKeyBehaviorCache;
+
     public IContactPersonalInfo PersonalInfo => this.GetFacet<IContactPersonalInfo>("Personal");
 
-    public IContactAddresses Adresses { get; }
+    public IContactAddresses Addresses => this.GetFacet<IContactAddresses>("Addresses");
 
     public IContactEmailAddresses Emails => this.GetFacet<IContactEmailAddresses>("Emails");
 

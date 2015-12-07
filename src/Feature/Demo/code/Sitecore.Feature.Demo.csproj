@@ -118,7 +118,6 @@
     <Content Include="App_Config\Include\Feature\Feature.Demo.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Content\Site.css" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Demo\KeyBehaviourCacheList.cshtml" />
@@ -158,7 +157,9 @@
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
