@@ -1,8 +1,8 @@
 ﻿---
-ID: 9bd240d2-a645-4e05-9412-5905729cfa51
-Parent: 1e6a8c8c-6646-4776-8ab4-615265669633
-Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Habitat/Domain/Maps/_MapPoint/MapPoint
+ID: 02eda08e-78e1-409c-9655-a2f43abe09f3
+Parent: da61ad50-8fdb-4252-a68f-b4470b1c9fe8
+Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+Path: /sitecore/layout/Renderings/Feature/Maps
 Languages:
 - Language: en
   Versions:
@@ -10,7 +10,7 @@ Languages:
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20151203T130847Z
+      Value: 20151203T082037Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
       # __Created by
       Value: sitecore\admin

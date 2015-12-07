@@ -2,7 +2,7 @@
 ID: 31713995-c6bf-4ccb-8807-198493508afa
 Parent: b327be93-876a-49c3-9275-422937bca4a3
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Habitat/Domain/Maps/_MapPoints Folder
+Path: /sitecore/templates/Feature/Maps/_MapPoints Folder
 SharedFields:
 - ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
   # __Base template

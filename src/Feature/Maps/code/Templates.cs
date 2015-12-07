@@ -1,4 +1,4 @@
-﻿namespace Habitat.Feature.Maps
+﻿namespace Sitecore.Feature.Maps
 {
   using Sitecore.Data;
 

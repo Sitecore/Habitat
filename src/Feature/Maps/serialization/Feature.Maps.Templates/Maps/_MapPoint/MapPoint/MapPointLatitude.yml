@@ -1,15 +1,15 @@
 ﻿---
-ID: 0295c01d-214c-4c23-afc2-3f0b4e88b643
+ID: 67ebbb8d-88bb-41a5-96ef-cedb7b9b637e
 Parent: 9bd240d2-a645-4e05-9412-5905729cfa51
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Habitat/Domain/Maps/_MapPoint/MapPoint/MapPointAddress
+Path: /sitecore/templates/Feature/Maps/_MapPoint/MapPoint/MapPointLatitude
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type
-  Value: Multi-Line Text
+  Value: Single-Line Text
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder
-  Value: 200
+  Value: 300
 Languages:
 - Language: en
   Versions:
@@ -17,4 +17,4 @@ Languages:
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20151204T040001Z
+      Value: 20151203T130847Z

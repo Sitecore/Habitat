@@ -155,11 +155,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Install
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maps", "Maps", "{6D6721F4-AF10-4FFF-9C82-796C6EAF9585}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Feature.Maps", "src\Feature\Maps\code\Habitat.Feature.Maps.csproj", "{19CE4259-BD16-4239-AC7C-22220FB26575}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Maps", "src\Feature\Maps\code\Sitecore.Feature.Maps.csproj", "{19CE4259-BD16-4239-AC7C-22220FB26575}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Feature.Maps.Specflow", "src\Feature\Maps\specs\Habitat.Feature.Maps.Specflow.csproj", "{8CB3AF5A-1718-4C92-893B-B8387A70AA4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Maps.Specflow", "src\Feature\Maps\specs\Sitecore.Feature.Maps.Specflow.csproj", "{8CB3AF5A-1718-4C92-893B-B8387A70AA4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Feature.Maps.Tests", "src\Feature\Maps\Tests\Habitat.Feature.Maps.Tests.csproj", "{268D8E32-75BB-4830-9D0E-3F70E1C75A5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Maps.Tests", "src\Feature\Maps\Tests\Sitecore.Feature.Maps.Tests.csproj", "{268D8E32-75BB-4830-9D0E-3F70E1C75A5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

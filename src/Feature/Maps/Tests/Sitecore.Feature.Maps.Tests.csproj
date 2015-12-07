@@ -7,8 +7,8 @@
     <ProjectGuid>{268D8E32-75BB-4830-9D0E-3F70E1C75A5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Feature.Maps.Tests</RootNamespace>
-    <AssemblyName>Habitat.Feature.Maps.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Maps.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Maps.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

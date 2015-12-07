@@ -7,8 +7,8 @@
     <ProjectGuid>{8CB3AF5A-1718-4C92-893B-B8387A70AA4E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Habitat.Feature.Maps.Specflow</RootNamespace>
-    <AssemblyName>Habitat.Feature.Maps.Specflow</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Maps.Specflow</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Maps.Specflow</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

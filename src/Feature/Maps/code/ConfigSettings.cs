@@ -1,9 +1,9 @@
-﻿namespace Habitat.Feature.Maps
+﻿namespace Sitecore.Feature.Maps
 {
   using Sitecore.Configuration;
 
   public class ConfigSettings
   {
-    public static string GoogleMapApiKey => Settings.GetSetting("Habitat.Feature.Maps.GoogleMapApiKey", "");
+    public static string GoogleMapApiKey => Settings.GetSetting("Sitecore.Feature.Maps.GoogleMapApiKey", "");
   }
 }
