@@ -1,10 +1,10 @@
-﻿namespace Habitat.Maps.Controllers
+﻿namespace Habitat.Feature.Maps.Controllers
 {
   using System;
   using System.Linq;
   using System.Web.Mvc;
-  using Habitat.Maps.Models;
-  using Habitat.Maps.Repositories;
+  using Habitat.Feature.Maps.Models;
+  using Habitat.Feature.Maps.Repositories;
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Mvc.Controllers;

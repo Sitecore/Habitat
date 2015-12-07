@@ -1,4 +1,4 @@
-﻿namespace Habitat.Maps.Repositories
+﻿namespace Habitat.Feature.Maps.Repositories
 {
   using System.Collections.Generic;
   using Sitecore.Data.Items;
