@@ -4,6 +4,7 @@ namespace Sitecore.Feature.Demo.Models
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.Analytics.Tracking;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class BehaviorProfile
   {
@@ -16,7 +17,7 @@ namespace Sitecore.Feature.Demo.Models
 
 
     public Guid Id => behaviorProfileContext.Id.Guid;
-    public string Name => Context.Database.GetItem(behaviorProfileContext.Id).DisplayName;
+    public string Name => behaviorProfileContext.Id.DisplayName();
 
 
     public int NumberOfTimesScored => behaviorProfileContext.NumberOfTimesScored;
