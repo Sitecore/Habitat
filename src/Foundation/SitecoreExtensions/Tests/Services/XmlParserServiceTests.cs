@@ -24,14 +24,14 @@
 
     [Theory]
     [AutoDbData]
-    public void ValidateAndReturnXmlDocumentShouldReturnNullForEmptyString(TestXmlParser service)
+    public void ValidateAndReturnXmlDocument_EmptyString_ShouldReturnNull(TestXmlParser service)
     {
       service.ValidateAndReturnXmlDocument(string.Empty).Should().BeNull();
     }
 
     [Theory]
     [AutoDbData]
-    public void ValidateAndReturnXmlDocumentShouldThrowExceptionForInvalidXml(TestXmlParser service)
+    public void ValidateAndReturnXmlDocument_NotExpectedXml_ShouldThrowException(TestXmlParser service)
     {
       Action a = () => service.ValidateAndReturnXmlDocument("<data/>");
       a.ShouldThrow<ArgumentException>().WithMessage("Xml is not a valid image");
@@ -39,7 +39,7 @@
 
     [Theory]
     [AutoDbData]
-    public void ValidateAndReturnXmlDocumentShouldReturnXmlDocument(TestXmlParser service)
+    public void ValidateAndReturnXmlDocument_ExpectedXml_ShouldReturnXmlDocument(TestXmlParser service)
     {
       var validateAndReturnXmlDocument = service.ValidateAndReturnXmlDocument("<image/>");
       validateAndReturnXmlDocument.Should().NotBeNull();
@@ -49,7 +49,7 @@
 
     [Theory]
     [AutoDbData]
-    public void GetAttributeShouldReturnEmptyString(TestXmlParser service)
+    public void GetAttributeShouldReturn_NotExistentAttribute_EmptyString(TestXmlParser service)
     {
 
       var doc = new XmlDocument();
@@ -62,7 +62,7 @@
 
     [Theory]
     [AutoDbData]
-    public void GetAttributeShouldReturnValue(TestXmlParser service)
+    public void GetAttributeShould_ValidAttribute_ReturnValue(TestXmlParser service)
     {
 
       var doc = new XmlDocument();
