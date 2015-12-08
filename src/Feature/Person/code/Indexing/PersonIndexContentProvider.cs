@@ -2,6 +2,7 @@
 {
   using System;
   using System.Collections.Generic;
+  using System.Diagnostics.CodeAnalysis;
   using System.Linq.Expressions;
   using Sitecore.Foundation.Indexing.Infrastructure;
   using Sitecore.Foundation.Indexing.Models;
@@ -19,6 +20,8 @@
       Templates.Employee.ID
     };
 
+    //TODO: Unit test
+    [ExcludeFromCodeCoverage]
     public override Expression<Func<SearchResultItem, bool>> GetQueryPredicate(IQuery query)
     {
       var fieldNames = new[]
@@ -28,6 +31,8 @@
       return this.GetFreeTextPredicate(fieldNames, query);
     }
 
+    //TODO: Unit test
+    [ExcludeFromCodeCoverage]
     public override void FormatResult(SearchResultItem item, ISearchResult formattedResult)
     {
       var contentItem = item.GetItem();
