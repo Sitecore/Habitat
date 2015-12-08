@@ -39,7 +39,6 @@ Scenario: Demo_Show Tracking Information_UC2_Contact_Few Visits
 	| 2                | 20               | 
 
 
-
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC3_Contact_Identification 
 	Given Habitat website is opened on Main Page
@@ -110,8 +109,7 @@ Scenario: Demo_Show Tracking Information_UC4_Contact_Classification_Existing cus
 	| Bot - Unidentified  | unchecked      |
 	| Bot - Auto-detected | unchecked      |
 	| Bot - Malicious     | unchecked      |
-	 
-		 
+	 	 
 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC5_This Visit_First Visit 
@@ -145,7 +143,6 @@ Scenario: Demo_Show Tracking Information_UC5_This Visit_Few Visits and pages
 	Then Following This Visit section contains
 	| Pages Viewed | Engagement value |
 	| 2            | 10               |
-
 
 
 @NeedImplementation
@@ -207,8 +204,6 @@ Scenario: Demo_Show Tracking Information_UC9_Device
 	| Computer    | Misc   | Windows 7 (Microsoft) | Unidentified | Unknown        | Unknown       |
 
 
-
-
 @NeedImplemantation 
 Scenario: Demo_Show Tracking Information_UC10_Pages_Shown pages 
 	Given Habitat website is opened on Main Page
@@ -250,9 +245,6 @@ Scenario: Demo_Show Tracking Information_UC11_Goals_Goals archived
 	| Home Page (10)       |
 
 
-
-
-
 @NeedImplementation 
 Scenario: Demo_Show Tracking Information_UC12_Engagement          
 	Given Habitat website is opened on http://habitat.test5ua1.dk.sitecore.net/Register?sc_camp=9AC6AD85B15A4A5BB14337185A19364E>
@@ -261,3 +253,10 @@ Scenario: Demo_Show Tracking Information_UC12_Engagement
 	Then Following Engagement section contains
 	| Engagement plan name |
 	| Register Page Open   |
+
+
+@NeedImplementation
+Scenario: Demo_Show Tracking Information_Bug36059_Tracking information panel is empty in Experience Editor
+	Given Admin user is logged into Habitat
+	When Admin launches <Experience Editor>
+	Then there is no <Info-sign> in the right down corner of the page

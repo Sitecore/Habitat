@@ -34,9 +34,9 @@ namespace Habitat.Demo.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Mockup of External page", "\r\nIn order to start a demo story from an external page\nAs a technical presales co" +
-                    "nsultant\nI want to be able to show a mockup of an external page, e.g. search eng" +
-                    "ine page with adword links to a campaign on the website", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Mockup of External page", "\nIn order to start a demo story from an external page\nAs a technical presales con" +
+                    "sultant\nI want to be able to show a mockup of an external page, e.g. search engi" +
+                    "ne page with adword links to a campaign on the website", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
