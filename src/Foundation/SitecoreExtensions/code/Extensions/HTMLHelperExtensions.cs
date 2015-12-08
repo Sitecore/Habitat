@@ -45,9 +45,7 @@
 
     public static HtmlString DynamicPlaceholder(this SitecoreHelper helper, string placeholderName, bool useStaticPlaceholderNames = false)
     {
-      if (useStaticPlaceholderNames)
-        return helper.Placeholder(placeholderName);
-      return DynamicPlaceholderExtension.DynamicPlaceholder(helper, placeholderName);
+      return useStaticPlaceholderNames ? helper.Placeholder(placeholderName) : DynamicPlaceholderExtension.DynamicPlaceholder(helper, placeholderName);
     }
 
     public static HtmlString Field(this SitecoreHelper helper, ID fieldID)
