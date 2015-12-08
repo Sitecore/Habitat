@@ -101,7 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Person\EmployeeContactLinks.cshtml" />
-    <Content Include="App_Config\Include\Habitat\Habitat.Person.config">
+    <Content Include="App_Config\Include\Feature\Habitat.Person.config">
       <SubType>Designer</SubType>
     </Content>
     <None Include="Web.config" />
@@ -121,7 +121,7 @@
     <Content Include="Views\Person\PersonPhoto.cshtml" />
     <Content Include="Views\Person\EmployeeDetails.cshtml" />
     <Content Include="Views\Person\EmployeeContactTeaser.cshtml" />
-    <Content Include="App_Config\Include\Habitat\Habitat.Person.Serialization.config" />
+    <Content Include="App_Config\Include\Feature\Habitat.Person.Serialization.config" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
