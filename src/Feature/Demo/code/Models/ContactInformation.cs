@@ -34,7 +34,7 @@ namespace Sitecore.Feature.Demo.Models
       }
     }
 
-    public IContactPicture Picture => contactProfileProvider.Picture;
+    public IContactPicture Picture => contactProfileProvider.Picture?.Picture == null ? null : contactProfileProvider.Picture;
     public IContactPersonalInfo PersonalInfo => contactProfileProvider.PersonalInfo;
     public IContactAddresses Addresses => contactProfileProvider.Addresses;
     public IContactPhoneNumbers PhoneNumbers => contactProfileProvider.PhoneNumbers;

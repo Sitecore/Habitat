@@ -50,7 +50,7 @@
     <div class="panel-collapse collapse" id="contactPersonalData">
       <div class="panel-body">
         <dl class="list-unstyled">
-          @if (Model.Picture != null && Model.Picture.Picture.Length > 0)
+          @if (Model.Picture?.Picture != null && Model.Picture.Picture.Length > 0)
           {
             <dt>@DictionaryRepository.Get("/Demo/contactDetails/Picture", "Picture")</dt>
             <dd>

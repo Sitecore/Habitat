@@ -5,8 +5,7 @@ namespace Sitecore.Foundation.Assets.Models
 
   internal class AssetRequirementCache : CustomCache
   {
-    public AssetRequirementCache(long maxSize)
-      : base("Habitat.AssetRequirements", maxSize)
+    public AssetRequirementCache(long maxSize) : base("Sitecore.Foundation.AssetRequirements", maxSize)
     {
     }
 

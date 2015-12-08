@@ -26,9 +26,29 @@ gulp.task("01-Copy-Sitecore-Lib", function () {
 
 gulp.task("02-Publish-All-Projects", function (callback) {
   runSequence(
-    "Publish-Framework-Projects",
-    "Publish-Domain-Projects",
+    "Publish-Foundation-Projects",
+    "Publish-Feature-Projects",
     "Publish-Project-Projects", callback);
+});
+
+gulp.task("03-Apply-Xml-Transform", function () {
+  return gulp.src("./src/Project/**/*Website.csproj")
+    .pipe(foreach(function (stream, file) {
+      return stream
+        .pipe(debug({ title: "Applying transform project:" }))
+        .pipe(msbuild({
+          targets: ["ApplyTransform"],
+          configuration: config.buildConfiguration,
+          logCommand: true,
+          verbosity: "normal",
+          maxcpucount: 0,
+          toolsVersion: 14.0,
+          properties: {
+            WebConfigToTransform: config.websiteRoot + "\\web.config"
+          }
+        }));
+    }));
+
 });
 
 /*****************************
@@ -60,31 +80,11 @@ var publishProjects = function (location, dest) {
     }));
 };
 
-gulp.task("Apply-Xml-Transform", function () {
-  return gulp.src("./src/Project/**/*Website.csproj")
-    .pipe(foreach(function (stream, file) {
-      return stream
-        .pipe(debug({ title: "Applying transform project:" }))
-        .pipe(msbuild({
-          targets: ["ApplyTransform"],
-          configuration: config.buildConfiguration,
-          logCommand: true,
-          verbosity: "normal",
-          maxcpucount: 0,
-          toolsVersion: 14.0,
-          properties: {
-            WebConfigToTransform: config.websiteRoot + "\\web.config"
-          }
-        }));
-    }));
-
-});
-
-gulp.task("Publish-Framework-Projects", function () {
+gulp.task("Publish-Foundation-Projects", function () {
   return publishProjects("./src/Foundation");
 });
 
-gulp.task("Publish-Domain-Projects", function () {
+gulp.task("Publish-Feature-Projects", function () {
   return publishProjects("./src/Feature");
 });
 
@@ -184,8 +184,8 @@ gulp.task("CI-Publish", function (callback) {
   config.buildConfiguration = "Release";
   fs.mkdirSync(config.websiteRoot);
   runSequence(
-    "Publish-Framework-Projects",
-    "Publish-Domain-Projects",
+    "Publish-Foundation-Projects",
+    "Publish-Feature-Projects",
     "Publish-Project-Projects", callback);
 });
 
