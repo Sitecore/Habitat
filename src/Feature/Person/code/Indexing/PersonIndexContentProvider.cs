@@ -20,8 +20,6 @@
       Templates.Employee.ID
     };
 
-    //TODO: Unit test
-    [ExcludeFromCodeCoverage]
     public override Expression<Func<SearchResultItem, bool>> GetQueryPredicate(IQuery query)
     {
       var fieldNames = new[]
@@ -31,8 +29,6 @@
       return this.GetFreeTextPredicate(fieldNames, query);
     }
 
-    //TODO: Unit test
-    [ExcludeFromCodeCoverage]
     public override void FormatResult(SearchResultItem item, ISearchResult formattedResult)
     {
       var contentItem = item.GetItem();
