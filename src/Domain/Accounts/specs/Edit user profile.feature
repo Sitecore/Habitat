@@ -11,7 +11,10 @@ Scenario: Account_Edit user profile_UC1_Open Edit Profile page
 
 @InDesign
 Scenario: Account_Edit user profile_UC2_Update all fields_First time
-	Given Habitat website is opened on Edit Profile page
+	Given User with following data is registered in Habitat
+	| Email              | Password | ConfirmPassword |
+	| kov10@sitecore.net | k        | k               |
+	And Habitat website is opened on Edit Profile page
 	When User inputs data in to the fields
 	| Last Name | First Name | Phone number    |
 	| Teltov    | Konstantin | +38(067)3333333 |
@@ -29,7 +32,7 @@ Scenario: Account_Edit user profile_UC2_Update all fields_First time
 
 @InDesign
 Scenario: Account_Edit user profile_UC3_Update all fields_Change user info
-	Given Habitat user was created and registered with following info
+	Given Habitat user was created and updated with following info
 	| Last Name | First Name | Phone number    | Interests |
 	| Teltov    | Konstantin | +38(067)3333333 | Swiming   | 
 	And Habitat website is opened on Edit Profile page
@@ -70,9 +73,9 @@ Scenario: Account_Edit user profile_UC4_Update one of the fields_First time
 
 @InDesign
 Scenario: Account_Edit user profile_UC5_Update one of the fields_Change user info
-	Given Habitat user was created and registered with following info
+	Given Habitat user was created and updated with following info
 	| Last Name | First Name | Phone number    | Interests |
-	| Teltov    | Konstantin | +38(067)3333333 | Swiming   | 
+	| Teltov    | Konstantin | +38(067)3333333 | Swiming   |  
 	And Habitat website is opened on Edit Profile page
 	When User inputs data in to the fields
 	| Last Name |

@@ -57,17 +57,26 @@ namespace Habitat.Accounts.Specflow.Infrastructure
             => this.Driver.FindElements(By.CssSelector(".col-sm-4 form input"));
 
         public IEnumerable<IWebElement> LoginPageButtons
-            => this.Driver.FindElements(By.CssSelector(".btn.btn-default"));
+            => this.Driver.FindElements(By.CssSelector(".btn.btn-default")).Where(el => el.Displayed).ToList();
 
       public IEnumerable<IWebElement> LoginPageLinks
-        => this.Driver.FindElements(By.CssSelector("a.btn.btn-link")).Where(el=> el.Displayed);
+        => this.Driver.WaitUntilElementsPresent(By.CssSelector("a.btn.btn-link")).Where(el=> el.Displayed).ToList();
 
-      public IEnumerable<IWebElement> LoginPageErrorMessages
+      public IEnumerable<IWebElement> PageErrorMessages
           =>
               this.Driver.FindElements(By.CssSelector(".field-validation-error.help-block"));
 
       public IEnumerable<IWebElement> UserIconDropDownButtonLinks
           => this.Driver.FindElements(By.CssSelector(".btn.btn-default"));
+
+      public IEnumerable<IWebElement> PageHelpBlock
+          => this.Driver.FindElements(By.CssSelector(".help-block"));
+
+    public IWebElement PageAlertInfo
+      => this.Driver.WaitUntilElementPresent(By.CssSelector("div.alert.alert-info"));
+
+    public IWebElement RegisterEmail
+      => this.Driver.FindElement(By.Id("registerEmail"));
 
     }
 }

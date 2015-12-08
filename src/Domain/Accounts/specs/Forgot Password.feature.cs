@@ -34,8 +34,7 @@ namespace Habitat.Accounts.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Forgot Password", "\r\nIn order to be able to login \r\nAs a site visitor\r\nI want to be able to restore " +
-                    "password", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Forgot Password", "", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -75,144 +74,92 @@ namespace Habitat.Accounts.Specflow
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Forgot Password")]
-        [Xunit.TraitAttribute("Description", "Accounts_Forgot Password_UC1_Open Password Resert page")]
-        public virtual void Accounts_ForgotPassword_UC1_OpenPasswordResertPage()
+        [Xunit.TraitAttribute("Description", "Accounts_Forgot Password_UC1_Open Password Resert page on Login Page")]
+        public virtual void Accounts_ForgotPassword_UC1_OpenPasswordResertPageOnLoginPage()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Forgot Password_UC1_Open Password Resert page", new string[] {
-                        "NeedImplementation"});
-#line 8
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Forgot Password_UC1_Open Password Resert page on Login Page", new string[] {
+                        "Ready"});
+#line 6
 this.ScenarioSetup(scenarioInfo);
-#line 9
- testRunner.Given("Habitat website is opened on Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
+#line 7
+ testRunner.Given("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
  testRunner.When("Actor clicks Forgot your password? link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
- testRunner.Then("Password reset title presents on Forgot Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 12
+#line 9
+ testRunner.Then("Password Reset title presents on ForgotPassword page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 10
  testRunner.And("Page URL ends on /ForgotPassword", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Text on page"});
             table1.AddRow(new string[] {
                         "The new password will be sent to your e-mail."});
-#line 13
- testRunner.And("following text is present on the page", ((string)(null)), table1, "And ");
+#line 11
+ testRunner.And("Forgot password form contains message to user", ((string)(null)), table1, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Forgot Password")]
-        [Xunit.TraitAttribute("Description", "Accounts_Forgot Password_UC2_Check required fields")]
-        public virtual void Accounts_ForgotPassword_UC2_CheckRequiredFields()
+        [Xunit.TraitAttribute("Description", "Accounts_Forgot Password_UC2_Open Password Resert page on Login form")]
+        public virtual void Accounts_ForgotPassword_UC2_OpenPasswordResertPageOnLoginForm()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Forgot Password_UC2_Check required fields", new string[] {
-                        "NeedImplementation"});
-#line 19
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Forgot Password_UC2_Open Password Resert page on Login form", new string[] {
+                        "Ready"});
+#line 17
 this.ScenarioSetup(scenarioInfo);
-#line 20
- testRunner.Given("Habitat website is opened on Forgot Password Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 21
- testRunner.When("Actor clicks Reset Password button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Required field error message"});
+                        "Email",
+                        "Password",
+                        "ConfirmPassword"});
             table2.AddRow(new string[] {
-                        "E-mail is required"});
+                        "kov10@sitecore.net",
+                        "k",
+                        "k"});
+#line 18
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table2, "Given ");
+#line 21
+ testRunner.And("Login form is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
- testRunner.Then("System shows following error message for the E-mail field", ((string)(null)), table2, "Then ");
-#line 25
+ testRunner.When("Actor clicks Forgot your password? link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+ testRunner.Then("Password Reset title presents on ForgotPassword page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 24
  testRunner.And("Page URL ends on /ForgotPassword", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.FactAttribute()]
-        [Xunit.TraitAttribute("FeatureTitle", "Forgot Password")]
-        [Xunit.TraitAttribute("Description", "Accounts_Forgot Password_UC3_Reset password for registered user")]
-        public virtual void Accounts_ForgotPassword_UC3_ResetPasswordForRegisteredUser()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Forgot Password_UC3_Reset password for registered user", new string[] {
-                        "NeedImplementation"});
-#line 29
-this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Email",
-                        "Password",
-                        "ConfirmPassword"});
+                        "Text on page"});
             table3.AddRow(new string[] {
-                        "kov@sitecore.net",
-                        "k",
-                        "k"});
-#line 30
- testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table3, "Given ");
-#line 33
- testRunner.And("Habitat website is opened on Forgot Password Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "E-mail"});
-            table4.AddRow(new string[] {
-                        "kov@sitecore.net"});
-#line 34
- testRunner.When("Actor enters following data into E-mail field", ((string)(null)), table4, "When ");
-#line 37
- testRunner.And("Actor clicks Reset Password button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Info message on Forgot Password page"});
-            table5.AddRow(new string[] {
-                        "Your password has been reset."});
-#line 38
- testRunner.Then("Systen shows following message", ((string)(null)), table5, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Button name"});
-            table6.AddRow(new string[] {
-                        "Reset Password"});
-#line 41
- testRunner.And("Then Following buttons is no longer present on Forgot Password page", ((string)(null)), table6, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field name"});
-            table7.AddRow(new string[] {
-                        "E-mail"});
-#line 44
- testRunner.Then("Following fields is no longer present on Forgot Password page", ((string)(null)), table7, "Then ");
-#line 47
- testRunner.And("User receives an e-mail with new password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "The new password will be sent to your e-mail."});
+#line 25
+ testRunner.And("Forgot password form contains message to user", ((string)(null)), table3, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Forgot Password")]
-        [Xunit.TraitAttribute("Description", "Accounts_Forgot Password_UC4_Invalid e-mail")]
-        public virtual void Accounts_ForgotPassword_UC4_InvalidE_Mail()
+        [Xunit.TraitAttribute("Description", "Accounts_Forgot Password_UC3_Check required fields")]
+        public virtual void Accounts_ForgotPassword_UC3_CheckRequiredFields()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Forgot Password_UC4_Invalid e-mail", new string[] {
-                        "NeedImplementation"});
-#line 51
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Forgot Password_UC3_Check required fields", new string[] {
+                        "Ready"});
+#line 32
 this.ScenarioSetup(scenarioInfo);
-#line 52
- testRunner.Given("Habitat website is opened on Forgot Password Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 33
+ testRunner.Given("Habitat website is opened on Forgot Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 34
+ testRunner.When("Actor clicks Reset password button on Reset Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "E-mail"});
-            table8.AddRow(new string[] {
-                        "kov$sitecore.net"});
-#line 53
- testRunner.When("Actor enters following text to E-mail field", ((string)(null)), table8, "When ");
-#line 56
- testRunner.And("Actor clicks Reset Password button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "E-mail field error message"});
-            table9.AddRow(new string[] {
-                        "Invalid email address"});
-#line 57
- testRunner.Then("System shows following error message for the E-mail field", ((string)(null)), table9, "Then ");
-#line 60
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Required field error message"});
+            table4.AddRow(new string[] {
+                        "E-mail is required"});
+#line 35
+ testRunner.Then("System shows following error message for the E-mail field", ((string)(null)), table4, "Then ");
+#line 38
  testRunner.And("Page URL ends on /ForgotPassword", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -220,42 +167,131 @@ this.ScenarioSetup(scenarioInfo);
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Forgot Password")]
-        [Xunit.TraitAttribute("Description", "Accounts_Forgot Password_UC5_Try to reset password for unknown user")]
-        public virtual void Accounts_ForgotPassword_UC5_TryToResetPasswordForUnknownUser()
+        [Xunit.TraitAttribute("Description", "Accounts_Forgot Password_UC4_Reset password for registered user")]
+        public virtual void Accounts_ForgotPassword_UC4_ResetPasswordForRegisteredUser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Forgot Password_UC5_Try to reset password for unknown user", new string[] {
-                        "NeedImplementation"});
-#line 64
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Forgot Password_UC4_Reset password for registered user", new string[] {
+                        "Ready"});
+#line 42
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table10.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k",
                         "k"});
+#line 43
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table5, "Given ");
+#line 46
+ testRunner.And("Habitat website is opened on Forgot Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "E-mail"});
+            table6.AddRow(new string[] {
+                        "kov@sitecore.net"});
+#line 47
+ testRunner.When("Actor enters following data into E-mail field", ((string)(null)), table6, "When ");
+#line 50
+ testRunner.And("Actor clicks Reset password button on Reset Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Info message on Forgot Password page"});
+            table7.AddRow(new string[] {
+                        "Your password has been reset."});
+#line 51
+ testRunner.Then("Systen shows following Alert message", ((string)(null)), table7, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Button name"});
+            table8.AddRow(new string[] {
+                        "Reset Password"});
+#line 54
+ testRunner.And("Then Following buttons is no longer present on Forgot Password page", ((string)(null)), table8, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Field name"});
+            table9.AddRow(new string[] {
+                        "E-mail"});
+#line 57
+ testRunner.Then("Following fields is no longer present on Forgot Password page", ((string)(null)), table9, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Forgot Password")]
+        [Xunit.TraitAttribute("Description", "Accounts_Forgot Password_UC5_Invalid e-mail")]
+        public virtual void Accounts_ForgotPassword_UC5_InvalidE_Mail()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Forgot Password_UC5_Invalid e-mail", new string[] {
+                        "Ready"});
 #line 65
- testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table10, "Given ");
-#line 68
- testRunner.And("Habitat website is opened on Forgot Password Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
+#line 66
+ testRunner.Given("Habitat website is opened on Forgot Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "E-mail"});
+            table10.AddRow(new string[] {
+                        "kov$sitecore.net"});
+#line 67
+ testRunner.When("Actor enters following data into E-mail field", ((string)(null)), table10, "When ");
+#line 70
+ testRunner.And("Actor clicks Reset password button on Reset Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                        "E-mail"});
+                        "E-mail field error message"});
             table11.AddRow(new string[] {
-                        "kov1@sitecore.net"});
-#line 69
- testRunner.When("Actor enters following data into E-mail field", ((string)(null)), table11, "When ");
-#line 72
- testRunner.And("Actor clicks Reset Password button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+                        "Invalid email address"});
+#line 71
+ testRunner.Then("System shows following error message for the E-mail field", ((string)(null)), table11, "Then ");
+#line 74
+ testRunner.And("Page URL ends on /ForgotPassword", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Forgot Password")]
+        [Xunit.TraitAttribute("Description", "Accounts_Forgot Password_UC6_Try to reset password for unknown user")]
+        public virtual void Accounts_ForgotPassword_UC6_TryToResetPasswordForUnknownUser()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Forgot Password_UC6_Try to reset password for unknown user", new string[] {
+                        "NeedImplementation"});
+#line 78
+this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "E-mail field error message"});
+                        "Email",
+                        "Password",
+                        "ConfirmPassword"});
             table12.AddRow(new string[] {
+                        "kov@sitecore.net",
+                        "k",
+                        "k"});
+#line 79
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table12, "Given ");
+#line 82
+ testRunner.And("Habitat website is opened on Forgot Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "E-mail"});
+            table13.AddRow(new string[] {
+                        "kov1@sitecore.net"});
+#line 83
+ testRunner.When("Actor enters following data into E-mail field", ((string)(null)), table13, "When ");
+#line 86
+ testRunner.And("Actor clicks Reset password button on Reset Password page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "E-mail field error message"});
+            table14.AddRow(new string[] {
                         "User with specified email does not exist"});
-#line 73
- testRunner.Then("Systen shows following message", ((string)(null)), table12, "Then ");
+#line 87
+ testRunner.Then("System shows following error message for the E-mail field", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

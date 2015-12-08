@@ -39,6 +39,5 @@ namespace Habitat.Accounts.Specflow.Steps
         {
             Driver.Navigate().GoToUrl(Settings.ForgotPasswordPageUrl);
         }
-
   }
 }
