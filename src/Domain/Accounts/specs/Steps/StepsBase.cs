@@ -15,7 +15,7 @@ namespace Habitat.Accounts.Specflow.Steps
     public static void Timeout()
     {
 #warning shitcode
-      Thread.Sleep(1000);
+      Thread.Sleep(3000);
     }
     public static IWebDriver Driver
     {

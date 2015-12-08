@@ -7,7 +7,9 @@ using TechTalk.SpecFlow;
 
 namespace Habitat.Accounts.Specflow.Steps
 {
-    internal class LoginSteps : StepsBase
+  using System.Net.Mime;
+
+  internal class LoginSteps : StepsBase
     {
         [Then(@"(.*) title presents on Login form")]
         public void ThenLoginTitlePresentsOnLoginForm(string title)
@@ -109,7 +111,17 @@ namespace Habitat.Accounts.Specflow.Steps
           links.All(x => elements.Contains(x, StringComparer.InvariantCultureIgnoreCase)).Should().BeTrue();
         }
 
-        [When(@"User clicks (.*) button on Login page")]
+        [When(@"Actor clicks (.*) link")]
+        public void WhenActorClicksForgotYourPasswordLink(string btnLink)
+        {
+          var forgotPasslink = this.Site.LoginPageLinks.First(el => el.Text.Equals(btnLink, StringComparison.InvariantCultureIgnoreCase));
+          forgotPasslink.Click();
+          
+        }
+
+
+
+    [When(@"User clicks (.*) button on Login page")]
         public void WhenUserClicksLoginButtonOnLoginPage(string btn)
         {
             var elements = this.Site.LoginPageButtons.First(el => el.GetAttribute("value").Contains(btn));
@@ -124,7 +136,7 @@ namespace Habitat.Accounts.Specflow.Steps
             foreach (var textMessage in textMessages)
             {
                 var found = false;
-                foreach (var webElement in this.Site.LoginPageErrorMessages)
+                foreach (var webElement in this.Site.PageErrorMessages)
                 {
                     found = webElement.Text == textMessage;
                     if (found)
