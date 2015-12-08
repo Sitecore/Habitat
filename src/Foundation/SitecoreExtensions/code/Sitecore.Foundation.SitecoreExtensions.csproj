@@ -122,7 +122,6 @@
     <Compile Include="Extensions\FieldExtensions.cs" />
     <Compile Include="Extensions\RenderingExtensions.cs" />
     <Compile Include="Extensions\ItemExtensions.cs" />
-    <Compile Include="Helpers\AnalyticsHelper.cs" />
     <Compile Include="Extensions\HTMLHelperExtensions.cs" />
     <Compile Include="HtmlHelpers\ValidationHelpers.cs" />
     <Compile Include="Model\File.cs" />
@@ -137,6 +136,9 @@
     <Compile Include="Repositories\ItemRepository.cs" />
     <Compile Include="Repositories\LinkRepository.cs" />
     <Compile Include="Repositories\RenderingPropertiesRepository.cs" />
+    <Compile Include="Services\FieldRendererService.cs" />
+    <Compile Include="Services\ContactProfileProvider.cs" />
+    <Compile Include="Services\IContactProfileProvider.cs" />
     <Compile Include="Services\XmlParserService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -168,7 +170,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56863/</IISUrl>
+          <IISUrl>http://localhost:52990/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

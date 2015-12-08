@@ -26,9 +26,29 @@ gulp.task("01-Copy-Sitecore-Lib", function () {
 
 gulp.task("02-Publish-All-Projects", function (callback) {
   runSequence(
-    "Publish-Framework-Projects",
-    "Publish-Domain-Projects",
+    "Publish-Foundation-Projects",
+    "Publish-Feature-Projects",
     "Publish-Project-Projects", callback);
+});
+
+gulp.task("03-Apply-Xml-Transform", function () {
+  return gulp.src("./src/Project/**/*Website.csproj")
+    .pipe(foreach(function (stream, file) {
+      return stream
+        .pipe(debug({ title: "Applying transform project:" }))
+        .pipe(msbuild({
+          targets: ["ApplyTransform"],
+          configuration: config.buildConfiguration,
+          logCommand: true,
+          verbosity: "normal",
+          maxcpucount: 0,
+          toolsVersion: 14.0,
+          properties: {
+            WebConfigToTransform: config.websiteRoot + "\\web.config"
+          }
+        }));
+    }));
+
 });
 
 /*****************************
@@ -60,39 +80,17 @@ var publishProjects = function (location, dest) {
     }));
 };
 
-gulp.task("Apply-Xml-Transform", function () {
-  return gulp.src("./src/Project/**/*Website.csproj")
-    .pipe(foreach(function (stream, file) {
-      return stream
-        .pipe(debug({ title: "Applying transform project:" }))
-        .pipe(msbuild({
-          targets: ["ApplyTransform"],
-          configuration: config.buildConfiguration,
-          logCommand: true,
-          verbosity: "normal",
-          maxcpucount: 0,
-          toolsVersion: 14.0,
-          properties: {
-            WebConfigToTransform: config.websiteRoot + "\\web.config"
-          }
-        }));
-    }));
-
-});
-
-gulp.task("Publish-Framework-Projects", function () {
+gulp.task("Publish-Foundation-Projects", function () {
   return publishProjects("./src/Foundation");
 });
 
-gulp.task("Publish-Domain-Projects", function () {
+gulp.task("Publish-Feature-Projects", function () {
   return publishProjects("./src/Feature");
 });
 
 gulp.task("Publish-Project-Projects", function () {
   return publishProjects("./src/Project");
 });
-
-
 
 gulp.task("Publish-Assemblies", function () {
   var root = "./src";
@@ -126,14 +124,22 @@ gulp.task("Publish-All-Views", function () {
  Watchers
 *****************************/
 gulp.task("Auto-Publish-Css", function () {
-  var root = "./src/project/design";
-  return gulp.watch(root + "/**/*.css", function (event) {
-    if (event.type === "changed") {
-      console.log("publish this file " + event.path);
-      gulp.src(event.path, { base: root }).pipe(gulp.dest(config.websiteRoot));
-    }
-    console.log("published " + event.path);
-  });
+  var root = "./src";
+  var roots = [root + "/**/assets", "!" + root + "/**/obj/**/assets"];
+  var files = "/**/*.css";
+  var destination = config.websiteRoot + "\\assets";
+  gulp.src(roots, { base: root }).pipe(
+    foreach(function (stream, rootFolder) {
+      gulp.watch(rootFolder.path + files, function (event) {
+        if (event.type === "changed") {
+          console.log("publish this file " + event.path);
+          gulp.src(event.path, { base: rootFolder.path }).pipe(gulp.dest(destination));
+        }
+        console.log("published " + event.path);
+      });
+      return stream;
+    })
+  );
 });
 
 gulp.task("Auto-Publish-Views", function () {
@@ -184,8 +190,8 @@ gulp.task("CI-Publish", function (callback) {
   config.buildConfiguration = "Release";
   fs.mkdirSync(config.websiteRoot);
   runSequence(
-    "Publish-Framework-Projects",
-    "Publish-Domain-Projects",
+    "Publish-Foundation-Projects",
+    "Publish-Feature-Projects",
     "Publish-Project-Projects", callback);
 });
 

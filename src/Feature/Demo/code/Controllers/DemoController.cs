@@ -4,11 +4,22 @@ namespace Sitecore.Feature.Demo.Controllers
   using Sitecore.Analytics;
   using Sitecore.Feature.Demo.Models;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Mvc.Controllers;
   using Sitecore.Mvc.Presentation;
 
   public class DemoController : SitecoreController
   {
+    private readonly IContactProfileProvider contactProfileProvider;
+
+    public DemoController():this(new ContactProfileProvider())
+    {
+    }
+    public DemoController(IContactProfileProvider contactProfileProvider)
+    {
+      this.contactProfileProvider = contactProfileProvider;
+    }
+
     public ActionResult VisitDetails()
     {
       if (Tracker.Current == null || Tracker.Current.Interaction == null)
@@ -20,7 +31,7 @@ namespace Sitecore.Feature.Demo.Controllers
     {
       if (Tracker.Current == null || Tracker.Current.Contact == null)
         return null;
-      return View("ContactDetails", new ContactInformation());
+      return View("ContactDetails", new ContactInformation(contactProfileProvider));
     }
 
     public ActionResult DemoContent()

@@ -13,6 +13,16 @@
 
   public class ItemExtensionsTests
   {
+
+    [Theory]
+    [AutoDbData]
+    public void DisplayNameShouldReturnActualValue([Content]Item item)
+    {
+      item.ID.DisplayName().Should().BeEquivalentTo(item.DisplayName);
+      item.ID.Guid.DisplayName().Should().BeEquivalentTo(item.DisplayName);
+    }
+
+
     [Theory]
     [AutoDbData]
     public void MediaUrlShouldThrowExceptionWhenItemNull()

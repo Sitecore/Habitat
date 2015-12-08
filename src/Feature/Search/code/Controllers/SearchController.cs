@@ -45,8 +45,9 @@
     {
       var pagingSettings =  this.renderingPropertiesRepository.Get<PagingSettings>();
       var pageNumber = page ?? 1;
-      var results = this.GetSearchResults(new SearchQuery { Query = query, Page = pageNumber, ResultsOnPage = pagingSettings.ResultsOnPage });
-      var pageble = new PagedSearchResults(pageNumber, results.TotalNumberOfResults, pagingSettings.PagesToShow, pagingSettings.ResultsOnPage);
+      var resultsOnPage = pagingSettings.ResultsOnPage <= 1 ? Models.PagedSearchResults.DefaultResultsOnPage : pagingSettings.ResultsOnPage;
+      var results = this.GetSearchResults(new SearchQuery { Query = query, Page = pageNumber, ResultsOnPage =  resultsOnPage});
+      var pageble = new PagedSearchResults(pageNumber, results.TotalNumberOfResults, pagingSettings.PagesToShow, resultsOnPage);
       pageble.Query = query;
       pageble.Results = results;
       return this.View(pageble);

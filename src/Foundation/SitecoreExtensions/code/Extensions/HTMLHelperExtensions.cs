@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Extensions
 {
+  using System;
   using System.Web;
   using System.Web.Mvc;
   using Sitecore.Data;
@@ -14,15 +15,26 @@
   /// </summary>
   public static class HtmlHelperExtensions
   {
-    public static HtmlString ImageField(this SitecoreHelper helper, string fieldName, Item item, int mh = 0, int mw = 0, string cssClass = null, bool disableWebEditing = false)
+    public static HtmlString ImageField(this SitecoreHelper helper, ID fieldID, Item item, int mh = 0, int mw = 0, string cssClass = null, bool disableWebEditing = false)
     {
-      return helper.Field(fieldName, item, new
+      return helper.Field(fieldID.ToString(), item, new
                                            {
                                              mh,
                                              mw,
                                              DisableWebEdit = disableWebEditing,
                                              @class = cssClass ?? ""
                                            });
+    }
+
+    public static HtmlString ImageField(this SitecoreHelper helper, string fieldName, Item item, int mh = 0, int mw = 0, string cssClass = null, bool disableWebEditing = false)
+    {
+      return helper.Field(fieldName, item, new
+      {
+        mh,
+        mw,
+        DisableWebEdit = disableWebEditing,
+        @class = cssClass ?? ""
+      });
     }
 
     public static EditFrameRendering BeginEditFrame<T>(this HtmlHelper<T> helper, string dataSource, string buttons)
@@ -33,9 +45,7 @@
 
     public static HtmlString DynamicPlaceholder(this SitecoreHelper helper, string placeholderName, bool useStaticPlaceholderNames = false)
     {
-      if (useStaticPlaceholderNames)
-        return helper.Placeholder(placeholderName);
-      return DynamicPlaceholderExtension.DynamicPlaceholder(helper, placeholderName);
+      return useStaticPlaceholderNames ? helper.Placeholder(placeholderName) : DynamicPlaceholderExtension.DynamicPlaceholder(helper, placeholderName);
     }
 
     public static HtmlString Field(this SitecoreHelper helper, ID fieldID)

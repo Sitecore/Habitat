@@ -4,14 +4,16 @@
   using System.Collections.Generic;
   using System.Globalization;
   using System.Linq;
+  using System.Web;
+  using Sitecore.Foundation.SitecoreExtensions.Model;
+  using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Data.Managers;
   using Sitecore.Diagnostics;
-  using Sitecore.Foundation.SitecoreExtensions.Model;
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Globalization;
   using Sitecore.Links;
   using Sitecore.Resources.Media;
@@ -23,6 +25,17 @@
   /// </summary>
   public static class ItemExtensions
   {
+
+    public static string DisplayName(this ID itemId)
+    {
+      return DatabaseRepository.GetActiveDatabase().GetItem(itemId)?.DisplayName;
+    }
+
+    public static string DisplayName(this Guid itemId)
+    {
+      return DisplayName(new ID(itemId));
+    }
+
     public static string Url(this Item item, UrlOptions options = null)
     {
       if (item == null)
@@ -151,8 +164,12 @@
       }
 
       var itemTemplate = TemplateManager.GetTemplate(item);
-      return itemTemplate != null &&
-             (itemTemplate.ID == templateItem.ID || itemTemplate.DescendsFrom(templateItem.ID));
+      return itemTemplate != null && (itemTemplate.ID == templateItem.ID || itemTemplate.DescendsFrom(templateItem.ID));
+    }
+
+    public static bool FieldHasValue(this Item item, ID fieldID)
+    {
+      return item.Fields[fieldID] != null && item.Fields[fieldID].HasValue && !string.IsNullOrWhiteSpace(item.Fields[fieldID].Value);
     }
 
     public static string GetString(this Item item, string fieldName)
@@ -317,18 +334,12 @@
 
     public static Item[] GetReferrersAsItems(this Item item)
     {
-      return Globals.LinkDatabase.GetReferrers(item)
-        .Select(i => i.GetSourceItem())
-        .Where(i => i != null)
-        .ToArray();
+      return Globals.LinkDatabase.GetReferrers(item).Select(i => i.GetSourceItem()).Where(i => i != null).ToArray();
     }
 
     public static Item[] GetReferencesAsItems(this Item item)
     {
-      return Globals.LinkDatabase.GetReferences(item)
-        .Select(i => i.GetTargetItem())
-        .Where(i => i != null)
-        .ToArray();
+      return Globals.LinkDatabase.GetReferences(item).Select(i => i.GetTargetItem()).Where(i => i != null).ToArray();
     }
 
     public static bool HasVersionedRenderings(this Item item)
@@ -360,6 +371,18 @@
     {
       var versionItem = item.Database.GetItem(item.ID, language, version);
       return versionItem != null && versionItem.HasVersionedRenderings();
+    }
+
+    public static HtmlString Field(this Item item, ID fieldId)
+    {
+      Assert.IsNotNull(item, "Item cannot be null");
+      Assert.IsNotNull(fieldId, "FieldId cannot be null");
+      return new HtmlString(FieldRendererService.RenderField(item, fieldId));
+    }
+
+    public static HtmlString Field(this Item item, ID fieldId, object parameters)
+    {
+      return new HtmlString(FieldRendererService.BeginField(fieldId, item, parameters) + FieldRendererService.EndField().ToString());
     }
   }
 }
