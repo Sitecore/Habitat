@@ -92,8 +92,6 @@ gulp.task("Publish-Project-Projects", function () {
   return publishProjects("./src/Project");
 });
 
-
-
 gulp.task("Publish-Assemblies", function () {
   var root = "./src";
   var binFiles = root + "/**/bin/Sitecore.{Feature,Foundation,Habitat}.*.{dll,pdb}";
@@ -126,14 +124,22 @@ gulp.task("Publish-All-Views", function () {
  Watchers
 *****************************/
 gulp.task("Auto-Publish-Css", function () {
-  var root = "./src/project/design";
-  return gulp.watch(root + "/**/*.css", function (event) {
-    if (event.type === "changed") {
-      console.log("publish this file " + event.path);
-      gulp.src(event.path, { base: root }).pipe(gulp.dest(config.websiteRoot));
-    }
-    console.log("published " + event.path);
-  });
+  var root = "./src";
+  var roots = [root + "/**/assets", "!" + root + "/**/obj/**/assets"];
+  var files = "/**/*.css";
+  var destination = config.websiteRoot + "\\assets";
+  gulp.src(roots, { base: root }).pipe(
+    foreach(function (stream, rootFolder) {
+      gulp.watch(rootFolder.path + files, function (event) {
+        if (event.type === "changed") {
+          console.log("publish this file " + event.path);
+          gulp.src(event.path, { base: rootFolder.path }).pipe(gulp.dest(destination));
+        }
+        console.log("published " + event.path);
+      });
+      return stream;
+    })
+  );
 });
 
 gulp.task("Auto-Publish-Views", function () {
