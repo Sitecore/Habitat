@@ -14,9 +14,7 @@
 
     private readonly ISearchServiceRepository searchServiceRepository;
 
-    public NewsRepository(Item contextItem):this(contextItem, new SearchServiceRepository(new SearchSettingsRepository()))
-    {
-    }
+    public NewsRepository(Item contextItem) : this(contextItem, new SearchServiceRepository(new SearchSettingsRepository())) { }
 
     public NewsRepository(Item contextItem, ISearchServiceRepository searchServiceRepository)
     {

@@ -16,7 +16,8 @@ namespace Sitecore.Feature.News.Repositories
       {
         Templates.NewsArticle.ID
       };
-      return null;
+
+      return settings;
     }
   }
 }

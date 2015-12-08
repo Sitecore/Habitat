@@ -131,7 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Indexing\NewsIndexContentProvider.cs" />
-    <Compile Include="Query.cs" />
     <Compile Include="Repositories\INewsRepository.cs" />
     <Compile Include="Controller\NewsController.cs" />
     <Compile Include="Repositories\ISearchSettingsRepository.cs" />

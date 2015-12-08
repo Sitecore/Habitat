@@ -44,7 +44,7 @@
     [AutoDbData]
     public void Shoul_ThrowException_IfContextItemNotSet([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository)
     {
-      Action act = () => new NewsRepository(null, searchServiceRepository);
+      Action act = () => new NewsRepository(null);
       act.ShouldThrow<ArgumentNullException>();
     }
 
@@ -54,6 +54,25 @@
     {
       Action act = () => new NewsRepository(contextItem, searchServiceRepository);
       act.ShouldThrow<ArgumentException>();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void Should_Return_LatestNews([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository, string itemName, [Substitute] SearchService searchService, ISearchSettings searchSettings, ISearchResults searchResults, List<Item> collection)
+    {
+      var id = ID.NewID;
+      searchService.Settings.Returns(searchSettings);
+      searchResults.Results.Returns(collection.Select(x=>new Foundation.Indexing.Models.SearchResult(x)));
+      searchService.FindAll().Returns(searchResults);
+      searchServiceRepository.Get().Returns(searchService);
+      var db = new Db
+      {
+        new DbItem(itemName, id, Templates.NewsFolder.ID)
+      };
+      var contextItem = db.GetItem(id);
+      var repository = new NewsRepository(contextItem, searchServiceRepository);
+      var news = repository.GetLatestNews(1);
+      news.Count().ShouldBeEquivalentTo(1);
     }
   }
 }
