@@ -1,0 +1,29 @@
+﻿---
+ID: 2e4bdd9e-f7a0-4bb6-8a4f-8a8c1a52e512
+Parent: d046e7a5-9ee2-4cba-8484-c601561f66d9
+Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
+Path: /sitecore/layout/Placeholder Settings/Project/Habitat/Columns/col-huge
+SharedFields:
+- ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
+  # Placeholder Key
+  Value: col-huge
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 0
+- ID: e391b526-d0c5-439d-803e-17512eae6222
+  # Allowed Controls
+  Type: TreelistEx
+  Value: |
+    {E86BFEB1-F3FC-4E37-B693-A5550D6789EE}
+    {A25C9850-AAB7-46A6-84B7-0DFAB32FC357}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150921T033504Z
+    - ID: 87871ff5-1965-46d6-884f-01d6a0b9c4c1
+      # Description
+      Value: Full Page Column

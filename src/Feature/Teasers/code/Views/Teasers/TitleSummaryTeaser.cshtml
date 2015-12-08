@@ -1,0 +1,22 @@
+﻿@using Sitecore.Feature.Teasers
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+
+<div class="panel panel-default teaser">
+  <div class="panel-heading">
+    <h3 class="teaser-heading">
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
+    </h3>
+  </div>
+  <div class="panel-body">
+    <div class="teaser-text">
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
+    </div>
+  </div>
+  <div class="panel-footer">
+    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
+    {
+      @class = "btn btn-default"
+    })
+  </div>
+</div>

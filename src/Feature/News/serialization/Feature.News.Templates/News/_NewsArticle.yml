@@ -1,0 +1,27 @@
+﻿---
+ID: 2f75c8af-35fc-4a88-b585-7595203f442c
+Parent: f7cf8ebd-6ec0-467a-92f0-e28ec0ad0f6e
+Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+Path: /sitecore/templates/Feature/News/_NewsArticle
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: Applications/32x32/form_blue.png
+- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+  # __Base template
+  Type: tree list
+  Value: {76E517CE-D593-4EF7-BB9B-E52EB4E230C8}
+- ID: f7d48a55-2158-4f02-9356-756654404f73
+  # __Standard values
+  Value: {C425B1AA-48B4-4EF1-86B3-19B95ACCEEE1}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20141212T113805
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

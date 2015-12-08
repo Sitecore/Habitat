@@ -1,0 +1,20 @@
+﻿---
+ID: 28bd7068-7ff6-4ce6-98e6-85cfe9967e14
+Parent: 81460d62-74f8-4471-9dad-2c82d767a689
+Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+Path: /sitecore/layout/Renderings/Feature/Accounts/AccountsMenu
+SharedFields:
+- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+  # Path
+  Value: /Views/Accounts/AccountsMenu.cshtml
+- ID: e514a1eb-ddba-44f7-8528-82ca2280f778
+  # JavaScript assets
+  Value: /scripts/accounts/accounts.js
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150923T064641Z

@@ -10,7 +10,7 @@
       <Attributes />
       <Readme />
       <Publisher />
-      <PostStep>Habitat.Framework.Installer.PostStep, Habitat.Framework.Installer</PostStep>
+      <PostStep>Sitecore.Foundation.Installer.PostStep, Sitecore.Foundation.Installer</PostStep>
       <PackageID />
     </metadata>
   </Metadata>

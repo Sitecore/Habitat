@@ -1,0 +1,23 @@
+﻿@using Sitecore.Feature.Media
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@*TODO: Page editor mode*@
+@{
+  const int ThumbnailWidth = 750;
+  var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail.ToString(), @Model.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
+  if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
+  {
+    thumbnail = Html.Sitecore().ImageField(Templates.HasMediaImage.Fields.Image.ToString(), @Model.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
+  }
+  if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
+  {
+    return;
+  }
+}
+
+<div class="thumbnail lightbox">
+  <a href="@Model.Item.ImageUrl(Templates.HasMediaImage.Fields.Image)" data-type="image" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" class="lightbox" data-gallery="page">
+    @thumbnail
+    <span class="fa fa-search overlay"></span>
+  </a>
+</div>
