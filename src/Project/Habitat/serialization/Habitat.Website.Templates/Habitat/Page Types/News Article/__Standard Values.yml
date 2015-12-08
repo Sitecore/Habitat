@@ -4,6 +4,9 @@ Parent: b69277ad-e917-4b9f-9136-a12e0a3e462f
 Template: b69277ad-e917-4b9f-9136-a12e0a3e462f
 Path: /sitecore/templates/Project/Habitat/Page Types/News Article/__Standard Values
 SharedFields:
+- ID: c9283d9e-7c29-4419-9c28-5a5c8ff53e84
+  # __Bucketable
+  Value: 1
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
   # __Renderings
   Type: layout
