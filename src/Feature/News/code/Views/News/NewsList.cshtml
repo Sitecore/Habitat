@@ -24,11 +24,11 @@
           <div class="metadata panel panel-default">
             <div class="panel-body">
               <span class="date text-muted">
-                                @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
-                                {
-                                  format = "MMMM dd, yyyy"
-                                })
-                            </span>
+                @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
+                           {
+                             format = "MMMM dd, yyyy"
+                           })
+              </span>
             </div>
           </div>
         </div>
