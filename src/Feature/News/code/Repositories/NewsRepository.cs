@@ -8,11 +8,17 @@
   using Sitecore.Foundation.Indexing;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
-  internal class NewsRepository : INewsRepository
+  public class NewsRepository : INewsRepository
   {
     public Item ContextItem { get; set; }
 
-    public NewsRepository(Item contextItem)
+    private readonly ISearchServiceRepository searchServiceRepository;
+
+    public NewsRepository(Item contextItem):this(contextItem, new SearchServiceRepository(new SearchSettingsRepository()))
+    {
+    }
+
+    public NewsRepository(Item contextItem, ISearchServiceRepository searchServiceRepository)
     {
       if (contextItem == null)
       {
@@ -23,19 +29,20 @@
         throw new ArgumentException("Item must derive from NewsFolder", nameof(contextItem));
       }
       this.ContextItem = contextItem;
+
+      this.searchServiceRepository = searchServiceRepository;
     }
 
     public IEnumerable<Item> Get()
     {
-      var settings = new SearchSettings {Root = this.ContextItem, Tempaltes = new List<ID> {Templates.NewsArticle.ID} };
-      var searchService = new SearchService(settings);
+      var searchService = this.searchServiceRepository.Get();
+      searchService.Settings.Root = this.ContextItem;
       var results = searchService.FindAll();
-      return results.Select(x => x.Document.GetItem()).OrderByDescending(i => i[Templates.NewsArticle.Fields.Date]);
+      return results.Results.Select(x => x.Item).OrderByDescending(i => i[Templates.NewsArticle.Fields.Date]);
     }
 
     public IEnumerable<Item> GetLatestNews(int count)
     {
-      //TODO: Change to use buckets and search
       return this.Get().Take(count);
     }
   }

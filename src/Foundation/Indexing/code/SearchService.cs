@@ -59,7 +59,7 @@
       }
     }
 
-    public List<SearchHit<SearchResultItem>> FindAll()
+    public virtual ISearchResults FindAll()
     {
       using (var context = ContentSearchManager.GetIndex(this.IndexName).CreateSearchContext())
       {
@@ -71,9 +71,9 @@
         {
           queryable = queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Tempaltes));
         }
-        
-        var results = queryable.GetResults().Hits.ToList();
-        return results;
+
+        var results = queryable.GetResults();
+        return SearchResultsRepository.Create(results, null);
       }
     }
 

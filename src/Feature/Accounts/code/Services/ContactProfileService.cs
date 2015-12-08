@@ -55,6 +55,14 @@
       }
     }
 
+    public void SetTag(string tagName, string tagValue)
+    {
+      if (!string.IsNullOrEmpty(tagName) && !string.IsNullOrEmpty(tagValue))
+      {
+        this.contactProfileProvider.Contact.Tags.Set(tagName, tagValue);
+      }
+    }
+
     public void SetProfile(EditProfile editProfileModel)
     {
       if (this.contactProfileProvider.Contact != null)
@@ -62,7 +70,7 @@
         var personalInfo = this.contactProfileProvider.PersonalInfo;
         personalInfo.FirstName = editProfileModel.FirstName;
         personalInfo.Surname = editProfileModel.LastName;
-        this.contactProfileProvider.Contact.Tags.Set("Interests", editProfileModel.Interest);
+        this.SetTag("Interests", editProfileModel.Interest);
         this.SetPreferredPhoneNumber(editProfileModel.PhoneNumber);
         this.SetPreferredEmail(Context.User.Profile.Email);
         this.contactProfileProvider.Flush();
