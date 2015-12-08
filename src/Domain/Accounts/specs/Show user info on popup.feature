@@ -12,6 +12,7 @@ Scenario: Account_Show user info on popup_UC1_Only email is shown
 	| Email            |
 	| kov@sitecore.net |
 
+
 @NeedImplementation
 Scenario: Account_Show user info on popup_UC2_Full user info is shown 
 	Given User with following data is registered in Habitat
@@ -43,3 +44,21 @@ Scenario: Account_Show user info on popup_UC2_User Name with special symbols
 	| Email            | Name              |
 	| kov@sitecore.net | Konstantin Teltov |
 
+
+@NeedImplementation
+Scenario: Account_Show user info on popup_Bug36103_Name label should dismiss if user has removed User Last Name and First Name
+	Given User with following data is registered in Habitat and logged in 
+	| Email            | Password | ConfirmPassword | First name | Last name |
+	| kov@sitecore.net | k        | k               | Konstantin | Teltov    |
+	When User moves cursor over the User icon
+	And User clicks Edit Profile from drop-down menu 
+	And User clears data in <First name> and <Last name> fields
+	And User clicks Update button
+	And When User moves cursor over the User icon
+	Then User info is shown on User popup
+	| Email            | 
+	| kov@sitecore.net | 
+	And Name label is no longer exists on the pop up
+	
+
+ 

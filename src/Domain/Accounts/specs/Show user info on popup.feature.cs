@@ -116,7 +116,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Show user info on popup_UC2_Full user info is shown", new string[] {
                         "NeedImplementation"});
-#line 16
+#line 17
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -127,11 +127,11 @@ this.ScenarioSetup(scenarioInfo);
                         "kov10@sitecore.net",
                         "k",
                         "k"});
-#line 17
+#line 18
  testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table3, "Given ");
-#line 20
- testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
+ testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
  testRunner.And("User clicks Edit Profile from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -142,9 +142,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Teltov",
                         "Konstantin",
                         "+38(067)3333333"});
-#line 22
+#line 23
  testRunner.And("User inputs data in to the fields", ((string)(null)), table4, "And ");
-#line 25
+#line 26
  testRunner.And("User selects <Swiming> from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -153,7 +153,7 @@ this.ScenarioSetup(scenarioInfo);
             table5.AddRow(new string[] {
                         "kov@sitecore.net",
                         "Konstantin Teltov"});
-#line 26
+#line 27
  testRunner.Then("User info is shown on User popup", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -166,7 +166,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Show user info on popup_UC2_User Name with special symbols", new string[] {
                         "NeedImplementation"});
-#line 32
+#line 33
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -177,11 +177,11 @@ this.ScenarioSetup(scenarioInfo);
                         "kov10@sitecore.net",
                         "k",
                         "k"});
-#line 33
+#line 34
  testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table6, "Given ");
-#line 36
- testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
+ testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 38
  testRunner.And("User clicks Edit Profile from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -192,9 +192,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Teltov!@#$%^&?()-+*",
                         "KONSTANTIN!@#$%^&?()-+*",
                         "+38(067)3333333"});
-#line 38
+#line 39
  testRunner.And("User inputs data in to the fields", ((string)(null)), table7, "And ");
-#line 41
+#line 42
  testRunner.And("User selects <Swiming> from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -203,8 +203,57 @@ this.ScenarioSetup(scenarioInfo);
             table8.AddRow(new string[] {
                         "kov@sitecore.net",
                         "Konstantin Teltov"});
-#line 42
+#line 43
  testRunner.Then("User info is shown on User popup", ((string)(null)), table8, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Show user info on popup")]
+        [Xunit.TraitAttribute("Description", "Account_Show user info on popup_Bug36103_Name label should dismiss if user has re" +
+            "moved User Last Name and First Name")]
+        public virtual void Account_ShowUserInfoOnPopup_Bug36103_NameLabelShouldDismissIfUserHasRemovedUserLastNameAndFirstName()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Show user info on popup_Bug36103_Name label should dismiss if user has re" +
+                    "moved User Last Name and First Name", new string[] {
+                        "NeedImplementation"});
+#line 49
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Email",
+                        "Password",
+                        "ConfirmPassword",
+                        "First name",
+                        "Last name"});
+            table9.AddRow(new string[] {
+                        "kov@sitecore.net",
+                        "k",
+                        "k",
+                        "Konstantin",
+                        "Teltov"});
+#line 50
+ testRunner.Given("User with following data is registered in Habitat and logged in", ((string)(null)), table9, "Given ");
+#line 53
+ testRunner.When("User moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 54
+ testRunner.And("User clicks Edit Profile from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+ testRunner.And("User clears data in <First name> and <Last name> fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.And("User clicks Update button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.And("When User moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Email"});
+            table10.AddRow(new string[] {
+                        "kov@sitecore.net"});
+#line 58
+ testRunner.Then("User info is shown on User popup", ((string)(null)), table10, "Then ");
+#line 61
+ testRunner.And("Name label is no longer exists on the pop up", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
