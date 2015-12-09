@@ -10,8 +10,8 @@
 
 	public class PersonIndexContentProviderTests
 	{
-		[Theory]
-		public void SupportedTemplatesShouldReturnAtLeastOneTemplate(IQuery query)
+		[Fact]
+		public void SupportedTemplatesShouldReturnAtLeastOneTemplate()
 		{
 			var provider = new PersonIndexContentProvider();
 			var templates = provider.SupportedTemplates;
@@ -20,8 +20,8 @@
 			supportedTemplates.Should().HaveCount(c => c > 0);
 		}
 
-		[Theory]
-		public void SupportedTemplatesShouldOnlyReturnTemplatesInModule(IQuery query)
+		[Fact]
+		public void SupportedTemplatesShouldOnlyReturnTemplatesInModule()
 		{
 			var provider = new PersonIndexContentProvider();
 			var templates = provider.SupportedTemplates;
