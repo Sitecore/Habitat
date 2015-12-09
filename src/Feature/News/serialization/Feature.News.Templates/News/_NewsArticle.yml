@@ -11,9 +11,6 @@ SharedFields:
   # __Base template
   Type: tree list
   Value: {76E517CE-D593-4EF7-BB9B-E52EB4E230C8}
-- ID: f7d48a55-2158-4f02-9356-756654404f73
-  # __Standard values
-  Value: {C425B1AA-48B4-4EF1-86B3-19B95ACCEEE1}
 Languages:
 - Language: en
   Versions:
