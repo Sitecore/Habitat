@@ -13,6 +13,6 @@ namespace Sitecore.Feature.Search.Models
     public string SearchResultsUrl { get; set; }
     public Item Root { get; set; }
 
-    public IEnumerable<ID> Tempaltes { get; set; }
+    public IEnumerable<ID> Templates { get; set; }
   }
 }

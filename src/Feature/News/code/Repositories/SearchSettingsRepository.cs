@@ -5,14 +5,17 @@ using System.Web;
 
 namespace Sitecore.Feature.News.Repositories
 {
+  using Sitecore.ContentSearch;
   using Sitecore.Data;
+  using Sitecore.Foundation.Indexing.Models;
+  using Sitecore.Foundation.Indexing.Repositories;
 
-  public class SearchSettingsRepository : ISearchSettingsRepository
+  public class SearchSettingsRepository : SearchSettingsRepositoryBase
   {
-    public SearchSettings Get()
+    public override ISearchSettings Get()
     {
-      var settings = new SearchSettings();
-      settings.Tempaltes = new List<ID>
+      var settings = new SearchSettingsBase();
+      settings.Templates = new List<ID>
       {
         Templates.NewsArticle.ID
       };

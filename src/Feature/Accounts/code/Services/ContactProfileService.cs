@@ -6,6 +6,7 @@
 
   public class ContactProfileService : IContactProfileService
   {
+    private const string InterestsTagName = "Interests";
     private const string PrimaryEmailKey = "Primary";
     private const string PrimaryPhoneKey = "Primary";
     private readonly IContactProfileProvider contactProfileProvider;
@@ -70,7 +71,7 @@
         var personalInfo = this.contactProfileProvider.PersonalInfo;
         personalInfo.FirstName = editProfileModel.FirstName;
         personalInfo.Surname = editProfileModel.LastName;
-        this.SetTag("Interests", editProfileModel.Interest);
+        this.SetTag(InterestsTagName, editProfileModel.Interest);
         this.SetPreferredPhoneNumber(editProfileModel.PhoneNumber);
         this.SetPreferredEmail(Context.User.Profile.Email);
         this.contactProfileProvider.Flush();

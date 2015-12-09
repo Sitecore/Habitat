@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Sitecore.Feature.News.Repositories
 {
+  using Sitecore.Foundation.Indexing.Models;
+
   public interface ISearchSettingsRepository
   {
-    SearchSettings Get();
+    ISearchSettings Get();
   }
 }

@@ -1,10 +1,5 @@
 ﻿namespace Sitecore.Feature.News.Tests
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
   using FluentAssertions;
   using Sitecore.Feature.News.Repositories;
   using Sitecore.Feature.News.Tests.Extensions;
@@ -17,7 +12,7 @@
     public void Get_ReturnsSearchSettings(SearchSettingsRepository settingsRepository)
     {
       var searchSettings = settingsRepository.Get();
-      searchSettings.Tempaltes.Should().Contain(Templates.NewsArticle.ID);
+      searchSettings.Templates.Should().Contain(Templates.NewsArticle.ID);
     }
   }
 }

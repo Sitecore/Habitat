@@ -8,6 +8,6 @@ namespace Sitecore.Foundation.Indexing.Models
   {
     Item Root { get; set; }
 
-    IEnumerable<ID> Tempaltes { get; set; }
+    IEnumerable<ID> Templates { get; set; }
   }
 }

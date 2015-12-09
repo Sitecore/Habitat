@@ -6,6 +6,7 @@
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.Foundation.Indexing;
+  using Sitecore.Foundation.Indexing.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class NewsRepository : INewsRepository

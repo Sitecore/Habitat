@@ -118,7 +118,6 @@
     <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="NewsRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchServiceRepositoryTests.cs" />
     <Compile Include="SearchSettingsRepositoryTests.cs" />
     <Compile Include="SearchSettingsTests.cs" />
   </ItemGroup>
