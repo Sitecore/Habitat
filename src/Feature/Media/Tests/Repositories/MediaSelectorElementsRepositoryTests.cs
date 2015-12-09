@@ -9,33 +9,34 @@
   using Sitecore.Feature.Media.Tests.Infrastructure;
   using Xunit;
 
-  public class CarouselElementsRepositoryTests
+  public class MediaSelectorElementsRepositoryTests
   {
     [Theory]
     [AutoDbData]
-    public void GetShouldReturnEmptyForEmptyItems([Content]Item item)
+    public void GetShouldReturnEmptyForEmptyItems([Content] Item item)
     {
       // substitute the original provider with the mocked one
-      CarouselElementsRepository.Get(item).Count().Should().Be(0);
+      MediaSelectorElementsRepository.Get(item).Count().Should().Be(0);
     }
+
     [Theory]
     [AutoDbData]
-    public void GetShouldReturnEmptyForEmptyVideoItems([Content]Item item)
+    public void GetShouldReturnEmptyForEmptyVideoItems([Content] Item item)
     {
-      var child = item.Add("childVideo",new TemplateID( Templates.HasMediaVideo.ID));
+      var child = item.Add("childVideo", new TemplateID(Templates.HasMediaVideo.ID));
 
       using (new EditContext(item))
       {
         item[Templates.HasMediaSelector.Fields.MediaSelector] = child.ID.ToString();
       }
       // substitute the original provider with the mocked one
-      CarouselElementsRepository.Get(item).Count().Should().Be(0);
+      MediaSelectorElementsRepository.Get(item).Count().Should().Be(0);
     }
 
 
     [Theory]
     [AutoDbData]
-    public void GetShouldReturnCollectionForValidVideoLinksItems([Content]Item item, [Content]MediaTemplate mediaTemplate,[Content]MediaSelectorTemplate selectorTemplate,[Content] VideoTemplate vt)
+    public void GetShouldReturnCollectionForValidVideoLinksItems([Content] Item item, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
     {
       var child = item.Add("childVideo", new TemplateID(Templates.HasMedia.ID));
 
@@ -51,14 +52,15 @@
         selector[Templates.HasMediaSelector.Fields.MediaSelector] = child.ID.ToString();
       }
       // substitute the original provider with the mocked one
-      var carouselElements = CarouselElementsRepository.Get(selector);
+      var carouselElements = MediaSelectorElementsRepository.Get(selector);
       carouselElements.Count().Should().Be(1);
       carouselElements.First().Item.ID.Should().Be(child.ID);
       carouselElements.First().Item[Templates.HasMediaVideo.Fields.VideoLink].Should().Be("videoLink");
     }
+
     [Theory]
     [AutoDbData]
-    public void GetShouldReturnCollectionForVideoLinkWithThumbnail([Content]Item item, [Content]MediaTemplate mediaTemplate, [Content]MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
+    public void GetShouldReturnCollectionForVideoLinkWithThumbnail([Content] Item item, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
     {
       var child = item.Add("childVideo", new TemplateID(Templates.HasMedia.ID));
 
@@ -74,7 +76,7 @@
         selector[Templates.HasMediaSelector.Fields.MediaSelector] = child.ID.ToString();
       }
       // substitute the original provider with the mocked one
-      var carouselElements = CarouselElementsRepository.Get(selector);
+      var carouselElements = MediaSelectorElementsRepository.Get(selector);
       carouselElements.Count().Should().Be(1);
       carouselElements.First().Item.ID.Should().Be(child.ID);
       carouselElements.First().Item[Templates.HasMedia.Fields.Thumbnail].Should().Be("videoLink");
@@ -82,19 +84,19 @@
 
 
     [Theory]
-  [AutoDbData]
-  public void GetShouldIgnoreEmptyVideoLinksItems([Content]Item item, [Content]MediaTemplate mediaTemplate, [Content]MediaSelectorTemplate selectorTemplate, [Content]VideoTemplate vt)
-  {
-    var child = item.Add("childVideo", new TemplateID(Templates.HasMedia.ID));
-
-    var selector = item.Add("selector", new TemplateID(Templates.HasMediaSelector.ID));
-    using (new EditContext(selector))
+    [AutoDbData]
+    public void GetShouldIgnoreEmptyVideoLinksItems([Content] Item item, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
     {
-      selector[Templates.HasMediaSelector.Fields.MediaSelector] = child.ID.ToString();
+      var child = item.Add("childVideo", new TemplateID(Templates.HasMedia.ID));
+
+      var selector = item.Add("selector", new TemplateID(Templates.HasMediaSelector.ID));
+      using (new EditContext(selector))
+      {
+        selector[Templates.HasMediaSelector.Fields.MediaSelector] = child.ID.ToString();
+      }
+      // substitute the original provider with the mocked one
+      var carouselElements = MediaSelectorElementsRepository.Get(selector);
+      carouselElements.Count().Should().Be(0);
     }
-    // substitute the original provider with the mocked one
-    var carouselElements = CarouselElementsRepository.Get(selector);
-    carouselElements.Count().Should().Be(0);
   }
-}
 }

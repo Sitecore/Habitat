@@ -7,9 +7,9 @@
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Mvc.Extensions;
 
-  public static class CarouselElementsRepository
+  public static class MediaSelectorElementsRepository
   {
-    public static IEnumerable<CarouselElement> Get(Item item)
+    public static IEnumerable<MediaSelectorElement> Get(Item item)
     {
       var active = "active";
       var multiListValues = item.GetMultiListValues(Templates.HasMediaSelector.Fields.MediaSelector);
@@ -23,7 +23,7 @@
           continue;
         }
 
-        yield return new CarouselElement
+        yield return new MediaSelectorElement
         {
           Item = child,
           Active = active

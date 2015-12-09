@@ -1,0 +1,55 @@
+﻿@using Sitecore.Feature.Media
+@using Sitecore.Feature.Media.Infrastructure.Repositories
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+	var galleryId = "gallery" + Guid.NewGuid().ToString("N");
+  var elements = MediaSelectorElementsRepository.Get(Model.Item).ToArray();
+}
+
+<div class="gallery">
+	<div class="row">
+		@foreach (var element in elements)
+		{
+			const int ThumbnailWidth = 750;
+			var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail.ToString(), element.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
+			if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
+			{
+				thumbnail = Html.Sitecore().ImageField(Templates.HasMediaImage.Fields.Image.ToString(), element.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
+			}
+			if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
+			{
+				continue;
+			}
+
+			var columnWidth = string.IsNullOrEmpty(element.Active) ? "col-xs-4" : "col-md-12";
+			if (element.Item.IsDerived(Templates.HasMediaVideo.ID))
+		  {
+			  var linkFieldUrl = Model.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink);
+			  if (!string.IsNullOrWhiteSpace(linkFieldUrl))
+			  {
+			  <div class="@columnWidth">
+				  <div class="thumbnail lightbox">
+					  <a href="@linkFieldUrl" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" class="lightbox" data-gallery="@galleryId">
+						  @thumbnail
+						  <span class="fa fa-play-circle overlay"></span>
+					  </a>
+				  </div>
+			  </div>
+			  }
+		  }
+		  else
+		  {
+		    <div class="@columnWidth">
+			    <div class="thumbnail lightbox">
+				    <a href="@element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image)" data-type="image" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" class="lightbox" data-gallery="@galleryId">
+					    @thumbnail
+					    <span class="fa fa-search overlay"></span>
+				    </a>
+			    </div>
+		    </div>
+		  }
+		}
+	</div>
+</div>
