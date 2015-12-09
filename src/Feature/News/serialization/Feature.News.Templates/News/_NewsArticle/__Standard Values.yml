@@ -7,11 +7,20 @@ SharedFields:
 - ID: c464d2d7-3382-428a-bcdf-0963c60ba0e3
   # NewsDate
   Value: $now
+- ID: c9283d9e-7c29-4419-9c28-5a5c8ff53e84
+  # __Bucketable
+  Value: 1
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151204T114226Z
     - ID: 3437eaac-6ee8-460b-a33d-da1f714b5a93
       # NewsImage
       Value: "<image mediaid=\"{88032F9C-B464-44CB-B76D-513D60B9C127}\" />"
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
