@@ -73,6 +73,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contact Identification.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Contact Identification.feature</DependentUpon>
+    </Compile>
     <Compile Include="Edit user profile.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +145,10 @@
   <ItemGroup>
     <None Include="app.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Contact Identification.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Contact Identification.feature.cs</LastGenOutput>
     </None>
     <None Include="Edit user profile.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
