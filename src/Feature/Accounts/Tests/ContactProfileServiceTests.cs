@@ -41,7 +41,7 @@
 
     [Theory]
     [AutoDbData]
-    public void ShouldSetTag([Frozen] IContactProfileProvider contactProfileProvider, [Greedy] ContactProfileService contactProfileService, string tagName, string tagValue)
+    public void SetTag_NotEmptyStringParameters_ShouldCallSetOnTagsPropertyOfContactWithSameParameters([Frozen] IContactProfileProvider contactProfileProvider, [Greedy] ContactProfileService contactProfileService, string tagName, string tagValue)
     {
       contactProfileService.SetTag(tagName, tagValue);
       contactProfileProvider.Contact.Tags.Received().Set(tagName, tagValue);
@@ -49,7 +49,7 @@
 
     [Theory]
     [AutoDbData]
-    public void ShouldNotSetTagIfTagValueIsEmpty([Frozen] IContactProfileProvider contactProfileProvider, [Greedy] ContactProfileService contactProfileService, string tagName)
+    public void SetTag_TagValueParameterIsEmpty_ShouldNotCallSetOnTagsPropertyOfContact([Frozen] IContactProfileProvider contactProfileProvider, [Greedy] ContactProfileService contactProfileService, string tagName)
     {
       contactProfileService.SetTag(tagName, String.Empty);
       contactProfileProvider.Contact.Tags.DidNotReceive().Set(tagName, String.Empty);
