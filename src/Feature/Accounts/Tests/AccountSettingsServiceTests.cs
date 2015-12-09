@@ -112,9 +112,13 @@
     }
 
 
-    private static SiteContext BuildUpSiteContext(Db db, string body = "restore password $pass$ body", string from = "from@sc.net", string subj = "restore password subject")
+    private static SiteContext BuildUpSiteContext(Db db, string body = "restore password $pass$ body", string from = "from@sc.net", string subj = "restore password subject",ID outcomeID =null)
     {
       var template = ID.NewID;
+      if (outcomeID == (ID)null)
+      {
+        outcomeID = ID.NewID;
+      }
       db.Add(new DbItem("siteroot")
       {
         TemplateID = Templates.AccountsSettings.ID,
@@ -123,6 +127,10 @@
           new DbField("FogotPasswordMailTemplate", Templates.AccountsSettings.Fields.FogotPasswordMailTemplate)
           {
             Value = template.ToString()
+          },
+          new DbField("RegisterOutcome", Templates.AccountsSettings.Fields.RegisterOutcome)
+          {
+            Value = outcomeID.ToString()
           }
         },
         Children =
@@ -138,7 +146,8 @@
             {
               Templates.MailTemplate.Fields.Subject, subj
             }
-          }
+          },
+          new DbItem("outcome", outcomeID)
         }
       });
 
@@ -185,6 +194,36 @@
       var result = accountSettingsService.GetPageLinkOrDefault(item, id, defaultItem);
 
       result.Should().Be(returnUrl);
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void GetRegisterOutcome_NullSettingsItem_ShouldthrowException(Db db, AccountsSettingsService accountsSettingsService)
+    {
+      //Arrange
+      var fakeSite = BuildUpSiteContext(db, null);
+      db.GetItem("/sitecore/content").DeleteChildren();
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        //Act
+        //Assert
+        accountsSettingsService.Invoking(x=>x.GetRegisterOutcome(null)).ShouldThrow<ItemNotFoundException>();
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void GetRegisterOutcome_SettingsExist_ShouldReturnOutcomeID(Db db, ID outcomeId, AccountsSettingsService accountsSettingsService)
+    {
+      //Arrange
+      var fakeSite = BuildUpSiteContext(db, outcomeID: outcomeId);
+      using (new SiteContextSwitcher(fakeSite))
+      {
+        //Act
+        var resultOutcomeId = accountsSettingsService.GetRegisterOutcome(null);
+        //Assert
+        resultOutcomeId.Should().Be(outcomeId);
+      }
     }
   }
 }

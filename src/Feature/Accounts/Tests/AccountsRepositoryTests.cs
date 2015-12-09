@@ -140,7 +140,7 @@
         using (new AuthenticationSwitcher(authenticationProvider))
         {
           var loginResult = repo.Login("John", "somepassword");
-          accountTrackerService.Received(1).TrackLogin();
+          accountTrackerService.Received(1).TrackLogin("somedomain\\John");
         }
       }
     }
@@ -184,7 +184,7 @@
         using (new AuthenticationSwitcher(authenticationProvider))
         {
           var loginResult = repo.Login("John", "somepassword");
-          accountTrackerService.DidNotReceive().TrackLogin();
+          accountTrackerService.DidNotReceive().TrackLogin(Arg.Any<string>());
         }
       }
     }
@@ -253,7 +253,7 @@
           using (new AuthenticationSwitcher(authenticationProvider))
           {
             repository.RegisterUser(registrationInfo.Email, registrationInfo.Password, profileId);
-            authenticationProvider.Received(1).Login(Arg.Is<User>(u => u.Name == $@"somedomain\{registrationInfo.Email}"));
+            authenticationProvider.Received(1).Login(Arg.Is<string>(u => u == $@"somedomain\{registrationInfo.Email}"), Arg.Is<string>(p=>p== registrationInfo.Password), Arg.Any<bool>());
           }
         }
       }
@@ -275,7 +275,6 @@
           using (new AuthenticationSwitcher(authenticationProvider))
           {
             repository.RegisterUser(registrationInfo.Email, registrationInfo.Password, profileId);
-            accountTrackerService.Received(1).TrackLogin();
             accountTrackerService.Received(1).TrackRegister();
           }
         }

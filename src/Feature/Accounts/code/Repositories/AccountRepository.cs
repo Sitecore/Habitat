@@ -37,8 +37,7 @@
 
       if (result)
       {
-        accountTrackerService.TrackLogin();
-        accountTrackerService.IdentifyContact(accountName);
+        accountTrackerService.TrackLogin(accountName);
       }
 
       return result;
@@ -72,12 +71,8 @@
       }
 
       user.Profile.Save();
-
       accountTrackerService.TrackRegister();
-
-      AuthenticationManager.Login(user);
-
-      accountTrackerService.TrackLogin();
+      this.Login(email, password);
     }
   }
 }
