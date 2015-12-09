@@ -71,7 +71,7 @@
       }
 
       user.Profile.Save();
-      accountTrackerService.TrackRegister();
+      accountTrackerService.TrackRegistration();
       this.Login(email, password);
     }
   }

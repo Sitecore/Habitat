@@ -125,7 +125,7 @@
 
     [Theory]
     [AutoDbData]
-    public void LoginShouldTriggerLoginEventIfUserIsLoggedIn(FakeMembershipUser user, [Frozen]IAccountTrackerService accountTrackerService, AuthenticationProvider authenticationProvider, AccountRepository repo)
+    public void Login_ValidUser_ShouldTriggerLoginEvents(FakeMembershipUser user, [Frozen]IAccountTrackerService accountTrackerService, AuthenticationProvider authenticationProvider, AccountRepository repo)
     {
       authenticationProvider.Login(@"somedomain\John", Arg.Any<string>(), Arg.Any<bool>()).Returns(true);
 
@@ -169,7 +169,7 @@
 
     [Theory]
     [AutoDbData]
-    public void LoginShouldNotTrackLoginEventIfUserIsNotLoggedIn(FakeMembershipUser user, [Frozen]IAccountTrackerService accountTrackerService, AuthenticationProvider authenticationProvider, AccountRepository repo)
+    public void Login_NotLoggedInUser_ShouldNotTrackLoginEvents(FakeMembershipUser user, [Frozen]IAccountTrackerService accountTrackerService, AuthenticationProvider authenticationProvider, AccountRepository repo)
     {
       authenticationProvider.Login(@"somedomain\John", Arg.Any<string>(), Arg.Any<bool>()).Returns(false);
 
@@ -261,7 +261,7 @@
 
     [Theory]
     [AutoDbData]
-    public void RegisterShouldTrackLoginAndRegisterEvents(FakeMembershipUser user, [Substitute]MembershipProvider membershipProvider, [Substitute]AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, [Frozen]IAccountTrackerService accountTrackerService, AccountRepository repository, string profileId)
+    public void Register_ValidUser_ShouldTrackRegistraionEvents(FakeMembershipUser user, [Substitute]MembershipProvider membershipProvider, [Substitute]AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, [Frozen]IAccountTrackerService accountTrackerService, AccountRepository repository, string profileId)
     {
       user.UserName.Returns("name");
       MembershipCreateStatus status;
@@ -275,7 +275,7 @@
           using (new AuthenticationSwitcher(authenticationProvider))
           {
             repository.RegisterUser(registrationInfo.Email, registrationInfo.Password, profileId);
-            accountTrackerService.Received(1).TrackRegister();
+            accountTrackerService.Received(1).TrackRegistration();
           }
         }
       }

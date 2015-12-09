@@ -22,10 +22,10 @@
       this.IdentifyContact(identifier);
     }
 
-    public virtual void TrackRegister()
+    public virtual void TrackRegistration()
     {
-      this.TrackPageEvent(ConfigSettings.RegisterGoalId);
-      this.TrackRegisterOutcome();
+      this.TrackPageEvent(ConfigSettings.RegistrationGoalId);
+      this.TrackRegistrationOutcome();
     }
 
     public void IdentifyContact(string identifier)
@@ -36,9 +36,9 @@
       }
     }
 
-    public void TrackRegisterOutcome()
+    public void TrackRegistrationOutcome()
     {
-      var outcomeId = accountsSettingsService.GetRegisterOutcome(Context.Item);
+      var outcomeId = accountsSettingsService.GetRegistrationOutcome(Context.Item);
       if (outcomeId != (ID)null && !outcomeId.IsNull)
       {
         this.TrackOutcome(outcomeId);

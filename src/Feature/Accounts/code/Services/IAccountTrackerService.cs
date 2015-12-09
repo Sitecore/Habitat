@@ -5,11 +5,10 @@
   public interface IAccountTrackerService
   {
     void TrackPageEvent(ID pageEventItemId);
-    void TrackRegister();
-
+    void TrackRegistration();
     void IdentifyContact(string identifier);
     void TrackOutcome(ID definitionId);
-    void TrackRegisterOutcome();
+    void TrackRegistrationOutcome();
     void TrackLogin(string identifier);
   }
 }

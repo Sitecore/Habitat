@@ -21,7 +21,7 @@
   public class AccountTrackerServiceTests
   {
     [Theory, AutoDbData]
-    public void TrackPageEventShouldTrackById(Database db, [Content] Item item, ITracker tracker, AccountTrackerService accountTrackerService)
+    public void TrackPageEvent_ValidID_ShouldTrackById(Database db, [Content] Item item, ITracker tracker, AccountTrackerService accountTrackerService)
     {
       tracker.IsActive.Returns(true);
       using (new TrackerSwitcher(tracker))
@@ -32,20 +32,20 @@
     }
 
     [Theory, AutoDbData]
-    public void TrackPageEventShouldAssertArguments(AccountTrackerService accountTrackerService)
+    public void TrackPageEvent_NullEvent_ShouldThrowArgumentException(AccountTrackerService accountTrackerService)
     {
       accountTrackerService.Invoking(x => x.TrackPageEvent(null)).ShouldThrow<ArgumentNullException>();
     }
 
     [Theory, AutoDbData]
-    public void TrackPageEventShouldNotTrackForNullTracker(Database db, [Content] Item item, ITracker tracker, AccountTrackerService accountTrackerService)
+    public void TrackPageEvent_NullTracker_ShouldNotTrackEvent(Database db, [Content] Item item, ITracker tracker, AccountTrackerService accountTrackerService)
     {
         accountTrackerService.TrackPageEvent(item.ID);
         tracker.CurrentPage.DidNotReceive().Register(Arg.Is<PageEventItem>(x => x.ID == item.ID));
     }
 
     [Theory, AutoDbData]
-    public void TrackPageEventShouldNotTrackForNonActiveTracker(Database db, [Content] Item item, ITracker tracker, AccountTrackerService accountTrackerService)
+    public void TrackPageEvent_InActiveTracker_ShouldNotTrack(Database db, [Content] Item item, ITracker tracker, AccountTrackerService accountTrackerService)
     {
       using (new TrackerSwitcher(tracker))
       {
@@ -55,7 +55,7 @@
     }
 
     [Theory, AutoDbData]
-    public void TrackLoginShouldTrackPageEvent(string identifier, Db db, ITracker tracker, AccountTrackerService accountTrackerService, [Substitute] Session session)
+    public void TrackLogin_Call_ShouldTrackLoginGoal(string identifier, Db db, ITracker tracker, AccountTrackerService accountTrackerService, [Substitute] Session session)
     {
       tracker.IsActive.Returns(true);
       tracker.Session.Returns(session);
@@ -70,7 +70,7 @@
     }
 
     [Theory, AutoDbData]
-    public void TrackRegisterShouldTrack(Db db, ID outcomeID, ITracker tracker, [Frozen]IAccountsSettingsService accountsSettingsService, AccountTrackerService accountTrackerService)
+    public void TrackRegister_Call_ShouldTrackRegistrationGoal(Db db, ID outcomeID, ITracker tracker, [Frozen]IAccountsSettingsService accountsSettingsService, AccountTrackerService accountTrackerService)
     {
       //Arrange
       tracker.IsActive.Returns(true);
@@ -79,23 +79,23 @@
       tracker.Session.Returns(Substitute.For<Session>());
       tracker.Session.CustomData.Returns(new Dictionary<string, object>());
 
-      accountsSettingsService.GetRegisterOutcome(Arg.Any<Item>()).Returns(outcomeID);
+      accountsSettingsService.GetRegistrationOutcome(Arg.Any<Item>()).Returns(outcomeID);
 
-      db.Add(new DbItem("Item", ConfigSettings.RegisterGoalId));
+      db.Add(new DbItem("Item", ConfigSettings.RegistrationGoalId));
       db.Add(new DbItem("Item", ConfigSettings.LoginGoalId));
 
       using (db)
       using (new TrackerSwitcher(tracker))
       {
-        accountTrackerService.TrackRegister();
-        tracker.CurrentPage.Received(1).Register(Arg.Is<PageEventItem>(x => x.ID == ConfigSettings.RegisterGoalId));
+        accountTrackerService.TrackRegistration();
+        tracker.CurrentPage.Received(1).Register(Arg.Is<PageEventItem>(x => x.ID == ConfigSettings.RegistrationGoalId));
         tracker.GetContactOutcomes().Should().Contain(o => o.DefinitionId == outcomeID);
       }
     }
 
     [Theory]
     [AutoDbData]
-    public void ShouldCallTrackerIdentify([NoAutoProperties] AccountTrackerService trackerService, string contactIdentifier, ITracker tracker, [Substitute] Session session)
+    public void IdentifyContact_ValidIdentifier_ShouldIdentifyContact([NoAutoProperties] AccountTrackerService trackerService, string contactIdentifier, ITracker tracker, [Substitute] Session session)
     {
       tracker.IsActive.Returns(true);
       tracker.Session.Returns(session);
@@ -108,7 +108,7 @@
 
     [Theory]
     [AutoDbData]
-    public void TrackOutcomeShouldAssertArguments([NoAutoProperties] AccountTrackerService trackerService, ITracker tracker)
+    public void TrackOutcome_NullOutcomeId_ThrowException([NoAutoProperties] AccountTrackerService trackerService, ITracker tracker)
     {
       tracker.IsActive.Returns(true);
       using (new TrackerSwitcher(tracker))
@@ -119,7 +119,7 @@
 
     [Theory]
     [AutoDbData]
-    public void TrackOutcomeShouldRegisterOutcome([Frozen]ID outcomeDefinitionId, [Frozen]IAccountsSettingsService accountsSettingsService, [NoAutoProperties] AccountTrackerService trackerService, ITracker tracker, Contact contact, CurrentInteraction interaction)
+    public void TrackOutcome_ValidOutcome_ShouldRegisterOutcome([Frozen]ID outcomeDefinitionId, [Frozen]IAccountsSettingsService accountsSettingsService, [NoAutoProperties] AccountTrackerService trackerService, ITracker tracker, Contact contact, CurrentInteraction interaction)
     {
       tracker.IsActive.Returns(true);
       tracker.Contact.Returns(contact);

@@ -49,7 +49,7 @@
       }
     }
 
-    public virtual ID GetRegisterOutcome(Item contextItem)
+    public virtual ID GetRegistrationOutcome(Item contextItem)
     {
       var item = GetSettingsItem(contextItem);
 

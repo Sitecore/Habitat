@@ -207,7 +207,7 @@
       {
         //Act
         //Assert
-        accountsSettingsService.Invoking(x=>x.GetRegisterOutcome(null)).ShouldThrow<ItemNotFoundException>();
+        accountsSettingsService.Invoking(x=>x.GetRegistrationOutcome(null)).ShouldThrow<ItemNotFoundException>();
       }
     }
 
@@ -220,7 +220,7 @@
       using (new SiteContextSwitcher(fakeSite))
       {
         //Act
-        var resultOutcomeId = accountsSettingsService.GetRegisterOutcome(null);
+        var resultOutcomeId = accountsSettingsService.GetRegistrationOutcome(null);
         //Assert
         resultOutcomeId.Should().Be(outcomeId);
       }
