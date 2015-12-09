@@ -14,7 +14,7 @@
   {
     [Theory]
     [AutoDbData]
-    public void Should_Return_SearchSettings_WithTemplatesAssigned(SearchSettingsRepository settingsRepository)
+    public void Get_ReturnsSearchSettings(SearchSettingsRepository settingsRepository)
     {
       var searchSettings = settingsRepository.Get();
       searchSettings.Tempaltes.Should().Contain(Templates.NewsArticle.ID);

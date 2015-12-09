@@ -25,7 +25,7 @@
   {
     [Theory]
     [AutoDbData]
-    public void ShouldReturnNewsList([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository, string itemName, [Substitute] SearchService searchService, ISearchSettings searchSettings)
+    public void Get_ReturnsListOfNews([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository, string itemName, [Substitute] SearchService searchService, ISearchSettings searchSettings)
     {
       var id = ID.NewID;
       searchService.Settings.Returns(searchSettings);
@@ -42,7 +42,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Shoul_ThrowException_IfContextItemNotSet([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository)
+    public void Constructor_NullAs1Parameter_ThrowArgumentNullException([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository)
     {
       Action act = () => new NewsRepository(null);
       act.ShouldThrow<ArgumentNullException>();
@@ -50,7 +50,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Should_ThrowExeption_IfContextItemOfWrongTemplate([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository, Item contextItem)
+    public void Constructor_ItemNotDerivedFromNewsFolterTemplate_ThrowArgumentNullException([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository, Item contextItem)
     {
       Action act = () => new NewsRepository(contextItem, searchServiceRepository);
       act.ShouldThrow<ArgumentException>();
@@ -58,7 +58,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Should_Return_LatestNews([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository, string itemName, [Substitute] SearchService searchService, ISearchSettings searchSettings, ISearchResults searchResults, List<Item> collection)
+    public void GetLatestNews_IntegerAs1Parameter_ReturnsNumberOfNewsEquelToParameterValue([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository, string itemName, [Substitute] SearchService searchService, ISearchSettings searchSettings, ISearchResults searchResults, List<Item> collection)
     {
       var id = ID.NewID;
       searchService.Settings.Returns(searchSettings);

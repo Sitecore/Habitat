@@ -16,7 +16,7 @@
   {
     [Theory]
     [AutoDbData]
-    public void Should_Return_SearchService([Frozen] ISearchSettingsRepository settingRepository, SearchServiceRepository serviceRepository)
+    public void Get_ReturnsSearchService([Frozen] ISearchSettingsRepository settingRepository, SearchServiceRepository serviceRepository)
     {
       var result = serviceRepository.Get();
       result.Should().BeOfType<SearchService>();

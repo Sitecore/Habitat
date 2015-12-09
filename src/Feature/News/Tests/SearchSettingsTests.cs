@@ -15,7 +15,7 @@ namespace Sitecore.Feature.News.Tests
   {
     [Theory]
     [AutoDbData]
-    public void Should_SetAndRead_RootField(SearchSettings settings, Item item)
+    public void Root_SetRootSomeItem_RootShouldReturnsSameItem(SearchSettings settings, Item item)
     {
       settings.Root = item;
       settings.Root.ShouldBeEquivalentTo(item);
