@@ -51,8 +51,8 @@
     [AutoDbData]
     public void SetTag_TagValueParameterIsEmpty_ShouldNotCallSetOnTagsPropertyOfContact([Frozen] IContactProfileProvider contactProfileProvider, [Greedy] ContactProfileService contactProfileService, string tagName)
     {
-      contactProfileService.SetTag(tagName, String.Empty);
-      contactProfileProvider.Contact.Tags.DidNotReceive().Set(tagName, String.Empty);
+      contactProfileService.SetTag(tagName, null);
+      contactProfileProvider.Contact.Tags.DidNotReceive().Set(tagName, null);
     }
   }
 }
