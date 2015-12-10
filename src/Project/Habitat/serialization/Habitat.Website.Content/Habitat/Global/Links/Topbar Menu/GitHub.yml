@@ -2,7 +2,11 @@
 ID: 8cd9787a-22eb-4832-8e77-284f9a3f36e5
 Parent: 575bb28a-b341-40e0-84f4-940deefb1b98
 Template: 390333c8-751b-4332-84a3-6360b969a19f
-Path: /sitecore/content/Habitat/Global/Links/Topbar Menu/About
+Path: /sitecore/content/Habitat/Global/Links/Topbar Menu/GitHub
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 100
 Languages:
 - Language: en
   Versions:
@@ -16,4 +20,4 @@ Languages:
       Value: 20150910T101321Z
     - ID: fe71c30e-f07d-4052-8594-c3028cd76e1f
       # Link
-      Value: "<link text=\"\" linktype=\"internal\" url=\"\" anchor=\"\" title=\"\" class=\"\" querystring=\"\" target=\"\" id=\"{762684E7-480B-41D6-82DE-8549BABE95E3}\" />"
+      Value: "<link linktype=\"external\" url=\"https://github.com/Sitecore/Habitat/\" anchor=\"\" target=\"\" />"
