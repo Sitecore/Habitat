@@ -31,7 +31,7 @@ Scenario: Accounts_Contact Identification_UC2_Identification is shown in the dem
 	And Identification status is <Known>
 	And System shows following info on Contact panel title
 	| Number of visits | 
-	| 2                | 
+	| 1                | 
 
 
 @NeedImplementation
@@ -39,7 +39,10 @@ Scenario: Accounts_Contact Identification_UC3_Identification is shown in the dem
 	Given User is registered in Habitat and logged out 
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
-	And Habitat website is opened on Forgot Login page
+	And Habitat website is opened on Login page
+	And System contained following info on Contact panel title
+	| Number of visits | 
+	| 1                | 
 	When Actor enteres following data into Login page fields
 	| Email              |Password |
 	| kov@sitecore.net   |k        |
@@ -51,7 +54,7 @@ Scenario: Accounts_Contact Identification_UC3_Identification is shown in the dem
 	And Identification status is <Known>
 	And System shows following info on Contact panel title
 	| Number of visits | 
-	| 3                | 
+	| 2                | 
 
 
 @NeedImplementation
