@@ -1,0 +1,28 @@
+﻿---
+ID: baa538a3-9de8-4d89-b2ea-7f30b7d6410d
+Parent: 9f6e51e8-696a-45d5-bafe-a2d6f2f98cac
+Template: 40ad8a9b-c75c-428d-9e1a-51372b21f63e
+Path: /sitecore/content/Habitat/Global/Quotes/Groundbreaking
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 0de53078-0da4-40cc-bbca-63aa96a0a1ef
+      # Quote
+      Value: [Habitat...] is nothing less than groundbreaking, it is a real revolution in the way that Sitecore teaches developers to work with their product.
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151209T053230Z
+    - ID: 26cd59ab-3639-488f-bafd-58d2b217755a
+      # Name
+      Value: Anders Laub Christoffersen
+    - ID: 76972fcd-4bb0-4255-864e-077745efdf50
+      # Title
+      Value: Sitecore MVP
+    - ID: bf83983a-473f-4a49-be8e-7d563aa5687e
+      # Company
+      Value: Pentia A/S
+    - ID: c9baf3eb-8cfa-4bf6-9b19-51d38db5fc38
+      # Picture
+      Value: "<image mediaid=\"{A127A6BF-3087-4495-BD07-7B7C5C77A621}\" />"
