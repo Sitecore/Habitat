@@ -1,0 +1,26 @@
+﻿---
+ID: bdd730eb-f808-4c65-b94a-d2f03672eafb
+Parent: db7775fa-27d8-44e4-9e6c-08ade58ef4ed
+Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
+Path: /sitecore/layout/Renderings/Feature/News/LatestNews
+SharedFields:
+- ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
+  # Datasource Template
+  Value: {74889B26-061C-4D6A-8CDB-422665FC34EC}
+- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  # Datasource Location
+  Value: {0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+- ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
+  # Controller Action
+  Value: LatestNews
+- ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
+  # Controller
+  Value: Sitecore.Feature.News.Controller.NewsController, Sitecore.Feature.News
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150824T174219Z

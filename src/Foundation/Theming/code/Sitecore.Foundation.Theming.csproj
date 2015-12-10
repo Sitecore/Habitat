@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98DE0D1D-26F1-4CCA-847C-4E0FC2DBA5FC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sitecore.Foundation.Theming</RootNamespace>
+    <AssemblyName>Sitecore.Foundation.Theming</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\plugins\animate\animate.css" />
+    <Content Include="assets\plugins\animate\animate.min.css" />
+    <Content Include="assets\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="assets\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="assets\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\plugins\simple-line-icons\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="assets\plugins\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="assets\plugins\simple-line-icons\icons-lte-ie7.js" />
+    <Content Include="assets\plugins\simple-line-icons\License.txt" />
+    <Content Include="assets\plugins\simple-line-icons\Readme.txt" />
+    <Content Include="assets\plugins\simple-line-icons\simple-line-icons.css" />
+    <Content Include="assets\plugins\simple-line-icons\simple-line-icons.min.css" />
+    <Content Include="assets\Sitecore.Foundation.Theming.css" />
+    <Content Include="assets\Sitecore.Foundation.Theming.Editor.css" />
+    <Content Include="assets\Sitecore.Foundation.Theming.Editor.min.css">
+      <DependentUpon>Sitecore.Foundation.Theming.Editor.css</DependentUpon>
+    </Content>
+    <Content Include="assets\Sitecore.Foundation.Theming.min.css">
+      <DependentUpon>Sitecore.Foundation.Theming.css</DependentUpon>
+    </Content>
+    <Content Include="fonts\Bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Config\Include\Foundation\Foundation.Theming.config" />
+    <Content Include="assets\plugins\animate\README.md" />
+    <Content Include="assets\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\plugins\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="assets\plugins\font-awesome\less\animated.less" />
+    <Content Include="assets\plugins\font-awesome\less\bordered-pulled.less" />
+    <Content Include="assets\plugins\font-awesome\less\core.less" />
+    <Content Include="assets\plugins\font-awesome\less\fixed-width.less" />
+    <Content Include="assets\plugins\font-awesome\less\font-awesome.less" />
+    <Content Include="assets\plugins\font-awesome\less\icons.less" />
+    <Content Include="assets\plugins\font-awesome\less\larger.less" />
+    <Content Include="assets\plugins\font-awesome\less\list.less" />
+    <Content Include="assets\plugins\font-awesome\less\mixins.less" />
+    <Content Include="assets\plugins\font-awesome\less\path.less" />
+    <Content Include="assets\plugins\font-awesome\less\rotated-flipped.less" />
+    <Content Include="assets\plugins\font-awesome\less\stacked.less" />
+    <Content Include="assets\plugins\font-awesome\less\variables.less" />
+    <Content Include="assets\plugins\font-awesome\scss\font-awesome.scss" />
+    <Content Include="assets\plugins\font-awesome\scss\_animated.scss" />
+    <Content Include="assets\plugins\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="assets\plugins\font-awesome\scss\_core.scss" />
+    <Content Include="assets\plugins\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="assets\plugins\font-awesome\scss\_icons.scss" />
+    <Content Include="assets\plugins\font-awesome\scss\_larger.scss" />
+    <Content Include="assets\plugins\font-awesome\scss\_list.scss" />
+    <Content Include="assets\plugins\font-awesome\scss\_mixins.scss" />
+    <Content Include="assets\plugins\font-awesome\scss\_path.scss" />
+    <Content Include="assets\plugins\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="assets\plugins\font-awesome\scss\_stacked.scss" />
+    <Content Include="assets\plugins\font-awesome\scss\_variables.scss" />
+    <Content Include="assets\plugins\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="assets\plugins\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="assets\plugins\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="fonts\Bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\Bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\Bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\Bootstrap\glyphicons-halflings-regular.woff2" />
+    <Content Include="javascripts\bootstrap-sprockets.js" />
+    <Content Include="javascripts\bootstrap.js" />
+    <Content Include="javascripts\bootstrap.min.js" />
+    <Content Include="javascripts\bootstrap\affix.js" />
+    <Content Include="javascripts\bootstrap\alert.js" />
+    <Content Include="javascripts\bootstrap\button.js" />
+    <Content Include="javascripts\bootstrap\carousel.js" />
+    <Content Include="javascripts\bootstrap\collapse.js" />
+    <Content Include="javascripts\bootstrap\dropdown.js" />
+    <Content Include="javascripts\bootstrap\modal.js" />
+    <Content Include="javascripts\bootstrap\popover.js" />
+    <Content Include="javascripts\bootstrap\scrollspy.js" />
+    <Content Include="javascripts\bootstrap\tab.js" />
+    <Content Include="javascripts\bootstrap\tooltip.js" />
+    <Content Include="javascripts\bootstrap\transition.js" />
+    <Content Include="scripts\Sitecore.Foundation.Theming.js" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Black.ttf" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-BlackItalic.ttf" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Bold.ttf" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-BoldItalic.ttf" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Italic.ttf" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Light.ttf" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-LightItalic.ttf" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Medium.ttf" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-MediumItalic.ttf" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Regular.ttf" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Thin.ttf" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-ThinItalic.ttf" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Condensed-Bold-Italic.woff" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Condensed-Bold.woff" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Condensed-Italic.woff" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Condensed-Light-Italic.woff" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Condensed-Light.woff" />
+    <Content Include="fonts\Sitecore.Foundation.Theming\Roboto-Condensed.woff" />
+    <Content Include="packages.config" />
+    <Content Include="scripts\jquery-2.1.4.js" />
+    <Content Include="scripts\jquery-2.1.4.min.js" />
+    <Content Include="images\.keep" />
+    <None Include="scripts\jquery-2.1.4.intellisense.js" />
+    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
+    <Content Include="stylesheets\Sitecore.Foundation.Theming.Editor.scss" />
+    <None Include="stylesheets\Sitecore.Foundation.Theming.scss" />
+    <None Include="stylesheets\_contentList.scss" />
+    <None Include="stylesheets\_sidebar.scss" />
+    <None Include="stylesheets\_navigation.scss" />
+    <None Include="stylesheets\_media.scss" />
+    <None Include="stylesheets\_article.scss" />
+    <None Include="stylesheets\_teasers.scss" />
+    <None Include="stylesheets\_fonts.scss" />
+    <Content Include="scripts\jquery-2.1.4.min.map" />
+    <None Include="stylesheets\_bootstrap.scss" />
+    <None Include="stylesheets\_bootstrap-sprockets.scss" />
+    <None Include="stylesheets\_bootstrap-mincer.scss" />
+    <None Include="stylesheets\_bootstrap-compass.scss" />
+    <None Include="stylesheets\bootstrap\_wells.scss" />
+    <None Include="stylesheets\bootstrap\_variables.scss" />
+    <None Include="stylesheets\bootstrap\_utilities.scss" />
+    <None Include="stylesheets\bootstrap\_type.scss" />
+    <None Include="stylesheets\bootstrap\_tooltip.scss" />
+    <None Include="stylesheets\bootstrap\_thumbnails.scss" />
+    <None Include="stylesheets\bootstrap\_theme.scss" />
+    <None Include="stylesheets\bootstrap\_tables.scss" />
+    <None Include="stylesheets\bootstrap\_scaffolding.scss" />
+    <None Include="stylesheets\bootstrap\_responsive-utilities.scss" />
+    <None Include="stylesheets\bootstrap\_responsive-embed.scss" />
+    <None Include="stylesheets\bootstrap\_progress-bars.scss" />
+    <None Include="stylesheets\bootstrap\_print.scss" />
+    <None Include="stylesheets\bootstrap\_popovers.scss" />
+    <None Include="stylesheets\bootstrap\_panels.scss" />
+    <None Include="stylesheets\bootstrap\_pagination.scss" />
+    <None Include="stylesheets\bootstrap\_pager.scss" />
+    <None Include="stylesheets\bootstrap\_normalize.scss" />
+    <None Include="stylesheets\bootstrap\_navs.scss" />
+    <None Include="stylesheets\bootstrap\_navbar.scss" />
+    <None Include="stylesheets\bootstrap\_modals.scss" />
+    <None Include="stylesheets\bootstrap\_mixins.scss" />
+    <None Include="stylesheets\bootstrap\_media.scss" />
+    <None Include="stylesheets\bootstrap\_list-group.scss" />
+    <None Include="stylesheets\bootstrap\_labels.scss" />
+    <None Include="stylesheets\bootstrap\_jumbotron.scss" />
+    <None Include="stylesheets\bootstrap\_input-groups.scss" />
+    <None Include="stylesheets\bootstrap\_grid.scss" />
+    <None Include="stylesheets\bootstrap\_glyphicons.scss" />
+    <None Include="stylesheets\bootstrap\_forms.scss" />
+    <None Include="stylesheets\bootstrap\_dropdowns.scss" />
+    <None Include="stylesheets\bootstrap\_component-animations.scss" />
+    <None Include="stylesheets\bootstrap\_code.scss" />
+    <None Include="stylesheets\bootstrap\_close.scss" />
+    <None Include="stylesheets\bootstrap\_carousel.scss" />
+    <None Include="stylesheets\bootstrap\_buttons.scss" />
+    <None Include="stylesheets\bootstrap\_button-groups.scss" />
+    <None Include="stylesheets\bootstrap\_breadcrumbs.scss" />
+    <None Include="stylesheets\bootstrap\_badges.scss" />
+    <None Include="stylesheets\bootstrap\_alerts.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_vendor-prefixes.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_text-overflow.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_text-emphasis.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_table-row.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_tab-focus.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_size.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_responsive-visibility.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_resize.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_reset-text.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_reset-filter.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_progress-bar.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_panels.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_pagination.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_opacity.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_nav-vertical-align.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_nav-divider.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_list-group.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_labels.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_image.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_hide-text.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_grid.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_grid-framework.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_gradients.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_forms.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_clearfix.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_center-block.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_buttons.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_border-radius.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_background-variant.scss" />
+    <None Include="stylesheets\bootstrap\mixins\_alerts.scss" />
+    <None Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53946</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53946/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

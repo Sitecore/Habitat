@@ -1,0 +1,20 @@
+﻿---
+ID: 0cadfe65-0e55-424a-b396-45a7445694e2
+Parent: b87cd5f0-4e72-429d-90a3-b285f1d038ca
+Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+Path: /sitecore/layout/Models/Project
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: applications/32x32/folder_window.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151030T173146Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

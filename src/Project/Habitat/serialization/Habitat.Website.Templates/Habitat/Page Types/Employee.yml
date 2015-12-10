@@ -1,0 +1,34 @@
+﻿---
+ID: 467c2144-4454-4518-b1de-e31b4cbbff33
+Parent: 85086bb5-0365-48d7-98b1-cb9b1b6392ca
+Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+Path: /sitecore/templates/Project/Habitat/Page Types/Employee
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: People/16x16/user_headphones.png
+- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+  # __Base template
+  Type: tree list
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {745652AE-3298-48B1-9BE1-99012D91F3AC}
+    {91962B60-25F6-428F-8D10-02AA1E49D6A5}
+    {D88CCD80-D851-470D-AF11-701FF23504E7}
+    {BDD24F35-05E8-4466-8798-7D3DD6A6C991}
+    {A1CBA309-D22B-46D5-80F8-2972C185363F}
+    {8FD6C8B6-A9A4-4322-947E-90CE3D94916D}
+- ID: f7d48a55-2158-4f02-9356-756654404f73
+  # __Standard values
+  Value: {CA9A524F-2196-4C7B-BF1E-34B29B4ED6EA}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151124T101516Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

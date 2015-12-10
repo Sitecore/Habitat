@@ -1,0 +1,13 @@
+﻿---
+ID: 20507226-1c3b-4d7a-89d4-de00706e59b6
+Parent: 1121e629-34c8-478e-9b33-8b54951c195f
+Template: 4de2d9d9-0781-47ad-8f5d-52f2ad920d83
+Path: /sitecore/content/Shared/Social/Twitter feeds
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151123T163956Z
