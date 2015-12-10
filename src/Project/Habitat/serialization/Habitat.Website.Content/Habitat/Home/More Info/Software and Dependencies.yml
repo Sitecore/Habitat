@@ -1,8 +1,8 @@
 ﻿---
-ID: 340146a4-809e-4bc1-bcf2-9b0ebd23f271
-Parent: 5deefbdd-6c01-4c49-962c-911736be4178
+ID: 21aa5aa4-1f74-41cd-9dbf-290cea253a7f
+Parent: 3a5d638d-5bdd-4ddd-beac-4a0c81c27e8a
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
-Path: /sitecore/content/Habitat/Home/About Habitat/Fundamentals/Extensibilty
+Path: /sitecore/content/Habitat/Home/More Info/Software and Dependencies
 SharedFields:
 - ID: b0a67b2a-8b07-4e0b-8809-69f751709806
   # __Tracking
@@ -23,16 +23,16 @@ Languages:
     Fields:
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       # NavigationTitle
-      Value: Extensibilty
+      Value: Software and Dependencies
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20151009T064235Z
+      Value: 20151026T042439Z
     - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
       # Image
-      Value: "<image mediaid=\"{B401FBDE-2CE7-4B44-90AB-9A41DE9B95F9}\" ></image>"
+      Value: "<image mediaid=\"{B2EC1BE8-4580-43FD-8245-D40CDE731170}\" />"
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       # Title
-      Value: Extensibilty
+      Value: Software and Dependencies
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
       # BrowserTitle
-      Value: Extensibilty
+      Value: Software and Dependencies

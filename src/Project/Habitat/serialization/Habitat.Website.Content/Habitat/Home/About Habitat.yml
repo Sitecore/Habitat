@@ -30,9 +30,15 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20150907T045121Z
+    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+      # Summary
+      Value: Sitecore Habitat is a set of principles and conventions focused on increasing productivity and quality in Sitecore projects.
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       # Title
       Value: About Habitat
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
       # BrowserTitle
       Value: About Habitat
+    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+      # Body
+      Value: Sitecore Habitat is a set of principles and conventions focused on increasing productivity and quality in Sitecore projects.
