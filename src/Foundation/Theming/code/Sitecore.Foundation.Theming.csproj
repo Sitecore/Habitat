@@ -61,6 +61,10 @@
     <Content Include="assets\plugins\simple-line-icons\simple-line-icons.css" />
     <Content Include="assets\plugins\simple-line-icons\simple-line-icons.min.css" />
     <Content Include="assets\Sitecore.Foundation.Theming.css" />
+    <Content Include="assets\Sitecore.Foundation.Theming.Editor.css" />
+    <Content Include="assets\Sitecore.Foundation.Theming.Editor.min.css">
+      <DependentUpon>Sitecore.Foundation.Theming.Editor.css</DependentUpon>
+    </Content>
     <Content Include="assets\Sitecore.Foundation.Theming.min.css">
       <DependentUpon>Sitecore.Foundation.Theming.css</DependentUpon>
     </Content>
@@ -149,6 +153,7 @@
     <Content Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </Content>
+    <Content Include="stylesheets\Sitecore.Foundation.Theming.Editor.scss" />
     <None Include="stylesheets\Sitecore.Foundation.Theming.scss" />
     <None Include="stylesheets\_contentList.scss" />
     <None Include="stylesheets\_sidebar.scss" />

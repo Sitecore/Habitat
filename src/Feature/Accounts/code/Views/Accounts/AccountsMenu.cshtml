@@ -25,8 +25,7 @@
                     @if (!string.IsNullOrWhiteSpace(Sitecore.Context.User.Profile.FullName))
                     {
                     <dt>@Captions.Name</dt>
-                        <dd>@Sitecore.Context.User.Profile["FirstName"]<br/>@Sitecore.Context.User.Profile["LastName"]</dd>
-
+                        <dd>@Sitecore.Context.User.Profile.FullName</dd>
                     }
                     <dt>@Captions.Email</dt>
                     <dd>@Sitecore.Context.User.Profile.Email</dd>

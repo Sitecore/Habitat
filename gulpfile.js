@@ -19,9 +19,20 @@ var websiteRootBackup = config.websiteRoot;
 *****************************/
 gulp.task("01-Copy-Sitecore-Lib", function () {
   console.log("Copying Sitecore Libraries");
-  gulp.src(config.sitecoreLibraries + "/**/*")
+  var files = config.sitecoreLibraries + "/**/*";
+  gulp.src(files)
     .pipe(gulp.dest("./lib/Sitecore"));
-  console.log("Finished copying sitecore libraries", "color:red");
+
+  var root = "./src";
+  var projects = root + "/**/code/bin";
+  gulp.src(projects, { base: root })
+    .pipe(foreach(function (stream, file) {
+      console.log("copying to " + file.path);
+      gulp.src(files)
+        .pipe(gulp.dest(file.path));
+      return stream;
+    }));
+
 });
 
 gulp.task("02-Publish-All-Projects", function (callback) {

@@ -3,6 +3,10 @@ ID: 6fc63e8c-dd07-40f5-b3dc-cc74c7f767e6
 Parent: 575bb28a-b341-40e0-84f4-940deefb1b98
 Template: 390333c8-751b-4332-84a3-6360b969a19f
 Path: /sitecore/content/Habitat/Global/Links/Topbar Menu/Sitecore
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 300
 Languages:
 - Language: en
   Versions:

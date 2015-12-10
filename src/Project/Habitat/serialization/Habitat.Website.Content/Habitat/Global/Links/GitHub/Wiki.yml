@@ -1,0 +1,19 @@
+﻿---
+ID: c02914fb-799d-4a20-8a91-7aa00fa5df90
+Parent: d656e3ef-7298-4af3-b4a7-e5f43b5bcf4a
+Template: 390333c8-751b-4332-84a3-6360b969a19f
+Path: /sitecore/content/Habitat/Global/Links/GitHub/Wiki
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: Wiki
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151210T040908Z
+    - ID: fe71c30e-f07d-4052-8594-c3028cd76e1f
+      # Link
+      Value: "<link linktype=\"external\" url=\"https://github.com/Sitecore/Habitat/wiki\" anchor=\"\" target=\"_blank\" />"
