@@ -2,14 +2,15 @@
 {
   using System;
   using System.Linq;
+  using Common.Specflow.Infrastructure;
   using FluentAssertions;
   using Habitat.Accounts.Specflow.Infrastructure;
   using OpenQA.Selenium;
+  using Sitecore.Feature.Accounts.Specflow.Steps;
   using TechTalk.SpecFlow;
-  using Xunit;
 
   [Binding]
-  internal class CommonSteps : StepsBase
+  internal class CommonSteps : AccountStepsBase
   {
     [When(@"User selects (.*) from drop-down menu")]
     public void WhenUserSelectsRegisterFromDropDownMenu(string linkText)
@@ -27,27 +28,27 @@
     [Then(@"(.*) title presents on page")]
     public void ThenRegisterTitlePresentsOnPage(string title)
     {
-      this.Site.PageTitle.Text.Should().BeEquivalentTo(title);
+      Site.PageTitle.Text.Should().BeEquivalentTo(title);
     }
 
     [Then(@"(.*) title is no longer present on page")]
     public void ThenLoginTitleIsNoLongerPresentOnPage(string title)
     {
-      this.Site.PageTitle.Text.Should().NotBe(title);
+      Site.PageTitle.Text.Should().NotBe(title);
     }
 
 
     [Then(@"(.*) button presents")]
     public void ThenRegisterButtonPresents(string btn)
     {
-      this.Site.SubmitButton.Text.Should().BeEquivalentTo(btn);
+      Site.SubmitButton.Text.Should().BeEquivalentTo(btn);
     }
 
     [Then(@"Register fields present on page")]
     public void ThenRegisterFieldsPresentOnPage(Table table)
     {
       var fields = table.Rows.Select(x => x.Values.First());
-      var elements = this.Site.FormFields.Select(el => el.GetAttribute("name"));
+      var elements = Site.FormFields.Select(el => el.GetAttribute("name"));
       elements.Should().Contain(fields);
     }
 
@@ -59,7 +60,7 @@
       foreach (var button in buttons)
       {
         var found = false;
-        foreach (var webElement in this.Site.UserIconDropDownButtons)
+        foreach (var webElement in Site.UserIconDropDownButtons)
         {
           found = webElement.Text == button;
           if (found)
@@ -81,7 +82,7 @@
       foreach (var button in buttons)
       {
         var found = false;
-        foreach (var webElement in this.Site.UserIconDropDownButtons)
+        foreach (var webElement in Site.UserIconDropDownButtons)
         {
           found = webElement.Text == button;
           if (found)
@@ -99,12 +100,11 @@
       var row = table.Rows.First();
       foreach (var key in row.Keys)
       {
-        this.Site.FormFields.GetField(key).SendKeys(row[key]);
+        Site.FormFields.GetField(key).SendKeys(row[key]);
       }
       //Following code will remove create user from DB after use case ends
-      ContextExtensions.CleanupPool.Add(new TestCleanupAction()
+      ContextExtensions.CleanupPool.Add(new TestCleanupAction
       {
-
         ActionType = ActionType.RemoveUser,
         Payload = "extranet\\" + row["Email"]
       });
@@ -114,18 +114,18 @@
     public void GivenUserWithFollowingDataIsRegistered(Table table)
     {
       Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
-      this.WhenActorEntersFollowingDataInToTheRegisterFields(table);
-      this.Site.SubmitButton.Click();
+      WhenActorEntersFollowingDataInToTheRegisterFields(table);
+      Site.SubmitButton.Click();
       new SiteNavigation().WhenActorMovesCursorOverTheUserIcon();
-      this.WhenUserSelectsRegisterFromDropDownMenu("Logout");
+      WhenUserSelectsRegisterFromDropDownMenu("Logout");
     }
 
     [Given(@"User with following data is registered in Habitat")]
     public void GivenUserWithFollowingDataIsRegisteredInHabitat(Table table)
     {
       Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
-      this.WhenActorEntersFollowingDataInToTheRegisterFields(table);
-      this.Site.SubmitButton.Click();
+      WhenActorEntersFollowingDataInToTheRegisterFields(table);
+      Site.SubmitButton.Click();
 
       table.Rows
         .Select(row => row["Email"]).ToList()
@@ -145,7 +145,6 @@
       Driver.FindElement(By.CssSelector("body")).SendKeys(Keys.Control + 't');
       Driver.Navigate().GoToUrl(Settings.EndSessionUrl);
       Driver.FindElement(By.CssSelector("body")).SendKeys(Keys.Control + 'w');
-      
     }
 
 
@@ -154,7 +153,7 @@
     public void GivenUserWasLoggedOutFromTheHabitat()
     {
       new SiteNavigation().WhenActorMovesCursorOverTheUserIcon();
-      this.Site.SubmitButton.Click();
+      Site.SubmitButton.Click();
     }
 
     [Given(@"User clicks (.*) from drop-down menu")]
@@ -164,54 +163,37 @@
       Driver.FindElement(By.LinkText(linkText.ToUpperInvariant())).Click();
     }
 
-    [AfterScenario]
-    public void Cleanup()
-    {
-      ContextExtensions.CleanupPool.ForEach(this.CleanupExecute);
-    }
-
-    private void CleanupExecute(TestCleanupAction payload)
-    {
-      if (payload.ActionType == ActionType.RemoveUser)
-      {
-        ContextExtensions.HelperService.DeleteUser(payload.Payload);
-        return;
-
-      }
-
-      throw new NotSupportedException($"Action type '{payload.ActionType}' is not supported");
-    }
+   
 
     [Given(@"User is registered in Habitat and logged out")]
     public void GivenUserIsRegisteredInHabitatAndLoggedOut(Table table)
     {
       Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
-      this.WhenActorEntersFollowingDataInToTheRegisterFields(table);
-      this.Site.SubmitButton.Click();
+      WhenActorEntersFollowingDataInToTheRegisterFields(table);
+      Site.SubmitButton.Click();
       new SiteNavigation().WhenActorMovesCursorOverTheUserIcon();
-      this.Site.SubmitButton.Click();
-
+      Site.SubmitButton.Click();
     }
 
     [Given(@"User was deleted from the System")]
     public void GivenUserWasDeletedFromTheSystem()
     {
-      this.Cleanup();
+      Cleanup();
     }
 
     [Given(@"Login form is opened")]
     public void GivenLoginFormIsOpened()
     {
-      this.SiteNavigation.GivenHabitatWebsiteIsOpenedOnMainPage();
-      this.SiteNavigation.WhenActorMovesCursorOverTheUserIcon();
-      this.WhenUserClicksLoginFromDropDownMenu("Login");
+      SiteNavigation.GivenHabitatWebsiteIsOpenedOnMainPage();
+      SiteNavigation.WhenActorMovesCursorOverTheUserIcon();
+      WhenUserClicksLoginFromDropDownMenu("Login");
     }
 
 
     [Then(@"Login popup is no longer presents")]
     public void ThenLoginPopupIsNoLongerPresents()
     {
-      var element = this.Site.LoginFormPopup;
+      var element = Site.LoginFormPopup;
 
       element.Displayed.Should().BeFalse();
     }
@@ -224,7 +206,7 @@
       foreach (var buttonLink in buttonsLinks)
       {
         var found = false;
-        foreach (var webElement in this.Site.UserIconDropDownButtonLinks)
+        foreach (var webElement in Site.UserIconDropDownButtonLinks)
         {
           found = webElement.Text == buttonLink;
           if (found)

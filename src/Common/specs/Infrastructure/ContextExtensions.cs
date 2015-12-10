@@ -3,10 +3,10 @@
   using System.Collections.Generic;
   using System.ServiceModel;
   using Common.Specflow.TestHelperService;
-  using Habitat.Accounts.Specflow.Steps;
+  using Common.Specflow.UtfService;
   using TechTalk.SpecFlow;
 
-  internal static class ContextExtensions
+  public static class ContextExtensions
   {
     public static List<TestCleanupAction> CleanupPool
     {
@@ -21,6 +21,7 @@
       }
     }
 
-    public static AutoTestsHelperServiceSoapClient HelperService => new AutoTestsHelperServiceSoapClient(new BasicHttpBinding(), new EndpointAddress(new Settings().TestHelperService));
+    public static AutoTestsHelperServiceSoapClient HelperService => new AutoTestsHelperServiceSoapClient(new BasicHttpBinding(), new EndpointAddress(new BaseSettings().TestHelperService));
+    public static HelperWebServiceSoapClient UtfService => new HelperWebServiceSoapClient(new BasicHttpBinding(), new EndpointAddress(new BaseSettings().UtfHelperService));
   }
 }

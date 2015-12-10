@@ -10,7 +10,7 @@ namespace Habitat.Accounts.Specflow.Infrastructure
 {
   using OpenQA.Selenium.Support.UI;
 
-  static class SeleniumExtensions
+  public static class SeleniumExtensions
   {
     public static void MoveToElement(this IWebElement element)
     {

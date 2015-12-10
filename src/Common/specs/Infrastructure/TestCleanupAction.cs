@@ -1,9 +1,13 @@
-﻿namespace Habitat.Accounts.Specflow.Steps
+﻿namespace Common.Specflow.Infrastructure
 {
-  internal class TestCleanupAction
+  public class TestCleanupAction
   {
     public ActionType ActionType { get; set; }
-    public string Payload { get; set; }
+    public object Payload { get; set; }
 
+    public T GetPayload<T>() where T:class
+    {
+      return Payload as T;
+    }
   }
 }

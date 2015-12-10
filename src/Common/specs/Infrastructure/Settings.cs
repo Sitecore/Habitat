@@ -1,8 +1,8 @@
-﻿namespace Habitat.Accounts.Specflow.Steps
+﻿namespace Common.Specflow.Infrastructure
 {
   using System.Configuration;
 
-  public class Settings
+  public class BaseSettings
   {
     public string BaseUrl => ConfigurationManager.AppSettings["baseUrl"];
     public string RegisterPageUrl => ConfigurationManager.AppSettings["registerUrl"];
@@ -17,5 +17,8 @@
 
     public string ForgotPasswordPageUrl => ConfigurationManager.AppSettings["forgotPasswordUrl"];
     public string EndSessionUrl => ConfigurationManager.AppSettings["endSessionUrl"];
+    public string UtfHelperService => BaseUrl + ConfigurationManager.AppSettings["utfProxyUrl"];
+    public string UserName => "sitecore\\admin";
+    public string Password => "b";
   }
 }

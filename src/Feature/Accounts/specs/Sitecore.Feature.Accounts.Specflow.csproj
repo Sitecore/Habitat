@@ -39,6 +39,9 @@
       <HintPath>..\..\..\..\packages\FluentAssertions.4.0.1\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.Analytics">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -88,7 +91,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Forgot Password.feature</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\SeleniumExtensions.cs" />
     <Compile Include="Infrastructure\Site.cs" />
     <Compile Include="Log out.feature.cs">
       <AutoGen>True</AutoGen>
@@ -121,26 +123,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Save user details in xDB.feature</DependentUpon>
     </Compile>
-    <Compile Include="Service References\TestHelperService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Show user info on popup.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Show user info on popup.feature</DependentUpon>
     </Compile>
-    <Compile Include="Steps\ActionType.cs" />
     <Compile Include="Steps\CommonSteps.cs" />
-    <Compile Include="Infrastructure\ContextExtensions.cs" />
     <Compile Include="Steps\ForgotPasswordSteps.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
     <Compile Include="Steps\RegisterPage.cs" />
     <Compile Include="Steps\Settings.cs" />
     <Compile Include="Steps\SiteNavigation.cs" />
-    <Compile Include="Steps\StepsBase.cs" />
-    <Compile Include="Infrastructure\TestCleanupAction.cs" />
+    <Compile Include="Steps\AccountStepsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -183,7 +177,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Save user details in xDB.feature.cs</LastGenOutput>
     </None>
-    <None Include="Service References\TestHelperService\tests.wsdl" />
     <None Include="Show user info on popup.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Show user info on popup.feature.cs</LastGenOutput>
@@ -193,25 +186,10 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\TestHelperService\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\TestHelperService\tests.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\TestHelperService\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\TestHelperService\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\TestHelperService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <ProjectReference Include="..\..\..\Common\specs\Common.Specflow.csproj">
+      <Project>{E0C9AF4F-FC51-42E6-B7B9-1E173AC0589D}</Project>
+      <Name>Common.Specflow</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

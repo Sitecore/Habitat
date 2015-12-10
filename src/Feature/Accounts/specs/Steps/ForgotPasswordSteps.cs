@@ -1,43 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
-using TechTalk.SpecFlow;
-using FluentAssertions;
-
-namespace Habitat.Accounts.Specflow.Steps
+﻿namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
-  using System.Security.Cryptography;
+  using System;
+  using System.Linq;
   using FluentAssertions;
-  using Habitat.Accounts.Specflow.Infrastructure;
+  using TechTalk.SpecFlow;
 
-  class ForgotPasswordSteps : StepsBase
+  internal class ForgotPasswordSteps : AccountStepsBase
   {
     [Then(@"(.*) title presents on ForgotPassword page")]
     public void ThenPasswordResetTitlePresentsOnForgotPasswordPage(string title)
     {
-      this.Site.PageTitle.Text.Should().BeEquivalentTo(title);
+      Site.PageTitle.Text.Should().BeEquivalentTo(title);
     }
 
     [Then(@"Forgot password form contains message to user")]
     public void ThenForgotPasswordFormContainsMessageToUser(Table table)
     {
       var fields = table.Rows.Select(x => x.Values.First());
-      var elements = this.Site.PageHelpBlock.Select(el => el.Text);
+      var elements = Site.PageHelpBlock.Select(el => el.Text);
       elements.Should().Contain(fields);
     }
 
     [Then(@"System shows following error message for the E-mail field")]
-    public void ThenSystemShowsFollowingErrorMessageForTheE_MailField(Table table)
+    public void ThenSystemShowsFollowingErrorMessageForTheEMailField(Table table)
     {
       var textMessages = table.Rows.Select(x => x.Values.First());
 
       foreach (var textMessage in textMessages)
       {
         var found = false;
-        foreach (var webElement in this.Site.PageErrorMessages)
+        foreach (var webElement in Site.PageErrorMessages)
         {
           found = webElement.Text == textMessage;
           if (found)
@@ -52,17 +44,17 @@ namespace Habitat.Accounts.Specflow.Steps
     [When(@"Actor clicks (.*) button on Reset Password page")]
     public void WhenActorClicksResetPasswordButtonOnResetPasswordPage(string btn)
     {
-      var button = this.Site.LoginPageButtons.First(el => el.Text.Equals(btn, StringComparison.CurrentCultureIgnoreCase) || el.GetAttribute("value").Equals(btn, StringComparison.CurrentCultureIgnoreCase));
+      var button = Site.LoginPageButtons.First(el => el.Text.Equals(btn, StringComparison.CurrentCultureIgnoreCase) || el.GetAttribute("value").Equals(btn, StringComparison.CurrentCultureIgnoreCase));
       button.Click();
     }
 
     [When(@"Actor enters following data into E-mail field")]
-    public void WhenActorEntersFollowingDataIntoE_MailField(Table table)
+    public void WhenActorEntersFollowingDataIntoEMailField(Table table)
     {
       var row = table.Rows.First();
       foreach (var key in row.Keys)
       {
-        this.Site.RegisterEmail.SendKeys(row[key]);
+        Site.RegisterEmail.SendKeys(row[key]);
       }
     }
 
@@ -70,8 +62,7 @@ namespace Habitat.Accounts.Specflow.Steps
     public void ThenSystenShowsFollowingAlertMessage(Table table)
     {
       var alertMessage = table.Rows.Select(el => el.Values.First());
-      this.Site.PageAlertInfo.Text.Should().Contain(alertMessage.First());
-
+      Site.PageAlertInfo.Text.Should().Contain(alertMessage.First());
     }
 
     [Then(@"Then Following buttons is no longer present on Forgot Password page")]
@@ -82,7 +73,7 @@ namespace Habitat.Accounts.Specflow.Steps
       foreach (var button in buttons)
       {
         var found = false;
-        foreach (var webElement in this.Site.LoginPageButtons)
+        foreach (var webElement in Site.LoginPageButtons)
         {
           found = webElement.Text == button;
           if (found)
@@ -102,7 +93,7 @@ namespace Habitat.Accounts.Specflow.Steps
       foreach (var field in fields)
       {
         var found = false;
-        foreach (var webElement in this.Site.LoginFormFields)
+        foreach (var webElement in Site.LoginFormFields)
         {
           found = webElement.Text == field;
           if (found)
