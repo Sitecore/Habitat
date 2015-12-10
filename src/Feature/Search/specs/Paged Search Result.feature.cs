@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Habitat.Search.Specflow
+namespace Sitecore.Feature.Search.Specflow
 {
     using TechTalk.SpecFlow;
     
