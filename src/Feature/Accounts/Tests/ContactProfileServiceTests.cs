@@ -1,9 +1,11 @@
 ﻿namespace Sitecore.Feature.Accounts.Tests
 {
+  using System;
   using FluentAssertions;
   using NSubstitute;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Analytics.Model.Entities;
+  using Sitecore.Analytics.Tracking;
   using Sitecore.Feature.Accounts.Models;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
@@ -35,6 +37,22 @@
     {
       contactProfileService.SetPreferredEmail(emailAddress.SmtpAddress);
       contactProfileProvider.Emails.Entries[contactProfileProvider.Emails.Preferred].SmtpAddress.ShouldBeEquivalentTo(emailAddress.SmtpAddress);
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void SetTag_NotEmptyStringParameters_ShouldCallSetOnTagsPropertyOfContactWithSameParameters([Frozen] IContactProfileProvider contactProfileProvider, [Greedy] ContactProfileService contactProfileService, string tagName, string tagValue)
+    {
+      contactProfileService.SetTag(tagName, tagValue);
+      contactProfileProvider.Contact.Tags.Received().Set(tagName, tagValue);
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void SetTag_TagValueParameterIsEmpty_ShouldNotCallSetOnTagsPropertyOfContact([Frozen] IContactProfileProvider contactProfileProvider, [Greedy] ContactProfileService contactProfileService, string tagName)
+    {
+      contactProfileService.SetTag(tagName, String.Empty);
+      contactProfileProvider.Contact.Tags.DidNotReceive().Set(tagName, String.Empty);
     }
   }
 }

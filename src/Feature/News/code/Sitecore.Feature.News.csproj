@@ -135,6 +135,7 @@
     <Compile Include="Controller\NewsController.cs" />
     <Compile Include="Repositories\NewsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\SearchSettingsRepository.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
