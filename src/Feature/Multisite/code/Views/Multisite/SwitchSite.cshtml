@@ -1,0 +1,17 @@
+﻿@using Sitecore.Feature.Multisite
+@using Sitecore.Mvc
+
+@model Sitecore.Feature.Multisite.Models.SiteDefinitions
+
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        @Model.Current.Name
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        @foreach (var site in Model.Sites)
+        {
+            <li><a href="http://@site.HostName">@site.Name</a></li>
+        }
+    </ul>
+</div>
