@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Sitecore.Feature.Multisite.Models
 {
-  public class SiteConfiguration
+  public class SiteDefinition
   {
     public string Name { get; set; }
     public string HostName { get; set; }

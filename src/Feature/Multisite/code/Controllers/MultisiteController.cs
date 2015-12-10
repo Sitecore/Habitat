@@ -7,14 +7,25 @@
   using System.Web.Mvc;
   using Sitecore.Data;
   using Sitecore.Feature.Multisite.Models;
+  using Sitecore.Feature.Multisite.Repositories;
 
   public class MultisiteController : Controller
   {
+    private IMultisiteRepository multisiteRepository;
+
+    public MultisiteController() :this(new MultisiteRepository())
+    {  
+    }
+
+    public MultisiteController(IMultisiteRepository multisiteRepository)
+    {
+      this.multisiteRepository = multisiteRepository;
+    }
+
     [HttpGet]
     public ActionResult SwitchSite(string SiteName)
     {
-      var definitions = new SiteDefinitions();
-      definitions.Sites = new List<SiteConfiguration> {new SiteConfiguration {HostName = "habitat.local", Name = "Habitat", IsCurrent = true}, new SiteConfiguration { HostName = "habitat.local1", Name = "Habitat1" } };
+      var definitions = multisiteRepository.GetSiteDefinitions();
       return this.View(definitions);
     }
   }

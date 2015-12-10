@@ -14,7 +14,7 @@
 
       public struct Fields
       {
-        public static readonly ID HostName = new ID("{12537182-F35C-403F-AFB5-747D55C450B8}");
+        public static readonly ID ShowInMenu = new ID("{12537182-F35C-403F-AFB5-747D55C450B8}");
       }
     }
   }

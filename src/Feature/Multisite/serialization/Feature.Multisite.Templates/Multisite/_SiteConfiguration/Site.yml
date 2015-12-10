@@ -2,7 +2,7 @@
 ID: a71c3a41-08fa-4da0-909b-c4c52f531cde
 Parent: 0fccfe4f-b087-498f-bd26-5cdffc522c9a
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Feature/Multisite/_SiteConfiguration/Site configuration
+Path: /sitecore/templates/Feature/Multisite/_SiteConfiguration/Site
 Languages:
 - Language: en
   Versions:

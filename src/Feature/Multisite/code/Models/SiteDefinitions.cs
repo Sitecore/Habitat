@@ -5,9 +5,9 @@
 
   public class SiteDefinitions
   {
-    public IEnumerable<SiteConfiguration> Sites { get; set; }
+    public IEnumerable<SiteDefinition> Sites { get; set; }
 
-    public SiteConfiguration Current
+    public SiteDefinition Current
     {
       get
       {
