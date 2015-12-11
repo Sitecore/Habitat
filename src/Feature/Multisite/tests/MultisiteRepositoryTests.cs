@@ -6,8 +6,14 @@
   using System.Text;
   using System.Threading.Tasks;
   using FluentAssertions;
+  using NSubstitute;
+  using Ploeh.AutoFixture.Xunit2;
+  using Sitecore.Data;
+  using Sitecore.FakeDb;
+  using Sitecore.Feature.Multisite.Models;
   using Sitecore.Feature.Multisite.Repositories;
   using Sitecore.Feature.Multisite.Tests.Extensions;
+  using Sitecore.Foundation.Multisite;
   using Sitecore.Foundation.Multisite.Providers;
   using Xunit;
 
@@ -19,6 +25,31 @@
     {
       Action action = () => new MultisiteRepository(provider);
       action.ShouldNotThrow();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void GetSiteDefinitions_ShouldReturnSiteDefinitiosModel([Frozen]ISiteDefinitionsProvider siteDefinitionProvider, [Greedy] MultisiteRepository repository, string name)
+    {
+      var id = ID.NewID;
+      var db = new Db
+      {
+        new DbItem(name, id, Multisite.Templates.SiteConfiguration.ID)
+        {
+          new DbField(Multisite.Templates.SiteConfiguration.Fields.ShowInMenu)
+          {
+            {"en", "1"}
+          }
+        }
+      };
+
+      var item = db.GetItem(id);
+
+      siteDefinitionProvider.SiteDefinitions.Returns(new List<SiteDefinitionItem> {new SiteDefinitionItem {Item = item} });
+      var definitions = repository.GetSiteDefinitions();
+      definitions.Should().BeOfType<SiteDefinitions>();
+      var sites = definitions.Sites.ToList();
+      sites.Count.Should().BeGreaterThan(0);
     }
   }
 }

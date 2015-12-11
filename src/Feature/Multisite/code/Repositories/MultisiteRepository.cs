@@ -13,7 +13,7 @@
 
   public class MultisiteRepository : IMultisiteRepository
   {
-    private ISiteDefinitionsProvider itemSiteDefinitionsProvider;
+    private ISiteDefinitionsProvider siteDefinitionsProvider;
 
     public MultisiteRepository() : this(new ItemSiteDefinitionsProvider())
     {
@@ -21,13 +21,12 @@
 
     public MultisiteRepository(ISiteDefinitionsProvider itemSiteDefinitionsProvider)
     {
-      this.itemSiteDefinitionsProvider = itemSiteDefinitionsProvider;
+      this.siteDefinitionsProvider = itemSiteDefinitionsProvider;
     }
 
     public SiteDefinitions GetSiteDefinitions()
     {
-      var provider = new ItemSiteDefinitionsProvider();
-      var siteDefinitions = provider.SiteDefinitions;
+      var siteDefinitions = this.siteDefinitionsProvider.SiteDefinitions;
       var siteConfigurationItems = siteDefinitions.Where(siteDefinition => siteDefinition.Item != null && this.IsSiteConfigurationItem(siteDefinition.Item));
       return this.Create(siteConfigurationItems);
     }
