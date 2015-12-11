@@ -53,55 +53,49 @@
     public void GetProfileShouldReturnFullEditProfileModel(Db db, [Substitute] UserProfile userProfile, [RightKeys("FirstName", "LastName", "Phone", "Interest")] IDictionary<string, string> properties,
       [Frozen] IProfileSettingsService profileSettingsService, [Frozen] IUserProfileProvider userProfileProvider, [Greedy] UserProfileService userProfileService)
     {
-      using (db)
+      var id = new ID();
+      db.Add(new DbItem("Profile", id)
       {
-        var id = new ID();
-        db.Add(new DbItem("Profile", id)
-        {
-          Fields =
+        Fields =
           {
             new DbField("FirstName", Templates.UserProfile.Fields.FirstName),
             new DbField("LastName", Templates.UserProfile.Fields.LastName),
             new DbField("Phone", Templates.UserProfile.Fields.PhoneNumber),
             new DbField("Interest", Templates.UserProfile.Fields.Interest)
           }
-        });
-        profileSettingsService.GetUserDefaultProfile().Returns(db.GetItem(id));
-        userProfileProvider.GetCustomProperties(Arg.Any<UserProfile>()).Returns(properties);
+      });
+      profileSettingsService.GetUserDefaultProfile().Returns(db.GetItem(id));
+      userProfileProvider.GetCustomProperties(Arg.Any<UserProfile>()).Returns(properties);
 
-        var result = userProfileService.GetProfile(userProfile);
-        result.FirstName.Should().Be(properties["FirstName"]);
-        result.LastName.Should().Be(properties["LastName"]);
-        result.PhoneNumber.Should().Be(properties["Phone"]);
-        result.Interest.Should().Be(properties["Interest"]);
-      }
+      var result = userProfileService.GetProfile(userProfile);
+      result.FirstName.Should().Be(properties["FirstName"]);
+      result.LastName.Should().Be(properties["LastName"]);
+      result.PhoneNumber.Should().Be(properties["Phone"]);
+      result.Interest.Should().Be(properties["Interest"]);
     }
 
     [Theory, AutoDbDataWithExtension]
     public void SetProfileShouldUpdateUserProfile(Db db, [Substitute] UserProfile userProfile, [Substitute]EditProfile editProfile, [Frozen] IProfileSettingsService profileSettingsService, [Frozen] IUserProfileProvider userProfileProvider, [Greedy] UserProfileService userProfileService)
     {
-      using (db)
+      var id = new ID();
+      db.Add(new DbItem("Profile", id)
       {
-        var id = new ID();
-        db.Add(new DbItem("Profile", id)
-        {
-          Fields =
+        Fields =
           {
             new DbField("FirstName", Templates.UserProfile.Fields.FirstName),
             new DbField("LastName", Templates.UserProfile.Fields.LastName),
             new DbField("Phone", Templates.UserProfile.Fields.PhoneNumber),
             new DbField("Interest", Templates.UserProfile.Fields.Interest)
           }
-        });
-        profileSettingsService.GetUserDefaultProfile().Returns(db.GetItem(id));
-        userProfileService.SetProfile(userProfile, editProfile);
+      });
+      profileSettingsService.GetUserDefaultProfile().Returns(db.GetItem(id));
+      userProfileService.SetProfile(userProfile, editProfile);
 
-        userProfileProvider.Received(1).SetCustomProfile(userProfile, Arg.Is<IDictionary<string, string>>(
-          x => x["FirstName"] == editProfile.FirstName &&
-               x["LastName"] == editProfile.LastName &&
-               x["Interest"] == editProfile.Interest &&
-               x["Phone"] == editProfile.PhoneNumber));
-      }
+      userProfileProvider.Received(1).SetCustomProfile(userProfile, Arg.Is<IDictionary<string, string>>(
+        x => x["FirstName"] == editProfile.FirstName &&
+             x["LastName"] == editProfile.LastName &&
+             x["Interest"] == editProfile.Interest &&
+             x["Phone"] == editProfile.PhoneNumber));
     }
 
     [Theory, AutoDbDataWithExtension(typeof(AutoConfiguredNSubstituteCustomization))]
