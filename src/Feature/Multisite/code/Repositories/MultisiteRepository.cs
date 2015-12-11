@@ -13,11 +13,22 @@
 
   public class MultisiteRepository : IMultisiteRepository
   {
+    private ISiteDefinitionsProvider itemSiteDefinitionsProvider;
+
+    public MultisiteRepository() : this(new ItemSiteDefinitionsProvider())
+    {
+    }
+
+    public MultisiteRepository(ISiteDefinitionsProvider itemSiteDefinitionsProvider)
+    {
+      this.itemSiteDefinitionsProvider = itemSiteDefinitionsProvider;
+    }
+
     public SiteDefinitions GetSiteDefinitions()
     {
       var provider = new ItemSiteDefinitionsProvider();
       var siteDefinitions = provider.SiteDefinitions;
-      var siteConfigurationItems = siteDefinitions.Where(siteDefinition => siteDefinition.Item != null && siteDefinition.Item.IsDerived(Multisite.Templates.SiteConfiguration.ID));
+      var siteConfigurationItems = siteDefinitions.Where(siteDefinition => siteDefinition.Item != null && this.IsSiteConfigurationItem(siteDefinition.Item));
       return this.Create(siteConfigurationItems);
     }
 

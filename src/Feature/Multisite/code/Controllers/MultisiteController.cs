@@ -23,7 +23,7 @@
     }
 
     [HttpGet]
-    public ActionResult SwitchSite(string SiteName)
+    public ActionResult SwitchSite()
     {
       var definitions = multisiteRepository.GetSiteDefinitions();
       return this.View(definitions);

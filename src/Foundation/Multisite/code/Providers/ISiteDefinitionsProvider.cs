@@ -3,7 +3,7 @@
   using System.Collections.Generic;
   using Sitecore.Web;
 
-  interface ISiteDefinitionsProvider
+  public interface ISiteDefinitionsProvider
   {
     IEnumerable<SiteDefinitionItem> SiteDefinitions { get; }
   }
