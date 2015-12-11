@@ -13,5 +13,7 @@ namespace Sitecore.Foundation.Multisite
     public string HostName { get; set; }
 
     public string Name { get; set; }
+
+    public bool IsCurrent { get; set; }
   }
 }

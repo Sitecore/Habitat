@@ -2,6 +2,7 @@
 {
   using System.Collections.Generic;
   using System.Linq;
+  using Sitecore.Collections;
   using Sitecore.Web;
 
   public class ConfigurationSiteDefinitionsProvider : SiteDefinitionsProviderBase
@@ -11,8 +12,8 @@
       get
       {
         var sites = Sitecore.Configuration.Factory.GetSiteInfoList();
-
-        return sites.Select(siteInfo => new SiteDefinitionItem {HostName = siteInfo.HostName, Name = siteInfo.Name});
+        var siteInf = new SiteInfo(new StringDictionary());
+        return sites.Select(siteInfo => new SiteDefinitionItem {HostName = siteInfo.HostName, Name = siteInfo.Name, IsCurrent = this.IsCurrent(siteInfo.Name)});
       }
     }
   }

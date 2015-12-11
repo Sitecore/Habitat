@@ -19,7 +19,8 @@
           {
             Item = siteItem,
             Name = siteItem.Name,
-            HostName = siteItem[Templates.Site.Fields.HostName]
+            HostName = siteItem[Templates.Site.Fields.HostName],
+            IsCurrent = this.IsCurrent(siteItem.Name)
           });
         }
 

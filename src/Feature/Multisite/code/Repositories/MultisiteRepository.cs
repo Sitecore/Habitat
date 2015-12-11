@@ -29,7 +29,7 @@
     private SiteDefinitions Create(IEnumerable<SiteDefinitionItem> definitions)
     {
       var siteDefinitions = new SiteDefinitions();
-      siteDefinitions.Sites = definitions.Where(siteConfigurationItem => siteConfigurationItem.Item[Multisite.Templates.SiteConfiguration.Fields.ShowInMenu] == "1").Select(siteConfiguration => new SiteDefinition {HostName = siteConfiguration.HostName, Name = siteConfiguration.Name});
+      siteDefinitions.Sites = definitions.Where(siteConfigurationItem => siteConfigurationItem.Item[Multisite.Templates.SiteConfiguration.Fields.ShowInMenu] == "1").Select(siteConfiguration => new SiteDefinition {HostName = siteConfiguration.HostName, Name = siteConfiguration.Name, IsCurrent = siteConfiguration.IsCurrent});
       return siteDefinitions;
     }
   }
