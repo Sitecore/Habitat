@@ -1,0 +1,13 @@
+﻿---
+ID: 8dc4eac1-57c2-45f0-b9ac-0d96cb1707cf
+Parent: d77856c3-8a5e-452c-8854-f2965edf25e0
+Template: d77856c3-8a5e-452c-8854-f2965edf25e0
+Path: /sitecore/templates/Feature/Maps/_MapRenderingParameters/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151209T141740Z

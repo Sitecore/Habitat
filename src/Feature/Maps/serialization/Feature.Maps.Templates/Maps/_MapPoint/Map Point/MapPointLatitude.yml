@@ -2,7 +2,7 @@
 ID: 67ebbb8d-88bb-41a5-96ef-cedb7b9b637e
 Parent: 9bd240d2-a645-4e05-9412-5905729cfa51
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Feature/Maps/_MapPoint/MapPoint/MapPointLatitude
+Path: /sitecore/templates/Feature/Maps/_MapPoint/Map Point/MapPointLatitude
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type
@@ -15,6 +15,9 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+      # Title
+      Value: Latitude
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151203T130847Z

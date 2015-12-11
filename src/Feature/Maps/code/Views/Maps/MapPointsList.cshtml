@@ -1,25 +1,10 @@
 ﻿@using Sitecore.Feature.Maps
-@model IEnumerable<Sitecore.Data.Items.Item>
-@if (Sitecore.Context.PageMode.IsPageEditor)
-{
-  if (Model == null)
-  {
-    <h1>Datasource has not been set</h1>
-  }
-  else if (!Model.Any())
-  {
-    <h1>No data</h1>
-  }
-}
-@foreach (var item in Model)
-{
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">@Html.Sitecore().Field(Templates.MapPoint.Fields.Name_FieldName, item)</h3>        
-      </div>
-      <div class="panel-body">
-        <address>@Html.Sitecore().Field(Templates.MapPoint.Fields.Address_FieldName, item)</address>
-        <span>@Html.Sitecore().Field(Templates.MapPoint.Fields.Latitude_FieldName, item) @Html.Sitecore().Field(Templates.MapPoint.Fields.Longitude_FieldName, item)</span>
-      </div>
-    </div>
-}
+@using Sitecore.Feature.Maps.Models
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Presentation
+@model RenderingModel 
+
+<input type="hidden" id="googleMapApiKey" value="@ConfigSettings.GoogleMapApiKey" />
+<input type="hidden" id="mapContextItem" name="mapContextItem" value="@Model.Rendering.Item.ID"/>
+<input type="hidden" id="mapRenderingParameters" name="mapRenderingParameters" value="@Model.Rendering.Parameters.ToJson()"/>
+<div class="map-container"></div>

@@ -111,7 +111,7 @@
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Maps\MapPointsList.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Maps\MapPoints.cshtml" />
+    <Content Include="Views\Maps\MapPoint.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

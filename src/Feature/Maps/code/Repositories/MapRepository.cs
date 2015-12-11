@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Feature.Maps.Repositories
 {
+  using System;
   using System.Collections.Generic;
   using Sitecore.Data.Items;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
@@ -8,6 +9,15 @@
   {
     public IEnumerable<Item> GetAll(Item contextItem)
     {
+      if (contextItem == null)
+      {
+        throw new ArgumentNullException(nameof(contextItem));
+      }
+      if (!contextItem.IsDerived(Templates.MapPointsFolder.ID))
+      {
+        throw new ArgumentException("Item must derive from MapPointsFolder", nameof(contextItem));
+      }
+
       return GetRecursive(contextItem);
     }
 

@@ -1,0 +1,24 @@
+﻿---
+ID: d77856c3-8a5e-452c-8854-f2965edf25e0
+Parent: b327be93-876a-49c3-9275-422937bca4a3
+Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+Path: /sitecore/templates/Feature/Maps/_MapRenderingParameters
+SharedFields:
+- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+  # __Base template
+  Type: tree list
+  Value: {8CA06D6A-B353-44E8-BC31-B528C7306971}
+- ID: f7d48a55-2158-4f02-9356-756654404f73
+  # __Standard values
+  Value: {8DC4EAC1-57C2-45F0-B9AC-0D96CB1707CF}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151209T141538Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

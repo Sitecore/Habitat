@@ -1,0 +1,62 @@
+﻿---
+ID: 4049a904-6746-4a6d-9c6f-b82a5e55bb96
+Parent: 8b32ebbc-9772-48d3-808c-704e66b2ec2c
+Template: ebf4b65f-6ef1-4d45-ae55-941694a9d180
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Maps/Map Points
+SharedFields:
+- ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
+  # __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
+      <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r uid="{E83C8DD0-69AD-4004-B1D8-680C059D8558}">
+          <p:d />
+        </r>
+        <r uid="{565F9960-4E47-4DA4-9406-0A29DD09911F}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{F366176E-2C2B-4AF2-B356-BCF8BD657C58}" s:ph="sidebarcontent" />
+      </d>
+      <d id="{46D2F427-4CE5-4E1F-BA10-EF3636F43534}">
+        <r uid="{E83C8DD0-69AD-4004-B1D8-680C059D8558}">
+          <p:d />
+        </r>
+        <r uid="{565F9960-4E47-4DA4-9406-0A29DD09911F}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{F366176E-2C2B-4AF2-B356-BCF8BD657C58}" s:ph="sidebarcontent" />
+      </d>
+      <d id="{207131FA-F6B2-4488-BCB3-3BF70100B9B8}">
+        <r uid="{E83C8DD0-69AD-4004-B1D8-680C059D8558}">
+          <p:d />
+        </r>
+        <r uid="{565F9960-4E47-4DA4-9406-0A29DD09911F}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{F366176E-2C2B-4AF2-B356-BCF8BD657C58}" s:ph="sidebarcontent" />
+      </d>
+      <d id="{73966209-F1B6-43CA-853A-F1DB1C9A654B}">
+        <r uid="{E83C8DD0-69AD-4004-B1D8-680C059D8558}">
+          <p:d />
+        </r>
+        <r uid="{565F9960-4E47-4DA4-9406-0A29DD09911F}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{F366176E-2C2B-4AF2-B356-BCF8BD657C58}" s:ph="sidebarcontent" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
+      # __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
+          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{E83C8DD0-69AD-4004-B1D8-680C059D8558}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="" s:id="{7DFD9396-CB94-4174-9721-9419A2AA68E3}" s:par="CenterLatitude=-5.055576&amp;CenterLongitude=3.803790&amp;ZoomLevel=1" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{565F9960-4E47-4DA4-9406-0A29DD09911F}">
+              <p:d />
+            </r>
+          </d>
+        </r>
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: Map Points
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151208T100033Z
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      # BrowserTitle
+      Value: Map Points

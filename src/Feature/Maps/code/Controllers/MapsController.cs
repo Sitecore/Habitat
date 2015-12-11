@@ -21,15 +21,9 @@
     public MapsController(IMapRepository mapRepository)
     {
       this.mapRepository = mapRepository;
-    }
+    }   
 
-    public ActionResult MapPointsList()
-    {
-      var offices = mapRepository.GetAll(RenderingContext.Current.Rendering.Item);
-      return View(offices);
-    }  
-
-    public ActionResult MapPoints()
+    public ActionResult MapPoint()
     {
       return View();
     }

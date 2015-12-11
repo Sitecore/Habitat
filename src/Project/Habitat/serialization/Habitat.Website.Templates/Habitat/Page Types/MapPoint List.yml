@@ -1,0 +1,33 @@
+﻿---
+ID: ebf4b65f-6ef1-4d45-ae55-941694a9d180
+Parent: 85086bb5-0365-48d7-98b1-cb9b1b6392ca
+Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+Path: /sitecore/templates/Project/Habitat/Page Types/MapPoint List
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: Apps/32x32/Map.png
+- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+  # __Base template
+  Type: tree list
+  Value: |
+    {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
+    {91962B60-25F6-428F-8D10-02AA1E49D6A5}
+    {D88CCD80-D851-470D-AF11-701FF23504E7}
+    {A1CBA309-D22B-46D5-80F8-2972C185363F}
+    {BDD24F35-05E8-4466-8798-7D3DD6A6C991}
+    {31713995-C6BF-4CCB-8807-198493508AFA}
+- ID: f7d48a55-2158-4f02-9356-756654404f73
+  # __Standard values
+  Value: {9C7F50E3-5833-48B0-8953-EE83213CF997}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151208T094044Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
