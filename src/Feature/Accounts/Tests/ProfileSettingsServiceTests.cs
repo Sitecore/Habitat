@@ -22,7 +22,6 @@
       var siteContext = this.BuildSiteContext(db, coreDb, profileId, interestFolderId, interests);
 
       using (new SiteContextSwitcher(siteContext))
-      using (db)
       using (coreDb)
       {
         var item = profileSettingsService.GetUserDefaultProfile();
@@ -38,7 +37,6 @@
       var siteContext = this.BuildSiteContext(db, coreDb, profileId, interestFolderId, interests);
 
       using (new SiteContextSwitcher(siteContext))
-      using (db)
       using (coreDb)
       {
         var interestsResult = profileSettingsService.GetInterests();
@@ -48,7 +46,6 @@
 
     private SiteContext BuildSiteContext(Db db, Db coreDb, ID profileId, ID interestFolder, IEnumerable<string> interests)
     {
-      var contextId = ID.NewID;
       var interestItem = new DbItem("InterestsFolder", interestFolder);
       interests.Select(i => new DbItem(i) { TemplateID = Templates.Interest.ID, Fields = { new DbField("Title", Templates.Interest.Fields.Title) { Value = i } } })
         .ToList().ForEach(x=>interestItem.Add(x));

@@ -40,8 +40,8 @@
     [Theory, AutoDbData]
     public void TrackPageEvent_NullTracker_ShouldNotTrackEvent(Database db, [Content] Item item, ITracker tracker, AccountTrackerService accountTrackerService)
     {
-        accountTrackerService.TrackPageEvent(item.ID);
-        tracker.CurrentPage.DidNotReceive().Register(Arg.Is<PageEventItem>(x => x.ID == item.ID));
+      accountTrackerService.TrackPageEvent(item.ID);
+      tracker.CurrentPage.DidNotReceive().Register(Arg.Is<PageEventItem>(x => x.ID == item.ID));
     }
 
     [Theory, AutoDbData]
@@ -61,7 +61,6 @@
       tracker.Session.Returns(session);
       db.Add(new DbItem("Item", ConfigSettings.LoginGoalId));
 
-      using (db)
       using (new TrackerSwitcher(tracker))
       {
         accountTrackerService.TrackLogin(identifier);
@@ -72,7 +71,7 @@
     [Theory, AutoDbData]
     public void TrackRegister_Call_ShouldTrackRegistrationGoal(Db db, ID outcomeID, ITracker tracker, [Frozen]IAccountsSettingsService accountsSettingsService, AccountTrackerService accountTrackerService)
     {
-      //Arrange
+      // Arrange
       tracker.IsActive.Returns(true);
       tracker.Contact.Returns(Substitute.For<Contact>());
       tracker.Interaction.Returns(Substitute.For<CurrentInteraction>());
@@ -84,7 +83,6 @@
       db.Add(new DbItem("Item", ConfigSettings.RegistrationGoalId));
       db.Add(new DbItem("Item", ConfigSettings.LoginGoalId));
 
-      using (db)
       using (new TrackerSwitcher(tracker))
       {
         accountTrackerService.TrackRegistration();
@@ -113,7 +111,7 @@
       tracker.IsActive.Returns(true);
       using (new TrackerSwitcher(tracker))
       {
-        trackerService.Invoking(x=>x.TrackOutcome(null)).ShouldThrow<ArgumentNullException>();
+        trackerService.Invoking(x => x.TrackOutcome(null)).ShouldThrow<ArgumentNullException>();
       }
     }
 
@@ -139,21 +137,19 @@
     [AutoDbData]
     public void TrackOutcome_InactiveTracker_ShouldNotTrack([Frozen]ID outcomeDefinitionId, [Frozen]IAccountsSettingsService accountsSettingsService, [NoAutoProperties] AccountTrackerService trackerService, ITracker tracker)
     {
-      //Arrange
+      // Arrange
       tracker.IsActive.Returns(false);
       tracker.Session.Returns(Substitute.For<Session>());
       tracker.Session.CustomData.Returns(new Dictionary<string, object>());
 
       using (new TrackerSwitcher(tracker))
       {
-        //Act
+        // Act
         trackerService.TrackOutcome(outcomeDefinitionId);
 
-        //Assert
+        // Assert
         tracker.GetContactOutcomes().Should().BeEmpty();
       }
-      
     }
-
   }
 }
