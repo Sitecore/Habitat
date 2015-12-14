@@ -72,7 +72,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Steps\EditFieldPayload.cs" />
+    <Compile Include="Infrastructure\ItemFieldDefinition.cs" />
     <Compile Include="Steps\StepsBase.cs" />
+    <Compile Include="Steps\Transforms.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

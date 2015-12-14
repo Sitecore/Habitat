@@ -41,7 +41,7 @@ namespace Common.Specflow.Steps
 
     public void EditItem(string idOrPath, string fieldName, string fieldValue, string db = "Master")
     {
-      ContextExtensions.UtfService.EditItem(idOrPath, fieldName, fieldValue, Settings.UserName, Settings.Password, (Database)Enum.Parse(typeof(Database),db));
+      ContextExtensions.UtfService.EditItem(idOrPath, fieldName, fieldValue, Settings.UserName, Settings.Password, (Database)Enum.Parse(typeof(Database), db));
     }
 
     private void CleanupExecute(TestCleanupAction payload)
@@ -53,13 +53,24 @@ namespace Common.Specflow.Steps
       }
       if (payload.ActionType == ActionType.CleanFieldValue)
       {
-        var fieldPayload= payload.GetPayload<EditFieldPayload>();
+        var fieldPayload = payload.GetPayload<EditFieldPayload>();
         ContextExtensions.UtfService.EditItem(fieldPayload.ItemIdOrPath, fieldPayload.FieldName, fieldPayload.FieldValue, Settings.UserName, Settings.Password, fieldPayload.Database);
         return;
       }
 
       throw new NotSupportedException($"Action type '{payload.ActionType}' is not supported");
     }
+
+
+    [Given(@"Value set to item field")]
+    public void GivenValueSetToItemField(IEnumerable<ItemFieldDefinition> fields)
+    {
+      foreach (var field in fields)
+      {
+        EditItem(field.ItemPath, field.FieldName, field.FieldValue);
+      }
+    }
+
 
     [AfterFeature]
     public static void TeardownTest()

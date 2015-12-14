@@ -6,11 +6,10 @@ Scenario: Accounts_Page after login_UC1_Define custom page
 	Given User is registered in Habitat
 	| Email            | Password | Confirm password |
 	| kov@sitecore.net | k        | k                | 
-	And Content Editor is opened by Admin
-	And Sitecore/Content/Habitat item is selected
-	When User inputs </sitecore/content/Habitat/Home/Contact Us> page in to the AfterLoginPage: field
-	And User presses Save button on the Content Editor ribbon
-	And Actor opens Habitat website on Login page
+	And Value set to item field
+  | ItemPath                  | Field          | Value                                     |
+  | /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Contact Us |
+	When Actor opens Habitat website on Login page
 	And Actor enteres following data into fields
 	| E-mail              |Password |
 	| kov@sitecore.net    |k        |
