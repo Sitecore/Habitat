@@ -156,10 +156,14 @@
     <Content Include="stylesheets\Sitecore.Foundation.Theming.Editor.scss" />
     <None Include="stylesheets\Sitecore.Foundation.Theming.scss" />
     <None Include="stylesheets\_contentList.scss" />
+    <Content Include="stylesheets\_dropdowns.scss" />
     <None Include="stylesheets\_sidebar.scss" />
     <None Include="stylesheets\_navigation.scss" />
     <None Include="stylesheets\_media.scss" />
     <None Include="stylesheets\_article.scss" />
+    <Content Include="stylesheets\_panels.scss" />
+    <Content Include="stylesheets\_forms.scss" />
+    <Content Include="stylesheets\_footer.scss" />
     <None Include="stylesheets\_teasers.scss" />
     <None Include="stylesheets\_fonts.scss" />
     <Content Include="scripts\jquery-2.1.4.min.map" />
