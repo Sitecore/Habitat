@@ -228,3 +228,20 @@ Scenario: Account_Save user details in xDB_UC9_Update system section in xDB
 	Then Contact collection System section consist of
 	| VisitCount | Value |
 	| 2          |       |
+
+
+@NeedImplementation
+Scenario: Account_Save user details in xDB_UC10_Empty Interests value 
+	Given User is registered in Habitat and logged out 
+	| Email              | Password | ConfirmPassword |
+	| kov10@sitecore.net | k        | k               |  
+	And Habitat website is opened on Edit Profile page
+	When User selects <Skiing> from Interests drop-down list
+	And User clicks Save button
+	And User selects <Skiing> from Interests drop-down list
+	And User clicks Save button
+	And User opens MongoDB
+	Then Contact collection Tags.Interests.Values section consist of
+	| "0"     | "1" |
+	| Swiming | ""  |
+	

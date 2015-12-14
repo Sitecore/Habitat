@@ -141,6 +141,11 @@
     <Compile Include="Steps\SiteNavigation.cs" />
     <Compile Include="Steps\StepsBase.cs" />
     <Compile Include="Infrastructure\TestCleanupAction.cs" />
+    <Compile Include="Trigger an outcome on customer registration.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Trigger an outcome on customer registration.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -187,6 +192,10 @@
     <None Include="Show user info on popup.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Show user info on popup.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Trigger an outcome on customer registration.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Trigger an outcome on customer registration.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
