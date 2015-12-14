@@ -18,12 +18,7 @@
     public MapsController(IMapRepository mapRepository)
     {
       this.mapRepository = mapRepository;
-    }   
-
-    public ActionResult MapPoint()
-    {
-      return View();
-    }
+    }     
 
     [HttpPost]
     public JsonResult GetMapPoints(Guid itemId)

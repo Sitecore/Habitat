@@ -1,8 +1,10 @@
 ﻿(function (window, $, google) {
+  "use strict";
+
   window.MapModule = window.MapModule || {};
   window.MapModule.maps = [];
 
-  $(window.document).ready(function () {
+  $(window.document).ready(function () { 
     loadMapJsScript();
   });
 
@@ -28,13 +30,17 @@
   };
 
   function loadMapJsScript() {
-    var fileref = window.document.createElement("script");
-    fileref.setAttribute("type", "text/javascript");
-    fileref.setAttribute("src", "https://maps.googleapis.com/maps/api/js?callback=MapModule.initMaps");
-    fileref.setAttribute("async", "");
-    fileref.setAttribute("defer", "");
+    var scriptTag = $('script[data-key="gmapapi"]');
+    if (scriptTag.length == 0) {
+      var fileref = window.document.createElement("script");
+      fileref.setAttribute("type", "text/javascript");
+      fileref.setAttribute("src", "https://maps.googleapis.com/maps/api/js?callback=MapModule.initMaps");
+      fileref.setAttribute("async", "");
+      fileref.setAttribute("defer", "");
+      fileref.setAttribute("data-key", "gmapapi");
 
-    window.document.getElementsByTagName("head")[0].appendChild(fileref);
+      window.document.getElementsByTagName("head")[0].appendChild(fileref);
+    }    
   }
 
   function initMapContainers() {
@@ -62,7 +68,7 @@
       var map = new google.maps.Map(element, mapProperties);
       map.setCustomProperties(renderingParams);
       map.setDefaultView(mapProperties.center, mapProperties.zoom);
-      
+
       var mapDataSourceItemId = $element.siblings('input[id="mapContextItem"]').val();
       if (mapDataSourceItemId) {
         getMapPoints(map, mapDataSourceItemId);
@@ -97,7 +103,7 @@
         this.controls[google.maps.ControlPosition.TOP_CENTER].push(centerMapControl);
       }
     };
-    google.maps.Map.prototype.setCustomProperties = function(properties) {
+    google.maps.Map.prototype.setCustomProperties = function (properties) {
       this.centerMapControl = properties.EnableCenterMapControl;
     }
   }
@@ -109,12 +115,21 @@
       }
       if (renderingParams.ZoomLevel) {
         mapProperties.zoom = parseInt(renderingParams.ZoomLevel);
-      }    
+      }
+      mapProperties.zoomControl = getCheckboxBooleanValue(renderingParams.EnableZoomControl);
+      mapProperties.mapTypeControl = getCheckboxBooleanValue(renderingParams.EnableMapTypeControl);
+      mapProperties.scaleControl = getCheckboxBooleanValue(renderingParams.EnableScaleControl);
+      mapProperties.streetViewControl = getCheckboxBooleanValue(renderingParams.EnableStreetViewControl);
+      mapProperties.rotateControl = getCheckboxBooleanValue(renderingParams.EnableRotateControl);
+      mapProperties.MapTypeId = renderingParams.MapType;
     }
 
     return renderingParams;
   }
 
+  function getCheckboxBooleanValue(value) {
+    return value == "1" ? true : false;
+  }
   function getMapPoints(map, mapDataSourceItemId) {
     if (!map || !mapDataSourceItemId) {
       return;
@@ -127,32 +142,40 @@
       data: {
         itemId: mapDataSourceItemId
       },
-      success: function (data) {
-        var infoWindow = new google.maps.InfoWindow({
-          content: ""
-        });
-        $.each(data, function (index, mapPoint) {
-          var latlng = parseCoordinate(mapPoint.Location);
-          if (latlng) {
-            var marker = new google.maps.Marker({
-              position: latlng,
-              map: map,
-              title: mapPoint.Name
-            });
-
-            var contentString = "<h2>" + mapPoint.Name + "</h2>" +
-              "<p>" + mapPoint.Address + "</p>" +
-              "<a href='javascript:void(0)' onclick='MapModule.zoomToMapPoint(" + map.Id + "," + latlng.lat() + "," + latlng.lng() + ")'>Zoom here</a>";
-
-
-            google.maps.event.addListener(marker, "click", function () {
-              infoWindow.setContent(contentString);
-              infoWindow.open(map, marker);
-            });
-          }
-        });
+      success: function (data) {        
+        if (data.length == 1) {
+          putMarker(data[0]);
+          map.setCenter(parseCoordinate(data[0].Location));
+        } else {
+          $.each(data, function (index, mapPoint) {
+            putMarker(mapPoint);
+          });
+        }       
       }
     });
+
+    function putMarker(mapPoint) {
+      var infoWindow = new google.maps.InfoWindow({
+        content: ""
+      });
+      var latlng = parseCoordinate(mapPoint.Location);
+      if (latlng) {
+        var marker = new google.maps.Marker({
+          position: latlng,
+          map: map,
+          title: mapPoint.Name
+        });
+
+        var contentString = "<h2>" + mapPoint.Name + "</h2>" +
+          "<p>" + mapPoint.Address + "</p>" +
+          "<a href='javascript:void(0)' onclick='MapModule.zoomToMapPoint(" + map.Id + "," + latlng.lat() + "," + latlng.lng() + ")'>Zoom here</a>";
+
+        google.maps.event.addListener(marker, "click", function () {
+          infoWindow.setContent(contentString);
+          infoWindow.open(map, marker);
+        });
+      }
+    }
   }
 
   function parseCoordinate(latlngLiteral) {

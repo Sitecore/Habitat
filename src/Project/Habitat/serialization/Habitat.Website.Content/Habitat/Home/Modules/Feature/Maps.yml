@@ -31,7 +31,7 @@ Languages:
       Value: "<image mediapath=\"\" alt=\"Habitat-073-square\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"\" mediaid=\"{B049BE67-52D1-4589-941C-3BFAB95EA2FC}\" />"
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
       # Summary
-      Value: The Maps&nbsp;module features functionalities such as markers, map points locator, etc.
+      Value: The Maps&nbsp;module features functionalities such as displaying content items as markers in the map, configurable map through rendering parameters, map field type, etc.
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       # Title
       Value: Maps
@@ -41,5 +41,5 @@ Languages:
     - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
       # Body
       Value: |
-        <p>The Maps&nbsp;module features  functionalities such as markers, map points locator, etc.</p>
+        <p>The Maps&nbsp;module features functionalities such as displaying content items as markers in the map, configurable map through rendering parameters, map field type, etc.</p>
         <a href="~/link.aspx?_id=4049A90467464A6D9C6FB82A5E55BB96&amp;_z=z">See the example here. </a>

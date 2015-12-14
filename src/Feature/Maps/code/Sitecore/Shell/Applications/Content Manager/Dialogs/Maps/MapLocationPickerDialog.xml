@@ -57,7 +57,7 @@
         <Border class="mapCanvas" ID="mapCanvas"/>
       </Groupbox>
 
-      <Edit ID="txtSelectedLocation" style="display:none;" />
+      <Edit ID="TxtSelectedLocation" style="display:none;" />
     </FormDialog>
   </MapLocationPickerDialog>
 </control>

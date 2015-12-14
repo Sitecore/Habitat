@@ -1,4 +1,6 @@
 ﻿(function (window, google, $) {
+  "use strict";
+  
   $(document).ready(function () {
     initializeMap();
     registerEventHandlers();
@@ -8,7 +10,7 @@
   var geocoder;
   var marker;
 
-  //return current position value by using Latitude Longitude Format
+  //return last selected location
   function getCurrentLocation() {
     var currentLoc = $("input#TxtSelectedLocation").val();
 

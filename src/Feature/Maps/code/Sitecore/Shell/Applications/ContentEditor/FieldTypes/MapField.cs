@@ -77,10 +77,10 @@ namespace Sitecore.Feature.Maps.Sitecore.Shell.Applications.ContentEditor.FieldT
 
       switch (message.Name)
       {
-        case "map:setLocation": //It defined in core database
+        case "map:setLocation": 
           Sitecore_Context.ClientPage.Start(this, "SetLocation");
           return;
-        case "map:clearLocation": //it also defined in core database
+        case "map:clearLocation": 
           Sitecore_Context.ClientPage.Start(this, "ClearLocation");
           return;
       }
@@ -94,47 +94,32 @@ namespace Sitecore.Feature.Maps.Sitecore.Shell.Applications.ContentEditor.FieldT
     }
 
     protected void SetLocation(Web.UI.Sheer.ClientPipelineArgs args)
-    {
-      //Check if popup windows is postback
+    {      
       if (args.IsPostBack)
-      {
-        //check whether popup windows has selected value
+      {        
         if (args.HasResult && Value.Equals(args.Result) == false)
-        {
-          //tell content editor that value in field is modified
-          SetModified();
-
-          //set current field value with selected value from popup window
+        {          
+          SetModified();          
           SetValue(args.Result);
         }
       }
       else
       {
-        //show popup
-        //get popup control that named MapLocationPickerDialog
-        var url = UIUtil.GetUri("control:MapLocationPickerDialog");
-        //Try to get Current Value (if it previously has a value)
+        //show popup        
+        var url = UIUtil.GetUri("control:MapLocationPickerDialog");        
         var value = GetValue();
         if (!string.IsNullOrEmpty(value))
-        {
-          //passing current value to querystring so that it could read by our popup window
+        {         
           url = $"{url}&value={value}";
         }
-
-        //Show our popup dialog
         Web.UI.Sheer.SheerResponse.ShowModalDialog(url, "800", "600", "", true);
-
-        //Wait popup dialog for postback
         args.WaitForPostBack();
       }
     }
 
     protected void ClearLocation(Web.UI.Sheer.ClientPipelineArgs args)
-    {
-      //set empty value
-      SetValue(string.Empty);
-
-      //tell content editor that value in field is modified
+    {    
+      SetValue(string.Empty);     
       SetModified();
     }
   }

@@ -7,12 +7,16 @@ namespace Sitecore.Feature.Maps.Repositories
 
   public class MapRepository : IMapRepository
   {
-    
+
     public IEnumerable<Data.Items.Item> GetAll(Data.Items.Item contextItem)
     {
       if (contextItem == null)
       {
         throw new ArgumentNullException(nameof(contextItem));
+      }
+      if (contextItem.IsDerived(Templates.MapPoint.ID))
+      {
+        return new List<Data.Items.Item>() { contextItem };
       }
       if (!contextItem.IsDerived(Templates.MapPointsFolder.ID))
       {
@@ -26,7 +30,7 @@ namespace Sitecore.Feature.Maps.Repositories
     private IEnumerable<Data.Items.Item> GetRecursive(Data.Items.Item item)
     {
       var result = new List<Data.Items.Item>();
-      
+
       foreach (Data.Items.Item childItem in item.Children)
       {
         if (childItem.IsDerived(Templates.MapPointsFolder.ID) && childItem.HasChildren)

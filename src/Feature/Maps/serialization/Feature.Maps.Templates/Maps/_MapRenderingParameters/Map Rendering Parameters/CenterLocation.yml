@@ -21,3 +21,6 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151209T141628Z
+    - ID: 577f1689-7de4-4ad2-a15f-7fdc1759285f
+      # __Long description
+      Value: When there's only one marker in the map, by default it will ignore the Center Location parameter if set and will use the marker latlong as the center position of the map
