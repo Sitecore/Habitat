@@ -1,0 +1,31 @@
+﻿---
+ID: 4f476950-ae7c-445f-b8f5-f090ead461cb
+Parent: 4049a904-6746-4a6d-9c6f-b82a5e55bb96
+Template: 66e65a5b-88f9-4328-8665-2ff296ff8435
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Maps/Map Points/Sitecore Indonesia
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 0295c01d-214c-4c23-afc2-3f0b4e88b643
+      # MapPointAddress
+      Value: |
+        Menara BCA, 45th floor
+        Jl. MH Thamrin No.1
+        Jakarta 10310 Indonesia
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: Sitecore Indonesia
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151208T100049Z
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      # BrowserTitle
+      Value: Sitecore Indonesia
+    - ID: f12c22bb-e57d-4fab-96e1-1229e4e7ff0e
+      # MapPointName
+      Value: Sitecore Indonesia
+    - ID: f686ac8e-1d33-45db-8e1a-1b40cd491e7a
+      # MapPointLocation
+      Value: -6.196587,106.8224224
