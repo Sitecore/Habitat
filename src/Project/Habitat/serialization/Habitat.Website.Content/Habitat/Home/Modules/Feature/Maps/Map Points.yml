@@ -45,7 +45,9 @@ Languages:
       Value: |
         <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
           <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-            <r uid="{E83C8DD0-69AD-4004-B1D8-680C059D8558}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="" s:id="{7DFD9396-CB94-4174-9721-9419A2AA68E3}" s:par="CenterLatitude=-5.055576&amp;CenterLongitude=3.803790&amp;ZoomLevel=1" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{91F6D6F0-5942-4F59-BF51-49427D53DD06}" p:before="r[@uid='{E83C8DD0-69AD-4004-B1D8-680C059D8558}']" s:id="{914673DC-FC44-4660-B6EB-FF421FAAC2F9}" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{E83C8DD0-69AD-4004-B1D8-680C059D8558}" p:before="r[@uid='{6746B374-A7A9-4029-BB0B-7AE62498983F}']" s:ds="" s:id="{7DFD9396-CB94-4174-9721-9419A2AA68E3}" s:par="CenterLocation&amp;ZoomLevel=2&amp;EnableCenterMapControl&amp;CenterLatitude=-5.055576&amp;CenterLongitude=3.803790" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{6746B374-A7A9-4029-BB0B-7AE62498983F}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{4049A904-6746-4A6D-9C6F-B82A5E55BB96}" s:id="{7DFD9396-CB94-4174-9721-9419A2AA68E3}" s:par="CenterLocation=-6.9174639%2C107.61912280000001&amp;ZoomLevel=4&amp;EnableCenterMapControl=1" s:ph="/page-layout/sidebarcontent" />
             <r uid="{565F9960-4E47-4DA4-9406-0A29DD09911F}">
               <p:d />
             </r>
@@ -57,6 +59,15 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151208T100033Z
+    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+      # Summary
+      Value: "<span style=\"color: #333333; background-color: #ffffff;\">The Maps&nbsp;module features functionalities such as markers, map points locator, etc.</span>"
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      # Title
+      Value: Map Points
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
       # BrowserTitle
       Value: Map Points
+    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+      # Body
+      Value: This page demoed the multiple maps support with different configurations for each ones

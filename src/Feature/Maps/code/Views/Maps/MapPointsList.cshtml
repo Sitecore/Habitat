@@ -1,10 +1,8 @@
-﻿@using Sitecore.Feature.Maps
-@using Sitecore.Feature.Maps.Models
-@using Sitecore.Foundation.SitecoreExtensions.Extensions
-@using Sitecore.Mvc.Presentation
-@model RenderingModel 
+﻿@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
 
-<input type="hidden" id="googleMapApiKey" value="@ConfigSettings.GoogleMapApiKey" />
-<input type="hidden" id="mapContextItem" name="mapContextItem" value="@Model.Rendering.Item.ID"/>
-<input type="hidden" id="mapRenderingParameters" name="mapRenderingParameters" value="@Model.Rendering.Parameters.ToJson()"/>
-<div class="map-container"></div>
+<div class="map-container">
+  <input type="hidden" id="mapContextItem" name="mapContextItem" value="@Model.Rendering.Item.ID" />
+  <input type="hidden" id="mapRenderingParameters" name="mapRenderingParameters" value="@Model.Rendering.Parameters.ToJson()" />
+  <div class="map-canvas"></div>
+</div>

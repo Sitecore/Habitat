@@ -1,15 +1,15 @@
 ﻿---
-ID: 67ebbb8d-88bb-41a5-96ef-cedb7b9b637e
-Parent: 9bd240d2-a645-4e05-9412-5905729cfa51
+ID: 35f8d3e6-887e-4e54-b715-b81459846cbb
+Parent: 55d248e4-6f66-4c00-9653-beceae53e8b7
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Feature/Maps/_MapPoint/Map Point/MapPointLatitude
+Path: /sitecore/templates/Feature/Maps/_MapRenderingParameters/Map Rendering Parameters/EnableCenterMapControl
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type
-  Value: Single-Line Text
+  Value: Checkbox
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder
-  Value: 300
+  Value: 400
 Languages:
 - Language: en
   Versions:
@@ -17,7 +17,7 @@ Languages:
     Fields:
     - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
       # Title
-      Value: Latitude
+      Value: Enable Center Map Control
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20151203T130847Z
+      Value: 20151209T141628Z

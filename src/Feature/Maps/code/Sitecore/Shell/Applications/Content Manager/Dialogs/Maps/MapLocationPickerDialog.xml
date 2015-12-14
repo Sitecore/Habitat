@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:content="http://www.sitecore.net/content">
+  <MapLocationPickerDialog>
+    <!--Init Script-->
+    <Script Src="https://maps.googleapis.com/maps/api/js" Key="gmapAPI" Language="javascript"/>
+    <Script Src="/sitecore/shell/Controls/Lib/jQuery/jquery.js" Key="gmapLocationPicker" Language="javascript"/>
+    <Script Src="/sitecore/shell/applications/content manager/dialogs/maps/js/maplocationpickerdialog.js" Key="gmapLocationPicker" Language="javascript"/>
+    <Stylesheet>
+      table tr td{
+      padding-left: 5px;
+      }
+
+      div.form-element {
+      border: 1px;
+      border-style: solid;
+      border-color: black;
+      margin: 2px;
+      background-color: white;
+      }
+
+      div.form-element input {
+      border: 0px;
+      width: 100%;
+      }
+
+      div.form-element.error{
+      border-color: red;
+      }
+
+      div.mapCanvas{
+      width: 100%;
+      height: 98%;
+      }
+    </Stylesheet>
+
+    <FormDialog ID="Dialog" Icon="Network/32x32/environment_view.png" Header="Map Location Picker"
+                Text="Pick a location" OKButton="Select">
+
+      <!--Define Code Beside-->
+      <CodeBeside Type="Sitecore.Feature.Maps.Sitecore.shell.Applications.Content_Manager.Dialogs.Maps.MapLocationPickerDialog, Sitecore.Feature.Maps"/>
+
+      <Groupbox Header="Search a location" Style="height:50px;">
+        <table width="100%">
+          <tr valign="center">
+            <td width="70%">
+              <div class="form-element">
+                <Edit ID="txtSearchAddress" Width="100%" MaxLength="200"/>
+              </div>
+            </td>
+            <td>
+              <button id="btnUpdateMap">Search</button>              
+            </td>
+          </tr>
+        </table>
+      </Groupbox>
+      <Groupbox Header="Map" Style="height:85%; overflow:hidden;">
+        <Border class="mapCanvas" ID="mapCanvas"/>
+      </Groupbox>
+
+      <Edit ID="txtSelectedLocation" style="display:none;" />
+    </FormDialog>
+  </MapLocationPickerDialog>
+</control>

@@ -1,0 +1,8 @@
+﻿<Project>
+  <PropertyGroup>
+    <Site Server="sc81rev151003-habitat.localhost" UserName="sitecore\admin" IsRemoteSitecore="True" />
+  </PropertyGroup>
+  <File Include="Sitecore\Shell\client\Your Apps\Maps\MapLocationPicker.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="core">{2420FE7F-6180-4B78-9DA9-DB51A9730E62}</Item>
+  </File>
+</Project>

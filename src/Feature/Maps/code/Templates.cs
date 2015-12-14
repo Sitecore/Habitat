@@ -1,6 +1,6 @@
 ﻿namespace Sitecore.Feature.Maps
 {
-  using Sitecore.Data;
+  using Data;
 
   public struct Templates
   {
@@ -16,11 +16,8 @@
         public static ID Address = new ID("{0295C01D-214C-4C23-AFC2-3F0B4E88B643}");
         public const string Address_FieldName = "MapPointAddress";
 
-        public static ID Latitude = new ID("{67EBBB8D-88BB-41A5-96EF-CEDB7B9B637E}");
-        public const string Latitude_FieldName = "MapPointLatitude";
-
-        public static ID Longitude = new ID("{73C04A83-BEB9-4B24-9116-F9BC51A5BAAD}");
-        public const string Longitude_FieldName = "MapPointLongitude";
+        public static ID Location = new ID("{F686AC8E-1D33-45DB-8E1A-1B40CD491E7A}");
+        public const string Location_FieldName = "MapPointLocation";
       }
     }
 

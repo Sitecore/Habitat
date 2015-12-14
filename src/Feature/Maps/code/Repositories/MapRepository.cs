@@ -1,13 +1,14 @@
-﻿namespace Sitecore.Feature.Maps.Repositories
+﻿
+namespace Sitecore.Feature.Maps.Repositories
 {
+  using Foundation.SitecoreExtensions.Extensions;
   using System;
   using System.Collections.Generic;
-  using Sitecore.Data.Items;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class MapRepository : IMapRepository
   {
-    public IEnumerable<Item> GetAll(Item contextItem)
+    
+    public IEnumerable<Data.Items.Item> GetAll(Data.Items.Item contextItem)
     {
       if (contextItem == null)
       {
@@ -22,11 +23,11 @@
     }
 
     //TODO: change to bucket search
-    private IEnumerable<Item> GetRecursive(Item item)
+    private IEnumerable<Data.Items.Item> GetRecursive(Data.Items.Item item)
     {
-      var result = new List<Item>();
+      var result = new List<Data.Items.Item>();
       
-      foreach (Item childItem in item.Children)
+      foreach (Data.Items.Item childItem in item.Children)
       {
         if (childItem.IsDerived(Templates.MapPointsFolder.ID) && childItem.HasChildren)
         {

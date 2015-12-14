@@ -31,15 +31,12 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151208T100310Z
-    - ID: 67ebbb8d-88bb-41a5-96ef-cedb7b9b637e
-      # MapPointLatitude
-      Value: -33.8633101
-    - ID: 73c04a83-beb9-4b24-9116-f9bc51a5baad
-      # MapPointLongitude
-      Value: 151.2090332
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
       # BrowserTitle
       Value: Sitecore Australia - NSW
     - ID: f12c22bb-e57d-4fab-96e1-1229e4e7ff0e
       # MapPointName
       Value: Sitecore Australia - NSW
+    - ID: f686ac8e-1d33-45db-8e1a-1b40cd491e7a
+      # MapPointLocation
+      Value: -33.8633101,151.2090332

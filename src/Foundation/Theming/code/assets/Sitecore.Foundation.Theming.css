@@ -6250,9 +6250,12 @@ footer {
     color: #333333; }
 
 /****************
-    FOOTER
+    MAPS
 ****************/
 .map-container {
+  margin-bottom: 24px; }
+
+.map-canvas {
   width: 100%;
   height: 500px; }
 

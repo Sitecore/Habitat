@@ -3,14 +3,11 @@
   using System;
   using System.Linq;
   using System.Web.Mvc;
-  using Sitecore;
-  using Sitecore.Data;
-  using Sitecore.Feature.Maps.Models;
-  using Sitecore.Feature.Maps.Repositories;
-  using Sitecore.Mvc.Controllers;
-  using Sitecore.Mvc.Presentation;
+  using Data;
+  using Models;
+  using Repositories;
 
-  public class MapsController : SitecoreController
+  public class MapsController : Mvc.Controllers.SitecoreController
   {
     private readonly IMapRepository mapRepository;
 

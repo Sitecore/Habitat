@@ -31,7 +31,7 @@ Languages:
       Value: "<image mediapath=\"\" alt=\"Habitat-073-square\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"\" mediaid=\"{B049BE67-52D1-4589-941C-3BFAB95EA2FC}\" />"
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
       # Summary
-      Value: The Maps module contains office locator functionality.
+      Value: The Maps&nbsp;module features functionalities such as markers, map points locator, etc.
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       # Title
       Value: Maps

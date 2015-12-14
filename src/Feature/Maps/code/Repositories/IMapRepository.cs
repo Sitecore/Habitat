@@ -1,10 +1,9 @@
 ﻿namespace Sitecore.Feature.Maps.Repositories
 {
   using System.Collections.Generic;
-  using Sitecore.Data.Items;
 
   public interface IMapRepository
   {
-    IEnumerable<Item> GetAll(Item contextItem);
+    IEnumerable<Data.Items.Item> GetAll(Data.Items.Item contextItem);
   }
 }

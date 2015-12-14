@@ -1,9 +1,12 @@
 ﻿/// <reference path="bootstrap/_bootstrap.scss" />
 
 /****************
-    FOOTER
+    MAPS
 ****************/
-.map-container {
+.map-container{
+  margin-bottom: 24px;
+}
+.map-canvas {
     width: 100%;
     height: 500px;
 }
