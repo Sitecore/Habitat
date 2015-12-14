@@ -58,7 +58,7 @@
 
     public void SetTag(string tagName, string tagValue)
     {
-      if (!string.IsNullOrEmpty(tagName) && !string.IsNullOrEmpty(tagValue))
+      if (!string.IsNullOrEmpty(tagName) && tagValue != null)
       {
         this.contactProfileProvider.Contact.Tags.Set(tagName, tagValue);
       }
@@ -71,7 +71,7 @@
         var personalInfo = this.contactProfileProvider.PersonalInfo;
         personalInfo.FirstName = editProfileModel.FirstName;
         personalInfo.Surname = editProfileModel.LastName;
-        this.SetTag(InterestsTagName, editProfileModel.Interest);
+        this.SetTag(InterestsTagName, editProfileModel.Interest ?? string.Empty);
         this.SetPreferredPhoneNumber(editProfileModel.PhoneNumber);
         this.SetPreferredEmail(Context.User.Profile.Email);
         this.contactProfileProvider.Flush();

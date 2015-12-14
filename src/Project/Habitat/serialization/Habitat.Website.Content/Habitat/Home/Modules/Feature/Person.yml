@@ -2,7 +2,7 @@
 ID: cac2e25b-3a13-4e1b-ab8c-5b71fd613077
 Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
-Path: /sitecore/content/Habitat/Home/Modules/Domain/Person
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Person
 Languages:
 - Language: en
   Versions:
@@ -14,9 +14,11 @@ Languages:
       Value: |
         <r xmlns:p="p" xmlns:s="s" p:p="1">
           <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{BC261A12-F39D-4CF2-8AF5-44A0414F8DE6}" p:before="r[@uid='{739BF69E-F139-4F7D-BE04-90CFFE95DEE3}']" s:ds="{2D415DBB-9AFE-4E75-A264-DFCE07B11D26}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/sidebarcontent/col-wide-1_56fb6a2c-c9d3-4b11-9fab-dfd17037cf4f" />
             <r uid="{739BF69E-F139-4F7D-BE04-90CFFE95DEE3}" p:before="r[@uid='{272D5F56-D7D1-4912-9818-DDE458B2F652}']" s:ds="{F0519E91-3B1E-47B0-91C0-710C6DF5AD34}" s:id="{7B7DD1F9-A0DB-45D9-9A3F-B704BB28903E}" s:ph="/page-layout/sidebarcontent/col-wide-2_7ded4929-bf4c-4ed3-83c3-6dd129800939" />
             <r uid="{272D5F56-D7D1-4912-9818-DDE458B2F652}" p:before="r[@uid='{276E5D2A-2127-4E04-B371-32DF4E3E3EBD}']" s:ds="{F0519E91-3B1E-47B0-91C0-710C6DF5AD34}" s:id="{EBB6DC33-F281-49BE-B273-29ECCD6085A8}" s:ph="/page-layout/sidebarcontent/col-wide-1_7ded4929-bf4c-4ed3-83c3-6dd129800939" />
             <r uid="{276E5D2A-2127-4E04-B371-32DF4E3E3EBD}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{779041C8-F089-4E63-A054-D718F42EE16D}" s:id="{A1AD34DD-535E-47AF-A911-34C57CCC26F6}" s:ph="/page-layout/sidebarcontent/col-wide-1_7ded4929-bf4c-4ed3-83c3-6dd129800939" />
+            <r uid="{56FB6A2C-C9D3-4B11-9FAB-DFD17037CF4F}" p:before="r[@uid='{7DED4929-BF4C-4ED3-83C3-6DD129800939}']" s:id="{03112E88-1499-4132-9D5F-E213AFD2019C}" s:ph="/page-layout/sidebarcontent" />
             <r uid="{7DED4929-BF4C-4ED3-83C3-6DD129800939}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/sidebarcontent" />
           </d>
         </r>
@@ -38,3 +40,6 @@ Languages:
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
       # BrowserTitle
       Value: Person
+    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+      # Body
+      Value: "<span style=\"line-height: 24.2857px;\">The Person module contains person-related functionality and content, e.g. employee pages, personal contact info and quotes.</span>"

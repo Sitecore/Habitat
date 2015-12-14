@@ -6,7 +6,7 @@
 
 @{
   var carouselId = "carousel" + Guid.NewGuid().ToString("N");
-  var elements = CarouselElementsRepository.Get(Model.Item).ToArray();
+  var elements = MediaSelectorElementsRepository.Get(Model.Item).ToArray();
 }
 <div id="@carouselId" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">

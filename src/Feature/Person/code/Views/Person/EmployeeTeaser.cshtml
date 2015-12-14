@@ -3,24 +3,24 @@
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-<div class="panel panel-default teaser employee-teaser">
-  <div class="panel-heading">
-    <h3 class="teaser-heading">
+<div class="teaser teaser-default employee-teaser">
+  <div class="teaser-heading">
+    <h3>
       @Model.Item.Field(Templates.Person.Fields.Name)
     </h3>
-    <p class="title text-muted">
+    <p class="title metadata">
       @Model.Item.Field(Templates.Person.Fields.Title)
     </p>
   </div>
-  <div class="panel-body">
-    <div class="teaser-image">
-      <a href="@Model.Item.Url()">
-        @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 750, cssClass: "img-responsive")
-      </a>
-    </div>
-    <p>@Model.Item.Field(Templates.Person.Fields.Summary)</p>
+	<div class="teaser-image">
+		<a href="@Model.Item.Url()">
+			@Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 750, cssClass: "img-responsive")
+		</a>
+	</div>
+  <div class="teaser-body">
+    @Model.Item.Field(Templates.Person.Fields.Summary)
   </div>
-  <div class="panel-footer">
+  <div class="teaser-footer">
     <a href="@Model.Item.Url()" class="btn btn-default">
       @DictionaryRepository.Get("/Person/EmployeeTeaser/Read more", "Read more")
     </a>

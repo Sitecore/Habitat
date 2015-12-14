@@ -9,7 +9,7 @@ SharedFields:
   Value: /sitecore/content
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type
-  Value: Droplink
+  Value: Droptree
 - ID: be351a73-fcb0-4213-93fa-c302d8ab4f51
   # Shared
   Value: 1

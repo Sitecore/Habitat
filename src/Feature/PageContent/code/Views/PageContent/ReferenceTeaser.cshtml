@@ -8,23 +8,19 @@
   return;
 }
 
-<div class="panel panel-default teaser">
-  <div class="panel-heading">
-    <h3 class="teaser-heading">
-      @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title.ToString(), Model.Item)
-    </h3>
-  </div>
-  <div class="panel-body">
-    <div class="teaser-image">
-      <a href="@Model.Item.Url()">
-        @Html.Sitecore().ImageField(Templates.HasPageContent.Fields.Image.ToString(), Model.Item, mw: 500, cssClass: "img-responsive")
-      </a>
-    </div>
-    <div class="teaser-text">
+<div class="teaser teaser-default">
+  <h3 class="teaser-heading">
+    @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title.ToString(), Model.Item)
+  </h3>
+	<div class="teaser-image">
+		<a href="@Model.Item.Url()">
+			@Html.Sitecore().ImageField(Templates.HasPageContent.Fields.Image.ToString(), Model.Item, mw: 500, cssClass: "img-responsive")
+		</a>
+	</div>
+  <div class="teaser-body">
       @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary.ToString(), Model.Item)
-    </div>
   </div>
-  <div class="panel-footer">
+  <div class="teaser-footer">
     <a href="@Model.Item.Url()" class="btn btn-default">
       @DictionaryRepository.Get("/PageContent/Teaser/Read more", "Read more")
     </a>

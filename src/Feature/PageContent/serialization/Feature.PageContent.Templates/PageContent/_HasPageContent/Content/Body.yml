@@ -4,6 +4,9 @@ Parent: 24dd5b45-8c1e-47b9-ae47-b02cde8a4a87
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
 Path: /sitecore/templates/Feature/PageContent/_HasPageContent/Content/Body
 SharedFields:
+- ID: 1eb8ae32-e190-44a6-968d-ed904c794ebf
+  # Source
+  Value: {8814B531-00B9-451B-81CD-0D63872802A1}
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type
   Value: Rich Text

@@ -2,7 +2,7 @@
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 <blockquote>
-  @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 64)
+  @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, 64, 64)
   <p>
     @Model.Item.Field(Templates.Quote.Fields.Quote)
   </p>

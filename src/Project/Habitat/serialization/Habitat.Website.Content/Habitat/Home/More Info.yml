@@ -1,0 +1,48 @@
+﻿---
+ID: 3a5d638d-5bdd-4ddd-beac-4a0c81c27e8a
+Parent: dac24edd-44fb-42ef-9ecd-1e8daf706386
+Template: 94a8c8e9-690b-4e65-98e7-f95800222767
+Path: /sitecore/content/Habitat/Home/More Info
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 500
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
+      # __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s" p:p="1">
+          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{F7C9E32F-2D5C-4FF1-B17B-8F00E0DFDE0F}" p:before="r[@uid='{0B840D0E-F299-4D63-83BF-BC9953320763}']" s:ds="{59745F53-6D22-49B3-8844-98D5B24A8D98}" s:id="{0534F12C-804E-4532-A832-5D61FE9EC6ED}" s:ph="/page-layout/sidebarcontent/col-wide-2_14f635d7-5f88-48d5-8898-78eb6a411b02" />
+            <r uid="{0B840D0E-F299-4D63-83BF-BC9953320763}" p:before="r[@uid='{3313664A-9595-46D6-ACBB-E747145B8445}']" s:ds="{E67E0BB9-D9CB-4AFB-97C8-575E655F52CE}" s:id="{0534F12C-804E-4532-A832-5D61FE9EC6ED}" s:ph="/page-layout/sidebarcontent/col-wide-2_14f635d7-5f88-48d5-8898-78eb6a411b02" />
+            <r uid="{3313664A-9595-46D6-ACBB-E747145B8445}" p:before="r[@uid='{A54F2995-2138-4FA6-A6DA-A5980D22FB94}']" s:ds="{A7044280-3047-4E6F-9C9F-A6DBBB741933}" s:id="{0534F12C-804E-4532-A832-5D61FE9EC6ED}" s:ph="/page-layout/sidebarcontent/col-wide-2_14f635d7-5f88-48d5-8898-78eb6a411b02" />
+            <r uid="{A54F2995-2138-4FA6-A6DA-A5980D22FB94}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{D656E3EF-7298-4AF3-B4A7-E5F43B5BCF4A}" s:id="{69B9C355-004B-4268-BB1E-2F725B8752B7}" s:ph="/page-layout/sidebarcontent/col-wide-1_14f635d7-5f88-48d5-8898-78eb6a411b02" />
+            <r uid="{14F635D7-5F88-48D5-8898-78EB6A411B02}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/sidebarcontent" />
+          </d>
+        </r>
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: More Info
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150827T013810Z
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      # Image
+      Value: "<image mediapath=\"/Default Website/cover\" src=\"~/media/Default Website/cover\" height=\"\" mediaid=\"{8CBBCDFB-C9A8-4D3F-BFF0-D01C504E10BB}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"\" vspace=\"\" ></image>"
+    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+      # Summary
+      Value: Want to know more about Habitat? Here are some interesting links, videos and material for you.
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      # Title
+      Value: Find out more
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      # BrowserTitle
+      Value: Contact Us
+    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+      # Body
+      Value: <p>The Habitat project - this website - is completely available for you on GitHub, source code and all.</p><p>There are a number of videos concerning the methodology and it's underlying patterns.</p>

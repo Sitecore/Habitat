@@ -7,6 +7,9 @@ SharedFields:
 - ID: 5585a30d-b115-4753-93ce-422c3455deb2
   # ShowInNavigation
   Value: 0
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 900
 Languages:
 - Language: en
   Versions:
