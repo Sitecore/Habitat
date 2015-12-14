@@ -17,7 +17,7 @@ namespace Sitecore.Feature.Demo.Models
       this.contactProfileProvider = contactProfileProvider;
     }
 
-    public int NoOfVisits => contactProfileProvider.Contact.System.VisitCount;
+    public int NoOfVisits => contactProfileProvider.Contact.System?.VisitCount??0;
     public string Classification => Tracker.DefinitionItems.VisitorClassifications[Tracker.Current.Contact.System.Classification].Header;
     public int EngagementValue => contactProfileProvider.Contact.System.Value;
     public Guid Id => contactProfileProvider.Contact.ContactId;
@@ -42,6 +42,6 @@ namespace Sitecore.Feature.Demo.Models
     public IContactEmailAddresses Emails => contactProfileProvider.Emails;
     public IContactPreferences Preferences => contactProfileProvider.Preferences;
     public IEnumerable<BehaviorProfile> BehaviorProfiles => contactProfileProvider.Contact.BehaviorProfiles.Profiles.Select(x => new BehaviorProfile(x));
-    public IKeyBehaviorCache KeyBehaviorCache => contactProfileProvider.KeyBehaviorCache;
+    public Analytics.Tracking.KeyBehaviorCache KeyBehaviorCache => contactProfileProvider.KeyBehaviorCache;
   }
 }

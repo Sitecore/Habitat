@@ -52,7 +52,7 @@
 
     public IContactPreferences Preferences => this.GetFacet<IContactPreferences>("Preferences");
 
-    public IKeyBehaviorCache KeyBehaviorCache => this.Contact?.Attachments["KeyBehaviorCache"] as IKeyBehaviorCache;
+    public Analytics.Tracking.KeyBehaviorCache KeyBehaviorCache => this.Contact?.GetKeyBehaviorCache();
 
     public IContactPersonalInfo PersonalInfo => this.GetFacet<IContactPersonalInfo>("Personal");
 
