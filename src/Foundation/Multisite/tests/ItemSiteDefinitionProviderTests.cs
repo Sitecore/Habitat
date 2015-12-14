@@ -1,10 +1,7 @@
-﻿namespace Sitecore.Foundation.Multisite.Tets
+﻿namespace Sitecore.Foundation.Multisite.Tests
 {
-  using System;
   using System.Collections.Generic;
   using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
   using FluentAssertions;
   using Sitecore.Collections;
   using Sitecore.Data;
@@ -12,7 +9,6 @@
   using Sitecore.FakeDb.Sites;
   using Sitecore.Foundation.Multisite.Providers;
   using Sitecore.Foundation.Multisite.Tets.Extensions;
-  using Sitecore.Shell.Framework.Commands.Preferences;
   using Sitecore.Sites;
   using Xunit;
 

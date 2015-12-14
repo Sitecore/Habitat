@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sitecore.Foundation.Multisite.Tets
+﻿namespace Sitecore.Foundation.Multisite.Tests
 {
+  using System.Collections.Generic;
   using FluentAssertions;
   using Sitecore.Foundation.Multisite.Providers;
   using Sitecore.Foundation.Multisite.Tets.Extensions;
