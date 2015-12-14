@@ -103,12 +103,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\Maps\Maps.js" />
+    <Content Include="Scripts\Maps\maps.js" />
     <Content Include="App_Config\Include\Feature\Feature.Maps.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="packages.config" />
-    <Content Include="App_Config\Include\Feature\Feature.Maps..config">
+    <Content Include="App_Config\Include\Feature\Feature.Maps.config">
       <SubType>Designer</SubType>
     </Content>
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
@@ -116,7 +116,7 @@
     <Content Include="Sitecore\Shell\Applications\Content Manager\Dialogs\Maps\MapLocationPickerDialog.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\Maps\MapPointsList.cshtml" />
+    <Content Include="Views\Maps\MapPoints.cshtml" />
     <Content Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

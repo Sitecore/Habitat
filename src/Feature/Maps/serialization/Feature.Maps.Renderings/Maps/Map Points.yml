@@ -2,11 +2,11 @@
 ID: 7dfd9396-cb94-4174-9721-9419a2aa68e3
 Parent: 02eda08e-78e1-409c-9655-a2f43abe09f3
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
-Path: /sitecore/layout/Renderings/Feature/Maps/Map Points List
+Path: /sitecore/layout/Renderings/Feature/Maps/Map Points
 SharedFields:
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   # Path
-  Value: /views/maps/mappointslist.cshtml
+  Value: /views/maps/mappoints.cshtml
 - ID: 7d24e54f-5c16-4314-90c9-6051aa1a7da1
   # Parameters Template
   Value: {D77856C3-8A5E-452C-8854-F2965EDF25E0}
