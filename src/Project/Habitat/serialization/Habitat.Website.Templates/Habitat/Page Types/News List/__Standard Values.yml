@@ -8,6 +8,9 @@ SharedFields:
   # __Masters
   Type: TreelistEx
   Value: {B69277AD-E917-4B9F-9136-A12E0A3E462F}
+- ID: d312103c-b36c-4ca5-864a-c85f9abda503
+  # __Is Bucket
+  Value: 1
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
   # __Renderings
   Type: layout

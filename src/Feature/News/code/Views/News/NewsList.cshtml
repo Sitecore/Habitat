@@ -21,15 +21,11 @@
           <div class="description">
             @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary.ToString(), item)
           </div>
-          <div class="metadata panel panel-default">
-            <div class="panel-body">
-              <span class="date text-muted">
-                                @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
-                                {
-                                  format = "MMMM dd, yyyy"
-                                })
-                            </span>
-            </div>
+          <div class="metadata well">
+            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
+                        {
+                          format = "MMMM dd, yyyy"
+                        })
           </div>
         </div>
       </li>

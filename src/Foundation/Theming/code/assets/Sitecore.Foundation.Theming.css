@@ -1180,21 +1180,69 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.1;
   color: inherit; }
   h1 small, h1 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h1 .metadata > .panel-body > .date,
-  h1 .small, h2 small, h2 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h2 .metadata > .panel-body > .date,
-  h2 .small, h3 small, h3 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h3 .metadata > .panel-body > .date,
-  h3 .small, h4 small, h4 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h4 .metadata > .panel-body > .date,
-  h4 .small, h5 small, h5 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h5 .metadata > .panel-body > .date,
-  h5 .small, h6 small, h6 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h6 .metadata > .panel-body > .date,
+  h1 .small,
+  h1 footer .postfooter, footer
+  h1 .postfooter,
+  h1 .teaser .metadata, .teaser
+  h1 .metadata, h2 small, h2 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h2 .metadata > .panel-body > .date,
+  h2 .small,
+  h2 footer .postfooter, footer
+  h2 .postfooter,
+  h2 .teaser .metadata, .teaser
+  h2 .metadata, h3 small, h3 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h3 .metadata > .panel-body > .date,
+  h3 .small,
+  h3 footer .postfooter, footer
+  h3 .postfooter,
+  h3 .teaser .metadata, .teaser
+  h3 .metadata, h4 small, h4 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h4 .metadata > .panel-body > .date,
+  h4 .small,
+  h4 footer .postfooter, footer
+  h4 .postfooter,
+  h4 .teaser .metadata, .teaser
+  h4 .metadata, h5 small, h5 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h5 .metadata > .panel-body > .date,
+  h5 .small,
+  h5 footer .postfooter, footer
+  h5 .postfooter,
+  h5 .teaser .metadata, .teaser
+  h5 .metadata, h6 small, h6 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h6 .metadata > .panel-body > .date,
   h6 .small,
+  h6 footer .postfooter, footer
+  h6 .postfooter,
+  h6 .teaser .metadata, .teaser
+  h6 .metadata,
   .h1 small,
   .h1 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media
   .h1 .metadata > .panel-body > .date,
-  .h1 .small, .h2 small, .h2 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h2 .metadata > .panel-body > .date,
-  .h2 .small, .h3 small, .h3 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h3 .metadata > .panel-body > .date,
-  .h3 .small, .h4 small, .h4 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h4 .metadata > .panel-body > .date,
-  .h4 .small, .h5 small, .h5 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h5 .metadata > .panel-body > .date,
-  .h5 .small, .h6 small, .h6 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h6 .metadata > .panel-body > .date,
-  .h6 .small {
+  .h1 .small,
+  .h1 footer .postfooter, footer
+  .h1 .postfooter,
+  .h1 .teaser .metadata, .teaser
+  .h1 .metadata, .h2 small, .h2 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h2 .metadata > .panel-body > .date,
+  .h2 .small,
+  .h2 footer .postfooter, footer
+  .h2 .postfooter,
+  .h2 .teaser .metadata, .teaser
+  .h2 .metadata, .h3 small, .h3 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h3 .metadata > .panel-body > .date,
+  .h3 .small,
+  .h3 footer .postfooter, footer
+  .h3 .postfooter,
+  .h3 .teaser .metadata, .teaser
+  .h3 .metadata, .h4 small, .h4 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h4 .metadata > .panel-body > .date,
+  .h4 .small,
+  .h4 footer .postfooter, footer
+  .h4 .postfooter,
+  .h4 .teaser .metadata, .teaser
+  .h4 .metadata, .h5 small, .h5 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h5 .metadata > .panel-body > .date,
+  .h5 .small,
+  .h5 footer .postfooter, footer
+  .h5 .postfooter,
+  .h5 .teaser .metadata, .teaser
+  .h5 .metadata, .h6 small, .h6 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h6 .metadata > .panel-body > .date,
+  .h6 .small,
+  .h6 footer .postfooter, footer
+  .h6 .postfooter,
+  .h6 .teaser .metadata, .teaser
+  .h6 .metadata {
     font-weight: normal;
     line-height: 1;
     color: #777777; }
@@ -1205,18 +1253,42 @@ h3, .h3 {
   margin-top: 24px;
   margin-bottom: 12px; }
   h1 small, h1 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h1 .metadata > .panel-body > .date,
-  h1 .small, .h1 small, .h1 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h1 .metadata > .panel-body > .date,
+  h1 .small,
+  h1 footer .postfooter, footer
+  h1 .postfooter,
+  h1 .teaser .metadata, .teaser
+  h1 .metadata, .h1 small, .h1 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h1 .metadata > .panel-body > .date,
   .h1 .small,
+  .h1 footer .postfooter, footer
+  .h1 .postfooter,
+  .h1 .teaser .metadata, .teaser
+  .h1 .metadata,
   h2 small,
   h2 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media
   h2 .metadata > .panel-body > .date,
-  h2 .small, .h2 small, .h2 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h2 .metadata > .panel-body > .date,
+  h2 .small,
+  h2 footer .postfooter, footer
+  h2 .postfooter,
+  h2 .teaser .metadata, .teaser
+  h2 .metadata, .h2 small, .h2 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h2 .metadata > .panel-body > .date,
   .h2 .small,
+  .h2 footer .postfooter, footer
+  .h2 .postfooter,
+  .h2 .teaser .metadata, .teaser
+  .h2 .metadata,
   h3 small,
   h3 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media
   h3 .metadata > .panel-body > .date,
-  h3 .small, .h3 small, .h3 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h3 .metadata > .panel-body > .date,
-  .h3 .small {
+  h3 .small,
+  h3 footer .postfooter, footer
+  h3 .postfooter,
+  h3 .teaser .metadata, .teaser
+  h3 .metadata, .h3 small, .h3 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h3 .metadata > .panel-body > .date,
+  .h3 .small,
+  .h3 footer .postfooter, footer
+  .h3 .postfooter,
+  .h3 .teaser .metadata, .teaser
+  .h3 .metadata {
     font-size: 65%; }
 
 h4, .h4,
@@ -1225,18 +1297,42 @@ h6, .h6 {
   margin-top: 12px;
   margin-bottom: 12px; }
   h4 small, h4 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media h4 .metadata > .panel-body > .date,
-  h4 .small, .h4 small, .h4 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h4 .metadata > .panel-body > .date,
+  h4 .small,
+  h4 footer .postfooter, footer
+  h4 .postfooter,
+  h4 .teaser .metadata, .teaser
+  h4 .metadata, .h4 small, .h4 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h4 .metadata > .panel-body > .date,
   .h4 .small,
+  .h4 footer .postfooter, footer
+  .h4 .postfooter,
+  .h4 .teaser .metadata, .teaser
+  .h4 .metadata,
   h5 small,
   h5 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media
   h5 .metadata > .panel-body > .date,
-  h5 .small, .h5 small, .h5 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h5 .metadata > .panel-body > .date,
+  h5 .small,
+  h5 footer .postfooter, footer
+  h5 .postfooter,
+  h5 .teaser .metadata, .teaser
+  h5 .metadata, .h5 small, .h5 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h5 .metadata > .panel-body > .date,
   .h5 .small,
+  .h5 footer .postfooter, footer
+  .h5 .postfooter,
+  .h5 .teaser .metadata, .teaser
+  .h5 .metadata,
   h6 small,
   h6 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media
   h6 .metadata > .panel-body > .date,
-  h6 .small, .h6 small, .h6 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h6 .metadata > .panel-body > .date,
-  .h6 .small {
+  h6 .small,
+  h6 footer .postfooter, footer
+  h6 .postfooter,
+  h6 .teaser .metadata, .teaser
+  h6 .metadata, .h6 small, .h6 .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media .h6 .metadata > .panel-body > .date,
+  .h6 .small,
+  .h6 footer .postfooter, footer
+  .h6 .postfooter,
+  .h6 .teaser .metadata, .teaser
+  .h6 .metadata {
     font-size: 75%; }
 
 h1, .h1 {
@@ -1270,7 +1366,9 @@ p {
       font-size: 25.5px; } }
 
 small, .content-list > .media-list .media .metadata > .panel-body > .date,
-.small {
+.small,
+footer .postfooter,
+.teaser .metadata {
   font-size: 88%; }
 
 mark,
@@ -1284,7 +1382,7 @@ mark,
 .text-right {
   text-align: right; }
 
-.text-center {
+.text-center, footer .postfooter {
   text-align: center; }
 
 .text-justify {
@@ -1302,7 +1400,7 @@ mark,
 .text-capitalize {
   text-transform: capitalize; }
 
-.text-muted {
+.text-muted, footer .postfooter, .teaser .metadata {
   color: #777777; }
 
 .text-primary {
@@ -1460,7 +1558,11 @@ blockquote {
   blockquote small,
   blockquote .content-list > .media-list .media .metadata > .panel-body > .date, .content-list > .media-list .media
   blockquote .metadata > .panel-body > .date,
-  blockquote .small {
+  blockquote .small,
+  blockquote footer .postfooter, footer
+  blockquote .postfooter,
+  blockquote .teaser .metadata, .teaser
+  blockquote .metadata {
     display: block;
     font-size: 80%;
     line-height: 1.42857;
@@ -1469,7 +1571,11 @@ blockquote {
     blockquote small:before,
     blockquote .content-list > .media-list .media .metadata > .panel-body > .date:before, .content-list > .media-list .media
     blockquote .metadata > .panel-body > .date:before,
-    blockquote .small:before {
+    blockquote .small:before,
+    blockquote footer .postfooter:before, footer
+    blockquote .postfooter:before,
+    blockquote .teaser .metadata:before, .teaser
+    blockquote .metadata:before {
       content: '\2014 \00A0'; }
 
 .blockquote-reverse,
@@ -1487,22 +1593,38 @@ blockquote.pull-right,
   .blockquote-reverse .content-list > .media-list .media .metadata > .panel-body > .date:before, .content-list > .media-list .media
   .blockquote-reverse .metadata > .panel-body > .date:before,
   .blockquote-reverse .small:before,
+  .blockquote-reverse footer .postfooter:before, footer
+  .blockquote-reverse .postfooter:before,
+  .blockquote-reverse .teaser .metadata:before, .teaser
+  .blockquote-reverse .metadata:before,
   blockquote.pull-right footer:before, .page-header-container blockquote.breadcrumb footer:before, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats footer:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon footer:before,
   blockquote.pull-right small:before, .page-header-container blockquote.breadcrumb small:before, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats small:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon small:before,
   blockquote.pull-right .content-list > .media-list .media .metadata > .panel-body > .date:before, .content-list > .media-list .media
   blockquote.pull-right .metadata > .panel-body > .date:before, .page-header-container blockquote.breadcrumb .content-list > .media-list .media .metadata > .panel-body > .date:before, .content-list > .media-list .media .page-header-container blockquote.breadcrumb .metadata > .panel-body > .date:before, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .content-list > .media-list .media .metadata > .panel-body > .date:before, .content-list > .media-list .media #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .metadata > .panel-body > .date:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .content-list > .media-list .media .metadata > .panel-body > .date:before, .content-list > .media-list .media #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .metadata > .panel-body > .date:before,
-  blockquote.pull-right .small:before, .page-header-container blockquote.breadcrumb .small:before, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .small:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .small:before {
+  blockquote.pull-right .small:before, .page-header-container blockquote.breadcrumb .small:before, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .small:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .small:before,
+  blockquote.pull-right footer .postfooter:before, footer
+  blockquote.pull-right .postfooter:before, .page-header-container blockquote.breadcrumb footer .postfooter:before, footer .page-header-container blockquote.breadcrumb .postfooter:before, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats footer .postfooter:before, footer #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .postfooter:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon footer .postfooter:before, footer #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .postfooter:before,
+  blockquote.pull-right .teaser .metadata:before, .teaser
+  blockquote.pull-right .metadata:before, .page-header-container blockquote.breadcrumb .teaser .metadata:before, .teaser .page-header-container blockquote.breadcrumb .metadata:before, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .teaser .metadata:before, .teaser #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .metadata:before, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .teaser .metadata:before, .teaser #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .metadata:before {
     content: ''; }
   .blockquote-reverse footer:after,
   .blockquote-reverse small:after,
   .blockquote-reverse .content-list > .media-list .media .metadata > .panel-body > .date:after, .content-list > .media-list .media
   .blockquote-reverse .metadata > .panel-body > .date:after,
   .blockquote-reverse .small:after,
+  .blockquote-reverse footer .postfooter:after, footer
+  .blockquote-reverse .postfooter:after,
+  .blockquote-reverse .teaser .metadata:after, .teaser
+  .blockquote-reverse .metadata:after,
   blockquote.pull-right footer:after, .page-header-container blockquote.breadcrumb footer:after, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats footer:after, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon footer:after,
   blockquote.pull-right small:after, .page-header-container blockquote.breadcrumb small:after, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats small:after, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon small:after,
   blockquote.pull-right .content-list > .media-list .media .metadata > .panel-body > .date:after, .content-list > .media-list .media
   blockquote.pull-right .metadata > .panel-body > .date:after, .page-header-container blockquote.breadcrumb .content-list > .media-list .media .metadata > .panel-body > .date:after, .content-list > .media-list .media .page-header-container blockquote.breadcrumb .metadata > .panel-body > .date:after, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .content-list > .media-list .media .metadata > .panel-body > .date:after, .content-list > .media-list .media #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .metadata > .panel-body > .date:after, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .content-list > .media-list .media .metadata > .panel-body > .date:after, .content-list > .media-list .media #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .metadata > .panel-body > .date:after,
-  blockquote.pull-right .small:after, .page-header-container blockquote.breadcrumb .small:after, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .small:after, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .small:after {
+  blockquote.pull-right .small:after, .page-header-container blockquote.breadcrumb .small:after, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .small:after, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .small:after,
+  blockquote.pull-right footer .postfooter:after, footer
+  blockquote.pull-right .postfooter:after, .page-header-container blockquote.breadcrumb footer .postfooter:after, footer .page-header-container blockquote.breadcrumb .postfooter:after, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats footer .postfooter:after, footer #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .postfooter:after, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon footer .postfooter:after, footer #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .postfooter:after,
+  blockquote.pull-right .teaser .metadata:after, .teaser
+  blockquote.pull-right .metadata:after, .page-header-container blockquote.breadcrumb .teaser .metadata:after, .teaser .page-header-container blockquote.breadcrumb .metadata:after, #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .teaser .metadata:after, .teaser #sidebar > .panel-group > .panel > .panel-heading blockquote.stats .metadata:after, #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .teaser .metadata:after, .teaser #sidebar > .panel-group > .panel .panel-group .panel-heading .panel-title blockquote.expand-icon .metadata:after {
     content: '\00A0 \2014'; }
 
 address {
@@ -4378,7 +4500,7 @@ a.badge:hover, a.badge:focus {
       .jumbotron .h1 {
         font-size: 77px; } }
 
-.thumbnail {
+.thumbnail, .lightbox {
   display: block;
   padding: 0;
   margin-bottom: 24px;
@@ -4389,20 +4511,22 @@ a.badge:hover, a.badge:focus {
   -webkit-transition: border 0.2s ease-in-out;
   -o-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out; }
-  .thumbnail > img,
-  .thumbnail a > img {
+  .thumbnail > img, .lightbox > img,
+  .thumbnail a > img, .lightbox a > img {
     display: block;
     max-width: 100%;
     height: auto;
     margin-left: auto;
     margin-right: auto; }
-  .thumbnail .caption {
+  .thumbnail .caption, .lightbox .caption {
     padding: 0;
     color: #333333; }
 
-a.thumbnail:hover,
+a.thumbnail:hover, a.lightbox:hover,
 a.thumbnail:focus,
-a.thumbnail.active {
+a.lightbox:focus,
+a.thumbnail.active,
+a.active.lightbox {
   border-color: #125687; }
 
 .alert {
@@ -4649,15 +4773,27 @@ button.list-group-item {
   .list-group-item.active .list-group-item-heading > small,
   .list-group-item.active .content-list > .media-list .media .metadata > .panel-body.list-group-item-heading > .date, .content-list > .media-list .media
   .list-group-item.active .metadata > .panel-body.list-group-item-heading > .date,
-  .list-group-item.active .list-group-item-heading > .small, .list-group-item.active:hover .list-group-item-heading,
+  .list-group-item.active .list-group-item-heading > .small,
+  .list-group-item.active footer .list-group-item-heading > .postfooter, footer
+  .list-group-item.active .list-group-item-heading > .postfooter,
+  .list-group-item.active .teaser .list-group-item-heading > .metadata, .teaser
+  .list-group-item.active .list-group-item-heading > .metadata, .list-group-item.active:hover .list-group-item-heading,
   .list-group-item.active:hover .list-group-item-heading > small,
   .list-group-item.active:hover .content-list > .media-list .media .metadata > .panel-body.list-group-item-heading > .date, .content-list > .media-list .media
   .list-group-item.active:hover .metadata > .panel-body.list-group-item-heading > .date,
-  .list-group-item.active:hover .list-group-item-heading > .small, .list-group-item.active:focus .list-group-item-heading,
+  .list-group-item.active:hover .list-group-item-heading > .small,
+  .list-group-item.active:hover footer .list-group-item-heading > .postfooter, footer
+  .list-group-item.active:hover .list-group-item-heading > .postfooter,
+  .list-group-item.active:hover .teaser .list-group-item-heading > .metadata, .teaser
+  .list-group-item.active:hover .list-group-item-heading > .metadata, .list-group-item.active:focus .list-group-item-heading,
   .list-group-item.active:focus .list-group-item-heading > small,
   .list-group-item.active:focus .content-list > .media-list .media .metadata > .panel-body.list-group-item-heading > .date, .content-list > .media-list .media
   .list-group-item.active:focus .metadata > .panel-body.list-group-item-heading > .date,
-  .list-group-item.active:focus .list-group-item-heading > .small {
+  .list-group-item.active:focus .list-group-item-heading > .small,
+  .list-group-item.active:focus footer .list-group-item-heading > .postfooter, footer
+  .list-group-item.active:focus .list-group-item-heading > .postfooter,
+  .list-group-item.active:focus .teaser .list-group-item-heading > .metadata, .teaser
+  .list-group-item.active:focus .list-group-item-heading > .metadata {
     color: inherit; }
   .list-group-item.active .list-group-item-text, .list-group-item.active:hover .list-group-item-text, .list-group-item.active:focus .list-group-item-text {
     color: #78bced; }
@@ -4794,10 +4930,14 @@ button.list-group-item-danger {
   .panel-title > a,
   .panel-title > small, .content-list > .media-list .media .metadata >
   .panel-body.panel-title > .date,
-  .panel-title > .small,
+  .panel-title > .small, footer
+  .panel-title > .postfooter, .teaser
+  .panel-title > .metadata,
   .panel-title > small > a, .content-list > .media-list .media .metadata >
   .panel-body.panel-title > .date > a,
-  .panel-title > .small > a {
+  .panel-title > .small > a, footer
+  .panel-title > .postfooter > a, .teaser
+  .panel-title > .metadata > a {
     color: inherit; }
 
 .panel-footer {
@@ -5908,8 +6048,38 @@ a {
   transition: all 0.2s ease-out 0s; }
 
 /****************
-  Forms
+    Page Header
 ****************/
+.page-header-container {
+  background-color: #eeeeee;
+  padding: 25px 0;
+  margin-bottom: 24px; }
+  .page-header-container .page-header {
+    margin: 0;
+    border: 0; }
+  .page-header-container .section-title {
+    text-transform: uppercase; }
+    .page-header-container .section-title h1 {
+      font-size: 22px;
+      margin: 0;
+      padding: 0; }
+  .page-header-container .breadcrumb {
+    margin: 0;
+    padding: 0;
+    background-color: inherit; }
+
+footer {
+  padding-top: 24px; }
+  footer .prefooter {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    background-color: #f5f5f5; }
+    footer .prefooter .nav-pills > li {
+      width: 49%; }
+  footer .postfooter {
+    padding-top: 12px;
+    padding-bottom: 24px; }
+
 .btn {
   font-size: 16px;
   text-transform: uppercase; }
@@ -5939,35 +6109,12 @@ a {
 .dropdown input[type="submit"]:hover {
   color: #125687; }
 
-/****************
-    Page Header
-****************/
-.page-header-container {
-  background-color: #eeeeee;
-  padding: 25px 0;
-  margin-bottom: 24px; }
-  .page-header-container .page-header {
-    margin: 0;
-    border: 0; }
-  .page-header-container .section-title {
-    text-transform: uppercase; }
-    .page-header-container .section-title h1 {
-      font-size: 22px;
-      margin: 0;
-      padding: 0; }
-  .page-header-container .breadcrumb {
-    margin: 0;
-    padding: 0;
-    background-color: inherit; }
+.dropdown-menu.dropdown-menu-wide {
+  min-width: 360px; }
 
-/****************
-    FOOTER
-****************/
-footer {
-  background-color: #f5f5f5;
-  padding-top: 24px; }
-  footer .prefooter .nav-pills > li {
-    width: 49%; }
+.dropdown-menu > li > .dropdown-item-body {
+  display: block;
+  padding: 3px 20px; }
 
 #sidebar .panel {
   border: 0; }
@@ -6045,49 +6192,24 @@ footer {
   margin-bottom: 24px; }
 
 .teaser {
-  margin-bottom: 48px; }
-  .teaser.thumbnail > .caption h1, .teaser.thumbnail > .caption h2, .teaser.thumbnail > .caption h3, .teaser.thumbnail > .caption h1, .teaser.thumbnail > .caption h2, .teaser.thumbnail > .caption h3, .teaser.thumbnail > .caption h1, .teaser.thumbnail > .caption h2, .teaser.thumbnail > .caption h3 {
-    text-align: center;
-    text-transform: uppercase; }
-  .teaser.thumbnail > .caption hr {
+  margin-top: 24px; }
+  .teaser hr {
     border: none;
     width: 30px;
     height: 3px;
-    margin: 0 auto 30px;
+    margin: 0 0 30px;
     background: #125687 none repeat scroll 0 0; }
-  .teaser.thumbnail > .caption p {
-    text-align: center; }
-  .teaser.panel {
-    border: none;
-    box-shadow: none; }
-    .teaser.panel .panel-heading {
-      padding: 0;
-      background: none;
-      border: none; }
-      .teaser.panel .panel-heading h1, .teaser.panel .panel-heading h2, .teaser.panel .panel-heading h3, .teaser.panel .panel-heading h1, .teaser.panel .panel-heading h2, .teaser.panel .panel-heading h3, .teaser.panel .panel-heading h1, .teaser.panel .panel-heading h2, .teaser.panel .panel-heading h3 {
-        margin-top: 0;
-        margin-bottom: 24px;
-        text-transform: uppercase; }
-    .teaser.panel .panel-body {
-      padding: 0;
-      background: none;
-      border: none; }
-    .teaser.panel .panel-footer {
-      padding: 0;
-      background: none;
-      border: none;
-      margin-top: 24px; }
-  .teaser h1 a, .teaser h2 a, .teaser h3 a, .teaser h1 a, .teaser h2 a, .teaser h3 a, .teaser h1 a, .teaser h2 a, .teaser h3 a {
-    color: #333333; }
-  .teaser h1 a:hover, .teaser h1 a:focus, .teaser h2 a:hover, .teaser h2 a:focus, .teaser h3 a:hover, .teaser h3 a:focus, .teaser h1 a:hover, .teaser h1 a:focus, .teaser h2 a:hover, .teaser h2 a:focus, .teaser h3 a:hover, .teaser h3 a:focus, .teaser h1 a:hover, .teaser h1 a:focus, .teaser h2 a:hover, .teaser h2 a:focus, .teaser h3 a:hover, .teaser h3 a:focus {
-    color: #125687;
-    text-decoration: none; }
+  .teaser > .teaser-heading {
+    margin-bottom: 24px; }
+  .teaser h1, .teaser h2, .teaser h3, .teaser h4, .teaser h5, .teaser h6 {
+    text-transform: uppercase; }
+  .teaser > .teaser-image {
+    margin-bottom: 24px; }
+  .teaser > .teaser-footer {
+    margin-top: 24px; }
   .teaser.teaser-list ul.media-list .media .media-left img, .teaser.teaser-list ul.media-list .media .media-right img {
     border-radius: 50%; }
 
-/****************
-    NAVIGATION
-****************/
 .secondary-menu > .panel-heading {
   font-weight: 700; }
   .secondary-menu > .panel-heading a, .secondary-menu > .panel-heading a:hover {
@@ -6174,9 +6296,6 @@ footer {
     #primary-navigation > .primary-nav .dropdown:hover .dropdown-menu {
       display: block; } }
 
-/****************
-    MEDIA
-****************/
 .carousel {
   margin-bottom: 48px; }
   .carousel > .carousel-inner > .item > img, .carousel > .carousel-inner > .item > video {
@@ -6184,35 +6303,45 @@ footer {
   .carousel > .carousel-inner > .item > .carousel-caption {
     background-color: rgba(0, 0, 0, 0.2);
     padding-bottom: 40px; }
-    .carousel > .carousel-inner > .item > .carousel-caption h2 {
-      font-size: 40px;
+    .carousel > .carousel-inner > .item > .carousel-caption h1, .carousel > .carousel-inner > .item > .carousel-caption h2, .carousel > .carousel-inner > .item > .carousel-caption h3, .carousel > .carousel-inner > .item > .carousel-caption h4, .carousel > .carousel-inner > .item > .carousel-caption h5, .carousel > .carousel-inner > .item > .carousel-caption h6 {
       color: #eeeeee;
       text-transform: uppercase; }
 
-.page-layout .page-header-container.container-fluid:nth-child(2) .jumbotron {
-  color: blue; }
-
 .jumbotron .container {
   background-color: rgba(0, 0, 0, 0.2); }
-  .jumbotron .container h1 {
-    font-size: 40px;
+  .jumbotron .container h1, .jumbotron .container h2, .jumbotron .container h3, .jumbotron .container h4, .jumbotron .container h5, .jumbotron .container h6 {
     color: #eeeeee;
     text-transform: uppercase; }
   .jumbotron .container p {
     color: #eeeeee; }
 
-.lightbox.thumbnail {
+.lightbox {
   position: relative; }
-  .lightbox.thumbnail .overlay {
+  .lightbox .overlay {
     top: 0;
     left: 0;
+    height: 100%;
+    width: 100%;
     position: absolute;
-    padding-top: 10px;
-    padding-left: 10px;
-    font-size: 2rem;
-    color: inherit; }
-  .lightbox.thumbnail a:hover .overlay {
-    color: silver; }
+    vertical-align: middle;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    margin: auto 0; }
+    .lightbox .overlay :first-child {
+      position: relative;
+      top: 50%;
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%); }
+  .lightbox a:hover .overlay {
+    color: #eeeeee;
+    background-color: rgba(0, 0, 0, 0.2);
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s; }
 
 /********************
     Content List

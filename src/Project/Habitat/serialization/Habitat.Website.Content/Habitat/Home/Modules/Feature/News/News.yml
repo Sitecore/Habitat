@@ -4,6 +4,10 @@ Parent: ea258531-d346-4200-b673-471cf1544506
 Template: a99866e5-08e7-44d8-8a52-f8e26bcd3714
 Path: /sitecore/content/Habitat/Home/Modules/Feature/News/News
 SharedFields:
+- ID: a0cb3965-8884-4c7a-8815-b6b2e5ced162
+  # __Editors
+  Type: TreelistEx
+  Value: {59F53BBB-D1F5-4E38-8EBA-0D73109BB59B}
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder
   Value: 300

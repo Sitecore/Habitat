@@ -99,7 +99,7 @@
   <ItemGroup>
     <Compile Include="Infrastructure\AutoDbDataAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\CarouselElementsRepositoryTests.cs" />
+    <Compile Include="Repositories\MediaSelectorElementsRepositoryTests.cs" />
     <Compile Include="Infrastructure\MediaSelectorTemplate.cs" />
     <Compile Include="Infrastructure\MediaTemplate.cs" />
     <Compile Include="Infrastructure\VideoTemplate.cs" />

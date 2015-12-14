@@ -1,9 +1,9 @@
 ﻿@using Sitecore.Feature.Navigation
 @model Sitecore.Feature.Navigation.Models.NavigationItem
 @{
-  if (Model == null)
+  if (!Sitecore.Context.PageMode.IsPageEditor && (Model == null || Model.Children == null || !Model.Children.Items.Any()))
   {
-    return;
+	  return;
   }
 }
 

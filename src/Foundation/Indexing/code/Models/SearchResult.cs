@@ -4,7 +4,7 @@ namespace Sitecore.Foundation.Indexing.Models
   using Sitecore.Data.Items;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
-  internal class SearchResult : ISearchResult
+  public class SearchResult : ISearchResult
   {
     private Uri _url;
 
