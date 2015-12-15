@@ -16,11 +16,9 @@
     [Theory]
     [InlineData("TestString","Test String")]
     [InlineData("Test String","Test String")]
-    public void DisplayNameShouldReturnActualValue(string input, string expected)
+    public void Humanize_ShouldReturnValueSplittedWithWhitespaces(string input, string expected)
     {
       input.Humanize().Should().Be(expected);
     }
-
-
   }
 }
