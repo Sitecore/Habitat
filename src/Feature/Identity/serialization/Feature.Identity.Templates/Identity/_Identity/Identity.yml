@@ -1,0 +1,16 @@
+﻿---
+ID: 2bc401c8-8d88-4468-8cc2-39c99d5e83d3
+Parent: fa8de5b9-d5d8-40a7-866a-23af4f5a9629
+Template: e269fbb5-3750-427a-9149-7aa950b49301
+Path: /sitecore/templates/Feature/Identity/_Identity/Identity
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150826T104517Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

@@ -1,0 +1,11 @@
+﻿@using Sitecore
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{ var useStaticPlaceholderNames = MainUtil.GetBool(Model.Rendering.Parameters[Sitecore.Habitat.Website.Constants.LayoutParameters.UseStaticPlaceholderNames], false); }
+<div class="container@(MainUtil.GetBool(Model.Rendering.Parameters[Sitecore.Habitat.Website.Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
+  <div class="row">
+    <div class="col-md-12">
+      @Html.Sitecore().DynamicPlaceholder("col-huge", useStaticPlaceholderNames)
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+﻿---
+ID: 98e48045-dfc7-4a70-9bed-5c40ab6558a6
+Parent: 20507226-1c3b-4d7a-89d4-de00706e59b6
+Template: 773a96f7-2752-4da2-a2f5-6119a21a24f3
+Path: /sitecore/content/Shared/Social/Twitter feeds/sitecorehabitat
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 099e4085-150c-4073-88d9-8b159d9a8b01
+      # FeedTitle
+      Value: Tweets by @sitecorehabitat
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151123T164134Z
+    - ID: 92ef8986-45e2-42de-913f-b91fd960297a
+      # TwitterUrl
+      Value: "<link linktype=\"external\" url=\"https://twitter.com/sitecorehabitat\" />"
+    - ID: d1cf33b1-8b8a-4aab-aa7e-2460566beded
+      # WidgetId
+      Value: 641815052882804737

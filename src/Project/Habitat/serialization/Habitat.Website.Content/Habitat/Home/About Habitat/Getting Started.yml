@@ -1,0 +1,62 @@
+﻿---
+ID: c9aa3b8f-5638-4360-afad-416d1a6d82b1
+Parent: 762684e7-480b-41d6-82de-8549babe95e3
+Template: 94a8c8e9-690b-4e65-98e7-f95800222767
+Path: /sitecore/content/Habitat/Home/About Habitat/Getting Started
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  # __Sortorder
+  Value: 150
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
+      # __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s" p:p="1">
+          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{EB8755D8-3463-4D8B-93F1-EDD0A01C5C49}" p:before="r[@uid='{0B68BB27-5DBD-42F2-ABB6-F7E28D3F43D3}']" s:ds="{A92C04FE-9158-47C5-BCA2-14FCA32FF772}" s:id="{0534F12C-804E-4532-A832-5D61FE9EC6ED}" s:ph="/page-layout/sidebarcontent/col-wide-1_9bcf12d2-af7f-47ce-b8f2-8da2dffae9cf" />
+            <r uid="{0B68BB27-5DBD-42F2-ABB6-F7E28D3F43D3}" p:before="r[@uid='{84C7E7C4-7DF9-4225-99A3-820AE2CC6C74}']" s:ds="{BAA538A3-9DE8-4D89-B2EA-7F30B7D6410D}" s:id="{A1AD34DD-535E-47AF-A911-34C57CCC26F6}" s:ph="/page-layout/sidebarcontent/col-wide-2_9bcf12d2-af7f-47ce-b8f2-8da2dffae9cf" />
+            <r uid="{84C7E7C4-7DF9-4225-99A3-820AE2CC6C74}" p:before="r[@uid='{8277EA6B-505F-41C3-9EF3-60E533B9D8CB}']" s:ds="{3A5D638D-5BDD-4DDD-BEAC-4A0C81C27E8A}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-3_510d3d3a-1960-4fdd-9972-96e3b8d56bfa" />
+            <r uid="{8277EA6B-505F-41C3-9EF3-60E533B9D8CB}" p:before="r[@uid='{426CF3E2-3CE7-4F1B-8210-A8256B5A7A6C}']" s:ds="{F7434DF7-E32E-4F8C-A50E-27C476F4DC32}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-2_510d3d3a-1960-4fdd-9972-96e3b8d56bfa" />
+            <r uid="{426CF3E2-3CE7-4F1B-8210-A8256B5A7A6C}" p:before="r[@uid='{68AFA8FC-8D3A-4D99-AE7F-F7C77A56905E}']" s:ds="{8A80477E-7CB4-4CEE-A035-B48AC118ABE8}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-1_510d3d3a-1960-4fdd-9972-96e3b8d56bfa" />
+            <r uid="{68AFA8FC-8D3A-4D99-AE7F-F7C77A56905E}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{8ABB8E75-E21C-4667-B277-C125B8E3A01F}" s:id="{A25C9850-AAB7-46A6-84B7-0DFAB32FC357}" s:ph="/page-layout/col-huge_f4c4538a-b396-4c18-95f6-09639646602f" />
+            <r uid="{F4C4538A-B396-4C18-95F6-09639646602F}" p:before="r[@uid='{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}']" s:ds="" s:id="{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}" s:par="ContainerIsFluid=1&amp;UseStaticPlaceholderNames" s:ph="page-layout" />
+            <r uid="{EB352679-4420-46AE-95B0-7CA976C24194}">
+              <p:d />
+            </r>
+            <r uid="{510D3D3A-1960-4FDD-9972-96E3B8D56BFA}" p:before="r[@uid='{A85893F9-5DF5-4C28-AC0F-67AD85D29661}']" s:ds="" s:id="{7074CA39-734D-4953-A3D5-B7D09C37CE3B}" s:par="ContainerIsFluid&amp;UseStaticPlaceholderNames" s:ph="page-layout" />
+            <r uid="{9BCF12D2-AF7F-47CE-B8F2-8DA2DFFAE9CF}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/sidebarcontent" />
+          </d>
+        </r>
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: Getting Started
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151026T042307Z
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      # Image
+      Value: "<image mediaid=\"{10EEB8D4-7919-4485-BFB4-96EA618E9984}\" ></image>"
+    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+      # Summary
+      Value: Habitat is not only a defined methodology with conventions and practises. It is also an example implementation available for your understanding.
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      # Title
+      Value: Getting Started
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      # BrowserTitle
+      Value: Getting Started
+    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+      # Body
+      Value: |
+        <p>The Sitecore Habitat methodology has been implemented in an example solution - actually the exact one you are browsing right now.</p>
+        <p>The example solution with full source code and a set of simple to use tools are available for your use on github.com. Please follow the link below to find the repository.</p>
+        <p>In the <a href="https://github.com/sitecore/habitat/wiki" target="_blank">Sitecore Habitat GitHub wiki </a>you will find information on how to install and work with the example implementation. You can also click around in the Modules section of this site to see which modules are included in the example.</p>
+        <p>Good luck with Habitat!</p>
+        <ul>
+            <li><a href="http://github.com/sitecore/habitat" target="_blank">Github Habitat Repository</a></li>
+        </ul>

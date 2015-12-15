@@ -1,0 +1,17 @@
+﻿---
+ID: da61ad50-8fdb-4252-a68f-b4470b1c9fe8
+Parent: 32566f0e-7686-45f1-a12f-d7260bd78bc3
+Template: 7ee0975b-0698-493e-b3a2-0b2ef33d0522
+Path: /sitecore/layout/Renderings/Feature
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: applications/32x32/folder_cubes.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150824T174129Z
