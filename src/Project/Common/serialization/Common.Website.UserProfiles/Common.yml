@@ -2,7 +2,7 @@
 ID: f2913f12-6c68-49f2-a675-c9bb8892d987
 Parent: 65701ce7-6ffc-4a76-88f0-05834afd7e9d
 Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
-Path: /sitecore/system/Settings/Security/Profiles/Habitat
+Path: /sitecore/system/Settings/Security/Profiles/Common
 Languages:
 - Language: en
   Versions:

@@ -43,7 +43,7 @@ gulp.task("02-Publish-All-Projects", function (callback) {
 });
 
 gulp.task("03-Apply-Xml-Transform", function () {
-  return gulp.src("./src/Project/**/*Website.csproj")
+  return gulp.src("./src/Project/**/code/*.csproj")
     .pipe(foreach(function (stream, file) {
       return stream
         .pipe(debug({ title: "Applying transform project:" }))
