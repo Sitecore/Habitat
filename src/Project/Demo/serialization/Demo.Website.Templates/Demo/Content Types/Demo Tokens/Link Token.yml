@@ -1,21 +1,18 @@
 ﻿---
-ID: 49c651ba-4004-40a9-9b0f-e95d0573f3ae
-Parent: 85086bb5-0365-48d7-98b1-cb9b1b6392ca
+ID: 7defaa26-ed9d-4495-b5f0-0a7620403842
+Parent: 32f4012d-fc30-4efd-af6c-1d3144b257fc
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Project/Habitat/Page Types/Demo Page
+Path: /sitecore/templates/Project/Demo/Content Types/Demo Tokens/Link Token
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
   # __Icon
-  Value: People/32x32/palm.png
+  Value: People/32x32/dictionary.png
 - ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
   # __Base template
   Type: tree list
   Value: |
     {1930BBEB-7805-471A-A3BE-4858AC7CF696}
-    {1224B40E-7B6C-42B3-A6D0-C40A6C61345C}
-- ID: f7d48a55-2158-4f02-9356-756654404f73
-  # __Standard values
-  Value: {CAE7DAE3-DEB2-4415-B118-A2069BDB174A}
+    {359AD0B9-20B5-49E7-A430-891D6E67BC5C}
 Languages:
 - Language: en
   Versions:
@@ -23,7 +20,7 @@ Languages:
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20151109T235136Z
+      Value: 20151110T043433Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
       # __Created by
       Value: sitecore\admin

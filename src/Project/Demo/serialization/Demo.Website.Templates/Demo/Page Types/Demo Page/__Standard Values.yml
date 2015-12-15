@@ -2,7 +2,7 @@
 ID: cae7dae3-deb2-4415-b118-a2069bdb174a
 Parent: 49c651ba-4004-40a9-9b0f-e95d0573f3ae
 Template: 49c651ba-4004-40a9-9b0f-e95d0573f3ae
-Path: /sitecore/templates/Project/Habitat/Page Types/Demo Page/__Standard Values
+Path: /sitecore/templates/Project/Demo/Page Types/Demo Page/__Standard Values
 SharedFields:
 - ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
   # __Masters
