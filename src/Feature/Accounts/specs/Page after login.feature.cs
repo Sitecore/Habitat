@@ -85,13 +85,13 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
-                        "Confirm password"});
+                        "ConfirmPassword"});
             table1.AddRow(new string[] {
-                        "kov@sitecore.net",
+                        "kov10@sitecore.net",
                         "k",
                         "k"});
 #line 6
- testRunner.Given("User is registered in Habitat", ((string)(null)), table1, "Given ");
+ testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",

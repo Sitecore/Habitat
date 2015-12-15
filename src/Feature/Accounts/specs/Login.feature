@@ -30,7 +30,6 @@ Scenario: Aссounts_Login form_UC2_Check required fields
     | E-mail is required            |
     | Password is required          |
 
-
 @Ready
 Scenario: Accounts_Login form_UC3_Enter correct Username and Password
 	Given User with following data is registered in Habitat

@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Common.Specflow.Steps
+﻿namespace Common.Specflow.Steps
 {
+  using System;
+  using System.Collections.Generic;
   using System.Threading;
   using Common.Specflow.Infrastructure;
   using Common.Specflow.UtfService;
@@ -15,16 +11,25 @@ namespace Common.Specflow.Steps
 
   public class StepsBase
   {
-    [BeforeStep()]
+    public static IWebDriver Driver
+    {
+      get
+      {
+        return FeatureContext.Current.Get<IWebDriver>();
+      }
+      set
+      {
+        FeatureContext.Current.Set(value);
+      }
+    }
+
+    private BaseSettings Settings => new BaseSettings();
+
+    [BeforeStep]
     public static void Timeout()
     {
 #warning shitcode
       Thread.Sleep(3000);
-    }
-    public static IWebDriver Driver
-    {
-      get { return FeatureContext.Current.Get<IWebDriver>(); }
-      set { FeatureContext.Current.Set(value); }
     }
 
     [BeforeFeature]
@@ -84,7 +89,5 @@ namespace Common.Specflow.Steps
         // Ignore errors if unable to close the browser
       }
     }
-
-    private BaseSettings Settings => new BaseSettings();
   }
 }

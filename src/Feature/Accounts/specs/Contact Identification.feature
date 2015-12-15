@@ -30,8 +30,8 @@ Scenario: Accounts_Contact Identification_UC2_Identification is shown in the dem
 	And Identifier is <extranet\kov@sitecore.net>
 	And Identification status is <Known>
 	And System shows following info on Contact panel title
-	| Number of visits | 
-	| 2                | 
+	| Number of visits |
+	| 2                |
 
 
 @NeedImplementation
