@@ -168,6 +168,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.MultiSite.Tests", "src\Feature\Multisite\tests\Sitecore.Feature.MultiSite.Tests.csproj", "{B2D57490-58A9-4F73-A34E-B4076713F712}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.MultiSite.Tests", "src\Foundation\Multisite\tests\Sitecore.Foundation.MultiSite.Tests.csproj", "{57295D42-6C03-455B-8202-12AEAF233677}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Demo.Specflow", "src\Domain\Demo\specs\Habitat.Demo.Specflow.csproj", "{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF}"
 EndProject
 Global
