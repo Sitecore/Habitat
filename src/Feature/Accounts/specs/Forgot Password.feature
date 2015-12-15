@@ -26,8 +26,6 @@ Scenario: Accounts_Forgot Password_UC2_Open Password Resert page on Login form
 	| Text on page                                  |
 	| The new password will be sent to your e-mail. |
 
-
-
 	@Ready
 Scenario: Accounts_Forgot Password_UC3_Check required fields
 	Given Habitat website is opened on Forgot Password page

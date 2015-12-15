@@ -3,12 +3,12 @@
 
 @NeedImplementation
 Scenario: Accounts_Page after login_UC1_Define custom page
-	Given User is registered in Habitat
-	| Email            | Password | Confirm password |
-	| kov@sitecore.net | k        | k                | 
+	Given User with following data is registered in Habitat
+	| Email              | Password | ConfirmPassword |
+	| kov10@sitecore.net | k        | k               |
 	And Value set to item field
-  | ItemPath                  | Field          | Value                                     |
-  | /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Contact Us |
+	| ItemPath                  | Field          | Value                                     |
+	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Contact Us |
 	When Actor opens Habitat website on Login page
 	And Actor enteres following data into fields
 	| E-mail              |Password |

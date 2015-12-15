@@ -71,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Steps\CommonGlobalSteps.cs" />
     <Compile Include="Steps\EditFieldPayload.cs" />
     <Compile Include="Infrastructure\ItemFieldDefinition.cs" />
     <Compile Include="Steps\StepsBase.cs" />

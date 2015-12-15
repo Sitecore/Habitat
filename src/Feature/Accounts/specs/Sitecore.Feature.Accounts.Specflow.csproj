@@ -128,13 +128,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Show user info on popup.feature</DependentUpon>
     </Compile>
+    <Compile Include="Site switcher.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Site switcher.feature</DependentUpon>
+    </Compile>
     <Compile Include="Steps\CommonSteps.cs" />
     <Compile Include="Steps\ForgotPasswordSteps.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
     <Compile Include="Steps\RegisterPage.cs" />
-    <Compile Include="Steps\Settings.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Steps\SiteNavigation.cs" />
     <Compile Include="Steps\AccountStepsBase.cs" />
+    <Compile Include="Trigger an outcome on customer registration.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Trigger an outcome on customer registration.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -180,6 +190,14 @@
     <None Include="Show user info on popup.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Show user info on popup.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Site switcher.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Site switcher.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Trigger an outcome on customer registration.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Trigger an outcome on customer registration.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

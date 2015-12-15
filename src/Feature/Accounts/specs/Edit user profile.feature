@@ -29,7 +29,6 @@ Scenario: Account_Edit user profile_UC2_Update all fields_First time
 	 | Last Name | First Name | Phone number    | Interests |
 	 | Teltov    | Konstantin | +38(067)3333333 | Swiming   |
 
-
 @InDesign
 Scenario: Account_Edit user profile_UC3_Update all fields_Change user info
 	Given Habitat user was created and updated with following info

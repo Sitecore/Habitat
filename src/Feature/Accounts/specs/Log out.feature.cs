@@ -9,214 +9,179 @@
 //      the code is regenerated.
 //  </auto-generated>
 // ------------------------------------------------------------------------------
-
 #region Designer generated code
-
-
 #pragma warning disable
-
-namespace Habitat.Accounts.Specflow
+namespace Sitecore.Feature.Accounts.Specflow
 {
-  using TechTalk.SpecFlow;
-
-  [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
-  [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-  public partial class LogOutFeature : Xunit.IUseFixture<LogOutFeature.FixtureData>, System.IDisposable
-  {
-    private static TechTalk.SpecFlow.ITestRunner testRunner;
-
-#line 1 "Log out.feature"
-#line hidden
-
-    public LogOutFeature()
-    {
-      this.TestInitialize();
-    }
-
-    public static void FeatureSetup()
-    {
-      testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-      var featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Log out", "", ProgrammingLanguage.CSharp, ((string[])(null)));
-      testRunner.OnFeatureStart(featureInfo);
-    }
-
-    public static void FeatureTearDown()
-    {
-      testRunner.OnFeatureEnd();
-      testRunner = null;
-    }
-
-    public virtual void TestInitialize()
-    {
-    }
-
-    public virtual void ScenarioTearDown()
-    {
-      testRunner.OnScenarioEnd();
-    }
-
-    public virtual void ScenarioSetup(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
-    {
-      testRunner.OnScenarioStart(scenarioInfo);
-    }
-
-    public virtual void ScenarioCleanup()
-    {
-      testRunner.CollectScenarioErrors();
-    }
-
-    public virtual void SetFixture(LogOutFeature.FixtureData fixtureData)
-    {
-    }
-
-    void System.IDisposable.Dispose()
-    {
-      this.ScenarioTearDown();
-    }
-
-    [Xunit.FactAttribute()]
-    [Xunit.TraitAttribute("FeatureTitle", "Log out")]
-    [Xunit.TraitAttribute("Description", "Accounts_Log out_UC1_Simple log out")]
-    public virtual void Accounts_LogOut_UC1_SimpleLogOut()
-    {
-      var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Log out_UC1_Simple log out", new string[]
-      {
-        "Ready"
-      });
-#line 5
-      this.ScenarioSetup(scenarioInfo);
-#line hidden
-      var table1 = new TechTalk.SpecFlow.Table(new string[]
-      {
-        "Email",
-        "Password",
-        "ConfirmPassword"
-      });
-      table1.AddRow(new string[]
-      {
-        "kov10@sitecore.net",
-        "k",
-        "k"
-      });
-#line 6
-      testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table1, "Given ");
-#line 9
-      testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 10
-      testRunner.And("User clicks Log out on User Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
-      testRunner.Then("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-      var table2 = new TechTalk.SpecFlow.Table(new string[]
-      {
-        "Button name"
-      });
-      table2.AddRow(new string[]
-      {
-        "Logout"
-      });
-#line 12
-      testRunner.And("Following buttons is no longer present under User drop-drop down menu", ((string)(null)), table2, "And ");
-#line hidden
-      var table3 = new TechTalk.SpecFlow.Table(new string[]
-      {
-        "Button name"
-      });
-      table3.AddRow(new string[]
-      {
-        "Login"
-      });
-      table3.AddRow(new string[]
-      {
-        "Register"
-      });
-#line 15
-      testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table3, "And ");
-#line hidden
-      this.ScenarioCleanup();
-    }
-
-    [Xunit.FactAttribute()]
-    [Xunit.TraitAttribute("FeatureTitle", "Log out")]
-    [Xunit.TraitAttribute("Description", "Accounts_Log out_UC2_Session expired")]
-    public virtual void Accounts_LogOut_UC2_SessionExpired()
-    {
-      var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Log out_UC2_Session expired", new string[]
-      {
-        "NeedImplementation"
-      });
-#line 22
-      this.ScenarioSetup(scenarioInfo);
-#line hidden
-      var table4 = new TechTalk.SpecFlow.Table(new string[]
-      {
-        "Email",
-        "Password",
-        "ConfirmPassword"
-      });
-      table4.AddRow(new string[]
-      {
-        "kov10@sitecore.net",
-        "k",
-        "k"
-      });
-#line 23
-      testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table4, "Given ");
-#line 26
-      testRunner.And("Session was expired", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 27
-      testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 28
-      testRunner.And("User clicks Log out on User Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
-      testRunner.Then("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-      var table5 = new TechTalk.SpecFlow.Table(new string[]
-      {
-        "Button name"
-      });
-      table5.AddRow(new string[]
-      {
-        "Logout"
-      });
-#line 30
-      testRunner.And("Following buttons is no longer present under User drop-drop down menu", ((string)(null)), table5, "And ");
-#line hidden
-      var table6 = new TechTalk.SpecFlow.Table(new string[]
-      {
-        "Button name"
-      });
-      table6.AddRow(new string[]
-      {
-        "Login"
-      });
-      table6.AddRow(new string[]
-      {
-        "Register"
-      });
-#line 33
-      testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table6, "And ");
-#line hidden
-      this.ScenarioCleanup();
-    }
-
+    using TechTalk.SpecFlow;
+    
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class FixtureData : System.IDisposable
+    public partial class LogOutFeature : Xunit.IUseFixture<LogOutFeature.FixtureData>, System.IDisposable
     {
-      public FixtureData()
-      {
-        FeatureSetup();
-      }
-
-      void System.IDisposable.Dispose()
-      {
-        FeatureTearDown();
-      }
+        
+        private static TechTalk.SpecFlow.ITestRunner testRunner;
+        
+#line 1 "Log out.feature"
+#line hidden
+        
+        public LogOutFeature()
+        {
+            this.TestInitialize();
+        }
+        
+        public static void FeatureSetup()
+        {
+            testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Log out", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            testRunner.OnFeatureStart(featureInfo);
+        }
+        
+        public static void FeatureTearDown()
+        {
+            testRunner.OnFeatureEnd();
+            testRunner = null;
+        }
+        
+        public virtual void TestInitialize()
+        {
+        }
+        
+        public virtual void ScenarioTearDown()
+        {
+            testRunner.OnScenarioEnd();
+        }
+        
+        public virtual void ScenarioSetup(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
+        {
+            testRunner.OnScenarioStart(scenarioInfo);
+        }
+        
+        public virtual void ScenarioCleanup()
+        {
+            testRunner.CollectScenarioErrors();
+        }
+        
+        public virtual void SetFixture(LogOutFeature.FixtureData fixtureData)
+        {
+        }
+        
+        void System.IDisposable.Dispose()
+        {
+            this.ScenarioTearDown();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Log out")]
+        [Xunit.TraitAttribute("Description", "Accounts_Log out_UC1_Simple log out")]
+        public virtual void Accounts_LogOut_UC1_SimpleLogOut()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Log out_UC1_Simple log out", new string[] {
+                        "Ready"});
+#line 5
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Email",
+                        "Password",
+                        "ConfirmPassword"});
+            table1.AddRow(new string[] {
+                        "kov10@sitecore.net",
+                        "k",
+                        "k"});
+#line 6
+ testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table1, "Given ");
+#line 9
+ testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.And("User clicks Log out on User Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.Then("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Button name"});
+            table2.AddRow(new string[] {
+                        "Logout"});
+#line 12
+ testRunner.And("Following buttons is no longer present under User drop-drop down menu", ((string)(null)), table2, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Button name"});
+            table3.AddRow(new string[] {
+                        "Login"});
+            table3.AddRow(new string[] {
+                        "Register"});
+#line 15
+ testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table3, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Log out")]
+        [Xunit.TraitAttribute("Description", "Accounts_Log out_UC2_Session expired")]
+        public virtual void Accounts_LogOut_UC2_SessionExpired()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Log out_UC2_Session expired", new string[] {
+                        "NeedImplementation"});
+#line 21
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Email",
+                        "Password",
+                        "ConfirmPassword"});
+            table4.AddRow(new string[] {
+                        "kov10@sitecore.net",
+                        "k",
+                        "k"});
+#line 22
+ testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table4, "Given ");
+#line 25
+ testRunner.And("Session was expired", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+ testRunner.And("User clicks Log out on User Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.Then("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Button name"});
+            table5.AddRow(new string[] {
+                        "Logout"});
+#line 29
+ testRunner.And("Following buttons is no longer present under User drop-drop down menu", ((string)(null)), table5, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Button name"});
+            table6.AddRow(new string[] {
+                        "Login"});
+            table6.AddRow(new string[] {
+                        "Register"});
+#line 32
+ testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table6, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        public class FixtureData : System.IDisposable
+        {
+            
+            public FixtureData()
+            {
+                LogOutFeature.FeatureSetup();
+            }
+            
+            void System.IDisposable.Dispose()
+            {
+                LogOutFeature.FeatureTearDown();
+            }
+        }
     }
-  }
 }
-
 #pragma warning restore
-
 #endregion
