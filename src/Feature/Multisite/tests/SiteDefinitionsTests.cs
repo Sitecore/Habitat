@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sitecore.Feature.Multisite.Tests
+﻿namespace Sitecore.Feature.MultiSite.Tests
 {
+  using System.Collections.Generic;
   using FluentAssertions;
-  using Sitecore.Feature.Multisite.Models;
+  using Sitecore.Feature.MultiSite.Models;
   using Sitecore.Feature.Multisite.Tests.Extensions;
   using Xunit;
 

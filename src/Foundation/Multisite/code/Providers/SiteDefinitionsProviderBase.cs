@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.Multisite.Providers
+﻿namespace Sitecore.Foundation.MultiSite.Providers
 {
   using System;
   using System.Collections.Generic;

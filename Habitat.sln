@@ -159,15 +159,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Theming
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Multisite", "Multisite", "{AC21E230-C263-4FE0-8614-D6783D1FFC86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Multisite", "src\Feature\Multisite\code\Sitecore.Feature.Multisite.csproj", "{64CB17EE-49BF-44A6-98F0-4F72EE89073B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.MultiSite", "src\Feature\Multisite\code\Sitecore.Feature.MultiSite.csproj", "{64CB17EE-49BF-44A6-98F0-4F72EE89073B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Multisite", "Multisite", "{FE63FBCC-D03E-4439-A428-028A6FF8B15A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Multisite", "src\Foundation\Multisite\code\Sitecore.Foundation.Multisite.csproj", "{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.MultiSite", "src\Foundation\Multisite\code\Sitecore.Foundation.MultiSite.csproj", "{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Multisite.Tests", "src\Feature\Multisite\tests\Sitecore.Feature.Multisite.Tests.csproj", "{B2D57490-58A9-4F73-A34E-B4076713F712}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.MultiSite.Tests", "src\Feature\Multisite\tests\Sitecore.Feature.MultiSite.Tests.csproj", "{B2D57490-58A9-4F73-A34E-B4076713F712}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Multisite.Tests", "src\Foundation\Multisite\tests\Sitecore.Foundation.Multisite.Tests.csproj", "{57295D42-6C03-455B-8202-12AEAF233677}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.MultiSite.Tests", "src\Foundation\Multisite\tests\Sitecore.Foundation.MultiSite.Tests.csproj", "{57295D42-6C03-455B-8202-12AEAF233677}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

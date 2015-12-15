@@ -1,30 +1,30 @@
-﻿namespace Sitecore.Feature.Multisite.Repositories
+﻿namespace Sitecore.Feature.MultiSite.Repositories
 {
   using System;
   using System.Collections.Generic;
   using System.Linq;
   using System.Web;
   using Sitecore.Data.Items;
-  using Sitecore.Feature.Multisite.Models;
-  using Sitecore.Foundation.Multisite;
-  using Sitecore.Foundation.Multisite.Providers;
+  using Sitecore.Feature.MultiSite.Models;
+  using Sitecore.Foundation.MultiSite;
+  using Sitecore.Foundation.MultiSite.Providers;
   using Sitecore.Foundation.SitecoreExtensions;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
-  public class MultisiteRepository : IMultisiteRepository
+  public class SiteDefinitionRepositoryRepository : ISiteDefinitionRepositoryRepository
   {
     private ISiteDefinitionsProvider siteDefinitionsProvider;
 
-    public MultisiteRepository() : this(new ItemSiteDefinitionsProvider())
+    public SiteDefinitionRepositoryRepository() : this(new ItemSiteDefinitionsProvider())
     {
     }
 
-    public MultisiteRepository(ISiteDefinitionsProvider itemSiteDefinitionsProvider)
+    public SiteDefinitionRepositoryRepository(ISiteDefinitionsProvider itemSiteDefinitionsProvider)
     {
       this.siteDefinitionsProvider = itemSiteDefinitionsProvider;
     }
 
-    public SiteDefinitions GetSiteDefinitions()
+    public SiteDefinitions Get()
     {
       var siteDefinitions = this.siteDefinitionsProvider.SiteDefinitions;
       var siteConfigurationItems = siteDefinitions.Where(siteDefinition => siteDefinition.Item != null && this.IsSiteConfigurationItem(siteDefinition.Item));
@@ -33,13 +33,13 @@
 
     private bool IsSiteConfigurationItem(Item item)
     {
-      return item.IsDerived(Multisite.Templates.SiteConfiguration.ID);
+      return item.IsDerived(MultiSite.Templates.SiteConfiguration.ID);
     }
 
     private SiteDefinitions Create(IEnumerable<SiteDefinitionItem> definitions)
     {
       var siteDefinitions = new SiteDefinitions();
-      siteDefinitions.Sites = definitions.Where(siteConfigurationItem => siteConfigurationItem.Item[Multisite.Templates.SiteConfiguration.Fields.ShowInMenu] == "1").Select(siteConfiguration => new SiteDefinition {HostName = siteConfiguration.HostName, Name = siteConfiguration.Name, IsCurrent = siteConfiguration.IsCurrent});
+      siteDefinitions.Sites = definitions.Where(siteConfigurationItem => siteConfigurationItem.Item[MultiSite.Templates.SiteConfiguration.Fields.ShowInMenu] == "1").Select(siteConfiguration => new SiteDefinition {HostName = siteConfiguration.HostName, Name = siteConfiguration.Name, IsCurrent = siteConfiguration.IsCurrent});
       return siteDefinitions;
     }
   }

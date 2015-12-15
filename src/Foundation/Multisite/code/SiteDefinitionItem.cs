@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Sitecore.Foundation.Multisite
+﻿namespace Sitecore.Foundation.MultiSite
 {
   using Sitecore.Data.Items;
 

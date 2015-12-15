@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.Feature.Multisite</RootNamespace>
-    <AssemblyName>Sitecore.Feature.Multisite</AssemblyName>
+    <RootNamespace>Sitecore.Feature.MultiSite</RootNamespace>
+    <AssemblyName>Sitecore.Feature.MultiSite</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -105,8 +105,8 @@
     <Compile Include="Models\SiteDefinition.cs" />
     <Compile Include="Models\SiteDefinitions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IMultisiteRepository.cs" />
-    <Compile Include="Repositories\MultisiteRepository.cs" />
+    <Compile Include="Repositories\ISiteDefinitionRepositoryRepository.cs" />
+    <Compile Include="Repositories\SiteDefinitionRepositoryRepository.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -122,9 +122,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.Multisite.csproj">
+    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.MultiSite.csproj">
       <Project>{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7}</Project>
-      <Name>Sitecore.Foundation.Multisite</Name>
+      <Name>Sitecore.Foundation.MultiSite</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>

@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Feature.Multisite.Tests
+﻿namespace Sitecore.Feature.MultiSite.Tests
 {
   using System;
   using System.Collections.Generic;
@@ -8,18 +8,18 @@
   using System.Web.Mvc;
   using FluentAssertions;
   using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Feature.Multisite.Controllers;
-  using Sitecore.Feature.Multisite.Models;
-  using Sitecore.Feature.Multisite.Repositories;
   using Sitecore.Feature.Multisite.Tests.Extensions;
+  using Sitecore.Feature.MultiSite.Controllers;
+  using Sitecore.Feature.MultiSite.Models;
+  using Sitecore.Feature.MultiSite.Repositories;
   using Xunit;
 
-
+   
   public class MultisiteControllerTests
   {
     [Theory]
     [AutoDbData]
-    public void SwitchSite_ShouldReturnViewActionWithSiteDefinitionsModel([Frozen]IMultisiteRepository repository, [Greedy]MultisiteController controller, MultisiteController multisiteController)
+    public void SwitchSite_ShouldReturnViewActionWithSiteDefinitionsModel([Frozen]ISiteDefinitionRepositoryRepository repository, [Greedy]MultisiteController controller, MultisiteController multisiteController)
     {
       var result = controller.SwitchSite();
       result.Should().BeOfType<ViewResult>().Which.Model.As<SiteDefinitions>();

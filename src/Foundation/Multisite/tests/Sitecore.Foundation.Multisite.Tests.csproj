@@ -7,8 +7,8 @@
     <ProjectGuid>{57295D42-6C03-455B-8202-12AEAF233677}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.Foundation.Multisite.Tests</RootNamespace>
-    <AssemblyName>Sitecore.Foundation.Multisite.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Foundation.MultiSite.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Foundation.MultiSite.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -110,9 +110,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\code\Sitecore.Foundation.Multisite.csproj">
+    <ProjectReference Include="..\code\Sitecore.Foundation.MultiSite.csproj">
       <Project>{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7}</Project>
-      <Name>Sitecore.Foundation.Multisite</Name>
+      <Name>Sitecore.Foundation.MultiSite</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

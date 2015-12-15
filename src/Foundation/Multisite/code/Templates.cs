@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.Multisite
+﻿namespace Sitecore.Foundation.MultiSite
 {
   using Sitecore.Data;
 
