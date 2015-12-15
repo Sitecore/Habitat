@@ -2,9 +2,9 @@
   "use strict";
 
   window.MapModule = window.MapModule || {};
-  window.MapModule.maps = [];
+  window.MapModule.markerClusters = [];
 
-  $(window.document).ready(function () { 
+  $(window.document).ready(function () {
     loadMapJsScript();
   });
 
@@ -19,9 +19,9 @@
   };
   window.MapModule.getMap = function (mapId) {
     var mapFound;
-    $.each(window.MapModule.maps, function (index, map) {
-      if (map.Id == mapId) {
-        mapFound = map;
+    $.each(window.MapModule.markerClusters, function (index, markerCluster) {
+      if (markerCluster.map.Id == mapId) {
+        mapFound = markerCluster.map;
         return false;
       }
     });
@@ -40,7 +40,7 @@
       fileref.setAttribute("data-key", "gmapapi");
 
       window.document.getElementsByTagName("head")[0].appendChild(fileref);
-    }    
+    }
   }
 
   function initMapContainers() {
@@ -60,26 +60,27 @@
       };
       var $element = $(element);
       var $renderingParamsEl = $element.siblings('input[id="mapRenderingParameters"]');
+      var renderingParams = {};
       if ($renderingParamsEl) {
-        var renderingParams = eval("(" + $renderingParamsEl.val() + ")");
+        renderingParams = eval("(" + $renderingParamsEl.val() + ")");
         setMapProperties(mapProperties, renderingParams);
       }
 
       var map = new google.maps.Map(element, mapProperties);
+      //assign unique id to map instance
+      map.Id = Date.now();
       map.setCustomProperties(renderingParams);
+      //render custom controls if any
+      map.renderCustomControls();
       map.setDefaultView(mapProperties.center, mapProperties.zoom);
 
       var mapDataSourceItemId = $element.siblings('input[id="mapContextItem"]').val();
       if (mapDataSourceItemId) {
-        getMapPoints(map, mapDataSourceItemId);
+        getMapPoints(map, mapDataSourceItemId, function (markers) {          
+          var markerCluster = new MarkerClusterer(map, markers);
+          window.MapModule.markerClusters.push(markerCluster);
+        });
       }
-
-      //render custom controls if any
-      map.renderCustomControls();
-
-      //assign unique id to map instance
-      map.Id = Date.now();
-      window.MapModule.maps.push(map);
     });
   }
 
@@ -130,7 +131,7 @@
   function getCheckboxBooleanValue(value) {
     return value == "1" ? true : false;
   }
-  function getMapPoints(map, mapDataSourceItemId) {
+  function getMapPoints(map, mapDataSourceItemId, callback) {
     if (!map || !mapDataSourceItemId) {
       return;
     }
@@ -142,27 +143,27 @@
       data: {
         itemId: mapDataSourceItemId
       },
-      success: function (data) {        
+      success: function (data) {
         if (data.length == 1) {
-          putMarker(data[0]);
+          var marker = getMarker(map, data[0]);
+          callback([marker]);
           map.setCenter(parseCoordinate(data[0].Location));
         } else {
+          var markers = [];
           $.each(data, function (index, mapPoint) {
-            putMarker(mapPoint);
+            var marker = getMarker(map, mapPoint);
+            markers.push(marker);
           });
-        }       
+          callback(markers);
+        }
       }
     });
 
-    function putMarker(mapPoint) {
-      var infoWindow = new google.maps.InfoWindow({
-        content: ""
-      });
+    function getMarker(map, mapPoint) {
       var latlng = parseCoordinate(mapPoint.Location);
       if (latlng) {
         var marker = new google.maps.Marker({
           position: latlng,
-          map: map,
           title: mapPoint.Name
         });
 
@@ -171,9 +172,13 @@
           "<a href='javascript:void(0)' onclick='MapModule.zoomToMapPoint(" + map.Id + "," + latlng.lat() + "," + latlng.lng() + ")'>Zoom here</a>";
 
         google.maps.event.addListener(marker, "click", function () {
-          infoWindow.setContent(contentString);
+          var infoWindow = new google.maps.InfoWindow({
+            content: contentString
+          });
           infoWindow.open(map, marker);
         });
+
+        return marker;
       }
     }
   }

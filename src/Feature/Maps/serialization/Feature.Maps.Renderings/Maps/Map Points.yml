@@ -12,7 +12,10 @@ SharedFields:
   Value: {D77856C3-8A5E-452C-8854-F2965EDF25E0}
 - ID: e514a1eb-ddba-44f7-8528-82ca2280f778
   # JavaScript assets
-  Value: /scripts/maps/maps.js
+  Value: |
+    /scripts/maps/markerclusterer.js
+    /scripts/maps/maps.js
+    
 - ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
   # Open Properties after Add
   Value: 1

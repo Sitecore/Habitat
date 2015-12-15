@@ -112,6 +112,7 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <Content Include="Scripts\Maps\markerclusterer.js" />
     <Content Include="Sitecore\Shell\Applications\Content Manager\Dialogs\Maps\js\maplocationpickerdialog.js" />
     <Content Include="Sitecore\Shell\Applications\Content Manager\Dialogs\Maps\MapLocationPickerDialog.xml">
       <SubType>Designer</SubType>
