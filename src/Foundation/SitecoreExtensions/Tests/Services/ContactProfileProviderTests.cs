@@ -19,7 +19,7 @@
   {
     [Theory]
     [AutoDbData]
-    public void ShouldReturnContact([NoAutoProperties] ContactProfileProvider provider, ITracker tracker, Contact contact)
+    public void Contact_ContactInitialized_ShouldReturnContact([NoAutoProperties] ContactProfileProvider provider, ITracker tracker, Contact contact)
     {
       tracker.IsActive.Returns(true);
       tracker.Contact.Returns(contact);
@@ -33,7 +33,7 @@
 
     [Theory]
     [AutoDbData]
-    public void ShouldReturnContactAddressProperty([NoAutoProperties] ContactProfileProvider provider, IContactAddresses facet, ITracker tracker, [Substitute] Contact contact)
+    public void Addresses_FacetExists_ShouldReturnContactAddressProperty([NoAutoProperties] ContactProfileProvider provider, IContactAddresses facet, ITracker tracker, [Substitute] Contact contact)
     {
       tracker.IsActive.Returns(true);
       tracker.Contact.Returns(contact);
@@ -54,7 +54,7 @@
 
     [Theory]
     [AutoDbData]
-    public void ShouldReturnContactBehaviorProfilesProperty([NoAutoProperties] ContactProfileProvider provider, IContactBehaviorProfilesContext facet, ITracker tracker, [Substitute] Contact contact)
+    public void BehaviorProfiles_FacetExists_ShouldReturnContactBehaviorProfiles([NoAutoProperties] ContactProfileProvider provider, IContactBehaviorProfilesContext facet, ITracker tracker, [Substitute] Contact contact)
     {
       tracker.IsActive.Returns(true);
       tracker.Contact.Returns(contact);
@@ -69,7 +69,7 @@
 
     [Theory]
     [AutoDbData]
-    public void ShouldReturnContactCommunicationProfileProperty([NoAutoProperties] ContactProfileProvider provider, IContactCommunicationProfile facet, ITracker tracker, [Substitute] Contact contact)
+    public void CommunicationProfile_FacetExists_ShouldReturnContactCommunicationProfile([NoAutoProperties] ContactProfileProvider provider, IContactCommunicationProfile facet, ITracker tracker, [Substitute] Contact contact)
     {
       tracker.IsActive.Returns(true);
       tracker.Contact.Returns(contact);
@@ -90,7 +90,7 @@
 
     [Theory]
     [AutoDbData]
-    public void ShouldReturnContactEmailProperty([NoAutoProperties] ContactProfileProvider provider, IContactEmailAddresses facet, ITracker tracker, [Substitute] Contact contact)
+    public void Emails_FacetExist_ShouldReturnContactEmail([NoAutoProperties] ContactProfileProvider provider, IContactEmailAddresses facet, ITracker tracker, [Substitute] Contact contact)
     {
       tracker.IsActive.Returns(true);
       tracker.Contact.Returns(contact);
