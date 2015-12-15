@@ -1,0 +1,27 @@
+﻿---
+ID: e5d898c8-24a9-4d99-a363-24a87fa99286
+Parent: d15aa0d7-49db-4a9d-b161-6ba4a6d9e05b
+Template: d15aa0d7-49db-4a9d-b161-6ba4a6d9e05b
+Path: /sitecore/templates/Project/Habitat/Page Types/Login/__Standard Values
+SharedFields:
+- ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
+  # __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{ED043C36-CD48-4EDF-A288-EC404EE1CD42}" />
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151105T094947Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      # Image
+      Value: "<image mediaid=\"{88032F9C-B464-44CB-B76D-513D60B9C127}\" />"

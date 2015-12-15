@@ -1,0 +1,16 @@
+﻿---
+ID: 1121e629-34c8-478e-9b33-8b54951c195f
+Parent: 75bc9ee3-894a-4e87-bcde-2a7443807f60
+Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+Path: /sitecore/content/Shared/Social
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151123T153607Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

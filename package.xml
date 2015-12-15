@@ -4,14 +4,14 @@
       <PackageName>Habitat package</PackageName>
       <Author>Sitecore</Author>
       <Version>1.0.0.0</Version>
-      <Revision/>
-      <License/>
-      <Comment/>
-      <Attributes/>
-      <Readme/>
-      <Publisher/>
-      <PostStep>Habitat.Website.Installer.PostStep, Habitat.Website</PostStep>
-      <PackageID/>
+      <Revision />
+      <License />
+      <Comment />
+      <Attributes />
+      <Readme />
+      <Publisher />
+      <PostStep>Sitecore.Foundation.Installer.PostStep, Sitecore.Foundation.Installer</PostStep>
+      <PackageID />
     </metadata>
   </Metadata>
   <SaveProject>True</SaveProject>
@@ -36,45 +36,45 @@
       </Converter>
       <Include>
         <ItemNameFilter>
-          <Pattern/>
+          <Pattern />
           <FilterSearchType>Simple</FilterSearchType>
         </ItemNameFilter>
         <ItemDateFilter>
           <FilterType>CreatedFilter</FilterType>
-          <NotOlderThan/>
-          <ActionDateTo/>
-          <ActionDateFrom/>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
         </ItemDateFilter>
         <ItemDateFilter>
           <FilterType>ModifiedFilter</FilterType>
           <NotOlderThan>1</NotOlderThan>
-          <ActionDateTo/>
-          <ActionDateFrom/>
+          <ActionDateTo />
+          <ActionDateFrom />
         </ItemDateFilter>
         <ItemPublishFilter>
-          <PublishDate/>
+          <PublishDate />
           <CheckWorkflow>True</CheckWorkflow>
         </ItemPublishFilter>
         <ItemTemplateFilter>
-          <Templates/>
+          <Templates />
         </ItemTemplateFilter>
         <ItemUserFilter>
           <FilterType>Created</FilterType>
-          <Accounts/>
+          <Accounts />
         </ItemUserFilter>
         <ItemUserFilter>
           <FilterType>Modified</FilterType>
-          <Accounts/>
+          <Accounts />
         </ItemUserFilter>
         <ItemLanguageFilter>
-          <Languages/>
+          <Languages />
         </ItemLanguageFilter>
       </Include>
-      <Exclude/>
+      <Exclude />
       <Name>Habitat items</Name>
     </items>
     <xfiles>
-      <Entries><x-item>/favicon.ico</x-item><x-item>/web.config.transform</x-item><x-item>/assets/habitat.css</x-item><x-item>/assets/habitat.min.css</x-item><x-item>/Content/bootstrap-theme.css</x-item><x-item>/Content/bootstrap-theme.css.map</x-item><x-item>/Content/bootstrap-theme.min.css</x-item><x-item>/Content/bootstrap.css</x-item><x-item>/Content/bootstrap.css.map</x-item><x-item>/Content/bootstrap.min.css</x-item><x-item>/fonts/glyphicons-halflings-regular.eot</x-item><x-item>/fonts/glyphicons-halflings-regular.svg</x-item><x-item>/fonts/glyphicons-halflings-regular.ttf</x-item><x-item>/fonts/glyphicons-halflings-regular.woff</x-item><x-item>/fonts/glyphicons-halflings-regular.woff2</x-item><x-item>/Views/Web.config</x-item><x-item>/Scripts/bootstrap.js</x-item><x-item>/Scripts/bootstrap.min.js</x-item><x-item>/Scripts/jquery-2.1.4.js</x-item><x-item>/Scripts/jquery-2.1.4.min.js</x-item><x-item>/Scripts/jquery-2.1.4.min.map</x-item><x-item>/bin/Habitat.Accounts.dll</x-item><x-item>/bin/Habitat.Demo.dll</x-item><x-item>/bin/Habitat.Design.dll</x-item><x-item>/bin/Habitat.Framework.Assets.dll</x-item><x-item>/bin/Habitat.Framework.Indexing.dll</x-item><x-item>/bin/Habitat.Framework.Serialization.dll</x-item><x-item>/bin/Habitat.Framework.SitecoreExtensions.dll</x-item><x-item>/bin/Habitat.Identity.dll</x-item><x-item>/bin/Habitat.Language.dll</x-item><x-item>/bin/Habitat.Media.dll</x-item><x-item>/bin/Habitat.Metadata.dll</x-item><x-item>/bin/Habitat.Navigation.dll</x-item><x-item>/bin/Habitat.News.dll</x-item><x-item>/bin/Habitat.PageContent.dll</x-item><x-item>/bin/Habitat.Search.dll</x-item><x-item>/bin/Habitat.Social.dll</x-item><x-item>/bin/Habitat.Teasers.dll</x-item><x-item>/bin/Habitat.Website.dll</x-item><x-item>/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</x-item><x-item>/bin/Microsoft.Web.XmlTransform.dll</x-item><x-item>/sass/Accounts.scss</x-item><x-item>/sass/Demo.scss</x-item><x-item>/sass/Fonts.scss</x-item><x-item>/sass/habitat.scss</x-item><x-item>/sass/Media.scss</x-item><x-item>/sass/Navigation.scss</x-item><x-item>/sass/News.scss</x-item><x-item>/sass/PageContent.scss</x-item><x-item>/sass/Teasers.scss</x-item><x-item>/App_Config/Include/Sitecore.Support.MvcDynamicPlaceholders.config</x-item><x-item>/Content/Media/ekko-lightbox.css</x-item><x-item>/Content/Media/ekko-lightbox.min.css</x-item><x-item>/fonts/Bootstrap/glyphicons-halflings-regular.eot</x-item><x-item>/fonts/Bootstrap/glyphicons-halflings-regular.svg</x-item><x-item>/fonts/Bootstrap/glyphicons-halflings-regular.ttf</x-item><x-item>/fonts/Bootstrap/glyphicons-halflings-regular.woff</x-item><x-item>/fonts/Bootstrap/glyphicons-halflings-regular.woff2</x-item><x-item>/Views/Accounts/AccountsDetails.cshtml</x-item><x-item>/Views/Accounts/AccountsMenu.cshtml</x-item><x-item>/Views/Accounts/ForgotPassword.cshtml</x-item><x-item>/Views/Accounts/InfoMessage.cshtml</x-item><x-item>/Views/Accounts/Login.cshtml</x-item><x-item>/Views/Accounts/LoginDialog.cshtml</x-item><x-item>/Views/Accounts/Register.cshtml</x-item><x-item>/fonts/Habitat/Roboto-Black.ttf</x-item><x-item>/fonts/Habitat/Roboto-BlackItalic.ttf</x-item><x-item>/fonts/Habitat/Roboto-Bold.ttf</x-item><x-item>/fonts/Habitat/Roboto-BoldItalic.ttf</x-item><x-item>/fonts/Habitat/Roboto-Condensed-Bold-Italic.woff</x-item><x-item>/fonts/Habitat/Roboto-Condensed-Bold.woff</x-item><x-item>/fonts/Habitat/Roboto-Condensed-Italic.woff</x-item><x-item>/fonts/Habitat/Roboto-Condensed-Light-Italic.woff</x-item><x-item>/fonts/Habitat/Roboto-Condensed-Light.woff</x-item><x-item>/fonts/Habitat/Roboto-Condensed.woff</x-item><x-item>/fonts/Habitat/Roboto-Italic.ttf</x-item><x-item>/fonts/Habitat/Roboto-Light.ttf</x-item><x-item>/fonts/Habitat/Roboto-LightItalic.ttf</x-item><x-item>/fonts/Habitat/Roboto-Medium.ttf</x-item><x-item>/fonts/Habitat/Roboto-MediumItalic.ttf</x-item><x-item>/fonts/Habitat/Roboto-Regular.ttf</x-item><x-item>/fonts/Habitat/Roboto-Thin.ttf</x-item><x-item>/fonts/Habitat/Roboto-ThinItalic.ttf</x-item><x-item>/Views/Demo/ContactDetails.cshtml</x-item><x-item>/Views/Demo/DemoContent.cshtml</x-item><x-item>/Views/Demo/EmptyLayout.cshtml</x-item><x-item>/Views/Demo/VisitDetails.cshtml</x-item><x-item>/Views/Identity/Copyright.cshtml</x-item><x-item>/Views/Identity/Logo.cshtml</x-item><x-item>/Views/Language/LanguageSelector.cshtml</x-item><x-item>/Views/Media/Carousel.cshtml</x-item><x-item>/Views/Media/LightboxImage.cshtml</x-item><x-item>/Views/Media/LightboxVideo.cshtml</x-item><x-item>/Views/Metadata/PageMetadata.cshtml</x-item><x-item>/Views/Navigation/Breadcrumb.cshtml</x-item><x-item>/Views/Navigation/LinkMenu.cshtml</x-item><x-item>/Views/Navigation/PrimaryMenu.cshtml</x-item><x-item>/Views/Navigation/SecondaryMenu.cshtml</x-item><x-item>/Views/Navigation/_SecondaryMenuItems.cshtml</x-item><x-item>/Views/News/LatestNews.cshtml</x-item><x-item>/Views/News/NewsArticle.cshtml</x-item><x-item>/Views/News/NewsList.cshtml</x-item><x-item>/Views/News/NewsTeaser.cshtml</x-item><x-item>/Views/PageContent/ChildPageList.cshtml</x-item><x-item>/Views/PageContent/PageBody.cshtml</x-item><x-item>/Views/PageContent/PageImage.cshtml</x-item><x-item>/Views/PageContent/PageSummary.cshtml</x-item><x-item>/Views/PageContent/PageTitle.cshtml</x-item><x-item>/Views/PageContent/ReferenceTeaser.cshtml</x-item><x-item>/Views/Social/OpenGraph.cshtml</x-item><x-item>/Views/Social/SocialLinks.cshtml</x-item><x-item>/Views/Social/TwitterFeed.cshtml</x-item><x-item>/Views/Search/GlobalSearch.cshtml</x-item><x-item>/Views/Search/SearchResults.cshtml</x-item><x-item>/Views/Search/SearchSettings.cshtml</x-item><x-item>/Views/Teasers/AccordeonTeaser.cshtml</x-item><x-item>/Views/Teasers/Jumbotron.cshtml</x-item><x-item>/Views/Teasers/TitleImageSummaryTeaser.cshtml</x-item><x-item>/Views/Teasers/TitleImageTeaser.cshtml</x-item><x-item>/Views/Teasers/TitleSummaryTeaser.cshtml</x-item><x-item>/Scripts/Accounts/Accounts.js</x-item><x-item>/Scripts/Design/Habitat.Design.js</x-item><x-item>/Scripts/Media/ekko-lightbox.js</x-item><x-item>/Scripts/Media/ekko-lightbox.min.js</x-item><x-item>/bin/roslyn/csc.exe</x-item><x-item>/bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll</x-item><x-item>/bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll</x-item><x-item>/bin/roslyn/Microsoft.CodeAnalysis.dll</x-item><x-item>/bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll</x-item><x-item>/bin/roslyn/Microsoft.CSharp.Core.targets</x-item><x-item>/bin/roslyn/Microsoft.VisualBasic.Core.targets</x-item><x-item>/bin/roslyn/System.Collections.Immutable.dll</x-item><x-item>/bin/roslyn/System.Reflection.Metadata.dll</x-item><x-item>/bin/roslyn/vbc.exe</x-item><x-item>/bin/roslyn/VBCSCompiler.exe</x-item><x-item>/bin/roslyn/VBCSCompiler.exe.config</x-item><x-item>/sass/bootstrap/_bootstrap.scss</x-item><x-item>/assets/plugins/animate/animate.css</x-item><x-item>/assets/plugins/animate/animate.min.css</x-item><x-item>/assets/plugins/animate/README.md</x-item><x-item>/App_Config/Include/Habitat/Habitat.Accounts.config</x-item><x-item>/App_Config/Include/Habitat/Habitat.Framework.Assets.config</x-item><x-item>/App_Config/Include/Habitat/Habitat.Framework.Indexing.config</x-item><x-item>/App_Config/Include/Habitat/Habitat.Framework.SitecoreExtensions.config</x-item><x-item>/App_Config/Include/Habitat/Habitat.Framework.SitecoreExtensions.PerformanceTweaks.config</x-item><x-item>/App_Config/Include/Habitat/Habitat.News.config</x-item><x-item>/App_Config/Include/Habitat/Habitat.PageContent.config</x-item><x-item>/App_Config/Include/Habitat/Habitat.Website.config</x-item><x-item>/App_Config/Include/Habitat/z.Habitat.Design.config</x-item><x-item>/App_Config/Include/Habitat/z.Habitat.DevSettings.config</x-item><x-item>/assets/plugins/simple-line-icons/icons-lte-ie7.js</x-item><x-item>/assets/plugins/simple-line-icons/License.txt</x-item><x-item>/assets/plugins/simple-line-icons/Readme.txt</x-item><x-item>/assets/plugins/simple-line-icons/simple-line-icons.css</x-item><x-item>/assets/plugins/simple-line-icons/simple-line-icons.min.css</x-item><x-item>/Views/Website/Layouts/Default.cshtml</x-item><x-item>/Views/Website/Sublayouts/1 Column.cshtml</x-item><x-item>/Views/Website/Sublayouts/2 Column 3-9.cshtml</x-item><x-item>/Views/Website/Sublayouts/2 Column 4-8.cshtml</x-item><x-item>/Views/Website/Sublayouts/2 Column 6-6.cshtml</x-item><x-item>/Views/Website/Sublayouts/2 Column 8-4.cshtml</x-item><x-item>/Views/Website/Sublayouts/2 Column 9-3.cshtml</x-item><x-item>/Views/Website/Sublayouts/3 Column 3-3-6.cshtml</x-item><x-item>/Views/Website/Sublayouts/3 Column 4-4-4.cshtml</x-item><x-item>/Views/Website/Sublayouts/3 Column 6-3-3.cshtml</x-item><x-item>/Views/Website/Sublayouts/4 Column 3-3-3-3.cshtml</x-item><x-item>/Views/Website/Sublayouts/6 Column 2-2-2-2-2-2.cshtml</x-item><x-item>/Views/Website/Sublayouts/Footer.cshtml</x-item><x-item>/Views/Website/Sublayouts/Inner 1 Column.cshtml</x-item><x-item>/Views/Website/Sublayouts/Inner 2 Column 4-8.cshtml</x-item><x-item>/Views/Website/Sublayouts/Inner 2 Column 6-6.cshtml</x-item><x-item>/Views/Website/Sublayouts/Inner 2 Column 8-4.cshtml</x-item><x-item>/Views/Website/Sublayouts/PageHeading.cshtml</x-item><x-item>/Views/Website/Sublayouts/PageSidebarLeft.cshtml</x-item><x-item>/Views/Website/Sublayouts/PageSidebarRight.cshtml</x-item><x-item>/sass/bootstrap/bootstrap/_alerts.scss</x-item><x-item>/sass/bootstrap/bootstrap/_badges.scss</x-item><x-item>/sass/bootstrap/bootstrap/_breadcrumbs.scss</x-item><x-item>/sass/bootstrap/bootstrap/_button-groups.scss</x-item><x-item>/sass/bootstrap/bootstrap/_buttons.scss</x-item><x-item>/sass/bootstrap/bootstrap/_carousel.scss</x-item><x-item>/sass/bootstrap/bootstrap/_close.scss</x-item><x-item>/sass/bootstrap/bootstrap/_code.scss</x-item><x-item>/sass/bootstrap/bootstrap/_component-animations.scss</x-item><x-item>/sass/bootstrap/bootstrap/_dropdowns.scss</x-item><x-item>/sass/bootstrap/bootstrap/_forms.scss</x-item><x-item>/sass/bootstrap/bootstrap/_glyphicons.scss</x-item><x-item>/sass/bootstrap/bootstrap/_grid.scss</x-item><x-item>/sass/bootstrap/bootstrap/_input-groups.scss</x-item><x-item>/sass/bootstrap/bootstrap/_jumbotron.scss</x-item><x-item>/sass/bootstrap/bootstrap/_labels.scss</x-item><x-item>/sass/bootstrap/bootstrap/_list-group.scss</x-item><x-item>/sass/bootstrap/bootstrap/_media.scss</x-item><x-item>/sass/bootstrap/bootstrap/_mixins.scss</x-item><x-item>/sass/bootstrap/bootstrap/_modals.scss</x-item><x-item>/sass/bootstrap/bootstrap/_navbar.scss</x-item><x-item>/sass/bootstrap/bootstrap/_navs.scss</x-item><x-item>/sass/bootstrap/bootstrap/_normalize.scss</x-item><x-item>/sass/bootstrap/bootstrap/_pager.scss</x-item><x-item>/sass/bootstrap/bootstrap/_pagination.scss</x-item><x-item>/sass/bootstrap/bootstrap/_panels.scss</x-item><x-item>/sass/bootstrap/bootstrap/_popovers.scss</x-item><x-item>/sass/bootstrap/bootstrap/_print.scss</x-item><x-item>/sass/bootstrap/bootstrap/_progress-bars.scss</x-item><x-item>/sass/bootstrap/bootstrap/_responsive-embed.scss</x-item><x-item>/sass/bootstrap/bootstrap/_responsive-utilities.scss</x-item><x-item>/sass/bootstrap/bootstrap/_scaffolding.scss</x-item><x-item>/sass/bootstrap/bootstrap/_tables.scss</x-item><x-item>/sass/bootstrap/bootstrap/_theme.scss</x-item><x-item>/sass/bootstrap/bootstrap/_thumbnails.scss</x-item><x-item>/sass/bootstrap/bootstrap/_tooltip.scss</x-item><x-item>/sass/bootstrap/bootstrap/_type.scss</x-item><x-item>/sass/bootstrap/bootstrap/_utilities.scss</x-item><x-item>/sass/bootstrap/bootstrap/_variables.scss</x-item><x-item>/sass/bootstrap/bootstrap/_wells.scss</x-item><x-item>/assets/plugins/font-awesome/css/font-awesome.css</x-item><x-item>/assets/plugins/font-awesome/css/font-awesome.min.css</x-item><x-item>/assets/plugins/font-awesome/fonts/fontawesome-webfont.eot</x-item><x-item>/assets/plugins/font-awesome/fonts/fontawesome-webfont.svg</x-item><x-item>/assets/plugins/font-awesome/fonts/fontawesome-webfont.ttf</x-item><x-item>/assets/plugins/font-awesome/fonts/fontawesome-webfont.woff</x-item><x-item>/assets/plugins/font-awesome/fonts/fontawesome-webfont.woff2</x-item><x-item>/assets/plugins/font-awesome/fonts/FontAwesome.otf</x-item><x-item>/assets/plugins/font-awesome/less/animated.less</x-item><x-item>/assets/plugins/font-awesome/less/bordered-pulled.less</x-item><x-item>/assets/plugins/font-awesome/less/core.less</x-item><x-item>/assets/plugins/font-awesome/less/fixed-width.less</x-item><x-item>/assets/plugins/font-awesome/less/font-awesome.less</x-item><x-item>/assets/plugins/font-awesome/less/icons.less</x-item><x-item>/assets/plugins/font-awesome/less/larger.less</x-item><x-item>/assets/plugins/font-awesome/less/list.less</x-item><x-item>/assets/plugins/font-awesome/less/mixins.less</x-item><x-item>/assets/plugins/font-awesome/less/path.less</x-item><x-item>/assets/plugins/font-awesome/less/rotated-flipped.less</x-item><x-item>/assets/plugins/font-awesome/less/stacked.less</x-item><x-item>/assets/plugins/font-awesome/less/variables.less</x-item><x-item>/assets/plugins/font-awesome/scss/font-awesome.scss</x-item><x-item>/assets/plugins/font-awesome/scss/_animated.scss</x-item><x-item>/assets/plugins/font-awesome/scss/_bordered-pulled.scss</x-item><x-item>/assets/plugins/font-awesome/scss/_core.scss</x-item><x-item>/assets/plugins/font-awesome/scss/_fixed-width.scss</x-item><x-item>/assets/plugins/font-awesome/scss/_icons.scss</x-item><x-item>/assets/plugins/font-awesome/scss/_larger.scss</x-item><x-item>/assets/plugins/font-awesome/scss/_list.scss</x-item><x-item>/assets/plugins/font-awesome/scss/_mixins.scss</x-item><x-item>/assets/plugins/font-awesome/scss/_path.scss</x-item><x-item>/assets/plugins/font-awesome/scss/_rotated-flipped.scss</x-item><x-item>/assets/plugins/font-awesome/scss/_stacked.scss</x-item><x-item>/assets/plugins/font-awesome/scss/_variables.scss</x-item><x-item>/assets/plugins/simple-line-icons/fonts/Simple-Line-Icons.dev.svg</x-item><x-item>/assets/plugins/simple-line-icons/fonts/Simple-Line-Icons.eot</x-item><x-item>/assets/plugins/simple-line-icons/fonts/Simple-Line-Icons.svg</x-item><x-item>/assets/plugins/simple-line-icons/fonts/Simple-Line-Icons.ttf</x-item><x-item>/assets/plugins/simple-line-icons/fonts/Simple-Line-Icons.woff</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_alerts.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_background-variant.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_border-radius.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_buttons.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_center-block.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_clearfix.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_forms.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_gradients.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_grid-framework.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_grid.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_hide-text.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_image.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_labels.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_list-group.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_nav-divider.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_nav-vertical-align.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_opacity.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_pagination.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_panels.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_progress-bar.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_reset-filter.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_reset-text.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_resize.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_responsive-visibility.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_size.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_tab-focus.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_table-row.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_text-emphasis.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_text-overflow.scss</x-item><x-item>/sass/bootstrap/bootstrap/mixins/_vendor-prefixes.scss</x-item></Entries>
+      <Entries></Entries>
       <Converter>
         <FileToEntryConverter>
           <Root>/</Root>
@@ -90,17 +90,74 @@
           </Transforms>
         </FileToEntryConverter>
       </Converter>
-      <Include/>
-      <Exclude/>
+      <Include />
+      <Exclude />
       <Name>habitat files</Name>
     </xfiles>
+    <items>
+      <Database>core</Database>
+      <Root>{11111111-1111-1111-1111-111111111111}</Root>
+      <SkipVersions>False</SkipVersions>
+      <Converter>
+        <ItemToEntryConverter>
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Merge</ItemMode>
+                  <ItemMergeMode>Merge</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
+        </ItemToEntryConverter>
+      </Converter>
+      <Include>
+        <ItemNameFilter>
+          <Pattern />
+          <FilterSearchType>Simple</FilterSearchType>
+        </ItemNameFilter>
+        <ItemDateFilter>
+          <FilterType>CreatedFilter</FilterType>
+          <NotOlderThan />
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemDateFilter>
+          <FilterType>ModifiedFilter</FilterType>
+          <NotOlderThan>1</NotOlderThan>
+          <ActionDateTo />
+          <ActionDateFrom />
+        </ItemDateFilter>
+        <ItemPublishFilter>
+          <PublishDate />
+          <CheckWorkflow>True</CheckWorkflow>
+        </ItemPublishFilter>
+        <ItemTemplateFilter>
+          <Templates />
+        </ItemTemplateFilter>
+        <ItemUserFilter>
+          <FilterType>Created</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemUserFilter>
+          <FilterType>Modified</FilterType>
+          <Accounts />
+        </ItemUserFilter>
+        <ItemLanguageFilter>
+          <Languages />
+        </ItemLanguageFilter>
+      </Include>
+      <Exclude />
+      <Name>Habitat core items</Name>
+    </items>
   </Sources>
   <Converter>
     <TrivialConverter>
-      <Transforms/>
+      <Transforms />
     </TrivialConverter>
   </Converter>
-  <Include/>
-  <Exclude/>
-  <Name/>
+  <Include />
+  <Exclude />
+  <Name />
 </project>

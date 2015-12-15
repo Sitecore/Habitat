@@ -1,0 +1,7 @@
+; Top-most EditorConfig file
+root = true
+
+; 2-column space indentation
+[*]
+indent_style = space
+indent_size = 2

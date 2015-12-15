@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "assets/Sitecore.Foundation.Theming.css",
+    "inputFile": "stylesheets/Sitecore.Foundation.Theming.scss"
+  },
+  {
+    "outputFile": "assets/Sitecore.Foundation.Theming.Editor.css",
+    "inputFile": "stylesheets/Sitecore.Foundation.Theming.Editor.scss"
+  }
+]

@@ -1,0 +1,24 @@
+﻿---
+ID: 773a96f7-2752-4da2-a2f5-6119a21a24f3
+Parent: b4f0acba-3630-4189-ad63-8dc213ef7d8c
+Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+Path: /sitecore/templates/Project/Habitat/Content Types/TwitterFeed
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: office/32x32/rss.png
+- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+  # __Base template
+  Type: tree list
+  Value: {89D988BC-A9A7-43F5-A9FD-A05B0B164720}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151123T163433Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

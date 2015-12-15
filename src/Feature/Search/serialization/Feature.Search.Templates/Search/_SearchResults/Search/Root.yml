@@ -1,0 +1,29 @@
+﻿---
+ID: cd904125-3ae5-4709-9e6d-71473c5d5007
+Parent: c3941047-1196-45df-93fe-12c20a5edde8
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Feature/Search/_SearchResults/Search/Root
+SharedFields:
+- ID: 1eb8ae32-e190-44a6-968d-ed904c794ebf
+  # Source
+  Value: /sitecore/content
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  # Type
+  Value: Droptree
+- ID: be351a73-fcb0-4213-93fa-c302d8ab4f51
+  # Shared
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+      # Title
+      Value: Search Root
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151022T051857Z
+    - ID: 9541e67d-ce8c-4225-803d-33f7f29f09ef
+      # __Short description
+      Value: Defines the root from where the search is performed (if blank, the website root is used)

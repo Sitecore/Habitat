@@ -1,0 +1,16 @@
+﻿---
+ID: f93150f8-b16a-43e9-a830-fe91bad2a959
+Parent: d1d3e60f-e571-48d2-84cf-b053ee660c13
+Template: e269fbb5-3750-427a-9149-7aa950b49301
+Path: /sitecore/templates/Feature/Search/_PagedSearchResultsParameters/Paging
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151126T130508Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

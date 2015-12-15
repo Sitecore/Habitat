@@ -1,0 +1,16 @@
+﻿---
+ID: f453cfa9-dbd9-4dc7-8410-b39cba98f75f
+Parent: 8fd6c8b6-a9a4-4322-947e-90ce3d94916d
+Template: e269fbb5-3750-427a-9149-7aa950b49301
+Path: /sitecore/templates/Foundation/Indexing/_IndexedItem/Indexing
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151023T032301Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
