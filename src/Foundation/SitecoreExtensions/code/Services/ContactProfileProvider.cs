@@ -1,6 +1,8 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Services
 {
+  using System;
   using System.Collections.Generic;
+  using System.Linq.Expressions;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Model.Entities;
   using Sitecore.Analytics.Model.Framework;
@@ -52,7 +54,23 @@
 
     public IContactPreferences Preferences => this.GetFacet<IContactPreferences>("Preferences");
 
-    public Analytics.Tracking.KeyBehaviorCache KeyBehaviorCache => this.Contact?.GetKeyBehaviorCache();
+    public Analytics.Tracking.KeyBehaviorCache KeyBehaviorCache
+    {
+
+      get
+      {
+        try
+        {
+          return this.Contact?.GetKeyBehaviorCache();
+        }
+
+        catch (Exception e)
+        {
+          Diagnostics.Log.Warn("Contact has no KeyBehaviourCache object", e, this);
+          return null;
+        }
+      }
+    }
 
     public IContactPersonalInfo PersonalInfo => this.GetFacet<IContactPersonalInfo>("Personal");
 
@@ -63,7 +81,7 @@
     public IContactCommunicationProfile CommunicationProfile => this.GetFacet<IContactCommunicationProfile>("Communication Profile");
 
     public IContactPhoneNumbers PhoneNumbers => this.GetFacet<IContactPhoneNumbers>("Phone Numbers");
-    public IEnumerable<IBehaviorProfileContext> BehaviorProfiles =>  this.Contact.BehaviorProfiles.Profiles;
+    public IEnumerable<IBehaviorProfileContext> BehaviorProfiles => this.Contact.BehaviorProfiles.Profiles;
 
     public Contact Flush()
     {

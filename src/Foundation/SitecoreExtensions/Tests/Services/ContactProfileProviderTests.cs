@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests.Services
 {
+  using System;
   using System.Collections.Generic;
   using System.Collections.ObjectModel;
   using FluentAssertions;
@@ -107,5 +108,20 @@
         provider.Emails.ShouldBeEquivalentTo(facet);
       }
     }
+
+    [Theory]
+    [AutoDbData]
+    public void KeyBehaviorCache_WhenNotExist_ShouldReturnNull([NoAutoProperties] ContactProfileProvider provider, ITracker tracker, [Substitute] Contact contact)
+    {
+      tracker.IsActive.Returns(true);
+      contact.Attachments.Clear();
+      tracker.Contact.Returns(contact);
+    
+      using (new TrackerSwitcher(tracker))
+      {
+        provider.KeyBehaviorCache.Should().BeNull();
+      }
+    }
+
   }
 }
