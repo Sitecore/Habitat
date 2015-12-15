@@ -81,19 +81,32 @@ namespace Sitecore.Feature.Accounts.Specflow
                         "InDesign"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
-#line 6
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 7
- testRunner.When("Actor clicks on siteswitcher combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemPath",
+                        "Field",
+                        "Value"});
+            table1.AddRow(new string[] {
+                        "/Sitecore/Content/Demo",
+                        "ShowInMenu",
+                        "1"});
+#line 6
+ testRunner.Given("Value set to item field", ((string)(null)), table1, "Given ");
+#line 9
+ testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.When("Actor clicks on siteswitcher combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Site name"});
-            table1.AddRow(new string[] {
-                        ""});
-            table1.AddRow(new string[] {
-                        ""});
-#line 8
- testRunner.Then("System shows following avalilable sites", ((string)(null)), table1, "Then ");
+            table2.AddRow(new string[] {
+                        "Habitat"});
+            table2.AddRow(new string[] {
+                        "Demo"});
+#line 11
+ testRunner.Then("System shows following avalilable sites", ((string)(null)), table2, "Then ");
+#line 15
+ testRunner.And("<Habitat> value is selected by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -105,16 +118,41 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Site switcher_UC2_Select new site", new string[] {
                         "InDesign"});
-#line 14
-this.ScenarioSetup(scenarioInfo);
-#line 15
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 16
- testRunner.When("Actor clicks on siteswitcher combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 17
- testRunner.And("Actor selects <> from siteswitcher combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.Then("New website is shown", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+this.ScenarioSetup(scenarioInfo);
+#line 19
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 20
+ testRunner.When("Actor clicks on siteswitcher combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+ testRunner.And("Actor selects <Demo> from siteswitcher combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.Then("Actor present on Demo website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Site switcher")]
+        [Xunit.TraitAttribute("Description", "Site switcher_UC3_Return to previous site")]
+        public virtual void SiteSwitcher_UC3_ReturnToPreviousSite()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Site switcher_UC3_Return to previous site", new string[] {
+                        "InDesign"});
+#line 26
+this.ScenarioSetup(scenarioInfo);
+#line 27
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 28
+ testRunner.When("Actor clicks on siteswitcher combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 29
+ testRunner.And("Actor selects <Demo> from siteswitcher combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.And("Actor clicks on siteswitcher combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+ testRunner.And("Actor selects <Habitat> from siteswitcher combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.Then("Actor present on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
