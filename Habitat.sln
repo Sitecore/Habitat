@@ -168,6 +168,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.MultiSite.Tests", "src\Feature\Multisite\tests\Sitecore.Feature.MultiSite.Tests.csproj", "{B2D57490-58A9-4F73-A34E-B4076713F712}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.MultiSite.Tests", "src\Foundation\Multisite\tests\Sitecore.Foundation.MultiSite.Tests.csproj", "{57295D42-6C03-455B-8202-12AEAF233677}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Habitat.Demo.Specflow", "src\Domain\Demo\specs\Habitat.Demo.Specflow.csproj", "{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -511,6 +512,14 @@ Global
 		{4DD516F2-D9E5-4775-B840-E00A71DD7E87}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4DD516F2-D9E5-4775-B840-E00A71DD7E87}.Release|x64.ActiveCfg = Release|Any CPU
 		{4DD516F2-D9E5-4775-B840-E00A71DD7E87}.Release|x64.Build.0 = Release|Any CPU
+		{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF}.Debug|x64.Build.0 = Debug|Any CPU
+		{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF}.Release|x64.ActiveCfg = Release|Any CPU
+		{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF}.Release|x64.Build.0 = Release|Any CPU
 		{622EBD86-43A5-4857-965C-1724F714012A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{622EBD86-43A5-4857-965C-1724F714012A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{622EBD86-43A5-4857-965C-1724F714012A}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -661,5 +670,6 @@ Global
 		{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7} = {FE63FBCC-D03E-4439-A428-028A6FF8B15A}
 		{B2D57490-58A9-4F73-A34E-B4076713F712} = {AC21E230-C263-4FE0-8614-D6783D1FFC86}
 		{57295D42-6C03-455B-8202-12AEAF233677} = {FE63FBCC-D03E-4439-A428-028A6FF8B15A}
+		{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF} = {CA21CE04-607F-4AF6-8A70-3F1E82C42B11}
 	EndGlobalSection
 EndGlobal
