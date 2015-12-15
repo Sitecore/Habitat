@@ -131,6 +131,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Show user info on popup.feature</DependentUpon>
     </Compile>
+    <Compile Include="Site switcher.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Site switcher.feature</DependentUpon>
+    </Compile>
     <Compile Include="Steps\ActionType.cs" />
     <Compile Include="Steps\CommonSteps.cs" />
     <Compile Include="Infrastructure\ContextExtensions.cs" />
@@ -192,6 +197,10 @@
     <None Include="Show user info on popup.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Show user info on popup.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Site switcher.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Site switcher.feature.cs</LastGenOutput>
     </None>
     <None Include="Trigger an outcome on customer registration.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
