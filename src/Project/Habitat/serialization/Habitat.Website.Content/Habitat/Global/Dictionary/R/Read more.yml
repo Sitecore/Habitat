@@ -1,0 +1,20 @@
+﻿---
+ID: 61656520-8e0b-4df0-97fe-562a20b936c4
+Parent: 0bb1f3d4-0f46-4a82-b4d3-c1f42e067e70
+Template: 6d1cd897-1936-4a3a-a511-289a94c2a7b1
+Path: /sitecore/content/Habitat/Global/Dictionary/R/Read more
+SharedFields:
+- ID: 580c75a8-c01a-4580-83cb-987776ceb3af
+  # Key
+  Value: Read more
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150831T150843Z
+    - ID: 2ba3454a-9a9c-4cdf-a9f8-107fd484eb6e
+      # Phrase
+      Value: Read more

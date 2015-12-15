@@ -1,0 +1,22 @@
+﻿---
+ID: 6086f621-4a0e-4724-9d6f-ea7ba8139f57
+Parent: 6aa25831-0944-4a79-9aff-7bac39e03557
+Template: c7d9d293-4ef8-4380-8e10-c4632e729f39
+Path: /sitecore/content/Habitat/Global/Teasers/Flexibility
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 0f6b5546-e0ab-4487-81de-640c1aa1b65b
+      # TeaserImage
+      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{40EA01F7-1897-4ED0-8721-76511278B6A5}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"087\" vspace=\"\" />"
+    - ID: 13d97a52-7c4e-407c-960d-fadde8a3c1b1
+      # TeaserSummary
+      Value: Flexibility to adapt and expand is imperative to a successful marketing solution.
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150827T063230Z
+    - ID: 4a59d072-5b41-4a79-a157-2b2ccac10f2b
+      # TeaserTitle
+      Value: Flexibility

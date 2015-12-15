@@ -1,0 +1,25 @@
+﻿---
+ID: a7044280-3047-4e6f-9c9f-a6dbbb741933
+Parent: ea13174a-b43e-4f68-b474-b41188771a9e
+Template: f1c095e2-b3e0-46d0-b838-02a9e8b880d9
+Path: /sitecore/content/Habitat/Global/Media/Habitat Layers Video
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151209T025118Z
+    - ID: 2628705d-9434-4448-978c-c3bf166fa1eb
+      # MediaVideoLink
+      Value: "<link text=\"Video Introduction\" linktype=\"external\" url=\"https://youtu.be/XKLpTMuQT4Y\" anchor=\"\" target=\"_blank\" />"
+    - ID: 302c9f8d-f703-4f76-a4ab-73d222648232
+      # MediaDescription
+      Value: This video describes and shows the layered approach in Habitat and how it helps control maintainability and flexibility.
+    - ID: 4ff62b0a-d73b-4436-bea2-023154f2ffc4
+      # MediaThumbnail
+      Value: "<image mediaid=\"{747D33E6-9784-4B15-AC8E-C854C5ED0D47}\" ></image>"
+    - ID: 63dda48b-b0cb-45a7-9a1b-b26ddb41009b
+      # MediaTitle
+      Value: Sitecore Habitat Layers Video
