@@ -137,7 +137,7 @@
     <Compile Include="Steps\ForgotPasswordSteps.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
     <Compile Include="Steps\RegisterPage.cs" />
-    <Compile Include="Steps\Settings.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Steps\SiteNavigation.cs" />
     <Compile Include="Steps\AccountStepsBase.cs" />
     <Compile Include="Trigger an outcome on customer registration.feature.cs">
