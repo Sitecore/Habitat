@@ -9,6 +9,7 @@
   using Sitecore.Analytics.Tracking;
   using Sitecore.Configuration;
   using Sitecore.Data;
+  using Sitecore.Diagnostics;
 
   public class ContactProfileProvider : IContactProfileProvider
   {
@@ -66,7 +67,7 @@
 
         catch (Exception e)
         {
-          Diagnostics.Log.Warn("Contact has no KeyBehaviourCache object", e, this);
+          Log.Warn(e.Message, e, this);
           return null;
         }
       }
