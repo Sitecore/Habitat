@@ -1,14 +1,14 @@
-﻿Feature: Show Tracking Information
+﻿﻿Feature: Show Tracking Information
 	
 #Sitecore package "TestData_Show Tracking Information.zip" should be uploaded to habitat before test passing 
-
+ 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC1_Expand Slide bar with tracking info
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner
 	Then Slide bar element was expanded
-
-
+ 
+ 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC1_Collapse Slide bar with tracking info
 	Given Habitat website is opened on Main Page
@@ -25,8 +25,8 @@ Scenario: Demo_Show Tracking Information_UC2_Contact_First Visit
 	Then System shows following info on Contact panel title
 	| Number of visits | Engagement value |
 	| 1                | 10               |
-
-
+ 
+ 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC2_Contact_Few Visits
 #Engagement value should be predefined in Goal and published. Also Goal is assigned to Home page and published.   
@@ -37,17 +37,17 @@ Scenario: Demo_Show Tracking Information_UC2_Contact_Few Visits
 	Then System shows following info on Contact panel title
 	| Number of visits | Engagement value |
 	| 2                | 20               | 
-
-
-
+ 
+ 
+ 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC3_Contact_Identification 
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner
 	And User expands Identification section
 	Then Contact ID term with it's ID presents
-
-
+ 
+ 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC3_Contact_Identification_new session 
 	Given Habitat website is opened on Main Page
@@ -58,7 +58,7 @@ Scenario: Demo_Show Tracking Information_UC3_Contact_Identification_new session
 	And User clicks on <Info-sign> in the right down corner
 	And User expands Identification section
 	Then New Contact ID presents 
-
+ 
 	 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC4_Contact_Classification_List of the available check boxes(Unclassified)  
@@ -83,8 +83,8 @@ Scenario: Demo_Show Tracking Information_UC4_Contact_Classification_List of the 
 	| Bot - Unidentified  | unchecked      |
 	| Bot - Auto-detected | unchecked      |
 	| Bot - Malicious     | unchecked      |
-
-
+ 
+ 
 @InDesign
 Scenario: Demo_Show Tracking Information_UC4_Contact_Classification_Existing customer checked
 #Engagement value should be predefined in Goal and published. Also Goal is assigned to Home page and published.   
@@ -112,7 +112,7 @@ Scenario: Demo_Show Tracking Information_UC4_Contact_Classification_Existing cus
 	| Bot - Malicious     | unchecked      |
 	 
 		 
-
+ 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC5_This Visit_First Visit 
 	Given Habitat website is opened on Main Page
@@ -120,8 +120,8 @@ Scenario: Demo_Show Tracking Information_UC5_This Visit_First Visit
 	Then Following This Visit section contains
 	| Pages Viewed | Engagement value |
 	| 1            | 10               |
-
-
+ 
+ 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC5_This Visit_Few Visits
 #Engagement value should be predefined in Goal and published. Also Goal is assigned to Home page and published.
@@ -132,8 +132,8 @@ Scenario: Demo_Show Tracking Information_UC5_This Visit_Few Visits
 	Then Following This Visit section contains
 	| Pages Viewed | Engagement value |
 	| 1            | 10               |
-
-
+ 
+ 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC5_This Visit_Few Visits and pages
 #Engagement value should be predefined in Goal and published. Also Goal is assigned to Home page and published.
@@ -145,9 +145,9 @@ Scenario: Demo_Show Tracking Information_UC5_This Visit_Few Visits and pages
 	Then Following This Visit section contains
 	| Pages Viewed | Engagement value |
 	| 2            | 10               |
-
-
-
+ 
+ 
+ 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC6_Patterns_Focus Developer  
 	Given Habitat website is opened on Main Page
@@ -162,8 +162,8 @@ Scenario: Demo_Show Tracking Information_UC6_Patterns_Focus Developer
 	And Following Patterns section contains 
 	| Text H4 | Text H5   |
 	| FOCUS   | DEVELOPER | 
-
-
+ 
+ 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC6_Patterns_Focus Architect   
 	Given Habitat website is opened on Main Page
@@ -178,8 +178,8 @@ Scenario: Demo_Show Tracking Information_UC6_Patterns_Focus Architect
 	And Following Patterns section contains 
 	| Text H4 | Text H5   |
 	| FOCUS   | ARCHITECT | 
-
-
+ 
+ 
 @NeedImplementation 
 Scenario: Demo_Show Tracking Information_UC7_Campaigns
 	Given Habitat website is opened on http://habitat.test5ua1.dk.sitecore.net?sc_camp=9AC6AD85B15A4A5BB14337185A19364E
@@ -188,15 +188,15 @@ Scenario: Demo_Show Tracking Information_UC7_Campaigns
 	Then Following Campaigns section contains
 	| Campaign name         |
 	| Habitat Test Campaign |
-
+ 
 @InDesign
 Scenario: Demo_Show Tracking Information_UC8_Geo IP Location
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner 
 	And User expands Geo IP Location section
 	Then <I have no idea how to test it now>
-
-
+ 
+ 
 @NeedImplementation 
 Scenario: Demo_Show Tracking Information_UC9_Device
 	Given Habitat website is opened on Main Page
@@ -205,10 +205,10 @@ Scenario: Demo_Show Tracking Information_UC9_Device
 	Then Following Device section contains
 	| Device Type | Vendor | Operating System      | Browser      | Display Height | Display Width |
 	| Computer    | Misc   | Windows 7 (Microsoft) | Unidentified | Unknown        | Unknown       |
-
-
-
-
+ 
+ 
+ 
+ 
 @NeedImplemantation 
 Scenario: Demo_Show Tracking Information_UC10_Pages_Shown pages 
 	Given Habitat website is opened on Main Page
@@ -223,8 +223,8 @@ Scenario: Demo_Show Tracking Information_UC10_Pages_Shown pages
 	| /Project   |
 	| Contact-Us |
 	| Home       |
-
-
+ 
+ 
 @NeedImplemantation 
 Scenario: Demo_Show Tracking Information_UC10_Pages_Click link to page 
 	Given Habitat website is opened on Main Page
@@ -235,8 +235,8 @@ Scenario: Demo_Show Tracking Information_UC10_Pages_Click link to page
 	And User selects Contact Us from the Pages section
 	Then Page URL ends on /Contact-Us
 	And Contact Us title presents on page
-
-
+ 
+ 
 @NeedImplementation 
 Scenario: Demo_Show Tracking Information_UC11_Goals_Goals archived 
 	Given Habitat website is opened on Main Page
@@ -248,11 +248,11 @@ Scenario: Demo_Show Tracking Information_UC11_Goals_Goals archived
 	| Goal name with score |
 	| Register page (20)   |
 	| Home Page (10)       |
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
 @NeedImplementation 
 Scenario: Demo_Show Tracking Information_UC12_Engagement          
 	Given Habitat website is opened on http://habitat.test5ua1.dk.sitecore.net/Register?sc_camp=9AC6AD85B15A4A5BB14337185A19364E>

@@ -1,6 +1,5 @@
-﻿Feature: Mockup of External page
+﻿﻿Feature: Mockup of External page
 	
-
 @InDesign
 Scenario: Demo_Mockup of External page
 	Given I have entered 50 into the calculator
