@@ -1,0 +1,20 @@
+﻿@using Sitecore.Feature.Navigation
+@model Sitecore.Feature.Navigation.Models.NavigationItem
+@{
+  if (!Sitecore.Context.PageMode.IsPageEditor && (Model == null || Model.Children == null || !Model.Children.Items.Any()))
+  {
+	  return;
+  }
+}
+
+<nav class="secondary-menu panel panel-default">
+  <div class="panel-heading">
+    <a href="@Model.Url" target="@Model.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), Model.Item)</a>
+  </div>
+  <div class="panel-body">
+    @if (Model.Children != null)
+    {
+      @Html.Partial("_SecondaryMenuItems", Model.Children)
+    }
+  </div>
+</nav>

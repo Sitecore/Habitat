@@ -1,0 +1,26 @@
+﻿---
+ID: 781c6b36-4b02-46ea-8adc-b92a11877f10
+Parent: a781e01f-0c9e-4751-8c08-12a32ec063e3
+Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+Path: /sitecore/layout/Renderings/Feature/Teasers/TitleSummaryTeaser
+SharedFields:
+- ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
+  # Datasource Template
+  Value: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
+- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+  # Path
+  Value: /Views/Teasers/TitleSummaryTeaser.cshtml
+- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  # Datasource Location
+  Value: {6AA25831-0944-4A79-9AFF-7BAC39E03557}
+- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
+  # Open Properties after Add
+  Value: -
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150831T115820Z

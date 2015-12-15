@@ -1,0 +1,56 @@
+﻿---
+ID: f7718fed-de86-4bfd-a952-023c41b385fd
+Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
+Template: 94a8c8e9-690b-4e65-98e7-f95800222767
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Media
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
+      # __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s" p:p="1">
+          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{D1B8246C-E6A9-4E80-ABB2-6D634F464C58}" p:before="r[@uid='{F677B6FA-E472-43F0-B6BC-47E6EF4368A8}']" s:ds="{2D415DBB-9AFE-4E75-A264-DFCE07B11D26}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/sidebarcontent/col-wide-1_65c0e70c-9a3d-49e4-9d6f-7082b6da071b" />
+            <r uid="{F677B6FA-E472-43F0-B6BC-47E6EF4368A8}" p:before="r[@uid='{786A174D-E4A0-4610-9D66-7B3E94E31028}']" s:ds="{6B3E2125-9402-4ABE-BE65-1DC375B2111E}" s:id="{4E541395-9332-4F1D-87F0-E7F4920C2036}" s:ph="/page-layout/sidebarcontent/col-wide-1_57d3b154-c64c-4e59-ac83-939d86bdd05a" />
+            <r uid="{786A174D-E4A0-4610-9D66-7B3E94E31028}" p:before="r[@uid='{2186A232-C85A-4679-9A48-7D2D9039A90D}']" s:ds="{FA333FC7-7F62-499B-8CEA-E2CB837F208D}" s:id="{A25C9850-AAB7-46A6-84B7-0DFAB32FC357}" s:ph="/page-layout/col-huge_0659af81-8a75-4387-baaa-2b86c44f6e97" />
+            <r uid="{2186A232-C85A-4679-9A48-7D2D9039A90D}" p:before="r[@uid='{6ECD5B6A-789C-4BA8-B7E7-B8008616DB35}']" s:id="{03112E88-1499-4132-9D5F-E213AFD2019C}" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{6ECD5B6A-789C-4BA8-B7E7-B8008616DB35}" p:before="r[@uid='{01B44603-57BF-45D5-B987-81FCEF3934AE}']" s:ds="{6B3E2125-9402-4ABE-BE65-1DC375B2111E}" s:id="{E86BFEB1-F3FC-4E37-B693-A5550D6789EE}" s:ph="/page-layout/sidebarcontent/col-wide-1_2186a232-c85a-4679-9a48-7d2d9039a90d" />
+            <r uid="{01B44603-57BF-45D5-B987-81FCEF3934AE}" p:before="r[@uid='{8D7B040A-437D-4338-A42C-9374E518662C}']" s:ds="{B488057D-9E60-42D5-9ED0-71F722FA5FB1}" s:id="{F49C9252-47F3-406B-B311-E26EE4D1149B}" s:ph="/page-layout/sidebarcontent/col-wide-2_e17f9c33-8f96-43a6-bf9a-51106c767deb" />
+            <r uid="{8D7B040A-437D-4338-A42C-9374E518662C}" p:before="r[@uid='{2C78A502-34A3-42B3-B420-70E0415EA2ED}']" s:ds="{69CF65FB-F46E-4038-BBFB-66695B9178E4}" s:id="{F49C9252-47F3-406B-B311-E26EE4D1149B}" s:ph="/page-layout/sidebarcontent/col-wide-1_e17f9c33-8f96-43a6-bf9a-51106c767deb" />
+            <r uid="{2C78A502-34A3-42B3-B420-70E0415EA2ED}" p:before="r[@uid='{3C05B68B-EF1F-4085-83F3-D1781D803A81}']" s:ds="{20CB5BBB-3700-4FF9-A59A-2B4F70C5BE31}" s:id="{0534F12C-804E-4532-A832-5D61FE9EC6ED}" s:par="" s:ph="/page-layout/sidebarcontent/col-wide-2_e17f9c33-8f96-43a6-bf9a-51106c767deb" />
+            <r uid="{3C05B68B-EF1F-4085-83F3-D1781D803A81}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{EC545DC1-F12B-4B22-8FEB-7F0A4211C0E8}" s:id="{F49C9252-47F3-406B-B311-E26EE4D1149B}" s:ph="/page-layout/sidebarcontent/col-wide-1_e17f9c33-8f96-43a6-bf9a-51106c767deb" />
+            <r uid="{0659AF81-8A75-4387-BAAA-2B86C44F6E97}" p:before="r[@uid='{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}']" s:ds="" s:id="{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}" s:par="ContainerIsFluid=1&amp;UseStaticPlaceholderNames" s:ph="page-layout" />
+            <r uid="{66422117-69C1-4B62-9323-482F16C4F244}">
+              <p:d />
+            </r>
+            <r uid="{70E90BE6-8273-47FD-AD1F-6DCE3BFBE6F5}" p:before="r[@uid='{A85893F9-5DF5-4C28-AC0F-67AD85D29661}']" s:id="{CF750731-1275-4CC7-A9E6-809515CB4DD1}" s:ph="page-layout" />
+            <r uid="{65C0E70C-9A3D-49E4-9D6F-7082B6DA071B}" p:before="r[@uid='{E17F9C33-8F96-43A6-BF9A-51106C767DEB}']" s:id="{03112E88-1499-4132-9D5F-E213AFD2019C}" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{E17F9C33-8F96-43A6-BF9A-51106C767DEB}" p:before="r[@uid='{57D3B154-C64C-4E59-AC83-939D86BDD05A}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/sidebarcontent" />
+            <r uid="{57D3B154-C64C-4E59-AC83-939D86BDD05A}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{831876B6-F9F1-463E-9DD5-7F93F1640590}" s:ph="/page-layout/sidebarcontent" />
+          </d>
+        </r>
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: Media
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150921T014315Z
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      # Image
+      Value: "<image mediaid=\"{DC6635DB-90B7-4EBA-8B65-4D6C38F8EB95}\" />"
+    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+      # Summary
+      Value: The Media module contains functionality for Carousels, Lightboxes and Videos.
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      # Title
+      Value: Media
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      # BrowserTitle
+      Value: Media
+    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+      # Body
+      Value: The media module contains basic functionality for handling media such as images and videos. Below is a example of the components available.

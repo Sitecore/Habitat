@@ -1,0 +1,66 @@
+﻿@using Sitecore.Foundation.Assets
+@using Sitecore.Foundation.Assets.Models
+@using Sitecore.Mvc.Analytics.Extensions
+@inherits WebViewPage
+@{
+  Layout = null;
+}
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	@if (!Sitecore.Context.PageMode.IsPageEditor)
+	{
+	@Html.Sitecore().Placeholder("head")
+	}
+	<!-- Latest compiled and minified JavaScript -->
+	@RenderAssetsService.Current.RenderScript(ScriptLocation.Head)
+	@RenderAssetsService.Current.RenderStyles()
+	@Html.Sitecore().VisitorIdentification()
+</head>
+<body class="@(Sitecore.Context.PageMode.IsNormal ? "" : (Sitecore.Context.PageMode.IsPageEditor ? "pagemode-edit" : "pagemode-preview"))">
+	<header>
+		<div class="topbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="pull-left">@Html.Sitecore().Placeholder("topbarleft")</div>
+						<div class="pull-right">@Html.Sitecore().Placeholder("topbarright")</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mainnavbar">
+			<div class="container-fluid">
+				@Html.Sitecore().Placeholder("navbar")
+			</div>
+		</div>
+	</header>
+	<div class="page-layout">
+		@Html.Sitecore().Placeholder("page-layout")
+	</div>
+	<footer>
+		@Html.Sitecore().Placeholder("footer")
+	</footer>
+
+	@if (!Sitecore.Context.PageMode.IsPageEditor)
+	{
+	<div id="sidebar-wrapper">
+		<a href="#sidebar" class="sidebar-toggle">
+			<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+		</a>
+		<div id="sidebar">
+			@Html.Sitecore().Placeholder("page-sidebar")
+		</div>
+	</div>
+	}
+
+	@RenderAssetsService.Current.RenderScript(ScriptLocation.Body)
+</body>
+</html>

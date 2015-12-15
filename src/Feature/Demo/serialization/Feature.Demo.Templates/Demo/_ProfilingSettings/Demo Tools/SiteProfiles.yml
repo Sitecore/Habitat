@@ -1,0 +1,26 @@
+﻿---
+ID: 2a84eca4-68bb-4451-b4ac-98ea71a5a3dc
+Parent: 492b36fe-85e8-4cbc-b130-0b19cbe7bd91
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Feature/Demo/_ProfilingSettings/Demo Tools/SiteProfiles
+SharedFields:
+- ID: 1eb8ae32-e190-44a6-968d-ed904c794ebf
+  # Source
+  Value: /sitecore/system/Marketing Control Panel/Profiles
+- ID: 39847666-389d-409b-95bd-f2016f11eed5
+  # Unversioned
+  Value: 1
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  # Type
+  Value: Multilist
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+      # Title
+      Value: Site Profiles
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151109T015312Z

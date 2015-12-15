@@ -1,0 +1,44 @@
+﻿/// <reference path="_bootstrap.scss" />
+
+.teaser {
+  margin-top: $line-height-computed;
+  hr {
+    border: none;
+    width: 30px;
+    height: 3px;
+    margin: 0 0 30px;
+    background: $brand-primary none repeat scroll 0 0;
+  }
+
+  >.teaser-heading {
+    margin-bottom: $line-height-computed;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+  }
+
+  >.teaser-image {
+    margin-bottom: $line-height-computed;
+  }
+
+  .metadata {
+    @extend .text-muted;
+    @extend .small;
+  }
+
+  >.teaser-footer {
+    margin-top: $line-height-computed;
+  }
+
+  &.teaser-list {
+    ul.media-list {
+      .media {
+        .media-left, .media-right {
+          img {
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}

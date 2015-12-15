@@ -1,0 +1,19 @@
+﻿@using Sitecore.Feature.Media
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@*TODO: Page editor mode*@
+@{
+  const int thumbnailWidth = 750;
+  var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail.ToString(), @Model.Item, mw: thumbnailWidth, cssClass: "img-responsive");
+  if (thumbnail == null || string.IsNullOrWhiteSpace(thumbnail.ToString()))
+  {
+    return;
+  }
+}
+
+<div class="lightbox lightbox-video">
+	<a href="@Model.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink)" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" data-gallery="page">
+		@thumbnail
+		<span class="overlay"><i class="fa fa-play-circle fa-2x"></i></span>
+	</a>
+</div>

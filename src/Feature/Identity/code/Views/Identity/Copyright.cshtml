@@ -1,0 +1,14 @@
+﻿@using Sitecore.Feature.Identity
+@using Sitecore.Feature.Identity.Repositories
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+  var identity = IdentityRepository.Get(Model.Item);
+  if (identity == null)
+  {
+    return;
+  }
+}
+<div class="copyright">
+  @Html.Sitecore().Field(Templates.Identity.Fields.Copyright.ToString(), identity)
+</div>

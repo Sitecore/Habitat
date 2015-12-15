@@ -85,7 +85,7 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Accounts\specs\Habitat.Accounts.Specflow.csproj">
+    <ProjectReference Include="..\..\..\feature\Accounts\specs\Sitecore.Feature.Accounts.Specflow.csproj">
       <Project>{cf95188d-0e98-44fa-bb40-d1ea083a09fb}</Project>
       <Name>Habitat.Accounts.Specflow</Name>
     </ProjectReference>
