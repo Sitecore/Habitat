@@ -2,4 +2,61 @@
   <PropertyGroup>
     <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
   </PropertyGroup>
+  <File Include="Views\Common\Sublayouts\1 Column.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\2 Column 3-9.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{AB7054DD-B8E3-41D6-A75F-B54F2F37D08B}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\2 Column 4-8.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{E6D8107A-D811-4826-82BB-1A6279830C5A}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\2 Column 6-6.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{1B92270B-EC01-4939-B579-0ADFEB758A95}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\2 Column 8-4.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{4ACD4C20-28D1-46F7-8FBA-A35778937BD1}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\2 Column 9-3.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{CB27D488-5DF8-48B9-B096-D68B2DA637E3}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\3 Column 3-3-6.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{DB4DA660-2D4A-4214-8896-9724E165DA44}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\3 Column 4-4-4.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{7074CA39-734D-4953-A3D5-B7D09C37CE3B}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\3 Column 6-3-3.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{B21C8A38-51BC-4866-9589-6062D6390247}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\4 Column 3-3-3-3.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{DE648E12-A568-4919-802E-A688EBC9B9F3}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\6 Column 2-2-2-2-2-2.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{29270EFB-34BD-4472-B799-76E6D7D6705C}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\Footer.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{299FD8EA-2CFD-4A69-9CA4-7EA24CD34A46}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\Inner\Inner 1 Column.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{03112E88-1499-4132-9D5F-E213AFD2019C}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\Inner\Inner 2 Column 4-8.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{831876B6-F9F1-463E-9DD5-7F93F1640590}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\Inner\Inner 2 Column 6-6.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\Inner\Inner 2 Column 8-4.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{45CE489D-FA30-473E-9751-142BD06CCB33}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\PageHeading.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{A2216CA7-B205-4042-A345-72117D0086C3}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\PageSidebarLeft.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{EADA94FA-315F-4DF2-AC49-13346DFDAF12}</Item>
+  </File>
+  <File Include="Views\Common\Sublayouts\PageSidebarRight.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{CF750731-1275-4CC7-A9E6-809515CB4DD1}</Item>
+  </File>
 </Project>

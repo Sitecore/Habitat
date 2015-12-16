@@ -1,12 +1,12 @@
 ﻿---
-ID: 03112e88-1499-4132-9d5f-e213afd2019c
+ID: 831876b6-f9f1-463e-9dd5-7f93f1640590
 Parent: a033c041-5aee-4b43-a0f7-119f790553d5
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
-Path: /sitecore/layout/Renderings/Project/Habitat/Inner/Inner 1 Column
+Path: /sitecore/layout/Renderings/Project/Common/Inner/Inner 2 Column 4-8
 SharedFields:
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   # Path
-  Value: /Views/Website/Sublayouts/Inner 1 Column.cshtml
+  Value: /Views/Common/Sublayouts/Inner/Inner 2 Column 4-8.cshtml
 - ID: e441abe7-2ca3-4640-ae26-3789967925d7
   # Compatible Renderings
   Type: Treelist
@@ -22,4 +22,4 @@ Languages:
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20151116T044541Z
+      Value: 20151008T043558Z
