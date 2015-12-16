@@ -1400,7 +1400,7 @@ mark,
 .text-capitalize {
   text-transform: capitalize; }
 
-.text-muted, footer .postfooter, .teaser .metadata {
+.text-muted, footer .postfooter, #sidebar dd > dl > dt, .teaser .metadata {
   color: #777777; }
 
 .text-primary {
@@ -6115,6 +6115,9 @@ footer {
 .dropdown-menu > li > .dropdown-item-body {
   display: block;
   padding: 3px 20px; }
+
+#sidebar dd > dl {
+  margin-left: 10px; }
 
 #sidebar .panel {
   border: 0; }

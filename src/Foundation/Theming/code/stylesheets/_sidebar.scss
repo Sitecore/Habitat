@@ -1,6 +1,12 @@
 ﻿/// <reference path="_bootstrap.scss" />
 
 #sidebar {
+  dd>dl{
+    margin-left: 10px;
+    >dt{
+      @extend .text-muted;
+    }
+  }
   .panel {
     border: 0;
   }

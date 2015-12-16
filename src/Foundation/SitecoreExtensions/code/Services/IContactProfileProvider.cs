@@ -20,6 +20,6 @@
     Contact Contact { get; }
     IContactPicture Picture { get; }
     IContactPreferences Preferences { get; }
-    IKeyBehaviorCache KeyBehaviorCache { get; }
+    Analytics.Tracking.KeyBehaviorCache KeyBehaviorCache { get; }
   }
 }
