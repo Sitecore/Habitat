@@ -120,7 +120,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Demo\KeyBehaviourCacheList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

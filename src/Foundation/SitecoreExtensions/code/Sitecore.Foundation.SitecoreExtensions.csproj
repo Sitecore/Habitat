@@ -152,7 +152,7 @@
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Sitecore.Support.MvcDynamicPlaceholders.config" />
     <None Include="web.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

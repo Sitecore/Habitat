@@ -114,7 +114,7 @@
     </Content>
     <Content Include="App_Config\Include\Feature\Feature.News.Serialization.config" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\News\NewsTeaser.cshtml" />
     <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">
