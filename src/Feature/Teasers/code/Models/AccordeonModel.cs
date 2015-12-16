@@ -15,6 +15,7 @@
 
     public IEnumerable<AccordeonElement> Elements => new[]
     {
+      //TODO: Hardcoded
       new AccordeonElement("Test1"), new AccordeonElement("Test2"), new AccordeonElement("Test3")
     };
   }

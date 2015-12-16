@@ -19,6 +19,9 @@ Languages:
     - ID: 021aa3f7-206f-4acc-9538-f6d7fe86b168
       # InterestFolder
       Value: {A74EE096-F225-4568-8D81-2F71ABBC8118}
+    - ID: 12537182-f35c-403f-afb5-747d55c450b8
+      # ShowInMenu
+      Value: 1
     - ID: 235ae392-97ac-4822-be38-837da3e7724e
       # SiteBrowserTitle
       Value:  - Habitat Sitecore Framework
@@ -34,15 +37,15 @@ Languages:
     - ID: 71962360-10d8-4b98-bb8d-57660ce11127
       # RegisterPage
       Value: /sitecore/content/Habitat/Home/Register
-    - ID: 835fa523-d28a-46a2-a589-6aa4a5bf0846
-      # RegisterOutcome
-      Value: {52054874-4767-47DC-8099-8C08BFA307AA}
     - ID: 989351f9-6c42-4623-bc83-dbefb398a56b
       # InterestsFolder
       Value: {A74EE096-F225-4568-8D81-2F71ABBC8118}
     - ID: b128e2b3-3865-4f1c-a147-5f248676d3f5
       # AfterLoginPage
       Value: /sitecore/content/Habitat/Home
+    - ID: b8027200-aab0-4876-b454-dbb85add9e3c
+      # HostName
+      Value: habitat.local
     - ID: e748d808-64c1-4dec-9718-f35cf9689e4b
       # Logo
       Value: "<image mediapath=\"/Default Website/sc_logo\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Default Website/sc_logo\" mediaid=\"{461A93BF-5471-4AF2-BF36-D638F5660CB5}\" />"
