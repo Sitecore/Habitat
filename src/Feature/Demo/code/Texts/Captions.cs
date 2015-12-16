@@ -64,6 +64,9 @@
       public static string Goals => DictionaryRepository.Get("/Demo/ContactDetails/Goals", "Goals");
       public static string CustomValues => DictionaryRepository.Get("/Demo/ContactDetails/CustomValues", "Custom Values");
       public static string Outcomes => DictionaryRepository.Get("/Demo/ContactDetails/Outcomes", "Outcomes");
+      public static string PageEvents => DictionaryRepository.Get("/Demo/ContactDetails/PageEvents", "Page Events");
+      public static string Venues => DictionaryRepository.Get("/Demo/ContactDetails/Venues", "Venues");
+
     }
   }
 }
