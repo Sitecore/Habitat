@@ -1,12 +1,22 @@
-﻿
-namespace Sitecore.Feature.Maps.Repositories
+﻿namespace Sitecore.Feature.Maps.Repositories
 {
-  using Foundation.SitecoreExtensions.Extensions;
   using System;
   using System.Collections.Generic;
+  using System.Linq;
 
   public class MapRepository : IMapRepository
   {
+    private readonly News.Repositories.ISearchServiceRepository searchServiceRepository;
+
+    public MapRepository() : this(new Foundation.Indexing.Repositories.SearchServiceRepository(new SearchSettingsRepository()))
+    {
+      
+    }
+
+    public MapRepository(News.Repositories.ISearchServiceRepository searchServiceRepository)
+    {
+      this.searchServiceRepository = searchServiceRepository;
+    }
 
     public IEnumerable<Data.Items.Item> GetAll(Data.Items.Item contextItem)
     {
@@ -14,36 +24,19 @@ namespace Sitecore.Feature.Maps.Repositories
       {
         throw new ArgumentNullException(nameof(contextItem));
       }
-      if (contextItem.IsDerived(Templates.MapPoint.ID))
+      if (Foundation.SitecoreExtensions.Extensions.ItemExtensions.IsDerived(contextItem, Templates.MapPoint.ID))
       {
-        return new List<Data.Items.Item>() { contextItem };
+        return new List<Data.Items.Item> { contextItem };
       }
-      if (!contextItem.IsDerived(Templates.MapPointsFolder.ID))
+      if (!Foundation.SitecoreExtensions.Extensions.ItemExtensions.IsDerived(contextItem, Templates.MapPointsFolder.ID))
       {
         throw new ArgumentException("Item must derive from MapPointsFolder", nameof(contextItem));
       }
 
-      return GetRecursive(contextItem);
-    }
+      var searchService = searchServiceRepository.Get();
+      searchService.Settings.Root = contextItem;
 
-    //TODO: change to bucket search
-    private IEnumerable<Data.Items.Item> GetRecursive(Data.Items.Item item)
-    {
-      var result = new List<Data.Items.Item>();
-
-      foreach (Data.Items.Item childItem in item.Children)
-      {
-        if (childItem.IsDerived(Templates.MapPointsFolder.ID) && childItem.HasChildren)
-        {
-          result.AddRange(GetRecursive(childItem));
-        }
-        else if (childItem.IsDerived(Templates.MapPoint.ID))
-        {
-          result.Add(childItem);
-        }
-      }
-
-      return result;
-    }
+      return searchService.FindAll().Results.Select(x => x.Item);
+    }    
   }
 }

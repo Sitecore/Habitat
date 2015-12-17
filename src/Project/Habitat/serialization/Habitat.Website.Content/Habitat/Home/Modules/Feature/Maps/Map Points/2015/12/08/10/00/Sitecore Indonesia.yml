@@ -1,8 +1,12 @@
 ﻿---
 ID: 4f476950-ae7c-445f-b8f5-f090ead461cb
-Parent: 4049a904-6746-4a6d-9c6f-b82a5e55bb96
+Parent: 8d0d0650-2e4c-4e2b-b21c-525d7b8ace20
 Template: 66e65a5b-88f9-4328-8665-2ff296ff8435
-Path: /sitecore/content/Habitat/Home/Modules/Feature/Maps/Map Points/Sitecore Indonesia
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Maps/Map Points/2015/12/08/10/00/Sitecore Indonesia
+SharedFields:
+- ID: 9dafca1d-d618-4616-86b8-a8acd6b28a63
+  # __Bucket Parent Reference
+  Value: {4049A904-6746-4A6D-9C6F-B82A5E55BB96}
 Languages:
 - Language: en
   Versions:
