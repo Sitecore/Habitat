@@ -1,0 +1,16 @@
+﻿---
+ID: fdf5cbd3-1af3-48eb-8934-272e27139e8e
+Parent: f5f30cdc-9003-4015-84ec-c3a7e3e50d5e
+Template: f5f30cdc-9003-4015-84ec-c3a7e3e50d5e
+Path: /sitecore/templates/Project/Common/Content Types/Teasers/Accordeon Teaser/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151216T021929Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

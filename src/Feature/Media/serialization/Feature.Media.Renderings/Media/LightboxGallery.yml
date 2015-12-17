@@ -12,7 +12,7 @@ SharedFields:
   Value: /Views/Media/LightboxGallery.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   # Datasource Location
-  Value: {EA13174A-B43E-4F68-B474-B41188771A9E}
+  Value: query:/sitecore/content/*/Global/Media
 Languages:
 - Language: en
   Versions:

@@ -1,0 +1,29 @@
+﻿---
+ID: ac7394d5-2aa7-4fdb-a7d8-b1b87f9fa661
+Parent: 8664a57f-f2c9-4b18-b4e5-d3fed495d212
+Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+Path: /sitecore/templates/Project/Common/Content Types/Link Menu
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: Applications/16x16/folder_preferences.png
+- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+  # __Base template
+  Type: tree list
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {F9F4FC05-98D0-4C62-860F-F08AE7F0EE25}
+- ID: f7d48a55-2158-4f02-9356-756654404f73
+  # __Standard values
+  Value: {D836BE1C-65C1-4530-8D4A-21AEE1D9E328}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150910T041837Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
