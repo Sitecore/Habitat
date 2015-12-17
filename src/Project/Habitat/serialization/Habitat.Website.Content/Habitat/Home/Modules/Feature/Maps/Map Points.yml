@@ -4,6 +4,15 @@ Parent: 8b32ebbc-9772-48d3-808c-704e66b2ec2c
 Template: ebf4b65f-6ef1-4d45-ae55-941694a9d180
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Maps/Map Points
 SharedFields:
+- ID: a0cb3965-8884-4c7a-8815-b6b2e5ced162
+  # __Editors
+  Type: TreelistEx
+  Value: |
+    {59F53BBB-D1F5-4E38-8EBA-0D73109BB59B}
+    {A0C460F4-DBAE-4A5A-8F3A-C4ADFCDACEEA}
+- ID: d312103c-b36c-4ca5-864a-c85f9abda503
+  # __Is Bucket
+  Value: 1
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
   # __Renderings
   Type: layout
