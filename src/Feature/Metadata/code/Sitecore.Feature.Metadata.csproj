@@ -104,7 +104,7 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\Feature.Metadata.Serialization.config" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Views\Web.config" />
     <Content Include="Views\Metadata\PageMetadata.cshtml" />
     <None Include="Web.Debug.config">

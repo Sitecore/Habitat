@@ -3,6 +3,15 @@ ID: ea258531-d346-4200-b673-471cf1544506
 Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/Modules/Feature/News
+SharedFields:
+- ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
+  # __Masters
+  Type: TreelistEx
+  Value: |
+    {94A8C8E9-690B-4E65-98E7-F95800222767}
+    {8FF3D369-A508-4D2F-84A5-9B6C6BF5E537}
+    {467C2144-4454-4518-B1DE-E31B4CBBFF33}
+    {A99866E5-08E7-44D8-8A52-F8E26BCD3714}
 Languages:
 - Language: en
   Versions:

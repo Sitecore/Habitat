@@ -116,7 +116,7 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\Feature.Navigation.Serialization.config" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Navigation\_SecondaryMenuItems.cshtml" />
     <Content Include="Views\Navigation\LinkMenu.cshtml" />
     <None Include="Views\Web.config" />

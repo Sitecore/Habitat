@@ -148,7 +148,7 @@
     <Content Include="scripts\jquery-2.1.4.min.js" />
     <Content Include="images\.keep" />
     <None Include="scripts\jquery-2.1.4.intellisense.js" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="compilerconfig.json" />
     <Content Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

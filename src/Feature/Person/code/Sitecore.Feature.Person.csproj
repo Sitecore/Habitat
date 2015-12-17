@@ -122,7 +122,7 @@
     <Content Include="Views\Person\EmployeeDetails.cshtml" />
     <Content Include="Views\Person\EmployeeContactTeaser.cshtml" />
     <Content Include="App_Config\Include\Feature\Habitat.Person.Serialization.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
