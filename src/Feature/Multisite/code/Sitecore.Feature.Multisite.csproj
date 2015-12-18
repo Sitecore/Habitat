@@ -123,7 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.MultiSite.csproj">
-      <Project>{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7}</Project>
+      <Project>{cfa2ae87-7f8d-4ca6-bb72-b16380190db7}</Project>
       <Name>Sitecore.Foundation.MultiSite</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
