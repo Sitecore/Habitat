@@ -112,7 +112,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Feature\Feature.Multisite.Serialization.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Multisite\SwitchSite.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

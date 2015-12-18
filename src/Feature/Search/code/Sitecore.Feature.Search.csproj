@@ -136,7 +136,7 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\Feature.Search.Serialization.config" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Search\GlobalSearch.cshtml" />
     <Content Include="Views\Search\SearchResults.cshtml" />
     <Content Include="Views\Search\SearchSettings.cshtml" />

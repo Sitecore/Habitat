@@ -115,7 +115,7 @@
     </Content>
     <Content Include="App_Config\Include\Feature\Feature.PageContent.Serialization.config" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\PageContent\ReferenceTeaser.cshtml" />
     <Content Include="Views\PageContent\ChildPageList.cshtml" />
     <None Include="Views\Web.config" />

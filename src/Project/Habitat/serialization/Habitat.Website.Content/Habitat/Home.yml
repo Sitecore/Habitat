@@ -3,6 +3,16 @@ ID: dac24edd-44fb-42ef-9ecd-1e8daf706386
 Parent: 725a45e3-e307-4b95-b363-2782b059df06
 Template: 4a8822cc-b418-4452-ab0f-8bb6df2f2114
 Path: /sitecore/content/Habitat/Home
+SharedFields:
+- ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
+  # __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:p="p" xmlns:s="s" p:p="1">
+      <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r uid="{5FA96CD5-9C1A-4676-8585-CA9D7A3074F2}" p:before="r[@uid='{56552E8A-9180-44AA-A713-D30ACEEEB6FD}']" s:id="{604ECBB6-2BBF-45AF-AC6E-BA9F853E7A03}" s:ph="topbarright" />
+      </d>
+    </r>
 Languages:
 - Language: en
   Versions:
