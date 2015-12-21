@@ -164,6 +164,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Demo.Website", "src\Project\Demo\code\Sitecore.Demo.Website.csproj", "{D584C2DC-7F5F-447A-831C-8C5A75277FAF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{BC277CB0-BAA3-4C15-973F-3F9C10B77278}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Multisite", "Multisite", "{AC21E230-C263-4FE0-8614-D6783D1FFC86}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.MultiSite", "src\Feature\Multisite\code\Sitecore.Feature.MultiSite.csproj", "{64CB17EE-49BF-44A6-98F0-4F72EE89073B}"
