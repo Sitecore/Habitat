@@ -24,3 +24,6 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151022T224857Z
+    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+      # __Display name
+      Value: Use Static Placeholder Names
