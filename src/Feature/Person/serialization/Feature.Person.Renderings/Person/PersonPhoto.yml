@@ -4,6 +4,9 @@ Parent: 918adf7b-f0e9-422c-8dee-757215ce3407
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Person/PersonPhoto
 SharedFields:
+- ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
+  # Datasource Template
+  Value: /sitecore/templates/Feature/Person/_Person
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   # Path
   Value: /Views/Person/PersonPhoto.cshtml
