@@ -15,7 +15,7 @@
         var contentRoot = Sitecore.Context.Database.GetItem(Sitecore.ItemIDs.ContentRoot);
         if (contentRoot != null)
         {
-          return contentRoot.Children.Where(item => this.IsSite(item)).Select(siteItem => new SiteDefinitionItem
+          return contentRoot.Children.Where(item => SiteContext.IsSite(item)).Select(siteItem => new SiteDefinitionItem
           {
             Item = siteItem,
             Name = siteItem.Name,
@@ -26,11 +26,6 @@
 
         return null;
       }
-    }
-
-    private bool IsSite(Item item)
-    {
-      return item.IsDerived(Templates.Site.ID);
     }
   }
 }

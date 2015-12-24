@@ -1,0 +1,16 @@
+﻿---
+ID: b2e4052a-6b3b-4527-933b-e24188c76b61
+Parent: ddf31f45-d997-46b1-accb-05c980792c75
+Template: 35e75c72-4985-4e09-88c3-0eac6cd1e64f
+Path: /sitecore/templates/Branches/Foundation/MultiSite/Settings
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151224T141931Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
