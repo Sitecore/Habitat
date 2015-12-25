@@ -5,6 +5,9 @@ Template: b2613cc1-a748-46a3-a0db-3774574bd339
 Path: /sitecore/templates/Branches/Foundation/MultiSite/RenderingSettings
 BranchID: f6b0e6f1-2451-4c72-94fd-22d7b93b592a
 SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: Apps/32x32/Routes.png
 - ID: 854cc8f6-94ad-4521-a4b6-44ed8f794c98
   # Command
   Value: multisite:createdatasourcesetting

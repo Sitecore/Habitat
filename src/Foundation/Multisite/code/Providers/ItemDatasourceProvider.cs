@@ -9,7 +9,7 @@ namespace Sitecore.Foundation.MultiSite.Providers
   using Sitecore.Data.Items;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
-  public class ItemDatasourceProvider :IDatasourceProvider
+  public class ItemDatasourceProvider : IDatasourceProvider
   {
     private readonly Database database;
 
@@ -23,47 +23,61 @@ namespace Sitecore.Foundation.MultiSite.Providers
       {
       };
 
-      var definitions = new ItemSiteDefinitionsProvider();
-      var siteContext = new SiteContext();
-      
-      var currentDefinition = siteContext.GetSiteDefinitionByItem(contextItem);
-      if (currentDefinition == null)
-      {
-        return sources;
-      }
-      var definitionItem = currentDefinition.Item;
-      var settingsFolder = definitionItem.Children["settings"];
+      var sourceSettingItem = this.GetSettingItem(settingName, contextItem);
 
-      if (settingsFolder == null)
-      {
-        return sources;
-      }
-
-      var sourceSettingItem = settingsFolder.Children.FirstOrDefault(x => x.IsDerived(Templates.DatasourceConfiguration.ID) && x.Key.Equals(settingName));
-
-      if (sourceSettingItem == null)
-      {
-        return sources;
-      }
-
-      var datasourceRoot = sourceSettingItem[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
+      var datasourceRoot = sourceSettingItem?[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
 
       if (!string.IsNullOrEmpty(datasourceRoot))
       {
         var sourceRootItem = database.GetItem(datasourceRoot);
-        if (sourceRootItem == null)
+        if (sourceRootItem != null)
         {
-          var fallbackProvider = new ConfigurationDataSourceProvider();
-
-          sources = fallbackProvider.GetSources(settingName, contextItem);
-        }
-        else
-        {
-          sources = new[] {sourceRootItem};
+          sources = new[] { sourceRootItem };
         }
       }
 
+      if (!sources.Any())
+      {
+        var fallbackProvider = new ConfigurationDataSourceProvider(database);
+        sources = fallbackProvider.GetSources(settingName, contextItem);
+      }
+
       return sources;
+    }
+
+    protected virtual Item GetSettingItem(string settingName, Item contextItem)
+    {
+      var siteContext = new SiteContext();
+
+      var currentDefinition = siteContext.GetSiteDefinitionByItem(contextItem);
+      if (currentDefinition == null)
+      {
+        return null;
+      }
+      var definitionItem = currentDefinition.Item;
+      var settingsFolder = definitionItem.Children["settings"];
+
+      var sourceSettingItem = settingsFolder?.Children.FirstOrDefault(x => x.IsDerived(Templates.DatasourceConfiguration.ID) && x.Key.Equals(settingName));
+
+      return sourceSettingItem;
+    }
+
+
+    public Item GetSourceTemplate(string settingName, Item contextItem)
+    {
+      var settingItem = this.GetSettingItem(settingName, contextItem);
+
+      var templateId = settingItem?[Templates.DatasourceConfiguration.Fields.DatasourceTemplate];
+
+      if (!string.IsNullOrEmpty(templateId))
+      {
+        var sourceRootItem = database.GetItem(templateId);
+
+        return sourceRootItem;
+      }
+
+      var fallbackProvider = new ConfigurationDataSourceProvider(database);
+      return fallbackProvider.GetSourceTemplate(settingName, contextItem);
     }
   }
 }

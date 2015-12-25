@@ -24,11 +24,11 @@ namespace Sitecore.Foundation.MultiSite.Pipelines
         return;
       }
       this.ResolveSources(args);
+      this.ResolveTemplate(args);
     }
 
     private void ResolveSources(GetRenderingDatasourceArgs args)
     {
-      
       var contextItem = args.ContentDatabase.GetItem(args.ContextItemPath);
       var source = args.RenderingItem["Datasource Location"];
       var name = this.GetSourceSettingName(source);
@@ -41,6 +41,23 @@ namespace Sitecore.Foundation.MultiSite.Pipelines
       var sources = provider.GetSources(name, contextItem);
 
       args.DatasourceRoots.AddRange(sources);
+    }
+
+    private void ResolveTemplate(GetRenderingDatasourceArgs args)
+    {
+      
+      var contextItem = args.ContentDatabase.GetItem(args.ContextItemPath);
+      var source = args.RenderingItem["Datasource Location"];
+      var name = this.GetSourceSettingName(source);
+      if (string.IsNullOrEmpty(name))
+      {
+        return;
+      }
+
+      var provider = new ItemDatasourceProvider(args.ContentDatabase);
+      var sources = provider.GetSourceTemplate(name, contextItem);
+
+      args.Prototype =  sources;
     }
 
     public string GetSourceSettingName(string source)
