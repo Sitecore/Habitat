@@ -116,8 +116,8 @@
     <Content Include="App_Config\Include\Feature\Feature.PageContent.Serialization.config" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
-    <Content Include="Views\PageContent\ReferenceTeaser.cshtml" />
     <Content Include="Views\PageContent\ChildPageList.cshtml" />
+    <Content Include="Views\PageContent\PageTeaser.cshtml" />
     <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

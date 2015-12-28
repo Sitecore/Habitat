@@ -15,6 +15,12 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+      # Title
+      Value: News Body
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20150901T114439Z
+    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+      # __Display name
+      Value: News Body

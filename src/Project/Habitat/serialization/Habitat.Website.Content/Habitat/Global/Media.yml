@@ -1,0 +1,13 @@
+﻿---
+ID: ea13174a-b43e-4f68-b474-b41188771a9e
+Parent: 4b67a7f9-7246-4a59-a051-961095c2dc70
+Template: 920a1781-559f-4e1c-bb2e-6b9a2113fe6b
+Path: /sitecore/content/Habitat/Global/Media
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150901T054311Z

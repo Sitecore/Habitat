@@ -1,0 +1,23 @@
+﻿---
+ID: 7074ca39-734d-4953-a3d5-b7d09c37ce3b
+Parent: 4935d7de-c715-46e5-862e-44adf1bc61e8
+Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+Path: /sitecore/layout/Renderings/Project/Common/3 Column 4-4-4
+SharedFields:
+- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+  # Path
+  Value: /Views/Common/Sublayouts/3 Column 4-4-4.cshtml
+- ID: 7d24e54f-5c16-4314-90c9-6051aa1a7da1
+  # Parameters Template
+  Value: {4654D5F0-9B39-426A-992D-1D42E356FB0A}
+- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
+  # Open Properties after Add
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150921T022957Z

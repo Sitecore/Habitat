@@ -1,0 +1,29 @@
+﻿---
+ID: b21c8a38-51bc-4866-9589-6062d6390247
+Parent: 4935d7de-c715-46e5-862e-44adf1bc61e8
+Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+Path: /sitecore/layout/Renderings/Project/Common/3 Column 6-3-3
+SharedFields:
+- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+  # Path
+  Value: /Views/Common/Sublayouts/3 Column 6-3-3.cshtml
+- ID: 7d24e54f-5c16-4314-90c9-6051aa1a7da1
+  # Parameters Template
+  Value: {4654D5F0-9B39-426A-992D-1D42E356FB0A}
+- ID: e441abe7-2ca3-4640-ae26-3789967925d7
+  # Compatible Renderings
+  Type: Treelist
+  Value: |
+    {B21C8A38-51BC-4866-9589-6062D6390247}
+    {DB4DA660-2D4A-4214-8896-9724E165DA44}
+- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
+  # Open Properties after Add
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20150921T023029Z
