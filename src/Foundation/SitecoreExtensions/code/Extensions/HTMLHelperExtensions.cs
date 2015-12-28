@@ -8,6 +8,7 @@
   using Sitecore.Diagnostics;
   using Sitecore.Foundation.SitecoreExtensions.Controls;
   using Sitecore.Mvc.Helpers;
+  using Sitecore.Shell.Framework.Commands.ContentEditor;
   using Sitecore.Support;
 
   /// <summary>
@@ -18,12 +19,12 @@
     public static HtmlString ImageField(this SitecoreHelper helper, ID fieldID, Item item, int mh = 0, int mw = 0, string cssClass = null, bool disableWebEditing = false)
     {
       return helper.Field(fieldID.ToString(), item, new
-                                           {
-                                             mh,
-                                             mw,
-                                             DisableWebEdit = disableWebEditing,
-                                             @class = cssClass ?? ""
-                                           });
+      {
+        mh,
+        mw,
+        DisableWebEdit = disableWebEditing,
+        @class = cssClass ?? ""
+      });
     }
 
     public static HtmlString ImageField(this SitecoreHelper helper, string fieldName, Item item, int mh = 0, int mw = 0, string cssClass = null, bool disableWebEditing = false)
@@ -52,6 +53,23 @@
     {
       Assert.ArgumentNotNullOrEmpty(fieldID, nameof(fieldID));
       return helper.Field(fieldID.ToString());
+    }
+
+    public static MvcHtmlString PageEditorError(this SitecoreHelper helper, string errorMessage)
+    {
+      Log.Error($@"Presentation error: {errorMessage}", typeof(HtmlHelperExtensions));
+
+      if (Context.PageMode.IsNormal)
+      {
+        return new MvcHtmlString(string.Empty);
+      }
+
+      var builder = new TagBuilder("p");
+      builder.AddCssClass("alert");
+      builder.AddCssClass("alert-danger");
+      builder.InnerHtml = errorMessage;
+
+      return MvcHtmlString.Create(builder.ToString());
     }
   }
 }
