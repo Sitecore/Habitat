@@ -30,7 +30,7 @@
       }
       if (!Foundation.SitecoreExtensions.Extensions.ItemExtensions.IsDerived(contextItem, Templates.MapPointsFolder.ID))
       {
-        throw new ArgumentException("Item must derive from MapPointsFolder", nameof(contextItem));
+        throw new ArgumentException("Item must derive from MapPointsFolder or MapPoint", nameof(contextItem));
       }
 
       var searchService = searchServiceRepository.Get();
