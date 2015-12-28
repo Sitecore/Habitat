@@ -6,7 +6,7 @@ Path: /sitecore/layout/Renderings/Feature/Person/Quote
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   # Datasource Template
-  Value: {40AD8A9B-C75C-428D-9E1A-51372B21F63E}
+  Value: /sitecore/templates/Feature/Person/_Quote
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   # Path
   Value: /Views/Person/Quote.cshtml
