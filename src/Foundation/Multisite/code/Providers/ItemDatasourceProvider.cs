@@ -11,73 +11,55 @@ namespace Sitecore.Foundation.MultiSite.Providers
 
   public class ItemDatasourceProvider : IDatasourceProvider
   {
-    private readonly Database database;
+    private ISettingsProvider settingsProvider;
 
-    public ItemDatasourceProvider(Database database)
+    public ItemDatasourceProvider() : this(new SettingsProvider())
     {
-      this.database = database;
     }
+
+    public ItemDatasourceProvider(ISettingsProvider settingsProvider)
+    {
+      this.settingsProvider = settingsProvider;
+    }
+
     public Item[] GetSources(string settingName, Item contextItem)
     {
       var sources = new Item[]
       {
       };
 
-      var sourceSettingItem = this.GetSettingItem(settingName, contextItem);
+      var sourceSettingItem = this.settingsProvider.GetSettingItem(settingName, contextItem);
 
       var datasourceRoot = sourceSettingItem?[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
 
       if (!string.IsNullOrEmpty(datasourceRoot))
       {
-        var sourceRootItem = database.GetItem(datasourceRoot);
+        var sourceRootItem = this.Database.GetItem(datasourceRoot);
         if (sourceRootItem != null)
         {
           sources = new[] { sourceRootItem };
         }
       }
 
-      if (!sources.Any())
-      {
-        var fallbackProvider = new ConfigurationDataSourceProvider(database);
-        sources = fallbackProvider.GetSources(settingName, contextItem);
-      }
-
       return sources;
     }
 
-    protected virtual Item GetSettingItem(string settingName, Item contextItem)
-    {
-      var siteContext = new SiteContext();
-
-      var currentDefinition = siteContext.GetSiteDefinitionByItem(contextItem);
-      if (currentDefinition == null)
-      {
-        return null;
-      }
-      var definitionItem = currentDefinition.Item;
-      var settingsFolder = definitionItem.Children["settings"];
-
-      var sourceSettingItem = settingsFolder?.Children.FirstOrDefault(x => x.IsDerived(Templates.DatasourceConfiguration.ID) && x.Key.Equals(settingName));
-
-      return sourceSettingItem;
-    }
-
-
     public Item GetSourceTemplate(string settingName, Item contextItem)
     {
-      var settingItem = this.GetSettingItem(settingName, contextItem);
+      var settingItem = this.settingsProvider.GetSettingItem(settingName, contextItem);
 
       var templateId = settingItem?[Templates.DatasourceConfiguration.Fields.DatasourceTemplate];
 
       if (!string.IsNullOrEmpty(templateId))
       {
-        var sourceRootItem = database.GetItem(templateId);
+        var sourceRootItem = this.Database.GetItem(templateId);
 
         return sourceRootItem;
       }
 
-      var fallbackProvider = new ConfigurationDataSourceProvider(database);
-      return fallbackProvider.GetSourceTemplate(settingName, contextItem);
+      return null;
     }
+
+    public Database Database { get; set; }
   }
 }

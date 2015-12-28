@@ -7,6 +7,7 @@ namespace Sitecore.Foundation.MultiSite.Pipelines
 {
   using System.Text.RegularExpressions;
   using Sitecore.Collections;
+  using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
   using Sitecore.Foundation.MultiSite.Providers;
   using Sitecore.Pipelines.GetLookupSourceItems;
@@ -14,20 +15,33 @@ namespace Sitecore.Foundation.MultiSite.Pipelines
 
   public class SiteDataSource
   {
-    public const string SiteSourceMatchPattern = "^\\$site\\[\\w*\\]$"; 
+    private const string DatasourceLocationFieldName = "Datasource Location";
+    public const string SiteSourceMatchPattern = "^\\$site\\[\\w*\\]$";
+    private DatasourceProviderFactory providerFactory;
+
+    public SiteDataSource():this(new DatasourceProviderFactory())
+    {
+    }
+
+    public SiteDataSource(DatasourceProviderFactory factory)
+    {
+      this.providerFactory = factory;
+    }
+
     public void Process(GetRenderingDatasourceArgs args)
     {
-      var source = args.RenderingItem["Datasource Location"];
+      var source = args.RenderingItem[DatasourceLocationFieldName];
       Assert.ArgumentNotNull((object)args, "args");
       if (!source.StartsWith("$site"))
       {
         return;
       }
+
       this.ResolveSources(args);
       this.ResolveTemplate(args);
     }
 
-    private void ResolveSources(GetRenderingDatasourceArgs args)
+    protected virtual void ResolveSources(GetRenderingDatasourceArgs args)
     {
       var contextItem = args.ContentDatabase.GetItem(args.ContextItemPath);
       var source = args.RenderingItem["Datasource Location"];
@@ -37,13 +51,32 @@ namespace Sitecore.Foundation.MultiSite.Pipelines
         return;
       }
 
-      var provider = new ItemDatasourceProvider(args.ContentDatabase);
-      var sources = provider.GetSources(name, contextItem);
+      var sources = new Item[] {};
+      var provider = this.providerFactory.GetProvider(args.ContentDatabase);
+      if (provider != null)
+      {
+        sources = provider.GetSources(name, contextItem);
+      }
+
+
+      
+
+      if (!sources.Any())
+      {
+        provider = providerFactory.GetFallbackProvider(args.ContentDatabase);
+        if (provider == null)
+        {
+          return;
+        }
+
+        sources = provider.GetSources(name, contextItem);
+      }
+
 
       args.DatasourceRoots.AddRange(sources);
     }
 
-    private void ResolveTemplate(GetRenderingDatasourceArgs args)
+    protected virtual void ResolveTemplate(GetRenderingDatasourceArgs args)
     {
       
       var contextItem = args.ContentDatabase.GetItem(args.ContextItemPath);
@@ -54,10 +87,24 @@ namespace Sitecore.Foundation.MultiSite.Pipelines
         return;
       }
 
-      var provider = new ItemDatasourceProvider(args.ContentDatabase);
-      var sources = provider.GetSourceTemplate(name, contextItem);
+      Item sourceTemplate = null;
 
-      args.Prototype =  sources;
+      var provider = this.providerFactory.GetProvider(args.ContentDatabase);
+      if (provider != null)
+      {
+        sourceTemplate = provider.GetSourceTemplate(name, contextItem);
+      }
+
+      if (sourceTemplate == null)
+      {
+        provider = this.providerFactory.GetFallbackProvider(args.ContentDatabase);
+        if (provider != null)
+        {
+          sourceTemplate = provider.GetSourceTemplate(name, contextItem);
+        }
+      }
+
+      args.Prototype =  sourceTemplate;
     }
 
     public string GetSourceSettingName(string source)
@@ -67,11 +114,8 @@ namespace Sitecore.Foundation.MultiSite.Pipelines
       {
         var value = match.Value;
         var settingNameMatch = Regex.Match(value, "\\[\\w*\\]");
-        if (settingNameMatch.Success)
-        {
-          var settingName = settingNameMatch.Value.Trim('[', ']');
-          return settingName;
-        }
+        var settingName = settingNameMatch.Value.Trim('[', ']');
+        return settingName;
       }
 
       return string.Empty;

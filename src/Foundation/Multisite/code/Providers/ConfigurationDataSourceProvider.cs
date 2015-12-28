@@ -11,20 +11,25 @@ namespace Sitecore.Foundation.MultiSite.Providers
 
   public class ConfigurationDataSourceProvider : IDatasourceProvider
   {
-    private Database database;
+
     private const string locationPostfix = "sourceLocation";
     private const string sourceTemplatePostfix = "sourceTemplate";
+    private ISettingsProvider settingsProvider;
 
-    public ConfigurationDataSourceProvider(Database database)
+    public ConfigurationDataSourceProvider() : this(new SettingsProvider())
     {
-      this.database = database;
     }
 
-    public Item[] GetSources(string name, Item contextItem)
+    public ConfigurationDataSourceProvider(ISettingsProvider settingsProvider)
+    {
+      this.settingsProvider = settingsProvider;
+    }
+
+    public virtual Item[] GetSources(string name, Item contextItem)
     {
       var sources = new Item[] {};
 
-      var siteInfo = this.GetCurrentSiteInfo(contextItem);
+      var siteInfo = this.settingsProvider.GetCurrentSiteInfo(contextItem);
 
       if (siteInfo == null)
       {
@@ -39,7 +44,7 @@ namespace Sitecore.Foundation.MultiSite.Providers
         return sources;
       }
 
-      var dataSourceLocation = database.GetItem(sourceLocation);
+      var dataSourceLocation = this.Database.GetItem(sourceLocation);
       if (dataSourceLocation == null)
       {
         return sources;
@@ -50,25 +55,9 @@ namespace Sitecore.Foundation.MultiSite.Providers
       return sources;
     }
 
-    protected virtual  SiteInfo GetCurrentSiteInfo(Item contextItem)
+    public virtual Item GetSourceTemplate(string settingName, Item contextItem)
     {
-      var siteContext = new SiteContext();
-
-      var currentDefinition = siteContext.GetSiteDefinitionByItem(contextItem);
-      if (currentDefinition == null)
-      {
-        {
-          return null;
-        }
-      }
-
-      var siteInfo = Sitecore.Configuration.Factory.GetSiteInfo(currentDefinition.Name);
-      return siteInfo;
-    }
-
-    public Item GetSourceTemplate(string settingName, Item contextItem)
-    {
-      var siteInfo = this.GetCurrentSiteInfo(contextItem);
+      var siteInfo = this.settingsProvider.GetCurrentSiteInfo(contextItem);
 
       if (siteInfo == null)
       {
@@ -83,10 +72,12 @@ namespace Sitecore.Foundation.MultiSite.Providers
         return null;
       }
 
-      var dataSourceLocation = database.GetItem(sourceTemplate);
+      var dataSourceLocation = this.Database.GetItem(sourceTemplate);
 
       return dataSourceLocation;
 
     }
+
+    public Database Database { get; set; }
   }
 }

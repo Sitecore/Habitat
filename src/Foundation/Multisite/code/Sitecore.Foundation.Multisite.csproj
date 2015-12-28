@@ -105,7 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\CreateRenderingSettings.cs" />
+    <Compile Include="DatasourceProviderFactory.cs" />
     <Compile Include="Dialogs\DatasourceSettingsPage.cs" />
+    <Compile Include="Providers\ISettingsProvider.cs" />
     <Compile Include="Pipelines\SiteDataSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ConfigurationDataSourceProvider.cs" />
@@ -114,6 +116,7 @@
     <Compile Include="Providers\ISiteDefinitionsProvider.cs" />
     <Compile Include="Providers\ItemDatasourceProvider.cs" />
     <Compile Include="Providers\ItemSiteDefinitionsProvider.cs" />
+    <Compile Include="Providers\SettingsProvider.cs" />
     <Compile Include="Providers\SiteDefinitionsProviderBase.cs" />
     <Compile Include="SiteContext.cs" />
     <Compile Include="SiteDefinitionItem.cs" />
