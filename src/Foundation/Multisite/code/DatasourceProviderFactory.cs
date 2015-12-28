@@ -25,7 +25,7 @@ namespace Sitecore.Foundation.MultiSite
       return provider;
     }
 
-    protected virtual IDatasourceProvider GetProviderByConfigPath(string path)
+    public virtual IDatasourceProvider GetProviderByConfigPath(string path)
     {
       var configNode = Sitecore.Configuration.Factory.GetConfigNode(path);
       if (configNode != null)

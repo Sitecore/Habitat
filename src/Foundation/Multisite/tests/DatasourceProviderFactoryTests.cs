@@ -6,10 +6,14 @@
   using System.Text;
   using System.Threading.Tasks;
   using FluentAssertions;
+  using NSubstitute;
   using Sitecore.Configuration;
   using Sitecore.Data;
+  using Sitecore.Foundation.MultiSite.Providers;
   using Sitecore.Foundation.MultiSite.Tests.Extensions;
   using Xunit;
+  using Ploeh.AutoFixture.AutoNSubstitute;
+  using Sitecore.FakeDb;
 
   public class DatasourceProviderFactoryTests
   {

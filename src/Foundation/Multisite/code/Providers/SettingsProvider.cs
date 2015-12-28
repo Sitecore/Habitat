@@ -11,11 +11,21 @@ namespace Sitecore.Foundation.MultiSite.Providers
 
   public class SettingsProvider : ISettingsProvider
   {
+    private SiteContext siteContext;
+
+    public SettingsProvider() : this(new SiteContext())
+    { 
+    }
+
+    public SettingsProvider(SiteContext siteContext)
+    {
+      this.siteContext = siteContext;
+    }
+
     public virtual Item GetSettingItem(string settingName, Item contextItem)
     {
-      var siteContext = new SiteContext();
 
-      var currentDefinition = siteContext.GetSiteDefinitionByItem(contextItem);
+      var currentDefinition = this.siteContext.GetSiteDefinitionByItem(contextItem);
       if (currentDefinition == null)
       {
         return null;
@@ -24,7 +34,7 @@ namespace Sitecore.Foundation.MultiSite.Providers
       var definitionItem = currentDefinition.Item;
       var settingsFolder = definitionItem.Children["settings"];
 
-      var sourceSettingItem = settingsFolder?.Children.FirstOrDefault(x => x.IsDerived(Templates.DatasourceConfiguration.ID) && x.Key.Equals(settingName));
+      var sourceSettingItem = settingsFolder?.Children.FirstOrDefault(x => x.IsDerived(Templates.DatasourceConfiguration.ID) && x.Key.Equals(settingName.ToLower()));
 
       return sourceSettingItem;
     }
