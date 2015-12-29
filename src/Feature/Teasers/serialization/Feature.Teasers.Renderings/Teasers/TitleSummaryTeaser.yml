@@ -13,6 +13,12 @@ SharedFields:
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   # Datasource Location
   Value: query:/sitecore/content/*/Global/Teasers
+- ID: e441abe7-2ca3-4640-ae26-3789967925d7
+  # Compatible Renderings
+  Type: Treelist
+  Value: |
+    {E47303E0-90FD-4E81-B2B5-CA4E8C1C36B4}
+    {781C6B36-4B02-46EA-8ADC-B92A11877F10}
 Languages:
 - Language: en
   Versions:

@@ -31,6 +31,15 @@
       return this.Create(siteConfigurationItems);
     }
 
+    public void ConfigureHostName(string name, string hostName, bool showInMenu = true)
+    {
+      var siteDefinition = siteDefinitionsProvider.SiteDefinitions.Single(x => x.Name.Equals(name, StringComparison.InvariantCultureIgnoreCase));
+      siteDefinition.Item.Editing.BeginEdit();
+      siteDefinition.Item[Templates.Site.Fields.HostName] = hostName;
+      siteDefinition.Item[MultiSite.Templates.SiteConfiguration.Fields.ShowInMenu] = showInMenu ? "1" : "0";
+      siteDefinition.Item.Editing.EndEdit();
+    }
+
     private bool IsSiteConfigurationItem(Item item)
     {
       return item.IsDerived(MultiSite.Templates.SiteConfiguration.ID);

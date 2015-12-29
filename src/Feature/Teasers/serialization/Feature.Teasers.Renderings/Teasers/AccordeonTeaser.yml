@@ -13,6 +13,10 @@ SharedFields:
 - ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
   # Controller Action
   Value: AccordeonTeaser
+- ID: e441abe7-2ca3-4640-ae26-3789967925d7
+  # Compatible Renderings
+  Type: Treelist
+  Value: {A25C9850-AAB7-46A6-84B7-0DFAB32FC357}
 - ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
   # Controller
   Value: Sitecore.Feature.Teasers.Controller.TeasersController, Sitecore.Feature.Teasers
