@@ -105,6 +105,7 @@
     <Content Include="App_Config\Include\Foundation\Foundation.Multisite.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="sitecore\shell\Applications\Dialogs\Multisite\DatasourceSettings.xml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
