@@ -3,13 +3,13 @@
   using System;
   using System.Web;
   using System.Web.Mvc;
+  using DynamicPlaceholders.Mvc.Extensions;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
   using Sitecore.Foundation.SitecoreExtensions.Controls;
   using Sitecore.Mvc.Helpers;
   using Sitecore.Shell.Framework.Commands.ContentEditor;
-  using Sitecore.Support;
 
   /// <summary>
   ///   HTML Helper extensions
@@ -46,7 +46,7 @@
 
     public static HtmlString DynamicPlaceholder(this SitecoreHelper helper, string placeholderName, bool useStaticPlaceholderNames = false)
     {
-      return useStaticPlaceholderNames ? helper.Placeholder(placeholderName) : DynamicPlaceholderExtension.DynamicPlaceholder(helper, placeholderName);
+      return useStaticPlaceholderNames ? helper.Placeholder(placeholderName) : SitecoreHelperExtensions.DynamicPlaceholder(helper, placeholderName);
     }
 
     public static HtmlString Field(this SitecoreHelper helper, ID fieldID)
