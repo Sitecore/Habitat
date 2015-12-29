@@ -1,6 +1,7 @@
 ﻿namespace Sitecore.Foundation.MultiSite
 {
   using Sitecore.Data;
+  using Sitecore.Shell.Framework.Commands.Masters;
 
   public class Templates
   {
@@ -11,6 +12,17 @@
       public struct Fields
       {
         public static readonly ID HostName = new ID("{B8027200-AAB0-4876-B454-DBB85ADD9E3C}");
+      }
+    }
+
+    public struct DatasourceConfiguration
+    {
+      public static ID ID = new ID("{C82DC5FF-09EF-4403-96D3-3CAF377B8C5B}");
+
+      public struct Fields
+      {
+        public static  readonly ID DatasourceLocation = new ID("{5FE1CC43-F86C-459C-A379-CD75950D85AF}");
+        public static  readonly ID DatasourceTemplate = new ID("{498DD5B6-7DAE-44A7-9213-1D32596AD14F}");
       }
     }
   }
