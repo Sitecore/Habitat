@@ -16,6 +16,8 @@ namespace Sitecore.Foundation.MultiSite.Dialogs
 
   public class DatasourceSettingsPage : DialogForm
   {
+    private const string DialogRootSettingName = "Foundation.Multisite.DatasourceDialogRoot";
+
     protected DataContext DataContext;
     /// <summary>
     /// The dialog.
@@ -41,8 +43,16 @@ namespace Sitecore.Foundation.MultiSite.Dialogs
       if (this.DataContext != null)
       {
         this.DataContext.GetFromQueryString();
-        this.DataContext.Root = "/sitecore/layout/renderings/feature";
+        this.DataContext.Root = this.Root;
         this.DataContext.Filter = this.GetFilter();
+      }
+    }
+
+    protected string Root
+    {
+      get
+      {
+        return Sitecore.Configuration.Settings.GetSetting(DialogRootSettingName, "/sitecore/layout/renderings/feature");
       }
     }
 
