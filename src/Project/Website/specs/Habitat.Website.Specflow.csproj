@@ -57,6 +57,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compatible Renderings.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Compatible Renderings.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WFFM forms integration.feature.cs">
       <AutoGen>True</AutoGen>
@@ -66,6 +71,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Compatible Renderings.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Compatible Renderings.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="WFFM forms integration.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
