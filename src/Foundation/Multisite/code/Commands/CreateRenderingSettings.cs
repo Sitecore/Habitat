@@ -6,6 +6,7 @@ using System.Web;
 namespace Sitecore.Foundation.MultiSite.Commands
 {
   using System.Collections.Specialized;
+  using System.Text.RegularExpressions;
   using Sitecore.Data;
   using Sitecore.Presentation;
   using Sitecore.Shell.Framework.Commands;
@@ -14,6 +15,7 @@ namespace Sitecore.Foundation.MultiSite.Commands
 
   public class CreateRenderingSettings : Command
   {
+    private const string DatasourceLocationFieldName = "Datasource Location";
     public override void Execute(CommandContext context)
     {
       var item = context.Items[0];
@@ -39,7 +41,15 @@ namespace Sitecore.Foundation.MultiSite.Commands
           var renderingItem = Sitecore.Context.ContentDatabase.GetItem(renderingItemId);
           if (renderingItem != null)
           {
-            contextItem.Add(renderingItem.Name, new TemplateID(Templates.DatasourceConfiguration.ID));
+            var datasourceLocationValue = renderingItem[DatasourceLocationFieldName];
+            var settingName = renderingItem.Name;
+            var settingMatch = Regex.Match(datasourceLocationValue, "\\[\\w*\\]");
+            if (settingMatch.Success)
+            {
+              settingName = settingMatch.Value.Trim('[', ']');
+            }
+
+            contextItem.Add(settingName, new TemplateID(Templates.DatasourceConfiguration.ID));
           }
         }
       }
