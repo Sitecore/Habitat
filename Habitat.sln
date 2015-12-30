@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
@@ -164,6 +164,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{17F4DD07-2283-41AD-9532-A6BCF1BD062D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Specflow", "src\Common\specs\Common.Specflow.csproj", "{E0C9AF4F-FC51-42E6-B7B9-1E173AC0589D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Specflow", "src\Feature\Person\specs\Sitecore.Feature.Specflow\Sitecore.Feature.Specflow.csproj", "{75491645-7E1B-4E96-B31F-60FDE4DB1694}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -571,6 +573,14 @@ Global
 		{E0C9AF4F-FC51-42E6-B7B9-1E173AC0589D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E0C9AF4F-FC51-42E6-B7B9-1E173AC0589D}.Release|x64.ActiveCfg = Release|Any CPU
 		{E0C9AF4F-FC51-42E6-B7B9-1E173AC0589D}.Release|x64.Build.0 = Release|Any CPU
+		{75491645-7E1B-4E96-B31F-60FDE4DB1694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75491645-7E1B-4E96-B31F-60FDE4DB1694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75491645-7E1B-4E96-B31F-60FDE4DB1694}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{75491645-7E1B-4E96-B31F-60FDE4DB1694}.Debug|x64.Build.0 = Debug|Any CPU
+		{75491645-7E1B-4E96-B31F-60FDE4DB1694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75491645-7E1B-4E96-B31F-60FDE4DB1694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75491645-7E1B-4E96-B31F-60FDE4DB1694}.Release|x64.ActiveCfg = Release|Any CPU
+		{75491645-7E1B-4E96-B31F-60FDE4DB1694}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -646,5 +656,6 @@ Global
 		{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF} = {CA21CE04-607F-4AF6-8A70-3F1E82C42B11}
 		{47B8566D-0BA3-4427-81DB-38C7BBE38768} = {E5ADCE9F-29A4-42D7-A316-2A1AD6E23E3E}
 		{E0C9AF4F-FC51-42E6-B7B9-1E173AC0589D} = {17F4DD07-2283-41AD-9532-A6BCF1BD062D}
+		{75491645-7E1B-4E96-B31F-60FDE4DB1694} = {18A4B060-7586-4321-806B-0325FAA01373}
 	EndGlobalSection
 EndGlobal
