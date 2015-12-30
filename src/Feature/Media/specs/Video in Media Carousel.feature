@@ -138,9 +138,10 @@ Scenario: Video in Media Carousel_UC6_Video was removed from carousel
 	And User publishes /sitecore/content/Shared/Media item with sub-items
 	And User opens Home page
 	Then Carousel element presents at Habitat Home page
-	And Following video absents
+	And Following video absents 
 	| Video path                                      |
 	| /-/media/Habitat/Videos/Sitecore-Experience.mp4 |
+
 	
 	
 
