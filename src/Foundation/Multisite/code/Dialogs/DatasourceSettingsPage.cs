@@ -7,6 +7,7 @@ namespace Sitecore.Foundation.MultiSite.Dialogs
 {
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
+  using Sitecore.Foundation.MultiSite.Providers;
   using Sitecore.Shell.Applications.Dialogs.ItemLister;
   using Sitecore.Web.UI.HtmlControls;
   using Sitecore.Web.UI.Pages;
@@ -85,7 +86,7 @@ namespace Sitecore.Foundation.MultiSite.Dialogs
 
     protected string GetFilter()
     {
-      return string.Format("(contains(@@templatekey, 'folder') or contains(@Datasource Location, '$site'))");
+      return string.Format("(contains(@@templatekey, 'folder') or contains(@Datasource Location, '" + DatasourceConfigurationService.SiteDatasourcePrefix + "'))");
     }
   }
 }

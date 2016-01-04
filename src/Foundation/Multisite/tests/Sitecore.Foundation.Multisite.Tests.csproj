@@ -105,10 +105,11 @@
     <Compile Include="Extensions\AutoDbDataAttribute.cs" />
     <Compile Include="ItemDatasourceProviderTests.cs" />
     <Compile Include="ItemSiteDefinitionProviderTests.cs" />
-    <Compile Include="Pipelines\SiteDataSourceTests.cs" />
+    <Compile Include="Pipelines\GetDatasourceLocationAndTemplateFromSiteTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SettingsProviderTests.cs" />
     <Compile Include="SiteContextTests.cs" />
+    <Compile Include="DatasourceConfigurationServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -3,22 +3,22 @@
 
 @model Sitecore.Feature.MultiSite.Models.SiteDefinitions
 
-<div class="dropdown">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        @if (Model.Current == null)
-        {
-            <span>@Request.Url.Host</span>
-        }
-        else
-        {
-            <span>@Model.Current.Name</span>
-        }
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        @foreach (var site in Model.Sites)
-        {
-            <li><a href="@site.Url">@site.Name</a></li>
-        }
-    </ul>
-</div>
+@{
+  if (Model.Sites.Count() <= 1)
+  {
+    return;
+  }
+  var currentSite = (Model.Current == null ? Request.Url?.Host : Model.Current.Name);
+}
+
+<li class="dropdown sites">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="@currentSite">
+    <i class="fa fa-home"></i>
+  </a>
+  <ul class="dropdown-menu">
+      @foreach (var site in Model.Sites)
+      {
+        <li><a href="@site.Url">@site.Name</a></li>
+      }
+  </ul>
+</li>

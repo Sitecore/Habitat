@@ -6,7 +6,7 @@
 
   public class SiteDefinitionsProviderBase : ISiteDefinitionsProvider
   {
-    public virtual IEnumerable<SiteDefinitionItem> SiteDefinitions { get; }
+    public virtual IEnumerable<SiteDefinition> SiteDefinitions { get; }
 
     public virtual bool IsCurrent(string siteName)
     {

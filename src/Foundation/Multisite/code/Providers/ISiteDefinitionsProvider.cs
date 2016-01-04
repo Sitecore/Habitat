@@ -5,6 +5,6 @@
 
   public interface ISiteDefinitionsProvider
   {
-    IEnumerable<SiteDefinitionItem> SiteDefinitions { get; }
+    IEnumerable<SiteDefinition> SiteDefinitions { get; }
   }
 }

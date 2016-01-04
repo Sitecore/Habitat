@@ -1,81 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Sitecore.Foundation.MultiSite.Providers
+﻿namespace Sitecore.Foundation.MultiSite.Providers
 {
   using Sitecore.Data;
   using Sitecore.Data.Items;
-  using Sitecore.Web;
 
-  public class ConfigurationDataSourceProvider : IDatasourceProvider
+  public class ConfigurationDatasourceProvider : IDatasourceProvider
   {
+    private const string datasourceLocationPostfix = "datasourceLocation";
+    private const string datasourceTemplatePostfix = "datasourceTemplate";
+    private readonly ISettingsProvider settingsProvider;
 
-    private const string locationPostfix = "sourceLocation";
-    private const string sourceTemplatePostfix = "sourceTemplate";
-    private ISettingsProvider settingsProvider;
-
-    public ConfigurationDataSourceProvider() : this(new SettingsProvider())
+    public ConfigurationDatasourceProvider() : this(new SettingsProvider())
     {
     }
 
-    public ConfigurationDataSourceProvider(ISettingsProvider settingsProvider)
+    public ConfigurationDatasourceProvider(ISettingsProvider settingsProvider)
     {
       this.settingsProvider = settingsProvider;
     }
 
-    public virtual Item[] GetSources(string name, Item contextItem)
+    public virtual Item[] GetDatasources(string name, Item contextItem)
     {
-      var sources = new Item[] {};
-
-      var siteInfo = this.settingsProvider.GetCurrentSiteInfo(contextItem);
-
+      var siteInfo = settingsProvider.GetCurrentSiteInfo(contextItem);
       if (siteInfo == null)
       {
-        return sources;
+        return new Item[] { };
       }
 
-      var sourceLocationPropertyName = $"{name}.{locationPostfix}";
-      var sourceLocation = siteInfo.Properties[sourceLocationPropertyName];
+      var datasourceLocationPropertyName = $"{name}.{datasourceLocationPostfix}";
+      var datasourceLocation = siteInfo.Properties[datasourceLocationPropertyName];
 
-      if (string.IsNullOrEmpty(sourceLocation))
+      if (string.IsNullOrEmpty(datasourceLocation))
       {
-        return sources;
+        return new Item[] { };
       }
 
-      var dataSourceLocation = this.Database.GetItem(sourceLocation);
-      if (dataSourceLocation == null)
-      {
-        return sources;
-      }
-
-      sources = new [] {dataSourceLocation};
-
-      return sources;
+      var item = Database.GetItem(datasourceLocation);
+      return item == null ? (new Item[] { }) : new[] { item };
     }
 
-    public virtual Item GetSourceTemplate(string settingName, Item contextItem)
+    public virtual Item GetDatasourceTemplate(string settingName, Item contextItem)
     {
-      var siteInfo = this.settingsProvider.GetCurrentSiteInfo(contextItem);
-
+      var siteInfo = settingsProvider.GetCurrentSiteInfo(contextItem);
       if (siteInfo == null)
       {
         return null;
       }
 
-      var sourceTemplatePropertyName = $"{settingName}.{sourceTemplatePostfix}";
-      var sourceTemplate = siteInfo.Properties[sourceTemplatePropertyName];
+      var datasourceTemplatePropertyName = $"{settingName}.{datasourceTemplatePostfix}";
+      var datasourceTemplate = siteInfo.Properties[datasourceTemplatePropertyName];
 
-      if (string.IsNullOrEmpty(sourceTemplate))
-      {
-        return null;
-      }
-
-      var dataSourceLocation = this.Database.GetItem(sourceTemplate);
-
-      return dataSourceLocation;
-
+      return string.IsNullOrEmpty(datasourceTemplate) ? null : Database.GetItem(datasourceTemplate);
     }
 
     public Database Database { get; set; }

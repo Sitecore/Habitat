@@ -25,15 +25,15 @@
   {
     [Theory]
     [AutoDbData]
-    public void Constructor_InstanceOfISiteDefinitionInterface_InstanceShouldBeCreated(ISiteDefinitionsProvider provider, SiteDefinitionRepositoryRepository multisiteRepository)
+    public void Constructor_InstanceOfISiteDefinitionInterface_InstanceShouldBeCreated(ISiteDefinitionsProvider provider, SiteDefinitionsRepository multisiteRepository)
     {
-      Action action = () => new SiteDefinitionRepositoryRepository(provider);
+      Action action = () => new SiteDefinitionsRepository(provider);
       action.ShouldNotThrow();
     }
 
     [Theory]
     [AutoDbData]
-    public void GetSiteDefinitions_ShouldReturnSiteDefinitiosModel([Frozen]ISiteDefinitionsProvider siteDefinitionProvider, [Greedy] SiteDefinitionRepositoryRepository repository, string name)
+    public void GetSiteDefinitions_ShouldReturnSiteDefinitiosModel([Frozen]ISiteDefinitionsProvider siteDefinitionProvider, [Greedy] SiteDefinitionsRepository repository, string name)
     {
       var id = ID.NewID;
       var db = new Db
@@ -49,7 +49,7 @@
 
       var item = db.GetItem(id);
 
-      siteDefinitionProvider.SiteDefinitions.Returns(new List<SiteDefinitionItem> { new SiteDefinitionItem { Item = item } });
+      siteDefinitionProvider.SiteDefinitions.Returns(new List<Foundation.MultiSite.SiteDefinition> { new Foundation.MultiSite.SiteDefinition { Item = item } });
       var definitions = repository.Get();
       definitions.Should().BeOfType<SiteDefinitions>();
       var sites = definitions.Sites.ToList();
@@ -58,13 +58,13 @@
 
     [Theory]
     [AutoDbData]
-    public void SiteDefinitionRepository_Call_UpdateSiteItem([Content]SiteTemplate siteTemplate, [Content]Item rootItem, string name, string hostName, bool showInMenu, SiteDefinitionItem siteDefinitionItem, [Frozen]ISiteDefinitionsProvider sideDefinitionsProvider, [Greedy]SiteDefinitionRepositoryRepository siteDefinitionRepository)
+    public void SiteDefinitionRepository_Call_UpdateSiteItem([Content]SiteTemplate siteTemplate, [Content]Item rootItem, string name, string hostName, bool showInMenu, Foundation.MultiSite.SiteDefinition siteDefinition, [Frozen]ISiteDefinitionsProvider sideDefinitionsProvider, [Greedy]SiteDefinitionsRepository siteDefinitionRepository)
     {
       //Arrange
       var siteItem = rootItem.Add("Site", new TemplateID(siteTemplate.ID));
-      siteDefinitionItem.Name = name;
-      siteDefinitionItem.Item = siteItem;
-      sideDefinitionsProvider.SiteDefinitions.Returns(new[] { siteDefinitionItem });
+      siteDefinition.Name = name;
+      siteDefinition.Item = siteItem;
+      sideDefinitionsProvider.SiteDefinitions.Returns(new[] { siteDefinition });
 
       //Act
       using (new SecurityDisabler())

@@ -13,7 +13,7 @@
     public void SiteDefinitions_ShouldReturnSiteDefinitionFromTheSiteDefinitions(ConfigurationSiteDefinitionsProvider provider)
     {
       var results = provider.SiteDefinitions;
-      results.Should().As<IEnumerable<SiteDefinitionItem>>();
+      results.Should().As<IEnumerable<SiteDefinition>>();
     }
   }
 }
