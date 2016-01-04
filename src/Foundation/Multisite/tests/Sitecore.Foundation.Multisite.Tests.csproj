@@ -99,10 +99,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationDatasourceProviderTests.cs" />
     <Compile Include="ConfigurationSiteDefinitionProviderTests.cs" />
+    <Compile Include="DatasourceProviderFactoryTests.cs" />
     <Compile Include="Extensions\AutoDbDataAttribute.cs" />
+    <Compile Include="ItemDatasourceProviderTests.cs" />
     <Compile Include="ItemSiteDefinitionProviderTests.cs" />
+    <Compile Include="Pipelines\SiteDataSourceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsProviderTests.cs" />
+    <Compile Include="SiteContextTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -118,6 +124,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

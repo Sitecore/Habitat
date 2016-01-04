@@ -4,9 +4,16 @@ Parent: 3731116d-9468-4b89-9c95-cc6cecff1cf4
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Identity/Copyright
 SharedFields:
+- ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
+  # Datasource Template
+  Value: /sitecore/templates/Feature/Identity/_Identity
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   # Path
   Value: /Views/Identity/Copyright.cshtml
+- ID: e441abe7-2ca3-4640-ae26-3789967925d7
+  # Compatible Renderings
+  Type: Treelist
+  Value: {A47C8288-7D4C-45FF-B75F-4AEDBF58A02D}
 Languages:
 - Language: en
   Versions:

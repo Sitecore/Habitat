@@ -168,6 +168,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountTrackerServiceTests.cs" />
+    <Compile Include="Attributes\AccountsRedirectAuthenticatedAttributeTests.cs" />
+    <Compile Include="Attributes\RedirectAuthenticatedAttributeTests.cs" />
     <Compile Include="Attributes\RedirectUnauthenticatedTests.cs" />
     <Compile Include="Attributes\ValidateModelTests.cs" />
     <Compile Include="ContactProfileServiceTests.cs" />

@@ -1,0 +1,27 @@
+﻿---
+ID: cd4947e9-59ca-405c-a645-73d4b173c75b
+Parent: b2e4052a-6b3b-4527-933b-e24188c76b61
+Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+Path: /sitecore/templates/Branches/Foundation/MultiSite/Settings/$name
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: Apps/32x32/Setting.png
+- ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
+  # __Masters
+  Type: TreelistEx
+  Value: |
+    {05DB4668-538B-4E6E-9C89-B6AB7374AA3C}
+    {C82DC5FF-09EF-4403-96D3-3CAF377B8C5B}
+    {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151224T141932Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
