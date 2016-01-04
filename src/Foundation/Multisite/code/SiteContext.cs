@@ -10,13 +10,13 @@ namespace Sitecore.Foundation.MultiSite
 
   public class SiteContext
   {
-    public virtual SiteDefinitionItem GetSiteDefinitionByItem(Item item)
+    public virtual SiteDefinition GetSiteDefinitionByItem(Item item)
     {
-      SiteDefinitionItem site = null;
+      SiteDefinition site = null;
       var siteItem = item.Axes.GetAncestors().FirstOrDefault(IsSite);
       if (siteItem != null)
       {
-        site = new SiteDefinitionItem
+        site = new SiteDefinition
         {
           Item = siteItem,
           Name = siteItem.Name,

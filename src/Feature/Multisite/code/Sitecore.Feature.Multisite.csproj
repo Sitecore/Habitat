@@ -105,8 +105,8 @@
     <Compile Include="Models\SiteDefinition.cs" />
     <Compile Include="Models\SiteDefinitions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ISiteDefinitionRepositoryRepository.cs" />
-    <Compile Include="Repositories\SiteDefinitionRepositoryRepository.cs" />
+    <Compile Include="Repositories\ISiteDefinitionsRepository.cs" />
+    <Compile Include="Repositories\SiteDefinitionsRepository.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
