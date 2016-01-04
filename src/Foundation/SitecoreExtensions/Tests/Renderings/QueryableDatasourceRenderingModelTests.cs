@@ -10,6 +10,7 @@
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.Foundation.SitecoreExtensions.Model;
+  using Sitecore.Foundation.SitecoreExtensions.Rendering;
   using Sitecore.Foundation.SitecoreExtensions.Tests.Common;
   using Sitecore.Mvc.Presentation;
   using Xunit;
