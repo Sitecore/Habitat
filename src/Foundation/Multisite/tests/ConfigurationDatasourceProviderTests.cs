@@ -27,7 +27,7 @@
       provider.Database = db.Database;
       db.Add(sourceDbItem);
       var sourceItem = db.GetItem(sourceDbItem.ID);
-      var attributeName = $"{settingName}.sourceLocation";
+      var attributeName = $"{settingName}.{ConfigurationDatasourceProvider.DatasourceLocationPostfix}";
       var siteInfo = new SiteInfo(new StringDictionary { {attributeName, sourceItem.ID.ToString()} });
       settingsProvider.GetCurrentSiteInfo(Arg.Any<Item>()).Returns(siteInfo);
       var sources = provider.GetDatasources(settingName, contextItem);
@@ -42,7 +42,7 @@
       provider.Database = db.Database;
       db.Add(sourceDbItem);
       var sourceTemplate = db.GetItem(sourceDbItem.ID);
-      var attributeName = $"{settingName}.sourceTemplate";
+      var attributeName = $"{settingName}.{ConfigurationDatasourceProvider.DatasourceTemplatePostfix}";
       var siteInfo = new SiteInfo(new StringDictionary { { attributeName, sourceTemplate.ID.ToString() } });
       settingsProvider.GetCurrentSiteInfo(Arg.Any<Item>()).Returns(siteInfo);
       var sources = provider.GetDatasourceTemplate(settingName, contextItem);

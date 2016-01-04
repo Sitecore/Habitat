@@ -5,8 +5,8 @@
 
   public class ConfigurationDatasourceProvider : IDatasourceProvider
   {
-    private const string datasourceLocationPostfix = "datasourceLocation";
-    private const string datasourceTemplatePostfix = "datasourceTemplate";
+    public const string DatasourceLocationPostfix = "datasourceLocation";
+    public const string DatasourceTemplatePostfix = "datasourceTemplate";
     private readonly ISettingsProvider settingsProvider;
 
     public ConfigurationDatasourceProvider() : this(new SettingsProvider())
@@ -26,7 +26,7 @@
         return new Item[] { };
       }
 
-      var datasourceLocationPropertyName = $"{name}.{datasourceLocationPostfix}";
+      var datasourceLocationPropertyName = $"{name}.{DatasourceLocationPostfix}";
       var datasourceLocation = siteInfo.Properties[datasourceLocationPropertyName];
 
       if (string.IsNullOrEmpty(datasourceLocation))
@@ -46,7 +46,7 @@
         return null;
       }
 
-      var datasourceTemplatePropertyName = $"{settingName}.{datasourceTemplatePostfix}";
+      var datasourceTemplatePropertyName = $"{settingName}.{DatasourceTemplatePostfix}";
       var datasourceTemplate = siteInfo.Properties[datasourceTemplatePropertyName];
 
       return string.IsNullOrEmpty(datasourceTemplate) ? null : Database.GetItem(datasourceTemplate);
