@@ -54,6 +54,9 @@
       <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.Foundation.SitecoreExtensions">
+      <HintPath>..\..\..\foundation\SitecoreExtensions\tests\bin\Debug\Sitecore.Foundation.SitecoreExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
@@ -106,6 +109,7 @@
     <Compile Include="Infrastructure\Repositories\LanguageRepository.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\Feature.Language.Serialization.config" />
@@ -121,7 +125,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.MultiSite.csproj">
+      <Project>{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7}</Project>
+      <Name>Sitecore.Foundation.MultiSite</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

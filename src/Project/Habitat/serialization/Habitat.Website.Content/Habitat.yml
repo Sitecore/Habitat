@@ -10,7 +10,9 @@ SharedFields:
 - ID: 5f115b6d-6052-4c7e-b442-ae923a7e9bd2
   # SupportedLanguages
   Type: Multilist
-  Value: {AF584191-45C9-4201-8740-5409F4CF8BDD}
+  Value: |
+    {2403D44D-A04E-4C4F-B00B-5CE8CF531254}
+    {AF584191-45C9-4201-8740-5409F4CF8BDD}
 - ID: 71962360-10d8-4b98-bb8d-57660ce11127
   # RegisterPage
   Value: /sitecore/content/Habitat/Home/Register
