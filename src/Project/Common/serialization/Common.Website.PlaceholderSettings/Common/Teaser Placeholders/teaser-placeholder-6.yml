@@ -1,12 +1,12 @@
 ﻿---
-ID: d31f8746-4a70-467e-ba60-092a5a51eb0d
+ID: 9e971ce5-549e-4cb9-98dc-f36c110b2ce7
 Parent: a150435d-da28-46b2-a576-542f4ee053dc
 Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
-Path: /sitecore/layout/Placeholder Settings/Project/Habitat/Teaser Placeholders/teaser-placeholder-1
+Path: /sitecore/layout/Placeholder Settings/Project/Common/Teaser Placeholders/teaser-placeholder-6
 SharedFields:
 - ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
   # Placeholder Key
-  Value: teaser-placeholder-1
+  Value: teaser-placeholder-6
 Languages:
 - Language: en
   Versions:
@@ -14,4 +14,4 @@ Languages:
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20151026T055534Z
+      Value: 20151026T055553Z

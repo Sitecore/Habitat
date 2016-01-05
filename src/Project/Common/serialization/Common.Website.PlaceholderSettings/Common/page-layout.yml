@@ -1,8 +1,8 @@
 ﻿---
 ID: 7eacf219-713d-47fd-ab0c-2c9da547d3e9
-Parent: 0ed714d5-79fc-468b-95be-6f5dafcb8e7b
+Parent: 6ca1a082-5054-4aa0-88da-39489a7d1cce
 Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
-Path: /sitecore/layout/Placeholder Settings/Project/Habitat/page-layout
+Path: /sitecore/layout/Placeholder Settings/Project/Common/page-layout
 SharedFields:
 - ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
   # Placeholder Key

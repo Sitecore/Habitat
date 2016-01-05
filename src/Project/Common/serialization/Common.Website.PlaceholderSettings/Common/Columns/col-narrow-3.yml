@@ -1,15 +1,15 @@
 ﻿---
-ID: 1a9aed6b-a8c8-41ce-ae0c-99fbc59ae9ee
+ID: b34a4f2b-47cd-4ba6-b1b1-bb62f4090ffd
 Parent: d046e7a5-9ee2-4cba-8484-c601561f66d9
 Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
-Path: /sitecore/layout/Placeholder Settings/Project/Habitat/Columns/col-narrow-1
+Path: /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-3
 SharedFields:
 - ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
   # Placeholder Key
-  Value: col-narrow-1
+  Value: col-narrow-3
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder
-  Value: 100
+  Value: 300
 - ID: e391b526-d0c5-439d-803e-17512eae6222
   # Allowed Controls
   Type: TreelistEx
