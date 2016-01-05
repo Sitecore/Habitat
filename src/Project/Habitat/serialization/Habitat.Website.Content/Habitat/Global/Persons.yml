@@ -1,0 +1,16 @@
+﻿---
+ID: 6d9494f4-1c7e-47ff-91c0-e2d99886e3dd
+Parent: 4b67a7f9-7246-4a59-a051-961095c2dc70
+Template: 51e2ff7f-6fb3-4470-91c8-d2ad97bf1eae
+Path: /sitecore/content/Habitat/Global/Persons
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151230T103118Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
