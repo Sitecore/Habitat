@@ -18,15 +18,7 @@
 
     public ContactProfileProvider()
     {
-      try
-      {
-        contactManager = Factory.CreateObject("tracking/contactManager", true) as ContactManager;
-      }
-      catch (Exception ex)
-      {
-        Log.Error("Contact manager cannot be created", ex, this);
-        throw;
-      }
+      contactManager = (ContactManager)Factory.CreateObject("tracking/contactManager", false);
     }
 
     public Contact Contact
@@ -43,7 +35,7 @@
           contact = Tracker.Current.Contact;
         }
 
-        return contact ?? (contact = contactManager.CreateContact(ID.NewID));
+        return contact ?? (contact = contactManager?.CreateContact(ID.NewID));
       }
     }
 
@@ -72,10 +64,9 @@
     public IContactCommunicationProfile CommunicationProfile => GetFacet<IContactCommunicationProfile>("Communication Profile");
     public IContactPhoneNumbers PhoneNumbers => GetFacet<IContactPhoneNumbers>("Phone Numbers");
     public IEnumerable<IBehaviorProfileContext> BehaviorProfiles => Contact.BehaviorProfiles.Profiles;
-
     public Contact Flush()
     {
-      return contactManager.FlushContactToXdb2(Contact);
+      return contactManager?.FlushContactToXdb2(Contact);
     }
 
     protected T GetFacet<T>(string facetName) where T : class, IFacet
