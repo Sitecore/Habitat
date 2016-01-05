@@ -27,10 +27,10 @@ namespace Sitecore.Foundation.MultiSite.Tests
       var provider = new SettingsProvider(context);
       var settingItemId = ID.NewID;
       var definitionId = ID.NewID;
-      db.Add(new DbItem(definitionItemName, definitionId) {new DbItem("Settings") {new DbItem(settingName, settingItemId, Templates.DatasourceConfiguration.ID)} });
+      db.Add(new DbItem(definitionItemName, definitionId) {new DbItem(SettingsProvider.SettingsRootName) {new DbItem(settingName, settingItemId, Templates.SiteSettings.ID)} });
       var definitionItem = db.GetItem(definitionId);
       var setting = db.GetItem(settingItemId);
-      context.GetSiteDefinitionByItem(Arg.Any<Item>()).Returns(new SiteDefinition {Item = definitionItem });
+      context.GetSiteDefinition(Arg.Any<Item>()).Returns(new SiteDefinition {Item = definitionItem });
       var settingItem = provider.GetSettingItem(settingName, contextItem);
       settingItem.ID.ShouldBeEquivalentTo(setting.ID);
     }
@@ -40,7 +40,7 @@ namespace Sitecore.Foundation.MultiSite.Tests
     public void GetSettingsItem_SiteDefinitionDoesNotExists_ShouldReturnNull(string settingName, [Frozen]Item contextItem, [Substitute]SiteContext context, Db db, string definitionItemName)
     {
       var provider = new SettingsProvider(context);
-      context.GetSiteDefinitionByItem(Arg.Any<Item>()).Returns((SiteDefinition)null);
+      context.GetSiteDefinition(Arg.Any<Item>()).Returns((SiteDefinition)null);
       var settingItem = provider.GetSettingItem(settingName, contextItem);
       settingItem.Should().BeNull();
     }

@@ -4,9 +4,9 @@
   using System.Collections.Generic;
   using Sitecore.Web;
 
-  public class SiteDefinitionsProviderBase : ISiteDefinitionsProvider
+  public abstract class SiteDefinitionsProviderBase : ISiteDefinitionsProvider
   {
-    public virtual IEnumerable<SiteDefinition> SiteDefinitions { get; }
+    public abstract IEnumerable<SiteDefinition> SiteDefinitions { get; }
 
     public virtual bool IsCurrent(string siteName)
     {
