@@ -18,17 +18,17 @@
       {
         var dataSource = Rendering.DataSource;
 
-        var result = new List<Item>();
 
-        if (dataSource != null)
+        if (string.IsNullOrEmpty(dataSource))
         {
-          using (var providerSearchContext = ContentSearchManager.GetIndex(IndexName).CreateSearchContext())
-          {
-            var list = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(dataSource));
-            result.AddRange(list.Select(current => current != null ? current.GetItem() : null).ToArray().Where(item => item != null));
-          }
+          return Enumerable.Empty<Item>();
         }
-        return result;
+
+        using (var providerSearchContext = ContentSearchManager.GetIndex(IndexName).CreateSearchContext())
+        {
+          var list = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(dataSource));
+          return list.Select(current => current != null ? current.GetItem() : null).ToArray().Where(item => item != null);
+        }
       }
     }
   }
