@@ -6,7 +6,7 @@ Path: /sitecore/templates/Feature/Media/_HasMediaSelector/Media/MediaSelector
 SharedFields:
 - ID: 1eb8ae32-e190-44a6-968d-ed904c794ebf
   # Source
-  Value: query:/sitecore/content/Shared/Media//*[@@templateid='{F0369E1A-9030-4A05-A09C-EF09B664ED27}' or @@templateid='{F1C095E2-B3E0-46D0-B838-02A9E8B880D9}']
+  Value: query:/sitecore/content/*/Global/Media//*[@@templateid='{F0369E1A-9030-4A05-A09C-EF09B664ED27}' or @@templateid='{F1C095E2-B3E0-46D0-B838-02A9E8B880D9}']
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type
   Value: Multilist
@@ -18,6 +18,12 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+      # Title
+      Value: Media Selector
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20150902T071444Z
+    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+      # __Display name
+      Value: Media Selector

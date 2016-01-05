@@ -1,8 +1,5 @@
 ﻿/// <reference path="_bootstrap.scss" />
 
-/****************
-    MEDIA
-****************/
 .carousel {
   margin-bottom: 2 * $line-height-computed;
 
@@ -16,8 +13,7 @@
         background-color: rgba(0,0,0,.2);
         padding-bottom: 40px;
 
-        h2 {
-          font-size: 40px;
+        h1, h2, h3, h4, h5, h6 {
           color: $gray-lighter;
           text-transform: uppercase;
         }
@@ -26,18 +22,12 @@
   }
 }
 
-.page-layout .page-header-container {
-  &.container-fluid:nth-child(2) .jumbotron {
-    color: blue;
-  }
-}
 
 .jumbotron {
   .container {
     background-color: rgba(0,0,0,.2);
 
-    h1 {
-      font-size: 40px;
+    h1, h2, h3, h4, h5, h6 {
       color: $gray-lighter;
       text-transform: uppercase;
     }
@@ -49,24 +39,39 @@
 }
 
 .lightbox {
-  &.thumbnail {
-    position: relative;
+  @extend .thumbnail;
+  position: relative;
 
-    .overlay {
-      top: 0;
-      left: 0;
-      position: absolute;
-      padding-top: 10px;
-      padding-left: 10px;
-      font-size: 2rem;
-      color: inherit;
+  .overlay {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    vertical-align: middle;
+    text-align: center;
+    color: rgba(0,0,0,.5);
+    margin: auto 0;
+
+    :first-child {
+      position: relative;
+      top: 50%;
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
+  }
 
-    a:hover {
-      .overlay {
-        color: silver;
-      }
+  a:hover {
+    .overlay {
+      color: $gray-lighter;
+      background-color: rgba(0,0,0,.2);
+      -moz-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
     }
   }
 }
-

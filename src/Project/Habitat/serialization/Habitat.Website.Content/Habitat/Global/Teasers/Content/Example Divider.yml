@@ -1,0 +1,16 @@
+﻿---
+ID: 2d415dbb-9afe-4e75-a264-dfce07b11d26
+Parent: 8508f499-b20d-4505-a5c8-66cdb715d748
+Template: c7d9d293-4ef8-4380-8e10-c4632e729f39
+Path: /sitecore/content/Habitat/Global/Teasers/Content/Example Divider
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151210T020806Z
+    - ID: 4a59d072-5b41-4a79-a157-2b2ccac10f2b
+      # TeaserTitle
+      Value: Examples:

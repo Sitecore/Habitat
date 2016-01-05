@@ -205,7 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\specs\Common.Specflow.csproj">
-      <Project>{E0C9AF4F-FC51-42E6-B7B9-1E173AC0589D}</Project>
+      <Project>{e0c9af4f-fc51-42e6-b7b9-1e173ac0589d}</Project>
       <Name>Common.Specflow</Name>
     </ProjectReference>
   </ItemGroup>

@@ -118,7 +118,7 @@
     </Content>
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Indexing.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>

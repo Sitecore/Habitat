@@ -9,10 +9,14 @@ SharedFields:
   Value: {20A56D46-F5E3-4DB8-8B96-081575363D44}
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   # Datasource Location
-  Value: {6AA25831-0944-4A79-9AFF-7BAC39E03557}
+  Value: query:/sitecore/content/*/Global/Teasers
 - ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
   # Controller Action
   Value: AccordeonTeaser
+- ID: e441abe7-2ca3-4640-ae26-3789967925d7
+  # Compatible Renderings
+  Type: Treelist
+  Value: {A25C9850-AAB7-46A6-84B7-0DFAB32FC357}
 - ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
   # Controller
   Value: Sitecore.Feature.Teasers.Controller.TeasersController, Sitecore.Feature.Teasers

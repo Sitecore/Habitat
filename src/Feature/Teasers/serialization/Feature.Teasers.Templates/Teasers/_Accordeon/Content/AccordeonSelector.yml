@@ -6,15 +6,21 @@ Path: /sitecore/templates/Feature/Teasers/_Accordeon/Content/AccordeonSelector
 SharedFields:
 - ID: 1eb8ae32-e190-44a6-968d-ed904c794ebf
   # Source
-  Value: query:/sitecore/content/Shared/Teasers//*[@@templateid='{C7D9D293-4EF8-4380-8E10-C4632E729F39}']
+  Value: query:/sitecore/content/*/global/Teasers
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type
-  Value: Multilist
+  Value: Treelist
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
+    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+      # Title
+      Value: Accordeon Selector
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20150903T121516Z
+    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+      # __Display name
+      Value: Accordeon Selector

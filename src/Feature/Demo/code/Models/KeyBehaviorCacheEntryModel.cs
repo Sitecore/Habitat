@@ -13,7 +13,7 @@ namespace Sitecore.Feature.Demo.Models
     {
       ElementId = Guid.NewGuid().ToString("N");
     }
-    public IKeyBehaviorCacheEntry[] Entries { get; set; }
+    public IReadOnlyCollection<Sitecore.Analytics.Tracking.KeyBehaviorCacheEntry> Entries { get; set; }
     public string Title { get; set; }
     public string ElementId { get; set; }
   }

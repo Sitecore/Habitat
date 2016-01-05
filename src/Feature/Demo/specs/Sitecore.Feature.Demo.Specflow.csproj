@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C7C98CD9-1D34-437B-A558-0CAA1FDA1BDF}</ProjectGuid>
+    <ProjectGuid>{DA6D2488-72D8-4D4F-8528-8CF91789E577}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sitecore.Feature.Demo.Specflow</RootNamespace>

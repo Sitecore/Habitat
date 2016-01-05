@@ -12,10 +12,13 @@ SharedFields:
   Value: /Views/Teasers/TitleImageSummaryTeaser.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   # Datasource Location
-  Value: {6AA25831-0944-4A79-9AFF-7BAC39E03557}
-- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
-  # Open Properties after Add
-  Value: -
+  Value: query:/sitecore/content/*/Global/Teasers
+- ID: e441abe7-2ca3-4640-ae26-3789967925d7
+  # Compatible Renderings
+  Type: Treelist
+  Value: |
+    {E47303E0-90FD-4E81-B2B5-CA4E8C1C36B4}
+    {781C6B36-4B02-46EA-8ADC-B92A11877F10}
 Languages:
 - Language: en
   Versions:

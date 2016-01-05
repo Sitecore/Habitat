@@ -3,26 +3,22 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 
-<div class="panel panel-default teaser">
+<div class="teaser teaser-default teaser">
   @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Title) || Sitecore.Context.PageMode.IsPageEditor)
   {
-	  <div class="panel-heading">
-		  <h3 class="teaser-heading">
-			  @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
-		  </h3>
-	  </div>
+		<h3 class="teaser-heading">
+			@Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
+		</h3>
 	}
 	@if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Summary) || Sitecore.Context.PageMode.IsPageEditor)
 	{
-	<div class="panel-body">
-		<div class="teaser-text">
-			@Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
-		</div>
+	<div class="teaser-body">
+		@Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
 	</div>
 	}
 	@if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Link) || Sitecore.Context.PageMode.IsPageEditor)
 	{
-	<div class="panel-footer">
+	<div class="teaser-footer">
 		@Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
    {
 	   @class = "btn btn-default"

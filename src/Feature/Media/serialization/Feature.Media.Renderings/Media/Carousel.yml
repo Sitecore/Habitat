@@ -12,7 +12,11 @@ SharedFields:
   Value: /Views/Media/Carousel.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   # Datasource Location
-  Value: {EA13174A-B43E-4F68-B474-B41188771A9E}
+  Value: query:/sitecore/content/*/Global/Media
+- ID: e441abe7-2ca3-4640-ae26-3789967925d7
+  # Compatible Renderings
+  Type: Treelist
+  Value: {4E541395-9332-4F1D-87F0-E7F4920C2036}
 - ID: e514a1eb-ddba-44f7-8528-82ca2280f778
   # JavaScript assets
   Value: /Scripts/Media/carousel.js
