@@ -22,7 +22,7 @@ namespace Sitecore.Foundation.MultiSite.Providers
       this.settingsProvider = settingsProvider;
     }
 
-    public Item[] GetSources(string settingName, Item contextItem)
+    public Item[] GetDatasources(string settingName, Item contextItem)
     {
       var sources = new Item[]
       {
@@ -44,7 +44,7 @@ namespace Sitecore.Foundation.MultiSite.Providers
       return sources;
     }
 
-    public Item GetSourceTemplate(string settingName, Item contextItem)
+    public Item GetDatasourceTemplate(string settingName, Item contextItem)
     {
       var settingItem = this.settingsProvider.GetSettingItem(settingName, contextItem);
 

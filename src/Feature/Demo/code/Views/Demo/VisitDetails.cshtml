@@ -159,12 +159,23 @@
       </div>
       <div class="panel-collapse collapse" id="collapseEngagement">
         <div class="panel-body">
-          <ul class="list-unstyled">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Plan</th>
+                <th>Last state</th>
+              </tr>
+            </thead>
+            <tbody>
             @foreach (var item in Model.EngagementStates)
             {
-              <li>@item</li>
+              <tr>
+                <td>@item.Plan</td>
+                <td>@item.State</td>
+              </tr>
             }
-          </ul>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

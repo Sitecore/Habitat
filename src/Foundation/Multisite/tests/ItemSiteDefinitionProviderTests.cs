@@ -32,7 +32,7 @@
       {
         var results = provider.SiteDefinitions;
         results.Count().ShouldBeEquivalentTo(2);
-        results.Should().As<IEnumerable<SiteDefinitionItem>>();
+        results.Should().As<IEnumerable<SiteDefinition>>();
       }
     }
 

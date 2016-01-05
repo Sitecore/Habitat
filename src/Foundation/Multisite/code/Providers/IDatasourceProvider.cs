@@ -12,9 +12,9 @@ namespace Sitecore.Foundation.MultiSite.Providers
 
   public interface IDatasourceProvider
   {
-    Item[] GetSources(string name, Item contextItem);
+    Item[] GetDatasources(string name, Item contextItem);
 
-    Item GetSourceTemplate(string name, Item conteItem);
+    Item GetDatasourceTemplate(string name, Item contextItem);
 
     Database Database { get; set; }
   }
