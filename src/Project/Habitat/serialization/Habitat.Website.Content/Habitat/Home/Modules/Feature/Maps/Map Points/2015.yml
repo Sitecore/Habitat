@@ -1,0 +1,13 @@
+﻿---
+ID: 890c869e-b882-4ebd-be2e-079e668b1dfc
+Parent: 4049a904-6746-4a6d-9c6f-b82a5e55bb96
+Template: adb6ca4f-03ef-4f47-b9ac-9ce2ba53ff97
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Maps/Map Points/2015
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151217T074000Z

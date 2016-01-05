@@ -1,0 +1,13 @@
+﻿---
+ID: af7c93d2-2fbb-4385-9112-0ea61d5e45d6
+Parent: a19e84af-dfa5-4f63-85ce-4c326f6e3e9b
+Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+Path: /sitecore/system/Field types/Maps/Map Field/Menu
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151211T070609Z

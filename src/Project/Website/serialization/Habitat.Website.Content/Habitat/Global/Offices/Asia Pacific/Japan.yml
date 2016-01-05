@@ -1,0 +1,13 @@
+﻿---
+ID: c41550c8-68b5-4cb0-9789-cf5c3455b5dc
+Parent: c5b67999-8ea9-4c98-8ac1-076a4fa53c2c
+Template: 03aa07a3-fa6f-4fd4-a4a3-e497fbcaa332
+Path: /sitecore/content/Habitat/Global/Offices/Asia Pacific/Japan
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151203T151224Z

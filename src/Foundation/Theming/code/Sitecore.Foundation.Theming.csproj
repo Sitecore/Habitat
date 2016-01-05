@@ -153,6 +153,7 @@
     <Content Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </Content>
+    <Content Include="stylesheets\_maps.scss" />
     <Content Include="stylesheets\Sitecore.Foundation.Theming.Editor.scss" />
     <None Include="stylesheets\Sitecore.Foundation.Theming.scss" />
     <None Include="stylesheets\_contentList.scss" />

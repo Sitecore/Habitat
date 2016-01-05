@@ -1,0 +1,36 @@
+﻿---
+ID: a157c0cb-e9d4-4084-b128-79b998188754
+Parent: 50530c74-29a4-4eae-a105-d8d5d20d6f5a
+Template: 66e65a5b-88f9-4328-8665-2ff296ff8435
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Maps/Map Points/2015/12/08/10/02/Sitecore Singapore
+SharedFields:
+- ID: 9dafca1d-d618-4616-86b8-a8acd6b28a63
+  # __Bucket Parent Reference
+  Value: {4049A904-6746-4A6D-9C6F-B82A5E55BB96}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 0295c01d-214c-4c23-afc2-3f0b4e88b643
+      # MapPointAddress
+      Value: |
+        #42-02, One Raffles Place
+        1 Raffles Place
+        Singapore, 048616
+        Singapore
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      # NavigationTitle
+      Value: Sitecore Singapore
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20151208T100212Z
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      # BrowserTitle
+      Value: Sitecore Singapore
+    - ID: f12c22bb-e57d-4fab-96e1-1229e4e7ff0e
+      # MapPointName
+      Value: Sitecore Singapore
+    - ID: f686ac8e-1d33-45db-8e1a-1b40cd491e7a
+      # MapPointLocation
+      Value: 1.284794,103.850985

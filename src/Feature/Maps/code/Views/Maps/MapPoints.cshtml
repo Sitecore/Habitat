@@ -1,0 +1,8 @@
+﻿@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+<div class="map-container">
+  <input type="hidden" id="mapContextItem" name="mapContextItem" value="@Model.Rendering.Item.ID" />
+  <input type="hidden" id="mapRenderingParameters" name="mapRenderingParameters" value="@Model.Rendering.Parameters.ToJson()" />
+  <div class="map-canvas"></div>
+</div>
