@@ -3,7 +3,40 @@ ID: 725a45e3-e307-4b95-b363-2782b059df06
 Parent: 0de95ae4-41ab-4d01-9eb0-67441b7c2450
 Template: 0643d9d4-f30b-4b07-91d0-289cc324c9cf
 Path: /sitecore/content/Habitat
+SharedFields:
+- ID: 365254c4-1c1c-493a-9710-671574717898
+  # FogotPasswordMailTemplate
+  Value: /sitecore/content/Habitat/Global/Registration/Forgot Password Mail
+- ID: 5f115b6d-6052-4c7e-b442-ae923a7e9bd2
+  # SupportedLanguages
+  Type: Multilist
+  Value: {AF584191-45C9-4201-8740-5409F4CF8BDD}
+- ID: 71962360-10d8-4b98-bb8d-57660ce11127
+  # RegisterPage
+  Value: /sitecore/content/Habitat/Home/Register
+- ID: 989351f9-6c42-4623-bc83-dbefb398a56b
+  # InterestsFolder
+  Value: {A74EE096-F225-4568-8D81-2F71ABBC8118}
+- ID: b128e2b3-3865-4f1c-a147-5f248676d3f5
+  # AfterLoginPage
+  Value: /sitecore/content/Habitat/Home
+- ID: ed71d374-8c33-4561-991d-77482ae01330
+  # AccountsDetailsPage
+  Value: /sitecore/content/Habitat/Home/EditProfile
+- ID: f3cd2bb8-472b-4df0-87c0-a13098e391ca
+  # ForgotPasswordPage
+  Value: /sitecore/content/Habitat/Home/Login/ForgotPassword
 Languages:
+- Language: da
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20160105T102340Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin
 - Language: en
   Versions:
   - Version: 1
@@ -23,30 +56,12 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20150824T171748Z
-    - ID: 365254c4-1c1c-493a-9710-671574717898
-      # FogotPasswordMailTemplate
-      Value: /sitecore/content/Habitat/Global/Registration/Forgot Password Mail
     - ID: 378b7d87-5775-4eb6-86b7-282d5359b1c6
       # UserProfile
       Value: {14523428-879D-491C-9DF0-1417E82A4311}
-    - ID: 71962360-10d8-4b98-bb8d-57660ce11127
-      # RegisterPage
-      Value: /sitecore/content/Habitat/Home/Register
-    - ID: 989351f9-6c42-4623-bc83-dbefb398a56b
-      # InterestsFolder
-      Value: {A74EE096-F225-4568-8D81-2F71ABBC8118}
-    - ID: b128e2b3-3865-4f1c-a147-5f248676d3f5
-      # AfterLoginPage
-      Value: /sitecore/content/Habitat/Home
     - ID: b8027200-aab0-4876-b454-dbb85add9e3c
       # HostName
       Value: habitat.local
     - ID: e748d808-64c1-4dec-9718-f35cf9689e4b
       # Logo
       Value: "<image mediapath=\"/Default Website/sc_logo\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Default Website/sc_logo\" mediaid=\"{461A93BF-5471-4AF2-BF36-D638F5660CB5}\" />"
-    - ID: ed71d374-8c33-4561-991d-77482ae01330
-      # AccountsDetailsPage
-      Value: /sitecore/content/Habitat/Home/EditProfile
-    - ID: f3cd2bb8-472b-4df0-87c0-a13098e391ca
-      # ForgotPasswordPage
-      Value: /sitecore/content/Habitat/Home/Login/ForgotPassword
