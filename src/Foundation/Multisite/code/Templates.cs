@@ -25,6 +25,10 @@
         public static  readonly ID DatasourceTemplate = new ID("{498DD5B6-7DAE-44A7-9213-1D32596AD14F}");
       }
     }
-  }
 
+    public struct SiteSettings
+    {
+      public static ID ID = new ID("{BCCFEBEA-DCCB-48FE-9570-6503829EC03F}");
+    }
+  }
 }

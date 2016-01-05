@@ -1,0 +1,21 @@
+﻿---
+ID: c7c95984-e060-42d9-bbc6-b45c18768905
+Parent: 725a45e3-e307-4b95-b363-2782b059df06
+Template: 4c82b6dd-fe7c-4144-bcb3-f21b4080568f
+Path: /sitecore/content/Habitat/Settings
+BranchID: b2e4052a-6b3b-4527-933b-e24188c76b61
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  # __Icon
+  Value: Apps/32x32/Setting.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20160104T045042Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

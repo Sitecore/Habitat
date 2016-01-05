@@ -4,15 +4,12 @@ Parent: db7775fa-27d8-44e4-9e6c-08ade58ef4ed
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/News/NewsArticle
 SharedFields:
-- ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
-  # Datasource Template
-  Value: /sitecore/templates/Feature/News/_NewsArticle
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   # Path
   Value: /Views/News/NewsArticle.cshtml
-- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
-  # Open Properties after Add
-  Value: -
+- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  # Datasource Location
+  Value: site:newsarticle
 - ID: e441abe7-2ca3-4640-ae26-3789967925d7
   # Compatible Renderings
   Type: Treelist

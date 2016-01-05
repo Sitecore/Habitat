@@ -2,19 +2,28 @@
 {
   using System.Collections.Generic;
   using System.Linq;
-  using Sitecore.Collections;
+  using Sitecore.Configuration;
   using Sitecore.Web;
 
   public class ConfigurationSiteDefinitionsProvider : SiteDefinitionsProviderBase
   {
-    public override IEnumerable<SiteDefinitionItem> SiteDefinitions
+    public override IEnumerable<SiteDefinition> SiteDefinitions
     {
       get
       {
-        var sites = Sitecore.Configuration.Factory.GetSiteInfoList();
-        var siteInf = new SiteInfo(new StringDictionary());
-        return sites.Select(siteInfo => new SiteDefinitionItem {HostName = siteInfo.HostName, Name = siteInfo.Name, IsCurrent = this.IsCurrent(siteInfo.Name)});
+        var sites = Factory.GetSiteInfoList();
+        return sites.Select(CreateSiteDefinition);
       }
+    }
+
+    private SiteDefinition CreateSiteDefinition(SiteInfo siteInfo)
+    {
+      return new SiteDefinition
+             {
+               HostName = siteInfo.HostName,
+               Name = siteInfo.Name,
+               IsCurrent = IsCurrent(siteInfo.Name)
+             };
     }
   }
 }

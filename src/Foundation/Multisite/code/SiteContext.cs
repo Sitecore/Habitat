@@ -6,25 +6,35 @@ using System.Web;
 namespace Sitecore.Foundation.MultiSite
 {
   using Sitecore.Data.Items;
+  using Sitecore.Diagnostics;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class SiteContext
   {
-    public virtual SiteDefinitionItem GetSiteDefinitionByItem(Item item)
+    public virtual SiteDefinition GetSiteDefinition(Item item)
     {
-      SiteDefinitionItem site = null;
-      var siteItem = item.Axes.GetAncestors().FirstOrDefault(IsSite);
-      if (siteItem != null)
-      {
-        site = new SiteDefinitionItem
-        {
-          Item = siteItem,
-          Name = siteItem.Name,
-          HostName = siteItem[Templates.Site.Fields.HostName]
-        };
-      }
+      Assert.ArgumentNotNull(item, nameof(item));
 
-      return site;
+      var siteItem = GetSiteItemByHierarchy(item) ?? GetSiteItemBySiteContext();
+      if (siteItem == null)
+        return null;
+
+      return new SiteDefinition
+      {
+        Item = siteItem,
+        Name = siteItem.Name,
+        HostName = siteItem[Templates.Site.Fields.HostName]
+      };
+    }
+
+    private Item GetSiteItemBySiteContext()
+    {
+      return GetSiteItemByHierarchy(Context.Site.GetStartItem());
+    }
+
+    private static Item GetSiteItemByHierarchy(Item item)
+    {
+      return item.Axes.GetAncestors().FirstOrDefault(IsSite);
     }
 
     public static bool IsSite(Item item)

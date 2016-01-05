@@ -144,6 +144,7 @@
     <Compile Include="Models\DemoContent.cs" />
     <Compile Include="Models\ContactInformation.cs" />
     <Compile Include="Controllers\DemoController.cs" />
+    <Compile Include="Models\EngagementState.cs" />
     <Compile Include="Models\KeyBehaviorCacheEntryModel.cs" />
     <Compile Include="Models\PageLink.cs" />
     <Compile Include="Models\PatternMatch.cs" />

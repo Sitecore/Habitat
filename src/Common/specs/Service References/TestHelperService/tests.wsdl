@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://sitecore.net/AutoTestsHelperService.asmx" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://sitecore.net/AutoTestsHelperService.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://sitecore.net/AutoTestsHelperService.asmx">
+      <s:element name="CreateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IndexDatabases">
+        <s:complexType />
+      </s:element>
+      <s:element name="IndexDatabasesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="IndexMasterDatabases">
+        <s:complexType />
+      </s:element>
+      <s:element name="IndexMasterDatabasesResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IndexDatabasesSoapIn">
+    <wsdl:part name="parameters" element="tns:IndexDatabases" />
+  </wsdl:message>
+  <wsdl:message name="IndexDatabasesSoapOut">
+    <wsdl:part name="parameters" element="tns:IndexDatabasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IndexMasterDatabasesSoapIn">
+    <wsdl:part name="parameters" element="tns:IndexMasterDatabases" />
+  </wsdl:message>
+  <wsdl:message name="IndexMasterDatabasesSoapOut">
+    <wsdl:part name="parameters" element="tns:IndexMasterDatabasesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AutoTestsHelperServiceSoap">
+    <wsdl:operation name="CreateUser">
+      <wsdl:input message="tns:CreateUserSoapIn" />
+      <wsdl:output message="tns:CreateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input message="tns:DeleteUserSoapIn" />
+      <wsdl:output message="tns:DeleteUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IndexDatabases">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Indexes core and master databases</wsdl:documentation>
+      <wsdl:input message="tns:IndexDatabasesSoapIn" />
+      <wsdl:output message="tns:IndexDatabasesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IndexMasterDatabases">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Indexes master database</wsdl:documentation>
+      <wsdl:input message="tns:IndexMasterDatabasesSoapIn" />
+      <wsdl:output message="tns:IndexMasterDatabasesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AutoTestsHelperServiceSoap" type="tns:AutoTestsHelperServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndexDatabases">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/IndexDatabases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndexMasterDatabases">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/IndexMasterDatabases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AutoTestsHelperServiceSoap12" type="tns:AutoTestsHelperServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateUser">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/DeleteUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndexDatabases">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/IndexDatabases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IndexMasterDatabases">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/IndexMasterDatabases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AutoTestsHelperService">
+    <wsdl:port name="AutoTestsHelperServiceSoap" binding="tns:AutoTestsHelperServiceSoap">
+      <soap:address location="http://habitat.test5ua1.dk.sitecore.net/tests.proxy.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AutoTestsHelperServiceSoap12" binding="tns:AutoTestsHelperServiceSoap12">
+      <soap12:address location="http://habitat.test5ua1.dk.sitecore.net/tests.proxy.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

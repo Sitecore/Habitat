@@ -21,7 +21,7 @@ namespace Sitecore.Foundation.MultiSite.Tests
   {
     [Theory]
     [AutoDbData]
-    public void GetSources_ShouldReturnSourcesFromSettingItem([Frozen]ISettingsProvider settingsProvider, [Greedy]ItemDatasourceProvider provider, string name, Item contextItem, Db db, string settingItemName, Item item, DbItem sourceRoot)
+    public void GetDatasources_ShouldReturnSourcesFromSettingItem([Frozen]ISettingsProvider settingsProvider, [Greedy]ItemDatasourceProvider provider, string name, Item contextItem, Db db, string settingItemName, Item item, DbItem sourceRoot)
     {
       provider.Database = db.Database;
       var settingId = ID.NewID;
@@ -30,14 +30,14 @@ namespace Sitecore.Foundation.MultiSite.Tests
       var sourceRootItem = db.GetItem(sourceRoot.ID);
       var settingItem = db.GetItem(settingId);
       settingsProvider.GetSettingItem(Arg.Any<string>(), Arg.Any<Item>()).Returns(settingItem);
-      var sources = provider.GetSources(name, item);
+      var sources = provider.GetDatasources(name, item);
       sources.Should().NotBeNull();
       sources.Should().Contain(sourceRootItem);
     }
 
     [Theory]
     [AutoDbData]
-    public void GetSourceTemplate_ShouldReturnTemplateFromSettingItem([Frozen]ISettingsProvider settingsProvider, [Greedy]ItemDatasourceProvider provider, string name, Item contextItem, Db db, string settingItemName, Item item, DbItem sourceTemplate)
+    public void GetDatasourceTemplate_ShouldReturnTemplateFromSettingItem([Frozen]ISettingsProvider settingsProvider, [Greedy]ItemDatasourceProvider provider, string name, Item contextItem, Db db, string settingItemName, Item item, DbItem sourceTemplate)
     {
       provider.Database = db.Database;
       var settingId = ID.NewID;
@@ -46,17 +46,17 @@ namespace Sitecore.Foundation.MultiSite.Tests
       var sourceRootItem = db.GetItem(sourceTemplate.ID);
       var settingItem = db.GetItem(settingId);
       settingsProvider.GetSettingItem(Arg.Any<string>(), Arg.Any<Item>()).Returns(settingItem);
-      var sources = provider.GetSourceTemplate(name, item);
+      var sources = provider.GetDatasourceTemplate(name, item);
       sources.Should().NotBeNull();
       sources.ID.ShouldBeEquivalentTo(sourceRootItem.ID);
     }
 
     [Theory]
     [AutoDbData]
-    public void GetSourceTemplates_ShouldReturnNull(ISettingsProvider settingsProvider, ItemDatasourceProvider itemDsProvider, string settingName, Item contextItem)
+    public void GetDatasourceTemplate_ShouldReturnNull(ISettingsProvider settingsProvider, ItemDatasourceProvider itemDsProvider, string settingName, Item contextItem)
     {
       var provider = new ItemDatasourceProvider(settingsProvider);
-      var template = provider.GetSourceTemplate(settingName, contextItem);
+      var template = provider.GetDatasourceTemplate(settingName, contextItem);
     }
   }
 }

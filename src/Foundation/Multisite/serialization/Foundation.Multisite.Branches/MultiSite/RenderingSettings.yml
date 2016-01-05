@@ -2,7 +2,7 @@
 ID: 05db4668-538b-4e6e-9c89-b6ab7374aa3c
 Parent: ddf31f45-d997-46b1-accb-05c980792c75
 Template: b2613cc1-a748-46a3-a0db-3774574bd339
-Path: /sitecore/templates/Branches/Foundation/MultiSite/RenderingSettings
+Path: /sitecore/templates/Branches/Foundation/Multisite/RenderingSettings
 BranchID: f6b0e6f1-2451-4c72-94fd-22d7b93b592a
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
@@ -22,3 +22,6 @@ Languages:
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
       # __Created by
       Value: sitecore\admin
+    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+      # __Display name
+      Value: Rendering Settings
