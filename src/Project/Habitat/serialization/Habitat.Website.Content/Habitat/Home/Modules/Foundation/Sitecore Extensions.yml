@@ -14,9 +14,6 @@ Languages:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
       Value: 20151026T041957Z
-    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
-      # Image
-      Value: 
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
       # Summary
       Value: The Sitecore extensions module contains a range of simple extensions to the Sitecore platform to optimize development.

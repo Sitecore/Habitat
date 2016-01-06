@@ -43,7 +43,7 @@ Languages:
   - Version: 1
     Fields:
     - ID: 0cc9785e-54fe-4fae-93e4-d0d2ae75f339
-      # Description
+      # Biography
       Value: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue vulputate erat hendrerit tincidunt.
     - ID: 0ee2f208-1fee-42fc-8051-6696d49a92bf
       # OpenGraphTitle
