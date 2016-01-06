@@ -1,15 +1,18 @@
 ﻿---
-ID: 60745023-ffd5-400e-8f80-4bca9f2abb29
-Parent: 49567788-6193-4b6f-bfee-4605cd263c61
+ID: 5f115b6d-6052-4c7e-b442-ae923a7e9bd2
+Parent: 9eff9357-83ae-4bfd-9c48-cc9efdb5c34a
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Feature/Accounts/_AccountsSettings/Accounts/LoginPage
+Path: /sitecore/templates/Feature/Language/_LanguageSettings/Language/SupportedLanguages
 SharedFields:
+- ID: 1eb8ae32-e190-44a6-968d-ed904c794ebf
+  # Source
+  Value: /sitecore/system/languages
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   # Type
-  Value: Internal Link
+  Value: Multilist
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   # __Sortorder
-  Value: 300
+  Value: 100
 - ID: be351a73-fcb0-4213-93fa-c302d8ab4f51
   # Shared
   Value: 1
@@ -20,10 +23,7 @@ Languages:
     Fields:
     - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
       # Title
-      Value: Login Page
+      Value: Supported Languages
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       # __Created
-      Value: 20151105T120732Z
-    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
-      # __Display name
-      Value: Login Page
+      Value: 20160105T142240Z

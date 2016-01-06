@@ -9,7 +9,7 @@ SharedFields:
   Value: {20A56D46-F5E3-4DB8-8B96-081575363D44}
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   # Datasource Location
-  Value: query:/sitecore/content/*/Global/Teasers
+  Value: site:accordeonteaser
 - ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
   # Controller Action
   Value: AccordeonTeaser
