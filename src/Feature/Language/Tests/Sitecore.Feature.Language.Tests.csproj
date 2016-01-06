@@ -112,6 +112,7 @@
     <Compile Include="Extensions\AutoDbDataAttribute.cs" />
     <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="LanguageFactoryTests.cs" />
+    <Compile Include="LanguageRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -120,10 +121,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.MultiSite.csproj">
+      <Project>{cfa2ae87-7f8d-4ca6-bb72-b16380190db7}</Project>
+      <Name>Sitecore.Foundation.MultiSite</Name>
+    </ProjectReference>
     <ProjectReference Include="..\code\Sitecore.Feature.Language.csproj">
       <Project>{aca65632-ee93-422b-b25e-8e31969694f5}</Project>
       <Name>Sitecore.Feature.Language</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
