@@ -68,7 +68,7 @@ gulp.task("03-Apply-Xml-Transform", function () {
 var publishProjects = function (location, dest) {
   dest = dest || config.websiteRoot;
   console.log("publish to " + dest + " folder");
-  return gulp.src([location + "/**/*.csproj", "!" + location + "/**/*Tests.csproj", "!" + location + "/**/*Specflow.csproj"])
+  return gulp.src([location + "/**/code/*.csproj"])
     .pipe(foreach(function (stream, file) {
       return stream
         .pipe(debug({ title: "Building project:" }))
@@ -105,7 +105,7 @@ gulp.task("Publish-Project-Projects", function () {
 
 gulp.task("Publish-Assemblies", function () {
   var root = "./src";
-  var binFiles = root + "/**/bin/Sitecore.{Feature,Foundation,Habitat}.*.{dll,pdb}";
+  var binFiles = root + "/**/code/**/bin/Sitecore.{Feature,Foundation,Habitat}.*.{dll,pdb}";
   var destination = config.websiteRoot + "/bin/";
   return gulp.src(binFiles, { base: root })
     .pipe(rename({ dirname: "" }))
@@ -174,7 +174,7 @@ gulp.task("Auto-Publish-Views", function () {
 
 gulp.task("Auto-Publish-Assemblies", function () {
   var root = "./src";
-  var roots = [root + "/**/code/bin"];
+  var roots = [root + "/**/code/**/bin"];
   var files = "/**/Sitecore.{Feature,Foundation,Habitat}.*.{dll,pdb}";;
   var destination = config.websiteRoot + "/bin/";
   gulp.src(roots, { base: root }).pipe(
