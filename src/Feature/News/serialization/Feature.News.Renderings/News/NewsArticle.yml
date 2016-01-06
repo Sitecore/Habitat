@@ -7,9 +7,13 @@ SharedFields:
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   # Path
   Value: /Views/News/NewsArticle.cshtml
-- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
-  # Open Properties after Add
-  Value: -
+- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  # Datasource Location
+  Value: site:newsarticle
+- ID: e441abe7-2ca3-4640-ae26-3789967925d7
+  # Compatible Renderings
+  Type: Treelist
+  Value: {96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}
 Languages:
 - Language: en
   Versions:

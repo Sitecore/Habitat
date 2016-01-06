@@ -11,12 +11,12 @@
   {
     public class TestXmlParser : XmlParserService
     {
-      public XmlDocument ValidateAndReturnXmlDocument(string xml)
+      public new XmlDocument ValidateAndReturnXmlDocument(string xml)
       {
         return XmlParserService.ValidateAndReturnXmlDocument(xml);
       }
 
-      public string GetAttribute(XmlNode node, string attributeName)
+      public new string GetAttribute(XmlNode node, string attributeName)
       {
         return XmlParserService.GetAttribute(node, attributeName);
       }

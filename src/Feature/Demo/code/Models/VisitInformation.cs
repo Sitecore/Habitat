@@ -72,7 +72,7 @@
 
     public IEnumerable<string> GoalsList => this.LoadGoals();
 
-    public IEnumerable<string> EngagementStates => this.LoadEngagementStates();
+    public IEnumerable<EngagementState> EngagementStates => this.LoadEngagementStates();
 
     public IEnumerable<PatternMatch> LoadPatterns()
     {
@@ -152,15 +152,15 @@
       return goals;
     }
 
-    public IEnumerable<string> LoadEngagementStates()
+    public IEnumerable<EngagementState> LoadEngagementStates()
     {
-      var states = new List<string>();
+      var states = new List<EngagementState>();
       try
       {
         var automationStateManager = AutomationStateManager.Create(Tracker.Current.Contact);
         var engagementstates = automationStateManager.GetAutomationStates().ToArray();
 
-        states.AddRange(engagementstates.Select(context => $"{context.PlanItem.DisplayName}: {context.StateItem.DisplayName}"));
+        states.AddRange(engagementstates.Select(context =>new EngagementState() {Plan = context.PlanItem.DisplayName , State = context.StateItem.DisplayName }));
       }
       catch (Exception ex)
       {

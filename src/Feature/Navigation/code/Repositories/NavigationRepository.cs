@@ -73,7 +73,7 @@
     public NavigationItem GetSecondaryMenuItem()
     {
       var rootItem = this.GetSecondaryMenuRoot();
-      return rootItem == null ? null : this.CreateNavigationItem(rootItem, 0, 2);
+      return rootItem == null ? null : this.CreateNavigationItem(rootItem, 0, 3);
     }
 
     public NavigationItems GetLinkMenuItems(Item menuRoot)

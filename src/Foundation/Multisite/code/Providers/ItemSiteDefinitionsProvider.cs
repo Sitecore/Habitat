@@ -8,29 +8,24 @@
 
   public class ItemSiteDefinitionsProvider : SiteDefinitionsProviderBase
   {
-    public override IEnumerable<SiteDefinitionItem> SiteDefinitions
+    public override IEnumerable<SiteDefinition> SiteDefinitions
     {
       get
       {
-        var contentRoot = Sitecore.Context.Database.GetItem(Sitecore.ItemIDs.ContentRoot);
-        if (contentRoot != null)
-        {
-          return contentRoot.Children.Where(item => this.IsSite(item)).Select(siteItem => new SiteDefinitionItem
-          {
-            Item = siteItem,
-            Name = siteItem.Name,
-            HostName = siteItem[Templates.Site.Fields.HostName],
-            IsCurrent = this.IsCurrent(siteItem.Name)
-          });
-        }
-
-        return null;
+        var contentRoot = Context.Database.GetItem(Sitecore.ItemIDs.ContentRoot);
+        return contentRoot?.Children.Where(SiteContext.IsSite).Select(CreateSiteDefinition);
       }
     }
 
-    private bool IsSite(Item item)
+    private SiteDefinition CreateSiteDefinition(Item siteItem)
     {
-      return item.IsDerived(Templates.Site.ID);
+      return new SiteDefinition
+             {
+               Item = siteItem,
+               Name = siteItem.Name,
+               HostName = siteItem[Templates.Site.Fields.HostName],
+               IsCurrent = this.IsCurrent(siteItem.Name)
+             };
     }
   }
 }

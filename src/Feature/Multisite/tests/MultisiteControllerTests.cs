@@ -19,7 +19,7 @@
   {
     [Theory]
     [AutoDbData]
-    public void SwitchSite_ShouldReturnViewActionWithSiteDefinitionsModel([Frozen]ISiteDefinitionRepositoryRepository repository, [Greedy]MultisiteController controller, MultisiteController multisiteController)
+    public void SwitchSite_ShouldReturnViewActionWithSiteDefinitionsModel([Frozen]ISiteDefinitionsRepository repository, [Greedy]MultisiteController controller, MultisiteController multisiteController)
     {
       var result = controller.SwitchSite();
       result.Should().BeOfType<ViewResult>().Which.Model.As<SiteDefinitions>();

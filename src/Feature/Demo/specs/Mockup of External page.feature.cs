@@ -11,7 +11,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Habitat.Demo.Specflow
+namespace Sitecore.Feature.Demo.Specflow
 {
     using TechTalk.SpecFlow;
     
@@ -34,7 +34,9 @@ namespace Habitat.Demo.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Mockup of External page", "", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Mockup of External page", "\r\nIn order to start a demo story from an external page\r\nAs a technical presales c" +
+                    "onsultant\r\nI want to be able to show a mockup of an external page, e.g. search e" +
+                    "ngine page with adword links to a campaign on the website", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,21 +76,123 @@ namespace Habitat.Demo.Specflow
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Mockup of External page")]
-        [Xunit.TraitAttribute("Description", "Demo_Mockup of External page")]
-        public virtual void Demo_MockupOfExternalPage()
+        [Xunit.TraitAttribute("Description", "Demo_Show Google search engine mockup")]
+        public virtual void Demo_ShowGoogleSearchEngineMockup()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Mockup of External page", new string[] {
-                        "InDesign"});
-#line 4
-this.ScenarioSetup(scenarioInfo);
-#line 5
- testRunner.Given("I have entered 50 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 6
- testRunner.And("I have entered 70 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 7
- testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show Google search engine mockup", new string[] {
+                        "NeedImplementation"});
 #line 8
- testRunner.Then("the result should be 120 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+this.ScenarioSetup(scenarioInfo);
+#line 9
+ testRunner.Given("browser is opened in inPrivate mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 10
+ testRunner.When("Actor follows http://demo.habitat.test5ua1.dk.sitecore.net/ link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
+ testRunner.Then("Mockup of Google page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Goggle page buttons"});
+            table1.AddRow(new string[] {
+                        "Google Search"});
+            table1.AddRow(new string[] {
+                        "I\'m feeling Lucky"});
+#line 12
+ testRunner.And("Following buttons are present on the page", ((string)(null)), table1, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Mockup of External page")]
+        [Xunit.TraitAttribute("Description", "Demo_Show predefined keyword")]
+        public virtual void Demo_ShowPredefinedKeyword()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Show predefined keyword", new string[] {
+                        "NeedImplementation"});
+#line 19
+this.ScenarioSetup(scenarioInfo);
+#line 20
+ testRunner.Given("Mockup of Google page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 21
+ testRunner.When("Actor enters any text to search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Text"});
+            table2.AddRow(new string[] {
+                        "Sitecore Habitat"});
+#line 22
+ testRunner.Then("search field contains following text", ((string)(null)), table2, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Mockup of External page")]
+        [Xunit.TraitAttribute("Description", "Demo_Adwords link on the Google search results mockup")]
+        public virtual void Demo_AdwordsLinkOnTheGoogleSearchResultsMockup()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Adwords link on the Google search results mockup", new string[] {
+                        "NeedImplementation"});
+#line 28
+this.ScenarioSetup(scenarioInfo);
+#line 30
+ testRunner.Given("Mockup of Google page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 31
+ testRunner.When("Actor enters any text to search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 32
+ testRunner.And("clicks Google Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Text"});
+            table3.AddRow(new string[] {
+                        "Sitecore Habitat"});
+#line 33
+ testRunner.Then("search field contains following text", ((string)(null)), table3, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Text"});
+            table4.AddRow(new string[] {
+                        "?sc_camp={0BFFAF94-F523-452A-9F2A-1FA3292D4647}"});
+#line 36
+ testRunner.And("link with following parametr is present on the page", ((string)(null)), table4, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Mockup of External page")]
+        [Xunit.TraitAttribute("Description", "Demo_Campaign is triggered on the website")]
+        public virtual void Demo_CampaignIsTriggeredOnTheWebsite()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_Campaign is triggered on the website", new string[] {
+                        "NeedImplementation"});
+#line 42
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Text"});
+            table5.AddRow(new string[] {
+                        "?sc_camp={0BFFAF94-F523-452A-9F2A-1FA3292D4647}"});
+#line 43
+ testRunner.Given("link with following parametr is clicked", ((string)(null)), table5, "Given ");
+#line 46
+ testRunner.When("Actor clicks info icon in the bottom right corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Section Name"});
+            table6.AddRow(new string[] {
+                        "Contact"});
+            table6.AddRow(new string[] {
+                        "This visist"});
+#line 47
+ testRunner.Then("flyout with following sections is opened", ((string)(null)), table6, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Text"});
+            table7.AddRow(new string[] {
+                        "Facebook Content Messages"});
+#line 51
+ testRunner.And("Camapign drop-down  contains following text", ((string)(null)), table7, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
