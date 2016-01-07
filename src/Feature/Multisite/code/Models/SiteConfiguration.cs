@@ -2,11 +2,11 @@
 {
   using Sitecore.Text;
 
-  public class SiteDefinition
+  public class SiteConfiguration
   {
     public string Name { get; set; }
+    public string Title { get; set; }
     public string HostName { get; set; }
-
     public bool IsCurrent { get; set; }
 
     public string Url
@@ -21,5 +21,7 @@
         return url.ToString();
       }
     }
+
+    public bool ShowInMenu { get; set; }
   }
 }

@@ -2,8 +2,8 @@
 {
   using Sitecore.Feature.MultiSite.Models;
 
-  public interface ISiteDefinitionsRepository
+  public interface ISiteConfigurationRepository
   {
-    SiteDefinitions Get();
+    SiteConfigurations Get();
   }
 }

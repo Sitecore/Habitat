@@ -155,6 +155,7 @@
     <Content Include="Views\Common\Sublayouts\PageHeading.cshtml" />
     <Content Include="Views\Common\Sublayouts\PageSidebarLeft.cshtml" />
     <Content Include="Views\Common\Sublayouts\PageSidebarRight.cshtml" />
+    <Content Include="Views\Common\Sublayouts\Navbar.cshtml" />
     <None Include="Views\Web.config" />
     <Content Include="web.config.transform" />
   </ItemGroup>
