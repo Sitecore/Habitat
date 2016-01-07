@@ -5,13 +5,13 @@
 
   public class MultisiteController : Controller
   {
-    private readonly ISiteDefinitionsRepository multisiteRepository;
+    private readonly ISiteConfigurationRepository multisiteRepository;
 
-    public MultisiteController() :this(new SiteDefinitionsRepository())
+    public MultisiteController() :this(new SiteConfigurationRepository())
     {  
     }
 
-    public MultisiteController(ISiteDefinitionsRepository multisiteRepository)
+    public MultisiteController(ISiteConfigurationRepository multisiteRepository)
     {
       this.multisiteRepository = multisiteRepository;
     }

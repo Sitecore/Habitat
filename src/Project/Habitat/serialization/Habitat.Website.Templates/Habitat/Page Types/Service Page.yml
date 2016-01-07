@@ -2,7 +2,7 @@
 ID: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Parent: 85086bb5-0365-48d7-98b1-cb9b1b6392ca
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
-Path: /sitecore/templates/Project/Habitat/Page Types/ServicePage
+Path: /sitecore/templates/Project/Habitat/Page Types/Service Page
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
   # __Icon

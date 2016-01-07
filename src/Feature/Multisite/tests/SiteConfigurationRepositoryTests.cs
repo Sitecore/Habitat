@@ -21,19 +21,19 @@
   using Sitecore.SecurityModel;
   using Xunit;
 
-  public class SiteDefinitionRepositoryTests
+  public class SiteConfigurationRepositoryTests
   {
     [Theory]
     [AutoDbData]
-    public void Constructor_InstanceOfISiteDefinitionInterface_InstanceShouldBeCreated(ISiteDefinitionsProvider provider, SiteDefinitionsRepository multisiteRepository)
+    public void Constructor_InstanceOfISiteDefinitionInterface_InstanceShouldBeCreated(ISiteDefinitionsProvider provider, SiteConfigurationRepository multisiteRepository)
     {
-      Action action = () => new SiteDefinitionsRepository(provider);
+      Action action = () => new SiteConfigurationRepository(provider);
       action.ShouldNotThrow();
     }
 
     [Theory]
     [AutoDbData]
-    public void GetSiteDefinitions_ShouldReturnSiteDefinitiosModel([Frozen]ISiteDefinitionsProvider siteDefinitionProvider, [Greedy] SiteDefinitionsRepository repository, string name)
+    public void GetSiteDefinitions_ShouldReturnSiteDefinitiosModel([Frozen]ISiteDefinitionsProvider siteDefinitionProvider, [Greedy] SiteConfigurationRepository repository, string name)
     {
       var id = ID.NewID;
       var db = new Db
@@ -51,30 +51,9 @@
 
       siteDefinitionProvider.SiteDefinitions.Returns(new List<Foundation.MultiSite.SiteDefinition> { new Foundation.MultiSite.SiteDefinition { Item = item } });
       var definitions = repository.Get();
-      definitions.Should().BeOfType<SiteDefinitions>();
-      var sites = definitions.Sites.ToList();
+      definitions.Should().BeOfType<SiteConfigurations>();
+      var sites = definitions.Items.ToList();
       sites.Count.Should().BeGreaterThan(0);
-    }
-
-    [Theory]
-    [AutoDbData]
-    public void SiteDefinitionRepository_Call_UpdateSiteItem([Content]SiteTemplate siteTemplate, [Content]Item rootItem, string name, string hostName, bool showInMenu, Foundation.MultiSite.SiteDefinition siteDefinition, [Frozen]ISiteDefinitionsProvider sideDefinitionsProvider, [Greedy]SiteDefinitionsRepository siteDefinitionRepository)
-    {
-      //Arrange
-      var siteItem = rootItem.Add("Site", new TemplateID(siteTemplate.ID));
-      siteDefinition.Name = name;
-      siteDefinition.Item = siteItem;
-      sideDefinitionsProvider.SiteDefinitions.Returns(new[] { siteDefinition });
-
-      //Act
-      using (new SecurityDisabler())
-      {
-        siteDefinitionRepository.ConfigureHostName(name, hostName, showInMenu);
-      }
-
-      //Assert
-      siteItem[Templates.Site.Fields.HostName].Should().Be(hostName);
-      siteItem[MultiSite.Templates.SiteConfiguration.Fields.ShowInMenu].Should().Be(showInMenu? "1":"0");
     }
 
     public class SiteTemplate : DbTemplate

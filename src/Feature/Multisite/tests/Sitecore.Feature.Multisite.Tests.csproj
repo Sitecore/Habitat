@@ -107,9 +107,9 @@
     <Compile Include="Extensions\AutoDbDataAttribute.cs" />
     <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="MultisiteControllerTests.cs" />
-    <Compile Include="SiteDefinitionRepositoryTests.cs" />
+    <Compile Include="SiteConfigurationRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SiteDefinitionsTests.cs" />
+    <Compile Include="SiteConfigurationsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
