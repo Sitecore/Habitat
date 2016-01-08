@@ -1,0 +1,16 @@
+﻿---
+ID: b722393b-d434-404f-92c5-dd57108b5b71
+Parent: 9afb4657-8e9d-4c02-ba61-a910b2c1833c
+Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+Path: /sitecore/system/Social/Klout/Applications/Default/Habitat
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20160106T045311Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

@@ -3,7 +3,7 @@
 
 @{
   var activeLanguage = LanguageRepository.GetActive();
-  var languages = LanguageRepository.GetAll().ToArray();
+  var languages = LanguageRepository.GetSupportedLanguages().ToArray();
   if (languages.Length <= 1)
   {
     return;

@@ -5,7 +5,7 @@
 
 @if (Model.Item == null || !Model.Item.IsDerived(Templates.Quote.ID))
 {
-    @Html.Sitecore().PageEditorError(DictionaryRepository.Get("/Person/Quote/Invalid quote source", "Quote source is invalid"));
+  @Html.Sitecore().PageEditorError(DictionaryRepository.Get("/Person/Quote/Invalid quote source", "Quote source is invalid"))
 }
 else
 {
