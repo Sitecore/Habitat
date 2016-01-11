@@ -14,11 +14,12 @@
 <configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
 	<sitecore>
 		<pipelines>
-			<httpRequestBegin>
-				<processor patch:after="*[@type='Sitecore.Pipelines.HttpRequest.UserResolver, Sitecore.Kernel']" type="Unicorn.ControlPanel.Remote.UnicornRemotePipelineProcessor">
-					<param desc="activationUrl">/unicornRemote.aspx</param>
-				</processor>
-			</httpRequestBegin>
+				<unicornControlPanelRequest>
+					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.VSSyncVerb, Unicorn" patch:after="processor[1]" />
+					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.VSReserializeVerb, Unicorn" patch:after="processor[1]" />
+					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.VersionVerb, Unicorn" patch:after="processor[1]" />
+					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.ConfigurationsVerb, Unicorn" patch:after="processor[1]" />
+				</unicornControlPanelRequest>
 		</pipelines>
 	</sitecore>
 </configuration>

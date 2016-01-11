@@ -3,23 +3,24 @@ ID: ec545dc1-f12b-4b22-8feb-7f0a4211c0e8
 Parent: ea13174a-b43e-4f68-b474-b41188771a9e
 Template: f0369e1a-9030-4a05-a09c-ef09b664ed27
 Path: /sitecore/content/Habitat/Global/Media/Extensibility
+DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150911T001154Z
     - ID: 302c9f8d-f703-4f76-a4ab-73d222648232
-      # MediaDescription
+      Hint: MediaDescription
       Value: Add new features, simply and without a steep learning curve
     - ID: 4ff62b0a-d73b-4436-bea2-023154f2ffc4
-      # MediaThumbnail
+      Hint: MediaThumbnail
       Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{9038ED94-C574-418F-A817-B6A52F8CD3B0}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"Blonde Woman\" vspace=\"\" ></image>"
     - ID: 63dda48b-b0cb-45a7-9a1b-b26ddb41009b
-      # MediaTitle
+      Hint: MediaTitle
       Value: Extensibility
     - ID: 9f51dead-ad6e-41c2-9759-7be17eb474a4
-      # MediaImage
+      Hint: MediaImage
       Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{9038ED94-C574-418F-A817-B6A52F8CD3B0}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"Blonde Woman\" vspace=\"\" />"

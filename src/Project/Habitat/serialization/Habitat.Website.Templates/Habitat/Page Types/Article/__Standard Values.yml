@@ -3,16 +3,17 @@ ID: d5830167-eac2-415e-8c95-250ffc9bf445
 Parent: 94a8c8e9-690b-4e65-98e7-f95800222767
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/templates/Project/Habitat/Page Types/Article/__Standard Values
+DB: master
 SharedFields:
 - ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
-  # __Masters
+  Hint: __Masters
   Type: TreelistEx
   Value: |
     {94A8C8E9-690B-4E65-98E7-F95800222767}
     {8FF3D369-A508-4D2F-84A5-9B6C6BF5E537}
     {467C2144-4454-4518-B1DE-E31B4CBBFF33}
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
-  # __Renderings
+  Hint: __Renderings
   Type: layout
   Value: |
     <r>
@@ -51,20 +52,20 @@ Languages:
   - Version: 1
     Fields:
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: $name
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150824T175451Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\admin
     - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
-      # Image
+      Hint: Image
       Value: "<image mediaid=\"{88032F9C-B464-44CB-B76D-513D60B9C127}\" />"
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
-      # Title
+      Hint: Title
       Value: $name
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      # BrowserTitle
+      Hint: BrowserTitle
       Value: $name

@@ -3,9 +3,10 @@ ID: 9ac1e982-476d-4567-93c4-ee0fce56cecb
 Parent: b16765ba-7b3e-4c5b-9937-bfc985f2550c
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/About Habitat/Introduction/Dependencies and Layers
+DB: master
 SharedFields:
 - ID: b0a67b2a-8b07-4e0b-8809-69f751709806
-  # __Tracking
+  Hint: __Tracking
   Type: Tracking
   Value: |
     <tracking>
@@ -22,7 +23,7 @@ Languages:
   - Version: 1
     Fields:
     - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
-      # __Final Renderings
+      Hint: __Final Renderings
       Type: Layout
       Value: |
         <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
@@ -51,25 +52,25 @@ Languages:
           </d>
         </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: Dependencies and Layers
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151009T013423Z
     - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
-      # Image
+      Hint: Image
       Value: "<image mediaid=\"{D556FE4B-1253-452C-83DD-C3E1998304B0}\" ></image>"
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
-      # Summary
+      Hint: Summary
       Value: Controlling dependencies between features and modules is critical for long term maintainability and flexibility.
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
-      # Title
+      Hint: Title
       Value: Dependencies and Layers
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      # BrowserTitle
+      Hint: BrowserTitle
       Value: Dependencies and Layers
     - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
-      # Body
+      Hint: Body
       Value: |
         <p>When following the Package Principles or traditional modular architecture there exists no layers. Actually modular architecture is often seen as an approach to going away from the traditional 3 tiered architecture (UI, business logic, data).&nbsp;Layers in the Habitat methodology is not this kind of layers.</p>
         <p>The layered approach in Sitecore Habitat is aimed at tightly controlling dependencies between modules and thereby is a vital part of the architectural approach.</p>

@@ -3,9 +3,10 @@ ID: 5f41c588-0e60-4899-a3bb-752cf7aef100
 Parent: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Template: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Path: /sitecore/templates/Project/Habitat/Page Types/Service Page/__Standard Values
+DB: master
 SharedFields:
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
-  # __Renderings
+  Hint: __Renderings
   Type: layout
   Value: |
     <r>
@@ -41,17 +42,17 @@ Languages:
   - Version: 1
     Fields:
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: $name
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151104T131924Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\admin
     - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
-      # Image
+      Hint: Image
       Value: "<image mediaid=\"{88032F9C-B464-44CB-B76D-513D60B9C127}\" />"
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
-      # Title
+      Hint: Title
       Value: $name

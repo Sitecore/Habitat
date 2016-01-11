@@ -3,18 +3,19 @@ ID: 69b9c355-004b-4268-bb1e-2f725b8752b7
 Parent: 9ce7afd3-6b9f-4955-9b00-164b9c91ecd2
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
 Path: /sitecore/layout/Renderings/Feature/Navigation/LinkMenu
+DB: master
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
-  # Datasource Template
+  Hint: Datasource Template
   Value: /sitecore/templates/Feature/Navigation/_NavigationRoot
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
-  # Datasource Location
+  Hint: Datasource Location
   Value: /sitecore/content/Habitat/Global/Links
 - ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
-  # Controller Action
+  Hint: Controller Action
   Value: LinkMenu
 - ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
-  # Controller
+  Hint: Controller
   Value: Sitecore.Feature.Navigation.Controllers.NavigationController, Sitecore.Feature.Navigation
 Languages:
 - Language: en
@@ -22,5 +23,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150907T042151Z
