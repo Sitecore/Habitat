@@ -2,11 +2,10 @@
 ID: 7b09f96b-3744-43fa-b934-c3dd44fab0cb
 Parent: 51e2ff7f-6fb3-4470-91c8-d2ad97bf1eae
 Template: 51e2ff7f-6fb3-4470-91c8-d2ad97bf1eae
-Path: /sitecore/templates/Project/Common/Content Types/Employees folder/__Standard Values
-DB: master
+Path: /sitecore/templates/Project/Habitat/Page Types/Employees folder/__Standard Values
 SharedFields:
 - ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
-  Hint: __Masters
+  # __Masters
   Type: TreelistEx
   Value: {467C2144-4454-4518-B1DE-E31B4CBBFF33}
 Languages:
@@ -15,8 +14,8 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      Hint: __Created
+      # __Created
       Value: 20151230T104017Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      Hint: __Created by
+      # __Created by
       Value: sitecore\admin

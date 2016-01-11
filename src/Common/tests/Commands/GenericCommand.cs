@@ -1,12 +1,11 @@
-﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests.Common
+﻿namespace UnitTests.Common.Commands
 {
   using Ploeh.AutoFixture.Kernel;
 
-  public abstract class GenericCommand<T> : ISpecimenCommand where T :class
+  public abstract class GenericCommand<T> : ISpecimenCommand where T : class
   {
     public void Execute(object specimen, ISpecimenContext context)
     {
-
       var castedSpecimen = specimen as T;
       if (castedSpecimen == null)
       {
