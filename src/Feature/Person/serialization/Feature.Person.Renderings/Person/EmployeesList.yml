@@ -15,7 +15,7 @@ SharedFields:
   Value: /sitecore/content/Habitat/Global/Quotes
 - ID: ddab263e-b42e-419a-aa6f-081b7393ca38
   # Model
-  Value: Sitecore.Foundation.SitecoreExtensions.Rendering.QueryableDatasourceRenderingModel, Sitecore.Foundation.SitecoreExtensions
+  Value: /sitecore/layout/Models/Feature/Person/EmployeesList
 - ID: e441abe7-2ca3-4640-ae26-3789967925d7
   # Compatible Renderings
   Type: Treelist

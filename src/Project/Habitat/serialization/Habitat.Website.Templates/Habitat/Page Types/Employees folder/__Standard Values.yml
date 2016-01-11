@@ -2,7 +2,7 @@
 ID: 7b09f96b-3744-43fa-b934-c3dd44fab0cb
 Parent: 51e2ff7f-6fb3-4470-91c8-d2ad97bf1eae
 Template: 51e2ff7f-6fb3-4470-91c8-d2ad97bf1eae
-Path: /sitecore/templates/Project/Common/Content Types/Employees folder/__Standard Values
+Path: /sitecore/templates/Project/Habitat/Page Types/Employees folder/__Standard Values
 SharedFields:
 - ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
   # __Masters

@@ -4,55 +4,130 @@
   using System.Linq;
   using FluentAssertions;
   using NSubstitute;
+  using Sitecore.Abstractions;
   using Sitecore.ContentSearch;
   using Sitecore.ContentSearch.Linq.Common;
   using Sitecore.ContentSearch.SearchTypes;
+  using Sitecore.ContentSearch.Utilities;
+  using Sitecore.Data;
+  using Sitecore.Data.Items;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.Foundation.SitecoreExtensions.Model;
+  using Sitecore.FakeDb.Pipelines;
   using Sitecore.Foundation.SitecoreExtensions.Rendering;
-  using Sitecore.Foundation.SitecoreExtensions.Tests.Common;
   using Sitecore.Mvc.Presentation;
+  using Sitecore.Pipelines.GetRenderingDatasource;
+  using UnitTests.Common.Attributes;
   using Xunit;
 
   public class QueryableDatasourceRenderingModelTests
   {
     [Theory]
     [AutoDbData]
-    public void Items_IndexMatchDb_ReturnsAllItems([Content] DbItem[] contentItems, ISearchIndex index)
+    public void Items_IndexMatchDb_ReturnsAllItems([ResolvePipeline("getRenderingDatasource")] IPipelineProcessor processor, [Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, string indexName, [Content] Item renderingItem)
     {
       //arrange
-      ContentSearchManager.SearchConfiguration.Indexes.Clear();
-      var rendering = new Rendering() { DataSource = "ds" };
       var results = GetResults(contentItems);
-      index.CreateSearchContext().GetQueryable<SearchResultItem>(Arg.Any<IExecutionContext[]>()).Returns(results);
+
+      InitIndexes(index, searchProvider, indexName, results);
+
+      var rendering = new Rendering
+      {
+        DataSource = "ds",
+        RenderingItem = new RenderingItem(renderingItem)
+      };
       var renderingModel = new QueryableDatasourceRenderingModel();
-      ContentSearchManager.SearchConfiguration.Indexes.Add(renderingModel.IndexName, index);
       renderingModel.Initialize(rendering);
+
 
       //act
       var items = renderingModel.Items;
-
 
       //assert
       items.Count().Should().Be(contentItems.Length);
       index.CreateSearchContext().ReceivedWithAnyArgs(1);
     }
 
+
     [Theory]
     [AutoDbData]
-    public void Items_IndexHaveNonexistentItems_ReturnsExistentItems([Content] DbItem[] contentItems, DbItem brokenItem, List<DbItem> indexedItems, ISearchIndex index)
+    public void Initialize_TemplateResolved_DatasourceTemplateShouldBeSet([Content] DbTemplate templateItem, [ResolvePipeline("getRenderingDatasource")] IPipelineProcessor processor, [Content] Item renderingItem)
+    {
+      //arrange
+      var item = renderingItem.Database.GetItem(templateItem.ID);
+      processor.WhenForAnyArgs(x => x.Process(Arg.Any<GetRenderingDatasourceArgs>())).Do(x => x.Arg<GetRenderingDatasourceArgs>().Prototype = item);
+
+
+      var rendering = new Rendering
+      {
+        DataSource = "ds",
+        RenderingItem = new RenderingItem(renderingItem)
+      };
+      var renderingModel = new QueryableDatasourceRenderingModel();
+      //act
+      renderingModel.Initialize(rendering);
+
+
+      //assert
+      renderingModel.DatasourceTemplate.Should().NotBeNull();
+      renderingModel.DatasourceTemplate.ID.Should().Be(templateItem.ID);
+    }
+
+
+    [Theory]
+    [AutoDbData]
+    public void Items_ItemTemplateSet_FiltersByTemplateId(Db db, [Content] DbTemplate templateItem, [ResolvePipeline("getRenderingDatasource")] IPipelineProcessor processor, [Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, string indexName, [Content] Item renderingItem)
+    {
+      //arrange
+      var dbItem = new DbItem("templated", ID.NewID, templateItem.ID);
+      db.Add(dbItem);
+      var dbItems = contentItems.ToList();
+      dbItems.Add(dbItem);
+
+      var prototype = db.GetItem(templateItem.ID);
+      processor.WhenForAnyArgs(x => x.Process(Arg.Any<GetRenderingDatasourceArgs>())).Do(x => { x.Arg<GetRenderingDatasourceArgs>().Prototype = prototype; });
+      var results = GetResults(dbItems);
+
+      InitIndexes(index, searchProvider, indexName, results);
+
+      var rendering = new Rendering
+      {
+        DataSource = "ds",
+        RenderingItem = new RenderingItem(renderingItem)
+      };
+      var renderingModel = new QueryableDatasourceRenderingModel();
+
+      renderingModel.Initialize(rendering);
+
+
+      //act
+      var items = renderingModel.Items;
+
+      //assert
+      items.Count().Should().Be(1);
+      index.CreateSearchContext().ReceivedWithAnyArgs(1);
+    }
+
+
+    [Theory]
+    [AutoDbData]
+    public void Items_IndexHaveNonexistentItems_ReturnsExistentItems([Content] DbItem[] contentItems, [ResolvePipeline("getRenderingDatasource")] IPipelineProcessor processor, DbItem brokenItem, List<DbItem> indexedItems, ISearchIndex index, string indexName, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem)
     {
       //arrange
       indexedItems.AddRange(contentItems);
       indexedItems.Add(brokenItem);
 
-      ContentSearchManager.SearchConfiguration.Indexes.Clear();
-      var rendering = new Rendering() { DataSource = "ds" };
+
       var results = GetResults(indexedItems);
-      index.CreateSearchContext().GetQueryable<SearchResultItem>(Arg.Any<IExecutionContext[]>()).Returns(results);
+
+      InitIndexes(index, searchProvider, indexName, results);
+
+      var rendering = new Rendering
+      {
+        DataSource = "ds",
+        RenderingItem = new RenderingItem(renderingItem)
+      };
       var renderingModel = new QueryableDatasourceRenderingModel();
-      ContentSearchManager.SearchConfiguration.Indexes.Add(renderingModel.IndexName, index);
       renderingModel.Initialize(rendering);
 
       //act
@@ -67,15 +142,17 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_IndexEmpty_ReturnsEmptyCollection(List<DbItem> indexedItems, ISearchIndex index)
+    public void Items_IndexEmpty_ReturnsEmptyCollection([ResolvePipeline("getRenderingDatasource")] IPipelineProcessor processor, List<DbItem> indexedItems, ISearchIndex index, string indexName, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem)
     {
       //arrange
+      InitIndexes(index, searchProvider, indexName, new List<SearchResultItem>().AsQueryable());
 
-      ContentSearchManager.SearchConfiguration.Indexes.Clear();
-      var rendering = new Rendering() {DataSource = "ds"};
-      index.CreateSearchContext().GetQueryable<SearchResultItem>(Arg.Any<IExecutionContext[]>()).Returns(new List<SearchResultItem>().AsQueryable());
+      var rendering = new Rendering
+      {
+        DataSource = "ds",
+        RenderingItem = new RenderingItem(renderingItem)
+      };
       var renderingModel = new QueryableDatasourceRenderingModel();
-      ContentSearchManager.SearchConfiguration.Indexes.Add(renderingModel.IndexName, index);
       renderingModel.Initialize(rendering);
 
       //act
@@ -88,16 +165,19 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_EmptyDatasource_ReturnsEmptyCollection(List<DbItem> indexedItems, ISearchIndex index)
+    public void Items_EmptyDatasource_ReturnsEmptyCollection([ResolvePipeline("getRenderingDatasource")] IPipelineProcessor processor, List<DbItem> indexedItems, ISearchIndex index, string indexName, [Content] Item renderingItem)
     {
       //arrange
 
-      ContentSearchManager.SearchConfiguration.Indexes.Clear();
-      var rendering = new Rendering() { };
-      index.CreateSearchContext().GetQueryable<SearchResultItem>(Arg.Any<IExecutionContext[]>()).Returns(new List<SearchResultItem>().AsQueryable());
+      InitIndexes(index, null, indexName, new List<SearchResultItem>().AsQueryable());
+
+      var rendering = new Rendering
+      {
+        RenderingItem = new RenderingItem(renderingItem)
+      };
       var renderingModel = new QueryableDatasourceRenderingModel();
-      ContentSearchManager.SearchConfiguration.Indexes.Add(renderingModel.IndexName, index);
       renderingModel.Initialize(rendering);
+
 
       //act
       var items = renderingModel.Items;
@@ -108,18 +188,30 @@
     }
 
 
-    private IQueryable<SearchResultItem> GetResults(IEnumerable<DbItem> contentItems)
+    private static IQueryable<SearchResult> GetResults(IEnumerable<DbItem> contentItems)
     {
-      var list = new List<SearchResultItem>();
+      var list = new List<SearchResult>();
 
       foreach (var item in contentItems)
       {
-        var searchResultItem = Substitute.For<SearchResultItem>();
+        var searchResultItem = Substitute.For<SearchResult>();
+        searchResultItem.Templates = new List<string>
+        {
+          IdHelper.NormalizeGuid(item.TemplateID)
+        };
         var dbItem = Context.Database.GetItem(item.ID);
         searchResultItem.GetItem().Returns(dbItem);
         list.Add(searchResultItem);
       }
       return list.AsQueryable();
+    }
+
+    private static void InitIndexes(ISearchIndex index, SearchProvider searchProvider, string indexName, IQueryable<SearchResultItem> results)
+    {
+      searchProvider?.GetContextIndexName(Arg.Any<IIndexable>(), Arg.Any<ICorePipeline>()).Returns(indexName);
+      index.CreateSearchContext().GetQueryable<SearchResultItem>(Arg.Any<IExecutionContext[]>()).Returns(results);
+      ContentSearchManager.SearchConfiguration.Indexes.Clear();
+      ContentSearchManager.SearchConfiguration.Indexes.Add(indexName, index);
     }
   }
 }
