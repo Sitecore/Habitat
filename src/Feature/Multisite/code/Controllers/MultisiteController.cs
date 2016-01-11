@@ -16,7 +16,6 @@
       this.multisiteRepository = multisiteRepository;
     }
 
-    [HttpGet]
     public ActionResult SwitchSite()
     {
       var definitions = multisiteRepository.Get();

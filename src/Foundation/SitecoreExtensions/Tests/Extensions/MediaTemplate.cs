@@ -7,14 +7,9 @@
   {
     public MediaTemplate()
     {
-      this.Add(new DbField("medialink",this.FieldId));
+      Add(new DbField("medialink", FieldId));
     }
 
-    public ID FieldId { get
-    {
-      return this.field;
-    } }
-
-    private readonly ID field = ID.NewID;
+    public ID FieldId { get; } = ID.NewID;
   }
 }
