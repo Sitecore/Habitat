@@ -63,7 +63,7 @@
           Context.Database.GetRootItem()
         },
         ContentLanguage = rendering.Item?.Language,
-        ContextItemPath = (rendering.Item != null) ? rendering.Item.Paths.FullPath : string.Empty
+        ContextItemPath = rendering.Item?.Paths.FullPath ?? PageItem.Paths.FullPath
       };
       CorePipeline.Run("getRenderingDatasource", getRenderingDatasourceArgs);
 

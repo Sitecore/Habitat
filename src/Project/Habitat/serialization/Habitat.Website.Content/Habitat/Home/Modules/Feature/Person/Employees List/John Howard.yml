@@ -9,7 +9,7 @@ Languages:
   - Version: 1
     Fields:
     - ID: 0cc9785e-54fe-4fae-93e4-d0d2ae75f339
-      # Biography
+      Hint: Biography
       Value: |
         As Chief Marketing Officer, John is responsible for all aspects of the company&rsquo;s global marketing organization, including strategy, branding, product marketing, corporate communications and field-marketing.<br>
         John has developed and led growth and digital innovation strategies for more than 20 years, primarily in the enterprise tech industry. He is a change agent that believes in the power of participation and the evolving role technology plays in connecting businesses with their customers.<br>
@@ -19,47 +19,47 @@ Languages:
         <br>
         John&nbsp;holds a BA in Finance from National University and a Master&rsquo;s degree in Marketing from the  School of  Management.
     - ID: 0ee2f208-1fee-42fc-8051-6696d49a92bf
-      # OpenGraphTitle
+      Hint: OpenGraphTitle
       Value: John Doe
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: John Doe
     - ID: 25b4cee3-a61a-4dc3-bb52-775dd509dbb5
-      # Mobile
+      Hint: Mobile
       Value: +1 202 555 0148
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151201T000649Z
     - ID: 26cd59ab-3639-488f-bafd-58d2b217755a
-      # Name
+      Hint: Name
       Value: John Howard
     - ID: 2b13dfab-3450-45ef-93f4-beaa6f544fa6
-      # LinkedInLink
+      Hint: LinkedInLink
       Value: "<link linktype=\"external\" url=\"http://linkedin.com\" anchor=\"\" target=\"\" />"
     - ID: 5978b330-1d46-4065-8751-f74bf17d815e
-      # Email
+      Hint: Email
       Value: john.doe@sitecorehabitat.com
     - ID: 69a846d9-4c7f-435c-a8dc-87e2d7359cfa
-      # BlogLink
+      Hint: BlogLink
       Value: "<link linktype=\"external\" url=\"http://MyBlog.com\" anchor=\"\" target=\"\" />"
     - ID: 6de98ef7-1209-40a3-a63e-16dbef015211
-      # TwitterLink
+      Hint: TwitterLink
       Value: "<link linktype=\"external\" url=\"http://twitter.com\" anchor=\"\" target=\"\" />"
     - ID: 76972fcd-4bb0-4255-864e-077745efdf50
-      # Title
+      Hint: Title
       Value: CMO
     - ID: 8d0e8ee3-21c4-4ae2-a2f1-53d3f3ebe501
-      # Telephone
+      Hint: Telephone
       Value: +1 202 555 0162
     - ID: b897023c-15d2-49f3-8974-06fa5fb7ad00
-      # Summary
-      Value: Michael is a highly accomplished executive with extensive marketing, operational and global business management experience.
+      Hint: Summary
+      Value: John is a highly accomplished executive with extensive marketing, operational and global business management experience.
     - ID: c9baf3eb-8cfa-4bf6-9b19-51d38db5fc38
-      # Picture
+      Hint: Picture
       Value: "<image mediapath=\"/Habitat/Images/Square/Habitat-075-square\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Habitat/Images/Square/Habitat-075-square\" mediaid=\"{9DF6B8F9-46D3-4EBF-B29F-1018443D85AD}\"></image>"
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      # BrowserTitle
+      Hint: BrowserTitle
       Value: John Doe
     - ID: d31889c0-e34c-4904-a6f3-f3d92d314aa9
-      # FacebookLink
+      Hint: FacebookLink
       Value: "<link text=\"\" linktype=\"external\" url=\"www.facebook.com\" anchor=\"\" title=\"\" class=\"\" querystring=\"\" target=\"\" id=\"\" />"
