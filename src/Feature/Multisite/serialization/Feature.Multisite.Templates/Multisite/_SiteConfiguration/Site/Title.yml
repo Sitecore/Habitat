@@ -3,12 +3,13 @@ ID: f07811d3-41e9-440a-9d81-310c1d78bed6
 Parent: a71c3a41-08fa-4da0-909b-c4c52f531cde
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
 Path: /sitecore/templates/Feature/Multisite/_SiteConfiguration/Site/Title
+DB: master
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
-  # Type
+  Hint: Type
   Value: Single-Line Text
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 200
 Languages:
 - Language: en
@@ -16,5 +17,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20160107T060307Z

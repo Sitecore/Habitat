@@ -1,9 +1,7 @@
 <!--
-	This is an example of how to configure a Unicorn configuration that overrides the location on disk to store the serialized items.
+	This is an example of how to configure Unicorn to override the location on disk to store the serialized items.
 
-	Enabled configuration definition patches should be present on all environments Unicorn is present on.
-
-	See Unicorn.config for commentary on how configurations operate, or https://github.com/kamsar/Unicorn/blob/master/README.md
+	If used, this should be present on all environments where Unicorn is active (usually all but CD).
 -->
 <configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
 	<sitecore>

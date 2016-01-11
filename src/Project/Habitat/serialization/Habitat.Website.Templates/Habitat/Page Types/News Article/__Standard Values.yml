@@ -3,12 +3,13 @@ ID: 5fe4d0ed-177a-4111-80a0-d1cb6f4718ad
 Parent: b69277ad-e917-4b9f-9136-a12e0a3e462f
 Template: b69277ad-e917-4b9f-9136-a12e0a3e462f
 Path: /sitecore/templates/Project/Habitat/Page Types/News Article/__Standard Values
+DB: master
 SharedFields:
 - ID: c9283d9e-7c29-4419-9c28-5a5c8ff53e84
-  # __Bucketable
+  Hint: __Bucketable
   Value: 1
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
-  # __Renderings
+  Hint: __Renderings
   Type: layout
   Value: |
     <r>
@@ -46,8 +47,8 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150824T175451Z
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      # BrowserTitle
+      Hint: BrowserTitle
       Value: $name

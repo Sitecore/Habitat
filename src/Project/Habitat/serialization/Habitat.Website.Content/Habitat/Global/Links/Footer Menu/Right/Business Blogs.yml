@@ -3,17 +3,18 @@ ID: 1139990d-143d-4f24-a4a6-e56df1bb7461
 Parent: b4d87e66-d2c5-4c06-8f9a-08aeaf38055a
 Template: 390333c8-751b-4332-84a3-6360b969a19f
 Path: /sitecore/content/Habitat/Global/Links/Footer Menu/Right/Business Blogs
+DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: Business Blogs
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150910T110307Z
     - ID: fe71c30e-f07d-4052-8594-c3028cd76e1f
-      # Link
+      Hint: Link
       Value: "<link text=\"\" linktype=\"external\" url=\"http://www.sitecore.net/learn/blogs/business-blogs.aspx\" anchor=\"\" title=\"\" class=\"\" querystring=\"\" target=\"_blank\" id=\"\" />"

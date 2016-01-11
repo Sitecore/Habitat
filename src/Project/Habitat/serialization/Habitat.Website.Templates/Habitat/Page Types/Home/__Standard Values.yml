@@ -3,9 +3,10 @@ ID: 551174d0-3adb-41cd-8ce5-7088c1fb652d
 Parent: 4a8822cc-b418-4452-ab0f-8bb6df2f2114
 Template: 4a8822cc-b418-4452-ab0f-8bb6df2f2114
 Path: /sitecore/templates/Project/Habitat/Page Types/Home/__Standard Values
+DB: master
 SharedFields:
 - ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
-  # __Masters
+  Hint: __Masters
   Type: TreelistEx
   Value: |
     {A99866E5-08E7-44D8-8A52-F8E26BCD3714}
@@ -14,7 +15,7 @@ SharedFields:
     {8FF3D369-A508-4D2F-84A5-9B6C6BF5E537}
     {6EF8F8A0-C567-495B-9E00-8775A268A486}
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
-  # __Renderings
+  Hint: __Renderings
   Type: layout
   Value: |
     <r>
@@ -48,7 +49,7 @@ Languages:
   - Version: 1
     Fields:
     - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
-      # __Final Renderings
+      Hint: __Final Renderings
       Type: Layout
       Value: |
         <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
@@ -57,8 +58,8 @@ Languages:
           </d>
         </r>
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20141119T151742
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: extranet\Anonymous

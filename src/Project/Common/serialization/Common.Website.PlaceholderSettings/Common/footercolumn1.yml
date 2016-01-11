@@ -3,15 +3,16 @@ ID: 269d1093-8f64-4b87-aa17-2ad453fd3b09
 Parent: 6ca1a082-5054-4aa0-88da-39489a7d1cce
 Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
 Path: /sitecore/layout/Placeholder Settings/Project/Common/footercolumn1
+DB: master
 SharedFields:
 - ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
-  # Placeholder Key
+  Hint: Placeholder Key
   Value: footercolumn1
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 100
 - ID: e391b526-d0c5-439d-803e-17512eae6222
-  # Allowed Controls
+  Hint: Allowed Controls
   Type: TreelistEx
   Value: |
     {F49C9252-47F3-406B-B311-E26EE4D1149B}
@@ -31,5 +32,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150921T020150Z

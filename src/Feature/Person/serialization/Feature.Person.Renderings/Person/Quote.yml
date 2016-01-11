@@ -3,15 +3,16 @@ ID: a1ad34dd-535e-47af-a911-34c57ccc26f6
 Parent: 918adf7b-f0e9-422c-8dee-757215ce3407
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Person/Quote
+DB: master
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
-  # Datasource Template
+  Hint: Datasource Template
   Value: /sitecore/templates/Feature/Person/_Quote
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
-  # Path
+  Hint: Path
   Value: /Views/Person/Quote.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
-  # Datasource Location
+  Hint: Datasource Location
   Value: query:/sitecore/content/*/Global/Quotes
 Languages:
 - Language: en
@@ -19,5 +20,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151124T104858Z

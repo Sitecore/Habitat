@@ -3,32 +3,34 @@ ID: fcc7e3b4-46ab-4a51-975f-a6b259b3d214
 Parent: f93150f8-b16a-43e9-a830-fe91bad2a959
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
 Path: /sitecore/templates/Feature/Search/_PagedSearchResultsParameters/Paging/ResultsOnPage
+DB: master
 SharedFields:
 - ID: 337e20e1-999a-4eea-85ad-b58a03ae75cc
-  # Quick Action Bar
+  Hint: Quick Action Bar
   Type: tree list
   Value: {7CC88F55-8466-484B-A224-EF4984DCAEDA}
 - ID: 9c903e29-650d-4af2-b9bd-526d5c14a1a5
-  # Validator Bar
+  Hint: Validator Bar
   Type: tree list
   Value: {7CC88F55-8466-484B-A224-EF4984DCAEDA}
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
-  # Type
+  Hint: Type
   Value: Single-Line Text
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 100
 Languages:
 - Language: en
+  Fields:
+  - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+    Hint: Title
+    Value: Results on page
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Hint: __Display name
+    Value: Results on page
   Versions:
   - Version: 1
     Fields:
-    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
-      # Title
-      Value: Results on page
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151126T130508Z
-    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
-      # __Display name
-      Value: Results on page

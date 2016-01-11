@@ -3,12 +3,13 @@ ID: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Parent: 85086bb5-0365-48d7-98b1-cb9b1b6392ca
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
 Path: /sitecore/templates/Project/Habitat/Page Types/Service Page
+DB: master
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
-  # __Icon
+  Hint: __Icon
   Value: Network/16x16/key1.png
 - ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
-  # __Base template
+  Hint: __Base template
   Type: tree list
   Value: |
     {AF74A00B-8CA7-4C9A-A5C1-156A68590EE2}
@@ -17,7 +18,7 @@ SharedFields:
     {A1CBA309-D22B-46D5-80F8-2972C185363F}
     {8FD6C8B6-A9A4-4322-947E-90CE3D94916D}
 - ID: f7d48a55-2158-4f02-9356-756654404f73
-  # __Standard values
+  Hint: __Standard values
   Value: {5F41C588-0E60-4899-A3BB-752CF7AEF100}
 Languages:
 - Language: en
@@ -25,8 +26,8 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151104T131544Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\admin
