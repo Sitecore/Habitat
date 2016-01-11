@@ -5,30 +5,18 @@ Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Person/EmployeesList
 DB: master
 SharedFields:
-- ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
-  Hint: Datasource Template
-  Value: /sitecore/templates/Feature/Person/_Employee
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
-  Hint: Path
   Value: /Views/Person/EmployeesList.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   Hint: Datasource Location
-  Value: /sitecore/content/Habitat/Global/Quotes
+  Value: site:employeeslist
 - ID: ddab263e-b42e-419a-aa6f-081b7393ca38
   Hint: Model
   Value: Sitecore.Foundation.SitecoreExtensions.Rendering.QueryableDatasourceRenderingModel, Sitecore.Foundation.SitecoreExtensions
-- ID: e441abe7-2ca3-4640-ae26-3789967925d7
-  Hint: Compatible Renderings
-  Type: Treelist
-  Value: |
-    {EBB6DC33-F281-49BE-B273-29ECCD6085A8}
-    {907018D8-CC53-4D34-AD67-3FDF0A25832A}
-    {7B7DD1F9-A0DB-45D9-9A3F-B704BB28903E}
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      Hint: __Created
       Value: 20151124T104542Z

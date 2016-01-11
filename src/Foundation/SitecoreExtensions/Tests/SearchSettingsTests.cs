@@ -3,7 +3,7 @@
   using FluentAssertions;
   using Sitecore.Data.Items;
   using Sitecore.Foundation.Indexing.Models;
-  using Sitecore.Foundation.SitecoreExtensions.Tests.Common;
+  using UnitTests.Common.Attributes;
   using Xunit;
 
   public class SearchSettingsBaseTests
