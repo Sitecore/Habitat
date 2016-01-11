@@ -50,12 +50,6 @@
       var results = GetResults(contentItems);
 
       InitIndexes(index, searchProvider, results);
-
-      var rendering = new Rendering
-      {
-        DataSource = "ds",
-        RenderingItem = new RenderingItem(renderingItem)
-      };
       var renderingModel = new QueryableDatasourceRenderingModel() { Rendering = new Rendering() { DataSource = "notEmpty" } };
 
       //act
