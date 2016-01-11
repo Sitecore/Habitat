@@ -16,15 +16,28 @@
   using Sitecore.FakeDb.Pipelines;
   using Sitecore.Foundation.SitecoreExtensions.Rendering;
   using Sitecore.Mvc.Presentation;
+  using Sitecore.Pipelines;
   using Sitecore.Pipelines.GetRenderingDatasource;
   using UnitTests.Common.Attributes;
+  using UnitTests.Common.Pipelines;
   using Xunit;
 
   public class QueryableDatasourceRenderingModelTests
   {
+    public class FakeDatasourceResolverPipeline : IPipelineProcessor
+    {
+      public Item Item { get; set; }
+      public void Process(PipelineArgs args)
+      {
+        var castedArgs = args as GetRenderingDatasourceArgs;
+        if (castedArgs != null)
+          castedArgs.Prototype = Item;
+      }
+    }
+
     [Theory]
     [AutoDbData]
-    public void Items_IndexMatchDb_ReturnsAllItems([ResolvePipeline("getRenderingDatasource")] IPipelineProcessor processor, [Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, string indexName, [Content] Item renderingItem)
+    public void Items_IndexMatchDb_ReturnsAllItems([ResolvePipeline("getRenderingDatasource")] EmptyPipeline processor, [Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, string indexName, [Content] Item renderingItem)
     {
       //arrange
       var results = GetResults(contentItems);
@@ -51,13 +64,10 @@
 
     [Theory]
     [AutoDbData]
-    public void Initialize_TemplateResolved_DatasourceTemplateShouldBeSet([Content] DbTemplate templateItem, [ResolvePipeline("getRenderingDatasource")] IPipelineProcessor processor, [Content] Item renderingItem)
+    public void Initialize_TemplateResolved_DatasourceTemplateShouldBeSet([Content] DbTemplate templateItem, [ResolvePipeline("getRenderingDatasource")] FakeDatasourceResolverPipeline processor, [Content] Item renderingItem)
     {
       //arrange
-      var item = renderingItem.Database.GetItem(templateItem.ID);
-      processor.WhenForAnyArgs(x => x.Process(Arg.Any<GetRenderingDatasourceArgs>())).Do(x => x.Arg<GetRenderingDatasourceArgs>().Prototype = item);
-
-
+      processor.Item = renderingItem.Database.GetItem(templateItem.ID);
       var rendering = new Rendering
       {
         DataSource = "ds",
@@ -76,16 +86,14 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_ItemTemplateSet_FiltersByTemplateId(Db db, [Content] DbTemplate templateItem, [ResolvePipeline("getRenderingDatasource")] IPipelineProcessor processor, [Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, string indexName, [Content] Item renderingItem)
+    public void Items_ItemTemplateSet_FiltersByTemplateId(Db db, [Content] DbTemplate templateItem, [ResolvePipeline("getRenderingDatasource")] FakeDatasourceResolverPipeline processor, [Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, string indexName, [Content] Item renderingItem)
     {
       //arrange
       var dbItem = new DbItem("templated", ID.NewID, templateItem.ID);
       db.Add(dbItem);
       var dbItems = contentItems.ToList();
       dbItems.Add(dbItem);
-
-      var prototype = db.GetItem(templateItem.ID);
-      processor.WhenForAnyArgs(x => x.Process(Arg.Any<GetRenderingDatasourceArgs>())).Do(x => { x.Arg<GetRenderingDatasourceArgs>().Prototype = prototype; });
+      processor.Item = db.GetItem(templateItem.ID);
       var results = GetResults(dbItems);
 
       InitIndexes(index, searchProvider, indexName, results);
@@ -111,7 +119,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_IndexHaveNonexistentItems_ReturnsExistentItems([Content] DbItem[] contentItems, [ResolvePipeline("getRenderingDatasource")] IPipelineProcessor processor, DbItem brokenItem, List<DbItem> indexedItems, ISearchIndex index, string indexName, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem)
+    public void Items_IndexHaveNonexistentItems_ReturnsExistentItems([Content] DbItem[] contentItems, [ResolvePipeline("getRenderingDatasource")] EmptyPipeline processor, DbItem brokenItem, List<DbItem> indexedItems, ISearchIndex index, string indexName, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem)
     {
       //arrange
       indexedItems.AddRange(contentItems);
@@ -142,7 +150,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_IndexEmpty_ReturnsEmptyCollection([ResolvePipeline("getRenderingDatasource")] IPipelineProcessor processor, List<DbItem> indexedItems, ISearchIndex index, string indexName, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem)
+    public void Items_IndexEmpty_ReturnsEmptyCollection([ResolvePipeline("getRenderingDatasource")] EmptyPipeline processor, List<DbItem> indexedItems, ISearchIndex index, string indexName, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem)
     {
       //arrange
       InitIndexes(index, searchProvider, indexName, new List<SearchResultItem>().AsQueryable());
@@ -165,7 +173,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_EmptyDatasource_ReturnsEmptyCollection([ResolvePipeline("getRenderingDatasource")] IPipelineProcessor processor, List<DbItem> indexedItems, ISearchIndex index, string indexName, [Content] Item renderingItem)
+    public void Items_EmptyDatasource_ReturnsEmptyCollection([ResolvePipeline("getRenderingDatasource")] EmptyPipeline processor, List<DbItem> indexedItems, ISearchIndex index, string indexName, [Content] Item renderingItem)
     {
       //arrange
 
