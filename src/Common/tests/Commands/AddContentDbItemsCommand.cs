@@ -1,4 +1,4 @@
-namespace Sitecore.Foundation.SitecoreExtensions.Tests.Common
+namespace UnitTests.Common.Commands
 {
   using System.Linq;
   using Ploeh.AutoFixture.Kernel;
@@ -6,7 +6,6 @@ namespace Sitecore.Foundation.SitecoreExtensions.Tests.Common
 
   public class AddContentDbItemsCommand : GenericCommand<DbItem[]>
   {
-
     protected override void ExecuteAction(DbItem[] specimen, ISpecimenContext context)
     {
       var db = (Db)context.Resolve(typeof(Db));
