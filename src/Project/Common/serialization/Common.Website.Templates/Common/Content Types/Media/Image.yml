@@ -3,18 +3,19 @@ ID: f0369e1a-9030-4a05-a09c-ef09b664ed27
 Parent: 8077ae77-96e3-41df-9655-33e61b0a36af
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
 Path: /sitecore/templates/Project/Common/Content Types/Media/Image
+DB: master
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
-  # __Icon
+  Hint: __Icon
   Value: Multimedia/16x16/image.png
 - ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
-  # __Base template
+  Hint: __Base template
   Type: tree list
   Value: |
     {1930BBEB-7805-471A-A3BE-4858AC7CF696}
     {FAE0C913-1600-4EBA-95A9-4D6FD7407E25}
 - ID: f7d48a55-2158-4f02-9356-756654404f73
-  # __Standard values
+  Hint: __Standard values
   Value: {8611FF17-22F1-44E2-B835-ED676B16B3A6}
 Languages:
 - Language: en
@@ -22,8 +23,8 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150901T053736Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\admin

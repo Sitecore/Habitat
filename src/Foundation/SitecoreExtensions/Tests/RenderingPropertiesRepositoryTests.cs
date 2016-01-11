@@ -2,9 +2,9 @@
 {
   using FluentAssertions;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
-  using Sitecore.Foundation.SitecoreExtensions.Tests.Common;
   using Sitecore.Mvc.Common;
   using Sitecore.Mvc.Presentation;
+  using UnitTests.Common.Attributes;
   using Xunit;
 
   public class RenderingPropertiesRepositoryTests
@@ -17,7 +17,10 @@
       var rendering = new Rendering();
       var properties = new RenderingProperties(rendering);
       properties["Parameters"] = "property1=5&property2=10";
-      context.Rendering = new Rendering() {Properties = properties};
+      context.Rendering = new Rendering
+      {
+        Properties = properties
+      };
       var repository = new RenderingPropertiesRepository();
       ContextService.Get().Push(context);
       var resultObject = repository.Get<Model>();

@@ -3,31 +3,32 @@ ID: 907018d8-cc53-4d34-ad67-3fdf0a25832a
 Parent: 918adf7b-f0e9-422c-8dee-757215ce3407
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Person/EmployeeDetails
+DB: master
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
-  # Datasource Template
+  Hint: Datasource Template
   Value: /sitecore/templates/Feature/Person/_Employee
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
-  # Path
+  Hint: Path
   Value: /Views/Person/EmployeeDetails.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
-  # Datasource Location
+  Hint: Datasource Location
   Value: /sitecore/content/Habitat/Global/Quotes
-- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
-  # Open Properties after Add
-  Value: -
 - ID: e441abe7-2ca3-4640-ae26-3789967925d7
-  # Compatible Renderings
+  Hint: Compatible Renderings
   Type: Treelist
   Value: |
     {C6E4CC96-91AC-4074-AD62-7DAE344F995D}
     {EBB6DC33-F281-49BE-B273-29ECCD6085A8}
     {7B7DD1F9-A0DB-45D9-9A3F-B704BB28903E}
+- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
+  Hint: Open Properties after Add
+  Value: -
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151124T104542Z

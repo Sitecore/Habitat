@@ -3,26 +3,27 @@ ID: f0d3abb7-1e45-4c5d-8070-b08a16b7ee1b
 Parent: 1a3560fc-9e54-4e65-bead-e349f3b80dd7
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/Modules/Foundation/Theming
+DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: Theming
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151210T035636Z
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
-      # Summary
+      Hint: Summary
       Value: The Theming module contains base theming and front-end assets for the solution, including Bootstrap and misc plug-ins.
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
-      # Title
+      Hint: Title
       Value: Theming
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      # BrowserTitle
+      Hint: BrowserTitle
       Value: Theming
     - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
-      # Body
+      Hint: Body
       Value: "<span style=\"line-height: 24.2857px;\"><br></span>"

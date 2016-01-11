@@ -28,23 +28,20 @@
       var siteContext = new SiteContext();
       var siteDefinition = siteContext.GetSiteDefinition(Sitecore.Context.Item);
       
-      if (siteDefinition?.Item == null)
+      if (siteDefinition?.Item == null || !siteDefinition.Item.IsDerived(Feature.Language.Templates.LanguageSettings.ID))
       {
         return languages;
       }
 
-      if (siteDefinition.Item.IsDerived(Feature.Language.Templates.LanguageSettings.ID))
+      var supportedLanguagesField = new MultilistField(siteDefinition.Item.Fields[Feature.Language.Templates.LanguageSettings.Fields.SupportedLanguages]);
+      if (supportedLanguagesField.Count == 0)
       {
-        var supportedLanguagesField = new MultilistField(siteDefinition.Item.Fields[Feature.Language.Templates.LanguageSettings.Fields.SupportedLanguages]);
-        if (supportedLanguagesField.Count == 0)
-        {
-          return languages;
-        }
-
-        var supportedLanguages = supportedLanguagesField.GetItems();
-
-        languages = languages.Where(language => supportedLanguages.Any(item => item.Name.Equals(language.TwoLetterCode)));
+        return languages;
       }
+
+      var supportedLanguages = supportedLanguagesField.GetItems();
+
+      languages = languages.Where(language => supportedLanguages.Any(item => item.Name.Equals(language.Name)));
 
       return languages;
     } 

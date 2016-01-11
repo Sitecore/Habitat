@@ -3,9 +3,10 @@ ID: b16765ba-7b3e-4c5b-9937-bfc985f2550c
 Parent: 762684e7-480b-41d6-82de-8549babe95e3
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/About Habitat/Introduction
+DB: master
 SharedFields:
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 100
 Languages:
 - Language: en
@@ -13,7 +14,7 @@ Languages:
   - Version: 1
     Fields:
     - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
-      # __Final Renderings
+      Hint: __Final Renderings
       Type: Layout
       Value: |
         <r xmlns:p="p" xmlns:s="s" p:p="1">
@@ -33,27 +34,27 @@ Languages:
           </d>
         </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: Introduction
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151009T064159Z
     - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
-      # Image
+      Hint: Image
       Value: "<image mediaid=\"{40EA01F7-1897-4ED0-8721-76511278B6A5}\" ></image>"
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
-      # Summary
+      Hint: Summary
       Value: |
         Sitecore Habitat is a set of principles and conventions focused on increasing productivity and quality in Sitecore projects.
         <div>&nbsp;</div>
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
-      # Title
+      Hint: Title
       Value: Introduction to Habitat
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      # BrowserTitle
+      Hint: BrowserTitle
       Value: Architecture
     - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
-      # Body
+      Hint: Body
       Value: |
         
         		<p>Sitecore Habitat is a set of principles and conventions focused on:</p>

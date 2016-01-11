@@ -3,19 +3,20 @@ ID: 6b3e2125-9402-4abe-be65-1dc375b2111e
 Parent: ea13174a-b43e-4f68-b474-b41188771a9e
 Template: c18d3794-d126-4548-bfc8-89358de6e9c1
 Path: /sitecore/content/Habitat/Global/Media/Carousel
+DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150902T071953Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\admin
     - ID: 72ea8682-24d2-4beb-951c-3e2164974105
-      # MediaSelector
+      Hint: MediaSelector
       Type: Multilist
       Value: |
         {12CFA7C1-B5BD-4C99-B6F4-221423F2E0E1}

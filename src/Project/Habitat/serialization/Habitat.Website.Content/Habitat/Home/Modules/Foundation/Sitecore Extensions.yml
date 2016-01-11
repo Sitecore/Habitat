@@ -3,23 +3,24 @@ ID: eb019d8e-94bf-4da7-ba76-fb7e553612f7
 Parent: 1a3560fc-9e54-4e65-bead-e349f3b80dd7
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/Modules/Foundation/Sitecore Extensions
+DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: Sitecore Extensions
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151026T041957Z
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
-      # Summary
+      Hint: Summary
       Value: The Sitecore extensions module contains a range of simple extensions to the Sitecore platform to optimize development.
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
-      # Title
+      Hint: Title
       Value: Sitecore Extensions
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      # BrowserTitle
+      Hint: BrowserTitle
       Value: Sitecore Extensions

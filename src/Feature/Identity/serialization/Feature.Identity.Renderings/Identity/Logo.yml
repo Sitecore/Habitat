@@ -3,25 +3,26 @@ ID: a47c8288-7d4c-45ff-b75f-4aedbf58a02d
 Parent: 3731116d-9468-4b89-9c95-cc6cecff1cf4
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Identity/Logo
+DB: master
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
-  # Datasource Template
+  Hint: Datasource Template
   Value: /sitecore/templates/Feature/Identity/_Identity
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
-  # Path
+  Hint: Path
   Value: /Views/Identity/Logo.cshtml
-- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
-  # Open Properties after Add
-  Value: -
 - ID: e441abe7-2ca3-4640-ae26-3789967925d7
-  # Compatible Renderings
+  Hint: Compatible Renderings
   Type: Treelist
   Value: {7DAE9F23-890F-4E06-99A7-CCEDB74D3D8E}
+- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
+  Hint: Open Properties after Add
+  Value: -
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150826T113825Z
