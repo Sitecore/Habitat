@@ -1,0 +1,23 @@
+﻿---
+ID: 6047f883-98d5-4363-b0b4-3b631fe2444e
+Parent: c7c95984-e060-42d9-bbc6-b45c18768905
+Template: c82dc5ff-09ef-4403-96d3-3caf377b8c5b
+Path: /sitecore/content/Habitat/Settings/carousel
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160112T102731Z
+    - ID: 498dd5b6-7dae-44a7-9213-1d32596ad14f
+      Hint: DatasourceTemplate
+      Value: {C18D3794-D126-4548-BFC8-89358DE6E9C1}
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: 5fe1cc43-f86c-459c-a379-cd75950d85af
+      Hint: DatasourceLocation
+      Value: /sitecore/content/Habitat/Global/Media

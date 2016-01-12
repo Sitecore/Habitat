@@ -5,11 +5,14 @@ Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Person/EmployeesList
 DB: master
 SharedFields:
+- ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
+  Hint: Datasource Template
+  Value: 
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   Value: /Views/Person/EmployeesList.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   Hint: Datasource Location
-  Value: site:employeeslist
+  Value: site:employee
 - ID: ddab263e-b42e-419a-aa6f-081b7393ca38
   Hint: Model
   Value: Sitecore.Foundation.SitecoreExtensions.Rendering.QueryableDatasourceRenderingModel, Sitecore.Foundation.SitecoreExtensions
