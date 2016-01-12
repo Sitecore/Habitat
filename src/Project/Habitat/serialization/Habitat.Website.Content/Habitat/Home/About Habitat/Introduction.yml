@@ -9,6 +9,42 @@ SharedFields:
   Hint: __Sortorder
   Value: 100
 Languages:
+- Language: da
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      Hint: NavigationTitle
+      Value: Indledning
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160112T105843Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      Hint: Image
+      Value: "<image mediaid=\"{8CBBCDFB-C9A8-4D3F-BFF0-D01C504E10BB}\" />"
+    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+      Hint: Summary
+      Value: Sitecore Habitat er et s&aelig;t af principper og konventioner fokus p&aring; at &oslash;ge produktiviteten og kvaliteten i Sitecore-projekter.
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      Hint: Title
+      Value:  Introduktion til Habitat
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      Hint: BrowserTitle
+      Value:  Arkitektur
+    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+      Hint: Body
+      Value: |
+        Sitecore Habitat er et s&aelig;t af principper og konventioner fokus p&aring;:<br>
+        enkelhed<br>
+        G&oslash;re Sitecore l&oslash;sningen overskueligt og enkelt - selv som det vokser og modnes.<br>
+        fleksibilitet<br>
+        Sikring af virksomheden, at &aelig;ndringer og tilf&oslash;jelser kan g&oslash;res med mindre investeringer og uden afbrydelser.<br>
+        udvidelsesmuligheder<br>
+        Giver en hurtig og overskuelig m&aring;de at udvide l&oslash;sninger og genbruge funktioner p&aring; tv&aelig;rs af websteder og endda p&aring; tv&aelig;rs af l&oslash;sninger<br>
+        Konventionerne er baseret p&aring; en r&aelig;kke velbegrundede og industri-standard principper s&aring;som lav Kobling / H&oslash;j Samh&oslash;righed Domain Driven Design Package Principper
 - Language: en
   Versions:
   - Version: 1
