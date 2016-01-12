@@ -14,7 +14,7 @@ SharedFields:
     }); 
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   Hint: Datasource Template
-  Value: {F0369E1A-9030-4A05-A09C-EF09B664ED27}
+  Value: 
 - ID: 4867d192-326a-4aa4-81ef-ea430e224aff
   Hint: Css assets
   Value: /Content/Media/ekko-lightbox.min.css
@@ -23,7 +23,7 @@ SharedFields:
   Value: /Views/Media/LightboxImage.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   Hint: Datasource Location
-  Value: query:/sitecore/content/*/Global/Media
+  Value: site:lightboximage
 - ID: e514a1eb-ddba-44f7-8528-82ca2280f778
   Hint: JavaScript assets
   Value: /Scripts/Media/ekko-lightbox.min.js
