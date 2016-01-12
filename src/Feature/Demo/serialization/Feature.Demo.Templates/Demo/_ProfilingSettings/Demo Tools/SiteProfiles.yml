@@ -7,7 +7,7 @@ DB: master
 SharedFields:
 - ID: 1eb8ae32-e190-44a6-968d-ed904c794ebf
   Hint: Source
-  Value: /sitecore/system/Marketing Control Panel/Profiles
+  Value: query:/sitecore/system/Marketing Control Panel/Profiles//*[@@templatename='Profile']
 - ID: 39847666-389d-409b-95bd-f2016f11eed5
   Hint: Unversioned
   Value: 1
