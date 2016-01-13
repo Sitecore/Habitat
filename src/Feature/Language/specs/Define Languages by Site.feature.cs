@@ -18,9 +18,7 @@ namespace Sitecore.Feature.Language.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Define Languages by Site")]
-    public partial class DefineLanguagesBySiteFeature
+    public partial class DefineLanguagesBySiteFeature : Xunit.IUseFixture<DefineLanguagesBySiteFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,8 +26,12 @@ namespace Sitecore.Feature.Language.Specflow
 #line 1 "Define Languages by Site.feature"
 #line hidden
         
-        [NUnit.Framework.TestFixtureSetUpAttribute()]
-        public virtual void FeatureSetup()
+        public DefineLanguagesBySiteFeature()
+        {
+            this.TestInitialize();
+        }
+        
+        public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Define Languages by Site", "\nAs an editor \r\nI want to be able to define the supported languages on a per site" +
@@ -37,19 +39,16 @@ namespace Sitecore.Feature.Language.Specflow
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.TestFixtureTearDownAttribute()]
-        public virtual void FeatureTearDown()
+        public static void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -65,9 +64,18 @@ namespace Sitecore.Feature.Language.Specflow
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Define Languages by Site_UC1_Set one language on the site")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        public virtual void SetFixture(DefineLanguagesBySiteFeature.FixtureData fixtureData)
+        {
+        }
+        
+        void System.IDisposable.Dispose()
+        {
+            this.ScenarioTearDown();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Define Languages by Site")]
+        [Xunit.TraitAttribute("Description", "Define Languages by Site_UC1_Set one language on the site")]
         public virtual void DefineLanguagesBySite_UC1_SetOneLanguageOnTheSite()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Define Languages by Site_UC1_Set one language on the site", new string[] {
@@ -91,9 +99,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Define Languages by Site_UC2_No specific languages are defined on the site")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Define Languages by Site")]
+        [Xunit.TraitAttribute("Description", "Define Languages by Site_UC2_No specific languages are defined on the site")]
         public virtual void DefineLanguagesBySite_UC2_NoSpecificLanguagesAreDefinedOnTheSite()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Define Languages by Site_UC2_No specific languages are defined on the site", new string[] {
@@ -161,10 +169,10 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Define Languages by Site_UC3_Check that language with country code appears in the" +
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Define Languages by Site")]
+        [Xunit.TraitAttribute("Description", "Define Languages by Site_UC3_Check that language with country code appears in the" +
             " list")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
         public virtual void DefineLanguagesBySite_UC3_CheckThatLanguageWithCountryCodeAppearsInTheList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Define Languages by Site_UC3_Check that language with country code appears in the" +
@@ -230,9 +238,9 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Define Languages by Site_UC4_Switch between languages on the site")]
-        [NUnit.Framework.CategoryAttribute("NeedImplementation")]
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Define Languages by Site")]
+        [Xunit.TraitAttribute("Description", "Define Languages by Site_UC4_Switch between languages on the site")]
         public virtual void DefineLanguagesBySite_UC4_SwitchBetweenLanguagesOnTheSite()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Define Languages by Site_UC4_Switch between languages on the site", new string[] {
@@ -249,6 +257,22 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("site language is switched to danish", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
+        [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        public class FixtureData : System.IDisposable
+        {
+            
+            public FixtureData()
+            {
+                DefineLanguagesBySiteFeature.FeatureSetup();
+            }
+            
+            void System.IDisposable.Dispose()
+            {
+                DefineLanguagesBySiteFeature.FeatureTearDown();
+            }
         }
     }
 }
