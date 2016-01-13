@@ -12,7 +12,7 @@
   }
 }
 <title>@Html.Sitecore().Field(Templates.PageMetadata.Fields.BrowserTitle.ToString(), Model.Item) @Html.Sitecore().Field(Templates.SiteMetadata.Fields.SiteBrowserTitle.ToString(), siteMetadata)</title>
-<meta name="keywords" content="@Html.Sitecore().Field(Templates.PageMetadata.Fields.Keywords.ToString(), Model.Item)">
+<meta name="keywords" content="@MetadataRepository.GetKeywords(Model.Item).ToString()">
 <meta name="description" content="@Html.Sitecore().Field(Templates.PageMetadata.Fields.Description.ToString(), Model.Item)">
 @{
   if (!MainUtil.GetBool(Model.Item[Templates.PageMetadata.Fields.CanIndex], true))

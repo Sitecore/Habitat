@@ -7,13 +7,13 @@ DB: master
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   Hint: Datasource Template
-  Value: {14E452CA-064D-48A8-9FF2-2744D10437A1}
+  Value: 
 - ID: 94069f66-609c-48b0-8281-521c30fb269d
   Hint: Open Properties after Add
-  Value: -
+  Value: 
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   Hint: Datasource Location
-  Value: {0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+  Value: site:searchsettings
 - ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
   Hint: Controller Action
   Value: SearchSettings
