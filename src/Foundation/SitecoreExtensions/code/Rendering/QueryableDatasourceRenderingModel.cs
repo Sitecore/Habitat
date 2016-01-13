@@ -34,10 +34,8 @@
         {
           var items = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(dataSource));
           var searchResultItems = items.Cast<SearchResult>();
-          if (DatasourceTemplate!=null)
+          if (DatasourceTemplate != null)
           {
-        return query;
-      }
             var templateId = IdHelper.NormalizeGuid(DatasourceTemplate.ID);
             searchResultItems = searchResultItems.Where(x => x.Templates.Contains(templateId));
           }
@@ -51,7 +49,7 @@
       }
     }
 
-   
+
     private void ResolveDatasourceTemplate(Rendering rendering)
     {
       var getRenderingDatasourceArgs = new GetRenderingDatasourceArgs(rendering.RenderingItem.InnerItem)
