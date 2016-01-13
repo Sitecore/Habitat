@@ -40,7 +40,48 @@
       }
     }
 
-    
+
+    [Theory]
+    [AutoDbData]
+    public void Items_DifferentItemLanguageExists_ReturnsOnlyContextLanguage([Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem)
+    {
+      //arrange
+      var results = GetResults(contentItems).ToArray();
+      results.First().Language = "noncontext";
+
+      InitIndexes(index, searchProvider, results.AsQueryable());
+      var renderingModel = new QueryableDatasourceRenderingModel() { Rendering = new Rendering() { DataSource = "notEmpty" } };
+
+      //act
+      var items = renderingModel.Items;
+
+      //assert
+      items.Count().Should().Be(contentItems.Length - 1);
+      index.CreateSearchContext().ReceivedWithAnyArgs(1);
+
+    }
+
+
+    [Theory]
+    [AutoDbData]
+    public void Items_NotLatestItemVersionExists_ReturnsOnlyLatestItems([Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem)
+    {
+      //arrange
+      var results = GetResults(contentItems).ToArray();
+      results.First().IsLatestVersion = false;
+
+      InitIndexes(index, searchProvider, results.AsQueryable());
+      var renderingModel = new QueryableDatasourceRenderingModel() { Rendering = new Rendering() { DataSource = "notEmpty" } };
+
+      //act
+      var items = renderingModel.Items;
+
+      //assert
+      items.Count().Should().Be(contentItems.Length-1);
+      index.CreateSearchContext().ReceivedWithAnyArgs(1);
+
+    }
+
 
     [Theory]
     [AutoDbData]
@@ -179,10 +220,9 @@
       foreach (var item in contentItems)
       {
         var searchResultItem = Substitute.For<SearchResult>();
-        searchResultItem.Templates = new List<string>
-        {
-          IdHelper.NormalizeGuid(item.TemplateID)
-        };
+        searchResultItem.Templates = new List<string> { IdHelper.NormalizeGuid(item.TemplateID) };
+        searchResultItem.IsLatestVersion = true;
+        searchResultItem.Language = Context.Language.Name;
         var dbItem = Context.Database.GetItem(item.ID);
         searchResultItem.GetItem().Returns(dbItem);
         list.Add(searchResultItem);

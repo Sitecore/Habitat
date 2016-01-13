@@ -8,5 +8,7 @@ namespace Sitecore.Foundation.SitecoreExtensions.Rendering
   {
     [IndexField("all_templates")]
     public List<string> Templates { get; set; }
+    [IndexField("_latestversion")]
+    public bool IsLatestVersion { get; set; }
   }
 }

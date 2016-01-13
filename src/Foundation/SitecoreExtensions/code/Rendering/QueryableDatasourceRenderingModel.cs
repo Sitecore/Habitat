@@ -41,13 +41,18 @@
         using (var providerSearchContext = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
         {
           var items = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(dataSource));
-
+          var searchResultItems = items.Cast<SearchResult>();
           if (DatasourceTemplate!=null)
           {
             var templateId = IdHelper.NormalizeGuid(DatasourceTemplate.ID);
-            items = items.Cast<SearchResult>().Where(x => x.Templates.Contains(templateId));
+            searchResultItems = searchResultItems.Where(x => x.Templates.Contains(templateId));
           }
-          return items.Select(current => current != null ? current.GetItem() : null).ToArray().Where(item => item != null);
+          return searchResultItems
+            .Where(x => x.Language == Context.Language.Name)
+            .Where(x => x.IsLatestVersion)
+            .Select(current => current != null ? current.GetItem() : null)
+            .ToArray()
+            .Where(item => item != null);
         }
       }
     }
