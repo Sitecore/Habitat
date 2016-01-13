@@ -41,7 +41,7 @@
 
       var supportedLanguages = supportedLanguagesField.GetItems();
 
-      languages = languages.Where(language => supportedLanguages.Any(item => item.Name.Equals(language.TwoLetterCode)));
+      languages = languages.Where(language => supportedLanguages.Any(item => item.Name.Equals(language.Name)));
 
       return languages;
     } 

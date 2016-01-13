@@ -3,9 +3,10 @@ ID: 86b2e20e-ecfc-45e2-8735-9a6fcae83c95
 Parent: b16765ba-7b3e-4c5b-9937-bfc985f2550c
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/About Habitat/Introduction/Modular Architecture
+DB: master
 SharedFields:
 - ID: b0a67b2a-8b07-4e0b-8809-69f751709806
-  # __Tracking
+  Hint: __Tracking
   Type: Tracking
   Value: |
     <tracking>
@@ -17,15 +18,25 @@ SharedFields:
       </profile>
     </tracking>
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 0
 Languages:
+- Language: da
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160112T132028Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
-      # __Final Renderings
+      Hint: __Final Renderings
       Type: Layout
       Value: |
         <r xmlns:p="p" xmlns:s="s" p:p="1">
@@ -48,25 +59,25 @@ Languages:
           </d>
         </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: Modular Architecture
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150920T232217Z
     - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
-      # Image
+      Hint: Image
       Value: "<image mediaid=\"{4A70900A-A5D7-4FB3-9085-A75707EE7067}\" ></image>"
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
-      # Summary
+      Hint: Summary
       Value: The modular architecture of Habitat is a foundation for the flexibly and maintainability of the solution.
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
-      # Title
+      Hint: Title
       Value: Modular Architecture
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      # BrowserTitle
+      Hint: BrowserTitle
       Value: Modular Architecture
     - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
-      # Body
+      Hint: Body
       Value: |
         <p>Modular Architecture is focused on simplifying the development of the solution by breaking the solution into smaller independent and manageable parts.The Architecture in Habitat is primarily derived from the <a href="https://en.wikipedia.org/wiki/Package_principles" target="_blank">Package Principles</a> defined by Robert C. Martin, which describes how to avoid dependencies between unrelated parts by applying simple patterns.</p>
         <p>In other words, there can be no modules or modular architecture without a set of conventions and principles which describes how to separate cohesive functionality into isolated parts - and how to combine those modules into a united solution.</p>

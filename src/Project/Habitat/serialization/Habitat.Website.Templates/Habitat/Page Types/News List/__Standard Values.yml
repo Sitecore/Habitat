@@ -3,16 +3,17 @@ ID: 9abc1bbc-1506-49e6-890c-82a79c36f246
 Parent: a99866e5-08e7-44d8-8a52-f8e26bcd3714
 Template: a99866e5-08e7-44d8-8a52-f8e26bcd3714
 Path: /sitecore/templates/Project/Habitat/Page Types/News List/__Standard Values
+DB: master
 SharedFields:
 - ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
-  # __Masters
+  Hint: __Masters
   Type: TreelistEx
   Value: {B69277AD-E917-4B9F-9136-A12E0A3E462F}
 - ID: d312103c-b36c-4ca5-864a-c85f9abda503
-  # __Is Bucket
+  Hint: __Is Bucket
   Value: 1
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
-  # __Renderings
+  Hint: __Renderings
   Type: layout
   Value: |
     <r>
@@ -50,11 +51,11 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150824T175428Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\admin
     - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
-      # Image
+      Hint: Image
       Value: "<image mediaid=\"{88032F9C-B464-44CB-B76D-513D60B9C127}\" />"

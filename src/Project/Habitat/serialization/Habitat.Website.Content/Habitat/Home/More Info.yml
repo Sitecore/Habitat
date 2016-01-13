@@ -3,9 +3,10 @@ ID: 3a5d638d-5bdd-4ddd-beac-4a0c81c27e8a
 Parent: dac24edd-44fb-42ef-9ecd-1e8daf706386
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/More Info
+DB: master
 SharedFields:
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 500
 Languages:
 - Language: en
@@ -13,7 +14,7 @@ Languages:
   - Version: 1
     Fields:
     - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
-      # __Final Renderings
+      Hint: __Final Renderings
       Type: Layout
       Value: |
         <r xmlns:p="p" xmlns:s="s" p:p="1">
@@ -26,23 +27,23 @@ Languages:
           </d>
         </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: More Info
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150827T013810Z
     - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
-      # Image
+      Hint: Image
       Value: "<image mediapath=\"/Default Website/cover\" src=\"~/media/Default Website/cover\" height=\"\" mediaid=\"{8CBBCDFB-C9A8-4D3F-BFF0-D01C504E10BB}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"\" vspace=\"\" ></image>"
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
-      # Summary
+      Hint: Summary
       Value: Want to know more about Habitat? Here are some interesting links, videos and material for you.
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
-      # Title
+      Hint: Title
       Value: Find out more
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      # BrowserTitle
+      Hint: BrowserTitle
       Value: Contact Us
     - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
-      # Body
+      Hint: Body
       Value: <p>The Habitat project - this website - is completely available for you on GitHub, source code and all.</p><p>There are a number of videos concerning the methodology and it's underlying patterns.</p>

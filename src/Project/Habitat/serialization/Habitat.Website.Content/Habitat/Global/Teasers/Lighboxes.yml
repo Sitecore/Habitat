@@ -3,20 +3,21 @@ ID: 4a1e242e-fd29-4529-bee0-3a9b1cac30ab
 Parent: 6aa25831-0944-4a79-9aff-7bac39e03557
 Template: c7d9d293-4ef8-4380-8e10-c4632e729f39
 Path: /sitecore/content/Habitat/Global/Teasers/Lighboxes
+DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 0f6b5546-e0ab-4487-81de-640c1aa1b65b
-      # TeaserImage
+      Hint: TeaserImage
       Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{9F63F58A-E57A-49A2-BC8F-DCDFACE44B68}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"Experience Marketing\" vspace=\"\" />"
     - ID: 13d97a52-7c4e-407c-960d-fadde8a3c1b1
-      # TeaserSummary
+      Hint: TeaserSummary
       Value: Lightboxes are used to make media pop out
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150921T055523Z
     - ID: 4a59d072-5b41-4a79-a157-2b2ccac10f2b
-      # TeaserTitle
+      Hint: TeaserTitle
       Value: Lightboxes

@@ -26,5 +26,15 @@
         public static readonly ID SiteBrowserTitle = new ID("{235AE392-97AC-4822-BE38-837DA3E7724E}");
       }
     }
+
+    public struct Keyword
+    {
+      public static ID ID = new ID("{409F883A-0DC8-431A-9508-7316B59B92BE}");
+
+      public struct Fields
+      {
+        public static  readonly ID Keyword = new ID("{7BDBBA5F-C7E6-45C2-82F5-010DED013588}");
+      }
+    }
   }
 }

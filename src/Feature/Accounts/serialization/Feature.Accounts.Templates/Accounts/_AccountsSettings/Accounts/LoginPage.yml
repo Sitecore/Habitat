@@ -3,27 +3,22 @@ ID: 60745023-ffd5-400e-8f80-4bca9f2abb29
 Parent: 49567788-6193-4b6f-bfee-4605cd263c61
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
 Path: /sitecore/templates/Feature/Accounts/_AccountsSettings/Accounts/LoginPage
+DB: master
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
-  # Type
+  Hint: Type
   Value: Internal Link
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 300
 - ID: be351a73-fcb0-4213-93fa-c302d8ab4f51
-  # Shared
+  Hint: Shared
   Value: 1
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
-      # Title
-      Value: Login Page
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151105T120732Z
-    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
-      # __Display name
-      Value: Login Page

@@ -3,20 +3,21 @@ ID: 9be736e5-4a1f-4ef1-8449-a7b62f09c9ee
 Parent: 4b86cb93-0ae5-4845-877b-6a045eac5707
 Template: f0369e1a-9030-4a05-a09c-ef09b664ed27
 Path: /sitecore/content/Habitat/Global/Media/Dependencies/Dependencies 5
+DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151209T045130Z
     - ID: 302c9f8d-f703-4f76-a4ab-73d222648232
-      # MediaDescription
+      Hint: MediaDescription
       Value: With fewer dependencies and tighter controlled coupling - both on the micro and macro architecture levels - productivity will be kept high and solution ROI will be significantly higher.
     - ID: 63dda48b-b0cb-45a7-9a1b-b26ddb41009b
-      # MediaTitle
+      Hint: MediaTitle
       Value: Low coupling means higher productivity
     - ID: 9f51dead-ad6e-41c2-9759-7be17eb474a4
-      # MediaImage
+      Hint: MediaImage
       Value: "<image mediapath=\"/Habitat/Images/Content/Dependencies/Habitat Dependencies 2\" alt=\"Dependencies in Habitat\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Habitat/Images/Content/Dependencies/Habitat Dependencies 2\" mediaid=\"{3BFDC421-51B8-4183-BE06-F988C63239A9}\" />"

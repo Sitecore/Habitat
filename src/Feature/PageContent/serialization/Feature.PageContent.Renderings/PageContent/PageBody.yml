@@ -3,29 +3,33 @@ ID: 914673dc-fc44-4660-b6eb-ff421faac2f9
 Parent: d5d2ab0a-3909-4e22-af15-3bef1e97a0c0
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/PageContent/PageBody
+DB: master
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
-  # Datasource Template
-  Value: /sitecore/templates/Feature/PageContent/_HasPageContent
+  Hint: Datasource Template
+  Value: 
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
-  # Path
+  Hint: Path
   Value: /Views/PageContent/PageBody.cshtml
-- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
-  # Open Properties after Add
-  Value: -
+- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  Hint: Datasource Location
+  Value: site:pagecontent
 - ID: e441abe7-2ca3-4640-ae26-3789967925d7
-  # Compatible Renderings
+  Hint: Compatible Renderings
   Type: Treelist
   Value: |
     {359A65BB-0A2C-44E5-8C34-DF3ACDBB42A7}
     {616956DF-9471-4934-9CAE-AAAF342A7E1C}
     {07AB411C-F894-4144-B069-48EF67431D32}
     {45B8E1D9-D522-49E0-B9B7-04C965CC7089}
+- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
+  Hint: Open Properties after Add
+  Value: 
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150825T123755Z
