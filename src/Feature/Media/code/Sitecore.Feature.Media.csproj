@@ -103,6 +103,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\Extensions.cs" />
     <Compile Include="Infrastructure\Models\MediaSelectorElement.cs" />
     <Compile Include="Infrastructure\Repositories\MediaSelectorElementsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +112,7 @@
   <ItemGroup>
     <Content Include="Content\Media\ekko-lightbox.css" />
     <Content Include="Content\Media\ekko-lightbox.min.css" />
+    <Content Include="Content\Media\parallax.css" />
     <Content Include="Scripts\Media\carousel.js" />
     <Content Include="Scripts\Media\ekko-lightbox.js" />
     <Content Include="Scripts\Media\ekko-lightbox.min.js" />
@@ -121,6 +123,7 @@
     <Content Include="App_Config\Include\Feature\Feature.Media.Serialization.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Media\LightboxGallery.cshtml" />
+    <Content Include="Views\Media\ParallaxBackground.cshtml" />
     <None Include="Web.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">

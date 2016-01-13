@@ -1,0 +1,8 @@
+﻿.parallax {
+  padding: 100px 0;
+}
+
+.parallax [data-multibackground-content] {
+  text-align: center;
+  white-space: pre-line;
+}
