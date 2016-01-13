@@ -1,0 +1,25 @@
+﻿---
+ID: 324f221b-ceba-4d4f-9ffc-9382c603b3bf
+Parent: 11bb3fc6-8662-4c3e-9293-8b5945cbcd6d
+Template: c7d9d293-4ef8-4380-8e10-c4632e729f39
+Path: /sitecore/content/Habitat/Global/Teasers/Parallax teasers/Inverted parallax for image
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 13d97a52-7c4e-407c-960d-fadde8a3c1b1
+      Hint: TeaserSummary
+      Value: |
+         Some additional content to extend parallax container.
+        
+        
+        
+        Some additional content to extend parallax container.
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160112T134132Z
+    - ID: 4a59d072-5b41-4a79-a157-2b2ccac10f2b
+      Hint: TeaserTitle
+      Value: Image background with inverted parallax
