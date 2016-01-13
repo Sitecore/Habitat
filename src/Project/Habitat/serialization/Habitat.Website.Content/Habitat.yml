@@ -52,6 +52,11 @@ Languages:
       Hint: Logo
       Value: "<image mediapath=\"/Default Website/sc_logo\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Default Website/sc_logo\" mediaid=\"{461A93BF-5471-4AF2-BF36-D638F5660CB5}\" />"
 - Language: en
+  Fields:
+  - ID: 2a84eca4-68bb-4451-b4ac-98ea71a5a3dc
+    Hint: SiteProfiles
+    Type: Multilist
+    Value: {24DFF2CF-B30A-4B75-8967-2FE3DED82271}
   Versions:
   - Version: 1
     Fields:
