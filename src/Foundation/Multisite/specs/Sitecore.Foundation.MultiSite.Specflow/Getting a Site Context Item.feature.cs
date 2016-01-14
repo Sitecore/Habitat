@@ -359,6 +359,47 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Getting a Site Context Item")]
+        [Xunit.TraitAttribute("Description", "Getting a Site Context Item_UC6_Define sitecore rendering_Datacource settings emp" +
+            "ty")]
+        public virtual void GettingASiteContextItem_UC6_DefineSitecoreRendering_DatacourceSettingsEmpty()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC6_Define sitecore rendering_Datacource settings emp" +
+                    "ty", new string[] {
+                        "InDesign"});
+#line 97
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemPath",
+                        "Field",
+                        "Value"});
+            table13.AddRow(new string[] {
+                        "/sitecore/layout/Renderings/Feature/Social/TwitterFeed",
+                        "Datasource Location",
+                        "query:/sitecore/content/*/Global/Social"});
+            table13.AddRow(new string[] {
+                        "/sitecore/layout/Renderings/Feature/Social/TwitterFeed",
+                        "Datasource Template",
+                        "{89D988BC-A9A7-43F5-A9FD-A05B0B164720}"});
+#line 98
+ testRunner.Given("Value set to item field", ((string)(null)), table13, "Given ");
+#line 102
+ testRunner.When("Setting item with Setting template was inserted under /sitecore/content/Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 103
+ testRunner.And("User presses RendringSettings under /sitecore/content/Habitat/Settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item path"});
+            table14.AddRow(new string[] {
+                        "App Center Sync/Feature/Social"});
+#line 104
+ testRunner.Then("There is no item under following path", ((string)(null)), table14, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
