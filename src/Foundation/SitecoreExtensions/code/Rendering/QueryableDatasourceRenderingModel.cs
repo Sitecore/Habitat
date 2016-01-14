@@ -32,35 +32,35 @@
 
         using (var providerSearchContext = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
         {
-          var query = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(dataSource));
-          query = AddTemplatesPredicate(query);
-          return query.Select(current => current != null ? current.GetItem() : null).ToArray().Where(item => item != null);
+          var items = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(dataSource));
+          var searchResultItems = items.Cast<SearchResult>();
+          if (DatasourceTemplate != null)
+          {
+            var templateId = IdHelper.NormalizeGuid(DatasourceTemplate.ID);
+            searchResultItems = searchResultItems.Where(x => x.Templates.Contains(templateId));
+          }
+          return searchResultItems
+            .Where(x => x.Language == Context.Language.Name)
+            .Where(x => x.IsLatestVersion)
+            .Select(current => current != null ? current.GetItem() : null)
+            .ToArray()
+            .Where(item => item != null);
         }
       }
-    }
-
-    private IQueryable<SearchResultItem> AddTemplatesPredicate(IQueryable<SearchResultItem> query)
-    {
-      if (DatasourceTemplate == null)
-      {
-        return query;
-      }
-      var templateId = IdHelper.NormalizeGuid(DatasourceTemplate.ID);
-      return query.Cast<SearchResult>().Where(x => x.Templates.Contains(templateId));
     }
 
 
     private void ResolveDatasourceTemplate(Rendering rendering)
     {
       var getRenderingDatasourceArgs = new GetRenderingDatasourceArgs(rendering.RenderingItem.InnerItem)
-                                       {
-                                         FallbackDatasourceRoots = new List<Item>
-                                                                   {
-                                                                     Context.Database.GetRootItem()
-                                                                   },
-                                         ContentLanguage = rendering.Item?.Language,
-                                         ContextItemPath = rendering.Item?.Paths.FullPath ?? PageItem.Paths.FullPath
-                                       };
+      {
+        FallbackDatasourceRoots = new List<Item>
+        {
+          Context.Database.GetRootItem()
+        },
+        ContentLanguage = rendering.Item?.Language,
+        ContextItemPath = rendering.Item?.Paths.FullPath ?? PageItem.Paths.FullPath
+      };
       CorePipeline.Run("getRenderingDatasource", getRenderingDatasourceArgs);
 
       DatasourceTemplate = getRenderingDatasourceArgs.Prototype;
