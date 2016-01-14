@@ -1,0 +1,17 @@
+﻿---
+ID: 153640e2-fd0d-42d3-8480-f9615ee78a9a
+Parent: 553d3cc1-b549-4aa1-9ed9-e8e06e14a683
+Template: 18cdd4ce-cdbe-4bdc-9d5a-6249f7f0ec17
+Path: /sitecore/content/Habitat/Global/Metadata Keywords/sitecore
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160114T100352Z
+    - ID: 7bdbba5f-c7e6-45c2-82f5-010ded013588
+      Hint: Keyword
+      Value: sitecore
