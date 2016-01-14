@@ -100,9 +100,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="web.config.transform" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="App_Config\Include\Project\Demo.Website.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
