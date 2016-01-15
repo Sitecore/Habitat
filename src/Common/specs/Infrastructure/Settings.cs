@@ -20,5 +20,7 @@
     public string UtfHelperService => BaseUrl + ConfigurationManager.AppSettings["utfProxyUrl"];
     public string UserName => "sitecore\\admin";
     public string Password => "b";
+
+    public string EndVisitUrl => ConfigurationManager.AppSettings["endVisitUrl"];
   }
 }

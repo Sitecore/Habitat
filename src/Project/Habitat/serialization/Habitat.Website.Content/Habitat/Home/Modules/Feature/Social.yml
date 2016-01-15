@@ -3,13 +3,14 @@ ID: 29118c22-b3c0-43e8-8e12-a80bc99e008f
 Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Social
+DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
-      # __Final Renderings
+      Hint: __Final Renderings
       Type: Layout
       Value: |
         <r xmlns:p="p" xmlns:s="s" p:p="1">
@@ -21,25 +22,25 @@ Languages:
           </d>
         </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: Social
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151116T023652Z
     - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
-      # Image
+      Hint: Image
       Value: "<image mediaid=\"{45D3C3F1-FBF9-498E-B3D1-DE9C923D477C}\" />"
     - ID: ac3fd4db-8266-476d-9635-67814d91e901
-      # Summary
+      Hint: Summary
       Value: The social modules contains components and functionality related to social media
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
-      # Title
+      Hint: Title
       Value: Social
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      # BrowserTitle
+      Hint: BrowserTitle
       Value: Social
     - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
-      # Body
+      Hint: Body
       Value: |
         <p><span style="line-height: 24.2857px;">The social modules contains components and functionality related to social media such as Facebook, Twitter etc.</span></p>
         <p><span style="line-height: 24.2857px;">Amongst others the module include the OpenGraph metadata and twitter feed components.</span></p>

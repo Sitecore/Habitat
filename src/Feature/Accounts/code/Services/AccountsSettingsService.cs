@@ -78,7 +78,7 @@
     public MailMessage GetForgotPasswordMailTemplate()
     {
       var settingsItem = GetSettingsItem(null);
-      InternalLinkField link = settingsItem.Fields[Templates.AccountsSettings.Fields.FogotPasswordMailTemplate];
+      InternalLinkField link = settingsItem.Fields[Templates.AccountsSettings.Fields.ForgotPasswordMailTemplate];
       var mailTemplateItem = link.TargetItem;
 
       if (mailTemplateItem == null)

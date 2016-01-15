@@ -74,39 +74,50 @@ namespace Sitecore.Feature.Accounts.Specflow
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Trigger an outcome on customer registration")]
-        [Xunit.TraitAttribute("Description", "Trigger an outcome on customer registration_UC1_Default registration outcome")]
-        public virtual void TriggerAnOutcomeOnCustomerRegistration_UC1_DefaultRegistrationOutcome()
+        [Xunit.TraitAttribute("Description", "Trigger an outcome on customer registration_UC1_Empty registration outcome")]
+        public virtual void TriggerAnOutcomeOnCustomerRegistration_UC1_EmptyRegistrationOutcome()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trigger an outcome on customer registration_UC1_Default registration outcome", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trigger an outcome on customer registration_UC1_Empty registration outcome", new string[] {
                         "InDesgin"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
-#line 6
- testRunner.Given("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemPath",
+                        "Field",
+                        "Value"});
+            table1.AddRow(new string[] {
+                        "/sitecore/content/Habitat",
+                        "RegisterOutcome",
+                        ""});
+#line 6
+ testRunner.Given("Value set to item field", ((string)(null)), table1, "Given ");
+#line 9
+ testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table1.AddRow(new string[] {
+            table2.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 7
- testRunner.When("Actor enters following data in to the register fields", ((string)(null)), table1, "When ");
 #line 10
- testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 11
- testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
- testRunner.And("User clicks END VISIT button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Outcome"});
-            table2.AddRow(new string[] {
-                        "Marketing Lead"});
+ testRunner.When("Actor enters following data in to the register fields", ((string)(null)), table2, "When ");
 #line 13
- testRunner.Then("Experince Profile-->Activity outcomes field equals to", ((string)(null)), table2, "Then ");
+ testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+ testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "email",
+                        "Outcome value"});
+            table3.AddRow(new string[] {
+                        "kov@sitecore.net",
+                        ""});
+#line 15
+ testRunner.Then("User Otcome contains value", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -118,87 +129,45 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trigger an outcome on customer registration_UC2_Custom registration outcome", new string[] {
                         "InDesgin"});
-#line 20
+#line 22
 this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "RegisterOutcome"});
-            table3.AddRow(new string[] {
-                        "Sales Lead"});
-#line 21
- testRunner.Given("Habitat/Accounts analytics/RegisterOutcome field value defined:", ((string)(null)), table3, "Given ");
-#line 24
- testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Email",
-                        "Password",
-                        "ConfirmPassword"});
+                        "ItemPath",
+                        "Field",
+                        "Value"});
             table4.AddRow(new string[] {
-                        "kov@sitecore.net",
-                        "k",
-                        "k"});
-#line 25
- testRunner.When("Actor enters following data in to the register fields", ((string)(null)), table4, "When ");
-#line 28
- testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
- testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
- testRunner.And("User clicks END VISIT button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Outcome"});
-            table5.AddRow(new string[] {
-                        "Sales Lead"});
-#line 31
- testRunner.Then("Experince Profile-->Activity outcomes field equals to", ((string)(null)), table5, "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.FactAttribute()]
-        [Xunit.TraitAttribute("FeatureTitle", "Trigger an outcome on customer registration")]
-        [Xunit.TraitAttribute("Description", "Trigger an outcome on customer registration_UC3_None registration outcome")]
-        public virtual void TriggerAnOutcomeOnCustomerRegistration_UC3_NoneRegistrationOutcome()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trigger an outcome on customer registration_UC3_None registration outcome", new string[] {
-                        "InDesgin"});
-#line 37
-this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "RegisterOutcome"});
-            table6.AddRow(new string[] {
-                        "None"});
-#line 38
- testRunner.Given("Habitat/Accounts analytics/RegisterOutcome field value defined:", ((string)(null)), table6, "Given ");
-#line 41
+                        "/sitecore/content/Habitat",
+                        "RegisterOutcome",
+                        "Outcomes/Sales Lead"});
+#line 23
+ testRunner.Given("Value set to item field", ((string)(null)), table4, "Given ");
+#line 26
  testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table7.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 42
- testRunner.When("Actor enters following data in to the register fields", ((string)(null)), table7, "When ");
-#line 45
+#line 27
+ testRunner.When("Actor enters following data in to the register fields", ((string)(null)), table5, "When ");
+#line 30
  testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 46
- testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 47
- testRunner.And("User clicks END VISIT button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+ testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Outcome"});
-            table8.AddRow(new string[] {
-                        "Empty"});
-#line 48
- testRunner.Then("Experince Profile-->Activity outcomes field equals to", ((string)(null)), table8, "Then ");
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "email",
+                        "Outcome value"});
+            table6.AddRow(new string[] {
+                        "kov@sitecore.net",
+                        "Sales Lead"});
+#line 32
+ testRunner.Then("User Otcome contains value", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -1,0 +1,21 @@
+﻿---
+ID: 409f883a-0dc8-431a-9508-7316b59b92be
+Parent: 07ba1e7e-3f43-4d47-b065-3f0f6ba2ca0f
+Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+Path: /sitecore/templates/Feature/Metadata/_Keyword
+SharedFields:
+- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+  # __Base template
+  Type: tree list
+  Value: {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      # __Created
+      Value: 20160106T162034Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      # __Created by
+      Value: sitecore\admin

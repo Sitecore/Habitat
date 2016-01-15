@@ -2,49 +2,35 @@
 	
 
 @InDesgin
-Scenario: Trigger an outcome on customer registration_UC1_Default registration outcome
-	Given Habitat website is opened on Register page
+Scenario: Trigger an outcome on customer registration_UC1_Empty registration outcome 
+	Given Value set to item field
+	| ItemPath                  | Field           | Value |
+	| /sitecore/content/Habitat | RegisterOutcome |       |
+	And Habitat website is opened on Register page
 	When Actor enters following data in to the register fields
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
 	And Actor clicks Register button
-	And User clicks on <Info-sign> in the right down corner
-	And User clicks END VISIT button
-	Then Experince Profile-->Activity outcomes field equals to
-	| Outcome        |
-	| Marketing Lead |
+	And Actor Ends user visit
+	Then User Otcome contains value
+	| email            | Outcome value |
+	| kov@sitecore.net |               |
 
 
 
 @InDesgin	
 Scenario: Trigger an outcome on customer registration_UC2_Custom registration outcome
-	Given Habitat/Accounts analytics/RegisterOutcome field value defined:
-	| RegisterOutcome |
-	| Sales Lead      |
+	Given Value set to item field
+	| ItemPath                  | Field           | Value               |
+	| /sitecore/content/Habitat | RegisterOutcome | Outcomes/Sales Lead |
 	And Habitat website is opened on Register page
 	When Actor enters following data in to the register fields
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
 	And Actor clicks Register button
-	And User clicks on <Info-sign> in the right down corner
-	And User clicks END VISIT button
-	Then Experince Profile-->Activity outcomes field equals to
-	| Outcome    |
-	| Sales Lead |
+	And Actor Ends user visit
+	Then User Otcome contains value
+	| email            | Outcome value |
+	| kov@sitecore.net | Sales Lead    |
 
 
-@InDesgin
-Scenario: Trigger an outcome on customer registration_UC3_None registration outcome
-	Given Habitat/Accounts analytics/RegisterOutcome field value defined:
-	| RegisterOutcome |
-	| None            |
-	And Habitat website is opened on Register page
-	When Actor enters following data in to the register fields
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And Actor clicks Register button
-	And User clicks on <Info-sign> in the right down corner
-	And User clicks END VISIT button
-	Then Experince Profile-->Activity outcomes field equals to
-	| Outcome |
-	| Empty   |

@@ -1,6 +1,5 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests.Services
 {
-  using System;
   using System.Collections.Generic;
   using System.Collections.ObjectModel;
   using FluentAssertions;
@@ -12,7 +11,7 @@
   using Sitecore.Analytics.Model.Framework;
   using Sitecore.Analytics.Tracking;
   using Sitecore.Foundation.SitecoreExtensions.Services;
-  using Sitecore.Foundation.SitecoreExtensions.Tests.Common;
+  using UnitTests.Common.Attributes;
   using Xunit;
 
   public class ContactProfileProviderTests
@@ -116,12 +115,11 @@
       tracker.IsActive.Returns(true);
       contact.Attachments.Clear();
       tracker.Contact.Returns(contact);
-    
+
       using (new TrackerSwitcher(tracker))
       {
         provider.KeyBehaviorCache.Should().BeNull();
       }
     }
-
   }
 }

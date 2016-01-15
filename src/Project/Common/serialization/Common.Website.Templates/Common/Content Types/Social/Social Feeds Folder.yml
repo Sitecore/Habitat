@@ -3,16 +3,17 @@ ID: 4de2d9d9-0781-47ad-8f5d-52f2ad920d83
 Parent: 156651dd-1922-412a-81f4-e124b77f62de
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
 Path: /sitecore/templates/Project/Common/Content Types/Social/Social Feeds Folder
+DB: master
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
-  # __Icon
+  Hint: __Icon
   Value: Applications/32x32/folder_up.png
 - ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
-  # __Base template
+  Hint: __Base template
   Type: tree list
   Value: {A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
 - ID: f7d48a55-2158-4f02-9356-756654404f73
-  # __Standard values
+  Hint: __Standard values
   Value: {DDA1DE43-921D-42DC-872D-A53DE27F088C}
 Languages:
 - Language: en
@@ -20,8 +21,8 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151123T163543Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\admin

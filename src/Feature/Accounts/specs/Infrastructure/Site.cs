@@ -76,5 +76,8 @@
 
     public IWebElement RegisterEmail
       => Driver.FindElement(By.Id("registerEmail"));
+
+    public IWebElement ShowUserInfoPopupFields
+      => Driver.FindElement(By.XPath(".//*[@id='primary-navigation']/ul/li[7]/ul/li[1]/div"));
   }
 }

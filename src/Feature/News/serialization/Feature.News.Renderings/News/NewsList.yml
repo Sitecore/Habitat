@@ -3,19 +3,20 @@ ID: 6d309fc1-d6b1-43b1-a31c-1fecb7b9303f
 Parent: db7775fa-27d8-44e4-9e6c-08ade58ef4ed
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
 Path: /sitecore/layout/Renderings/Feature/News/NewsList
+DB: master
 SharedFields:
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
-  # Datasource Location
+  Hint: Datasource Location
   Value: site:newslist
 - ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
-  # Controller Action
+  Hint: Controller Action
   Value: NewsList
 - ID: e441abe7-2ca3-4640-ae26-3789967925d7
-  # Compatible Renderings
+  Hint: Compatible Renderings
   Type: Treelist
   Value: {BDD730EB-F808-4C65-B94A-D2F03672EAFB}
 - ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
-  # Controller
+  Hint: Controller
   Value: Sitecore.Feature.News.Controller.NewsController, Sitecore.Feature.News
 Languages:
 - Language: en
@@ -23,5 +24,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150824T174219Z

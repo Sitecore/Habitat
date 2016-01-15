@@ -10,7 +10,8 @@
     {
       return new Models.Language
       {
-        Name = language.CultureInfo.NativeName,
+        Name = language.Name,
+        NativeName = language.CultureInfo.NativeName,
         Url = GetItemUrlByLanguage(language),
         Icon = string.Concat("/~/icon/", language.GetIcon(Context.Database)),
         TwoLetterCode = language.CultureInfo.TwoLetterISOLanguageName

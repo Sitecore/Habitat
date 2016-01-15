@@ -3,9 +3,10 @@ ID: f5f0fbe3-61ad-4967-a5d8-8d760331d6a1
 Parent: 1ce3b36c-9b0c-4eb5-a996-bfcb4eaa5287
 Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
 Path: /sitecore/layout/Placeholder Settings/Project
+DB: master
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
-  # __Icon
+  Hint: __Icon
   Value: applications/32x32/folder_window.png
 Languages:
 - Language: en
@@ -13,8 +14,8 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151030T173238Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\admin

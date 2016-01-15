@@ -2,6 +2,7 @@
 {
   using System;
   using System.Collections.Generic;
+  using Sitecore.Data.Items;
   using Sitecore.Web;
 
   public abstract class SiteDefinitionsProviderBase : ISiteDefinitionsProvider
@@ -10,7 +11,9 @@
 
     public virtual bool IsCurrent(string siteName)
     {
-      return Sitecore.Context.Site.Name.Equals(siteName, StringComparison.OrdinalIgnoreCase);
+      return Sitecore.Context.Site != null && Sitecore.Context.Site.Name.Equals(siteName, StringComparison.OrdinalIgnoreCase);
     }
+
+    public abstract SiteDefinition GetContextSiteDefinition(Item item);
   }
 }

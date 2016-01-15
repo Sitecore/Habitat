@@ -29,7 +29,6 @@ namespace Sitecore.Foundation.MultiSite.Providers
       };
 
       var sourceSettingItem = this.settingsProvider.GetSettingItem(settingName, contextItem);
-
       var datasourceRoot = sourceSettingItem?[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
 
       if (!string.IsNullOrEmpty(datasourceRoot))

@@ -3,23 +3,24 @@ ID: 779041c8-f089-4e63-a054-d718f42ee16d
 Parent: 9f6e51e8-696a-45d5-bafe-a2d6f2f98cac
 Template: 40ad8a9b-c75c-428d-9e1a-51372b21f63e
 Path: /sitecore/content/Habitat/Global/Quotes/Jane Douane
+DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151124T111205Z
     - ID: 26cd59ab-3639-488f-bafd-58d2b217755a
-      # Name
+      Hint: Name
       Value: Jane Douane
     - ID: 76972fcd-4bb0-4255-864e-077745efdf50
-      # Title
+      Hint: Title
       Value: CTO
     - ID: bf83983a-473f-4a49-be8e-7d563aa5687e
-      # Company
+      Hint: Company
       Value: Sitecore
     - ID: c9baf3eb-8cfa-4bf6-9b19-51d38db5fc38
-      # Picture
+      Hint: Picture
       Value: "<image mediaid=\"{FF8E14C4-79AA-4D80-A2E5-D07BFD835411}\" height=\"93\" hspace=\"\" width=\"100\" alt=\"\" vspace=\"\" />"

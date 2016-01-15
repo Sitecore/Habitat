@@ -3,22 +3,23 @@ ID: e6d8107a-d811-4826-82bb-1a6279830c5a
 Parent: 4935d7de-c715-46e5-862e-44adf1bc61e8
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Project/Common/2 Column 4-8
+DB: master
 SharedFields:
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
-  # Path
+  Hint: Path
   Value: /Views/Common/Sublayouts/2 Column 4-8.cshtml
 - ID: 7d24e54f-5c16-4314-90c9-6051aa1a7da1
-  # Parameters Template
+  Hint: Parameters Template
   Value: {4654D5F0-9B39-426A-992D-1D42E356FB0A}
 - ID: e441abe7-2ca3-4640-ae26-3789967925d7
-  # Compatible Renderings
+  Hint: Compatible Renderings
   Type: Treelist
   Value: |
     {AB7054DD-B8E3-41D6-A75F-B54F2F37D08B}
     {4ACD4C20-28D1-46F7-8FBA-A35778937BD1}
     {CB27D488-5DF8-48B9-B096-D68B2DA637E3}
 - ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
-  # Open Properties after Add
+  Hint: Open Properties after Add
   Value: 1
 Languages:
 - Language: en
@@ -26,5 +27,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150921T022826Z

@@ -3,19 +3,20 @@ ID: 153dd91b-8f8b-4f76-8879-62d30283bc7e
 Parent: ea13174a-b43e-4f68-b474-b41188771a9e
 Template: c18d3794-d126-4548-bfc8-89358de6e9c1
 Path: /sitecore/content/Habitat/Global/Media/Dependencies
+DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151209T051145Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\admin
     - ID: 72ea8682-24d2-4beb-951c-3e2164974105
-      # MediaSelector
+      Hint: MediaSelector
       Type: Multilist
       Value: |
         {38682229-4386-40F3-A1AE-A824F705F5B2}
