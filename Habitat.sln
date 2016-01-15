@@ -167,6 +167,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Metadata.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Metadata.Specflow", "src\Project\Habitat\specs\Feature.Metadata\Sitecore.Feature.Metadata.Specflow.csproj", "{22B66A8A-9155-4961-B439-7CC2C0665AED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Language.Specflow", "src\Project\Habitat\specs\Feature.Language\Sitecore.Feature.Language.Specflow.csproj", "{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -549,6 +551,14 @@ Global
 		{22B66A8A-9155-4961-B439-7CC2C0665AED}.Release|Any CPU.Build.0 = Release|Any CPU
 		{22B66A8A-9155-4961-B439-7CC2C0665AED}.Release|x64.ActiveCfg = Release|Any CPU
 		{22B66A8A-9155-4961-B439-7CC2C0665AED}.Release|x64.Build.0 = Release|Any CPU
+		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}.Debug|x64.Build.0 = Debug|Any CPU
+		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}.Release|x64.ActiveCfg = Release|Any CPU
+		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -625,5 +635,6 @@ Global
 		{B65AC070-F56C-4C2C-9D0E-E76CEF7E8928} = {3BB5C2EE-694B-49F4-989F-8484FD0A3F75}
 		{76232CCE-4D3F-4332-8C34-2D7807EE3954} = {21824E62-1354-4760-A77F-08E55B9818A3}
 		{22B66A8A-9155-4961-B439-7CC2C0665AED} = {AE1154F1-2C89-4AEC-B7B3-1902D73F037C}
+		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6} = {AE1154F1-2C89-4AEC-B7B3-1902D73F037C}
 	EndGlobalSection
 EndGlobal
