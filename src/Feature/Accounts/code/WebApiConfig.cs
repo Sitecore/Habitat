@@ -6,7 +6,7 @@
   {
     public static void Register(HttpConfiguration config)
     {
-      config.Routes.MapHttpRoute("HabitatAccountsApi", "api/{controller}/{action}");
+      config.Routes.MapHttpRoute("SitecoreFeatureAccountsApi", "api/{controller}/{action}");
     }
   }
 }
