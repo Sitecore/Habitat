@@ -3,12 +3,13 @@ ID: 1fbe5200-2c62-4a32-ba84-cffe3cf665d3
 Parent: a5efe032-021d-46fd-a1e6-d0d3c123c46c
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
 Path: /sitecore/templates/Feature/Accounts/_Interest/Interest/Title
+DB: master
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
-  # Type
+  Hint: Type
   Value: Single-Line Text
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 100
 Languages:
 - Language: en
@@ -16,5 +17,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151112T131701Z

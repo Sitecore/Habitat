@@ -131,6 +131,23 @@ gulp.task("Publish-All-Views", function () {
   );
 });
 
+gulp.task("Publish-All-Configs", function () {
+  var root = "./src";
+  var roots = [root + "/**/App_Config", "!" + root + "/**/obj/**/App_Config"];
+  var files = "/**/*.config";
+  var destination = config.websiteRoot + "\\App_Config";
+  return gulp.src(roots, { base: root }).pipe(
+    foreach(function (stream, file) {
+      console.log("Publishing from " + file.path);
+      gulp.src(file.path + files, { base: file.path })
+        .pipe(newer(destination))
+        .pipe(debug({ title: "Copying " }))
+        .pipe(gulp.dest(destination));
+      return stream;
+    })
+  );
+});
+
 /*****************************
  Watchers
 *****************************/

@@ -3,20 +3,18 @@ ID: 1ce39f86-2f0b-4f4c-b94d-8ec78a04a827
 Parent: 6aa25831-0944-4a79-9aff-7bac39e03557
 Template: f5f30cdc-9003-4015-84ec-c3a7e3e50d5e
 Path: /sitecore/content/Habitat/Global/Teasers/Accordeon
+DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150903T121817Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
-      Value: sitecore\admin
     - ID: 9e942565-677f-491c-a0ac-6b930e37342a
-      # AccordeonSelector
-      Type: Multilist
+      Hint: AccordeonSelector
+      Type: Treelist
       Value: |
         {EF593C2A-F3F8-421A-9368-0E189A689DBD}
         {6086F621-4A0E-4724-9D6F-EA7BA8139F57}

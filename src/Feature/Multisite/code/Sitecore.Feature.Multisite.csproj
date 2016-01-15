@@ -102,11 +102,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\MultisiteController.cs" />
-    <Compile Include="Models\SiteDefinition.cs" />
-    <Compile Include="Models\SiteDefinitions.cs" />
+    <Compile Include="Models\SiteConfiguration.cs" />
+    <Compile Include="Models\SiteConfigurations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ISiteDefinitionsRepository.cs" />
-    <Compile Include="Repositories\SiteDefinitionsRepository.cs" />
+    <Compile Include="Repositories\ISiteConfigurationRepository.cs" />
+    <Compile Include="Repositories\SiteConfigurationRepository.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
