@@ -63,7 +63,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Rainbow, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Rainbow.Core.1.1.0-beta06\lib\net45\Rainbow.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Rainbow.Core.1.1.0-beta07\lib\net45\Rainbow.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Rainbow.Storage.Sc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
