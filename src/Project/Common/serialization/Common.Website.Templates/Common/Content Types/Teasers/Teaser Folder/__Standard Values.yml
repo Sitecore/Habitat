@@ -3,9 +3,10 @@ ID: 9ac6b528-888a-4006-aeff-bc81e7202f14
 Parent: 29d4b405-39eb-487d-9d6b-3f8467ab167d
 Template: 29d4b405-39eb-487d-9d6b-3f8467ab167d
 Path: /sitecore/templates/Project/Common/Content Types/Teasers/Teaser Folder/__Standard Values
+DB: master
 SharedFields:
 - ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
-  # __Masters
+  Hint: __Masters
   Type: TreelistEx
   Value: |
     {C7D9D293-4EF8-4380-8E10-C4632E729F39}
@@ -18,8 +19,8 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150827T063159Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\admin

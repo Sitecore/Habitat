@@ -52,6 +52,10 @@
     <Reference Include="Sitecore.ContentSearch">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
@@ -104,6 +108,7 @@
     <Content Include="App_Config\Include\Feature\Habitat.Person.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Person\EmployeesList.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

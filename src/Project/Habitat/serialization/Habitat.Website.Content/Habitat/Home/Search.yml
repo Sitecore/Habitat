@@ -3,12 +3,13 @@ ID: 9aa07d42-e9b5-4b52-a0e2-4fdf08c203ee
 Parent: dac24edd-44fb-42ef-9ecd-1e8daf706386
 Template: 92168572-385b-45f0-b40f-3d987ad20e5c
 Path: /sitecore/content/Habitat/Home/Search
+DB: master
 SharedFields:
 - ID: 5585a30d-b115-4753-93ce-422c3455deb2
-  # ShowInNavigation
+  Hint: ShowInNavigation
   Value: 0
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 900
 Languages:
 - Language: en
@@ -16,17 +17,17 @@ Languages:
   - Version: 1
     Fields:
     - ID: 0ee2f208-1fee-42fc-8051-6696d49a92bf
-      # OpenGraphTitle
+      Hint: OpenGraphTitle
       Value: Search Results
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: Search
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150911T033505Z
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
-      # Title
+      Hint: Title
       Value: Search
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      # BrowserTitle
+      Hint: BrowserTitle
       Value: Search Results

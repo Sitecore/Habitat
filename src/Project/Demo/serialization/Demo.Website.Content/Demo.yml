@@ -3,12 +3,13 @@ ID: 99631735-7d1e-4343-b73e-6b5b46340f40
 Parent: 0de95ae4-41ab-4d01-9eb0-67441b7c2450
 Template: 49c651ba-4004-40a9-9b0f-e95d0573f3ae
 Path: /sitecore/content/Demo
+DB: master
 SharedFields:
 - ID: 39c4902e-9960-4469-aeef-e878e9c8218f
-  # __Hidden
+  Hint: __Hidden
   Value: 1
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 200
 Languages:
 - Language: en
@@ -16,7 +17,7 @@ Languages:
   - Version: 1
     Fields:
     - ID: 0bc0aedf-a6d0-4f74-933c-bd1779cd40b2
-      # HTML Content
+      Hint: HTML Content
       Value: |
         <!doctype html>
         <html itemscope="" itemtype="http://schema.org/WebPage" lang="en-AU">
@@ -4406,12 +4407,9 @@ Languages:
           </div>
         </body>
         </html>
-    - ID: 12537182-f35c-403f-afb5-747d55c450b8
-      # ShowInMenu
-      Value: 1
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151109T235920Z
     - ID: b8027200-aab0-4876-b454-dbb85add9e3c
-      # HostName
+      Hint: HostName
       Value: demo.habitat.local

@@ -1,0 +1,14 @@
+﻿---
+ID: 7c000ab4-d412-4602-b5df-bc3036a5213e
+Parent: bd726323-e745-47d0-99f7-d25a870fe211
+Template: f77fc8c9-8888-414d-8fc7-d20609b52c59
+Path: /sitecore/system/Social/Accounts/Habitat
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160106T044802Z

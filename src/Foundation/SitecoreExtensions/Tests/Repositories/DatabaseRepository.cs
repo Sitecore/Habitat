@@ -2,7 +2,7 @@
 {
   using FluentAssertions;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
-  using Sitecore.Foundation.SitecoreExtensions.Tests.Common;
+  using UnitTests.Common.Attributes;
   using Xunit;
 
   public class DatabaseRepositoryTests

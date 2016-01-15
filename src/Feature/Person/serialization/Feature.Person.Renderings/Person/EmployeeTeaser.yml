@@ -3,31 +3,32 @@ ID: 7b7dd1f9-a0db-45d9-9a3f-b704bb28903e
 Parent: 918adf7b-f0e9-422c-8dee-757215ce3407
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Person/EmployeeTeaser
+DB: master
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
-  # Datasource Template
-  Value: /sitecore/templates/Feature/Person/_Employee
+  Hint: Datasource Template
+  Value: 
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
-  # Path
+  Hint: Path
   Value: /Views/Person/EmployeeTeaser.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
-  # Datasource Location
-  Value: {0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
-- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
-  # Open Properties after Add
-  Value: -
+  Hint: Datasource Location
+  Value: site:employee
 - ID: e441abe7-2ca3-4640-ae26-3789967925d7
-  # Compatible Renderings
+  Hint: Compatible Renderings
   Type: Treelist
   Value: |
     {907018D8-CC53-4D34-AD67-3FDF0A25832A}
     {EBB6DC33-F281-49BE-B273-29ECCD6085A8}
     {C6E4CC96-91AC-4074-AD62-7DAE344F995D}
+- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
+  Hint: Open Properties after Add
+  Value: 
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151124T104420Z

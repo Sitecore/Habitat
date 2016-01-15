@@ -3,24 +3,26 @@ ID: 12537182-f35c-403f-afb5-747d55c450b8
 Parent: a71c3a41-08fa-4da0-909b-c4c52f531cde
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
 Path: /sitecore/templates/Feature/Multisite/_SiteConfiguration/Site/ShowInMenu
+DB: master
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
-  # Type
+  Hint: Type
   Value: Checkbox
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 100
 Languages:
 - Language: en
+  Fields:
+  - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+    Hint: Title
+    Value: Show in menu
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Hint: __Display name
+    Value: Show in menu
   Versions:
   - Version: 1
     Fields:
-    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
-      # Title
-      Value: Show in menu
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151209T153819Z
-    - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
-      # __Display name
-      Value: Show in menu

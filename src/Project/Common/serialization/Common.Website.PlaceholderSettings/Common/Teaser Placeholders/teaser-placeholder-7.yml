@@ -1,0 +1,18 @@
+﻿---
+ID: 4d4c2de5-4c29-4c97-bb9a-1ffcf1fb96dd
+Parent: a150435d-da28-46b2-a576-542f4ee053dc
+Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
+Path: /sitecore/layout/Placeholder Settings/Project/Common/Teaser Placeholders/teaser-placeholder-7
+DB: master
+SharedFields:
+- ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
+  Hint: Placeholder Key
+  Value: teaser-placeholder-7
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151026T055557Z

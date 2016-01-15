@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Sitecore.Foundation.MultiSite
+﻿namespace Sitecore.Foundation.MultiSite
 {
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.MultiSite.Providers;
 
   public class SiteContext
   {
@@ -15,31 +10,14 @@ namespace Sitecore.Foundation.MultiSite
     {
       Assert.ArgumentNotNull(item, nameof(item));
 
-      var siteItem = GetSiteItemByHierarchy(item) ?? GetSiteItemBySiteContext();
-      if (siteItem == null)
-        return null;
-
-      return new SiteDefinition
+      var itemSiteDefinitionsProvider = new ItemSiteDefinitionsProvider();
+      var siteDefinition = itemSiteDefinitionsProvider.GetContextSiteDefinition(item);
+      if (siteDefinition != null)
       {
-        Item = siteItem,
-        Name = siteItem.Name,
-        HostName = siteItem[Templates.Site.Fields.HostName]
-      };
-    }
-
-    private Item GetSiteItemBySiteContext()
-    {
-      return GetSiteItemByHierarchy(Context.Site.GetStartItem());
-    }
-
-    private static Item GetSiteItemByHierarchy(Item item)
-    {
-      return item.Axes.GetAncestors().FirstOrDefault(IsSite);
-    }
-
-    public static bool IsSite(Item item)
-    {
-      return item.IsDerived(Templates.Site.ID);
+        return siteDefinition;
+      }
+      var configSiteDefinitionsProvider = new ConfigurationSiteDefinitionsProvider();
+      return configSiteDefinitionsProvider.GetContextSiteDefinition(item);
     }
   }
 }

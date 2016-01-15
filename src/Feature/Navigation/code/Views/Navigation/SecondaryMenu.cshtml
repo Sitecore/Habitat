@@ -1,9 +1,12 @@
 ﻿@using Sitecore.Feature.Navigation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Feature.Navigation.Models.NavigationItem
 @{
-  if (!Sitecore.Context.PageMode.IsPageEditor && (Model == null || Model.Children == null || !Model.Children.Items.Any()))
+  if (Model?.Children == null || !Model.Children.Items.Any())
   {
-	  return;
+    @Html.Sitecore().PageEditorError(DictionaryRepository.Get("/Navigation/SecondaryMenu/No menu items", "No menu items found"))
+    return;
   }
 }
 

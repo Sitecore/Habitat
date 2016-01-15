@@ -124,7 +124,7 @@
         TemplateID = Templates.AccountsSettings.ID,
         Fields =
         {
-          new DbField("FogotPasswordMailTemplate", Templates.AccountsSettings.Fields.FogotPasswordMailTemplate)
+          new DbField("ForgotPasswordMailTemplate", Templates.AccountsSettings.Fields.ForgotPasswordMailTemplate)
           {
             Value = template.ToString()
           },
@@ -167,8 +167,6 @@
     [Theory, AutoDbData]
     public void GetPageLinkOrDefaultShouldThrowIfDefaultIsNull(Item item, ID id, AccountsSettingsService accountSettingsService)
     {
-      //var accountSettingsService = Substitute.ForPartsOf<AccountsSettingsService>();
-      //accountSettingsService
       accountSettingsService.Invoking(x => x.GetPageLinkOrDefault(item, id, null)).ShouldThrow<ArgumentNullException>();
     }
 
