@@ -1,6 +1,7 @@
 ﻿namespace Sitecore.Feature.Search.Controllers
 {
   using System.Web.Mvc;
+  using Sitecore.Exceptions;
   using Sitecore.Feature.Search.Models;
   using Sitecore.Feature.Search.Repositories;
   using Sitecore.Foundation.Indexing.Models;
@@ -33,12 +34,12 @@
 
     public ActionResult GlobalSearch()
     {
-      return this.View("GlobalSearch", this.GetSearchSettings());
+      return this.View("GlobalSearch", GetSearchSettings());
     }
 
     public ActionResult SearchSettings(string query)
     {
-      return this.View("SearchSettings", this.GetSearchSettings(query));
+      return this.View("SearchSettings", GetSearchSettings());
     }
 
     public ActionResult PagedSearchResults(string query, int? page)

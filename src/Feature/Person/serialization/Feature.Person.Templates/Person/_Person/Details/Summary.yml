@@ -3,12 +3,13 @@ ID: b897023c-15d2-49f3-8974-06fa5fb7ad00
 Parent: e7db8566-b0a1-4e49-965f-cfb8450deeb4
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
 Path: /sitecore/templates/Feature/Person/_Person/Details/Summary
+DB: master
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
-  # Type
+  Hint: Type
   Value: Multi-Line Text
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 400
 Languages:
 - Language: en
@@ -16,5 +17,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151201T010720Z

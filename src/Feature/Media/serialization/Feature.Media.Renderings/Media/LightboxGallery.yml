@@ -3,18 +3,19 @@ ID: 4e541395-9332-4f1d-87f0-e7f4920c2036
 Parent: c41e1360-7356-4397-9126-cf27db1f600e
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Media/LightboxGallery
+DB: master
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
-  # Datasource Template
-  Value: {C18D3794-D126-4548-BFC8-89358DE6E9C1}
+  Hint: Datasource Template
+  Value: 
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
-  # Path
+  Hint: Path
   Value: /Views/Media/LightboxGallery.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
-  # Datasource Location
-  Value: query:/sitecore/content/*/Global/Media
+  Hint: Datasource Location
+  Value: site:carousel
 - ID: e441abe7-2ca3-4640-ae26-3789967925d7
-  # Compatible Renderings
+  Hint: Compatible Renderings
   Type: Treelist
   Value: {E86BFEB1-F3FC-4E37-B693-A5550D6789EE}
 Languages:
@@ -23,5 +24,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151209T040530Z

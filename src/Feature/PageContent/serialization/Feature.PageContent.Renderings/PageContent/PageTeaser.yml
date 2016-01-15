@@ -3,18 +3,19 @@ ID: 07ab411c-f894-4144-b069-48ef67431d32
 Parent: d5d2ab0a-3909-4e22-af15-3bef1e97a0c0
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/PageContent/PageTeaser
+DB: master
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
-  # Datasource Template
-  Value: /sitecore/templates/Feature/PageContent/_HasPageContent
+  Hint: Datasource Template
+  Value: 
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
-  # Path
+  Hint: Path
   Value: /Views/PageContent/PageTeaser.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
-  # Datasource Location
-  Value: {0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+  Hint: Datasource Location
+  Value: site:pageteaser
 - ID: e441abe7-2ca3-4640-ae26-3789967925d7
-  # Compatible Renderings
+  Hint: Compatible Renderings
   Type: Treelist
   Value: |
     {914673DC-FC44-4660-B6EB-FF421FAAC2F9}
@@ -27,5 +28,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150831T120542Z

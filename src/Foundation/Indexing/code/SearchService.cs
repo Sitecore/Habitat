@@ -21,15 +21,13 @@
 
     public SearchService(ISearchSettings settings)
     {
-      //TODO: Be more intelligent, read from Site settings
-      this.IndexName = "sitecore_master_index";
       this.Settings = settings;
     }
 
 
     public virtual ISearchResults Search(IQuery query)
     {
-      using (var context = ContentSearchManager.GetIndex(this.IndexName).CreateSearchContext())
+      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
       {
         var root = this.Settings.Root;
         var queryable = context.GetQueryable<SearchResultItem>();
@@ -66,7 +64,7 @@
 
     public virtual ISearchResults FindAll(int skip, int take)
     {
-      using (var context = ContentSearchManager.GetIndex(this.IndexName).CreateSearchContext())
+      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
       {
         var root = this.Settings.Root;
         var queryable = context.GetQueryable<SearchResultItem>();
@@ -157,7 +155,6 @@
       }
       return queryable.Where(contentPredicates);
     }
-
-    public string IndexName { get; }
+    
   }
 }

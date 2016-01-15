@@ -3,9 +3,10 @@ ID: 3389cafc-000c-41e5-921c-92821b3db7b5
 Parent: d44c5a79-5c36-4a93-9de4-7e59345df572
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Social/OpenGraph
+DB: master
 SharedFields:
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
-  # Path
+  Hint: Path
   Value: /Views/Social/OpenGraph.cshtml
 Languages:
 - Language: en
@@ -13,5 +14,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150826T065247Z

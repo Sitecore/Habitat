@@ -4,7 +4,7 @@
   using System.Xml;
   using FluentAssertions;
   using Sitecore.Foundation.SitecoreExtensions.Services;
-  using Sitecore.Foundation.SitecoreExtensions.Tests.Common;
+  using UnitTests.Common.Attributes;
   using Xunit;
 
   public class XmlParserServiceTests
@@ -51,11 +51,10 @@
     [AutoDbData]
     public void GetAttributeShouldReturn_NotExistentAttribute_EmptyString(TestXmlParser service)
     {
-
       var doc = new XmlDocument();
       doc.LoadXml("<data/>");
-      
-      var attribute = service.GetAttribute(doc.DocumentElement,"someRandomAttribute");
+
+      var attribute = service.GetAttribute(doc.DocumentElement, "someRandomAttribute");
       attribute.Should().BeNullOrEmpty();
     }
 
@@ -64,7 +63,6 @@
     [AutoDbData]
     public void GetAttributeShould_ValidAttribute_ReturnValue(TestXmlParser service)
     {
-
       var doc = new XmlDocument();
       doc.LoadXml("<data expectedAttr='expectedValue'/>");
 

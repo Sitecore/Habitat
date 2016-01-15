@@ -59,4 +59,7 @@
   <File Include="Views\Common\Sublayouts\PageSidebarRight.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{CF750731-1275-4CC7-A9E6-809515CB4DD1}</Item>
   </File>
+  <File Include="Views\Common\Sublayouts\Navbar.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{E26A158B-FA1E-4E9B-8622-E4458243FF46}</Item>
+  </File>
 </Project>

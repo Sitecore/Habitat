@@ -3,12 +3,13 @@ ID: 831876b6-f9f1-463e-9dd5-7f93f1640590
 Parent: a033c041-5aee-4b43-a0f7-119f790553d5
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Project/Common/Inner/Inner 2 Column 4-8
+DB: master
 SharedFields:
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
-  # Path
+  Hint: Path
   Value: /Views/Common/Sublayouts/Inner/Inner 2 Column 4-8.cshtml
 - ID: e441abe7-2ca3-4640-ae26-3789967925d7
-  # Compatible Renderings
+  Hint: Compatible Renderings
   Type: Treelist
   Value: |
     {50F6052C-4FC2-4AA6-9399-FFC6055CF19F}
@@ -20,5 +21,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151008T043558Z

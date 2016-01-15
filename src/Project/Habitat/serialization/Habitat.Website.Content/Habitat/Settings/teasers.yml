@@ -1,0 +1,23 @@
+﻿---
+ID: e763d0c3-c649-4b40-9880-e3354fa1d24a
+Parent: c7c95984-e060-42d9-bbc6-b45c18768905
+Template: c82dc5ff-09ef-4403-96d3-3caf377b8c5b
+Path: /sitecore/content/Habitat/Settings/teasers
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160105T104836Z
+    - ID: 498dd5b6-7dae-44a7-9213-1d32596ad14f
+      Hint: DatasourceTemplate
+      Value: /sitecore/templates/Project/Common/Content Types/Teasers/Teaser
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: 5fe1cc43-f86c-459c-a379-cd75950d85af
+      Hint: DatasourceLocation
+      Value: /sitecore/content/Habitat/Global/Teasers

@@ -3,7 +3,7 @@
 
 @{
   var activeLanguage = LanguageRepository.GetActive();
-  var languages = LanguageRepository.GetAll().ToArray();
+  var languages = LanguageRepository.GetSupportedLanguages().ToArray();
   if (languages.Length <= 1)
   {
     return;
@@ -17,7 +17,7 @@
     @foreach (var language in languages)
     {
       <li>
-        <a href="@language.Url">@language.Name</a>
+        <a href="@language.Url">@language.NativeName</a>
       </li>
     }
   </ul>
