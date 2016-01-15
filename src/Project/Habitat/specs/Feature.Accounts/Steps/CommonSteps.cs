@@ -17,6 +17,13 @@
       Driver.FindElement(By.LinkText(linkText.ToUpperInvariant())).Click();
     }
 
+    [Then(@"User info is shown on User popup")]
+    public void ThenUserInfoIsShownOnUserPopup(Table table)
+    {
+
+    }
+
+
     [Then(@"Habitat website is opened on Main Page (.*)")]
     [Then(@"Page URL ends on (.*)")]
     public void ThenPageUrlEndsOnExpected(string urlEnding)

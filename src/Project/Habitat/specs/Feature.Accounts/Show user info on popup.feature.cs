@@ -100,9 +100,11 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Email"});
+                        "Email",
+                        "Email lable"});
             table2.AddRow(new string[] {
-                        "kov@sitecore.net"});
+                        "kov@sitecore.net",
+                        "E-mail"});
 #line 11
  testRunner.Then("User info is shown on User popup", ((string)(null)), table2, "Then ");
 #line hidden
@@ -149,10 +151,14 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
-                        "Name"});
+                        "Name",
+                        "Email lable",
+                        "Name Lable"});
             table5.AddRow(new string[] {
                         "kov@sitecore.net",
-                        "Konstantin Teltov"});
+                        "Konstantin Teltov",
+                        "E-mail",
+                        "Name"});
 #line 27
  testRunner.Then("User info is shown on User popup", ((string)(null)), table5, "Then ");
 #line hidden
@@ -199,10 +205,14 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
-                        "Name"});
+                        "Name",
+                        "Email lable",
+                        "Name Lable"});
             table8.AddRow(new string[] {
                         "kov@sitecore.net",
-                        "Konstantin Teltov"});
+                        "Konstantin!@#$%^&?()-+* Teltov!@#$%^&?()-+*",
+                        "E-mail",
+                        "Name"});
 #line 43
  testRunner.Then("User info is shown on User popup", ((string)(null)), table8, "Then ");
 #line hidden

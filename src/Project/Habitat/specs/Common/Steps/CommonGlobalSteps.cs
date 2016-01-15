@@ -64,6 +64,13 @@
       }
     }
 
+    [When(@"Actor Ends user visit")]
+    public void WhenActorEndsUserVisit()
+    {
+      FeatureContext.Current.Get<IWebDriver>().Navigate().GoToUrl(Settings.EndVisitUrl);
+    }
+
+
 
     [AfterFeature]
     public static void TeardownTest()
