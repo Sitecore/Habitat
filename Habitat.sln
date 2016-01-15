@@ -165,6 +165,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Language.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Metadata.Tests", "src\Feature\Metadata\Tests\Sitecore.Feature.Metadata.Tests.csproj", "{76232CCE-4D3F-4332-8C34-2D7807EE3954}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Media.Tests", "src\Feature\Media\Tests\Sitecore.Feature.Media.Tests.csproj", "{097A482B-CD89-4BA9-939F-B232D35AF8E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -539,6 +541,14 @@ Global
 		{76232CCE-4D3F-4332-8C34-2D7807EE3954}.Release|Any CPU.Build.0 = Release|Any CPU
 		{76232CCE-4D3F-4332-8C34-2D7807EE3954}.Release|x64.ActiveCfg = Release|Any CPU
 		{76232CCE-4D3F-4332-8C34-2D7807EE3954}.Release|x64.Build.0 = Release|Any CPU
+		{097A482B-CD89-4BA9-939F-B232D35AF8E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{097A482B-CD89-4BA9-939F-B232D35AF8E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{097A482B-CD89-4BA9-939F-B232D35AF8E1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{097A482B-CD89-4BA9-939F-B232D35AF8E1}.Debug|x64.Build.0 = Debug|Any CPU
+		{097A482B-CD89-4BA9-939F-B232D35AF8E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{097A482B-CD89-4BA9-939F-B232D35AF8E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{097A482B-CD89-4BA9-939F-B232D35AF8E1}.Release|x64.ActiveCfg = Release|Any CPU
+		{097A482B-CD89-4BA9-939F-B232D35AF8E1}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -614,5 +624,6 @@ Global
 		{47B8566D-0BA3-4427-81DB-38C7BBE38768} = {AE1154F1-2C89-4AEC-B7B3-1902D73F037C}
 		{B65AC070-F56C-4C2C-9D0E-E76CEF7E8928} = {3BB5C2EE-694B-49F4-989F-8484FD0A3F75}
 		{76232CCE-4D3F-4332-8C34-2D7807EE3954} = {21824E62-1354-4760-A77F-08E55B9818A3}
+		{097A482B-CD89-4BA9-939F-B232D35AF8E1} = {836F4115-EB6C-468A-AE65-6F123B0376E8}
 	EndGlobalSection
 EndGlobal
