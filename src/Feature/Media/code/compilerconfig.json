@@ -1,0 +1,22 @@
+﻿[
+  {
+    "inputFile": "Scripts/Media/jquery.multibackground.js",
+    "outputFile": "Scripts/Media/jquery.multibackground.js",
+    "minify": {
+      "enabled": true
+    },
+    "options": {
+      "sourceMap": true
+    }
+  },
+  {
+    "inputFile": "Scripts/Media/jquery.smoothwheel.js",
+    "outputFile": "Scripts/Media/jquery.smoothwheel.js",
+    "minify": {
+        "enabled": true
+    },
+    "options":{
+        "sourceMap": true
+    }   
+  }
+]

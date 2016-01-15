@@ -5,6 +5,12 @@ Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Media/ParallaxBackground
 DB: master
 SharedFields:
+- ID: 11421560-0bcb-403a-b099-8595c34341fd
+  Hint: JavaScript inline
+  Value: |
+    $(document).ready(function(){
+      $(document).smoothWheel();
+    });
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   Hint: Datasource Template
   Value: /sitecore/templates/Feature/Media/_HasParallaxBackground
@@ -15,7 +21,9 @@ SharedFields:
   Value: /Views/Media/ParallaxBackground.cshtml
 - ID: e514a1eb-ddba-44f7-8528-82ca2280f778
   Hint: JavaScript assets
-  Value: https://rawgit.com/TonyBogdanov/MultiBackground/master/plugin/jquery.multibackground.js
+  Value: |
+    /Scripts/Media/jquery.multibackground.js
+    /Scripts/Media/jquery.smoothwheel.min.js
 - ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
   Hint: Open Properties after Add
   Value: 1
