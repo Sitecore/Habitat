@@ -30,7 +30,8 @@ Scenario: Create metakeywords content_UC2_Assign metakeyword to page and check k
 	| <meta name="keywords" content="sitecore"> |
 
 @NeedImplementation
-Given Admin user is logged into Content Editor application
+Scenario: Create metakeywords content_UC3_Assign several metakeywords to page and check keywords in the page HTML
+	Given Admin user is logged into Content Editor application
 	When Admin opens following item
 	| Item Path                                                    | Field Name    |
 	| /sitecore/content/Habitat/Home/About Habitat/Getting Started | Meta Keywords |
