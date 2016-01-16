@@ -20,8 +20,25 @@
     [Then(@"User info is shown on User popup")]
     public void ThenUserInfoIsShownOnUserPopup(Table table)
     {
-
+      var values = table.Rows.Select(x => x.Values.First());
+      //1
+      foreach (var value in values)
+      {
+        var found = false;
+        foreach (var webElement in Site.ShowUserInfoPopupFields)
+        {
+          found = webElement.Text == value;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeFalse();
+      }
     }
+
+
+
 
 
     [Then(@"Habitat website is opened on Main Page (.*)")]
@@ -99,6 +116,29 @@
         found.Should().BeFalse();
       }
     }
+
+    [Then(@"User info is not shown on User popup")]
+    public void ThenUserInfoIsNotShownOnUserPopup(Table table)
+    {
+      var fields = table.Rows.Select(x => x.Values.First());
+      //1
+      foreach (var field in fields)
+      {
+        var found = false;
+        foreach (var webElement in Site.EditUserProfileTextFields)
+        {
+          found = webElement.Text == field;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeFalse();
+      }
+    }
+
+
+
 
     [When(@"Actor enters following data in to the register fields")]
     public void WhenActorEntersFollowingDataInToTheRegisterFields(Table table)
