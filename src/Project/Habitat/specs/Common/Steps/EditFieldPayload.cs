@@ -1,5 +1,7 @@
 namespace Sitecore.Foundation.Common.Specflow.Steps
 {
+  using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
+
   public class EditFieldPayload
   {
     public string ItemIdOrPath { get; set; }

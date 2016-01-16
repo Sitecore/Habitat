@@ -2,6 +2,8 @@
 {
   using System.Collections.Generic;
   using System.ServiceModel;
+  using Sitecore.Foundation.Common.Specflow.Service_References.TestHelperService;
+  using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
   using TechTalk.SpecFlow;
 
   public static class ContextExtensions

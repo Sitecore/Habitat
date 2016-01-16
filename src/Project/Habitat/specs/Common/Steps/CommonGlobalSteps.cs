@@ -6,6 +6,7 @@
   using OpenQA.Selenium;
   using OpenQA.Selenium.Firefox;
   using Sitecore.Foundation.Common.Specflow.Infrastructure;
+  using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
   using TechTalk.SpecFlow;
 
   [Binding]
