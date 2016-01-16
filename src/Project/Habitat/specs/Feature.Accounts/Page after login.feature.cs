@@ -100,7 +100,7 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
-                        "/sitecore/content/Habitat/Home/Contact Us"});
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Accounts"});
 #line 9
  testRunner.And("Value set to item field", ((string)(null)), table2, "And ");
 #line 12
@@ -117,9 +117,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 16
  testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.Then("Page URL ends on /Contact-Us", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page URL ends on /Accounts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
- testRunner.And("Contact-Us title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Accounts title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -241,7 +241,7 @@ this.ScenarioSetup(scenarioInfo);
             table10.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
-                        "/sitecore/content/Habitat/Home/Contact Us"});
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Accounts"});
 #line 56
  testRunner.Given("Value set to item field", ((string)(null)), table10, "Given ");
 #line 59
@@ -260,9 +260,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 63
  testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
- testRunner.Then("Page URL ends on /Contact-Us", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page URL ends on /Accounts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 65
- testRunner.And("Contact-Us title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Accounts title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -284,7 +284,7 @@ this.ScenarioSetup(scenarioInfo);
             table12.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
-                        "/sitecore/content/Habitat/Home/Contact Us"});
+                        "/sitecore/content/Habitat/Home/Register"});
 #line 70
  testRunner.Given("Value set to item field", ((string)(null)), table12, "Given ");
 #line hidden
@@ -314,9 +314,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 81
  testRunner.And("User clicks Login button on Login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 82
- testRunner.Then("Page URL ends on /Contact-Us", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page URL ends on /Register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 83
- testRunner.And("Contact-Us title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Register title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
