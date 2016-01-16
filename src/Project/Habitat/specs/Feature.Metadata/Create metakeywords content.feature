@@ -25,7 +25,9 @@ Scenario: Create metakeywords content_UC2_Assign metakeyword to page and check k
 	| /sitecore/content/Habitat/Home/About Habitat/Getting Started | Meta Keywords |
 	And Admin assign <sitecore> keyword
 	And Admin saves changes on the item
-	Then page HTML contains <meta name="keywords" content="sitecore">
+	Then page HTML contains following tag
+	| Tag                                       |
+	| <meta name="keywords" content="sitecore"> |
 
 @NeedImplementation
 Given Admin user is logged into Content Editor application
@@ -35,4 +37,6 @@ Given Admin user is logged into Content Editor application
 	And Admin assign <sitecore> keyword
 	And Admin assign <habitat> keyword
 	And Admin saves changes on the item
-	Then page HTML contains <meta name="keywords" content="sitecore, habitat">
+	Then page HTML contains following tag
+	|Tag                                                |
+	|<meta name="keywords" content="sitecore, habitat"> |
