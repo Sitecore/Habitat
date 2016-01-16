@@ -1,12 +1,11 @@
-﻿namespace Sitecore.Foundation.Testing.Specflow.Steps
+﻿namespace Sitecore.Foundation.Common.Specflow.Steps
 {
   using System;
   using System.Collections.Generic;
   using System.Threading;
   using OpenQA.Selenium;
   using OpenQA.Selenium.Firefox;
-  using Sitecore.Foundation.Testing.Specflow.Infrastructure;
-  using Sitecore.Foundation.Testing.Specflow.UtfService;
+  using Sitecore.Foundation.Common.Specflow.Infrastructure;
   using TechTalk.SpecFlow;
 
   [Binding]

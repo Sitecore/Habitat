@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
@@ -139,7 +139,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.MultiSi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "specs", "specs", "{AE1154F1-2C89-4AEC-B7B3-1902D73F037C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Testing.Specflow", "src\Project\Habitat\specs\Common\Sitecore.Foundation.Testing.Specflow.csproj", "{E0C9AF4F-FC51-42E6-B7B9-1E173AC0589D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Common.Specflow", "src\Project\Habitat\specs\Common\Sitecore.Foundation.Common.Specflow.csproj", "{E0C9AF4F-FC51-42E6-B7B9-1E173AC0589D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Accounts.Specflow", "src\Project\Habitat\specs\Feature.Accounts\Sitecore.Feature.Accounts.Specflow.csproj", "{CF95188D-0E98-44FA-BB40-D1EA083A09FB}"
 EndProject

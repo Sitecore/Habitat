@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.Testing.Specflow.Steps
+﻿namespace Sitecore.Foundation.Common.Specflow.Steps
 {
   using OpenQA.Selenium;
   using TechTalk.SpecFlow;

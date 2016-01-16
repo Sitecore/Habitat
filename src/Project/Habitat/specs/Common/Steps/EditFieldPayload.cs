@@ -1,7 +1,5 @@
-namespace Sitecore.Foundation.Testing.Specflow.Steps
+namespace Sitecore.Foundation.Common.Specflow.Steps
 {
-  using Sitecore.Foundation.Testing.Specflow.UtfService;
-
   public class EditFieldPayload
   {
     public string ItemIdOrPath { get; set; }

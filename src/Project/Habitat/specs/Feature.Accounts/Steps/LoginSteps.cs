@@ -3,7 +3,7 @@
   using System;
   using System.Linq;
   using FluentAssertions;
-  using Habitat.Accounts.Specflow.Infrastructure;
+  using Sitecore.Foundation.Common.Specflow.Extensions;
   using TechTalk.SpecFlow;
 
   internal class LoginSteps : AccountStepsBase

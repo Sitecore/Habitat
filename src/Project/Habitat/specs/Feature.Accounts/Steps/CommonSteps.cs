@@ -3,9 +3,9 @@
   using System;
   using System.Linq;
   using FluentAssertions;
-  using Habitat.Accounts.Specflow.Infrastructure;
   using OpenQA.Selenium;
-  using Sitecore.Foundation.Testing.Specflow.Infrastructure;
+  using Sitecore.Foundation.Common.Specflow.Extensions;
+  using Sitecore.Foundation.Common.Specflow.Infrastructure;
   using TechTalk.SpecFlow;
 
   [Binding]
