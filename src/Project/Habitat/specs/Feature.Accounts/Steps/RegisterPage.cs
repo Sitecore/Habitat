@@ -52,9 +52,11 @@
       {
         var c = new WebClient();
         c.Headers.Add(HttpRequestHeader.Accept, "application/json");
-        var searchResult = JsonConvert.DeserializeObject<SearchEntity>(c.DownloadString(Settings.SearchContactUrl + row["email"]));
-        var contactID = searchResult.Data.ContactSearchResults.First(x => x.PreferredEmailAddress == row["email"]).ContactId;
-        var outcomeUrl =  Settings.BaseUrl + "/sitecore/api/ao/proxy/contacts/{contactID}/intel/outcome-detail";
+        var email = row["email"];
+        var username = email.Split('@').First();
+        var searchResult = JsonConvert.DeserializeObject<SearchEntity>(c.DownloadString(Settings.SearchContactUrl + username));
+        var contactID = searchResult.Data.Dataset.ContactSearchResults.First(x => x.PreferredEmailAddress == email).ContactId;
+        var outcomeUrl =  Settings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}/intel/outcome-detail";
 
         var outcomes = JsonConvert.DeserializeObject<SearchEntity>(c.DownloadString(outcomeUrl));
         outcomes.Data.Dataset.OutcomeDetail.Any(x => x.OutcomeDefinitionDisplayName == row["Outcome value"]).Should().BeTrue();
@@ -65,6 +67,7 @@
 
     public class SearchEntity
     {
+      [JsonProperty("data")]
       public Data Data { get; set; }
 
     }
@@ -73,7 +76,8 @@
 
   internal class Data
   {
-    public  ContactSearchResult[] ContactSearchResults { get; set; }
+    
+    [JsonProperty("dataSet")]
     public  Dataset Dataset { get; set; }
   }
 
@@ -87,12 +91,17 @@
 
   internal class Dataset
   {
+    [JsonProperty("outcome-detail")]
     public OutcomeDetail[] OutcomeDetail { get; set; }
+    public ContactSearchResult[] ContactSearchResults { get; set; }
   }
 
   internal class ContactSearchResult
   {
+
+    [JsonProperty("contactId")]
     public Guid ContactId { get; set; }
+    [JsonProperty("preferredEmailAddress")]
     public string PreferredEmailAddress { get; set; }
   }
 }

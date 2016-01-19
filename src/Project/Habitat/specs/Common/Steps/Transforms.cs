@@ -5,6 +5,7 @@
   using TechTalk.SpecFlow;
   using TechTalk.SpecFlow.Assist;
 
+  [Binding]
   public class Transforms
   {
     [StepArgumentTransformation]
