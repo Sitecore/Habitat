@@ -10,12 +10,3 @@ namespace Sitecore.Feature.Media.Tests.Infrastructure
     }
   }
 }
-
-namespace Sitecore.Feature.Media.Tests.Infrastructure
-{
-}
-
-namespace Sitecore.Feature.Media.Tests.Infrastructure
-{
-}
-
