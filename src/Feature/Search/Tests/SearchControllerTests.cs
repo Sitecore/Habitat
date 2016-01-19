@@ -13,6 +13,7 @@
   using Sitecore.Foundation.Indexing;
   using Sitecore.Foundation.Indexing.Models;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using UnitTests.Common.Attributes;
   using Xunit;
 
   public class SearchControllerTests

@@ -2,6 +2,7 @@
 {
   using System;
   using Ploeh.AutoFixture;
+  using UnitTests.Common.Attributes;
 
   public class AutoDbDataWithExtension: AutoDbDataAttribute
   {

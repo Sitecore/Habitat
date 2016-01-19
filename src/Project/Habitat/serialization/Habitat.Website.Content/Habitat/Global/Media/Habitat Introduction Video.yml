@@ -4,6 +4,10 @@ Parent: ea13174a-b43e-4f68-b474-b41188771a9e
 Template: f1c095e2-b3e0-46d0-b838-02a9e8b880d9
 Path: /sitecore/content/Habitat/Global/Media/Habitat Introduction Video
 DB: master
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 800
 Languages:
 - Language: en
   Versions:
