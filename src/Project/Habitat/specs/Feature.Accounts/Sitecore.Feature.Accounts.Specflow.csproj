@@ -135,11 +135,16 @@
       <DependentUpon>Site switcher.feature</DependentUpon>
     </Compile>
     <Compile Include="Steps\CommonSteps.cs" />
+    <Compile Include="Infrastructure\ContactSearchResult.cs" />
+    <Compile Include="Infrastructure\Data.cs" />
+    <Compile Include="Infrastructure\Dataset.cs" />
     <Compile Include="Steps\ForgotPasswordSteps.cs" />
     <Compile Include="Steps\LoginSteps.cs" />
+    <Compile Include="Infrastructure\OutcomeDetail.cs" />
     <Compile Include="Steps\RegisterPage.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Steps\EditUserProfile.cs" />
+    <Compile Include="Infrastructure\SearchEntity.cs" />
     <Compile Include="Steps\SiteNavigation.cs" />
     <Compile Include="Steps\AccountStepsBase.cs" />
     <Compile Include="Trigger an outcome on customer registration.feature.cs">

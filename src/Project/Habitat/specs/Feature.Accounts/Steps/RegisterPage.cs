@@ -1,11 +1,11 @@
 ﻿namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
-  using System;
   using System.Linq;
   using System.Net;
   using System.Runtime.Serialization.Json;
   using FluentAssertions;
   using Newtonsoft.Json;
+  using Sitecore.Feature.Accounts.Specflow.Infrastructure;
   using TechTalk.SpecFlow;
 
   [Binding]
@@ -65,43 +65,6 @@
      
     }
 
-    public class SearchEntity
-    {
-      [JsonProperty("data")]
-      public Data Data { get; set; }
-
-    }
-
-  }
-
-  internal class Data
-  {
-    
-    [JsonProperty("dataSet")]
-    public  Dataset Dataset { get; set; }
-  }
-
-  internal class OutcomeDetail
-  {
-    public Guid ContactID { get; set; }
-    public string OutcomeDefinitionDisplayName { get; set; }
-    public string OutcomeCategoryDisplayName { get; set; }
-
-  }
-
-  internal class Dataset
-  {
-    [JsonProperty("outcome-detail")]
-    public OutcomeDetail[] OutcomeDetail { get; set; }
-    public ContactSearchResult[] ContactSearchResults { get; set; }
-  }
-
-  internal class ContactSearchResult
-  {
-
-    [JsonProperty("contactId")]
-    public Guid ContactId { get; set; }
-    [JsonProperty("preferredEmailAddress")]
-    public string PreferredEmailAddress { get; set; }
+   
   }
 }
