@@ -7,15 +7,15 @@ Scenario: Accounts_Page after login_UC1_Define custom page
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
 	And Value set to item field
-	| ItemPath                  | Field          | Value                                     |
-	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Contact Us |
+	| ItemPath                  | Field          | Value                                                   |
+	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Modules/Feature/Accounts |
 	When Actor opens Habitat website on Login page
 	And Actor enteres following data into fields
 	| E-mail              |Password |
 	| kov@sitecore.net    |k        |
 	And Actor clicks Login button
-	Then Page URL ends on /Contact-Us
-	And Contact-Us title presents on page
+	Then Page URL ends on /Accounts
+	And Accounts title presents on page
 	  	
 
 
@@ -54,22 +54,22 @@ Scenario: Accounts_Page after login_UC3_Define custom page_empty value
 @Ready
 Scenario: Accounts_Page after login_UC4_After login page for new registered user 
 	Given Value set to item field
-	| ItemPath                  | Field          | Value                                     |
-	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Contact Us |
+	| ItemPath                  | Field          | Value                                                   |
+	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Modules/Feature/Accounts |
 	And Habitat website is opened on Register page	
 	When Actor enters following data in to the register fields
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
 	And Actor clicks Register button
-	Then Page URL ends on /Contact-Us
-	And Contact-Us title presents on page
+	Then Page URL ends on /Accounts
+	And Accounts title presents on page
 
 
 @Ready
 Scenario: Accounts_Page after login_UC5_After login behavior for login pop up
 	Given Value set to item field
-	| ItemPath                  | Field          | Value                                     |
-	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Contact Us |
+	| ItemPath                  | Field          | Value                                   |
+	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Register |
 	And User is registered in Habitat and logged out
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               | 
@@ -79,8 +79,8 @@ Scenario: Accounts_Page after login_UC5_After login behavior for login pop up
 	| Email            | Password |
 	| kov@sitecore.net | k        |
 	And User clicks Login button on Login form
-	Then Page URL ends on /Contact-Us
-	And Contact-Us title presents on page
+	Then Page URL ends on /Register
+	And Register title presents on page
 
 @Ready
 Scenario: Accounts_Page after login_UC6_Double redirect logic

@@ -2,6 +2,7 @@
 {
   using System.Collections.Generic;
   using System.Linq;
+  using System.Net.Mime;
   using OpenQA.Selenium;
   using Sitecore.Foundation.Common.Specflow.Extensions;
   using TechTalk.SpecFlow;
@@ -15,6 +16,8 @@
     public IWebElement PageTitle => Driver.FindElement(By.CssSelector(".section-title"));
 
     public IWebElement SubmitButton => Driver.FindElement(By.CssSelector("input[type=submit]"));
+
+    public IEnumerable<IWebElement> SubmitButtons => Driver.FindElements(By.CssSelector("input[type=submit]"));
 
     public IWebElement SubmitLink => Driver.FindElement(By.CssSelector("a.btn.btn-link"));
 
@@ -78,7 +81,14 @@
     public IWebElement RegisterEmail
       => Driver.FindElement(By.Id("registerEmail"));
 
-    public IWebElement ShowUserInfoPopupFields
-      => Driver.FindElement(By.XPath(".//*[@id='primary-navigation']/ul/li[7]/ul/li[1]/div"));
+    public IEnumerable<IWebElement> ShowUserInfoPopupFields
+      => Driver.FindElements(By.XPath(".//*[@id='primary-navigation']/ul/li[7]/ul/li[1]/div"));
+
+    public IEnumerable<IWebElement> EditUserProfileTextFields
+      => Driver.FindElements(By.CssSelector("#firstName, #lastName, #phoneNumber"));
+
+    public IEnumerable<IWebElement> EditUserProfileCheckBoxFields
+      => Driver.FindElements(By.CssSelector("#interests"));
+
   }
 }

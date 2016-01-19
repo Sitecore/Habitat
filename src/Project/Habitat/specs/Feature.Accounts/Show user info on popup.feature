@@ -1,6 +1,6 @@
 ﻿Feature: Show user info on popup
 	
-@NeedImplementation
+@Ready
 Scenario: Account_Show user info on popup_UC1_Only email is shown 
 	Given Habitat website is opened on Register page
 	When Actor enters following data in to the register fields
@@ -13,52 +13,56 @@ Scenario: Account_Show user info on popup_UC1_Only email is shown
 	| kov@sitecore.net | E-mail      |
 
 
-@NeedImplementation
+@Ready
 Scenario: Account_Show user info on popup_UC2_Full user info is shown 
 	Given User with following data is registered in Habitat
-	| Email              | Password | ConfirmPassword |
-	| kov10@sitecore.net | k        | k               |	
-	When Actor moves cursor over the User icon
-	And User clicks Edit Profile from drop-down menu 
-	And User inputs data in to the fields
-	| Last Name | First Name | Phone number    |
-	| Teltov    | Konstantin | +38(067)3333333 |
-	And User selects <Swiming> from Interests drop-down list
+	| Email            | Password | ConfirmPassword |
+	| kov@sitecore.net | k        | k               |	
+	And Edit profile page is opened
+	When User inputs data in to the fields
+	| LastName | FirstName  | PhoneNumber     |
+	| Teltov   | Konstantin | +38(067)3333333 |
+	And User clicks Update button on Edit User Profile page  
 	Then User info is shown on User popup
 	| Email            | Name              | Email lable | Name Lable |
 	| kov@sitecore.net | Konstantin Teltov | E-mail      | Name       |
 
 
-@NeedImplementation
-Scenario: Account_Show user info on popup_UC2_User Name with special symbols 
+@Ready
+Scenario: Account_Show user info on popup_UC3_User Name with special symbols 
 	Given User with following data is registered in Habitat
-	| Email              | Password | ConfirmPassword |
-	| kov10@sitecore.net | k        | k               |	
-	When Actor moves cursor over the User icon
-	And User clicks Edit Profile from drop-down menu 
-	And User inputs data in to the fields
-	| Last Name           | First Name              | Phone number    |
+	| Email            | Password | ConfirmPassword |
+	| kov@sitecore.net | k        | k               |
+	And Edit profile page is opened	
+	When User inputs data in to the fields
+	| LastName            | FirstName               | PhoneNumber     |
 	| Teltov!@#$%^&?()-+* | KONSTANTIN!@#$%^&?()-+* | +38(067)3333333 |
-	And User selects <Swiming> from Interests drop-down list
+	And User clicks Update button on Edit User Profile page  
 	Then User info is shown on User popup
 	| Email            | Name                                        | Email lable | Name Lable |
 	| kov@sitecore.net | Konstantin!@#$%^&?()-+* Teltov!@#$%^&?()-+* | E-mail      | Name       |
 
 
-@NeedImplementation
+@Ready
 Scenario: Account_Show user info on popup_Bug36103_Name label should dismiss if user has removed User Last Name and First Name
-	Given User with following data is registered in Habitat and logged in 
-	| Email            | Password | ConfirmPassword | First name | Last name |
-	| kov@sitecore.net | k        | k               | Konstantin | Teltov    |
-	When User moves cursor over the User icon
-	And User clicks Edit Profile from drop-down menu 
-	And User clears data in <First name> and <Last name> fields
-	And User clicks Update button
-	And When User moves cursor over the User icon
+	Given User with following data is registered in Habitat
+	| Email            | Password | ConfirmPassword |
+	| kov@sitecore.net | k        | k               |
+	And Following fields were updated in User Profile
+	| LastName | FirstName  |
+	| Teltov   | Konstantin |
+	And User clicks Update button on Edit User Profile page	
+	When User updates following fields in User Profile 
+	| LastName | FirstName |
+	|          |           |
+	And User clicks Update button on Edit User Profile page
+	And Actor moves cursor over the User icon	
 	Then User info is shown on User popup
-	| Email            | 
-	| kov@sitecore.net | 
-	And Name label is no longer exists on the pop up
+	| Email            | Email lable | 
+	| kov@sitecore.net | E-mail      | 
+	And User info is not shown on User popup
+	| Name Lable |Name              |
+	| Name       |Konstantin Teltov |
 	
 
  

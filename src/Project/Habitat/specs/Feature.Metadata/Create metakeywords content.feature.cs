@@ -72,6 +72,120 @@ namespace Sitecore.Feature.Metadata.Specflow
             this.ScenarioTearDown();
         }
         
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Create metakeywords content")]
+        [Xunit.TraitAttribute("Description", "Create metakeywords content_UC1_Create new keyword in the Content Editor")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        public virtual void CreateMetakeywordsContent_UC1_CreateNewKeywordInTheContentEditor()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create metakeywords content_UC1_Create new keyword in the Content Editor", new string[] {
+                        "NeedImplementation"});
+#line 8
+this.ScenarioSetup(scenarioInfo);
+#line 9
+ testRunner.Given("Admin user is logged into Content Editor application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item Path"});
+            table1.AddRow(new string[] {
+                        "/sitecore/content/Habitat/Global/Metadata Keywords"});
+#line 10
+ testRunner.When("Admin opens following item", ((string)(null)), table1, "When ");
+#line 13
+ testRunner.And("Admin selects Metakeyword from Insert chunk on the ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+ testRunner.And("Admin enters <Name> on the Message dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.And("Admin clicks OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item Path"});
+            table2.AddRow(new string[] {
+                        "/sitecore/content/Habitat/Global/Metadata Keywords"});
+#line 16
+ testRunner.Then("new item with title <Name> should be added under following item", ((string)(null)), table2, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Create metakeywords content")]
+        [Xunit.TraitAttribute("Description", "Create metakeywords content_UC2_Assign metakeyword to page and check keywords in " +
+            "the page HTML")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        public virtual void CreateMetakeywordsContent_UC2_AssignMetakeywordToPageAndCheckKeywordsInThePageHTML()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create metakeywords content_UC2_Assign metakeyword to page and check keywords in " +
+                    "the page HTML", new string[] {
+                        "NeedImplementation"});
+#line 21
+this.ScenarioSetup(scenarioInfo);
+#line 22
+ testRunner.Given("Admin user is logged into Content Editor application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item Path",
+                        "Field Name"});
+            table3.AddRow(new string[] {
+                        "/sitecore/content/Habitat/Home/About Habitat/Getting Started",
+                        "Meta Keywords"});
+#line 23
+ testRunner.When("Admin opens following item", ((string)(null)), table3, "When ");
+#line 26
+ testRunner.And("Admin assign <sitecore> keyword", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.And("Admin saves changes on the item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Tag"});
+            table4.AddRow(new string[] {
+                        "<meta name=\"keywords\" content=\"sitecore\">"});
+#line 28
+ testRunner.Then("page HTML contains following tag", ((string)(null)), table4, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Create metakeywords content")]
+        [Xunit.TraitAttribute("Description", "Create metakeywords content_UC3_Assign several metakeywords to page and check key" +
+            "words in the page HTML")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        public virtual void CreateMetakeywordsContent_UC3_AssignSeveralMetakeywordsToPageAndCheckKeywordsInThePageHTML()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create metakeywords content_UC3_Assign several metakeywords to page and check key" +
+                    "words in the page HTML", new string[] {
+                        "NeedImplementation"});
+#line 33
+this.ScenarioSetup(scenarioInfo);
+#line 34
+ testRunner.Given("Admin user is logged into Content Editor application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item Path",
+                        "Field Name"});
+            table5.AddRow(new string[] {
+                        "/sitecore/content/Habitat/Home/About Habitat/Getting Started",
+                        "Meta Keywords"});
+#line 35
+ testRunner.When("Admin opens following item", ((string)(null)), table5, "When ");
+#line 38
+ testRunner.And("Admin assign <sitecore> keyword", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+ testRunner.And("Admin assign <habitat> keyword", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 40
+ testRunner.And("Admin saves changes on the item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Tag"});
+            table6.AddRow(new string[] {
+                        "<meta name=\"keywords\" content=\"sitecore, habitat\">"});
+#line 41
+ testRunner.Then("page HTML contains following tag", ((string)(null)), table6, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
