@@ -4,5 +4,6 @@
 
   public class AccountSettings : BaseSettings
   {
+    public string SearchContactUrl => base.BaseUrl + "/sitecore/api/ao/proxy/contacts/search?match=";
   }
 }

@@ -117,7 +117,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         ""});
 #line 15
- testRunner.Then("User Otcome contains value", ((string)(null)), table3, "Then ");
+ testRunner.Then("User Outcome contains value", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -167,7 +167,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "Sales Lead"});
 #line 32
- testRunner.Then("User Otcome contains value", ((string)(null)), table6, "Then ");
+ testRunner.Then("User Outcome contains value", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

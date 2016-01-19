@@ -12,7 +12,7 @@ Scenario: Trigger an outcome on customer registration_UC1_Empty registration out
 	| kov@sitecore.net | k        | k               |
 	And Actor clicks Register button
 	And Actor Ends user visit
-	Then User Otcome contains value
+	Then User Outcome contains value
 	| email            | Outcome value |
 	| kov@sitecore.net |               |
 
@@ -29,7 +29,7 @@ Scenario: Trigger an outcome on customer registration_UC2_Custom registration ou
 	| kov@sitecore.net | k        | k               |
 	And Actor clicks Register button
 	And Actor Ends user visit
-	Then User Otcome contains value
+	Then User Outcome contains value
 	| email            | Outcome value |
 	| kov@sitecore.net | Sales Lead    |
 
