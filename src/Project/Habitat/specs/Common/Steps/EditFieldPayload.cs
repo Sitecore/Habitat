@@ -1,6 +1,6 @@
-namespace Sitecore.Foundation.Testing.Specflow.Steps
+namespace Sitecore.Foundation.Common.Specflow.Steps
 {
-  using Sitecore.Foundation.Testing.Specflow.UtfService;
+  using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
 
   public class EditFieldPayload
   {

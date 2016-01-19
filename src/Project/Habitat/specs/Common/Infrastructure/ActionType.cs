@@ -1,4 +1,4 @@
-namespace Sitecore.Foundation.Testing.Specflow.Infrastructure
+namespace Sitecore.Foundation.Common.Specflow.Infrastructure
 {
   public enum ActionType
   {

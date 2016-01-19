@@ -1,12 +1,12 @@
-﻿namespace Sitecore.Foundation.Testing.Specflow.Steps
+﻿namespace Sitecore.Foundation.Common.Specflow.Steps
 {
   using System;
   using System.Collections.Generic;
   using System.Threading;
   using OpenQA.Selenium;
   using OpenQA.Selenium.Firefox;
-  using Sitecore.Foundation.Testing.Specflow.Infrastructure;
-  using Sitecore.Foundation.Testing.Specflow.UtfService;
+  using Sitecore.Foundation.Common.Specflow.Infrastructure;
+  using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
   using TechTalk.SpecFlow;
 
   [Binding]
@@ -63,6 +63,13 @@
         EditItem(field.ItemPath, field.FieldName, field.FieldValue);
       }
     }
+
+    [When(@"Actor Ends user visit")]
+    public void WhenActorEndsUserVisit()
+    {
+      FeatureContext.Current.Get<IWebDriver>().Navigate().GoToUrl(Settings.EndVisitUrl);
+    }
+
 
 
     [AfterFeature]

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
-
-namespace Habitat.Accounts.Specflow.Infrastructure
+﻿namespace Sitecore.Foundation.Common.Specflow.Extensions
 {
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using OpenQA.Selenium;
+  using OpenQA.Selenium.Interactions;
   using OpenQA.Selenium.Support.UI;
 
   public static class SeleniumExtensions

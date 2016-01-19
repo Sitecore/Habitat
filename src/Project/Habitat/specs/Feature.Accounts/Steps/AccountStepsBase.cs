@@ -1,7 +1,7 @@
 ﻿namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
   using Sitecore.Feature.Accounts.Specflow.Infrastructure;
-  using Sitecore.Foundation.Testing.Specflow.Steps;
+  using Sitecore.Foundation.Common.Specflow.Steps;
   using TechTalk.SpecFlow;
 
   [Binding]

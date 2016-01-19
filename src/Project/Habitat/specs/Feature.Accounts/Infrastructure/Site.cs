@@ -2,8 +2,8 @@
 {
   using System.Collections.Generic;
   using System.Linq;
-  using Habitat.Accounts.Specflow.Infrastructure;
   using OpenQA.Selenium;
+  using Sitecore.Foundation.Common.Specflow.Extensions;
   using TechTalk.SpecFlow;
 
   public class Site
@@ -77,5 +77,8 @@
 
     public IWebElement RegisterEmail
       => Driver.FindElement(By.Id("registerEmail"));
+
+    public IWebElement ShowUserInfoPopupFields
+      => Driver.FindElement(By.XPath(".//*[@id='primary-navigation']/ul/li[7]/ul/li[1]/div"));
   }
 }

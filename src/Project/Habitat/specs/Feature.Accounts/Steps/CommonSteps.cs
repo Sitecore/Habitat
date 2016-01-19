@@ -3,9 +3,9 @@
   using System;
   using System.Linq;
   using FluentAssertions;
-  using Habitat.Accounts.Specflow.Infrastructure;
   using OpenQA.Selenium;
-  using Sitecore.Foundation.Testing.Specflow.Infrastructure;
+  using Sitecore.Foundation.Common.Specflow.Extensions;
+  using Sitecore.Foundation.Common.Specflow.Infrastructure;
   using TechTalk.SpecFlow;
 
   [Binding]
@@ -16,6 +16,13 @@
     {
       Driver.FindElement(By.LinkText(linkText.ToUpperInvariant())).Click();
     }
+
+    [Then(@"User info is shown on User popup")]
+    public void ThenUserInfoIsShownOnUserPopup(Table table)
+    {
+
+    }
+
 
     [Then(@"Habitat website is opened on Main Page (.*)")]
     [Then(@"Page URL ends on (.*)")]

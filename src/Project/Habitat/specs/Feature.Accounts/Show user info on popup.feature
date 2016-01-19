@@ -9,8 +9,8 @@ Scenario: Account_Show user info on popup_UC1_Only email is shown
 	And Actor clicks Register button
 	And Actor moves cursor over the User icon
 	Then User info is shown on User popup
-	| Email            |
-	| kov@sitecore.net |
+	| Email            | Email lable |
+	| kov@sitecore.net | E-mail      |
 
 
 @NeedImplementation
@@ -25,8 +25,8 @@ Scenario: Account_Show user info on popup_UC2_Full user info is shown
 	| Teltov    | Konstantin | +38(067)3333333 |
 	And User selects <Swiming> from Interests drop-down list
 	Then User info is shown on User popup
-	| Email            | Name              |
-	| kov@sitecore.net | Konstantin Teltov |
+	| Email            | Name              | Email lable | Name Lable |
+	| kov@sitecore.net | Konstantin Teltov | E-mail      | Name       |
 
 
 @NeedImplementation
@@ -41,8 +41,8 @@ Scenario: Account_Show user info on popup_UC2_User Name with special symbols
 	| Teltov!@#$%^&?()-+* | KONSTANTIN!@#$%^&?()-+* | +38(067)3333333 |
 	And User selects <Swiming> from Interests drop-down list
 	Then User info is shown on User popup
-	| Email            | Name              |
-	| kov@sitecore.net | Konstantin Teltov |
+	| Email            | Name                                        | Email lable | Name Lable |
+	| kov@sitecore.net | Konstantin!@#$%^&?()-+* Teltov!@#$%^&?()-+* | E-mail      | Name       |
 
 
 @NeedImplementation

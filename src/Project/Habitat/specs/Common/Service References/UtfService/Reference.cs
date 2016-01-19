@@ -8,148 +8,147 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sitecore.Foundation.Testing.Specflow.UtfService {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Database", Namespace="http://tempuri.org/")]
+namespace Sitecore.Foundation.Common.Specflow.Service_References.UtfService {
+  using System;
+  using System.Runtime.Serialization;
+
+  [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [DataContract(Name="Database", Namespace="http://tempuri.org/")]
     public enum Database : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Core = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Master = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Web = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://tempuri.org/", ItemName="string")]
-    [System.SerializableAttribute()]
+    [CollectionDataContract(Name="ArrayOfString", Namespace="http://tempuri.org/", ItemName="string")]
+    [Serializable()]
     public class ArrayOfString : System.Collections.Generic.List<string> {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PublishMode", Namespace="http://tempuri.org/")]
+    [DataContract(Name="PublishMode", Namespace="http://tempuri.org/")]
     public enum PublishMode : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Unknown = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Full = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Incremental = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         SingleItem = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Smart = 4,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SecurityRight", Namespace="http://tempuri.org/")]
+    [DataContract(Name="SecurityRight", Namespace="http://tempuri.org/")]
     public enum SecurityRight : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Read = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Write = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Rename = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Create = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Delete = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Administer = 5,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         LanguageWrite = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         FieldRead = 7,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         FieldWrite = 8,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         LanguageRead = 9,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         CreateBucket = 10,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RevertBucket = 11,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         WorkflowStateDelete = 12,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         WorkflowStateWrite = 13,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AccessPermission", Namespace="http://tempuri.org/")]
+    [DataContract(Name="AccessPermission", Namespace="http://tempuri.org/")]
     public enum AccessPermission : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NotSet = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Allow = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Deny = 2,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserOption", Namespace="http://tempuri.org/")]
+    [DataContract(Name="UserOption", Namespace="http://tempuri.org/")]
     public enum UserOption : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ShowGutter = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ShowHeader = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ShowPages = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ShowQuickInfo = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ShowRawValues = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ShowSearchPanel = 5,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RenderItemPersonalizationInfo = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ShowSections = 7,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ShowSystemFields = 8,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ShowValidatorBar = 9,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         VisibleStrips = 10,
     }
     
@@ -159,149 +158,149 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
         
         // CODEGEN: Generating message contract since element name itemId from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ItemExistsById", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdResponse ItemExistsById(Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdRequest request);
+        ItemExistsByIdResponse ItemExistsById(ItemExistsByIdRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ItemExistsById", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdResponse> ItemExistsByIdAsync(Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdRequest request);
+        System.Threading.Tasks.Task<ItemExistsByIdResponse> ItemExistsByIdAsync(ItemExistsByIdRequest request);
         
         // CODEGEN: Generating message contract since element name itemPath from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ItemExistsByPath", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathResponse ItemExistsByPath(Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathRequest request);
+        ItemExistsByPathResponse ItemExistsByPath(ItemExistsByPathRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ItemExistsByPath", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathResponse> ItemExistsByPathAsync(Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathRequest request);
+        System.Threading.Tasks.Task<ItemExistsByPathResponse> ItemExistsByPathAsync(ItemExistsByPathRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ClearTemplates", ReplyAction="*")]
-        void ClearTemplates(Sitecore.Foundation.Testing.Specflow.UtfService.Database database);
+        void ClearTemplates(Database database);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ClearTemplates", ReplyAction="*")]
-        System.Threading.Tasks.Task ClearTemplatesAsync(Sitecore.Foundation.Testing.Specflow.UtfService.Database database);
+        System.Threading.Tasks.Task ClearTemplatesAsync(Database database);
         
         // CODEGEN: Generating message contract since element name itemName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateItem", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemResponse CreateItem(Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemRequest request);
+        CreateItemResponse CreateItem(CreateItemRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateItem", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemResponse> CreateItemAsync(Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemRequest request);
+        System.Threading.Tasks.Task<CreateItemResponse> CreateItemAsync(CreateItemRequest request);
         
         // CODEGEN: Generating message contract since element name itemIdOrPath from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EditItem", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.EditItemResponse EditItem(Sitecore.Foundation.Testing.Specflow.UtfService.EditItemRequest request);
+        EditItemResponse EditItem(EditItemRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EditItem", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.EditItemResponse> EditItemAsync(Sitecore.Foundation.Testing.Specflow.UtfService.EditItemRequest request);
+        System.Threading.Tasks.Task<EditItemResponse> EditItemAsync(EditItemRequest request);
         
         // CODEGEN: Generating message contract since element name itemIdOrPath from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetItemFieldValue", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueResponse GetItemFieldValue(Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueRequest request);
+        GetItemFieldValueResponse GetItemFieldValue(GetItemFieldValueRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetItemFieldValue", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueResponse> GetItemFieldValueAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueRequest request);
+        System.Threading.Tasks.Task<GetItemFieldValueResponse> GetItemFieldValueAsync(GetItemFieldValueRequest request);
         
         // CODEGEN: Generating message contract since element name itemIdOrPath from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteItem", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemResponse DeleteItem(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemRequest request);
+        DeleteItemResponse DeleteItem(DeleteItemRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteItem", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemResponse> DeleteItemAsync(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemRequest request);
+        System.Threading.Tasks.Task<DeleteItemResponse> DeleteItemAsync(DeleteItemRequest request);
         
         // CODEGEN: Generating message contract since element name folderPath from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteFilesAndFolders", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersResponse DeleteFilesAndFolders(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersRequest request);
+        DeleteFilesAndFoldersResponse DeleteFilesAndFolders(DeleteFilesAndFoldersRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteFilesAndFolders", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersResponse> DeleteFilesAndFoldersAsync(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersRequest request);
+        System.Threading.Tasks.Task<DeleteFilesAndFoldersResponse> DeleteFilesAndFoldersAsync(DeleteFilesAndFoldersRequest request);
         
         // CODEGEN: Generating message contract since element name path from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FileOrFolderExists", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsResponse FileOrFolderExists(Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsRequest request);
+        FileOrFolderExistsResponse FileOrFolderExists(FileOrFolderExistsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FileOrFolderExists", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsResponse> FileOrFolderExistsAsync(Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsRequest request);
+        System.Threading.Tasks.Task<FileOrFolderExistsResponse> FileOrFolderExistsAsync(FileOrFolderExistsRequest request);
         
         // CODEGEN: Generating message contract since element name content from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UploadFile", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileResponse UploadFile(Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileRequest request);
+        UploadFileResponse UploadFile(UploadFileRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UploadFile", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileResponse> UploadFileAsync(Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileRequest request);
+        System.Threading.Tasks.Task<UploadFileResponse> UploadFileAsync(UploadFileRequest request);
         
         // CODEGEN: Generating message contract since element name packageName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InstallPackage", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageResponse InstallPackage(Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageRequest request);
+        InstallPackageResponse InstallPackage(InstallPackageRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InstallPackage", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageResponse> InstallPackageAsync(Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageRequest request);
+        System.Threading.Tasks.Task<InstallPackageResponse> InstallPackageAsync(InstallPackageRequest request);
         
         // CODEGEN: Generating message contract since element name parentIdOrPath from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetChildren", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenResponse GetChildren(Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenRequest request);
+        GetChildrenResponse GetChildren(GetChildrenRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetChildren", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenResponse> GetChildrenAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenRequest request);
+        System.Threading.Tasks.Task<GetChildrenResponse> GetChildrenAsync(GetChildrenRequest request);
         
         // CODEGEN: Generating message contract since element name parentIdOrPath from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteChildren", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenResponse DeleteChildren(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenRequest request);
+        DeleteChildrenResponse DeleteChildren(DeleteChildrenRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteChildren", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenResponse> DeleteChildrenAsync(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenRequest request);
+        System.Threading.Tasks.Task<DeleteChildrenResponse> DeleteChildrenAsync(DeleteChildrenRequest request);
         
         // CODEGEN: Generating message contract since element name publishLanguage from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/PublishSite", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteResponse PublishSite(Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteRequest request);
+        PublishSiteResponse PublishSite(PublishSiteRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/PublishSite", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteResponse> PublishSiteAsync(Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteRequest request);
+        System.Threading.Tasks.Task<PublishSiteResponse> PublishSiteAsync(PublishSiteRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateUser", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserResponse CreateUser(Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserRequest request);
+        CreateUserResponse CreateUser(CreateUserRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateUser", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserResponse> CreateUserAsync(Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserRequest request);
+        System.Threading.Tasks.Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request);
         
         // CODEGEN: Generating message contract since element name roleName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateRole", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleResponse CreateRole(Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleRequest request);
+        CreateRoleResponse CreateRole(CreateRoleRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CreateRole", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleResponse> CreateRoleAsync(Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleRequest request);
+        System.Threading.Tasks.Task<CreateRoleResponse> CreateRoleAsync(CreateRoleRequest request);
         
         // CODEGEN: Generating message contract since element name itemIdOrPath from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SetSecurityRight", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightResponse SetSecurityRight(Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightRequest request);
+        SetSecurityRightResponse SetSecurityRight(SetSecurityRightRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SetSecurityRight", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightResponse> SetSecurityRightAsync(Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightRequest request);
+        System.Threading.Tasks.Task<SetSecurityRightResponse> SetSecurityRightAsync(SetSecurityRightRequest request);
         
         // CODEGEN: Generating message contract since element name itemIdOrPath from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSecurityRight", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightResponse GetSecurityRight(Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightRequest request);
+        GetSecurityRightResponse GetSecurityRight(GetSecurityRightRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSecurityRight", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightResponse> GetSecurityRightAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightRequest request);
+        System.Threading.Tasks.Task<GetSecurityRightResponse> GetSecurityRightAsync(GetSecurityRightRequest request);
         
         // CODEGEN: Generating message contract since element name userOrRoleName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteUserOrRole", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleResponse DeleteUserOrRole(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleRequest request);
+        DeleteUserOrRoleResponse DeleteUserOrRole(DeleteUserOrRoleRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteUserOrRole", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleResponse> DeleteUserOrRoleAsync(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleRequest request);
+        System.Threading.Tasks.Task<DeleteUserOrRoleResponse> DeleteUserOrRoleAsync(DeleteUserOrRoleRequest request);
         
         // CODEGEN: Generating message contract since element name userOrRoleName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserOrRoleExists", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsResponse UserOrRoleExists(Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsRequest request);
+        UserOrRoleExistsResponse UserOrRoleExists(UserOrRoleExistsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UserOrRoleExists", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsResponse> UserOrRoleExistsAsync(Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsRequest request);
+        System.Threading.Tasks.Task<UserOrRoleExistsResponse> UserOrRoleExistsAsync(UserOrRoleExistsRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KickUser", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.KickUserResponse KickUser(Sitecore.Foundation.Testing.Specflow.UtfService.KickUserRequest request);
+        KickUserResponse KickUser(KickUserRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KickUser", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.KickUserResponse> KickUserAsync(Sitecore.Foundation.Testing.Specflow.UtfService.KickUserRequest request);
+        System.Threading.Tasks.Task<KickUserResponse> KickUserAsync(KickUserRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/KickAllUsers", ReplyAction="*")]
         void KickAllUsers();
@@ -317,66 +316,66 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
         
         // CODEGEN: Generating message contract since element name itemIdOrPath from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RebuildIndex", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexResponse RebuildIndex(Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexRequest request);
+        RebuildIndexResponse RebuildIndex(RebuildIndexRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RebuildIndex", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexResponse> RebuildIndexAsync(Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexRequest request);
+        System.Threading.Tasks.Task<RebuildIndexResponse> RebuildIndexAsync(RebuildIndexRequest request);
         
         // CODEGEN: Generating message contract since element name indexName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RebuildCustomIndex", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexResponse RebuildCustomIndex(Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexRequest request);
+        RebuildCustomIndexResponse RebuildCustomIndex(RebuildCustomIndexRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RebuildCustomIndex", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexResponse> RebuildCustomIndexAsync(Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexRequest request);
+        System.Threading.Tasks.Task<RebuildCustomIndexResponse> RebuildCustomIndexAsync(RebuildCustomIndexRequest request);
         
         // CODEGEN: Generating message contract since element name GetErrorsResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetErrors", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsResponse GetErrors(Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsRequest request);
+        GetErrorsResponse GetErrors(GetErrorsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetErrors", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsResponse> GetErrorsAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsRequest request);
+        System.Threading.Tasks.Task<GetErrorsResponse> GetErrorsAsync(GetErrorsRequest request);
         
         // CODEGEN: Generating message contract since element name filePath from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EditXmlFile", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileResponse EditXmlFile(Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileRequest request);
+        EditXmlFileResponse EditXmlFile(EditXmlFileRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EditXmlFile", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileResponse> EditXmlFileAsync(Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileRequest request);
+        System.Threading.Tasks.Task<EditXmlFileResponse> EditXmlFileAsync(EditXmlFileRequest request);
         
         // CODEGEN: Generating message contract since element name GetWarningsResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetWarnings", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsResponse GetWarnings(Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsRequest request);
+        GetWarningsResponse GetWarnings(GetWarningsRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetWarnings", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsResponse> GetWarningsAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsRequest request);
+        System.Threading.Tasks.Task<GetWarningsResponse> GetWarningsAsync(GetWarningsRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SetCEUserOption", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionResponse SetCEUserOption(Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionRequest request);
+        SetCEUserOptionResponse SetCEUserOption(SetCEUserOptionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SetCEUserOption", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionResponse> SetCEUserOptionAsync(Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionRequest request);
+        System.Threading.Tasks.Task<SetCEUserOptionResponse> SetCEUserOptionAsync(SetCEUserOptionRequest request);
         
         // CODEGEN: Generating message contract since element name GetLogFilesNamesResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetLogFilesNames", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesResponse GetLogFilesNames(Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesRequest request);
+        GetLogFilesNamesResponse GetLogFilesNames(GetLogFilesNamesRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetLogFilesNames", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesResponse> GetLogFilesNamesAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesRequest request);
+        System.Threading.Tasks.Task<GetLogFilesNamesResponse> GetLogFilesNamesAsync(GetLogFilesNamesRequest request);
         
         // CODEGEN: Generating message contract since element name fileName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetLogFileContent", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentResponse GetLogFileContent(Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentRequest request);
+        GetLogFileContentResponse GetLogFileContent(GetLogFileContentRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetLogFileContent", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentResponse> GetLogFileContentAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentRequest request);
+        System.Threading.Tasks.Task<GetLogFileContentResponse> GetLogFileContentAsync(GetLogFileContentRequest request);
         
         // CODEGEN: Generating message contract since element name GetSitecoreVersionResult from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSitecoreVersion", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionResponse GetSitecoreVersion(Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionRequest request);
+        GetSitecoreVersionResponse GetSitecoreVersion(GetSitecoreVersionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSitecoreVersion", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionResponse> GetSitecoreVersionAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionRequest request);
+        System.Threading.Tasks.Task<GetSitecoreVersionResponse> GetSitecoreVersionAsync(GetSitecoreVersionRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ClearSitecoreCache", ReplyAction="*")]
         void ClearSitecoreCache();
@@ -392,12 +391,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class ItemExistsByIdRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ItemExistsById", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdRequestBody Body;
+        public ItemExistsByIdRequestBody Body;
         
         public ItemExistsByIdRequest() {
         }
         
-        public ItemExistsByIdRequest(Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdRequestBody Body) {
+        public ItemExistsByIdRequest(ItemExistsByIdRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -405,19 +404,19 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class ItemExistsByIdRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string itemId;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.Database database;
+        [DataMember(Order=1)]
+        public Database database;
         
         public ItemExistsByIdRequestBody() {
         }
         
-        public ItemExistsByIdRequestBody(string itemId, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
+        public ItemExistsByIdRequestBody(string itemId, Database database) {
             this.itemId = itemId;
             this.database = database;
         }
@@ -430,12 +429,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class ItemExistsByIdResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ItemExistsByIdResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdResponseBody Body;
+        public ItemExistsByIdResponseBody Body;
         
         public ItemExistsByIdResponse() {
         }
         
-        public ItemExistsByIdResponse(Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdResponseBody Body) {
+        public ItemExistsByIdResponse(ItemExistsByIdResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -443,10 +442,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class ItemExistsByIdResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string ItemExistsByIdResult;
         
         public ItemExistsByIdResponseBody() {
@@ -464,12 +463,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class ItemExistsByPathRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ItemExistsByPath", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathRequestBody Body;
+        public ItemExistsByPathRequestBody Body;
         
         public ItemExistsByPathRequest() {
         }
         
-        public ItemExistsByPathRequest(Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathRequestBody Body) {
+        public ItemExistsByPathRequest(ItemExistsByPathRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -477,19 +476,19 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class ItemExistsByPathRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string itemPath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.Database database;
+        [DataMember(Order=1)]
+        public Database database;
         
         public ItemExistsByPathRequestBody() {
         }
         
-        public ItemExistsByPathRequestBody(string itemPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
+        public ItemExistsByPathRequestBody(string itemPath, Database database) {
             this.itemPath = itemPath;
             this.database = database;
         }
@@ -502,12 +501,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class ItemExistsByPathResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ItemExistsByPathResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathResponseBody Body;
+        public ItemExistsByPathResponseBody Body;
         
         public ItemExistsByPathResponse() {
         }
         
-        public ItemExistsByPathResponse(Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathResponseBody Body) {
+        public ItemExistsByPathResponse(ItemExistsByPathResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -515,10 +514,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class ItemExistsByPathResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string ItemExistsByPathResult;
         
         public ItemExistsByPathResponseBody() {
@@ -536,12 +535,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class CreateItemRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateItem", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemRequestBody Body;
+        public CreateItemRequestBody Body;
         
         public CreateItemRequest() {
         }
         
-        public CreateItemRequest(Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemRequestBody Body) {
+        public CreateItemRequest(CreateItemRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -549,31 +548,31 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class CreateItemRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string itemName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string parentIdOrPath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string templateIdOrPath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [DataMember(EmitDefaultValue=false, Order=3)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [DataMember(EmitDefaultValue=false, Order=4)]
         public string passWord;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.Database database;
+        [DataMember(Order=5)]
+        public Database database;
         
         public CreateItemRequestBody() {
         }
         
-        public CreateItemRequestBody(string itemName, string parentIdOrPath, string templateIdOrPath, string userName, string passWord, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
+        public CreateItemRequestBody(string itemName, string parentIdOrPath, string templateIdOrPath, string userName, string passWord, Database database) {
             this.itemName = itemName;
             this.parentIdOrPath = parentIdOrPath;
             this.templateIdOrPath = templateIdOrPath;
@@ -590,12 +589,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class CreateItemResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateItemResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemResponseBody Body;
+        public CreateItemResponseBody Body;
         
         public CreateItemResponse() {
         }
         
-        public CreateItemResponse(Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemResponseBody Body) {
+        public CreateItemResponse(CreateItemResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -603,10 +602,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class CreateItemResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string CreateItemResult;
         
         public CreateItemResponseBody() {
@@ -624,12 +623,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class EditItemRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="EditItem", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.EditItemRequestBody Body;
+        public EditItemRequestBody Body;
         
         public EditItemRequest() {
         }
         
-        public EditItemRequest(Sitecore.Foundation.Testing.Specflow.UtfService.EditItemRequestBody Body) {
+        public EditItemRequest(EditItemRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -637,31 +636,31 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class EditItemRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string itemIdOrPath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string fieldName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string fieldValue;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [DataMember(EmitDefaultValue=false, Order=3)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [DataMember(EmitDefaultValue=false, Order=4)]
         public string passWord;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.Database database;
+        [DataMember(Order=5)]
+        public Database database;
         
         public EditItemRequestBody() {
         }
         
-        public EditItemRequestBody(string itemIdOrPath, string fieldName, string fieldValue, string userName, string passWord, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
+        public EditItemRequestBody(string itemIdOrPath, string fieldName, string fieldValue, string userName, string passWord, Database database) {
             this.itemIdOrPath = itemIdOrPath;
             this.fieldName = fieldName;
             this.fieldValue = fieldValue;
@@ -678,12 +677,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class EditItemResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="EditItemResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.EditItemResponseBody Body;
+        public EditItemResponseBody Body;
         
         public EditItemResponse() {
         }
         
-        public EditItemResponse(Sitecore.Foundation.Testing.Specflow.UtfService.EditItemResponseBody Body) {
+        public EditItemResponse(EditItemResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -691,10 +690,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class EditItemResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string EditItemResult;
         
         public EditItemResponseBody() {
@@ -712,12 +711,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetItemFieldValueRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetItemFieldValue", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueRequestBody Body;
+        public GetItemFieldValueRequestBody Body;
         
         public GetItemFieldValueRequest() {
         }
         
-        public GetItemFieldValueRequest(Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueRequestBody Body) {
+        public GetItemFieldValueRequest(GetItemFieldValueRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -725,22 +724,22 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class GetItemFieldValueRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string itemIdOrPath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string fieldName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.Database database;
+        [DataMember(Order=2)]
+        public Database database;
         
         public GetItemFieldValueRequestBody() {
         }
         
-        public GetItemFieldValueRequestBody(string itemIdOrPath, string fieldName, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
+        public GetItemFieldValueRequestBody(string itemIdOrPath, string fieldName, Database database) {
             this.itemIdOrPath = itemIdOrPath;
             this.fieldName = fieldName;
             this.database = database;
@@ -754,12 +753,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetItemFieldValueResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetItemFieldValueResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueResponseBody Body;
+        public GetItemFieldValueResponseBody Body;
         
         public GetItemFieldValueResponse() {
         }
         
-        public GetItemFieldValueResponse(Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueResponseBody Body) {
+        public GetItemFieldValueResponse(GetItemFieldValueResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -767,10 +766,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class GetItemFieldValueResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string GetItemFieldValueResult;
         
         public GetItemFieldValueResponseBody() {
@@ -788,12 +787,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class DeleteItemRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteItem", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemRequestBody Body;
+        public DeleteItemRequestBody Body;
         
         public DeleteItemRequest() {
         }
         
-        public DeleteItemRequest(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemRequestBody Body) {
+        public DeleteItemRequest(DeleteItemRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -801,22 +800,22 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class DeleteItemRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string itemIdOrPath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.Database database;
+        [DataMember(Order=1)]
+        public Database database;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public bool withException;
         
         public DeleteItemRequestBody() {
         }
         
-        public DeleteItemRequestBody(string itemIdOrPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database, bool withException) {
+        public DeleteItemRequestBody(string itemIdOrPath, Database database, bool withException) {
             this.itemIdOrPath = itemIdOrPath;
             this.database = database;
             this.withException = withException;
@@ -830,12 +829,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class DeleteItemResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteItemResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemResponseBody Body;
+        public DeleteItemResponseBody Body;
         
         public DeleteItemResponse() {
         }
         
-        public DeleteItemResponse(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemResponseBody Body) {
+        public DeleteItemResponse(DeleteItemResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -843,7 +842,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class DeleteItemResponseBody {
         
         public DeleteItemResponseBody() {
@@ -857,12 +856,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class DeleteFilesAndFoldersRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteFilesAndFolders", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersRequestBody Body;
+        public DeleteFilesAndFoldersRequestBody Body;
         
         public DeleteFilesAndFoldersRequest() {
         }
         
-        public DeleteFilesAndFoldersRequest(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersRequestBody Body) {
+        public DeleteFilesAndFoldersRequest(DeleteFilesAndFoldersRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -870,13 +869,13 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class DeleteFilesAndFoldersRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string folderPath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string nameMask;
         
         public DeleteFilesAndFoldersRequestBody() {
@@ -895,12 +894,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class DeleteFilesAndFoldersResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteFilesAndFoldersResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersResponseBody Body;
+        public DeleteFilesAndFoldersResponseBody Body;
         
         public DeleteFilesAndFoldersResponse() {
         }
         
-        public DeleteFilesAndFoldersResponse(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersResponseBody Body) {
+        public DeleteFilesAndFoldersResponse(DeleteFilesAndFoldersResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -908,7 +907,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class DeleteFilesAndFoldersResponseBody {
         
         public DeleteFilesAndFoldersResponseBody() {
@@ -922,12 +921,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class FileOrFolderExistsRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="FileOrFolderExists", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsRequestBody Body;
+        public FileOrFolderExistsRequestBody Body;
         
         public FileOrFolderExistsRequest() {
         }
         
-        public FileOrFolderExistsRequest(Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsRequestBody Body) {
+        public FileOrFolderExistsRequest(FileOrFolderExistsRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -935,10 +934,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class FileOrFolderExistsRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string path;
         
         public FileOrFolderExistsRequestBody() {
@@ -956,12 +955,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class FileOrFolderExistsResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="FileOrFolderExistsResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsResponseBody Body;
+        public FileOrFolderExistsResponseBody Body;
         
         public FileOrFolderExistsResponse() {
         }
         
-        public FileOrFolderExistsResponse(Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsResponseBody Body) {
+        public FileOrFolderExistsResponse(FileOrFolderExistsResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -969,10 +968,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class FileOrFolderExistsResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        [DataMember(Order=0)]
         public bool FileOrFolderExistsResult;
         
         public FileOrFolderExistsResponseBody() {
@@ -990,12 +989,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class UploadFileRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadFile", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileRequestBody Body;
+        public UploadFileRequestBody Body;
         
         public UploadFileRequest() {
         }
         
-        public UploadFileRequest(Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileRequestBody Body) {
+        public UploadFileRequest(UploadFileRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1003,16 +1002,16 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class UploadFileRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public byte[] content;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string fileName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string uploadFolder;
         
         public UploadFileRequestBody() {
@@ -1032,12 +1031,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class UploadFileResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadFileResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileResponseBody Body;
+        public UploadFileResponseBody Body;
         
         public UploadFileResponse() {
         }
         
-        public UploadFileResponse(Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileResponseBody Body) {
+        public UploadFileResponse(UploadFileResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1045,7 +1044,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class UploadFileResponseBody {
         
         public UploadFileResponseBody() {
@@ -1059,12 +1058,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class InstallPackageRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InstallPackage", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageRequestBody Body;
+        public InstallPackageRequestBody Body;
         
         public InstallPackageRequest() {
         }
         
-        public InstallPackageRequest(Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageRequestBody Body) {
+        public InstallPackageRequest(InstallPackageRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1072,10 +1071,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class InstallPackageRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string packageName;
         
         public InstallPackageRequestBody() {
@@ -1093,12 +1092,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class InstallPackageResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InstallPackageResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageResponseBody Body;
+        public InstallPackageResponseBody Body;
         
         public InstallPackageResponse() {
         }
         
-        public InstallPackageResponse(Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageResponseBody Body) {
+        public InstallPackageResponse(InstallPackageResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1106,7 +1105,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class InstallPackageResponseBody {
         
         public InstallPackageResponseBody() {
@@ -1120,12 +1119,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetChildrenRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetChildren", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenRequestBody Body;
+        public GetChildrenRequestBody Body;
         
         public GetChildrenRequest() {
         }
         
-        public GetChildrenRequest(Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenRequestBody Body) {
+        public GetChildrenRequest(GetChildrenRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1133,22 +1132,22 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class GetChildrenRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string parentIdOrPath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.Database database;
+        [DataMember(Order=1)]
+        public Database database;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public bool returnPath;
         
         public GetChildrenRequestBody() {
         }
         
-        public GetChildrenRequestBody(string parentIdOrPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database, bool returnPath) {
+        public GetChildrenRequestBody(string parentIdOrPath, Database database, bool returnPath) {
             this.parentIdOrPath = parentIdOrPath;
             this.database = database;
             this.returnPath = returnPath;
@@ -1162,12 +1161,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetChildrenResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetChildrenResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenResponseBody Body;
+        public GetChildrenResponseBody Body;
         
         public GetChildrenResponse() {
         }
         
-        public GetChildrenResponse(Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenResponseBody Body) {
+        public GetChildrenResponse(GetChildrenResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1175,16 +1174,16 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class GetChildrenResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetChildrenResult;
+        [DataMember(EmitDefaultValue=false, Order=0)]
+        public ArrayOfString GetChildrenResult;
         
         public GetChildrenResponseBody() {
         }
         
-        public GetChildrenResponseBody(Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetChildrenResult) {
+        public GetChildrenResponseBody(ArrayOfString GetChildrenResult) {
             this.GetChildrenResult = GetChildrenResult;
         }
     }
@@ -1196,12 +1195,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class DeleteChildrenRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteChildren", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenRequestBody Body;
+        public DeleteChildrenRequestBody Body;
         
         public DeleteChildrenRequest() {
         }
         
-        public DeleteChildrenRequest(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenRequestBody Body) {
+        public DeleteChildrenRequest(DeleteChildrenRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1209,19 +1208,19 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class DeleteChildrenRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string parentIdOrPath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.Database database;
+        [DataMember(Order=1)]
+        public Database database;
         
         public DeleteChildrenRequestBody() {
         }
         
-        public DeleteChildrenRequestBody(string parentIdOrPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
+        public DeleteChildrenRequestBody(string parentIdOrPath, Database database) {
             this.parentIdOrPath = parentIdOrPath;
             this.database = database;
         }
@@ -1234,12 +1233,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class DeleteChildrenResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteChildrenResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenResponseBody Body;
+        public DeleteChildrenResponseBody Body;
         
         public DeleteChildrenResponse() {
         }
         
-        public DeleteChildrenResponse(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenResponseBody Body) {
+        public DeleteChildrenResponse(DeleteChildrenResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1247,7 +1246,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class DeleteChildrenResponseBody {
         
         public DeleteChildrenResponseBody() {
@@ -1261,12 +1260,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class PublishSiteRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="PublishSite", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteRequestBody Body;
+        public PublishSiteRequestBody Body;
         
         public PublishSiteRequest() {
         }
         
-        public PublishSiteRequest(Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteRequestBody Body) {
+        public PublishSiteRequest(PublishSiteRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1274,19 +1273,19 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class PublishSiteRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.PublishMode publishMode;
+        [DataMember(Order=0)]
+        public PublishMode publishMode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string publishLanguage;
         
         public PublishSiteRequestBody() {
         }
         
-        public PublishSiteRequestBody(Sitecore.Foundation.Testing.Specflow.UtfService.PublishMode publishMode, string publishLanguage) {
+        public PublishSiteRequestBody(PublishMode publishMode, string publishLanguage) {
             this.publishMode = publishMode;
             this.publishLanguage = publishLanguage;
         }
@@ -1299,12 +1298,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class PublishSiteResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="PublishSiteResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteResponseBody Body;
+        public PublishSiteResponseBody Body;
         
         public PublishSiteResponse() {
         }
         
-        public PublishSiteResponse(Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteResponseBody Body) {
+        public PublishSiteResponse(PublishSiteResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1312,7 +1311,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class PublishSiteResponseBody {
         
         public PublishSiteResponseBody() {
@@ -1326,12 +1325,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class CreateUserRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateUser", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserRequestBody Body;
+        public CreateUserRequestBody Body;
         
         public CreateUserRequest() {
         }
         
-        public CreateUserRequest(Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserRequestBody Body) {
+        public CreateUserRequest(CreateUserRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1339,25 +1338,25 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class CreateUserRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string passWord;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString roles;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public ArrayOfString roles;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [DataMember(EmitDefaultValue=false, Order=3)]
         public string eMail;
         
         public CreateUserRequestBody() {
         }
         
-        public CreateUserRequestBody(string userName, string passWord, Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString roles, string eMail) {
+        public CreateUserRequestBody(string userName, string passWord, ArrayOfString roles, string eMail) {
             this.userName = userName;
             this.passWord = passWord;
             this.roles = roles;
@@ -1372,12 +1371,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class CreateUserResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateUserResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserResponseBody Body;
+        public CreateUserResponseBody Body;
         
         public CreateUserResponse() {
         }
         
-        public CreateUserResponse(Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserResponseBody Body) {
+        public CreateUserResponse(CreateUserResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1385,7 +1384,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class CreateUserResponseBody {
         
         public CreateUserResponseBody() {
@@ -1399,12 +1398,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class CreateRoleRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateRole", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleRequestBody Body;
+        public CreateRoleRequestBody Body;
         
         public CreateRoleRequest() {
         }
         
-        public CreateRoleRequest(Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleRequestBody Body) {
+        public CreateRoleRequest(CreateRoleRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1412,19 +1411,19 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class CreateRoleRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string roleName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString rolesMembership;
+        [DataMember(EmitDefaultValue=false, Order=1)]
+        public ArrayOfString rolesMembership;
         
         public CreateRoleRequestBody() {
         }
         
-        public CreateRoleRequestBody(string roleName, Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString rolesMembership) {
+        public CreateRoleRequestBody(string roleName, ArrayOfString rolesMembership) {
             this.roleName = roleName;
             this.rolesMembership = rolesMembership;
         }
@@ -1437,12 +1436,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class CreateRoleResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateRoleResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleResponseBody Body;
+        public CreateRoleResponseBody Body;
         
         public CreateRoleResponse() {
         }
         
-        public CreateRoleResponse(Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleResponseBody Body) {
+        public CreateRoleResponse(CreateRoleResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1450,7 +1449,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class CreateRoleResponseBody {
         
         public CreateRoleResponseBody() {
@@ -1464,12 +1463,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class SetSecurityRightRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SetSecurityRight", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightRequestBody Body;
+        public SetSecurityRightRequestBody Body;
         
         public SetSecurityRightRequest() {
         }
         
-        public SetSecurityRightRequest(Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightRequestBody Body) {
+        public SetSecurityRightRequest(SetSecurityRightRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1477,28 +1476,28 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class SetSecurityRightRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.Database database;
+        [DataMember(Order=0)]
+        public Database database;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string itemIdOrPath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.SecurityRight right;
+        [DataMember(Order=3)]
+        public SecurityRight right;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.AccessPermission state;
+        [DataMember(Order=4)]
+        public AccessPermission state;
         
         public SetSecurityRightRequestBody() {
         }
         
-        public SetSecurityRightRequestBody(Sitecore.Foundation.Testing.Specflow.UtfService.Database database, string itemIdOrPath, string userName, Sitecore.Foundation.Testing.Specflow.UtfService.SecurityRight right, Sitecore.Foundation.Testing.Specflow.UtfService.AccessPermission state) {
+        public SetSecurityRightRequestBody(Database database, string itemIdOrPath, string userName, SecurityRight right, AccessPermission state) {
             this.database = database;
             this.itemIdOrPath = itemIdOrPath;
             this.userName = userName;
@@ -1514,12 +1513,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class SetSecurityRightResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SetSecurityRightResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightResponseBody Body;
+        public SetSecurityRightResponseBody Body;
         
         public SetSecurityRightResponse() {
         }
         
-        public SetSecurityRightResponse(Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightResponseBody Body) {
+        public SetSecurityRightResponse(SetSecurityRightResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1527,7 +1526,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class SetSecurityRightResponseBody {
         
         public SetSecurityRightResponseBody() {
@@ -1541,12 +1540,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetSecurityRightRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSecurityRight", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightRequestBody Body;
+        public GetSecurityRightRequestBody Body;
         
         public GetSecurityRightRequest() {
         }
         
-        public GetSecurityRightRequest(Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightRequestBody Body) {
+        public GetSecurityRightRequest(GetSecurityRightRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1554,25 +1553,25 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class GetSecurityRightRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.Database database;
+        [DataMember(Order=0)]
+        public Database database;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string itemIdOrPath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.SecurityRight right;
+        [DataMember(Order=3)]
+        public SecurityRight right;
         
         public GetSecurityRightRequestBody() {
         }
         
-        public GetSecurityRightRequestBody(Sitecore.Foundation.Testing.Specflow.UtfService.Database database, string itemIdOrPath, string userName, Sitecore.Foundation.Testing.Specflow.UtfService.SecurityRight right) {
+        public GetSecurityRightRequestBody(Database database, string itemIdOrPath, string userName, SecurityRight right) {
             this.database = database;
             this.itemIdOrPath = itemIdOrPath;
             this.userName = userName;
@@ -1587,12 +1586,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetSecurityRightResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSecurityRightResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightResponseBody Body;
+        public GetSecurityRightResponseBody Body;
         
         public GetSecurityRightResponse() {
         }
         
-        public GetSecurityRightResponse(Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightResponseBody Body) {
+        public GetSecurityRightResponse(GetSecurityRightResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1600,16 +1599,16 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class GetSecurityRightResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.AccessPermission GetSecurityRightResult;
+        [DataMember(Order=0)]
+        public AccessPermission GetSecurityRightResult;
         
         public GetSecurityRightResponseBody() {
         }
         
-        public GetSecurityRightResponseBody(Sitecore.Foundation.Testing.Specflow.UtfService.AccessPermission GetSecurityRightResult) {
+        public GetSecurityRightResponseBody(AccessPermission GetSecurityRightResult) {
             this.GetSecurityRightResult = GetSecurityRightResult;
         }
     }
@@ -1621,12 +1620,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class DeleteUserOrRoleRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteUserOrRole", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleRequestBody Body;
+        public DeleteUserOrRoleRequestBody Body;
         
         public DeleteUserOrRoleRequest() {
         }
         
-        public DeleteUserOrRoleRequest(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleRequestBody Body) {
+        public DeleteUserOrRoleRequest(DeleteUserOrRoleRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1634,13 +1633,13 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class DeleteUserOrRoleRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userOrRoleName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        [DataMember(Order=1)]
         public bool isUser;
         
         public DeleteUserOrRoleRequestBody() {
@@ -1659,12 +1658,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class DeleteUserOrRoleResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteUserOrRoleResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleResponseBody Body;
+        public DeleteUserOrRoleResponseBody Body;
         
         public DeleteUserOrRoleResponse() {
         }
         
-        public DeleteUserOrRoleResponse(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleResponseBody Body) {
+        public DeleteUserOrRoleResponse(DeleteUserOrRoleResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1672,7 +1671,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class DeleteUserOrRoleResponseBody {
         
         public DeleteUserOrRoleResponseBody() {
@@ -1686,12 +1685,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class UserOrRoleExistsRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UserOrRoleExists", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsRequestBody Body;
+        public UserOrRoleExistsRequestBody Body;
         
         public UserOrRoleExistsRequest() {
         }
         
-        public UserOrRoleExistsRequest(Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsRequestBody Body) {
+        public UserOrRoleExistsRequest(UserOrRoleExistsRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1699,13 +1698,13 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class UserOrRoleExistsRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userOrRoleName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        [DataMember(Order=1)]
         public bool isUser;
         
         public UserOrRoleExistsRequestBody() {
@@ -1724,12 +1723,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class UserOrRoleExistsResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UserOrRoleExistsResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsResponseBody Body;
+        public UserOrRoleExistsResponseBody Body;
         
         public UserOrRoleExistsResponse() {
         }
         
-        public UserOrRoleExistsResponse(Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsResponseBody Body) {
+        public UserOrRoleExistsResponse(UserOrRoleExistsResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1737,10 +1736,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class UserOrRoleExistsResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        [DataMember(Order=0)]
         public bool UserOrRoleExistsResult;
         
         public UserOrRoleExistsResponseBody() {
@@ -1758,12 +1757,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class KickUserRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="KickUser", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.KickUserRequestBody Body;
+        public KickUserRequestBody Body;
         
         public KickUserRequest() {
         }
         
-        public KickUserRequest(Sitecore.Foundation.Testing.Specflow.UtfService.KickUserRequestBody Body) {
+        public KickUserRequest(KickUserRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1771,10 +1770,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class KickUserRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
         public KickUserRequestBody() {
@@ -1792,12 +1791,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class KickUserResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="KickUserResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.KickUserResponseBody Body;
+        public KickUserResponseBody Body;
         
         public KickUserResponse() {
         }
         
-        public KickUserResponse(Sitecore.Foundation.Testing.Specflow.UtfService.KickUserResponseBody Body) {
+        public KickUserResponse(KickUserResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1805,7 +1804,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class KickUserResponseBody {
         
         public KickUserResponseBody() {
@@ -1819,12 +1818,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class RebuildIndexRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="RebuildIndex", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexRequestBody Body;
+        public RebuildIndexRequestBody Body;
         
         public RebuildIndexRequest() {
         }
         
-        public RebuildIndexRequest(Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexRequestBody Body) {
+        public RebuildIndexRequest(RebuildIndexRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1832,19 +1831,19 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class RebuildIndexRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string itemIdOrPath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.Database database;
+        [DataMember(Order=1)]
+        public Database database;
         
         public RebuildIndexRequestBody() {
         }
         
-        public RebuildIndexRequestBody(string itemIdOrPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
+        public RebuildIndexRequestBody(string itemIdOrPath, Database database) {
             this.itemIdOrPath = itemIdOrPath;
             this.database = database;
         }
@@ -1857,12 +1856,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class RebuildIndexResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="RebuildIndexResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexResponseBody Body;
+        public RebuildIndexResponseBody Body;
         
         public RebuildIndexResponse() {
         }
         
-        public RebuildIndexResponse(Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexResponseBody Body) {
+        public RebuildIndexResponse(RebuildIndexResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1870,7 +1869,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class RebuildIndexResponseBody {
         
         public RebuildIndexResponseBody() {
@@ -1884,12 +1883,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class RebuildCustomIndexRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="RebuildCustomIndex", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexRequestBody Body;
+        public RebuildCustomIndexRequestBody Body;
         
         public RebuildCustomIndexRequest() {
         }
         
-        public RebuildCustomIndexRequest(Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexRequestBody Body) {
+        public RebuildCustomIndexRequest(RebuildCustomIndexRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1897,10 +1896,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class RebuildCustomIndexRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string indexName;
         
         public RebuildCustomIndexRequestBody() {
@@ -1918,12 +1917,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class RebuildCustomIndexResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="RebuildCustomIndexResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexResponseBody Body;
+        public RebuildCustomIndexResponseBody Body;
         
         public RebuildCustomIndexResponse() {
         }
         
-        public RebuildCustomIndexResponse(Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexResponseBody Body) {
+        public RebuildCustomIndexResponse(RebuildCustomIndexResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1931,7 +1930,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class RebuildCustomIndexResponseBody {
         
         public RebuildCustomIndexResponseBody() {
@@ -1945,12 +1944,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetErrorsRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetErrors", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsRequestBody Body;
+        public GetErrorsRequestBody Body;
         
         public GetErrorsRequest() {
         }
         
-        public GetErrorsRequest(Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsRequestBody Body) {
+        public GetErrorsRequest(GetErrorsRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1958,7 +1957,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class GetErrorsRequestBody {
         
         public GetErrorsRequestBody() {
@@ -1972,12 +1971,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetErrorsResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetErrorsResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsResponseBody Body;
+        public GetErrorsResponseBody Body;
         
         public GetErrorsResponse() {
         }
         
-        public GetErrorsResponse(Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsResponseBody Body) {
+        public GetErrorsResponse(GetErrorsResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1985,16 +1984,16 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class GetErrorsResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetErrorsResult;
+        [DataMember(EmitDefaultValue=false, Order=0)]
+        public ArrayOfString GetErrorsResult;
         
         public GetErrorsResponseBody() {
         }
         
-        public GetErrorsResponseBody(Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetErrorsResult) {
+        public GetErrorsResponseBody(ArrayOfString GetErrorsResult) {
             this.GetErrorsResult = GetErrorsResult;
         }
     }
@@ -2006,12 +2005,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class EditXmlFileRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="EditXmlFile", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileRequestBody Body;
+        public EditXmlFileRequestBody Body;
         
         public EditXmlFileRequest() {
         }
         
-        public EditXmlFileRequest(Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileRequestBody Body) {
+        public EditXmlFileRequest(EditXmlFileRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -2019,16 +2018,16 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class EditXmlFileRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string filePath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string xpath;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string value;
         
         public EditXmlFileRequestBody() {
@@ -2048,12 +2047,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class EditXmlFileResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="EditXmlFileResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileResponseBody Body;
+        public EditXmlFileResponseBody Body;
         
         public EditXmlFileResponse() {
         }
         
-        public EditXmlFileResponse(Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileResponseBody Body) {
+        public EditXmlFileResponse(EditXmlFileResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -2061,10 +2060,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class EditXmlFileResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string EditXmlFileResult;
         
         public EditXmlFileResponseBody() {
@@ -2082,12 +2081,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetWarningsRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetWarnings", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsRequestBody Body;
+        public GetWarningsRequestBody Body;
         
         public GetWarningsRequest() {
         }
         
-        public GetWarningsRequest(Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsRequestBody Body) {
+        public GetWarningsRequest(GetWarningsRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -2095,7 +2094,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class GetWarningsRequestBody {
         
         public GetWarningsRequestBody() {
@@ -2109,12 +2108,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetWarningsResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetWarningsResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsResponseBody Body;
+        public GetWarningsResponseBody Body;
         
         public GetWarningsResponse() {
         }
         
-        public GetWarningsResponse(Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsResponseBody Body) {
+        public GetWarningsResponse(GetWarningsResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -2122,16 +2121,16 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class GetWarningsResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetWarningsResult;
+        [DataMember(EmitDefaultValue=false, Order=0)]
+        public ArrayOfString GetWarningsResult;
         
         public GetWarningsResponseBody() {
         }
         
-        public GetWarningsResponseBody(Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetWarningsResult) {
+        public GetWarningsResponseBody(ArrayOfString GetWarningsResult) {
             this.GetWarningsResult = GetWarningsResult;
         }
     }
@@ -2143,12 +2142,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class SetCEUserOptionRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SetCEUserOption", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionRequestBody Body;
+        public SetCEUserOptionRequestBody Body;
         
         public SetCEUserOptionRequest() {
         }
         
-        public SetCEUserOptionRequest(Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionRequestBody Body) {
+        public SetCEUserOptionRequest(SetCEUserOptionRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -2156,25 +2155,25 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class SetCEUserOptionRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.UserOption userOption;
+        [DataMember(Order=0)]
+        public UserOption userOption;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        [DataMember(Order=1)]
         public bool value;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [DataMember(EmitDefaultValue=false, Order=3)]
         public string passWord;
         
         public SetCEUserOptionRequestBody() {
         }
         
-        public SetCEUserOptionRequestBody(Sitecore.Foundation.Testing.Specflow.UtfService.UserOption userOption, bool value, string userName, string passWord) {
+        public SetCEUserOptionRequestBody(UserOption userOption, bool value, string userName, string passWord) {
             this.userOption = userOption;
             this.value = value;
             this.userName = userName;
@@ -2189,12 +2188,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class SetCEUserOptionResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SetCEUserOptionResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionResponseBody Body;
+        public SetCEUserOptionResponseBody Body;
         
         public SetCEUserOptionResponse() {
         }
         
-        public SetCEUserOptionResponse(Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionResponseBody Body) {
+        public SetCEUserOptionResponse(SetCEUserOptionResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -2202,7 +2201,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class SetCEUserOptionResponseBody {
         
         public SetCEUserOptionResponseBody() {
@@ -2216,12 +2215,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetLogFilesNamesRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLogFilesNames", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesRequestBody Body;
+        public GetLogFilesNamesRequestBody Body;
         
         public GetLogFilesNamesRequest() {
         }
         
-        public GetLogFilesNamesRequest(Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesRequestBody Body) {
+        public GetLogFilesNamesRequest(GetLogFilesNamesRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -2229,7 +2228,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class GetLogFilesNamesRequestBody {
         
         public GetLogFilesNamesRequestBody() {
@@ -2243,12 +2242,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetLogFilesNamesResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLogFilesNamesResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesResponseBody Body;
+        public GetLogFilesNamesResponseBody Body;
         
         public GetLogFilesNamesResponse() {
         }
         
-        public GetLogFilesNamesResponse(Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesResponseBody Body) {
+        public GetLogFilesNamesResponse(GetLogFilesNamesResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -2256,16 +2255,16 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class GetLogFilesNamesResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetLogFilesNamesResult;
+        [DataMember(EmitDefaultValue=false, Order=0)]
+        public ArrayOfString GetLogFilesNamesResult;
         
         public GetLogFilesNamesResponseBody() {
         }
         
-        public GetLogFilesNamesResponseBody(Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetLogFilesNamesResult) {
+        public GetLogFilesNamesResponseBody(ArrayOfString GetLogFilesNamesResult) {
             this.GetLogFilesNamesResult = GetLogFilesNamesResult;
         }
     }
@@ -2277,12 +2276,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetLogFileContentRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLogFileContent", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentRequestBody Body;
+        public GetLogFileContentRequestBody Body;
         
         public GetLogFileContentRequest() {
         }
         
-        public GetLogFileContentRequest(Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentRequestBody Body) {
+        public GetLogFileContentRequest(GetLogFileContentRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -2290,10 +2289,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class GetLogFileContentRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string fileName;
         
         public GetLogFileContentRequestBody() {
@@ -2311,12 +2310,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetLogFileContentResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetLogFileContentResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentResponseBody Body;
+        public GetLogFileContentResponseBody Body;
         
         public GetLogFileContentResponse() {
         }
         
-        public GetLogFileContentResponse(Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentResponseBody Body) {
+        public GetLogFileContentResponse(GetLogFileContentResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -2324,16 +2323,16 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class GetLogFileContentResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetLogFileContentResult;
+        [DataMember(EmitDefaultValue=false, Order=0)]
+        public ArrayOfString GetLogFileContentResult;
         
         public GetLogFileContentResponseBody() {
         }
         
-        public GetLogFileContentResponseBody(Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetLogFileContentResult) {
+        public GetLogFileContentResponseBody(ArrayOfString GetLogFileContentResult) {
             this.GetLogFileContentResult = GetLogFileContentResult;
         }
     }
@@ -2345,12 +2344,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetSitecoreVersionRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSitecoreVersion", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionRequestBody Body;
+        public GetSitecoreVersionRequestBody Body;
         
         public GetSitecoreVersionRequest() {
         }
         
-        public GetSitecoreVersionRequest(Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionRequestBody Body) {
+        public GetSitecoreVersionRequest(GetSitecoreVersionRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -2358,7 +2357,7 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class GetSitecoreVersionRequestBody {
         
         public GetSitecoreVersionRequestBody() {
@@ -2372,12 +2371,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     public partial class GetSitecoreVersionResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSitecoreVersionResponse", Namespace="http://tempuri.org/", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionResponseBody Body;
+        public GetSitecoreVersionResponseBody Body;
         
         public GetSitecoreVersionResponse() {
         }
         
-        public GetSitecoreVersionResponse(Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionResponseBody Body) {
+        public GetSitecoreVersionResponse(GetSitecoreVersionResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -2385,10 +2384,10 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [DataContract(Namespace="http://tempuri.org/")]
     public partial class GetSitecoreVersionResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string GetSitecoreVersionResult;
         
         public GetSitecoreVersionResponseBody() {
@@ -2400,12 +2399,12 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface HelperWebServiceSoapChannel : Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap, System.ServiceModel.IClientChannel {
+    public interface HelperWebServiceSoapChannel : HelperWebServiceSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class HelperWebServiceSoapClient : System.ServiceModel.ClientBase<Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap>, Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap {
+    public partial class HelperWebServiceSoapClient : System.ServiceModel.ClientBase<HelperWebServiceSoap>, HelperWebServiceSoap {
         
         public HelperWebServiceSoapClient() {
         }
@@ -2427,572 +2426,572 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.ItemExistsById(Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdRequest request) {
+        ItemExistsByIdResponse HelperWebServiceSoap.ItemExistsById(ItemExistsByIdRequest request) {
             return base.Channel.ItemExistsById(request);
         }
         
-        public string ItemExistsById(string itemId, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdRequestBody();
+        public string ItemExistsById(string itemId, Database database) {
+            ItemExistsByIdRequest inValue = new ItemExistsByIdRequest();
+            inValue.Body = new ItemExistsByIdRequestBody();
             inValue.Body.itemId = itemId;
             inValue.Body.database = database;
-            Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).ItemExistsById(inValue);
+            ItemExistsByIdResponse retVal = ((HelperWebServiceSoap)(this)).ItemExistsById(inValue);
             return retVal.Body.ItemExistsByIdResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.ItemExistsByIdAsync(Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdRequest request) {
+        System.Threading.Tasks.Task<ItemExistsByIdResponse> HelperWebServiceSoap.ItemExistsByIdAsync(ItemExistsByIdRequest request) {
             return base.Channel.ItemExistsByIdAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdResponse> ItemExistsByIdAsync(string itemId, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByIdRequestBody();
+        public System.Threading.Tasks.Task<ItemExistsByIdResponse> ItemExistsByIdAsync(string itemId, Database database) {
+            ItemExistsByIdRequest inValue = new ItemExistsByIdRequest();
+            inValue.Body = new ItemExistsByIdRequestBody();
             inValue.Body.itemId = itemId;
             inValue.Body.database = database;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).ItemExistsByIdAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).ItemExistsByIdAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.ItemExistsByPath(Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathRequest request) {
+        ItemExistsByPathResponse HelperWebServiceSoap.ItemExistsByPath(ItemExistsByPathRequest request) {
             return base.Channel.ItemExistsByPath(request);
         }
         
-        public string ItemExistsByPath(string itemPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathRequestBody();
+        public string ItemExistsByPath(string itemPath, Database database) {
+            ItemExistsByPathRequest inValue = new ItemExistsByPathRequest();
+            inValue.Body = new ItemExistsByPathRequestBody();
             inValue.Body.itemPath = itemPath;
             inValue.Body.database = database;
-            Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).ItemExistsByPath(inValue);
+            ItemExistsByPathResponse retVal = ((HelperWebServiceSoap)(this)).ItemExistsByPath(inValue);
             return retVal.Body.ItemExistsByPathResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.ItemExistsByPathAsync(Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathRequest request) {
+        System.Threading.Tasks.Task<ItemExistsByPathResponse> HelperWebServiceSoap.ItemExistsByPathAsync(ItemExistsByPathRequest request) {
             return base.Channel.ItemExistsByPathAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathResponse> ItemExistsByPathAsync(string itemPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.ItemExistsByPathRequestBody();
+        public System.Threading.Tasks.Task<ItemExistsByPathResponse> ItemExistsByPathAsync(string itemPath, Database database) {
+            ItemExistsByPathRequest inValue = new ItemExistsByPathRequest();
+            inValue.Body = new ItemExistsByPathRequestBody();
             inValue.Body.itemPath = itemPath;
             inValue.Body.database = database;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).ItemExistsByPathAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).ItemExistsByPathAsync(inValue);
         }
         
-        public void ClearTemplates(Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
+        public void ClearTemplates(Database database) {
             base.Channel.ClearTemplates(database);
         }
         
-        public System.Threading.Tasks.Task ClearTemplatesAsync(Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
+        public System.Threading.Tasks.Task ClearTemplatesAsync(Database database) {
             return base.Channel.ClearTemplatesAsync(database);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.CreateItem(Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemRequest request) {
+        CreateItemResponse HelperWebServiceSoap.CreateItem(CreateItemRequest request) {
             return base.Channel.CreateItem(request);
         }
         
-        public string CreateItem(string itemName, string parentIdOrPath, string templateIdOrPath, string userName, string passWord, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemRequestBody();
+        public string CreateItem(string itemName, string parentIdOrPath, string templateIdOrPath, string userName, string passWord, Database database) {
+            CreateItemRequest inValue = new CreateItemRequest();
+            inValue.Body = new CreateItemRequestBody();
             inValue.Body.itemName = itemName;
             inValue.Body.parentIdOrPath = parentIdOrPath;
             inValue.Body.templateIdOrPath = templateIdOrPath;
             inValue.Body.userName = userName;
             inValue.Body.passWord = passWord;
             inValue.Body.database = database;
-            Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).CreateItem(inValue);
+            CreateItemResponse retVal = ((HelperWebServiceSoap)(this)).CreateItem(inValue);
             return retVal.Body.CreateItemResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.CreateItemAsync(Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemRequest request) {
+        System.Threading.Tasks.Task<CreateItemResponse> HelperWebServiceSoap.CreateItemAsync(CreateItemRequest request) {
             return base.Channel.CreateItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemResponse> CreateItemAsync(string itemName, string parentIdOrPath, string templateIdOrPath, string userName, string passWord, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.CreateItemRequestBody();
+        public System.Threading.Tasks.Task<CreateItemResponse> CreateItemAsync(string itemName, string parentIdOrPath, string templateIdOrPath, string userName, string passWord, Database database) {
+            CreateItemRequest inValue = new CreateItemRequest();
+            inValue.Body = new CreateItemRequestBody();
             inValue.Body.itemName = itemName;
             inValue.Body.parentIdOrPath = parentIdOrPath;
             inValue.Body.templateIdOrPath = templateIdOrPath;
             inValue.Body.userName = userName;
             inValue.Body.passWord = passWord;
             inValue.Body.database = database;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).CreateItemAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).CreateItemAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.EditItemResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.EditItem(Sitecore.Foundation.Testing.Specflow.UtfService.EditItemRequest request) {
+        EditItemResponse HelperWebServiceSoap.EditItem(EditItemRequest request) {
             return base.Channel.EditItem(request);
         }
         
-        public string EditItem(string itemIdOrPath, string fieldName, string fieldValue, string userName, string passWord, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.EditItemRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.EditItemRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.EditItemRequestBody();
+        public string EditItem(string itemIdOrPath, string fieldName, string fieldValue, string userName, string passWord, Database database) {
+            EditItemRequest inValue = new EditItemRequest();
+            inValue.Body = new EditItemRequestBody();
             inValue.Body.itemIdOrPath = itemIdOrPath;
             inValue.Body.fieldName = fieldName;
             inValue.Body.fieldValue = fieldValue;
             inValue.Body.userName = userName;
             inValue.Body.passWord = passWord;
             inValue.Body.database = database;
-            Sitecore.Foundation.Testing.Specflow.UtfService.EditItemResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).EditItem(inValue);
+            EditItemResponse retVal = ((HelperWebServiceSoap)(this)).EditItem(inValue);
             return retVal.Body.EditItemResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.EditItemResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.EditItemAsync(Sitecore.Foundation.Testing.Specflow.UtfService.EditItemRequest request) {
+        System.Threading.Tasks.Task<EditItemResponse> HelperWebServiceSoap.EditItemAsync(EditItemRequest request) {
             return base.Channel.EditItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.EditItemResponse> EditItemAsync(string itemIdOrPath, string fieldName, string fieldValue, string userName, string passWord, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.EditItemRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.EditItemRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.EditItemRequestBody();
+        public System.Threading.Tasks.Task<EditItemResponse> EditItemAsync(string itemIdOrPath, string fieldName, string fieldValue, string userName, string passWord, Database database) {
+            EditItemRequest inValue = new EditItemRequest();
+            inValue.Body = new EditItemRequestBody();
             inValue.Body.itemIdOrPath = itemIdOrPath;
             inValue.Body.fieldName = fieldName;
             inValue.Body.fieldValue = fieldValue;
             inValue.Body.userName = userName;
             inValue.Body.passWord = passWord;
             inValue.Body.database = database;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).EditItemAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).EditItemAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetItemFieldValue(Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueRequest request) {
+        GetItemFieldValueResponse HelperWebServiceSoap.GetItemFieldValue(GetItemFieldValueRequest request) {
             return base.Channel.GetItemFieldValue(request);
         }
         
-        public string GetItemFieldValue(string itemIdOrPath, string fieldName, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueRequestBody();
+        public string GetItemFieldValue(string itemIdOrPath, string fieldName, Database database) {
+            GetItemFieldValueRequest inValue = new GetItemFieldValueRequest();
+            inValue.Body = new GetItemFieldValueRequestBody();
             inValue.Body.itemIdOrPath = itemIdOrPath;
             inValue.Body.fieldName = fieldName;
             inValue.Body.database = database;
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetItemFieldValue(inValue);
+            GetItemFieldValueResponse retVal = ((HelperWebServiceSoap)(this)).GetItemFieldValue(inValue);
             return retVal.Body.GetItemFieldValueResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetItemFieldValueAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueRequest request) {
+        System.Threading.Tasks.Task<GetItemFieldValueResponse> HelperWebServiceSoap.GetItemFieldValueAsync(GetItemFieldValueRequest request) {
             return base.Channel.GetItemFieldValueAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueResponse> GetItemFieldValueAsync(string itemIdOrPath, string fieldName, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetItemFieldValueRequestBody();
+        public System.Threading.Tasks.Task<GetItemFieldValueResponse> GetItemFieldValueAsync(string itemIdOrPath, string fieldName, Database database) {
+            GetItemFieldValueRequest inValue = new GetItemFieldValueRequest();
+            inValue.Body = new GetItemFieldValueRequestBody();
             inValue.Body.itemIdOrPath = itemIdOrPath;
             inValue.Body.fieldName = fieldName;
             inValue.Body.database = database;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetItemFieldValueAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).GetItemFieldValueAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.DeleteItem(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemRequest request) {
+        DeleteItemResponse HelperWebServiceSoap.DeleteItem(DeleteItemRequest request) {
             return base.Channel.DeleteItem(request);
         }
         
-        public void DeleteItem(string itemIdOrPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database, bool withException) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemRequestBody();
+        public void DeleteItem(string itemIdOrPath, Database database, bool withException) {
+            DeleteItemRequest inValue = new DeleteItemRequest();
+            inValue.Body = new DeleteItemRequestBody();
             inValue.Body.itemIdOrPath = itemIdOrPath;
             inValue.Body.database = database;
             inValue.Body.withException = withException;
-            Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).DeleteItem(inValue);
+            DeleteItemResponse retVal = ((HelperWebServiceSoap)(this)).DeleteItem(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.DeleteItemAsync(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemRequest request) {
+        System.Threading.Tasks.Task<DeleteItemResponse> HelperWebServiceSoap.DeleteItemAsync(DeleteItemRequest request) {
             return base.Channel.DeleteItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemResponse> DeleteItemAsync(string itemIdOrPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database, bool withException) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteItemRequestBody();
+        public System.Threading.Tasks.Task<DeleteItemResponse> DeleteItemAsync(string itemIdOrPath, Database database, bool withException) {
+            DeleteItemRequest inValue = new DeleteItemRequest();
+            inValue.Body = new DeleteItemRequestBody();
             inValue.Body.itemIdOrPath = itemIdOrPath;
             inValue.Body.database = database;
             inValue.Body.withException = withException;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).DeleteItemAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).DeleteItemAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.DeleteFilesAndFolders(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersRequest request) {
+        DeleteFilesAndFoldersResponse HelperWebServiceSoap.DeleteFilesAndFolders(DeleteFilesAndFoldersRequest request) {
             return base.Channel.DeleteFilesAndFolders(request);
         }
         
         public void DeleteFilesAndFolders(string folderPath, string nameMask) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersRequestBody();
+            DeleteFilesAndFoldersRequest inValue = new DeleteFilesAndFoldersRequest();
+            inValue.Body = new DeleteFilesAndFoldersRequestBody();
             inValue.Body.folderPath = folderPath;
             inValue.Body.nameMask = nameMask;
-            Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).DeleteFilesAndFolders(inValue);
+            DeleteFilesAndFoldersResponse retVal = ((HelperWebServiceSoap)(this)).DeleteFilesAndFolders(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.DeleteFilesAndFoldersAsync(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersRequest request) {
+        System.Threading.Tasks.Task<DeleteFilesAndFoldersResponse> HelperWebServiceSoap.DeleteFilesAndFoldersAsync(DeleteFilesAndFoldersRequest request) {
             return base.Channel.DeleteFilesAndFoldersAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersResponse> DeleteFilesAndFoldersAsync(string folderPath, string nameMask) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteFilesAndFoldersRequestBody();
+        public System.Threading.Tasks.Task<DeleteFilesAndFoldersResponse> DeleteFilesAndFoldersAsync(string folderPath, string nameMask) {
+            DeleteFilesAndFoldersRequest inValue = new DeleteFilesAndFoldersRequest();
+            inValue.Body = new DeleteFilesAndFoldersRequestBody();
             inValue.Body.folderPath = folderPath;
             inValue.Body.nameMask = nameMask;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).DeleteFilesAndFoldersAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).DeleteFilesAndFoldersAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.FileOrFolderExists(Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsRequest request) {
+        FileOrFolderExistsResponse HelperWebServiceSoap.FileOrFolderExists(FileOrFolderExistsRequest request) {
             return base.Channel.FileOrFolderExists(request);
         }
         
         public bool FileOrFolderExists(string path) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsRequestBody();
+            FileOrFolderExistsRequest inValue = new FileOrFolderExistsRequest();
+            inValue.Body = new FileOrFolderExistsRequestBody();
             inValue.Body.path = path;
-            Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).FileOrFolderExists(inValue);
+            FileOrFolderExistsResponse retVal = ((HelperWebServiceSoap)(this)).FileOrFolderExists(inValue);
             return retVal.Body.FileOrFolderExistsResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.FileOrFolderExistsAsync(Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsRequest request) {
+        System.Threading.Tasks.Task<FileOrFolderExistsResponse> HelperWebServiceSoap.FileOrFolderExistsAsync(FileOrFolderExistsRequest request) {
             return base.Channel.FileOrFolderExistsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsResponse> FileOrFolderExistsAsync(string path) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.FileOrFolderExistsRequestBody();
+        public System.Threading.Tasks.Task<FileOrFolderExistsResponse> FileOrFolderExistsAsync(string path) {
+            FileOrFolderExistsRequest inValue = new FileOrFolderExistsRequest();
+            inValue.Body = new FileOrFolderExistsRequestBody();
             inValue.Body.path = path;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).FileOrFolderExistsAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).FileOrFolderExistsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.UploadFile(Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileRequest request) {
+        UploadFileResponse HelperWebServiceSoap.UploadFile(UploadFileRequest request) {
             return base.Channel.UploadFile(request);
         }
         
         public void UploadFile(byte[] content, string fileName, string uploadFolder) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileRequestBody();
+            UploadFileRequest inValue = new UploadFileRequest();
+            inValue.Body = new UploadFileRequestBody();
             inValue.Body.content = content;
             inValue.Body.fileName = fileName;
             inValue.Body.uploadFolder = uploadFolder;
-            Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).UploadFile(inValue);
+            UploadFileResponse retVal = ((HelperWebServiceSoap)(this)).UploadFile(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.UploadFileAsync(Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileRequest request) {
+        System.Threading.Tasks.Task<UploadFileResponse> HelperWebServiceSoap.UploadFileAsync(UploadFileRequest request) {
             return base.Channel.UploadFileAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileResponse> UploadFileAsync(byte[] content, string fileName, string uploadFolder) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.UploadFileRequestBody();
+        public System.Threading.Tasks.Task<UploadFileResponse> UploadFileAsync(byte[] content, string fileName, string uploadFolder) {
+            UploadFileRequest inValue = new UploadFileRequest();
+            inValue.Body = new UploadFileRequestBody();
             inValue.Body.content = content;
             inValue.Body.fileName = fileName;
             inValue.Body.uploadFolder = uploadFolder;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).UploadFileAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).UploadFileAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.InstallPackage(Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageRequest request) {
+        InstallPackageResponse HelperWebServiceSoap.InstallPackage(InstallPackageRequest request) {
             return base.Channel.InstallPackage(request);
         }
         
         public void InstallPackage(string packageName) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageRequestBody();
+            InstallPackageRequest inValue = new InstallPackageRequest();
+            inValue.Body = new InstallPackageRequestBody();
             inValue.Body.packageName = packageName;
-            Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).InstallPackage(inValue);
+            InstallPackageResponse retVal = ((HelperWebServiceSoap)(this)).InstallPackage(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.InstallPackageAsync(Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageRequest request) {
+        System.Threading.Tasks.Task<InstallPackageResponse> HelperWebServiceSoap.InstallPackageAsync(InstallPackageRequest request) {
             return base.Channel.InstallPackageAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageResponse> InstallPackageAsync(string packageName) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.InstallPackageRequestBody();
+        public System.Threading.Tasks.Task<InstallPackageResponse> InstallPackageAsync(string packageName) {
+            InstallPackageRequest inValue = new InstallPackageRequest();
+            inValue.Body = new InstallPackageRequestBody();
             inValue.Body.packageName = packageName;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).InstallPackageAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).InstallPackageAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetChildren(Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenRequest request) {
+        GetChildrenResponse HelperWebServiceSoap.GetChildren(GetChildrenRequest request) {
             return base.Channel.GetChildren(request);
         }
         
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetChildren(string parentIdOrPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database, bool returnPath) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenRequestBody();
+        public ArrayOfString GetChildren(string parentIdOrPath, Database database, bool returnPath) {
+            GetChildrenRequest inValue = new GetChildrenRequest();
+            inValue.Body = new GetChildrenRequestBody();
             inValue.Body.parentIdOrPath = parentIdOrPath;
             inValue.Body.database = database;
             inValue.Body.returnPath = returnPath;
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetChildren(inValue);
+            GetChildrenResponse retVal = ((HelperWebServiceSoap)(this)).GetChildren(inValue);
             return retVal.Body.GetChildrenResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetChildrenAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenRequest request) {
+        System.Threading.Tasks.Task<GetChildrenResponse> HelperWebServiceSoap.GetChildrenAsync(GetChildrenRequest request) {
             return base.Channel.GetChildrenAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenResponse> GetChildrenAsync(string parentIdOrPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database, bool returnPath) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetChildrenRequestBody();
+        public System.Threading.Tasks.Task<GetChildrenResponse> GetChildrenAsync(string parentIdOrPath, Database database, bool returnPath) {
+            GetChildrenRequest inValue = new GetChildrenRequest();
+            inValue.Body = new GetChildrenRequestBody();
             inValue.Body.parentIdOrPath = parentIdOrPath;
             inValue.Body.database = database;
             inValue.Body.returnPath = returnPath;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetChildrenAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).GetChildrenAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.DeleteChildren(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenRequest request) {
+        DeleteChildrenResponse HelperWebServiceSoap.DeleteChildren(DeleteChildrenRequest request) {
             return base.Channel.DeleteChildren(request);
         }
         
-        public void DeleteChildren(string parentIdOrPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenRequestBody();
+        public void DeleteChildren(string parentIdOrPath, Database database) {
+            DeleteChildrenRequest inValue = new DeleteChildrenRequest();
+            inValue.Body = new DeleteChildrenRequestBody();
             inValue.Body.parentIdOrPath = parentIdOrPath;
             inValue.Body.database = database;
-            Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).DeleteChildren(inValue);
+            DeleteChildrenResponse retVal = ((HelperWebServiceSoap)(this)).DeleteChildren(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.DeleteChildrenAsync(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenRequest request) {
+        System.Threading.Tasks.Task<DeleteChildrenResponse> HelperWebServiceSoap.DeleteChildrenAsync(DeleteChildrenRequest request) {
             return base.Channel.DeleteChildrenAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenResponse> DeleteChildrenAsync(string parentIdOrPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteChildrenRequestBody();
+        public System.Threading.Tasks.Task<DeleteChildrenResponse> DeleteChildrenAsync(string parentIdOrPath, Database database) {
+            DeleteChildrenRequest inValue = new DeleteChildrenRequest();
+            inValue.Body = new DeleteChildrenRequestBody();
             inValue.Body.parentIdOrPath = parentIdOrPath;
             inValue.Body.database = database;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).DeleteChildrenAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).DeleteChildrenAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.PublishSite(Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteRequest request) {
+        PublishSiteResponse HelperWebServiceSoap.PublishSite(PublishSiteRequest request) {
             return base.Channel.PublishSite(request);
         }
         
-        public void PublishSite(Sitecore.Foundation.Testing.Specflow.UtfService.PublishMode publishMode, string publishLanguage) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteRequestBody();
+        public void PublishSite(PublishMode publishMode, string publishLanguage) {
+            PublishSiteRequest inValue = new PublishSiteRequest();
+            inValue.Body = new PublishSiteRequestBody();
             inValue.Body.publishMode = publishMode;
             inValue.Body.publishLanguage = publishLanguage;
-            Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).PublishSite(inValue);
+            PublishSiteResponse retVal = ((HelperWebServiceSoap)(this)).PublishSite(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.PublishSiteAsync(Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteRequest request) {
+        System.Threading.Tasks.Task<PublishSiteResponse> HelperWebServiceSoap.PublishSiteAsync(PublishSiteRequest request) {
             return base.Channel.PublishSiteAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteResponse> PublishSiteAsync(Sitecore.Foundation.Testing.Specflow.UtfService.PublishMode publishMode, string publishLanguage) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.PublishSiteRequestBody();
+        public System.Threading.Tasks.Task<PublishSiteResponse> PublishSiteAsync(PublishMode publishMode, string publishLanguage) {
+            PublishSiteRequest inValue = new PublishSiteRequest();
+            inValue.Body = new PublishSiteRequestBody();
             inValue.Body.publishMode = publishMode;
             inValue.Body.publishLanguage = publishLanguage;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).PublishSiteAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).PublishSiteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.CreateUser(Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserRequest request) {
+        CreateUserResponse HelperWebServiceSoap.CreateUser(CreateUserRequest request) {
             return base.Channel.CreateUser(request);
         }
         
-        public void CreateUser(string userName, string passWord, Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString roles, string eMail) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserRequestBody();
+        public void CreateUser(string userName, string passWord, ArrayOfString roles, string eMail) {
+            CreateUserRequest inValue = new CreateUserRequest();
+            inValue.Body = new CreateUserRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.passWord = passWord;
             inValue.Body.roles = roles;
             inValue.Body.eMail = eMail;
-            Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).CreateUser(inValue);
+            CreateUserResponse retVal = ((HelperWebServiceSoap)(this)).CreateUser(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.CreateUserAsync(Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserRequest request) {
+        System.Threading.Tasks.Task<CreateUserResponse> HelperWebServiceSoap.CreateUserAsync(CreateUserRequest request) {
             return base.Channel.CreateUserAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserResponse> CreateUserAsync(string userName, string passWord, Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString roles, string eMail) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.CreateUserRequestBody();
+        public System.Threading.Tasks.Task<CreateUserResponse> CreateUserAsync(string userName, string passWord, ArrayOfString roles, string eMail) {
+            CreateUserRequest inValue = new CreateUserRequest();
+            inValue.Body = new CreateUserRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.passWord = passWord;
             inValue.Body.roles = roles;
             inValue.Body.eMail = eMail;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).CreateUserAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).CreateUserAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.CreateRole(Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleRequest request) {
+        CreateRoleResponse HelperWebServiceSoap.CreateRole(CreateRoleRequest request) {
             return base.Channel.CreateRole(request);
         }
         
-        public void CreateRole(string roleName, Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString rolesMembership) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleRequestBody();
+        public void CreateRole(string roleName, ArrayOfString rolesMembership) {
+            CreateRoleRequest inValue = new CreateRoleRequest();
+            inValue.Body = new CreateRoleRequestBody();
             inValue.Body.roleName = roleName;
             inValue.Body.rolesMembership = rolesMembership;
-            Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).CreateRole(inValue);
+            CreateRoleResponse retVal = ((HelperWebServiceSoap)(this)).CreateRole(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.CreateRoleAsync(Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleRequest request) {
+        System.Threading.Tasks.Task<CreateRoleResponse> HelperWebServiceSoap.CreateRoleAsync(CreateRoleRequest request) {
             return base.Channel.CreateRoleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleResponse> CreateRoleAsync(string roleName, Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString rolesMembership) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.CreateRoleRequestBody();
+        public System.Threading.Tasks.Task<CreateRoleResponse> CreateRoleAsync(string roleName, ArrayOfString rolesMembership) {
+            CreateRoleRequest inValue = new CreateRoleRequest();
+            inValue.Body = new CreateRoleRequestBody();
             inValue.Body.roleName = roleName;
             inValue.Body.rolesMembership = rolesMembership;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).CreateRoleAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).CreateRoleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.SetSecurityRight(Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightRequest request) {
+        SetSecurityRightResponse HelperWebServiceSoap.SetSecurityRight(SetSecurityRightRequest request) {
             return base.Channel.SetSecurityRight(request);
         }
         
-        public void SetSecurityRight(Sitecore.Foundation.Testing.Specflow.UtfService.Database database, string itemIdOrPath, string userName, Sitecore.Foundation.Testing.Specflow.UtfService.SecurityRight right, Sitecore.Foundation.Testing.Specflow.UtfService.AccessPermission state) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightRequestBody();
+        public void SetSecurityRight(Database database, string itemIdOrPath, string userName, SecurityRight right, AccessPermission state) {
+            SetSecurityRightRequest inValue = new SetSecurityRightRequest();
+            inValue.Body = new SetSecurityRightRequestBody();
             inValue.Body.database = database;
             inValue.Body.itemIdOrPath = itemIdOrPath;
             inValue.Body.userName = userName;
             inValue.Body.right = right;
             inValue.Body.state = state;
-            Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).SetSecurityRight(inValue);
+            SetSecurityRightResponse retVal = ((HelperWebServiceSoap)(this)).SetSecurityRight(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.SetSecurityRightAsync(Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightRequest request) {
+        System.Threading.Tasks.Task<SetSecurityRightResponse> HelperWebServiceSoap.SetSecurityRightAsync(SetSecurityRightRequest request) {
             return base.Channel.SetSecurityRightAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightResponse> SetSecurityRightAsync(Sitecore.Foundation.Testing.Specflow.UtfService.Database database, string itemIdOrPath, string userName, Sitecore.Foundation.Testing.Specflow.UtfService.SecurityRight right, Sitecore.Foundation.Testing.Specflow.UtfService.AccessPermission state) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.SetSecurityRightRequestBody();
+        public System.Threading.Tasks.Task<SetSecurityRightResponse> SetSecurityRightAsync(Database database, string itemIdOrPath, string userName, SecurityRight right, AccessPermission state) {
+            SetSecurityRightRequest inValue = new SetSecurityRightRequest();
+            inValue.Body = new SetSecurityRightRequestBody();
             inValue.Body.database = database;
             inValue.Body.itemIdOrPath = itemIdOrPath;
             inValue.Body.userName = userName;
             inValue.Body.right = right;
             inValue.Body.state = state;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).SetSecurityRightAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).SetSecurityRightAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetSecurityRight(Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightRequest request) {
+        GetSecurityRightResponse HelperWebServiceSoap.GetSecurityRight(GetSecurityRightRequest request) {
             return base.Channel.GetSecurityRight(request);
         }
         
-        public Sitecore.Foundation.Testing.Specflow.UtfService.AccessPermission GetSecurityRight(Sitecore.Foundation.Testing.Specflow.UtfService.Database database, string itemIdOrPath, string userName, Sitecore.Foundation.Testing.Specflow.UtfService.SecurityRight right) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightRequestBody();
+        public AccessPermission GetSecurityRight(Database database, string itemIdOrPath, string userName, SecurityRight right) {
+            GetSecurityRightRequest inValue = new GetSecurityRightRequest();
+            inValue.Body = new GetSecurityRightRequestBody();
             inValue.Body.database = database;
             inValue.Body.itemIdOrPath = itemIdOrPath;
             inValue.Body.userName = userName;
             inValue.Body.right = right;
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetSecurityRight(inValue);
+            GetSecurityRightResponse retVal = ((HelperWebServiceSoap)(this)).GetSecurityRight(inValue);
             return retVal.Body.GetSecurityRightResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetSecurityRightAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightRequest request) {
+        System.Threading.Tasks.Task<GetSecurityRightResponse> HelperWebServiceSoap.GetSecurityRightAsync(GetSecurityRightRequest request) {
             return base.Channel.GetSecurityRightAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightResponse> GetSecurityRightAsync(Sitecore.Foundation.Testing.Specflow.UtfService.Database database, string itemIdOrPath, string userName, Sitecore.Foundation.Testing.Specflow.UtfService.SecurityRight right) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetSecurityRightRequestBody();
+        public System.Threading.Tasks.Task<GetSecurityRightResponse> GetSecurityRightAsync(Database database, string itemIdOrPath, string userName, SecurityRight right) {
+            GetSecurityRightRequest inValue = new GetSecurityRightRequest();
+            inValue.Body = new GetSecurityRightRequestBody();
             inValue.Body.database = database;
             inValue.Body.itemIdOrPath = itemIdOrPath;
             inValue.Body.userName = userName;
             inValue.Body.right = right;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetSecurityRightAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).GetSecurityRightAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.DeleteUserOrRole(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleRequest request) {
+        DeleteUserOrRoleResponse HelperWebServiceSoap.DeleteUserOrRole(DeleteUserOrRoleRequest request) {
             return base.Channel.DeleteUserOrRole(request);
         }
         
         public void DeleteUserOrRole(string userOrRoleName, bool isUser) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleRequestBody();
+            DeleteUserOrRoleRequest inValue = new DeleteUserOrRoleRequest();
+            inValue.Body = new DeleteUserOrRoleRequestBody();
             inValue.Body.userOrRoleName = userOrRoleName;
             inValue.Body.isUser = isUser;
-            Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).DeleteUserOrRole(inValue);
+            DeleteUserOrRoleResponse retVal = ((HelperWebServiceSoap)(this)).DeleteUserOrRole(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.DeleteUserOrRoleAsync(Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleRequest request) {
+        System.Threading.Tasks.Task<DeleteUserOrRoleResponse> HelperWebServiceSoap.DeleteUserOrRoleAsync(DeleteUserOrRoleRequest request) {
             return base.Channel.DeleteUserOrRoleAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleResponse> DeleteUserOrRoleAsync(string userOrRoleName, bool isUser) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.DeleteUserOrRoleRequestBody();
+        public System.Threading.Tasks.Task<DeleteUserOrRoleResponse> DeleteUserOrRoleAsync(string userOrRoleName, bool isUser) {
+            DeleteUserOrRoleRequest inValue = new DeleteUserOrRoleRequest();
+            inValue.Body = new DeleteUserOrRoleRequestBody();
             inValue.Body.userOrRoleName = userOrRoleName;
             inValue.Body.isUser = isUser;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).DeleteUserOrRoleAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).DeleteUserOrRoleAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.UserOrRoleExists(Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsRequest request) {
+        UserOrRoleExistsResponse HelperWebServiceSoap.UserOrRoleExists(UserOrRoleExistsRequest request) {
             return base.Channel.UserOrRoleExists(request);
         }
         
         public bool UserOrRoleExists(string userOrRoleName, bool isUser) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsRequestBody();
+            UserOrRoleExistsRequest inValue = new UserOrRoleExistsRequest();
+            inValue.Body = new UserOrRoleExistsRequestBody();
             inValue.Body.userOrRoleName = userOrRoleName;
             inValue.Body.isUser = isUser;
-            Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).UserOrRoleExists(inValue);
+            UserOrRoleExistsResponse retVal = ((HelperWebServiceSoap)(this)).UserOrRoleExists(inValue);
             return retVal.Body.UserOrRoleExistsResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.UserOrRoleExistsAsync(Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsRequest request) {
+        System.Threading.Tasks.Task<UserOrRoleExistsResponse> HelperWebServiceSoap.UserOrRoleExistsAsync(UserOrRoleExistsRequest request) {
             return base.Channel.UserOrRoleExistsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsResponse> UserOrRoleExistsAsync(string userOrRoleName, bool isUser) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.UserOrRoleExistsRequestBody();
+        public System.Threading.Tasks.Task<UserOrRoleExistsResponse> UserOrRoleExistsAsync(string userOrRoleName, bool isUser) {
+            UserOrRoleExistsRequest inValue = new UserOrRoleExistsRequest();
+            inValue.Body = new UserOrRoleExistsRequestBody();
             inValue.Body.userOrRoleName = userOrRoleName;
             inValue.Body.isUser = isUser;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).UserOrRoleExistsAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).UserOrRoleExistsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.KickUserResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.KickUser(Sitecore.Foundation.Testing.Specflow.UtfService.KickUserRequest request) {
+        KickUserResponse HelperWebServiceSoap.KickUser(KickUserRequest request) {
             return base.Channel.KickUser(request);
         }
         
         public void KickUser(string userName) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.KickUserRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.KickUserRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.KickUserRequestBody();
+            KickUserRequest inValue = new KickUserRequest();
+            inValue.Body = new KickUserRequestBody();
             inValue.Body.userName = userName;
-            Sitecore.Foundation.Testing.Specflow.UtfService.KickUserResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).KickUser(inValue);
+            KickUserResponse retVal = ((HelperWebServiceSoap)(this)).KickUser(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.KickUserResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.KickUserAsync(Sitecore.Foundation.Testing.Specflow.UtfService.KickUserRequest request) {
+        System.Threading.Tasks.Task<KickUserResponse> HelperWebServiceSoap.KickUserAsync(KickUserRequest request) {
             return base.Channel.KickUserAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.KickUserResponse> KickUserAsync(string userName) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.KickUserRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.KickUserRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.KickUserRequestBody();
+        public System.Threading.Tasks.Task<KickUserResponse> KickUserAsync(string userName) {
+            KickUserRequest inValue = new KickUserRequest();
+            inValue.Body = new KickUserRequestBody();
             inValue.Body.userName = userName;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).KickUserAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).KickUserAsync(inValue);
         }
         
         public void KickAllUsers() {
@@ -3012,229 +3011,229 @@ namespace Sitecore.Foundation.Testing.Specflow.UtfService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.RebuildIndex(Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexRequest request) {
+        RebuildIndexResponse HelperWebServiceSoap.RebuildIndex(RebuildIndexRequest request) {
             return base.Channel.RebuildIndex(request);
         }
         
-        public void RebuildIndex(string itemIdOrPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexRequestBody();
+        public void RebuildIndex(string itemIdOrPath, Database database) {
+            RebuildIndexRequest inValue = new RebuildIndexRequest();
+            inValue.Body = new RebuildIndexRequestBody();
             inValue.Body.itemIdOrPath = itemIdOrPath;
             inValue.Body.database = database;
-            Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).RebuildIndex(inValue);
+            RebuildIndexResponse retVal = ((HelperWebServiceSoap)(this)).RebuildIndex(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.RebuildIndexAsync(Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexRequest request) {
+        System.Threading.Tasks.Task<RebuildIndexResponse> HelperWebServiceSoap.RebuildIndexAsync(RebuildIndexRequest request) {
             return base.Channel.RebuildIndexAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexResponse> RebuildIndexAsync(string itemIdOrPath, Sitecore.Foundation.Testing.Specflow.UtfService.Database database) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.RebuildIndexRequestBody();
+        public System.Threading.Tasks.Task<RebuildIndexResponse> RebuildIndexAsync(string itemIdOrPath, Database database) {
+            RebuildIndexRequest inValue = new RebuildIndexRequest();
+            inValue.Body = new RebuildIndexRequestBody();
             inValue.Body.itemIdOrPath = itemIdOrPath;
             inValue.Body.database = database;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).RebuildIndexAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).RebuildIndexAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.RebuildCustomIndex(Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexRequest request) {
+        RebuildCustomIndexResponse HelperWebServiceSoap.RebuildCustomIndex(RebuildCustomIndexRequest request) {
             return base.Channel.RebuildCustomIndex(request);
         }
         
         public void RebuildCustomIndex(string indexName) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexRequestBody();
+            RebuildCustomIndexRequest inValue = new RebuildCustomIndexRequest();
+            inValue.Body = new RebuildCustomIndexRequestBody();
             inValue.Body.indexName = indexName;
-            Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).RebuildCustomIndex(inValue);
+            RebuildCustomIndexResponse retVal = ((HelperWebServiceSoap)(this)).RebuildCustomIndex(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.RebuildCustomIndexAsync(Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexRequest request) {
+        System.Threading.Tasks.Task<RebuildCustomIndexResponse> HelperWebServiceSoap.RebuildCustomIndexAsync(RebuildCustomIndexRequest request) {
             return base.Channel.RebuildCustomIndexAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexResponse> RebuildCustomIndexAsync(string indexName) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.RebuildCustomIndexRequestBody();
+        public System.Threading.Tasks.Task<RebuildCustomIndexResponse> RebuildCustomIndexAsync(string indexName) {
+            RebuildCustomIndexRequest inValue = new RebuildCustomIndexRequest();
+            inValue.Body = new RebuildCustomIndexRequestBody();
             inValue.Body.indexName = indexName;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).RebuildCustomIndexAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).RebuildCustomIndexAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetErrors(Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsRequest request) {
+        GetErrorsResponse HelperWebServiceSoap.GetErrors(GetErrorsRequest request) {
             return base.Channel.GetErrors(request);
         }
         
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetErrors() {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsRequestBody();
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetErrors(inValue);
+        public ArrayOfString GetErrors() {
+            GetErrorsRequest inValue = new GetErrorsRequest();
+            inValue.Body = new GetErrorsRequestBody();
+            GetErrorsResponse retVal = ((HelperWebServiceSoap)(this)).GetErrors(inValue);
             return retVal.Body.GetErrorsResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetErrorsAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsRequest request) {
+        System.Threading.Tasks.Task<GetErrorsResponse> HelperWebServiceSoap.GetErrorsAsync(GetErrorsRequest request) {
             return base.Channel.GetErrorsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsResponse> GetErrorsAsync() {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetErrorsRequestBody();
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetErrorsAsync(inValue);
+        public System.Threading.Tasks.Task<GetErrorsResponse> GetErrorsAsync() {
+            GetErrorsRequest inValue = new GetErrorsRequest();
+            inValue.Body = new GetErrorsRequestBody();
+            return ((HelperWebServiceSoap)(this)).GetErrorsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.EditXmlFile(Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileRequest request) {
+        EditXmlFileResponse HelperWebServiceSoap.EditXmlFile(EditXmlFileRequest request) {
             return base.Channel.EditXmlFile(request);
         }
         
         public string EditXmlFile(string filePath, string xpath, string value) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileRequestBody();
+            EditXmlFileRequest inValue = new EditXmlFileRequest();
+            inValue.Body = new EditXmlFileRequestBody();
             inValue.Body.filePath = filePath;
             inValue.Body.xpath = xpath;
             inValue.Body.value = value;
-            Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).EditXmlFile(inValue);
+            EditXmlFileResponse retVal = ((HelperWebServiceSoap)(this)).EditXmlFile(inValue);
             return retVal.Body.EditXmlFileResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.EditXmlFileAsync(Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileRequest request) {
+        System.Threading.Tasks.Task<EditXmlFileResponse> HelperWebServiceSoap.EditXmlFileAsync(EditXmlFileRequest request) {
             return base.Channel.EditXmlFileAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileResponse> EditXmlFileAsync(string filePath, string xpath, string value) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.EditXmlFileRequestBody();
+        public System.Threading.Tasks.Task<EditXmlFileResponse> EditXmlFileAsync(string filePath, string xpath, string value) {
+            EditXmlFileRequest inValue = new EditXmlFileRequest();
+            inValue.Body = new EditXmlFileRequestBody();
             inValue.Body.filePath = filePath;
             inValue.Body.xpath = xpath;
             inValue.Body.value = value;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).EditXmlFileAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).EditXmlFileAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetWarnings(Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsRequest request) {
+        GetWarningsResponse HelperWebServiceSoap.GetWarnings(GetWarningsRequest request) {
             return base.Channel.GetWarnings(request);
         }
         
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetWarnings() {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsRequestBody();
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetWarnings(inValue);
+        public ArrayOfString GetWarnings() {
+            GetWarningsRequest inValue = new GetWarningsRequest();
+            inValue.Body = new GetWarningsRequestBody();
+            GetWarningsResponse retVal = ((HelperWebServiceSoap)(this)).GetWarnings(inValue);
             return retVal.Body.GetWarningsResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetWarningsAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsRequest request) {
+        System.Threading.Tasks.Task<GetWarningsResponse> HelperWebServiceSoap.GetWarningsAsync(GetWarningsRequest request) {
             return base.Channel.GetWarningsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsResponse> GetWarningsAsync() {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetWarningsRequestBody();
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetWarningsAsync(inValue);
+        public System.Threading.Tasks.Task<GetWarningsResponse> GetWarningsAsync() {
+            GetWarningsRequest inValue = new GetWarningsRequest();
+            inValue.Body = new GetWarningsRequestBody();
+            return ((HelperWebServiceSoap)(this)).GetWarningsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.SetCEUserOption(Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionRequest request) {
+        SetCEUserOptionResponse HelperWebServiceSoap.SetCEUserOption(SetCEUserOptionRequest request) {
             return base.Channel.SetCEUserOption(request);
         }
         
-        public void SetCEUserOption(Sitecore.Foundation.Testing.Specflow.UtfService.UserOption userOption, bool value, string userName, string passWord) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionRequestBody();
+        public void SetCEUserOption(UserOption userOption, bool value, string userName, string passWord) {
+            SetCEUserOptionRequest inValue = new SetCEUserOptionRequest();
+            inValue.Body = new SetCEUserOptionRequestBody();
             inValue.Body.userOption = userOption;
             inValue.Body.value = value;
             inValue.Body.userName = userName;
             inValue.Body.passWord = passWord;
-            Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).SetCEUserOption(inValue);
+            SetCEUserOptionResponse retVal = ((HelperWebServiceSoap)(this)).SetCEUserOption(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.SetCEUserOptionAsync(Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionRequest request) {
+        System.Threading.Tasks.Task<SetCEUserOptionResponse> HelperWebServiceSoap.SetCEUserOptionAsync(SetCEUserOptionRequest request) {
             return base.Channel.SetCEUserOptionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionResponse> SetCEUserOptionAsync(Sitecore.Foundation.Testing.Specflow.UtfService.UserOption userOption, bool value, string userName, string passWord) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.SetCEUserOptionRequestBody();
+        public System.Threading.Tasks.Task<SetCEUserOptionResponse> SetCEUserOptionAsync(UserOption userOption, bool value, string userName, string passWord) {
+            SetCEUserOptionRequest inValue = new SetCEUserOptionRequest();
+            inValue.Body = new SetCEUserOptionRequestBody();
             inValue.Body.userOption = userOption;
             inValue.Body.value = value;
             inValue.Body.userName = userName;
             inValue.Body.passWord = passWord;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).SetCEUserOptionAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).SetCEUserOptionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetLogFilesNames(Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesRequest request) {
+        GetLogFilesNamesResponse HelperWebServiceSoap.GetLogFilesNames(GetLogFilesNamesRequest request) {
             return base.Channel.GetLogFilesNames(request);
         }
         
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetLogFilesNames() {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesRequestBody();
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetLogFilesNames(inValue);
+        public ArrayOfString GetLogFilesNames() {
+            GetLogFilesNamesRequest inValue = new GetLogFilesNamesRequest();
+            inValue.Body = new GetLogFilesNamesRequestBody();
+            GetLogFilesNamesResponse retVal = ((HelperWebServiceSoap)(this)).GetLogFilesNames(inValue);
             return retVal.Body.GetLogFilesNamesResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetLogFilesNamesAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesRequest request) {
+        System.Threading.Tasks.Task<GetLogFilesNamesResponse> HelperWebServiceSoap.GetLogFilesNamesAsync(GetLogFilesNamesRequest request) {
             return base.Channel.GetLogFilesNamesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesResponse> GetLogFilesNamesAsync() {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFilesNamesRequestBody();
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetLogFilesNamesAsync(inValue);
+        public System.Threading.Tasks.Task<GetLogFilesNamesResponse> GetLogFilesNamesAsync() {
+            GetLogFilesNamesRequest inValue = new GetLogFilesNamesRequest();
+            inValue.Body = new GetLogFilesNamesRequestBody();
+            return ((HelperWebServiceSoap)(this)).GetLogFilesNamesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetLogFileContent(Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentRequest request) {
+        GetLogFileContentResponse HelperWebServiceSoap.GetLogFileContent(GetLogFileContentRequest request) {
             return base.Channel.GetLogFileContent(request);
         }
         
-        public Sitecore.Foundation.Testing.Specflow.UtfService.ArrayOfString GetLogFileContent(string fileName) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentRequestBody();
+        public ArrayOfString GetLogFileContent(string fileName) {
+            GetLogFileContentRequest inValue = new GetLogFileContentRequest();
+            inValue.Body = new GetLogFileContentRequestBody();
             inValue.Body.fileName = fileName;
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetLogFileContent(inValue);
+            GetLogFileContentResponse retVal = ((HelperWebServiceSoap)(this)).GetLogFileContent(inValue);
             return retVal.Body.GetLogFileContentResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetLogFileContentAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentRequest request) {
+        System.Threading.Tasks.Task<GetLogFileContentResponse> HelperWebServiceSoap.GetLogFileContentAsync(GetLogFileContentRequest request) {
             return base.Channel.GetLogFileContentAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentResponse> GetLogFileContentAsync(string fileName) {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetLogFileContentRequestBody();
+        public System.Threading.Tasks.Task<GetLogFileContentResponse> GetLogFileContentAsync(string fileName) {
+            GetLogFileContentRequest inValue = new GetLogFileContentRequest();
+            inValue.Body = new GetLogFileContentRequestBody();
             inValue.Body.fileName = fileName;
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetLogFileContentAsync(inValue);
+            return ((HelperWebServiceSoap)(this)).GetLogFileContentAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionResponse Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetSitecoreVersion(Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionRequest request) {
+        GetSitecoreVersionResponse HelperWebServiceSoap.GetSitecoreVersion(GetSitecoreVersionRequest request) {
             return base.Channel.GetSitecoreVersion(request);
         }
         
         public string GetSitecoreVersion() {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionRequestBody();
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionResponse retVal = ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetSitecoreVersion(inValue);
+            GetSitecoreVersionRequest inValue = new GetSitecoreVersionRequest();
+            inValue.Body = new GetSitecoreVersionRequestBody();
+            GetSitecoreVersionResponse retVal = ((HelperWebServiceSoap)(this)).GetSitecoreVersion(inValue);
             return retVal.Body.GetSitecoreVersionResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionResponse> Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap.GetSitecoreVersionAsync(Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionRequest request) {
+        System.Threading.Tasks.Task<GetSitecoreVersionResponse> HelperWebServiceSoap.GetSitecoreVersionAsync(GetSitecoreVersionRequest request) {
             return base.Channel.GetSitecoreVersionAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionResponse> GetSitecoreVersionAsync() {
-            Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionRequest inValue = new Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.UtfService.GetSitecoreVersionRequestBody();
-            return ((Sitecore.Foundation.Testing.Specflow.UtfService.HelperWebServiceSoap)(this)).GetSitecoreVersionAsync(inValue);
+        public System.Threading.Tasks.Task<GetSitecoreVersionResponse> GetSitecoreVersionAsync() {
+            GetSitecoreVersionRequest inValue = new GetSitecoreVersionRequest();
+            inValue.Body = new GetSitecoreVersionRequestBody();
+            return ((HelperWebServiceSoap)(this)).GetSitecoreVersionAsync(inValue);
         }
         
         public void ClearSitecoreCache() {

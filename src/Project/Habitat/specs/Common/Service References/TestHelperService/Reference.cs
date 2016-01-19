@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sitecore.Foundation.Testing.Specflow.TestHelperService {
+namespace Sitecore.Foundation.Common.Specflow.Service_References.TestHelperService {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -17,17 +17,17 @@ namespace Sitecore.Foundation.Testing.Specflow.TestHelperService {
         
         // CODEGEN: Generating message contract since element name userName from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserResponse CreateUser(Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserRequest request);
+        CreateUserResponse CreateUser(CreateUserRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserResponse> CreateUserAsync(Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserRequest request);
+        System.Threading.Tasks.Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/DeleteUser", ReplyAction="*")]
-        Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserResponse DeleteUser(Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserRequest request);
+        DeleteUserResponse DeleteUser(DeleteUserRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/DeleteUser", ReplyAction="*")]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserResponse> DeleteUserAsync(Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserRequest request);
+        System.Threading.Tasks.Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/IndexDatabases", ReplyAction="*")]
         void IndexDatabases();
@@ -49,12 +49,12 @@ namespace Sitecore.Foundation.Testing.Specflow.TestHelperService {
     public partial class CreateUserRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateUser", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserRequestBody Body;
+        public CreateUserRequestBody Body;
         
         public CreateUserRequest() {
         }
         
-        public CreateUserRequest(Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserRequestBody Body) {
+        public CreateUserRequest(CreateUserRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -87,12 +87,12 @@ namespace Sitecore.Foundation.Testing.Specflow.TestHelperService {
     public partial class CreateUserResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateUserResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserResponseBody Body;
+        public CreateUserResponseBody Body;
         
         public CreateUserResponse() {
         }
         
-        public CreateUserResponse(Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserResponseBody Body) {
+        public CreateUserResponse(CreateUserResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -121,12 +121,12 @@ namespace Sitecore.Foundation.Testing.Specflow.TestHelperService {
     public partial class DeleteUserRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteUser", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserRequestBody Body;
+        public DeleteUserRequestBody Body;
         
         public DeleteUserRequest() {
         }
         
-        public DeleteUserRequest(Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserRequestBody Body) {
+        public DeleteUserRequest(DeleteUserRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -155,12 +155,12 @@ namespace Sitecore.Foundation.Testing.Specflow.TestHelperService {
     public partial class DeleteUserResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteUserResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
-        public Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserResponseBody Body;
+        public DeleteUserResponseBody Body;
         
         public DeleteUserResponse() {
         }
         
-        public DeleteUserResponse(Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserResponseBody Body) {
+        public DeleteUserResponse(DeleteUserResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -183,12 +183,12 @@ namespace Sitecore.Foundation.Testing.Specflow.TestHelperService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface AutoTestsHelperServiceSoapChannel : Sitecore.Foundation.Testing.Specflow.TestHelperService.AutoTestsHelperServiceSoap, System.ServiceModel.IClientChannel {
+    public interface AutoTestsHelperServiceSoapChannel : AutoTestsHelperServiceSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AutoTestsHelperServiceSoapClient : System.ServiceModel.ClientBase<Sitecore.Foundation.Testing.Specflow.TestHelperService.AutoTestsHelperServiceSoap>, Sitecore.Foundation.Testing.Specflow.TestHelperService.AutoTestsHelperServiceSoap {
+    public partial class AutoTestsHelperServiceSoapClient : System.ServiceModel.ClientBase<AutoTestsHelperServiceSoap>, AutoTestsHelperServiceSoap {
         
         public AutoTestsHelperServiceSoapClient() {
         }
@@ -210,55 +210,55 @@ namespace Sitecore.Foundation.Testing.Specflow.TestHelperService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserResponse Sitecore.Foundation.Testing.Specflow.TestHelperService.AutoTestsHelperServiceSoap.CreateUser(Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserRequest request) {
+        CreateUserResponse AutoTestsHelperServiceSoap.CreateUser(CreateUserRequest request) {
             return base.Channel.CreateUser(request);
         }
         
         public bool CreateUser(string userName, string password) {
-            Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserRequest inValue = new Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserRequestBody();
+            CreateUserRequest inValue = new CreateUserRequest();
+            inValue.Body = new CreateUserRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
-            Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserResponse retVal = ((Sitecore.Foundation.Testing.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).CreateUser(inValue);
+            CreateUserResponse retVal = ((AutoTestsHelperServiceSoap)(this)).CreateUser(inValue);
             return retVal.Body.CreateUserResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserResponse> Sitecore.Foundation.Testing.Specflow.TestHelperService.AutoTestsHelperServiceSoap.CreateUserAsync(Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserRequest request) {
+        System.Threading.Tasks.Task<CreateUserResponse> AutoTestsHelperServiceSoap.CreateUserAsync(CreateUserRequest request) {
             return base.Channel.CreateUserAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserResponse> CreateUserAsync(string userName, string password) {
-            Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserRequest inValue = new Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.TestHelperService.CreateUserRequestBody();
+        public System.Threading.Tasks.Task<CreateUserResponse> CreateUserAsync(string userName, string password) {
+            CreateUserRequest inValue = new CreateUserRequest();
+            inValue.Body = new CreateUserRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
-            return ((Sitecore.Foundation.Testing.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).CreateUserAsync(inValue);
+            return ((AutoTestsHelperServiceSoap)(this)).CreateUserAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserResponse Sitecore.Foundation.Testing.Specflow.TestHelperService.AutoTestsHelperServiceSoap.DeleteUser(Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserRequest request) {
+        DeleteUserResponse AutoTestsHelperServiceSoap.DeleteUser(DeleteUserRequest request) {
             return base.Channel.DeleteUser(request);
         }
         
         public bool DeleteUser(string userName) {
-            Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserRequest inValue = new Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserRequestBody();
+            DeleteUserRequest inValue = new DeleteUserRequest();
+            inValue.Body = new DeleteUserRequestBody();
             inValue.Body.userName = userName;
-            Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserResponse retVal = ((Sitecore.Foundation.Testing.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).DeleteUser(inValue);
+            DeleteUserResponse retVal = ((AutoTestsHelperServiceSoap)(this)).DeleteUser(inValue);
             return retVal.Body.DeleteUserResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserResponse> Sitecore.Foundation.Testing.Specflow.TestHelperService.AutoTestsHelperServiceSoap.DeleteUserAsync(Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserRequest request) {
+        System.Threading.Tasks.Task<DeleteUserResponse> AutoTestsHelperServiceSoap.DeleteUserAsync(DeleteUserRequest request) {
             return base.Channel.DeleteUserAsync(request);
         }
         
-        public System.Threading.Tasks.Task<Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserResponse> DeleteUserAsync(string userName) {
-            Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserRequest inValue = new Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserRequest();
-            inValue.Body = new Sitecore.Foundation.Testing.Specflow.TestHelperService.DeleteUserRequestBody();
+        public System.Threading.Tasks.Task<DeleteUserResponse> DeleteUserAsync(string userName) {
+            DeleteUserRequest inValue = new DeleteUserRequest();
+            inValue.Body = new DeleteUserRequestBody();
             inValue.Body.userName = userName;
-            return ((Sitecore.Foundation.Testing.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).DeleteUserAsync(inValue);
+            return ((AutoTestsHelperServiceSoap)(this)).DeleteUserAsync(inValue);
         }
         
         public void IndexDatabases() {
