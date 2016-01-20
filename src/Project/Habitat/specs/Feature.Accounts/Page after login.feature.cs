@@ -95,8 +95,8 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
-                        "Field",
-                        "Value"});
+                        "FieldName",
+                        "FieldValue"});
             table2.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
@@ -147,8 +147,8 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
-                        "Field",
-                        "Value"});
+                        "FieldName",
+                        "FieldValue"});
             table5.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
@@ -197,8 +197,8 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
-                        "Field",
-                        "Value"});
+                        "FieldName",
+                        "FieldValue"});
             table8.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
@@ -236,8 +236,8 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
-                        "Field",
-                        "Value"});
+                        "FieldName",
+                        "FieldValue"});
             table10.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
@@ -279,8 +279,8 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
-                        "Field",
-                        "Value"});
+                        "FieldName",
+                        "FieldValue"});
             table12.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
@@ -344,8 +344,8 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
-                        "Field",
-                        "Value"});
+                        "FieldName",
+                        "FieldValue"});
             table16.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",

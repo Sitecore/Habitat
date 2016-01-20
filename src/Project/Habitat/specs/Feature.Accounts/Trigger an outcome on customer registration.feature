@@ -4,8 +4,8 @@
 @InDesgin
 Scenario: Trigger an outcome on customer registration_UC1_Empty registration outcome 
 	Given Value set to item field
-	| ItemPath                  | Field           | Value |
-	| /sitecore/content/Habitat | RegisterOutcome |       |
+	| ItemPath                  | FieldName       | FieldValue |
+	| /sitecore/content/Habitat | RegisterOutcome |            |
 	And Habitat website is opened on Register page
 	When Actor enters following data in to the register fields
 	| Email            | Password | ConfirmPassword |
@@ -20,8 +20,8 @@ Scenario: Trigger an outcome on customer registration_UC1_Empty registration out
 
 @InDesgin	
 Scenario: Trigger an outcome on customer registration_UC2_Custom registration outcome
-	Given Value set to item field
-	| ItemPath                  | Field           | Value               |
+	Given Outcome set to item field
+	| ItemPath                  | FieldName       | FieldValue          |
 	| /sitecore/content/Habitat | RegisterOutcome | Outcomes/Sales Lead |
 	And Habitat website is opened on Register page
 	When Actor enters following data in to the register fields
@@ -29,6 +29,7 @@ Scenario: Trigger an outcome on customer registration_UC2_Custom registration ou
 	| kov@sitecore.net | k        | k               |
 	And Actor clicks Register button
 	And Actor Ends user visit
+	And Wating for timeout 30 s
 	Then User Outcome contains value
 	| email            | Outcome value |
 	| kov@sitecore.net | Sales Lead    |

@@ -84,8 +84,8 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
-                        "Field",
-                        "Value"});
+                        "FieldName",
+                        "FieldValue"});
             table1.AddRow(new string[] {
                         "/sitecore/content/Habitat",
                         "RegisterOutcome",
@@ -134,14 +134,14 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
-                        "Field",
-                        "Value"});
+                        "FieldName",
+                        "FieldValue"});
             table4.AddRow(new string[] {
                         "/sitecore/content/Habitat",
                         "RegisterOutcome",
                         "Outcomes/Sales Lead"});
 #line 23
- testRunner.Given("Value set to item field", ((string)(null)), table4, "Given ");
+ testRunner.Given("Outcome set to item field", ((string)(null)), table4, "Given ");
 #line 26
  testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -159,6 +159,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.And("Wating for timeout 30 s", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "email",
@@ -166,7 +168,7 @@ this.ScenarioSetup(scenarioInfo);
             table6.AddRow(new string[] {
                         "kov@sitecore.net",
                         "Sales Lead"});
-#line 32
+#line 33
  testRunner.Then("User Outcome contains value", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
