@@ -34,6 +34,7 @@
         queryable = SetQueryRoot(queryable, root);
         queryable = this.FilterOnPresentationOnly(queryable);
         queryable = FilterOnLanguage(queryable);
+        queryable = FilterOnVersion(queryable);
         if (this.Settings.Templates != null && this.Settings.Templates.Any())
         {
           queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Templates));
@@ -69,6 +70,8 @@
         var root = this.Settings.Root;
         var queryable = context.GetQueryable<SearchResultItem>();
         queryable = SetQueryRoot(queryable, root);
+        queryable = FilterOnLanguage(queryable);
+        queryable = FilterOnVersion(queryable);
         queryable = queryable.Where(PredicateBuilder.True<SearchResultItem>());
         if (this.Settings.Templates != null && this.Settings.Templates.Any())
         {
@@ -137,6 +140,12 @@
     private static IQueryable<SearchResultItem> FilterOnLanguage(IQueryable<SearchResultItem> queryable)
     {
       queryable = queryable.Filter(item => item.Language == Context.Language.Name);
+      return queryable;
+    }
+
+    private static IQueryable<SearchResultItem> FilterOnVersion(IQueryable<SearchResultItem> queryable)
+    {
+      queryable = queryable.Cast<IndexedItem>().Filter(item => item.IsLatestVersion);
       return queryable;
     }
 
