@@ -9,6 +9,7 @@
   using Sitecore.Feature.Search.Tests.Extensions;
   using Sitecore.Mvc.Common;
   using Sitecore.Mvc.Presentation;
+  using UnitTests.Common.Attributes;
   using Xunit;
 
   public class SearchSettingsRepositoryTests
