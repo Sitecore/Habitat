@@ -70,4 +70,30 @@ Scenario: Person_Employee List_UC6_Custom search query_Exclude criteria logic
 	| JOHN HOWARD |
 
 
+@InDesign
+Scenario: Person_Employee List_UC7_Custom search query_New version of the item is defined
+	Given Control properties were defined for item
+	| Item path                                                            | Control ID                             | Data Source                                               |
+	| /sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List | {DC19892A-B345-4EFE-AAA2-6E27A801A733} | text:John;template:{467c2144-4454-4518-b1de-e31b4cbbff33} |
+	And New item version was added
+	| Item name   |
+	| John Doe    |
+	Then Following persons are shown 
+	| Person      |
+	| JOHN HOWARD |
+	| JOHN DOE    |
+
+
+@InDesign
+Scenario: Person_Employee List_UC8_Custom search query_New language of the item is defined
+	Given Control properties were defined for item
+	| Item path                                                            | Control ID                             | Data Source                                               |
+	| /sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List | {DC19892A-B345-4EFE-AAA2-6E27A801A733} | text:John;template:{467c2144-4454-4518-b1de-e31b4cbbff33} |
+	And New item Language version was added
+	| Item name   |
+	| John Howard |
+	Then Following persons are shown 
+	| Person      |
+	| JOHN HOWARD |
+	| JOHN DOE    |
 

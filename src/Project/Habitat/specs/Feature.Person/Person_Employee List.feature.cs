@@ -277,6 +277,86 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
+        [Xunit.TraitAttribute("Description", "Person_Employee List_UC7_Custom search query_New version of the item is defined")]
+        public virtual void Person_EmployeeList_UC7_CustomSearchQuery_NewVersionOfTheItemIsDefined()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC7_Custom search query_New version of the item is defined", new string[] {
+                        "InDesign"});
+#line 74
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item path",
+                        "Control ID",
+                        "Data Source"});
+            table12.AddRow(new string[] {
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
+                        "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "text:John;template:{467c2144-4454-4518-b1de-e31b4cbbff33}"});
+#line 75
+ testRunner.Given("Control properties were defined for item", ((string)(null)), table12, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item name"});
+            table13.AddRow(new string[] {
+                        "John Doe"});
+#line 78
+ testRunner.And("New item version was added", ((string)(null)), table13, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Person"});
+            table14.AddRow(new string[] {
+                        "JOHN HOWARD"});
+            table14.AddRow(new string[] {
+                        "JOHN DOE"});
+#line 81
+ testRunner.Then("Following persons are shown", ((string)(null)), table14, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
+        [Xunit.TraitAttribute("Description", "Person_Employee List_UC8_Custom search query_New language of the item is defined")]
+        public virtual void Person_EmployeeList_UC8_CustomSearchQuery_NewLanguageOfTheItemIsDefined()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC8_Custom search query_New language of the item is defined", new string[] {
+                        "InDesign"});
+#line 88
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item path",
+                        "Control ID",
+                        "Data Source"});
+            table15.AddRow(new string[] {
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
+                        "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "text:John;template:{467c2144-4454-4518-b1de-e31b4cbbff33}"});
+#line 89
+ testRunner.Given("Control properties were defined for item", ((string)(null)), table15, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item name"});
+            table16.AddRow(new string[] {
+                        "John Howard"});
+#line 92
+ testRunner.And("New item Language version was added", ((string)(null)), table16, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Person"});
+            table17.AddRow(new string[] {
+                        "JOHN HOWARD"});
+            table17.AddRow(new string[] {
+                        "JOHN DOE"});
+#line 95
+ testRunner.Then("Following persons are shown", ((string)(null)), table17, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
