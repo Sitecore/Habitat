@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Sitecore.Foundation.MultiSite
+﻿namespace Sitecore.Foundation.Multisite
 {
-  using System.Xml;
   using Sitecore.Configuration;
   using Sitecore.Data;
-  using Sitecore.Foundation.MultiSite.Providers;
+  using Sitecore.Foundation.Multisite.Providers;
+  using Sitecore.Reflection;
 
   public class DatasourceProviderFactory
   {
@@ -27,10 +22,10 @@ namespace Sitecore.Foundation.MultiSite
 
     public virtual IDatasourceProvider GetProviderByConfigPath(string path)
     {
-      var configNode = Sitecore.Configuration.Factory.GetConfigNode(path);
+      var configNode = Factory.GetConfigNode(path);
       if (configNode != null)
       {
-        var provider = Sitecore.Reflection.ReflectionUtil.CreateObject(configNode) as IDatasourceProvider;
+        var provider = ReflectionUtil.CreateObject(configNode) as IDatasourceProvider;
         return provider;
       }
 

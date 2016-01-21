@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Feature.MultiSite.Tests
+﻿namespace Sitecore.Feature.Multisite.Tests
 {
   using System;
   using System.Collections.Generic;
@@ -9,9 +9,9 @@
   using FluentAssertions;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Feature.Multisite.Tests.Extensions;
-  using Sitecore.Feature.MultiSite.Controllers;
-  using Sitecore.Feature.MultiSite.Models;
-  using Sitecore.Feature.MultiSite.Repositories;
+  using Sitecore.Feature.Multisite.Controllers;
+  using Sitecore.Feature.Multisite.Models;
+  using Sitecore.Feature.Multisite.Repositories;
   using Xunit;
 
    

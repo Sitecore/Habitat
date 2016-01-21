@@ -1,11 +1,11 @@
-﻿namespace Sitecore.Feature.MultiSite.Repositories
+﻿namespace Sitecore.Feature.Multisite.Repositories
 {
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.Data.Items;
-  using Sitecore.Feature.MultiSite.Models;
-  using Sitecore.Foundation.MultiSite;
-  using Sitecore.Foundation.MultiSite.Providers;
+  using Sitecore.Feature.Multisite.Models;
+  using Sitecore.Foundation.Multisite;
+  using Sitecore.Foundation.Multisite.Providers;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class SiteConfigurationRepository : ISiteConfigurationRepository
@@ -34,7 +34,7 @@
 
     private bool IsSiteConfigurationItem(Item item)
     {
-      return item.IsDerived(MultiSite.Templates.SiteConfiguration.ID);
+      return item.IsDerived(Multisite.Templates.SiteConfiguration.ID);
     }
 
     private SiteConfigurations Create(IEnumerable<SiteDefinition> definitions)
@@ -48,7 +48,7 @@
 
     private static SiteConfiguration CreateSiteConfiguration(SiteDefinition siteConfiguration)
     {
-      var title = siteConfiguration.Item.GetString(MultiSite.Templates.SiteConfiguration.Fields.Title);
+      var title = siteConfiguration.Item.GetString(Multisite.Templates.SiteConfiguration.Fields.Title);
       if (string.IsNullOrEmpty(title))
       {
         title = siteConfiguration.Name;
@@ -58,7 +58,7 @@
                HostName = siteConfiguration.HostName,
                Name = siteConfiguration.Name,
                Title = title,
-               ShowInMenu = siteConfiguration.Item.GetCheckBoxValue(MultiSite.Templates.SiteConfiguration.Fields.ShowInMenu),
+               ShowInMenu = siteConfiguration.Item.GetCheckBoxValue(Multisite.Templates.SiteConfiguration.Fields.ShowInMenu),
                IsCurrent = siteConfiguration.IsCurrent
              };
     }

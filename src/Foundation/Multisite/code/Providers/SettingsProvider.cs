@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Sitecore.Foundation.MultiSite.Providers
+﻿namespace Sitecore.Foundation.Multisite.Providers
 {
+  using System.Linq;
+  using Sitecore.Configuration;
   using Sitecore.Data.Items;
+  using Sitecore.Foundation.Multisite.Providers;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Web;
 
@@ -22,7 +20,7 @@ namespace Sitecore.Foundation.MultiSite.Providers
       this.siteContext = siteContext;
     }
 
-    public static string SettingsRootName => Sitecore.Configuration.Settings.GetSetting("Multisite.SettingsRootName", "settings");
+    public static string SettingsRootName => Settings.GetSetting("Multisite.SettingsRootName", "settings");
 
     public virtual Item GetSettingItem(string settingName, Item contextItem)
     {
@@ -53,7 +51,7 @@ namespace Sitecore.Foundation.MultiSite.Providers
         }
       }
 
-      var siteInfo = Sitecore.Configuration.Factory.GetSiteInfo(currentDefinition.Name);
+      var siteInfo = Factory.GetSiteInfo(currentDefinition.Name);
       return siteInfo;
     }
   }

@@ -1,8 +1,9 @@
-﻿namespace Sitecore.Foundation.MultiSite
+﻿namespace Sitecore.Foundation.Multisite
 {
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
-  using Sitecore.Foundation.MultiSite.Providers;
+  using Sitecore.Foundation.Multisite.Providers;
+  using Sitecore.Foundation.Multisite;
 
   public class SiteContext
   {
