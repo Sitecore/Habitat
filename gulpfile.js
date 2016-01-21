@@ -11,6 +11,7 @@ var rimraf = require("gulp-rimraf");
 var runSequence = require("run-sequence");
 var fs = require("fs");
 var path = require("path");
+var xmlpoke  = require("xmlpoke");
 var config = require("./gulp-config.js")();
 var websiteRootBackup = config.websiteRoot;
 
@@ -258,25 +259,13 @@ gulp.task("CI-Enumerate-Files", function () {
 
 
 gulp.task("CI-Update-Xml", function (cb) {
-  var destination = path.resolve("./package.xml");
-
-  //TODO: find a tool to modify XML instead of string replacement
-
-  var str = "<Entries>";
-  for (var idx in packageFiles) {
-    str += "<x-item>" + packageFiles[idx] + "</x-item>";
-  }
-  str += "</Entries>";
-
-  fs.readFile(destination, "utf8", function (err, data) {
-    if (err) {
-      return console.log(err);
+  xmlpoke("./package.xml", function (xml) {
+    for (var idx in packageFiles) {
+        xml.add("project/Sources/xfiles/Entries/x-item", packageFiles[idx]);
     }
-    var result = data.replace("<Entries></Entries>", str);
-    fs.writeFile(destination, result, "utf8", cb);
   });
+  cb();
 });
-
 
 gulp.task("CI-Clean", function (callback) {
   rimrafDir.sync(path.resolve("./temp"));
