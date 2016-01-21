@@ -1,7 +1,7 @@
 ﻿---
 ID: 4b67a7f9-7246-4a59-a051-961095c2dc70
 Parent: 725a45e3-e307-4b95-b363-2782b059df06
-Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+Template: fd075cbc-572e-4d27-a09f-b780e8ff4741
 Path: /sitecore/content/Habitat/Global
 DB: master
 SharedFields:
@@ -10,6 +10,10 @@ SharedFields:
   Value: 200
 Languages:
 - Language: en
+  Fields:
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Hint: __Display name
+    Value: 
   Versions:
   - Version: 1
     Fields:

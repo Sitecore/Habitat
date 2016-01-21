@@ -2,10 +2,11 @@
 ID: 0c23095f-9750-4030-828d-bc7c0edd3ced
 Parent: cd047791-c29a-4596-aeee-db5e70421c1f
 Template: cd047791-c29a-4596-aeee-db5e70421c1f
-Path: /sitecore/templates/Project/Common/Content Types/MetaKeyword folder/__Standard Values
+Path: /sitecore/templates/Project/Common/Content Types/MetaKeyword Folder/__Standard Values
+DB: master
 SharedFields:
 - ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
-  # __Masters
+  Hint: __Masters
   Type: TreelistEx
   Value: {18CDD4CE-CDBE-4BDC-9D5A-6249F7F0EC17}
 Languages:
@@ -14,8 +15,8 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20160106T162358Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\admin
