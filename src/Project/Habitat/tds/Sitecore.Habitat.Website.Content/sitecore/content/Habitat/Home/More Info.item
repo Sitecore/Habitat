@@ -1,0 +1,100 @@
+----item----
+version: 1
+id: {3A5D638D-5BDD-4DDD-BEAC-4A0C81C27E8A}
+database: master
+path: /sitecore/content/Habitat/Home/More Info
+parent: {DAC24EDD-44FB-42EF-9ECD-1E8DAF706386}
+name: More Info
+master: {00000000-0000-0000-0000-000000000000}
+template: {94A8C8E9-690B-4E65-98E7-F95800222767}
+templatekey: Article
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+500
+----version----
+language: en
+version: 1
+revision: 280061f0-9ab0-4cfa-9c1f-c7ad941b9d0e
+
+----field----
+field: {C30A013F-3CC8-4961-9837-1C483277084A}
+name: Title
+key: title
+content-length: 13
+
+Find out more
+----field----
+field: {AC3FD4DB-8266-476D-9635-67814D91E901}
+name: Summary
+key: summary
+content-length: 94
+
+Want to know more about Habitat? Here are some interesting links, videos and material for you.
+----field----
+field: {D74F396D-5C5E-4916-BD0A-BFD58B6B1967}
+name: Body
+key: body
+content-length: 199
+
+<p>The Habitat project - this website - is completely available for you on GitHub, source code and all.</p><p>There are a number of videos concerning the methodology and it's underlying patterns.</p>
+----field----
+field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
+name: Image
+key: image
+content-length: 214
+
+<image mediapath="/Default Website/cover" src="~/media/Default Website/cover" height="" mediaid="{8CBBCDFB-C9A8-4D3F-BFF0-D01C504E10BB}" hspace="" usethumbnail="" showineditor="" width="" alt="" vspace="" ></image>
+----field----
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
+content-length: 9
+
+More Info
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 10
+
+Contact Us
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 1421
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{F7C9E32F-2D5C-4FF1-B17B-8F00E0DFDE0F}" p:before="r[@uid='{0B840D0E-F299-4D63-83BF-BC9953320763}']" s:ds="{59745F53-6D22-49B3-8844-98D5B24A8D98}" s:id="{0534F12C-804E-4532-A832-5D61FE9EC6ED}" s:ph="/page-layout/sidebarcontent/col-wide-2_14f635d7-5f88-48d5-8898-78eb6a411b02" /><r uid="{0B840D0E-F299-4D63-83BF-BC9953320763}" p:before="r[@uid='{3313664A-9595-46D6-ACBB-E747145B8445}']" s:ds="{E67E0BB9-D9CB-4AFB-97C8-575E655F52CE}" s:id="{0534F12C-804E-4532-A832-5D61FE9EC6ED}" s:ph="/page-layout/sidebarcontent/col-wide-2_14f635d7-5f88-48d5-8898-78eb6a411b02" /><r uid="{3313664A-9595-46D6-ACBB-E747145B8445}" p:before="r[@uid='{A54F2995-2138-4FA6-A6DA-A5980D22FB94}']" s:ds="{A7044280-3047-4E6F-9C9F-A6DBBB741933}" s:id="{0534F12C-804E-4532-A832-5D61FE9EC6ED}" s:ph="/page-layout/sidebarcontent/col-wide-2_14f635d7-5f88-48d5-8898-78eb6a411b02" /><r uid="{A54F2995-2138-4FA6-A6DA-A5980D22FB94}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{D656E3EF-7298-4AF3-B4A7-E5F43B5BCF4A}" s:id="{69B9C355-004B-4268-BB1E-2F725B8752B7}" s:ph="/page-layout/sidebarcontent/col-wide-1_14f635d7-5f88-48d5-8898-78eb6a411b02" /><r uid="{14F635D7-5F88-48D5-8898-78EB6A411B02}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/sidebarcontent" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150827T013810Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+280061f0-9ab0-4cfa-9c1f-c7ad941b9d0e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

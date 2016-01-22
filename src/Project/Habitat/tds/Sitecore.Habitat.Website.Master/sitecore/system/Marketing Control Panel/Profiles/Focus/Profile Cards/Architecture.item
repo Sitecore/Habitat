@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {72D91AD3-7770-49F6-9EEA-AA101E89CC1F}
+database: master
+path: /sitecore/system/Marketing Control Panel/Profiles/Focus/Profile Cards/Architecture
+parent: {66CA6714-8081-4381-8D66-30421AF92E0B}
+name: Architecture
+master: {00000000-0000-0000-0000-000000000000}
+template: {0FC09EA4-8D87-4B0E-A5C9-8076AE863D9C}
+templatekey: Profile Card
+
+----field----
+field: {709B879B-7264-49C7-8864-E254D9129302}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{C85FEEF0-DD71-41AA-A148-33CC17471B34}" />
+----field----
+field: {85970AB7-22EA-4206-BE86-C0167178860B}
+name: Profile Card Value
+key: profile card value
+content-length: 262
+
+<tracking>
+  <profile id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}" name="Focus">
+    <key name="Background" value="9" />
+    <key name="Practical" value="2" />
+    <key name="Process" value="6" />
+    <key name="Scope" value="3" />
+  </profile>
+</tracking>
+----version----
+language: en
+version: 1
+revision: ca8c646a-ec79-4335-8e39-7c7a26220815
+
+----field----
+field: {A26FC256-1DB0-44AA-BA3D-1C830BF882A2}
+name: Name
+key: name
+content-length: 12
+
+Architecture
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151117T002637Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ca8c646a-ec79-4335-8e39-7c7a26220815
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091353Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

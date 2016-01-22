@@ -1,0 +1,102 @@
+----item----
+version: 1
+id: {A9FAB072-6C2F-4379-AE7E-BC8B5A00E66B}
+database: master
+path: /sitecore/content/Habitat/Home/Modules/Project/Habitat
+parent: {8D8EDB18-B641-4277-BAD3-9C6CF89F9FE3}
+name: Habitat
+master: {00000000-0000-0000-0000-000000000000}
+template: {94A8C8E9-690B-4E65-98E7-F95800222767}
+templatekey: Article
+
+----field----
+field: {B0A67B2A-8B07-4E0B-8809-69F751709806}
+name: __Tracking
+key: __tracking
+content-length: 256
+
+<tracking><profile id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}" name="Focus" presets="development|100||"><key name="Background" value="0" /><key name="Practical" value="8" /><key name="Process" value="2" /><key name="Scope" value="5" /></profile></tracking>
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+200
+----version----
+language: en
+version: 1
+revision: 3a97f3ba-e0bd-4076-b647-af8d45d4e0e1
+
+----field----
+field: {C30A013F-3CC8-4961-9837-1C483277084A}
+name: Title
+key: title
+content-length: 7
+
+Habitat
+----field----
+field: {AC3FD4DB-8266-476D-9635-67814D91E901}
+name: Summary
+key: summary
+content-length: 141
+
+The Habitat module in the example implementation contains the page types, layouts - and even the content of the website you are browsing now.
+----field----
+field: {D74F396D-5C5E-4916-BD0A-BFD58B6B1967}
+name: Body
+key: body
+content-length: 431
+
+<p><span style="line-height: 24.2857px;">The Habitat module in the example implementation contains the page types, layouts - and even the content of the website you are browsing now.</span></p>
+<p><span style="line-height: 24.2857px;">In other words, the Habitat module <strong>is</strong> the Habitat website. This brings together all the features and functionalities in the solution into page types and content.<br>
+</span></p>
+----field----
+field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{0BC5AD71-EDBC-4C9F-BC5A-424A5F1FC84B}" />
+----field----
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
+content-length: 7
+
+Habitat
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 6
+
+Design
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151026T041927Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3a97f3ba-e0bd-4076-b647-af8d45d4e0e1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091521Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

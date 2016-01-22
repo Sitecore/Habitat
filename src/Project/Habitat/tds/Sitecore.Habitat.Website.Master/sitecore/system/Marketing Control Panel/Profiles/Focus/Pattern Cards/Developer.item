@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {5EA96321-8CC5-4E1D-80BF-8E3901692B49}
+database: master
+path: /sitecore/system/Marketing Control Panel/Profiles/Focus/Pattern Cards/Developer
+parent: {A0F38085-E3B3-45CD-93C6-3FBE85E29255}
+name: Developer
+master: {00000000-0000-0000-0000-000000000000}
+template: {4A6A7E36-2481-438F-A9BA-0453ECC638FA}
+templatekey: Pattern Card
+
+----field----
+field: {FE732790-2DDB-4657-A882-C2FCE1FBF0C9}
+name: Name
+key: name
+content-length: 6
+
+Module
+----field----
+field: {98535F26-6C9D-4FD7-A7E2-392C7CB82D65}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{40EA01F7-1897-4ED0-8721-76511278B6A5}" />
+----field----
+field: {6DA71AD3-5849-4482-9317-D21390E5A348}
+name: Pattern
+key: pattern
+content-length: 262
+
+<tracking>
+  <profile id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}" name="Focus">
+    <key name="Background" value="0" />
+    <key name="Practical" value="8" />
+    <key name="Process" value="3" />
+    <key name="Scope" value="6" />
+  </profile>
+</tracking>
+----version----
+language: en
+version: 1
+revision: 3634d79e-a592-49ac-ab9e-3b169c5cbb3c
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151117T002523Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3634d79e-a592-49ac-ab9e-3b169c5cbb3c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091353Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

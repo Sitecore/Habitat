@@ -1,0 +1,73 @@
+----item----
+version: 1
+id: {067ABED5-CB79-46C0-9019-C9E7B01AF3E6}
+database: master
+path: /sitecore/content/Habitat/Global/Teasers/Teasers Documentation
+parent: {6AA25831-0944-4A79-9AFF-7BAC39E03557}
+name: Teasers Documentation
+master: {00000000-0000-0000-0000-000000000000}
+template: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
+templatekey: Teaser
+
+----field----
+field: {E8AB122C-6F54-4D4E-AEC6-F81ADDC558FC}
+name: TeaserLink
+key: teaserlink
+content-length: 153
+
+<link linktype="external" text="This is the link to anything" title="This is an external link" url="http://www.sitecore.net" anchor="" target="_blank" />
+----version----
+language: en
+version: 1
+revision: 9803d1fa-d2dc-4c9a-9af1-35c67ffa22a5
+
+----field----
+field: {0F6B5546-E0AB-4487-81DE-640C1AA1B65B}
+name: TeaserImage
+key: teaserimage
+content-length: 58
+
+<image mediaid="{45B255A6-8E92-4AAB-9F06-0C46D2741245}" />
+----field----
+field: {4A59D072-5B41-4A79-A157-2B2CCAC10F2B}
+name: TeaserTitle
+key: teasertitle
+content-length: 14
+
+Teaser example
+----field----
+field: {13D97A52-7C4E-407C-960D-FADDE8A3C1B1}
+name: TeaserSummary
+key: teasersummary
+content-length: 163
+
+Teasers can be used to promote other content on- or off-site.&nbsp;This content can be shown in multiple ways.&nbsp;
+This is the description for the teaser.&nbsp;
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151116T053200Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9803d1fa-d2dc-4c9a-9af1-35c67ffa22a5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

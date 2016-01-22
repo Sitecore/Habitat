@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {AD50901F-DA3E-48F3-9519-D6C21C978925}
+database: master
+path: /sitecore/content/Habitat/Global/Teasers/Sitecore Experience Platform
+parent: {6AA25831-0944-4A79-9AFF-7BAC39E03557}
+name: Sitecore Experience Platform
+master: {00000000-0000-0000-0000-000000000000}
+template: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
+templatekey: Teaser
+
+----field----
+field: {E8AB122C-6F54-4D4E-AEC6-F81ADDC558FC}
+name: TeaserLink
+key: teaserlink
+content-length: 110
+
+<link linktype="external" text="Visit Sitecore.net" url="http://www.sitecore.net" anchor="" target="_blank" />
+----version----
+language: en
+version: 1
+revision: a9702b33-c934-4f1e-9860-f4d2270a2ffa
+
+----field----
+field: {0F6B5546-E0AB-4487-81DE-640C1AA1B65B}
+name: TeaserImage
+key: teaserimage
+content-length: 176
+
+<image mediapath="" src="" height="" mediaid="{9F63F58A-E57A-49A2-BC8F-DCDFACE44B68}" hspace="" usethumbnail="" showineditor="" width="" alt="Experience Marketing" vspace="" />
+----field----
+field: {4A59D072-5B41-4A79-A157-2B2CCAC10F2B}
+name: TeaserTitle
+key: teasertitle
+content-length: 28
+
+Sitecore Experience Platform
+----field----
+field: {13D97A52-7C4E-407C-960D-FADDE8A3C1B1}
+name: TeaserSummary
+key: teasersummary
+content-length: 103
+
+The Sitecore Experience Platform is a market leading customer experience and content management system.
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150921T053847Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a9702b33-c934-4f1e-9860-f4d2270a2ffa
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

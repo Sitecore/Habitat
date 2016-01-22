@@ -1,0 +1,73 @@
+----item----
+version: 1
+id: {20CB5BBB-3700-4FF9-A59A-2B4F70C5BE31}
+database: master
+path: /sitecore/content/Habitat/Global/Media/Lightbox Video Documentation
+parent: {EA13174A-B43E-4F68-B474-B41188771A9E}
+name: Lightbox Video Documentation
+master: {00000000-0000-0000-0000-000000000000}
+template: {F1C095E2-B3E0-46D0-B838-02A9E8B880D9}
+templatekey: Video
+
+----version----
+language: en
+version: 1
+revision: 89458fd5-9bcb-47de-bc89-6435bfb70e51
+
+----field----
+field: {2628705D-9434-4448-978C-C3BF166FA1EB}
+name: MediaVideoLink
+key: mediavideolink
+content-length: 78
+
+<link linktype="external" url="https://www.youtube.com/watch?v=oQjnUEryPUA" />
+----field----
+field: {63DDA48B-B0CB-45A7-9A1B-B26DDB41009B}
+name: MediaTitle
+key: mediatitle
+content-length: 16
+
+Video Lightboxes
+----field----
+field: {302C9F8D-F703-4F76-A4AB-73D222648232}
+name: MediaDescription
+key: mediadescription
+content-length: 280
+
+<p>A video lightboxwill show a video in a pop up window (lightbox) when a thumbnail image is clicked. </p>
+<p>The editor can point to a local video from the media library or an external youtube video. The editor can also describe the video and pick a thumbnail for the video.</p>
+----field----
+field: {4FF62B0A-D73B-4436-BEA2-023154F2FFC4}
+name: MediaThumbnail
+key: mediathumbnail
+content-length: 58
+
+<image mediaid="{FEC50693-DA98-433F-B1F5-F000E093D411}" />
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151116T041239Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+89458fd5-9bcb-47de-bc89-6435bfb70e51
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

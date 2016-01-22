@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {07AB411C-F894-4144-B069-48EF67431D32}
+database: master
+path: /sitecore/layout/Renderings/Feature/PageContent/PageTeaser
+parent: {D5D2AB0A-3909-4E22-AF15-3BEF1E97A0C0}
+name: PageTeaser
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 36
+
+/Views/PageContent/PageTeaser.cshtml
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 38
+
+{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+----field----
+field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
+name: Datasource Template
+key: datasource template
+content-length: 55
+
+/sitecore/templates/Feature/PageContent/_HasPageContent
+----field----
+field: {E441ABE7-2CA3-4640-AE26-3789967925D7}
+name: Compatible Renderings
+key: compatible renderings
+content-length: 155
+
+{914673DC-FC44-4660-B6EB-FF421FAAC2F9}|{359A65BB-0A2C-44E5-8C34-DF3ACDBB42A7}|{616956DF-9471-4934-9CAE-AAAF342A7E1C}|{45B8E1D9-D522-49E0-B9B7-04C965CC7089}
+----version----
+language: en
+version: 1
+revision: f321d494-5165-4606-b404-eaa1d0a43077
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150831T120542Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f321d494-5165-4606-b404-eaa1d0a43077
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091207Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

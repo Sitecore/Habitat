@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {B935402E-2C43-46D2-B842-30831F645EBD}
+database: master
+path: /sitecore/content/Habitat/Home/Modules/Feature/Navigation/External Link
+parent: {876B43B4-6EFF-4E82-8450-5974B95EF94C}
+name: External Link
+master: {00000000-0000-0000-0000-000000000000}
+template: {8FF3D369-A508-4D2F-84A5-9B6C6BF5E537}
+templatekey: Navigation Link
+
+----version----
+language: en
+version: 1
+revision: 719dc19c-8ea3-4d3f-8323-44b3e64a1c0c
+
+----field----
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
+content-length: 25
+
+External Link in the Menu
+----field----
+field: {FE71C30E-F07D-4052-8594-C3028CD76E1F}
+name: Link
+key: link
+content-length: 78
+
+<link linktype="external" url="http://www.sitecore.net" anchor="" target="" />
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151210T034327Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+719dc19c-8ea3-4d3f-8323-44b3e64a1c0c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

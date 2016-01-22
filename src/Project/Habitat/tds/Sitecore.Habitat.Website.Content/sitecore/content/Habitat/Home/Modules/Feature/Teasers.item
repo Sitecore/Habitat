@@ -1,0 +1,93 @@
+----item----
+version: 1
+id: {45665B10-7165-4C6C-9FA1-8A14238DA71A}
+database: master
+path: /sitecore/content/Habitat/Home/Modules/Feature/Teasers
+parent: {F7434DF7-E32E-4F8C-A50E-27C476F4DC32}
+name: Teasers
+master: {00000000-0000-0000-0000-000000000000}
+template: {94A8C8E9-690B-4E65-98E7-F95800222767}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: 6181bea1-8a61-4027-b56a-226e45c6ee93
+
+----field----
+field: {C30A013F-3CC8-4961-9837-1C483277084A}
+name: Title
+key: title
+content-length: 7
+
+Teasers
+----field----
+field: {AC3FD4DB-8266-476D-9635-67814D91E901}
+name: Summary
+key: summary
+content-length: 105
+
+The Teasers module contains page elements which promote content on or off the site using text and images.
+----field----
+field: {D74F396D-5C5E-4916-BD0A-BFD58B6B1967}
+name: Body
+key: body
+content-length: 150
+
+<span style="line-height: 24.2857px;">The Teasers module contains page elements which promote content on or off the site using text and images.</span>
+----field----
+field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{08E01453-5709-43F0-9F2F-9B7A65BA5666}" />
+----field----
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
+content-length: 7
+
+Teasers
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 7
+
+Teasers
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 3926
+
+<r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{0D43C7B1-A82F-4E19-A60A-A139A38E9307}" p:before="r[@uid='{B91BEB36-59C1-4947-9C4A-4CE3279664E5}']" s:ds="{2D415DBB-9AFE-4E75-A264-DFCE07B11D26}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/sidebarcontent/col-wide-1_4826a375-41d8-4662-a900-2c7d3884e0d2" /><r uid="{B91BEB36-59C1-4947-9C4A-4CE3279664E5}" p:before="r[@uid='{BE55B5D9-AD57-4B80-9DD9-B7097D6FDF59}']" s:ds="{067ABED5-CB79-46C0-9019-C9E7B01AF3E6}" s:id="{FDFCD088-3C9E-49C4-97FF-2DDE5D339BA0}" s:ph="/page-layout/sidebarcontent/col-wide-2_8f0f5bf1-68d8-48b9-a74b-0fb7168eacf3" /><r uid="{BE55B5D9-AD57-4B80-9DD9-B7097D6FDF59}" p:before="r[@uid='{9CBC6D54-45E4-4A9B-9D2A-BC63A80138D4}']" s:ds="{067ABED5-CB79-46C0-9019-C9E7B01AF3E6}" s:id="{E47303E0-90FD-4E81-B2B5-CA4E8C1C36B4}" s:ph="/page-layout/sidebarcontent/col-wide-2_8f0f5bf1-68d8-48b9-a74b-0fb7168eacf3" /><r uid="{9CBC6D54-45E4-4A9B-9D2A-BC63A80138D4}" p:before="r[@uid='{363F77C0-C397-4EEE-92E7-B03127038808}']" s:ds="{067ABED5-CB79-46C0-9019-C9E7B01AF3E6}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/sidebarcontent/col-wide-2_8f0f5bf1-68d8-48b9-a74b-0fb7168eacf3" /><r uid="{363F77C0-C397-4EEE-92E7-B03127038808}" p:before="r[@uid='{116DD174-8A1F-437D-9A88-A6514E66EE5B}']" s:ds="{EF593C2A-F3F8-421A-9368-0E189A689DBD}" s:id="{E47303E0-90FD-4E81-B2B5-CA4E8C1C36B4}" s:ph="/page-layout/sidebarcontent/col-wide-1_8f0f5bf1-68d8-48b9-a74b-0fb7168eacf3/teaser-placeholder-3_230041cf-89fc-4a8d-9e56-a4cdb8f7ffe6" /><r uid="{116DD174-8A1F-437D-9A88-A6514E66EE5B}" p:before="r[@uid='{6B39FF2B-2F81-4974-A47F-472177ED384A}']" s:ds="{6086F621-4A0E-4724-9D6F-EA7BA8139F57}" s:id="{E47303E0-90FD-4E81-B2B5-CA4E8C1C36B4}" s:ph="/page-layout/sidebarcontent/col-wide-1_8f0f5bf1-68d8-48b9-a74b-0fb7168eacf3/teaser-placeholder-2_230041cf-89fc-4a8d-9e56-a4cdb8f7ffe6" /><r uid="{6B39FF2B-2F81-4974-A47F-472177ED384A}" p:before="r[@uid='{8BA3071A-7D64-4367-B16D-76605EAE1127}']" s:ds="{8ABB8E75-E21C-4667-B277-C125B8E3A01F}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/sidebarcontent/col-wide-1_8f0f5bf1-68d8-48b9-a74b-0fb7168eacf3/teaser-placeholder-1_230041cf-89fc-4a8d-9e56-a4cdb8f7ffe6" /><r uid="{8BA3071A-7D64-4367-B16D-76605EAE1127}" p:before="r[@uid='{A025012B-6BAA-4FFD-B9FF-7FBF2257D19F}']" s:ds="{8ABB8E75-E21C-4667-B277-C125B8E3A01F}" s:id="{E47303E0-90FD-4E81-B2B5-CA4E8C1C36B4}" s:ph="/page-layout/sidebarcontent/col-wide-1_8f0f5bf1-68d8-48b9-a74b-0fb7168eacf3/col-narrow-1_230041cf-89fc-4a8d-9e56-a4cdb8f7ffe6" /><r uid="{A025012B-6BAA-4FFD-B9FF-7FBF2257D19F}" p:before="r[@uid='{E96BBF84-009C-4BE3-AB61-09DC44579927}']" s:ds="{439EC71A-4231-45C8-B075-975BD41099A7}" s:id="{BDD730EB-F808-4C65-B94A-D2F03672EAFB}" s:ph="/page-layout/sidebarcontent/col-wide-1_8f0f5bf1-68d8-48b9-a74b-0fb7168eacf3/col-narrow-1_230041cf-89fc-4a8d-9e56-a4cdb8f7ffe6" /><r uid="{E96BBF84-009C-4BE3-AB61-09DC44579927}" p:before="r[@uid='{230041CF-89FC-4A8D-9E56-A4CDB8F7FFE6}']" s:id="{0CF58F14-D0F8-4C41-9896-3D69048A0B19}" s:ph="/page-layout/sidebarcontent/col-wide-1_8f0f5bf1-68d8-48b9-a74b-0fb7168eacf3/col-narrow-1_230041cf-89fc-4a8d-9e56-a4cdb8f7ffe6" /><r uid="{230041CF-89FC-4A8D-9E56-A4CDB8F7FFE6}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{1CE39F86-2F0B-4F4C-B94D-8EC78A04A827}" s:id="{DDC6F993-6689-432E-90C7-B2865947DFD5}" s:ph="/page-layout/sidebarcontent/col-wide-1_8f0f5bf1-68d8-48b9-a74b-0fb7168eacf3" /><r uid="{4826A375-41D8-4662-A900-2C7D3884E0D2}" p:before="r[@uid='{8F0F5BF1-68D8-48B9-A74B-0FB7168EACF3}']" s:id="{03112E88-1499-4132-9D5F-E213AFD2019C}" s:ph="/page-layout/sidebarcontent" /><r uid="{8F0F5BF1-68D8-48B9-A74B-0FB7168EACF3}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/sidebarcontent" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151026T051241Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6181bea1-8a61-4027-b56a-226e45c6ee93
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

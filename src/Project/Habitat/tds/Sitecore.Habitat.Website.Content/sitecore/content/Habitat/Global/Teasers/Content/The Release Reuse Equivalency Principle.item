@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {D8B82E2A-8B5D-48D1-BE62-8575BA861556}
+database: master
+path: /sitecore/content/Habitat/Global/Teasers/Content/The Release Reuse Equivalency Principle
+parent: {8508F499-B20D-4505-A5C8-66CDB715D748}
+name: The Release Reuse Equivalency Principle
+master: {00000000-0000-0000-0000-000000000000}
+template: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
+templatekey: Teaser
+
+----field----
+field: {E8AB122C-6F54-4D4E-AEC6-F81ADDC558FC}
+name: TeaserLink
+key: teaserlink
+content-length: 157
+
+<link linktype="external" text="THE RELEASE REUSE EQUIVALENCY PRINCIPLE" url="http://c2.com/cgi/wiki?ReuseReleaseEquivalencePrinciple" anchor="" target="" />
+----version----
+language: en
+version: 1
+revision: 449a1e71-9e58-47c6-9654-65cc2094b438
+
+----field----
+field: {4A59D072-5B41-4A79-A157-2B2CCAC10F2B}
+name: TeaserTitle
+key: teasertitle
+content-length: 39
+
+THE RELEASE REUSE EQUIVALENCY PRINCIPLE
+----field----
+field: {13D97A52-7C4E-407C-960D-FADDE8A3C1B1}
+name: TeaserSummary
+key: teasersummary
+content-length: 130
+
+The granule of reuse is the granule of release. Only classes that are released and tracked as a module, can be reused as a module.
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151210T003250Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+449a1e71-9e58-47c6-9654-65cc2094b438
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

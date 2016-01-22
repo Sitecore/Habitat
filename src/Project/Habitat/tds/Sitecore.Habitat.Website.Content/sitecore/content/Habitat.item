@@ -1,0 +1,135 @@
+----item----
+version: 1
+id: {725A45E3-E307-4B95-B363-2782B059DF06}
+database: master
+path: /sitecore/content/Habitat
+parent: {0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+name: Habitat
+master: {00000000-0000-0000-0000-000000000000}
+template: {0643D9D4-F30B-4B07-91D0-289CC324C9CF}
+templatekey: Site Root
+
+----version----
+language: en
+version: 1
+revision: eec6238a-7d93-450b-8379-1b5bf8850a35
+
+----field----
+field: {ED71D374-8C33-4561-991D-77482AE01330}
+name: AccountsDetailsPage
+key: accountsdetailspage
+content-length: 42
+
+/sitecore/content/Habitat/Home/EditProfile
+----field----
+field: {71962360-10D8-4B98-BB8D-57660CE11127}
+name: RegisterPage
+key: registerpage
+content-length: 39
+
+/sitecore/content/Habitat/Home/Register
+----field----
+field: {365254C4-1C1C-493A-9710-671574717898}
+name: FogotPasswordMailTemplate
+key: fogotpasswordmailtemplate
+content-length: 66
+
+/sitecore/content/Habitat/Global/Registration/Forgot Password Mail
+----field----
+field: {F3CD2BB8-472B-4DF0-87C0-A13098E391CA}
+name: ForgotPasswordPage
+key: forgotpasswordpage
+content-length: 51
+
+/sitecore/content/Habitat/Home/Login/ForgotPassword
+----field----
+field: {B128E2B3-3865-4F1C-A147-5F248676D3F5}
+name: AfterLoginPage
+key: afterloginpage
+content-length: 30
+
+/sitecore/content/Habitat/Home
+----field----
+field: {989351F9-6C42-4623-BC83-DBEFB398A56B}
+name: InterestsFolder
+key: interestsfolder
+content-length: 38
+
+{A74EE096-F225-4568-8D81-2F71ABBC8118}
+----field----
+field: {E748D808-64C1-4DEC-9718-F35CF9689E4B}
+name: Logo
+key: logo
+content-length: 211
+
+<image mediapath="/Default Website/sc_logo" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/sc_logo" mediaid="{461A93BF-5471-4AF2-BF36-D638F5660CB5}" />
+----field----
+field: {02115632-FE1E-4B3D-9AD4-A4DDF1F782F0}
+name: Copyright
+key: copyright
+content-length: 126
+
+Copyright &copy; 2015 <a href="http://sitecore.net" target="_blank" title="Opens in a new window">Sitecore Corporation A/S</a>
+----field----
+field: {235AE392-97AC-4822-BE38-837DA3E7724E}
+name: SiteBrowserTitle
+key: sitebrowsertitle
+content-length: 29
+
+ - Habitat Sitecore Framework
+----field----
+field: {378B7D87-5775-4EB6-86B7-282D5359B1C6}
+name: UserProfile
+key: userprofile
+content-length: 38
+
+{14523428-879D-491C-9DF0-1417E82A4311}
+----field----
+field: {021AA3F7-206F-4ACC-9538-F6D7FE86B168}
+name: InterestFolder
+key: interestfolder
+content-length: 38
+
+{A74EE096-F225-4568-8D81-2F71ABBC8118}
+----field----
+field: {B8027200-AAB0-4876-B454-DBB85ADD9E3C}
+name: HostName
+key: hostname
+content-length: 13
+
+habitat.local
+----field----
+field: {12537182-F35C-403F-AFB5-747D55C450B8}
+name: ShowInMenu
+key: showinmenu
+content-length: 1
+
+1
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150824T171748Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+eec6238a-7d93-450b-8379-1b5bf8850a35
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

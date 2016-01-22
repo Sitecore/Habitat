@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {359AD0B9-20B5-49E7-A430-891D6E67BC5C}
+database: master
+path: /sitecore/templates/Feature/Demo/_LinkToken
+parent: {CC5890AF-54A1-4F8F-9298-A064D631E132}
+name: _LinkToken
+master: {00000000-0000-0000-0000-000000000000}
+template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
+templatekey: Template
+
+----field----
+field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
+name: __Base template
+key: __base template
+content-length: 77
+
+{1930BBEB-7805-471A-A3BE-4858AC7CF696}|{A7EBF38A-5F66-4579-92D1-568A8BA50293}
+----version----
+language: en
+version: 1
+revision: 272f539c-bf44-489c-81ec-c479d91b09d4
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151110T043033Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+272f539c-bf44-489c-81ec-c479d91b09d4
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091115Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

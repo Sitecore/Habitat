@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {4DE2D9D9-0781-47AD-8F5D-52F2AD920D83}
+database: master
+path: /sitecore/templates/Project/Common/Content Types/Social/Social Feeds Folder
+parent: {156651DD-1922-412A-81F4-E124B77F62DE}
+name: Social Feeds Folder
+master: {00000000-0000-0000-0000-000000000000}
+template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
+templatekey: Template
+
+----field----
+field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
+name: __Base template
+key: __base template
+content-length: 38
+
+{A87A00B1-E6DB-45AB-8B54-636FEC3B5523}
+----field----
+field: {F7D48A55-2158-4F02-9356-756654404F73}
+name: __Standard values
+key: __standard values
+content-length: 38
+
+{DDA1DE43-921D-42DC-872D-A53DE27F088C}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 32
+
+Applications/32x32/folder_up.png
+----version----
+language: en
+version: 1
+revision: 33453a36-da63-46b1-9da7-978f447b52c2
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151123T163543Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+33453a36-da63-46b1-9da7-978f447b52c2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091322Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

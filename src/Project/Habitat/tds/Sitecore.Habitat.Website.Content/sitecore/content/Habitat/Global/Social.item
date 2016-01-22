@@ -1,0 +1,44 @@
+----item----
+version: 1
+id: {20507226-1C3B-4D7A-89D4-DE00706E59B6}
+database: master
+path: /sitecore/content/Habitat/Global/Social
+parent: {4B67A7F9-7246-4A59-A051-961095C2DC70}
+name: Social
+master: {00000000-0000-0000-0000-000000000000}
+template: {4DE2D9D9-0781-47AD-8F5D-52F2AD920D83}
+templatekey: Social Feeds Folder
+
+----version----
+language: en
+version: 1
+revision: cb91263e-9b7d-4696-9cff-dce6e5de0559
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151123T163956Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+cb91263e-9b7d-4696-9cff-dce6e5de0559
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

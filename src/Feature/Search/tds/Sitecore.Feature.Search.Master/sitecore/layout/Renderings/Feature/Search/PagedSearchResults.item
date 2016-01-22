@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {E52D0AE8-2989-44E5-BEA1-EA30C17B2080}
+database: master
+path: /sitecore/layout/Renderings/Feature/Search/PagedSearchResults
+parent: {5A852BFA-9F18-4B9C-B0AF-A60913872B2D}
+name: PagedSearchResults
+master: {00000000-0000-0000-0000-000000000000}
+template: {2A3E91A0-7987-44B5-AB34-35C2D9DE83B9}
+templatekey: Controller rendering
+
+----field----
+field: {E64AD073-DFCC-4D20-8C0B-FE5AA6226CD7}
+name: Controller
+key: controller
+content-length: 77
+
+Sitecore.Feature.Search.Controllers.SearchController, Sitecore.Feature.Search
+----field----
+field: {DED9E431-3604-4921-A4B3-A6EC7636A5B6}
+name: Controller Action
+key: controller action
+content-length: 18
+
+PagedSearchResults
+----field----
+field: {13F89250-AD6B-4548-882E-118A12C18094}
+name: Parameters Template
+key: parameters template
+content-length: 38
+
+{D1D3E60F-E571-48D2-84CF-B053EE660C13}
+----field----
+field: {E441ABE7-2CA3-4640-AE26-3789967925D7}
+name: Compatible Renderings
+key: compatible renderings
+content-length: 38
+
+{D460006D-1069-414C-AD24-4821EBA45F70}
+----version----
+language: en
+version: 1
+revision: c7bf7c76-6287-4840-a8c7-9db2c2405b61
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151124T165018Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c7bf7c76-6287-4840-a8c7-9db2c2405b61
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091214Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

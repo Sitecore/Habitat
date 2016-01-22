@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {9E942565-677F-491C-A0AC-6B930E37342A}
+database: master
+path: /sitecore/templates/Feature/Teasers/_Accordeon/Content/AccordeonSelector
+parent: {5357F973-492D-43D2-975A-0DDB05BA377E}
+name: AccordeonSelector
+master: {00000000-0000-0000-0000-000000000000}
+template: {455A3E98-A627-4B40-8035-E683A0331AC7}
+templatekey: Template field
+
+----field----
+field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
+name: Type
+key: type
+content-length: 8
+
+Treelist
+----field----
+field: {1EB8AE32-E190-44A6-968D-ED904C794EBF}
+name: Source
+key: source
+content-length: 40
+
+query:/sitecore/content/*/global/Teasers
+----version----
+language: en
+version: 1
+revision: 5629dbe7-aa3a-4afa-b6fe-d0e43e5daaf2
+
+----field----
+field: {19A69332-A23E-4E70-8D16-B2640CB24CC8}
+name: Title
+key: title
+content-length: 18
+
+Accordeon Selector
+----field----
+field: {B5E02AD9-D56F-4C41-A065-A133DB87BDEB}
+name: __Display name
+key: __display name
+content-length: 18
+
+Accordeon Selector
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150903T121516Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+5629dbe7-aa3a-4afa-b6fe-d0e43e5daaf2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091237Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

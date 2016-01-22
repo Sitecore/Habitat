@@ -1,0 +1,102 @@
+----item----
+version: 1
+id: {844A7337-2020-4C2E-912E-7651930FE179}
+database: master
+path: /sitecore/content/Habitat/Home/Modules/Feature/News/News/2015/08/24/17/57/Experience Management
+parent: {F5C343AA-35DE-4262-9F29-E7AF52D601CD}
+name: Experience Management
+master: {00000000-0000-0000-0000-000000000000}
+template: {B69277AD-E917-4B9F-9136-A12E0A3E462F}
+templatekey: News Article
+
+----field----
+field: {C464D2D7-3382-428A-BCDF-0963C60BA0E3}
+name: NewsDate
+key: newsdate
+content-length: 16
+
+20150824T175742Z
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 2
+
+50
+----field----
+field: {9DAFCA1D-D618-4616-86B8-A8ACD6B28A63}
+name: __Bucket Parent Reference
+key: __bucket parent reference
+content-length: 38
+
+{439EC71A-4231-45C8-B075-975BD41099A7}
+----version----
+language: en
+version: 1
+revision: c46212be-0313-4dac-9ca7-76e1fe09453c
+
+----field----
+field: {BD9ECD4A-C0B0-4233-A3CD-D995519AC87B}
+name: NewsTitle
+key: newstitle
+content-length: 57
+
+New praise for world class experience management platform
+----field----
+field: {3437EAAC-6EE8-460B-A33D-DA1F714B5A93}
+name: NewsImage
+key: newsimage
+content-length: 159
+
+<image mediapath="" src="" height="" mediaid="{40EA01F7-1897-4ED0-8721-76511278B6A5}" hspace="" usethumbnail="" showineditor="" width="" alt="087" vspace="" />
+----field----
+field: {9D08271A-1672-44DD-B7EF-0A6EC34FCBA7}
+name: NewsSummary
+key: newssummary
+content-length: 348
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas.</p>
+<p>Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus.</p>
+----field----
+field: {801612C7-5E98-4E3C-80D2-A34D0EEBCBDA}
+name: NewsBody
+key: newsbody
+content-length: 1366
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas. Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus. Sed consectetur, est ac venenatis consequat, nisi tellus euismod tortor, nec volutpat tortor lectus in nisi. Nulla facilisi. Phasellus ultricies rutrum odio, sed ultricies tortor ornare vel. Nunc a leo justo. Pellentesque elementum quam eget mauris gravida convallis at at sem. Integer vitae lectus dui. Quisque facilisis enim purus, et fringilla velit mollis eget. Nullam vitae nisi ullamcorper, congue quam ac, porttitor urna. Maecenas sed nisi rhoncus lacus consectetur commodo.</p>
+<p>Nam finibus ornare augue, eget ullamcorper erat. Vivamus a tortor blandit, fermentum mauris quis, ullamcorper ex. Donec et lacus in augue aliquet elementum. Mauris nec molestie neque. Suspendisse eu quam commodo, iaculis turpis vel, laoreet lacus. Nullam tempus ornare volutpat. Praesent imperdiet eleifend mi, sit amet eleifend urna dapibus eu. Duis euismod lectus eget metus convallis tristique. Quisque eget neque non nibh consectetur lobortis. Nam condimentum eros sed dui molestie, vel gravida sem accumsan. Mauris in purus dolor.</p>
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 12
+
+News article
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150824T175742Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c46212be-0313-4dac-9ca7-76e1fe09453c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

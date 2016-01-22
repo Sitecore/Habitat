@@ -1,0 +1,101 @@
+----item----
+version: 1
+id: {EA258531-D346-4200-B673-471CF1544506}
+database: master
+path: /sitecore/content/Habitat/Home/Modules/Feature/News
+parent: {F7434DF7-E32E-4F8C-A50E-27C476F4DC32}
+name: News
+master: {00000000-0000-0000-0000-000000000000}
+template: {94A8C8E9-690B-4E65-98E7-F95800222767}
+templatekey: Article
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 155
+
+{94A8C8E9-690B-4E65-98E7-F95800222767}|{8FF3D369-A508-4D2F-84A5-9B6C6BF5E537}|{467C2144-4454-4518-B1DE-E31B4CBBFF33}|{A99866E5-08E7-44D8-8A52-F8E26BCD3714}
+----version----
+language: en
+version: 1
+revision: eafb5bde-a6e0-4f1c-9625-7b125086726e
+
+----field----
+field: {C30A013F-3CC8-4961-9837-1C483277084A}
+name: Title
+key: title
+content-length: 4
+
+News
+----field----
+field: {AC3FD4DB-8266-476D-9635-67814D91E901}
+name: Summary
+key: summary
+content-length: 82
+
+The News module contains news functionality including lists, articles and teasers.
+----field----
+field: {D74F396D-5C5E-4916-BD0A-BFD58B6B1967}
+name: Body
+key: body
+content-length: 190
+
+The News module contains features related to news content, i.e. articles and lists.<br>
+<a href="~/link.aspx?_id=439EC71A423145C8B075975BD41099A7&amp;_z=z">See the news list here.&nbsp;</a>
+----field----
+field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{E8F78F17-7440-4D1C-A29B-A0AD2F80CC88}" />
+----field----
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
+content-length: 4
+
+News
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 4
+
+News
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 2151
+
+<r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{B0E37855-3D22-4D6B-951E-7D58C50C15D5}" p:before="r[@uid='{8D96E4DE-53DC-4682-BF61-A9F700EAE98E}']" s:ds="{2D415DBB-9AFE-4E75-A264-DFCE07B11D26}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/sidebarcontent/col-wide-1_976c4efe-08e1-4e62-9cae-7935f09deef7" /><r uid="{8D96E4DE-53DC-4682-BF61-A9F700EAE98E}" p:before="r[@uid='{6B5DF276-8ACA-4FC0-BBC1-A0E4C2E757A6}']" s:ds="{439EC71A-4231-45C8-B075-975BD41099A7}" s:id="{BDD730EB-F808-4C65-B94A-D2F03672EAFB}" s:ph="/page-layout/sidebarcontent/col-narrow-1_6875e0cc-fb06-49ca-98c3-939edf453dfc" /><r uid="{6B5DF276-8ACA-4FC0-BBC1-A0E4C2E757A6}" p:before="r[@uid='{77597299-08C8-4792-B2B8-6445D2712A4F}']" s:ds="{B415F846-5EED-409C-B6D8-C23BAB52D502}" s:id="{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}" s:ph="/page-layout/sidebarcontent/col-wide-1_6875e0cc-fb06-49ca-98c3-939edf453dfc" /><r uid="{77597299-08C8-4792-B2B8-6445D2712A4F}" p:before="r[@uid='{1EB93BB4-BE61-4924-87E8-4108E4711261}']" s:ds="{B415F846-5EED-409C-B6D8-C23BAB52D502}" s:id="{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}" s:ph="/page-layout/sidebarcontent/col-wide-1_dc521682-15b5-4fe3-91a8-676e7e1c3cf3" /><r uid="{1EB93BB4-BE61-4924-87E8-4108E4711261}" p:before="r[@uid='{F4A61C67-000E-45CC-936B-672FC5FA9E1D}']" s:ds="{439EC71A-4231-45C8-B075-975BD41099A7}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/sidebarcontent/col-wide-2" /><r uid="{F4A61C67-000E-45CC-936B-672FC5FA9E1D}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{844A7337-2020-4C2E-912E-7651930FE179}" s:id="{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}" s:ph="/page-layout/sidebarcontent/col-wide-1" /><r uid="{976C4EFE-08E1-4E62-9CAE-7935F09DEEF7}" p:before="r[@uid='{6875E0CC-FB06-49CA-98C3-939EDF453DFC}']" s:id="{03112E88-1499-4132-9D5F-E213AFD2019C}" s:ph="/page-layout/sidebarcontent" /><r uid="{6875E0CC-FB06-49CA-98C3-939EDF453DFC}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{45CE489D-FA30-473E-9751-142BD06CCB33}" s:ph="/page-layout/sidebarcontent" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151008T041914Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+eafb5bde-a6e0-4f1c-9625-7b125086726e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

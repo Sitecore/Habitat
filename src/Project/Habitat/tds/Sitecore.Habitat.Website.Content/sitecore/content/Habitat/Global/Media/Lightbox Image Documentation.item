@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {B488057D-9E60-42D5-9ED0-71F722FA5FB1}
+database: master
+path: /sitecore/content/Habitat/Global/Media/Lightbox Image Documentation
+parent: {EA13174A-B43E-4F68-B474-B41188771A9E}
+name: Lightbox Image Documentation
+master: {00000000-0000-0000-0000-000000000000}
+template: {F0369E1A-9030-4A05-A09C-EF09B664ED27}
+templatekey: Image
+
+----version----
+language: en
+version: 1
+revision: 697f3537-054b-4f9e-83f8-22da653b7d6d
+
+----field----
+field: {63DDA48B-B0CB-45A7-9A1B-B26DDB41009B}
+name: MediaTitle
+key: mediatitle
+content-length: 14
+
+Image Lightbox
+----field----
+field: {302C9F8D-F703-4F76-A4AB-73D222648232}
+name: MediaDescription
+key: mediadescription
+content-length: 192
+
+The image lightbox shows a thumbnail on the page but offers a higher resolution version when clicked. Multiple lightboxes will provide a gallery where the visitor can click through them.&nbsp;
+----field----
+field: {9F51DEAD-AD6E-41C2-9759-7BE17EB474A4}
+name: MediaImage
+key: mediaimage
+content-length: 58
+
+<image mediaid="{D079BD07-949D-4426-A05A-DAB9CBFE9CE8}" />
+----field----
+field: {4FF62B0A-D73B-4436-BEA2-023154F2FFC4}
+name: MediaThumbnail
+key: mediathumbnail
+content-length: 58
+
+<image mediaid="{D079BD07-949D-4426-A05A-DAB9CBFE9CE8}" />
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151116T041930Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+697f3537-054b-4f9e-83f8-22da653b7d6d
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

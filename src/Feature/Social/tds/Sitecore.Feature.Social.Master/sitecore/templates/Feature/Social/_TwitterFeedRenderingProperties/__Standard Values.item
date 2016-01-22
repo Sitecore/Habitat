@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {300A5935-6031-41E8-A66F-1FB4BFAE860D}
+database: master
+path: /sitecore/templates/Feature/Social/_TwitterFeedRenderingProperties/__Standard Values
+parent: {9EEE8077-990F-4FDE-95FB-C7B9819DF913}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {9EEE8077-990F-4FDE-95FB-C7B9819DF913}
+templatekey: _TwitterFeedRenderingProperties
+
+----field----
+field: {3094D236-5985-4C4F-AE6A-E30740885532}
+name: Caching
+key: caching
+content-length: 15
+
+0|0|0|0|0|0|0|0
+----version----
+language: en
+version: 1
+revision: f256d1a4-5f35-48d5-9fbc-62b577e29ac2
+
+----field----
+field: {084D873D-194D-456B-A1D8-328C048E5582}
+name: TweetsToShow
+key: tweetstoshow
+content-length: 1
+
+2
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151201T122927Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f256d1a4-5f35-48d5-9fbc-62b577e29ac2
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091225Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

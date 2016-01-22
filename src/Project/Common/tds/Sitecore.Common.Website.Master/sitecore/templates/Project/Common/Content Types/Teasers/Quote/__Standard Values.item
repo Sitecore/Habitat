@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {C681618A-76FE-453C-9C7C-F4A11FDADD5C}
+database: master
+path: /sitecore/templates/Project/Common/Content Types/Teasers/Quote/__Standard Values
+parent: {40AD8A9B-C75C-428D-9E1A-51372B21F63E}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {40AD8A9B-C75C-428D-9E1A-51372B21F63E}
+templatekey: Quote
+
+----version----
+language: en
+version: 1
+revision: 7f817487-36ff-4ca3-9c93-55c01663f4b0
+
+----field----
+field: {0DE53078-0DA4-40CC-BBCA-63AA96A0A1EF}
+name: Quote
+key: quote
+content-length: 106
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue vulputate erat hendrerit tincidunt.
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151124T110522Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7f817487-36ff-4ca3-9c93-55c01663f4b0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091322Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

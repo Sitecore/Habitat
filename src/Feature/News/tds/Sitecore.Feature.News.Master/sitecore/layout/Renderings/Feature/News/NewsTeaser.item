@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}
+database: master
+path: /sitecore/layout/Renderings/Feature/News/NewsTeaser
+parent: {DB7775FA-27D8-44E4-9E6C-08ADE58EF4ED}
+name: NewsTeaser
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 29
+
+/Views/News/NewsTeaser.cshtml
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 16
+
+site:newsarticle
+----field----
+field: {E441ABE7-2CA3-4640-AE26-3789967925D7}
+name: Compatible Renderings
+key: compatible renderings
+content-length: 38
+
+{F366176E-2C2B-4AF2-B356-BCF8BD657C58}
+----version----
+language: en
+version: 1
+revision: 75be59cc-e6e7-46f6-b4ea-f33520311ef8
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150831T120600Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+75be59cc-e6e7-46f6-b4ea-f33520311ef8
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091158Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

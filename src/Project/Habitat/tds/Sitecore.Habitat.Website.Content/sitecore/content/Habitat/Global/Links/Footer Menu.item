@@ -1,0 +1,44 @@
+----item----
+version: 1
+id: {0F916DE7-60AC-4833-B480-865F26F1DD56}
+database: master
+path: /sitecore/content/Habitat/Global/Links/Footer Menu
+parent: {3AA0815E-CBD7-4A56-A922-1CCA81D844D1}
+name: Footer Menu
+master: {00000000-0000-0000-0000-000000000000}
+template: {AC7394D5-2AA7-4FDB-A7D8-B1B87F9FA661}
+templatekey: Link Menu
+
+----version----
+language: en
+version: 1
+revision: 24d4bc7c-f79b-4b2c-8ef1-0ade0c0bc68f
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150910T105320Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+24d4bc7c-f79b-4b2c-8ef1-0ade0c0bc68f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

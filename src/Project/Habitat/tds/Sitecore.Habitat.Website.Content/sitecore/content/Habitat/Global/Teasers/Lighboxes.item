@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {4A1E242E-FD29-4529-BEE0-3A9B1CAC30AB}
+database: master
+path: /sitecore/content/Habitat/Global/Teasers/Lighboxes
+parent: {6AA25831-0944-4A79-9AFF-7BAC39E03557}
+name: Lighboxes
+master: {00000000-0000-0000-0000-000000000000}
+template: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
+templatekey: Teaser
+
+----version----
+language: en
+version: 1
+revision: 2ef57cf7-508b-4a5c-9e3e-69da1395c561
+
+----field----
+field: {0F6B5546-E0AB-4487-81DE-640C1AA1B65B}
+name: TeaserImage
+key: teaserimage
+content-length: 176
+
+<image mediapath="" src="" height="" mediaid="{9F63F58A-E57A-49A2-BC8F-DCDFACE44B68}" hspace="" usethumbnail="" showineditor="" width="" alt="Experience Marketing" vspace="" />
+----field----
+field: {4A59D072-5B41-4A79-A157-2B2CCAC10F2B}
+name: TeaserTitle
+key: teasertitle
+content-length: 10
+
+Lightboxes
+----field----
+field: {13D97A52-7C4E-407C-960D-FADDE8A3C1B1}
+name: TeaserSummary
+key: teasersummary
+content-length: 41
+
+Lightboxes are used to make media pop out
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150921T055523Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2ef57cf7-508b-4a5c-9e3e-69da1395c561
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

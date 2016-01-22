@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {87F08F10-D97E-4EE9-8282-73351EE226AF}
+database: master
+path: /sitecore/content/Habitat/Home/Register
+parent: {DAC24EDD-44FB-42EF-9ECD-1E8DAF706386}
+name: Register
+master: {00000000-0000-0000-0000-000000000000}
+template: {6EF8F8A0-C567-495B-9E00-8775A268A486}
+templatekey: ServicePage
+
+----field----
+field: {5585A30D-B115-4753-93CE-422C3455DEB2}
+name: ShowInNavigation
+key: showinnavigation
+content-length: 1
+
+0
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+600
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 278
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{47F5A079-6F63-4219-BC45-1A221B200906}"><p:d /></r><r uid="{F57684CD-F181-4D99-83F8-869BD554234E}" s:id="{B683EFB4-161D-4FDF-9A90-CC8637766C9C}" s:ph="/page-layout/col-narrow-2" /></d></r>
+----version----
+language: en
+version: 1
+revision: 3101e3fe-4c9a-44b7-b2e3-93bda9e6a6c1
+
+----field----
+field: {C30A013F-3CC8-4961-9837-1C483277084A}
+name: Title
+key: title
+content-length: 8
+
+Register
+----field----
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
+content-length: 8
+
+Register
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151104T135644Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3101e3fe-4c9a-44b7-b2e3-93bda9e6a6c1
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

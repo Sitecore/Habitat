@@ -1,0 +1,155 @@
+----item----
+version: 1
+id: {F0519E91-3B1E-47B0-91C0-710C6DF5AD34}
+database: master
+path: /sitecore/content/Habitat/Home/Modules/Feature/Person/John Doe
+parent: {CAC2E25B-3A13-4E1B-AB8C-5B71FD613077}
+name: John Doe
+master: {00000000-0000-0000-0000-000000000000}
+template: {467C2144-4454-4518-B1DE-E31B4CBBFF33}
+templatekey: Employee
+
+----version----
+language: en
+version: 1
+revision: d268b142-ccbf-4a73-9882-d3a8e90d80c9
+
+----field----
+field: {0CC9785E-54FE-4FAE-93E4-D0D2AE75F339}
+name: Biography
+key: biography
+content-length: 1810
+
+John is a highly accomplished executive with extensive financial, operational and global business management experience. During 2013, he served as Chief Operating Officer and Chief Financial Officer of Great Kitchenware Inc., a leading network security provider. &nbsp;He joined Great Kitchenware&nbsp;in April of 2013, and played a key role in recovering the topline and stabilizing operational and financial matters. &nbsp;Prior to that, he served as Executive Vice President and Chief Financial Officer of Googly Eyes Inc., a leading cloud-based business to business commerce company that was acquired by SAP in October 2012 for $4.3 billion.&nbsp;John&nbsp;joined Googly Eyes&nbsp;in August 2008, and played a significant role on the management team in building a high-growth and highly-profitable recurring global business. He was engaged in all areas of the business and helped contribute to significant growth and an increase in shareholder value, with Ariba's equity market capitalization increasing from approximately $400 million to over $4 billion at the time of the company's sale.&nbsp;
+<div style="color: #212b34;">&nbsp;</div>
+<div style="color: #212b34;">Prior to Googly Eyes,&nbsp;John&nbsp;spent nearly eight years at Johns Livestock, a manufacturer of livestock feeding materials, where he held various senior finance positions, the last one being a global division CFO where he was involved in all aspects of the multi-billion dollar business. He also spent nearly six years in various global finance leadership roles at Toms Petrol and Cafeteria, a large natural resource company.
+<div>&nbsp;</div>
+<div>John&nbsp;holds a Bachelor of Arts degree in Economics and Management from Southwest College and a degree from University of Highlands School of Law</div>
+<div>&nbsp;</div>
+</div>
+----field----
+field: {26CD59AB-3639-488F-BAFD-58D2B217755A}
+name: Name
+key: name
+content-length: 8
+
+John Doe
+----field----
+field: {76972FCD-4BB0-4255-864E-077745EFDF50}
+name: Title
+key: title
+content-length: 3
+
+CEO
+----field----
+field: {C9BAF3EB-8CFA-4BF6-9B19-51D38DB5FC38}
+name: Picture
+key: picture
+content-length: 252
+
+<image mediapath="/Habitat/Images/Square/Habitat-075-square" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Habitat/Images/Square/Habitat-075-square" mediaid="{7C3BBB56-BE70-4F1B-86A3-3D7C505D74AD}" ></image>
+----field----
+field: {B897023C-15D2-49F3-8974-06FA5FB7AD00}
+name: Summary
+key: summary
+content-length: 120
+
+John is a highly accomplished executive with extensive financial, operational and global business management experience.
+----field----
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
+content-length: 8
+
+John Doe
+----field----
+field: {8D0E8EE3-21C4-4AE2-A2F1-53D3F3EBE501}
+name: Telephone
+key: telephone
+content-length: 15
+
++1 202 555 0162
+----field----
+field: {25B4CEE3-A61A-4DC3-BB52-775DD509DBB5}
+name: Mobile
+key: mobile
+content-length: 15
+
++1 202 555 0148
+----field----
+field: {5978B330-1D46-4065-8751-F74BF17D815E}
+name: Email
+key: email
+content-length: 28
+
+john.doe@sitecorehabitat.com
+----field----
+field: {D31889C0-E34C-4904-A6F3-F3D92D314AA9}
+name: FacebookLink
+key: facebooklink
+content-length: 118
+
+<link text="" linktype="external" url="www.facebook.com" anchor="" title="" class="" querystring="" target="" id="" />
+----field----
+field: {2B13DFAB-3450-45EF-93F4-BEAA6F544FA6}
+name: LinkedInLink
+key: linkedinlink
+content-length: 74
+
+<link linktype="external" url="http://linkedin.com" anchor="" target="" />
+----field----
+field: {6DE98EF7-1209-40A3-A63E-16DBEF015211}
+name: TwitterLink
+key: twitterlink
+content-length: 73
+
+<link linktype="external" url="http://twitter.com" anchor="" target="" />
+----field----
+field: {69A846D9-4C7F-435C-A8DC-87E2D7359CFA}
+name: BlogLink
+key: bloglink
+content-length: 72
+
+<link linktype="external" url="http://MyBlog.com" anchor="" target="" />
+----field----
+field: {0EE2F208-1FEE-42FC-8051-6696D49A92BF}
+name: OpenGraphTitle
+key: opengraphtitle
+content-length: 8
+
+John Doe
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 8
+
+John Doe
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151201T000649Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d268b142-ccbf-4a73-9882-d3a8e90d80c9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

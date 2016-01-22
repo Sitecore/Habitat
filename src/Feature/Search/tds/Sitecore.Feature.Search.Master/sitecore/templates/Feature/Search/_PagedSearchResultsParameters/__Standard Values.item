@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {6912DBC9-587B-448C-A49D-0FB43F446301}
+database: master
+path: /sitecore/templates/Feature/Search/_PagedSearchResultsParameters/__Standard Values
+parent: {D1D3E60F-E571-48D2-84CF-B053EE660C13}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {D1D3E60F-E571-48D2-84CF-B053EE660C13}
+templatekey: _PagedSearchResultsParameters
+
+----field----
+field: {3094D236-5985-4C4F-AE6A-E30740885532}
+name: Caching
+key: caching
+content-length: 15
+
+0|0|0|0|0|0|0|0
+----version----
+language: en
+version: 1
+revision: 91d5f9ee-b1bb-4270-9a19-0921f25b26cc
+
+----field----
+field: {FCC7E3B4-46AB-4A51-975F-A6B259B3D214}
+name: ResultsOnPage
+key: resultsonpage
+content-length: 1
+
+4
+----field----
+field: {D7DDE02F-B1F1-416D-91E0-7C3612EF4871}
+name: PagesToShow
+key: pagestoshow
+content-length: 1
+
+5
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151126T130538Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+91d5f9ee-b1bb-4270-9a19-0921f25b26cc
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091214Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

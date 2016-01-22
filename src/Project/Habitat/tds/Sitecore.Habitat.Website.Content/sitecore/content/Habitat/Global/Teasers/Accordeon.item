@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {1CE39F86-2F0B-4F4C-B94D-8EC78A04A827}
+database: master
+path: /sitecore/content/Habitat/Global/Teasers/Accordeon
+parent: {6AA25831-0944-4A79-9AFF-7BAC39E03557}
+name: Accordeon
+master: {00000000-0000-0000-0000-000000000000}
+template: {F5F30CDC-9003-4015-84EC-C3A7E3E50D5E}
+templatekey: Accordeon Teaser
+
+----version----
+language: en
+version: 1
+revision: b1ee6bfc-fdf6-4354-bef8-4d63795a4402
+
+----field----
+field: {9E942565-677F-491C-A0AC-6B930E37342A}
+name: AccordeonSelector
+key: accordeonselector
+content-length: 77
+
+{EF593C2A-F3F8-421A-9368-0E189A689DBD}|{6086F621-4A0E-4724-9D6F-EA7BA8139F57}
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150903T121817Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b1ee6bfc-fdf6-4354-bef8-4d63795a4402
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091520Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

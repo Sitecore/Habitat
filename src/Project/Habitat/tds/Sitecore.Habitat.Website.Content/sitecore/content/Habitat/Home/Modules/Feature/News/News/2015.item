@@ -1,0 +1,44 @@
+----item----
+version: 1
+id: {B7BC7F95-8577-4705-881C-5D6F101E4983}
+database: master
+path: /sitecore/content/Habitat/Home/Modules/Feature/News/News/2015
+parent: {439EC71A-4231-45C8-B075-975BD41099A7}
+name: 2015
+master: {00000000-0000-0000-0000-000000000000}
+template: {ADB6CA4F-03EF-4F47-B9AC-9CE2BA53FF97}
+templatekey: Bucket
+
+----version----
+language: en
+version: 1
+revision: ab0e7737-7870-46e9-954f-d955e620d751
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151210T043731Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ab0e7737-7870-46e9-954f-d955e620d751
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

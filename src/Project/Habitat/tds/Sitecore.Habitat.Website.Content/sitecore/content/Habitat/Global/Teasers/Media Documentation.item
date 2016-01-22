@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {FA333FC7-7F62-499B-8CEA-E2CB837F208D}
+database: master
+path: /sitecore/content/Habitat/Global/Teasers/Media Documentation
+parent: {6AA25831-0944-4A79-9AFF-7BAC39E03557}
+name: Media Documentation
+master: {00000000-0000-0000-0000-000000000000}
+template: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
+templatekey: Teaser
+
+----version----
+language: en
+version: 1
+revision: 25118b1a-9555-4706-b7d0-68890d7ad02f
+
+----field----
+field: {0F6B5546-E0AB-4487-81DE-640C1AA1B65B}
+name: TeaserImage
+key: teaserimage
+content-length: 58
+
+<image mediaid="{280645B5-681E-49C6-912E-5BF2A20D5330}" />
+----field----
+field: {4A59D072-5B41-4A79-A157-2B2CCAC10F2B}
+name: TeaserTitle
+key: teasertitle
+content-length: 12
+
+Media module
+----field----
+field: {13D97A52-7C4E-407C-960D-FADDE8A3C1B1}
+name: TeaserSummary
+key: teasersummary
+content-length: 121
+
+This modules provides basic functionality for handling images and video. See below for an example of components provided.
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151116T045207Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+25118b1a-9555-4706-b7d0-68890d7ad02f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,0 +1,108 @@
+----item----
+version: 1
+id: {86B2E20E-ECFC-45E2-8735-9A6FCAE83C95}
+database: master
+path: /sitecore/content/Habitat/Home/About Habitat/Introduction/Modular Architecture
+parent: {B16765BA-7B3E-4C5B-9937-BFC985F2550C}
+name: Modular Architecture
+master: {00000000-0000-0000-0000-000000000000}
+template: {94A8C8E9-690B-4E65-98E7-F95800222767}
+templatekey: Article
+
+----field----
+field: {B0A67B2A-8B07-4E0B-8809-69F751709806}
+name: __Tracking
+key: __tracking
+content-length: 257
+
+<tracking><profile id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}" name="Focus" presets="architecture|100||"><key name="Background" value="9" /><key name="Practical" value="2" /><key name="Process" value="6" /><key name="Scope" value="3" /></profile></tracking>
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 1
+
+0
+----version----
+language: en
+version: 1
+revision: 3016917c-cb24-4465-8f1e-254787e27dc0
+
+----field----
+field: {C30A013F-3CC8-4961-9837-1C483277084A}
+name: Title
+key: title
+content-length: 20
+
+Modular Architecture
+----field----
+field: {AC3FD4DB-8266-476D-9635-67814D91E901}
+name: Summary
+key: summary
+content-length: 105
+
+The modular architecture of Habitat is a foundation for the flexibly and maintainability of the solution.
+----field----
+field: {D74F396D-5C5E-4916-BD0A-BFD58B6B1967}
+name: Body
+key: body
+content-length: 686
+
+<p>Modular Architecture is focused on simplifying the development of the solution by breaking the solution into smaller independent and manageable parts.The Architecture in Habitat is primarily derived from the <a href="https://en.wikipedia.org/wiki/Package_principles" target="_blank">Package Principles</a> defined by Robert C. Martin, which describes how to avoid dependencies between unrelated parts by applying simple patterns.</p>
+<p>In other words, there can be no modules or modular architecture without a set of conventions and principles which describes how to separate cohesive functionality into isolated parts - and how to combine those modules into a united solution.</p>
+----field----
+field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
+name: Image
+key: image
+content-length: 65
+
+<image mediaid="{4A70900A-A5D7-4FB3-9085-A75707EE7067}" ></image>
+----field----
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
+content-length: 20
+
+Modular Architecture
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 20
+
+Modular Architecture
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 3327
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{04E88626-2783-4386-AC79-BA53C5BDA9A5}" p:before="r[@uid='{16540082-E491-4DD2-AC2B-1E12FAF469EA}']" s:ds="{D8B82E2A-8B5D-48D1-BE62-8575BA861556}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/sidebarcontent/col-wide-2_532a965f-a5e1-4954-810a-c3ccc3a4a67b" /><r uid="{16540082-E491-4DD2-AC2B-1E12FAF469EA}" p:before="r[@uid='{05018973-F464-4DF2-B440-983FD4D35296}']" s:ds="{BC2D52EE-2BD9-4322-AFBA-8C78669D2B19}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/sidebarcontent/col-wide-2_532a965f-a5e1-4954-810a-c3ccc3a4a67b" /><r uid="{05018973-F464-4DF2-B440-983FD4D35296}" p:before="r[@uid='{53A985C6-D18E-42A3-8076-5A05B9B8102E}']" s:ds="{5C363FAA-B7D5-4B1D-9E4F-B2699BB529AD}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/sidebarcontent/col-wide-2_532a965f-a5e1-4954-810a-c3ccc3a4a67b" /><r uid="{53A985C6-D18E-42A3-8076-5A05B9B8102E}" p:before="r[@uid='{4C3E9FC0-A0B3-425A-8D6E-6966120AD833}']" s:ds="{C9AA3B8F-5638-4360-AFAD-416D1A6D82B1}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-2_06c2b774-ff9c-4b66-a6d6-95b34db27f51" /><r uid="{4C3E9FC0-A0B3-425A-8D6E-6966120AD833}" p:before="r[@uid='{BBD152D4-6C2C-46B0-8DF1-7EA576780AC4}']" s:ds="{3A5D638D-5BDD-4DDD-BEAC-4A0C81C27E8A}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-3_06c2b774-ff9c-4b66-a6d6-95b34db27f51" /><r uid="{BBD152D4-6C2C-46B0-8DF1-7EA576780AC4}" p:before="r[@uid='{2C25EE1C-6286-4F73-8DD0-9D32F32AD1DD}']" s:ds="{8A80477E-7CB4-4CEE-A035-B48AC118ABE8}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/sidebarcontent/col-wide-1_532a965f-a5e1-4954-810a-c3ccc3a4a67b" /><r uid="{2C25EE1C-6286-4F73-8DD0-9D32F32AD1DD}" p:before="r[@uid='{A3BA2BF4-D119-4539-8FBA-BF4C0EBCEA1F}']" s:ds="{9AC1E982-476D-4567-93C4-EE0FCE56CECB}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-1_06c2b774-ff9c-4b66-a6d6-95b34db27f51" /><r uid="{A3BA2BF4-D119-4539-8FBA-BF4C0EBCEA1F}" p:before="r[@uid='{4A84899C-66DF-4159-8DEB-46B1C46484C5}']" s:ds="{EF593C2A-F3F8-421A-9368-0E189A689DBD}" s:id="{A25C9850-AAB7-46A6-84B7-0DFAB32FC357}" s:ph="/page-layout/col-huge_ce48a842-bc61-4a2f-a650-7895796f1747" /><r uid="{4A84899C-66DF-4159-8DEB-46B1C46484C5}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{E67E0BB9-D9CB-4AFB-97C8-575E655F52CE}" s:id="{0534F12C-804E-4532-A832-5D61FE9EC6ED}" s:ph="/page-layout/sidebarcontent/col-wide-2_532a965f-a5e1-4954-810a-c3ccc3a4a67b" /><r uid="{CE48A842-BC61-4A2F-A650-7895796F1747}" p:before="r[@uid='{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}']" s:ds="" s:id="{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}" s:par="ContainerIsFluid=1&amp;UseStaticPlaceholderNames" s:ph="page-layout" /><r uid="{EB352679-4420-46AE-95B0-7CA976C24194}"><p:d /></r><r uid="{06C2B774-FF9C-4B66-A6D6-95B34DB27F51}" p:before="r[@uid='{A85893F9-5DF5-4C28-AC0F-67AD85D29661}']" s:ds="" s:id="{7074CA39-734D-4953-A3D5-B7D09C37CE3B}" s:par="ContainerIsFluid&amp;UseStaticPlaceholderNames" s:ph="page-layout" /><r uid="{532A965F-A5E1-4954-810A-C3CCC3A4A67B}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/sidebarcontent" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150920T232217Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+3016917c-cb24-4465-8f1e-254787e27dc0
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

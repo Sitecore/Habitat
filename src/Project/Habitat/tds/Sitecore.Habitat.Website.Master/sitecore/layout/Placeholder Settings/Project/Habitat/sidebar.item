@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {C4A1EB6E-995D-4F56-B1D1-DD8BD1074933}
+database: master
+path: /sitecore/layout/Placeholder Settings/Project/Habitat/sidebar
+parent: {0ED714D5-79FC-468B-95BE-6F5DAFCB8E7B}
+name: sidebar
+master: {00000000-0000-0000-0000-000000000000}
+template: {5C547D4E-7111-4995-95B0-6B561751BF2E}
+templatekey: Placeholder
+
+----field----
+field: {7256BDAB-1FD2-49DD-B205-CB4873D2917C}
+name: Placeholder Key
+key: placeholder key
+content-length: 7
+
+sidebar
+----field----
+field: {E391B526-D0C5-439D-803E-17512EAE6222}
+name: Allowed Controls
+key: allowed controls
+content-length: 38
+
+{359A65BB-0A2C-44E5-8C34-DF3ACDBB42A7}
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 4
+
+1300
+----version----
+language: en
+version: 1
+revision: 2c46d8b9-46aa-4b53-93b4-1f5018757533
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151008T042522Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2c46d8b9-46aa-4b53-93b4-1f5018757533
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091345Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

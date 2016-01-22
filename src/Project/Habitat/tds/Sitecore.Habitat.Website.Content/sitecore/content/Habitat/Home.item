@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {DAC24EDD-44FB-42EF-9ECD-1E8DAF706386}
+database: master
+path: /sitecore/content/Habitat/Home
+parent: {725A45E3-E307-4B95-B363-2782B059DF06}
+name: Home
+master: {00000000-0000-0000-0000-000000000000}
+template: {4A8822CC-B418-4452-AB0F-8BB6DF2F2114}
+templatekey: Home
+
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 265
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{5FA96CD5-9C1A-4676-8585-CA9D7A3074F2}" p:before="r[@uid='{56552E8A-9180-44AA-A713-D30ACEEEB6FD}']" s:id="{604ECBB6-2BBF-45AF-AC6E-BA9F853E7A03}" s:ph="topbarright" /></d></r>
+----version----
+language: en
+version: 1
+revision: c3042067-d688-45db-a791-07b16a4bc1bb
+
+----field----
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
+content-length: 4
+
+Home
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 38
+
+Flexibility, Simplicity, Extensibility
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 2564
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{C4889F47-B6AF-4234-86E7-1E0A99424FD3}" p:before="r[@uid='{BFF37CDC-43F8-45B5-9932-22ECE9BC939E}']" s:ds="{C9AA3B8F-5638-4360-AFAD-416D1A6D82B1}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-3_1e2620e0-c323-4f24-9b39-f5b4a5515d8d" /><r uid="{BFF37CDC-43F8-45B5-9932-22ECE9BC939E}" p:before="r[@uid='{A404BF7C-C691-4C8F-BD79-1DBA98E713B9}']" s:ds="{8A80477E-7CB4-4CEE-A035-B48AC118ABE8}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-2_1e2620e0-c323-4f24-9b39-f5b4a5515d8d" /><r uid="{A404BF7C-C691-4C8F-BD79-1DBA98E713B9}" p:before="r[@uid='{A99B70AC-A17D-42F7-89D9-1F7FBAE7A337}']" s:ds="{B16765BA-7B3E-4C5B-9937-BFC985F2550C}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-1_1e2620e0-c323-4f24-9b39-f5b4a5515d8d" /><r uid="{A99B70AC-A17D-42F7-89D9-1F7FBAE7A337}" p:before="r[@uid='{5FD69110-9DDD-4D33-847E-8374B6F95BDC}']" s:ds="{844A7337-2020-4C2E-912E-7651930FE179}" s:id="{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}" s:ph="/page-layout/col-narrow-2_e0710d5f-c5a8-4e12-bc23-14faa69486b5" /><r uid="{5FD69110-9DDD-4D33-847E-8374B6F95BDC}" p:before="r[@uid='{7F8C0B40-365D-4A91-8B5F-6BB50F3B576E}']" s:ds="{8A80477E-7CB4-4CEE-A035-B48AC118ABE8}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-wide-1_e0710d5f-c5a8-4e12-bc23-14faa69486b5" /><r uid="{7F8C0B40-365D-4A91-8B5F-6BB50F3B576E}" p:before="r[@uid='{D3002700-342B-478F-BB50-160F62D2A548}']" s:id="{45CE489D-FA30-473E-9751-142BD06CCB33}" s:ph="/page-layout/col-wide-1_0486ed11-b646-491f-a170-511fe37e61a6" /><r uid="{D3002700-342B-478F-BB50-160F62D2A548}" p:before="r[@uid='{6D6BAA73-DFEE-4585-B961-4AB9A843C5C4}']" s:ds="{439EC71A-4231-45C8-B075-975BD41099A7}" s:id="{BDD730EB-F808-4C65-B94A-D2F03672EAFB}" s:ph="/page-layout/col-narrow-1_e0710d5f-c5a8-4e12-bc23-14faa69486b5" /><r uid="{6D6BAA73-DFEE-4585-B961-4AB9A843C5C4}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{6B3E2125-9402-4ABE-BE65-1DC375B2111E}" s:id="{E86BFEB1-F3FC-4E37-B693-A5550D6789EE}" s:ph="/page-layout/col-huge_56552e8a-9180-44aa-a713-d30aceeeb6fd" /><r uid="{5FA96CD5-9C1A-4676-8585-CA9D7A3074F2}"><p:d /></r><r uid="{56552E8A-9180-44AA-A713-D30ACEEEB6FD}" s:ds="" s:par="ContainerIsFluid=1" /><r uid="{E0710D5F-C5A8-4E12-BC23-14FAA69486B5}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:ds="" s:id="{B21C8A38-51BC-4866-9589-6062D6390247}" s:par="ContainerIsFluid" s:ph="page-layout" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150823T123346Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c3042067-d688-45db-a791-07b16a4bc1bb
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

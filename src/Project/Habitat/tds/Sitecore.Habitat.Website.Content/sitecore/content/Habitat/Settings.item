@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {C7C95984-E060-42D9-BBC6-B45C18768905}
+database: master
+path: /sitecore/content/Habitat/Settings
+parent: {725A45E3-E307-4B95-B363-2782B059DF06}
+name: Settings
+master: {B2E4052A-6B3B-4527-933B-E24188C76B61}
+template: {4C82B6DD-FE7C-4144-BCB3-F21B4080568F}
+templatekey: Settings Folder
+
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 22
+
+Apps/32x32/Setting.png
+----version----
+language: en
+version: 1
+revision: d3df5bdf-ab77-4a60-84e6-340b39a99387
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20160104T045042Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+d3df5bdf-ab77-4a60-84e6-340b39a99387
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091520Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

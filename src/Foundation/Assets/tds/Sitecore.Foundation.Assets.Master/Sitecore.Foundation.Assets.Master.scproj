@@ -1,0 +1,158 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>ff4528b9-f4ea-49a5-8665-68a2730f3657</ProjectGuid>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SourceWebPhysicalPath>..\..\code</SourceWebPhysicalPath>
+    <SourceWebProject>{7e46ff93-ee05-412c-ac47-2a59a13da73c}|src\foundation\Assets\code\Sitecore.Foundation.Assets.csproj</SourceWebProject>
+    <SourceWebVirtualPath>/Sitecore.Foundation.Assets.csproj</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>Sitecore.Foundation.Assets.Master</SingleAssemblyName>
+    <UseWebConfigReplacement>false</UseWebConfigReplacement>
+    <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
+    <LegacyFileReplacement>false</LegacyFileReplacement>
+    <AssemblyName>Sitecore.Foundation.Assets.Master</AssemblyName>
+    <Name>Sitecore.Foundation.Assets.Master</Name>
+    <RootNamespace>Sitecore.Foundation.Assets.Master</RootNamespace>
+    <EnableCodeGeneration>false</EnableCodeGeneration>
+    <ManageRoles>False</ManageRoles>
+    <SitecoreDatabase>master</SitecoreDatabase>
+    <AssemblyStatus>Exclude</AssemblyStatus>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <SitecoreItem Include="sitecore\templates.item">
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ItemDeployment>DeployOnce</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets\_PageAssets.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets\_PageAssets\Assets.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets\_PageAssets\Assets\CssCode.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets\_PageAssets\Assets\InheritAssets.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets\_PageAssets\Assets\JavascriptCodeBottom.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets\_PageAssets\Assets\JavascriptCodeTop.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets\_RenderingAssets.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets\_RenderingAssets\Assets.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets\_RenderingAssets\Assets\Css assets.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets\_RenderingAssets\Assets\Css inline.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets\_RenderingAssets\Assets\JavaScript assets.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\Foundation\Assets\_RenderingAssets\Assets\JavaScript inline.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ExcludeItemFrom>
+      </ExcludeItemFrom>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Renderings.item">
+      <ItemDeployment>DeployOnce</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\System\Layout\Renderings\View rendering.item">
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+    </SitecoreItem>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\code\Sitecore.Foundation.Assets.csproj">
+      <Project>{7e46ff93-ee05-412c-ac47-2a59a13da73c}</Project>
+      <Name>Sitecore.Foundation.Assets</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
+</Project>

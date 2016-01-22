@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {D4DF1AE5-A5C9-4371-A4A4-2F76B40729DB}
+database: master
+path: /sitecore/layout/Placeholder Settings/Project/Habitat/Teaser Placeholders/teaser-placeholder-3
+parent: {A150435D-DA28-46B2-A576-542F4EE053DC}
+name: teaser-placeholder-3
+master: {00000000-0000-0000-0000-000000000000}
+template: {5C547D4E-7111-4995-95B0-6B561751BF2E}
+templatekey: Placeholder
+
+----field----
+field: {7256BDAB-1FD2-49DD-B205-CB4873D2917C}
+name: Placeholder Key
+key: placeholder key
+content-length: 20
+
+teaser-placeholder-3
+----version----
+language: en
+version: 1
+revision: a53d2f05-2c92-4efd-81c1-fbb897a4ef30
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151026T055542Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+a53d2f05-2c92-4efd-81c1-fbb897a4ef30
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

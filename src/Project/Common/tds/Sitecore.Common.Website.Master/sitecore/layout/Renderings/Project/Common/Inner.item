@@ -1,0 +1,44 @@
+----item----
+version: 1
+id: {A033C041-5AEE-4B43-A0F7-119F790553D5}
+database: master
+path: /sitecore/layout/Renderings/Project/Common/Inner
+parent: {4935D7DE-C715-46E5-862E-44ADF1BC61E8}
+name: Inner
+master: {00000000-0000-0000-0000-000000000000}
+template: {7EE0975B-0698-493E-B3A2-0B2EF33D0522}
+templatekey: Rendering Folder
+
+----version----
+language: en
+version: 1
+revision: ad1dd99a-d4eb-4b41-a997-0ed2730f1f9b
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151116T034651Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ad1dd99a-d4eb-4b41-a997-0ed2730f1f9b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091325Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

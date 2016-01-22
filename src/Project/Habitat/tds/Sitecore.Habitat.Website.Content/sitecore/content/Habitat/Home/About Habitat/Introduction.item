@@ -1,0 +1,112 @@
+----item----
+version: 1
+id: {B16765BA-7B3E-4C5B-9937-BFC985F2550C}
+database: master
+path: /sitecore/content/Habitat/Home/About Habitat/Introduction
+parent: {762684E7-480B-41D6-82DE-8549BABE95E3}
+name: Introduction
+master: {00000000-0000-0000-0000-000000000000}
+template: {94A8C8E9-690B-4E65-98E7-F95800222767}
+templatekey: Article
+
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+100
+----version----
+language: en
+version: 1
+revision: e72d07ee-e26f-4bc3-9ec0-ef7df8824cfa
+
+----field----
+field: {C30A013F-3CC8-4961-9837-1C483277084A}
+name: Title
+key: title
+content-length: 23
+
+Introduction to Habitat
+----field----
+field: {AC3FD4DB-8266-476D-9635-67814D91E901}
+name: Summary
+key: summary
+content-length: 143
+
+Sitecore Habitat is a set of principles and conventions focused on increasing productivity and quality in Sitecore projects.
+<div>&nbsp;</div>
+----field----
+field: {D74F396D-5C5E-4916-BD0A-BFD58B6B1967}
+name: Body
+key: body
+content-length: 1190
+
+
+		<p>Sitecore Habitat is a set of principles and conventions focused on:</p>
+<p><strong>Simplicity<br>
+</strong>Making the Sitecore solution manageable and simple - even as it grows and matures.</p>
+<p><strong>Flexibility<br>
+</strong>Assuring the business that changes and additions can be made with smaller investments and without disruptions.</p>
+<p><strong>Extensibility<br>
+</strong>Providing a quick and manageable way of extending solutions and reusing features across sites and even across solutions</p>
+<p>The conventions are based on a number of well-founded and industry-standard principles such as </p>
+<p><em class="glyphicon glyphicon-book"></em> Low <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)" target="_blank">Coupling</a>/High <a href="https://en.wikipedia.org/wiki/Cohesion_(computer_science)" target="_blank">Cohesion</a></p>
+<p><em class="glyphicon glyphicon-book"></em><a href="http://https://en.wikipedia.org/wiki/Domain-driven_design" target="_blank"> Domain Driven Design</a></p>
+<p><em class="glyphicon glyphicon-book"></em><a href="https://en.wikipedia.org/wiki/Package_principles" target="_blank"> Package Principles</a></p>
+----field----
+field: {9492E0BB-9DF9-46E7-8188-EC795C4ADE44}
+name: Image
+key: image
+content-length: 65
+
+<image mediaid="{40EA01F7-1897-4ED0-8721-76511278B6A5}" ></image>
+----field----
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
+content-length: 12
+
+Introduction
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 12
+
+Architecture
+----field----
+field: {04BF00DB-F5FB-41F7-8AB7-22408372A981}
+name: __Final Renderings
+key: __final renderings
+content-length: 2472
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{E6EB8434-0A9F-4B70-AD17-4AA241066440}" p:before="r[@uid='{D7A9ABA4-473A-418A-B846-0C97CC5D25D9}']" s:ds="{D24907F7-1A25-43DC-A5A2-FCB1E55EBBB6}" s:id="{A25C9850-AAB7-46A6-84B7-0DFAB32FC357}" s:ph="/page-layout/col-huge_eabac199-fc28-4b1e-a9d0-af8e1f5a54bd" /><r uid="{D7A9ABA4-473A-418A-B846-0C97CC5D25D9}" p:before="r[@uid='{4D428EC8-CDD2-47D4-AA0C-BC2F2EF4DFFD}']" s:ds="{C9AA3B8F-5638-4360-AFAD-416D1A6D82B1}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-3_2dc859b1-398e-4858-9a4a-c38f40a4983d" /><r uid="{4D428EC8-CDD2-47D4-AA0C-BC2F2EF4DFFD}" p:before="r[@uid='{8FE606AE-525F-4155-A505-612E8803DBB8}']" s:ds="{9AC1E982-476D-4567-93C4-EE0FCE56CECB}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-2_2dc859b1-398e-4858-9a4a-c38f40a4983d" /><r uid="{8FE606AE-525F-4155-A505-612E8803DBB8}" p:before="r[@uid='{C8467716-8A0F-4745-A40E-CEAA3BCF23A6}']" s:ds="{86B2E20E-ECFC-45E2-8735-9A6FCAE83C95}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:ph="/page-layout/col-narrow-1_2dc859b1-398e-4858-9a4a-c38f40a4983d" /><r uid="{C8467716-8A0F-4745-A40E-CEAA3BCF23A6}" p:before="r[@uid='{B432DBB2-2BD8-4A1F-A090-F193985FC35E}']" s:ds="{E732AB5A-24AE-40D8-8F93-05DAD455E259}" s:id="{FDFCD088-3C9E-49C4-97FF-2DDE5D339BA0}" s:ph="/page-layout/sidebarcontent/col-wide-2_58364788-cc39-4f57-8fe3-ebd6a5cc746d" /><r uid="{B432DBB2-2BD8-4A1F-A090-F193985FC35E}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{59745F53-6D22-49B3-8844-98D5B24A8D98}" s:id="{0534F12C-804E-4532-A832-5D61FE9EC6ED}" s:ph="/page-layout/sidebarcontent/col-wide-1_58364788-cc39-4f57-8fe3-ebd6a5cc746d" /><r uid="{EABAC199-FC28-4B1E-A9D0-AF8E1F5A54BD}" p:before="r[@uid='{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}']" s:ds="" s:id="{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}" s:par="ContainerIsFluid=1&amp;UseStaticPlaceholderNames" s:ph="page-layout" /><r uid="{EB352679-4420-46AE-95B0-7CA976C24194}"><p:d /></r><r uid="{2DC859B1-398E-4858-9A4A-C38F40A4983D}" p:before="r[@uid='{A85893F9-5DF5-4C28-AC0F-67AD85D29661}']" s:ds="" s:id="{7074CA39-734D-4953-A3D5-B7D09C37CE3B}" s:par="ContainerIsFluid&amp;UseStaticPlaceholderNames" s:ph="page-layout" /><r uid="{58364788-CC39-4F57-8FE3-EBD6A5CC746D}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/sidebarcontent" /></d></r>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151009T064159Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e72d07ee-e26f-4bc3-9ec0-ef7df8824cfa
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

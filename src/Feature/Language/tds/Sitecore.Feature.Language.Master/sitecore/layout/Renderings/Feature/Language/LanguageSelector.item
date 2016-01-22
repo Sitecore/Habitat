@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {2695013C-DD51-410B-9983-F271F16C727D}
+database: master
+path: /sitecore/layout/Renderings/Feature/Language/LanguageSelector
+parent: {98ED267F-3FDF-4ABB-B808-31D6298F33EA}
+name: LanguageSelector
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 39
+
+/Views/Language/LanguageSelector.cshtml
+----version----
+language: en
+version: 1
+revision: 1a5b2895-08d3-4d81-ad08-84b6ec7d5458
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20150831T075102Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+1a5b2895-08d3-4d81-ad08-84b6ec7d5458
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091127Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

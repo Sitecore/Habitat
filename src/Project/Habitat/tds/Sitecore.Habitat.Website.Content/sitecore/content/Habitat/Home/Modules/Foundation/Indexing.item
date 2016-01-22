@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {F3137394-1488-4E72-BDAF-23C1EAAE0A83}
+database: master
+path: /sitecore/content/Habitat/Home/Modules/Foundation/Indexing
+parent: {1A3560FC-9E54-4E65-BEAD-E349F3B80DD7}
+name: Indexing
+master: {00000000-0000-0000-0000-000000000000}
+template: {94A8C8E9-690B-4E65-98E7-F95800222767}
+templatekey: Article
+
+----version----
+language: en
+version: 1
+revision: c8a14478-1050-4088-a8dd-5374f94dda28
+
+----field----
+field: {C30A013F-3CC8-4961-9837-1C483277084A}
+name: Title
+key: title
+content-length: 8
+
+Indexing
+----field----
+field: {AC3FD4DB-8266-476D-9635-67814D91E901}
+name: Summary
+key: summary
+content-length: 170
+
+By having a low level indexing functionality, modules in the domain layer can subscribe to search functionality and also offer their content to the global website search.
+----field----
+field: {1B483E91-D8C4-4D19-BA03-462074B55936}
+name: NavigationTitle
+key: navigationtitle
+content-length: 8
+
+Indexing
+----field----
+field: {CA0479CE-0BFE-4522-83DE-BA688B380A78}
+name: BrowserTitle
+key: browsertitle
+content-length: 8
+
+Indexing
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151026T042043Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+c8a14478-1050-4088-a8dd-5374f94dda28
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

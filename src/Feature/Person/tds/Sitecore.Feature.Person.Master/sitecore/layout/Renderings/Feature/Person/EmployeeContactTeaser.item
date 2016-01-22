@@ -1,0 +1,79 @@
+----item----
+version: 1
+id: {EBB6DC33-F281-49BE-B273-29ECCD6085A8}
+database: master
+path: /sitecore/layout/Renderings/Feature/Person/EmployeeContactTeaser
+parent: {918ADF7B-F0E9-422C-8DEE-757215CE3407}
+name: EmployeeContactTeaser
+master: {00000000-0000-0000-0000-000000000000}
+template: {99F8905D-4A87-4EB8-9F8B-A9BEBFB3ADD6}
+templatekey: View rendering
+
+----field----
+field: {51B435BC-F7B9-478A-9C51-52916AF96FF5}
+name: Path
+key: path
+content-length: 42
+
+/Views/Person/EmployeeContactTeaser.cshtml
+----field----
+field: {EF7C5528-7307-4E19-863B-DA19EED6A9ED}
+name: Open Properties after Add
+key: open properties after add
+content-length: 1
+
+-
+----field----
+field: {B5B27AF1-25EF-405C-87CE-369B3A004016}
+name: Datasource Location
+key: datasource location
+content-length: 38
+
+{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}
+----field----
+field: {1A7C85E5-DC0B-490D-9187-BB1DBCB4C72F}
+name: Datasource Template
+key: datasource template
+content-length: 44
+
+/sitecore/templates/Feature/Person/_Employee
+----field----
+field: {E441ABE7-2CA3-4640-AE26-3789967925D7}
+name: Compatible Renderings
+key: compatible renderings
+content-length: 116
+
+{C6E4CC96-91AC-4074-AD62-7DAE344F995D}|{907018D8-CC53-4D34-AD67-3FDF0A25832A}|{7B7DD1F9-A0DB-45D9-9A3F-B704BB28903E}
+----version----
+language: en
+version: 1
+revision: 4518f02e-ea8b-494e-b4f0-088376002285
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151124T104702Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4518f02e-ea8b-494e-b4f0-088376002285
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091246Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 16
+
+sitecore\unicorn

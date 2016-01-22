@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {2D415DBB-9AFE-4E75-A264-DFCE07B11D26}
+database: master
+path: /sitecore/content/Habitat/Global/Teasers/Content/Example Divider
+parent: {8508F499-B20D-4505-A5C8-66CDB715D748}
+name: Example Divider
+master: {00000000-0000-0000-0000-000000000000}
+template: {C7D9D293-4EF8-4380-8E10-C4632E729F39}
+templatekey: Teaser
+
+----version----
+language: en
+version: 1
+revision: 4823bb03-ed3b-49a2-ba2c-686d8777e569
+
+----field----
+field: {4A59D072-5B41-4A79-A157-2B2CCAC10F2B}
+name: TeaserTitle
+key: teasertitle
+content-length: 9
+
+Examples:
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151210T020806Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+4823bb03-ed3b-49a2-ba2c-686d8777e569
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091347Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

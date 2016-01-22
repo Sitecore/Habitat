@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {E67E0BB9-D9CB-4AFB-97C8-575E655F52CE}
+database: master
+path: /sitecore/content/Habitat/Global/Media/Habitat Modules Video
+parent: {EA13174A-B43E-4F68-B474-B41188771A9E}
+name: Habitat Modules Video
+master: {00000000-0000-0000-0000-000000000000}
+template: {F1C095E2-B3E0-46D0-B838-02A9E8B880D9}
+templatekey: Video
+
+----version----
+language: en
+version: 1
+revision: e140710b-81da-487e-aa6f-6ab2ec4f5e8f
+
+----field----
+field: {2628705D-9434-4448-978C-C3BF166FA1EB}
+name: MediaVideoLink
+key: mediavideolink
+content-length: 115
+
+<link text="Video Introduction" linktype="external" url="https://youtu.be/DgPrikqFe4s" anchor="" target="_blank" />
+----field----
+field: {63DDA48B-B0CB-45A7-9A1B-B26DDB41009B}
+name: MediaTitle
+key: mediatitle
+content-length: 30
+
+Sitecore Habitat Modules Video
+----field----
+field: {302C9F8D-F703-4F76-A4AB-73D222648232}
+name: MediaDescription
+key: mediadescription
+content-length: 146
+
+<p>The modular approach to architecture taken in Sitecore Habitat is aimed at assuring simplicity of management and longevity of the solution.</p>
+----field----
+field: {4FF62B0A-D73B-4436-BEA2-023154F2FFC4}
+name: MediaThumbnail
+key: mediathumbnail
+content-length: 65
+
+<image mediaid="{3041CF0C-3E70-48E1-9FD1-83E111BCFA1F}" ></image>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20151209T025118Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e140710b-81da-487e-aa6f-6ab2ec4f5e8f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20160122T091346Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

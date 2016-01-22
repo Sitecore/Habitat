@@ -1,0 +1,159 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>ee5d29cf-a673-4915-a13b-d543c35c4228</ProjectGuid>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SourceWebPhysicalPath>
+    </SourceWebPhysicalPath>
+    <SourceWebProject>
+    </SourceWebProject>
+    <SourceWebVirtualPath>
+    </SourceWebVirtualPath>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>TDS.Master.Deploy</SingleAssemblyName>
+    <UseWebConfigReplacement>false</UseWebConfigReplacement>
+    <DeleteAppCodeCompiledFiles>true</DeleteAppCodeCompiledFiles>
+    <LegacyFileReplacement>false</LegacyFileReplacement>
+    <AssemblyName>TDS.Master.Deploy</AssemblyName>
+    <Name>TDS.Master.Deploy</Name>
+    <RootNamespace>TDS.Master.Deploy</RootNamespace>
+    <EnableCodeGeneration>false</EnableCodeGeneration>
+    <ManageRoles>False</ManageRoles>
+    <SitecoreDatabase>master</SitecoreDatabase>
+    <AssemblyStatus>Exclude</AssemblyStatus>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <PackageName>TDS.Master.Deploy</PackageName>
+    <GeneratePackage>False</GeneratePackage>
+    <SeperateFilesAndItems>False</SeperateFilesAndItems>
+    <PackageExcludeCode>False</PackageExcludeCode>
+    <AddDateTimeToPackageName>False</AddDateTimeToPackageName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <RecursiveDeployAction>Ignore</RecursiveDeployAction>
+    <PackageName>TDS.Master.Deploy</PackageName>
+    <GeneratePackage>True</GeneratePackage>
+    <SeperateFilesAndItems>False</SeperateFilesAndItems>
+    <PackageExcludeCode>False</PackageExcludeCode>
+    <AddDateTimeToPackageName>True</AddDateTimeToPackageName>
+    <PackageAuthor>
+    </PackageAuthor>
+    <PackagePublisher>
+    </PackagePublisher>
+    <PackageReadme>
+    </PackageReadme>
+    <PackageVersion>
+    </PackageVersion>
+    <SitecoreAssemblyPath>C:\Websites\Habitat.local\Website\bin</SitecoreAssemblyPath>
+    <EnableValidations>False</EnableValidations>
+    <ValidationSettingsFilePath>.\TDS.Master.Deploy_Release.xml</ValidationSettingsFilePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AssemblyAttributes Include="AssemblyFileVersion">
+      <Value>$(AssemblyFileVersion)</Value>
+    </AssemblyAttributes>
+    <AssemblyAttributes Include="AssemblyVersion">
+      <Value>$(AssemblyVersion)</Value>
+    </AssemblyAttributes>
+  </ItemGroup>
+  <ItemGroup>
+    <BundledProject Include="..\..\Feature\Accounts\tds\Sitecore.Feature.Accounts.Core\Sitecore.Feature.Accounts.Core.scproj">
+      <ProjectId>{ab2cf434-d424-4ee9-b665-71235cee0eea}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\Accounts\tds\Sitecore.Feature.Accounts.Master\Sitecore.Feature.Accounts.Master.scproj">
+      <ProjectId>{b8c2ce20-903d-40d6-a8b0-70426675018a}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\Demo\tds\Sitecore.Feature.Demo.Master\Sitecore.Feature.Demo.Master.scproj">
+      <ProjectId>{4054fabc-4019-401d-8a44-3da084ff863b}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\Identity\tds\Sitecore.Feature.Identity.Master\Sitecore.Feature.Identity.Master.scproj">
+      <ProjectId>{1cc729df-ca49-45ea-a52e-042185891e46}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\Language\tds\Sitecore.Feature.Language.Master\Sitecore.Feature.Language.Master.scproj">
+      <ProjectId>{0f9e3279-d03c-47e7-9615-877630c1bd13}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\Media\tds\Sitecore.Feature.Media.Master\Sitecore.Feature.Media.Master.scproj">
+      <ProjectId>{2fd3314c-41ff-4928-9f69-91c2931425e3}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\Metadata\tds\Sitecore.Feature.Metadata.Master\Sitecore.Feature.Metadata.Master.scproj">
+      <ProjectId>{2cf35290-7e1b-488e-b641-4f088a88645f}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\Multisite\tds\Sitecore.Feature.MultiSite.Master\Sitecore.Feature.MultiSite.Master.scproj">
+      <ProjectId>{95f2a5aa-1b45-4065-b534-5c3035734310}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\Navigation\tds\Sitecore.Feature.Navigation.Master\Sitecore.Feature.Navigation.Master.scproj">
+      <ProjectId>{636e860e-2a97-433d-a1b0-0c8e4b3e2c71}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\News\tds\Sitecore.Feature.News.Master\Sitecore.Feature.News.Master.scproj">
+      <ProjectId>{c0004eaa-1497-4e31-90d4-4a4780f0bebc}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\PageContent\tds\Sitecore.Feature.PageContent.Master\Sitecore.Feature.PageContent.Master.scproj">
+      <ProjectId>{45537924-c101-440f-a5f3-e6c3b9a8f915}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\Person\tds\Sitecore.Feature.Person.Master\Sitecore.Feature.Person.Master.scproj">
+      <ProjectId>{c29d40df-7635-44f2-bb61-849f8b5ca5c4}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\Search\tds\Sitecore.Feature.Search.Master\Sitecore.Feature.Search.Master.scproj">
+      <ProjectId>{73447e8d-fe7f-4314-847b-aaabc59c8d96}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\Social\tds\Sitecore.Feature.Social.Master\Sitecore.Feature.Social.Master.scproj">
+      <ProjectId>{da9ea6c0-cc3b-468c-8d91-14a82184ce85}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Feature\Teasers\tds\Sitecore.Feature.Teasers.Master\Sitecore.Feature.Teasers.Master.scproj">
+      <ProjectId>{6cdf24dc-6698-4405-9e6e-a82c42c3a89b}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Foundation\Assets\tds\Sitecore.Foundation.Assets.Master\Sitecore.Foundation.Assets.Master.scproj">
+      <ProjectId>{ff4528b9-f4ea-49a5-8665-68a2730f3657}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Foundation\Indexing\tds\Sitecore.Foundation.Indexing.Master\Sitecore.Foundation.Indexing.Master.scproj">
+      <ProjectId>{eebeaac5-b950-4963-96ad-f2ee9a39d7b2}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Foundation\Installer\tds\Sitecore.Foundation.Installer.Master\Sitecore.Foundation.Installer.Master.scproj">
+      <ProjectId>{a42c81e8-68da-4a37-a7d5-15c4329b49fe}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Foundation\Multisite\tds\Sitecore.Foundation.MultiSite.Master\Sitecore.Foundation.MultiSite.Master.scproj">
+      <ProjectId>{b45862c7-f9ac-493c-a6fa-bb4cb1ab48f7}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Foundation\Serialization\tds\Sitecore.Foundation.Serialization.Core\Sitecore.Foundation.Serialization.Core.scproj">
+      <ProjectId>{31859b98-b72e-4777-b943-c62ccab0d73e}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Foundation\Serialization\tds\Sitecore.Foundation.Serialization.Master\Sitecore.Foundation.Serialization.Master.scproj">
+      <ProjectId>{06ca7e16-6ac2-4606-9891-eb5022a5cef2}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Foundation\SitecoreExtensions\tds\Sitecore.Foundation.SitecoreExtensions.Master\Sitecore.Foundation.SitecoreExtensions.Master.scproj">
+      <ProjectId>{34d5860c-f7df-48e4-ba80-dc13aa6f251a}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Foundation\Theming\tds\Sitecore.Foundation.Theming.Master\Sitecore.Foundation.Theming.Master.scproj">
+      <ProjectId>{ccefde8b-ae25-417d-8f3d-0da723040e77}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Project\Common\tds\Sitecore.Common.Website.Core\Sitecore.Common.Website.Core.scproj">
+      <ProjectId>{b31a30e1-0f57-4f26-823e-022714d21b2a}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Project\Common\tds\Sitecore.Common.Website.Master\Sitecore.Common.Website.Master.scproj">
+      <ProjectId>{1d565c6c-59ad-4d1d-9398-c93ff6c877f8}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Project\Demo\tds\Sitecore.Demo.Website.Master\Sitecore.Demo.Website.Master.scproj">
+      <ProjectId>{605461f7-ce91-4a8a-b13b-484ea313f50b}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Project\Habitat\tds\Sitecore.Habitat.Website.Content\Sitecore.Habitat.Website.Content.scproj">
+      <ProjectId>{4f44d081-949d-410c-b2b8-0d4e9939d459}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Project\Habitat\tds\Sitecore.Habitat.Website.Master\Sitecore.Habitat.Website.Master.scproj">
+      <ProjectId>{948573fb-9596-42cd-b1d8-152254d13391}</ProjectId>
+    </BundledProject>
+    <BundledProject Include="..\..\Project\Habitat\tds\Sitecore.Habitat.Website.Media\Sitecore.Habitat.Website.Media.scproj">
+      <ProjectId>{166dc65d-203c-4ac2-9db2-4d177d3dcc2a}</ProjectId>
+    </BundledProject>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
+</Project>
