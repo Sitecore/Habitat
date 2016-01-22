@@ -49,6 +49,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Media Background.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Media Background.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Video in Media Carousel.feature.cs">
       <AutoGen>True</AutoGen>
@@ -58,6 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Media Background.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Media Background.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="Video in Media Carousel.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
