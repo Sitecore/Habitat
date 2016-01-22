@@ -109,7 +109,6 @@
     <Content Include="Views\Teasers\TitleImageTeaser.cshtml" />
     <Content Include="Views\Teasers\TitleSummaryTeaser.cshtml" />
     <Content Include="Views\Web.config" />
-    <Content Include="App_Config\Include\Feature\Feature.Teasers.Serialization.config" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">

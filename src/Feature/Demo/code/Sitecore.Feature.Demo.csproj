@@ -116,9 +116,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Feature\Feature.Demo.Serialization.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Demo\KeyBehaviourCacheList.cshtml" />

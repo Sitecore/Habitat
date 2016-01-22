@@ -162,9 +162,6 @@
     <Content Include="App_Config\Include\Project\Habitat.Website.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Project\Habitat.Website.Serialization.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="favicon.ico" />
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Project\z.Habitat.DevSettings.config">

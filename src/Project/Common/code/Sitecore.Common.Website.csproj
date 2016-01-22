@@ -132,9 +132,6 @@
     <Content Include="App_Config\Include\Project\Common.Website.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Project\Common.Website.Serialization.config">
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Common\Sublayouts\1 Column.cshtml" />
     <Content Include="Views\Common\Sublayouts\2 Column 3-9.cshtml" />

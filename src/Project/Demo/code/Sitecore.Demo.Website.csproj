@@ -103,11 +103,6 @@
     <Content Include="web.config.transform" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Include\Project\Demo.Website.Serialization.config">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
   </ItemGroup>
   <PropertyGroup>

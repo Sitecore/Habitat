@@ -122,9 +122,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\Foundation.Assets.config" />
-    <Content Include="App_Config\Include\Foundation\Foundation.Assets.Serialization.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="web.config" />

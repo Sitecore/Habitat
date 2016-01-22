@@ -8,3 +8,5 @@ The architecture and methodology focuses on:
 * Extensibility - *Simply add new features without steep learning curve*
 
 For more information, please check out the [Habitat Wiki](../../wiki)
+
+## This version of Habitat is based on Tag 1 and uses TDS instead of Unicorn

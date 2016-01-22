@@ -113,7 +113,6 @@
     <Content Include="App_Config\Include\Feature\Feature.PageContent.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Feature\Feature.PageContent.Serialization.config" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\PageContent\ChildPageList.cshtml" />
