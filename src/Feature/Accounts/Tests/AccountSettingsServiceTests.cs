@@ -17,7 +17,7 @@
   using Xunit;
 
   public class AccountSettingsServiceTests
-  {
+  { 
     [Theory]
     [AutoDbData]
     public void GetForgotPasswordMailTemplateShouldRetreiveSourceAddressFromItem(Db db)
