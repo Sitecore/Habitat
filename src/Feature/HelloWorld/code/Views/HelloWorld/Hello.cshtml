@@ -1,0 +1,13 @@
+﻿@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Sitecore.Feature.HelloWorld.Models.HelloViewModel>
+    @{
+        if (Model == null )
+        {
+            return;
+        }
+    }
+
+<div class="teaser teaser-default">
+    <h3 class="teaser-heading">
+        @Editable(x => x.Hello.Hello_Text)
+    </h3>
+</div>

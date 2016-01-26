@@ -1,0 +1,17 @@
+﻿---
+ID: 7a8c523d-d3c4-4f5a-a7a3-839d6eece0f0
+Parent: 2cd48de2-e323-4600-b743-9209b6e60ba5
+Template: e269fbb5-3750-427a-9149-7aa950b49301
+Path: /sitecore/templates/Feature/HelloWorld/_HelloWorld/Details
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160122T175446Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
