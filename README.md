@@ -9,7 +9,11 @@ The architecture and methodology focuses on:
 
 For more information, please check out the [Habitat Wiki](../../wiki)
 
-## This version of Habitat is based on Tag 1 and uses TDS as main Item Serialization and Deployment Provider
+## Differences than the original
+
+This version of Habitat is using Team Development For Sitecore for Item Serialization and Deployments.
+
+Team Development for Sitecore is a Visual Studio plug-in managed by Hedgehog Development. At its core, it provides companies with the ability to automate their Sitecore builds or set up a continuous deployment scenarios. TDS provides several additional features its users find valuable, for more information visit: www.teamdevelopmentforsitecore.com.
 
 ##To Install:
 
