@@ -20,7 +20,7 @@
     private readonly IUserProfileService userProfileService;
     private readonly IContactProfileService contactProfileService;
 
-    public AccountsController() : this(new AccountRepository(new AccountTrackerService()), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService(), new ContactProfileService())
+    public AccountsController() : this(new AccountRepository(new AccountTrackerService(new AccountsSettingsService())), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService(), new ContactProfileService())
     {
     }
 
@@ -34,27 +34,17 @@
     }
 
     [HttpGet]
+    [AccountsRedirectAuthenticated]
     public ActionResult Register()
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       return this.View();
     }
 
     [HttpPost]
     [ValidateModel]
+    [AccountsRedirectAuthenticated]
     public ActionResult Register(RegistrationInfo registrationInfo)
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       if (this.accountRepository.Exists(registrationInfo.Email))
       {
         this.ModelState.AddModelError(nameof(registrationInfo.Email), Errors.UserAlreadyExists);
@@ -83,28 +73,10 @@
     }
 
     [HttpGet]
+    [AccountsRedirectAuthenticated]
     public ActionResult Login()
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       return this.View();
-    }
-
-    private ActionResult RedirectAuthenticatedUser()
-    {
-      if (Context.PageMode.IsNormal)
-      {
-        if (Context.User.IsAuthenticated)
-        {
-          var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
-          return this.Redirect(link);
-        }
-      }
-      return null;
     }
 
     [HttpPost]
@@ -152,27 +124,17 @@
     }
 
     [HttpGet]
+    [AccountsRedirectAuthenticated]
     public ActionResult ForgotPassword()
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       return this.View();
     }
 
     [HttpPost]
     [ValidateModel]
+    [AccountsRedirectAuthenticated]
     public ActionResult ForgotPassword(PasswordResetInfo model)
     {
-      var redirect = this.RedirectAuthenticatedUser();
-      if (redirect != null)
-      {
-        return redirect;
-      }
-
       if (!this.accountRepository.Exists(model.Email))
       {
         this.ModelState.AddModelError(nameof(model.Email), Errors.UserDoesNotExist);

@@ -3,21 +3,19 @@ ID: 0cf58f14-d0f8-4c41-9896-3d69048a0b19
 Parent: d44c5a79-5c36-4a93-9de4-7e59345df572
 Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Social/TwitterFeed
+DB: master
 SharedFields:
-- ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
-  # Datasource Template
-  Value: {89D988BC-A9A7-43F5-A9FD-A05B0B164720}
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
-  # Path
+  Hint: Path
   Value: /Views/Social/TwitterFeed.cshtml
 - ID: 7d24e54f-5c16-4314-90c9-6051aa1a7da1
-  # Parameters Template
+  Hint: Parameters Template
   Value: {9EEE8077-990F-4FDE-95FB-C7B9819DF913}
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
-  # Datasource Location
-  Value: {20507226-1C3B-4D7A-89D4-DE00706E59B6}
+  Hint: Datasource Location
+  Value: site:twitterfeed
 - ID: e514a1eb-ddba-44f7-8528-82ca2280f778
-  # JavaScript assets
+  Hint: JavaScript assets
   Value: http://platform.twitter.com/widgets.js
 Languages:
 - Language: en
@@ -25,5 +23,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150910T030357Z

@@ -67,6 +67,7 @@
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -115,7 +116,7 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\Feature.Navigation.Serialization.config" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Navigation\_SecondaryMenuItems.cshtml" />
     <Content Include="Views\Navigation\LinkMenu.cshtml" />
     <None Include="Views\Web.config" />

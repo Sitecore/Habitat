@@ -4,7 +4,7 @@
   using System.Linq;
   using System.Xml.Linq;
   using FluentAssertions;
-  using SitecoreFoundation.Installer.XmlTransform;
+  using Sitecore.Foundation.Installer.XmlTransform;
   using Xunit;
 
   public class XdtTransformEngineTests

@@ -21,22 +21,28 @@
 
     public SearchService(ISearchSettings settings)
     {
-      //TODO: Be more intelligent, read from Site settings
-      this.IndexName = "sitecore_master_index";
       this.Settings = settings;
     }
 
 
     public virtual ISearchResults Search(IQuery query)
     {
-      using (var context = ContentSearchManager.GetIndex(this.IndexName).CreateSearchContext())
+      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
       {
         var root = this.Settings.Root;
         var queryable = context.GetQueryable<SearchResultItem>();
         queryable = SetQueryRoot(queryable, root);
         queryable = this.FilterOnPresentationOnly(queryable);
         queryable = FilterOnLanguage(queryable);
-        queryable = this.FilterOnTemplates(queryable);
+        queryable = FilterOnVersion(queryable);
+        if (this.Settings.Templates != null && this.Settings.Templates.Any())
+        {
+          queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Templates));
+        }
+        else
+        {
+          queryable = this.FilterOnTemplates(queryable);
+        }
         queryable = this.AddContentPredicates(queryable, query);
         queryable = AddFacets(queryable);
         if (query.IndexOfFirstResult > 0)
@@ -48,8 +54,41 @@
           queryable = queryable.Take(query.NoOfResults);
         }
         var results = queryable.GetResults();
-
         return SearchResultsRepository.Create(results, query);
+      }
+    }
+
+    public virtual ISearchResults FindAll()
+    {
+      return this.FindAll(0, 0);
+    }
+
+    public virtual ISearchResults FindAll(int skip, int take)
+    {
+      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
+      {
+        var root = this.Settings.Root;
+        var queryable = context.GetQueryable<SearchResultItem>();
+        queryable = SetQueryRoot(queryable, root);
+        queryable = FilterOnLanguage(queryable);
+        queryable = FilterOnVersion(queryable);
+        queryable = queryable.Where(PredicateBuilder.True<SearchResultItem>());
+        if (this.Settings.Templates != null && this.Settings.Templates.Any())
+        {
+          queryable = queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Templates));
+        }
+
+        if (skip > 0)
+        {
+          queryable = queryable.Skip(skip);
+        }
+        if (take > 0)
+        {
+          queryable = queryable.Take(take);
+        }
+
+        var results = queryable.GetResults();
+        return SearchResultsRepository.Create(results, null);
       }
     }
 
@@ -104,6 +143,12 @@
       return queryable;
     }
 
+    private static IQueryable<SearchResultItem> FilterOnVersion(IQueryable<SearchResultItem> queryable)
+    {
+      queryable = queryable.Cast<IndexedItem>().Filter(item => item.IsLatestVersion);
+      return queryable;
+    }
+
     private static IQueryable<SearchResultItem> SetQueryRoot(IQueryable<SearchResultItem> queryable, Item root)
     {
       queryable = queryable.Where(item => item.Path.StartsWith(root.Paths.FullPath));
@@ -119,7 +164,6 @@
       }
       return queryable.Where(contentPredicates);
     }
-
-    public string IndexName { get; }
+    
   }
 }

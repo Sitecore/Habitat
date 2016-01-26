@@ -3,18 +3,23 @@ ID: 57930fe6-c782-429e-b095-1821340f9ae4
 Parent: fae0c913-1600-4eba-95a9-4d6fd7407e25
 Template: e269fbb5-3750-427a-9149-7aa950b49301
 Path: /sitecore/templates/Feature/Media/_HasMediaImage/Media
+DB: master
 SharedFields:
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 0
 Languages:
 - Language: en
+  Fields:
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Hint: __Display name
+    Value: Media
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150831T121518Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\admin

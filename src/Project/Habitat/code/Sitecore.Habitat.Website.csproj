@@ -37,7 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <RunCodeAnalysis>false</RunCodeAnalysis>    
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -45,7 +45,7 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>    
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -86,7 +86,7 @@
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -162,39 +162,23 @@
     <Content Include="App_Config\Include\Project\Habitat.Website.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="App_Config\Include\Project\z.Habitat.DevSettings.config">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="App_Config\Include\Project\Habitat.Website.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="favicon.ico" />
-    <Content Include="web.config.transform" />
     <Content Include="packages.config" />
+    <Content Include="App_Config\Include\Project\z.Habitat.DevSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Website\Layouts\Default.cshtml" />
-    <Content Include="Views\Website\Sublayouts\3 Column 4-4-4.cshtml" />
-    <Content Include="Views\Website\Sublayouts\PageSidebarLeft.cshtml" />
-    <Content Include="Views\Website\Sublayouts\PageSidebarRight.cshtml" />
-    <Content Include="Views\Website\Sublayouts\Inner 1 Column.cshtml" />
-    <Content Include="Views\Website\Sublayouts\1 Column.cshtml" />
-    <Content Include="Views\Website\Sublayouts\2 Column 6-6.cshtml" />
-    <Content Include="Views\Website\Sublayouts\PageHeading.cshtml" />
-    <Content Include="Views\Website\Sublayouts\Footer.cshtml" />
-    <Content Include="Views\Website\Sublayouts\2 Column 9-3.cshtml" />
-    <Content Include="Views\Website\Sublayouts\2 Column 3-9.cshtml" />
-    <Content Include="Views\Website\Sublayouts\2 Column 4-8.cshtml" />
-    <Content Include="Views\Website\Sublayouts\2 Column 8-4.cshtml" />
-    <Content Include="Views\Website\Sublayouts\4 Column 3-3-3-3.cshtml" />
-    <Content Include="Views\Website\Sublayouts\3 Column 3-3-6.cshtml" />
-    <Content Include="Views\Website\Sublayouts\3 Column 6-3-3.cshtml" />
-    <Content Include="Views\Website\Sublayouts\Inner 2 Column 6-6.cshtml" />
-    <Content Include="Views\Website\Sublayouts\Inner 2 Column 8-4.cshtml" />
-    <Content Include="Views\Website\Sublayouts\Inner 2 Column 4-8.cshtml" />
-    <Content Include="Views\Website\Sublayouts\6 Column 2-2-2-2-2-2.cshtml" />
+    <Content Include="web.config.transform" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Website\Sublayouts\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\foundation\Assets\code\Sitecore.Foundation.Assets.csproj">
       <Project>{7E46FF93-EE05-412C-AC47-2A59A13DA73C}</Project>

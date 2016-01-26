@@ -15,7 +15,8 @@
         public static readonly ID LoginPage = new ID("{60745023-FFD5-400E-8F80-4BCA9F2ABB29}");
         public static readonly ID ForgotPasswordPage = new ID("{F3CD2BB8-472B-4DF0-87C0-A13098E391CA}");
         public static readonly ID AfterLoginPage = new ID("{B128E2B3-3865-4F1C-A147-5F248676D3F5}");
-        public static readonly ID FogotPasswordMailTemplate = new ID("{365254C4-1C1C-493A-9710-671574717898}");
+        public static readonly ID ForgotPasswordMailTemplate = new ID("{365254C4-1C1C-493A-9710-671574717898}");
+        public static readonly ID RegisterOutcome = new ID("{835FA523-D28A-46A2-A589-6AA4A5BF0846}");
       }
     }
 

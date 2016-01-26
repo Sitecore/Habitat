@@ -13,6 +13,7 @@
   using Sitecore.Foundation.Indexing;
   using Sitecore.Foundation.Indexing.Models;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using UnitTests.Common.Attributes;
   using Xunit;
 
   public class SearchControllerTests
@@ -54,10 +55,11 @@
 
     [Theory]
     [AutoDbData]
-    public void ShouldReturnGlobalSearch(ISearchResults searchResults, [Substitute] SearchService service, ISearchServiceRepository serviceRepository, ISearchSettingsRepository settingsRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
+    public void ShouldReturnGlobalSearch(ISearchResults searchResults, [Substitute] SearchService service, [Substitute] SearchSettings settings, ISearchServiceRepository serviceRepository, ISearchSettingsRepository settingsRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
     {
       service.Search(Arg.Any<IQuery>()).Returns(searchResults);
       serviceRepository.Get().Returns(service);
+      settingsRepository.Get().Returns(settings);
       var controller = new SearchController(serviceRepository, settingsRepository, queryRepository, renderingPropertiesRepository);
       var result = controller.GlobalSearch() as ViewResult;
       result.Model.Should().As<ISearchResults>();

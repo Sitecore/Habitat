@@ -1,0 +1,26 @@
+﻿---
+ID: bc2d52ee-2bd9-4322-afba-8c78669d2b19
+Parent: 8508f499-b20d-4505-a5c8-66cdb715d748
+Template: c7d9d293-4ef8-4380-8e10-c4632e729f39
+Path: /sitecore/content/Habitat/Global/Teasers/Content/The Common Closure Principle
+DB: master
+SharedFields:
+- ID: e8ab122c-6f54-4d4e-aec6-f81addc558fc
+  Hint: TeaserLink
+  Value: "<link linktype=\"external\" text=\"THE COMMON CLOSURE PRINCIPLE\" url=\"http://c2.com/cgi/wiki?CommonClosurePrinciple\" anchor=\"\" target=\"_blank\" />"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 13d97a52-7c4e-407c-960d-fadde8a3c1b1
+      Hint: TeaserSummary
+      Value: |
+        Classes that change together are packaged together.&nbsp;What affects one, affects all.
+        
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151210T003448Z
+    - ID: 4a59d072-5b41-4a79-a157-2b2ccac10f2b
+      Hint: TeaserTitle
+      Value: THE COMMON CLOSURE PRINCIPLE

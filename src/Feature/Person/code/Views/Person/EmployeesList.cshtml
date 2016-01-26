@@ -1,0 +1,26 @@
+﻿@using Sitecore.Feature.Person
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Foundation.SitecoreExtensions.Rendering.QueryableDatasourceRenderingModel
+<div class="row">
+  @foreach (var item in Model.Items)
+  {
+    <div class="teaser teaser-default employee-teaser col-xs-6 col-md-4">
+      <div class="teaser-heading">
+        <h3>
+          @item.Field(Templates.Person.Fields.Name)
+        </h3>
+        <p class="title metadata">
+          @item.Field(Templates.Person.Fields.Title)
+        </p>
+      </div>
+      <div class="teaser-image">
+        <a href="@item.Url()">
+          @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, item, mw: 750, cssClass: "img-responsive")
+        </a>
+      </div>
+      <div class="teaser-body">
+        @item.Field(Templates.Person.Fields.Summary)
+      </div>
+    </div>
+  }
+</div>

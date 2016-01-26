@@ -19,6 +19,10 @@
 
 					Configurations can override the default dependencies defined in Unicorn.config's <defaults> to apply
 					custom behaviors to specific configurations.
+					
+					Configurations may also depend on each other. Add a comma-delimited list of configuration names to depend on to the 'dependencies' attribute on the configuration.
+					Dependent configurations do not force dependencies to sync if not selected, but syncs will always occur in dependency order if multiple dependent configurations sync at once.
+					Transitive dependency and multiple dependency (comma delimited) are supported.
 				-->
 				<configuration name="Default Configuration" description="Write something here about why this configuration exists and what it's for. Or remove the attribute; it's optional.">
 					<predicate type="Unicorn.Predicates.SerializationPresetPredicate, Unicorn" singleInstance="true">

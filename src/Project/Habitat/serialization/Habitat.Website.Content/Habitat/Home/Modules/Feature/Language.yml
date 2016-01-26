@@ -3,20 +3,30 @@ ID: fd46936d-1f9e-4e0c-98d8-0bc99dd8e6ec
 Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
 Template: 94a8c8e9-690b-4e65-98e7-f95800222767
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Language
+DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: Language
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151116T023610Z
+    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+      Hint: Image
+      Value: "<image mediaid=\"{9DF6B8F9-46D3-4EBF-B29F-1018443D85AD}\" />"
+    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+      Hint: Summary
+      Value: The language module contains functionality related to the multi-language support of Habitat.
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
-      # Title
+      Hint: Title
       Value: Language
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      # BrowserTitle
+      Hint: BrowserTitle
       Value: Language
+    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+      Hint: Body
+      Value: "<span style=\"line-height: 24.2857px;\">The language module contains functionality related to the multi-language support of Habitat, specifically the language switcher which appears when the site contains multiple languages.</span>"

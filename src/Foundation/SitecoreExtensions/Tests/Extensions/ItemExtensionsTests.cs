@@ -7,12 +7,23 @@
   using Sitecore.Data.Items;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
+  using Sitecore.FakeDb.Resources.Media;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
-  using Sitecore.Foundation.SitecoreExtensions.Tests.Common;
+  using Sitecore.Resources.Media;
+  using UnitTests.Common.Attributes;
   using Xunit;
 
   public class ItemExtensionsTests
   {
+    [Theory]
+    [AutoDbData]
+    public void DisplayNameShouldReturnActualValue([Content] Item item)
+    {
+      item.ID.DisplayName().Should().BeEquivalentTo(item.DisplayName);
+      item.ID.Guid.DisplayName().Should().BeEquivalentTo(item.DisplayName);
+    }
+
+
     [Theory]
     [AutoDbData]
     public void MediaUrlShouldThrowExceptionWhenItemNull()
@@ -27,8 +38,8 @@
     public void MediaUrlShoulReturnEmptyStringWhenLinkNull([Content] Item item, [Content] MediaTemplate template)
     {
       var mediaItem = item.Add("media", new TemplateID(template.ID));
-      ItemExtensions.MediaUrl(mediaItem, template.FieldId).Should().NotBeNull();
-      ItemExtensions.MediaUrl(mediaItem, template.FieldId).Should().BeEmpty();
+      mediaItem.MediaUrl(template.FieldId).Should().NotBeNull();
+      mediaItem.MediaUrl(template.FieldId).Should().BeEmpty();
     }
 
     [Theory]
@@ -36,26 +47,27 @@
     public void MediaUrlShoulReturnLink([Content] Db db, [Content] Item target, [Content] MediaTemplate template, string expectedUri)
     {
       var newID = ID.NewID;
-      db.Add(new Sitecore.FakeDb.DbItem("home", newID, template.ID)
+      db.Add(new DbItem("home", newID, template.ID)
       {
-        new Sitecore.FakeDb.DbLinkField("medialink", template.FieldId)
+        new DbLinkField("medialink", template.FieldId)
         {
           LinkType = "media",
           TargetID = target.ID
-
         }
       });
 
-      Sitecore.Resources.Media.MediaProvider mediaProvider =
-        NSubstitute.Substitute.For<Sitecore.Resources.Media.MediaProvider>();
+      var mediaProvider =
+        Substitute.For<MediaProvider>();
 
       mediaProvider
-        .GetMediaUrl(Arg.Is<Sitecore.Data.Items.MediaItem>(i => i.ID == target.ID))
+        .GetMediaUrl(Arg.Is<MediaItem>(i => i.ID == target.ID))
         .Returns(expectedUri);
 
       // substitute the original provider with the mocked one
-      using (new Sitecore.FakeDb.Resources.Media.MediaProviderSwitcher(mediaProvider))
-        ItemExtensions.MediaUrl(Database.GetDatabase("master").GetItem(newID), template.FieldId).Should().Be(expectedUri);
+      using (new MediaProviderSwitcher(mediaProvider))
+      {
+        Database.GetDatabase("master").GetItem(newID).MediaUrl(template.FieldId).Should().Be(expectedUri);
+      }
     }
 
     [Theory]
@@ -63,25 +75,26 @@
     public void MediaUrlShouldReturnEmptyStringWhenLinkIsBroken([Content] Db db, [Content] Item target, [Content] MediaTemplate template, string expectedUri)
     {
       var newID = ID.NewID;
-      db.Add(new Sitecore.FakeDb.DbItem("home", newID, template.ID)
+      db.Add(new DbItem("home", newID, template.ID)
       {
-        new Sitecore.FakeDb.DbLinkField("medialink", template.FieldId)
+        new DbLinkField("medialink", template.FieldId)
         {
-          LinkType = "media",
-
+          LinkType = "media"
         }
       });
 
-      Sitecore.Resources.Media.MediaProvider mediaProvider =
-        NSubstitute.Substitute.For<Sitecore.Resources.Media.MediaProvider>();
+      var mediaProvider =
+        Substitute.For<MediaProvider>();
 
       mediaProvider
-        .GetMediaUrl(Arg.Is<Sitecore.Data.Items.MediaItem>(i => i.ID == target.ID))
+        .GetMediaUrl(Arg.Is<MediaItem>(i => i.ID == target.ID))
         .Returns(expectedUri);
 
       // substitute the original provider with the mocked one
-      using (new Sitecore.FakeDb.Resources.Media.MediaProviderSwitcher(mediaProvider))
-        ItemExtensions.MediaUrl(Database.GetDatabase("master").GetItem(newID), template.FieldId).Should().Be("");
+      using (new MediaProviderSwitcher(mediaProvider))
+      {
+        Database.GetDatabase("master").GetItem(newID).MediaUrl(template.FieldId).Should().Be("");
+      }
     }
   }
 }

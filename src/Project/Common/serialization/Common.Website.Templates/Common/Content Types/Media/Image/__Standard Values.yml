@@ -1,0 +1,17 @@
+﻿---
+ID: 8611ff17-22f1-44e2-b835-ed676b16b3a6
+Parent: f0369e1a-9030-4a05-a09c-ef09b664ed27
+Template: f0369e1a-9030-4a05-a09c-ef09b664ed27
+Path: /sitecore/templates/Project/Common/Content Types/Media/Image/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20150901T053815Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin

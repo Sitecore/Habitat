@@ -3,20 +3,44 @@ ID: 6fc63e8c-dd07-40f5-b3dc-cc74c7f767e6
 Parent: 575bb28a-b341-40e0-84f4-940deefb1b98
 Template: 390333c8-751b-4332-84a3-6360b969a19f
 Path: /sitecore/content/Habitat/Global/Links/Topbar Menu/Sitecore
+DB: master
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 300
 Languages:
+- Language: da
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      Hint: NavigationTitle
+      Value: Sitecore.net
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160112T162957Z
+    - ID: 4231cd60-47c1-42ad-b838-0a6f8f1c4cfb
+      Hint: DividerBefore
+      Value: 1
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: fe71c30e-f07d-4052-8594-c3028cd76e1f
+      Hint: Link
+      Value: "<link linktype=\"external\" url=\"https://www.sitecore.net\" />"
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
-      # NavigationTitle
+      Hint: NavigationTitle
       Value: Sitecore.net
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150910T101349Z
     - ID: 4231cd60-47c1-42ad-b838-0a6f8f1c4cfb
-      # DividerBefore
+      Hint: DividerBefore
       Value: 1
     - ID: fe71c30e-f07d-4052-8594-c3028cd76e1f
-      # Link
+      Hint: Link
       Value: "<link text=\"\" linktype=\"external\" url=\"https://www.sitecore.net\" anchor=\"\" title=\"\" class=\"\" querystring=\"\" target=\"_blank\" id=\"\" />"

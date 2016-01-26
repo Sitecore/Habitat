@@ -14,5 +14,8 @@
 
     [IndexField(Constants.IndexFields.AllTemplates)]
     public List<string> AllTemplates { get; set; }
+
+    [IndexField(Constants.IndexFields.IsLatestVersion)]
+    public bool IsLatestVersion { get; set; }
   }
 }

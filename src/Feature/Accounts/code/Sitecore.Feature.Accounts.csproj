@@ -72,6 +72,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Outcome">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
@@ -140,7 +143,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Scripts\Accounts\Accounts.js" />
     <Content Include="Views\Accounts\Login.cshtml" />
     <Content Include="Views\Accounts\AccountsMenu.cshtml" />
@@ -164,14 +167,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\AccountsRedirectAuthenticatedAttribute.cs" />
+    <Compile Include="Attributes\RedirectAuthenticatedAttribute.cs" />
     <Compile Include="Attributes\RedirectUnauthenticatedAttribute.cs" />
     <Compile Include="Attributes\ValidateModelAttribute.cs" />
     <Compile Include="Models\InfoMessage.cs" />
     <Compile Include="Models\LoginInfo.cs" />
     <Compile Include="Models\EditProfile.cs" />
-    <Compile Include="Services\ContactProfileProvider.cs" />
     <Compile Include="Services\ContactProfileService.cs" />
-    <Compile Include="Services\IContactProfileProvider.cs" />
     <Compile Include="Services\IContactProfileService.cs" />
     <Compile Include="Services\AccountTrackerService.cs" />
     <Compile Include="Services\IAccountsSettingsService.cs" />

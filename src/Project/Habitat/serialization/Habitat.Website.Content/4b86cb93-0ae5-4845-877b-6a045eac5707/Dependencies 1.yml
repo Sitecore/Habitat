@@ -1,0 +1,23 @@
+﻿---
+ID: 38682229-4386-40f3-a1ae-a824f705f5b2
+Parent: 4b86cb93-0ae5-4845-877b-6a045eac5707
+Template: f0369e1a-9030-4a05-a09c-ef09b664ed27
+Path: /sitecore/content/Habitat/Global/Media/Dependencies/Dependencies 1
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151209T045130Z
+    - ID: 302c9f8d-f703-4f76-a4ab-73d222648232
+      Hint: MediaDescription
+      Value: <p>Taking the first steps in building a Sitecore solution is often quite rapid. You can be very productive and cover a great deal of functionality in a short sprint</p>
+    - ID: 63dda48b-b0cb-45a7-9a1b-b26ddb41009b
+      Hint: MediaTitle
+      Value: Building a Sitecore Solution is Easy!
+    - ID: 9f51dead-ad6e-41c2-9759-7be17eb474a4
+      Hint: MediaImage
+      Value: "<image mediapath=\"\" alt=\"Dependencies in Habitat\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"\" mediaid=\"{4A89A178-F0A7-4F49-92B0-7833F9F52155}\" />"

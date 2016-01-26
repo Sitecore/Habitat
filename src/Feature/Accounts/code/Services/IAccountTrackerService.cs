@@ -4,10 +4,11 @@
 
   public interface IAccountTrackerService
   {
-    void TrackLogin();
     void TrackPageEvent(ID pageEventItemId);
-    void TrackRegister();
-
+    void TrackRegistration();
     void IdentifyContact(string identifier);
+    void TrackOutcome(ID definitionId);
+    void TrackRegistrationOutcome();
+    void TrackLogin(string identifier);
   }
 }

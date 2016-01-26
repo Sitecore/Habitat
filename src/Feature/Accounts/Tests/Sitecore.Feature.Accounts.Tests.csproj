@@ -82,6 +82,10 @@
     <Reference Include="Sitecore.Analytics.Model">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Outcome, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.FakeDb, Version=0.33.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.FakeDb.0.33.0\lib\net45\Sitecore.FakeDb.dll</HintPath>
       <Private>True</Private>
@@ -92,6 +96,7 @@
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="sitecore.nexus">
       <HintPath>..\..\..\..\lib\Sitecore\sitecore.nexus.dll</HintPath>
@@ -163,9 +168,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountTrackerServiceTests.cs" />
+    <Compile Include="Attributes\AccountsRedirectAuthenticatedAttributeTests.cs" />
+    <Compile Include="Attributes\RedirectAuthenticatedAttributeTests.cs" />
     <Compile Include="Attributes\RedirectUnauthenticatedTests.cs" />
     <Compile Include="Attributes\ValidateModelTests.cs" />
-    <Compile Include="ContactProfileProviderTests.cs" />
     <Compile Include="ContactProfileServiceTests.cs" />
     <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="Extensions\CoreDbAttribute.cs" />
@@ -185,7 +191,9 @@
     <Compile Include="UserProfileServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="App_Config\FieldTypes.config" />
     <None Include="packages.config" />
   </ItemGroup>

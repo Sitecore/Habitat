@@ -1,0 +1,20 @@
+﻿---
+ID: c681618a-76fe-453c-9c7c-f4a11fdadd5c
+Parent: 40ad8a9b-c75c-428d-9e1a-51372b21f63e
+Template: 40ad8a9b-c75c-428d-9e1a-51372b21f63e
+Path: /sitecore/templates/Project/Common/Content Types/Teasers/Quote/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 0de53078-0da4-40cc-bbca-63aa96a0a1ef
+      Hint: Quote
+      Value: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris congue vulputate erat hendrerit tincidunt.
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151124T110522Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin

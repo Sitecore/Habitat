@@ -3,24 +3,29 @@ ID: ca0479ce-0bfe-4522-83de-ba688b380a78
 Parent: 480c27f8-fbd9-4273-a61e-28253a1aa0e6
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
 Path: /sitecore/templates/Feature/Metadata/_PageMetadata/Metadata/BrowserTitle
+DB: master
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
-  # Type
+  Hint: Type
   Value: Single-Line Text
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 50
 Languages:
 - Language: en
+  Fields:
+  - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+    Hint: Title
+    Value: Browser Title - title shown in the Browser window / tab, and most important on search-engine listings.
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Hint: __Display name
+    Value: Browser Title
   Versions:
   - Version: 1
     Fields:
-    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
-      # Title
-      Value: Browser Title - title shown in the Browser window / tab, and most important on search-engine listings.
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20130503T130315Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      # __Created by
+      Hint: __Created by
       Value: sitecore\jeremy

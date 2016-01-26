@@ -1,0 +1,20 @@
+﻿---
+ID: 6e76f4ee-694e-4b6d-8635-48d227ab5c79
+Parent: c7c95984-e060-42d9-bbc6-b45c18768905
+Template: c82dc5ff-09ef-4403-96d3-3caf377b8c5b
+Path: /sitecore/content/Habitat/Settings/identity
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160112T102337Z
+    - ID: 498dd5b6-7dae-44a7-9213-1d32596ad14f
+      Hint: DatasourceTemplate
+      Value: /sitecore/templates/Feature/Identity/_Identity
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin

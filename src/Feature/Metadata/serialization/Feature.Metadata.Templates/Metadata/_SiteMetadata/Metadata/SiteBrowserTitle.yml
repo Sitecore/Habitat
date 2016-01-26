@@ -3,18 +3,23 @@ ID: 235ae392-97ac-4822-be38-837da3e7724e
 Parent: e19d3ff4-18be-4d45-bf5b-24899eaf624b
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
 Path: /sitecore/templates/Feature/Metadata/_SiteMetadata/Metadata/SiteBrowserTitle
+DB: master
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
-  # Type
+  Hint: Type
   Value: Single-Line Text
 Languages:
 - Language: en
+  Fields:
+  - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+    Hint: Title
+    Value: Global Browser Title - is added to all pages throughout the site, following the page specific browser title
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Hint: __Display name
+    Value: Site Browser Title
   Versions:
   - Version: 1
     Fields:
-    - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
-      # Title
-      Value: Global Browser Title - is added to all pages throughout the site, following the page specific browser title
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20150826T052732Z

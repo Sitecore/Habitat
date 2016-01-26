@@ -4,14 +4,16 @@
   using System.Collections.Generic;
   using System.Globalization;
   using System.Linq;
+  using System.Web;
+  using Sitecore.Foundation.SitecoreExtensions.Model;
+  using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Data.Managers;
   using Sitecore.Diagnostics;
-  using Sitecore.Foundation.SitecoreExtensions.Model;
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Globalization;
   using Sitecore.Links;
   using Sitecore.Resources.Media;
@@ -23,6 +25,17 @@
   /// </summary>
   public static class ItemExtensions
   {
+
+    public static string DisplayName(this ID itemId)
+    {
+      return DatabaseRepository.GetActiveDatabase().GetItem(itemId)?.DisplayName;
+    }
+
+    public static string DisplayName(this Guid itemId)
+    {
+      return DisplayName(new ID(itemId));
+    }
+
     public static string Url(this Item item, UrlOptions options = null)
     {
       if (item == null)
@@ -44,15 +57,32 @@
       return imageField?.MediaItem == null ? string.Empty : imageField.ImageUrl(options);
     }
 
-    public static string MediaUrl(this Item item, ID mediaFieldId, MediaUrlOptions options = null)
+    public static Item TargetItem(this Item item, ID linkFieldId)
     {
       if (item == null)
       {
         throw new ArgumentNullException(nameof(item));
       }
 
-      var imageField = (LinkField)item.Fields[mediaFieldId];
-      return imageField.TargetItem == null ? String.Empty : (MediaManager.GetMediaUrl(imageField.TargetItem) ?? string.Empty);
+      var linkField = (LinkField)item.Fields[linkFieldId];
+      return linkField.TargetItem;
+    }
+
+    public static string MediaUrl(this Item item, ID mediaFieldId, MediaUrlOptions options = null)
+    {
+      var targetItem = item.TargetItem(mediaFieldId);
+      return targetItem == null ? String.Empty : (MediaManager.GetMediaUrl(targetItem) ?? string.Empty);
+    }
+
+
+    public static bool IsImage(this Item item)
+    {
+      return new MediaItem(item).MimeType.StartsWith("image/",StringComparison.InvariantCultureIgnoreCase);
+    }
+
+    public static bool IsVideo(this Item item)
+    {
+      return new MediaItem(item).MimeType.StartsWith("video/", StringComparison.InvariantCultureIgnoreCase);
     }
 
     public static Item[] TargetItems(this Item item, string fieldName)
@@ -78,12 +108,7 @@
         throw new ArgumentNullException(nameof(item));
       }
 
-      if (item.IsDerived(templateID))
-      {
-        return item;
-      }
-
-      return item.Axes.GetAncestors().Reverse().FirstOrDefault(i => i.IsDerived(templateID));
+      return item.IsDerived(templateID) ? item : item.Axes.GetAncestors().Reverse().FirstOrDefault(i => i.IsDerived(templateID));
     }
 
     public static IList<Item> GetAncestorsAndSelfOfTemplate(this Item item, ID templateID)
@@ -151,8 +176,12 @@
       }
 
       var itemTemplate = TemplateManager.GetTemplate(item);
-      return itemTemplate != null &&
-             (itemTemplate.ID == templateItem.ID || itemTemplate.DescendsFrom(templateItem.ID));
+      return itemTemplate != null && (itemTemplate.ID == templateItem.ID || itemTemplate.DescendsFrom(templateItem.ID));
+    }
+
+    public static bool FieldHasValue(this Item item, ID fieldID)
+    {
+      return item.Fields[fieldID] != null && item.Fields[fieldID].HasValue && !string.IsNullOrWhiteSpace(item.Fields[fieldID].Value);
     }
 
     public static string GetString(this Item item, string fieldName)
@@ -219,7 +248,7 @@
 
     public static void SetDropLink(this Item item, ID fieldId, Item linkedItem)
     {
-      Assert.ArgumentNotNull(linkedItem, "linkedItem");
+      Assert.ArgumentNotNull(linkedItem, nameof(linkedItem));
       new InternalLinkField(item.Fields[fieldId]).Value = linkedItem.ID.Guid.ToString("P").ToUpper();
     }
 
@@ -261,7 +290,7 @@
 
     public static IEnumerable<Item> GetChildrenDerivedFrom(this Item item, ID templateId)
     {
-      return item.GetChildren().Where(c => IsDerived(c, templateId));
+      return item.GetChildren().Where(c => c.IsDerived(templateId));
     }
 
     public static bool HasLanguage(this Item item, string languageName)
@@ -277,11 +306,7 @@
     public static bool HasContextLanguage(this Item item)
     {
       var latestVersion = item.Versions.GetLatestVersion();
-      if (latestVersion != null)
-      {
-        return latestVersion.Versions.Count > 0;
-      }
-      return false;
+      return latestVersion?.Versions.Count > 0;
     }
 
     public static string GetUrl(this Item item)
@@ -297,7 +322,7 @@
 
     public static bool IsInSite(this Item item, SiteContext siteContext)
     {
-      Assert.ArgumentNotNull(siteContext, "siteContext");
+      Assert.ArgumentNotNull(siteContext, nameof(siteContext));
       Assert.IsNotNull(item, "Item is null");
       var rootItem = siteContext.Database.GetItem(siteContext.RootPath);
       for (var sitecoreItem = item; sitecoreItem != null; sitecoreItem = sitecoreItem.Parent)
@@ -317,18 +342,12 @@
 
     public static Item[] GetReferrersAsItems(this Item item)
     {
-      return Globals.LinkDatabase.GetReferrers(item)
-        .Select(i => i.GetSourceItem())
-        .Where(i => i != null)
-        .ToArray();
+      return Globals.LinkDatabase.GetReferrers(item).Select(i => i.GetSourceItem()).Where(i => i != null).ToArray();
     }
 
     public static Item[] GetReferencesAsItems(this Item item)
     {
-      return Globals.LinkDatabase.GetReferences(item)
-        .Select(i => i.GetTargetItem())
-        .Where(i => i != null)
-        .ToArray();
+      return Globals.LinkDatabase.GetReferences(item).Select(i => i.GetTargetItem()).Where(i => i != null).ToArray();
     }
 
     public static bool HasVersionedRenderings(this Item item)
@@ -356,10 +375,22 @@
       return item.HasVersionedRenderingsOnLanguage(Context.Language);
     }
 
-    public static bool HasVersionedRenderingsOnVersion(this Item item, Language language, Sitecore.Data.Version version)
+    public static bool HasVersionedRenderingsOnVersion(this Item item, Language language, Data.Version version)
     {
       var versionItem = item.Database.GetItem(item.ID, language, version);
       return versionItem != null && versionItem.HasVersionedRenderings();
+    }
+
+    public static HtmlString Field(this Item item, ID fieldId)
+    {
+      Assert.IsNotNull(item, "Item cannot be null");
+      Assert.IsNotNull(fieldId, "FieldId cannot be null");
+      return new HtmlString(FieldRendererService.RenderField(item, fieldId));
+    }
+
+    public static HtmlString Field(this Item item, ID fieldId, object parameters)
+    {
+      return new HtmlString(FieldRendererService.BeginField(fieldId, item, parameters) + FieldRendererService.EndField().ToString());
     }
   }
 }

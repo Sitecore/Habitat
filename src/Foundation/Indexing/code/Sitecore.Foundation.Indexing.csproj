@@ -118,7 +118,7 @@
     </Content>
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Indexing.config" />
-    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -144,6 +144,11 @@
     <Compile Include="Models\SearchResultRepository.cs" />
     <Compile Include="Models\SearchResults.cs" />
     <Compile Include="Models\SearchResultsRepository.cs" />
+    <Compile Include="Models\SearchSettingsBase.cs" />
+    <Compile Include="Repositories\ISearchServiceRepository.cs" />
+    <Compile Include="Repositories\ISearchSettingsRepository.cs" />
+    <Compile Include="Repositories\SearchServiceRepository.cs" />
+    <Compile Include="Repositories\SearchSettingsRepositoryBase.cs" />
     <Compile Include="SearchService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates.cs" />

@@ -1,0 +1,33 @@
+﻿---
+ID: 9860cbee-700c-4f02-9ebf-c56a63024f94
+Parent: 83458bd1-1b73-4ea4-aabb-8e6aa4b40ef1
+Template: 92168572-385b-45f0-b40f-3d987ad20e5c
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Search/Search results
+DB: master
+SharedFields:
+- ID: cd904125-3ae5-4709-9e6d-71473c5d5007
+  Hint: Root
+  Value: {83458BD1-1B73-4EA4-AABB-8E6AA4B40EF1}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 0ee2f208-1fee-42fc-8051-6696d49a92bf
+      Hint: OpenGraphTitle
+      Value: New Search Results
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      Hint: NavigationTitle
+      Value: Search Page
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151210T034448Z
+    - ID: 80e30dd8-8021-45f5-9fe1-23d2702cc206
+      Hint: SearchBoxTitle
+      Value: Search in the Search Module
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      Hint: Title
+      Value: Search in the Search Module
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      Hint: BrowserTitle
+      Value: New Search Results

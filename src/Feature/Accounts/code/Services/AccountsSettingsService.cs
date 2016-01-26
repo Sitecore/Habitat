@@ -33,6 +33,8 @@
       return link.TargetItem.Url();
     }
 
+
+
     public virtual string GetPageLinkOrDefault(Item contextItem, ID field, Item defaultItem)
     {
       Assert.ArgumentNotNull(defaultItem, nameof(defaultItem));
@@ -47,7 +49,18 @@
       }
     }
 
-    
+    public virtual ID GetRegistrationOutcome(Item contextItem)
+    {
+      var item = GetSettingsItem(contextItem);
+
+      if (item == null)
+      {
+        throw new ItemNotFoundException("Page with accounts settings isn't specified");
+      }
+
+      ReferenceField field = item.Fields[Templates.AccountsSettings.Fields.RegisterOutcome];
+      return field?.TargetID;
+    }
 
     private static Item GetSettingsItem(Item contextItem)
     {
@@ -65,7 +78,7 @@
     public MailMessage GetForgotPasswordMailTemplate()
     {
       var settingsItem = GetSettingsItem(null);
-      InternalLinkField link = settingsItem.Fields[Templates.AccountsSettings.Fields.FogotPasswordMailTemplate];
+      InternalLinkField link = settingsItem.Fields[Templates.AccountsSettings.Fields.ForgotPasswordMailTemplate];
       var mailTemplateItem = link.TargetItem;
 
       if (mailTemplateItem == null)

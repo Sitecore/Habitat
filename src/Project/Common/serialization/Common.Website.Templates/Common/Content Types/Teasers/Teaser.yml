@@ -1,0 +1,28 @@
+﻿---
+ID: c7d9d293-4ef8-4380-8e10-c4632e729f39
+Parent: 9701d6e6-4b64-453e-b1b8-f6a28d5f98df
+Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+Path: /sitecore/templates/Project/Common/Content Types/Teasers/Teaser
+DB: master
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  Hint: __Icon
+  Value: Applications/16x16/text_rich_marked.png
+- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+  Hint: __Base template
+  Type: tree list
+  Value: {FEC0E62A-01FD-40E5-88F3-E5229FE79527}
+- ID: f7d48a55-2158-4f02-9356-756654404f73
+  Hint: __Standard values
+  Value: {28442A49-F6D9-4EFD-865D-9DF0B74B512B}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20150827T062712Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin

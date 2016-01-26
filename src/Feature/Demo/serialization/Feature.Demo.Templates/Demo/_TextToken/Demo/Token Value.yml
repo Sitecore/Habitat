@@ -3,18 +3,26 @@ ID: 7b9f4fe3-6285-4969-9784-b96d49973161
 Parent: 00ccda77-fb89-44fc-9530-d1eaa41d88b7
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
 Path: /sitecore/templates/Feature/Demo/_TextToken/Demo/Token Value
+DB: master
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
-  # Type
+  Hint: Type
   Value: Multi-Line Text
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
-  # __Sortorder
+  Hint: __Sortorder
   Value: 100
 Languages:
 - Language: en
+  Fields:
+  - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+    Hint: Title
+    Value: Token Value
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Hint: __Display name
+    Value: Token Value
   Versions:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      # __Created
+      Hint: __Created
       Value: 20151110T043136Z

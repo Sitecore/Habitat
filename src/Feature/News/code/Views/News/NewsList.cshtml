@@ -1,7 +1,7 @@
 ﻿@using Sitecore.Feature.News
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model IEnumerable<Sitecore.Data.Items.Item>
-<div class="newslist">
+<div class="content-list newslist">
   <ol class="media-list">
 
     @foreach (var item in Model)
@@ -21,15 +21,11 @@
           <div class="description">
             @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary.ToString(), item)
           </div>
-          <div class="metadata panel panel-default">
-            <div class="panel-body">
-              <span class="date text-muted">
-                                @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
-                                {
-                                  format = "MMMM dd, yyyy"
-                                })
-                            </span>
-            </div>
+          <div class="metadata well">
+            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
+                        {
+                          format = "MMMM dd, yyyy"
+                        })
           </div>
         </div>
       </li>
