@@ -50,7 +50,12 @@ Languages:
     - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
       Hint: __Final Renderings
       Type: Layout
-      Value: 
+      Value: |
+        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
+          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{AEC5E025-C2AB-42F3-A1EC-55ABD86A2AF6}" p:before="r[@uid='{6D6BAA73-DFEE-4585-B961-4AB9A843C5C4}']" s:ds="{A89A9674-2E29-41FB-88A9-C033567A55BF}" s:id="{208BF152-10EF-46CA-8898-D54CF85F6CD2}" s:ph="/page-layout/col-narrow-1_e0710d5f-c5a8-4e12-bc23-14faa69486b5" />
+          </d>
+        </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       Hint: NavigationTitle
       Value: Home

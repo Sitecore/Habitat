@@ -60,7 +60,7 @@ Languages:
     Fields:
     - ID: 02115632-fe1e-4b3d-9ad4-a4ddf1f782f0
       Hint: Copyright
-      Value: "Copyright &copy; 2015 <a href=\"http://sitecore.net\" target=\"_blank\" title=\"Opens in a new window\">Sitecore Corporation A/S</a>"
+      Value: "Copyright © 2015 <a href=\"http://sitecore.net\" target=\"_blank\" title=\"Opens in a new window\">Sitecore Corporation A/S</a>"
     - ID: 021aa3f7-206f-4acc-9538-f6d7fe86b168
       Hint: InterestFolder
       Value: {A74EE096-F225-4568-8D81-2F71ABBC8118}

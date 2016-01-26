@@ -1,0 +1,74 @@
+<#@ template language="C#" debug="true" #>
+
+<#@ import namespace="HedgehogDevelopment.CodeGeneration.Extensions" #>
+<#@ assembly name="C:\Projects\git\meau.com\MEAU.Web.References\HedgehogDevelopment.CodeGeneration.Extensions.dll" #>
+
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="HedgehogDevelopment.SitecoreProject.VSIP.CodeGeneration.Models" #>
+
+<#@ parameter name="Model" type="HedgehogDevelopment.SitecoreProject.VSIP.CodeGeneration.Models.SitecoreItem" #>
+<#@ parameter name="DefaultNamespace" type="System.String" #>
+
+<#
+// Build ancestor list
+SitecoreItem item = Model.Parent;
+List<SitecoreItem> ancestors = new List<SitecoreItem>();
+while(item != null){
+	ancestors.Add(item);
+	item = item.Parent;
+}
+// reverse the order
+ancestors.Reverse();
+#>
+
+namespace <#= DefaultNamespace#>
+{
+	<#=BuildClassDefinition("ItemTree")#>	
+<#
+PushIndent("\t");
+
+foreach(SitecoreItem ancestor in ancestors){#>
+	<#=BuildClassDefinition(ancestor)#>
+<#
+	PushIndent("\t");
+}
+PushIndent("\t");
+#>
+/// <summary>
+/// <#= Model.Name #> Item
+/// <para><#= Model.SitecoreFields.GetValue("__Short description")#></para>
+/// <para>Path: <#= Model.Path #></para>	
+/// <para>ID: <#= Model.ID.ToString() #></para>	
+/// </summary>
+<#=BuildClassDefinition(Model)#>
+	public static global::Sitecore.Data.ID ItemID { get { return new global::Sitecore.Data.ID("<#=Model.ID#>"); } }
+	public static string ItemName { get { return  "<#=Model.Name#>"; } }
+	public static string ItemPath { get { return  "<#=Model.Path#>"; } }
+	
+	public static global::Sitecore.Data.ID TemplateID { get { return  new global::Sitecore.Data.ID("<#=Model.TemplateId#>"); } }
+	public static string TemplateName { get { return "<#=Model.TemplateName#>"; } }
+}
+<#
+PopIndent();
+for(int i = 0; i< ancestors.Count; i++){
+	PopIndent();
+	#>
+	}
+<#}
+PopIndent();
+#>
+	}
+}
+
+
+
+<#+
+private string BuildClassDefinition(SitecoreItem item){
+	return BuildClassDefinition(item.Name.AsClassName());
+}
+
+private string BuildClassDefinition(string className){
+	return "public static partial class " + className + "{";
+}
+#>

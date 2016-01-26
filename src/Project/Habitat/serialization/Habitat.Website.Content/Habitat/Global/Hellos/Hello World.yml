@@ -1,0 +1,20 @@
+﻿---
+ID: a89a9674-2e29-41fb-88a9-c033567a55bf
+Parent: 9d84a921-cf5e-4d21-8ce6-76504965542e
+Template: 2cd48de2-e323-4600-b743-9209b6e60ba5
+Path: /sitecore/content/Habitat/Global/Hellos/Hello World
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160122T180631Z
+    - ID: 3bee67cb-db60-434b-82c3-520f038c01b5
+      Hint: Hello Text
+      Value: Hello World
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
