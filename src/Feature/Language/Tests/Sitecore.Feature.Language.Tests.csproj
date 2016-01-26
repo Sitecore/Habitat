@@ -121,9 +121,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.MultiSite.csproj">
+    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.Multisite.csproj">
       <Project>{cfa2ae87-7f8d-4ca6-bb72-b16380190db7}</Project>
-      <Name>Sitecore.Foundation.MultiSite</Name>
+      <Name>Sitecore.Foundation.Multisite</Name>
     </ProjectReference>
     <ProjectReference Include="..\code\Sitecore.Feature.Language.csproj">
       <Project>{aca65632-ee93-422b-b25e-8e31969694f5}</Project>

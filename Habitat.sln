@@ -127,15 +127,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{BC277CB0-B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Multisite", "Multisite", "{AC21E230-C263-4FE0-8614-D6783D1FFC86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.MultiSite", "src\Feature\Multisite\code\Sitecore.Feature.MultiSite.csproj", "{64CB17EE-49BF-44A6-98F0-4F72EE89073B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Multisite", "src\Feature\Multisite\code\Sitecore.Feature.Multisite.csproj", "{64CB17EE-49BF-44A6-98F0-4F72EE89073B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Multisite", "Multisite", "{FE63FBCC-D03E-4439-A428-028A6FF8B15A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.MultiSite", "src\Foundation\Multisite\code\Sitecore.Foundation.MultiSite.csproj", "{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Multisite", "src\Foundation\Multisite\code\Sitecore.Foundation.Multisite.csproj", "{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.MultiSite.Tests", "src\Feature\Multisite\tests\Sitecore.Feature.MultiSite.Tests.csproj", "{B2D57490-58A9-4F73-A34E-B4076713F712}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Multisite.Tests", "src\Feature\Multisite\tests\Sitecore.Feature.Multisite.Tests.csproj", "{B2D57490-58A9-4F73-A34E-B4076713F712}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.MultiSite.Tests", "src\Foundation\Multisite\tests\Sitecore.Foundation.MultiSite.Tests.csproj", "{57295D42-6C03-455B-8202-12AEAF233677}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Multisite.Tests", "src\Foundation\Multisite\tests\Sitecore.Foundation.Multisite.Tests.csproj", "{57295D42-6C03-455B-8202-12AEAF233677}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "specs", "specs", "{AE1154F1-2C89-4AEC-B7B3-1902D73F037C}"
 EndProject
@@ -155,7 +155,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Search.Spe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Social.Specflow", "src\Project\Habitat\specs\Feature.Social\Sitecore.Feature.Social.Specflow.csproj", "{5E3D01C4-286E-4AD0-96C3-74D0993F890F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.MultiSite.Specflow", "src\Project\Habitat\specs\Foundation.Multisite\Sitecore.Foundation.MultiSite.Specflow.csproj", "{48C6666C-8509-424A-A191-39855878E5C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Multisite.Specflow", "src\Project\Habitat\specs\Foundation.Multisite\Sitecore.Foundation.Multisite.Specflow.csproj", "{48C6666C-8509-424A-A191-39855878E5C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.Common", "src\Common\tests\UnitTests.Common.csproj", "{7CC3D72B-4518-4B78-BE48-630A263C0F5B}"
 EndProject
