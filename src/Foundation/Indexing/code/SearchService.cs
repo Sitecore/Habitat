@@ -37,7 +37,7 @@
         queryable = FilterOnVersion(queryable);
         if (this.Settings.Templates != null && this.Settings.Templates.Any())
         {
-          queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Templates));
+          queryable = queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Templates));
         }
         else
         {
