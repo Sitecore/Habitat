@@ -78,7 +78,7 @@ namespace Sitecore.Foundation.MultiSite.Specflow
         public virtual void GettingASiteContextItem_UC1_DefineCustomRendering_VerifyItemNameCreated()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC1_Define custom rendering_Verify item name created", new string[] {
-                        "InDesign"});
+                        "NeedImplementation"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -120,7 +120,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC2_Define custom rendering_List of the available cus" +
                     "tom items", new string[] {
-                        "InDesign"});
+                        "NeedImplementation"});
 #line 17
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -187,7 +187,7 @@ this.ScenarioSetup(scenarioInfo);
         public virtual void GettingASiteContextItem_UC3_DefineCustomRendering_ApplyCustomItem()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC3_Define custom rendering_Apply custom item", new string[] {
-                        "InDesign"});
+                        "NeedImplementation"});
 #line 39
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -252,7 +252,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC4_Define custom rendering_Item is not available on " +
                     "another site", new string[] {
-                        "InDesign"});
+                        "NeedImplementation"});
 #line 59
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -323,7 +323,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC5_Define sitecore rendering_List of the available r" +
                     "endering items", new string[] {
-                        "InDesign"});
+                        "NeedImplementation"});
 #line 83
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -367,7 +367,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC6_Define sitecore rendering_Datacource settings emp" +
                     "ty", new string[] {
-                        "InDesign"});
+                        "NeedImplementation"});
 #line 97
 this.ScenarioSetup(scenarioInfo);
 #line hidden

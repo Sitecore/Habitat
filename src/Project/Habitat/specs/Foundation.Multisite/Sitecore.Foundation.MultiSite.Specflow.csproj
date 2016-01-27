@@ -66,6 +66,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Getting a Site Context Item.feature</DependentUpon>
     </Compile>
+    <Compile Include="Multisite datasource.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Multisite datasource.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +78,10 @@
     <None Include="Getting a Site Context Item.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Getting a Site Context Item.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Multisite datasource.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Multisite datasource.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

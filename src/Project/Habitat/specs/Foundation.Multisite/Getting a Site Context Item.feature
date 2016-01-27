@@ -1,7 +1,7 @@
 ﻿Feature: Getting a Site Context Item
 	
 
-@InDesign
+@NeedImplementation
 Scenario: Getting a Site Context Item_UC1_Define custom rendering_Verify item name created
 	Given Value set to item field
 	| ItemPath                                               | Field               | Value          |
@@ -13,7 +13,7 @@ Scenario: Getting a Site Context Item_UC1_Define custom rendering_Verify item na
 	| Item Name |
 	| twitter   |
 
-@InDesign
+@NeedImplementation
 Scenario: Getting a Site Context Item_UC2_Define custom rendering_List of the available custom items
 	Given Value set to item field
 	| ItemPath                                               | Field               | Value         |
@@ -35,7 +35,7 @@ Scenario: Getting a Site Context Item_UC2_Define custom rendering_List of the av
 	| CustomTwitter   |
 
 
-@InDesign
+@NeedImplementation
 Scenario: Getting a Site Context Item_UC3_Define custom rendering_Apply custom item
 	Given Value set to item field
 	| ItemPath                                               | Field               | Value         |
@@ -55,7 +55,7 @@ Scenario: Getting a Site Context Item_UC3_Define custom rendering_Apply custom i
 	Then <Tweets by @CustomTwitter> text presents on Twitter placeholder
 
 
-@InDesign
+@NeedImplementation
 Scenario: Getting a Site Context Item_UC4_Define custom rendering_Item is not available on another site
 	Given Value set to item field
 	| ItemPath                                               | Field               | Value         |
@@ -79,7 +79,7 @@ Scenario: Getting a Site Context Item_UC4_Define custom rendering_Item is not av
 
 
 
-@InDesign
+@NeedImplementation
 Scenario: Getting a Site Context Item_UC5_Define sitecore rendering_List of the available rendering items
 	Given Value set to item field
 	| ItemPath                                               | Field               | Value                                   |
@@ -93,7 +93,7 @@ Scenario: Getting a Site Context Item_UC5_Define sitecore rendering_List of the 
 	| sitecorehabitat |
 
 
-@InDesign
+@NeedImplementation
 Scenario: Getting a Site Context Item_UC6_Define sitecore rendering_Datacource settings empty
 	Given Value set to item field
 	| ItemPath                                               | Field               | Value                                   |
