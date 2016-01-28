@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Feature.MultiSite.Models
+﻿namespace Sitecore.Feature.Multisite.Models
 {
   using Sitecore.Text;
 

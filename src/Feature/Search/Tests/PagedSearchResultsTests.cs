@@ -4,6 +4,7 @@
   using FluentAssertions;
   using Sitecore.Feature.Search.Models;
   using Sitecore.Feature.Search.Tests.Extensions;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class PagedSearchResultsTests

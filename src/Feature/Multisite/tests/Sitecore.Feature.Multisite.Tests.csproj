@@ -7,8 +7,8 @@
     <ProjectGuid>{B2D57490-58A9-4F73-A34E-B4076713F712}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.Feature.MultiSite.Tests</RootNamespace>
-    <AssemblyName>Sitecore.Feature.MultiSite.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Multisite.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Multisite.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -117,13 +117,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.MultiSite.csproj">
+    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.Multisite.csproj">
       <Project>{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7}</Project>
-      <Name>Sitecore.Foundation.MultiSite</Name>
+      <Name>Sitecore.Foundation.Multisite</Name>
     </ProjectReference>
-    <ProjectReference Include="..\code\Sitecore.Feature.MultiSite.csproj">
+    <ProjectReference Include="..\code\Sitecore.Feature.Multisite.csproj">
       <Project>{64CB17EE-49BF-44A6-98F0-4F72EE89073B}</Project>
-      <Name>Sitecore.Feature.MultiSite</Name>
+      <Name>Sitecore.Feature.Multisite</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

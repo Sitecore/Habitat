@@ -18,12 +18,12 @@
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.FakeDb.Pipelines;
   using Sitecore.Foundation.SitecoreExtensions.Rendering;
+  using Sitecore.Foundation.Testing.Attributes;
+  using Sitecore.Foundation.Testing.Pipelines;
   using Sitecore.Mvc.Common;
   using Sitecore.Mvc.Presentation;
   using Sitecore.Pipelines;
   using Sitecore.Pipelines.GetRenderingDatasource;
-  using UnitTests.Common.Attributes;
-  using UnitTests.Common.Pipelines;
   using Xunit;
 
   public class QueryableDatasourceRenderingModelTests

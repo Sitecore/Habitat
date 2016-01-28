@@ -1,0 +1,39 @@
+﻿---
+ID: a3fbe06f-b1ab-42dc-9d95-2b34082d8cf8
+Parent: c41e1360-7356-4397-9126-cf27db1f600e
+Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+Path: /sitecore/layout/Renderings/Feature/Media/ParallaxBackground
+DB: master
+SharedFields:
+- ID: 11421560-0bcb-403a-b099-8595c34341fd
+  Hint: JavaScript inline
+  Value: |
+    $(document).ready(function(){
+      $(document).smoothWheel();
+    });
+- ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
+  Hint: Datasource Template
+  Value: /sitecore/templates/Feature/Media/_HasParallaxBackground
+- ID: 4867d192-326a-4aa4-81ef-ea430e224aff
+  Hint: Css assets
+  Value: /Content/Media/parallax.css
+- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+  Value: /Views/Media/ParallaxBackground.cshtml
+- ID: e514a1eb-ddba-44f7-8528-82ca2280f778
+  Hint: JavaScript assets
+  Value: |
+    /Scripts/Media/jquery.multibackground.js
+    /Scripts/Media/jquery.smoothwheel.min.js
+- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
+  Hint: Open Properties after Add
+  Value: 1
+- ID: fd0dec96-b220-4196-b544-68b11eee727a
+  Hint: Css inline
+  Value: 
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Value: 20160105T132545Z

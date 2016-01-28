@@ -1,10 +1,10 @@
-﻿namespace Sitecore.Foundation.MultiSite.Pipelines
+﻿namespace Sitecore.Foundation.Multisite.Pipelines
 {
   using System.Linq;
   using System.Text.RegularExpressions;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
-  using Sitecore.Foundation.MultiSite.Providers;
+  using Sitecore.Foundation.Multisite.Providers;
   using Sitecore.Pipelines.GetRenderingDatasource;
 
   public class GetDatasourceLocationAndTemplateFromSite

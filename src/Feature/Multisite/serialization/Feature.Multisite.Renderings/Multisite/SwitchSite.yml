@@ -10,7 +10,7 @@ SharedFields:
   Value: SwitchSite
 - ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
   Hint: Controller
-  Value: Sitecore.Feature.MultiSite.Controllers.MultisiteController, Sitecore.Feature.MultiSite
+  Value: Sitecore.Feature.Multisite.Controllers.MultisiteController, Sitecore.Feature.Multisite
 Languages:
 - Language: en
   Versions:

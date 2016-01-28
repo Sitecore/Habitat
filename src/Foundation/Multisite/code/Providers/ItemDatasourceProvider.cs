@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Sitecore.Foundation.MultiSite.Providers
+﻿namespace Sitecore.Foundation.Multisite.Providers
 {
+  using System;
   using Sitecore.Data;
   using Sitecore.Data.Items;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.Multisite.Providers;
 
   public class ItemDatasourceProvider : IDatasourceProvider
   {
@@ -33,14 +29,47 @@ namespace Sitecore.Foundation.MultiSite.Providers
 
       if (!string.IsNullOrEmpty(datasourceRoot))
       {
-        var sourceRootItem = this.Database.GetItem(datasourceRoot);
-        if (sourceRootItem != null)
+        if (datasourceRoot.StartsWith("query:", StringComparison.InvariantCulture))
         {
-          sources = new[] { sourceRootItem };
+           sources = this.AddRootsFromQuery(datasourceRoot.Substring("query:".Length), contextItem);
+        }
+        else if (datasourceRoot.StartsWith("./", StringComparison.InvariantCulture)) 
+        {
+          string path = datasourceRoot;
+          path = contextItem.Paths.FullPath + datasourceRoot.Remove(0, 1);
+
+          Item root = this.Database.GetItem(path);
+          if (root != null)
+          {
+            sources = new [] { root };
+          }
+        }
+        else
+        {
+          var sourceRootItem = this.Database.GetItem(datasourceRoot);
+          if (sourceRootItem != null)
+          {
+            sources = new[] { sourceRootItem };
+          }
         }
       }
 
       return sources;
+    }
+
+    protected virtual Item[] AddRootsFromQuery(string query, Item contextItem)
+    {
+      Item[] roots = (Item[])null;
+      if (query.StartsWith("./", StringComparison.InvariantCulture) && contextItem != null)
+      {
+        roots = contextItem.Axes.SelectItems(query);
+      }
+      else
+      {
+        roots = this.Database.SelectItems(query);
+      }
+
+      return roots;
     }
 
     public Item GetDatasourceTemplate(string settingName, Item contextItem)

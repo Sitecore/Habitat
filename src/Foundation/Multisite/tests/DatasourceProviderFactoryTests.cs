@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.MultiSite.Tests
+﻿namespace Sitecore.Foundation.Multisite.Tests
 {
   using System;
   using System.Collections.Generic;
@@ -9,8 +9,8 @@
   using NSubstitute;
   using Sitecore.Configuration;
   using Sitecore.Data;
-  using Sitecore.Foundation.MultiSite.Providers;
-  using Sitecore.Foundation.MultiSite.Tests.Extensions;
+  using Sitecore.Foundation.Multisite.Providers;
+  using Sitecore.Foundation.Multisite.Tests.Extensions;
   using Xunit;
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Sitecore.FakeDb;
