@@ -50,7 +50,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.ContentSearch">
-      <HintPath>..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.FakeDb, Version=0.36.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.FakeDb.0.36.0\lib\net45\Sitecore.FakeDb.dll</HintPath>
