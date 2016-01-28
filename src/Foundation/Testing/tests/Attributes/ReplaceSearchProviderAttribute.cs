@@ -1,4 +1,4 @@
-namespace UnitTests.Common.Attributes
+namespace Sitecore.Foundation.Testing.Attributes
 {
   using System;
 

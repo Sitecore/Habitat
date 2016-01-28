@@ -9,8 +9,8 @@
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.FakeDb.Resources.Media;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Resources.Media;
-  using UnitTests.Common.Attributes;
   using Xunit;
 
   public class ItemExtensionsTests

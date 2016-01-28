@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
@@ -157,8 +157,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Social.Spe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Multisite.Specflow", "src\Project\Habitat\specs\Foundation.Multisite\Sitecore.Foundation.Multisite.Specflow.csproj", "{48C6666C-8509-424A-A191-39855878E5C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests.Common", "src\Common\tests\UnitTests.Common.csproj", "{7CC3D72B-4518-4B78-BE48-630A263C0F5B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Habitat.Website.Specflow", "src\Project\Habitat\specs\Habitat.Website\Sitecore.Habitat.Website.Specflow.csproj", "{47B8566D-0BA3-4427-81DB-38C7BBE38768}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Language.Tests", "src\Feature\Language\Tests\Sitecore.Feature.Language.Tests.csproj", "{B65AC070-F56C-4C2C-9D0E-E76CEF7E8928}"
@@ -170,6 +168,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Metadata.Specflow", "src\Project\Habitat\specs\Feature.Metadata\Sitecore.Feature.Metadata.Specflow.csproj", "{22B66A8A-9155-4961-B439-7CC2C0665AED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Language.Specflow", "src\Project\Habitat\specs\Feature.Language\Sitecore.Feature.Language.Specflow.csproj", "{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{1B850A0C-6B4F-4189-89F3-7A16E9592291}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Testing", "src\Foundation\Testing\tests\Sitecore.Foundation.Testing.csproj", "{7CC3D72B-4518-4B78-BE48-630A263C0F5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -513,14 +515,6 @@ Global
 		{48C6666C-8509-424A-A191-39855878E5C8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{48C6666C-8509-424A-A191-39855878E5C8}.Release|x64.ActiveCfg = Release|Any CPU
 		{48C6666C-8509-424A-A191-39855878E5C8}.Release|x64.Build.0 = Release|Any CPU
-		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Debug|x64.Build.0 = Debug|Any CPU
-		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Release|x64.ActiveCfg = Release|Any CPU
-		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Release|x64.Build.0 = Release|Any CPU
 		{47B8566D-0BA3-4427-81DB-38C7BBE38768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{47B8566D-0BA3-4427-81DB-38C7BBE38768}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47B8566D-0BA3-4427-81DB-38C7BBE38768}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -569,6 +563,14 @@ Global
 		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}.Release|x64.ActiveCfg = Release|Any CPU
 		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6}.Release|x64.Build.0 = Release|Any CPU
+		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Debug|x64.Build.0 = Debug|Any CPU
+		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Release|x64.ActiveCfg = Release|Any CPU
+		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -647,5 +649,7 @@ Global
 		{097A482B-CD89-4BA9-939F-B232D35AF8E1} = {836F4115-EB6C-468A-AE65-6F123B0376E8}
 		{22B66A8A-9155-4961-B439-7CC2C0665AED} = {AE1154F1-2C89-4AEC-B7B3-1902D73F037C}
 		{99812DA7-6CEF-4971-ACEB-DD32AAD304B6} = {AE1154F1-2C89-4AEC-B7B3-1902D73F037C}
+		{1B850A0C-6B4F-4189-89F3-7A16E9592291} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
+		{7CC3D72B-4518-4B78-BE48-630A263C0F5B} = {1B850A0C-6B4F-4189-89F3-7A16E9592291}
 	EndGlobalSection
 EndGlobal

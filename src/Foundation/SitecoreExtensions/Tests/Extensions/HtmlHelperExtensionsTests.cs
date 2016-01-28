@@ -7,8 +7,8 @@
   using log4net.Config;
   using Sitecore.FakeDb.Sites;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Sites;
-  using UnitTests.Common.Attributes;
   using Xunit;
 
   public class HtmlHelperExtensionsTests

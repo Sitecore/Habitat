@@ -7,7 +7,7 @@
   using Sitecore.Data;
   using Sitecore.FakeDb;
   using Sitecore.Feature.Media.Infrastructure;
-  using UnitTests.Common.Attributes;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class RenderParallaxMediaTests

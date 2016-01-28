@@ -2,7 +2,7 @@
 {
   using System;
   using Ploeh.AutoFixture;
-  using UnitTests.Common.Attributes;
+  using Sitecore.Foundation.Testing.Attributes;
 
   public class AutoDbDataWithExtension: AutoDbDataAttribute
   {

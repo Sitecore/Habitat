@@ -1,4 +1,4 @@
-﻿namespace UnitTests.Common.Commands
+﻿namespace Sitecore.Foundation.Testing.Commands
 {
   using Ploeh.AutoFixture.Kernel;
 

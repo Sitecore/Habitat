@@ -119,10 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-    <ProjectReference Include="..\..\..\Common\tests\UnitTests.Common.csproj">
-      <Project>{7cc3d72b-4518-4b78-be48-630a263c0f5b}</Project>
-      <Name>UnitTests.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\feature\Media\code\Sitecore.Feature.Media.csproj">
       <Project>{1417B162-F987-4CBD-8642-CA4C4119E705}</Project>
       <Name>Sitecore.Feature.Media</Name>

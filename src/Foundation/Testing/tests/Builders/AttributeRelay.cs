@@ -1,4 +1,4 @@
-﻿namespace UnitTests.Common.Builders
+﻿namespace Sitecore.Foundation.Testing.Builders
 {
   using System.Linq;
   using System.Reflection;
