@@ -7,7 +7,7 @@
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.Feature.Media.Infrastructure.Repositories;
   using Sitecore.Feature.Media.Tests.Infrastructure;
-  using UnitTests.Common.Attributes;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class MediaSelectorElementsRepositoryTests

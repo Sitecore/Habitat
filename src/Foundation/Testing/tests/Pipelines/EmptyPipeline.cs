@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UnitTests.Common.Pipelines
+﻿namespace Sitecore.Foundation.Testing.Pipelines
 {
   using Sitecore.FakeDb.Pipelines;
   using Sitecore.Pipelines;

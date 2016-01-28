@@ -1,11 +1,11 @@
-namespace UnitTests.Common.Commands
+namespace Sitecore.Foundation.Testing.Commands
 {
   using System.Reflection;
   using Ploeh.AutoFixture.Kernel;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.Pipelines;
-  using UnitTests.Common.Attributes;
-  using UnitTests.Common.Builders;
+  using Sitecore.Foundation.Testing.Attributes;
+  using Sitecore.Foundation.Testing.Builders;
 
   public class ResolvePipelineSpecimenBuilder : AttributeRelay<ResolvePipelineAttribute>
   {
@@ -13,7 +13,7 @@ namespace UnitTests.Common.Commands
     {
       var db = (Db)context.Resolve(typeof(Db));
       db.PipelineWatcher.Dispose();
-      db.GetType().GetField("pipelineWatcher", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(db, null);
+      db.GetType().GetField("pipelineWatcher", BindingFlags.Instance | BindingFlags.NonPublic)?.SetValue(db, null);
       var pipeline = (IPipelineProcessor)base.Resolve(context, attribute, parameterInfo);
       db.PipelineWatcher.Register(attribute.PipelineName, pipeline);
       return pipeline;

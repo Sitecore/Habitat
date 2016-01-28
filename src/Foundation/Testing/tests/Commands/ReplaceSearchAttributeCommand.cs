@@ -1,4 +1,4 @@
-﻿namespace UnitTests.Common.Commands
+﻿namespace Sitecore.Foundation.Testing.Commands
 {
   using System.Reflection;
   using Ploeh.AutoFixture.Kernel;
@@ -10,8 +10,8 @@
     private static void SetupSearchProvider(SearchProvider searchProvider)
     {
       var providerHelper = new ProviderHelper<SearchProvider, SearchProviderCollection>("randomString");
-      typeof(ContentSearchManager).GetField("ProviderHelper", BindingFlags.Static | BindingFlags.NonPublic).SetValue(null, providerHelper);
-      providerHelper.GetType().GetField("_provider", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(providerHelper, searchProvider);
+      typeof(ContentSearchManager).GetField("ProviderHelper", BindingFlags.Static | BindingFlags.NonPublic)?.SetValue(null, providerHelper);
+      providerHelper.GetType().GetField("_provider", BindingFlags.Instance | BindingFlags.NonPublic)?.SetValue(providerHelper, searchProvider);
     }
 
     public void Execute(object specimen, ISpecimenContext context)

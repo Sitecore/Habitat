@@ -7,8 +7,8 @@
     <ProjectGuid>{7CC3D72B-4518-4B78-BE48-630A263C0F5B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UnitTests.Common</RootNamespace>
-    <AssemblyName>UnitTests.Common</AssemblyName>
+    <RootNamespace>Sitecore.Foundation.Testing</RootNamespace>
+    <AssemblyName>Sitecore.Foundation.Testing</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

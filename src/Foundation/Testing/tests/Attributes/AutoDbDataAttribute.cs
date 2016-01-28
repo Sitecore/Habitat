@@ -1,11 +1,11 @@
-﻿namespace UnitTests.Common.Attributes
+﻿namespace Sitecore.Foundation.Testing.Attributes
 {
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Kernel;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.FakeDb.AutoFixture;
-  using UnitTests.Common.Builders;
-  using UnitTests.Common.Commands;
+  using Sitecore.Foundation.Testing.Builders;
+  using Sitecore.Foundation.Testing.Commands;
 
   public class AutoDbDataAttribute : AutoDataAttribute
   {
