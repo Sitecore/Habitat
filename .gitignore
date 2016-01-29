@@ -22,3 +22,5 @@ vars.user.cmd
 temp/
 *.ncrunchproject
 *.ncrunchsolution
+gulp-config.js
+src/Project/Habitat/code/App_Config/Include/Project/z.Habitat.DevSettings.config
