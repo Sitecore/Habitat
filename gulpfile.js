@@ -51,7 +51,7 @@ gulp.task("03-Apply-Xml-Transform", function () {
         .pipe(msbuild({
           targets: ["ApplyTransform"],
           configuration: config.buildConfiguration,
-          logCommand: true,
+          logCommand: false,
           verbosity: "normal",
           maxcpucount: 0,
           toolsVersion: 14.0,
@@ -61,6 +61,21 @@ gulp.task("03-Apply-Xml-Transform", function () {
         }));
     }));
 
+});
+
+gulp.task("04-Optional-Copy-Local-Assemblies", function () {
+  console.log("Copying site assemblies to all local projects");
+  var files = config.sitecoreLibraries + "/**/*";
+
+  var root = "./src";
+  var projects = root + "/**/code/bin";
+  gulp.src(projects, { base: root })
+    .pipe(foreach(function (stream, file) {
+      console.log("copying to " + file.path);
+      gulp.src(files)
+        .pipe(gulp.dest(file.path));
+      return stream;
+    }));
 });
 
 /*****************************
