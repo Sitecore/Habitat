@@ -53,8 +53,7 @@ Scenario: Search_Paged Search Results_UC4_Change default number of pages to show
 	And Actor enters <T2> search term
 	And Actor clicks search link
 	Then number of pages on the <Search> page is equal to <3>
-
-
+  
 	@NeedImplementation
 Scenario: Search_Paged Search Results_UC5_Next button
 	Given Term <T3> was presented on 3 pages
