@@ -4,7 +4,7 @@
   using System.Xml;
   using FluentAssertions;
   using Sitecore.Foundation.SitecoreExtensions.Services;
-  using UnitTests.Common.Attributes;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class XmlParserServiceTests
