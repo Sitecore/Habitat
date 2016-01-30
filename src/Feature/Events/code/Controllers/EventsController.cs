@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 
 namespace Sitecore.Feature.Events.Controllers
 {
+    using Sitecore.Data;
     using Sitecore.Feature.Events.Models;
-    using System.Globalization;
     using Sitecore.Feature.Events.Repositories;
-    using Sitecore.Mvc.Controllers;
     using Sitecore.Mvc.Presentation;
+    using Sitecore.Links;
 
     public class EventsController : Controller
     {
@@ -30,7 +27,7 @@ namespace Sitecore.Feature.Events.Controllers
         {
             var events = this._eventRepository.Get().Select(c => new EventModel(c));
             return this.View(events);
-        }       
+        }
 
         public ActionResult EventDetail()
         {
@@ -39,8 +36,21 @@ namespace Sitecore.Feature.Events.Controllers
         }
         public ActionResult EventCalendar()
         {
+            var eventlistid = RenderingContext.Current.Rendering.DataSource;
+            var eventlisturl = "";
 
-            return this.View();
+            if (!string.IsNullOrEmpty(eventlistid))
+            {
+                var item = Context.Database.GetItem(ID.Parse(eventlistid) );
+                if (item != null)
+                {
+                    eventlisturl = LinkManager.GetItemUrl(item);
+                }
+
+            }
+         
+            var model = new EventCalendarModel {EventlistId = eventlistid,EventListUrl = eventlisturl};
+            return this.View(model);
         }
 
 

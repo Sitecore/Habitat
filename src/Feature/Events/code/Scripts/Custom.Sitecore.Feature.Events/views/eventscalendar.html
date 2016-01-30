@@ -1,5 +1,6 @@
 ﻿
 <br>
+
 <div class="row">
     <div class="col-md-6 text-center">
         <div class="btn-group">
@@ -21,11 +22,18 @@
                     increment="vm.calendarView">
                 Next
             </button>
+           
+           
+           
         </div>
     </div>
     <br class="visible-xs visible-sm">
     <div class="col-md-6 text-center">
         <div class="btn-group">
+            <button class="btn btn-primary"
+                    ng-click="vm.goto(vm.eventlisturl)">
+                Events List
+            </button>
             <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'">Year</label>
             <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'">Month</label>
             <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'">Week</label>

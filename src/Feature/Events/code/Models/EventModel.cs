@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Sitecore.Feature.Events.Models
 {
-    using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
     using Sitecore.Foundation.SitecoreExtensions.Model;
+    using Sitecore.Links;
 
     public class EventHeaderModel
     {
@@ -19,6 +16,7 @@ namespace Sitecore.Feature.Events.Models
         public string Summary { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
+        public string EventUrl { get; set; }
     }
 
     public class EventModel : EventHeaderModel
@@ -38,16 +36,15 @@ namespace Sitecore.Feature.Events.Models
         public EventModel(Item item)
         {
             Item = item;
-
-            //fields
+            EventUrl = LinkManager.GetItemUrl(item);
             Title = item.GetString(Templates.Event.Fields.Title);
             StartDate = item.GetDate(Templates.Event.Fields.StartDate);
             EndDate = item.GetDate(Templates.Event.Fields.EndDate);
             Location = item.GetString(Templates.Event.Fields.Location);
             Description = item.GetString(Templates.Event.Fields.Description);
             Image = item.GetImage(Templates.Event.Fields.Image);
-            var plainDesc = Sitecore.StringUtil.RemoveTags(Description);
-            Summary = Sitecore.StringUtil.Clip(plainDesc, 250, true);
+            var plainDesc = StringUtil.RemoveTags(Description);
+            Summary = StringUtil.Clip(plainDesc, 250, true);
         }
 
 

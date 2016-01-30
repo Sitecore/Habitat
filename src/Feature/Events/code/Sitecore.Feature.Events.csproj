@@ -140,6 +140,7 @@
   <ItemGroup>
     <Compile Include="Controllers\EventsApiController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Models\EventCalendarModel.cs" />
     <Compile Include="Models\EventModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IEventRepository.cs" />

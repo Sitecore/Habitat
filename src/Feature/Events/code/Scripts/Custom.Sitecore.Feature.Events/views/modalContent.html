@@ -1,31 +1,20 @@
 ﻿<div class="modal-header">
-    <h3 class="modal-title">{{ vm.event.title }}</h3>
+    <a href="{{ vm.event.eventUrl }}"><h3 class="modal-title">{{ vm.event.title }}</h3></a>
 </div>
 <div class="modal-body">
-    <p>
+    <div>
+        <pre> <a href="{{ vm.event.eventUrl }}">
         <image ng-src="{{vm.event.image}}" style="width: 100%"></image>
-        <pre>starts at:  {{ vm.event.startsAtTxt }} UTC  </pre>
-        <pre ng-show="vm.event.endsAtTxt!=''">ends at:  {{ vm.event.endsAtTxt }} UTC</pre>
-        <pre>description:{{ vm.event.description }}</pre>
-        <pre>location: {{ vm.event.location }}</pre>
-      
-    </p>
+        </a></pre>
+        <pre><b>starts at:</b>{{ vm.event.startsAtTxt }} UTC</pre>
+        <pre ng-show="vm.event.endsAtTxt!=''"><b>ends at:</b>{{ vm.event.endsAtTxt }} UTC</pre>
+        <div ng-bind-html="vm.event.description | unsafe "></div>
+        <span><b>location:</b>{{ vm.event.location }}</span>
+    </div>
 </div>
 
 
-    <!-- 3. Place event data -->
-    <!--<span class="addtocalendar atc-style-blue">
-        <var class="atc_event">
-            <var class="atc_date_start">2016-05-04 12:00:00</var>
-            <var class="atc_date_end">2016-05-04 18:00:00</var>
-            <var class="atc_timezone">Europe/London</var>
-            <var class="atc_title">Star Wars Day Party</var>
-            <var class="atc_description">May the force be with you</var>
-            <var class="atc_location">Tatooine</var>
-            <var class="atc_organizer">Luke Skywalker</var>
-            <var class="atc_organizer_email">luke@starwars.com</var>
-        </var>
-    </span>-->
 <div class="modal-footer">
+
     <button class="btn btn-primary" ng-click="$close()">OK</button>
 </div>
