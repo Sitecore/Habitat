@@ -31,7 +31,7 @@ Languages:
         Brought to you by St.George.&nbsp;
     - ID: e2d7bdff-048e-42ba-9f33-41d761e51b57
       Hint: EventStartDate
-      Value: 20160130T010000Z
+      Value: 20160130T023000Z
     - ID: e7088d4f-9396-412d-9bd8-c9ba4096c79d
       Hint: EventTitle
       Value: Dragon Boat Races
@@ -40,4 +40,4 @@ Languages:
       Value: "<image mediaid=\"{0D17E01F-CA43-4E93-9A1A-6199A79A1CB6}\" />"
     - ID: fbfc769d-534c-4680-845a-cd5f226dd59c
       Hint: EventEndDate
-      Value: 20160129T180000Z
+      Value: 20160130T060000Z
