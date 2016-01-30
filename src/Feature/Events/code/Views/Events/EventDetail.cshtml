@@ -1,9 +1,21 @@
 ﻿@using Sitecore.Feature.Events
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using System.Globalization
 @model Sitecore.Feature.Events.Models.EventModel
 @{
     var googleMapsApiKey = Sitecore.Context.Site.GetRootItem().GetString(Templates.Event.EventSettings.GoogleMapsApiKey);
+
 }
+<link href="/Scripts/addtocalendar/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+(function () {
+            if (window.addtocalendar)if(typeof window.addtocalendar.start == "function")return;
+            if (window.ifaddtocalendar == undefined) { window.ifaddtocalendar = 1;
+                var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+                s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
+                s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
+                var h = d[g]('body')[0];h.appendChild(s); }})();
+</script>
 <div class="events">
     <h2>
         @Html.Sitecore().Field(Templates.Event.Fields.Title.ToString(), Model.Item)
@@ -13,6 +25,17 @@
         <span class="text-muted">
             <strong>When:</strong> @Html.Sitecore().Field(Templates.Event.Fields.StartDate.ToString(), new {format = "MMMM dd, yyyy"}) - @Html.Sitecore().Field(Templates.Event.Fields.EndDate.ToString(), new {format = "MMMM dd, yyyy"}) <br />
             <strong>From:</strong> @Model.GetEventFormattedTime()
+        </span>
+        <!-- 3. Place event data -->
+        <span class="addtocalendar atc-style-blue pull-right">
+            <var class="atc_event">
+                <var class="atc_date_start">@(Model.StartDate?.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture))</var>
+                <var class="atc_date_end">@(Model.EndDate?.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture))</var>
+                <var class="atc_timezone">Europe/London</var>
+                <var class="atc_title">@Model.Title</var>
+                <var class="atc_description">@Model.Summary</var>
+                <var class="atc_location">@Model.Location</var>
+            </var>
         </span>
     </div>
     @Html.Sitecore().ImageField(Templates.Event.Fields.Image.ToString(), Model.Item, mw: 1000, cssClass: "img-responsive image")
