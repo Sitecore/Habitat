@@ -8,7 +8,7 @@
         </a></pre>
         <pre><b>starts at:</b>{{ vm.event.startsAtTxt }} UTC</pre>
         <pre ng-show="vm.event.endsAtTxt!=''"><b>ends at:</b>{{ vm.event.endsAtTxt }} UTC</pre>
-        <div ng-bind-html="vm.event.description | unsafe "></div>
+        <div ng-bind-html="vm.event.summary | unsafe "></div>
         <span><b>location:</b>{{ vm.event.location }}</span>
     </div>
 </div>

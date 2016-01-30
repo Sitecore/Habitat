@@ -43,14 +43,15 @@ namespace Sitecore.Feature.Events.Controllers
             return Json(events.Where(e => e.StartDate.HasValue).Select(c =>
               new
               {
-                 
+
                   title = c.Title,
                   startsAtTxt = c.StartDate?.ToUniversalTime().ToString(CultureInfo.InvariantCulture) ?? "",
                   endsAtTxt = c.EndDate?.ToUniversalTime().ToString(CultureInfo.InvariantCulture) ?? "",
                   description = c.Description,
                   location = c.Location,
-                  image = GetImageUrl(c.Image),
-                  eventUrl=c.EventUrl
+                  image =c.Image,
+                  eventUrl = c.EventUrl,
+                  summary=c.Summary
 
 
               }).ToArray(), JsonRequestBehavior.AllowGet);
@@ -68,8 +69,8 @@ namespace Sitecore.Feature.Events.Controllers
 
             //action does not need to acknowledge
             return new EmptyResult();
-        } 
-        
+        }
+
         private void RegisterPageEvent(string name, Guid definitionId, Guid itemId, string data, string text)
         {
             if (TrackerEnabled())
@@ -82,7 +83,7 @@ namespace Sitecore.Feature.Events.Controllers
                     Text = text
                 };
                 interaction.CurrentPage.Register(pageEventData);
-            }            
+            }
         }
 
         private static bool TrackerEnabled()
@@ -94,7 +95,12 @@ namespace Sitecore.Feature.Events.Controllers
         {
             if (image != null && !string.IsNullOrEmpty(image.MediaId))
             {
-                return MediaManager.GetMediaUrl(new MediaItem(Sitecore.Context.Database.GetItem(image.MediaId)));
+                var item = new MediaItem(Sitecore.Context.Database.GetItem(image.MediaId));
+                if (item != null && item.ID != ID.Null && item.ID!=ID.Undefined)
+
+                {
+                    return MediaManager.GetMediaUrl(item);
+                }
             }
 
 

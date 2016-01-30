@@ -12,7 +12,7 @@ namespace Sitecore.Feature.Events.Models
         public string Title { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
-        public Image Image { get; set; }
+        public string Image { get; set; }
         public string Summary { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
@@ -42,12 +42,22 @@ namespace Sitecore.Feature.Events.Models
             EndDate = item.GetDate(Templates.Event.Fields.EndDate);
             Location = item.GetString(Templates.Event.Fields.Location);
             Description = item.GetString(Templates.Event.Fields.Description);
-            Image = item.GetImage(Templates.Event.Fields.Image);
+            Image = GetImageURL(item);
             var plainDesc = StringUtil.RemoveTags(Description);
             Summary = StringUtil.Clip(plainDesc, 250, true);
         }
 
-
+        public static string GetImageURL(Item currentItem)
+        {
+            string imageURL = string.Empty;
+            Sitecore.Data.Fields.ImageField imageField = currentItem.Fields[Templates.Event.Fields.Image];
+            if (imageField != null && imageField.MediaItem != null)
+            {
+                Sitecore.Data.Items.MediaItem image = new Sitecore.Data.Items.MediaItem(imageField.MediaItem);
+                imageURL = Sitecore.StringUtil.EnsurePrefix('/', Sitecore.Resources.Media.MediaManager.GetMediaUrl(image));
+            }
+            return imageURL;
+        }
 
         public string GetEventFormattedTime()
         {
