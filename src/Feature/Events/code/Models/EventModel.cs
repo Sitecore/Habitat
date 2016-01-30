@@ -9,11 +9,16 @@ namespace Sitecore.Feature.Events.Models
     using Sitecore.Data.Items;
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
-    public class EventModel
+    public class EventHeaderModel
     {
         public string Title { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+    }
+
+    public class EventModel : EventHeaderModel
+    {
+        
         public Item Item { get; set; }
 
         public EventModel()
