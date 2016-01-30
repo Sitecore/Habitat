@@ -1,0 +1,14 @@
+﻿---
+ID: c13c5f09-c29e-4f96-9b4f-88d903ceba42
+Parent: 4dea1255-e256-4fab-89fe-cbc6caa37e0f
+Template: adb6ca4f-03ef-4f47-b9ac-9ce2ba53ff97
+Path: /sitecore/content/Habitat/Home/Modules/Feature/News/News/2016/01/30/03/13
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T031311Z

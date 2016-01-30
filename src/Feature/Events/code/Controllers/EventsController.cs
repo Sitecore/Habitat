@@ -8,7 +8,17 @@ namespace Sitecore.Feature.Events.Controllers
 {
     public class EventsController : Controller
     {
-        public ActionResult EventsList()
+        public ActionResult List()
+        {
+            return this.View();
+        }
+
+        public ActionResult Calendar()
+        {
+            return this.View();
+        }
+
+        public ActionResult Detail()
         {
             return this.View();
         }

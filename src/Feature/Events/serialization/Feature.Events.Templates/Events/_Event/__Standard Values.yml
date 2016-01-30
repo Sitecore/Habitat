@@ -1,0 +1,20 @@
+﻿---
+ID: 270c247b-8468-4ebc-b367-851601176134
+Parent: 1cd22d18-f739-4e95-a359-2f52288871da
+Template: 1cd22d18-f739-4e95-a359-2f52288871da
+Path: /sitecore/templates/Feature/Events/_Event/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T042129Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: e7088d4f-9396-412d-9bd8-c9ba4096c79d
+      Hint: EventTitle
+      Value: $name

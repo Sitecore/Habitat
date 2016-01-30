@@ -1,0 +1,17 @@
+﻿---
+ID: 66edae2d-d88e-4e9e-bdab-f74dfe579ae3
+Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
+Template: 66b80709-4204-4668-8fdc-5f95a60e580c
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Events
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T041133Z
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      Hint: Title
+      Value: Events

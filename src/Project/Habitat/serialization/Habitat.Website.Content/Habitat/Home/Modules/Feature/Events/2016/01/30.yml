@@ -1,0 +1,14 @@
+﻿---
+ID: a61f8fe5-a41b-4fcc-bdab-178d7a214a08
+Parent: 202cb249-8669-4a9a-9465-bd85bba9d47f
+Template: adb6ca4f-03ef-4f47-b9ac-9ce2ba53ff97
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Events/2016/01/30
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T041845Z
