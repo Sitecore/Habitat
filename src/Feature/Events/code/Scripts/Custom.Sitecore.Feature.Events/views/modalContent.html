@@ -1,16 +1,25 @@
 ﻿<div class="modal-header">
-    <h3 class="modal-title">Event action occurred!</h3>
+    <h3 class="modal-title">{{ vm.event.title }}</h3>
 </div>
 <div class="modal-body">
     <p>
-        Action:
-        <pre>{{ vm.action }}</pre>
-    </p>
-    <p>
-        Event:
-        <pre>{{ vm.event | json }}</pre>
+        <pre>{{ vm.event.description }}</pre>
     </p>
 </div>
+
+    <!-- 3. Place event data -->
+    <!--<span class="addtocalendar atc-style-blue">
+        <var class="atc_event">
+            <var class="atc_date_start">2016-05-04 12:00:00</var>
+            <var class="atc_date_end">2016-05-04 18:00:00</var>
+            <var class="atc_timezone">Europe/London</var>
+            <var class="atc_title">Star Wars Day Party</var>
+            <var class="atc_description">May the force be with you</var>
+            <var class="atc_location">Tatooine</var>
+            <var class="atc_organizer">Luke Skywalker</var>
+            <var class="atc_organizer_email">luke@starwars.com</var>
+        </var>
+    </span>-->
 <div class="modal-footer">
     <button class="btn btn-primary" ng-click="$close()">OK</button>
 </div>

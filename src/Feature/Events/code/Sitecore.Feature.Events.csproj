@@ -119,6 +119,8 @@
     <Content Include="Views\Events\EventDetail.cshtml" />
     <None Include="Properties\PublishProfiles\Events.dev.pubxml" />
     <Content Include="Content\ui-bootstrap-csp.css" />
+    <Content Include="Scripts\addtocalendar\atc\1.5\atc-style-blue.css" />
+    <Content Include="Scripts\addtocalendar\atc\1.5\atc.min.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-bootstrap-calendar\dist\css\angular-bootstrap-calendar.min.css" />
     <Content Include="Scripts\angular-bootstrap-calendar\dist\js\angular-bootstrap-calendar-tpls.min.js" />
