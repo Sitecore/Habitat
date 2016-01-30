@@ -1,0 +1,20 @@
+﻿---
+ID: 47382690-8c0e-4566-a1e2-5ffa527cb85d
+Parent: 813e2e8a-b387-4ae1-918d-d29090d91d12
+Template: f0691a97-c479-48c4-9e53-fb48ee6785dc
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Events/2016/01/30/04/18/Free Galleries Ticket
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T041845Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      Hint: BrowserTitle
+      Value: Free Galleries Ticket

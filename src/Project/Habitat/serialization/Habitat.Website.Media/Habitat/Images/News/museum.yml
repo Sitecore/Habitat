@@ -1,0 +1,61 @@
+﻿---
+ID: 7226b841-5963-4fb3-8cf5-59ee8a110d55
+Parent: 2f9550ab-23bc-462f-a481-5df37f5b546d
+Template: daf085e8-602e-43a6-8299-038ff171349f
+Path: /sitecore/media library/Habitat/Images/News/museum
+DB: master
+SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  Hint: __Icon
+  Value: -/media/7226B84159634FB38CF559EE8A110D55.ashx?h=16&thn=1&w=16
+- ID: 22eac599-f13b-4607-a89d-c091763a467d
+  Hint: Width
+  Value: 960
+- ID: 40e50ed9-ba07-4702-992e-a912738d32dc
+  Hint: Blob
+  Value: {D85E5E28-6452-4D81-A4D6-DCF0BDA9BBA9}
+- ID: 6954b7c7-2487-423f-8600-436cb3b6dc0e
+  Hint: Size
+  Value: 54677
+- ID: 6f47a0a5-9c94-4b48-abeb-42d38def6054
+  Hint: Mime Type
+  Value: image/jpeg
+- ID: b0145335-8735-414b-9169-a1d4e4dc9641
+  Hint: Software
+  Value: Paint.NET v3.5.6
+- ID: c06867fe-9a43-4c7d-b739-48780492d06f
+  Hint: Extension
+  Value: jpg
+- ID: cb09946f-3218-4823-87d2-d5007c199a96
+  Hint: Dimensions
+  Value: 960 x 320
+- ID: de2ca9e4-c117-4c8a-a139-1ff4b199d15a
+  Hint: Height
+  Value: 320
+Languages:
+- Language: da
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T044502Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: 65885c44-8fcd-4a7f-94f1-ee63703fe193
+      Hint: Alt
+      Value: Australian National Maritime Museum
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T044502Z
+    - ID: 65885c44-8fcd-4a7f-94f1-ee63703fe193
+      Hint: Alt
+      Value: Australian National Maritime Museum
+    - ID: ba8341a1-ff30-47b8-ae6a-f4947e4113f0
+      Hint: Description
+      Value: Australian National Maritime Museum
