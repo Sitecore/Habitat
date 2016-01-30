@@ -37,8 +37,12 @@ namespace Sitecore.Feature.Events.Controllers
             var eventModel = new EventModel(RenderingContext.Current.Rendering.Item);
             return this.View(eventModel);
         }
+        public ActionResult EventCalendar()
+        {
 
-        
+            return this.View();
+        }
+
 
     }
 }
