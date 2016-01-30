@@ -6,7 +6,7 @@
         <image ng-src="{{vm.event.image}}" style="width: 100%"></image>
         <pre>starts at:  {{ vm.event.startsAtTxt }} UTC  </pre>
         <pre ng-show="vm.event.endsAtTxt!=''">ends at:  {{ vm.event.endsAtTxt }} UTC</pre>
-        <pre>description:{{ vm.event.description }}</pre>
+        <pre>description:<span  ng-bind-html="vm.event.description | unsafe "></span></pre>
         <pre>location: {{ vm.event.location }}</pre>
       
     </p>

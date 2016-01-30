@@ -37,3 +37,5 @@ app.controller('EventsCalendarController', ['moment', 'alert', '$http', function
     };
 
 }]);
+
+app.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
