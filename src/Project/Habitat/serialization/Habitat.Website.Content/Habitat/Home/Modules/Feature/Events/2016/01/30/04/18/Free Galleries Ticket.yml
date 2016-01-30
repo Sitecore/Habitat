@@ -1,9 +1,19 @@
 ﻿---
 ID: 47382690-8c0e-4566-a1e2-5ffa527cb85d
-Parent: 813e2e8a-b387-4ae1-918d-d29090d91d12
+Parent: bac3aca2-5a8c-4f57-8e59-53e0ea023711
 Template: f0691a97-c479-48c4-9e53-fb48ee6785dc
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Events/2016/01/30/04/18/Free Galleries Ticket
 DB: master
+SharedFields:
+- ID: 39c4902e-9960-4469-aeef-e878e9c8218f
+  Hint: __Hidden
+  Value: 0
+- ID: 9dafca1d-d618-4616-86b8-a8acd6b28a63
+  Hint: __Bucket Parent Reference
+  Value: {66EDAE2D-D88E-4E9E-BDAB-F74DFE579AE3}
+- ID: d312103c-b36c-4ca5-864a-c85f9abda503
+  Hint: __Is Bucket
+  Value: 0
 Languages:
 - Language: en
   Versions:

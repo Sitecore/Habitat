@@ -5,6 +5,9 @@ Template: 66b80709-4204-4668-8fdc-5f95a60e580c
 Path: /sitecore/templates/Project/Habitat/Page Types/Event List/__Standard Values
 DB: master
 SharedFields:
+- ID: c9283d9e-7c29-4419-9c28-5a5c8ff53e84
+  Hint: __Bucketable
+  Value: 1
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
   Hint: __Renderings
   Type: layout
