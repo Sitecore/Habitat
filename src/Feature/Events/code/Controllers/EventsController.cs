@@ -40,6 +40,7 @@ namespace Sitecore.Feature.Events.Controllers
 
         public ActionResult EventDetail()
         {
+            var events = this._eventRepository.Get().Select(c => new EventModel(c));
             return this.View();
         }
 

@@ -159,7 +159,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Indexing\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\EventsApi\" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +170,9 @@
       <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

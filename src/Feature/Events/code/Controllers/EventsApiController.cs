@@ -1,30 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 
 namespace Sitecore.Feature.Events.Controllers
 {
     using System.Globalization;
+    using Sitecore.Data;
+    using Sitecore.Feature.Events.Models;
+    using Sitecore.Feature.Events.Repositories;
+    using Sitecore.Shell.Applications.ContentEditor;
 
     public class EventsApiController : Controller
     {
         [HttpGet]
-        public ActionResult GetEventsListJson(string id)
+        public ActionResult GetCalendarEventsJson(string id)
         {
-            Data.ID sitecoreid;
-            if (Data.ID.TryParse(id, out sitecoreid))
+            ID eventListId;
+            if (!ID.TryParse(id, out eventListId))
             {
-                
+                //throw new Exception("Invalid event list id");
+                return new EmptyResult();
             }
-            var events = new List<object>
+
+            //get event list item
+            var eventListItem = Sitecore.Context.Database.GetItem(eventListId);
+            if (eventListItem == null)
             {
-                new {title = "sample event1",startsAtTxt=System.DateTime.UtcNow.ToString(CultureInfo.InvariantCulture),endsAtTxt=System.DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)},
-                new {title = "sample event2",startsAtTxt=System.DateTime.UtcNow.AddDays(2).ToString(CultureInfo.InvariantCulture),endsAtTxt=System.DateTime.UtcNow.AddDays(2).AddHours(5).ToString(CultureInfo.InvariantCulture)},
-                new {title = "sample event3",startsAtTxt=System.DateTime.UtcNow.AddDays(4).ToString(CultureInfo.InvariantCulture),endsAtTxt=System.DateTime.UtcNow.AddDays(4).AddHours(5).ToString(CultureInfo.InvariantCulture)}
-            };
-            return Json(events.ToArray(), JsonRequestBehavior.AllowGet);
+                return new EmptyResult();
+            }
+
+            //set context item
+            Context.Item = eventListItem;
+
+            //initialize event repository
+            var eventRepository = new EventRepository(eventListItem);
+            var events = eventRepository.Get().Select(c => new EventModel(c) as EventHeaderModel);
+                
+            return Json(events.Where(e=>e.StartDate.HasValue).Select(c => 
+            new { title = c.Title,
+                startsAtTxt = c.StartDate?.ToUniversalTime().ToString(CultureInfo.InvariantCulture) ?? "",
+                endsAtTxt = c.EndDate?.ToUniversalTime().ToString(CultureInfo.InvariantCulture) ?? "",
+                description = c.Description,
+                location=c.Location,
+              //  image=c.Image
+                
+            }).ToArray(), JsonRequestBehavior.AllowGet);
+
         }
     }
 }
