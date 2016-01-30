@@ -1,13 +1,13 @@
 ﻿---
-ID: c5c763c8-1f8b-44b4-8d32-dc0a187bdabc
+ID: 9289e761-9ffa-4597-a418-d1d9f0262ad6
 Parent: 31b2c58d-d3a5-45a4-90a5-08685aed6c0d
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
-Path: /sitecore/layout/Renderings/Feature/Events/CalendarView
+Path: /sitecore/layout/Renderings/Feature/Events/EventDetail
 DB: master
 SharedFields:
 - ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
   Hint: Controller Action
-  Value: Calendar
+  Value: EventDetail
 - ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
   Hint: Controller
   Value: Sitecore.Feature.Events.Controllers.EventsController,Sitecore.Feature.Events
@@ -18,4 +18,4 @@ Languages:
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
-      Value: 20160130T022805Z
+      Value: 20160130T022822Z

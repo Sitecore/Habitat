@@ -1,17 +1,10 @@
 ﻿---
-ID: 5cfb42bb-5cbe-4015-bd7e-f4583b1e6232
-Parent: a99866e5-08e7-44d8-8a52-f8e26bcd3714
-Template: a99866e5-08e7-44d8-8a52-f8e26bcd3714
+ID: 136ec434-1ac4-49f9-abcd-cc4f5dbff196
+Parent: 66b80709-4204-4668-8fdc-5f95a60e580c
+Template: 66b80709-4204-4668-8fdc-5f95a60e580c
 Path: /sitecore/templates/Project/Habitat/Page Types/Event List/__Standard Values
 DB: master
 SharedFields:
-- ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
-  Hint: __Masters
-  Type: TreelistEx
-  Value: {F0691A97-C479-48C4-9E53-FB48EE6785DC}
-- ID: d312103c-b36c-4ca5-864a-c85f9abda503
-  Hint: __Is Bucket
-  Value: 1
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
   Hint: __Renderings
   Type: layout
@@ -34,7 +27,7 @@ SharedFields:
         <r id="{E6BA23C6-08F7-43D0-BE00-BB2129D6F288}" ph="pageheading" uid="{20E3883C-C16D-41D7-B5D3-C4AC60D8386D}" />
         <r id="{EADA94FA-315F-4DF2-AC49-13346DFDAF12}" ph="page-layout" uid="{66422117-69C1-4B62-9323-482F16C4F244}" />
         <r id="{3F7AD288-FA57-441F-AD79-CA60DC0C0A8D}" ph="sidebar" uid="{A85893F9-5DF5-4C28-AC0F-67AD85D29661}" />
-        <r id="{6D309FC1-D6B1-43B1-A31C-1FECB7B9303F}" ph="sidebarcontent" uid="{3900ADC1-26E3-45C2-935C-1BC12D4E228A}" />
+        <r id="{67020F22-340A-4870-8151-75AEA8A204EC}" ph="sidebarcontent" uid="{3900ADC1-26E3-45C2-935C-1BC12D4E228A}" />
         <r id="{299FD8EA-2CFD-4A69-9CA4-7EA24CD34A46}" ph="footer" uid="{E2040FB7-4151-456D-9315-5973E4EB4D9D}" />
         <r ds="{FB1E4810-6D89-4F1E-A47B-70478FE32DA7}" id="{69B9C355-004B-4268-BB1E-2F725B8752B7}" ph="footercolumn1" uid="{0E0C6DCA-1A29-4975-84D7-E99498A64A72}" />
         <r ds="{B4D87E66-D2C5-4C06-8F9A-08AEAF38055A}" id="{69B9C355-004B-4268-BB1E-2F725B8752B7}" ph="footercolumn1" uid="{0E0C6DCA-1A29-4975-84D7-E99498A64A72}" />
@@ -52,10 +45,7 @@ Languages:
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
-      Value: 20150824T175428Z
+      Value: 20160130T062652Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
       Hint: __Created by
       Value: sitecore\admin
-    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
-      Hint: Image
-      Value: "<image mediaid=\"{88032F9C-B464-44CB-B76D-513D60B9C127}\" />"

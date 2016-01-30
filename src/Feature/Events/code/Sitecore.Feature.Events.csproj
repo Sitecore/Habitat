@@ -48,9 +48,17 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
@@ -106,10 +114,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Events\List.cshtml" />
     <Content Include="App_Config\Include\Feature\Feature.Events.Serialization.config" />
-    <Content Include="Views\Events\Calendar.cshtml" />
-    <Content Include="Views\Events\Detail.cshtml" />
+    <Content Include="Views\Events\EventCalendar.cshtml" />
+    <Content Include="Views\Events\EventDetail.cshtml" />
     <None Include="Properties\PublishProfiles\Events.dev.pubxml" />
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="Scripts\addtocalendar\atc\1.5\atc-style-blue.css" />
@@ -127,6 +134,7 @@
     <Content Include="Scripts\interact.js\1.2.4\interact.min.js" />
     <Content Include="Scripts\moment\min\moment.min.js" />
     <None Include="Properties\PublishProfiles\aza.pubxml" />
+    <Content Include="Views\Events\EventList.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +156,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Indexing\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

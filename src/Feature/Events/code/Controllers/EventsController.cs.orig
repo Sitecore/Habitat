@@ -6,8 +6,13 @@ using System.Web.Mvc;
 
 namespace Sitecore.Feature.Events.Controllers
 {
+<<<<<<< HEAD
+    using System.Globalization;
+    using Sitecore.Shell.Feeds.FeedTypes;
+=======
     using Sitecore.Feature.Events.Repositories;
     using Sitecore.Mvc.Presentation;
+>>>>>>> 2078526a141edefb5704a821a3c16931a2e3a0c5
 
     public class EventsController : Controller
     {
