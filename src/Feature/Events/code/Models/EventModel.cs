@@ -44,7 +44,6 @@ namespace Sitecore.Feature.Events.Models
             Location = item.GetString(Templates.Event.Fields.Location);
             Description = item.GetString(Templates.Event.Fields.Description);
             ImageUrl = GetImageURL(item);
-            Image= item.GetImage(Templates.Event.Fields.Image);
             var plainDesc = StringUtil.RemoveTags(Description);
             Summary = StringUtil.Clip(plainDesc, 250, true);
         }
