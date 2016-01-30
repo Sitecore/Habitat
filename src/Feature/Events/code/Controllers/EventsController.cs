@@ -16,9 +16,9 @@ namespace Sitecore.Feature.Events.Controllers
         {
         }
 
-        public EventsController(IEventRepository newsRepository)
+        public EventsController(IEventRepository eventsRepository)
         {
-            this._eventRepository = newsRepository;
+            this._eventRepository = eventsRepository;
         }
 
         public ActionResult EventList()
