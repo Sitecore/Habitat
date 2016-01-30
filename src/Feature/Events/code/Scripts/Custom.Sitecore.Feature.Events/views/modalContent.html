@@ -3,7 +3,12 @@
 </div>
 <div class="modal-body">
     <p>
-        <pre>{{ vm.event.description }}</pre>
+        <image ng-src="{{vm.event.image}}"></image>
+        <pre>starts at:  {{ vm.event.startsAtTxt }} UTC  </pre>
+        <pre ng-show="vm.event.endsAtTxt!=''">ends at:  {{ vm.event.endsAtTxt }} UTC</pre>
+        <pre>description:{{ vm.event.description }}</pre>
+        <pre>location: {{ vm.event.location }}</pre>
+      
     </p>
 </div>
 

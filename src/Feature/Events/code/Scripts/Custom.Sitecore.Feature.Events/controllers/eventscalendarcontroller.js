@@ -13,8 +13,13 @@ app.controller('EventsCalendarController', ['moment', 'alert', '$http', function
             if (result != null && result.data != "") {
                 var events = result.data;
                 for (var i = 0; i < result.data.length; i++) {
-                    events[i].startsAt = new Date(events[i].startsAtTxt);
-                    events[i].endsAt = new Date(events[i].endsAtTxt);
+                    if (events[i].startsAtTxt != "") {
+                        events[i].startsAt = new Date(events[i].startsAtTxt);
+                    }
+                    if (events[i].endsAtTxt != "") {
+                        events[i].endsAt = new Date(events[i].endsAtTxt);
+                    }
+                   
                 }
 
                 vm.events = events;
