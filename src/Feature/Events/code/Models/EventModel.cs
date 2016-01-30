@@ -15,7 +15,7 @@ namespace Sitecore.Feature.Events.Models
         public string Title { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
-        public string Image { get; set; }
+        public Image Image { get; set; }
         public string Summary { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
@@ -45,13 +45,12 @@ namespace Sitecore.Feature.Events.Models
             EndDate = item.GetDate(Templates.Event.Fields.EndDate);
             Location = item.GetString(Templates.Event.Fields.Location);
             Description = item.GetString(Templates.Event.Fields.Description);
+            Image = item.GetImage(Templates.Event.Fields.Image);
             var plainDesc = Sitecore.StringUtil.RemoveTags(Description);
             Summary = Sitecore.StringUtil.Clip(plainDesc, 250, true);
-            //     Image = item.GetImage(Templates.Event.Fields.Image) != null ? item.GetImage(Templates.Event.Fields.Image).MediaPath : "#";
-
         }
 
-      
+
 
         public string GetEventFormattedTime()
         {
