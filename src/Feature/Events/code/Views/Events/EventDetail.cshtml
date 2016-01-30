@@ -1,9 +1,11 @@
 ﻿@using Sitecore.Feature.Events
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using System.Globalization
+@using Sitecore.Mvc.Presentation
 @model Sitecore.Feature.Events.Models.EventModel
 @{
     var googleMapsApiKey = Sitecore.Context.Site.GetRootItem().GetString(Templates.Event.EventSettings.GoogleMapsApiKey);
+    var currentItem = RenderingContext.Current.ContextItem;
 
 }
 <link href="/Scripts/addtocalendar/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
@@ -14,7 +16,17 @@
                 var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
                 s.type = 'text/javascript';s.charset = 'UTF-8';s.async = true;
                 s.src = ('https:' == window.location.protocol ? 'https' : 'http')+'://addtocalendar.com/atc/1.5/atc.min.js';
-                var h = d[g]('body')[0];h.appendChild(s); }})();
+                var h = d[g]('body')[0]; h.appendChild(s);
+            }
+})();
+
+    //event tracking
+$(document).ready(function() {
+    $('.addtocalendar').on('click', '.atcb-item-link', function () {
+        var data = $(this).text();
+        $.get("/api/EventsApi/RegisterCalendarAddPageEvent?id=@currentItem.ID.ToString()&data=" + data + "&text=@currentItem.Name");
+    });    
+});
 </script>
 <div class="events">
     <h2>
@@ -29,7 +41,7 @@
         <!-- 3. Place event data -->
         <span class="addtocalendar atc-style-blue pull-right">
             <var class="atc_event">
-                <var class="atc_date_start">@(Model.StartDate?.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture))</var>
+                <var id="" class="atc_date_start">@(Model.StartDate?.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture))</var>
                 <var class="atc_date_end">@(Model.EndDate?.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture))</var>
                 <var class="atc_timezone">Europe/London</var>
                 <var class="atc_title">@Model.Title</var>

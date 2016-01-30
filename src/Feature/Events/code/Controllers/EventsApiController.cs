@@ -72,7 +72,7 @@ namespace Sitecore.Feature.Events.Controllers
         
         private void RegisterPageEvent(string name, Guid definitionId, Guid itemId, string data, string text)
         {
-            if (Tracker.Current != null && Tracker.Current.Session != null && Tracker.Current.Session.Interaction != null)
+            if (TrackerEnabled())
             {
                 var interaction = Tracker.Current.Session.Interaction;
                 var pageEventData = new PageEventData(name, definitionId)
@@ -83,6 +83,11 @@ namespace Sitecore.Feature.Events.Controllers
                 };
                 interaction.CurrentPage.Register(pageEventData);
             }            
+        }
+
+        private static bool TrackerEnabled()
+        {
+            return Tracker.IsActive && Tracker.Current.Session != null && Tracker.Current.Session.Interaction != null;
         }
 
         private string GetImageUrl(Sitecore.Foundation.SitecoreExtensions.Model.Image image)
