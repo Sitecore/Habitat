@@ -1,7 +1,7 @@
 ﻿@using Sitecore.Feature.Events
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model IEnumerable<Sitecore.Feature.Events.Models.EventModel>
-<div class="content-list newslist">
+<div class="content-list eventlist">
     <ol class="media-list">
 
         @foreach (var eventItem in Model)
@@ -19,6 +19,9 @@
                                 @Html.Sitecore().Field(Templates.Event.Fields.Title.ToString(), item)
                             </a>
                         </h3>
+                        <div class="description">
+                            <p>@eventItem.Summary</p>
+                        </div>
                         <div class="metadata well">
                             @Html.Sitecore().Field(Templates.Event.Fields.StartDate.ToString(), item, new
                    {

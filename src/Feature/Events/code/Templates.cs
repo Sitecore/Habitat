@@ -8,6 +8,11 @@
         {
             public static ID ID = new ID("{1CD22D18-F739-4E95-A359-2F52288871DA}");
 
+            public struct EventSettings
+            {
+                public static readonly ID GoogleMapsApiKey = new ID("{3C27D3B4-82BC-409F-9587-59BA4A9E0EF9}");
+            }
+
             public struct Fields
             {
                 public static readonly ID Title = new ID("{E7088D4F-9396-412D-9BD8-C9BA4096C79D}");
