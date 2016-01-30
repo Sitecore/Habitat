@@ -49,7 +49,7 @@ namespace Sitecore.Feature.Events.Controllers
                   endsAtTxt = c.EndDate?.ToUniversalTime().ToString(CultureInfo.InvariantCulture) ?? "",
                   description = c.Description,
                   location = c.Location,
-                  image =c.Image,
+                  imageUrl =c.ImageUrl,
                   eventUrl = c.EventUrl,
                   summary=c.Summary
 
@@ -91,21 +91,6 @@ namespace Sitecore.Feature.Events.Controllers
             return Tracker.IsActive && Tracker.Current.Session != null && Tracker.Current.Session.Interaction != null;
         }
 
-        private string GetImageUrl(Sitecore.Foundation.SitecoreExtensions.Model.Image image)
-        {
-            if (image != null && !string.IsNullOrEmpty(image.MediaId))
-            {
-                var item = new MediaItem(Sitecore.Context.Database.GetItem(image.MediaId));
-                if (item != null && item.ID != ID.Null && item.ID!=ID.Undefined)
-
-                {
-                    return MediaManager.GetMediaUrl(item);
-                }
-            }
-
-
-            return string.Empty;
-        }
 
 
     }
