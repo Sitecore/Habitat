@@ -23,10 +23,7 @@
             {
                 throw new ArgumentNullException(nameof(contextItem));
             }
-            if (!contextItem.IsDerived(Templates.EventFolder.ID))
-            {
-                throw new ArgumentException("Item must derive from EventFolder", nameof(contextItem));
-            }
+            
             this.ContextItem = contextItem;
 
             this.searchServiceRepository = searchServiceRepository;
