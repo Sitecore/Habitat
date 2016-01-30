@@ -29,7 +29,7 @@ namespace Sitecore.Feature.Events.Models
             Item = item;
 
             //fields
-            Title = item[Templates.Event.Fields.Title];            
+            Title = item[Templates.Event.Fields.Title];
         }
     }
 }
