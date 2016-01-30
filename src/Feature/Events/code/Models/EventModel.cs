@@ -46,7 +46,7 @@ namespace Sitecore.Feature.Events.Models
 
             if (EndDate != null)
             {
-                eventTime = " - " + EndDate.GetValueOrDefault().ToShortTimeString();
+                eventTime += " - " + EndDate.GetValueOrDefault().ToShortTimeString();
             }
 
             return eventTime;
