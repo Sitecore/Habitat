@@ -1,7 +1,7 @@
 ﻿---
-ID: 72e3367a-dd8d-444d-9805-e840661c4745
-Parent: b69277ad-e917-4b9f-9136-a12e0a3e462f
-Template: b69277ad-e917-4b9f-9136-a12e0a3e462f
+ID: af6ce261-4e10-4839-9155-a416473e457a
+Parent: f0691a97-c479-48c4-9e53-fb48ee6785dc
+Template: f0691a97-c479-48c4-9e53-fb48ee6785dc
 Path: /sitecore/templates/Project/Habitat/Page Types/Event/__Standard Values
 DB: master
 SharedFields:
@@ -12,7 +12,7 @@ SharedFields:
   Hint: __Renderings
   Type: layout
   Value: |
-    <r>
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{ED043C36-CD48-4EDF-A288-EC404EE1CD42}">
         <r id="{E7AE3F87-CF66-40F2-A9F5-33ECF08BC777}" ph="head" uid="{E6CA18D8-321D-4105-9C38-0622E94BE400}" />
         <r id="{3389CAFC-000C-41E5-921C-92821B3DB7B5}" ph="head" uid="{EF51B238-7CE2-4E39-AB87-D05424735160}" />
@@ -30,7 +30,7 @@ SharedFields:
         <r id="{E6BA23C6-08F7-43D0-BE00-BB2129D6F288}" ph="pageheading" uid="{20E3883C-C16D-41D7-B5D3-C4AC60D8386D}" />
         <r id="{EADA94FA-315F-4DF2-AC49-13346DFDAF12}" ph="page-layout" uid="{66422117-69C1-4B62-9323-482F16C4F244}" />
         <r id="{3F7AD288-FA57-441F-AD79-CA60DC0C0A8D}" ph="sidebar" uid="{A85893F9-5DF5-4C28-AC0F-67AD85D29661}" />
-        <r id="{F366176E-2C2B-4AF2-B356-BCF8BD657C58}" ph="sidebarcontent" uid="{565F9960-4E47-4DA4-9406-0A29DD09911F}" />
+        <r id="{9289E761-9FFA-4597-A418-D1D9F0262AD6}" ph="sidebarcontent" uid="{565F9960-4E47-4DA4-9406-0A29DD09911F}" />
         <r id="{299FD8EA-2CFD-4A69-9CA4-7EA24CD34A46}" ph="footer" uid="{E2040FB7-4151-456D-9315-5973E4EB4D9D}" />
         <r ds="{FB1E4810-6D89-4F1E-A47B-70478FE32DA7}" id="{69B9C355-004B-4268-BB1E-2F725B8752B7}" ph="footercolumn1" uid="{0E0C6DCA-1A29-4975-84D7-E99498A64A72}" />
         <r ds="{B4D87E66-D2C5-4C06-8F9A-08AEAF38055A}" id="{69B9C355-004B-4268-BB1E-2F725B8752B7}" ph="footercolumn1" uid="{0E0C6DCA-1A29-4975-84D7-E99498A64A72}" />
@@ -48,7 +48,4 @@ Languages:
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
-      Value: 20150824T175451Z
-    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
-      Hint: BrowserTitle
-      Value: $name
+      Value: 20160130T055534Z

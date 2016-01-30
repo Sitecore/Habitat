@@ -1,9 +1,19 @@
 ﻿---
 ID: 04d49679-230d-4d97-86b5-51b7595d7ba8
-Parent: 66edae2d-d88e-4e9e-bdab-f74dfe579ae3
+Parent: c3a2179d-6509-40d3-985b-f842d0093831
 Template: f0691a97-c479-48c4-9e53-fb48ee6785dc
-Path: /sitecore/content/Habitat/Home/Modules/Feature/Events/Dragon Boat Races
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Events/2016/01/30/07/46/Dragon Boat Races
 DB: master
+SharedFields:
+- ID: 39c4902e-9960-4469-aeef-e878e9c8218f
+  Hint: __Hidden
+  Value: 0
+- ID: 9dafca1d-d618-4616-86b8-a8acd6b28a63
+  Hint: __Bucket Parent Reference
+  Value: {66EDAE2D-D88E-4E9E-BDAB-F74DFE579AE3}
+- ID: d312103c-b36c-4ca5-864a-c85f9abda503
+  Hint: __Is Bucket
+  Value: 0
 Languages:
 - Language: en
   Versions:
