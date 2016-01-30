@@ -4,7 +4,7 @@ app.controller('EventsCalendarController', ['moment', 'alert', '$http', function
     var vm = this;
 
 
-    $http.get('/api/Events/GetEventsListJson')
+    $http.get('api/EventsApi/GetEventsListJson')
       .then(
       function (result) {
           var events = result.data;
