@@ -1,0 +1,43 @@
+﻿---
+ID: 04d49679-230d-4d97-86b5-51b7595d7ba8
+Parent: 66edae2d-d88e-4e9e-bdab-f74dfe579ae3
+Template: f0691a97-c479-48c4-9e53-fb48ee6785dc
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Events/Dragon Boat Races
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T074621Z
+    - ID: 384e0ce5-7b42-4d00-a063-b903a07dd1b7
+      Hint: EventLocation
+      Value: Cockle Bay Wharf, Sydney, New South Wales, Australia
+    - ID: 8d4a615d-8cb1-4324-a5fe-fca3be62044d
+      Hint: EventDescription
+      Value: |
+        The mythical dragon commands the wind, the mist and the rain, surging through the skies and the seas.<br>
+        <br>
+        For more than 2,000 years, Dragon Boat racing has had a special place in Chinese culture, with 12-metre long boats battling it out to the pounding of drums. The first races were held to commemorate Qu Yuan, the great warrior poet, who drowned himself in a river as a protest against political corruption. Today, the race represents patriotism and group integrity.<br>
+        <br>
+        Get up close to all the action on the 90 metre viewing pontoon and watch this heart-stopping competition, as the spectacular dragon boats race through the waters to the pounding of drums and the cheering of spectators.<br>
+        <br>
+        Come and see a unique Taoist eye dotting ceremony and the blessing the waters to ensure a safe weekend of racing, and awakening of the dragons by dabbing red paint onto the eyes of each boat&rsquo;s figurehead.<br>
+        <br>
+        Meet St.George&rsquo;s Happy Dragon who will also be cheering on the dragon boats over the weekend.<br>
+        <br>
+        Brought to you by St.George.&nbsp;
+    - ID: e2d7bdff-048e-42ba-9f33-41d761e51b57
+      Hint: EventStartDate
+      Value: 20160130T023000Z
+    - ID: e7088d4f-9396-412d-9bd8-c9ba4096c79d
+      Hint: EventTitle
+      Value: Dragon Boat Races
+    - ID: f48585e9-4984-493e-9f3b-f40710cac667
+      Hint: EventImage
+      Value: "<image mediaid=\"{0D17E01F-CA43-4E93-9A1A-6199A79A1CB6}\" />"
+    - ID: fbfc769d-534c-4680-845a-cd5f226dd59c
+      Hint: EventEndDate
+      Value: 20160130T060000Z

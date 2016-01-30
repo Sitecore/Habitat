@@ -1,0 +1,39 @@
+﻿---
+ID: 26289245-f176-4861-92ab-a31129e02474
+Parent: 66edae2d-d88e-4e9e-bdab-f74dfe579ae3
+Template: f0691a97-c479-48c4-9e53-fb48ee6785dc
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Events/K-Pop Party 2016
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T074621Z
+    - ID: 384e0ce5-7b42-4d00-a063-b903a07dd1b7
+      Hint: EventLocation
+      Value: Carriageworks, 245 Wilson Street, Eveleigh
+    - ID: 8d4a615d-8cb1-4324-a5fe-fca3be62044d
+      Hint: EventDescription
+      Value: |
+        Celebrate the 2016 Sydney Chinese New Year Festival with the ultimate boy band party!<br>
+        <br>
+        Experience Boyfriend and JJCC perform live in concert, followed by on-stage interviews hosted by SBS PopAsia&rsquo;s Jamaica dela Cruz and Andy Trieu.<br>
+        <br>
+        VIP Gold Standing ticketholders will receive an exclusive High Touch with both bands following the concert!<br>
+        <br>
+        &lsquo;Boyfriend is in the top Korean K-Pop bands you should know&rsquo; The 10 Best Review
+    - ID: e2d7bdff-048e-42ba-9f33-41d761e51b57
+      Hint: EventStartDate
+      Value: 20160203T023000Z
+    - ID: e7088d4f-9396-412d-9bd8-c9ba4096c79d
+      Hint: EventTitle
+      Value: K-Pop Party 2016
+    - ID: f48585e9-4984-493e-9f3b-f40710cac667
+      Hint: EventImage
+      Value: "<image mediaid=\"{53E02992-FD2D-4608-BA3D-8CC8933030FD}\" />"
+    - ID: fbfc769d-534c-4680-845a-cd5f226dd59c
+      Hint: EventEndDate
+      Value: 20160203T063000Z

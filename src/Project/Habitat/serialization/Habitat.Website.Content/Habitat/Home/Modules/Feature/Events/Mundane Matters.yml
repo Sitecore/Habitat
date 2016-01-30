@@ -1,0 +1,39 @@
+﻿---
+ID: 35ba4a23-583c-40cf-b24d-19f32caa2600
+Parent: 66edae2d-d88e-4e9e-bdab-f74dfe579ae3
+Template: f0691a97-c479-48c4-9e53-fb48ee6785dc
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Events/Mundane Matters
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T074621Z
+    - ID: 384e0ce5-7b42-4d00-a063-b903a07dd1b7
+      Hint: EventLocation
+      Value: aza's home
+    - ID: 8d4a615d-8cb1-4324-a5fe-fca3be62044d
+      Hint: EventDescription
+      Value: |
+        Danling Xiao is the artist behind the photographic project Mundane Matters.<br>
+        <br>
+        Every day, she creates a food sculpture &mdash; Dracula carved out of an eggplant, a pumpkin transformed into a telephone &mdash; then captures it using her iPhone.<br>
+        <br>
+        She began the project in 2014, hoping to find happiness and inspiration in simple objects that are overlooked in today&rsquo;s busy life.<br>
+        <br>
+        Join us for an exhibition of Danling&rsquo;s sculptures and hear how she formed the daily habit of creating an image every day for nine months.
+    - ID: e2d7bdff-048e-42ba-9f33-41d761e51b57
+      Hint: EventStartDate
+      Value: 20160226T023000Z
+    - ID: e7088d4f-9396-412d-9bd8-c9ba4096c79d
+      Hint: EventTitle
+      Value: Mundane Matters: Do Play with Your Food
+    - ID: f48585e9-4984-493e-9f3b-f40710cac667
+      Hint: EventImage
+      Value: "<image mediaid=\"{6E2C5B2D-C49D-4D51-B776-CE7C72F3C659}\" />"
+    - ID: fbfc769d-534c-4680-845a-cd5f226dd59c
+      Hint: EventEndDate
+      Value: 20160226T060000Z

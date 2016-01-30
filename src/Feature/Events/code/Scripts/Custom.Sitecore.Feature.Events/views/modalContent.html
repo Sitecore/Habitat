@@ -3,7 +3,7 @@
 </div>
 <div class="modal-body">
     <p>
-        <image ng-src="{{vm.event.image}}"></image>
+        <image ng-src="{{vm.event.image}}" style="width: 100%" ></image>
         <pre>starts at:  {{ vm.event.startsAtTxt }} UTC  </pre>
         <pre ng-show="vm.event.endsAtTxt!=''">ends at:  {{ vm.event.endsAtTxt }} UTC</pre>
         <pre>description:{{ vm.event.description }}</pre>
