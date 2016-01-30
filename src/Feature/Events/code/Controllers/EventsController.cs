@@ -22,5 +22,9 @@ namespace Sitecore.Feature.Events.Controllers
         {
             return this.View();
         }
+        public ActionResult EventsCalendar()
+        {
+            return this.View();
+        }
     }
 }

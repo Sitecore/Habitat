@@ -1,0 +1,1 @@
+﻿var app = angular.module('sitecore.feature.events.app', ['mwl.calendar', 'ui.bootstrap']);

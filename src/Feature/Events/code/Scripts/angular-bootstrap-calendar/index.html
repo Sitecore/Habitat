@@ -1,0 +1,153 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular bootstrap calendar demo</title>
+    <meta name="description" content="Angular bootstrap calendar demo">
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css">
+      [ng-cloak] {
+        display: none;
+      }
+    </style>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css" rel="stylesheet">
+    <link href="docs/docs.css" rel="stylesheet">
+  </head>
+  <body ng-app="mwl.calendar.docs" ng-controller="ExamplesCtrl as vm" ng-cloak>
+
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Angular Bootstrap Calendar</a>
+        </div>
+        <ul class="nav navbar-nav hidden-xs">
+          <li class="active"><a href="/">Examples</a></li>
+          <li><a href="https://github.com/mattlewis92/angular-bootstrap-calendar#installation">Installation</a></li>
+          <li><a href="https://github.com/mattlewis92/angular-bootstrap-calendar#documentation">Documentation</a></li>
+          <li><a href="https://github.com/mattlewis92/angular-bootstrap-calendar">Project on GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid content">
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Examples
+            </div>
+            <div class="panel-body sidebar-nav">
+              <ul class="list-unstyled">
+                <li ng-repeat="demo in vm.examples track by $index">
+                  <a
+                    href="javascript:;"
+                    ng-click="vm.loadExample(demo)"
+                    ng-class="{active: vm.activeExample.key === demo.key}">
+                    {{ demo.label }}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <h3>{{ vm.activeExample.label }}</h3>
+          <div>
+            <button
+              class="btn btn-info pull-right"
+              ng-click="vm.editActiveExample()">
+              <i class="glyphicon glyphicon-edit"></i> Edit in Plunker
+            </button>
+            <uib-tabset>
+              <uib-tab heading="Demo" active="vm.showDemoTab">
+                <div id="demoContainer"></div>
+              </uib-tab>
+              <uib-tab heading="JavaScript">
+                <div hljs hljs-source="vm.activeExample.javascript" hljs-language="javascript"></div>
+              </uib-tab>
+              <uib-tab heading="Markup">
+                <div hljs hljs-source="vm.activeExample.markup" hljs-language="html"></div>
+              </uib-tab>
+            </uib-tabset>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script type="text/ng-template" id="modalContent.html">
+      <div class="modal-header">
+        <h3 class="modal-title">Event action occurred!</h3>
+      </div>
+      <div class="modal-body">
+        <p>Action:
+        <pre>{{ vm.action }}</pre>
+        </p>
+        <p>Event:
+        <pre>{{ vm.event | json }}</pre>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="$close()">OK</button>
+      </div>
+    </script>
+
+    <script type="text/ng-template" id="calendarControls.html">
+      <br>
+      <div class="row">
+
+        <div class="col-md-6 text-center">
+          <div class="btn-group">
+
+            <button
+              class="btn btn-primary"
+              mwl-date-modifier
+              date="vm.viewDate"
+              decrement="vm.calendarView">
+              Previous
+            </button>
+            <button
+              class="btn btn-default"
+              mwl-date-modifier
+              date="vm.viewDate"
+              set-to-today>
+              Today
+            </button>
+            <button
+              class="btn btn-primary"
+              mwl-date-modifier
+              date="vm.viewDate"
+              increment="vm.calendarView">
+              Next
+            </button>
+          </div>
+        </div>
+
+        <br class="visible-xs visible-sm">
+
+        <div class="col-md-6 text-center">
+          <div class="btn-group">
+            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'">Year</label>
+            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'">Month</label>
+            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'">Week</label>
+            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'day'">Day</label>
+          </div>
+        </div>
+
+      </div>
+      <br>
+    </script>
+
+    <script src="angular-bootstrap-calendar.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-touch.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.0.3/ui-bootstrap-tpls.min.js"></script>
+    <script src="//cdn.rawgit.com/ocombe/ocLazyLoad/1.0.9/dist/ocLazyLoad.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+    <script src="//cdn.rawgit.com/pc035860/angular-highlightjs/v0.5.1/build/angular-highlightjs.min.js"></script>
+    <script src="docs/docs.js"></script>
+    <script src="docs/examples/helpers.js"></script>
+  </body>
+</html>

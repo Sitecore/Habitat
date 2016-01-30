@@ -1,0 +1,44 @@
+<div class="cal-day-box">
+  <div class="row-fluid clearfix cal-row-head">
+    <div class="span1 col-xs-1 cal-cell" ng-bind="vm.calendarConfig.i18nStrings.timeLabel"></div>
+    <div class="span11 col-xs-11 cal-cell" ng-bind="vm.calendarConfig.i18nStrings.eventsLabel"></div>
+  </div>
+
+  <div class="cal-day-panel clearfix" ng-style="{height: vm.dayViewHeight + 'px'}">
+
+    <mwl-calendar-hour-list
+      day-view-start="vm.dayViewStart"
+      day-view-end="vm.dayViewEnd"
+      day-view-split="vm.dayViewSplit"
+      on-timespan-click="vm.onTimespanClick"
+      view-date="vm.viewDate">
+    </mwl-calendar-hour-list>
+
+    <div
+      class="pull-left day-event day-highlight"
+      ng-repeat="event in vm.view track by event.$id"
+      ng-class="'dh-event-' + event.type + ' ' + event.cssClass"
+      ng-style="{top: event.top + 'px', left: event.left + 60 + 'px', height: event.height + 'px'}"
+      mwl-draggable="event.draggable === true"
+      axis="'xy'"
+      snap-grid="{y: 30, x: 50}"
+      on-drag="vm.eventDragged(event, y)"
+      on-drag-end="vm.eventDragComplete(event, y)"
+      mwl-resizable="event.resizable === true && event.endsAt"
+      resize-edges="{top: true, bottom: true}"
+      on-resize="vm.eventResized(event, edge, y)"
+      on-resize-end="vm.eventResizeComplete(event, edge, y)">
+
+      <span class="cal-hours">
+        <span ng-show="event.top == 0"><span ng-bind="(event.tempStartsAt || event.startsAt) | calendarDate:'day':true"></span>, </span>
+        <span ng-bind="(event.tempStartsAt || event.startsAt) | calendarDate:'time':true"></span>
+      </span>
+      <a href="javascript:;" class="event-item" ng-click="vm.onEventClick({calendarEvent: event})">
+        <span ng-bind-html="vm.$sce.trustAsHtml(event.title) | calendarTruncateEventTitle:20:event.height"></span>
+      </a>
+
+    </div>
+
+  </div>
+
+</div>

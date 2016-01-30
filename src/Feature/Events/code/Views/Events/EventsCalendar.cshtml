@@ -1,0 +1,30 @@
+﻿@model dynamic
+
+<h3>events calendar</h3>
+
+<div ng-app="sitecore.feature.events.app">
+    <div ng-controller="EventsCalendarController as vm">
+        <ng-include src="'/Scripts/Custom.Sitecore.Feature.Events/views/eventscalendar.html'"></ng-include>
+        <mwl-calendar events="vm.events"
+                      view="vm.calendarView"
+                      view-date="vm.viewDate"
+                      cell-is-open="vm.isCellOpen"
+                      on-event-click="vm.eventClicked(calendarEvent);">
+        </mwl-calendar>
+    </div>
+   
+</div>
+
+@*TODO [Aza] move them to rendering*@
+<link href="~/Scripts/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
+
+<script src="~/Scripts/moment/min/moment.min.js"></script>
+<script src="~/Scripts/interact.js/1.2.4/interact.min.js"></script>
+<script src="~/Scripts/angular.min.js"></script>
+<script src="~/Scripts/angular-animate.min.js"></script>
+<script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+<script src="~/Scripts/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.min.js"></script>
+<script src="~/Scripts/Custom.Sitecore.Feature.Events/sitecore.feature.events.js"></script>
+<script src="~/Scripts/Custom.Sitecore.Feature.Events/services/alert.js"></script>
+<script src="~/Scripts/Custom.Sitecore.Feature.Events/controllers/eventscalendarcontroller.js"></script>
+
