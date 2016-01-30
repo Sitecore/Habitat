@@ -33,7 +33,8 @@ namespace Sitecore.Feature.Events.Controllers
                 return new EmptyResult();
             }
 
-            //set context item
+            //set context item, as the Foundation.Indexing SearchService creates SearchContext based on Cotext.Item 
+            //like this: using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
             Context.Item = eventListItem;
 
             //initialize event repository

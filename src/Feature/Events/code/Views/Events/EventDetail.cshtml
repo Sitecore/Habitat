@@ -6,6 +6,20 @@
 @{
     var googleMapsApiKey = Sitecore.Context.Site.GetRootItem().GetString(Templates.Event.EventSettings.GoogleMapsApiKey);
     var currentItem = RenderingContext.Current.ContextItem;
+    var startDateUtc = Model.StartDate?.ToUniversalTime();
+    var endDateUtc = Model.EndDate?.ToUniversalTime();
+
+    HtmlString startDateFieldVal, endDateFieldVal;
+    if (!Sitecore.Context.PageMode.IsExperienceEditorEditing)
+    {
+        startDateFieldVal = Html.Sitecore().Field(Templates.Event.Fields.StartDate.ToString(), new { format = "MMMM dd, yyyy" });
+        endDateFieldVal = Html.Sitecore().Field(Templates.Event.Fields.EndDate.ToString(), new { format = "MMMM dd, yyyy" });
+    }
+    else
+    {
+        startDateFieldVal = new HtmlString(startDateUtc?.Date.ToShortDateString() ?? string.Empty);
+        endDateFieldVal = new HtmlString(endDateUtc?.Date.ToShortDateString() ?? string.Empty);
+    }
 
 }
 <link href="/Scripts/addtocalendar/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
@@ -35,14 +49,14 @@ $(document).ready(function() {
 
     <div class="well">
         <span class="text-muted">
-            <strong>When:</strong> @Html.Sitecore().Field(Templates.Event.Fields.StartDate.ToString(), new {format = "MMMM dd, yyyy"}) - @Html.Sitecore().Field(Templates.Event.Fields.EndDate.ToString(), new {format = "MMMM dd, yyyy"}) <br />
-            <strong>From:</strong> @Model.GetEventFormattedTime()
+            <strong>When:</strong> @startDateFieldVal - @endDateFieldVal <br />
+            <strong>From:</strong> @Model.GetEventFormattedTimeUtc()
         </span>
         <!-- 3. Place event data -->
         <span class="addtocalendar atc-style-blue pull-right">
             <var class="atc_event">
-                <var id="" class="atc_date_start">@(Model.StartDate?.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture))</var>
-                <var class="atc_date_end">@(Model.EndDate?.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture))</var>
+                <var id="" class="atc_date_start">@(startDateUtc?.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture) ?? string.Empty)</var>
+                <var class="atc_date_end">@(endDateUtc?.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture) ?? string.Empty)</var>
                 <var class="atc_timezone">Europe/London</var>
                 <var class="atc_title">@Model.Title</var>
                 <var class="atc_description">@Model.Summary</var>

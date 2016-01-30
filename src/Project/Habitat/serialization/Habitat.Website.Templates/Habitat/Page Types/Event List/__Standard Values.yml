@@ -5,6 +5,10 @@ Template: 66b80709-4204-4668-8fdc-5f95a60e580c
 Path: /sitecore/templates/Project/Habitat/Page Types/Event List/__Standard Values
 DB: master
 SharedFields:
+- ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
+  Hint: __Masters
+  Type: TreelistEx
+  Value: {F0691A97-C479-48C4-9E53-FB48EE6785DC}
 - ID: c9283d9e-7c29-4419-9c28-5a5c8ff53e84
   Hint: __Bucketable
   Value: 1

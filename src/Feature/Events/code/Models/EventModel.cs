@@ -49,18 +49,18 @@ namespace Sitecore.Feature.Events.Models
 
 
 
-        public string GetEventFormattedTime()
+        public string GetEventFormattedTimeUtc()
         {
             var eventTime = string.Empty;
 
             if (StartDate != null)
             {
-                eventTime = StartDate.GetValueOrDefault().ToShortTimeString();
+                eventTime = StartDate.GetValueOrDefault().ToUniversalTime().ToShortTimeString();
             }
 
             if (EndDate != null)
             {
-                eventTime += " - " + EndDate.GetValueOrDefault().ToShortTimeString();
+                eventTime += " - " + EndDate.GetValueOrDefault().ToUniversalTime().ToShortTimeString();
             }
 
             return eventTime;
