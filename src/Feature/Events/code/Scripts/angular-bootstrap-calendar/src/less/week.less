@@ -1,0 +1,27 @@
+.cal-week-box {
+  position: relative;
+  [data-event-class] {
+    white-space: nowrap;
+    height: 30px;
+    line-height: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    font-size: 12px;
+    padding: 0 3px !important;
+  }
+  .cal-day-panel {
+    border: 0px !important;
+  }
+}
+
+.cal-week-box.cal-day-box {
+  .cal-row-head {
+    padding-left: 60px;
+  }
+  .cal-day-panel {
+    overflow-x: hidden;
+  }
+}
