@@ -138,6 +138,7 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\EventsApiController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Models\EventModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -158,6 +159,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Indexing\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\EventsApi\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\foundation\Indexing\code\Sitecore.Foundation.Indexing.csproj">

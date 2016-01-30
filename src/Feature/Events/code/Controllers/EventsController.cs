@@ -7,6 +7,7 @@ using System.Web.Mvc;
 namespace Sitecore.Feature.Events.Controllers
 {
     using Sitecore.Feature.Events.Models;
+    using System.Globalization;
     using Sitecore.Feature.Events.Repositories;
     using Sitecore.Mvc.Presentation;
 
@@ -39,6 +40,8 @@ namespace Sitecore.Feature.Events.Controllers
         {
             return this.View();
         }
+
         
+
     }
 }
