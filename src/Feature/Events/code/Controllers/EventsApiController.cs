@@ -11,13 +11,18 @@ namespace Sitecore.Feature.Events.Controllers
     public class EventsApiController : Controller
     {
         [HttpGet]
-        public ActionResult GetEventsListJson()
+        public ActionResult GetEventsListJson(string id)
         {
+            Data.ID sitecoreid;
+            if (Data.ID.TryParse(id, out sitecoreid))
+            {
+                
+            }
             var events = new List<object>
             {
-                new {title = "EventsControllerevent1",startsAtTxt=System.DateTime.UtcNow.ToString(CultureInfo.InvariantCulture),endsAtTxt=System.DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)},
-                new {title = "EventsControllerevent2",startsAtTxt=System.DateTime.UtcNow.AddDays(2).ToString(CultureInfo.InvariantCulture),endsAtTxt=System.DateTime.UtcNow.AddDays(2).AddHours(5).ToString(CultureInfo.InvariantCulture)},
-                new {title = "EventsControllerevent3",startsAtTxt=System.DateTime.UtcNow.AddDays(4).ToString(CultureInfo.InvariantCulture),endsAtTxt=System.DateTime.UtcNow.AddDays(4).AddHours(5).ToString(CultureInfo.InvariantCulture)}
+                new {title = "sample event1",startsAtTxt=System.DateTime.UtcNow.ToString(CultureInfo.InvariantCulture),endsAtTxt=System.DateTime.UtcNow.ToString(CultureInfo.InvariantCulture)},
+                new {title = "sample event2",startsAtTxt=System.DateTime.UtcNow.AddDays(2).ToString(CultureInfo.InvariantCulture),endsAtTxt=System.DateTime.UtcNow.AddDays(2).AddHours(5).ToString(CultureInfo.InvariantCulture)},
+                new {title = "sample event3",startsAtTxt=System.DateTime.UtcNow.AddDays(4).ToString(CultureInfo.InvariantCulture),endsAtTxt=System.DateTime.UtcNow.AddDays(4).AddHours(5).ToString(CultureInfo.InvariantCulture)}
             };
             return Json(events.ToArray(), JsonRequestBehavior.AllowGet);
         }

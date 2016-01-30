@@ -9,6 +9,7 @@ namespace Sitecore.Feature.Events.Controllers
     using Sitecore.Feature.Events.Models;
     using System.Globalization;
     using Sitecore.Feature.Events.Repositories;
+    using Sitecore.Mvc.Controllers;
     using Sitecore.Mvc.Presentation;
 
     public class EventsController : Controller
@@ -33,6 +34,7 @@ namespace Sitecore.Feature.Events.Controllers
 
         public ActionResult EventCalendar()
         {
+            
             return this.View();
         }
 
