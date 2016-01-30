@@ -1,12 +1,11 @@
-﻿@model dynamic
-
+﻿@model Sitecore.Feature.Events.Models.EventCalendarModel
 
 
 
 <h3>events calendar </h3>
 
 <div ng-app="sitecore.feature.events.app">
-    <div ng-controller="EventsCalendarController as vm"  ng-init="vm.init('@Html.Sitecore().CurrentRendering.DataSource')" >
+    <div ng-controller="EventsCalendarController as vm"  ng-init="vm.init('@Model.EventlistId','@Model.EventListUrl')" >
         <ng-include src="'/Scripts/Custom.Sitecore.Feature.Events/views/eventscalendar.html'"></ng-include>
         <mwl-calendar events="vm.events"
                       view="vm.calendarView"

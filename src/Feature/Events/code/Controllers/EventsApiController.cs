@@ -8,11 +8,7 @@ namespace Sitecore.Feature.Events.Controllers
     using Sitecore.Data.Items;
     using Sitecore.Feature.Events.Models;
     using Sitecore.Feature.Events.Repositories;
-    using Sitecore.Foundation.SitecoreExtensions.Model;
-    using Sitecore.Foundation.SitecoreExtensions.Repositories;
-    using Sitecore.Pipelines.GetDatasourceExamples;
     using Sitecore.Resources.Media;
-    using Sitecore.Shell.Applications.ContentEditor;
 
     public class EventsApiController : Controller
     {
@@ -43,13 +39,14 @@ namespace Sitecore.Feature.Events.Controllers
             return Json(events.Where(e => e.StartDate.HasValue).Select(c =>
               new
               {
+                 
                   title = c.Title,
                   startsAtTxt = c.StartDate?.ToUniversalTime().ToString(CultureInfo.InvariantCulture) ?? "",
                   endsAtTxt = c.EndDate?.ToUniversalTime().ToString(CultureInfo.InvariantCulture) ?? "",
                   description = c.Description,
                   location = c.Location,
-                  mediaId = c.Image.MediaId,
                   image = GetImageUrl(c.Image),
+                  eventUrl=c.EventUrl
 
 
               }).ToArray(), JsonRequestBehavior.AllowGet);

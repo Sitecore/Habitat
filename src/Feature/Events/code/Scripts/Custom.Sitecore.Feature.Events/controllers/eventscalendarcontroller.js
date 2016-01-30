@@ -1,13 +1,19 @@
 ﻿var app = angular.module('sitecore.feature.events.app');
-app.controller('EventsCalendarController', ['moment', 'alert', '$http', function (moment, alert, $http) {
+app.controller('EventsCalendarController', ['moment', 'alert', '$http', '$window', function (moment, alert, $http, $window) {
 
 
     var vm = this;
-    vm.eventid = '';
+    vm.eventlistid = '';
+    vm.eventlisturl = '';
     vm.events = [];
-    vm.init = function (eventid) {
-        vm.eventid = eventid;
-        $http.get('/api/EventsApi/GetCalendarEventsJson?id=' + vm.eventid)
+
+    vm.goto = function (eventlisturl) {
+        $window.location=eventlisturl;
+    }
+    vm.init = function (eventlistid,eventlisturl) {
+        vm.eventlistid = eventlistid;
+        vm.eventlisturl = eventlisturl;
+        $http.get('/api/EventsApi/GetCalendarEventsJson?id=' + vm.eventlistid)
         .then(
         function (result) {
             if (result != null && result.data != "") {
