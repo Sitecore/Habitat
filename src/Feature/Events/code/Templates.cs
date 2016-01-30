@@ -40,4 +40,14 @@
             public static readonly ID ID = new ID("{299C46F5-4AFC-4FE3-894F-D3E17CD159A8}");
         }
     }
+
+    public struct Settings
+    {
+        public struct PageEvents
+        {
+            public static ID EventSavedToCalendar = new ID("{7106E950-89E5-40D3-A539-B8F7B9A9CB18}");
+            public const string EventSavedToCalendar_ItemName = "Event saved to calendar";
+
+        }
+    }
 }

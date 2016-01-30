@@ -3,9 +3,13 @@ using System.Web.Mvc;
 
 namespace Sitecore.Feature.Events.Controllers
 {
+    using System;
     using System.Globalization;
+    using Sitecore.Analytics;
+    using Sitecore.Analytics.Data;
     using Sitecore.Data;
     using Sitecore.Data.Items;
+    using Sitecore.Diagnostics;
     using Sitecore.Feature.Events.Models;
     using Sitecore.Feature.Events.Repositories;
     using Sitecore.Foundation.SitecoreExtensions.Model;
@@ -54,6 +58,34 @@ namespace Sitecore.Feature.Events.Controllers
 
               }).ToArray(), JsonRequestBehavior.AllowGet);
 
+        }
+
+        public ActionResult RegisterCalendarAddPageEvent(string id, string data, string text)
+        {
+            ID itemId;
+            if (ID.TryParse(id, out itemId))
+            {
+                //register event
+                RegisterPageEvent(Settings.PageEvents.EventSavedToCalendar_ItemName, Settings.PageEvents.EventSavedToCalendar.Guid, itemId.Guid, data, text);
+            }
+
+            //action does not need to acknowledge
+            return new EmptyResult();
+        } 
+        
+        private void RegisterPageEvent(string name, Guid definitionId, Guid itemId, string data, string text)
+        {
+            if (Tracker.Current != null && Tracker.Current.Session != null && Tracker.Current.Session.Interaction != null)
+            {
+                var interaction = Tracker.Current.Session.Interaction;
+                var pageEventData = new PageEventData(name, definitionId)
+                {
+                    ItemId = itemId,
+                    Data = data,
+                    Text = text
+                };
+                interaction.CurrentPage.Register(pageEventData);
+            }            
         }
 
         private string GetImageUrl(Sitecore.Foundation.SitecoreExtensions.Model.Image image)
