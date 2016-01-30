@@ -30,18 +30,12 @@ namespace Sitecore.Feature.Events.Controllers
         {
             var events = this._eventRepository.Get().Select(c => new EventModel(c));
             return this.View(events);
-        }
-
-        public ActionResult EventCalendar()
-        {
-            
-            return this.View();
-        }
+        }       
 
         public ActionResult EventDetail()
         {
-            var events = this._eventRepository.Get().Select(c => new EventModel(c));
-            return this.View();
+            var eventModel = new EventModel(RenderingContext.Current.Rendering.Item);
+            return this.View(eventModel);
         }
 
         

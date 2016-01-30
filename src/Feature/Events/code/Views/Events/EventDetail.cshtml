@@ -1,3 +1,46 @@
-﻿@model dynamic
+﻿@using Sitecore.Feature.Events
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Feature.Events.Models.EventModel
+@{
+    var googleMapsApiKey = Sitecore.Context.Site.GetRootItem().GetString(Templates.Event.EventSettings.GoogleMapsApiKey);
+}
+<div class="events">
+    <h2>
+        @Html.Sitecore().Field(Templates.Event.Fields.Title.ToString(), Model.Item)
+    </h2>
 
-<h3>Detail View</h3>
+    <div class="well">
+        <span class="text-muted">
+            <strong>When:</strong> @Html.Sitecore().Field(Templates.Event.Fields.StartDate.ToString(), new {format = "MMMM dd, yyyy"}) - @Html.Sitecore().Field(Templates.Event.Fields.EndDate.ToString(), new {format = "MMMM dd, yyyy"}) <br />
+            <strong>From:</strong> @Model.GetEventFormattedTime()
+        </span>
+    </div>
+    @Html.Sitecore().ImageField(Templates.Event.Fields.Image.ToString(), Model.Item, mw: 1000, cssClass: "img-responsive image")
+    <div class="body">
+        <br />
+        @Html.Sitecore().Field(Templates.Event.Fields.Description.ToString(), Model.Item)
+    </div>
+</div>
+
+<!-- Map -->
+@if (!string.IsNullOrEmpty(Model.Location))
+{
+    if (!string.IsNullOrEmpty(googleMapsApiKey))
+    {
+        var mapSrc = $"https://www.google.com/maps/embed/v1/place?key={googleMapsApiKey}&q={Model.Location}";
+        <h4>Where</h4>
+        <div class="embed-responsive embed-responsive-4by3">
+            <iframe width="600"
+                    height="450"
+                    class="embed-responsive-item"
+                    style="border: 0"
+                    src="@mapSrc" allowfullscreen></iframe>
+        </div>        
+    }
+    else
+    {
+        <div class="well">
+            <span class="text-muted"><strong>Where:</strong> @Model.Location</span>
+</div>
+    }
+}

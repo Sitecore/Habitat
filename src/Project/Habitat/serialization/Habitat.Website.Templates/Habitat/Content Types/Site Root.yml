@@ -19,6 +19,7 @@ SharedFields:
     {2D9AA1E4-3359-4F02-9EAA-5CF972FD990D}
     {0FCCFE4F-B087-498F-BD26-5CDFFC522C9A}
     {748EBA96-3F0C-4F45-8AFB-DE8DCC707B84}
+    {5F1296DE-1DF8-4CE7-8F5A-FAFC086A8EFC}
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   Hint: __Sortorder
   Value: 100
@@ -32,7 +33,7 @@ Languages:
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
-      Value: 20130917T160321
+      Value: 20130917T060321Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
       Hint: __Created by
       Value: sitecore\admin
