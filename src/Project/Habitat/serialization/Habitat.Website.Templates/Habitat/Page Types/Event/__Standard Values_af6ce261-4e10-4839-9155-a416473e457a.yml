@@ -1,0 +1,14 @@
+﻿---
+ID: af6ce261-4e10-4839-9155-a416473e457a
+Parent: f0691a97-c479-48c4-9e53-fb48ee6785dc
+Template: f0691a97-c479-48c4-9e53-fb48ee6785dc
+Path: /sitecore/templates/Project/Habitat/Page Types/Event/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T055534Z
