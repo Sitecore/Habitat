@@ -126,8 +126,6 @@
     <Content Include="Scripts\Custom.Sitecore.Feature.Events\views\modalContent.html" />
     <Content Include="Scripts\interact.js\1.2.4\interact.min.js" />
     <Content Include="Scripts\moment\min\moment.min.js" />
-    <Content Include="Views\Events\EventsList.cshtml" />
-    <Content Include="Views\Events\EventsCalendar.cshtml" />
     <None Include="Properties\PublishProfiles\aza.pubxml" />
     <None Include="Web.config" />
   </ItemGroup>
