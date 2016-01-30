@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Sitecore.Feature.Events.Controllers
 {
+    using Sitecore.Feature.Events.Models;
     using Sitecore.Feature.Events.Repositories;
     using Sitecore.Mvc.Presentation;
 
@@ -25,8 +26,8 @@ namespace Sitecore.Feature.Events.Controllers
 
         public ActionResult EventList()
         {
-            var items = this._eventRepository.Get();
-            return this.View(items);
+            var events = this._eventRepository.Get().Select(c => new EventModel(c));
+            return this.View(events);
         }
 
         public ActionResult EventCalendar()
