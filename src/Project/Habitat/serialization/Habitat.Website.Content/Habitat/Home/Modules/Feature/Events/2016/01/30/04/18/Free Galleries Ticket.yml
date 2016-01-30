@@ -18,6 +18,24 @@ Languages:
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
       Hint: __Created by
       Value: sitecore\admin
+    - ID: 8d4a615d-8cb1-4324-a5fe-fca3be62044d
+      Hint: EventDescription
+      Value: |
+        <p>&nbsp;Your FREE Galleries Ticket will allow you unlimited access on the day of your visit to all the displays open in our Permanent Galleries and the Wharf 7 Heritage Centre. You can also access our popular Cabinet of Curiosities&nbsp; when programmed (suitable for all ages) and our Mini Mariners Play Space&nbsp; - designed especially for children under age 5.<br>
+        <br>
+        <br>
+        More info<br>
+        Opening hours: 9:30am - 5:00pm (6:00pm in January) every day of the year except Christmas Day (25 December). Last boarding time for Vessels: 4:10pm<br>
+        Address: Located right on Darling Harbour (the Pyrmont side) at 2 Murray St, Sydney. Getting here<br>
+        Contact us: phone <span class="skype_c2c_print_container notranslate">+61 2 9298 3777</span><span id="non_free_num_ui" class="skype_c2c_textarea_span" dir="ltr" tabindex="-1" data-numbertocall="+61292983777" data-numbertype="paid" data-isfreecall="false" data-isrtl="false" data-ismobile="false"><img alt="" width="0" height="0" class="skype_c2c_logo_img" src="resource://skype_ff_extension-at-jetpack/skype_ff_extension/data/call_skype_logo.png"><span class="skype_c2c_text_span">+61 2 9298 3777</span><span class="skype_c2c_free_text_span"></span></span> or email info@anmm.gov.au</p>
+        <br>
+        <div data-uilang="en" data-uiid="1" data-p2murl="https://c2c-p2m-secure.skype.com/p2m/v1/push" data-murl="https://pipe.skype.com/Client/2.0/" data-fp="{F678AEB8-5709-435F-80A6-7E560F120D6B}" style="display: none;" id="skype_c2c_menu_container" class="skype_c2c_menu_container notranslate">
+        <div class="skype_c2c_menu_click2call"><a target="_self" id="skype_c2c_menu_click2call_action" class="skype_c2c_menu_click2call_action">Call</a></div>
+        <div class="skype_c2c_menu_click2sms"><a target="_self" id="skype_c2c_menu_click2sms_action" class="skype_c2c_menu_click2sms_action">Send SMS</a></div>
+        <div class="skype_c2c_menu_push_to_mobile"><a target="_blank" id="skype_c2c_menu_push_to_mobile_action" class="skype_c2c_menu_push_to_mobile_action">Call from mobile</a></div>
+        <div class="skype_c2c_menu_add2skype"><a target="_self" id="skype_c2c_menu_add2skype_text" class="skype_c2c_menu_add2skype_text">Add to Skype</a></div>
+        <div class="skype_c2c_menu_toll_info"><span class="skype_c2c_menu_toll_callcredit">You'll need Skype Credit</span><span class="skype_c2c_menu_toll_free">Free via Skype</span></div>
+        </div>
     - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
       Hint: BrowserTitle
       Value: Free Galleries Ticket
@@ -27,6 +45,9 @@ Languages:
     - ID: e7088d4f-9396-412d-9bd8-c9ba4096c79d
       Hint: EventTitle
       Value: Free Galleries Ticket
+    - ID: f48585e9-4984-493e-9f3b-f40710cac667
+      Hint: EventImage
+      Value: "<image mediaid=\"{7226B841-5963-4FB3-8CF5-59EE8A110D55}\" />"
     - ID: fbfc769d-534c-4680-845a-cd5f226dd59c
       Hint: EventEndDate
       Value: 20160209T040000Z

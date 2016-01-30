@@ -1,0 +1,23 @@
+﻿---
+ID: e28f74c2-4010-4432-97b2-ea845e697b58
+Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
+Template: 94a8c8e9-690b-4e65-98e7-f95800222767
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Calendar
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+      Hint: NavigationTitle
+      Value: Calendar
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T073849Z
+    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+      Hint: Title
+      Value: Calendar
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      Hint: BrowserTitle
+      Value: Calendar
