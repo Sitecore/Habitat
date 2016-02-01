@@ -16,7 +16,6 @@ Scenario: Accounts_Contact Identification_UC1_Identification is shown in the dem
 	| Number of visits | 
 	| 1                | 
 
-
 @NeedImplementation
 Scenario: Accounts_Contact Identification_UC2_Identification is shown in the demo contact panel for just registered user
 	Given Habitat website is opened on Register page
@@ -32,7 +31,6 @@ Scenario: Accounts_Contact Identification_UC2_Identification is shown in the dem
 	And System shows following info on Contact panel title
 	| Number of visits | 
 	| 1                | 
-
 
 @NeedImplementation
 Scenario: Accounts_Contact Identification_UC3_Identification is shown in the demo contact panel for logged in user

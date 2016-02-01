@@ -3,11 +3,15 @@
 
 @NeedImplementation
 Scenario: Account_Edit user profile_UC1_Open Edit Profile page
-	Given User was registered and logged to Habitat
+	Given User with following data is registered in Habitat
+	| Email              | Password | ConfirmPassword |
+	| kov10@sitecore.net | k        | k               |
 	When Actor moves cursor over the User icon
 	And User clicks Edit Profile from drop-down menu
-	Then Edit Profile title presents
+	Then EDITPROFILE title presents on page
 	And Page URL ends on /Edit Profile
+
+
 
 @InDesign
 Scenario: Account_Edit user profile_UC2_Update all fields_First time
