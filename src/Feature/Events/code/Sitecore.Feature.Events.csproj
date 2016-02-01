@@ -169,7 +169,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Indexing\" />
-    <Folder Include="Views\EventsApi\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\foundation\Indexing\code\Sitecore.Foundation.Indexing.csproj">

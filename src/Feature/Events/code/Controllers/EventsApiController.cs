@@ -8,11 +8,8 @@ namespace Sitecore.Feature.Events.Controllers
     using Sitecore.Analytics;
     using Sitecore.Analytics.Data;
     using Sitecore.Data;
-    using Sitecore.Data.Items;
-    using Sitecore.Diagnostics;
     using Sitecore.Feature.Events.Models;
     using Sitecore.Feature.Events.Repositories;
-    using Sitecore.Resources.Media;
 
     public class EventsApiController : Controller
     {
@@ -27,7 +24,7 @@ namespace Sitecore.Feature.Events.Controllers
             }
 
             //get event list item
-            var eventListItem = Sitecore.Context.Database.GetItem(eventListId);
+            var eventListItem = Context.Database.GetItem(eventListId);
             if (eventListItem == null)
             {
                 return new EmptyResult();

@@ -1,8 +1,6 @@
 ﻿@model Sitecore.Feature.Events.Models.EventCalendarModel
 
-
-
-<h3>events calendar </h3>
+<h3>Events calendar</h3>
 
 <div ng-app="sitecore.feature.events.app">
     <div ng-controller="EventsCalendarController as vm"  ng-init="vm.init('@Model.EventlistId','@Model.EventListUrl')" >
@@ -17,9 +15,7 @@
     <h1>test {{vm.eventid}}</h1>  
 </div>
 
-@*TODO [Aza] move them to rendering*@
-@*<script src="~/Scripts/addtocalendar/atc/1.5/atc.min.js"></script>
-    <link href="~/Scripts/addtocalendar/atc/1.5/atc-style-blue.css" rel="stylesheet" />*@
+
 <link href="~/Scripts/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.min.css" rel="stylesheet">
 <script src="~/Scripts/moment/min/moment.min.js"></script>
 <script src="~/Scripts/interact.js/1.2.4/interact.min.js"></script>

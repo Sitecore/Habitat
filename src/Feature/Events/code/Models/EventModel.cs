@@ -43,19 +43,19 @@ namespace Sitecore.Feature.Events.Models
             EndDate = item.GetDate(Templates.Event.Fields.EndDate);
             Location = item.GetString(Templates.Event.Fields.Location);
             Description = item.GetString(Templates.Event.Fields.Description);
-            ImageUrl = GetImageURL(item);
+            ImageUrl = GetImageUrl(item);
             var plainDesc = StringUtil.RemoveTags(Description);
             Summary = StringUtil.Clip(plainDesc, 250, true);
         }
 
-        public static string GetImageURL(Item currentItem)
+        public static string GetImageUrl(Item currentItem)
         {
-            string imageUrl = string.Empty;
+            var imageUrl = string.Empty;
             Data.Fields.ImageField imageField = currentItem.Fields[Templates.Event.Fields.Image];
             if (imageField?.MediaItem != null)
             {
                 MediaItem image = new MediaItem(imageField.MediaItem);
-                imageUrl = StringUtil.EnsurePrefix('/', Sitecore.Resources.Media.MediaManager.GetMediaUrl(image));
+                imageUrl = StringUtil.EnsurePrefix('/', Resources.Media.MediaManager.GetMediaUrl(image));
             }
             return imageUrl;
         }

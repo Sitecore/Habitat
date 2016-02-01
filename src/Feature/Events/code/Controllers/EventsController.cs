@@ -12,7 +12,7 @@ namespace Sitecore.Feature.Events.Controllers
     public class EventsController : Controller
     {
 
-        private readonly IEventRepository _eventRepository;
+        private readonly IEventRepository eventRepository;
 
         public EventsController() : this(new EventRepository(RenderingContext.Current.Rendering.Item))
         {
@@ -20,19 +20,19 @@ namespace Sitecore.Feature.Events.Controllers
 
         public EventsController(IEventRepository eventsRepository)
         {
-            this._eventRepository = eventsRepository;
+            eventRepository = eventsRepository;
         }
 
         public ActionResult EventList()
         {
-            var events = this._eventRepository.Get().Select(c => new EventModel(c));
-            return this.View(events);
+            var events = eventRepository.Get().Select(c => new EventModel(c));
+            return View(events);
         }
 
         public ActionResult EventDetail()
         {
             var eventModel = new EventModel(RenderingContext.Current.Rendering.Item);
-            return this.View(eventModel);
+            return View(eventModel);
         }
         public ActionResult EventCalendar()
         {
@@ -50,7 +50,7 @@ namespace Sitecore.Feature.Events.Controllers
             }
          
             var model = new EventCalendarModel {EventlistId = eventlistid,EventListUrl = eventlisturl};
-            return this.View(model);
+            return View(model);
         }
 
 
