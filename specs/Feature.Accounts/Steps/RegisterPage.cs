@@ -73,6 +73,41 @@
 
     }
 
+
+    [Then(@"Following User info presents")]
+    public void ThenFollowingUserInfoPresents(Table table)
+    {
+    
+
+   
+      foreach (var row in table.Rows)
+      {
+        var c = new WebClient();
+        c.Headers.Add(HttpRequestHeader.Accept, "application/json");
+        var email = row["email"];
+        var username = email.Split('@').First();
+        var searchResult = JsonConvert.DeserializeObject<SearchEntity>(c.DownloadString(Settings.SearchContactUrl + username));
+        var contactID = searchResult.Data.Dataset.ContactSearchResults.First(x => x.PreferredEmailAddress == email).ContactId;
+        var outcomeUrl = Settings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}";
+
+        var contact = JsonConvert.DeserializeObject<ContactEntity>(c.DownloadString(outcomeUrl));
+        var expectedFirstName = row["First Name"];
+        contact.FirstName.Should().Be(expectedFirstName);
+
+        var expectedLastName = row["Last Name"];
+        contact.SurName.Should().Be(expectedLastName);
+
+        var expectedPhoneNumber = row["Phone number"];
+
+        
+
+      }
+
+    }
+
+
+
+
     [When(@"Wating for timeout (.*) s")]
     public void WhenWatingForTimeoutS(int seconds)
     {
@@ -101,4 +136,6 @@
       }
     }
   }
+
+ 
 }

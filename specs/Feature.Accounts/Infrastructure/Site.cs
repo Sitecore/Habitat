@@ -90,5 +90,8 @@
     public IEnumerable<IWebElement> EditUserProfileCheckBoxFields
       => Driver.FindElements(By.CssSelector("#interests"));
 
+    public IWebElement InterestsDropDownElement
+      => Driver.FindElement(By.CssSelector("#interests"));
+
   }
 }
