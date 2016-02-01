@@ -6,6 +6,7 @@
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.ContentSearch.Utilities;
   using Sitecore.Data.Items;
+  using Sitecore.Foundation.SitecoreExtensions.Model;
   using Sitecore.Mvc.Presentation;
   using Sitecore.Pipelines;
   using Sitecore.Pipelines.GetRenderingDatasource;

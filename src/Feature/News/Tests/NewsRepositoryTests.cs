@@ -19,6 +19,7 @@
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.Data.Items;
   using Sitecore.Foundation.Indexing.Models;
+  using Sitecore.Foundation.Indexing.Repositories;
   using Sitecore.Search;
 
   public class NewsRepositoryTests
