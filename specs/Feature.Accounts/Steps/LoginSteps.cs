@@ -64,25 +64,19 @@
       }
     }
 
+    [When(@"Actor enteres following data into Login form fields")]
     [When(@"Actor enteres following data into fields")]
     public void WhenActorEnteresFollowingDataIntoFields(Table table)
     {
       var row = table.Rows.First();
       foreach (var key in row.Keys)
       {
-        Site.LoginFormFields.GetField(key).SendKeys(row[key]);
+        var text = row[key];
+        Site.LoginFormFields.GetField(key).SendKeys(text);
       }
     }
 
-    [When(@"Actor enteres following data into Login form fields")]
-    public void WhenActorEnteresFollowingDataIntoLoginFormFields(Table table)
-    {
-      var row = table.Rows.First();
-      foreach (var key in row.Keys)
-      {
-        Site.LoginFormFields.GetField(key).SendKeys(row[key]);
-      }
-    }
+    
 
     [Then(@"Following fields present on Login page")]
     public void ThenFollowingFieldsPresentOnLoginPage(Table table)

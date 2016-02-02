@@ -54,43 +54,37 @@
     {
       foreach (var row in table.Rows)
       {
-        var c = new WebClient();
-        c.Headers.Add(HttpRequestHeader.Accept, "application/json");
         var email = row["email"];
-        var username = email.Split('@').First();
-        var searchResult = JsonConvert.DeserializeObject<SearchEntity>(c.DownloadString(Settings.SearchContactUrl + username));
-        var contactID = searchResult.Data.Dataset.ContactSearchResults.First(x => x.PreferredEmailAddress == email).ContactId;
-        var outcomeUrl = Settings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}/intel/outcome-detail";
 
-        var outcomes = JsonConvert.DeserializeObject<SearchEntity>(c.DownloadString(outcomeUrl));
+        var contactID = GetContactId(email);
+        var queryUrl = Settings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}/intel/outcome-detail";
+        var outcomes = GetAnalytycsEntities<SearchEntity>(queryUrl);
         var expectedOutcome = row["Outcome value"];
         outcomes.Data.Dataset.OutcomeDetail
           .Any(x => x.OutcomeDefinitionDisplayName == expectedOutcome)
           .Should().Be(!string.IsNullOrEmpty(expectedOutcome));
-
-
       }
 
     }
+
+    
 
 
     [Then(@"Following User info presents")]
     public void ThenFollowingUserInfoPresents(Table table)
     {
-    
 
-   
+
+
       foreach (var row in table.Rows)
       {
-        var c = new WebClient();
-        c.Headers.Add(HttpRequestHeader.Accept, "application/json");
         var email = row["email"];
-        var username = email.Split('@').First();
-        var searchResult = JsonConvert.DeserializeObject<SearchEntity>(c.DownloadString(Settings.SearchContactUrl + username));
-        var contactID = searchResult.Data.Dataset.ContactSearchResults.First(x => x.PreferredEmailAddress == email).ContactId;
-        var outcomeUrl = Settings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}";
+        var contactID = GetContactId(email);
+        var queryUrl = Settings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}";
 
-        var contact = JsonConvert.DeserializeObject<ContactEntity>(c.DownloadString(outcomeUrl));
+        var contact = GetAnalytycsEntities<ContactEntity>(queryUrl);
+
+
         var expectedFirstName = row["First Name"];
         contact.FirstName.Should().Be(expectedFirstName);
 
@@ -99,7 +93,6 @@
 
         var expectedPhoneNumber = row["Phone number"];
 
-        
 
       }
 
@@ -137,5 +130,5 @@
     }
   }
 
- 
+
 }
