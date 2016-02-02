@@ -1,0 +1,18 @@
+﻿---
+ID: 52a898d9-6d20-43fd-9798-1578b14a117c
+Parent: b6f628e5-5f85-4f98-9041-0d203e0ebf17
+Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+Path: /sitecore/layout/Renderings/Feature/FAQ/FAQ Accordion
+DB: master
+SharedFields:
+- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+  Hint: Path
+  Value: /Views/FAQ/FaqAccordion.cshtml
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160128T144427Z

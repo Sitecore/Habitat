@@ -1,0 +1,38 @@
+﻿@using System.Web.Mvc.Html
+@using Sitecore.Feature.FAQ.Repositories
+@using Sitecore.Feature.FAQ
+@using Sitecore.Data.Items
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+    var elements = GroupMemberRepository.Get(Model.Item).ToArray();
+    int i = 1;
+}
+
+@foreach (Item item in elements)
+{
+    var ID = Guid.NewGuid().ToString();
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@ID">
+                        @Html.Sitecore().Field(Templates.Faq.Fields.Question_FieldName, item)
+                    </a>
+                </h4>
+            </div>
+            <div id=@ID class="panel-collapse collapse">
+                <div class="panel-body">
+                    @Html.Sitecore().Field(Templates.Faq.Fields.Answer_FieldName,item)
+                </div>
+            </div>
+        </div>
+        <!-- /.panel -->
+    </div>
+}
+@if (Sitecore.Context.PageMode.IsPageEditor)
+{
+    <script>
+        $('.panel-collapse').toggle();
+    </script>
+}
