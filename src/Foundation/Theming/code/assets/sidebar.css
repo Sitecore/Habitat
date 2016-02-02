@@ -1,0 +1,35 @@
+﻿/****************
+  Sidebar display
+****************/
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 275px;
+  height: 100%;
+  margin-right: -250px;
+  overflow: hidden;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+  #sidebar-wrapper #sidebar {
+    position: relative;
+    overflow: auto;
+    width: 250px;
+    height: 100%;
+    left: 25px;
+    background-color: #f5f5f5; }
+    #sidebar-wrapper #sidebar h1, #sidebar-wrapper #sidebar h2, #sidebar-wrapper #sidebar h3, #sidebar-wrapper #sidebar h4 {
+      margin: 0 0 0 0; }
+  #sidebar-wrapper > .sidebar-toggle {
+    position: absolute;
+    bottom: 1.42857em;
+    color: #1e8fe1; }
+  #sidebar-wrapper.toggled {
+    right: 250px; }
+    #sidebar-wrapper.toggled #sidebar {
+      -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); }

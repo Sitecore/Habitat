@@ -1,17 +1,5 @@
 ﻿@using Sitecore
 @model Sitecore.Mvc.Presentation.RenderingModel
-<div class="container-fluid page-header-container">
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="container@(MainUtil.GetBool(Model.Rendering.Parameters[Sitecore.Habitat.Website.Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="page-header">
-              @Html.Sitecore().Placeholder("pageheading")
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<header class="page-header">
+  @Html.Sitecore().Placeholder("pageheading")
+</header>
