@@ -5,7 +5,7 @@ Scenario: Accounts_Register_UC1_Open Register page
 	Given Habitat website is opened on Main Page
 	When Actor moves cursor over the User icon
 	And User selects Register from drop-down menu
-	Then Page URL ends on /register
+	Then Page URL ends on /Register
 	And Register title presents on page
 	And Register fields present on page
 	| Field name      |
@@ -45,15 +45,15 @@ Scenario: Accounts_Register_UC3_Invalid email
 	And Page URL ends on /register 
 	
 	
-@Bug35795
+@Ready
 Scenario: Accounts_Register_UC4_Not unique email
-	Given User with following data is registered
+	Given User is registered in Habitat and logged out
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
 	And Habitat website is opened on Register page
 	When Actor enters following data in to the register fields
-	| Email            | Password | Confirm password |
-	| kov@sitecore.net | k        | k                |	
+	| Email            | Password | ConfirmPassword |
+	| kov@sitecore.net | k        | k               |	
 	And Actor clicks Register button
 	Then System shows following message for the Email field
 	| Email field error message                |
@@ -77,7 +77,7 @@ Scenario: Accounts_Register_UC5_Incorrect confirm password
 @Ready
 Scenario: Accounts_Register_UC6_One(email) of the required fields is empty
 	Given Habitat website is opened on Register page
-	When Actor enters following data in to the register fields
+	When Actor enters following data in to the register fields with misssed email
 	| Password | ConfirmPassword |
 	| k        | k               |	
 	And Actor clicks Register button
