@@ -3,12 +3,9 @@
   using System;
   using System.Collections.Generic;
   using System.Linq;
-  using System.Runtime.Remoting.Metadata.W3cXsd2001;
-  using Sitecore;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Automation.Data;
   using Sitecore.Analytics.Data.Items;
-  using Sitecore.Analytics.Patterns;
   using Sitecore.Analytics.Tracking;
   using Sitecore.CES.DeviceDetection;
   using Sitecore.Cintel.Reporting.Contact.ProfilePatternMatch.Processors;
@@ -22,8 +19,8 @@
   {
     private DeviceInformation _deviceInformation;
     private bool _isDeviceLookupDone;
-    public string PageCount => System.Convert.ToString(Tracker.Current.Interaction.PageCount);
-    public string EngagementValue => System.Convert.ToString(Tracker.Current.Interaction.Value);
+    public string PageCount => Convert.ToString(Tracker.Current.Interaction.PageCount);
+    public string EngagementValue => Convert.ToString(Tracker.Current.Interaction.Value);
 
     public bool HasCampaign
     {
@@ -56,11 +53,11 @@
     public bool HasGeoIp => Tracker.Current.Interaction.GeoData.Latitude.HasValue;
     public string City => Tracker.Current.Interaction.HasGeoIpData ? Tracker.Current.Interaction.GeoData.City : null;
     public string PostalCode => Tracker.Current.Interaction.HasGeoIpData ? Tracker.Current.Interaction.GeoData.PostalCode : null;
-    public DeviceInformation Device => this._isDeviceLookupDone ? this._deviceInformation : (this._deviceInformation = this.GetDeviceInformation());
+    public DeviceInformation Device => _isDeviceLookupDone ? _deviceInformation : (_deviceInformation = GetDeviceInformation());
 
     private DeviceInformation GetDeviceInformation()
     {
-      this._isDeviceLookupDone = true;
+      _isDeviceLookupDone = true;
       if (!DeviceDetectionManager.IsEnabled || !DeviceDetectionManager.IsReady || string.IsNullOrEmpty(Tracker.Current.Interaction.UserAgent))
       {
         return new DeviceInformation();
@@ -69,13 +66,13 @@
       return DeviceDetectionManager.GetDeviceInformation(Tracker.Current.Interaction.UserAgent);
     }
 
-    public IEnumerable<Profile> Profiles => this.LoadProfiles();
+    public IEnumerable<Profile> Profiles => LoadProfiles();
 
-    public IEnumerable<PageLink> PagesViewed => this.LoadPages();
+    public IEnumerable<PageLink> PagesViewed => LoadPages();
 
-    public IEnumerable<string> GoalsList => this.LoadGoals();
+    public IEnumerable<string> GoalsList => LoadGoals();
 
-    public IEnumerable<EngagementState> EngagementStates => this.LoadEngagementStates();
+    public IEnumerable<EngagementState> EngagementStates => LoadEngagementStates();
 
     public IEnumerable<Profile> LoadProfiles()
     {
@@ -93,15 +90,15 @@
         PatternMatches = CreatePatternMatch(x)
       });
       */
-      foreach (var visibleProfile in this.GetSiteProfiles())
+      foreach (var visibleProfile in GetSiteProfiles())
       {
-        var matchingPattern = this.GetMatchingPatternForContact(visibleProfile);
+        var matchingPattern = GetMatchingPatternForContact(visibleProfile);
         if (matchingPattern == null)
         {
           continue;
         }
 
-        var profile = new Profile()
+        var profile = new Profile
         {
           Name = visibleProfile.NameField,
           PatternMatches = CreatePatternMatch(visibleProfile)
@@ -119,8 +116,12 @@
       var patterns = PopulateProfilePatternMatchesWithXdbData.GetPatternsWithGravityShare(visibleProfile, userPattern);
 
       return from patternKeyValuePair in patterns
-             let src = patternKeyValuePair.Key.Image.ImageUrl(new MediaUrlOptions() { Width = 50, MaxWidth = 50 })
-             select new PatternMatch(visibleProfile.NameField, patternKeyValuePair.Key.NameField, src, patternKeyValuePair.Value);
+        let src = patternKeyValuePair.Key.Image.ImageUrl(new MediaUrlOptions
+        {
+          Width = 50,
+          MaxWidth = 50
+        })
+        select new PatternMatch(visibleProfile.NameField, patternKeyValuePair.Key.NameField, src, patternKeyValuePair.Value);
     }
 
 
@@ -152,12 +153,12 @@
 
     public IEnumerable<PageLink> LoadPages()
     {
-      return Tracker.Current.Interaction.GetPages().Select(this.CreatePageLink).Reverse();
+      return Tracker.Current.Interaction.GetPages().Select(CreatePageLink).Reverse();
     }
 
     private PageLink CreatePageLink(IPageContext page)
     {
-      return new PageLink(this.CleanPageName(page), page.Url.Path, false);
+      return new PageLink(CleanPageName(page), page.Url.Path, false);
     }
 
     public IEnumerable<string> LoadGoals()
@@ -179,7 +180,11 @@
         var automationStateManager = AutomationStateManager.Create(Tracker.Current.Contact);
         var engagementstates = automationStateManager.GetAutomationStates().ToArray();
 
-        states.AddRange(engagementstates.Select(context => new EngagementState() { Plan = context.PlanItem.DisplayName, State = context.StateItem.DisplayName }));
+        states.AddRange(engagementstates.Select(context => new EngagementState
+        {
+          Plan = context.PlanItem.DisplayName,
+          State = context.StateItem.DisplayName
+        }));
       }
       catch (Exception ex)
       {
