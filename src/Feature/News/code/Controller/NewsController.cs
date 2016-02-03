@@ -7,27 +7,27 @@
 
   public class NewsController : Controller
   {
-    private readonly INewsRepository _newsRepository;
+    private readonly INewsRepositoryCreator _newsRepositoryCreator;
 
-    public NewsController() : this(new NewsRepository(RenderingContext.Current.Rendering.Item))
+    public NewsController() : this(new NewsRepositoryCreator())
     {
     }
 
-    public NewsController(INewsRepository newsRepository)
+    public NewsController(INewsRepositoryCreator newsRepositoryCreator)
     {
-      this._newsRepository = newsRepository;
+      _newsRepositoryCreator = newsRepositoryCreator;
     }
 
     public ActionResult NewsList()
     {
-      var items = this._newsRepository.Get();
+      var items = this._newsRepositoryCreator.Create(RenderingContext.Current.Rendering.Item).Get();
       return this.View("NewsList", items);
     }
 
     public ActionResult LatestNews()
     {
       var count = RenderingContext.Current.Rendering.GetIntegerParameter("count", 5);
-      var items = this._newsRepository.GetLatestNews(count);
+      var items = this._newsRepositoryCreator.Create(RenderingContext.Current.Rendering.Item).GetLatestNews(count);
       return this.View("LatestNews", items);
     }
   }

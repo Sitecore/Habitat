@@ -1,21 +1,27 @@
-﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests.Extensions
+﻿namespace Sitecore.Foundation.Tests.Helpers
 {
+  using System.IO;
   using System.Reflection;
+  using System.Web;
   using System.Web.Mvc;
+  using System.Web.Routing;
   using FluentAssertions;
   using log4net.Appender;
   using log4net.Config;
+  using NSubstitute;
   using Sitecore.FakeDb.Sites;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.Alerts;
+  using Sitecore.Foundation.Alerts.Extensions;
+  using Sitecore.Foundation.Alerts.Models;
   using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Sites;
   using Xunit;
 
-  public class HtmlHelperExtensionsTests
+  public class AlertHtmlHelpersTests
   {
     [Theory]
     [AutoDbData]
-    public void PageEditorError_Call_LogError(string errorMessage, FakeSiteContext siteContext, MemoryAppender appender)
+    public void PageEditorError_Call_LogError(string errorMessage, FakeSiteContext siteContext, MemoryAppender appender, [RegisterView(ViewPath.InfoMessage)]IView view, HtmlHelper htmlHelper)
     {
       //Arrange
       typeof(SiteContext).GetField("displayMode", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(siteContext, DisplayMode.Edit);
@@ -24,7 +30,7 @@
       //Act
       using (new SiteContextSwitcher(siteContext))
       {
-        HtmlHelperExtensions.PageEditorError(null, errorMessage);
+        AlertHtmlHelpers.PageEditorError(htmlHelper, errorMessage);
       }
 
       //Assert
@@ -42,7 +48,7 @@
       MvcHtmlString result;
       using (new SiteContextSwitcher(siteContext))
       {
-        result = HtmlHelperExtensions.PageEditorError(null, errorMessage);
+        result = AlertHtmlHelpers.PageEditorError(null, errorMessage);
       }
 
       //Assert
@@ -51,7 +57,7 @@
 
     [Theory]
     [AutoDbData]
-    public void PageEditorError_EditMode_ReturnErrorBlock(string errorMessage, FakeSiteContext siteContext)
+    public void PageEditorError_EditMode_RenderErrorView(string errorMessage, FakeSiteContext siteContext, [RegisterView(ViewPath.InfoMessage)]IView view, HtmlHelper helper)
     {
       //Arrange
       typeof(SiteContext).GetField("displayMode", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(siteContext, DisplayMode.Edit);
@@ -60,11 +66,11 @@
       MvcHtmlString result;
       using (new SiteContextSwitcher(siteContext))
       {
-        result = HtmlHelperExtensions.PageEditorError(null, errorMessage);
-      }
+        result = AlertHtmlHelpers.PageEditorError(helper, errorMessage);
 
-      //Assert
-      result.ToString().Should().Contain(errorMessage).And.StartWith("<p").And.EndWith("</p>");
+        //Assert
+        view.Received().Render(Arg.Is<ViewContext>(v=>v.ViewData.Model.As<InfoMessage>().Type == InfoMessage.MessageType.Error), Arg.Any<TextWriter>());
+      }
     }
   }
 }

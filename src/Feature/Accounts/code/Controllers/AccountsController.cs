@@ -1,4 +1,8 @@
-﻿namespace Sitecore.Feature.Accounts.Controllers
+﻿using Sitecore.Foundation.Alerts;
+using Sitecore.Foundation.Alerts.Extensions;
+using Sitecore.Foundation.Alerts.Models;
+
+namespace Sitecore.Feature.Accounts.Controllers
 {
   using System;
   using System.Web.Mvc;
@@ -146,7 +150,7 @@
       {
         var newPassword = this.accountRepository.RestorePassword(model.Email);
         this.notificationService.SendPassword(model.Email, newPassword);
-        return this.View("InfoMessage", new InfoMessage(Captions.ResetPasswordSuccess));
+        return this.InfoMessage(InfoMessage.Success(Captions.ResetPasswordSuccess));
       }
       catch (Exception ex)
       {
@@ -168,7 +172,7 @@
 
       if (this.userProfileService.GetUserDefaultProfileId() != Context.User.Profile.ProfileItemId)
       {
-        return this.View("InfoMessage", new InfoMessage(Errors.ProfileMismatch, InfoMessage.MessageType.Error));
+        return this.InfoMessage(InfoMessage.Error(Errors.ProfileMismatch));
       }
 
       var profile = this.userProfileService.GetProfile(Context.User.Profile);
@@ -182,7 +186,7 @@
     {
       if (this.userProfileService.GetUserDefaultProfileId() != Context.User.Profile.ProfileItemId)
       {
-        return this.View("InfoMessage", new InfoMessage(Errors.ProfileMismatch, InfoMessage.MessageType.Error));
+        return this.InfoMessage(InfoMessage.Error(Errors.ProfileMismatch));
       }
 
       if (!this.userProfileService.ValidateProfile(profile, this.ModelState))

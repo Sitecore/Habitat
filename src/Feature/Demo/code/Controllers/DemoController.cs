@@ -1,3 +1,5 @@
+using Sitecore.Foundation.Alerts.Exceptions;
+
 namespace Sitecore.Feature.Demo.Controllers
 {
   using System.Web.Mvc;
@@ -36,8 +38,12 @@ namespace Sitecore.Feature.Demo.Controllers
 
     public ActionResult DemoContent()
     {
-      if (RenderingContext.Current.ContextItem == null || !RenderingContext.Current.ContextItem.IsDerived(Templates.DemoContent.ID))
-        return null;
+      if (RenderingContext.Current.ContextItem == null ||
+          !RenderingContext.Current.ContextItem.IsDerived(Templates.DemoContent.ID))
+      {
+        throw new InvalidDataSourceItemException($"Item should be not null and derived from {nameof(Templates.DemoContent)} {Templates.DemoContent.ID} template");
+      }
+      
       return View("DemoContent", new DemoContent(RenderingContext.Current.ContextItem));
     }
 

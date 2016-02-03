@@ -21,7 +21,7 @@
       ResolveDatasourceTemplate(rendering);
     }
 
-    public virtual IEnumerable<Item> Items
+    public virtual IEnumerable<Item> Items  
     {
       get
       {
