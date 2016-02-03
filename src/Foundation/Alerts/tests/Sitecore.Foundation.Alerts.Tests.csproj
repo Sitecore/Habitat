@@ -76,7 +76,7 @@
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\inetpub\wwwroot\habitat.local\Website\bin\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Logging, Version=1.2.0.30715, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
