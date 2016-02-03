@@ -1,6 +1,5 @@
 ﻿namespace Sitecore.Feature.Demo.Tests
 {
-  using System.Collections.Generic;
   using System.Linq;
   using FluentAssertions;
   using NSubstitute;
@@ -9,7 +8,6 @@
   using Sitecore.Collections;
   using Sitecore.Data;
   using Sitecore.Data.Items;
-  using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.FakeDb.Sites;
   using Sitecore.Feature.Demo.Models;
@@ -66,10 +64,9 @@
     }
 
 
-
     [Theory]
     [AutoProfileDbData]
-    public void LoadProfiles_SetProfiles_ShouldReturnExistentProfilesEnumerable([Content] Item item, ITracker tracker, IProfileProvider provider)
+    public void LoadProfiles_SetProfiles_ShouldReturnExistentProfilesEnumerable([Content] Item item, PatternMatch patternMatch, ITracker tracker, IProfileProvider provider)
     {
       //arrange
       tracker.IsActive.Returns(true);
@@ -81,28 +78,30 @@
         profileItem.Fields[ProfileItem.FieldIDs.NameField].Value = profileItem.Name;
       }
 
-      provider.GetSiteProfiles().Returns(new[]
-      {
-        new ProfileItem(profileItem)
-      });
+      provider.GetSiteProfiles().Returns(new[]{new ProfileItem(profileItem)});
       provider.HasMatchingPattern(null).ReturnsForAnyArgs(true);
+      provider.GetPatternsWithGravityShare(null).ReturnsForAnyArgs(new [] { patternMatch });
 
 
-
-
-      using (new TrackerSwitcher(tracker))
+      var fakeSiteContext = new FakeSiteContext("fake")
       {
-        var model = new VisitInformation(provider);
-        //act
-        var profiles = model.LoadProfiles();
+        Database = item.Database
+      };
 
-        //assert
-        profiles.Count().Should().Be(1);
-        profiles.First().Name.Should().Be(profileItem.Name);
+      using (new SiteContextSwitcher(fakeSiteContext))
+      {
+        using (new TrackerSwitcher(tracker))
+        {
+          var model = new VisitInformation(provider);
+          //act
+          var profiles = model.LoadProfiles().ToArray();
 
+          //assert
+          profiles.Count().Should().Be(1);
+          profiles.First().Name.Should().Be(profileItem.Name);
+          profiles.First().PatternMatches.Single().Should().Be(patternMatch);
+        }
       }
-
-
     }
 
     [Theory]
@@ -119,20 +118,15 @@
       provider.HasMatchingPattern(null).ReturnsForAnyArgs(false);
 
 
-
-
       using (new TrackerSwitcher(tracker))
       {
         var model = new VisitInformation(provider);
         //act
-        var profiles = model.LoadProfiles();
+        var profiles = model.LoadProfiles().ToArray();
 
         //assert
-        profiles.Count().Should().Be(0);
-
+        profiles.Length.Should().Be(0);
       }
-
-
     }
   }
 }
