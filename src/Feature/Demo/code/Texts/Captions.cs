@@ -6,6 +6,7 @@
   {
     public class VisitDetails
     {
+      public static string ExperienceProfile => DictionaryRepository.Get("/Demo/VisitDetails/Profiles", "Experience Profile");
       public static string GeoIpPostalCode => DictionaryRepository.Get("/Demo/VisitDetails/GeoIP/PostalCode", "Postal Code");
       public static string GeoIpCity => DictionaryRepository.Get("/Demo/VisitDetails/GeoIP/City", "City");
       public static string GeoIp => DictionaryRepository.Get("/Demo/VisitDetails/GeoIP", "Geo IP Location");

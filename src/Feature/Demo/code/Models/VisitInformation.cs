@@ -13,6 +13,7 @@
   using Sitecore.Data.Fields;
   using Sitecore.Diagnostics;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
+  using Sitecore.Mvc.Extensions;
   using Sitecore.Resources.Media;
 
   public class VisitInformation
@@ -73,6 +74,8 @@
     public IEnumerable<string> GoalsList => this.LoadGoals();
 
     public IEnumerable<EngagementState> EngagementStates => this.LoadEngagementStates();
+
+    public IEnumerable<ExperienceProfile> ExperienceProfiles => Tracker.Current.Interaction.Profiles.GetProfileNames().Select(profileName => new ExperienceProfile(Tracker.Current.Interaction.Profiles[profileName]));
 
     public IEnumerable<PatternMatch> LoadPatterns()
     {
