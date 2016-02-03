@@ -153,6 +153,7 @@
     <Compile Include="Models\KeyBehaviorCacheEntryModel.cs" />
     <Compile Include="Models\PageLink.cs" />
     <Compile Include="Models\PatternMatch.cs" />
+    <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\Score.cs" />
     <Compile Include="Models\VisitInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
