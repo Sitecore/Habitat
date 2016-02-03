@@ -1,0 +1,53 @@
+﻿@using Sitecore.Feature.Events
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model IEnumerable<Sitecore.Feature.Events.Models.EventModel>
+<div class="content-list eventlist">
+    <ol class="media-list">
+
+        @foreach (var eventItem in Model)
+        {
+            var item = eventItem.Item;
+            HtmlString startDateFieldVal, endDateFieldVal;
+            if (!Sitecore.Context.PageMode.IsExperienceEditorEditing)
+            {
+                startDateFieldVal = Html.Sitecore().Field(Templates.Event.Fields.StartDate.ToString(), new { format = "MMMM dd, yyyy" });
+                endDateFieldVal = Html.Sitecore().Field(Templates.Event.Fields.EndDate.ToString(), new { format = "MMMM dd, yyyy" });
+            }
+            else
+            {
+                startDateFieldVal = new HtmlString(eventItem.StartDate?.Date.ToShortDateString() ?? string.Empty);
+                endDateFieldVal = new HtmlString(eventItem.EndDate?.Date.ToShortDateString() ?? string.Empty);
+            }
+
+            <li class="media">
+                <div class="media-left">
+                    <a href="#">
+                        @Html.Sitecore().ImageField(Templates.Event.Fields.Image.ToString(), item, mw: 150, cssClass: "img-responsive img-thumbnail")
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h3 class="media-heading">
+                        <a href="@item.Url()">
+                            @Html.Sitecore().Field(Templates.Event.Fields.Title.ToString(), item)
+                        </a>
+                    </h3>
+                    <div class="description">
+                        <p>@eventItem.Summary</p>
+                    </div>
+                    <div class="metadata well">
+                        @Html.Sitecore().Field(Templates.Event.Fields.StartDate.ToString(), item, new
+                       {
+                           format = "MMMM dd, yyyy"
+                       })
+                        -
+                        @Html.Sitecore().Field(Templates.Event.Fields.EndDate.ToString(), item, new
+                       {
+                           format = "MMMM dd, yyyy"
+                       })
+                        <span>(@eventItem.GetEventFormattedTimeUtc())</span>
+                    </div>
+                </div>
+            </li>
+        }
+    </ol>
+</div>

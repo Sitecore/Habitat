@@ -1,0 +1,44 @@
+﻿
+<br>
+
+<div class="row">
+    <div class="col-md-6 text-center">
+        <div class="btn-group">
+            <button class="btn btn-primary"
+                    mwl-date-modifier
+                    date="vm.viewDate"
+                    decrement="vm.calendarView">
+                Previous
+            </button>
+            <button class="btn btn-default"
+                    mwl-date-modifier
+                    date="vm.viewDate"
+                    set-to-today>
+                Today
+            </button>
+            <button class="btn btn-primary"
+                    mwl-date-modifier
+                    date="vm.viewDate"
+                    increment="vm.calendarView">
+                Next
+            </button>
+           
+           
+           
+        </div>
+    </div>
+    <br class="visible-xs visible-sm">
+    <div class="col-md-6 text-center">
+        <div class="btn-group">
+            <button class="btn btn-primary"
+                    ng-click="vm.goto(vm.eventlisturl)">
+                Events List
+            </button>
+            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'year'">Year</label>
+            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'month'">Month</label>
+            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'week'">Week</label>
+            <label class="btn btn-primary" ng-model="vm.calendarView" uib-btn-radio="'day'">Day</label>
+        </div>
+    </div>
+</div>
+<br>

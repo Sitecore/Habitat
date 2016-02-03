@@ -1,0 +1,25 @@
+﻿---
+ID: 3c27d3b4-82bc-409f-9587-59ba4a9e0ef9
+Parent: b425067e-adb3-4a15-b565-916d4722626f
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Feature/Events/_EventSettings/Event Settings/GoogleMapsApiKey
+DB: master
+SharedFields:
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  Hint: Type
+  Value: Single-Line Text
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Fields:
+  - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+    Hint: Title
+    Value: Google Maps API Key
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T113030Z

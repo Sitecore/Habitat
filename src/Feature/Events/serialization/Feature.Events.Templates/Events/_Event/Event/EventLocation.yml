@@ -1,0 +1,25 @@
+﻿---
+ID: 384e0ce5-7b42-4d00-a063-b903a07dd1b7
+Parent: d6b67319-8cb4-4e8d-bebb-6c2ba5b4a309
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+Path: /sitecore/templates/Feature/Events/_Event/Event/EventLocation
+DB: master
+SharedFields:
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  Hint: Type
+  Value: Single-Line Text
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 500
+Languages:
+- Language: en
+  Fields:
+  - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+    Hint: Title
+    Value: Event Location
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T042013Z

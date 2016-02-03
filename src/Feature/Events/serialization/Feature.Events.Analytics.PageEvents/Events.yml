@@ -1,0 +1,14 @@
+﻿---
+ID: fd4fe1a8-1af4-4d54-904f-d31c7837ca67
+Parent: 633273c1-02a5-4ebc-9b82-bd1a7c684fea
+Template: 738a454a-0ed3-4d5b-b036-f16022aa6b54
+Path: /sitecore/system/Settings/Analytics/Page Events/Events
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T150105Z

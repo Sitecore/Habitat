@@ -1,0 +1,52 @@
+﻿---
+ID: 7cf7dbc0-98bd-4cfc-aebf-7ac3c6b22488
+Parent: c3a2179d-6509-40d3-985b-f842d0093831
+Template: f0691a97-c479-48c4-9e53-fb48ee6785dc
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Events/2016/01/30/07/46/Lunar Feasts
+DB: master
+SharedFields:
+- ID: 39c4902e-9960-4469-aeef-e878e9c8218f
+  Hint: __Hidden
+  Value: 0
+- ID: 9dafca1d-d618-4616-86b8-a8acd6b28a63
+  Hint: __Bucket Parent Reference
+  Value: {66EDAE2D-D88E-4E9E-BDAB-F74DFE579AE3}
+- ID: d312103c-b36c-4ca5-864a-c85f9abda503
+  Hint: __Is Bucket
+  Value: 0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T074621Z
+    - ID: 384e0ce5-7b42-4d00-a063-b903a07dd1b7
+      Hint: EventLocation
+      Value: china town , sydney
+    - ID: 8d4a615d-8cb1-4324-a5fe-fca3be62044d
+      Hint: EventDescription
+      Value: |
+        Sydney&rsquo;s top restaurants are celebrating Chinese New Year with tastebud tantalising set price menus to tempt you and your friends.<br>
+        <br>
+        From five star dining to a quick snack, try a new dish, and then try another!<br>
+        <br>
+        CBD<br>
+        Chinatown<br>
+        Circular Quay<br>
+        Darlinghurst and Potts Point<br>
+        Surry Hills<br>
+        Chippendale, Ultimo and Pyrmont
+    - ID: e2d7bdff-048e-42ba-9f33-41d761e51b57
+      Hint: EventStartDate
+      Value: 20160210T023000Z
+    - ID: e7088d4f-9396-412d-9bd8-c9ba4096c79d
+      Hint: EventTitle
+      Value: Mundane Matters: Do Play with Your Food
+    - ID: f48585e9-4984-493e-9f3b-f40710cac667
+      Hint: EventImage
+      Value: "<image mediaid=\"{B2248591-D6AA-4AAD-A6D1-90961A07D12A}\" />"
+    - ID: fbfc769d-534c-4680-845a-cd5f226dd59c
+      Hint: EventEndDate
+      Value: 20160210T063000Z

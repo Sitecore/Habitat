@@ -1,0 +1,42 @@
+﻿---
+ID: 7106e950-89e5-40d3-a539-b8f7b9a9cb18
+Parent: fd4fe1a8-1af4-4d54-904f-d31c7837ca67
+Template: 059cfbdf-49fc-4f14-a4e5-b63e1e1afb1e
+Path: /sitecore/system/Settings/Analytics/Page Events/Events/Event saved to calendar
+DB: master
+SharedFields:
+- ID: 2f2ae296-8b58-4d94-8eee-0e82589d61a4
+  Hint: Show in Page Events
+  Value: 1
+- ID: 33ae0e84-74a0-437f-ab2b-859dfa96f6c9
+  Hint: Points
+  Value: 10
+- ID: 6f10e607-2d04-4c0d-963a-fc79b5c4e8ce
+  Hint: Track as Latest Event
+  Value: 1
+- ID: a4f985d9-98b3-4b52-aaaf-4344f6e747c6
+  Hint: __Workflow
+  Value: {689E2994-4656-4C58-9112-7826CB46EE69}
+- ID: ac3bc9b6-46a2-4ead-af5e-6bdb532eb832
+  Hint: IsGoal
+  Value: 1
+- ID: ac6ba888-4213-43bd-b787-d8da2b6b881f
+  Hint: Name
+  Value: Event saved to calendar
+- ID: afc95c7c-d078-41df-b3be-9b7948992584
+  Hint: Category
+  Value: Events
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T150250Z
+    - ID: 3e431de1-525e-47a3-b6b0-1ccbec3a8c98
+      Hint: __Workflow state
+      Value: {EDCBB550-BED3-490F-82B8-7B2F14CCD26E}
+    - ID: 797466f5-763b-4299-b6ad-e4192bf21222
+      Hint: Description
+      Value: Event has been added to calendar

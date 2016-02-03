@@ -1,0 +1,47 @@
+﻿---
+ID: 2dd86479-46c4-4379-b605-a0713aadf8d7
+Parent: c3a2179d-6509-40d3-985b-f842d0093831
+Template: f0691a97-c479-48c4-9e53-fb48ee6785dc
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Events/2016/01/30/07/46/The Color Run Night Sydney
+DB: master
+SharedFields:
+- ID: 39c4902e-9960-4469-aeef-e878e9c8218f
+  Hint: __Hidden
+  Value: 0
+- ID: 9dafca1d-d618-4616-86b8-a8acd6b28a63
+  Hint: __Bucket Parent Reference
+  Value: {66EDAE2D-D88E-4E9E-BDAB-F74DFE579AE3}
+- ID: d312103c-b36c-4ca5-864a-c85f9abda503
+  Hint: __Is Bucket
+  Value: 0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T074621Z
+    - ID: 384e0ce5-7b42-4d00-a063-b903a07dd1b7
+      Hint: EventLocation
+      Value: The Royal Botanic Garden Mrs Macquaries Road, Sydney
+    - ID: 8d4a615d-8cb1-4324-a5fe-fca3be62044d
+      Hint: EventDescription
+      Value: |
+        The Color Run is staying up late for all our nocturnal Color Runners. This is your chance to experience a star-lit party that features glowtastic Color Zones, illuminating bubbles, and massive neon color throws, while being surrounded by the latest and greatest music so you can get down with your bad self.<br>
+        <br>
+        It will be an experience that will leave you with a smile on your face and glowing more than you ever thought possible.<br>
+        <br>
+        Our night owls will receive a special edition glow in the dark tee, black light head lamp, glow tattoo&rsquo;s and 2 colour packs!
+    - ID: e2d7bdff-048e-42ba-9f33-41d761e51b57
+      Hint: EventStartDate
+      Value: 20160229T023000Z
+    - ID: e7088d4f-9396-412d-9bd8-c9ba4096c79d
+      Hint: EventTitle
+      Value: The Color Run Night Sydney
+    - ID: f48585e9-4984-493e-9f3b-f40710cac667
+      Hint: EventImage
+      Value: "<image mediaid=\"{598C95D1-59A3-4176-8E49-F5C8D18DAC75}\" />"
+    - ID: fbfc769d-534c-4680-845a-cd5f226dd59c
+      Hint: EventEndDate
+      Value: 20160229T070000Z

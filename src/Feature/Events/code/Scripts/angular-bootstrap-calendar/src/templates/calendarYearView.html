@@ -1,0 +1,48 @@
+<div class="cal-year-box">
+  <div ng-repeat="rowOffset in [0, 4, 8] track by rowOffset">
+    <div class="row cal-before-eventlist">
+      <div
+        class="span3 col-md-3 col-xs-6 cal-cell {{ day.cssClass }}"
+        ng-repeat="month in vm.view | calendarLimitTo:4:rowOffset track by $index"
+        ng-init="monthIndex = vm.view.indexOf(month)"
+        ng-click="vm.monthClicked(month, false, $event)"
+        ng-class="{pointer: month.events.length > 0, 'cal-day-today': month.isToday}"
+        mwl-droppable
+        on-drop="vm.handleEventDrop(dropData.event, month.date)">
+
+        <span
+          class="pull-right"
+          data-cal-date
+          ng-click="vm.calendarCtrl.dateClicked(month.date)"
+          ng-bind="month.label">
+        </span>
+
+        <small
+          class="cal-events-num badge badge-important pull-left"
+          ng-show="month.badgeTotal > 0"
+          ng-bind="month.badgeTotal">
+        </small>
+
+        <div
+          class="cal-day-tick"
+          ng-show="monthIndex === vm.openMonthIndex && vm.view[vm.openMonthIndex].events.length > 0">
+          <i class="glyphicon glyphicon-chevron-up"></i>
+          <i class="fa fa-chevron-up"></i>
+        </div>
+
+      </div>
+    </div>
+
+    <mwl-calendar-slide-box
+      is-open="vm.openRowIndex === $index && vm.view[vm.openMonthIndex].events.length > 0"
+      events="vm.view[vm.openMonthIndex].events"
+      on-event-click="vm.onEventClick"
+      edit-event-html="vm.editEventHtml"
+      on-edit-event-click="vm.onEditEventClick"
+      delete-event-html="vm.deleteEventHtml"
+      on-delete-event-click="vm.onDeleteEventClick">
+    </mwl-calendar-slide-box>
+
+  </div>
+
+</div>

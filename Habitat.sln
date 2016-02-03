@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
@@ -146,6 +146,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{1B850A0C-6B4F-4189-89F3-7A16E9592291}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Testing", "src\Foundation\Testing\tests\Sitecore.Foundation.Testing.csproj", "{7CC3D72B-4518-4B78-BE48-630A263C0F5B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Events", "Events", "{36871250-B258-478B-BAD9-AAF962A2C1A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Events", "src\Feature\Events\code\Sitecore.Feature.Events.csproj", "{7CF029EA-BDA8-46FC-A48C-CAB978C7D28A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Events.Tests", "src\Feature\Events\Tests\Sitecore.Feature.Events.Tests.csproj", "{D765A20D-022E-4E34-AD4F-C7A07AB8E069}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -449,6 +455,22 @@ Global
 		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Release|x64.ActiveCfg = Release|Any CPU
 		{7CC3D72B-4518-4B78-BE48-630A263C0F5B}.Release|x64.Build.0 = Release|Any CPU
+		{7CF029EA-BDA8-46FC-A48C-CAB978C7D28A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CF029EA-BDA8-46FC-A48C-CAB978C7D28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CF029EA-BDA8-46FC-A48C-CAB978C7D28A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7CF029EA-BDA8-46FC-A48C-CAB978C7D28A}.Debug|x64.Build.0 = Debug|Any CPU
+		{7CF029EA-BDA8-46FC-A48C-CAB978C7D28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CF029EA-BDA8-46FC-A48C-CAB978C7D28A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CF029EA-BDA8-46FC-A48C-CAB978C7D28A}.Release|x64.ActiveCfg = Release|Any CPU
+		{7CF029EA-BDA8-46FC-A48C-CAB978C7D28A}.Release|x64.Build.0 = Release|Any CPU
+		{D765A20D-022E-4E34-AD4F-C7A07AB8E069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D765A20D-022E-4E34-AD4F-C7A07AB8E069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D765A20D-022E-4E34-AD4F-C7A07AB8E069}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D765A20D-022E-4E34-AD4F-C7A07AB8E069}.Debug|x64.Build.0 = Debug|Any CPU
+		{D765A20D-022E-4E34-AD4F-C7A07AB8E069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D765A20D-022E-4E34-AD4F-C7A07AB8E069}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D765A20D-022E-4E34-AD4F-C7A07AB8E069}.Release|x64.ActiveCfg = Release|Any CPU
+		{D765A20D-022E-4E34-AD4F-C7A07AB8E069}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -516,5 +538,8 @@ Global
 		{097A482B-CD89-4BA9-939F-B232D35AF8E1} = {836F4115-EB6C-468A-AE65-6F123B0376E8}
 		{1B850A0C-6B4F-4189-89F3-7A16E9592291} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
 		{7CC3D72B-4518-4B78-BE48-630A263C0F5B} = {1B850A0C-6B4F-4189-89F3-7A16E9592291}
+		{36871250-B258-478B-BAD9-AAF962A2C1A7} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
+		{7CF029EA-BDA8-46FC-A48C-CAB978C7D28A} = {36871250-B258-478B-BAD9-AAF962A2C1A7}
+		{D765A20D-022E-4E34-AD4F-C7A07AB8E069} = {36871250-B258-478B-BAD9-AAF962A2C1A7}
 	EndGlobalSection
 EndGlobal

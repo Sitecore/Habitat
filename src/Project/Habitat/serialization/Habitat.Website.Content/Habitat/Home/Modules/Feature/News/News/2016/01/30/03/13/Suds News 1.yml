@@ -1,0 +1,20 @@
+﻿---
+ID: 6656289a-8428-4b51-8494-9c3ba0e12310
+Parent: c13c5f09-c29e-4f96-9b4f-88d903ceba42
+Template: b69277ad-e917-4b9f-9136-a12e0a3e462f
+Path: /sitecore/content/Habitat/Home/Modules/Feature/News/News/2016/01/30/03/13/Suds News 1
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160130T031311Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      Hint: BrowserTitle
+      Value: Suds News 1
