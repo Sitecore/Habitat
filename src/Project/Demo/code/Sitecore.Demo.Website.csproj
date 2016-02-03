@@ -100,9 +100,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="web.config.transform" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="App_Config\Include\Project\Demo.Website.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
@@ -146,7 +143,7 @@
     <ItemGroup>
       <Transforms Include="*.transform" />
     </ItemGroup>
-    <TransformXml Source="$(WebConfigToTransform)" Transform="@(Transforms)" Destination="$(WebConfigToTransform)" />
+    <TransformXml Source="$(WebConfigToTransform)" Transform="@(Transforms)" Destination="$(WebConfigToTransform)" Condition="Exists(@(Transforms))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

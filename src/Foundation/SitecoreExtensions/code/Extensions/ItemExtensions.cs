@@ -57,15 +57,32 @@
       return imageField?.MediaItem == null ? string.Empty : imageField.ImageUrl(options);
     }
 
-    public static string MediaUrl(this Item item, ID mediaFieldId, MediaUrlOptions options = null)
+    public static Item TargetItem(this Item item, ID linkFieldId)
     {
       if (item == null)
       {
         throw new ArgumentNullException(nameof(item));
       }
 
-      var imageField = (LinkField)item.Fields[mediaFieldId];
-      return imageField.TargetItem == null ? String.Empty : (MediaManager.GetMediaUrl(imageField.TargetItem) ?? string.Empty);
+      var linkField = (LinkField)item.Fields[linkFieldId];
+      return linkField.TargetItem;
+    }
+
+    public static string MediaUrl(this Item item, ID mediaFieldId, MediaUrlOptions options = null)
+    {
+      var targetItem = item.TargetItem(mediaFieldId);
+      return targetItem == null ? String.Empty : (MediaManager.GetMediaUrl(targetItem) ?? string.Empty);
+    }
+
+
+    public static bool IsImage(this Item item)
+    {
+      return new MediaItem(item).MimeType.StartsWith("image/",StringComparison.InvariantCultureIgnoreCase);
+    }
+
+    public static bool IsVideo(this Item item)
+    {
+      return new MediaItem(item).MimeType.StartsWith("video/", StringComparison.InvariantCultureIgnoreCase);
     }
 
     public static Item[] TargetItems(this Item item, string fieldName)

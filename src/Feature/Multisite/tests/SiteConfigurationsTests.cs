@@ -1,8 +1,8 @@
-﻿namespace Sitecore.Feature.MultiSite.Tests
+﻿namespace Sitecore.Feature.Multisite.Tests
 {
   using System.Collections.Generic;
   using FluentAssertions;
-  using Sitecore.Feature.MultiSite.Models;
+  using Sitecore.Feature.Multisite.Models;
   using Sitecore.Feature.Multisite.Tests.Extensions;
   using Xunit;
 

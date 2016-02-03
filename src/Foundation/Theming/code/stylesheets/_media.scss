@@ -75,3 +75,47 @@
     }
   }
 }
+
+
+/********************
+    Parallax
+*********************/
+.parallax {
+  margin: 15px 0;
+  padding: 100px 0;
+  padding-top:    $jumbotron-padding;
+  padding-bottom: $jumbotron-padding;
+  color: $gray-lighter;
+  background-color: $jumbotron-bg;
+
+  h3, h3 {
+    color: $jumbotron-heading-color;
+  }
+  
+
+  .container &,
+  .container-fluid & {
+    padding-left:  ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: $screen-sm-min) {
+    padding-top:    ($jumbotron-padding * 1.6);
+    padding-bottom: ($jumbotron-padding * 1.6);
+
+    .container &,
+    .container-fluid & {
+      padding-left:  ($jumbotron-padding * 2);
+      padding-right: ($jumbotron-padding * 2);
+    }
+
+    h3,.h3 {
+      font-size: $jumbotron-heading-font-size;
+    }
+  }
+}
+

@@ -7,13 +7,14 @@
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.Feature.Media.Infrastructure.Repositories;
   using Sitecore.Feature.Media.Tests.Infrastructure;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class MediaSelectorElementsRepositoryTests
   {
     [Theory]
     [AutoDbData]
-    public void GetShouldReturnEmptyForEmptyItems([Content] Item item)
+    public void Get_NoItemsInRepo_ShouldReturnEmpty([Content] Item item)
     {
       // substitute the original provider with the mocked one
       MediaSelectorElementsRepository.Get(item).Count().Should().Be(0);
@@ -21,7 +22,7 @@
 
     [Theory]
     [AutoDbData]
-    public void GetShouldReturnEmptyForEmptyVideoItems([Content] Item item)
+    public void Get_NoVideoItemsInRepo_ShouldReturnEmpty([Content] Item item)
     {
       var child = item.Add("childVideo", new TemplateID(Templates.HasMediaVideo.ID));
 
@@ -36,7 +37,7 @@
 
     [Theory]
     [AutoDbData]
-    public void GetShouldReturnCollectionForValidVideoLinksItems([Content] Item item, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
+    public void Get_ValidVideoLinksItems_ShouldReturnItems([Content] Item item, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
     {
       var child = item.Add("childVideo", new TemplateID(Templates.HasMedia.ID));
 
@@ -60,7 +61,7 @@
 
     [Theory]
     [AutoDbData]
-    public void GetShouldReturnCollectionForVideoLinkWithThumbnail([Content] Item item, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
+    public void Get_VideoLinkWithThumbnail_ShouldReturnCollection([Content] Item item, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
     {
       var child = item.Add("childVideo", new TemplateID(Templates.HasMedia.ID));
 
@@ -85,7 +86,7 @@
 
     [Theory]
     [AutoDbData]
-    public void GetShouldIgnoreEmptyVideoLinksItems([Content] Item item, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
+    public void Get_EmptyVideoLinksItems_ShouldSkip([Content] Item item, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
     {
       var child = item.Add("childVideo", new TemplateID(Templates.HasMedia.ID));
 

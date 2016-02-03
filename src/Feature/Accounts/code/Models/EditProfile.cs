@@ -13,7 +13,7 @@
     public string LastName { get; set; }
 
     [Display(Name = nameof(Captions.PhoneNumber), ResourceType = typeof(Captions))]
-    [RegularExpression(@"^\+?(\(\d+\)-?)?\d+(-?\d+)+$", ErrorMessageResourceName = nameof(Errors.PhoneNumberFormat), ErrorMessageResourceType = typeof(Errors))]
+    [RegularExpression(@"^\+?\d*(\(\d+\)-?)?\d+(-?\d+)+$", ErrorMessageResourceName = nameof(Errors.PhoneNumberFormat), ErrorMessageResourceType = typeof(Errors))]
     [MaxLength(20, ErrorMessageResourceName = nameof(Errors.MaxLength), ErrorMessageResourceType = typeof(Errors))]
     public string PhoneNumber { get; set; }
 

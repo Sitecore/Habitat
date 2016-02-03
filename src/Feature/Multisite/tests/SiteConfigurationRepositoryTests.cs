@@ -1,24 +1,18 @@
-﻿namespace Sitecore.Feature.MultiSite.Tests
+﻿namespace Sitecore.Feature.Multisite.Tests
 {
   using System;
   using System.Collections.Generic;
   using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
   using FluentAssertions;
   using NSubstitute;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Data;
-  using Sitecore.Data.Items;
   using Sitecore.FakeDb;
-  using Sitecore.FakeDb.AutoFixture;
+  using Sitecore.Feature.Multisite.Models;
+  using Sitecore.Feature.Multisite.Repositories;
   using Sitecore.Feature.Multisite.Tests.Extensions;
-  using Sitecore.Feature.MultiSite.Models;
-  using Sitecore.Feature.MultiSite.Repositories;
-  using Sitecore.Foundation.MultiSite;
-  using Sitecore.Foundation.MultiSite.Providers;
-  using Sitecore.Publishing.Explanations;
-  using Sitecore.SecurityModel;
+  using Sitecore.Foundation.Multisite;
+  using Sitecore.Foundation.Multisite.Providers;
   using Xunit;
 
   public class SiteConfigurationRepositoryTests
@@ -38,9 +32,9 @@
       var id = ID.NewID;
       var db = new Db
       {
-        new DbItem(name, id, MultiSite.Templates.SiteConfiguration.ID)
+        new DbItem(name, id, Multisite.Templates.SiteConfiguration.ID)
         {
-          new DbField(MultiSite.Templates.SiteConfiguration.Fields.ShowInMenu)
+          new DbField(Multisite.Templates.SiteConfiguration.Fields.ShowInMenu)
           {
             {"en", "1"}
           }
@@ -49,7 +43,7 @@
 
       var item = db.GetItem(id);
 
-      siteDefinitionProvider.SiteDefinitions.Returns(new List<Foundation.MultiSite.SiteDefinition> { new Foundation.MultiSite.SiteDefinition { Item = item } });
+      siteDefinitionProvider.SiteDefinitions.Returns(new List<SiteDefinition> { new SiteDefinition { Item = item } });
       var definitions = repository.Get();
       definitions.Should().BeOfType<SiteConfigurations>();
       var sites = definitions.Items.ToList();
@@ -60,8 +54,8 @@
     {
       public SiteTemplate()
       {
-        this.Add(Templates.Site.Fields.HostName);
-        this.Add(MultiSite.Templates.SiteConfiguration.Fields.ShowInMenu);
+        this.Add(Foundation.Multisite.Templates.Site.Fields.HostName);
+        this.Add(Multisite.Templates.SiteConfiguration.Fields.ShowInMenu);
       }
     }
   }

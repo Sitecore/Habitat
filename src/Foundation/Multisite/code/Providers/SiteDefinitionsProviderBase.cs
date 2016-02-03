@@ -1,9 +1,8 @@
-﻿namespace Sitecore.Foundation.MultiSite.Providers
+﻿namespace Sitecore.Foundation.Multisite.Providers
 {
   using System;
   using System.Collections.Generic;
   using Sitecore.Data.Items;
-  using Sitecore.Web;
 
   public abstract class SiteDefinitionsProviderBase : ISiteDefinitionsProvider
   {
@@ -11,7 +10,7 @@
 
     public virtual bool IsCurrent(string siteName)
     {
-      return Sitecore.Context.Site != null && Sitecore.Context.Site.Name.Equals(siteName, StringComparison.OrdinalIgnoreCase);
+      return Context.Site != null && Context.Site.Name.Equals(siteName, StringComparison.OrdinalIgnoreCase);
     }
 
     public abstract SiteDefinition GetContextSiteDefinition(Item item);

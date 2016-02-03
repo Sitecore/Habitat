@@ -63,15 +63,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Rainbow, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Rainbow.Core.1.1.0-beta06\lib\net45\Rainbow.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Rainbow.Core.1.1.0\lib\net45\Rainbow.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Rainbow.Storage.Sc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Rainbow.Storage.Sc.1.1.0-beta06\lib\net45\Rainbow.Storage.Sc.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Rainbow.Storage.Sc.1.1.0\lib\net45\Rainbow.Storage.Sc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Rainbow.Storage.Yaml, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Rainbow.Storage.Yaml.1.1.0-beta06\lib\net45\Rainbow.Storage.Yaml.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Rainbow.Storage.Yaml.1.1.0\lib\net45\Rainbow.Storage.Yaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
@@ -114,7 +114,7 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Unicorn, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Unicorn.Core.3.1.0-beta09\lib\net45\Unicorn.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Unicorn.Core.3.1.0\lib\net45\Unicorn.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

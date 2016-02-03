@@ -11,7 +11,7 @@
   using Sitecore.Analytics.Model.Framework;
   using Sitecore.Analytics.Tracking;
   using Sitecore.Foundation.SitecoreExtensions.Services;
-  using UnitTests.Common.Attributes;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class ContactProfileProviderTests

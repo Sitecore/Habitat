@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Sitecore.Foundation.MultiSite.Dialogs
+﻿namespace Sitecore.Foundation.Multisite.Dialogs
 {
+  using System;
+  using Sitecore.Configuration;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
-  using Sitecore.Foundation.MultiSite.Providers;
-  using Sitecore.Shell.Applications.Dialogs.ItemLister;
+  using Sitecore.Foundation.Multisite.Providers;
   using Sitecore.Web.UI.HtmlControls;
   using Sitecore.Web.UI.Pages;
   using Sitecore.Web.UI.Sheer;
@@ -53,7 +49,7 @@ namespace Sitecore.Foundation.MultiSite.Dialogs
     {
       get
       {
-        return Sitecore.Configuration.Settings.GetSetting(DialogRootSettingName, "/sitecore/layout/renderings/feature");
+        return Settings.GetSetting(DialogRootSettingName, "/sitecore/layout/renderings/feature");
       }
     }
 

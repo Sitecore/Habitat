@@ -1,4 +1,4 @@
-namespace Sitecore.Foundation.MultiSite.Tests.Extensions
+namespace Sitecore.Foundation.Multisite.Tests.Extensions
 {
   using Ploeh.AutoFixture;
   using Ploeh.AutoFixture.AutoNSubstitute;

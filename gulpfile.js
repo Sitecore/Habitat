@@ -11,6 +11,7 @@ var rimraf = require("gulp-rimraf");
 var runSequence = require("run-sequence");
 var fs = require("fs");
 var path = require("path");
+var xmlpoke  = require("xmlpoke");
 var config = require("./gulp-config.js")();
 var websiteRootBackup = config.websiteRoot;
 
@@ -22,17 +23,6 @@ gulp.task("01-Copy-Sitecore-Lib", function () {
   var files = config.sitecoreLibraries + "/**/*";
   gulp.src(files)
     .pipe(gulp.dest("./lib/Sitecore"));
-
-  var root = "./src";
-  var projects = root + "/**/code/bin";
-  gulp.src(projects, { base: root })
-    .pipe(foreach(function (stream, file) {
-      console.log("copying to " + file.path);
-      gulp.src(files)
-        .pipe(gulp.dest(file.path));
-      return stream;
-    }));
-
 });
 
 gulp.task("02-Publish-All-Projects", function (callback) {
@@ -50,7 +40,7 @@ gulp.task("03-Apply-Xml-Transform", function () {
         .pipe(msbuild({
           targets: ["ApplyTransform"],
           configuration: config.buildConfiguration,
-          logCommand: true,
+          logCommand: false,
           verbosity: "normal",
           maxcpucount: 0,
           toolsVersion: 14.0,
@@ -62,13 +52,28 @@ gulp.task("03-Apply-Xml-Transform", function () {
 
 });
 
+gulp.task("04-Optional-Copy-Local-Assemblies", function () {
+  console.log("Copying site assemblies to all local projects");
+  var files = config.sitecoreLibraries + "/**/*";
+
+  var root = "./src";
+  var projects = root + "/**/code/bin";
+  gulp.src(projects, { base: root })
+    .pipe(foreach(function (stream, file) {
+      console.log("copying to " + file.path);
+      gulp.src(files)
+        .pipe(gulp.dest(file.path));
+      return stream;
+    }));
+});
+
 /*****************************
   Publish
 *****************************/
 var publishProjects = function (location, dest) {
   dest = dest || config.websiteRoot;
   console.log("publish to " + dest + " folder");
-  return gulp.src([location + "/**/*.csproj", "!" + location + "/**/*Tests.csproj", "!" + location + "/**/*Specflow.csproj"])
+  return gulp.src([location + "/**/code/*.csproj"])
     .pipe(foreach(function (stream, file) {
       return stream
         .pipe(debug({ title: "Building project:" }))
@@ -105,7 +110,7 @@ gulp.task("Publish-Project-Projects", function () {
 
 gulp.task("Publish-Assemblies", function () {
   var root = "./src";
-  var binFiles = root + "/**/bin/Sitecore.{Feature,Foundation,Habitat}.*.{dll,pdb}";
+  var binFiles = root + "/**/code/**/bin/Sitecore.{Feature,Foundation,Habitat}.*.{dll,pdb}";
   var destination = config.websiteRoot + "/bin/";
   return gulp.src(binFiles, { base: root })
     .pipe(rename({ dirname: "" }))
@@ -191,7 +196,7 @@ gulp.task("Auto-Publish-Views", function () {
 
 gulp.task("Auto-Publish-Assemblies", function () {
   var root = "./src";
-  var roots = [root + "/**/code/bin"];
+  var roots = [root + "/**/code/**/bin"];
   var files = "/**/Sitecore.{Feature,Foundation,Habitat}.*.{dll,pdb}";;
   var destination = config.websiteRoot + "/bin/";
   gulp.src(roots, { base: root }).pipe(
@@ -258,25 +263,13 @@ gulp.task("CI-Enumerate-Files", function () {
 
 
 gulp.task("CI-Update-Xml", function (cb) {
-  var destination = path.resolve("./package.xml");
-
-  //TODO: find a tool to modify XML instead of string replacement
-
-  var str = "<Entries>";
-  for (var idx in packageFiles) {
-    str += "<x-item>" + packageFiles[idx] + "</x-item>";
-  }
-  str += "</Entries>";
-
-  fs.readFile(destination, "utf8", function (err, data) {
-    if (err) {
-      return console.log(err);
+  xmlpoke("./package.xml", function (xml) {
+    for (var idx in packageFiles) {
+        xml.add("project/Sources/xfiles/Entries/x-item", packageFiles[idx]);
     }
-    var result = data.replace("<Entries></Entries>", str);
-    fs.writeFile(destination, result, "utf8", cb);
   });
+  cb();
 });
-
 
 gulp.task("CI-Clean", function (callback) {
   rimrafDir.sync(path.resolve("./temp"));

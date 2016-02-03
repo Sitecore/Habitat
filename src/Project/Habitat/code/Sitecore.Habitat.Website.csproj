@@ -174,7 +174,6 @@
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Website\Layouts\Default.cshtml" />
-    <Content Include="web.config.transform" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Website\Sublayouts\" />
@@ -248,7 +247,7 @@
     <ItemGroup>
       <Transforms Include="*.transform" />
     </ItemGroup>
-    <TransformXml Source="$(WebConfigToTransform)" Transform="@(Transforms)" Destination="$(WebConfigToTransform)" />
+    <TransformXml Source="$(WebConfigToTransform)" Transform="@(Transforms)" Destination="$(WebConfigToTransform)" Condition="Exists(@(Transforms))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -76,6 +76,9 @@ Languages:
     - ID: 378b7d87-5775-4eb6-86b7-282d5359b1c6
       Hint: UserProfile
       Value: {14523428-879D-491C-9DF0-1417E82A4311}
+    - ID: 835fa523-d28a-46a2-a589-6aa4a5bf0846
+      Hint: RegisterOutcome
+      Value: {C2D9DFBC-E465-45FD-BA21-0A06EBE942D6}
     - ID: b8027200-aab0-4876-b454-dbb85add9e3c
       Hint: HostName
       Value: habitat.local

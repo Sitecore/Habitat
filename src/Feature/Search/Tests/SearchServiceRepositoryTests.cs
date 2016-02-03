@@ -4,6 +4,7 @@
   using Sitecore.Feature.Search.Repositories;
   using Sitecore.Feature.Search.Tests.Extensions;
   using Sitecore.Foundation.Indexing;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class SearchServiceRepositoryTests

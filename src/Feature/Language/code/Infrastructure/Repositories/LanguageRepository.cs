@@ -6,7 +6,7 @@
   using Sitecore.Data.Fields;
   using Sitecore.Feature.Language.Infrastructure.Factories;
   using Sitecore.Feature.Language.Models;
-  using Sitecore.Foundation.MultiSite;
+  using Sitecore.Foundation.Multisite;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public static class LanguageRepository

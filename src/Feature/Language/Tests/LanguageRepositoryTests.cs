@@ -49,13 +49,13 @@
       var template = new DbTemplate();
       template.BaseIDs = new[]
       {
-        Foundation.MultiSite.Templates.Site.ID,
+        Foundation.Multisite.Templates.Site.ID,
           Templates.LanguageSettings.ID
       };
 
       var languageItem = new DbItem("en");
       db.Add(languageItem);
-      db.Add(new DbTemplate(Foundation.MultiSite.Templates.Site.ID));
+      db.Add(new DbTemplate(Foundation.Multisite.Templates.Site.ID));
       db.Add(new DbTemplate(Templates.LanguageSettings.ID) {Fields = { { Templates.LanguageSettings.Fields.SupportedLanguages, languageItem.ID.ToString()} }});
       db.Add(template);
 

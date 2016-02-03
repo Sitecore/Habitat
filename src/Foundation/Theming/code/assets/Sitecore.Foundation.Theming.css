@@ -3163,7 +3163,7 @@ fieldset[disabled] a.btn {
 .btn-warning {
   color: #fff;
   background-color: #EF8200;
-  border-color: #d57400; }
+  border-color: #d67400; }
   .btn-warning:focus, .btn-warning.focus {
     color: #fff;
     background-color: #bc6600;
@@ -3192,7 +3192,7 @@ fieldset[disabled] a.btn {
   fieldset[disabled] .btn-warning:focus,
   fieldset[disabled] .btn-warning.focus {
     background-color: #EF8200;
-    border-color: #d57400; }
+    border-color: #d67400; }
   .btn-warning .badge {
     color: #EF8200;
     background-color: #fff; }
@@ -6037,7 +6037,7 @@ button.close {
 body {
   font-weight: 300; }
 
-.container-fluid > .row > .col-md-12 > .jumbotron, .container-fluid > .row > .col-md-12 > .carousel {
+.container-fluid > .row > .col-md-12 > .jumbotron, .container-fluid > .row > .col-md-12 > .carousel, .container-fluid > .row > .col-md-12 .parallax {
   margin-left: -15px;
   margin-right: -15px; }
 
@@ -6345,6 +6345,35 @@ footer {
     -o-transition: all 0.5s;
     transition: all 0.5s;
     -webkit-transition: all 0.5s; }
+
+/********************
+    Parallax
+*********************/
+.parallax {
+  margin: 15px 0;
+  padding: 100px 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #eeeeee;
+  background-color: #eeeeee; }
+  .parallax h3, .parallax h3 {
+    color: inherit; }
+  .container .parallax,
+  .container-fluid .parallax {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .parallax .container {
+    max-width: 100%; }
+  @media screen and (min-width: 768px) {
+    .parallax {
+      padding-top: 48px;
+      padding-bottom: 48px; }
+      .container .parallax,
+      .container-fluid .parallax {
+        padding-left: 60px;
+        padding-right: 60px; }
+      .parallax h3, .parallax .h3 {
+        font-size: 77px; } }
 
 /********************
     Content List
