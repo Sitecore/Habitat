@@ -23,24 +23,50 @@
             <div class="panel-heading">
                 <a href="#visitDetailsPatterns" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
                     @Captions.VisitDetails.Patterns
-                    <span class="badge">@Model.PatternMatches.Count()</span>
+          <span class="badge">@Model.Profiles.Count()</span>
                     <span class="expand-icon glyphicon" aria-hidden="true"></span>
                 </a>
             </div>
             <div id="visitDetailsPatterns" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <div class="patternwrapper">
-                        @foreach (var item in Model.PatternMatches)
-                        {
-                        <div>
-                            <div class="image-wrapper">
-                                <img src="@item.Image" alt="@item.PatternName" />
-                            </div>
-                            <h4>@item.Profile</h4>
-                            <h5>@item.PatternName</h5>
-                        </div>
-                        }
+
+
+          @foreach (var profileItem in Model.Profiles)
+          {
+            <div class="patternwrapper">
+              @{
+                var patterns = profileItem.PatternMatches.OrderByDescending(x => x.MatchPercentage).Take(4).ToArray();
+              }
+              @for (var i = 0; i < patterns.Length; i++)
+              {
+                <div>
+                  @{ var item = patterns[i]; }
+
+                  @if (i == 0)
+                  {
+                    <div class="image-wrapper">
+                      <img src="@item.Image" alt="@item.PatternName" />
                     </div>
+                    <h4>@item.Profile</h4>
+                  }
+                  @if (i == 1)
+                  {
+                    <strong>
+                      Other patterns matches
+                    </strong>
+                  }
+
+                  <h5>@item.PatternName</h5>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="@item.MatchPercentage.ToString("P0")" aria-valuemin="0" aria-valuemax="100" style="width: @item.MatchPercentage.ToString("P0")">
+                      @item.MatchPercentage.ToString("P2")
+                    </div>
+                  </div>
+                </div>
+
+             }
+            </div>
+          }
                 </div>
             </div>
         </div>

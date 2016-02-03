@@ -68,6 +68,9 @@
     <Reference Include="Sitecore.CES.DeviceDetection">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.CES.DeviceDetection.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Cintel">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Cintel.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>

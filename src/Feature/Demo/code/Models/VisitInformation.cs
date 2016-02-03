@@ -3,17 +3,19 @@
   using System;
   using System.Collections.Generic;
   using System.Linq;
+  using System.Runtime.Remoting.Metadata.W3cXsd2001;
   using Sitecore;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Automation.Data;
   using Sitecore.Analytics.Data.Items;
+  using Sitecore.Analytics.Patterns;
   using Sitecore.Analytics.Tracking;
   using Sitecore.CES.DeviceDetection;
+  using Sitecore.Cintel.Reporting.Contact.ProfilePatternMatch.Processors;
   using Sitecore.Common;
   using Sitecore.Data.Fields;
   using Sitecore.Diagnostics;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
-  using Sitecore.Mvc.Extensions;
   using Sitecore.Resources.Media;
 
   public class VisitInformation
@@ -63,11 +65,11 @@
       {
         return new DeviceInformation();
       }
-      
+
       return DeviceDetectionManager.GetDeviceInformation(Tracker.Current.Interaction.UserAgent);
     }
 
-    public IEnumerable<PatternMatch> PatternMatches => this.LoadPatterns();
+    public IEnumerable<Profile> Profiles => this.LoadProfiles();
 
     public IEnumerable<PageLink> PagesViewed => this.LoadPages();
 
@@ -75,16 +77,22 @@
 
     public IEnumerable<EngagementState> EngagementStates => this.LoadEngagementStates();
 
-    public IEnumerable<ExperienceProfile> ExperienceProfiles => Tracker.Current.Interaction.Profiles.GetProfileNames().Select(profileName => new ExperienceProfile(Tracker.Current.Interaction.Profiles[profileName]));
-
-    public IEnumerable<PatternMatch> LoadPatterns()
+    public IEnumerable<Profile> LoadProfiles()
     {
       if (!Tracker.IsActive)
       {
-        return Enumerable.Empty<PatternMatch>();
+        return Enumerable.Empty<Profile>();
       }
 
-      var patternMatches = new List<PatternMatch>();
+      var patternMatches = new List<Profile>();
+
+      /*
+      return this.GetSiteProfiles().Where(item => GetMatchingPatternForContact(item) != null).Select(x => new Profile()
+      {
+        Name = x.NameField,
+        PatternMatches = CreatePatternMatch(x)
+      });
+      */
       foreach (var visibleProfile in this.GetSiteProfiles())
       {
         var matchingPattern = this.GetMatchingPatternForContact(visibleProfile);
@@ -92,21 +100,29 @@
         {
           continue;
         }
-        patternMatches.Add(CreatePatternMatch(matchingPattern, visibleProfile));
+
+        var profile = new Profile()
+        {
+          Name = visibleProfile.NameField,
+          PatternMatches = CreatePatternMatch(visibleProfile)
+        };
+
+        patternMatches.Add(profile);
       }
       return patternMatches;
     }
 
-    private static PatternMatch CreatePatternMatch(PatternCardItem matchingPattern, ProfileItem visibleProfile)
+    private static IEnumerable<PatternMatch> CreatePatternMatch(ProfileItem visibleProfile)
     {
-      var src = matchingPattern.Image.ImageUrl(new MediaUrlOptions()
-                                               {
-                                                 Width = 50,
-                                                 MaxWidth = 50
-                                               });
-      var patternMatch = new PatternMatch(visibleProfile.NameField, matchingPattern.Name, src);
-      return patternMatch;
+      var userPattern = visibleProfile.PatternSpace.CreatePattern(Tracker.Current.Interaction.Profiles[visibleProfile.Name]);
+
+      var patterns = PopulateProfilePatternMatchesWithXdbData.GetPatternsWithGravityShare(visibleProfile, userPattern);
+
+      return from patternKeyValuePair in patterns
+             let src = patternKeyValuePair.Key.Image.ImageUrl(new MediaUrlOptions() { Width = 50, MaxWidth = 50 })
+             select new PatternMatch(visibleProfile.NameField, patternKeyValuePair.Key.NameField, src, patternKeyValuePair.Value);
     }
+
 
     private PatternCardItem GetMatchingPatternForContact(ProfileItem visibleProfile)
     {
@@ -163,7 +179,7 @@
         var automationStateManager = AutomationStateManager.Create(Tracker.Current.Contact);
         var engagementstates = automationStateManager.GetAutomationStates().ToArray();
 
-        states.AddRange(engagementstates.Select(context =>new EngagementState() {Plan = context.PlanItem.DisplayName , State = context.StateItem.DisplayName }));
+        states.AddRange(engagementstates.Select(context => new EngagementState() { Plan = context.PlanItem.DisplayName, State = context.StateItem.DisplayName }));
       }
       catch (Exception ex)
       {
