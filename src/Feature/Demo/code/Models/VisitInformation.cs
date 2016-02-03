@@ -5,18 +5,21 @@
   using System.Linq;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Automation.Data;
-  using Sitecore.Analytics.Data.Items;
   using Sitecore.Analytics.Tracking;
   using Sitecore.CES.DeviceDetection;
-  using Sitecore.Cintel.Reporting.Contact.ProfilePatternMatch.Processors;
   using Sitecore.Common;
-  using Sitecore.Data.Fields;
   using Sitecore.Diagnostics;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
-  using Sitecore.Resources.Media;
+  using Sitecore.Feature.Demo.Services;
 
   public class VisitInformation
   {
+    private readonly IProfileProvider profileProvider;
+
+    public VisitInformation(IProfileProvider profileProvider)
+    {
+      this.profileProvider = profileProvider;
+    }
+
     private DeviceInformation _deviceInformation;
     private bool _isDeviceLookupDone;
     public string PageCount => Convert.ToString(Tracker.Current.Interaction.PageCount);
@@ -90,18 +93,17 @@
         PatternMatches = CreatePatternMatch(x)
       });
       */
-      foreach (var visibleProfile in GetSiteProfiles())
+      foreach (var currentProfile in profileProvider.GetSiteProfiles())
       {
-        var matchingPattern = GetMatchingPatternForContact(visibleProfile);
-        if (matchingPattern == null)
+        if (!profileProvider.HasMatchingPattern(currentProfile))
         {
           continue;
         }
 
         var profile = new Profile
         {
-          Name = visibleProfile.NameField,
-          PatternMatches = CreatePatternMatch(visibleProfile)
+          Name = currentProfile.NameField,
+          PatternMatches = profileProvider.GetPatternsWithGravityShare(currentProfile)
         };
 
         patternMatches.Add(profile);
@@ -109,47 +111,9 @@
       return patternMatches;
     }
 
-    private static IEnumerable<PatternMatch> CreatePatternMatch(ProfileItem visibleProfile)
-    {
-      var userPattern = visibleProfile.PatternSpace.CreatePattern(Tracker.Current.Interaction.Profiles[visibleProfile.Name]);
+  
+   
 
-      var patterns = PopulateProfilePatternMatchesWithXdbData.GetPatternsWithGravityShare(visibleProfile, userPattern);
-
-      return from patternKeyValuePair in patterns
-        let src = patternKeyValuePair.Key.Image.ImageUrl(new MediaUrlOptions
-        {
-          Width = 50,
-          MaxWidth = 50
-        })
-        select new PatternMatch(visibleProfile.NameField, patternKeyValuePair.Key.NameField, src, patternKeyValuePair.Value);
-    }
-
-
-    private PatternCardItem GetMatchingPatternForContact(ProfileItem visibleProfile)
-    {
-      var userPattern = Tracker.Current.Interaction.Profiles[visibleProfile.Name];
-      if (userPattern?.PatternId == null)
-      {
-        return null;
-      }
-      var matchingPattern = Context.Database.GetItem(userPattern.PatternId.Value.ToID());
-      if (matchingPattern == null)
-      {
-        return null;
-      }
-      return new PatternCardItem(matchingPattern);
-    }
-
-    private IEnumerable<ProfileItem> GetSiteProfiles()
-    {
-      var settingsItem = Context.Site.GetContextItem(Templates.ProfilingSettings.ID);
-      if (settingsItem == null)
-      {
-        return Enumerable.Empty<ProfileItem>();
-      }
-      MultilistField profiles = settingsItem.Fields[Templates.ProfilingSettings.Fields.SiteProfiles];
-      return profiles.GetItems().Select(i => new ProfileItem(i));
-    }
 
     public IEnumerable<PageLink> LoadPages()
     {

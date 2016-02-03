@@ -150,6 +150,8 @@
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Models\EngagementState.cs" />
     <Compile Include="Models\ExperienceProfile.cs" />
+    <Compile Include="Services\ProfileProvider.cs" />
+    <Compile Include="Services\IProfileProvider.cs" />
     <Compile Include="Models\KeyBehaviorCacheEntryModel.cs" />
     <Compile Include="Models\PageLink.cs" />
     <Compile Include="Models\PatternMatch.cs" />
