@@ -84,10 +84,28 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.SerializableKeyValuePairOfStringString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TestHelperService\tests.wsdl" />

@@ -46,6 +46,7 @@
     public void ThenPageUrlEndsOnExpected(string urlEnding)
     {
       Driver.Url.EndsWith(urlEnding).Should().BeTrue();
+
     }
 
     [Then(@"(.*) title presents on page")]
@@ -64,7 +65,7 @@
     [Then(@"(.*) button presents")]
     public void ThenRegisterButtonPresents(string btn)
     {
-      Site.SubmitButton.Text.Should().BeEquivalentTo(btn);
+      Site.SubmitButton.GetAttribute("Value").Should().BeEquivalentTo(btn);
     }
 
     [Then(@"Register fields present on page")]
@@ -155,6 +156,18 @@
         Payload = "extranet\\" + row["Email"]
       });
     }
+    [When(@"Actor enters following data in to the register fields with misssed email")]
+    public void WhenActorEntersFollowingDataInToTheRegisterFieldsWithMisssedEmail(Table table)
+    {
+      var row = table.Rows.First();
+      foreach (var key in row.Keys)
+      {
+        Site.FormFields.GetField(key).SendKeys(row[key]);
+      }
+    }
+
+
+
 
     [Given(@"User with following data is registered")]
     public void GivenUserWithFollowingDataIsRegistered(Table table)

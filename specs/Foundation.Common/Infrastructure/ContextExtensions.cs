@@ -1,8 +1,9 @@
-﻿namespace Sitecore.Foundation.Common.Specflow.Infrastructure
+﻿using Sitecore.Foundation.Common.Specflow.TestHelperService;
+
+namespace Sitecore.Foundation.Common.Specflow.Infrastructure
 {
   using System.Collections.Generic;
   using System.ServiceModel;
-  using Sitecore.Foundation.Common.Specflow.Service_References.TestHelperService;
   using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
   using TechTalk.SpecFlow;
 

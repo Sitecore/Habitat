@@ -1,22 +1,20 @@
 ﻿Feature: Register goals on login and registration
 	
 
-@NeedImplimentation
+@Ready
 Scenario: Account_Register goals on login and registration_UC1_Register new user
 	Given Habitat website is opened on Register page
 	When Actor enters following data in to the register fields
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
 	And Actor clicks Register button
-#Following then steps were taked from Demo-->Show Tracking info feature. 
-	And User clicks on <Info-sign> in the right down corner
-	And User expands Goals section
-	Then Then Following Goals section contains
-	| Goal name with score |
-	| Register page (0)    |
-	| Login (0)            |
+	And Actor Ends user visit
+	Then Profile Activity Goals section for kov@sitecore.net contains
+	| Goal     |
+	| Register |
+	| Login    |
  
-@NeedImplimentation	
+@Ready
 Scenario: Account_Register goals on login and registration_UC2_Login with new user
 	Given User with following data is registered in Habitat
 	| Email              | Password | ConfirmPassword |
@@ -28,17 +26,15 @@ Scenario: Account_Register goals on login and registration_UC2_Login with new us
 	| Email              | Password |
 	| kov10@sitecore.net | k        |
 	And User clicks Login button on Login form
-	#Following then steps were taked from Demo-->Show Tracking info feature. 
-	And User clicks on <Info-sign> in the right down corner
-	And User expands Goals section
-	Then Then Following Goals section contains
-	| Goal name with score |
-	| Register page(0)     |
-	| Login(0)             |
-	| Login(0)             | 
+	And Actor Ends user visit
+	Then Profile Activity Goals section for kov10@sitecore.net contains
+	| Goal     |
+	| Register |
+	| Login    |
+	| Login    |
 
 
-@NeedImplimentation
+@Ready
 Scenario: Account_Register goals on login and registration_UC3_Login twice with new user
 	Given User with following data is registered in Habitat
 	| Email              | Password | ConfirmPassword |
@@ -52,17 +48,16 @@ Scenario: Account_Register goals on login and registration_UC3_Login twice with 
 	And User clicks Login button on Login form
 	And Actor moves cursor over the User icon
 	And User clicks Log out on User Icon
+	And Actor moves cursor over the User icon
 	And User clicks Login from drop-down menu
 	And Actor enteres following data into Login form fields
 	| Email              | Password |
 	| kov10@sitecore.net | k        |
 	And User clicks Login button on Login form
-	#Following then steps were taked from Demo-->Show Tracking info feature. 
-	And User clicks on <Info-sign> in the right down corner
-	And User expands Goals section
-	Then Then Following Goals section contains
-	| Goal name with score |
-	| Register page(0)     |
-	| Login(0)             |
-	| Login(0)             |
-	| Login(0)             |  
+	And Actor Ends user visit
+	Then Profile Activity Goals section for kov10@sitecore.net contains
+	| Goal     |
+	| Register |
+	| Login    |
+	| Login    |
+	| Login    |  

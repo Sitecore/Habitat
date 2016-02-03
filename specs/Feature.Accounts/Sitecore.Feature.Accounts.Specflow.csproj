@@ -100,6 +100,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Forgot Password.feature</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\GoalSearchResult.cs" />
     <Compile Include="Infrastructure\Site.cs" />
     <Compile Include="Log out.feature.cs">
       <AutoGen>True</AutoGen>
@@ -155,6 +156,7 @@
     <Compile Include="Infrastructure\SearchEntity.cs" />
     <Compile Include="Steps\SiteNavigation.cs" />
     <Compile Include="Steps\AccountStepsBase.cs" />
+    <Compile Include="Steps\ExperienceProfileSteps.cs" />
     <Compile Include="Trigger an outcome on customer registration.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

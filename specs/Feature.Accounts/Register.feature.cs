@@ -88,7 +88,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.And("User selects Register from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
- testRunner.Then("Page URL ends on /register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page URL ends on /Register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 9
  testRunner.And("Register title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -196,11 +196,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Register")]
         [Xunit.TraitAttribute("Description", "Accounts_Register_UC4_Not unique email")]
-        [Xunit.TraitAttribute("Category", "Bug35795")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Accounts_Register_UC4_NotUniqueEmail()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Register_UC4_Not unique email", new string[] {
-                        "Bug35795"});
+                        "Ready"});
 #line 49
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -213,14 +213,14 @@ this.ScenarioSetup(scenarioInfo);
                         "k",
                         "k"});
 #line 50
- testRunner.Given("User with following data is registered", ((string)(null)), table7, "Given ");
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table7, "Given ");
 #line 53
  testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
-                        "Confirm password"});
+                        "ConfirmPassword"});
             table8.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k",
@@ -300,7 +300,7 @@ this.ScenarioSetup(scenarioInfo);
                         "k",
                         "k"});
 #line 80
- testRunner.When("Actor enters following data in to the register fields", ((string)(null)), table12, "When ");
+ testRunner.When("Actor enters following data in to the register fields with misssed email", ((string)(null)), table12, "When ");
 #line 83
  testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden

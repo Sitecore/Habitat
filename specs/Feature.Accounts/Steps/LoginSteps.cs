@@ -6,7 +6,7 @@
   using Sitecore.Foundation.Common.Specflow.Extensions;
   using TechTalk.SpecFlow;
 
-  internal class LoginSteps : AccountStepsBase
+  internal class LoginSteps : AccountStepsBase 
   {
     [Then(@"(.*) title presents on Login form")]
     public void ThenLoginTitlePresentsOnLoginForm(string title)
@@ -64,25 +64,19 @@
       }
     }
 
+    [When(@"Actor enteres following data into Login form fields")]
     [When(@"Actor enteres following data into fields")]
     public void WhenActorEnteresFollowingDataIntoFields(Table table)
     {
       var row = table.Rows.First();
       foreach (var key in row.Keys)
       {
-        Site.LoginFormFields.GetField(key).SendKeys(row[key]);
+        var text = row[key];
+        Site.LoginFormFields.GetField(key).SendKeys(text);
       }
     }
 
-    [When(@"Actor enteres following data into Login form fields")]
-    public void WhenActorEnteresFollowingDataIntoLoginFormFields(Table table)
-    {
-      var row = table.Rows.First();
-      foreach (var key in row.Keys)
-      {
-        Site.LoginFormFields.GetField(key).SendKeys(row[key]);
-      }
-    }
+    
 
     [Then(@"Following fields present on Login page")]
     public void ThenFollowingFieldsPresentOnLoginPage(Table table)
@@ -151,6 +145,20 @@
       {
         Site.LoginPageFields.GetField(key).SendKeys(row[key]);
       }
+    }
+    [Given(@"User was (.*) to Habitat")]
+    public void GivenUserWasLoginToHabitat(string btn, Table table)
+    {
+      Driver.Navigate().GoToUrl(Settings.LoginPageUrl);
+
+      var row = table.Rows.First();
+      foreach (var key in row.Keys)
+      {
+        Site.LoginPageFields.GetField(key).SendKeys(row[key]);
+      }
+
+      var elements = Site.LoginPageButtons.First(el => el.GetAttribute("value").Contains(btn));
+      elements.Click();
     }
   }
 }
