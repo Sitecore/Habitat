@@ -5,7 +5,7 @@ using Sitecore.Foundation.Alerts.Exceptions;
 
 namespace Sitecore.Feature.News.Repositories
 {
-  public class NewsRepositoryCreator : INewsRepositoryCreator
+  public class NewsRepositoryFactory : INewsRepositoryFactory
   {
     public INewsRepository Create(Item contextItem)
     {

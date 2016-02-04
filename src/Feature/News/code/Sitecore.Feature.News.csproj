@@ -133,10 +133,10 @@
     <Compile Include="Indexing\NewsIndexContentProvider.cs" />
     <Compile Include="Repositories\INewsRepository.cs" />
     <Compile Include="Controller\NewsController.cs" />
-    <Compile Include="Repositories\INewsRepositoryCreator.cs" />
+    <Compile Include="Repositories\INewsRepositoryFactory.cs" />
     <Compile Include="Repositories\NewsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\NewsRepositoryCreator.cs" />
+    <Compile Include="Repositories\NewsRepositoryFactory.cs" />
     <Compile Include="Repositories\SearchSettingsRepository.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>

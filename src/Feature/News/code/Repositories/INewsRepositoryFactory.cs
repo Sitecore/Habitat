@@ -2,7 +2,7 @@
 
 namespace Sitecore.Feature.News.Repositories
 {
-  public interface INewsRepositoryCreator
+  public interface INewsRepositoryFactory
   {
     INewsRepository Create(Item contextItem);
   }
