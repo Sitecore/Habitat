@@ -2,7 +2,7 @@
 {
   using System.Collections.Generic;
 
-  public interface IMapRepository
+  public interface IMapPointRepository
   {
     IEnumerable<Data.Items.Item> GetAll(Data.Items.Item contextItem);
   }

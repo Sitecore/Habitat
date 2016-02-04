@@ -5,15 +5,15 @@
   using System.Linq;
   using Foundation.SitecoreExtensions.Extensions;
 
-  public class MapRepository : IMapRepository
+  public class MapPointRepository : IMapPointRepository
   {
     private readonly News.Repositories.ISearchServiceRepository searchServiceRepository;
 
-    public MapRepository() : this(new Foundation.Indexing.Repositories.SearchServiceRepository(new SearchSettingsRepository()))
+    public MapPointRepository() : this(new Foundation.Indexing.Repositories.SearchServiceRepository(new SearchSettingsRepository()))
     {
     }
 
-    public MapRepository(News.Repositories.ISearchServiceRepository searchServiceRepository)
+    public MapPointRepository(News.Repositories.ISearchServiceRepository searchServiceRepository)
     {
       this.searchServiceRepository = searchServiceRepository;
     }

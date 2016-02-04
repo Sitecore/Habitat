@@ -1,0 +1,17 @@
+﻿---
+ID: 220acbad-f147-4ea0-9ae7-079f84c6fd89
+Parent: 07674169-6ecb-4534-9d90-f2bb2feb2bfa
+Template: 04c34cf5-b7ea-4408-88e8-5fc851173dbd
+Path: /sitecore/system/Modules/Feature/Maps/Map Types/satellite
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151214T093341Z
+    - ID: 4a724065-e4ca-4cdd-9027-f56ceef1b082
+      Hint: Name
+      Value: satellite

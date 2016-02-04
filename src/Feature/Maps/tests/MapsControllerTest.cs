@@ -12,9 +12,9 @@
   {
     [Theory]    
     [AutoDbData]
-    public void DefaultConstructor_ShouldNotThrow(IMapRepository mapRepository)
+    public void DefaultConstructor_ShouldNotThrow(IMapPointRepository mapPointRepository)
     {
-      Action act = () => new MapsController(mapRepository);
+      Action act = () => new MapsController(mapPointRepository);
       act.ShouldNotThrow();
     }   
   }
