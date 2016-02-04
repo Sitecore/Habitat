@@ -148,6 +148,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Testing", "src\Foundation\Testing\tests\Sitecore.Foundation.Testing.csproj", "{7CC3D72B-4518-4B78-BE48-630A263C0F5B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Demo.Tests", "src\Feature\Demo\tests\Sitecore.Feature.Demo.Tests.csproj", "{0CF1F7D9-121A-4E40-844C-612EC40345F5}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Alerts", "Alerts", "{DF1E54EE-B5F2-4911-B239-9708BF21F271}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Alerts", "src\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj", "{5CF5FA06-AB27-4DF5-A471-ED57EF3E4AE9}"
