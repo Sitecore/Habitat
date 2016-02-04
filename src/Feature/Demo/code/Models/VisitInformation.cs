@@ -84,36 +84,14 @@
         return Enumerable.Empty<Profile>();
       }
 
-      var patternMatches = new List<Profile>();
-
-      /*
-      return this.GetSiteProfiles().Where(item => GetMatchingPatternForContact(item) != null).Select(x => new Profile()
-      {
-        Name = x.NameField,
-        PatternMatches = CreatePatternMatch(x)
-      });
-      */
-      foreach (var currentProfile in profileProvider.GetSiteProfiles())
-      {
-        if (!profileProvider.HasMatchingPattern(currentProfile))
+      return profileProvider.GetSiteProfiles()
+        .Where(profile => profileProvider.HasMatchingPattern(profile))
+        .Select(x => new Profile
         {
-          continue;
-        }
-
-        var profile = new Profile
-        {
-          Name = currentProfile.NameField,
-          PatternMatches = profileProvider.GetPatternsWithGravityShare(currentProfile)
-        };
-
-        patternMatches.Add(profile);
-      }
-      return patternMatches;
+          Name = x.NameField,
+          PatternMatches = profileProvider.GetPatternsWithGravityShare(x)
+        });
     }
-
-  
-   
-
 
     public IEnumerable<PageLink> LoadPages()
     {
