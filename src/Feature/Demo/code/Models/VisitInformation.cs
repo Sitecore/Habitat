@@ -69,6 +69,8 @@
       return DeviceDetectionManager.GetDeviceInformation(Tracker.Current.Interaction.UserAgent);
     }
 
+    public IEnumerable<ExperienceProfile> ExperienceProfiles => Tracker.Current.Interaction.Profiles.GetProfileNames().Select(profileName => new ExperienceProfile(Tracker.Current.Interaction.Profiles[profileName]));
+
     public IEnumerable<Profile> Profiles => LoadProfiles();
 
     public IEnumerable<PageLink> PagesViewed => LoadPages();

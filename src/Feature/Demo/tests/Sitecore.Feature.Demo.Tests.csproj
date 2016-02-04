@@ -129,6 +129,7 @@
   <ItemGroup>
     <Compile Include="AutoProfileDbDataAttribute.cs" />
     <Compile Include="Controllers\DemoControllerTests.cs" />
+    <Compile Include="Models\BehaviorProfileTests.cs" />
     <Compile Include="Services\ProfileProviderTests.cs" />
     <Compile Include="Models\VisitInformationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
