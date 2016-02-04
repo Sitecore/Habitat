@@ -1,7 +1,16 @@
 ﻿@using Sitecore.Feature.Person
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Mvc.Presentation.RenderingModel
+
+@if (!Model?.Item?.IsDerived(Templates.Employee.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Employee.ID))
+  return;
+}
+
 
 <div class="employee employee-links">
   <h3>@DictionaryRepository.Get("/Person/EmployeeDetails/Contact Me", "Contact Me")</h3>

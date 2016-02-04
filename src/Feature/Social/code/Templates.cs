@@ -18,7 +18,7 @@
 
     public struct TwitterFeed
     {
-      public static ID ID = new ID("{BDD24F35-05E8-4466-8798-7D3DD6A6C991}");
+      public static ID ID = new ID("{89D988BC-A9A7-43F5-A9FD-A05B0B164720}");
 
       public struct Fields
       {
