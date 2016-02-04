@@ -1,4 +1,4 @@
-namespace Sitecore.Feature.Demo.Tests
+namespace Sitecore.Feature.Demo.Tests.Services
 {
   using System;
   using System.Linq;

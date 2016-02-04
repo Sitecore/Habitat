@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Feature.Demo.Tests
+﻿namespace Sitecore.Feature.Demo.Tests.Models
 {
   using System.Linq;
   using FluentAssertions;

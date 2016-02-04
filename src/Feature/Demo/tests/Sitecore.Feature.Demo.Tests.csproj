@@ -86,6 +86,10 @@
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="sitecore.nexus">
       <HintPath>..\..\..\..\lib\Sitecore\sitecore.nexus.dll</HintPath>
     </Reference>
@@ -124,8 +128,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoProfileDbDataAttribute.cs" />
-    <Compile Include="ProfileProviderTests.cs" />
-    <Compile Include="VisitInformationTests.cs" />
+    <Compile Include="Controllers\DemoControllerTests.cs" />
+    <Compile Include="Services\ProfileProviderTests.cs" />
+    <Compile Include="Models\VisitInformationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +144,10 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
+      <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
+      <Name>Sitecore.Foundation.SitecoreExtensions</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Foundation\Testing\tests\Sitecore.Foundation.Testing.csproj">
       <Project>{7CC3D72B-4518-4B78-BE48-630A263C0F5B}</Project>
       <Name>Sitecore.Foundation.Testing</Name>
