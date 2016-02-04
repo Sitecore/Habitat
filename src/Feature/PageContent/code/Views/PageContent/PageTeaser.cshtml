@@ -1,10 +1,13 @@
 ﻿@using Sitecore.Feature.PageContent
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-@if (Model.Item == null)
+@if (!Model?.Item?.IsDerived(Templates.HasPageContent.ID) ?? true)
 {
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasPageContent.ID))
   return;
 }
 

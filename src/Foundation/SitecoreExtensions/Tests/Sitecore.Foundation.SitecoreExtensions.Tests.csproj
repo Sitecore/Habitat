@@ -160,7 +160,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\HtmlHelperExtensionsTests.cs" />
     <Compile Include="Extensions\StringExtensionsTests.cs" />
     <Compile Include="Extensions\ItemExtensionsTests.cs" />
     <Compile Include="Extensions\MediaTemplate.cs" />

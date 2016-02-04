@@ -1,7 +1,15 @@
 ﻿@using Sitecore.Feature.Media
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Templates.HasMediaImage.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaImage.ID))
+  return;
+}
+
 @*TODO: Page editor mode*@
 @{
   const int ThumbnailWidth = 750;

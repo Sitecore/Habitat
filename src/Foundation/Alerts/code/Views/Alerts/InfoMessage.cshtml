@@ -1,5 +1,5 @@
-﻿@using Sitecore.Feature.Accounts.Models
-@model Sitecore.Feature.Accounts.Models.InfoMessage
+﻿@using Sitecore.Foundation.Alerts.Models
+@model InfoMessage
 @{
     var alerts = new Dictionary<InfoMessage.MessageType, string>()
     {
@@ -10,6 +10,7 @@
 
     };
 }
+
 @if (Model != null)
 {
     <div class="alert @alerts[Model.Type]">@Model.Message</div>

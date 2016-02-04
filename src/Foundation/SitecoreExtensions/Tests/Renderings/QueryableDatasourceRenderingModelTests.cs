@@ -192,7 +192,6 @@
       //assert
       items.Count().Should().Be(0);
       index.CreateSearchContext().ReceivedWithAnyArgs(1);
-
     }
 
     [Theory]

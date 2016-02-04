@@ -1,11 +1,10 @@
-namespace Sitecore.Foundation.Testing.Commands
+namespace Sitecore.Foundation.Testing.Builders
 {
   using System.Reflection;
   using Ploeh.AutoFixture.Kernel;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.Pipelines;
   using Sitecore.Foundation.Testing.Attributes;
-  using Sitecore.Foundation.Testing.Builders;
 
   public class ResolvePipelineSpecimenBuilder : AttributeRelay<ResolvePipelineAttribute>
   {
