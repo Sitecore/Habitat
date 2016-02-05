@@ -23,6 +23,8 @@
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
   using Sitecore.Feature.Accounts.Texts;
+  using Sitecore.Foundation.Alerts;
+  using Sitecore.Foundation.Alerts.Models;
   using Sitecore.Globalization;
   using Sitecore.Security;
   using Sitecore.Security.Accounts;
@@ -295,7 +297,7 @@
         repo.RestorePassword(Arg.Any<string>()).Returns("new password");
         repo.Exists(Arg.Any<string>()).Returns(true);
         var result = controller.ForgotPassword(model);
-        result.Should().BeOfType<ViewResult>().Which.ViewName.Should().Be("InfoMessage");
+        result.Should().BeOfType<ViewResult>().Which.ViewName.Should().Be(ViewPath.InfoMessage);
       }
     }
 
