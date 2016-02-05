@@ -1,6 +1,5 @@
 ﻿Feature: Show Tracking Information
 	
-#Sitecore package "TestData_Show Tracking Information.zip" should be uploaded to habitat before test passing 
 
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC1_Expand Slide bar with tracking info
@@ -45,6 +44,7 @@ Scenario: Demo_Show Tracking Information_UC3_Contact_Identification
 	When User clicks on <Info-sign> in the right down corner
 	And User expands Identification section
 	Then Contact ID term with it's ID presents
+	And Identification status is <Known>
 
 
 @NeedImplementation
@@ -57,62 +57,13 @@ Scenario: Demo_Show Tracking Information_UC3_Contact_Identification_new session
 	And User clicks on <Info-sign> in the right down corner
 	And User expands Identification section
 	Then New Contact ID presents 
-
-	 
-@NeedImplementation
-Scenario: Demo_Show Tracking Information_UC4_Contact_Classification_List of the available check boxes(Unclassified)  
-#Engagement value should be predefined in Goal and published. Also Goal is assigned to Home page and published.   
-	Given Habitat website is opened on Main Page
-	When User clicks on <Info-sign> in the right down corner
-	And User expands Classification section
-	Then Following check boxes present in list
-	| Area Name           | Checkbox state |
-	| Unclassified        | checked        |
-	| Business Visitor    | unchecked      |
-	| ISP                 | unchecked      |
-	| Existing Customer   | unchecked      |
-	| Analyst             | unchecked      |
-	| Press               | unchecked      |
-	| Supplier            | unchecked      |
-	| Business Partner    | unchecked      |
-	| Competitor          | unchecked      |
-	| My Company          | unchecked      |
-	| Bot - Feed Reader   | unchecked      |
-	| Bot - Search Engine | unchecked      |
-	| Bot - Unidentified  | unchecked      |
-	| Bot - Auto-detected | unchecked      |
-	| Bot - Malicious     | unchecked      |
-
-
-@InDesign
-Scenario: Demo_Show Tracking Information_UC4_Contact_Classification_Existing customer checked
-#Engagement value should be predefined in Goal and published. Also Goal is assigned to Home page and published.   
-	Given User with following data is registered in Habitat
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	When User clicks on <Info-sign> in the right down corner
-	And User expands Classification section
-	Then Following check boxes present in list
-	| Area Name           | Checkbox state |
-	| Unclassified        | unchecked      |
-	| Business Visitor    | unchecked      |
-	| ISP                 | unchecked      |
-	| Existing Customer   | checked        |
-	| Analyst             | unchecked      |
-	| Press               | unchecked      |
-	| Supplier            | unchecked      |
-	| Business Partner    | unchecked      |
-	| Competitor          | unchecked      |
-	| My Company          | unchecked      |
-	| Bot - Feed Reader   | unchecked      |
-	| Bot - Search Engine | unchecked      |
-	| Bot - Unidentified  | unchecked      |
-	| Bot - Auto-detected | unchecked      |
-	| Bot - Malicious     | unchecked      |
+	And Identifier is empty
+	And Identification status is <None>
 	 	 
 
 @NeedImplementation
-Scenario: Demo_Show Tracking Information_UC5_This Visit_First Visit 
+Scenario: Demo_Show Tracking Information_UC4_This Visit_First Visit 
+#Engagement value should be predefined in Goal and published. Also Goal is assigned to Home page and published.
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner
 	Then Following This Visit section contains
@@ -129,7 +80,7 @@ Scenario: Demo_Show Tracking Information_UC5_This Visit_Few Visits
 	And User clicks on <Info-sign> in the right down corner
 	Then Following This Visit section contains
 	| Pages Viewed | Engagement value |
-	| 1            | 10               |
+	| 2            | 20               |
 
 
 @NeedImplementation
@@ -148,50 +99,68 @@ Scenario: Demo_Show Tracking Information_UC5_This Visit_Few Visits and pages
 @NeedImplementation
 Scenario: Demo_Show Tracking Information_UC6_Patterns_Focus Developer  
 	Given Habitat website is opened on Main Page
-	When Actor moves cursor over the Modules
+	When Actor moves cursor over the MODULES
 	And User selects PROJECT navigation menu
-	And User selects default image
-	And User clicks on Website list-group-item
-	And User clicks on Design list-group-item  
+    And User clicks on MODULES link in breadcrumbs 
 	And User clicks on <Info-sign> in the right down corner
 	And User expands Patterns section
-	Then Following image presents: http://habitat.test5ua1.dk.sitecore.net/-/media/Habitat/Images/Square/Habitat-067-square.jpg?mw=50&w=50&hash=EDC92E237DDCFE910A6CD27BCA2530938E06AE6D
-	And Following Patterns section contains 
+	Then Following Patterns section contains 
 	| Text H4 | Text H5   |
-	| FOCUS   | DEVELOPER | 
+	| Focus   | Developer | 
 
+
+	@NeedImplementation
+Scenario: Demo_Show Tracking Information_UC6_Experience Profile_Focus Developer  
+	Given Habitat website is opened on Main Page
+	When Actor moves cursor over the MODULES
+	And User selects PROJECT navigation menu
+    And User clicks on MODULES link in breadcrumbs 
+	And User clicks on <Info-sign> in the right down corner
+	And User expands Experience Profile section
+	And User expands Focus subsection
+	Then Following Focus subsection contains 
+	| Scores        |
+	| background: 3 |
+	| practical: 5  |
+	| process: 7    |
+	| scope: 2      |
 
 @NeedImplementation
-Scenario: Demo_Show Tracking Information_UC6_Patterns_Focus Architect   
+Scenario: Demo_Show Tracking Information_UC6_Patterns_Focus SolutionArchitect   
 	Given Habitat website is opened on Main Page
 	When Actor moves cursor over the ABOUT HABITAT
-	And User selects Fundamentals navigation menu
-	And User clicks on Flexibility link
-	And User clicks on Extensibility link
-	And User clicks on Cimplicity link
+	And User selects INTRODUCTION navigation menu
 	And User clicks on <Info-sign> in the right down corner 
 	And User expands Patterns section
-	Then Following image presents: http://habitat.test5ua1.dk.sitecore.net/-/media/Habitat/Images/Square/Habitat-080-square.jpg?mw=50&w=50&hash=2C014C2D7867CA4532759638430D9EAD55038059 
-	And Following Patterns section contains 
-	| Text H4 | Text H5   |
-	| FOCUS   | ARCHITECT | 
+	Then Following Patterns section contains 
+	| Text H4 | Text H5           |
+	| Focus   | SolutionArchitect | 
 
 
 @NeedImplementation 
 Scenario: Demo_Show Tracking Information_UC7_Campaigns
-	Given Habitat website is opened on http://habitat.test5ua1.dk.sitecore.net?sc_camp=9AC6AD85B15A4A5BB14337185A19364E
-	When User clicks on <Info-sign> in the right down corner 
+	Given Habitat website is opened on Main Page
+	When User opens following link http://habitat.test5ua1.dk.sitecore.net/TrackerData.aspx
+	And User clicks <Track campaign> button
+	And User opens Habitat Main Page
+	And User clicks on <Info-sign> in the right down corner 
 	And User expands Campaigns section
 	Then Following Campaigns section contains
-	| Campaign name         |
-	| Habitat Test Campaign |
+	| Campaign name |
+	| Register page |
 
-@InDesign
+
+@NeedImplementation
 Scenario: Demo_Show Tracking Information_UC8_Geo IP Location
 	Given Habitat website is opened on Main Page
-	When User clicks on <Info-sign> in the right down corner 
+	When User opens following link http://habitat.test5ua1.dk.sitecore.net/TrackerData.aspx
+	And User clicks <Set GeoIp> button
+	And User opens Habitat Main Page
+	And User clicks on <Info-sign> in the right down corner 
 	And User expands Geo IP Location section
-	Then <I have no idea how to test it now>
+	Then Following Geo IP Location section contains
+	| City  | Postal Code |
+	| Miami | 33129       |
 
 
 @NeedImplementation 
@@ -200,59 +169,66 @@ Scenario: Demo_Show Tracking Information_UC9_Device
 	When User clicks on <Info-sign> in the right down corner 
 	And User expands Device section
 	Then Following Device section contains
-	| Device Type | Vendor | Operating System      | Browser      | Display Height | Display Width |
-	| Computer    | Misc   | Windows 7 (Microsoft) | Unidentified | Unknown        | Unknown       |
+	| Device Type | Vendor | Operating System        | Browser             | Display Height | Display Width |
+	| Computer    | Misc   | Windows 8.1 (Microsoft) | Internet Explorer 7 | Unknown        | Unknown       |
 
 
 @NeedImplemantation 
 Scenario: Demo_Show Tracking Information_UC10_Pages_Shown pages 
 	Given Habitat website is opened on Main Page
-	When User selects CONTACT US navigation menu
+	When User selects MORE INFO navigation menu
 	And User selects PROJECT navigation menu
 	And User selects default image
 	And User clicks on <Info-sign> in the right down corner
 	And User expands Pages section
 	Then Following Pages section contains 
 	| Page link  |
-	| /Website   |
+	| Home       |
 	| /Project   |
-	| Contact-Us |
+	| More-Info  |
 	| Home       |
 
 
 @NeedImplemantation 
 Scenario: Demo_Show Tracking Information_UC10_Pages_Click link to page 
 	Given Habitat website is opened on Main Page
-	When User selects CONTACT US navigation menu
+	When User selects MORE INFO navigation menu
 	And User selects HOME navigation menu
 	And User clicks on <Info-sign> in the right down corner
 	And User expands Pages section
-	And User selects Contact Us from the Pages section
-	Then Page URL ends on /Contact-Us
-	And Contact Us title presents on page
+	And User selects More-Info from the Pages section
+	Then Page URL ends on /More-Info
+	And <Find out more> title presents on page
 
 
 @NeedImplementation 
 Scenario: Demo_Show Tracking Information_UC11_Goals_Goals archived 
 	Given Habitat website is opened on Main Page
 	When Actor moves cursor over the User icon
-	And User selects Register from drop-down menu
+	And Actor selects Register from drop-down menu
+	And Actor fill in all required fields
+	|Email             |Password |Confirm password |  
+	| ace@sitecore.net | a       | a               |
+	And Actor clicks Register button
 	And User clicks on <Info-sign> in the right down corner
 	And User expands Goals section
 	Then Following Goals section contains
 	| Goal name with score |
-	| Register page (20)   |
-	| Home Page (10)       |
+	| Login (0)            |
+	| Register (0)         |
 
 
 @NeedImplementation 
 Scenario: Demo_Show Tracking Information_UC12_Engagement          
-	Given Habitat website is opened on http://habitat.test5ua1.dk.sitecore.net/Register?sc_camp=9AC6AD85B15A4A5BB14337185A19364E>
+	Given Habitat website is opened on Main Page
+	And following user is logged in
+	| Username            | Password |
+	| JohnSmith@gmail.com | j        |
 	When User clicks on <Info-sign> in the right down corner 
 	And User expands Engagement section
 	Then Following Engagement section contains
-	| Engagement plan name |
-	| Register Page Open   |
+	| Plan               | Last state      |
+	| Register Page Open | Registered user |
 
 
 @NeedImplementation
