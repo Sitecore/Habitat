@@ -1,0 +1,17 @@
+﻿---
+ID: d4ce5263-0aad-4540-bc85-9477f8529745
+Parent: 4b67a7f9-7246-4a59-a051-961095c2dc70
+Template: 1fd75c49-f524-4c15-9f82-dcb2d4cf2fa9
+Path: /sitecore/content/Habitat/Global/Background Types
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160204T104422Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
