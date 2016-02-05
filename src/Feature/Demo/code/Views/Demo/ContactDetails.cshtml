@@ -4,87 +4,90 @@
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.Mvc.Extensions
 @model ContactInformation
-<div id="contact-details" class="panel panel-primary">
+<div id="contact-details" class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">
-      @Captions.ContactDetails.Title
+            @Captions.ContactDetails.Title
             <span class="stats">
-        <span title="@Captions.ContactDetails.NumberOfVisits" data-toggle="tooltip" data-placement="left">
+                <span title="@Captions.ContactDetails.NumberOfVisits" data-toggle="tooltip" data-placement="left">
                     <span class="glyphicon glyphicon glyphicon-random" aria-hidden="true"></span>
-                    <span class="badge">@Model.NoOfVisits</span>
                 </span>
-        <span title="@Captions.ContactDetails.EngagementValue" data-toggle="tooltip" data-placement="left">
+                <span class="badge">@Model.NoOfVisits</span>
+                <span title="@Captions.ContactDetails.EngagementValue" data-toggle="tooltip" data-placement="left">
                     <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
-                    <span class="badge">@Model.EngagementValue</span>
                 </span>
+                <span class="badge">@Model.EngagementValue</span>
             </span>
         </h3>
     </div>
-    <div class="panel-group">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                <a href="#contactDetailsIdentification" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
-                    @Captions.ContactDetails.Identification
-                    <span class="expand-icon glyphicon" aria-hidden="true"></span>
-                </a>
+    <div class="panel-body">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#contactDetailsIdentification" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+                            @Captions.ContactDetails.Identification
+                            <span class="expand-icon glyphicon" aria-hidden="true"></span>
+                        </a>
                     </h4>
-            </div>
-            <div class="panel-collapse collapse" id="contactDetailsIdentification">
-                <div class="panel-body">
-                    <dl class="list-unstyled">
-            <dt>@Captions.ContactDetails.ContactId</dt>
-                        <dd>@Model.Id.ToString()</dd>
-            <dt>@Captions.ContactDetails.Identifier</dt>
-                        <dd>@Model.Identifier</dd>
-            <dt>@Captions.ContactDetails.IdentificationStatus</dt>
-                        <dd>@Model.IdentificationStatus</dd>
-                    </dl>
+                </div>
+                <div class="panel-collapse collapse" id="contactDetailsIdentification">
+                    <div class="panel-body">
+                        <dl class="list-unstyled">
+                            <dt>@Captions.ContactDetails.ContactId</dt>
+                            <dd>@Model.Id.ToString()</dd>
+                            <dt>@Captions.ContactDetails.Identifier</dt>
+                            <dd>@Model.Identifier</dd>
+                            <dt>@Captions.ContactDetails.IdentificationStatus</dt>
+                            <dd>@Model.IdentificationStatus</dd>
+                        </dl>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <a href="#contactPersonalData" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
-          @Captions.ContactDetails.PersonalData
-                    <span class="expand-icon glyphicon" aria-hidden="true"></span>
-                </a>
-            </div>
-            <div class="panel-collapse collapse" id="contactPersonalData">
-                <div class="panel-body">
-                    <dl class="list-unstyled">
-                        @if (!Model.Picture?.IsEmpty ?? false)
-                        {
-              <dt>@Captions.ContactDetails.Picture</dt>
-                        <dd>
-                            <img class="img-thumbnail" src="data:image;base64,@Convert.ToBase64String(Model.Picture.Picture)" />
-                        </dd>
-                        }
-                        @if (@Model.PersonalInfo != null && !@Model.PersonalInfo.IsEmpty)
-                        {
-
-
-                            foreach (var prop in @Model.PersonalInfo.GetType().GetProperties())
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#contactPersonalData" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+                            @Captions.ContactDetails.PersonalData
+                            <span class="expand-icon glyphicon" aria-hidden="true"></span>
+                        </a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="contactPersonalData">
+                    <div class="panel-body">
+                        <dl class="list-unstyled">
+                            @if (!Model.Picture?.IsEmpty ?? false)
                             {
-                                var val = prop.GetValue(@Model.PersonalInfo);
-                                if (val == null || val.ToString().IsEmptyOrNull() || prop.Name.Equals("IsEmpty"))
-                                {
-                                    continue;
-                                }
-                <dt>@prop.Name.Humanize()</dt>
-                                <dd>@val</dd>
+                            <dt>@Captions.ContactDetails.Picture</dt>
+                            <dd>
+                                <img class="img-thumbnail" src="data:image;base64,@Convert.ToBase64String(Model.Picture.Picture)" />
+                            </dd>
                             }
-                        }
-                        @if (Model.Addresses != null && !Model.Addresses.IsEmpty && Model.Addresses.Entries != null)
-                        {
-              <dt>@Captions.ContactDetails.Addresses</dt>
-                        <dd>
-                <dl>
-                                @foreach (var key in Model.Addresses.Entries.Keys)
+                            @if (@Model.PersonalInfo != null && !@Model.PersonalInfo.IsEmpty)
+                            {
+
+
+                                foreach (var prop in @Model.PersonalInfo.GetType().GetProperties())
                                 {
-                                    var preferred = Model.Addresses.Entries[key];
-                    var addressArray = new[]
-                    {
+                                    var val = prop.GetValue(@Model.PersonalInfo);
+                                    if (val == null || val.ToString().IsEmptyOrNull() || prop.Name.Equals("IsEmpty"))
+                                    {
+                                        continue;
+                                    }
+                                    <dt>@prop.Name.Humanize()</dt>
+                                    <dd>@val</dd>
+                                }
+                            }
+                            @if (Model.Addresses != null && !Model.Addresses.IsEmpty && Model.Addresses.Entries != null)
+                            {
+                            <dt>@Captions.ContactDetails.Addresses</dt>
+                            <dd>
+                                <dl>
+                                    @foreach (var key in Model.Addresses.Entries.Keys)
+                                    {
+                                        var preferred = Model.Addresses.Entries[key];
+                                        var addressArray = new[]
+                                        {
                       preferred.Country,
                       preferred.City,
                       preferred.StateProvince,
@@ -94,138 +97,144 @@
                       preferred.StreetLine4,
                       preferred.PostalCode
                     };
-                                <dt>@key</dt>
-                    <dd>@string.Join(", ", addressArray.Where(x => !string.IsNullOrEmpty(x)))</dd>
-                                }
-                            </dl>
-                        </dd>
-                        }
-                        @if (Model.PhoneNumbers != null && !Model.PhoneNumbers.IsEmpty && Model.PhoneNumbers.Entries != null)
-                        {
-              <dt>@Captions.ContactDetails.PhoneNumbers</dt>
-              <dd>
-                <dl>
-                  @foreach (var key in Model.PhoneNumbers.Entries.Keys)
-                            {
-                    var phoneNumber = Model.PhoneNumbers.Entries[key];
-                    var formattedExtension = !phoneNumber.Extension.IsWhiteSpaceOrNull() ? "(" + phoneNumber.Extension + ")" : string.Empty;
-                    <dt>@key</dt>
-                    <dd>@phoneNumber.CountryCode @formattedExtension @phoneNumber.Number </dd>
+                                    <dt>@key</dt>
+                                    <dd>@string.Join(", ", addressArray.Where(x => !string.IsNullOrEmpty(x)))</dd>
+                                    }
+                                </dl>
+                            </dd>
                             }
-                </dl>
-              </dd>
-
-                        }
-                    </dl>
-                </div>
-            </div>
-        </div>
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <a href="#contactCommunication" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
-          @Captions.ContactDetails.Communication
-                    <span class="expand-icon glyphicon" aria-hidden="true"></span>
-                </a>
-            </div>
-            <div class="panel-collapse collapse" id="contactCommunication">
-                <div class="panel-body">
-                    <dl class="list-unstyled">
-            <dt>@Captions.ContactDetails.CommunicationRevoked</dt>
-                        <dd>@Model.CommunicationProfile.CommunicationRevoked</dd>
-            <dt>@Captions.ContactDetails.ConsentRevoked</dt>
-                        <dd>@Model.CommunicationProfile.ConsentRevoked</dd>
-
-                        @if (Model.Emails != null && !Model.Emails.IsEmpty && Model.Emails.Entries != null)
-                        {
-              <dt>@Captions.ContactDetails.EmailAddresses</dt>
-              <dd>
-                <dl>
-                  @foreach (var key in Model.Emails.Entries.Keys)
+                            @if (Model.PhoneNumbers != null && !Model.PhoneNumbers.IsEmpty && Model.PhoneNumbers.Entries != null)
                             {
-                    var emailAddress = Model.Emails.Entries[key];
-                    <dt>@key</dt>
-                    <dd>@emailAddress.SmtpAddress</dd>
+                            <dt>@Captions.ContactDetails.PhoneNumbers</dt>
+                            <dd>
+                                <dl>
+                                    @foreach (var key in Model.PhoneNumbers.Entries.Keys)
+                                    {
+                                        var phoneNumber = Model.PhoneNumbers.Entries[key];
+                                        var formattedExtension = !phoneNumber.Extension.IsWhiteSpaceOrNull() ? "(" + phoneNumber.Extension + ")" : string.Empty;
+                                    <dt>@key</dt>
+                                    <dd>@phoneNumber.CountryCode @formattedExtension @phoneNumber.Number </dd>
+                                    }
+                                </dl>
+                            </dd>
 
                             }
-                </dl>
-              </dd>
-                        }
-            <dt>@Captions.ContactDetails.PreferenceLanguage</dt>
-                        <dd>@Model.Preferences.Language</dd>
-                    </dl>
+                        </dl>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <a href="#contactBehavoiur" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
-          @Captions.ContactDetails.BehaviorProfiles
-                    <span class="expand-icon glyphicon" aria-hidden="true"></span>
-                </a>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#contactCommunication" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+                            @Captions.ContactDetails.Communication
+                            <span class="expand-icon glyphicon" aria-hidden="true"></span>
+                        </a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="contactCommunication">
+                    <div class="panel-body">
+                        <dl class="list-unstyled">
+                            <dt>@Captions.ContactDetails.CommunicationRevoked</dt>
+                            <dd>@Model.CommunicationProfile.CommunicationRevoked</dd>
+                            <dt>@Captions.ContactDetails.ConsentRevoked</dt>
+                            <dd>@Model.CommunicationProfile.ConsentRevoked</dd>
+
+                            @if (Model.Emails != null && !Model.Emails.IsEmpty && Model.Emails.Entries != null)
+                            {
+                            <dt>@Captions.ContactDetails.EmailAddresses</dt>
+                            <dd>
+                                <dl>
+                                    @foreach (var key in Model.Emails.Entries.Keys)
+                                    {
+                                        var emailAddress = Model.Emails.Entries[key];
+                                    <dt>@key</dt>
+                                    <dd>@emailAddress.SmtpAddress</dd>
+
+                                    }
+                                </dl>
+                            </dd>
+                            }
+                            <dt>@Captions.ContactDetails.PreferenceLanguage</dt>
+                            <dd>@Model.Preferences.Language</dd>
+                        </dl>
+                    </div>
+                </div>
             </div>
-            <div class="panel-collapse collapse" id="contactBehavoiur">
-                <div class="panel-body">
 
-                    @foreach (var entry in Model.BehaviorProfiles.Where(x => x.NumberOfTimesScored > 0))
-                    {
-                    <div class="panel-group" aria-expanded="false">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                <a href="#@entry.Id" data-toggle="collapse" class="panel-title collapsed" aria-expanded="false">
-                                    @entry.Name
-                                    <span class="expand-icon glyphicon" aria-hidden="true"></span>
-                                </a>
-                            </div>
-                            <div class="panel-collapse collapse" id="@entry.Id" aria-expanded="false" style="height: 79px;">
-                                <div class="panel-body">
-                                    <dl>
-                                        <dt>Id</dt>
-                                        <dd>@entry.Id</dd>
-                                        <dt>
-                        @Captions.ContactDetails.TimesScored
-                                        </dt>
-                                        <dd>@entry.NumberOfTimesScored</dd>
-                      <dt>
-                        @Captions.ContactDetails.Scores
-                      </dt>
-                                        @foreach (var score in entry.Scores.Select(x => $"{x.Name}: {x.Value}"))
-                                        {
-                                        <dd>@score</dd>
-                                        }
-                                    </dl>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#contactBehavoiur" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+                            @Captions.ContactDetails.BehaviorProfiles
+                            <span class="expand-icon glyphicon" aria-hidden="true"></span>
+                        </a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="contactBehavoiur">
+                    <div class="panel-body">
+
+                        @foreach (var entry in Model.BehaviorProfiles.Where(x => x.NumberOfTimesScored > 0))
+                        {
+                        <div class="panel-group" aria-expanded="false">
+                            <div class="panel panel-info">
+                                <div class="panel-heading">
+                                    <a href="#@entry.Id" data-toggle="collapse" class="panel-title collapsed" aria-expanded="false">
+                                        @entry.Name
+                                        <span class="expand-icon glyphicon" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                                <div class="panel-collapse collapse" id="@entry.Id" aria-expanded="false" style="height: 79px;">
+                                    <div class="panel-body">
+                                        <dl>
+                                            <dt>Id</dt>
+                                            <dd>@entry.Id</dd>
+                                            <dt>
+                                                @Captions.ContactDetails.TimesScored
+                                            </dt>
+                                            <dd>@entry.NumberOfTimesScored</dd>
+                                            <dt>
+                                                @Captions.ContactDetails.Scores
+                                            </dt>
+                                            @foreach (var score in entry.Scores.Select(x => $"{x.Name}: {x.Value}"))
+                                            {
+                                            <dd>@score</dd>
+                                            }
+                                        </dl>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        }
                     </div>
-                    }
                 </div>
             </div>
-        </div>
 
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <a href="#contactKeyBehaviorCache" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
-          @Captions.ContactDetails.KeyBehaviorCache
-                    <span class="expand-icon glyphicon" aria-hidden="true"></span>
-                </a>
-            </div>
-            <div class="panel-collapse collapse" id="contactKeyBehaviorCache">
-                <div class="panel-body">
-                    @if (Model.KeyBehaviorCache != null)
-                    {
-            @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.Campaigns, Title = Captions.ContactDetails.Campaigns })
-            @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.Channels, Title = Captions.ContactDetails.Channels })
-            @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.Goals, Title = Captions.ContactDetails.Goals })
-            @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.CustomValues, Title = Captions.ContactDetails.CustomValues })
-            @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.Outcomes, Title = Captions.ContactDetails.Outcomes })
-            @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.PageEvents, Title = Captions.ContactDetails.PageEvents })
-            @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.Venues, Title = Captions.ContactDetails.Venues })
-                    }
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a href="#contactKeyBehaviorCache" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
+                            @Captions.ContactDetails.KeyBehaviorCache
+                            <span class="expand-icon glyphicon" aria-hidden="true"></span>
+                        </a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="contactKeyBehaviorCache">
+                    <div class="panel-body">
+                        @if (Model.KeyBehaviorCache != null)
+                        {
+                        @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.Campaigns, Title = Captions.ContactDetails.Campaigns })
+                        @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.Channels, Title = Captions.ContactDetails.Channels })
+                        @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.Goals, Title = Captions.ContactDetails.Goals })
+                        @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.CustomValues, Title = Captions.ContactDetails.CustomValues })
+                        @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.Outcomes, Title = Captions.ContactDetails.Outcomes })
+                        @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.PageEvents, Title = Captions.ContactDetails.PageEvents })
+                        @Html.Partial("KeyBehaviourCacheList", new KeyBehaviorCacheEntryModel { Entries = Model.KeyBehaviorCache.Venues, Title = Captions.ContactDetails.Venues })
+                        }
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
