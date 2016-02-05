@@ -52,12 +52,16 @@
 
         @if (!Sitecore.Context.PageMode.IsPageEditor)
         {
-        <div id="sidebar-wrapper">
-            <a href="#sidebar" class="sidebar-toggle">
-                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-            </a>
-            <div id="sidebar">
-                @Html.Sitecore().Placeholder("page-sidebar")
+
+        <div class="off-canvas-sidebar off-canvas-sidebar-right">
+            <button type="button" class="btn btn-info pull-right " data-toggle="sidebar" data-side="right">
+                <span class="glyphicon glyphicon-cog icon-md "></span>
+            </button>
+            <div class="sidebar sidebar-fixed-right">
+                <button type="button" class="btn btn-danger  " data-toggle="sidebar" data-side="right">
+                    X
+                </button>
+                @Html.Sitecore().Placeholder("page-sidebar")  
             </div>
         </div>
         }

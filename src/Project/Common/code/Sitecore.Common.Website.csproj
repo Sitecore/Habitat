@@ -153,6 +153,7 @@
     <Content Include="Views\Common\Sublayouts\PageSidebarLeft.cshtml" />
     <Content Include="Views\Common\Sublayouts\PageSidebarRight.cshtml" />
     <Content Include="Views\Common\Sublayouts\Navbar.cshtml" />
+    <Content Include="Views\Common\Sublayouts\Section.cshtml" />
     <None Include="Views\Web.config" />
     <Content Include="web.config.transform" />
   </ItemGroup>
@@ -171,7 +172,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52949</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

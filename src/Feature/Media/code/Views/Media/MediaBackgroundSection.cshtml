@@ -1,0 +1,10 @@
+﻿@using System.Web.UI.WebControls
+@using Sitecore
+@using Sitecore.Feature.Media
+@using Sitecore.Feature.Media.Infrastructure
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Feature.Media.Infrastructure.Models.MediaBackgroundRenderingModel
+
+<section class="section section-full @Model.CssClass" @Model.MediaAttribute>
+    @Html.Sitecore().DynamicPlaceholder("section")
+</section>
