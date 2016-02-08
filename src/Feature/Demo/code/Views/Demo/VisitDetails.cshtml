@@ -1,6 +1,7 @@
 ﻿@using System.Globalization
 @using Sitecore.Feature.Demo.Texts
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.StringExtensions
 @model Sitecore.Feature.Demo.Models.VisitInformation
 <div id="visit-details" class="panel panel-primary">
   <div class="panel-heading">
@@ -44,9 +45,13 @@
 
                   @if (i == 0)
                   {
-                    <div class="image-wrapper">
-                      <img src="@item.Image" alt="@item.PatternName" />
-                    </div>
+                    if (!@item.Image.IsNullOrEmpty())
+                    {
+                      <div class="image-wrapper">
+                        <img src="@item.Image" alt="@item.PatternName" />
+                      </div>
+                    }
+
                     <h4>@item.Profile</h4>
                   }
                   @if (i == 1)

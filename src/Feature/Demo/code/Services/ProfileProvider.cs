@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Feature.Demo.Services
 {
+  using System;
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.Analytics;
@@ -42,11 +43,13 @@
 
       var patterns = PopulateProfilePatternMatchesWithXdbData.GetPatternsWithGravityShare(visibleProfile, userPattern);
       return from patternKeyValuePair in patterns
-        let src = patternKeyValuePair.Key.Image.ImageUrl(new MediaUrlOptions
-        {
-          Width = 50,
-          MaxWidth = 50
-        })
+        let src = patternKeyValuePair.Key.Image?.MediaItem == null
+          ? string.Empty 
+          : patternKeyValuePair.Key.Image.ImageUrl(new MediaUrlOptions
+            {
+              Width = 50,
+              MaxWidth = 50
+            })
         select new PatternMatch(visibleProfile.NameField, patternKeyValuePair.Key.NameField, src, patternKeyValuePair.Value);
     }
   }
