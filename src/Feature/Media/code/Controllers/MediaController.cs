@@ -17,5 +17,13 @@
 
       return this.View(mediamBackgroundModel);
     }
+
+    public ActionResult MediaBackgroundHeader()
+    {
+      var renderingPropertiesRepository = new RenderingPropertiesRepository();
+      var mediamBackgroundModel = renderingPropertiesRepository.Get<MediaBackgroundRenderingModel>();
+
+      return this.View(mediamBackgroundModel);
+    }
   }
 }

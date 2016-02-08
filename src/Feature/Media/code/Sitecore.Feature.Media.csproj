@@ -143,6 +143,7 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Views\Media\MediaBackgroundSection.cshtml" />
+    <Content Include="Views\Media\MediaBackgroundHeader.cshtml" />
     <None Include="Web.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
