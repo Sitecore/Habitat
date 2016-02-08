@@ -42,16 +42,24 @@
     {
       get
       {
-        var mediaUrl = string.Empty;
-        var linkValue = HttpUtility.UrlDecode(this.Media);
-        var linkElement = XElement.Parse(linkValue);
-        var id = linkElement.Attribute("id")?.Value;
-        var item = Context.Database.GetItem(id);
-
-        if (item != null)
+        if (this.Type == null || !this.Type.Equals("bg-media"))
         {
-          var mediaItem = new MediaItem(item);
-          mediaUrl = MediaManager.GetMediaUrl(mediaItem);
+          return String.Empty;
+        }
+
+        var mediaUrl = string.Empty;
+        if (!string.IsNullOrEmpty(this.Media))
+        {
+          var linkValue = HttpUtility.UrlDecode(this.Media);
+          var linkElement = XElement.Parse(linkValue);
+          var id = linkElement.Attribute("id")?.Value;
+          var item = Context.Database.GetItem(id);
+
+          if (item != null)
+          {
+            var mediaItem = new MediaItem(item);
+            mediaUrl = MediaManager.GetMediaUrl(mediaItem);
+          }
         }
 
         return $"style=background-image:url('{mediaUrl}');";

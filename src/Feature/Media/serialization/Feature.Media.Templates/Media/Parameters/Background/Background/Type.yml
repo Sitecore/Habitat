@@ -2,7 +2,7 @@
 ID: f9588bb9-013e-4c21-b339-5ed379252cde
 Parent: 257a2fe2-e361-4f56-a107-4d4bcf0c239f
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Feature/Media/Parameters/Background/Data/Type
+Path: /sitecore/templates/Feature/Media/Parameters/Background/Background/Type
 DB: master
 SharedFields:
 - ID: 1eb8ae32-e190-44a6-968d-ed904c794ebf

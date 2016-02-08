@@ -2,8 +2,12 @@
 ID: 257a2fe2-e361-4f56-a107-4d4bcf0c239f
 Parent: b962a806-d708-4001-b0a3-3fa31f2263c5
 Template: e269fbb5-3750-427a-9149-7aa950b49301
-Path: /sitecore/templates/Feature/Media/Parameters/Background/Data
+Path: /sitecore/templates/Feature/Media/Parameters/Background/Background
 DB: master
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 200
 Languages:
 - Language: en
   Versions:

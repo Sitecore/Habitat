@@ -3,7 +3,7 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 
-<div class="jumbotron" style="background-image: url('@Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image)')">
+<div class="jumbotron bg-media" style="background-image: url('@Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image)')">
   <div class="container">
     <h1>
       @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)

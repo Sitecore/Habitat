@@ -1,16 +1,16 @@
 ﻿---
-ID: 73d4ba11-bc5c-44db-b184-8fd59857c8db
+ID: d598d6dd-3b61-47c3-b84b-8c73211fef04
 Parent: 257a2fe2-e361-4f56-a107-4d4bcf0c239f
 Template: 455a3e98-a627-4b40-8035-e683a0331ac7
-Path: /sitecore/templates/Feature/Media/Parameters/Background/Data/Media
+Path: /sitecore/templates/Feature/Media/Parameters/Background/Background/Parallax
 DB: master
 SharedFields:
 - ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   Hint: Type
-  Value: link
+  Value: Checkbox
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   Hint: __Sortorder
-  Value: 200
+  Value: 300
 Languages:
 - Language: en
   Versions:
@@ -18,4 +18,4 @@ Languages:
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
-      Value: 20160204T175912Z
+      Value: 20160204T175955Z
