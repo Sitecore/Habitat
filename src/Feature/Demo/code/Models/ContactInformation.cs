@@ -26,13 +26,7 @@ namespace Sitecore.Feature.Demo.Models
 
     public string IdentificationStatus => contactProfileProvider.Contact.Identifiers.IdentificationLevel.ToString();
 
-    public IEnumerable<string> Classifications
-    {
-      get
-      {
-        return Tracker.DefinitionItems.VisitorClassifications.Select(c => c.Header);
-      }
-    }
+    public IEnumerable<string> Classifications => Tracker.DefinitionItems.VisitorClassifications.Select(c => c.Header);
 
     public IContactPicture Picture => contactProfileProvider.Picture?.Picture == null ? null : contactProfileProvider.Picture;
     public IContactPersonalInfo PersonalInfo => contactProfileProvider.PersonalInfo;

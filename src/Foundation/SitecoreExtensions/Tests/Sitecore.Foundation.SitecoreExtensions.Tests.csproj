@@ -160,13 +160,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\HtmlHelperExtensionsTests.cs" />
     <Compile Include="Extensions\StringExtensionsTests.cs" />
     <Compile Include="Extensions\ItemExtensionsTests.cs" />
     <Compile Include="Extensions\MediaTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RenderingPropertiesRepositoryTests.cs" />
     <Compile Include="Renderings\QueryableDatasourceRenderingModelTests.cs" />
+    <Compile Include="Repositories\FileRepositoryTests.cs" />
+    <Compile Include="Repositories\ImageRepositoryTests.cs" />
     <Compile Include="Repositories\DatabaseRepository.cs" />
     <Compile Include="SearchSettingsTests.cs" />
     <Compile Include="Services\XmlParserServiceTests.cs" />

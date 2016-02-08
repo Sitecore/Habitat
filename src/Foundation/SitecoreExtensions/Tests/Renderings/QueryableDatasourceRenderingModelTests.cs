@@ -17,6 +17,7 @@
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.FakeDb.Pipelines;
+  using Sitecore.Foundation.SitecoreExtensions.Model;
   using Sitecore.Foundation.SitecoreExtensions.Rendering;
   using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Foundation.Testing.Pipelines;
@@ -191,7 +192,6 @@
       //assert
       items.Count().Should().Be(0);
       index.CreateSearchContext().ReceivedWithAnyArgs(1);
-
     }
 
     [Theory]

@@ -19,6 +19,7 @@
 					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.VSReserializeVerb, Unicorn" patch:after="processor[1]" />
 					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.VersionVerb, Unicorn" patch:after="processor[1]" />
 					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.ConfigurationsVerb, Unicorn" patch:after="processor[1]" />
+					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.ConfigurationHealthVerb, Unicorn" patch:after="processor[1]" />
 				</unicornControlPanelRequest>
 		</pipelines>
 	</sitecore>

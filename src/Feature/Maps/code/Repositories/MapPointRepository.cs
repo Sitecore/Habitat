@@ -7,13 +7,13 @@
 
   public class MapPointRepository : IMapPointRepository
   {
-    private readonly News.Repositories.ISearchServiceRepository searchServiceRepository;
+    private readonly Foundation.Indexing.Repositories.ISearchServiceRepository searchServiceRepository;
 
     public MapPointRepository() : this(new Foundation.Indexing.Repositories.SearchServiceRepository(new SearchSettingsRepository()))
     {
     }
 
-    public MapPointRepository(News.Repositories.ISearchServiceRepository searchServiceRepository)
+    public MapPointRepository(Foundation.Indexing.Repositories.ISearchServiceRepository searchServiceRepository)
     {
       this.searchServiceRepository = searchServiceRepository;
     }
