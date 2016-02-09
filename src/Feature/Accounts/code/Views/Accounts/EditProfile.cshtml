@@ -9,6 +9,7 @@
 
 @using (Html.BeginRouteForm(MvcSettings.SitecoreRouteName, FormMethod.Post))
 {
+    @Html.FormHandler()
     var info = Session.GetAndRemove("EditProfileMessage") as InfoMessage;
     if (info != null)
     {

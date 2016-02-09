@@ -127,6 +127,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\ValidateRenderingIdAttribute.cs" />
     <Compile Include="Controls\EditFrameRendering.cs" />
     <Compile Include="Extensions\SessionExtensions.cs" />
     <Compile Include="Extensions\SiteExtensions.cs" />
@@ -135,6 +136,7 @@
     <Compile Include="Extensions\ItemExtensions.cs" />
     <Compile Include="Extensions\HTMLHelperExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="HtmlHelpers\FormHelpers.cs" />
     <Compile Include="HtmlHelpers\ValidationHelpers.cs" />
     <Compile Include="Model\File.cs" />
     <Compile Include="Model\Image.cs" />
