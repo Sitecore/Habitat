@@ -5,64 +5,187 @@
 Scenario: Demo_Show Tracking Information_UC1_Expand Slide bar with tracking info
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner
-	Then Slide bar element was expanded
+	Then Slide bar element is visible 
 
 
 @NeedImplementation
-Scenario: Demo_Show Tracking Information_UC1_Collapse Slide bar with tracking info
+Scenario: Demo_Show Tracking Information_UC2_Collapse Slide bar with tracking info
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner
 	And User clicks on <Info-sign> in the right down corner
-	Then Slide bar element was collapsed
+	Then Slide bar element is invisible
 	
 	
 @NeedImplementation
-Scenario: Demo_Show Tracking Information_UC2_Contact_First Visit
+Scenario: Demo_Show Tracking Information_UC3_Contact_NumberOfVisits_First Visit
 #Engagement value should be predefined in Goal and published. Also Goal is assigned to Home page and published.   
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner
-	Then System shows following info on Contact panel title
-	| Number of visits | Engagement value |
-	| 1                | 10               |
+	Then System shows following number of visits for the Contact
+	| Number of visits |
+	| 1                |
 
 
 @NeedImplementation
-Scenario: Demo_Show Tracking Information_UC2_Contact_Few Visits
+Scenario: Demo_Show Tracking Information_UC4_Contact_NumberOfVisits_Few Visits
 #Engagement value should be predefined in Goal and published. Also Goal is assigned to Home page and published.   
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner
 	And User clicks END VISIT button
 	And User clicks on <Info-sign> in the right down corner
-	Then System shows following info on Contact panel title
-	| Number of visits | Engagement value |
-	| 2                | 20               | 
+	Then System shows following number of visits for the Contact
+	| Number of visits |
+	| 2                |
+	
+	
+@NeedImplementation
+Scenario: Demo_Show Tracking Information_UC5_Contact_EngagementValue
+	Given Habitat website is opened on Main Page
+	And User was Login to Habitat
+	| Email               | Password |
+	| JohnSmith@gmail.com | j        |
+	When User clicks on <Info-sign> in the right down corner
+	Then System shows following Engagement value for the Contact
+	| Engagement value |
+	|                  |	 
 
 
 @NeedImplementation
-Scenario: Demo_Show Tracking Information_UC3_Contact_Identification 
+Scenario: Demo_Show Tracking Information_UC6_Contact_Identification 
 	Given Habitat website is opened on Main Page
+	And User was Login to Habitat
+	| Email               | Password |
+	| JohnSmith@gmail.com | j        |
 	When User clicks on <Info-sign> in the right down corner
 	And User expands Identification section
-	Then Contact ID term with it's ID presents
-	And Identification status is <Known>
+	Then Following info showns for Contact--Identification section
+	| Contact ID                           | Identifier                   | Identification status |
+	| e5cb9cce-3397-4b40-af6b-f1e5bf3400bc | extranet\JohnSmith@gmail.com | Known                 |
+
+
 
 
 @NeedImplementation
-Scenario: Demo_Show Tracking Information_UC3_Contact_Identification_new session 
+Scenario: Demo_Show Tracking Information_UC7_Contact_Identification_new session 
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner
-	And User records Contact ID 
-	And User cleans up browser cookies 
-	And User refreshes browser page
-	And User clicks on <Info-sign> in the right down corner
 	And User expands Identification section
-	Then New Contact ID presents 
-	And Identifier is empty
-	And Identification status is <None>
+	Then Following info showns for Contact--Identification section
+	| Identification status |
+	| None                  |
+
+
+@NeedImplementation
+Scenario: Demo_Show Tracking Information_UC8_Contact_PersonalData_Data exists
+	Given Habitat website is opened on Main Page
+	And User was Login to Habitat
+	| Email               | Password |
+	| JohnSmith@gmail.com | j        |
+	When User clicks on <Info-sign> in the right down corner
+	And User expands Personal Data section
+	Then Following info showns for Contact--Personal Data section
+	| DT text       | DD text                            |
+	| Picture       |                                    |
+	| First Name    | John                               |
+	| Surname       | Smith                              |
+	| Gender        | Male                               |
+	| Job Title     | Intern                             |
+	| Addresses     | USA, Miami, 153 SE, 15th Rd, 33129 |
+	| Phone Numbers |                                    |
+	| cell          | 775  45454456                      |
+	| work          | 775 (15) 3434567653                |  
+
+@NeedImplementation
+Scenario: Demo_Show Tracking Information_UC9_Contact_PersonalData_Data does not exist
+	Given Habitat website is opened on Main Page
+	When User clicks on <Info-sign> in the right down corner
+	Then No text under Personal Data section
+
+
+@NeedImplementation
+Scenario: Demo_Show Tracking Information_UC10_Contact_Communication_Data exists
+	Given Habitat website is opened on Main Page
+	And User was Login to Habitat
+	| Email               | Password |
+	| JohnSmith@gmail.com | j        |
+	When User clicks on <Info-sign> in the right down corner
+	And User expands Communication section
+	Then Following info showns for Contact--Communication section
+	| DT text               | DD text             |
+	| Communication Revoked | False               |
+	| Consent Revoked       | False               |
+	| Email Addresses       |                     |
+	| Primary               | JohnSmith@gmail.com |
+	| Preference Language   | en                  |
+
+
+@InDesign
+Scenario: Demo_Show Tracking Information_UC11_Contact_Communication_Data does not exist
+	Given Habitat website is opened on Main Page
+	When User clicks on <Info-sign> in the right down corner
+	And User expands Communication section
+	Then Following info showns for Contact--Communication section
+	| DT text               | DD text |
+	| Communication Revoked | False   |
+	| Consent Revoked       | False   |
+
+
+@NeedImplementation
+Scenario: Demo_Show Tracking Information_UC12_Contact_BehaviorProfiles_Data exists
+	Given Habitat website is opened on Main Page
+	And User was Login to Habitat
+	| Email               | Password |
+	| JohnSmith@gmail.com | j        |
+	When User clicks on <Info-sign> in the right down corner
+	And User expands Behavior Profiles section
+	Then Panel Title contains
+	| Profile name |
+	| Focus        |
+	And Following info showns for Contact--Behavior Profiles section
+	| DT text                | DD text                              |
+	| Id                     | 24dff2cf-b30a-4b75-8967-2fe3ded82271 |
+	| Number Of Times Scored | 3                                    |
+	| Scores                 | Background: 18                       |
+	|                        | Practical: 12                        |
+	|                        | Process: 14                          |
+	|                        | Scope: 11                            |
+
+
+
+@NeedImplementation
+Scenario: Demo_Show Tracking Information_UC13_Contact_BehaviorProfiles_Data does not exist
+	Given Habitat website is opened on Main Page
+	When User clicks on <Info-sign> in the right down corner
+	And User expands Behavior Profiles section
+	Then No text under Behavior Profiles section
+
+@NeedImplementation
+Scenario: Demo_Show Tracking Information_UC14_Contact_KeyBehaviorCache
+	Given Habitat website is opened on Main Page
+	And User was Login to Habitat
+	| Email               | Password |
+	| JohnSmith@gmail.com | j        |
+	When User clicks on <Info-sign> in the right down corner
+	And User expands Key Behavior Cache section
+	Then Key Behavior Cache Title contains
+	| Profile name |
+	| Channels     |
+	| Goals        |
+	| Page Events  |
+                  
+
+
+
+@NeedImplementation
+Scenario: Demo_Show Tracking Information_UC15_Contact_KeyBehaviorCache_Data does not exist
+	Given Habitat website is opened on Main Page
+	When User clicks on <Info-sign> in the right down corner
+	And User expands Key Behavior Cache section
+	Then No text under Behavior Profiles section
 	 	 
 
 @NeedImplementation
-Scenario: Demo_Show Tracking Information_UC4_This Visit_First Visit 
+Scenario: Demo_Show Tracking Information_UC16_This Visit_First Visit 
 #Engagement value should be predefined in Goal and published. Also Goal is assigned to Home page and published.
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner
@@ -71,8 +194,8 @@ Scenario: Demo_Show Tracking Information_UC4_This Visit_First Visit
 	| 1            | 10               |
 
 
-@NeedImplementation
-Scenario: Demo_Show Tracking Information_UC5_This Visit_Few Visits
+@InDesign-Need to update after test data inserted
+Scenario: Demo_Show Tracking Information_UC17_This Visit_Few Visits
 #Engagement value should be predefined in Goal and published. Also Goal is assigned to Home page and published.
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner
@@ -83,8 +206,8 @@ Scenario: Demo_Show Tracking Information_UC5_This Visit_Few Visits
 	| 2            | 20               |
 
 
-@NeedImplementation
-Scenario: Demo_Show Tracking Information_UC5_This Visit_Few Visits and pages
+@InDesign-Need to update after test data inserted
+Scenario: Demo_Show Tracking Information_UC18_This Visit_Few Visits and pages
 #Engagement value should be predefined in Goal and published. Also Goal is assigned to Home page and published.
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner
@@ -97,48 +220,50 @@ Scenario: Demo_Show Tracking Information_UC5_This Visit_Few Visits and pages
 
 
 @NeedImplementation
-Scenario: Demo_Show Tracking Information_UC6_Patterns_Focus Developer  
+Scenario: Demo_Show Tracking Information_UC19_Patterns_Patterns nearly matched   
 	Given Habitat website is opened on Main Page
-	When Actor moves cursor over the MODULES
-	And User selects PROJECT navigation menu
-    And User clicks on MODULES link in breadcrumbs 
-	And User clicks on <Info-sign> in the right down corner
+	And User was Login to Habitat
+	| Email               | Password |
+	| JohnSmith@gmail.com | j        |
+	When User clicks on <Info-sign> in the right down corner 
 	And User expands Patterns section
-	Then Following Patterns section contains 
+	Then Patterns section main pattern
+	| Text H4 | Text H5           | Progress |
+	| Focus   | SolutionArchitect | 56.50%   | 	
+	And Patterns section <Other patterns matches>
+	| Text H5   | Progress |
+	| Developer | 43.50%   |
+
+
+@NeedImplementation
+Scenario: Demo_Show Tracking Information_UC20_Patterns_Data does not exist
+	Given Habitat website is opened on Main Page
+	When User clicks on <Info-sign> in the right down corner
+	And User expands Patterns section
+	Then No text under Patterns section
+
+
+@NeedImplementation
+Scenario: Demo_Show Tracking Information_UC20_ExperienceProfile_Focus Developer  
+	Given Habitat website is opened on Main Page
+	And User was Login to Habitat
+	| Email               | Password |
+	| JohnSmith@gmail.com | j        |
+	When User clicks on <Info-sign> in the right down corner
+	And User expands Experience Profile section
+	Then Following Experience Profile section contains 
 	| Text H4 | Text H5   |
 	| Focus   | Developer | 
-
-
-	@NeedImplementation
-Scenario: Demo_Show Tracking Information_UC6_Experience Profile_Focus Developer  
-	Given Habitat website is opened on Main Page
-	When Actor moves cursor over the MODULES
-	And User selects PROJECT navigation menu
-    And User clicks on MODULES link in breadcrumbs 
-	And User clicks on <Info-sign> in the right down corner
-	And User expands Experience Profile section
-	And User expands Focus subsection
-	Then Following Focus subsection contains 
+	And Following Focus subsection contains 
 	| Scores        |
 	| background: 3 |
 	| practical: 5  |
 	| process: 7    |
 	| scope: 2      |
 
-@NeedImplementation
-Scenario: Demo_Show Tracking Information_UC6_Patterns_Focus SolutionArchitect   
-	Given Habitat website is opened on Main Page
-	When Actor moves cursor over the ABOUT HABITAT
-	And User selects INTRODUCTION navigation menu
-	And User clicks on <Info-sign> in the right down corner 
-	And User expands Patterns section
-	Then Following Patterns section contains 
-	| Text H4 | Text H5           |
-	| Focus   | SolutionArchitect | 
-
 
 @NeedImplementation 
-Scenario: Demo_Show Tracking Information_UC7_Campaigns
+Scenario: Demo_Show Tracking Information_UC21_Campaigns
 	Given Habitat website is opened on Main Page
 	When User opens following link http://habitat.test5ua1.dk.sitecore.net/TrackerData.aspx
 	And User clicks <Track campaign> button
@@ -150,8 +275,17 @@ Scenario: Demo_Show Tracking Information_UC7_Campaigns
 	| Register page |
 
 
+@NeedImplementation 
+Scenario: Demo_Show Tracking Information_UC22_Campaigns_Data does not exist
+	Given Habitat website is opened on Main Page
+	When User clicks on <Info-sign> in the right down corner
+	And User expands Campaigns section
+	Then No text under Campaignss section
+
+
+
 @NeedImplementation
-Scenario: Demo_Show Tracking Information_UC8_Geo IP Location
+Scenario: Demo_Show Tracking Information_UC23_GeoIPLocation
 	Given Habitat website is opened on Main Page
 	When User opens following link http://habitat.test5ua1.dk.sitecore.net/TrackerData.aspx
 	And User clicks <Set GeoIp> button
@@ -162,19 +296,27 @@ Scenario: Demo_Show Tracking Information_UC8_Geo IP Location
 	| City  | Postal Code |
 	| Miami | 33129       |
 
+@NeedImplementation 
+Scenario: Demo_Show Tracking Information_UC24_GeoIPLocation_Data does not exist
+	Given Habitat website is opened on Main Page
+	When User clicks on <Info-sign> in the right down corner
+	And User expands Geo IP Location section
+	Then No text under Geo IP Location section
+
+
 
 @NeedImplementation 
-Scenario: Demo_Show Tracking Information_UC9_Device
+Scenario: Demo_Show Tracking Information_UC24_Device
 	Given Habitat website is opened on Main Page
 	When User clicks on <Info-sign> in the right down corner 
 	And User expands Device section
 	Then Following Device section contains
-	| Device Type | Vendor | Operating System        | Browser             | Display Height | Display Width |
-	| Computer    | Misc   | Windows 8.1 (Microsoft) | Internet Explorer 7 | Unknown        | Unknown       |
+	| Device Type | Vendor | Operating System        | Browser      | Display Height | Display Width |
+	| Computer    | Misc   | Windows 8.1 (Microsoft) | Unidentified | Unknown        | Unknown       |
 
 
 @NeedImplemantation 
-Scenario: Demo_Show Tracking Information_UC10_Pages_Shown pages 
+Scenario: Demo_Show Tracking Information_UC25_Pages_Shown pages 
 	Given Habitat website is opened on Main Page
 	When User selects MORE INFO navigation menu
 	And User selects PROJECT navigation menu
@@ -190,7 +332,7 @@ Scenario: Demo_Show Tracking Information_UC10_Pages_Shown pages
 
 
 @NeedImplemantation 
-Scenario: Demo_Show Tracking Information_UC10_Pages_Click link to page 
+Scenario: Demo_Show Tracking Information_UC26_Pages_Click link to page 
 	Given Habitat website is opened on Main Page
 	When User selects MORE INFO navigation menu
 	And User selects HOME navigation menu
@@ -202,7 +344,7 @@ Scenario: Demo_Show Tracking Information_UC10_Pages_Click link to page
 
 
 @NeedImplementation 
-Scenario: Demo_Show Tracking Information_UC11_Goals_Goals archived 
+Scenario: Demo_Show Tracking Information_UC27_Goals_Goals archived 
 	Given Habitat website is opened on Main Page
 	When Actor moves cursor over the User icon
 	And Actor selects Register from drop-down menu
@@ -219,10 +361,10 @@ Scenario: Demo_Show Tracking Information_UC11_Goals_Goals archived
 
 
 @NeedImplementation 
-Scenario: Demo_Show Tracking Information_UC12_Engagement          
+Scenario: Demo_Show Tracking Information_UC28_Engagement          
 	Given Habitat website is opened on Main Page
-	And following user is logged in
-	| Username            | Password |
+	And User was Login to Habitat
+	| Email               | Password |
 	| JohnSmith@gmail.com | j        |
 	When User clicks on <Info-sign> in the right down corner 
 	And User expands Engagement section
@@ -236,3 +378,5 @@ Scenario: Demo_Show Tracking Information_Bug36059_Tracking information panel is 
 	Given Admin user is logged into Habitat
 	When Admin launches <Experience Editor>
 	Then there is no <Info-sign> in the right down corner of the page
+
+
