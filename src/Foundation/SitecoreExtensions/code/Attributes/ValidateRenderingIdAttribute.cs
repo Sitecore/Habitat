@@ -14,7 +14,9 @@ namespace Sitecore.Foundation.SitecoreExtensions.Attributes
     
     public override bool IsValidForRequest(ControllerContext controllerContext, MethodInfo methodInfo)
     {
-      //if (!controllerContext.HttpContext.Request.HttpMethod.Equals("post", StringComparison.InvariantCulture)) return true;
+      if (!controllerContext.HttpContext.Request.GetHttpMethodOverride()
+          .Equals(HttpVerbs.Post.ToString(), StringComparison.OrdinalIgnoreCase)||
+          string.IsNullOrEmpty(controllerContext.HttpContext.Request.Form["uid"])) return true;
       var renderingContext = RenderingContext.CurrentOrNull;
       if (renderingContext == null)
       {
