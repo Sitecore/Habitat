@@ -2,6 +2,8 @@
 @using Sitecore.Analytics.Tracking
 @using Sitecore.Feature.Accounts.Models
 @using Sitecore.Feature.Accounts.Texts
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Models
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.HtmlHelpers
 @using Sitecore.Mvc.Configuration
@@ -13,7 +15,7 @@
     var info = Session.GetAndRemove("EditProfileMessage") as InfoMessage;
     if (info != null)
     {
-        Html.RenderPartial("InfoMessage", info);
+        Html.RenderPartial(ViewPath.InfoMessage, info);
     }
     <div class="form-group @Html.ValidationErrorFor(x => x.FirstName, "has-error")">
         @Html.LabelFor(x => x.FirstName, new {@class = "control-label"})
