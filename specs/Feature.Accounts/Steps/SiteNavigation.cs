@@ -24,6 +24,7 @@
       js?.ExecuteScript("arguments[0].style.display='block'", dropdown);
     }
 
+    [When(@"Actor opens Habitat website on Login page")]
     [Given(@"Habitat website is opened on Login page")]
     [When(@"Actor navigates to Login page")]
     public void WhenActorNavigatesToLoginPage()

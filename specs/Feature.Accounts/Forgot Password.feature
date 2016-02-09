@@ -53,8 +53,8 @@ Scenario: Accounts_Forgot Password_UC4_Reset password for registered user
     | Button name    |
     | Reset Password |
 	Then Following fields is no longer present on Forgot Password page
-    | Field name  |
-    | E-mail      |
+    | Field name |
+    | Email      |
 #	And User receives an e-mail with new password
 #	And User can login with new email
 

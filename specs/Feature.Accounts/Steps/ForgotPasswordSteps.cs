@@ -62,7 +62,7 @@
     public void ThenSystenShowsFollowingAlertMessage(Table table)
     {
       var alertMessage = table.Rows.Select(el => el.Values.First());
-      Site.PageAlertInfo.Text.Should().Contain(alertMessage.First());
+      Site.PageAlertSuccessfullInfo.Text.Should().Contain(alertMessage.First());
     }
 
     [Then(@"Then Following buttons is no longer present on Forgot Password page")]

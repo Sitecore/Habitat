@@ -78,6 +78,9 @@
     public IWebElement PageAlertInfo
       => Driver.WaitUntilElementPresent(By.CssSelector("div.alert.alert-info"));
 
+    public IWebElement PageAlertSuccessfullInfo
+      => Driver.FindElement(By.CssSelector("div.alert-success"));
+
     public IWebElement RegisterEmail
       => Driver.FindElement(By.Id("registerEmail"));
 

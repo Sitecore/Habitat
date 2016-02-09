@@ -217,7 +217,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Field name"});
             table9.AddRow(new string[] {
-                        "E-mail"});
+                        "Email"});
 #line 55
  testRunner.Then("Following fields is no longer present on Forgot Password page", ((string)(null)), table9, "Then ");
 #line hidden
