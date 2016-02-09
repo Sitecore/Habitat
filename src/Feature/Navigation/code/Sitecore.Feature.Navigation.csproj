@@ -119,6 +119,7 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Navigation\_SecondaryMenuItems.cshtml" />
     <Content Include="Views\Navigation\LinkMenu.cshtml" />
+    <Content Include="Views\Navigation\NavigationLinks.cshtml" />
     <None Include="Views\Web.config" />
     <Content Include="Views\Navigation\PrimaryMenu.cshtml" />
     <Content Include="Views\Navigation\SecondaryMenu.cshtml" />
@@ -153,7 +154,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55973</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
