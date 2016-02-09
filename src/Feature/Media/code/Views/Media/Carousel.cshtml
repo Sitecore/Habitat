@@ -23,7 +23,7 @@
       <div class="item @element.Active">
         @if (element.Item.IsDerived(Templates.HasMediaVideo.ID))
         {
-         <video class="img-responsive" muted
+         <video class="img-responsive" muted style="width: 100%;"
                  src="@element.Item.MediaUrl(Templates.HasMediaVideo.Fields.VideoLink)"
                  poster="@element.Item.ImageUrl(Templates.HasMedia.Fields.Thumbnail, new MediaUrlOptions())">
           </video>
