@@ -7,15 +7,15 @@ Scenario: Accounts_Page after login_UC1_Define custom page
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
 	And Value set to item field
-	| ItemPath                  | FieldName      | FieldValue                                              |
-	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Modules/Feature/Accounts |
+	| ItemPath                  | FieldName      | FieldValue                                          |
+	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Modules/Feature/Demo |
 	When Actor opens Habitat website on Login page
-	And Actor enteres following data into fields
-	| E-mail              |Password |
-	| kov@sitecore.net    |k        |
+	And Actor enteres following data into Login page fields
+	| Email            | Password |
+	| kov@sitecore.net | k        |
 	And Actor clicks Login button
-	Then Page URL ends on /Accounts
-	And Accounts title presents on page
+	Then Page URL ends on /Demo
+	And Demo title presents on page
 	  	
 
 
@@ -28,11 +28,11 @@ Scenario: Accounts_Page after login_UC2_Define custom page_defined page does not
 	| ItemPath                  | FieldName      | FieldValue                         |
 	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/KOV | 
 	And Habitat website is opened on Login page
-	When Actor enteres following data into fields
-	| E-mail              |Password |
-	| kov@sitecore.net    |k        |
+	When Actor enteres following data into Login page fields
+	| Email            | Password |
+	| kov@sitecore.net | k        |
 	And Actor clicks Login button
-	Then Page URL ends on /en
+	Then Page URL not ends on /Demo 
 
 
 @Ready

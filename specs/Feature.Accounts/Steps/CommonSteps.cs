@@ -46,8 +46,15 @@
     public void ThenPageUrlEndsOnExpected(string urlEnding)
     {
       Driver.Url.EndsWith(urlEnding).Should().BeTrue();
-
     }
+
+    [Then(@"Page URL not ends on (.*)")]
+    public void ThenPageURLNotEndsOn(string urlEnding)
+    {
+      Driver.Url.EndsWith(urlEnding).Should().BeFalse();
+    }
+
+
 
     [Then(@"(.*) title presents on page")]
     public void ThenRegisterTitlePresentsOnPage(string title)

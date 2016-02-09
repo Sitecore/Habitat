@@ -100,26 +100,26 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
-                        "/sitecore/content/Habitat/Home/Modules/Feature/Accounts"});
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Demo"});
 #line 9
  testRunner.And("Value set to item field", ((string)(null)), table2, "And ");
 #line 12
  testRunner.When("Actor opens Habitat website on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "E-mail",
+                        "Email",
                         "Password"});
             table3.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
 #line 13
- testRunner.And("Actor enteres following data into fields", ((string)(null)), table3, "And ");
+ testRunner.And("Actor enteres following data into Login page fields", ((string)(null)), table3, "And ");
 #line 16
  testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.Then("Page URL ends on /Accounts", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page URL ends on /Demo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 18
- testRunner.And("Accounts title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Demo title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -160,17 +160,17 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "E-mail",
+                        "Email",
                         "Password"});
             table6.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
 #line 31
- testRunner.When("Actor enteres following data into fields", ((string)(null)), table6, "When ");
+ testRunner.When("Actor enteres following data into Login page fields", ((string)(null)), table6, "When ");
 #line 34
  testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.Then("Page URL ends on /en", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Page URL not ends on /Demo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
