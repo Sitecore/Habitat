@@ -1,6 +1,15 @@
-﻿@using Sitecore.Feature.Person
+﻿@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Foundation.SitecoreExtensions.Rendering.QueryableDatasourceRenderingModel
+
+@if (Model?.Items == null || !Model.Items.All(i=>i.IsDerived(Templates.Person.ID)))
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID))
+  return;
+}
+
 <div class="row">
   @foreach (var item in Model.Items)
   {

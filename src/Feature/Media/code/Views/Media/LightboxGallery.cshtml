@@ -1,8 +1,17 @@
 ﻿@using Sitecore.Feature.Media
 @using Sitecore.Feature.Media.Infrastructure.Repositories
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Templates.HasMediaSelector.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaSelector.ID))
+  return;
+}
+
+
 
 @{
 	var galleryId = "gallery" + Guid.NewGuid().ToString("N");

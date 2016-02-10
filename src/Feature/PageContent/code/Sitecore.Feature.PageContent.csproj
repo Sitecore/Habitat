@@ -135,6 +135,10 @@
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj">
+      <Project>{5CF5FA06-AB27-4DF5-A471-ED57EF3E4AE9}</Project>
+      <Name>Sitecore.Foundation.Alerts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\Indexing\code\Sitecore.Foundation.Indexing.csproj">
       <Project>{80213F24-577F-4F0B-A3B8-62485EA4D2F3}</Project>
       <Name>Sitecore.Foundation.Indexing</Name>

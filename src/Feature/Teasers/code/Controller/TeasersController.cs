@@ -8,7 +8,7 @@
   {
     public ActionResult AccordeonTeaser()
     {
-      var model = new AccordeonModel(RenderingContext.Current.Rendering.Item);
+      var model = new AccordeonModel();
       return this.View("AccordeonTeaser", model);
     }
   }

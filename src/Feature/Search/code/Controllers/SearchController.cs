@@ -26,7 +26,6 @@
       this.renderingPropertiesRepository = renderingPropertiesRepository;
     }
 
-    [HttpGet]
     public ActionResult SearchResults(string query)
     {
       return this.View("SearchResults", this.GetSearchResults(new SearchQuery {Query = query}));

@@ -7,7 +7,7 @@
 
 @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
 {
-@Html.Sitecore().FormHandler()
+@Html.FormHandler()
 @Html.ValidationSummary(true)
 <div class="form-group @Html.ValidationErrorFor(x=>x.Email, "has-error")">
     @Html.LabelFor(x => x.Email, new { @class = "control-label" })

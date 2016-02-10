@@ -7,12 +7,12 @@
   using System.Web;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Tracking;
-
+  using AnalyticsProfile = Analytics.Tracking.Profile;
   public class ExperienceProfile
   {
-    private readonly Profile profile;
+    private readonly AnalyticsProfile profile;
 
-    public ExperienceProfile(Profile profiles)
+    public ExperienceProfile(AnalyticsProfile profiles)
     {
       this.profile = profiles;
     }
