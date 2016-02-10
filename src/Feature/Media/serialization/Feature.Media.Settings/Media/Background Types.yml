@@ -1,8 +1,8 @@
 ﻿---
 ID: d4ce5263-0aad-4540-bc85-9477f8529745
-Parent: 4b67a7f9-7246-4a59-a051-961095c2dc70
+Parent: 1df1bb01-b674-40f1-8640-c57eb583760c
 Template: 1fd75c49-f524-4c15-9f82-dcb2d4cf2fa9
-Path: /sitecore/content/Habitat/Global/Background Types
+Path: /sitecore/system/Settings/Feature/Media/Background Types
 DB: master
 Languages:
 - Language: en
