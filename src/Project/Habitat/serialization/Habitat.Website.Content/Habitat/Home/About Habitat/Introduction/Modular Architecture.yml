@@ -46,7 +46,7 @@ SharedFields:
         <r id="{2695013C-DD51-410B-9983-F271F16C727D}" ph="primarymenuitems" uid="{3555E24E-FBE9-4D81-AAC7-50408AA45EF0}" />
         <r id="{28BD7068-7FF6-4CE6-98E6-85CFE9967E14}" ph="primarymenuitems" uid="{79242576-4E0A-4CBF-BC2B-8B0C47FE9B64}" />
         <r ds="{9AA07D42-E9B5-4B52-A0E2-4FDF08C203EE}" id="{8C3A2CFC-18FB-4BF5-8584-50EA88978ED6}" ph="primarymenuitems" uid="{9C8A45F2-7008-42C1-8B8A-80A88825C1D8}" />
-        <r id="{26B33DEB-F1DB-4338-B043-AAF2F90E04A3}" ph="page-layout" uid="{1DF746C3-2D29-43E6-9DE2-05622DED6F97}" par="Type=bg-media&amp;Media=%3Clink%20text%3D%22%22%20linktype%3D%22internal%22%20class%3D%22%22%20title%3D%22%22%20target%3D%22%22%20querystring%3D%22%22%20id%3D%22%7B4E591DC8-B190-4FF3-A853-2C8C501AAD07%7D%22%20%2F%3E&amp;Parallax=1" />
+        <r id="{26B33DEB-F1DB-4338-B043-AAF2F90E04A3}" ph="page-layout" uid="{1DF746C3-2D29-43E6-9DE2-05622DED6F97}" par="Type=bg-media&amp;Media=%7B4E591DC8-B190-4FF3-A853-2C8C501AAD07%7D&amp;Parallax=1" />
         <r id="{1149A3C7-C69A-4E6B-A6C3-32687EC2F8D4}" uid="{F88DBD78-736F-49F8-B815-BE726483A175}" ph="page-layout" />
         <r uid="{CE48A842-BC61-4A2F-A650-7895796F1747}" before="r[@uid='{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}']" ds="" id="{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}" par="ContainerIsFluid=1&amp;UseStaticPlaceholderNames" ph="/page-layout/section_f88dbd78-736f-49f8-b815-be726483a175"></r>
         <r id="{45B8E1D9-D522-49E0-B9B7-04C965CC7089}" ph="pageheading" uid="{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}" />
