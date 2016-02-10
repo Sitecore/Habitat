@@ -40,7 +40,7 @@
 
     public ActionResult NavigationLinks()
     {
-      if (String.IsNullOrEmpty(RenderingContext.Current.Rendering.DataSource))
+      if (string.IsNullOrEmpty(RenderingContext.Current.Rendering.DataSource))
       {
         return null;
       }
