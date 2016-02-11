@@ -3,30 +3,33 @@
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.StringExtensions
 @model Sitecore.Feature.Demo.Models.VisitInformation
-<div id="visit-details" class="panel panel-primary">
+<div id="visit-details" class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">
       @Captions.VisitDetails.ThisVisit
       <span class="stats">
         <span title="@Captions.VisitDetails.PagesViewed" data-toggle="tooltip" data-placement="left">
           <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-          <span class="badge">@Model.PageCount</span>
         </span>
+                <span class="badge">@Model.PageCount</span>
         <span title="@Captions.VisitDetails.EngagementValue" data-toggle="tooltip" data-placement="left">
           <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
-          <span class="badge">@Model.EngagementValue</span>
         </span>
+                <span class="badge">@Model.EngagementValue</span>
       </span>
     </h3>
   </div>
+    <div class="panel-body">
   <div class="panel-group">
     <div class="panel panel-default">
       <div class="panel-heading">
+                    <h4 class="panel-title">
         <a href="#visitDetailsPatterns" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
           @Captions.VisitDetails.Patterns
           <span class="badge">@Model.Profiles.Count()</span>
           <span class="expand-icon glyphicon" aria-hidden="true"></span>
         </a>
+                    </h4>
       </div>
       <div id="visitDetailsPatterns" class="panel-collapse collapse">
         <div class="panel-body">
@@ -77,10 +80,12 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
+                    <h4 class="panel-title">
         <a href="#contactExperience" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
           @Captions.VisitDetails.ExperienceProfile
           <span class="expand-icon glyphicon" aria-hidden="true"></span>
         </a>
+                    </h4>
       </div>
       <div class="panel-collapse collapse" id="contactExperience">
         <div class="panel-body">
@@ -117,11 +122,13 @@
 
     <div class="panel panel-default">
       <div class="panel-heading">
+                    <h4 class="panel-title">
         <a href="#visitDetailsCampaign" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
           @Captions.VisitDetails.Campaign
           <span class="badge">@(Model.Campaign == null ? 0 : 1)</span>
           <span class="expand-icon glyphicon" aria-hidden="true"></span>
         </a>
+                    </h4>
       </div>
       <div class="panel-collapse collapse" id="visitDetailsCampaign">
         <div class="panel-body">
@@ -133,10 +140,12 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
+                    <h4 class="panel-title">
         <a href="#visitDetailsGeoIp" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
           @Captions.VisitDetails.GeoIp
           <span class="expand-icon glyphicon" aria-hidden="true"></span>
         </a>
+                    </h4>
       </div>
       <div class="panel-collapse collapse" id="visitDetailsGeoIp">
         <div class="panel-body">
@@ -151,10 +160,12 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
+                    <h4 class="panel-title">
         <a href="#visitDetailsDevice" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
           @Captions.VisitDetails.Device.Title
           <span class="expand-icon glyphicon" aria-hidden="true"></span>
         </a>
+                    </h4>
       </div>
       <div class="panel-collapse collapse" id="visitDetailsDevice">
         <div class="panel-body">
@@ -181,11 +192,13 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
+                    <h4 class="panel-title">
         <a href="#visitDetailsPages" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
           @Captions.VisitDetails.Pages
           <span class="badge">@Model.PagesViewed.Count()</span>
           <span class="expand-icon glyphicon" aria-hidden="true"></span>
         </a>
+                    </h4>
       </div>
       <div class="panel-collapse collapse" id="visitDetailsPages">
         <div class="panel-body">
@@ -202,11 +215,13 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
+                    <h4 class="panel-title">
         <a href="#collapseGoals" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
           @Captions.VisitDetails.Goals
           <span class="badge">@Model.GoalsList.Count()</span>
           <span class="expand-icon glyphicon" aria-hidden="true"></span>
         </a>
+                    </h4>
       </div>
       <div class="panel-collapse collapse" id="collapseGoals">
         <div class="panel-body">
@@ -221,11 +236,13 @@
     </div>
     <div class="panel panel-default">
       <div class="panel-heading">
+                    <h4 class="panel-title">
         <a href="#collapseEngagement" data-parent="#accordion" data-toggle="collapse" class="panel-title collapsed">
           @Captions.VisitDetails.Engagement
           <span class="badge">@Model.EngagementStates.Count()</span>
           <span class="expand-icon glyphicon" aria-hidden="true"></span>
         </a>
+                    </h4>
       </div>
       <div class="panel-collapse collapse" id="collapseEngagement">
         <div class="panel-body">
@@ -256,9 +273,5 @@
       @Captions.VisitDetails.EndVisit
     </a>
   </div>
+    </div>
 </div>
-<script language="javascript">
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip();
-  })
-</script>

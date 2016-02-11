@@ -1,4 +1,5 @@
-﻿$(function () {
+﻿jQuery(function () {
+    $ = jQuery;
   var $carouselArray = $(".carousel");
   $carouselArray.each(function () {
     var $carousel = $(this);

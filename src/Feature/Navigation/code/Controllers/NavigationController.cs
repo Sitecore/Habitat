@@ -38,6 +38,17 @@
       return View("SecondaryMenu", item);
     }
 
+    public ActionResult NavigationLinks()
+    {
+      if (string.IsNullOrEmpty(RenderingContext.Current.Rendering.DataSource))
+      {
+        return null;
+      }
+      var item = RenderingContext.Current.Rendering.Item;
+      var items = this._navigationRepository.GetLinkMenuItems(item);
+      return this.View(items);
+    }
+
     public ActionResult LinkMenu()
     {
       if (string.IsNullOrEmpty(RenderingContext.Current.Rendering.DataSource))

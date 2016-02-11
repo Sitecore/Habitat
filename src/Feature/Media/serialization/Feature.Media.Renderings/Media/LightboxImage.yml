@@ -8,9 +8,9 @@ SharedFields:
 - ID: 11421560-0bcb-403a-b099-8595c34341fd
   Hint: JavaScript inline
   Value: |
-    $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+    jQuery(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
         event.preventDefault();
-        $(this).ekkoLightbox();
+        jQuery(this).ekkoLightbox();
     }); 
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   Hint: Datasource Template

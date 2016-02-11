@@ -17,9 +17,9 @@
         @Html.ValidationMessageFor(x => x.Password, "", new { @class = "help-block" })
         @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "popupLoginPassword", @placeholder = "Password" })
     </div>
-    <a href="@AccountsSettingsService.Instance.GetPageLink(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)" class="btn btn-link">@Captions.ForgotYourPassword</a>
+    <a href="@AccountsSettingsService.Instance.GetPageLink(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)">@Captions.ForgotYourPassword</a>
+    <a href="@AccountsSettingsService.Instance.GetPageLink(Sitecore.Context.Item, Templates.AccountsSettings.Fields.RegisterPage)">Register</a>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">@Captions.Cancel</button>
     <button type="button" class="btn btn-primary" onclick="login('loginModal')">@Captions.Login</button>
 </div>

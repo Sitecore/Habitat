@@ -14,7 +14,7 @@
   return;
 }
 
-<div class="article body">
+<article>
   @if (Sitecore.Context.PageMode.IsPageEditor)
   {
     <div class="panel panel-info">
@@ -28,4 +28,4 @@
   }
 
   @Html.Sitecore().Field(Templates.HasPageContent.Fields.Body.ToString())
-</div>
+</article>
