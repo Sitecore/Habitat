@@ -7,6 +7,7 @@
   using System.Web.Mvc;
   using Sitecore.Mvc.Presentation;
 
+
   public class ValidateRenderingIdAttribute : ActionMethodSelectorAttribute
   {
     public override bool IsValidForRequest(ControllerContext controllerContext, MethodInfo methodInfo)
@@ -15,7 +16,7 @@
 
       var httpRequest = controllerContext.HttpContext.Request;
       var isWebFormsForMarketersRequest = httpRequest.Form.AllKeys
-        .Any(key => key.StartsWith("wffm", ignoreCase) && key.EndsWith("FormId", ignoreCase));
+        .Any(key => key.StartsWith("wffm", ignoreCase) && key.EndsWith("Id", ignoreCase));
 
       if (isWebFormsForMarketersRequest)
       {
