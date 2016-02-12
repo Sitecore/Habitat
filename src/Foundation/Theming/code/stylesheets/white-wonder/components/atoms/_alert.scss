@@ -1,0 +1,12 @@
+
+
+@import "bootstrap/alerts";
+
+
+.alert {
+  button.close {
+    background-color: transparent;
+    border: none;
+    -webkit-appearance: none;
+  }
+}

@@ -1,0 +1,10 @@
+
+
+
+.img {
+  &-responsive {
+    .thumbnail & {
+      width: 100%;
+    }
+  }
+}

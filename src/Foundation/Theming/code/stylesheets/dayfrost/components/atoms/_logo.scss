@@ -1,0 +1,45 @@
+.logo {
+
+  &-image {
+    width: 180px;
+
+    @media all and (max-width: $screen-sm-max) {
+      width: 110px;
+    }
+  }
+
+  .tagline {
+    color: #FFF;
+    .navbar-center .navbar-brand & {
+      text-align: center;
+    }
+
+    .bg-primary &, .bg-transparent & {
+      color: #FFF;
+    }
+  }
+
+  svg, img {
+    height: 35px;
+    width: 150px;
+
+    @media all and (max-width: $screen-sm-max) {
+      height: 25px;
+      width: 110px;
+    }
+
+    @media all and (max-width: $screen-xs-max) {
+
+    }
+
+
+    * {
+      fill: #FFF !important;
+      float: left;
+
+      .bg-white & {
+        fill: #000 !important;
+      }
+    }
+  }
+}
