@@ -164,7 +164,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\NoSitecoreAnalyticsAttributeTests.cs" />
+    <Compile Include="Attributes\SkipAnalyticsTrackingAttributeTests.cs" />
     <Compile Include="AutoDbMvcDataAttribute.cs" />
     <Compile Include="Attributes\ValidateRenderingIdAttributeTests.cs" />
     <Compile Include="Extensions\StringExtensionsTests.cs" />

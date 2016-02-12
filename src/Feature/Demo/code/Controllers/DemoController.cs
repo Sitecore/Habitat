@@ -12,7 +12,7 @@ namespace Sitecore.Feature.Demo.Controllers
   using Sitecore.Mvc.Controllers;
   using Sitecore.Mvc.Presentation;
 
-  [NoSitecoreAnalytics]
+  [SkipAnalyticsTracking]
   public class DemoController : SitecoreController
   {
     private readonly IContactProfileProvider contactProfileProvider;

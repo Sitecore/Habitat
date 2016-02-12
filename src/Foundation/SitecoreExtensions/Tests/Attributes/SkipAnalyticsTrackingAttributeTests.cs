@@ -12,11 +12,11 @@
   using Sitecore.Mvc.Presentation;
   using Xunit;
 
-  public class NoSitecoreAnalyticsAttributeTests
+  public class SkipAnalyticsTrackingAttributeTests
   {
     [Theory]
     [AutoDbMvcData]
-    public void OnActionExecuting_OnAjaxRequest_ShouldCallCancelAnalytics(NoSitecoreAnalyticsAttribute attribute, ActionExecutingContext ctx, ITracker tracker)
+    public void OnActionExecuting_OnAjaxRequest_ShouldCallCancelAnalytics(SkipAnalyticsTrackingAttribute trackingAttribute, ActionExecutingContext ctx, ITracker tracker)
     {
       //arrange
       InitializeActionFilterContext(ctx);
@@ -25,7 +25,7 @@
       using (new TrackerSwitcher(tracker))
       {
         //act
-        attribute.OnActionExecuting(ctx);
+        trackingAttribute.OnActionExecuting(ctx);
         //assert
         tracker.CurrentPage.Received(1).Cancel();
       }
@@ -35,7 +35,7 @@
 
     [Theory]
     [AutoDbMvcData]
-    public void OnActionExecuting_TrackerNotInitialized_ShouldDoNothing(NoSitecoreAnalyticsAttribute attribute, ActionExecutingContext ctx, ITracker tracker)
+    public void OnActionExecuting_TrackerNotInitialized_ShouldDoNothing(SkipAnalyticsTrackingAttribute trackingAttribute, ActionExecutingContext ctx, ITracker tracker)
     {
       //arrange
       InitializeActionFilterContext(ctx);
@@ -43,7 +43,7 @@
       using (new TrackerSwitcher(tracker))
       {
         //act
-        attribute.OnActionExecuting(ctx);
+        trackingAttribute.OnActionExecuting(ctx);
         //assert
         tracker.CurrentPage.DidNotReceive().Cancel();
       }
@@ -52,7 +52,7 @@
 
     [Theory]
     [AutoDbMvcData]
-    public void OnActionExecuting_CurrentPageIsNull_ShouldNotRaiseException(NoSitecoreAnalyticsAttribute attribute, ActionExecutingContext ctx, ITracker tracker)
+    public void OnActionExecuting_CurrentPageIsNull_ShouldNotRaiseException(SkipAnalyticsTrackingAttribute trackingAttribute, ActionExecutingContext ctx, ITracker tracker)
     {
       //arrange
       InitializeActionFilterContext(ctx);
@@ -63,7 +63,7 @@
       using (new TrackerSwitcher(tracker))
       {
         //act
-        Action action = () => attribute.OnActionExecuting(ctx);
+        Action action = () => trackingAttribute.OnActionExecuting(ctx);
         //assert
         action.ShouldNotThrow();
       }

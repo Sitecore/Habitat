@@ -127,7 +127,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attributes\NoSitecoreAnalyticsAttribute.cs" />
+    <Compile Include="Attributes\SkipAnalyticsTrackingAttribute.cs" />
     <Compile Include="Attributes\ValidateRenderingIdAttribute.cs" />
     <Compile Include="Controllers\BaseRenderingController.cs" />
     <Compile Include="Controls\EditFrameRendering.cs" />

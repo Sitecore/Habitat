@@ -3,7 +3,7 @@
   using System.Web.Mvc;
   using Sitecore.Analytics;
 
-  public class NoSitecoreAnalyticsAttribute : ActionFilterAttribute
+  public class SkipAnalyticsTrackingAttribute : ActionFilterAttribute
   {
     public override void OnActionExecuting(ActionExecutingContext filterContext)
     {
