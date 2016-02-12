@@ -9,26 +9,26 @@
   return;
 }
 
-<div class="teaser teaser-default teaser">
+<div class="well">
   @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Title) || Sitecore.Context.PageMode.IsPageEditor)
   {
-		<h3 class="teaser-heading">
-			@Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
-		</h3>
-	}
-	@if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Summary) || Sitecore.Context.PageMode.IsPageEditor)
-	{
-	<div class="teaser-body">
-		@Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
-	</div>
-	}
-	@if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Link) || Sitecore.Context.PageMode.IsPageEditor)
-	{
-	<div class="teaser-footer">
-		@Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
-   {
-	   @class = "btn btn-default"
-   })
-	</div>
-	}
+    <header>
+      <h3 class="teaser-heading">
+        @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
+      </h3>
+    </header>
+  }
+  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Summary) || Sitecore.Context.PageMode.IsPageEditor)
+  {
+    <p>
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
+    </p>
+  }
+  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Link) || Sitecore.Context.PageMode.IsPageEditor)
+  {
+    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
+{
+  @class = "btn btn-default"
+})
+  }
 </div>

@@ -1,0 +1,6 @@
+﻿@using Sitecore
+@model Sitecore.Feature.Media.Infrastructure.Models.MediaBackgroundRenderingModel
+
+<header class="page-header @Model.CssClass" @Model.MediaAttribute>
+  @Html.Sitecore().Placeholder("page-header")
+</header>

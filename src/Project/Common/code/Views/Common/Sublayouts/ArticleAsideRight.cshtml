@@ -1,0 +1,18 @@
+﻿@using Sitecore
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@{ var useStaticPlaceholderNames = MainUtil.GetBool(Model.Rendering.Parameters[Sitecore.Habitat.Website.Constants.LayoutParameters.UseStaticPlaceholderNames], false); }
+<div class="container@(MainUtil.GetBool(Model.Rendering.Parameters[Sitecore.Habitat.Website.Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
+  <div class="row">
+    <div class="col-lg-8">
+      <article>
+        @Html.Sitecore().DynamicPlaceholder("article-content", useStaticPlaceholderNames)
+      </article>
+    </div>
+    <div class="col-lg-4">
+      <aside>
+        @Html.Sitecore().DynamicPlaceholder("aside-primary", useStaticPlaceholderNames)
+      </aside>
+    </div>
+  </div>
+</div>

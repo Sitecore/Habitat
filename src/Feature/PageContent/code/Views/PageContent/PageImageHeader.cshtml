@@ -1,0 +1,18 @@
+﻿@using Sitecore.Feature.PageContent
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@if (Html.Sitecore().HasValue(Templates.HasPageContent.Fields.Image.ToString()))
+{
+  var image = Model.Item.GetImage(Templates.HasPageContent.Fields.Image)?.Source;
+  <header class="page-header bg-media bg-parallax" style="background-image: url('@image')">
+    @Html.Sitecore().Placeholder("page-header")
+  </header>
+}
+else
+{
+  <header class="page-header">
+    @Html.Sitecore().Placeholder("page-header")
+  </header>
+}
+

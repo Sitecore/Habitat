@@ -1,0 +1,37 @@
+﻿---
+ID: 541da8c9-e3d2-4d50-97fc-b97a2566909f
+Parent: 6ca1a082-5054-4aa0-88da-39489a7d1cce
+Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
+Path: /sitecore/layout/Placeholder Settings/Project/Common/article-content
+DB: master
+SharedFields:
+- ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
+  Hint: Placeholder Key
+  Value: article-content
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 1300
+- ID: e391b526-d0c5-439d-803e-17512eae6222
+  Hint: Allowed Controls
+  Type: TreelistEx
+  Value: |
+    {695CEE74-D8F4-481D-B813-237050809290}
+    {914673DC-FC44-4660-B6EB-FF421FAAC2F9}
+    {03112E88-1499-4132-9D5F-E213AFD2019C}
+    {831876B6-F9F1-463E-9DD5-7F93F1640590}
+    {50F6052C-4FC2-4AA6-9399-FFC6055CF19F}
+    {45CE489D-FA30-473E-9751-142BD06CCB33}
+    {A1AD34DD-535E-47AF-A911-34C57CCC26F6}
+    {B6F11192-7C7B-4DE2-9F85-140692B2470B}
+    {7B7DD1F9-A0DB-45D9-9A3F-B704BB28903E}
+    {907018D8-CC53-4D34-AD67-3FDF0A25832A}
+    {EBB6DC33-F281-49BE-B273-29ECCD6085A8}
+    {DC19892A-B345-4EFE-AAA2-6E27A801A733}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151008T042522Z

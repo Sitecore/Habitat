@@ -10,7 +10,7 @@
 
   public class MediaController : Controller
   {
-    public ActionResult MediaBackgroundSection()
+    public ActionResult SectionMedia()
     {
       var renderingPropertiesRepository = new RenderingPropertiesRepository();
       var mediamBackgroundModel = renderingPropertiesRepository.Get<MediaBackgroundRenderingModel>();
@@ -18,7 +18,7 @@
       return this.View(mediamBackgroundModel);
     }
 
-    public ActionResult MediaBackgroundHeader()
+    public ActionResult PageHeaderMedia()
     {
       var renderingPropertiesRepository = new RenderingPropertiesRepository();
       var mediamBackgroundModel = renderingPropertiesRepository.Get<MediaBackgroundRenderingModel>();

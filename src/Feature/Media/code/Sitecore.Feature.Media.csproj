@@ -142,8 +142,8 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="Views\Media\MediaBackgroundSection.cshtml" />
-    <Content Include="Views\Media\MediaBackgroundHeader.cshtml" />
+    <Content Include="Views\Media\SectionMedia.cshtml" />
+    <Content Include="Views\Media\PageHeaderMedia.cshtml" />
     <None Include="Web.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">

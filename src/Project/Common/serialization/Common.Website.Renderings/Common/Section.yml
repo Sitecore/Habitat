@@ -14,6 +14,9 @@ SharedFields:
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   Hint: Datasource Location
   Value: site:background
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 1800
 Languages:
 - Language: en
   Versions:

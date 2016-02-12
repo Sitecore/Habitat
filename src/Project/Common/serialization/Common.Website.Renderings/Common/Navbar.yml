@@ -8,6 +8,9 @@ SharedFields:
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   Hint: Path
   Value: /Views/Common/Sublayouts/Navbar.cshtml
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 1400
 Languages:
 - Language: en
   Versions:

@@ -9,27 +9,25 @@
   }
 }
 
-<nav>
-  <ul class="nav nav-pills">
-    @foreach (var item in Model.Items)
+<ul class="nav nav-stacked">
+  @foreach (var item in Model.Items)
+  {
+    var liclass = "";
+    if (item.Item.Fields[Templates.LinkMenuItem.Fields.DividerBefore].IsChecked())
     {
-      var liclass = "";
-      if (item.Item.Fields[Templates.LinkMenuItem.Fields.DividerBefore].IsChecked())
-      {
-        liclass = "divider-left";
-      }
-	    <li class="@liclass">
-		    <a href="@item.Url" target="@item.Target" title="@item.Item[Templates.Navigable.Fields.NavigationTitle]">
-			    @if (!string.IsNullOrWhiteSpace(item.Item[Templates.LinkMenuItem.Fields.Icon]))
-			    {
-				    <i class="fa fa-@item.Item[Templates.LinkMenuItem.Fields.Icon]"></i>
-			    }
-			    else
-			    {
-				    @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
-			    }
-		    </a>
-	    </li>
+      liclass = "divider-left";
     }
-  </ul>
-</nav>
+    <li class="@liclass">
+      <a href="@item.Url" target="@item.Target" title="@item.Item[Templates.Navigable.Fields.NavigationTitle]">
+        @if (!string.IsNullOrWhiteSpace(item.Item[Templates.LinkMenuItem.Fields.Icon]))
+        {
+          <i class="fa fa-@item.Item[Templates.LinkMenuItem.Fields.Icon]"></i>
+        }
+        else
+        {
+          @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
+        }
+      </a>
+    </li>
+  }
+</ul>

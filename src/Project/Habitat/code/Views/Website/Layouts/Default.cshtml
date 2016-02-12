@@ -8,13 +8,13 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]-->
 <!--[if !IE]><!-->
-<html lang="en">
+<html lang="@Sitecore.Context.Language.CultureInfo.TwoLetterISOLanguageName">
 <!--<![endif]-->
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   @if (!Sitecore.Context.PageMode.IsPageEditor)
   {
     @Html.Sitecore().Placeholder("head")
