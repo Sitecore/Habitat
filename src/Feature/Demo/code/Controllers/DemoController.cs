@@ -6,11 +6,13 @@ namespace Sitecore.Feature.Demo.Controllers
   using Sitecore.Analytics;
   using Sitecore.Feature.Demo.Models;
   using Sitecore.Feature.Demo.Services;
+  using Sitecore.Foundation.SitecoreExtensions.Attributes;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Mvc.Controllers;
   using Sitecore.Mvc.Presentation;
 
+  [NoSitecoreAnalytics]
   public class DemoController : SitecoreController
   {
     private readonly IContactProfileProvider contactProfileProvider;
