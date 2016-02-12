@@ -4,30 +4,6 @@ Parent: 725a45e3-e307-4b95-b363-2782b059df06
 Template: 4a8822cc-b418-4452-ab0f-8bb6df2f2114
 Path: /sitecore/content/Habitat/Home
 DB: master
-SharedFields:
-- ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
-  Hint: __Renderings
-  Type: layout
-  Value: |
-    <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
-      <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-        <r uid="{1E2620E0-C323-4F24-9B39-F5B4A5515D8D}" p:before="r[@uid='{BD115767-0C75-41D3-8D93-0740AC557683}']" s:ph="/page-layout/section_cefb9d51-300d-41a2-991c-24faa3214b32" />
-        <r uid="{BD115767-0C75-41D3-8D93-0740AC557683}" p:before="r[@uid='{A083EFA8-9258-42E0-8A95-4F6CB60FEE98}']" s:ds="{6B3E2125-9402-4ABE-BE65-1DC375B2111E}" s:id="{E86BFEB1-F3FC-4E37-B693-A5550D6789EE}" s:ph="/page-layout/pageheading" />
-        <r uid="{A083EFA8-9258-42E0-8A95-4F6CB60FEE98}" p:before="r[@uid='{CEFB9D51-300D-41A2-991C-24FAA3214B32}']" s:ds="" s:id="{A2216CA7-B205-4042-A345-72117D0086C3}" s:par="ContainerIsFluid&amp;UseStaticPlaceholderNames" s:ph="page-layout" />
-        <r uid="{CEFB9D51-300D-41A2-991C-24FAA3214B32}" p:before="r[@uid='{2BEAA295-6C06-4EBA-93B4-FBA461D9BF15}']" s:ds="" s:id="{1149A3C7-C69A-4E6B-A6C3-32687EC2F8D4}" s:par="Type&amp;Media&amp;Parallax" s:ph="page-layout" />
-        <r uid="{2BEAA295-6C06-4EBA-93B4-FBA461D9BF15}" p:before="r[@uid='{D3002700-342B-478F-BB50-160F62D2A548}']" s:ds="" s:id="{1149A3C7-C69A-4E6B-A6C3-32687EC2F8D4}" s:par="Type=bg-dark&amp;Media&amp;Parallax" s:ph="page-layout" />
-        <r uid="{D3002700-342B-478F-BB50-160F62D2A548}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{439EC71A-4231-45C8-B075-975BD41099A7}" s:id="{BDD730EB-F808-4C65-B94A-D2F03672EAFB}" s:par="" s:ph="/page-layout/section_2beaa295-6c06-4eba-93b4-fba461d9bf15/col-narrow-1_e0710d5f-c5a8-4e12-bc23-14faa69486b5" />
-        <r uid="{56552E8A-9180-44AA-A713-D30ACEEEB6FD}">
-          <p:d />
-        </r>
-        <r uid="{E0710D5F-C5A8-4E12-BC23-14FAA69486B5}" p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']" s:ds="" s:id="{B21C8A38-51BC-4866-9589-6062D6390247}" s:par="ContainerIsFluid" s:ph="/page-layout/section_2beaa295-6c06-4eba-93b4-fba461d9bf15" />
-        <r uid="{C4889F47-B6AF-4234-86E7-1E0A99424FD3}" p:before="r[@uid='{BFF37CDC-43F8-45B5-9932-22ECE9BC939E}']" s:ds="{C9AA3B8F-5638-4360-AFAD-416D1A6D82B1}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:par="" s:ph="/page-layout/section_cefb9d51-300d-41a2-991c-24faa3214b32/col-narrow-3_1e2620e0-c323-4f24-9b39-f5b4a5515d8d" />
-        <r uid="{BFF37CDC-43F8-45B5-9932-22ECE9BC939E}" p:before="r[@uid='{A404BF7C-C691-4C8F-BD79-1DBA98E713B9}']" s:ds="{8A80477E-7CB4-4CEE-A035-B48AC118ABE8}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:par="" s:ph="/page-layout/section_cefb9d51-300d-41a2-991c-24faa3214b32/col-narrow-2_1e2620e0-c323-4f24-9b39-f5b4a5515d8d" />
-        <r uid="{A404BF7C-C691-4C8F-BD79-1DBA98E713B9}" p:before="r[@uid='{A99B70AC-A17D-42F7-89D9-1F7FBAE7A337}']" s:ds="{B16765BA-7B3E-4C5B-9937-BFC985F2550C}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:par="" s:ph="/page-layout/section_cefb9d51-300d-41a2-991c-24faa3214b32/col-narrow-1_1e2620e0-c323-4f24-9b39-f5b4a5515d8d" />
-        <r uid="{A99B70AC-A17D-42F7-89D9-1F7FBAE7A337}" p:before="r[@uid='{5FD69110-9DDD-4D33-847E-8374B6F95BDC}']" s:ds="{844A7337-2020-4C2E-912E-7651930FE179}" s:id="{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}" s:par="" s:ph="/page-layout/section_2beaa295-6c06-4eba-93b4-fba461d9bf15/col-narrow-2_e0710d5f-c5a8-4e12-bc23-14faa69486b5" />
-        <r uid="{5FD69110-9DDD-4D33-847E-8374B6F95BDC}" s:ds="{8A80477E-7CB4-4CEE-A035-B48AC118ABE8}" s:id="{07AB411C-F894-4144-B069-48EF67431D32}" s:par="" s:ph="/page-layout/section_2beaa295-6c06-4eba-93b4-fba461d9bf15/col-wide-1_e0710d5f-c5a8-4e12-bc23-14faa69486b5" />
-      </d>
-    </r>
 Languages:
 - Language: da
   Versions:
@@ -49,15 +25,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
-      Hint: __Final Renderings
-      Type: Layout
-      Value: |
-        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
-          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-            <r uid="{E0710D5F-C5A8-4E12-BC23-14FAA69486B5}" p:before="r[@uid='{1E2620E0-C323-4F24-9B39-F5B4A5515D8D}']" />
-          </d>
-        </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       Hint: NavigationTitle
       Value: Home

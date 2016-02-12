@@ -11,8 +11,10 @@
     return;
   }
 }
-<div class="logo">
-  <a class="navbar-brand" href="/">
-    @Html.Sitecore().ImageField(Templates.Identity.Fields.Logo.ToString(), identity, 60)
-  </a>
-</div>
+
+<a class="navbar-brand" href="/">
+  <span class="logo">
+    @Html.Sitecore().ImageField(Templates.Identity.Fields.Logo.ToString(), identity)
+    <!-- TODO: add tagline field to logo, add .has-tagline to .logo <small class="tagline">Niteflight</small> -->
+  </span>
+</a>

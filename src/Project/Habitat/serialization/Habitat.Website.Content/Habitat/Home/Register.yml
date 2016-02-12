@@ -11,10 +11,7 @@ SharedFields:
 - ID: b0a67b2a-8b07-4e0b-8809-69f751709806
   Hint: __Tracking
   Type: Tracking
-  Value: |
-    <tracking>
-      <campaign title="Register page" id="{5704C80F-7DD3-4913-93C9-B2AF1D485801}" />
-    </tracking>
+  Value: <tracking />
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   Hint: __Sortorder
   Value: 600

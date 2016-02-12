@@ -1,22 +1,20 @@
 ﻿@using Sitecore
 @model Sitecore.Mvc.Presentation.RenderingModel
-<div class="prefooter">
-	<div class="container@(MainUtil.GetBool(Model.Rendering.Parameters[Sitecore.Habitat.Website.Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
-		<div class="row">
-			<div class="col-md-4 col-sm-6 col-xs-12">
-				@Html.Sitecore().Placeholder("footercolumn1")
-			</div>
-			<div class="col-md-5 col-sm-6 col-xs-12">
-				@Html.Sitecore().Placeholder("footercolumn2")
-			</div>
-			<div class="col-md-3 col-sm-12 col-xs-12">
-				@Html.Sitecore().Placeholder("footercolumn3")
-			</div>
+<div class="container@(MainUtil.GetBool(Model.Rendering.Parameters[Sitecore.Habitat.Website.Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
+	<div class="row">
+		<div class="col-md-4 col-sm-6 col-xs-12">
+			@Html.Sitecore().Placeholder("footercolumn1")
+		</div>
+		<div class="col-md-5 col-sm-6 col-xs-12">
+			@Html.Sitecore().Placeholder("footercolumn2")
+		</div>
+		<div class="col-md-3 col-sm-12 col-xs-12">
+			@Html.Sitecore().Placeholder("footercolumn3")
 		</div>
 	</div>
 </div>
-<div class="postfooter">
-	<div class="container-fluid">
+<div class="footer-bottom text-center">
+	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				@Html.Sitecore().Placeholder("postfooter")

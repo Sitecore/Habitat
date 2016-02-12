@@ -1,10 +1,22 @@
 ﻿[
   {
-    "outputFile": "assets/Sitecore.Foundation.Theming.css",
-    "inputFile": "stylesheets/Sitecore.Foundation.Theming.scss"
+    "outputFile": "stylesheets/editor.css",
+    "inputFile": "stylesheets/editor.scss"
   },
   {
-    "outputFile": "assets/Sitecore.Foundation.Theming.Editor.css",
-    "inputFile": "stylesheets/Sitecore.Foundation.Theming.Editor.scss"
+    "outputFile": "stylesheets/niteflight.css",
+    "inputFile": "stylesheets/niteflight.scss"
+  },
+  {
+    "outputFile": "stylesheets/dayfrost.css",
+    "inputFile": "stylesheets/dayfrost.scss"
+  },
+  {
+    "outputFile": "stylesheets/white-wonder.css",
+    "inputFile": "stylesheets/white-wonder.scss"
+  },
+  {
+    "outputFile": "stylesheets/bootstrap.css",
+    "inputFile": "stylesheets/bootstrap.scss"
   }
 ]
