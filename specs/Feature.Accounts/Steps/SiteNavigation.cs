@@ -37,5 +37,18 @@
     {
       Driver.Navigate().GoToUrl(Settings.ForgotPasswordPageUrl);
     }
+
+    [When(@"Actor moves on siteswitcher combo-box")]
+    public void WhenActorMovesOnSiteswitcherCombo_Box()
+    {
+      Site.SiteSwitcherIcon.MoveToElement();
+
+#warning hack for selenium hover behavoiur
+      var dropdown = Site.SiteSwitcherIcon.FindElement(By.XPath("../../ul"));
+      var js = Driver as IJavaScriptExecutor;
+      js?.ExecuteScript("arguments[0].style.display='block'", dropdown);
+    }
+
+
   }
 }

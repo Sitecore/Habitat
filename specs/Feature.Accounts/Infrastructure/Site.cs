@@ -1,4 +1,7 @@
-﻿namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
+﻿using System;
+using OpenQA.Selenium.Support.UI;
+
+namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
 {
   using System.Collections.Generic;
   using System.Linq;
@@ -13,7 +16,7 @@
 
     public IWebDriver Driver => FeatureContext.Current.Get<IWebDriver>();
 
-//InReview    public IWebElement PageTitle => Driver.FindElement(By.CssSelector(".section-title"));
+    public IWebElement PageTitle => Driver.FindElement(By.CssSelector(".section-title"));
 
     public IWebElement SubmitButton => Driver.FindElement(By.CssSelector("input[type=submit]"));
 
@@ -21,11 +24,11 @@
 
     public IWebElement SubmitLink => Driver.FindElement(By.CssSelector("a.btn.btn-link"));
 
-//InReview     public IEnumerable<IWebElement> FormFields
+    public IEnumerable<IWebElement> FormFields
       =>
-//        Driver.FindElements(
-//          By.CssSelector(
-//            ".page-layout input[type=text].form-control, .page-layout input[type=password].form-control"));
+        Driver.FindElements(
+          By.CssSelector(
+            ".page-layout input[type=text].form-control, .page-layout input[type=password].form-control"));
 
     public IEnumerable<IWebElement> UserIconDropDownButtons
       =>
@@ -95,6 +98,25 @@
 
     public IWebElement InterestsDropDownElement
       => Driver.FindElement(By.CssSelector("#interests"));
+
+    public IWebElement SiteSwitcherIcon
+      => Driver.FindElement(By.CssSelector(".fa.fa-home"));
+
+    public IEnumerable<IWebElement> SiteSwitcherIconDropDownLinks
+      => Driver.FindElements(By.XPath(".//*[@id='primary-navigation']/ul/li[6]/ul"));
+
+    public IEnumerable<IWebElement> SiteSwitcherIconDropDownChildElements
+    {
+      get
+      {
+        var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+        var locator = By.XPath(".//*[@id='primary-navigation']/ul/li[6]/ul/li");
+        return wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(locator));
+      }
+    }
+
+    public IWebElement DemoSiteLogo
+      => Driver.FindElement(By.CssSelector("#hplogo"));
 
   }
 }

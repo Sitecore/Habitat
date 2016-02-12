@@ -22,5 +22,7 @@
     public string Password => "b";
 
     public string EndVisitUrl => BaseUrl + ConfigurationManager.AppSettings["endVisitUrl"];
+
+    public string DemoSiteURL => ConfigurationManager.AppSettings["demoSiteUrl"];
   }
 }
