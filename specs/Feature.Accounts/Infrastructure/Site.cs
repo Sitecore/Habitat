@@ -13,7 +13,7 @@
 
     public IWebDriver Driver => FeatureContext.Current.Get<IWebDriver>();
 
-    public IWebElement PageTitle => Driver.FindElement(By.CssSelector(".section-title"));
+//InReview    public IWebElement PageTitle => Driver.FindElement(By.CssSelector(".section-title"));
 
     public IWebElement SubmitButton => Driver.FindElement(By.CssSelector("input[type=submit]"));
 
@@ -21,11 +21,11 @@
 
     public IWebElement SubmitLink => Driver.FindElement(By.CssSelector("a.btn.btn-link"));
 
-    public IEnumerable<IWebElement> FormFields
+//InReview     public IEnumerable<IWebElement> FormFields
       =>
-        Driver.FindElements(
-          By.CssSelector(
-            ".page-layout input[type=text].form-control, .page-layout input[type=password].form-control"));
+//        Driver.FindElements(
+//          By.CssSelector(
+//            ".page-layout input[type=text].form-control, .page-layout input[type=password].form-control"));
 
     public IEnumerable<IWebElement> UserIconDropDownButtons
       =>
