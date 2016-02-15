@@ -2,23 +2,14 @@
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-<div class="row">
-@{
-  var index = 0;
-  foreach (var item in Model.Item.Children.Where(i => i.IsDerived(Templates.HasPageContent.ID)))
-  {
-    using (Html.Sitecore().SwitchContextItem(item))
+<ul class="block-grid-md-4 block-grid-sm-3 block-grid-xs-1">
+@foreach (var item in Model.Item.Children.Where(i => i.IsDerived(Templates.HasPageContent.ID)))
+{
+  <li>
+    @using (Html.Sitecore().SwitchContextItem(item))
     {
-      <div class="col-xs-4">
-        @Html.Sitecore().ViewRendering("/Views/PageContent/PageTeaser")
-      </div>
+      @Html.Sitecore().ViewRendering("/Views/PageContent/PageTeaser")
     }
-    index++;
-    if (index % 3 == 0)
-    {
-      @:</div>
-      @:<div class="row">
-    }
-  }
+  </li>
 }
-</div>
+</ul>

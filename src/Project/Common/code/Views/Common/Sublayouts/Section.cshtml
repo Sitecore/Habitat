@@ -7,6 +7,7 @@
 @using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-<section class="section section-full" >
-    @Html.Sitecore().DynamicPlaceholder("section")
+@{ var useStaticPlaceholderNames = MainUtil.GetBool(Model.Rendering.Parameters[Sitecore.Habitat.Website.Constants.LayoutParameters.UseStaticPlaceholderNames], false); }
+<section class="section section-full">
+  @Html.Sitecore().DynamicPlaceholder("section", useStaticPlaceholderNames)
 </section>

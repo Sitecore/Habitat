@@ -1,34 +1,34 @@
 ﻿@using Sitecore.Feature.News
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model IEnumerable<Sitecore.Data.Items.Item>
-<div class="content-list newslist">
-  <ol class="media-list">
+<ul class="media-list media-list-divided">
+@foreach (var item in Model)
+{
+  <li class="media media-align-middle">
+    <div class="media-left ">
+      <a href="@item.Url()">
+        @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), item, mw: 150)
+      </a>
+    </div>
 
-    @foreach (var item in Model)
-    {
-      <li class="media">
-        <div class="media-left">
-          <a href="#">
-            @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), item, mw: 150, cssClass: "img-responsive img-thumbnail")
-          </a>
-        </div>
-        <div class="media-body">
-          <h3 class="media-heading">
-            <a href="@item.Url()">
-              @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), item)
-            </a>
-          </h3>
-          <div class="description">
-            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary.ToString(), item)
-          </div>
-          <div class="metadata well">
-            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
-                        {
-                          format = "MMMM dd, yyyy"
-                        })
-          </div>
-        </div>
-      </li>
-    }
-  </ol>
-</div>
+    <div class="media-body ">
+      <h3 class="media-title">
+        <a href="@item.Url()">
+          @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), item)
+        </a>
+      </h3>
+      <p>
+        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary.ToString(), item)
+      </p>
+    </div>
+    <div class="media-right">
+      <div class="label label-info">
+        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
+ {
+   format = "MMMM dd, yyyy"
+ })
+      </div>
+    </div>
+  </li>
+}
+</ul>

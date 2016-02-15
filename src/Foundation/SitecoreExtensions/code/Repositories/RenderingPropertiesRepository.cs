@@ -11,20 +11,17 @@
     {
       var obj = Sitecore.Reflection.ReflectionUtil.CreateObject(typeof(T));
       var currentContext = RenderingContext.Current.Rendering;
-      if (currentContext != null)
+      var parameters = currentContext?.Properties["Parameters"];
+      if (parameters != null)
       {
-        var parameters = currentContext.Properties["Parameters"];
-        if (parameters != null)
+        parameters = this.FilterEmptyParametrs(parameters);
+        try
         {
-          parameters = this.FilterEmptyParametrs(parameters);
-          try
-          {
-            Sitecore.Reflection.ReflectionUtil.SetProperties(obj, parameters);
-          }
-          catch (Exception e)
-          {
-              Sitecore.Diagnostics.Log.Error(e.Message, this); 
-          }
+          Sitecore.Reflection.ReflectionUtil.SetProperties(obj, parameters);
+        }
+        catch (Exception e)
+        {
+          Sitecore.Diagnostics.Log.Error(e.Message, this); 
         }
       }
 

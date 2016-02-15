@@ -14,22 +14,21 @@
   public class MediaBackgroundRenderingModel
   {
     public string Type { get; set; }
-
     public string Media { get; set; }
-
     public string Parallax { get; set; }
-
     public string MediaType { get; set; }
-
     public string MediaFormat { get; set; }
+    public string UseStaticPlaceholderNames { get; set; }
 
     public string CssClass
     {
       get
       {
-        var classes = new List<string>();
-        classes.Add(this.Type);
-        if (this.Parallax != null && this.Parallax.Equals("1"))
+        var classes = new List<string>
+                      {
+                        this.Type
+                      };
+        if (MainUtil.GetBool(this.Parallax, false))
         {
           classes.Add("bg-parallax");
         }
@@ -65,5 +64,6 @@
         return $"style=background-image:url('{mediaUrl}');";
       }
     }
+
   }
 }

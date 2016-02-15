@@ -18,5 +18,9 @@
   {
     "outputFile": "stylesheets/bootstrap.css",
     "inputFile": "stylesheets/bootstrap.scss"
+  },
+  {
+    "outputFile": "stylesheets/vendor.css",
+    "inputFile": "stylesheets/vendor.scss"
   }
 ]

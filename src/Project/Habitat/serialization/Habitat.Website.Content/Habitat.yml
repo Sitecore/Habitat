@@ -25,10 +25,10 @@ SharedFields:
   Value: /sitecore/content/Habitat/Home
 - ID: ed71d374-8c33-4561-991d-77482ae01330
   Hint: AccountsDetailsPage
-  Value: /sitecore/content/Habitat/Home/EditProfile
+  Value: /sitecore/content/Habitat/Home/Edit Profile
 - ID: f3cd2bb8-472b-4df0-87c0-a13098e391ca
   Hint: ForgotPasswordPage
-  Value: /sitecore/content/Habitat/Home/Login/ForgotPassword
+  Value: /sitecore/content/Habitat/Home/Login/Forgot Password
 Languages:
 - Language: da
   Versions:

@@ -6,5 +6,5 @@
 @model Sitecore.Feature.Media.Infrastructure.Models.MediaBackgroundRenderingModel
 
 <section class="section section-full @Model.CssClass" @Model.MediaAttribute>
-    @Html.Sitecore().DynamicPlaceholder("section")
+  @Html.Sitecore().DynamicPlaceholder("section", MainUtil.GetBool(Model.UseStaticPlaceholderNames, false))
 </section>

@@ -1,0 +1,26 @@
+﻿@using Sitecore.Feature.News
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Templates.NewsArticle.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.NewsArticle.ID))
+  return;
+}
+
+<div class="container">
+  <h1>
+    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), Model.Item)
+    @if (Model.Item.Fields[Templates.NewsArticle.Fields.Summary].HasValue || Sitecore.Context.PageMode.IsExperienceEditor)
+    {
+      <br />
+      <small>
+        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary.ToString(), Model.Item)
+      </small>
+    }
+  </h1>
+  <p>
+    <time>@Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new { format = "MMMM dd, yyyy" })</time>
+  </p>
+</div>

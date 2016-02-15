@@ -35,8 +35,8 @@ SharedFields:
         <r id="{26B33DEB-F1DB-4338-B043-AAF2F90E04A3}" par="Type=bg-dark" ph="page-layout" uid="{1DF746C3-2D29-43E6-9DE2-05622DED6F97}" />
         <r id="{E6BA23C6-08F7-43D0-BE00-BB2129D6F288}" ph="page-header" uid="{20E3883C-C16D-41D7-B5D3-C4AC60D8386D}" />
         <r id="{45B8E1D9-D522-49E0-B9B7-04C965CC7089}" ph="page-header" uid="{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}" />
-        <r id="{D201A487-5099-48A1-8189-55944F70C6CB}" ph="page-layout" uid="{A3CA17FF-693C-46F1-87AA-B8C1833F1890}" />
-        <r id="{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}" par="UseStaticPlaceholderNames=1" ph="/page-layout/section_a3ca17ff-693c-46f1-87aa-b8c1833f1890" uid="{66422117-69C1-4B62-9323-482F16C4F244}" />
+        <r id="{D201A487-5099-48A1-8189-55944F70C6CB}" par="UseStaticPlaceholderNames=1" ph="page-layout" uid="{A3CA17FF-693C-46F1-87AA-B8C1833F1890}" />
+        <r id="{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}" par="UseStaticPlaceholderNames=1" ph="/page-layout/section" uid="{66422117-69C1-4B62-9323-482F16C4F244}" />
         <r id="{84924ABF-F983-4AF5-9002-EA0237A53DA9}" ph="col-huge" uid="{A4AD2DA4-136E-466A-BC85-F02C9205869D}" />
         <r id="{299FD8EA-2CFD-4A69-9CA4-7EA24CD34A46}" ph="footer" uid="{E2040FB7-4151-456D-9315-5973E4EB4D9D}" />
         <r id="{98D6BC34-0185-42A0-B53B-CEB7B17008B6}" par="UseStaticPlaceholderNames=1" ph="/footer/section" uid="{025588CB-DFC0-4B02-8223-0015C525AE52}" />

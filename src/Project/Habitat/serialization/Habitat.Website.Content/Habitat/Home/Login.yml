@@ -11,22 +11,6 @@ SharedFields:
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   Hint: __Sortorder
   Value: 700
-- ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
-  Hint: __Renderings
-  Type: layout
-  Value: |
-    <r xmlns:p="p" xmlns:s="s" p:p="1">
-      <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-        <r uid="{47F5A079-6F63-4219-BC45-1A221B200906}">
-          <p:d />
-        </r>
-        <r uid="{89F31AC1-CB0B-4754-8B53-8EB29A5BDE61}" p:before="r[@uid='{A680096B-5220-4253-8276-448FECCE4866}']" s:id="{3F7AD288-FA57-441F-AD79-CA60DC0C0A8D}" s:ph="sidebarcontent" />
-        <r uid="{A680096B-5220-4253-8276-448FECCE4866}" s:id="{5899FE6B-2AD7-4243-B1F9-3BC664CF0A7C}" s:ph="/page-layout/col-narrow-2" />
-        <r uid="{1DF746C3-2D29-43E6-9DE2-05622DED6F97}">
-          <d></d>
-        </r>
-      </d>
-    </r>
 Languages:
 - Language: en
   Versions:

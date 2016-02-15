@@ -17,4 +17,7 @@
   <File Include="Views\Media\PageHeaderMedia.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{26B33DEB-F1DB-4338-B043-AAF2F90E04A3}</Item>
   </File>
+  <File Include="Views\Media\SectionMedia.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{1149A3C7-C69A-4E6B-A6C3-32687EC2F8D4}</Item>
+  </File>
 </Project>

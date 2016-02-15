@@ -116,6 +116,8 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\News\NewsTeaser.cshtml" />
+    <Content Include="Views\News\NewsPageHeader.cshtml" />
+    <Content Include="Views\News\NewsMetadata.cshtml" />
     <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
