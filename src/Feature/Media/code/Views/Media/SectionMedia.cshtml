@@ -1,4 +1,4 @@
-﻿@using System.Web.UI.WebControls
+@using System.Web.UI.WebControls
 @using Sitecore
 @using Sitecore.Feature.Media
 @using Sitecore.Feature.Media.Infrastructure
@@ -6,5 +6,11 @@
 @model Sitecore.Feature.Media.Infrastructure.Models.MediaBackgroundRenderingModel
 
 <section class="section section-full @Model.CssClass" @Model.MediaAttribute>
+  @if (Model.IsMedia && Model.MediaType.Equals("video"))
+  {
+    <video class="video-bg" loop autoplay muted>
+      <source src="@Model.MediaUrl" type="@Model.MediaType/@Model.MediaFormat">
+    </video>
+  }
   @Html.Sitecore().DynamicPlaceholder("section", MainUtil.GetBool(Model.UseStaticPlaceholderNames, false))
 </section>

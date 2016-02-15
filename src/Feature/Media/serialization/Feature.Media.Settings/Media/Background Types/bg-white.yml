@@ -2,7 +2,7 @@
 ID: 96b99746-9adb-432c-a2a5-a279e09672e4
 Parent: d4ce5263-0aad-4540-bc85-9477f8529745
 Template: 55a5bdad-eb69-40f5-8195-cda182e48ee4
-Path: /sitecore/content/Habitat/Global/Background Types/bg-white
+Path: /sitecore/system/Settings/Feature/Media/Background Types/bg-white
 DB: master
 Languages:
 - Language: en

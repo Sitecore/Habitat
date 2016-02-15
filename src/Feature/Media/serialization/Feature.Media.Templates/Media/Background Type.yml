@@ -5,6 +5,9 @@ Template: ab86861a-6030-46c5-b394-e8f99e8b87db
 Path: /sitecore/templates/Feature/Media/Background Type
 DB: master
 SharedFields:
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+  Hint: __Icon
+  Value: Apps/32x32/Photo.png
 - ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
   Hint: __Base template
   Type: tree list

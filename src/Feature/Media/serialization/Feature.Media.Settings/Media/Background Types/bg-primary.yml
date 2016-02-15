@@ -2,7 +2,7 @@
 ID: be6d975b-865d-4e68-903e-33f2a01f0006
 Parent: d4ce5263-0aad-4540-bc85-9477f8529745
 Template: 55a5bdad-eb69-40f5-8195-cda182e48ee4
-Path: /sitecore/content/Habitat/Global/Background Types/bg-primary
+Path: /sitecore/system/Settings/Feature/Media/Background Types/bg-primary
 DB: master
 Languages:
 - Language: en

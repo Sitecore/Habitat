@@ -23,7 +23,17 @@
       attribute.IsValidForRequest(ctx, null).Should().BeFalse();
     }
 
-  
+
+    [Theory]
+    [AutoDbMvcData]
+    public void IsValidForRequest_WffmForm_ShouldReturnFalse(ValidateRenderingIdAttribute attribute, ControllerContext ctx, string id)
+    {
+      InitControllerContext(ctx);
+      ctx.HttpContext.Request.Form.Add($"wffm{Guid.NewGuid()}.FormId",id);
+      //act and assert
+      attribute.IsValidForRequest(ctx, null).Should().BeFalse();
+    }
+
     [Theory]
     [AutoDbMvcData]
     public void IsValidForRequest_GetRequest_ShouldReturnTrue(ValidateRenderingIdAttribute attribute, ControllerContext ctx)

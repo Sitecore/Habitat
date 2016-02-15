@@ -4,7 +4,7 @@
 
 @if (Html.Sitecore().HasValue(Templates.HasPageContent.Fields.Image.ToString()))
 {
-  var image = Model.Item.GetImage(Templates.HasPageContent.Fields.Image)?.Source;
+  var image = Model.Item.ImageUrl(Templates.HasPageContent.Fields.Image);
   <header class="page-header bg-media bg-parallax" style="background-image: url('@image')">
     @Html.Sitecore().Placeholder("page-header")
   </header>
