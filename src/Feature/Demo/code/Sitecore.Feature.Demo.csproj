@@ -151,6 +151,7 @@
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Models\EngagementState.cs" />
     <Compile Include="Models\ExperienceProfile.cs" />
+    <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
     <Compile Include="Services\ProfileProvider.cs" />
     <Compile Include="Services\IProfileProvider.cs" />
     <Compile Include="Models\KeyBehaviorCacheEntryModel.cs" />
