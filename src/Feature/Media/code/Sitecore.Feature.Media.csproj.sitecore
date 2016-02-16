@@ -20,4 +20,7 @@
   <File Include="Views\Media\SectionMedia.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{1149A3C7-C69A-4E6B-A6C3-32687EC2F8D4}</Item>
   </File>
+  <File Include="Views\Media\PageHeaderCarousel.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{8B28417B-A5B3-44F1-BFCC-FE1D907336E7}</Item>
+  </File>
 </Project>

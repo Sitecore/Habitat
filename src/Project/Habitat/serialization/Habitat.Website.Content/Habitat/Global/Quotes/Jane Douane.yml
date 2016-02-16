@@ -23,4 +23,4 @@ Languages:
       Value: Sitecore
     - ID: c9baf3eb-8cfa-4bf6-9b19-51d38db5fc38
       Hint: Picture
-      Value: "<image mediaid=\"{FF8E14C4-79AA-4D80-A2E5-D07BFD835411}\" height=\"93\" hspace=\"\" width=\"100\" alt=\"\" vspace=\"\" />"
+      Value: "<image mediaid=\"{FF8E14C4-79AA-4D80-A2E5-D07BFD835411}\" height=\"93\" hspace=\"\" width=\"100\" alt=\"\" vspace=\"\" ></image>"

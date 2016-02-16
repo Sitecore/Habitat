@@ -9,6 +9,20 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
+          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{32253AB5-28DC-4C2A-8BA4-EB237D10E423}" p:before="r[@uid='{D64CB575-D3AE-47AD-9E4C-487DC0C421E9}']" s:ds="{6086F621-4A0E-4724-9D6F-EA7BA8139F57}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/section-narrow/col-narrow-1_eb4d55ad-27c6-4702-b701-c8aee9562f8c" />
+            <r uid="{D64CB575-D3AE-47AD-9E4C-487DC0C421E9}" p:before="r[@uid='{8F8D0C2E-6729-4A0A-823D-E243F301E3B8}']" s:ds="{6086F621-4A0E-4724-9D6F-EA7BA8139F57}" s:id="{FDFCD088-3C9E-49C4-97FF-2DDE5D339BA0}" s:ph="/page-layout/section-narrow/col-wide-1_eb4d55ad-27c6-4702-b701-c8aee9562f8c" />
+            <r uid="{8F8D0C2E-6729-4A0A-823D-E243F301E3B8}" p:before="r[@uid='{F02C576B-2B13-4AB6-97F8-33C27C6502EA}']" s:ds="{1CE39F86-2F0B-4F4C-B94D-8EC78A04A827}" s:id="{DDC6F993-6689-432E-90C7-B2865947DFD5}" s:ph="/page-layout/section-narrow/col-wide-1_5bf951c3-3bb6-4b6f-9212-253a4f5d08f4" />
+            <r uid="{F02C576B-2B13-4AB6-97F8-33C27C6502EA}" p:before="r[@uid='{5BF951C3-3BB6-4B6F-9212-253A4F5D08F4}']" s:ds="{6086F621-4A0E-4724-9D6F-EA7BA8139F57}" s:id="{E47303E0-90FD-4E81-B2B5-CA4E8C1C36B4}" s:ph="/page-layout/section-narrow/col-narrow-1_5bf951c3-3bb6-4b6f-9212-253a4f5d08f4" />
+            <r uid="{5BF951C3-3BB6-4B6F-9212-253A4F5D08F4}" p:before="r[@uid='{EB4D55AD-27C6-4702-B701-C8AEE9562F8C}']" s:id="{831876B6-F9F1-463E-9DD5-7F93F1640590}" s:ph="/page-layout/section-narrow" />
+            <r uid="{EB4D55AD-27C6-4702-B701-C8AEE9562F8C}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:id="{45CE489D-FA30-473E-9751-142BD06CCB33}" s:ph="/page-layout/section-narrow" />
+          </d>
+        </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       Hint: NavigationTitle
       Value: Teasers

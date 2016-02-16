@@ -14,9 +14,9 @@
   <h2>
     @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
   </h2>
-  <div>
+  <p class="">
     @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
-  </div>
+  </p>
   @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
   {
     @class = "btn btn-primary btn-lg"

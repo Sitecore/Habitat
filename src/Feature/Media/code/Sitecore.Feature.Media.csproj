@@ -144,6 +144,7 @@
     </None>
     <Content Include="Views\Media\SectionMedia.cshtml" />
     <Content Include="Views\Media\PageHeaderMedia.cshtml" />
+    <Content Include="Views\Media\PageHeaderCarousel.cshtml" />
     <None Include="Web.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
@@ -175,7 +176,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51612</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

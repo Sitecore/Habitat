@@ -14,4 +14,10 @@
   <File Include="Views\News\NewsMetadata.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{692E10B7-6E59-4253-BD64-9A2633FD735F}</Item>
   </File>
+  <File Include="Views\News\LatestNews.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{BDD730EB-F808-4C65-B94A-D2F03672EAFB}</Item>
+  </File>
+  <File Include="Views\News\NewsTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}</Item>
+  </File>
 </Project>
