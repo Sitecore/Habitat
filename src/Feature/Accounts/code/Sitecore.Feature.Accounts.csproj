@@ -148,9 +148,8 @@
     <Content Include="Views\Accounts\Login.cshtml" />
     <Content Include="Views\Accounts\AccountsMenu.cshtml" />
     <Content Include="Views\Accounts\ForgotPassword.cshtml" />
-    <Content Include="Views\Accounts\AccountsDetails.cshtml" />
     <Content Include="Views\Accounts\Register.cshtml" />
-    <Content Include="Views\Accounts\LoginDialog.cshtml" />
+    <Content Include="Views\Accounts\_Login.cshtml" />
     <Content Include="Views\Accounts\EditProfile.cshtml" />
     <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">

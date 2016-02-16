@@ -14,7 +14,7 @@ Languages:
       Value: 20151209T045130Z
     - ID: 302c9f8d-f703-4f76-a4ab-73d222648232
       Hint: MediaDescription
-      Value: Getting&nbsp;a modular architecture right and harvesting the wins of that relies on having a methodology where dependencies and coupling is controlled.
+      Value: Getting a modular architecture right and harvesting the wins of that relies on having a methodology where dependencies and coupling is controlled.
     - ID: 63dda48b-b0cb-45a7-9a1b-b26ddb41009b
       Hint: MediaTitle
       Value: Layering makes way for modularity

@@ -18,9 +18,6 @@ SharedFields:
   Hint: Compatible Renderings
   Type: Treelist
   Value: {DB4DA660-2D4A-4214-8896-9724E165DA44}
-- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
-  Hint: Open Properties after Add
-  Value: 1
 Languages:
 - Language: en
   Versions:

@@ -12,11 +12,9 @@
 <div class="well">
   @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Title) || Sitecore.Context.PageMode.IsPageEditor)
   {
-    <header>
-      <h3 class="teaser-heading">
-        @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
-      </h3>
-    </header>
+    <h4>
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
+    </h4>
   }
   @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Summary) || Sitecore.Context.PageMode.IsPageEditor)
   {

@@ -16,26 +16,26 @@
   <div class="text-center">
     @if (Sitecore.Context.PageMode.IsPageEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.Telephone))
     {
-      <a href="tel:@Model.Item[Templates.Employee.Fields.Telephone]" class="btn btn-info">
+      <a href="tel:@Model.Item[Templates.Employee.Fields.Telephone]" class="btn btn-link">
         <i class="fa fa-phone"></i> @Model.Item.Field(Templates.Employee.Fields.Telephone)
       </a>
     }
     @if (Sitecore.Context.PageMode.IsPageEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.Mobile))
     {
-      <a href="tel:@Model.Item[Templates.Employee.Fields.Mobile]" class="btn btn-info">
+      <a href="tel:@Model.Item[Templates.Employee.Fields.Mobile]" class="btn btn-link">
         <i class="fa fa-mobile"></i> @Model.Item.Field(Templates.Employee.Fields.Mobile)
       </a>
     }
     @if (Sitecore.Context.PageMode.IsPageEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.Email))
     {
-      <a href="mailto:@Model.Item[Templates.Employee.Fields.Email]" class="btn btn-info">
+      <a href="mailto:@Model.Item[Templates.Employee.Fields.Email]" class="btn btn-link">
         <i class="fa fa-envelope"></i> @Model.Item.Field(Templates.Employee.Fields.Email)
       </a>
     }
     @if (Sitecore.Context.PageMode.IsPageEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.BlogLink))
     {
-      <a href="@Model.Item.LinkFieldUrl(Templates.Employee.Fields.BlogLink)" target="_blank" class="btn btn-info">
-        <i class="fa fa-book"></i>
+      <a href="@Model.Item.LinkFieldUrl(Templates.Employee.Fields.BlogLink)" target="_blank" class="btn btn-hollow">
+        <i class="fa fa-globe"></i>
       </a>
     }
     @if (Sitecore.Context.PageMode.IsPageEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.TwitterLink))

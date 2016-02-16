@@ -10,19 +10,15 @@
   return;
 }
 
-<div class="jumbotron bg-media" style="background-image: url('@Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image)')">
-  <div class="container">
-    <h1>
-      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
-    </h1>
-    <p>
-      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
-    </p>
-    <p>
-      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
-      {
-        @class = "btn btn-primary btn-lg"
-      })
-    </p>
+<div class="jumbotron text-center bg-media" style="background-image: url('@Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image)')">
+  <h2>
+    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
+  </h2>
+  <div>
+    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
   </div>
+  @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
+  {
+    @class = "btn btn-primary btn-lg"
+  })
 </div>

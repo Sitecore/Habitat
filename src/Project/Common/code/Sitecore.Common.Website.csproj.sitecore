@@ -71,4 +71,7 @@
   <File Include="Views\Common\Sublayouts\ArticleAsideBoth.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{A85A0B65-D3B7-48B8-B362-F17AA3CA7DF1}</Item>
   </File>
+  <File Include="Views\Common\Sublayouts\NavbarActivity.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{8832BA30-99C3-4D20-9B1C-237D910A153F}</Item>
+  </File>
 </Project>

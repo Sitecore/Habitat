@@ -49,16 +49,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
-      Hint: __Final Renderings
-      Type: Layout
-      Value: |
-        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
-          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-            <r uid="{398B092F-32F3-4318-9A14-BD568F5206AC}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:id="{3F7AD288-FA57-441F-AD79-CA60DC0C0A8D}" s:ph="/page-layout/aside-primary_66422117-69c1-4b62-9323-482f16c4f244" />
-            <r uid="{66422117-69C1-4B62-9323-482F16C4F244}" s:ds="" s:par="ContainerIsFluid&amp;UseStaticPlaceholderNames=1" />
-          </d>
-        </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       Hint: NavigationTitle
       Value: Introduction
