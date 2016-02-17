@@ -39,6 +39,7 @@
       for (var i = 0; i < items.Items.Count - 1; i++)
       {
         items.Items[i].Level = i;
+        items.Items[i].IsActive = i == (items.Items.Count-1);
       }
 
       return items;

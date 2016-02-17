@@ -1,0 +1,28 @@
+﻿---
+ID: e86bfeb1-f3fc-4e37-b693-a5550d6789ee
+Parent: c41e1360-7356-4397-9126-cf27db1f600e
+Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+Path: /sitecore/layout/Renderings/Feature/Media/Media Carousel
+DB: master
+SharedFields:
+- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+  Hint: Path
+  Value: /Views/Media/Carousel.cshtml
+- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  Hint: Datasource Location
+  Value: site:carousel
+- ID: e441abe7-2ca3-4640-ae26-3789967925d7
+  Hint: Compatible Renderings
+  Type: Treelist
+  Value: {4E541395-9332-4F1D-87F0-E7F4920C2036}
+- ID: e514a1eb-ddba-44f7-8528-82ca2280f778
+  Hint: JavaScript assets
+  Value: 
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20150902T070251Z

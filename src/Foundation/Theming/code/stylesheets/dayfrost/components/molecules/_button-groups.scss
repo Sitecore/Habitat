@@ -1,0 +1,12 @@
+
+
+@import "bootstrap/button-groups";
+
+
+.btn-group {
+  .btn {
+    & + .btn {
+      margin-left: -2px;
+    }
+  }
+}

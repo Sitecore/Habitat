@@ -1,8 +1,8 @@
 ﻿function login(componentid) {
-  var logincontrol = $("#" + componentid);
+  var logincontrol = jQuery("#" + componentid);
   var usernameField = logincontrol.find("#popupLoginEmail");
   var passwordField = logincontrol.find("#popupLoginPassword");
-  $.ajax(
+  jQuery.ajax(
   {
     url: "/api/Accounts/LoginDialog",
     method: "POST",

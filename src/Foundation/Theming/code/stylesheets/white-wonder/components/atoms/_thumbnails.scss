@@ -1,0 +1,127 @@
+$thumbnail-border: transparent;
+
+
+
+@import "bootstrap/thumbnails";
+
+
+
+.thumbnail {
+  border: none;
+  padding: 0;
+  &-header {
+    p {
+      font-size: 16px;
+      color: $gray-light;
+      font-weight: bold;
+      margin: 0;
+      line-height: 1;
+    }
+  }
+  .caption {
+    padding: 0;
+    h1,h2,h3,h4,h5,h6 {
+      margin-top: 5px;
+    }
+    a {
+      text-decoration: underline;
+      &.btn {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-lg {
+    h3 {
+      font-size: 36px;
+    }
+  }
+  &-sm {
+
+  }
+  &-xl {
+
+  }
+  &-xs {
+
+  }
+
+  &.testimony {
+    border: none;
+    .caption {
+      border-top: 1px solid $page-header-border-color;
+      h5 {
+        color: #666;
+        font-style: italic;
+        font-weight: normal;
+      }
+      p {
+        color: $color-secondary-dark;
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &-square {
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    background-color: $gray-lighter;
+
+    @media all and (max-width: $screen-sm-max) {
+      height: auto;
+      padding: 20px;
+    }
+
+    .caption {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+
+      .ie9 & {
+      }
+
+      .lte-ie8 & {
+        top: 0;
+        padding-top: 30px;
+      }
+
+      @media all and (max-width: $screen-sm-max) {
+        position: relative;
+        top: 0;
+        transform: none;
+      }
+    }
+  }
+  &-focus {
+    background-color: $color-primary;
+    height: 0;
+    width: 100%;
+    padding: 10% 15%;
+    padding-bottom: 90%;
+    margin-top: -10%;
+    border-radius: 50%;
+    text-align: center;
+
+    @media all and (max-width: $screen-md-max) {
+      border-radius: 0;
+      height: auto;
+      padding-bottom: 10%;
+      margin-top: 0;
+      padding-left: 10%;
+      padding-right: 10%;
+      text-align: left;
+    }
+
+    .caption {
+      color: #FFF;
+
+      a {
+        color: #FFF;
+      }
+    }
+  }
+}

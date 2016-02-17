@@ -1,0 +1,21 @@
+$alert-success-bg: lighten($brand-success, 35%);
+$alert-success-text: $brand-success;
+$alert-info-bg: lighten($brand-info, 35%);
+$alert-info-text: $brand-info;
+$alert-warning-bg: lighten($brand-warning, 35%);
+$alert-warning-text: $brand-warning;
+$alert-danger-bg: lighten($brand-danger, 35%);
+$alert-danger-text: $brand-danger;
+
+
+
+@import "bootstrap/alerts";
+
+
+.alert {
+  button.close {
+    background-color: transparent;
+    border: none;
+    -webkit-appearance: none;
+  }
+}

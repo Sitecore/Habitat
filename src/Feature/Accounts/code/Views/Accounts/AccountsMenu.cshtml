@@ -3,58 +3,36 @@
 @using Sitecore.Feature.Accounts.Services
 @using Sitecore.Feature.Accounts.Texts
 @model Sitecore.Mvc.Presentation.RenderingModel
-<li class="dropdown">
-	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		<i class="fa fa-user"></i>
-	</a>
-	<ul class="dropdown-menu">
-		@if (!(Sitecore.Context.IsLoggedIn && Sitecore.Context.PageMode.IsNormal))
-		{
-		<li>
-			<a href="#" data-toggle="modal" data-target="#loginModal">Login</a>
-		</li>
-		<li>
-			<a href="@AccountsSettingsService.Instance.GetPageLink(Model.Item, Templates.AccountsSettings.Fields.RegisterPage)">Register</a>
-		</li>
-		}
-		else
-		{
-		<li>
-			<div class="dropdown-item-body">
-				<dl class="dl-horizontal">
-					@if (!string.IsNullOrWhiteSpace(Sitecore.Context.User.Profile.FullName))
-					{
-					<dt>@Captions.Name</dt>
-					<dd>@Sitecore.Context.User.Profile.FullName</dd>
-					}
-					<dt>@Captions.Email</dt>
-					<dd>@Sitecore.Context.User.Profile.Email</dd>
-				</dl>
-			</div>
-		</li>
-		<li>
-			<a href="@AccountsSettingsService.Instance.GetPageLink(Model.Item, Templates.AccountsSettings.Fields.AccountsDetailsPage)">@Captions.EditDetails</a>
-		</li>
-		<li>
-			@using (Html.BeginForm("Logout", "Accounts", FormMethod.Post))
-			{
-			<input type="submit" value="@Captions.Logout" />
-			}
-		</li>
-		}
-	</ul>
+<li class="dropdown hidden-xs">
+  <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
+    <i class="fa fa-user"></i>
+  </a>
+  <div class="dropdown-menu">
+    @if (!(Sitecore.Context.IsLoggedIn && Sitecore.Context.PageMode.IsNormal))
+    {
+      <h4>@Captions.Login</h4>
+      <form id="loginModal">
+        @Html.Partial("~/Views/Accounts/_Login.cshtml", new LoginInfo())
+      </form>
+    }
+    else
+    {
+      using (Html.BeginForm("Logout", "Accounts", FormMethod.Post))
+      {
+        if (!string.IsNullOrWhiteSpace(Sitecore.Context.User.Profile.FullName))
+        {
+          <div class="form-group">
+            <label class="control-label">@Captions.Name</label>
+            <div class="form-control-static">@Sitecore.Context.User.Profile.FullName</div>
+          </div>
+        }
+        <div class="form-group">
+          <label class="control-label">@Captions.Email</label>
+          <div class="form-control-static">@Sitecore.Context.User.Profile.Email</div>
+        </div>
+        <a class="btn btn-block btn-primary" href="@AccountsSettingsService.Instance.GetPageLink(Model.Item, Templates.AccountsSettings.Fields.AccountsDetailsPage)">@Captions.EditDetails</a>
+        <button type="submit" class="btn btn-block btn-default">@Captions.Logout</button>
+      }
+    }
+  </div>
 </li>
-<!-- Login Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
-	<div class="modal-dialog" role="document">
-		<form class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<h4 class="modal-title" id="myModalLabel">@Captions.Login</h4>
-			</div>
-			@Html.Partial("../Accounts/LoginDialog", new LoginInfo())
-		</form>
-	</div>
-</div>

@@ -1,0 +1,44 @@
+﻿@using Sitecore.Feature.Search.Text
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@model Sitecore.Feature.Search.Models.SearchSettings
+
+<div class="container ">
+  @{
+    // TODO: var totalResults = Model.TotalResults;
+    var totalResults = -1;
+
+    if (string.IsNullOrEmpty(Model.Query))
+    {
+      <h1 class="text-center">
+        @string.Format(DictionaryRepository.Get("/search/header/title no search", "Enter the text you want to find on the site:"))
+      </h1>
+    }
+    else if (totalResults == 0)
+    {
+      <h1 class="text-center">
+        @string.Format(DictionaryRepository.Get("/search/header/title without results", "Your search for '{0}' yielded no , please rephrase:"), Model.Query, totalResults)
+      </h1>
+    }
+    else
+    {
+      {
+        <h1 class="text-center">
+          @string.Format(DictionaryRepository.Get("/search/header/title with results", "Your search for '{0}' yielded {1} results:"), Model.Query, totalResults)
+        </h1>
+      }
+    }
+  }
+
+</div>
+<div class="container">
+  <form action="@Model.SearchResultsUrl" method="GET" class="text-center form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <input type="text" name="query" placeholder="@Model.SearchBoxTitle" value="@Model.Query" class="form-control" autocomplete="off" />
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit"><i class="fa fa-search"></i> @DictionaryRepository.Get("/search/header/search again", "Search again")</button>
+        </span>
+      </div>
+    </div>
+  </form>
+</div>

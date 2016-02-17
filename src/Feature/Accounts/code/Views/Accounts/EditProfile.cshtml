@@ -9,7 +9,7 @@
 @using Sitecore.Mvc.Configuration
 @model Sitecore.Feature.Accounts.Models.EditProfile
 
-@using (Html.BeginRouteForm(MvcSettings.SitecoreRouteName, FormMethod.Post))
+@using (Html.BeginRouteForm(MvcSettings.SitecoreRouteName, FormMethod.Post, new { @class = "form-signin" }))
 {
     @Html.FormHandler()
     var info = Session.GetAndRemove("EditProfileMessage") as InfoMessage;
@@ -49,5 +49,5 @@
         @Html.DropDownListFor(x=>x.Interest,new SelectList(Model.InterestTypes),"", new { @class ="form-control", id = "interests"})
     </div>
 
-    <input type="submit" class="btn btn-default" value="@Captions.Update" />
+    <input type="submit" class="btn btn-primary btn-large btn-block" value="@Captions.Update" />
 }

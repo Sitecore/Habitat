@@ -1,0 +1,76 @@
+
+.illustration {
+  background-image: url('../images/atoms.png');
+  background-image: url('../images/atoms.svg');
+  background-repeat: no-repeat;
+  width: 700px;
+  height: 700px;
+  margin: 50px auto;
+  position: relative;
+
+  .lte-ie8 & {
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/atoms.png', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/atoms.png', sizingMethod='scale')";
+    background-image: none;
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    background: transparent;
+    width: auto;
+    height: auto;
+  }
+
+  .visible-sm {
+    @media screen and (max-width: $screen-sm-max) {
+      display: block !important;
+    }
+    @media screen and (min-width: $screen-md-min) {
+      display: none !important;
+    }
+  }
+
+  &-text {
+    position: absolute;
+    max-width: 400px;
+
+    @media all and (max-width: $screen-sm-max) {
+      display: none;
+    }
+
+    &.atoms {
+      left: 130px;
+      top: -20px;
+    }
+    &.molecules {
+      text-align: right;
+      top: 280px;
+      width: 250px;
+      left: 30px;
+    }
+    &.organisms {
+      bottom: -20px;
+      right: 140px;
+      text-align: right;
+    }
+  }
+
+  .media {
+    .media-left, .media-body, .media-right {
+      @media all and (max-width: $screen-xs-max) {
+        display: block;
+        width: auto;
+        text-align: center;
+      }
+    }
+
+  }
+  .glyphicon {
+    font-size: 90px;
+    margin: 0 20px;
+  }
+}
+
+.border-bottom {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
