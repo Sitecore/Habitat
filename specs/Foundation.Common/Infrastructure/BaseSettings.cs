@@ -4,25 +4,25 @@
 
   public class BaseSettings
   {
-    public string BaseUrl => ConfigurationManager.AppSettings["baseUrl"];
-    public string RegisterPageUrl => BaseUrl + ConfigurationManager.AppSettings["registerUrl"];
+    public static string BaseUrl => ConfigurationManager.AppSettings["baseUrl"];
+    public static string RegisterPageUrl => BaseUrl + ConfigurationManager.AppSettings["registerUrl"];
 
-    public string LoginPageUrl => BaseUrl + ConfigurationManager.AppSettings["loginPageUrl"];
+    public static string LoginPageUrl => BaseUrl + ConfigurationManager.AppSettings["loginPageUrl"];
 
-    public string EditUserProfileUrl => BaseUrl + ConfigurationManager.AppSettings["editUserProfileUrl"];
+    public static string EditUserProfileUrl => BaseUrl + ConfigurationManager.AppSettings["editUserProfileUrl"];
 
-    public string ContactUsPageUrl => BaseUrl + ConfigurationManager.AppSettings["contactUsPageUrl"];
+    public static string ContactUsPageUrl => BaseUrl + ConfigurationManager.AppSettings["contactUsPageUrl"];
 
-    public string TestHelperService => BaseUrl + ConfigurationManager.AppSettings["testsProxyUrl"];
+    public static string TestHelperService => BaseUrl + ConfigurationManager.AppSettings["testsProxyUrl"];
 
-    public string ForgotPasswordPageUrl => BaseUrl + ConfigurationManager.AppSettings["forgotPasswordUrl"];
-    public string EndSessionUrl => BaseUrl + ConfigurationManager.AppSettings["endSessionUrl"];
-    public string UtfHelperService => BaseUrl + ConfigurationManager.AppSettings["utfProxyUrl"];
-    public string UserName => "sitecore\\admin";
-    public string Password => "b";
+    public static string ForgotPasswordPageUrl => BaseUrl + ConfigurationManager.AppSettings["forgotPasswordUrl"];
+    public static string EndSessionUrl => BaseUrl + ConfigurationManager.AppSettings["endSessionUrl"];
+    public static string UtfHelperService => BaseUrl + ConfigurationManager.AppSettings["utfProxyUrl"];
+    public static string UserName => "sitecore\\admin";
+    public static string Password => "b";
 
-    public string EndVisitUrl => BaseUrl + ConfigurationManager.AppSettings["endVisitUrl"];
+    public static string EndVisitUrl => BaseUrl + ConfigurationManager.AppSettings["endVisitUrl"];
 
-    public string DemoSiteURL => ConfigurationManager.AppSettings["demoSiteUrl"];
+    public static string DemoSiteURL => ConfigurationManager.AppSettings["demoSiteUrl"];
   }
 }

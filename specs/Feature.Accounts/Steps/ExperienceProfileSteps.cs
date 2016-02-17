@@ -16,7 +16,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void ThenProfileActivityGoalsSectionForKovSitecore_NetContains(string userName, Table table)
     {
       var contactID = GetContactId(userName);
-      var queryUrl = Settings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}/intel/goals";
+      var queryUrl = BaseSettings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}/intel/goals";
 
       var entities = GetAnalytycsEntities<SearchEntity>(queryUrl);
       foreach (var row in table.Rows)

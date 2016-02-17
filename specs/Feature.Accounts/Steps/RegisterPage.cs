@@ -18,7 +18,7 @@
     [Given(@"Habitat website is opened on Register page")]
     public void GivenHabitatWebsiteIsOpenedOnRegisterPage()
     {
-      Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
+      Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
     }
 
 
@@ -57,7 +57,7 @@
         var email = row["email"];
 
         var contactID = GetContactId(email);
-        var queryUrl = Settings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}/intel/outcome-detail";
+        var queryUrl = BaseSettings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}/intel/outcome-detail";
         var outcomes = GetAnalytycsEntities<SearchEntity>(queryUrl);
         var expectedOutcome = row["Outcome value"];
         outcomes.Data.Dataset.OutcomeDetail
@@ -80,7 +80,7 @@
       {
         var email = row["email"];
         var contactID = GetContactId(email);
-        var queryUrl = Settings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}";
+        var queryUrl = BaseSettings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}";
 
         var contact = GetAnalytycsEntities<ContactEntity>(queryUrl);
 

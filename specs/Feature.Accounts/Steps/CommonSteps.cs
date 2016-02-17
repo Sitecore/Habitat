@@ -102,7 +102,7 @@
         found.Should().BeFalse();
       }
       //2
-      //            buttons.All(b => Site.DropDownButtons.Any(x => x.Text == b)).Should().BeTrue();
+      //            buttons.All(b => SiteDemo.DropDownButtons.Any(x => x.Text == b)).Should().BeTrue();
     }
 
     [Then(@"Following buttons is no longer present under User drop-drop down menu")]
@@ -179,7 +179,7 @@
     [Given(@"User with following data is registered")]
     public void GivenUserWithFollowingDataIsRegistered(Table table)
     {
-      Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
+      Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
       WhenActorEntersFollowingDataInToTheRegisterFields(table);
       Site.SubmitButton.Click();
       new SiteNavigation().WhenActorMovesCursorOverTheUserIcon();
@@ -189,7 +189,7 @@
     [Given(@"User with following data is registered in Habitat")]
     public void GivenUserWithFollowingDataIsRegisteredInHabitat(Table table)
     {
-      Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
+      Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
       WhenActorEntersFollowingDataInToTheRegisterFields(table);
       Site.SubmitButton.Click();
 
@@ -209,7 +209,7 @@
     public void GivenSessionWasExpired()
     {
       Driver.FindElement(By.CssSelector("body")).SendKeys(Keys.Control + 't');
-      Driver.Navigate().GoToUrl(Settings.EndSessionUrl);
+      Driver.Navigate().GoToUrl(BaseSettings.EndSessionUrl);
       Driver.FindElement(By.CssSelector("body")).SendKeys(Keys.Control + 'w');
     }
 
@@ -234,7 +234,7 @@
     [Given(@"User is registered in Habitat and logged out")]
     public void GivenUserIsRegisteredInHabitatAndLoggedOut(Table table)
     {
-      Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
+      Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
       WhenActorEntersFollowingDataInToTheRegisterFields(table);
       Site.SubmitButton.Click();
       new SiteNavigation().WhenActorMovesCursorOverTheUserIcon();

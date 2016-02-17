@@ -1,4 +1,6 @@
-﻿namespace Sitecore.Feature.Accounts.Specflow.Steps
+﻿using Sitecore.Foundation.Common.Specflow.Infrastructure;
+
+namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
   using System;
   using System.Linq;
@@ -149,7 +151,7 @@
     [Given(@"User was (.*) to Habitat")]
     public void GivenUserWasLoginToHabitat(string btn, Table table)
     {
-      Driver.Navigate().GoToUrl(Settings.LoginPageUrl);
+      Driver.Navigate().GoToUrl(BaseSettings.LoginPageUrl);
 
       var row = table.Rows.First();
       foreach (var key in row.Keys)

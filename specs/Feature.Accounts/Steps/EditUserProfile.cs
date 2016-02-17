@@ -12,7 +12,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     [Given(@"Edit profile page is opened")]
     public void GivenEditProfilePageIsOpened()
     {
-      Driver.Navigate().GoToUrl(Settings.EditUserProfileUrl);
+      Driver.Navigate().GoToUrl(BaseSettings.EditUserProfileUrl);
     }
 
 

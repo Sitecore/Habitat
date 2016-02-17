@@ -12,8 +12,6 @@ namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
 
   public class Site
   {
-    public IWebElement UserIcon => Driver.FindElement(By.CssSelector(".fa-user"));
-
     public IWebDriver Driver => FeatureContext.Current.Get<IWebDriver>();
 
     public IWebElement PageTitle => Driver.FindElement(By.CssSelector(".section-title"));
@@ -99,24 +97,9 @@ namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
     public IWebElement InterestsDropDownElement
       => Driver.FindElement(By.CssSelector("#interests"));
 
-    public IWebElement SiteSwitcherIcon
-      => Driver.FindElement(By.CssSelector(".fa.fa-home"));
-
     public IEnumerable<IWebElement> SiteSwitcherIconDropDownLinks
       => Driver.FindElements(By.XPath(".//*[@id='primary-navigation']/ul/li[6]/ul"));
 
-    public IEnumerable<IWebElement> SiteSwitcherIconDropDownChildElements
-    {
-      get
-      {
-        var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-        var locator = By.XPath(".//*[@id='primary-navigation']/ul/li[6]/ul/li");
-        return wait.Until(ExpectedConditions.VisibilityOfAllElementsLocatedBy(locator));
-      }
-    }
-
-    public IWebElement DemoSiteLogo
-      => Driver.FindElement(By.CssSelector("#hplogo"));
 
   }
 }

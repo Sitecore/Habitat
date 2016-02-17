@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium.Interactions;
+using Sitecore.Foundation.Common.Specflow.Infrastructure;
 
 namespace Sitecore.Foundation.Common.Specflow.Steps
 {
@@ -30,6 +31,9 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     {
       new CommonGlobalSteps().Cleanup();
     }
+
+    public SiteBase SiteBase =new SiteBase();
+
 
   }
 }

@@ -222,6 +222,10 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Feature.Demo\Sitecore.Feature.Demo.Specflow.csproj">
+      <Project>{da6d2488-72d8-4d4f-8528-8cf91789e577}</Project>
+      <Name>Sitecore.Feature.Demo.Specflow</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Foundation.Common\Sitecore.Foundation.Common.Specflow.csproj">
       <Project>{e0c9af4f-fc51-42e6-b7b9-1e173ac0589d}</Project>
       <Name>Sitecore.Foundation.Common.Specflow</Name>
