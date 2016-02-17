@@ -1,8 +1,4 @@
-
-
 @import "bootstrap/mixins";
-
-
 
 @mixin backgroundHoverLighten($color, $percent, $important) {
     background-color: $color;

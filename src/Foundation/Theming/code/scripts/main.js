@@ -7,15 +7,6 @@ jQuery.noConflict();
 
 (function($) {
   $(function() {
-    /* Disabled for IE8 testing purposes
-    var wow = new WOW({
-      animateClass: 'animated',
-      offset: 200,
-      callback: function(box) {
-        $(box).addClass('wow-shown');
-      }
-    }).init();*/
-
     var mq;
 
     var $mqElement = $($.parseHTML('<span id="mq-detector"><span class="visible-xs"></span><span class="visible-sm"></span><span class="visible-md"></span><span class="visible-lg"></span></span>'));
@@ -63,30 +54,6 @@ jQuery.noConflict();
       $('[data-themetype="'+$(this).attr('data-themetype')+'"]').attr('disabled', 'disabled');
       $('[href="styles/'+$(this).attr('data-theme')+'.css"]').removeAttr('disabled');
     });
-
-    /*$('.grid-carousel').each(function(){
-      var split;
-      var $inner = $(this).find('.carousel-inner');
-      var _this = this;
-      var itemsShown;
-      var options = (typeof $(this).attr('data-options') !== "undefined") ? $.parseJSON($(this).attr('data-options')) : {};
-      $.each(options.itemsShown, function(key, val){
-        console.log(key, mq);
-        if (mq === key) {
-          itemsShown = val;
-          split = Math.ceil($inner.children().length / val);
-          return false;
-        }
-      });
-      for (var i = 0; i < split; i++) {
-        var $items = [];
-        for (var u = 0; u < itemsShown; u++) {
-          $items.push($inner.children().eq(u));
-        }
-        console.log($items);
-        $($items).wrapAll('<div class="item" />');
-      }
-    });*/
 
     $('.owl-carousel').each(function(){
       var options = (typeof $(this).attr('data-options') !== "undefined") ? $.parseJSON($(this).attr('data-options')) : {};
@@ -155,10 +122,9 @@ jQuery.noConflict();
       $('html').toggleClass('show-sidebar-left', $(this).attr('data-side') == 'left' && !$('html').hasClass('show-sidebar-left'));
       $('html').toggleClass('show-sidebar-right', $(this).attr('data-side') == 'right' && !$('html').hasClass('show-sidebar-right'));
     });
-    $(window).on('scroll', function(e) {
-      //$('.navbar').toggleClass('bg-transparent', $(window).scrollTop() <= 0 && $('body').hasClass('home'));
-      //$('.navbar').toggleClass('navbar-mega', $(window).scrollTop() <= 0);
+    $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
     });
-    //$('.sidebar').height($(window).height());
   });
 })(jQuery);

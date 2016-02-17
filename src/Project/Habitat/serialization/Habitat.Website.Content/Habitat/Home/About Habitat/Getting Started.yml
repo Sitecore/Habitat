@@ -45,6 +45,17 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
+          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{AE712ACE-7DE6-43C1-A41B-E5F3848E67CE}" p:before="r[@uid='{912BC1D7-B501-4EE5-B1FC-DC3BFC56CD87}']" s:ds="{BAA538A3-9DE8-4D89-B2EA-7F30B7D6410D}" s:id="{A1AD34DD-535E-47AF-A911-34C57CCC26F6}" s:ph="/page-layout/section-narrow/col-wide-2_69a3648f-2cd6-4b8d-ad40-30618e6d9386" />
+            <r uid="{912BC1D7-B501-4EE5-B1FC-DC3BFC56CD87}" p:before="r[@uid='{69A3648F-2CD6-4B8D-AD40-30618E6D9386}']" s:ds="{A92C04FE-9158-47C5-BCA2-14FCA32FF772}" s:id="{0534F12C-804E-4532-A832-5D61FE9EC6ED}" s:ph="/page-layout/section-narrow/col-wide-1_69a3648f-2cd6-4b8d-ad40-30618e6d9386" />
+            <r uid="{69A3648F-2CD6-4B8D-AD40-30618E6D9386}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/section-narrow" />
+          </d>
+        </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       Hint: NavigationTitle
       Value: Getting Started

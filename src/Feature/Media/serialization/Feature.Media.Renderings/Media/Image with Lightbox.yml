@@ -7,14 +7,10 @@ DB: master
 SharedFields:
 - ID: 11421560-0bcb-403a-b099-8595c34341fd
   Hint: JavaScript inline
-  Value: |
-    jQuery(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
-        event.preventDefault();
-        jQuery(this).ekkoLightbox();
-    }); 
+  Value: 
 - ID: 4867d192-326a-4aa4-81ef-ea430e224aff
   Hint: Css assets
-  Value: /Content/Media/ekko-lightbox.min.css
+  Value: 
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   Hint: Path
   Value: /Views/Media/LightboxImage.cshtml
@@ -23,7 +19,7 @@ SharedFields:
   Value: site:lightboximage
 - ID: e514a1eb-ddba-44f7-8528-82ca2280f778
   Hint: JavaScript assets
-  Value: /Scripts/Media/ekko-lightbox.min.js
+  Value: 
 Languages:
 - Language: en
   Versions:

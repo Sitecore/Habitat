@@ -73,7 +73,7 @@ var publishProjects = function (location, dest) {
       return stream
         .pipe(debug({ title: "Building project:" }))
         .pipe(msbuild({
-          targets: ["Clean", "Build"],
+          targets: ["Build"],
           configuration: config.buildConfiguration,
           logCommand: false,
           verbosity: "minimal",

@@ -65,14 +65,14 @@
                 <h5>@item.PatternName</h5>
                 <div class="progress">
                   <div class="progress-bar" role="progressbar" aria-valuenow="@item.MatchPercentage.ToString("###%").Trim('%')" aria-valuemin="0" aria-valuemax="100" style="width: @item.MatchPercentage.ToString("###%")">
-                    @item.MatchPercentage.ToString("P2", CultureInfo.InvariantCulture)
+                      @item.MatchPercentage.ToString("P2", CultureInfo.InvariantCulture)
                   </div>
                 </div>
               </div>
 
-                  }
+                    }
           </div>
-                  }
+                    }
       </div>
     </div>
   </div>
@@ -266,6 +266,10 @@
   </div>
 </div>
 <div class="well bg-transparent">
+    <a href="#" onclick="refreshVisitDetails(this)" class="btn btn-info" title="@Captions.VisitDetails.RefreshVisitDetailsDescription">
+      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+      @Captions.VisitDetails.Refresh
+    </a>
   <a href="@Url.Action("EndVisit")" class="btn btn-danger" title="@Captions.VisitDetails.EndVisitDescription">
     <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
     @Captions.VisitDetails.EndVisit

@@ -15,12 +15,8 @@
     "outputFile": "stylesheets/white-wonder.css",
     "inputFile": "stylesheets/white-wonder.scss"
   },
-  {
-    "outputFile": "stylesheets/bootstrap.css",
+    {
+      "outputFile": "stylesheets/bootstrap.css",
     "inputFile": "stylesheets/bootstrap.scss"
-  },
-  {
-    "outputFile": "stylesheets/vendor.css",
-    "inputFile": "stylesheets/vendor.scss"
   }
 ]

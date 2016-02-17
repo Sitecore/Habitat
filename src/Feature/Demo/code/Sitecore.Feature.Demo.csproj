@@ -126,6 +126,8 @@
     <Content Include="App_Config\Include\Feature\Feature.Demo.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Demo\_KeyBehaviourCacheList.cshtml" />
+    <Content Include="Scripts\VisitDetails.js" />
+    <Content Include="Views\Demo\KeyBehaviourCacheList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -150,6 +152,7 @@
     <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Models\EngagementState.cs" />
     <Compile Include="Models\ExperienceProfile.cs" />
+    <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
     <Compile Include="Services\ProfileProvider.cs" />
     <Compile Include="Services\IProfileProvider.cs" />
     <Compile Include="Models\KeyBehaviorCacheEntryModel.cs" />

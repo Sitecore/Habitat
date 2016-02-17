@@ -112,24 +112,6 @@
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Media\ekko-lightbox.css" />
-    <Content Include="Content\Media\ekko-lightbox.min.css">
-      <DependentUpon>ekko-lightbox.css</DependentUpon>
-    </Content>
-    <Content Include="Content\Media\parallax.css" />
-    <Content Include="Scripts\Media\carousel.js" />
-    <Content Include="Scripts\Media\ekko-lightbox.js" />
-    <Content Include="Scripts\Media\ekko-lightbox.min.js">
-      <DependentUpon>ekko-lightbox.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\Media\jquery.multibackground.js" />
-    <Content Include="Scripts\Media\jquery.multibackground.min.js">
-      <DependentUpon>jquery.multibackground.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\Media\jquery.smoothwheel.js" />
-    <Content Include="Scripts\Media\jquery.smoothwheel.min.js">
-      <DependentUpon>jquery.smoothwheel.js</DependentUpon>
-    </Content>
     <Content Include="Views\Media\LightboxImage.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Media\LightboxVideo.cshtml" />
@@ -137,7 +119,6 @@
     <Content Include="App_Config\Include\Feature\Feature.Media.Serialization.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Media\LightboxGallery.cshtml" />
-    <Content Include="Views\Media\ParallaxBackground.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

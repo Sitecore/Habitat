@@ -49,6 +49,25 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
+          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r uid="{908D601C-A415-4972-8B17-B9875044B59C}" p:before="r[@uid='{8B9AAC64-145C-414F-AC8F-61240571B3E3}']" s:ds="{E732AB5A-24AE-40D8-8F93-05DAD455E259}" s:id="{FDFCD088-3C9E-49C4-97FF-2DDE5D339BA0}" s:ph="/page-layout/section-narrow/col-wide-2_15745190-5e26-495a-9429-ea310797ce6e" />
+            <r uid="{8B9AAC64-145C-414F-AC8F-61240571B3E3}" p:before="r[@uid='{15745190-5E26-495A-9429-EA310797CE6E}']" s:ds="{59745F53-6D22-49B3-8844-98D5B24A8D98}" s:id="{0534F12C-804E-4532-A832-5D61FE9EC6ED}" s:ph="/page-layout/section-narrow/col-wide-1_15745190-5e26-495a-9429-ea310797ce6e" />
+            <r uid="{15745190-5E26-495A-9429-EA310797CE6E}" p:before="r[@uid='{BBF8FA00-D197-4DC3-9400-893B98C3D14B}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/section-narrow" />
+            <r uid="{BBF8FA00-D197-4DC3-9400-893B98C3D14B}" p:before="r[@uid='{2179D411-DBF3-4B5F-9541-5317FC878272}']" s:ds="{844A6AC4-4696-4EA3-B0F9-E1E502D3CDDF}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/section_66096c97-812e-4c51-9231-0e4f7dcc2f17/col-wide-2_f8a94c60-cedd-4329-87cc-f1ba49dbf3c1" />
+            <r uid="{2179D411-DBF3-4B5F-9541-5317FC878272}" p:before="r[@uid='{A194A9D7-B800-4FA5-8939-279818AEBC5B}']" s:ds="{DE020AD2-FB43-436C-B82B-2672B7DD5BC9}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/section_66096c97-812e-4c51-9231-0e4f7dcc2f17/col-wide-1_f8a94c60-cedd-4329-87cc-f1ba49dbf3c1" />
+            <r uid="{A194A9D7-B800-4FA5-8939-279818AEBC5B}" p:before="r[@uid='{9EEACF7C-310E-4546-B11A-2D1A6D59285D}']" s:ds="{D8B82E2A-8B5D-48D1-BE62-8575BA861556}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/section_66096c97-812e-4c51-9231-0e4f7dcc2f17/col-narrow-3_5f0e3a07-edd7-414d-a84e-479a2652037a" />
+            <r uid="{9EEACF7C-310E-4546-B11A-2D1A6D59285D}" p:before="r[@uid='{78A85593-830B-4416-8811-8AADBBF6AF3C}']" s:ds="{5C363FAA-B7D5-4B1D-9E4F-B2699BB529AD}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/section_66096c97-812e-4c51-9231-0e4f7dcc2f17/col-narrow-2_5f0e3a07-edd7-414d-a84e-479a2652037a" />
+            <r uid="{78A85593-830B-4416-8811-8AADBBF6AF3C}" p:before="r[@uid='{5F0E3A07-EDD7-414D-A84E-479A2652037A}']" s:ds="{BC2D52EE-2BD9-4322-AFBA-8C78669D2B19}" s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" s:ph="/page-layout/section_66096c97-812e-4c51-9231-0e4f7dcc2f17/col-narrow-1_5f0e3a07-edd7-414d-a84e-479a2652037a" />
+            <r uid="{5F0E3A07-EDD7-414D-A84E-479A2652037A}" p:before="r[@uid='{F8A94C60-CEDD-4329-87CC-F1BA49DBF3C1}']" s:id="{7074CA39-734D-4953-A3D5-B7D09C37CE3B}" s:ph="/page-layout/section_66096c97-812e-4c51-9231-0e4f7dcc2f17" />
+            <r uid="{F8A94C60-CEDD-4329-87CC-F1BA49DBF3C1}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:id="{1B92270B-EC01-4939-B579-0ADFEB758A95}" s:ph="/page-layout/section_66096c97-812e-4c51-9231-0e4f7dcc2f17" />
+            <r uid="{66096C97-812E-4C51-9231-0E4F7DCC2F17}" p:before="r[@uid='{A85893F9-5DF5-4C28-AC0F-67AD85D29661}']" s:id="{D201A487-5099-48A1-8189-55944F70C6CB}" s:ph="page-layout" />
+          </d>
+        </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       Hint: NavigationTitle
       Value: Introduction
@@ -72,8 +91,7 @@ Languages:
     - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
       Hint: Body
       Value: |
-        
-        		<p>Sitecore Habitat is a set of principles and conventions focused on:</p>
+        <p>Sitecore Habitat is a set of principles and conventions focused on:</p>
         <p><strong>Simplicity<br>
         </strong>Making the Sitecore solution manageable and simple - even as it grows and matures.</p>
         <p><strong>Flexibility<br>
@@ -81,6 +99,8 @@ Languages:
         <p><strong>Extensibility<br>
         </strong>Providing a quick and manageable way of extending solutions and reusing features across sites and even across solutions</p>
         <p>The conventions are based on a number of well-founded and industry-standard principles such as </p>
-        <p><em class="glyphicon glyphicon-book"></em> Low <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)" target="_blank">Coupling</a>/High <a href="https://en.wikipedia.org/wiki/Cohesion_(computer_science)" target="_blank">Cohesion</a></p>
-        <p><em class="glyphicon glyphicon-book"></em><a href="http://https://en.wikipedia.org/wiki/Domain-driven_design" target="_blank"> Domain Driven Design</a></p>
-        <p><em class="glyphicon glyphicon-book"></em><a href="https://en.wikipedia.org/wiki/Package_principles" target="_blank"> Package Principles</a></p>
+        <ul>
+            <li> Low <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)" target="_blank">Coupling</a>/High <a href="https://en.wikipedia.org/wiki/Cohesion_(computer_science)" target="_blank">Cohesion</a></li>
+            <li><a href="http://https://en.wikipedia.org/wiki/Domain-driven_design" target="_blank"> Domain Driven Design</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Package_principles" target="_blank"> Package Principles</a></li>
+        </ul>

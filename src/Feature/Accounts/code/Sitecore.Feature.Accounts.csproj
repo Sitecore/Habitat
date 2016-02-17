@@ -183,7 +183,6 @@
     <Compile Include="Services\UserProfileProvider.cs" />
     <Compile Include="Services\UserProfileService.cs" />
     <Compile Include="ConfigSettings.cs" />
-    <Compile Include="WebApiConfig.cs" />
     <Compile Include="Models\LoginResult.cs" />
     <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

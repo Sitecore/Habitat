@@ -10,7 +10,7 @@ SharedFields:
   Value: {B962A806-D708-4001-B0A3-3FA31F2263C5}
 - ID: 94069f66-609c-48b0-8281-521c30fb269d
   Hint: Open Properties after Add
-  Value: -
+  Value: 
 - ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
   Hint: Controller Action
   Value: SectionMedia

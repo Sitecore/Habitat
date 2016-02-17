@@ -16,7 +16,7 @@
   var elements = MediaSelectorElementsRepository.Get(Model.Item).ToArray();
 }
 
-<div id="@carouselId" class="carousel slide" data-ride="carousel" data-interval="@(Sitecore.Context.PageMode.IsExperienceEditor ? "false" : "")">
+<div id="@carouselId" class="carousel slide" data-ride="carousel" @(Sitecore.Context.PageMode.IsExperienceEditor ? "data-interval" : "")>
   <ol class="carousel-indicators">
     @for (var i = 0; i < elements.Length; i++)
       {
