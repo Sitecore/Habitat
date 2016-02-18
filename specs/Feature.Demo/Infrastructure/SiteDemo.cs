@@ -20,5 +20,8 @@ namespace Sitecore.Feature.Demo.Specflow.Infrastructure
 
     public IEnumerable<IWebElement> HabitatOnGoogleResults
       => Driver.FindElements(By.CssSelector("#vs0p1, #vs0p2, #vs0p3, #vs0p4"));
+
+    public IEnumerable<IWebElement> TrackingInfoCampaignList
+      => Driver.FindElements(By.CssSelector("#visitDetailsCampaign li"));
   }
 }

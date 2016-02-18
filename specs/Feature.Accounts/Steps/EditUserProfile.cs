@@ -9,6 +9,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
   internal class EditUserProfile : AccountStepsBase
   {
+    [When(@"Edit profile page is opened")]
     [Given(@"Edit profile page is opened")]
     public void GivenEditProfilePageIsOpened()
     {

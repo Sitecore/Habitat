@@ -115,41 +115,24 @@ this.ScenarioSetup(scenarioInfo);
 #line 13
  testRunner.When("User inputs data in to the fields", ((string)(null)), table3, "When ");
 #line 16
- testRunner.And("User selects <Skiing> from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects Skiing from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+ testRunner.Then("Contact kov@sitecore.net has FirstName equals Stas and Surname equals Maximov", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 20
+ testRunner.And("Contact kov@sitecore.net has PhoneNumber equals +38(067)3333333", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+ testRunner.And("Contact kov@sitecore.net has SMTP emails equals <kov@sitecore.net>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "FirstName",
-                        "Surname"});
-            table4.AddRow(new string[] {
-                        "Stas",
-                        "Maximov"});
-#line 19
- testRunner.Then("Contact collection Personal section consist of", ((string)(null)), table4, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number"});
-            table5.AddRow(new string[] {
-                        "+38(067)3333333"});
-#line 22
- testRunner.And("Contact collection Phone Numbers section consist of", ((string)(null)), table5, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SmtpAddress"});
-            table6.AddRow(new string[] {
-                        "kov@sitecore.net"});
-#line 25
- testRunner.And("Contact collection Emails section consist of", ((string)(null)), table6, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "\"0\""});
-            table7.AddRow(new string[] {
+            table4.AddRow(new string[] {
                         "Skiing"});
-#line 28
- testRunner.And("Contact collection Tags.Interests.Values section consist of", ((string)(null)), table7, "And ");
+#line 22
+ testRunner.And("Contact collection Tags.Interests.Values section for kov@sitecore.net consist of", ((string)(null)), table4, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -162,94 +145,78 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Save user details in xDB_UC2_Update full user info", new string[] {
                         "NeedImplementation"});
-#line 39
+#line 33
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table8.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "kov2@sitecore.net",
                         "k",
                         "k"});
-#line 40
- testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table8, "Given ");
+#line 34
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table5, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table9.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "kov2@sitecore.net",
                         "k"});
-#line 43
- testRunner.And("User was Login to Habitat", ((string)(null)), table9, "And ");
+#line 37
+ testRunner.And("User was Login to Habitat", ((string)(null)), table6, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "LastName",
                         "FirstName",
                         "PhoneNumber",
                         "Interests"});
-            table10.AddRow(new string[] {
+            table7.AddRow(new string[] {
                         "Teltov",
                         "Konstantin",
                         "+38(067)3333333",
                         "Swiming"});
-#line 46
- testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table10, "And ");
-#line 49
+#line 40
+ testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table7, "And ");
+#line 43
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
+#line 44
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "LastName",
                         "FirstName",
                         "PhoneNumber"});
-            table11.AddRow(new string[] {
+            table8.AddRow(new string[] {
                         "Maximov",
                         "Stas",
                         "+38(067)8888888"});
-#line 51
- testRunner.When("User inputs data in to the fields", ((string)(null)), table11, "When ");
-#line 54
+#line 45
+ testRunner.When("User inputs data in to the fields", ((string)(null)), table8, "When ");
+#line 48
  testRunner.And("User selects <Skiing> from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
+#line 49
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 56
+#line 50
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.Then("Contact kov2@sitecore.net has FirstName equals Stas and Surname equals Maximov", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 52
+ testRunner.And("Contact kov2@sitecore.net has PhoneNumber equals +38(067)8888888", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 53
+ testRunner.And("Contact kov2@sitecore.net has SMTP emails equals kov2@sitecore.net", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "FirstName",
-                        "Surname"});
-            table12.AddRow(new string[] {
-                        "Stas",
-                        "Maximov"});
-#line 57
- testRunner.Then("Contact collection Personal section consist of", ((string)(null)), table12, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number"});
-            table13.AddRow(new string[] {
-                        "+38(067)8888888"});
-#line 60
- testRunner.And("Contact collection Phone Numbers section consist of", ((string)(null)), table13, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SmtpAddress"});
-            table14.AddRow(new string[] {
-                        "kov@sitecore.net"});
-#line 63
- testRunner.And("Contact collection Emails section consist of", ((string)(null)), table14, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "\"0\"",
                         "\"1\""});
-            table15.AddRow(new string[] {
+            table9.AddRow(new string[] {
                         "Swiming",
                         "Skiing"});
-#line 66
- testRunner.And("Contact collection Tags.Interests.Values section consist of", ((string)(null)), table15, "And ");
+#line 54
+ testRunner.And("Contact collection Tags.Interests.Values section for kov2@sitecore.net consist of" +
+                    "", ((string)(null)), table9, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -262,71 +229,55 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Save user details in xDB_UC3_Save only one of the name fields", new string[] {
                         "NeedImplementation"});
-#line 75
+#line 63
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table16.AddRow(new string[] {
+            table10.AddRow(new string[] {
                         "kov3@sitecore.net",
                         "k",
                         "k"});
-#line 76
- testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table16, "Given ");
+#line 64
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table10, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table17.AddRow(new string[] {
+            table11.AddRow(new string[] {
                         "kov3@sitecore.net",
                         "k"});
-#line 79
- testRunner.And("User was Login to Habitat", ((string)(null)), table17, "And ");
-#line 82
+#line 67
+ testRunner.And("User was Login to Habitat", ((string)(null)), table11, "And ");
+#line 70
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "LastName"});
-            table18.AddRow(new string[] {
+            table12.AddRow(new string[] {
                         "Maximov"});
-#line 83
- testRunner.When("User inputs data in to the fields", ((string)(null)), table18, "When ");
-#line 86
+#line 71
+ testRunner.When("User inputs data in to the fields", ((string)(null)), table12, "When ");
+#line 74
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
+#line 75
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.Then("Contact kov3@sitecore.net has FirstName equals @empty and Surname equals Maximov", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 77
+ testRunner.And("Contact kov3@sitecore.net has PhoneNumber equals @empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.And("Contact kov3@sitecore.net has SMTP emails equals kov3@sitecore.net", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
-                        "FirstName",
-                        "Surname"});
-            table19.AddRow(new string[] {
-                        "empty",
-                        "Maximov"});
-#line 88
- testRunner.Then("Contact collection Personal section consist of", ((string)(null)), table19, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number"});
-            table20.AddRow(new string[] {
-                        "empty"});
-#line 91
- testRunner.And("Contact collection Phone Numbers section consist of", ((string)(null)), table20, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SmtpAddress"});
-            table21.AddRow(new string[] {
-                        "kov@sitecore.net"});
-#line 94
- testRunner.And("Contact collection Emails section consist of", ((string)(null)), table21, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "\"0\""});
-            table22.AddRow(new string[] {
-                        "empty"});
-#line 97
- testRunner.And("Contact collection Tags.Interests.Values section consist of", ((string)(null)), table22, "And ");
+            table13.AddRow(new string[] {
+                        "@empty"});
+#line 79
+ testRunner.And("Contact collection Tags.Interests.Values section for kov3@sitecore.net consist of" +
+                    "", ((string)(null)), table13, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -339,71 +290,55 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Save user details in xDB_UC4_Save only phone number", new string[] {
                         "NeedImplementation"});
-#line 103
+#line 85
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table23.AddRow(new string[] {
+            table14.AddRow(new string[] {
                         "kov4@sitecore.net",
                         "k",
                         "k"});
-#line 104
- testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table23, "Given ");
+#line 86
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table14, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table24.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "kov4@sitecore.net",
                         "k"});
-#line 107
- testRunner.And("User was Login to Habitat", ((string)(null)), table24, "And ");
-#line 110
+#line 89
+ testRunner.And("User was Login to Habitat", ((string)(null)), table15, "And ");
+#line 92
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "PhoneNumber"});
-            table25.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "+38(067)8888888"});
-#line 111
- testRunner.When("User inputs data in to the fields", ((string)(null)), table25, "When ");
-#line 114
+#line 93
+ testRunner.When("User inputs data in to the fields", ((string)(null)), table16, "When ");
+#line 96
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 115
+#line 97
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 98
+ testRunner.Then("Contact kov4@sitecore.net has FirstName equals @empty and Surname equals @empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 99
+ testRunner.And("Contact kov4@sitecore.net has PhoneNumber equals +38(067)8888888", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+ testRunner.And("Contact kov4@sitecore.net has SMTP emails equals kov4@sitecore.net", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
-                        "FirstName",
-                        "Surname"});
-            table26.AddRow(new string[] {
-                        "empty",
-                        "empty"});
-#line 116
- testRunner.Then("Contact collection Personal section consist of", ((string)(null)), table26, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number"});
-            table27.AddRow(new string[] {
-                        "+38(067)8888888"});
-#line 119
- testRunner.And("Contact collection Phone Numbers section consist of", ((string)(null)), table27, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SmtpAddress"});
-            table28.AddRow(new string[] {
-                        "kov@sitecore.net"});
-#line 122
- testRunner.And("Contact collection Emails section consist of", ((string)(null)), table28, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "\"0\""});
-            table29.AddRow(new string[] {
-                        "empty"});
-#line 125
- testRunner.And("Contact collection Tags.Interests.Values section consist of", ((string)(null)), table29, "And ");
+            table17.AddRow(new string[] {
+                        "@empty"});
+#line 101
+ testRunner.And("Contact collection Tags.Interests.Values section for kov6@sitecore.net consist of" +
+                    "", ((string)(null)), table17, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -416,66 +351,50 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Save user details in xDB_UC5_Save only Interests", new string[] {
                         "NeedImplementation"});
-#line 132
+#line 108
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table30.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "kov5@sitecore.net",
                         "k",
                         "k"});
-#line 133
- testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table30, "Given ");
+#line 109
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table18, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table31.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "kov5@sitecore.net",
                         "k"});
-#line 136
- testRunner.And("User was Login to Habitat", ((string)(null)), table31, "And ");
-#line 139
+#line 112
+ testRunner.And("User was Login to Habitat", ((string)(null)), table19, "And ");
+#line 115
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 140
+#line 116
  testRunner.When("User selects <Skiing> from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 141
+#line 117
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 142
+#line 118
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 119
+ testRunner.Then("Contact kov5@sitecore.net has FirstName equals @empty and Surname equals @empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 120
+ testRunner.And("Contact kov5@sitecore.net has PhoneNumber equals @empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 121
+ testRunner.And("Contact kov4@sitecore.net has SMTP emails equals kov5@sitecore.net", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
-                        "FirstName",
-                        "Surname"});
-            table32.AddRow(new string[] {
-                        "empty",
-                        "empty"});
-#line 143
- testRunner.Then("Contact collection Personal section consist of", ((string)(null)), table32, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number"});
-            table33.AddRow(new string[] {
-                        "empty"});
-#line 146
- testRunner.And("Contact collection Phone Numbers section consist of", ((string)(null)), table33, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SmtpAddress"});
-            table34.AddRow(new string[] {
-                        "kov@sitecore.net"});
-#line 149
- testRunner.And("Contact collection Emails section consist of", ((string)(null)), table34, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "\"0\""});
-            table35.AddRow(new string[] {
-                        "empty"});
-#line 152
- testRunner.And("Contact collection Tags.Interests.Values section consist of", ((string)(null)), table35, "And ");
+            table20.AddRow(new string[] {
+                        "@empty"});
+#line 122
+ testRunner.And("Contact collection Tags.Interests.Values section for kov6@sitecore.net consist of" +
+                    "", ((string)(null)), table20, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -488,86 +407,71 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Save user details in xDB_UC6_Update only one of the name fields", new string[] {
                         "NeedImplementation"});
-#line 158
+#line 128
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table36.AddRow(new string[] {
+            table21.AddRow(new string[] {
                         "kov6@sitecore.net",
                         "k",
                         "k"});
-#line 159
- testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table36, "Given ");
+#line 129
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table21, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table37.AddRow(new string[] {
+            table22.AddRow(new string[] {
                         "kov6@sitecore.net",
                         "k"});
-#line 162
- testRunner.And("User was Login to Habitat", ((string)(null)), table37, "And ");
+#line 132
+ testRunner.And("User was Login to Habitat", ((string)(null)), table22, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "LastName",
                         "FirstName",
                         "PhoneNumber",
                         "Interests"});
-            table38.AddRow(new string[] {
+            table23.AddRow(new string[] {
                         "Teltov",
                         "Konstantin",
                         "+38(067)3333333",
                         "Swiming"});
-#line 165
- testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table38, "And ");
-#line 168
+#line 135
+ testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table23, "And ");
+#line 138
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 169
+#line 139
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "LastName"});
-            table39.AddRow(new string[] {
+            table24.AddRow(new string[] {
                         "Maximov"});
-#line 170
- testRunner.When("User inputs data in to the fields", ((string)(null)), table39, "When ");
-#line 173
+#line 140
+ testRunner.When("User inputs data in to the fields", ((string)(null)), table24, "When ");
+#line 143
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 174
+#line 144
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 145
+ testRunner.Then("Contact kov6@sitecore.net has FirstName equals Konstantin and Surname equals Maxi" +
+                    "mov", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 146
+ testRunner.And("Contact kov6@sitecore.net has PhoneNumber equals +38(067)3333333", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 147
+ testRunner.And("Contact kov6@sitecore.net has SMTP emails equals kov6@sitecore.net", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
-                        "FirstName",
-                        "Surname"});
-            table40.AddRow(new string[] {
-                        "Konstantin",
-                        "Maximov"});
-#line 175
- testRunner.Then("Contact collection Personal section consist of", ((string)(null)), table40, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table41 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number"});
-            table41.AddRow(new string[] {
-                        "+38(067)3333333"});
-#line 178
- testRunner.And("Contact collection Phone Numbers section consist of", ((string)(null)), table41, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table42 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SmtpAddress"});
-            table42.AddRow(new string[] {
-                        "kov@sitecore.net"});
-#line 181
- testRunner.And("Contact collection Emails section consist of", ((string)(null)), table42, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table43 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "\"0\""});
-            table43.AddRow(new string[] {
+            table25.AddRow(new string[] {
                         "Swiming"});
-#line 184
- testRunner.And("Contact collection Tags.Interests.Values section consist of", ((string)(null)), table43, "And ");
+#line 148
+ testRunner.And("Contact collection Tags.Interests.Values section for kov6@sitecore.net consist of" +
+                    "", ((string)(null)), table25, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -580,86 +484,71 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Save user details in xDB_UC7_Update only phone number", new string[] {
                         "NeedImplementation"});
-#line 190
+#line 154
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table44 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table44.AddRow(new string[] {
+            table26.AddRow(new string[] {
                         "kov7@sitecore.net",
                         "k",
                         "k"});
-#line 191
- testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table44, "Given ");
+#line 155
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table26, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table45 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table45.AddRow(new string[] {
+            table27.AddRow(new string[] {
                         "kov7@sitecore.net",
                         "k"});
-#line 194
- testRunner.And("User was Login to Habitat", ((string)(null)), table45, "And ");
+#line 158
+ testRunner.And("User was Login to Habitat", ((string)(null)), table27, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table46 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "LastName",
                         "FirstName",
                         "PhoneNumber",
                         "Interests"});
-            table46.AddRow(new string[] {
+            table28.AddRow(new string[] {
                         "Teltov",
                         "Konstantin",
                         "+38(067)3333333",
                         "Swiming"});
-#line 197
- testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table46, "And ");
-#line 200
+#line 161
+ testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table28, "And ");
+#line 164
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 201
+#line 165
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table47 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "Phone number"});
-            table47.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "+38(067)8888888"});
-#line 202
- testRunner.When("User inputs data in to the fields", ((string)(null)), table47, "When ");
-#line 205
+#line 166
+ testRunner.When("User inputs data in to the fields", ((string)(null)), table29, "When ");
+#line 169
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 206
+#line 170
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 171
+ testRunner.Then("Contact kov7@sitecore.net has FirstName equals Konstantin and Surname equals Maxi" +
+                    "mov", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 172
+ testRunner.And("Contact kov7@sitecore.net has PhoneNumber equals +38(067)8888888", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 173
+ testRunner.And("Contact kov7@sitecore.net has SMTP emails equals kov7@sitecore.net", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table48 = new TechTalk.SpecFlow.Table(new string[] {
-                        "FirstName",
-                        "Surname"});
-            table48.AddRow(new string[] {
-                        "Konstantin",
-                        "Teltov"});
-#line 207
- testRunner.Then("Contact collection Personal section consist of", ((string)(null)), table48, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table49 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number"});
-            table49.AddRow(new string[] {
-                        "+38(067)8888888"});
-#line 210
- testRunner.And("Contact collection Phone Numbers section consist of", ((string)(null)), table49, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table50 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SmtpAddress"});
-            table50.AddRow(new string[] {
-                        "kov@sitecore.net"});
-#line 213
- testRunner.And("Contact collection Emails section consist of", ((string)(null)), table50, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table51 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
                         "\"0\""});
-            table51.AddRow(new string[] {
+            table30.AddRow(new string[] {
                         "Swiming"});
-#line 216
- testRunner.And("Contact collection Tags.Interests.Values section consist of", ((string)(null)), table51, "And ");
+#line 174
+ testRunner.And("Contact collection Tags.Interests.Values section for kov7@sitecore.net consist of" +
+                    "", ((string)(null)), table30, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -672,83 +561,68 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Save user details in xDB_UC8_Update only only Interests", new string[] {
                         "NeedImplementation"});
-#line 221
+#line 179
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table52 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table52.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "kov8@sitecore.net",
                         "k",
                         "k"});
-#line 222
- testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table52, "Given ");
+#line 180
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table31, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table53 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table53.AddRow(new string[] {
+            table32.AddRow(new string[] {
                         "kov8@sitecore.net",
                         "k"});
-#line 225
- testRunner.And("User was Login to Habitat", ((string)(null)), table53, "And ");
+#line 183
+ testRunner.And("User was Login to Habitat", ((string)(null)), table32, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table54 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
                         "LastName",
                         "FirstName",
                         "PhoneNumber",
                         "Interests"});
-            table54.AddRow(new string[] {
+            table33.AddRow(new string[] {
                         "Teltov",
                         "Konstantin",
                         "+38(067)3333333",
                         "Swiming"});
-#line 228
- testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table54, "And ");
-#line 231
+#line 186
+ testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table33, "And ");
+#line 189
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 232
+#line 190
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 233
+#line 191
  testRunner.When("User selects <Skiing> from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 234
+#line 192
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 235
+#line 193
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 194
+ testRunner.Then("Contact kov8@sitecore.net has FirstName equals Konstantin and Surname equals Telt" +
+                    "ov", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 195
+ testRunner.And("Contact kov8@sitecore.net has PhoneNumber equals +38(067)3333333", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 196
+ testRunner.And("Contact kov8@sitecore.net has SMTP emails equals kov8@sitecore.net", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table55 = new TechTalk.SpecFlow.Table(new string[] {
-                        "FirstName",
-                        "Surname"});
-            table55.AddRow(new string[] {
-                        "Konstantin",
-                        "Teltov"});
-#line 236
- testRunner.Then("Contact collection Personal section consist of", ((string)(null)), table55, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table56 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number"});
-            table56.AddRow(new string[] {
-                        "+38(067)3333333"});
-#line 239
- testRunner.And("Contact collection Phone Numbers section consist of", ((string)(null)), table56, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table57 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SmtpAddress"});
-            table57.AddRow(new string[] {
-                        "kov@sitecore.net"});
-#line 242
- testRunner.And("Contact collection Emails section consist of", ((string)(null)), table57, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table58 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "\"0\"",
                         "\"1\""});
-            table58.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "Swiming",
                         "Skiing"});
-#line 245
- testRunner.And("Contact collection Tags.Interests.Values section consist of", ((string)(null)), table58, "And ");
+#line 197
+ testRunner.And("Contact collection Tags.Interests.Values section for kov8@sitecore.net consist of" +
+                    "", ((string)(null)), table34, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -761,39 +635,32 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Save user details in xDB_UC9_Update system section in xDB", new string[] {
                         "NeedImplementation"});
-#line 251
+#line 203
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table59 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table59.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "kov9@sitecore.net",
                         "k",
                         "k"});
-#line 252
- testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table59, "Given ");
+#line 204
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table35, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table60 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table60.AddRow(new string[] {
+            table36.AddRow(new string[] {
                         "kov9@sitecore.net",
                         "k"});
-#line 255
- testRunner.And("User was Login to Habitat", ((string)(null)), table60, "And ");
-#line 258
+#line 207
+ testRunner.And("User was Login to Habitat", ((string)(null)), table36, "And ");
+#line 210
  testRunner.When("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table61 = new TechTalk.SpecFlow.Table(new string[] {
-                        "VisitCount",
-                        "Value"});
-            table61.AddRow(new string[] {
-                        "2",
-                        ""});
-#line 259
- testRunner.Then("Contact collection System section consist of", ((string)(null)), table61, "Then ");
+#line 211
+ testRunner.Then("Contact kov9@sitecore.net has visit count 2 and value 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -806,53 +673,54 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Save user details in xDB_UC10_Empty Interests value", new string[] {
                         "NeedImplementation"});
-#line 265
+#line 217
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table62 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table62.AddRow(new string[] {
+            table37.AddRow(new string[] {
                         "kov10@sitecore.net",
                         "k",
                         "k"});
-#line 266
- testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table62, "Given ");
+#line 218
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table37, "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table63 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table63.AddRow(new string[] {
+            table38.AddRow(new string[] {
                         "kov10@sitecore.net",
                         "k"});
-#line 269
- testRunner.And("User was Login to Habitat", ((string)(null)), table63, "And ");
-#line 272
+#line 221
+ testRunner.And("User was Login to Habitat", ((string)(null)), table38, "And ");
+#line 224
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 273
+#line 225
  testRunner.When("User selects <Skiing> from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 274
+#line 226
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 275
+#line 227
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 276
+#line 228
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 277
+#line 229
  testRunner.And("User selects empty from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 278
+#line 230
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 279
+#line 231
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table64 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
                         "\"0\"",
                         "\"1\""});
-            table64.AddRow(new string[] {
+            table39.AddRow(new string[] {
                         "Swiming",
-                        "\"\""});
-#line 280
- testRunner.Then("Contact collection Tags.Interests.Values section consist of", ((string)(null)), table64, "Then ");
+                        "@empty"});
+#line 232
+ testRunner.Then("Contact collection Tags.Interests.Values section for kov10@sitecore.net consist o" +
+                    "f", ((string)(null)), table39, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

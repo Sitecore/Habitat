@@ -52,6 +52,14 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
       element.Click();
     }
 
+    [When(@"Actor clicks (.*)‎ link")]
+    public void WhenActorClicksSitecoreHabitat_FlexibilitySimplicityExtensibilityLink(string link)
+    {
+      var element = SiteDemo.HabitatOnGoogleResults.Single(el => el.Text == link);
+      element.Click();
+    }
+
+
     [Then(@"Search results contains following sitelink")]
     public void ThenSearchResultsContainsFollowingSitelink(Table table)
     {
@@ -59,6 +67,13 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
       var elements = SiteDemo.HabitatOnGoogleResults.Select(el => el.Text);
       elements.Should().Contain(el=>links.Any(l=>l.Equals(el, StringComparison.InvariantCulture)));
     }
+
+    [Then(@"Page url contains Campaign ID")]
+    public void ThenPageUrlContainsCampaignId()
+    {
+      Driver.Url.Equals(Foundation.Common.Specflow.Infrastructure.BaseSettings.DemoSiteCampaignUrl);
+    }
+
 
   }
 }

@@ -24,5 +24,7 @@
     public static string EndVisitUrl => BaseUrl + ConfigurationManager.AppSettings["endVisitUrl"];
 
     public static string DemoSiteURL => ConfigurationManager.AppSettings["demoSiteUrl"];
+
+    public static string DemoSiteCampaignUrl => ConfigurationManager.AppSettings["demoSiteCampaignUrl"];
   }
 }

@@ -141,26 +141,16 @@ this.ScenarioSetup(scenarioInfo);
                         "NeedImplementation"});
 #line 31
 this.ScenarioSetup(scenarioInfo);
-#line 33
+#line 32
  testRunner.Given("Mockup of Google page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 34
+#line 33
  testRunner.When("Actor enters new test search text in to search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 35
+#line 34
  testRunner.And("Actor clicks Google Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Text"});
-            table3.AddRow(new string[] {
-                        "Sitecore Habitat - Flexibility, Simplicity, Extensibility‎"});
+#line 35
+ testRunner.And("Actor clicks Sitecore Habitat - Flexibility, Simplicity, Extensibility‎ link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
- testRunner.Then("Search results contains following sitelink", ((string)(null)), table3, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Text"});
-            table4.AddRow(new string[] {
-                        "?sc_camp={0BFFAF94-F523-452A-9F2A-1FA3292D4647}"});
-#line 39
- testRunner.And("link with following parametr is present on the page", ((string)(null)), table4, "And ");
+ testRunner.Then("Page url contains Campaign ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -173,33 +163,16 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_UC4_Campaign is triggered on the website", new string[] {
                         "NeedImplementation"});
-#line 45
+#line 41
 this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Text"});
-            table5.AddRow(new string[] {
-                        "?sc_camp={0BFFAF94-F523-452A-9F2A-1FA3292D4647}"});
-#line 46
- testRunner.Given("link with following parametr is clicked", ((string)(null)), table5, "Given ");
-#line 49
- testRunner.When("Actor clicks info icon in the bottom right corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Section Name"});
-            table6.AddRow(new string[] {
-                        "Contact"});
-            table6.AddRow(new string[] {
-                        "This visist"});
-#line 50
- testRunner.Then("flyout with following sections is opened", ((string)(null)), table6, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Text"});
-            table7.AddRow(new string[] {
-                        "Facebook Content Messages"});
-#line 54
- testRunner.And("Camapign drop-down  contains following text", ((string)(null)), table7, "And ");
+#line 42
+ testRunner.Given("Mockup of Google page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 43
+ testRunner.When("Actor enters new test search text in to search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 44
+ testRunner.And("Actor clicks Google Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+ testRunner.And("Actor clicks Sitecore Habitat - Flexibility, Simplicity, Extensibility‎ link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

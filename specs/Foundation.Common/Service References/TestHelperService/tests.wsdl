@@ -82,6 +82,56 @@
           <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:int" />
         </s:sequence>
       </s:complexType>
+      <s:element name="GetContactPersonalInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactPersonalInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactPersonalInfoResult" type="tns:PersonalInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersonalInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContactEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactEmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactPhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactPhoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactPhoneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="DeleteUser">
         <s:complexType>
           <s:sequence>
@@ -192,6 +242,24 @@
   <wsdl:message name="GetContactSystemInfoSoapOut">
     <wsdl:part name="parameters" element="tns:GetContactSystemInfoResponse" />
   </wsdl:message>
+  <wsdl:message name="GetContactPersonalInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactPersonalInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetContactPersonalInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactPersonalInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactEmail" />
+  </wsdl:message>
+  <wsdl:message name="GetContactEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactPhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactPhone" />
+  </wsdl:message>
+  <wsdl:message name="GetContactPhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactPhoneResponse" />
+  </wsdl:message>
   <wsdl:message name="DeleteUserSoapIn">
     <wsdl:part name="parameters" element="tns:DeleteUser" />
   </wsdl:message>
@@ -250,6 +318,18 @@
     <wsdl:operation name="GetContactSystemInfo">
       <wsdl:input message="tns:GetContactSystemInfoSoapIn" />
       <wsdl:output message="tns:GetContactSystemInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPersonalInfo">
+      <wsdl:input message="tns:GetContactPersonalInfoSoapIn" />
+      <wsdl:output message="tns:GetContactPersonalInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactEmail">
+      <wsdl:input message="tns:GetContactEmailSoapIn" />
+      <wsdl:output message="tns:GetContactEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPhone">
+      <wsdl:input message="tns:GetContactPhoneSoapIn" />
+      <wsdl:output message="tns:GetContactPhoneSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="DeleteUser">
       <wsdl:input message="tns:DeleteUserSoapIn" />
@@ -317,6 +397,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetContactSystemInfo">
       <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactSystemInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPersonalInfo">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactPersonalInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactEmail">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPhone">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactPhone" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -419,6 +526,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetContactSystemInfo">
       <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactSystemInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPersonalInfo">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactPersonalInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactEmail">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPhone">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactPhone" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

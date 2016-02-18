@@ -13,19 +13,13 @@ Scenario: Account_Save user details in xDB_UC1_Save full info
 	When User inputs data in to the fields
 	| LastName | FirstName | PhoneNumber     |
 	| Maximov  | Stas      | +38(067)3333333 |	
-	And User selects <Skiing> from Interests drop-down list
+	And User selects Skiing from Interests drop-down list
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit 
-	Then Contact collection Personal section consist of 
-	| FirstName | Surname |
-	| Stas      | Maximov |
-	And Contact collection Phone Numbers section consist of
-	| Number          |
-	| +38(067)3333333 |
-	And Contact collection Emails section consist of
-	| SmtpAddress      |
-	| kov@sitecore.net |
-	And Contact collection Tags.Interests.Values section consist of
+	Then Contact kov@sitecore.net has FirstName equals Stas and Surname equals Maximov
+	And Contact kov@sitecore.net has PhoneNumber equals +38(067)3333333
+	And Contact kov@sitecore.net has SMTP emails equals <kov@sitecore.net>
+	And Contact collection Tags.Interests.Values section for kov@sitecore.net consist of
 	| "0"    |
 	| Skiing |
 
@@ -54,16 +48,10 @@ Scenario: Account_Save user details in xDB_UC2_Update full user info
 	And User selects <Skiing> from Interests drop-down list
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit 
-	Then Contact collection Personal section consist of 
-	| FirstName | Surname |
-	| Stas      | Maximov |
-	And Contact collection Phone Numbers section consist of
-	| Number          |
-	| +38(067)8888888 |
-	And Contact collection Emails section consist of
-	| SmtpAddress      |
-	| kov@sitecore.net |
-	And Contact collection Tags.Interests.Values section consist of
+	Then Contact kov2@sitecore.net has FirstName equals Stas and Surname equals Maximov
+	And Contact kov2@sitecore.net has PhoneNumber equals +38(067)8888888
+	And Contact kov2@sitecore.net has SMTP emails equals kov2@sitecore.net
+	And Contact collection Tags.Interests.Values section for kov2@sitecore.net consist of
 	| "0"     | "1"    |
 	| Swiming | Skiing |
 
@@ -85,18 +73,12 @@ Scenario: Account_Save user details in xDB_UC3_Save only one of the name fields
 	| Maximov  |
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit 
-	Then Contact collection Personal section consist of 
-	| FirstName | Surname |
-	| empty     | Maximov |
-	And Contact collection Phone Numbers section consist of
-	| Number |
-	| empty  |
-	And Contact collection Emails section consist of
-	| SmtpAddress      |
-	| kov@sitecore.net |
-	And Contact collection Tags.Interests.Values section consist of
-	| "0"   |
-	| empty |
+	Then Contact kov3@sitecore.net has FirstName equals @empty and Surname equals Maximov
+	And Contact kov3@sitecore.net has PhoneNumber equals @empty
+	And Contact kov3@sitecore.net has SMTP emails equals kov3@sitecore.net
+	And Contact collection Tags.Interests.Values section for kov3@sitecore.net consist of
+	| "0"    |
+	| @empty |
 	
 	
 @NeedImplementation
@@ -113,18 +95,12 @@ Scenario: Account_Save user details in xDB_UC4_Save only phone number
 	| +38(067)8888888 |
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit 	
-	Then Contact collection Personal section consist of 
-	| FirstName | Surname |
-	| empty     | empty   |
-	And Contact collection Phone Numbers section consist of
-	| Number          |
-	| +38(067)8888888 |
-	And Contact collection Emails section consist of
-	| SmtpAddress      |
-	| kov@sitecore.net |
-	And Contact collection Tags.Interests.Values section consist of
-	| "0"   |
-	| empty |
+	Then Contact kov4@sitecore.net has FirstName equals @empty and Surname equals @empty
+	And Contact kov4@sitecore.net has PhoneNumber equals +38(067)8888888
+	And Contact kov4@sitecore.net has SMTP emails equals kov4@sitecore.net
+	And Contact collection Tags.Interests.Values section for kov6@sitecore.net consist of
+	| "0"    |
+	| @empty |
 
 
 	
@@ -140,18 +116,12 @@ Scenario: Account_Save user details in xDB_UC5_Save only Interests
 	When User selects <Skiing> from Interests drop-down list
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit 		
-	Then Contact collection Personal section consist of 
-	| FirstName | Surname |
-	| empty     | empty   |
-	And Contact collection Phone Numbers section consist of
-	| Number |
-	| empty  |
-	And Contact collection Emails section consist of
-	| SmtpAddress      |
-	| kov@sitecore.net |
-	And Contact collection Tags.Interests.Values section consist of
-	| "0"   |
-	| empty |
+	Then Contact kov5@sitecore.net has FirstName equals @empty and Surname equals @empty 
+	And Contact kov5@sitecore.net has PhoneNumber equals @empty
+	And Contact kov4@sitecore.net has SMTP emails equals kov5@sitecore.net
+	And Contact collection Tags.Interests.Values section for kov6@sitecore.net consist of
+	| "0"    |
+	| @empty |
 
 
 @NeedImplementation
@@ -172,16 +142,10 @@ Scenario: Account_Save user details in xDB_UC6_Update only one of the name field
 	| Maximov  |
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit 
-	Then Contact collection Personal section consist of 
-	| FirstName  | Surname |
-	| Konstantin | Maximov |
-	And Contact collection Phone Numbers section consist of
-	| Number          |
-	| +38(067)3333333 |
-	And Contact collection Emails section consist of
-	| SmtpAddress      |
-	| kov@sitecore.net |
-	And Contact collection Tags.Interests.Values section consist of
+	Then Contact kov6@sitecore.net has FirstName equals Konstantin and Surname equals Maximov 
+	And Contact kov6@sitecore.net has PhoneNumber equals +38(067)3333333
+	And Contact kov6@sitecore.net has SMTP emails equals kov6@sitecore.net
+	And Contact collection Tags.Interests.Values section for kov6@sitecore.net consist of
 	| "0"     |
 	| Swiming |
 	
@@ -204,16 +168,10 @@ Scenario: Account_Save user details in xDB_UC7_Update only phone number
 	| +38(067)8888888 |
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit 
-	Then Contact collection Personal section consist of 
-	| FirstName  | Surname |
-	| Konstantin | Teltov  |
-	And Contact collection Phone Numbers section consist of
-	| Number          |
-	| +38(067)8888888 |
-	And Contact collection Emails section consist of
-	| SmtpAddress      |
-	| kov@sitecore.net |
-	And Contact collection Tags.Interests.Values section consist of
+	Then Contact kov7@sitecore.net has FirstName equals Konstantin and Surname equals Maximov 
+	And Contact kov7@sitecore.net has PhoneNumber equals +38(067)8888888
+	And Contact kov7@sitecore.net has SMTP emails equals kov7@sitecore.net
+	And Contact collection Tags.Interests.Values section for kov7@sitecore.net consist of
 	| "0"     |
 	| Swiming |
 
@@ -233,16 +191,10 @@ Scenario: Account_Save user details in xDB_UC8_Update only only Interests
 	When User selects <Skiing> from Interests drop-down list
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit
-	Then Contact collection Personal section consist of 
-	| FirstName  | Surname |
-	| Konstantin | Teltov  |
-	And Contact collection Phone Numbers section consist of
-	| Number          |
-	| +38(067)3333333 |
-	And Contact collection Emails section consist of
-	| SmtpAddress      |
-	| kov@sitecore.net |
-	And Contact collection Tags.Interests.Values section consist of
+	Then Contact kov8@sitecore.net has FirstName equals Konstantin and Surname equals Teltov 
+	And Contact kov8@sitecore.net has PhoneNumber equals +38(067)3333333
+	And Contact kov8@sitecore.net has SMTP emails equals kov8@sitecore.net
+	And Contact collection Tags.Interests.Values section for kov8@sitecore.net consist of
 	| "0"     | "1"    |
 	| Swiming | Skiing |
 	
@@ -256,9 +208,9 @@ Scenario: Account_Save user details in xDB_UC9_Update system section in xDB
 	| Email             | Password |
 	| kov9@sitecore.net | k        |
 	When Actor Ends user visit
-	Then Contact collection System section consist of
-	| VisitCount | Value |
-	| 2          |       |
+	Then Contact kov9@sitecore.net has visit count 2 and value 0  
+
+
 
 
 @NeedImplementation
@@ -277,7 +229,7 @@ Scenario: Account_Save user details in xDB_UC10_Empty Interests value
 	And User selects empty from Interests drop-down list
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit
-	Then Contact collection Tags.Interests.Values section consist of
-	| "0"     | "1" |
-	| Swiming | ""  |
+	Then Contact collection Tags.Interests.Values section for kov10@sitecore.net consist of
+	| "0"     | "1"    |
+	| Swiming | @empty |
 	

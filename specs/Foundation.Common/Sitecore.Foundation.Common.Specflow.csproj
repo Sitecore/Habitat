@@ -98,6 +98,15 @@
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -105,6 +114,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.PersonalInfo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemResponse.datasource">

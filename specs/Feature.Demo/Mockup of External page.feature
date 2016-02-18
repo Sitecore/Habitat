@@ -29,31 +29,23 @@ Scenario: Demo_UC2_Show predefined keyword
 
 	@NeedImplementation
 Scenario: Demo_UC3_Adwords link on the Google search results mockup
-Show that the campaign is triggered on the website
 	Given Mockup of Google page is opened
 	When Actor enters new test search text in to search field
 	And Actor clicks Google Search button
-	Then Search results contains following sitelink
-	| Text                                                      |
-	| Sitecore Habitat - Flexibility, Simplicity, Extensibility‎ | 
-	And link with following parametr is present on the page
-	| Text                                            |
-	| ?sc_camp={0BFFAF94-F523-452A-9F2A-1FA3292D4647} |
+	And Actor clicks Sitecore Habitat - Flexibility, Simplicity, Extensibility‎ link
+	Then Page url contains Campaign ID
+
 
 
 	@NeedImplementation
 Scenario: Demo_UC4_Campaign is triggered on the website
-	Given link with following parametr is clicked 
-	| Text                                            |
-	| ?sc_camp={0BFFAF94-F523-452A-9F2A-1FA3292D4647} |
-	When Actor clicks info icon in the bottom right corner
-	Then flyout with following sections is opened
-	| Section Name  |
-	| Contact       |
-	| This visist   |
-	And Camapign drop-down  contains following text
-	| Text                     |
-	| Facebook Content Messages|
+	Given Mockup of Google page is opened
+	When Actor enters new test search text in to search field
+	And Actor clicks Google Search button
+	And Actor clicks Sitecore Habitat - Flexibility, Simplicity, Extensibility‎ link
+#	Then Campaign presents on Campaign section of the Show Tracking Info
+#	| Campaign                  |
+#	| Facebook Content Messages |
 
 	
 	

@@ -158,6 +158,7 @@
     <Compile Include="Steps\AccountStepsBase.cs" />
     <Compile Include="Steps\ExperienceProfileSteps.cs" />
     <Compile Include="Steps\SiteswitcherSteps.cs" />
+    <Compile Include="Steps\xDBSteps.cs" />
     <Compile Include="Trigger an outcome on customer registration.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
