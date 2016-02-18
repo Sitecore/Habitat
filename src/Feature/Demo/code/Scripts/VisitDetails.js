@@ -1,6 +1,6 @@
 ﻿function refreshVisitDetails(button) {
-  var container = $(button).closest(".panel");
-  $.ajax(
+    var container = jQuery(button).closest(".panel");
+  jQuery.ajax(
   {
     url: "/api/Demo/VisitDetails",
     method: "get",
