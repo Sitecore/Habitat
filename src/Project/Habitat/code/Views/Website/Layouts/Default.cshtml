@@ -15,7 +15,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  @if (!Sitecore.Context.PageMode.IsPageEditor)
+  @if (!Sitecore.Context.PageMode.IsExperienceEditor)
   {
     @Html.Sitecore().Placeholder("head")
   }
@@ -24,7 +24,7 @@
   @RenderAssetsService.Current.RenderStyles()
   @Html.Sitecore().VisitorIdentification()
 </head>
-<body class="header-static @(Sitecore.Context.PageMode.IsNormal ? "" : (Sitecore.Context.PageMode.IsPageEditor ? "pagemode-edit" : "pagemode-preview"))">
+<body class="header-static @(Sitecore.Context.PageMode.IsNormal ? "" : (Sitecore.Context.PageMode.IsExperienceEditor ? "pagemode-edit" : "pagemode-preview"))">
   <div id="main-container">
     <header class="header-static">
       @Html.Sitecore().Placeholder("header-top")
@@ -38,7 +38,7 @@
       @Html.Sitecore().Placeholder("footer")
     </footer>
 
-    @if (!Sitecore.Context.PageMode.IsPageEditor)
+    @if (!Sitecore.Context.PageMode.IsExperienceEditor)
     {
       <div class="off-canvas-sidebar off-canvas-sidebar-right">
         <button type="button" class="btn btn-info pull-right " data-toggle="sidebar" data-side="right">
