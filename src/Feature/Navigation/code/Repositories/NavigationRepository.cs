@@ -68,7 +68,7 @@
 
     private bool IncludeInNavigation(Item item, bool forceShowInMenu = false)
     {
-      return item.IsDerived(Templates.Navigable.ID) && (forceShowInMenu || MainUtil.GetBool(item[Templates.Navigable.Fields.ShowInNavigation], false));
+      return item.HasContextLanguage() && item.IsDerived(Templates.Navigable.ID) && (forceShowInMenu || MainUtil.GetBool(item[Templates.Navigable.Fields.ShowInNavigation], false));
     }
 
     public NavigationItem GetSecondaryMenuItem()
