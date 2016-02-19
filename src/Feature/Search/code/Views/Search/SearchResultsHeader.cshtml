@@ -16,14 +16,15 @@
     else if (totalResults == 0)
     {
       <h1 class="text-center">
-        @string.Format(DictionaryRepository.Get("/search/header/title without results", "Your search for '{0}' yielded no , please rephrase:"), Model.Query, totalResults)
+        @string.Format(DictionaryRepository.Get("/search/header/title without results", "Your search for '{0}' yielded no results, please rephrase:"), Model.Query, totalResults)
       </h1>
     }
     else
     {
       {
+        //TODO: show total number of results when implemented
         <h1 class="text-center">
-          @string.Format(DictionaryRepository.Get("/search/header/title with results", "Your search for '{0}' yielded {1} results:"), Model.Query, totalResults)
+          @string.Format(DictionaryRepository.Get("/search/header/title with results", "Your search for {0} yielded the following results:"), Model.Query, totalResults)
         </h1>
       }
     }
