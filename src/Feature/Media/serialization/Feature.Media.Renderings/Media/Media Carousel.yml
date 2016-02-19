@@ -15,9 +15,6 @@ SharedFields:
   Hint: Compatible Renderings
   Type: Treelist
   Value: {4E541395-9332-4F1D-87F0-E7F4920C2036}
-- ID: e514a1eb-ddba-44f7-8528-82ca2280f778
-  Hint: JavaScript assets
-  Value: 
 Languages:
 - Language: en
   Versions:

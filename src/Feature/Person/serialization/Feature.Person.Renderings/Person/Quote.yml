@@ -5,9 +5,6 @@ Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Person/Quote
 DB: master
 SharedFields:
-- ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
-  Hint: Datasource Template
-  Value: 
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   Hint: Path
   Value: /Views/Person/Quote.cshtml

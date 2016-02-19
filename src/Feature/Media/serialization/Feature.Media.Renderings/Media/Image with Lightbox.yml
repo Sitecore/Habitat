@@ -5,21 +5,12 @@ Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Media/Image with Lightbox
 DB: master
 SharedFields:
-- ID: 11421560-0bcb-403a-b099-8595c34341fd
-  Hint: JavaScript inline
-  Value: 
-- ID: 4867d192-326a-4aa4-81ef-ea430e224aff
-  Hint: Css assets
-  Value: 
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   Hint: Path
   Value: /Views/Media/LightboxImage.cshtml
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   Hint: Datasource Location
   Value: site:lightboximage
-- ID: e514a1eb-ddba-44f7-8528-82ca2280f778
-  Hint: JavaScript assets
-  Value: 
 Languages:
 - Language: en
   Versions:
