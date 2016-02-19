@@ -6,6 +6,7 @@ Path: /sitecore/templates/Project/Habitat/Page Types/Employees folder/__Standard
 DB: master
 SharedFields:
 - ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
+  Hint: __Masters
   Type: TreelistEx
   Value: {467C2144-4454-4518-B1DE-E31B4CBBFF33}
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
@@ -50,6 +51,5 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
       Value: 20151230T104017Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      Value: sitecore\admin

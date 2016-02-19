@@ -18,8 +18,6 @@ SharedFields:
       </profile>
     </tracking>
 Languages:
-- Language: da
-  Versions:
 - Language: en
   Versions:
   - Version: 1

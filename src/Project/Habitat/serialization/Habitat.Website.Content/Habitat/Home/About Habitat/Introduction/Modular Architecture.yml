@@ -21,8 +21,6 @@ SharedFields:
   Hint: __Sortorder
   Value: 0
 Languages:
-- Language: da
-  Versions:
 - Language: en
   Versions:
   - Version: 1

@@ -5,9 +5,6 @@ Template: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Path: /sitecore/content/Habitat/Home/Register
 DB: master
 SharedFields:
-- ID: 5585a30d-b115-4753-93ce-422c3455deb2
-  Hint: ShowInNavigation
-  Value: 
 - ID: b0a67b2a-8b07-4e0b-8809-69f751709806
   Hint: __Tracking
   Type: Tracking
