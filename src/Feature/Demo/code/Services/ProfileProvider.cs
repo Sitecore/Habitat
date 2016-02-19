@@ -38,19 +38,21 @@
 
     public IEnumerable<PatternMatch> GetPatternsWithGravityShare(ProfileItem visibleProfile)
     {
-    
+
       var userPattern = visibleProfile.PatternSpace.CreatePattern(Tracker.Current.Interaction.Profiles[visibleProfile.Name]);
 
       var patterns = PopulateProfilePatternMatchesWithXdbData.GetPatternsWithGravityShare(visibleProfile, userPattern);
-      return from patternKeyValuePair in patterns
-        let src = patternKeyValuePair.Key.Image?.MediaItem == null
-          ? string.Empty 
-          : patternKeyValuePair.Key.Image.ImageUrl(new MediaUrlOptions
-            {
-              Width = 50,
-              MaxWidth = 50
-            })
-        select new PatternMatch(visibleProfile.NameField, patternKeyValuePair.Key.NameField, src, patternKeyValuePair.Value);
+      return patterns.Select(patternKeyValuePair => CreatePatternMatch(visibleProfile, patternKeyValuePair));
+    }
+
+    private static PatternMatch CreatePatternMatch(ProfileItem visibleProfile, KeyValuePair<PatternCardItem, double> patternKeyValuePair)
+    {
+      return new PatternMatch(visibleProfile.NameField, patternKeyValuePair.Key.NameField, GetPatternImageUrl(patternKeyValuePair), patternKeyValuePair.Value);
+    }
+
+    private static string GetPatternImageUrl(KeyValuePair<PatternCardItem, double> patternKeyValuePair)
+    {
+      return patternKeyValuePair.Key.Image?.MediaItem == null ? string.Empty : patternKeyValuePair.Key.Image.ImageUrl(new MediaUrlOptions { Width = 50, MaxWidth = 50 });
     }
   }
 }

@@ -16,7 +16,7 @@
 
     public virtual string GetPageLink(Item contextItem, ID fieldID)
     {
-      var item = GetSettingsItem(contextItem);
+      var item = GetAccountsSettingsItem(contextItem);
 
       if (item == null)
       {
@@ -35,9 +35,8 @@
 
 
 
-    public virtual string GetPageLinkOrDefault(Item contextItem, ID field, Item defaultItem)
+    public virtual string GetPageLinkOrDefault(Item contextItem, ID field, Item defaultItem = null)
     {
-      Assert.ArgumentNotNull(defaultItem, nameof(defaultItem));
       try
       {
         return this.GetPageLink(contextItem, field);
@@ -45,13 +44,13 @@
       catch (Exception ex)
       {
         Log.Warn(ex.Message, ex, this);
-        return defaultItem.Url();
+        return defaultItem?.Url() ?? "/404";
       }
     }
 
     public virtual ID GetRegistrationOutcome(Item contextItem)
     {
-      var item = GetSettingsItem(contextItem);
+      var item = GetAccountsSettingsItem(contextItem);
 
       if (item == null)
       {
@@ -62,7 +61,7 @@
       return field?.TargetID;
     }
 
-    private static Item GetSettingsItem(Item contextItem)
+    public virtual Item GetAccountsSettingsItem(Item contextItem)
     {
       Item item = null;
 
@@ -77,7 +76,7 @@
 
     public MailMessage GetForgotPasswordMailTemplate()
     {
-      var settingsItem = GetSettingsItem(null);
+      var settingsItem = GetAccountsSettingsItem(null);
       InternalLinkField link = settingsItem.Fields[Templates.AccountsSettings.Fields.ForgotPasswordMailTemplate];
       var mailTemplateItem = link.TargetItem;
 

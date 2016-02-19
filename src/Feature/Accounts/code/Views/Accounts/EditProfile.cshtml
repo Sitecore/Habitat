@@ -11,43 +11,43 @@
 
 @using (Html.BeginRouteForm(MvcSettings.SitecoreRouteName, FormMethod.Post, new { @class = "form-signin" }))
 {
-    @Html.FormHandler()
-    var info = Session.GetAndRemove("EditProfileMessage") as InfoMessage;
-    if (info != null)
-    {
-        Html.RenderPartial(ViewPath.InfoMessage, info);
-    }
-    <div class="form-group @Html.ValidationErrorFor(x => x.FirstName, "has-error")">
-        @Html.LabelFor(x => x.FirstName, new {@class = "control-label"})
+  @Html.FormHandler()
+  var info = Session.GetAndRemove("EditProfileMessage") as InfoMessage;
+  if (info != null)
+  {
+    Html.RenderPartial(ViewPath.InfoMessage, info);
+  }
+  <div class="form-group @Html.ValidationErrorFor(x => x.FirstName, "has-error")">
+    @Html.LabelFor(x => x.FirstName, new { @class = "control-label" })
 
-        @Html.ValidationMessageFor(x => x.FirstName, "", new {@class = "help-block"})
+    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", id = "firstName", @placeholder = Captions.PlaceholderEditProfileFirstName })
 
-        @Html.TextBoxFor(x => x.FirstName, new {@class = "form-control", id = "firstName"})
-    </div>
+    @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "help-block" }, "p")
+  </div>
 
-    <div class="form-group @Html.ValidationErrorFor(x => x.LastName, "has-error")">
-        @Html.LabelFor(x => x.LastName, new {@class = "control-label"})
+  <div class="form-group @Html.ValidationErrorFor(x => x.LastName, "has-error")">
+    @Html.LabelFor(x => x.LastName, new { @class = "control-label" })
 
-        @Html.ValidationMessageFor(x => x.LastName, "", new {@class = "help-block"})
+    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", id = "lastName", @placeholder = Captions.PlaceholderEditProfileLastName })
 
-        @Html.TextBoxFor(x => x.LastName, new {@class = "form-control", id = "lastName"})
-    </div>
+    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "help-block" }, "p")
+  </div>
 
-    <div class="form-group @Html.ValidationErrorFor(x => x.PhoneNumber, "has-error")">
-        @Html.LabelFor(x => x.PhoneNumber, new {@class = "control-label"})
+  <div class="form-group @Html.ValidationErrorFor(x => x.PhoneNumber, "has-error")">
+    @Html.LabelFor(x => x.PhoneNumber, new { @class = "control-label" })
 
-        @Html.ValidationMessageFor(x => x.PhoneNumber, "", new {@class = "help-block"})
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", id = "phoneNumber", @placeholder = Captions.PlaceholderEditProfilePhone })
 
-        @Html.TextBoxFor(x => x.PhoneNumber, new {@class = "form-control", id = "phoneNumber"})
-    </div>
+    @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "help-block" }, "p")
+  </div>
 
-    <div class="form-group @Html.ValidationErrorFor(x => x.Interest, "has-error")">
-        @Html.LabelFor(x => x.Interest, new {@class = "control-label"})
+  <div class="form-group @Html.ValidationErrorFor(x => x.Interest, "has-error")">
+    @Html.LabelFor(x => x.Interest, new { @class = "control-label" })
 
-        @Html.ValidationMessageFor(x => x.Interest, "", new {@class = "help-block"})
+    @Html.DropDownListFor(x => x.Interest, new SelectList(Model.InterestTypes), "", new { @class = "form-control", id = "interests" })
 
-        @Html.DropDownListFor(x=>x.Interest,new SelectList(Model.InterestTypes),"", new { @class ="form-control", id = "interests"})
-    </div>
+    @Html.ValidationMessageFor(x => x.Interest, "", new { @class = "help-block" }, "p")
+</div>
 
-    <input type="submit" class="btn btn-primary btn-large btn-block" value="@Captions.Update" />
+    <input type="submit" class="btn btn-primary btn-lg btn-block" value="@Captions.Update" />
 }

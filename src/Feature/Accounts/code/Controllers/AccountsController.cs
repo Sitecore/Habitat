@@ -113,7 +113,7 @@ namespace Sitecore.Feature.Accounts.Controllers
 
     [HttpPost]
     [ValidateModel]
-    public ActionResult LoginDialog(LoginInfo loginInfo)
+    public ActionResult _Login(LoginInfo loginInfo)
     {
       return this.Login(loginInfo, redirectUrl => this.Json(new LoginResult
       {

@@ -7,11 +7,17 @@
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-@if (!Model?.Item?.IsDerived(Templates.AccountsSettings.ID) ?? true)
-{
-  return;
+@{
+  if (Model.Item == null)
+  {
+    return;
+  }
+  var accountSettings = AccountsSettingsService.Instance.GetAccountsSettingsItem(Model.Item);
+  if (accountSettings == null)
+  {
+    return;
+  }
 }
-
   <li class="dropdown hidden-xs">
     <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
       <i class="fa fa-user"></i>
