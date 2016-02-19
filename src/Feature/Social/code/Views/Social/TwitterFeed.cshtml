@@ -16,16 +16,13 @@
   return;
 }
 
-<div class="teaser teaser-default news-teaser">
-	@if (Model?.Item != null)
-  {
-		<div class="teaser-heading">
-			<h3>@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</h3>
-		</div>
-		<div class="teaser-body">
-			<a class="twitter-timeline" href="@Model.Item.LinkFieldUrl(Templates.TwitterFeed.Fields.TwitterUrl)" data-widget-id="@Model.Item.Fields[Templates.TwitterFeed.Fields.WidgetId].Value"
-			   data-tweet-limit="@twitterFeedProperties.TweetsToShow" data-chrome="noheader nofooter noscrollbar noborders transparent">@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</a>
+@if (Model?.Item != null)
+{
+  <div class="well">
+    <h4>@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</h4>
+    <div>
+      <a class="twitter-timeline" href="@Model.Item.LinkFieldUrl(Templates.TwitterFeed.Fields.TwitterUrl)" data-widget-id="@Model.Item.Fields[Templates.TwitterFeed.Fields.WidgetId].Value" data-tweet-limit="@twitterFeedProperties.TweetsToShow" data-chrome="noheader nofooter noscrollbar noborders transparent">@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</a>
 
-		</div>
-  }
-</div>
+    </div>
+  </div>
+}

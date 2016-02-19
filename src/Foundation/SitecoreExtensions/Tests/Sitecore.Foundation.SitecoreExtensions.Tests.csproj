@@ -74,6 +74,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Core, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Analytics.Model, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
@@ -160,9 +164,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\SkipAnalyticsTrackingAttributeTests.cs" />
+    <Compile Include="AutoDbMvcDataAttribute.cs" />
+    <Compile Include="Attributes\ValidateRenderingIdAttributeTests.cs" />
     <Compile Include="Extensions\StringExtensionsTests.cs" />
     <Compile Include="Extensions\ItemExtensionsTests.cs" />
     <Compile Include="Extensions\MediaTemplate.cs" />
+    <Compile Include="HtmlHelper\FormHelpersTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RenderingPropertiesRepositoryTests.cs" />
     <Compile Include="Renderings\QueryableDatasourceRenderingModelTests.cs" />

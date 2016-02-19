@@ -11,16 +11,19 @@
   return;
 }
 
-<blockquote>
-  @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, 64, 64)
+<blockquote class="blockquote-center">
+  <header>
+    @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mh: 150, cssClass: "img-responsive")
+    <p>
+      @Model.Item.Field(Templates.Person.Fields.Name)
+    </p>
+    <p>
+      @Model.Item.Field(Templates.Person.Fields.Title)@(Sitecore.Context.PageMode.IsExperienceEditor || (Model.Item.FieldHasValue(Templates.Person.Fields.Title) && Model.Item.FieldHasValue(Templates.Quote.Fields.CiteOrigin)) ? ", " : "")
+      @Model.Item.Field(Templates.Quote.Fields.CiteOrigin)
+    </p>
+  </header>
   <p>
     @Model.Item.Field(Templates.Quote.Fields.Quote)
   </p>
-  <footer>
-    <cite>
-      <span class="name">@Model.Item.Field(Templates.Person.Fields.Name)</span>
-      <span class="title">@Model.Item.Field(Templates.Person.Fields.Title)</span>
-      <span class="company">@Model.Item.Field(Templates.Quote.Fields.CiteOrigin)</span>
-    </cite>
-  </footer>
 </blockquote>
+

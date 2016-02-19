@@ -14,18 +14,4 @@
   return;
 }
 
-<div class="article body">
-  @if (Sitecore.Context.PageMode.IsPageEditor)
-  {
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        Summary
-      </div>
-      <div class="panel-body">
-        @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary.ToString())
-      </div>
-    </div>
-  }
-
-  @Html.Sitecore().Field(Templates.HasPageContent.Fields.Body.ToString())
-</div>
+@Html.Sitecore().Field(Templates.HasPageContent.Fields.Body.ToString())

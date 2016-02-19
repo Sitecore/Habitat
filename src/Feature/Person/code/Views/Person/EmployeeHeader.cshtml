@@ -1,0 +1,29 @@
+﻿@using Sitecore.Feature.Person
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@if (!Model?.Item?.IsDerived(Templates.Person.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID))
+  return;
+}
+
+<div class="container">
+  @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 300, cssClass: "img-responsive img-circle center-block")
+  <h1 class="text-center">
+    @Model.Item.Field(Templates.Person.Fields.Name)
+    <br>
+    <small>
+      <span class="label label-default">@Model.Item.Field(Templates.Person.Fields.Title)</span>
+    </small>
+    <br>
+    <small>
+      @Model.Item.Field(Templates.Person.Fields.Summary)
+    </small>
+  </h1>
+</div>
+
+

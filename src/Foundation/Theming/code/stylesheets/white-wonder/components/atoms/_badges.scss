@@ -1,0 +1,17 @@
+
+
+
+@import "bootstrap/badges";
+
+
+
+.badge {
+
+  color: $text-color;
+
+  .glyphicon + & {
+    position: absolute;
+    top: 50%;
+    left: 4px;
+  }
+}

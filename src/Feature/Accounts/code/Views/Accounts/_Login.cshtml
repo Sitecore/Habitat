@@ -1,0 +1,44 @@
+﻿@using Sitecore.Feature.Accounts
+@using Sitecore.Feature.Accounts.Services
+@using Sitecore.Feature.Accounts.Texts
+@using Sitecore.Foundation.SitecoreExtensions.HtmlHelpers
+@using Sitecore.Mvc
+@model Sitecore.Feature.Accounts.Models.LoginInfo
+<div class="login-body">
+  @Html.ValidationMessage("invalidCredentials", new { @class = "alert alert-danger" }, "div")
+  <div class="form-group @Html.ValidationErrorFor(x => x.Email, "has-error")">
+    @Html.LabelFor(x => x.Email, new
+                                 {
+                                   @class = "control-label"
+                                 })
+    @Html.TextBoxFor(x => x.Email, new
+{
+  @class = "form-control",
+  id = "popupLoginEmail",
+  @placeholder = Captions.PlaceholderLoginEmail
+})
+    @Html.ValidationMessageFor(x => x.Email, "", new
+                                                 {
+                                                   @class = "help-block"
+                                                 }, "p")
+  </div>
+  <div class="form-group @Html.ValidationErrorFor(x => x.Password, "has-error")">
+    @Html.LabelFor(x => x.Password, new
+                                    {
+                                      @class = "control-label"
+                                    })
+    @Html.PasswordFor(x => x.Password, new
+{
+  @class = "form-control",
+  id = "popupLoginPassword",
+  @placeholder = Captions.PlaceholderLoginPassword
+})
+    @Html.ValidationMessageFor(x => x.Password, "", new
+                                                    {
+                                                      @class = "help-block"
+                                                    }, "p")
+  </div>
+  <button type="button" class="btn btn-block btn-primary" onclick="login('loginModal')">@Captions.Login</button>
+  <a class="btn btn-block btn-default" href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)">@Captions.ForgotYourPassword</a>
+  <a class="btn btn-block btn-default" href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.RegisterPage)">@Captions.Register</a>
+</div>
