@@ -12,6 +12,7 @@
 
   public class AccountsSettingsService : IAccountsSettingsService
   {
+    public const string PageNotFoundUrl = "/404";
     public static AccountsSettingsService Instance => new AccountsSettingsService();
 
     public virtual string GetPageLink(Item contextItem, ID fieldID)
@@ -44,7 +45,7 @@
       catch (Exception ex)
       {
         Log.Warn(ex.Message, ex, this);
-        return defaultItem?.Url() ?? "/404";
+        return defaultItem?.Url() ?? PageNotFoundUrl;
       }
     }
 
