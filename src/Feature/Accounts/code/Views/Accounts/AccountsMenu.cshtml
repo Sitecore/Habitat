@@ -45,7 +45,7 @@
             <label class="control-label">@Captions.Email</label>
             <div class="form-control-static">@Sitecore.Context.User.Profile.Email</div>
           </div>
-          <a class="btn btn-block btn-primary" href="@AccountsSettingsService.Instance.GetPageLink(Model.Item, Templates.AccountsSettings.Fields.AccountsDetailsPage)">@Captions.EditDetails</a>
+          <a class="btn btn-block btn-primary" href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Model.Item, Templates.AccountsSettings.Fields.AccountsDetailsPage)">@Captions.EditDetails</a>
           <button type="submit" class="btn btn-block btn-default">@Captions.Logout</button>
         }
       }
