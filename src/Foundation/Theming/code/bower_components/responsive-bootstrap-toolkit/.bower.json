@@ -1,0 +1,31 @@
+{
+  "name": "responsive-bootstrap-toolkit",
+  "version": "2.5.1",
+  "homepage": "https://github.com/maciej-gurban/responsive-bootstrap-toolkit",
+  "description": "Responsive Bootstrap Toolkit provides an easy way of breakpoint detection in JavaScript, detecting changes in currently active breakpoint, as well as executing any breakpoint-specific JavaScript code.",
+  "main": "dist/bootstrap-toolkit.js",
+  "keywords": [
+    "bootstrap",
+    "foundation",
+    "breakpoint detection",
+    "detect screen resolution",
+    "responsive"
+  ],
+  "ignore": [
+    "node_modules",
+    "null"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.1"
+  },
+  "license": "MIT",
+  "_release": "2.5.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.5.1",
+    "commit": "47328963bc0786aec265567932825a1adb01cd7f"
+  },
+  "_source": "git://github.com/maciej-gurban/responsive-bootstrap-toolkit.git",
+  "_target": "~2.5.1",
+  "_originalSource": "responsive-toolkit"
+}
