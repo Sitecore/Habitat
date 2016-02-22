@@ -1,0 +1,26 @@
+$icon-font-path: 'bower_components/bootstrap-sass/assets/fonts/';
+
+$color-primary: #C8244F;
+
+$color-secondary: #424C5F;
+$color-secondary-dark: #2E384E;
+$color-secondary-light: #4D5668;
+$color-secondary-lighter: #586071;
+$color-secondary-lightest: #d5d7dc;
+
+$brand-primary: $color-primary;
+$gray-base: rgb(2, 3, 4);
+$gray: #999;
+$gray-light: #F2F3F4;
+$gray-darker: $color-secondary-dark;
+
+$text-color: $color-secondary;
+
+$main-bg: #FFF !default;
+$navbar-bg: $main-bg !default;
+
+$border-radius-base: 0px;
+$border-radius-large: 0px;
+$border-radius-small: 0px;
+
+$link-color: $brand-primary;

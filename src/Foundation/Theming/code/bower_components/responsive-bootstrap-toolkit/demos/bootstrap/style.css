@@ -1,0 +1,109 @@
+/**
+ * Nothing below is required for Responsive Bootstrap Toolkit to operate
+ */
+@media (max-width: 767px) {
+  .breakpoint-alias:before {
+    content: "XS";
+  }
+}
+@media (min-width: 768px) and (max-width: 983px) {
+  .breakpoint-alias:before {
+    content: "SM";
+  }
+}
+@media (min-width: 984px) and (max-width: 1199px) {
+  .breakpoint-alias:before {
+    content: "MD";
+  }
+}
+@media (min-width: 1200px) {
+  .breakpoint-alias:before {
+    content: "LG";
+  }
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 983px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+@media (min-width: 984px) and (max-width: 1199px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+.wrapper {
+  background: white;
+  color: #666666;
+}
+.wrapper .site-topbar {
+  height: 60px;
+  line-height: 60px;
+  vertical-align: middle;
+  background: #414141;
+  color: white;
+  position: relative;
+  vertical-align: middle;
+}
+.wrapper .site-topbar h5 {
+  height: inherit;
+  line-height: inherit;
+  vertical-align: middle;
+  font-weight: 300;
+  margin: 0 60px 0 15px;
+  vertical-align: middle;
+}
+.wrapper .site-topbar .breakpoint-alias {
+  background-color: #238cce;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  margin: auto;
+}
+
+.comparison-boxes {
+  text-align: justify;
+  font-size: 0.1px;
+}
+.comparison-boxes:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
+.comparison-operator {
+  height: 140px;
+  line-height: 140px;
+  vertical-align: middle;
+  display: inline-block;
+  background: #414141;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  width: 33%;
+  min-height: 50%;
+}
+.comparison-operator.active {
+  background: #238cce;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}

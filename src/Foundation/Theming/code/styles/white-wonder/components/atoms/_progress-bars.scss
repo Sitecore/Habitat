@@ -1,0 +1,19 @@
+$progress-bar-bg: #F2F3F4;
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
+
+
+.progress {
+  height: 50px;
+  .progress-bar {
+    padding: 15px;
+    font-size: 30px;
+    font-weight: 800;
+    text-align: left;
+    color: $text-color;
+
+    &-success, &-info, &-warning, &-danger {
+      color: #FFF;
+    }
+  }
+}
