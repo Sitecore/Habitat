@@ -6,7 +6,7 @@
 
 @if (!Model?.Item?.IsDerived(Templates.TeaserContent.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID))
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item.ID, Model.Rendering.Item.ID)
   return;
 }
 
