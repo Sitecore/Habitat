@@ -14,11 +14,17 @@ $sidebar-nav-item-border-color-active: $color-secondary-lightest;
     position: fixed;
     left: 0;
     top: 300px;
+    .show-sidebar-left &{
+      left: 320px;
+    }
   }
   &-right {
     position: fixed;
     right: 0;
     top: 300px;
+    .show-sidebar-right &{
+      right: 320px;
+    }
   }
 }
 

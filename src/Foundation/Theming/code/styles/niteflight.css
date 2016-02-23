@@ -8241,10 +8241,16 @@ p {
     position: fixed;
     left: 0;
     top: 300px; }
+    .show-sidebar-left .off-canvas-sidebar-left {
+      transition: all 0.4s ease;
+      left: 320px; }
   .off-canvas-sidebar-right {
     position: fixed;
     right: 0;
     top: 300px; }
+    .show-sidebar-right .off-canvas-sidebar-right {
+      transition: all 0.4s ease;
+      right: 320px; }
 
 .sidebar {
   background-color: #FFF;

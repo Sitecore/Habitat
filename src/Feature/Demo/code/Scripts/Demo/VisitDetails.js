@@ -1,11 +1,14 @@
-﻿function refreshVisitDetails(button) {
-    var container = jQuery(button).closest(".panel");
-  jQuery.ajax(
-  {
-    url: "/api/Demo/VisitDetails",
-    method: "get",
-    success: function (data) {
-        container.html(data);
-    }
+﻿jQuery(function() {
+  jQuery("head").on("visit-info:refresh", function() {
+    var panel = jQuery(".visit-info");
+    jQuery.ajax(
+    {
+      url: "/api/Demo/VisitDetails",
+      method: "get",
+      cache: false,
+      success: function(data) {
+        panel.replaceWith(data);
+      }
+    });
   });
-}
+});
