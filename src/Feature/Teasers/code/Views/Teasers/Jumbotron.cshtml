@@ -1,4 +1,5 @@
-﻿@using Sitecore.Feature.Teasers
+﻿@using Newtonsoft.Json.Serialization
+@using Sitecore.Feature.Teasers
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
@@ -9,8 +10,7 @@
   @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
 }
-
-<div class="jumbotron text-center bg-media" style="background-image: url('@Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image)')">
+<div class="jumbotron text-center bg-media" style="background-image: @Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image).ToCssUrlValue()">
   <h2>
     @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
   </h2>
