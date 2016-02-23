@@ -9,7 +9,8 @@
       "vendor/lightbox/dist/ekko-lightbox.js",
       "vendor/OwlCarousel/owl-carousel/owl.carousel.js",
       "scripts/main.js"
-    ]
+    ],
+    "sourceMap": true
   },
   {
     "outputFileName": "stylesheets/vendor.css",

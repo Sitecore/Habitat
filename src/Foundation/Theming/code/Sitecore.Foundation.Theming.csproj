@@ -848,6 +848,9 @@
     <Content Include="vendor\lightbox\LICENSE" />
     <Content Include="vendor\lightbox\package.json" />
     <Content Include="vendor\lightbox\README.md" />
+    <Content Include="scripts\Sitecore.Foundation.Theming.min.js.map">
+      <DependentUpon>Sitecore.Foundation.Theming.min.js</DependentUpon>
+    </Content>
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

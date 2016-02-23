@@ -8265,10 +8265,14 @@ p {
     position: fixed;
     left: 0;
     top: 300px; }
+    .show-sidebar-left .off-canvas-sidebar-left {
+      left: 320px; }
   .off-canvas-sidebar-right {
     position: fixed;
     right: 0;
     top: 300px; }
+    .show-sidebar-right .off-canvas-sidebar-right {
+      right: 320px; }
 
 .sidebar {
   background-color: #FFF;
