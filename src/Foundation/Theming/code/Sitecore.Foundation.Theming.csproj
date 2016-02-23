@@ -49,7 +49,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bower.json" />
+    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="bower_components\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
     <None Include="bundleconfig.json" />
+    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="scripts\DisableWFFMBootstrap.js" />
     <Content Include="scripts\Sitecore.Foundation.Theming.js" />
     <Content Include="scripts\Sitecore.Foundation.Theming.min.js">
       <DependentUpon>Sitecore.Foundation.Theming.js</DependentUpon>

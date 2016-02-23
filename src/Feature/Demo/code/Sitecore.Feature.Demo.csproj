@@ -126,7 +126,7 @@
     <Content Include="App_Config\Include\Feature\Feature.Demo.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Demo\_KeyBehaviourCacheList.cshtml" />
-    <Content Include="Scripts\VisitDetails.js" />
+    <Content Include="Scripts\Demo\VisitDetails.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
