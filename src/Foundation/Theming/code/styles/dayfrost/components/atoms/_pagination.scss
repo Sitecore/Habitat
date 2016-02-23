@@ -1,0 +1,62 @@
+$pagination-border: transparent;
+$pagination-bg: transparent;
+$pagination-active-border: $brand-primary;
+$pagination-active-color: $brand-primary;
+$pagination-active-bg: transparent;
+
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/pager";
+
+
+.pagination {
+  & > li {
+    & > a, & > span {
+      padding: 4px 10px;
+      border-width: 2px;
+      color: $text-color;
+      .bg-primary &, .bg-dark &, .bg-media & {
+        color: #FFF;
+        &:hover {
+          background-color: #FFF;
+          border-color: #FFF;
+          color: $brand-primary;
+        }
+      }
+
+      .bg-white & {
+        color: #000;
+      }
+    }
+    &.active {
+      & > a, & > span {
+        font-weight: bold;
+        .bg-primary &, .bg-dark &, .bg-media & {
+          border-color: #FFF;
+          &:hover {
+            background-color: transparent;
+            color: #FFF;
+          }
+        }
+
+        .bg-white & {
+          border-color: #000;
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pager {
+  a {
+    .bg-primary &, .bg-dark &, .bg-media & {
+      color: $brand-primary;
+      &:hover {
+        color: $brand-primary;
+      }
+    }
+  }
+}

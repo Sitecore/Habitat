@@ -12,7 +12,7 @@
 }
 @if (!Model?.Item?.IsDerived(Templates.TwitterFeed.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TwitterFeed.ID))
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TwitterFeed.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
 }
 

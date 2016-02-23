@@ -48,51 +48,34 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bower.json" />
+    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.svg" />
+    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="bower_components\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.eot" />
+    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
+    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.woff" />
+    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
     <None Include="bundleconfig.json" />
-    <Content Include="scripts\jquery-2.2.0.intellisense.js" />
-    <Content Include="scripts\jquery-2.2.0.js" />
-    <Content Include="scripts\jquery-2.2.0.min.js" />
-    <Content Include="scripts\modernizr-2.8.3.js" />
+    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="scripts\DisableWFFMBootstrap.js" />
     <Content Include="scripts\Sitecore.Foundation.Theming.js" />
     <Content Include="scripts\Sitecore.Foundation.Theming.min.js">
       <DependentUpon>Sitecore.Foundation.Theming.js</DependentUpon>
     </Content>
-    <Content Include="stylesheets\vendor.css" />
-    <Content Include="stylesheets\vendor.min.css">
-      <DependentUpon>vendor.css</DependentUpon>
-    </Content>
-    <Content Include="vendor\lightbox\.gitignore" />
-    <Content Include="vendor\lightbox\dist\ekko-lightbox.css" />
-    <Content Include="vendor\lightbox\dist\ekko-lightbox.js" />
-    <Content Include="vendor\lightbox\dist\ekko-lightbox.min.css" />
-    <Content Include="vendor\lightbox\dist\ekko-lightbox.min.js" />
-    <Content Include="vendor\lightbox\examples\index.html" />
-    <Content Include="vendor\lightbox\examples\remote\page1.html" />
-    <Content Include="vendor\lightbox\examples\remote\page2.html" />
-    <Content Include="vendor\lightbox\Gruntfile.js" />
-    <Content Include="vendor\shufflejs\dist\jquery.shuffle.js" />
-    <Content Include="vendor\shufflejs\dist\jquery.shuffle.min.js" />
-    <Content Include="vendor\shufflejs\dist\jquery.shuffle.modernizr.js" />
-    <Content Include="vendor\shufflejs\dist\jquery.shuffle.modernizr.min.js" />
-    <Content Include="vendor\shufflejs\dist\modernizr.custom.min.js" />
-    <Content Include="vendor\shufflejs\src\intro.js" />
-    <Content Include="vendor\shufflejs\src\modernizr.custom.min.js" />
-    <Content Include="vendor\shufflejs\src\outro.js" />
-    <Content Include="vendor\shufflejs\src\shuffle.js" />
-    <Content Include="stylesheets\editor.css">
+    <Content Include="styles\editor.css">
       <DependentUpon>editor.scss</DependentUpon>
     </Content>
-    <Content Include="stylesheets\editor.min.css">
+    <Content Include="styles\editor.min.css">
       <DependentUpon>editor.css</DependentUpon>
     </Content>
-    <Content Include="stylesheets\font-awesome.css" />
-    <Content Include="stylesheets\font-awesome.min.css" />
     <Content Include="fonts\bitter-v7-latin-700.svg" />
     <Content Include="fonts\bitter-v7-latin-italic.svg" />
     <Content Include="fonts\bitter-v7-latin-regular.svg" />
     <Content Include="App_Config\Include\Foundation\Foundation.Theming.config" />
-    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\open-sans-v13-latin-300.svg" />
     <Content Include="fonts\open-sans-v13-latin-300italic.svg" />
@@ -103,27 +86,7 @@
     <Content Include="fonts\open-sans-v13-latin-800.svg" />
     <Content Include="fonts\open-sans-v13-latin-italic.svg" />
     <Content Include="fonts\open-sans-v13-latin-regular.svg" />
-    <Content Include="javascripts\bootstrap-sprockets.js" />
-    <Content Include="javascripts\bootstrap.js" />
-    <Content Include="javascripts\bootstrap.min.js" />
-    <Content Include="javascripts\bootstrap\affix.js" />
-    <Content Include="javascripts\bootstrap\alert.js" />
-    <Content Include="javascripts\bootstrap\button.js" />
-    <Content Include="javascripts\bootstrap\carousel.js" />
-    <Content Include="javascripts\bootstrap\collapse.js" />
-    <Content Include="javascripts\bootstrap\dropdown.js" />
-    <Content Include="javascripts\bootstrap\modal.js" />
-    <Content Include="javascripts\bootstrap\popover.js" />
-    <Content Include="javascripts\bootstrap\scrollspy.js" />
-    <Content Include="javascripts\bootstrap\tab.js" />
-    <Content Include="javascripts\bootstrap\tooltip.js" />
-    <Content Include="javascripts\bootstrap\transition.js" />
     <Content Include="packages.config" />
-    <Content Include="images\.keep" />
-    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\bootstrap\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\main.js" />
     <Content Include="fonts\bitter-v7-latin-700.eot" />
     <Content Include="fonts\bitter-v7-latin-700.ttf" />
@@ -137,11 +100,6 @@
     <Content Include="fonts\bitter-v7-latin-regular.ttf" />
     <Content Include="fonts\bitter-v7-latin-regular.woff" />
     <Content Include="fonts\bitter-v7-latin-regular.woff2" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
-    <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -187,132 +145,32 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="stylesheets\bootstrap.css">
+    <Content Include="styles\bootstrap.css">
       <DependentUpon>bootstrap.scss</DependentUpon>
     </Content>
-    <Content Include="stylesheets\bootstrap.min.css">
+    <Content Include="styles\bootstrap.min.css">
       <DependentUpon>bootstrap.css</DependentUpon>
     </Content>
-    <Content Include="stylesheets\dayfrost.css">
+    <Content Include="styles\dayfrost.css">
       <DependentUpon>dayfrost.scss</DependentUpon>
     </Content>
-    <Content Include="stylesheets\dayfrost.min.css">
+    <Content Include="styles\dayfrost.min.css">
       <DependentUpon>dayfrost.css</DependentUpon>
     </Content>
-    <Content Include="stylesheets\niteflight.css">
+    <Content Include="styles\niteflight.css">
       <DependentUpon>niteflight.scss</DependentUpon>
     </Content>
-    <Content Include="stylesheets\niteflight.min.css">
+    <Content Include="styles\niteflight.min.css">
       <DependentUpon>niteflight.css</DependentUpon>
     </Content>
-    <Content Include="vendor\animate.css\animate.css" />
-    <Content Include="vendor\animate.css\animate.min.css" />
-    <Content Include="vendor\animate.css\gulpfile.js" />
-    <Content Include="vendor\bootstrap-block-grid\dist\bootstrap3-block-grid.css" />
-    <Content Include="vendor\bootstrap-block-grid\dist\bootstrap3-block-grid.min.css" />
-    <Content Include="vendor\bootstrap-block-grid\dist\bootstrap4-block-grid.css" />
-    <Content Include="vendor\bootstrap-block-grid\dist\bootstrap4-block-grid.min.css" />
-    <Content Include="vendor\bootstrap-block-grid\Gruntfile.js" />
-    <Content Include="vendor\hover\css\demo-page.css" />
-    <Content Include="vendor\hover\css\hover-min.css" />
-    <Content Include="vendor\hover\css\hover.css" />
-    <Content Include="vendor\hover\eager.jpg" />
-    <Content Include="vendor\hover\Gruntfile.js" />
-    <Content Include="vendor\hover\hover.jpg" />
-    <Content Include="vendor\hover\index.html" />
-    <Content Include="vendor\hover\license.txt" />
-    <Content Include="vendor\hover\logo-transparent.png" />
-    <Content Include="vendor\OwlCarousel\.gitignore" />
-    <Content Include="vendor\OwlCarousel\assets\css\bootstrapTheme.css" />
-    <Content Include="vendor\OwlCarousel\assets\css\custom.css" />
-    <Content Include="vendor\OwlCarousel\assets\css\responsive.css" />
-    <Content Include="vendor\OwlCarousel\assets\ico\apple-touch-icon-114-precomposed.png" />
-    <Content Include="vendor\OwlCarousel\assets\ico\apple-touch-icon-144-precomposed.png" />
-    <Content Include="vendor\OwlCarousel\assets\ico\apple-touch-icon-57-precomposed.png" />
-    <Content Include="vendor\OwlCarousel\assets\ico\apple-touch-icon-72-precomposed.png" />
-    <Content Include="vendor\OwlCarousel\assets\ico\favicon.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\AjaxLoader.gif" />
-    <Content Include="vendor\OwlCarousel\assets\img\demo-slides\controls.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\demo-slides\css3.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\demo-slides\feather.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\demo-slides\grab.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\demo-slides\modern.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\demo-slides\multi.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\demo-slides\responsive.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\demo-slides\tons.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\demo-slides\touch.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\demo-slides\zombie.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\glyphicons-halflings-green.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\glyphicons-halflings-white.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\glyphicons-halflings.png" />
-    <Content Include="vendor\OwlCarousel\assets\img\owl-logo.png" />
-    <Content Include="vendor\OwlCarousel\assets\js\application.js" />
-    <Content Include="vendor\OwlCarousel\assets\js\bootstrap-collapse.js" />
-    <Content Include="vendor\OwlCarousel\assets\js\bootstrap-tab.js" />
-    <Content Include="vendor\OwlCarousel\assets\js\bootstrap-transition.js" />
-    <Content Include="vendor\OwlCarousel\assets\js\google-code-prettify\prettify.css" />
-    <Content Include="vendor\OwlCarousel\assets\js\google-code-prettify\prettify.js" />
-    <Content Include="vendor\OwlCarousel\assets\js\google-code-prettify\run_prettify.js" />
-    <Content Include="vendor\OwlCarousel\assets\js\jquery-1.9.1.min.js" />
-    <Content Include="vendor\OwlCarousel\changelog.html" />
-    <Content Include="vendor\OwlCarousel\demos\assets\fullimage1.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\fullimage2.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\fullimage3.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\fullimage4.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\fullimage5.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\fullimage6.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\fullimage7.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\owl1.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\owl2.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\owl3.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\owl4.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\owl5.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\owl6.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\owl7.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\assets\owl8.jpg" />
-    <Content Include="vendor\OwlCarousel\demos\autoHeight.html" />
-    <Content Include="vendor\OwlCarousel\demos\click.html" />
-    <Content Include="vendor\OwlCarousel\demos\custom.html" />
-    <Content Include="vendor\OwlCarousel\demos\customJson.html" />
-    <Content Include="vendor\OwlCarousel\demos\full.html" />
-    <Content Include="vendor\OwlCarousel\demos\images.html" />
-    <Content Include="vendor\OwlCarousel\demos\itemsCustom.html" />
-    <Content Include="vendor\OwlCarousel\demos\json.html" />
-    <Content Include="vendor\OwlCarousel\demos\lazyLoad.html" />
-    <Content Include="vendor\OwlCarousel\demos\manipulations.html" />
-    <Content Include="vendor\OwlCarousel\demos\navOnTop.html" />
-    <Content Include="vendor\OwlCarousel\demos\navOnTop2.html" />
-    <Content Include="vendor\OwlCarousel\demos\one.html" />
-    <Content Include="vendor\OwlCarousel\demos\owlStatus.html" />
-    <Content Include="vendor\OwlCarousel\demos\progressBar.html" />
-    <Content Include="vendor\OwlCarousel\demos\randomOrder.html" />
-    <Content Include="vendor\OwlCarousel\demos\scaleup.html" />
-    <Content Include="vendor\OwlCarousel\demos\sync.html" />
-    <Content Include="vendor\OwlCarousel\demos\transitions.html" />
-    <Content Include="vendor\OwlCarousel\index.html" />
-    <Content Include="vendor\OwlCarousel\owl-carousel\AjaxLoader.gif" />
-    <Content Include="vendor\OwlCarousel\owl-carousel\grabbing.png" />
-    <Content Include="vendor\OwlCarousel\owl-carousel\owl.carousel.css" />
-    <Content Include="vendor\OwlCarousel\owl-carousel\owl.carousel.js" />
-    <Content Include="vendor\OwlCarousel\owl-carousel\owl.carousel.min.js" />
-    <Content Include="vendor\OwlCarousel\owl-carousel\owl.theme.css" />
-    <Content Include="vendor\OwlCarousel\owl-carousel\owl.transitions.css" />
-    <Content Include="vendor\wow\css\libs\animate.css" />
-    <Content Include="vendor\wow\css\site.css" />
-    <Content Include="vendor\wow\demo.html" />
-    <Content Include="vendor\wow\dist\wow.js" />
-    <Content Include="vendor\wow\dist\wow.min.js" />
-    <Content Include="vendor\wow\Gruntfile.js" />
-    <Content Include="vendor\wow\spec\javascripts\fixtures\custom.html" />
-    <Content Include="vendor\wow\spec\javascripts\fixtures\simple.html" />
-    <Content Include="vendor\wow\spec\javascripts\helpers\SpecHelper.js" />
-    <Content Include="vendor\wow\spec\javascripts\libs\jasmine-jquery.js" />
-    <Content Include="vendor\wow\spec\javascripts\libs\jquery.js" />
-    <Content Include="vendor\wow\spec\javascripts\wow-spec.js" />
-    <Content Include="stylesheets\white-wonder.css">
+    <Content Include="styles\vendor.css" />
+    <Content Include="styles\vendor.min.css">
+      <DependentUpon>vendor.css</DependentUpon>
+    </Content>
+    <Content Include="styles\white-wonder.css">
       <DependentUpon>white-wonder.scss</DependentUpon>
     </Content>
-    <Content Include="stylesheets\white-wonder.min.css">
+    <Content Include="styles\white-wonder.min.css">
       <DependentUpon>white-wonder.css</DependentUpon>
     </Content>
     <Content Include="stylesheets\_bootstrap.scss" />
@@ -851,6 +709,193 @@
     <Content Include="scripts\Sitecore.Foundation.Theming.min.js.map">
       <DependentUpon>Sitecore.Foundation.Theming.min.js</DependentUpon>
     </Content>
+    <Content Include="styles\bootstrap.scss" />
+    <Content Include="styles\dayfrost.scss" />
+    <Content Include="styles\niteflight.scss" />
+    <Content Include="styles\white-wonder.scss" />
+    <Content Include="styles\_variables.scss" />
+    <Content Include="styles\_fonts.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_address.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_alert.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_badges.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_blockquote.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_breadcrumbs.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_buttons.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_counter.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_dropdowns.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_forms.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_headline.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_icon.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_images.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_labels.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_list-group.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_list.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_logo.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_modal.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_navs.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_pagination.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_panels.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_popover.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_progress-bars.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_tables.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_tabs-nav.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_thumbnails.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_tooltip.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_typography.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_wells.scss" />
+    <Content Include="styles\dayfrost\components\molecules\_button-groups.scss" />
+    <Content Include="styles\dayfrost\components\molecules\_jumbotron.scss" />
+    <Content Include="styles\dayfrost\components\molecules\_media.scss" />
+    <Content Include="styles\dayfrost\components\molecules\_navbar.scss" />
+    <Content Include="styles\dayfrost\components\molecules\_sidebar.scss" />
+    <Content Include="styles\dayfrost\components\molecules\_testimony.scss" />
+    <Content Include="styles\dayfrost\components\organisms\_media-list.scss" />
+    <Content Include="styles\dayfrost\components\organisms\_mega-dropdown.scss" />
+    <Content Include="styles\dayfrost\components\organisms\_page-header.scss" />
+    <Content Include="styles\dayfrost\components\organisms\_panel-group.scss" />
+    <Content Include="styles\dayfrost\components\organisms\_tabs.scss" />
+    <Content Include="styles\dayfrost\templates\_article.scss" />
+    <Content Include="styles\dayfrost\templates\_aside.scss" />
+    <Content Include="styles\dayfrost\templates\_footer.scss" />
+    <Content Include="styles\dayfrost\templates\_header.scss" />
+    <Content Include="styles\dayfrost\templates\_section.scss" />
+    <Content Include="styles\dayfrost\templates\_sidebar.scss" />
+    <Content Include="styles\dayfrost\templates\_template.scss" />
+    <Content Include="styles\dayfrost\vendor\_owl-carousel.scss" />
+    <Content Include="styles\dayfrost\_fonts.scss" />
+    <Content Include="styles\dayfrost\_global.scss" />
+    <Content Include="styles\dayfrost\_grid.scss" />
+    <Content Include="styles\dayfrost\_helpers.scss" />
+    <Content Include="styles\dayfrost\_mixins.scss" />
+    <Content Include="styles\dayfrost\_overrides.scss" />
+    <Content Include="styles\dayfrost\_scaffolding.scss" />
+    <Content Include="styles\dayfrost\_utilities.scss" />
+    <Content Include="styles\dayfrost\_variables.scss" />
+    <Content Include="styles\niteflight\components\atoms\_address.scss" />
+    <Content Include="styles\niteflight\components\atoms\_alert.scss" />
+    <Content Include="styles\niteflight\components\atoms\_badges.scss" />
+    <Content Include="styles\niteflight\components\atoms\_blockquote.scss" />
+    <Content Include="styles\niteflight\components\atoms\_breadcrumbs.scss" />
+    <Content Include="styles\niteflight\components\atoms\_buttons.scss" />
+    <Content Include="styles\niteflight\components\atoms\_counter.scss" />
+    <Content Include="styles\niteflight\components\atoms\_dropdowns.scss" />
+    <Content Include="styles\niteflight\components\atoms\_forms.scss" />
+    <Content Include="styles\niteflight\components\atoms\_headline.scss" />
+    <Content Include="styles\niteflight\components\atoms\_icon.scss" />
+    <Content Include="styles\niteflight\components\atoms\_images.scss" />
+    <Content Include="styles\niteflight\components\atoms\_labels.scss" />
+    <Content Include="styles\niteflight\components\atoms\_list-group.scss" />
+    <Content Include="styles\niteflight\components\atoms\_list.scss" />
+    <Content Include="styles\niteflight\components\atoms\_logo.scss" />
+    <Content Include="styles\niteflight\components\atoms\_modal.scss" />
+    <Content Include="styles\niteflight\components\atoms\_navs.scss" />
+    <Content Include="styles\niteflight\components\atoms\_pagination.scss" />
+    <Content Include="styles\niteflight\components\atoms\_panels.scss" />
+    <Content Include="styles\niteflight\components\atoms\_popover.scss" />
+    <Content Include="styles\niteflight\components\atoms\_progress-bars.scss" />
+    <Content Include="styles\niteflight\components\atoms\_tables.scss" />
+    <Content Include="styles\niteflight\components\atoms\_tabs-nav.scss" />
+    <Content Include="styles\niteflight\components\atoms\_thumbnails.scss" />
+    <Content Include="styles\niteflight\components\atoms\_tooltip.scss" />
+    <Content Include="styles\niteflight\components\atoms\_typography.scss" />
+    <Content Include="styles\niteflight\components\atoms\_wells.scss" />
+    <Content Include="styles\niteflight\components\molecules\_button-groups.scss" />
+    <Content Include="styles\niteflight\components\molecules\_jumbotron.scss" />
+    <Content Include="styles\niteflight\components\molecules\_media.scss" />
+    <Content Include="styles\niteflight\components\molecules\_navbar.scss" />
+    <Content Include="styles\niteflight\components\molecules\_sidebar.scss" />
+    <Content Include="styles\niteflight\components\molecules\_testimony.scss" />
+    <Content Include="styles\niteflight\components\organisms\_media-list.scss" />
+    <Content Include="styles\niteflight\components\organisms\_mega-dropdown.scss" />
+    <Content Include="styles\niteflight\components\organisms\_page-header.scss" />
+    <Content Include="styles\niteflight\components\organisms\_panel-group.scss" />
+    <Content Include="styles\niteflight\components\organisms\_tabs.scss" />
+    <Content Include="styles\niteflight\templates\_article.scss" />
+    <Content Include="styles\niteflight\templates\_aside.scss" />
+    <Content Include="styles\niteflight\templates\_footer.scss" />
+    <Content Include="styles\niteflight\templates\_header.scss" />
+    <Content Include="styles\niteflight\templates\_section.scss" />
+    <Content Include="styles\niteflight\templates\_sidebar.scss" />
+    <Content Include="styles\niteflight\templates\_template.scss" />
+    <Content Include="styles\niteflight\vendor\_owl-carousel.scss" />
+    <Content Include="styles\niteflight\_fonts.scss" />
+    <Content Include="styles\niteflight\_global.scss" />
+    <Content Include="styles\niteflight\_grid.scss" />
+    <Content Include="styles\niteflight\_helpers.scss" />
+    <Content Include="styles\niteflight\_mixins.scss" />
+    <Content Include="styles\niteflight\_overrides.scss" />
+    <Content Include="styles\niteflight\_scaffolding.scss" />
+    <Content Include="styles\niteflight\_utilities.scss" />
+    <Content Include="styles\niteflight\_variables.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_address.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_alert.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_badges.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_blockquote.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_breadcrumbs.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_buttons.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_counter.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_dropdowns.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_forms.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_icon.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_images.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_labels.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_list-group.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_list.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_logo.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_navs.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_pagination.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_panels.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_progress-bars.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_table.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_thumbnails.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_tooltip.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_typography.scss" />
+    <Content Include="styles\white-wonder\components\atoms\_wells.scss" />
+    <Content Include="styles\white-wonder\components\molecules\_button-groups.scss" />
+    <Content Include="styles\white-wonder\components\molecules\_jumbotron.scss" />
+    <Content Include="styles\white-wonder\components\molecules\_media.scss" />
+    <Content Include="styles\white-wonder\components\molecules\_navbar.scss" />
+    <Content Include="styles\white-wonder\components\molecules\_sidebar.scss" />
+    <Content Include="styles\white-wonder\components\molecules\_testimony.scss" />
+    <Content Include="styles\white-wonder\components\organisms\_illustration.scss" />
+    <Content Include="styles\white-wonder\components\organisms\_media-list.scss" />
+    <Content Include="styles\white-wonder\components\organisms\_mega-dropdown.scss" />
+    <Content Include="styles\white-wonder\components\organisms\_page-header.scss" />
+    <Content Include="styles\white-wonder\pages\_whitewonder.scss" />
+    <Content Include="styles\white-wonder\templates\_article.scss" />
+    <Content Include="styles\white-wonder\templates\_aside.scss" />
+    <Content Include="styles\white-wonder\templates\_footer.scss" />
+    <Content Include="styles\white-wonder\templates\_header.scss" />
+    <Content Include="styles\white-wonder\templates\_section.scss" />
+    <Content Include="styles\white-wonder\templates\_sidebar.scss" />
+    <Content Include="styles\white-wonder\templates\_template.scss" />
+    <Content Include="styles\white-wonder\vendor\_owl-carousel.scss" />
+    <Content Include="styles\white-wonder\_fonts.scss" />
+    <Content Include="styles\white-wonder\_global.scss" />
+    <Content Include="styles\white-wonder\_grid.scss" />
+    <Content Include="styles\white-wonder\_helpers.scss" />
+    <Content Include="styles\white-wonder\_mixins.scss" />
+    <Content Include="styles\white-wonder\_overrides.scss" />
+    <Content Include="styles\white-wonder\_scaffolding.scss" />
+    <Content Include="styles\white-wonder\_utilities.scss" />
+    <Content Include="styles\white-wonder\_variables.scss" />
+    <Content Include="styles\niteflight\components\_atoms.scss" />
+    <Content Include="styles\niteflight\components\_molecules.scss" />
+    <Content Include="styles\niteflight\components\_organisms.scss" />
+    <Content Include="styles\niteflight\_templates.scss" />
+    <Content Include="styles\niteflight\_vendor.scss" />
+    <Content Include="styles\dayfrost\components\_atoms.scss" />
+    <Content Include="styles\dayfrost\components\_molecules.scss" />
+    <Content Include="styles\dayfrost\components\_organisms.scss" />
+    <Content Include="styles\dayfrost\_templates.scss" />
+    <Content Include="styles\dayfrost\_vendor.scss" />
+    <Content Include="styles\white-wonder\components\_atoms.scss" />
+    <Content Include="styles\white-wonder\components\_molecules.scss" />
+    <Content Include="styles\white-wonder\components\_organisms.scss" />
+    <Content Include="styles\white-wonder\_pages.scss" />
+    <Content Include="styles\white-wonder\_templates.scss" />
+    <Content Include="styles\white-wonder\_vendor.scss" />
+    <Content Include="styles\editor.scss" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -899,7 +944,9 @@
     </Reference>
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
