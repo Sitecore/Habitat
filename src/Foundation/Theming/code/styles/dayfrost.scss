@@ -1,17 +1,17 @@
+@import "variables";
 @import "fonts";
 @import "dayfrost/fonts";
-
 
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 
-@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
-@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/print";
-@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
-
 @import "dayfrost/variables";
 @import "dayfrost/overrides";
 @import "dayfrost/mixins";
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/print";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
 
 // Core CSS
 @import "dayfrost/scaffolding";

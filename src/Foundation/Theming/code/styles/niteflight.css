@@ -343,8 +343,8 @@ th {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot");
-  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  src: url("/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
+  src: url("/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("/bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 .glyphicon {
   position: relative;
@@ -8119,19 +8119,11 @@ p {
           right: 0; } }
       .navbar-activity .navbar-nav li .navbar-form input {
         margin: 2px 0; }
-      .navbar-activity .navbar-nav li:nth-child(1) {
-        transition-delay: 0.1s; }
-      .navbar-activity .navbar-nav li:nth-child(2) {
-        transition-delay: 0s; }
     .is-searching .navbar-activity .navbar-nav li {
       max-width: 0;
       transform: translateY(100%);
       opacity: 0; }
-      .is-searching .navbar-activity .navbar-nav li:nth-child(1) {
-        transition-delay: 0s; }
-      .is-searching .navbar-activity .navbar-nav li:nth-child(2) {
-        transition-delay: 0.1s; }
-      .is-searching .navbar-activity .navbar-nav li:nth-child(3) {
+      .is-searching .navbar-activity .navbar-nav li.navbar-activity-search {
         max-width: 400px;
         transform: none;
         opacity: 1; }

@@ -1,17 +1,17 @@
+@import "variables";
 @import "fonts";
 @import "white-wonder/fonts";
 
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 
-@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
-@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/print";
-@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
-
-@import "variables";
 @import "white-wonder/variables";
 @import "white-wonder/overrides";
 @import "white-wonder/mixins";
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/print";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
 
 // Core CSS
 @import "white-wonder/scaffolding";
