@@ -7692,19 +7692,11 @@ mark {
               width: calc(100% + 30px); } }
           .navbar-activity .navbar-nav li .navbar-form .form-group input {
             margin: 2px 0; }
-      .navbar-activity .navbar-nav li:nth-child(1) {
-        transition-delay: 0.1s; }
-      .navbar-activity .navbar-nav li:nth-child(2) {
-        transition-delay: 0s; }
     .is-searching .navbar-activity .navbar-nav li {
       max-width: 0;
       transform: translateY(100%);
       opacity: 0; }
-      .is-searching .navbar-activity .navbar-nav li:nth-child(1) {
-        transition-delay: 0s; }
-      .is-searching .navbar-activity .navbar-nav li:nth-child(2) {
-        transition-delay: 0.1s; }
-      .is-searching .navbar-activity .navbar-nav li:nth-child(3) {
+      .is-searching .navbar-activity .navbar-nav li.navbar-activity-search {
         max-width: 400px;
         transform: none;
         opacity: 1; }
