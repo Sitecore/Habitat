@@ -1,0 +1,12 @@
+
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
+
+
+.btn-group {
+  .btn {
+    & + .btn {
+      margin-left: -2px;
+    }
+  }
+}

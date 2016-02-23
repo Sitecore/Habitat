@@ -1,0 +1,26 @@
+
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/media";
+
+
+.media {
+
+  &-align {
+    &-middle {
+      .media-body, .media-left, .media-right {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .bg-primary &, .bg-dark &, .bg-media & {
+    color: $text-color;
+
+    .media-body {
+      color: #FFF;
+      p {
+        color: #FFF;
+      }
+    }
+  }
+}

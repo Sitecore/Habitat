@@ -2,23 +2,25 @@
   {
     "outputFileName": "scripts/Sitecore.Foundation.Theming.js",
     "inputFiles": [
-      "scripts/jquery-2.2.0.js",
-      "javascripts/bootstrap.js",
-      "vendor/shufflejs/dist/jquery.shuffle.js",
-      "vendor/wow/dist/wow.js",
-      "vendor/lightbox/dist/ekko-lightbox.js",
-      "vendor/OwlCarousel/owl-carousel/owl.carousel.js",
+      "bower_components/modernizr/modernizr.js",
+      "bower_components/jquery/dist/jquery.js",
+      "bower_components/bootstrap-sass/assets/javascripts/bootstrap.js",
+      "bower_components/shufflejs/dist/jquery.shuffle.js",
+      "bower_components/wow/dist/wow.js",
+      "bower_components/ekko-lightbox/dist/ekko-lightbox.js",
+      "bower_components/OwlCarousel/owl-carousel/owl.carousel.js",
       "scripts/main.js"
     ]
   },
   {
-    "outputFileName": "stylesheets/vendor.css",
+    "outputFileName": "styles/vendor.css",
     "inputFiles": [
-      "vendor/bootstrap-block-grid/dist/bootstrap3-block-grid.css",
-      "vendor/hover/css/hover.css",
-      "vendor/animate.css/animate.css",
-      "vendor/lightbox/dist/ekko-lightbox.css",
-      "vendor/OwlCarousel/owl-carousel/owl.carousel.css"
+      "bower_components/bootstrap-block-grid/dist/bootstrap3-block-grid.css",
+      "bower_components/hover/css/hover.css",
+      "bower_components/animate.css/animate.css",
+      "bower_components/ekko-lightbox/dist/ekko-lightbox.css",
+      "bower_components/OwlCarousel/owl-carousel/owl.carousel.css",
+      "bower_components/font-awesome/css/font-awesome.css"
     ]
   }
 

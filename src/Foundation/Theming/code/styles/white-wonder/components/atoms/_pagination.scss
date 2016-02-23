@@ -1,0 +1,18 @@
+$pagination-border: transparent;
+$pagination-bg: transparent;
+$pagination-active-border: $brand-primary;
+$pagination-active-color: $brand-primary;
+$pagination-active-bg: transparent;
+
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/pager";
+
+
+.pagination {
+  & > li {
+    & > a, & > span {
+      color: $text-color;
+    }
+  }
+}
