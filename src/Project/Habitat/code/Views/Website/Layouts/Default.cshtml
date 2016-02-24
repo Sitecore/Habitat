@@ -45,13 +45,13 @@
           <button type="button" class="btn btn-info sidebar-closed" data-toggle="sidebar" title="Open visit details panel" data-side="right">
             <span class="glyphicon glyphicon-eye-open icon-md "></span>
           </button>
-          <button type="button" class="btn btn-info sidebar-opened" data-toggle="sidebar" title="Close visit details panel" data-side="right">
+          <button type="button" class="btn btn-info sidebar-opened" style="display: none" data-toggle="sidebar" title="Close visit details panel" data-side="right">
             <span class="glyphicon glyphicon-eye-close icon-md "></span>
           </button>
-          <button href="#" onclick="jQuery('head').trigger('visit-info:refresh')" class="btn btn-success sidebar-opened" title="Refresh visit details panel">
+          <button href="#" onclick="jQuery('head').trigger('visit-info:refresh')" style="display: none" class="btn btn-success sidebar-opened" title="Refresh visit details panel">
             <span class="glyphicon glyphicon-refresh icon-md "></span>
           </button>
-          <a href="/api/sitecore/Demo/EndVisit" class="btn btn-danger sidebar-opened" title="End the current visit and submits it to the Sitecore Experience Database"> 
+          <a href="/api/sitecore/Demo/EndVisit" class="btn btn-danger sidebar-opened" style="display: none" title="End the current visit and submits it to the Sitecore Experience Database"> 
             <span class="glyphicon glyphicon-remove-circle icon-md " ></span>
           </a>
         </div>
