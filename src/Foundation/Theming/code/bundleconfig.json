@@ -10,7 +10,8 @@
       "bower_components/ekko-lightbox/dist/ekko-lightbox.js",
       "bower_components/OwlCarousel/owl-carousel/owl.carousel.js",
       "scripts/main.js"
-    ]
+    ],
+    "sourceMap": true
   },
   {
     "outputFileName": "styles/vendor.css",
