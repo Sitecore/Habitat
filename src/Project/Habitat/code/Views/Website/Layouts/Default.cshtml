@@ -41,13 +41,22 @@
     @if (!Sitecore.Context.PageMode.IsExperienceEditor)
     {
       <div class="off-canvas-sidebar off-canvas-sidebar-right">
-        <button type="button" class="btn btn-info pull-right " data-toggle="sidebar" data-side="right">
-          <span class="glyphicon glyphicon-cog icon-md "></span>
-        </button>
-        <div class="sidebar sidebar-fixed-right">
-          <button type="button" class="btn btn-danger  " data-toggle="sidebar" data-side="right">
-            X
+        <div class="btn-group-vertical" role="group"  >
+          <button type="button" class="btn btn-info sidebar-closed" data-toggle="sidebar" title="Open visit details panel" data-side="right">
+            <span class="glyphicon glyphicon-eye-open icon-md "></span>
           </button>
+          <button type="button" class="btn btn-info sidebar-opened" data-toggle="sidebar" title="Close visit details panel" data-side="right">
+            <span class="glyphicon glyphicon-eye-close icon-md "></span>
+          </button>
+          <button href="#" onclick="jQuery('head').trigger('visit-info:refresh')" class="btn btn-success sidebar-opened" title="Refresh visit details panel">
+            <span class="glyphicon glyphicon-refresh icon-md "></span>
+          </button>
+          <a href="/api/sitecore/Demo/EndVisit" class="btn btn-danger sidebar-opened" title="End the current visit and submits it to the Sitecore Experience Database"> 
+            <span class="glyphicon glyphicon-remove-circle icon-md " ></span>
+          </a>
+        </div>
+        
+        <div class="sidebar sidebar-fixed-right">
           @Html.Sitecore().Placeholder("page-sidebar")
         </div>
       </div>

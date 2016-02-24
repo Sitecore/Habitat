@@ -7776,10 +7776,14 @@ mark {
     position: fixed;
     left: 0;
     bottom: 0; }
+    .show-sidebar-left .off-canvas-sidebar-left {
+      left: 350px; }
   .off-canvas-sidebar-right {
     position: fixed;
     right: 0;
     bottom: 0; }
+    .show-sidebar-right .off-canvas-sidebar-right {
+      right: 350px; }
 
 .sidebar {
   background-color: #FFF;

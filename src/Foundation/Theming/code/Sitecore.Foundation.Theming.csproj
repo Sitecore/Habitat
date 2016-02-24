@@ -173,6 +173,9 @@
     <Content Include="styles\white-wonder.min.css">
       <DependentUpon>white-wonder.css</DependentUpon>
     </Content>
+    <Content Include="scripts\Sitecore.Foundation.Theming.min.js.map">
+      <DependentUpon>Sitecore.Foundation.Theming.min.js</DependentUpon>
+    </Content>
     <Content Include="styles\bootstrap.scss" />
     <Content Include="styles\dayfrost.scss" />
     <Content Include="styles\niteflight.scss" />
