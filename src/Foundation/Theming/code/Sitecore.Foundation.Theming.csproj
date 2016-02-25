@@ -61,11 +61,21 @@
     <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
     <None Include="bundleconfig.json" />
     <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.svg" />
-    <Content Include="scripts\DisableWFFMBootstrap.js" />
+    <Content Include="scripts\carousel.js" />
+    <Content Include="scripts\counter.js" />
+    <Content Include="scripts\disable-wffm-bootstrap.js" />
+    <Content Include="scripts\form.js" />
+    <Content Include="scripts\grid.js" />
+    <Content Include="scripts\lightbox.js" />
+    <Content Include="scripts\popover.js" />
+    <Content Include="scripts\search.js" />
+    <Content Include="scripts\sidebar.js" />
     <Content Include="scripts\Sitecore.Foundation.Theming.js" />
     <Content Include="scripts\Sitecore.Foundation.Theming.min.js">
       <DependentUpon>Sitecore.Foundation.Theming.js</DependentUpon>
     </Content>
+    <Content Include="scripts\theming.js" />
+    <Content Include="scripts\tooltip.js" />
     <Content Include="styles\editor.css">
       <DependentUpon>editor.scss</DependentUpon>
     </Content>
@@ -87,7 +97,6 @@
     <Content Include="fonts\open-sans-v13-latin-italic.svg" />
     <Content Include="fonts\open-sans-v13-latin-regular.svg" />
     <Content Include="packages.config" />
-    <Content Include="scripts\main.js" />
     <Content Include="fonts\bitter-v7-latin-700.eot" />
     <Content Include="fonts\bitter-v7-latin-700.ttf" />
     <Content Include="fonts\bitter-v7-latin-700.woff" />

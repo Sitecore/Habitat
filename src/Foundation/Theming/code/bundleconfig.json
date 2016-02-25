@@ -9,7 +9,16 @@
       "bower_components/wow/dist/wow.js",
       "bower_components/ekko-lightbox/dist/ekko-lightbox.js",
       "bower_components/OwlCarousel/owl-carousel/owl.carousel.js",
-      "scripts/main.js"
+      "scripts/carousel.js",
+      "scripts/counter.js",
+      "scripts/form.js",
+      "scripts/grid.js",
+      "scripts/lightbox.js",
+      "scripts/popover.js",
+      "scripts/search.js",
+      "scripts/sidebar.js",
+      "scripts/theming.js",
+      "scripts/tooltip.js"
     ],
     "sourceMap": true
   },
