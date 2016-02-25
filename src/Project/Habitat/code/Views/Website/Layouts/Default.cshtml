@@ -44,17 +44,18 @@
       <div class="off-canvas-sidebar off-canvas-sidebar-right">
         <div class="btn-group-vertical" role="group"  >
           <button type="button" class="btn btn-info sidebar-closed" data-toggle="sidebar" title="@Captions.OpenVisitDetailsPanel" data-side="right">
-            <span class="glyphicon glyphicon-eye-open icon-md "></span>
+            <span class="glyphicon glyphicon-info-sign icon-md "></span>
           </button>
-          <button type="button" class="btn btn-info sidebar-opened" style="display: none" data-toggle="sidebar" title="@Captions.CloseVisitDetailsPanel" data-side="right">
-            <span class="glyphicon glyphicon-eye-close icon-md "></span>
-          </button>
-          <button href="#" onclick="jQuery('head').trigger('visit-info:refresh')" style="display: none" class="btn btn-success sidebar-opened" title="@Captions.RefreshVisitDetailsPanel">
+          <button href="#" onclick="jQuery('head').trigger('visit-info:refresh')" style="display: none" class="btn btn-info sidebar-opened" title="@Captions.RefreshVisitDetailsPanel">
             <span class="glyphicon glyphicon-refresh icon-md "></span>
           </button>
-          <a href="/api/sitecore/Demo/EndVisit" class="btn btn-danger sidebar-opened" style="display: none" title="@Captions.EndVisit"> 
-            <span class="glyphicon glyphicon-remove-circle icon-md " ></span>
+         
+          <a href="/api/sitecore/Demo/EndVisit" class="btn btn-success sidebar-opened" style="display: none" title="@Captions.EndVisit">
+            <span class="glyphicon glyphicon-eye-close icon-md "></span>
           </a>
+          <button type="button" class="btn btn-danger sidebar-opened" style="display: none" data-toggle="sidebar" title="@Captions.CloseVisitDetailsPanel" data-side="right">
+            <span class="glyphicon glyphicon-remove-circle icon-md "></span>
+          </button>
         </div>
         
         <div class="sidebar sidebar-fixed-right">
