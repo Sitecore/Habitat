@@ -6,11 +6,11 @@
 
 @if (!Model?.Item?.IsDerived(Templates.TeaserContent.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item.ID, Model.Rendering.Item.ID)
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
 }
 
-<div class="jumbotron jumbotron-xl bg-media" style="background-image: url('@Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image)')">
+<div class="jumbotron jumbotron-xl bg-media" style="background-image: @Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image).ToCssUrlValue()">
   <div class="container">
     <div class="row">
       <div class="col-md-12">

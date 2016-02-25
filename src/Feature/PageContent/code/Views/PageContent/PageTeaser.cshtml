@@ -7,7 +7,7 @@
 
 @if (!Model?.Item?.IsDerived(Templates.HasPageContent.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasPageContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item.ID, Model.Rendering.Item.ID)
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasPageContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
 }
 

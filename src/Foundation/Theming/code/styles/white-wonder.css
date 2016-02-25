@@ -6502,13 +6502,16 @@ button.list-group-item-danger {
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress {
-  height: 50px; }
+  height: 30px;
+  border-radius: 0; }
   .progress .progress-bar {
-    padding: 15px;
-    font-size: 30px;
+    padding: 5px;
+    font-size: 15px;
     font-weight: 800;
     text-align: left;
-    color: #000; }
+    color: #000;
+    box-shadow: none;
+    white-space: nowrap; }
     .progress .progress-bar-success, .progress .progress-bar-info, .progress .progress-bar-warning, .progress .progress-bar-danger {
       color: #FFF; }
 
@@ -7776,10 +7779,14 @@ mark {
     position: fixed;
     left: 0;
     bottom: 0; }
+    .show-sidebar-left .off-canvas-sidebar-left {
+      left: 350px; }
   .off-canvas-sidebar-right {
     position: fixed;
     right: 0;
     bottom: 0; }
+    .show-sidebar-right .off-canvas-sidebar-right {
+      right: 350px; }
 
 .sidebar {
   background-color: #FFF;

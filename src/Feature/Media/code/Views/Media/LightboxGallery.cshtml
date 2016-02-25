@@ -7,7 +7,7 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.HasMediaSelector.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaSelector.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item.ID, Model.Rendering.Item.ID)
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaSelector.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
 }
 

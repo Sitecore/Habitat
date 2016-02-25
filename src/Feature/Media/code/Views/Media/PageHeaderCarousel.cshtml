@@ -7,7 +7,7 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.HasMediaSelector.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaSelector.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item.ID, Model.Rendering.Item.ID)
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaSelector.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
 }
 
@@ -29,15 +29,9 @@
     {
       <div class="item @element.Active">
         @{
-          var style = "";
-          if (element.Item.IsDerived(Templates.HasMediaVideo.ID))
-          {
-            style = "background-image: url('" + element.Item.ImageUrl(Templates.HasMedia.Fields.Thumbnail, new MediaUrlOptions()) + "')";
-          }
-          else
-          {
-            style = "background-image: url('" + element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions()) + "')";
-          }
+          var style = "background-image: ";
+          var field = element.Item.IsDerived(Templates.HasMediaVideo.ID) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
+          style += element.Item.ImageUrl(field, new MediaUrlOptions()).ToCssUrlValue();
         }
 
         <div class="jumbotron jumbotron-xl bg-media" style="@style">

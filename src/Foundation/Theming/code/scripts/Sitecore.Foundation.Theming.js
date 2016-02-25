@@ -1406,7 +1406,7 @@ window.Modernizr = (function( window, document, undefined ) {
 })(this, this.document);
 
 /*!
- * jQuery JavaScript Library v2.2.0
+ * jQuery JavaScript Library v2.2.1
  * http://jquery.com/
  *
  * Includes Sizzle.js
@@ -1416,7 +1416,7 @@ window.Modernizr = (function( window, document, undefined ) {
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2016-01-08T20:02Z
+ * Date: 2016-02-22T19:11Z
  */
 
 (function( global, factory ) {
@@ -1472,7 +1472,7 @@ var support = {};
 
 
 var
-	version = "2.2.0",
+	version = "2.2.1",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -5886,7 +5886,7 @@ function on( elem, types, selector, data, fn, one ) {
 	if ( fn === false ) {
 		fn = returnFalse;
 	} else if ( !fn ) {
-		return this;
+		return elem;
 	}
 
 	if ( one === 1 ) {
@@ -6535,14 +6535,14 @@ var
 	rscriptTypeMasked = /^true\/(.*)/,
 	rcleanScript = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g;
 
+// Manipulating tables requires a tbody
 function manipulationTarget( elem, content ) {
-	if ( jQuery.nodeName( elem, "table" ) &&
-		jQuery.nodeName( content.nodeType !== 11 ? content : content.firstChild, "tr" ) ) {
+	return jQuery.nodeName( elem, "table" ) &&
+		jQuery.nodeName( content.nodeType !== 11 ? content : content.firstChild, "tr" ) ?
 
-		return elem.getElementsByTagName( "tbody" )[ 0 ] || elem;
-	}
-
-	return elem;
+		elem.getElementsByTagName( "tbody" )[ 0 ] ||
+			elem.appendChild( elem.ownerDocument.createElement( "tbody" ) ) :
+		elem;
 }
 
 // Replace/restore the type attribute of script elements for safe DOM manipulation
@@ -7049,7 +7049,7 @@ var getStyles = function( elem ) {
 		// FF meanwhile throws on frame elements through "defaultView.getComputedStyle"
 		var view = elem.ownerDocument.defaultView;
 
-		if ( !view.opener ) {
+		if ( !view || !view.opener ) {
 			view = window;
 		}
 
@@ -7198,15 +7198,18 @@ function curCSS( elem, name, computed ) {
 		style = elem.style;
 
 	computed = computed || getStyles( elem );
+	ret = computed ? computed.getPropertyValue( name ) || computed[ name ] : undefined;
+
+	// Support: Opera 12.1x only
+	// Fall back to style even without computed
+	// computed is undefined for elems on document fragments
+	if ( ( ret === "" || ret === undefined ) && !jQuery.contains( elem.ownerDocument, elem ) ) {
+		ret = jQuery.style( elem, name );
+	}
 
 	// Support: IE9
 	// getPropertyValue is only needed for .css('filter') (#12537)
 	if ( computed ) {
-		ret = computed.getPropertyValue( name ) || computed[ name ];
-
-		if ( ret === "" && !jQuery.contains( elem.ownerDocument, elem ) ) {
-			ret = jQuery.style( elem, name );
-		}
 
 		// A tribute to the "awesome hack by Dean Edwards"
 		// Android Browser returns percentage for some values,
@@ -9256,7 +9259,7 @@ jQuery.extend( jQuery.event, {
 				// But now, this "simulate" function is used only for events
 				// for which stopPropagation() is noop, so there is no need for that anymore.
 				//
-				// For the compat branch though, guard for "click" and "submit"
+				// For the 1.x branch though, guard for "click" and "submit"
 				// events is still used, but was moved to jQuery.event.stopPropagation function
 				// because `originalEvent` should point to the original event for the constancy
 				// with other events and for more focused logic
@@ -11026,11 +11029,8 @@ jQuery.fn.extend( {
 			}
 
 			// Add offsetParent borders
-			// Subtract offsetParent scroll positions
-			parentOffset.top += jQuery.css( offsetParent[ 0 ], "borderTopWidth", true ) -
-				offsetParent.scrollTop();
-			parentOffset.left += jQuery.css( offsetParent[ 0 ], "borderLeftWidth", true ) -
-				offsetParent.scrollLeft();
+			parentOffset.top += jQuery.css( offsetParent[ 0 ], "borderTopWidth", true );
+			parentOffset.left += jQuery.css( offsetParent[ 0 ], "borderLeftWidth", true );
 		}
 
 		// Subtract parent offsets and element margins
@@ -17752,44 +17752,27 @@ if (typeof Object.create !== "function") {
         afterLazyLoad: false
     };
 }(jQuery, window, document));
-if(!window.console){
-  console={};
-  console.log = function(){};
-}
+jQuery.noConflict();
+
+(function($) {
+  $(function() {
+
+    $('.owl-carousel').each(function(){
+      var options = (typeof $(this).attr('data-options') !== "undefined") ? $.parseJSON($(this).attr('data-options')) : {};
+      options.navigationText = [
+        '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
+        '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
+      ];
+      $(this).owlCarousel(options);
+    });
+    
+  });
+})(jQuery);
 
 jQuery.noConflict();
 
-(function ($) {
+(function($) {
   $(function() {
-    var mq;
-
-    var $mqElement = $($.parseHTML('<span id="mq-detector"><span class="visible-xs"></span><span class="visible-sm"></span><span class="visible-md"></span><span class="visible-lg"></span></span>'));
-    $mqElement.css('visibility', 'hidden');
-
-    $('body').append($mqElement);
-    $mqElement.children().each(function() {
-      if($(this).is(':visible')) {
-        mq = $(this).attr('class').substring($(this).attr('class').length-2);
-      };
-    });
-
-    $('[href="styles/white-wonder.css"]').attr('data-themetype', 'main');
-    $('[href="styles/niteflight.css"]').attr('data-themetype', 'main');
-
-    $('.sidebar.sidebar-dynamic ul li a').on('click', function(e) {
-      e.preventDefault();
-      $(this).parent().toggleClass('open');
-    });
-
-    $('body').on('click', function(e) {
-      //$(e.target).toggleClass('bg-white');
-    });
-
-    $('input[type="file"]').on('change', function(e) {
-      var fileName = $(this).val().split('\\')[$(this).val().split('\\').length-1];
-      $('label[for="'+$(this).attr('id')+'"]').html(fileName).addClass('active');
-    });
-
     $('.counter').each(function() {
       var valTo = $(this).data('to');
       var increment = valTo / ($(this).data('speed')/100);
@@ -17803,21 +17786,25 @@ jQuery.noConflict();
         }
       }, 100);
     });
+  });
+})(jQuery);
 
-    $('[data-toggle="theme"]').on('click', function() {
-      $('[data-themetype="'+$(this).attr('data-themetype')+'"]').attr('disabled', 'disabled');
-      $('[href="styles/'+$(this).attr('data-theme')+'.css"]').removeAttr('disabled');
+jQuery.noConflict();
+
+(function($) {
+  $(function() {
+    $('input[type="file"]').on('change', function(e) {
+      var fileName = $(this).val().split('\\')[$(this).val().split('\\').length-1];
+      $('label[for="'+$(this).attr('id')+'"]').html(fileName).addClass('active');
     });
 
-    $('.owl-carousel').each(function(){
-      var options = (typeof $(this).attr('data-options') !== "undefined") ? $.parseJSON($(this).attr('data-options')) : {};
-      options.navigationText = [
-        '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>',
-        '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
-      ];
-      $(this).owlCarousel(options);
-    });
+  });
+})(jQuery);
 
+jQuery.noConflict();
+
+(function($) {
+  $(function() {
     $('.grid-filter').each(function() {
       var $grid = $($(this).attr('data-grid-filter'));
       var $filters = $(this).find('[data-group]');
@@ -17847,7 +17834,32 @@ jQuery.noConflict();
         });
       });
     });
+  });
+})(jQuery);
 
+jQuery.noConflict();
+
+(function($) {
+  $(function() {
+    $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
+  });
+})(jQuery);
+
+jQuery.noConflict();
+
+(function($) {
+  $(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+})(jQuery);
+
+jQuery.noConflict();
+
+(function($) {
+  $(function() {
     $('[data-toggle-class]').on('click', function(e) {
       e.preventDefault();
       switch ($(this).data('toggle-class')) {
@@ -17857,28 +17869,49 @@ jQuery.noConflict();
       }
       $($(this).attr('data-target')).toggleClass($(this).attr('data-toggle-class'));
     });
+  });
+})(jQuery);
 
-    $('[data-toggle="popover"]').popover();
-    $('[data-toggle="tooltip"]').tooltip();
-    $('.code').each(function(){
-      var encoded = document.createTextNode($.trim($(this)[0].innerHTML));
-      $(this).html(encoded);
-      var editor = ace.edit($(this).attr('id'));
-      editor.setFontSize(13);
-      editor.getSession().setMode("ace/mode/html");
-      //$(this).html(encoded);
+jQuery.noConflict();
+
+(function($) {
+  $(function() {
+    $('.sidebar.sidebar-dynamic ul li a').on('click', function(e) {
+      e.preventDefault();
+      $(this).parent().toggleClass('open');
     });
+    
     $('body').on('click', '[data-toggle="sidebar"]', function(e) {
       e.preventDefault();
       console.log(this);
       $('html').toggleClass('show-sidebar-left', $(this).attr('data-side') == 'left' && !$('html').hasClass('show-sidebar-left'));
       $('html').toggleClass('show-sidebar-right', $(this).attr('data-side') == 'right' && !$('html').hasClass('show-sidebar-right'));
+      $('.sidebar-closed, .sidebar-opened').toggle();
     });
     
+    !$('html').hasClass('show-sidebar-left') && !$('html').hasClass('show-sidebar-left') ? $('.sidebar-closed').show() && $('.sidebar-opened').hide() : $('.sidebar-closed').hide() && $('.sidebar-opened').show();
+  });
+})(jQuery);
 
-    $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {
-      event.preventDefault();
-      $(this).ekkoLightbox();
+jQuery.noConflict();
+
+(function($) {
+  $(function() {
+    $('[href="styles/white-wonder.css"]').attr('data-themetype', 'main');
+    $('[href="styles/dayfrost.css"]').attr('data-themetype', 'main');
+    $('[href="styles/niteflight.css"]').attr('data-themetype', 'main');
+    
+    $('[data-toggle="theme"]').on('click', function() {
+      $('[data-themetype="'+$(this).attr('data-themetype')+'"]').attr('disabled', 'disabled');
+      $('[href="styles/'+$(this).attr('data-theme')+'.css"]').removeAttr('disabled');
     });
+  });
+})(jQuery);
+
+jQuery.noConflict();
+
+(function($) {
+  $(function() {
+    $('[data-toggle="popover"]').popover();
   });
 })(jQuery);
