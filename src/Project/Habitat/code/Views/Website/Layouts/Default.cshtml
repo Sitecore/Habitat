@@ -1,5 +1,6 @@
 ﻿@using Sitecore.Foundation.Assets
 @using Sitecore.Foundation.Assets.Models
+@using Sitecore.Habitat.Website
 @using Sitecore.Mvc.Analytics.Extensions
 @inherits WebViewPage
 @{
@@ -42,16 +43,16 @@
     {
       <div class="off-canvas-sidebar off-canvas-sidebar-right">
         <div class="btn-group-vertical" role="group"  >
-          <button type="button" class="btn btn-info sidebar-closed" data-toggle="sidebar" title="Open visit details panel" data-side="right">
+          <button type="button" class="btn btn-info sidebar-closed" data-toggle="sidebar" title="@Captions.OpenVisitDetailsPanel" data-side="right">
             <span class="glyphicon glyphicon-eye-open icon-md "></span>
           </button>
-          <button type="button" class="btn btn-info sidebar-opened" style="display: none" data-toggle="sidebar" title="Close visit details panel" data-side="right">
+          <button type="button" class="btn btn-info sidebar-opened" style="display: none" data-toggle="sidebar" title="@Captions.CloseVisitDetailsPanel" data-side="right">
             <span class="glyphicon glyphicon-eye-close icon-md "></span>
           </button>
-          <button href="#" onclick="jQuery('head').trigger('visit-info:refresh')" style="display: none" class="btn btn-success sidebar-opened" title="Refresh visit details panel">
+          <button href="#" onclick="jQuery('head').trigger('visit-info:refresh')" style="display: none" class="btn btn-success sidebar-opened" title="@Captions.RefreshVisitDetailsPanel">
             <span class="glyphicon glyphicon-refresh icon-md "></span>
           </button>
-          <a href="/api/sitecore/Demo/EndVisit" class="btn btn-danger sidebar-opened" style="display: none" title="End the current visit and submits it to the Sitecore Experience Database"> 
+          <a href="/api/sitecore/Demo/EndVisit" class="btn btn-danger sidebar-opened" style="display: none" title="@Captions.EndVisit"> 
             <span class="glyphicon glyphicon-remove-circle icon-md " ></span>
           </a>
         </div>
