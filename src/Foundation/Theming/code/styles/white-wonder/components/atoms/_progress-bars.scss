@@ -1,16 +1,22 @@
 $progress-bar-bg: #F2F3F4;
+$progress-bar-padding: 5px;
+$progress-bar-font-size: 15px;
+$progress-bar-font-weight: 800;
+$progress-bar-height: $line-height-computed + 2 * $progress-bar-padding;
 
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
 
-
 .progress {
-  height: 50px;
+  height: $progress-bar-height;
+  border-radius: 0;
   .progress-bar {
-    padding: 15px;
-    font-size: 30px;
-    font-weight: 800;
+    padding: $progress-bar-padding;
+    font-size: $progress-bar-font-size;
+    font-weight: $progress-bar-font-weight;
     text-align: left;
     color: $text-color;
+    box-shadow: none;
+    white-space: nowrap;
 
     &-success, &-info, &-warning, &-danger {
       color: #FFF;

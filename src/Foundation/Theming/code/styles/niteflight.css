@@ -6601,11 +6601,11 @@ button.list-group-item-danger {
 .panel-body, .panel-heading {
   color: #424C5F; }
 
-.panel-body h1, .panel-body h2, .panel-body h3, .panel-body h4, .panel-body h5, .panel-body h6 {
-  margin-top: 0; }
-
 .panel > .panel-body:first-child {
   padding: 40px; }
+
+.panel-body h1, .panel-body h2, .panel-body h3, .panel-body h4, .panel-body h5, .panel-body h6 {
+  margin-top: 0; }
 
 .panel-footer {
   color: #d5d7dc; }
@@ -6767,15 +6767,16 @@ button.list-group-item-danger {
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress {
-  height: 50px;
+  height: 30px;
   border-radius: 0; }
   .progress .progress-bar {
-    padding: 15px;
-    font-size: 30px;
+    padding: 5px;
+    font-size: 15px;
     font-weight: 800;
     text-align: left;
     color: #424C5F;
-    box-shadow: none; }
+    box-shadow: none;
+    white-space: nowrap; }
     .progress .progress-bar-success, .progress .progress-bar-info, .progress .progress-bar-warning, .progress .progress-bar-danger {
       color: #FFF; }
 

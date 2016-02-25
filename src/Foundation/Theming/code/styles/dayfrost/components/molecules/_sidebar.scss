@@ -15,6 +15,7 @@ $sidebar-nav-item-border-color-active: $color-secondary-lightest;
     left: 0;
     top: 300px;
     .show-sidebar-left &{
+      transition: all 0.4s ease;
       left: 320px;
     }
   }
@@ -23,6 +24,7 @@ $sidebar-nav-item-border-color-active: $color-secondary-lightest;
     right: 0;
     top: 300px;
     .show-sidebar-right &{
+      transition: all 0.4s ease;
       right: 320px;
     }
   }

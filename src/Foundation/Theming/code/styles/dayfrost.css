@@ -6778,15 +6778,16 @@ button.list-group-item-danger {
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent); }
 
 .progress {
-  height: 50px;
+  height: 30px;
   border-radius: 0; }
   .progress .progress-bar {
-    padding: 15px;
-    font-size: 30px;
+    padding: 5px;
+    font-size: 15px;
     font-weight: 800;
     text-align: left;
     color: #79A0B9;
-    box-shadow: none; }
+    box-shadow: none;
+    white-space: nowrap; }
     .progress .progress-bar-success, .progress .progress-bar-info, .progress .progress-bar-warning, .progress .progress-bar-danger {
       color: #FFF; }
 
@@ -7059,23 +7060,7 @@ a.thumbnail.active {
 .thumbnail {
   border: none;
   padding: 0;
-  border-radius: 0;
-  /*&.testimony {
-    border: none;
-    .caption {
-      border-top: 1px solid $page-header-border-color;
-      h5 {
-        color: #666;
-        font-style: italic;
-        font-weight: normal;
-      }
-      p {
-        color: $color-secondary-dark;
-        font-weight: bold;
-        font-size: 16px;
-      }
-    }
-  }*/ }
+  border-radius: 0; }
   .thumbnail.bg-primary .caption, .thumbnail.bg-dark .caption, .thumbnail.bg-media .caption {
     color: #FFF; }
   .thumbnail.bg-primary .thumbnail-header .label, .thumbnail.bg-dark .thumbnail-header .label, .thumbnail.bg-media .thumbnail-header .label {
@@ -7121,6 +7106,18 @@ a.thumbnail.active {
     .bg-primary .thumbnail .btn:hover, .bg-dark .thumbnail .btn:hover, .bg-media .thumbnail .btn:hover {
       background-color: #79A0B9;
       color: #FFF !important; }
+  .thumbnail.testimony {
+    border: none; }
+    .thumbnail.testimony .caption {
+      border-top: 1px solid #eeeeee; }
+      .thumbnail.testimony .caption h5 {
+        color: #666;
+        font-style: italic;
+        font-weight: normal; }
+      .thumbnail.testimony .caption p {
+        color: #6A96B1;
+        font-weight: bold;
+        font-size: 16px; }
 
 .tooltip {
   position: absolute;
@@ -8266,12 +8263,14 @@ p {
     left: 0;
     top: 300px; }
     .show-sidebar-left .off-canvas-sidebar-left {
+      transition: all 0.4s ease;
       left: 320px; }
   .off-canvas-sidebar-right {
     position: fixed;
     right: 0;
     top: 300px; }
     .show-sidebar-right .off-canvas-sidebar-right {
+      transition: all 0.4s ease;
       right: 320px; }
 
 .sidebar {
