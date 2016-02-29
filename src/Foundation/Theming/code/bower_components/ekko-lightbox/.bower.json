@@ -1,0 +1,47 @@
+{
+  "name": "ekko-lightbox",
+  "version": "4.0.1",
+  "main": "./dist/ekko-lightbox.min.js",
+  "ignore": [
+    "**/.*",
+    "examples",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": ">= 3.0.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-banner": "~0.2.0",
+    "grunt-contrib-coffee": "~0.8.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-recess": "~0.3.3"
+  },
+  "homepage": "https://github.com/ashleydw/lightbox",
+  "authors": [
+    "ashleydw <hello@ashleyd.ws>"
+  ],
+  "description": "A lightbox gallery plugin for Bootstrap 3 based on the modal plugin",
+  "keywords": [
+    "lightbox",
+    "gallery",
+    "bootstrap",
+    "jquery",
+    "modal"
+  ],
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "_release": "4.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v4.0.1",
+    "commit": "0f6c04a4205e36782ca98044b50c47b78edbe073"
+  },
+  "_source": "git://github.com/ashleydw/lightbox.git",
+  "_target": "~4.0.1",
+  "_originalSource": "ekko-lightbox",
+  "_direct": true
+}

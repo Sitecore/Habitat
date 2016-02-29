@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Rendering
 {
+  using System;
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.ContentSearch;
@@ -7,12 +8,26 @@
   using Sitecore.ContentSearch.Utilities;
   using Sitecore.Data.Items;
   using Sitecore.Foundation.SitecoreExtensions.Model;
+  using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Mvc.Presentation;
   using Sitecore.Pipelines;
   using Sitecore.Pipelines.GetRenderingDatasource;
 
   public class QueryableDatasourceRenderingModel : RenderingModel
   {
+    private readonly IRenderingPropertiesRepository renderingPropertiesRepository;
+
+    public QueryableDatasourceRenderingSettings Settings => renderingPropertiesRepository.Get<QueryableDatasourceRenderingSettings>();
+
+    public QueryableDatasourceRenderingModel():this(new RenderingPropertiesRepository())
+    {
+      
+    }
+    public QueryableDatasourceRenderingModel(IRenderingPropertiesRepository renderingPropertiesRepository)
+    {
+      this.renderingPropertiesRepository = renderingPropertiesRepository;
+    }
+
     public Item DatasourceTemplate { get; set; }
 
     public override void Initialize(Rendering rendering)
@@ -43,6 +58,9 @@
           return searchResultItems
             .Where(x => x.Language == Context.Language.Name)
             .Where(x => x.IsLatestVersion)
+            .Where(x => !x.Paths.Contains(ItemIDs.TemplateRoot))
+            .Where(x => !x.Name.Equals(Sitecore.Constants.StandardValuesItemName, StringComparison.InvariantCultureIgnoreCase))
+            .Take(Settings.SearchResultsLimit)
             .Select(current => current != null ? current.GetItem() : null)
             .ToArray()
             .Where(item => item != null);

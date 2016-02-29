@@ -10,5 +10,10 @@
     {
       PipelineName = pipelineName;
     }
+
+    public ResolvePipelineAttribute()
+    {
+      
+    }
   }
 }

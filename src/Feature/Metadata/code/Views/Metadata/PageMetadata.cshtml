@@ -1,7 +1,17 @@
 ﻿@using Sitecore
 @using Sitecore.Feature.Metadata
 @using Sitecore.Feature.Metadata.Repositories
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Templates.PageMetadata.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.PageMetadata.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  return;
+}
+
+
 @*TODO: Fall back to Title / DisplayName etc*@
 @{
   //TODO Mode to Controller Rendering

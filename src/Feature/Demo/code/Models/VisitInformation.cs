@@ -3,25 +3,27 @@
   using System;
   using System.Collections.Generic;
   using System.Linq;
-  using Sitecore;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Automation.Data;
-  using Sitecore.Analytics.Data.Items;
   using Sitecore.Analytics.Tracking;
   using Sitecore.CES.DeviceDetection;
   using Sitecore.Common;
-  using Sitecore.Data.Fields;
   using Sitecore.Diagnostics;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
-  using Sitecore.Mvc.Extensions;
-  using Sitecore.Resources.Media;
+  using Sitecore.Feature.Demo.Services;
 
   public class VisitInformation
   {
+    private readonly IProfileProvider profileProvider;
+
+    public VisitInformation(IProfileProvider profileProvider)
+    {
+      this.profileProvider = profileProvider;
+    }
+
     private DeviceInformation _deviceInformation;
     private bool _isDeviceLookupDone;
-    public string PageCount => System.Convert.ToString(Tracker.Current.Interaction.PageCount);
-    public string EngagementValue => System.Convert.ToString(Tracker.Current.Interaction.Value);
+    public int PageCount => PagesViewed.Count();
+    public string EngagementValue => Convert.ToString(Tracker.Current.Interaction.Value);
 
     public bool HasCampaign
     {
@@ -54,94 +56,53 @@
     public bool HasGeoIp => Tracker.Current.Interaction.GeoData.Latitude.HasValue;
     public string City => Tracker.Current.Interaction.HasGeoIpData ? Tracker.Current.Interaction.GeoData.City : null;
     public string PostalCode => Tracker.Current.Interaction.HasGeoIpData ? Tracker.Current.Interaction.GeoData.PostalCode : null;
-    public DeviceInformation Device => this._isDeviceLookupDone ? this._deviceInformation : (this._deviceInformation = this.GetDeviceInformation());
+    public DeviceInformation Device => _isDeviceLookupDone ? _deviceInformation : (_deviceInformation = GetDeviceInformation());
 
     private DeviceInformation GetDeviceInformation()
     {
-      this._isDeviceLookupDone = true;
+      _isDeviceLookupDone = true;
       if (!DeviceDetectionManager.IsEnabled || !DeviceDetectionManager.IsReady || string.IsNullOrEmpty(Tracker.Current.Interaction.UserAgent))
       {
         return new DeviceInformation();
       }
-      
+
       return DeviceDetectionManager.GetDeviceInformation(Tracker.Current.Interaction.UserAgent);
     }
 
-    public IEnumerable<PatternMatch> PatternMatches => this.LoadPatterns();
-
-    public IEnumerable<PageLink> PagesViewed => this.LoadPages();
-
-    public IEnumerable<string> GoalsList => this.LoadGoals();
-
-    public IEnumerable<EngagementState> EngagementStates => this.LoadEngagementStates();
-
     public IEnumerable<ExperienceProfile> ExperienceProfiles => Tracker.Current.Interaction.Profiles.GetProfileNames().Select(profileName => new ExperienceProfile(Tracker.Current.Interaction.Profiles[profileName]));
 
-    public IEnumerable<PatternMatch> LoadPatterns()
+    public IEnumerable<Profile> Profiles => LoadProfiles();
+
+    public IEnumerable<PageLink> PagesViewed => LoadPages();
+
+    public IEnumerable<string> GoalsList => LoadGoals();
+
+    public IEnumerable<EngagementState> EngagementStates => LoadEngagementStates();
+
+    public IEnumerable<Profile> LoadProfiles()
     {
       if (!Tracker.IsActive)
       {
-        return Enumerable.Empty<PatternMatch>();
+        return Enumerable.Empty<Profile>();
       }
 
-      var patternMatches = new List<PatternMatch>();
-      foreach (var visibleProfile in this.GetSiteProfiles())
-      {
-        var matchingPattern = this.GetMatchingPatternForContact(visibleProfile);
-        if (matchingPattern == null)
+      return profileProvider.GetSiteProfiles()
+        .Where(profile => profileProvider.HasMatchingPattern(profile))
+        .Select(x => new Profile
         {
-          continue;
-        }
-        patternMatches.Add(CreatePatternMatch(matchingPattern, visibleProfile));
-      }
-      return patternMatches;
-    }
-
-    private static PatternMatch CreatePatternMatch(PatternCardItem matchingPattern, ProfileItem visibleProfile)
-    {
-      var src = matchingPattern.Image.ImageUrl(new MediaUrlOptions()
-                                               {
-                                                 Width = 50,
-                                                 MaxWidth = 50
-                                               });
-      var patternMatch = new PatternMatch(visibleProfile.NameField, matchingPattern.Name, src);
-      return patternMatch;
-    }
-
-    private PatternCardItem GetMatchingPatternForContact(ProfileItem visibleProfile)
-    {
-      var userPattern = Tracker.Current.Interaction.Profiles[visibleProfile.Name];
-      if (userPattern?.PatternId == null)
-      {
-        return null;
-      }
-      var matchingPattern = Context.Database.GetItem(userPattern.PatternId.Value.ToID());
-      if (matchingPattern == null)
-      {
-        return null;
-      }
-      return new PatternCardItem(matchingPattern);
-    }
-
-    private IEnumerable<ProfileItem> GetSiteProfiles()
-    {
-      var settingsItem = Context.Site.GetContextItem(Templates.ProfilingSettings.ID);
-      if (settingsItem == null)
-      {
-        return Enumerable.Empty<ProfileItem>();
-      }
-      MultilistField profiles = settingsItem.Fields[Templates.ProfilingSettings.Fields.SiteProfiles];
-      return profiles.GetItems().Select(i => new ProfileItem(i));
+          Name = x.NameField,
+          PatternMatches = profileProvider.GetPatternsWithGravityShare(x)
+        });
     }
 
     public IEnumerable<PageLink> LoadPages()
     {
-      return Tracker.Current.Interaction.GetPages().Select(this.CreatePageLink).Reverse();
+      return Tracker.Current.Interaction.GetPages().Cast<ICurrentPageContext>().Where(x=>!x.IsCancelled).Select(CreatePageLink).Reverse();
     }
 
     private PageLink CreatePageLink(IPageContext page)
     {
-      return new PageLink(this.CleanPageName(page), page.Url.Path, false);
+      return new PageLink(CleanPageName(page), page.Url.Path, false);
     }
 
     public IEnumerable<string> LoadGoals()
@@ -163,7 +124,11 @@
         var automationStateManager = AutomationStateManager.Create(Tracker.Current.Contact);
         var engagementstates = automationStateManager.GetAutomationStates().ToArray();
 
-        states.AddRange(engagementstates.Select(context =>new EngagementState() {Plan = context.PlanItem.DisplayName , State = context.StateItem.DisplayName }));
+        states.AddRange(engagementstates.Select(context => new EngagementState
+        {
+          Plan = context.PlanItem.DisplayName,
+          State = context.StateItem.DisplayName
+        }));
       }
       catch (Exception ex)
       {
