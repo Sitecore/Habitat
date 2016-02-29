@@ -66,6 +66,7 @@ Languages:
             <r uid="{5F0E3A07-EDD7-414D-A84E-479A2652037A}" p:before="r[@uid='{F8A94C60-CEDD-4329-87CC-F1BA49DBF3C1}']" s:id="{7074CA39-734D-4953-A3D5-B7D09C37CE3B}" s:ph="/page-layout/section_66096c97-812e-4c51-9231-0e4f7dcc2f17" />
             <r uid="{F8A94C60-CEDD-4329-87CC-F1BA49DBF3C1}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:id="{1B92270B-EC01-4939-B579-0ADFEB758A95}" s:ph="/page-layout/section_66096c97-812e-4c51-9231-0e4f7dcc2f17" />
             <r uid="{66096C97-812E-4C51-9231-0E4F7DCC2F17}" p:before="r[@uid='{A85893F9-5DF5-4C28-AC0F-67AD85D29661}']" s:id="{D201A487-5099-48A1-8189-55944F70C6CB}" s:ph="page-layout" />
+            <r uid="{025588CB-DFC0-4B02-8223-0015C525AE52}" s:par="" />
           </d>
         </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
@@ -81,7 +82,7 @@ Languages:
       Hint: Summary
       Value: |
         Sitecore Habitat is a set of principles and conventions focused on increasing productivity and quality in Sitecore projects.
-        <div> </div>
+        
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       Hint: Title
       Value: Introduction to Habitat

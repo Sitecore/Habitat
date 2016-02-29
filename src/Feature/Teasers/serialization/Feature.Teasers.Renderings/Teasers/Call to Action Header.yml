@@ -17,12 +17,15 @@ SharedFields:
   Value: {DDC6F993-6689-432E-90C7-B2865947DFD5}
 - ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
   Hint: Open Properties after Add
-  Value: -
+  Value: 
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
+    - ID: 1c307764-806c-42f0-b7ce-fc173ac8372b
+      Hint: Supports Local Datasource
+      Value: 1
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20150921T045718Z

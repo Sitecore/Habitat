@@ -7,7 +7,7 @@ DB: master
 SharedFields:
 - ID: 1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f
   Hint: Datasource Template
-  Value: {20A56D46-F5E3-4DB8-8B96-081575363D44}
+  Value: 
 - ID: b5b27af1-25ef-405c-87ce-369b3a004016
   Hint: Datasource Location
   Value: site:accordeonteaser
@@ -26,6 +26,9 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: 1c307764-806c-42f0-b7ce-fc173ac8372b
+      Hint: Supports Local Datasource
+      Value: 1
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20150903T115944Z

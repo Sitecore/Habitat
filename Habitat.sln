@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		package.xml = package.xml
 		publishsettings.targets = publishsettings.targets
 		README.md = README.md
+		WebEssentials2015-Settings.json = WebEssentials2015-Settings.json
 		src\Project\Habitat\code\App_Config\Include\Project\z.Habitat.DevSettings.config = src\Project\Habitat\code\App_Config\Include\Project\z.Habitat.DevSettings.config
 	EndProjectSection
 EndProject
@@ -156,10 +157,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Alerts"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Alerts.Tests", "src\Foundation\Alerts\tests\Sitecore.Foundation.Alerts.Tests.csproj", "{EC2C5218-7C4E-4010-820B-8F2593E77AE3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1B32FB80-BED9-4746-9362-CDB810C20896}"
-	ProjectSection(SolutionItems) = preProject
-		WebEssentials2015-Settings.json = WebEssentials2015-Settings.json
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LocalDatasource", "LocalDatasource", "{65673857-6BDF-408E-ACD8-417A0BCCAB7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.LocalDatasource", "src\Foundation\LocalDatasource\code\Sitecore.Foundation.LocalDatasource.csproj", "{323CA7A6-6ABB-4652-ABE2-75DAB139CBC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -487,6 +487,14 @@ Global
 		{EC2C5218-7C4E-4010-820B-8F2593E77AE3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EC2C5218-7C4E-4010-820B-8F2593E77AE3}.Release|x64.ActiveCfg = Release|Any CPU
 		{EC2C5218-7C4E-4010-820B-8F2593E77AE3}.Release|x64.Build.0 = Release|Any CPU
+		{323CA7A6-6ABB-4652-ABE2-75DAB139CBC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{323CA7A6-6ABB-4652-ABE2-75DAB139CBC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{323CA7A6-6ABB-4652-ABE2-75DAB139CBC0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{323CA7A6-6ABB-4652-ABE2-75DAB139CBC0}.Debug|x64.Build.0 = Debug|Any CPU
+		{323CA7A6-6ABB-4652-ABE2-75DAB139CBC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{323CA7A6-6ABB-4652-ABE2-75DAB139CBC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{323CA7A6-6ABB-4652-ABE2-75DAB139CBC0}.Release|x64.ActiveCfg = Release|Any CPU
+		{323CA7A6-6ABB-4652-ABE2-75DAB139CBC0}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -558,5 +566,7 @@ Global
 		{DF1E54EE-B5F2-4911-B239-9708BF21F271} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
 		{5CF5FA06-AB27-4DF5-A471-ED57EF3E4AE9} = {DF1E54EE-B5F2-4911-B239-9708BF21F271}
 		{EC2C5218-7C4E-4010-820B-8F2593E77AE3} = {DF1E54EE-B5F2-4911-B239-9708BF21F271}
+		{65673857-6BDF-408E-ACD8-417A0BCCAB7A} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
+		{323CA7A6-6ABB-4652-ABE2-75DAB139CBC0} = {65673857-6BDF-408E-ACD8-417A0BCCAB7A}
 	EndGlobalSection
 EndGlobal
