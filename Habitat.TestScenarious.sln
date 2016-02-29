@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Habitat.Website.Sp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Alerts.Specflow", "specs\Foundation.Alerts\Sitecore.Foundation.Alerts.Specflow\Sitecore.Foundation.Alerts.Specflow.csproj", "{91EC5117-4395-4705-9769-1AF2FB23F681}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions.Specflow", "specs\Foundation.SitecoreExtensions\Sitecore.Foundation.SitecoreExtensions.Specflow\Sitecore.Foundation.SitecoreExtensions.Specflow.csproj", "{7D9F8DE0-68EE-4ED5-92E5-36FD98F68442}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{91EC5117-4395-4705-9769-1AF2FB23F681}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91EC5117-4395-4705-9769-1AF2FB23F681}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91EC5117-4395-4705-9769-1AF2FB23F681}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D9F8DE0-68EE-4ED5-92E5-36FD98F68442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D9F8DE0-68EE-4ED5-92E5-36FD98F68442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D9F8DE0-68EE-4ED5-92E5-36FD98F68442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D9F8DE0-68EE-4ED5-92E5-36FD98F68442}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
