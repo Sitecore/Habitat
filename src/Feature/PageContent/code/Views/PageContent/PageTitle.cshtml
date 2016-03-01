@@ -16,8 +16,8 @@
   </h1>
   @if (Model.Item.Fields[Templates.HasPageContent.Fields.Summary].HasValue || Sitecore.Context.PageMode.IsExperienceEditor)
   {
-    <p class="lead">
+    <div class="lead">
       @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary.ToString(), Model.Item)
-    </p>
+    </div>
   }
 </header>

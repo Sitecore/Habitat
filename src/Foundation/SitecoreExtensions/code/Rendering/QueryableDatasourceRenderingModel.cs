@@ -16,6 +16,7 @@
   public class QueryableDatasourceRenderingModel : RenderingModel
   {
     private readonly IRenderingPropertiesRepository renderingPropertiesRepository;
+    private const int DefaultMaxResults = 10;
 
     public QueryableDatasourceRenderingSettings Settings => renderingPropertiesRepository.Get<QueryableDatasourceRenderingSettings>();
 
@@ -40,7 +41,7 @@
     {
       get
       {
-        var dataSource = Rendering.DataSource;
+        var dataSource = ParseRenderingDataSource();
         if (string.IsNullOrEmpty(dataSource))
         {
           return Enumerable.Empty<Item>();
@@ -60,12 +61,28 @@
             .Where(x => x.IsLatestVersion)
             .Where(x => !x.Paths.Contains(ItemIDs.TemplateRoot))
             .Where(x => !x.Name.Equals(Sitecore.Constants.StandardValuesItemName, StringComparison.InvariantCultureIgnoreCase))
-            .Take(Settings.SearchResultsLimit)
+            .Take(MaxResults)
             .Select(current => current != null ? current.GetItem() : null)
             .ToArray()
             .Where(item => item != null);
         }
       }
+    }
+
+    private int MaxResults => Settings.SearchResultsLimit > 0 ? Settings.SearchResultsLimit : DefaultMaxResults;
+
+    private string ParseRenderingDataSource()
+    {
+      var dataSource = Rendering.DataSource;
+      if (string.IsNullOrWhiteSpace(dataSource))
+      {
+        dataSource = "+location:" + Rendering.Item.ID;
+      }
+      if (MainUtil.IsID(dataSource))
+      {
+        dataSource = "+location:" + dataSource;
+      }
+      return dataSource;
     }
 
 
