@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
@@ -17,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		package.xml = package.xml
 		publishsettings.targets = publishsettings.targets
 		README.md = README.md
+		WebEssentials2015-Settings.json = WebEssentials2015-Settings.json
 		src\Project\Habitat\code\App_Config\Include\Project\z.Habitat.DevSettings.config = src\Project\Habitat\code\App_Config\Include\Project\z.Habitat.DevSettings.config
 	EndProjectSection
 EndProject
@@ -155,11 +156,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Alerts", "src\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj", "{5CF5FA06-AB27-4DF5-A471-ED57EF3E4AE9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Alerts.Tests", "src\Foundation\Alerts\tests\Sitecore.Foundation.Alerts.Tests.csproj", "{EC2C5218-7C4E-4010-820B-8F2593E77AE3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1B32FB80-BED9-4746-9362-CDB810C20896}"
-	ProjectSection(SolutionItems) = preProject
-		WebEssentials2015-Settings.json = WebEssentials2015-Settings.json
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
