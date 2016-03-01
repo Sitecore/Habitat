@@ -35,21 +35,21 @@
     {
       base.Initialize(rendering);
       ResolveDatasourceTemplate(rendering);
+      ParseRenderingDataSource(rendering);
     }
 
     public virtual IEnumerable<Item> Items
     {
       get
       {
-        var dataSource = ParseRenderingDataSource();
-        if (string.IsNullOrEmpty(dataSource))
+        if (string.IsNullOrEmpty(DatasourceString))
         {
           return Enumerable.Empty<Item>();
         }
 
         using (var providerSearchContext = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
         {
-          var items = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(dataSource));
+          var items = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(DatasourceString));
           var searchResultItems = items.Cast<SearchResult>();
           if (DatasourceTemplate != null)
           {
@@ -71,9 +71,9 @@
 
     private int MaxResults => Settings.SearchResultsLimit > 0 ? Settings.SearchResultsLimit : DefaultMaxResults;
 
-    private string ParseRenderingDataSource()
+    private void ParseRenderingDataSource(Rendering rendering)
     {
-      var dataSource = Rendering.DataSource;
+      var dataSource = rendering.DataSource;
       if (string.IsNullOrWhiteSpace(dataSource))
       {
         dataSource = "+location:" + Rendering.Item.ID;
@@ -82,8 +82,10 @@
       {
         dataSource = "+location:" + dataSource;
       }
-      return dataSource;
+      this.DatasourceString =  dataSource;
     }
+
+    public string DatasourceString { get; set; }
 
 
     private void ResolveDatasourceTemplate(Rendering rendering)
