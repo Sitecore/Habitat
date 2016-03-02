@@ -1,0 +1,63 @@
+$breadcrumb-bg: transparent;
+$breadcrumb-separator: "\\";
+$breadcrumb-color: $color-secondary-lighter;
+$breadcrumb-active-color: $color-secondary-dark;
+$breadcrumb-padding-horizontal: 0;
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
+
+
+.breadcrumb {
+  & > li {
+    font-size: 16px;
+
+    .ie9 &, .lte-ie8 {
+      margin-right: 1px;
+    }
+
+    @media all and (max-width: $screen-xs-max) {
+      font-size: 12px;
+    }
+
+    & + li {
+      &:before {
+        color: $breadcrumb-color;
+        .bg-primary &, .bg-dark &, .bg-media & {
+          color: #FFF;
+        }
+        .bg-white & {
+          color: #000;
+        }
+      }
+    }
+
+    a {
+      color: $breadcrumb-color;
+      .bg-primary &, .bg-dark &, .bg-media & {
+        color: #FFF;
+      }
+      .bg-white & {
+        color: #000;
+      }
+    }
+
+    &.active {
+      font-size: 24px;
+      font-weight: 800;
+
+      .bg-primary &, .bg-dark &, .bg-media & {
+        color: #FFF;
+      }
+
+      .bg-white & {
+        color: #000;
+      }
+
+
+      &:before {
+        font-weight: normal;
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -112,6 +112,8 @@
     <Content Include="App_Config\Include\Feature\Feature.Teasers.Serialization.config" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <Content Include="Views\Teasers\Headline.cshtml" />
+    <Content Include="Views\Teasers\JumbotronHeader.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

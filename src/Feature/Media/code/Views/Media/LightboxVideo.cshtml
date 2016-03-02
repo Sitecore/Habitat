@@ -6,7 +6,7 @@
 
 @if (!Model?.Item?.IsDerived(Templates.HasMediaVideo.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaVideo.ID))
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaVideo.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
 }
 
@@ -20,9 +20,8 @@
   }
 }
 
-<div class="lightbox lightbox-video">
+<div class="thumbnail lightbox-item">
 	<a href="@Model.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink)" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" data-gallery="page">
 		@thumbnail
-		<span class="overlay"><i class="fa fa-play-circle fa-2x"></i></span>
 	</a>
 </div>

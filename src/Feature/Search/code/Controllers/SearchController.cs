@@ -26,7 +26,6 @@
       this.renderingPropertiesRepository = renderingPropertiesRepository;
     }
 
-    [HttpGet]
     public ActionResult SearchResults(string query)
     {
       return this.View("SearchResults", this.GetSearchResults(new SearchQuery {Query = query}));
@@ -37,9 +36,9 @@
       return this.View("GlobalSearch", GetSearchSettings());
     }
 
-    public ActionResult SearchSettings(string query)
+    public ActionResult SearchResultsHeader(string query)
     {
-      return this.View("SearchSettings", GetSearchSettings());
+      return this.View("SearchResultsHeader", GetSearchSettings());
     }
 
     public ActionResult PagedSearchResults(string query, int? page)

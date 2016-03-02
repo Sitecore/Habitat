@@ -25,10 +25,10 @@ SharedFields:
   Value: /sitecore/content/Habitat/Home
 - ID: ed71d374-8c33-4561-991d-77482ae01330
   Hint: AccountsDetailsPage
-  Value: /sitecore/content/Habitat/Home/EditProfile
+  Value: /sitecore/content/Habitat/Home/Edit Profile
 - ID: f3cd2bb8-472b-4df0-87c0-a13098e391ca
   Hint: ForgotPasswordPage
-  Value: /sitecore/content/Habitat/Home/Login/ForgotPassword
+  Value: /sitecore/content/Habitat/Home/Login/Forgot Password
 Languages:
 - Language: da
   Versions:
@@ -58,6 +58,9 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: 005ed83c-2d2f-4d07-a7a9-eb64d873de46
+      Hint: OrganisationPhone
+      Value: +1 415 380 0600
     - ID: 02115632-fe1e-4b3d-9ad4-a4ddf1f782f0
       Hint: Copyright
       Value: "Copyright © 2015 <a href=\"http://sitecore.net\" target=\"_blank\" title=\"Opens in a new window\">Sitecore Corporation A/S</a>"
@@ -79,12 +82,26 @@ Languages:
     - ID: 835fa523-d28a-46a2-a589-6aa4a5bf0846
       Hint: RegisterOutcome
       Value: {C2D9DFBC-E465-45FD-BA21-0A06EBE942D6}
+    - ID: 9c428556-5d7b-46ac-b0bb-b06a4f4c9591
+      Hint: OrganisationEmail
+      Value: <link text='sales@sitecore.net' linktype='mailto' style='' url='mailto:sales@sitecore.net'  title='' />
+    - ID: a24df48f-c8a3-4163-966c-8c24bd8760b2
+      Hint: OrganisationAddress
+      Value: |
+        2320 Marinship Way
+        
+        Sausalito, CA 94965
+        
+        USA
     - ID: b8027200-aab0-4876-b454-dbb85add9e3c
       Hint: HostName
       Value: habitat.local
     - ID: e748d808-64c1-4dec-9718-f35cf9689e4b
       Hint: Logo
       Value: "<image mediapath=\"/Default Website/sc_logo\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Default Website/sc_logo\" mediaid=\"{461A93BF-5471-4AF2-BF36-D638F5660CB5}\" />"
+    - ID: efd4980a-030c-497c-8880-40b6030ac28b
+      Hint: OrganisationName
+      Value: Sitecore Corporation
     - ID: f07811d3-41e9-440a-9d81-310c1d78bed6
       Hint: Title
       Value: Habitat - Example Site

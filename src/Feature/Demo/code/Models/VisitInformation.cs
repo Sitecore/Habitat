@@ -22,7 +22,7 @@
 
     private DeviceInformation _deviceInformation;
     private bool _isDeviceLookupDone;
-    public string PageCount => Convert.ToString(Tracker.Current.Interaction.PageCount);
+    public int PageCount => PagesViewed.Count();
     public string EngagementValue => Convert.ToString(Tracker.Current.Interaction.Value);
 
     public bool HasCampaign
@@ -97,7 +97,7 @@
 
     public IEnumerable<PageLink> LoadPages()
     {
-      return Tracker.Current.Interaction.GetPages().Select(CreatePageLink).Reverse();
+      return Tracker.Current.Interaction.GetPages().Cast<ICurrentPageContext>().Where(x=>!x.IsCancelled).Select(CreatePageLink).Reverse();
     }
 
     private PageLink CreatePageLink(IPageContext page)

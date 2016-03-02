@@ -6,32 +6,8 @@
 
 @if (!Model?.Item?.IsDerived(Templates.Employee.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Employee.ID))
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Employee.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
 }
 
-<div class="employee">
-  <h1>
-    @Model.Item.Field(Templates.Person.Fields.Name)
-  </h1>
-
-  <div>
-    @Model.Item.Field(Templates.Person.Fields.Title)
-  </div>
-  <hr/>
-  <div class="body">
-    @if (Sitecore.Context.PageMode.IsPageEditor)
-    {
-      <div class="panel panel-info">
-        <div class="panel-heading">
-          Summary
-        </div>
-        <div class="panel-body">
-          @Model.Item.Field(Templates.Person.Fields.Summary)
-        </div>
-      </div>
-    }
-
-    @Model.Item.Field(Templates.Employee.Fields.Biography)
-  </div>
-</div>
+@Model.Item.Field(Templates.Employee.Fields.Biography)

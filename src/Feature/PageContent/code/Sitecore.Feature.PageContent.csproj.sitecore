@@ -1,0 +1,23 @@
+﻿<Project>
+  <PropertyGroup>
+    <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
+  </PropertyGroup>
+  <File Include="Views\PageContent\PageHeaderTitle.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{45B8E1D9-D522-49E0-B9B7-04C965CC7089}</Item>
+  </File>
+  <File Include="Views\PageContent\PageBody.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{914673DC-FC44-4660-B6EB-FF421FAAC2F9}</Item>
+  </File>
+  <File Include="Views\PageContent\PageTitle.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{695CEE74-D8F4-481D-B813-237050809290}</Item>
+  </File>
+  <File Include="Views\PageContent\PageImageHeader.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{359A65BB-0A2C-44E5-8C34-DF3ACDBB42A7}</Item>
+  </File>
+  <File Include="Views\PageContent\ChildPageList.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{84924ABF-F983-4AF5-9002-EA0237A53DA9}</Item>
+  </File>
+  <File Include="Views\PageContent\PageTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{07AB411C-F894-4144-B069-48EF67431D32}</Item>
+  </File>
+</Project>

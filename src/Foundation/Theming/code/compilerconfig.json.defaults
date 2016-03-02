@@ -10,7 +10,9 @@
       "indentType": "space",
       "indentWidth": 2,
       "outputStyle": "nested",
-      "Precision": 5
+      "Precision": 5,
+      "includePath": "stylesheets/",
+      "relativeUrls": false
     },
     "coffeescript": {
       "bare": false,

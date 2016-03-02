@@ -1,35 +1,42 @@
-﻿@using Sitecore.Foundation.Alerts
+﻿@using Sitecore.Feature.Person
+@using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Foundation.SitecoreExtensions.Rendering.QueryableDatasourceRenderingModel
 
-@if (Model?.Items == null || !Model.Items.All(i=>i.IsDerived(Templates.Person.ID)))
+@if (Model?.Items == null || !Model.Items.All(i => i.IsDerived(Templates.Person.ID)))
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID))
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
 }
 
-<div class="row">
+<ul class="block-grid-md-4 block-grid-sm-3 block-grid-xs-1">
   @foreach (var item in Model.Items)
   {
-    <div class="teaser teaser-default employee-teaser col-xs-6 col-md-4">
-      <div class="teaser-heading">
-        <h3>
-          @item.Field(Templates.Person.Fields.Name)
-        </h3>
-        <p class="title metadata">
-          @item.Field(Templates.Person.Fields.Title)
-        </p>
+    <li>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <a href="@item.Url()">
+            @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, item, mw: 750, cssClass: "img-responsive")
+          </a>
+        </div>
+        <div class="panel-body text-center">
+          <label>@item.Field(Templates.Person.Fields.Title)</label>
+          <h4>
+            @item.Field(Templates.Person.Fields.Name)
+          </h4>
+          <p>
+            @item.Field(Templates.Person.Fields.Summary)
+          </p>
+        </div>
+        <div class="panel-footer text-center">
+          <a href="@item.Url()" class="btn btn-default">
+            @DictionaryRepository.Get("/Person/EmployeesList/Read more", "Read more")
+          </a>
+        </div>
       </div>
-      <div class="teaser-image">
-        <a href="@item.Url()">
-          @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, item, mw: 750, cssClass: "img-responsive")
-        </a>
-      </div>
-      <div class="teaser-body">
-        @item.Field(Templates.Person.Fields.Summary)
-      </div>
-    </div>
+
+    </li>
   }
-</div>
+</ul>

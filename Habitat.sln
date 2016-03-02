@@ -10,12 +10,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		gulp-config.js = gulp-config.js
+		gulpfile-ci.js = gulpfile-ci.js
 		gulpfile.js = gulpfile.js
 		LICENSE = LICENSE
 		package.json = package.json
 		package.xml = package.xml
 		publishsettings.targets = publishsettings.targets
 		README.md = README.md
+		WebEssentials2015-Settings.json = WebEssentials2015-Settings.json
 		src\Project\Habitat\code\App_Config\Include\Project\z.Habitat.DevSettings.config = src\Project\Habitat\code\App_Config\Include\Project\z.Habitat.DevSettings.config
 	EndProjectSection
 EndProject
@@ -152,6 +154,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maps", "Maps", "{96063E26-CEF1-4763-90EF-81271231DB9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Maps.Tests", "src\Feature\Maps\tests\Sitecore.Feature.Maps.Tests.csproj", "{268D8E32-75BB-4830-9D0E-3F70E1C75A5F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FAQ", "FAQ", "{79E7F046-6A3D-4508-B7B5-02A864A49C23}"
+	ProjectSection(SolutionItems) = preProject
+		src\Feature\faq\test\Sitecore.Feature.FAQ.Tests.csproj = src\Feature\faq\test\Sitecore.Feature.FAQ.Tests.csproj
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.FAQ", "src\Feature\faq\code\Sitecore.Feature.FAQ.csproj", "{C2E10220-2850-484F-8FCA-DCDD1C6E3B53}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Demo.Tests", "src\Feature\Demo\tests\Sitecore.Feature.Demo.Tests.csproj", "{0CF1F7D9-121A-4E40-844C-612EC40345F5}"
 EndProject
@@ -479,6 +487,14 @@ Global
 		{268D8E32-75BB-4830-9D0E-3F70E1C75A5F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{268D8E32-75BB-4830-9D0E-3F70E1C75A5F}.Release|x64.ActiveCfg = Release|Any CPU
 		{268D8E32-75BB-4830-9D0E-3F70E1C75A5F}.Release|x64.Build.0 = Release|Any CPU
+		{C2E10220-2850-484F-8FCA-DCDD1C6E3B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E10220-2850-484F-8FCA-DCDD1C6E3B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E10220-2850-484F-8FCA-DCDD1C6E3B53}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C2E10220-2850-484F-8FCA-DCDD1C6E3B53}.Debug|x64.Build.0 = Debug|Any CPU
+		{C2E10220-2850-484F-8FCA-DCDD1C6E3B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E10220-2850-484F-8FCA-DCDD1C6E3B53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2E10220-2850-484F-8FCA-DCDD1C6E3B53}.Release|x64.ActiveCfg = Release|Any CPU
+		{C2E10220-2850-484F-8FCA-DCDD1C6E3B53}.Release|x64.Build.0 = Release|Any CPU
 		{0CF1F7D9-121A-4E40-844C-612EC40345F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0CF1F7D9-121A-4E40-844C-612EC40345F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CF1F7D9-121A-4E40-844C-612EC40345F5}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -573,6 +589,8 @@ Global
 		{19CE4259-BD16-4239-AC7C-22220FB26575} = {96063E26-CEF1-4763-90EF-81271231DB9F}
 		{96063E26-CEF1-4763-90EF-81271231DB9F} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
 		{268D8E32-75BB-4830-9D0E-3F70E1C75A5F} = {96063E26-CEF1-4763-90EF-81271231DB9F}
+		{79E7F046-6A3D-4508-B7B5-02A864A49C23} = {755F9E42-1707-4E1A-AE6D-3FD8A25118C0}
+		{C2E10220-2850-484F-8FCA-DCDD1C6E3B53} = {79E7F046-6A3D-4508-B7B5-02A864A49C23}
 		{0CF1F7D9-121A-4E40-844C-612EC40345F5} = {CA21CE04-607F-4AF6-8A70-3F1E82C42B11}
 		{DF1E54EE-B5F2-4911-B239-9708BF21F271} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
 		{5CF5FA06-AB27-4DF5-A471-ED57EF3E4AE9} = {DF1E54EE-B5F2-4911-B239-9708BF21F271}

@@ -5,15 +5,10 @@ var foreach = require("gulp-foreach");
 var rename = require("gulp-rename");
 var watch = require("gulp-watch");
 var newer = require("gulp-newer");
-var util = require("gulp-util");
-var rimrafDir = require("rimraf");
-var rimraf = require("gulp-rimraf");
 var runSequence = require("run-sequence");
-var fs = require("fs");
 var path = require("path");
-var xmlpoke  = require("xmlpoke");
 var config = require("./gulp-config.js")();
-var websiteRootBackup = config.websiteRoot;
+module.exports.config = config;
 
 /*****************************
   Initial setup
@@ -78,7 +73,7 @@ var publishProjects = function (location, dest) {
       return stream
         .pipe(debug({ title: "Building project:" }))
         .pipe(msbuild({
-          targets: ["Clean", "Build"],
+          targets: ["Build"],
           configuration: config.buildConfiguration,
           logCommand: false,
           verbosity: "minimal",
@@ -158,9 +153,9 @@ gulp.task("Publish-All-Configs", function () {
 *****************************/
 gulp.task("Auto-Publish-Css", function () {
   var root = "./src";
-  var roots = [root + "/**/assets", "!" + root + "/**/obj/**/assets"];
+  var roots = [root + "/**/stylesheets", "!" + root + "/**/obj/**/stylesheets"];
   var files = "/**/*.css";
-  var destination = config.websiteRoot + "\\assets";
+  var destination = config.websiteRoot + "\\stylesheets";
   gulp.src(roots, { base: root }).pipe(
     foreach(function (stream, rootFolder) {
       gulp.watch(rootFolder.path + files, function (event) {
@@ -211,71 +206,4 @@ gulp.task("Auto-Publish-Assemblies", function () {
       return stream;
     })
   );
-});
-
-/*****************************
- CI stuff
-*****************************/
-var packageFiles = [];
-gulp.task("CI-Publish", function (callback) {
-  packageFiles = [];
-  config.websiteRoot = path.resolve("./temp");
-  config.buildConfiguration = "Release";
-  fs.mkdirSync(config.websiteRoot);
-  runSequence(
-    "Publish-Foundation-Projects",
-    "Publish-Feature-Projects",
-    "Publish-Project-Projects", callback);
-});
-
-gulp.task("CI-Prepare-Package-Files", function (callback) {
-  var foldersToExclude = [config.websiteRoot + "\\App_config\\include\\Unicorn"];
-  foldersToExclude.forEach(function (item, index, array) {
-    rimrafDir.sync(config.websiteRoot + item);
-  });
-
-  var excludeList = [
-    config.websiteRoot + "\\bin\\{Sitecore,Lucene,Newtonsoft,Unicorn,Kamsar,Rainbow,System,Microsoft.Web.Infrastructure}*dll",
-    config.websiteRoot + "\\compilerconfig.json.defaults",
-    config.websiteRoot + "\\packages.config",
-    config.websiteRoot + "\\App_Config\\Include\\Rainbow*",
-    config.websiteRoot + "\\App_Config\\Include\\Unicorn\\*",
-    config.websiteRoot + "\\App_Config\\Include\\Habitat\\*Serialization.config",
-    "!" + config.websiteRoot + "\\bin\\Sitecore.Support*dll",
-    "!" + config.websiteRoot + "\\bin\\Sitecore.{Feature,Foundation,Habitat}*dll"
-  ];
-  console.log(excludeList);
-
-  return gulp.src(excludeList, { read: false }).pipe(rimraf({ force: true }));
-});
-
-gulp.task("CI-Enumerate-Files", function () {
-  config.websiteRoot = websiteRootBackup;
-
-  return gulp.src(path.resolve("./temp") + "/**/*.*", { base: "temp", read: false })
-    .pipe(foreach(function (stream, file) {
-      var item = "/" + file.relative.replace(/\\/g, "/");
-      console.log("Added to the package:" + item);
-      packageFiles.push(item);
-      return stream;
-    }));
-});
-
-
-gulp.task("CI-Update-Xml", function (cb) {
-  xmlpoke("./package.xml", function (xml) {
-    for (var idx in packageFiles) {
-        xml.add("project/Sources/xfiles/Entries/x-item", packageFiles[idx]);
-    }
-  });
-  cb();
-});
-
-gulp.task("CI-Clean", function (callback) {
-  rimrafDir.sync(path.resolve("./temp"));
-  callback();
-});
-
-gulp.task("CI-Do-magic", function (callback) {
-  runSequence("CI-Clean", "CI-Publish", "CI-Prepare-Package-Files", "CI-Enumerate-Files", "CI-Clean", "CI-Update-Xml", callback);
 });

@@ -13,5 +13,14 @@
     {
       input.Humanize().Should().Be(expected);
     }
+
+    [Theory]
+    [InlineData("  ", "none")]
+    [InlineData("", "none")]
+    [InlineData("somePath", "url('somePath')")]
+    public void ToCssUrlValue_ShouldReturnValueSplittedWithWhitespaces(string input, string expected)
+    {
+      input.ToCssUrlValue().Should().Be(expected);
+    }
   }
 }
