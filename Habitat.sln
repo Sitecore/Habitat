@@ -1,4 +1,5 @@
 ﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
@@ -154,6 +155,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maps", "Maps", "{96063E26-CEF1-4763-90EF-81271231DB9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Maps.Tests", "src\Feature\Maps\tests\Sitecore.Feature.Maps.Tests.csproj", "{268D8E32-75BB-4830-9D0E-3F70E1C75A5F}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FAQ", "FAQ", "{79E7F046-6A3D-4508-B7B5-02A864A49C23}"
 	ProjectSection(SolutionItems) = preProject
 		src\Feature\faq\test\Sitecore.Feature.FAQ.Tests.csproj = src\Feature\faq\test\Sitecore.Feature.FAQ.Tests.csproj
