@@ -28,13 +28,13 @@
                 <div class="panel-title">
                     <a role="button" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@ID">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        @Html.Sitecore().Field(Templates.Faq.Fields.Question_FieldName, item)
+                        @Html.Sitecore().Field(Templates.Faq.Fields.Question, item)
                     </a>
                 </div>
             </div>
             <div id=@ID class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingcollapse0">
                 <div class="panel-body">
-                    @Html.Sitecore().Field(Templates.Faq.Fields.Answer_FieldName, item)
+                    @Html.Sitecore().Field(Templates.Faq.Fields.Answer, item)
                 </div>
             </div>
         </div>
