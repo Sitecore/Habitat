@@ -10,7 +10,7 @@ SharedFields:
   Value: Single-Line Text
 - ID: b118496a-0f78-4a27-b55f-0a6c4b0b0fe1
   Hint: Default value
-  Value: $name
+  Value: Name
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   Hint: __Sortorder
   Value: 100

@@ -127,6 +127,10 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Demo\_KeyBehaviourCacheList.cshtml" />
     <Content Include="Scripts\Demo\VisitDetails.js" />
+    <Content Include="Views\Demo\Visits.cshtml" />
+    <Content Include="Views\Demo\PersonalInfo.cshtml" />
+    <Content Include="Views\Demo\OnsiteBehavior.cshtml" />
+    <Content Include="Views\Demo\Referral.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
