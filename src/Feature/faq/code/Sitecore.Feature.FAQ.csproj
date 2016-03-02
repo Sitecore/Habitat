@@ -101,9 +101,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="App_Config\include\FAQ\Feature.FAQ.Serialization.config" />
     <Content Include="Views\web.config" />
     <Content Include="Views\FAQ\FaqAccordion.cshtml" />
+    <Content Include="App_Config\include\Feature\Feature.FAQ.Serialization.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
