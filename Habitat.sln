@@ -152,6 +152,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maps", "Maps", "{96063E26-CEF1-4763-90EF-81271231DB9F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Maps.Tests", "src\Feature\Maps\tests\Sitecore.Feature.Maps.Tests.csproj", "{268D8E32-75BB-4830-9D0E-3F70E1C75A5F}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Demo.Tests", "src\Feature\Demo\tests\Sitecore.Feature.Demo.Tests.csproj", "{0CF1F7D9-121A-4E40-844C-612EC40345F5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Alerts", "Alerts", "{DF1E54EE-B5F2-4911-B239-9708BF21F271}"
