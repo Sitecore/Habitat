@@ -1,8 +1,8 @@
 ﻿---
 ID: 07674169-6ecb-4534-9d90-f2bb2feb2bfa
-Parent: 5e9752a9-bafd-46eb-8b24-1f923635d6b5
+Parent: 933308ac-1959-4515-bb18-c4cf011f2d9d
 Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
-Path: /sitecore/system/Modules/Feature/Maps/Map Types
+Path: /sitecore/system/Settings/Feature/Maps/Map Types
 DB: master
 SharedFields:
 - ID: 1172f251-dad4-4efb-a329-0c63500e4f1e

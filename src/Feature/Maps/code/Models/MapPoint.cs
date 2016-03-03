@@ -4,6 +4,10 @@ namespace Sitecore.Feature.Maps.Models
 {
   public class MapPoint
   {
+    public MapPoint()
+    {
+      
+    }
     public MapPoint(Data.Items.Item item)
     {
       Name = item.Field(Templates.MapPoint.Fields.Name).ToString();

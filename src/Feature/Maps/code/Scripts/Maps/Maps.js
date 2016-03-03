@@ -50,6 +50,7 @@
     setMapPrototypes();
     var $elements = $(".map-canvas");
     $.each($elements, function (index, element) {
+      var $element = $(element);
       var mapProperties = {
         center: { lat: -5.055576, lng: 3.803790 },
         zoom: 0,
@@ -61,7 +62,6 @@
         rotateControl: true,
         centerMapControl: true
       };
-      var $element = $(element);
       var $renderingParamsEl = $element.siblings('input[id="mapRenderingParameters"]');
       var renderingParams = {};
       if ($renderingParamsEl) {
@@ -147,7 +147,7 @@
 
     $.ajax(
     {
-      url: "/api/Maps/GetMapPoints",
+      url: "/api/sitecore/Maps/GetMapPoints",
       method: "POST",
       data: {
         itemId: mapDataSourceItemId

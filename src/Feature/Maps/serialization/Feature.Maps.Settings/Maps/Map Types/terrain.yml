@@ -2,7 +2,7 @@
 ID: c6bd7927-a5f1-40a6-806a-81ec543ef2e1
 Parent: 07674169-6ecb-4534-9d90-f2bb2feb2bfa
 Template: 04c34cf5-b7ea-4408-88e8-5fc851173dbd
-Path: /sitecore/system/Modules/Feature/Maps/Map Types/terrain
+Path: /sitecore/system/Settings/Feature/Maps/Map Types/terrain
 DB: master
 Languages:
 - Language: en
