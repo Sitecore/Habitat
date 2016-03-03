@@ -10,9 +10,9 @@ namespace Sitecore.Feature.Maps.Models
     }
     public MapPoint(Data.Items.Item item)
     {
-      Name = item.Field(Templates.MapPoint.Fields.Name).ToString();
-      Address = item.Field(Templates.MapPoint.Fields.Address).ToString();
-      Location = item.Field(Templates.MapPoint.Fields.Location).ToString();
+      Name = item[Templates.MapPoint.Fields.Name];
+      Address = item[Templates.MapPoint.Fields.Address];
+      Location = item[Templates.MapPoint.Fields.Location];
     }
 
     public string Name { get; set; }
