@@ -40,33 +40,12 @@ namespace Sitecore.Feature.Demo.Controllers
         return null;
       return View("ContactDetails", new ContactInformation(contactProfileProvider));
     }
-
-    public ActionResult Visits()
+    
+    public ActionResult ExperienceData()
     {
       if (Tracker.Current == null || Tracker.Current.Interaction == null)
         return null;
-      return View();
-    }
-
-    public ActionResult Referral()
-    {
-      if (Tracker.Current == null || Tracker.Current.Interaction == null)
-        return null;
-      return View();
-    }
-
-    public ActionResult PersonalInfo()
-    {
-      if (Tracker.Current == null || Tracker.Current.Interaction == null)
-        return null;
-      return View();
-    }
-
-    public ActionResult OnsiteBehavior()
-    {
-      if (Tracker.Current == null || Tracker.Current.Interaction == null)
-        return null;
-      return View();
+      return View(new ExperienceData(contactProfileProvider, profileProvider));
     }
 
     public ActionResult DemoContent()

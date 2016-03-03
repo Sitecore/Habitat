@@ -1,8 +1,8 @@
 ﻿---
-ID: a1c7c312-2251-4211-aee4-23a53918eabe
+ID: ced18f24-62c2-445e-b0d9-045e3325297b
 Parent: db86a052-120c-4d95-a6cd-078fcc0cdb39
 Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
-Path: /sitecore/layout/Renderings/Feature/Demo/xDB Onsite Behavior
+Path: /sitecore/layout/Renderings/Feature/Demo/xDB Panel
 DB: master
 SharedFields:
 - ID: 94069f66-609c-48b0-8281-521c30fb269d
@@ -10,7 +10,7 @@ SharedFields:
   Value: -
 - ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
   Hint: Controller Action
-  Value: OnsiteBehavior
+  Value: ExperienceData
 - ID: e514a1eb-ddba-44f7-8528-82ca2280f778
   Hint: JavaScript assets
   Value: /scripts/Demo/VisitDetails.js

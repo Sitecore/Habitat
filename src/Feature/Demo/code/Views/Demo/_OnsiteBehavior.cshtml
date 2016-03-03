@@ -1,0 +1,146 @@
+﻿@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.StringExtensions
+@model Sitecore.Feature.Demo.Models.OnsiteBehavior
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a href="#onsiteBehaviorPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
+        <span class="fa fa-bullseye"></span>
+        @DictionaryRepository.Get("/Demo/OnsiteBehavior/Title", "Onsite Behavior")
+        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+      </a>
+    </h4>
+  </div>
+  <div id="onsiteBehaviorPanel" class="panel-collapse collapse">
+    <div class="panel-body">
+        <div class="media">
+          <div class="media-left">
+            <span class="fa fa-users"></span>
+          </div>
+          <div class="media-body ">
+            <h4 class="media-title">
+              @DictionaryRepository.Get("/Demo/OnsiteBehavior/Profiling", "Profiling")
+            </h4>
+            @if (!Model.Profiles.Any())
+            {
+              <div class="alert alert-info">
+                @DictionaryRepository.Get("/Demo/OnsiteBehavior/NoProfiling", "You have not been profiled yet")
+              </div>
+            }
+            @{
+              foreach (var profile in Model.Profiles)
+              {
+                <div class="media">
+                  <div class="media-body ">
+                    <h5 class="media-title">@profile.Name</h5>
+                    <ol class="list-unstyled">
+                      @foreach (var patternMatch in profile.PatternMatches)
+                      {
+                        <li>
+                          <div>@patternMatch.PatternName</div>
+                          <div class="progress">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@patternMatch.MatchPercentage" aria-valuemin="0" aria-valuemax="100" style="width: @patternMatch.MatchPercentage%">
+                              @patternMatch.MatchPercentage.ToString("P0")
+                            </div>
+                          </div>
+                        </li>
+                      }
+                    </ol>
+                  </div>
+                  @{
+                    var matchedPattern = profile.PatternMatches.FirstOrDefault();
+                    var image = matchedPattern?.Image;
+                    if (!string.IsNullOrWhiteSpace(image))
+                    {
+                      <div class="media-right">
+                        <img src="@image" alt="@matchedPattern.PatternName" width="30" />
+                      </div>
+                    }
+                  }
+                </div>
+                    }
+            }
+          </div>
+        </div>
+      <div class="media">
+        <div class="media-left">
+          <span class="fa fa-trophy"></span>
+        </div>
+        <div class="media-body ">
+          <h4 class="media-title">
+            @DictionaryRepository.Get("/Demo/OnsiteBehavior/GoalsTriggered", "Triggered goals")
+            @if (Model.Goals.Any())
+            {
+              <strong class="pull-right">@Model.Goals.Count()</strong>
+            }
+          </h4>
+          @if (!Model.Goals.Any())
+          {
+            <div class="alert alert-info">
+              @DictionaryRepository.Get("/Demo/OnsiteBehavior/NoGoals", "You have triggered no goals so far")
+            </div>
+          }
+          else
+          {
+            <table class="table table-condensed table-borderless">
+              <tr>
+                <th>@DictionaryRepository.Get("/Demo/OnsiteBehavior/Goal", "Goal")</th>
+                <th title="@DictionaryRepository.Get("/Demo/OnsiteBehavior/EngagementValue", "Engagement value")"><span class="fa fa-heart"></span></th>
+                <th>@DictionaryRepository.Get("/Demo/OnsiteBehavior/GoalVisit", "Visit")</th>
+              </tr>
+              @foreach (var goal in Model.Goals)
+              {
+                <tr>
+                  <td>@goal.Title</td>
+                  <td>@goal.EngagementValue</td>
+                  <td>@(goal.Date?.ToString("dd-MM HH:MM") ?? @DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Now"))</td>
+                </tr>
+              }
+            </table>
+          }
+        </div>
+      </div>
+      <div class="media">
+        <div class="media-left">
+          <span class="fa fa-money"></span>
+        </div>
+        <div class="media-body ">
+          <h4 class="media-title">
+            @DictionaryRepository.Get("/Demo/OnsiteBehavior/Outcomes", "Outcomes")
+            @if (Model.Outcomes.Any())
+            {
+              <strong class="pull-right">@Model.Outcomes.Count()</strong>
+            }
+          </h4>
+          @if (!Model.Outcomes.Any())
+          {
+            <div class="alert alert-info">
+              @DictionaryRepository.Get("/Demo/OnsiteBehavior/NoOutcomes", "You have reached no outcomes")
+            </div>
+          }
+          else
+          {
+            <table class="table table-condensed table-borderless">
+              <tr>
+                <th>@DictionaryRepository.Get("/Demo/OnsiteBehavior/Outcome", "Outcome")</th>
+                <th>@DictionaryRepository.Get("/Demo/OnsiteBehavior/OutcomeVisit", "Visit")</th>
+              </tr>
+              @foreach (var outcome in Model.Outcomes)
+              {
+                <tr>
+                  <td colspan="2">
+                    <small>@outcome.DefinitionTitle</small>
+                  </td>
+                </tr>
+                <tr>
+                  <td>@outcome.Title</td>
+                  <td>@(outcome.Date?.ToString("dd-MM HH:MM") ?? @DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Now"))</td>
+                </tr>
+              }
+            </table>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

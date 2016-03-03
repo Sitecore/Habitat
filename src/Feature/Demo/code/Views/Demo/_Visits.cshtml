@@ -1,0 +1,116 @@
+﻿@using System.Globalization
+@using Sitecore.Feature.Demo.Texts
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.StringExtensions
+@model Sitecore.Feature.Demo.Models.Visits
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <a href="#visitsPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
+        <span class="fa fa-heart"></span>
+        @Captions.VisitDetails.Engagement
+        <span class="badge" title="@Captions.VisitDetails.EngagementValue" data-toggle="tooltip" data-placement="bottom">
+          @Model.EngagementValue
+        </span>
+        <span class="badge" title="@Captions.VisitDetails.PagesViewed" data-toggle="tooltip" data-placement="bottom">
+          <span class="fa fa-eye"></span>
+          @Model.TotalPageViews
+        </span>
+        <span class="badge" title="@Captions.ContactDetails.NumberOfVisits" data-toggle="tooltip" data-placement="bottom">
+          <span class="fa fa-history"></span>
+          @Model.TotalVisits
+        </span>
+        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+      </a>
+    </h3>
+  </div>
+  <div id="visitsPanel" class="panel-collapse collapse">
+    <div class="panel-body">
+      <div class="media">
+        <div class="media-left">
+          <span class="fa fa-heart"></span>
+        </div>
+
+        <div class="media-body ">
+          <h4 class="media-title">
+            @DictionaryRepository.Get("/Demo/Visits/EngagementValue", "Engagement value:")
+            <strong class="pull-right">@Model.EngagementValue</strong>
+          </h4>
+        </div>
+      </div>
+      <div class="media">
+        <div class="media-left">
+          <span class="fa fa-history"></span>
+        </div>
+        <div class="media-body">
+          <h4 class="media-title">
+            @DictionaryRepository.Get("/Demo/Visits/TotalVisits", "Visits to the site:")
+            @if (Model.TotalVisits > 1)
+            {
+              <strong class="pull-right">@Model.TotalVisits</strong>
+            }
+          </h4>
+          @if (Model.TotalVisits <= 1)
+          {
+            <div class="alert alert-info">
+              @DictionaryRepository.Get("/Demo/Visits/FirstVisit", "This is your first visit to the site.")
+            </div>
+          }
+        </div>
+      </div>
+      <div class="media">
+        <div class="media-left">
+          <span class="fa fa-eye"></span>
+        </div>
+        <div class="media-body ">
+          <h4 class="media-title">
+            @DictionaryRepository.Get("/Demo/Visits/PagesThisVisit", "Pages seen in this visit:")
+            <strong class="pull-right">@Model.TotalPageViews</strong>
+          </h4>
+          <table class="table table-condensed table-borderless">
+            <tr>
+              <th>@DictionaryRepository.Get("/Demo/Visits/PageViewPath", "Page")</th>
+              <th colspan="2">@DictionaryRepository.Get("/Demo/Visits/PageViewDuration", "Duration")</th>
+            </tr>
+            @foreach (var pageView in Model.PageViews)
+            {
+              <tr>
+                <td>@pageView.Path</td>
+                <td>
+                  @if (pageView.Duration == TimeSpan.Zero)
+                  {
+                    <span>-</span>
+                  }
+                  else
+                  {
+                    @pageView.Duration.ToString(@"mm\:ss")
+                  }
+                </td>
+                <td>
+                  @if (pageView.HasEngagementValue)
+                  {
+                    <span class="fa fa-heart" title="@DictionaryRepository.Get("/Demo/Visits/HasPersonalisation", "Page has engagement value")"></span>
+                  }
+                  @if (pageView.HasMvTest)
+                  {
+                    <span class="fa fa-flask" title="@DictionaryRepository.Get("/Demo/Visits/HasTest", "Page has a test")"></span>
+                  }
+                  @if (pageView.HasPersonalisation)
+                  {
+                    <span class="fa fa-street-view" title="@DictionaryRepository.Get("/Demo/Visits/HasPersonalisation", "Page has personalisation")"></span>
+                  }
+                </td>
+              </tr>
+            }
+            @if (Model.TotalPageViews > Model.PageViews.Count())
+            {
+              <tr>
+                <td colspan="3">...</td>
+              </tr>
+            }
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

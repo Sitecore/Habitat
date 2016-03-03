@@ -26,7 +26,7 @@ namespace Sitecore.Feature.Demo.Models
 
     private string ReplaceTokens(string content)
     {
-      var replacer = Factory.GetMasterVariablesReplacer();
+      var replacer = Sitecore.Configuration.Factory.GetMasterVariablesReplacer();
       using (new ReplacerContextSwitcher(GetReplacementTokens()))
         return replacer.Replace(content, Item);
     }
