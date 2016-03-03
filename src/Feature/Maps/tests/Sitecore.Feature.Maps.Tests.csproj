@@ -139,6 +139,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\foundation\Indexing\code\Sitecore.Foundation.Indexing.csproj">
+      <Project>{80213F24-577F-4F0B-A3B8-62485EA4D2F3}</Project>
+      <Name>Sitecore.Foundation.Indexing</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Foundation\Testing\tests\Sitecore.Foundation.Testing.csproj">
       <Project>{7CC3D72B-4518-4B78-BE48-630A263C0F5B}</Project>
       <Name>Sitecore.Foundation.Testing</Name>
