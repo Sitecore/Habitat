@@ -4,6 +4,7 @@
   using System.Collections.Generic;
   using System.Linq;
   using Foundation.SitecoreExtensions.Extensions;
+  using Models;
 
   public class MapPointRepository : IMapPointRepository
   {
@@ -18,7 +19,7 @@
       this.searchServiceRepository = searchServiceRepository;
     }
 
-    public IEnumerable<Data.Items.Item> GetAll(Data.Items.Item contextItem)
+    public IEnumerable<MapPoint> GetAll(Data.Items.Item contextItem)
     {
       if (contextItem == null)
       {
@@ -26,10 +27,7 @@
       }
       if (contextItem.IsDerived(Templates.MapPoint.ID))
       {
-        return new List<Data.Items.Item>
-               {
-                 contextItem
-               };
+        return new List<MapPoint> { new MapPoint(contextItem) };
       }
       if (!contextItem.IsDerived(Templates.MapPointsFolder.ID))
       {
@@ -39,7 +37,7 @@
       var searchService = searchServiceRepository.Get();
       searchService.Settings.Root = contextItem;
 
-      return searchService.FindAll().Results.Select(x => x.Item);
+      return searchService.FindAll().Results.Select(x => new MapPoint(x.Item));
     }
   }
 }

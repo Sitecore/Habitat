@@ -6,8 +6,9 @@
   using Data;
   using Models;
   using Repositories;
+  using Mvc.Controllers;
 
-  public class MapsController : Mvc.Controllers.SitecoreController
+  public class MapsController : SitecoreController
   {
     private readonly IMapPointRepository mapPointRepository;
 
@@ -24,7 +25,7 @@
     public JsonResult GetMapPoints(Guid itemId)
     {
       var item = Context.Database.GetItem(new ID(itemId));
-      var points = mapPointRepository.GetAll(item).Select(i=> new MapPoint(i));
+      var points = mapPointRepository.GetAll(item);
 
       return Json(points);
     }

@@ -1,9 +1,10 @@
 ﻿namespace Sitecore.Feature.Maps.Repositories
 {
   using System.Collections.Generic;
+  using Models;
 
   public interface IMapPointRepository
   {
-    IEnumerable<Data.Items.Item> GetAll(Data.Items.Item contextItem);
+    IEnumerable<MapPoint> GetAll(Data.Items.Item contextItem);
   }
 }
