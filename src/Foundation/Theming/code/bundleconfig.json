@@ -29,8 +29,7 @@
       "bower_components/hover/css/hover.css",
       "bower_components/animate.css/animate.css",
       "bower_components/ekko-lightbox/dist/ekko-lightbox.css",
-      "bower_components/OwlCarousel/owl-carousel/owl.carousel.css",
-      "bower_components/font-awesome/css/font-awesome.css"
+      "bower_components/OwlCarousel/owl-carousel/owl.carousel.css"
     ]
   }
 
