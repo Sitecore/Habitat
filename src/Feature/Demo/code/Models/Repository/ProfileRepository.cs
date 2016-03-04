@@ -3,6 +3,7 @@
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.Analytics;
+  using Sitecore.Analytics.Data.Items;
   using Sitecore.Feature.Demo.Services;
 
   internal class ProfileRepository
@@ -14,14 +15,15 @@
       this.profileProvider = profileProvider;
     }
 
-    public IEnumerable<Profile> GetSiteProfiles()
+    public IEnumerable<Profile> GetProfiles(ProfilingTypes profiling)
     {
       if (!Tracker.IsActive)
       {
         return Enumerable.Empty<Profile>();
       }
 
-      return profileProvider.GetSiteProfiles().Where(profileProvider.HasMatchingPattern).Select(x => new Profile { Name = x.NameField, PatternMatches = profileProvider.GetPatternsWithGravityShare(x) });
+      return profileProvider.GetSiteProfiles().Where(p => profileProvider.HasMatchingPattern(p, profiling)).Select(x => new Profile { Name = x.NameField, PatternMatches = profileProvider.GetPatternsWithGravityShare(x, profiling) });
     }
   }
+
 }

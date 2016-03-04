@@ -144,6 +144,7 @@
     <Content Include="Views\Demo\_OnsiteBehavior.cshtml" />
     <Content Include="Views\Demo\_Referral.cshtml" />
     <Content Include="Views\Demo\ExperienceData.cshtml" />
+    <Content Include="Views\Demo\_OnsiteBehaviorProfiling.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -27,25 +27,42 @@
       return profiles.GetItems().Select(i => new ProfileItem(i));
     }
 
-    public bool HasMatchingPattern(ProfileItem currentProfile)
+    public bool HasMatchingPattern(ProfileItem currentProfile, ProfilingTypes type)
     {
-      var userPattern = Tracker.Current.Contact.BehaviorProfiles[currentProfile.ID];
-      if (userPattern == null || ID.IsNullOrEmpty(userPattern.PatternId))
+      if (type == ProfilingTypes.Historic)
       {
-        return false;
+        var userPattern = Tracker.Current.Contact.BehaviorProfiles[currentProfile.ID];
+        if (userPattern == null || ID.IsNullOrEmpty(userPattern.PatternId))
+        {
+          return false;
+        }
+        return Context.Database.GetItem(userPattern.PatternId) != null;
       }
-      return Context.Database.GetItem(userPattern.PatternId) != null;
+      else
+      {
+        var userPattern = Tracker.Current.Interaction.Profiles[currentProfile.Name];
+        if (userPattern?.PatternId == null)
+        {
+          return false;
+        }
+        return Context.Database.GetItem(userPattern.PatternId.Value.ToID()) != null;
+      }
     }
 
-    public IEnumerable<PatternMatch> GetPatternsWithGravityShare(ProfileItem visibleProfile)
+    public IEnumerable<PatternMatch> GetPatternsWithGravityShare(ProfileItem visibleProfile, ProfilingTypes type)
     {
-      var userPattern = GetMatchedPattern(visibleProfile);
+      var userPattern = type == ProfilingTypes.Historic ? GetHistoricMatchedPattern(visibleProfile) : GetActiveMatchedPattern(visibleProfile);
 
       var patterns = PopulateProfilePatternMatchesWithXdbData.GetPatternsWithGravityShare(visibleProfile, userPattern);
       return patterns.Select(patternKeyValuePair => CreatePatternMatch(visibleProfile, patternKeyValuePair)).OrderByDescending(pm => pm.MatchPercentage);
     }
 
-    private Pattern GetMatchedPattern(ProfileItem profile)
+    private Pattern GetActiveMatchedPattern(ProfileItem visibleProfile)
+    {
+      return visibleProfile.PatternSpace.CreatePattern(Tracker.Current.Interaction.Profiles[visibleProfile.Name]);
+    }
+
+    private Pattern GetHistoricMatchedPattern(ProfileItem profile)
     {
       var behaviorProfile = Tracker.Current.Contact.BehaviorProfiles[profile.ID];
       if (behaviorProfile == null)

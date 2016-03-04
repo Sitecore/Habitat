@@ -22,7 +22,8 @@
              {
                Goals = goalRepository.GetLatest().ToArray(),
                Outcomes = outcomesRepository.GetLatest().ToArray(),
-               Profiles = profileRepository.GetSiteProfiles().ToArray(),
+               HistoricProfiles = profileRepository.GetProfiles(ProfilingTypes.Historic).ToArray(),
+               ActiveProfiles = profileRepository.GetProfiles(ProfilingTypes.Active).ToArray()
       };
     }
   }
