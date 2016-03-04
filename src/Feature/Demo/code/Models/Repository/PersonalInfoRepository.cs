@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Feature.Demo.Models.Factory
+﻿namespace Sitecore.Feature.Demo.Models.Repository
 {
   using System;
   using System.Collections.Generic;
@@ -8,31 +8,29 @@
   using Sitecore.Analytics.Model;
   using Sitecore.Analytics.Model.Entities;
   using Sitecore.Diagnostics;
-  using Sitecore.Feature.Demo.Services;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Services;
 
-  public class PersonalInfoFactory
+  public class PersonalInfoRepository
   {
     private readonly IContactProfileProvider contactProfileProvider;
-    private IProfileProvider profileProvider;
+    private readonly EngagementPlanStateRepository engagementPlanStateRepository = new EngagementPlanStateRepository();
 
-    public PersonalInfoFactory(IContactProfileProvider contactProfileProvider, IProfileProvider profileProvider)
+    public PersonalInfoRepository(IContactProfileProvider contactProfileProvider)
     {
       this.contactProfileProvider = contactProfileProvider;
-      this.profileProvider = profileProvider;
     }
 
-    public PersonalInfo Create()
+    public PersonalInfo Get()
     {
       return new PersonalInfo
              {
-               EngagementPlanStates = CreateEngagementPlanStates(),
+               EngagementPlanStates = engagementPlanStateRepository.GetCurrent().ToArray(),
                FullName = GetFullName(),
                IsIdentified = GetIsIdentified(),
                PhotoUrl = GetPhotoUrl(),
-               Properties = GetProperties()
+               Properties = GetProperties().ToArray()
              };
     }
 
@@ -175,27 +173,6 @@
       if (!string.IsNullOrEmpty(contactProfileProvider.PersonalInfo.Suffix))
         fullName = string.Join(", ", fullName, contactProfileProvider.PersonalInfo.Suffix).Trim();
       return !string.IsNullOrEmpty(fullName) ? fullName : null;
-    }
-
-    private IEnumerable<EngagementPlanState> CreateEngagementPlanStates()
-    {
-      try
-      {
-        var automationStateManager = AutomationStateManager.Create(Tracker.Current.Contact);
-        var engagementStates = automationStateManager.GetAutomationStates().ToArray();
-
-        return engagementStates.Select(stateContext => new EngagementPlanState
-                                                {
-                                                  EngagementPlanTitle = stateContext.PlanItem.DisplayName,
-                                                  Title = stateContext.StateItem.DisplayName,
-                                                  Date = stateContext.EntryDateTime
-                                                });
-      }
-      catch (Exception ex)
-      {
-        Log.Error("VisitInformation: Could not load engagement states", ex);
-        return Enumerable.Empty<EngagementPlanState>();
-      }
     }
   }
 }

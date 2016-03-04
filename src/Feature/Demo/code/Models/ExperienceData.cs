@@ -3,7 +3,7 @@
   using System.Web.Mvc;
   using Services;
   using Foundation.SitecoreExtensions.Services;
-  using Sitecore.Feature.Demo.Models.Factory;
+  using Sitecore.Feature.Demo.Models.Repository;
 
   public class ExperienceData
   {
@@ -15,10 +15,10 @@
       this.contactProfileProvider = contactProfileProvider;
       this.profileProvider = profileProvider;
 
-      Visits = new VisitsFactory(contactProfileProvider, profileProvider).Create();
-      PersonalInfo = new PersonalInfoFactory(contactProfileProvider, profileProvider).Create();
-      OnsiteBehavior = new OnsiteBehaviorFactory(contactProfileProvider, profileProvider).Create();
-      Referral = new ReferralFactory(contactProfileProvider, profileProvider).Create();
+      Visits = new VisitsRepository(contactProfileProvider, profileProvider).Get();
+      PersonalInfo = new PersonalInfoRepository(contactProfileProvider).Get();
+      OnsiteBehavior = new OnsiteBehaviorRepository(profileProvider).Get();
+      Referral = new ReferralRepository().Get();
     }
 
     public Visits Visits { get; set; }

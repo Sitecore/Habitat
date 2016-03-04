@@ -3,7 +3,7 @@
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.StringExtensions
 @model Sitecore.Feature.Demo.Models.Referral
-<div class="panel panel-info">
+<div class="panel panel-primary">
   <div class="panel-heading">
     <h4 class="panel-title">
       <a href="#referralPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
@@ -107,7 +107,12 @@
                 @DictionaryRepository.Get("/Demo/Referral/Device", "Device")
               </h4>
               <div class="text-nowrap">
-                @Model.Device.Title
+                <dl>
+                  <dt>@DictionaryRepository.Get("/Demo/Referral/DeviceTitle", "Device")</dt>
+                  <dd>@Model.Device.Title</dd>
+                  <dt>@DictionaryRepository.Get("/Demo/Referral/DeviceBrowser", "Browser")</dt>
+                  <dd>@Model.Device.Browser</dd>
+                </dl>
               </div>
             </div>
           </div>

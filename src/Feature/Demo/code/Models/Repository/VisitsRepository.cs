@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Feature.Demo.Models.Factory
+﻿namespace Sitecore.Feature.Demo.Models.Repository
 {
   using System.Collections.Generic;
   using System.Linq;
@@ -8,18 +8,18 @@
   using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Mvc.Extensions;
 
-  public class VisitsFactory
+  public class VisitsRepository
   {
     private readonly IContactProfileProvider contactProfileProvider;
     private IProfileProvider profileProvider;
 
-    public VisitsFactory(IContactProfileProvider contactProfileProvider, IProfileProvider profileProvider)
+    public VisitsRepository(IContactProfileProvider contactProfileProvider, IProfileProvider profileProvider)
     {
       this.contactProfileProvider = contactProfileProvider;
       this.profileProvider = profileProvider;
     }
 
-    public Visits Create()
+    public Visits Get()
     {
       var allPageViews = GetAllPageViews().ToArray();
       return new Visits
@@ -38,8 +38,8 @@
 
     private IEnumerable<PageView> GetAllPageViews()
     {
-      var pageViewFactory = new PageViewFactory();
-      return Tracker.Current.Interaction.GetPages().Cast<ICurrentPageContext>().Where(x => !x.IsCancelled).Select(pc => pageViewFactory.Create(pc)).Reverse();
+      var pageViewRepository = new PageViewRepository();
+      return Tracker.Current.Interaction.GetPages().Cast<ICurrentPageContext>().Where(x => !x.IsCancelled).Select(pc => pageViewRepository.Get(pc)).Reverse();
     }
 
     private int GetTotalVisits()

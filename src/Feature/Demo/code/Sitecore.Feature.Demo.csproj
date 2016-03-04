@@ -65,6 +65,10 @@
     <Reference Include="Sitecore.Analytics.Model">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Outcome, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.CES.DeviceDetection">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.CES.DeviceDetection.dll</HintPath>
     </Reference>
@@ -168,10 +172,17 @@
     <Compile Include="Models\EngagementState.cs" />
     <Compile Include="Models\ExperienceData.cs" />
     <Compile Include="Models\ExperienceProfile.cs" />
-    <Compile Include="Models\Factory\PageViewFactory.cs" />
-    <Compile Include="Models\Factory\PersonalInfoFactory.cs" />
-    <Compile Include="Models\Factory\OnsiteBehaviorFactory.cs" />
-    <Compile Include="Models\Factory\ReferralFactory.cs" />
+    <Compile Include="Models\Repository\CampaignRepository.cs" />
+    <Compile Include="Models\Repository\DeviceRepository.cs" />
+    <Compile Include="Models\Repository\EngagementPlanStateRepository.cs" />
+    <Compile Include="Models\Repository\GoalRepository.cs" />
+    <Compile Include="Models\Repository\LocationRepository.cs" />
+    <Compile Include="Models\Repository\OutcomeRepository.cs" />
+    <Compile Include="Models\Repository\PageViewRepository.cs" />
+    <Compile Include="Models\Repository\PersonalInfoRepository.cs" />
+    <Compile Include="Models\Repository\OnsiteBehaviorRepository.cs" />
+    <Compile Include="Models\Repository\ProfileRepository.cs" />
+    <Compile Include="Models\Repository\ReferralRepository.cs" />
     <Compile Include="Models\Goal.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\OnsiteBehaviour.cs" />
@@ -180,7 +191,7 @@
     <Compile Include="Models\PersonalInfo.cs" />
     <Compile Include="Models\Referral.cs" />
     <Compile Include="Models\Visits.cs" />
-    <Compile Include="Models\Factory\VisitsFactory.cs" />
+    <Compile Include="Models\Repository\VisitsRepository.cs" />
     <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
     <Compile Include="Services\ProfileProvider.cs" />
     <Compile Include="Services\IProfileProvider.cs" />

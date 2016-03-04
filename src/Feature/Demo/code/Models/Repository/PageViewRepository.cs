@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Feature.Demo.Models.Factory
+﻿namespace Sitecore.Feature.Demo.Models.Repository
 {
   using System;
   using System.Linq;
@@ -7,9 +7,9 @@
   using Sitecore.Data.Managers;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
 
-  internal class PageViewFactory
+  internal class PageViewRepository
   {
-    public PageView Create(ICurrentPageContext pageContext)
+    public PageView Get(ICurrentPageContext pageContext)
     {
       return new PageView()
              {

@@ -1,7 +1,7 @@
 ﻿@using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.StringExtensions
 @model Sitecore.Feature.Demo.Models.OnsiteBehavior
-<div class="panel panel-info">
+<div class="panel panel-primary">
   <div class="panel-heading">
     <h4 class="panel-title">
       <a href="#onsiteBehaviorPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
@@ -93,7 +93,7 @@
                 <tr>
                   <td>@goal.Title</td>
                   <td>@goal.EngagementValue</td>
-                  <td>@(goal.Date?.ToString("dd-MM HH:MM") ?? @DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Now"))</td>
+                  <td>@(goal.IsCurrentVisit ? @DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Now") : goal.Date.ToString("dd-MM HH:MM"))</td>
                 </tr>
               }
             </table>
@@ -129,12 +129,12 @@
               {
                 <tr>
                   <td colspan="2">
-                    <small>@outcome.DefinitionTitle</small>
+                    <small>@outcome.OutcomeGroup</small>
                   </td>
                 </tr>
                 <tr>
                   <td>@outcome.Title</td>
-                  <td>@(outcome.Date?.ToString("dd-MM HH:MM") ?? @DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Now"))</td>
+                  <td>@(!outcome.IsCurrentVisit ? outcome.Date.ToString("dd-MM HH:MM") : @DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Now"))</td>
                 </tr>
               }
             </table>

@@ -3,13 +3,14 @@
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.StringExtensions
 @model Sitecore.Feature.Demo.Models.Visits
-<div class="panel panel-success">
+<div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">
       <a href="#visitsPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
         <span class="fa fa-heart"></span>
         @Captions.VisitDetails.Engagement
         <span class="badge" title="@Captions.VisitDetails.EngagementValue" data-toggle="tooltip" data-placement="bottom">
+          <span class="fa fa-heart"></span>
           @Model.EngagementValue
         </span>
         <span class="badge" title="@Captions.VisitDetails.PagesViewed" data-toggle="tooltip" data-placement="bottom">

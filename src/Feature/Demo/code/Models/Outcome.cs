@@ -4,8 +4,9 @@
 
   public class Outcome
   {
-    public string DefinitionTitle { get; set; }
+    public string OutcomeGroup { get; set; }
     public string Title { get; set; }
-    public DateTime? Date { get; set; }
+    public DateTime Date { get; set; }
+    public bool IsCurrentVisit { get; set; }
   }
 }
