@@ -2,7 +2,17 @@
 @using Sitecore.Feature.FAQ.Repositories
 @using Sitecore.Feature.FAQ
 @using Sitecore.Data.Items
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Mvc
 @model Sitecore.Mvc.Presentation.RenderingModel
+
+@if (!Model?.Item?.IsDerived(Templates.FaqGroup.ID) ?? true)
+{
+@Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.FaqGroup.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID);
+    return;
+}
 
 @{
     var elements = GroupMemberRepository.Get(Model.Item).ToArray();
@@ -11,28 +21,23 @@
 @foreach (Item item in elements)
 {
     var ID = Guid.NewGuid().ToString();
+
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <div class="panel panel-default">
             <div class="panel-heading" role="tab" id="headingcollapse0">
-                <h4 class="panel-title">
+                <div class="panel-title">
                     <a role="button" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@ID">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        @Html.Sitecore().Field(Templates.Faq.Fields.Question_FieldName, item)
+                        @Html.Sitecore().Field(Templates.Faq.Fields.Question.ToString(), item)
                     </a>
-                </h4>
+                </div>
             </div>
             <div id=@ID class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingcollapse0">
                 <div class="panel-body">
-                    @Html.Sitecore().Field(Templates.Faq.Fields.Answer_FieldName,item)
+                    @Html.Sitecore().Field(Templates.Faq.Fields.Answer.ToString(), item)
                 </div>
             </div>
         </div>
         <!-- /.panel -->
     </div>
-}
-@if (Sitecore.Context.PageMode.IsPageEditor)
-{
-    <script>
-        $('.panel-collapse').toggle();
-    </script>
 }

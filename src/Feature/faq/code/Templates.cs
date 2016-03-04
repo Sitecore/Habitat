@@ -14,10 +14,7 @@ namespace Sitecore.Feature.FAQ
             public struct Fields
             {
                 public static readonly ID Question = new ID("{9588B6D5-3E6A-4C16-BD37-98DA6F1DDE52}");
-                public const string Question_FieldName = "Question";
-
                 public static readonly ID Answer = new ID("{57F39C75-51F0-4888-903E-724DFDCC8A38}");
-                public const string Answer_FieldName = "Answer";
             }
         }
 

@@ -56,9 +56,11 @@
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Mvc">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -99,9 +101,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="App_Config\include\FAQ\Feature.FAQ.Serialization.config" />
     <Content Include="Views\web.config" />
     <Content Include="Views\FAQ\FaqAccordion.cshtml" />
+    <Content Include="App_Config\include\Feature\Feature.FAQ.Serialization.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -123,6 +125,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj">
+      <Project>{5cf5fa06-ab27-4df5-a471-ed57ef3e4ae9}</Project>
+      <Name>Sitecore.Foundation.Alerts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
