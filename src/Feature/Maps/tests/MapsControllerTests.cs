@@ -13,6 +13,7 @@
   using NSubstitute;
   using Pipelines;
 
+
   public class MapsControllerTests
   {
     [Theory]
