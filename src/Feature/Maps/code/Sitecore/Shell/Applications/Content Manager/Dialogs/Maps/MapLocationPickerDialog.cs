@@ -1,8 +1,10 @@
 ﻿namespace Sitecore.Feature.Maps.Sitecore.Shell.Applications.Content_Manager.Dialogs.Maps
 {
   using System;
+  using System.Diagnostics.CodeAnalysis;
   using Web;
 
+  [ExcludeFromCodeCoverage]
   public class MapLocationPickerDialog : Web.UI.Pages.DialogForm
   {
     #region Control
