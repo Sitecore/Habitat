@@ -5,6 +5,9 @@ Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
 Path: /sitecore/layout/Renderings/Feature/Maps/Map
 DB: master
 SharedFields:
+- ID: 4867d192-326a-4aa4-81ef-ea430e224aff
+  Hint: Css assets
+  Value: /styles/maps/maps.min.css
 - ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
   Hint: Path
   Value: /Views/Maps/Map.cshtml
