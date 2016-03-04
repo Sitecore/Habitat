@@ -120,9 +120,20 @@
     <Content Include="Sitecore\Shell\Applications\Content Manager\Dialogs\Maps\MapLocationPickerDialog.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Styles\maps\maps.css">
+      <DependentUpon>maps.scss</DependentUpon>
+    </Content>
+    <Content Include="Styles\maps\maps.min.css">
+      <DependentUpon>maps.css</DependentUpon>
+    </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\Maps\Map.cshtml" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <Content Include="Styles\maps\maps.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
