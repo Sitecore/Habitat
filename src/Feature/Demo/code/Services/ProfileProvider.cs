@@ -5,8 +5,10 @@
   using System.Linq;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Data.Items;
+  using Sitecore.Analytics.Patterns;
   using Sitecore.Cintel.Reporting.Contact.ProfilePatternMatch.Processors;
   using Sitecore.Common;
+  using Sitecore.Data;
   using Sitecore.Data.Fields;
   using Sitecore.Feature.Demo.Models;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
@@ -27,22 +29,29 @@
 
     public bool HasMatchingPattern(ProfileItem currentProfile)
     {
-      var userPattern = Tracker.Current.Interaction.Profiles[currentProfile.Name];
-      if (userPattern?.PatternId == null)
+      var userPattern = Tracker.Current.Contact.BehaviorProfiles[currentProfile.ID];
+      if (userPattern == null || ID.IsNullOrEmpty(userPattern.PatternId))
       {
         return false;
       }
-      var matchingPattern = Context.Database.GetItem(userPattern.PatternId.Value.ToID());
-      return matchingPattern != null;
+      return Context.Database.GetItem(userPattern.PatternId) != null;
     }
 
     public IEnumerable<PatternMatch> GetPatternsWithGravityShare(ProfileItem visibleProfile)
     {
-
-      var userPattern = visibleProfile.PatternSpace.CreatePattern(Tracker.Current.Interaction.Profiles[visibleProfile.Name]);
+      var userPattern = GetMatchedPattern(visibleProfile);
 
       var patterns = PopulateProfilePatternMatchesWithXdbData.GetPatternsWithGravityShare(visibleProfile, userPattern);
-      return patterns.Select(patternKeyValuePair => CreatePatternMatch(visibleProfile, patternKeyValuePair));
+      return patterns.Select(patternKeyValuePair => CreatePatternMatch(visibleProfile, patternKeyValuePair)).OrderByDescending(pm => pm.MatchPercentage);
+    }
+
+    private Pattern GetMatchedPattern(ProfileItem profile)
+    {
+      var behaviorProfile = Tracker.Current.Contact.BehaviorProfiles[profile.ID];
+      if (behaviorProfile == null)
+        return null;
+      IProfileData profileData = new BehaviorProfileDecorator(profile, behaviorProfile);
+      return profile.PatternSpace.CreatePattern(profileData);
     }
 
     private static PatternMatch CreatePatternMatch(ProfileItem visibleProfile, KeyValuePair<PatternCardItem, double> patternKeyValuePair)

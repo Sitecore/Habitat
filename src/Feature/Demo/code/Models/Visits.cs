@@ -9,5 +9,6 @@
     public IEnumerable<PageView> PageViews { get; set; }
     public int TotalPageViews { get; set; }
     public int TotalVisits { get; set; }
+    public IEnumerable<EngagementPlanState> EngagementPlanStates { get; set; }
   }
 }

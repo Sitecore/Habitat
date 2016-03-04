@@ -57,28 +57,40 @@
           }
         </div>
       </div>
-      @if (Model.EngagementPlanStates.Any())
+      @if (Model.Location != null)
       {
         <div class="media">
           <div class="media-left">
-            <span class="fa fa-street-view"></span>
+            <span class="fa fa-globe"></span>
           </div>
           <div class="media-body ">
             <h4 class="media-title">
-              @DictionaryRepository.Get("/Demo/PersonalInfo/Engagement", "Engagement")
+              @DictionaryRepository.Get("/Demo/Referral/Location", "Location")
             </h4>
-            <table class="table table-condensed table-borderless">
-              @foreach (var state in Model.EngagementPlanStates)
-              {
-                <tr>
-                  <td colspan="2"><small>@state.EngagementPlanTitle</small></td>
-                </tr>
-                <tr>
-                  <td>@state.Date.ToString("dd-MM hh:mm")</td>
-                  <td>@state.Title</td>
-                </tr>
-              }
-            </table>
+            <div class="text-nowrap" title="@Model.Location.City, @Model.Location.Country">
+              @Model.Location.City, @Model.Location.Country
+            </div>
+          </div>
+        </div>
+      }
+      @if (Model.Device != null)
+      {
+        <div class="media">
+          <div class="media-left">
+            <span class="fa fa-tablet"></span>
+          </div>
+          <div class="media-body ">
+            <h4 class="media-title">
+              @DictionaryRepository.Get("/Demo/Referral/Device", "Device")
+            </h4>
+            <div class="text-nowrap">
+              <dl>
+                <dt>@DictionaryRepository.Get("/Demo/Referral/DeviceTitle", "Device")</dt>
+                <dd>@Model.Device.Title</dd>
+                <dt>@DictionaryRepository.Get("/Demo/Referral/DeviceBrowser", "Browser")</dt>
+                <dd>@Model.Device.Browser</dd>
+              </dl>
+            </div>
           </div>
         </div>
       }

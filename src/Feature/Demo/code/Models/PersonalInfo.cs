@@ -9,6 +9,7 @@
     public bool IsIdentified { get; set; }
     public IEnumerable<KeyValuePair<string, string>> Properties { get; set; }
     public string PhotoUrl { get; set; }
-    public IEnumerable<EngagementPlanState> EngagementPlanStates { get; set; }
+    public Location Location { get; set; }
+    public Device Device { get; set; }
   }
 }

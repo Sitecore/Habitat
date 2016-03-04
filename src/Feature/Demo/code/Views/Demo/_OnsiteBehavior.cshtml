@@ -34,13 +34,24 @@
                   <div class="media-body ">
                     <h5 class="media-title">@profile.Name</h5>
                     <ol class="list-unstyled">
-                      @foreach (var patternMatch in profile.PatternMatches)
+                      @foreach (var patternMatch in profile.PatternMatches.Take(1))
                       {
                         <li>
                           <div>@patternMatch.PatternName</div>
                           <div class="progress">
-                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@patternMatch.MatchPercentage" aria-valuemin="0" aria-valuemax="100" style="width: @patternMatch.MatchPercentage%">
+                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@(patternMatch.MatchPercentage*100)" aria-valuemin="0" aria-valuemax="100" style="width: @(patternMatch.MatchPercentage*100)%">
                               @patternMatch.MatchPercentage.ToString("P0")
+                            </div>
+                          </div>
+                        </li>
+                      }
+                      @foreach (var patternMatch in profile.PatternMatches.Skip(1))
+                      {
+                        <li>
+                          <div><small>@patternMatch.PatternName</small></div>
+                          <div class="progress">
+                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="@(patternMatch.MatchPercentage*100)" aria-valuemin="0" aria-valuemax="100" style="width: @(patternMatch.MatchPercentage*100)%">
+                              <small>@patternMatch.MatchPercentage.ToString("P0")</small>
                             </div>
                           </div>
                         </li>
@@ -82,21 +93,23 @@
           }
           else
           {
-            <table class="table table-condensed table-borderless">
-              <tr>
-                <th>@DictionaryRepository.Get("/Demo/OnsiteBehavior/Goal", "Goal")</th>
-                <th title="@DictionaryRepository.Get("/Demo/OnsiteBehavior/EngagementValue", "Engagement value")"><span class="fa fa-heart"></span></th>
-                <th>@DictionaryRepository.Get("/Demo/OnsiteBehavior/GoalVisit", "Visit")</th>
-              </tr>
+            <ol class="list-unstyled">
               @foreach (var goal in Model.Goals)
               {
-                <tr>
-                  <td>@goal.Title</td>
-                  <td>@goal.EngagementValue</td>
-                  <td>@(goal.IsCurrentVisit ? @DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Now") : goal.Date.ToString("dd-MM HH:MM"))</td>
-                </tr>
+                <li>
+                  <div>
+                    <small>@(goal.IsCurrentVisit ? @DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Now") : goal.Date.ToString("dd-MM HH:MM"))</small>
+                  </div>
+                    <div class="text-nowrap">
+                      @goal.Title
+                      @if (goal.EngagementValue > 0)
+                      {
+                        <small class="badge pull-right"><span class="fa fa-heart"></span> @goal.EngagementValue</small>
+                      }
+                  </div>
+                </li>
               }
-            </table>
+            </ol>
           }
         </div>
       </div>
@@ -120,24 +133,16 @@
           }
           else
           {
-            <table class="table table-condensed table-borderless">
-              <tr>
-                <th>@DictionaryRepository.Get("/Demo/OnsiteBehavior/Outcome", "Outcome")</th>
-                <th>@DictionaryRepository.Get("/Demo/OnsiteBehavior/OutcomeVisit", "Visit")</th>
-              </tr>
+            <ol class="list-unstyled">
               @foreach (var outcome in Model.Outcomes)
               {
-                <tr>
-                  <td colspan="2">
-                    <small>@outcome.OutcomeGroup</small>
-                  </td>
-                </tr>
-                <tr>
-                  <td>@outcome.Title</td>
-                  <td>@(!outcome.IsCurrentVisit ? outcome.Date.ToString("dd-MM HH:MM") : @DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Now"))</td>
-                </tr>
+                <li>
+                  <div><small>@(!outcome.IsCurrentVisit ? outcome.Date.ToString("dd-MM HH:MM") : @DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Now"))</small></div>
+                  <div><small>@outcome.OutcomeGroup</small></div>
+                  <div>@outcome.Title</div>
+                </li>
               }
-            </table>
+            </ol>
           }
         </div>
       </div>

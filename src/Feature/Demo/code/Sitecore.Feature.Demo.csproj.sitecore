@@ -2,16 +2,10 @@
   <PropertyGroup>
     <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
   </PropertyGroup>
-  <File Include="Views\Demo\ContactDetails.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{A6CFB41B-C613-4A2B-A5EE-4A374015914D}</Item>
-  </File>
   <File Include="Views\Demo\DemoContent.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{B883E272-70D8-419A-8AF8-819356D839AD}</Item>
   </File>
   <File Include="Views\Demo\EmptyLayout.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{BA43C26B-3A61-4F96-A83A-60193978B66C}</Item>
-  </File>
-  <File Include="Views\Demo\VisitDetails.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{24D6D94B-FF87-4A6C-9AA0-4CBF21488C05}</Item>
   </File>
 </Project>

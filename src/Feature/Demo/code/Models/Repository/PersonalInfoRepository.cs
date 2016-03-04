@@ -3,19 +3,17 @@
   using System;
   using System.Collections.Generic;
   using System.Linq;
-  using Sitecore.Analytics;
-  using Sitecore.Analytics.Automation.Data;
   using Sitecore.Analytics.Model;
   using Sitecore.Analytics.Model.Entities;
-  using Sitecore.Diagnostics;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Services;
 
   public class PersonalInfoRepository
   {
+    private readonly LocationRepository locationRepository = new LocationRepository();
+    private readonly DeviceRepository deviceRepository = new DeviceRepository();
     private readonly IContactProfileProvider contactProfileProvider;
-    private readonly EngagementPlanStateRepository engagementPlanStateRepository = new EngagementPlanStateRepository();
 
     public PersonalInfoRepository(IContactProfileProvider contactProfileProvider)
     {
@@ -26,11 +24,12 @@
     {
       return new PersonalInfo
              {
-               EngagementPlanStates = engagementPlanStateRepository.GetCurrent().ToArray(),
                FullName = GetFullName(),
                IsIdentified = GetIsIdentified(),
                PhotoUrl = GetPhotoUrl(),
-               Properties = GetProperties().ToArray()
+               Properties = GetProperties().ToArray(),
+               Device = GetDevice(),
+               Location = GetLocation()
              };
     }
 
@@ -65,17 +64,25 @@
     private IEnumerable<KeyValuePair<string, string>> GetIdentificationProperties()
     {
       if (!string.IsNullOrEmpty(contactProfileProvider.Contact.Identifiers.Identifier))
+      {
         yield return new KeyValuePair<string, string>(DictionaryRepository.Get("/Demo/PersonalInfo/Identification", "Identification"), contactProfileProvider.Contact.Identifiers.Identifier);
+      }
     }
 
     private IEnumerable<KeyValuePair<string, string>> GetCommunicationPreferencesProperties()
     {
       if (contactProfileProvider.CommunicationProfile.CommunicationRevoked)
+      {
         yield return new KeyValuePair<string, string>(DictionaryRepository.Get("/Demo/PersonalInfo/CommunicationRevoked", "Communication Revoked"), DictionaryRepository.Get("/Demo/PersonalInfo/CommunicationRevokedTrue", "Yes"));
+      }
       if (contactProfileProvider.CommunicationProfile.ConsentRevoked)
+      {
         yield return new KeyValuePair<string, string>(DictionaryRepository.Get("/Demo/PersonalInfo/ConsentRevokes", "Consent Revoked"), DictionaryRepository.Get("/Demo/PersonalInfo/ConsentRevokedTrue", "Yes"));
+      }
       if (!string.IsNullOrEmpty(contactProfileProvider.Preferences.Language))
+      {
         yield return new KeyValuePair<string, string>(DictionaryRepository.Get("/Demo/PersonalInfo/PreferredLanguage", "Preferred Language"), contactProfileProvider.Preferences.Language);
+      }
     }
 
     private IEnumerable<KeyValuePair<string, string>> GetPhoneNumberProperties()
@@ -91,10 +98,14 @@
     {
       var formattedPhone = "";
       if (!string.IsNullOrEmpty(phoneNumber.CountryCode))
+      {
         formattedPhone += $"+{phoneNumber.CountryCode}";
+      }
       formattedPhone += string.Join(" ", formattedPhone, phoneNumber.Number).Trim();
       if (!string.IsNullOrEmpty(phoneNumber.Extension))
+      {
         formattedPhone += string.Join("p", formattedPhone, phoneNumber.Extension).Trim();
+      }
 
       return formattedPhone;
     }
@@ -119,7 +130,7 @@
 
     private string FormatAddress(IAddress address)
     {
-      var streetAddress = string.Join(System.Environment.NewLine, new
+      var streetAddress = string.Join(Environment.NewLine, new
                                                            {
                                                              address.StreetLine1,
                                                              address.StreetLine2,
@@ -132,7 +143,7 @@
                                             address.StateProvince,
                                             address.PostalCode
                                           }).Trim();
-      return string.Join(System.Environment.NewLine, streetAddress, cityAddress, address.Country).Trim();
+      return string.Join(Environment.NewLine, streetAddress, cityAddress, address.Country).Trim();
     }
 
     private IEnumerable<KeyValuePair<string, string>> GetPersonalInfoProperties()
@@ -141,7 +152,9 @@
       foreach (var property in contactProfileProvider.PersonalInfo.GetType().GetProperties())
       {
         if (fullNameProperties.Contains(property.Name))
+        {
           continue;
+        }
 
         var value = property.GetValue(contactProfileProvider.PersonalInfo);
         if (string.IsNullOrEmpty(value?.ToString()) || property.Name.Equals("IsEmpty"))
@@ -171,8 +184,20 @@
     {
       var fullName = string.Join(" ", contactProfileProvider.PersonalInfo.Title, contactProfileProvider.PersonalInfo.FirstName, contactProfileProvider.PersonalInfo.MiddleName, contactProfileProvider.PersonalInfo.Surname).Trim();
       if (!string.IsNullOrEmpty(contactProfileProvider.PersonalInfo.Suffix))
+      {
         fullName = string.Join(", ", fullName, contactProfileProvider.PersonalInfo.Suffix).Trim();
+      }
       return !string.IsNullOrEmpty(fullName) ? fullName : null;
+    }
+
+    private Location GetLocation()
+    {
+      return locationRepository.GetCurrent();
+    }
+
+    private Device GetDevice()
+    {
+      return deviceRepository.GetCurrent();
     }
   }
 }

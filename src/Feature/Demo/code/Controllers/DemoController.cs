@@ -27,20 +27,7 @@ namespace Sitecore.Feature.Demo.Controllers
       this.profileProvider = profileProvider;
     }
 
-    public ActionResult VisitDetails()
-    {
-      if (Tracker.Current == null || Tracker.Current.Interaction == null)
-        return null;
-      return View("VisitDetails", new VisitInformation(profileProvider));
-    }
-
-    public ActionResult ContactDetails()
-    {
-      if (Tracker.Current == null || Tracker.Current.Contact == null)
-        return null;
-      return View("ContactDetails", new ContactInformation(contactProfileProvider));
-    }
-    
+   
     public ActionResult ExperienceData()
     {
       if (Tracker.Current == null || Tracker.Current.Interaction == null)

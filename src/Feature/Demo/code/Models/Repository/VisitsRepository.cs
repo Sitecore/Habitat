@@ -4,19 +4,17 @@
   using System.Linq;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Tracking;
-  using Sitecore.Feature.Demo.Services;
   using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Mvc.Extensions;
 
   public class VisitsRepository
   {
     private readonly IContactProfileProvider contactProfileProvider;
-    private IProfileProvider profileProvider;
+    private readonly EngagementPlanStateRepository engagementPlanStateRepository = new EngagementPlanStateRepository();
 
-    public VisitsRepository(IContactProfileProvider contactProfileProvider, IProfileProvider profileProvider)
+    public VisitsRepository(IContactProfileProvider contactProfileProvider)
     {
       this.contactProfileProvider = contactProfileProvider;
-      this.profileProvider = profileProvider;
     }
 
     public Visits Get()
@@ -27,8 +25,9 @@
                EngagementValue = GetEngagementValue(),
                PageViews = allPageViews.Take(10),
                TotalPageViews = allPageViews.Count(),
-               TotalVisits = GetTotalVisits()
-             };
+               TotalVisits = GetTotalVisits(),
+               EngagementPlanStates = engagementPlanStateRepository.GetCurrent().ToArray(),
+              };
     }
 
     private int GetEngagementValue()

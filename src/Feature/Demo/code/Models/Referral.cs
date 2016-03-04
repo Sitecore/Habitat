@@ -8,7 +8,5 @@
     public string ReferringSite { get; set; }
     public int TotalNoOfCampaigns { get; set; }
     public IEnumerable<Campaign> Campaigns { get; set; }
-    public Location Location { get; set; }
-    public Device Device { get; set; }
   }
 }

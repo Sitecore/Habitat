@@ -80,43 +80,6 @@
             </ol>
           }
         </div>
-        @if (Model.Location != null)
-        {
-          <div class="media">
-            <div class="media-left">
-              <span class="fa fa-globe"></span>
-            </div>
-            <div class="media-body ">
-              <h4 class="media-title">
-                @DictionaryRepository.Get("/Demo/Referral/Location", "Location")
-              </h4>
-              <div class="text-nowrap" title="@Model.Location.City, @Model.Location.Country">
-                @Model.Location.City, @Model.Location.Country
-              </div>
-            </div>
-          </div>
-        }
-        @if (Model.Device != null)
-        {
-          <div class="media">
-            <div class="media-left">
-              <span class="fa fa-tablet"></span>
-            </div>
-            <div class="media-body ">
-              <h4 class="media-title">
-                @DictionaryRepository.Get("/Demo/Referral/Device", "Device")
-              </h4>
-              <div class="text-nowrap">
-                <dl>
-                  <dt>@DictionaryRepository.Get("/Demo/Referral/DeviceTitle", "Device")</dt>
-                  <dd>@Model.Device.Title</dd>
-                  <dt>@DictionaryRepository.Get("/Demo/Referral/DeviceBrowser", "Browser")</dt>
-                  <dd>@Model.Device.Browser</dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-        }
       </div>
     </div>
   </div>

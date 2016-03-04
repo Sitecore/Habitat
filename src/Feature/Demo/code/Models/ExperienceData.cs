@@ -15,7 +15,7 @@
       this.contactProfileProvider = contactProfileProvider;
       this.profileProvider = profileProvider;
 
-      Visits = new VisitsRepository(contactProfileProvider, profileProvider).Get();
+      Visits = new VisitsRepository(contactProfileProvider).Get();
       PersonalInfo = new PersonalInfoRepository(contactProfileProvider).Get();
       OnsiteBehavior = new OnsiteBehaviorRepository(profileProvider).Get();
       Referral = new ReferralRepository().Get();
