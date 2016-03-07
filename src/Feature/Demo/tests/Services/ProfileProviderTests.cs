@@ -123,7 +123,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
         using (new SiteContextSwitcher(fakeSiteContext))
         {
           var provider = new ProfileProvider();
-          provider.HasMatchingPattern(new ProfileItem(profileItem)).Should().BeFalse();
+          provider.HasMatchingPattern(new ProfileItem(profileItem), ProfilingTypes.Active).Should().BeFalse();
         }
       }
     }
@@ -149,7 +149,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
         using (new SiteContextSwitcher(fakeSiteContext))
         {
           var provider = new ProfileProvider();
-          provider.HasMatchingPattern(new ProfileItem(profileItem)).Should().BeTrue();
+          provider.HasMatchingPattern(new ProfileItem(profileItem), ProfilingTypes.Active).Should().BeTrue();
         }
       }
     }
@@ -174,7 +174,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
         using (new SiteContextSwitcher(fakeSiteContext))
         {
           var provider = new ProfileProvider();
-          provider.HasMatchingPattern(new ProfileItem(profileItem)).Should().BeFalse();
+          provider.HasMatchingPattern(new ProfileItem(profileItem), ProfilingTypes.Active).Should().BeFalse();
         }
       }
     }
@@ -199,7 +199,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
         using (new SiteContextSwitcher(fakeSiteContext))
         {
           var provider = new ProfileProvider();
-          provider.HasMatchingPattern(new ProfileItem(profileItem)).Should().BeFalse();
+          provider.HasMatchingPattern(new ProfileItem(profileItem), ProfilingTypes.Active).Should().BeFalse();
         }
       }
     }

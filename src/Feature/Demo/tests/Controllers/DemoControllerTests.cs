@@ -24,57 +24,6 @@
   {
     [Theory]
     [AutoDbData]
-    public void VisitDetails_TrackerInteractionNotInitialized_ShouldReturnNull(IContactProfileProvider contact, IProfileProvider profile, ITracker tracker)
-    {
-      //arrange
-      var controller = new DemoController(contact, profile);
-      using (new TrackerSwitcher(tracker))
-      {
-        controller.VisitDetails().Should().Be(null);
-      }
-    }
-
-    [Theory]
-    [AutoDbData]
-    public void VisitDetails_TrackerInitialized_ShouldReturnVisitInformation(IContactProfileProvider contact, IProfileProvider profile, ITracker tracker, CurrentInteraction interaction)
-    {
-      tracker.Interaction.Returns(interaction);
-      //arrange
-      var controller = new DemoController(contact, profile);
-      using (new TrackerSwitcher(tracker))
-      {
-        controller.VisitDetails().As<ViewResult>().Model.Should().BeOfType<VisitInformation>();
-      }
-    }
-
-    [Theory]
-    [AutoDbData]
-    public void ContactDetails_ContactNotInitialized_ShouldReturnNull(IContactProfileProvider contact, IProfileProvider profile, ITracker tracker)
-    {
-      tracker.Contact.Returns((Contact)null);
-      //arrange
-      var controller = new DemoController(contact, profile);
-      using (new TrackerSwitcher(tracker))
-      {
-        controller.ContactDetails().Should().BeNull();
-      }
-    }
-
-    [Theory]
-    [AutoDbData]
-    public void ContactDetails_ContactInitialized_ShouldReturnContactInformation(IContactProfileProvider contact, IProfileProvider profile, ITracker tracker)
-    {
-      //arrange
-      var controller = new DemoController(contact, profile);
-      using (new TrackerSwitcher(tracker))
-      {
-        controller.ContactDetails().As<ViewResult>().Model.Should().BeOfType<ContactInformation>();
-      }
-    }
-
-
-    [Theory]
-    [AutoDbData]
     public void DemoContent_RenderingContextItemInitialized_ShouldReturnDemoContentView(Db db,IContactProfileProvider contact, IProfileProvider profile, ITracker tracker)
     {
       //arrange

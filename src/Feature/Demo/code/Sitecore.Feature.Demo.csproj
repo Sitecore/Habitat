@@ -65,6 +65,10 @@
     <Reference Include="Sitecore.Analytics.Model">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Outcome, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.CES.DeviceDetection">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.CES.DeviceDetection.dll</HintPath>
     </Reference>
@@ -74,6 +78,14 @@
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Marketing, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Marketing.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Marketing.Taxonomy, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Marketing.Taxonomy.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Mvc">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
@@ -127,6 +139,12 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Demo\_KeyBehaviourCacheList.cshtml" />
     <Content Include="Scripts\Demo\VisitDetails.js" />
+    <Content Include="Views\Demo\_Visits.cshtml" />
+    <Content Include="Views\Demo\_PersonalInfo.cshtml" />
+    <Content Include="Views\Demo\_OnsiteBehavior.cshtml" />
+    <Content Include="Views\Demo\_Referral.cshtml" />
+    <Content Include="Views\Demo\ExperienceData.cshtml" />
+    <Content Include="Views\Demo\_OnsiteBehaviorProfiling.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -136,8 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Demo\VisitDetails.cshtml" />
-    <Content Include="Views\Demo\ContactDetails.cshtml" />
     <Content Include="Views\Demo\DemoContent.cshtml" />
     <Content Include="Views\Demo\EmptyLayout.cshtml" />
     <None Include="Web.config">
@@ -145,21 +161,38 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\BehaviorProfile.cs" />
+    <Compile Include="Models\Campaign.cs" />
     <Compile Include="Models\DemoContent.cs" />
-    <Compile Include="Models\ContactInformation.cs" />
     <Compile Include="Controllers\DemoController.cs" />
-    <Compile Include="Models\EngagementState.cs" />
-    <Compile Include="Models\ExperienceProfile.cs" />
+    <Compile Include="Models\Device.cs" />
+    <Compile Include="Models\EngagementPlanState.cs" />
+    <Compile Include="Models\ExperienceData.cs" />
+    <Compile Include="Models\Repository\CampaignRepository.cs" />
+    <Compile Include="Models\Repository\DeviceRepository.cs" />
+    <Compile Include="Models\Repository\EngagementPlanStateRepository.cs" />
+    <Compile Include="Models\Repository\GoalRepository.cs" />
+    <Compile Include="Models\Repository\LocationRepository.cs" />
+    <Compile Include="Models\Repository\OutcomeRepository.cs" />
+    <Compile Include="Models\Repository\PageViewRepository.cs" />
+    <Compile Include="Models\Repository\PersonalInfoRepository.cs" />
+    <Compile Include="Models\Repository\OnsiteBehaviorRepository.cs" />
+    <Compile Include="Models\Repository\ProfileRepository.cs" />
+    <Compile Include="Models\Repository\ReferralRepository.cs" />
+    <Compile Include="Models\Goal.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\OnsiteBehaviour.cs" />
+    <Compile Include="Models\Outcome.cs" />
+    <Compile Include="Models\PageView.cs" />
+    <Compile Include="Models\PersonalInfo.cs" />
+    <Compile Include="Models\Referral.cs" />
+    <Compile Include="Models\Visits.cs" />
+    <Compile Include="Models\Repository\VisitsRepository.cs" />
     <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
+    <Compile Include="Services\BehaviorProfileDecorator.cs" />
     <Compile Include="Services\ProfileProvider.cs" />
     <Compile Include="Services\IProfileProvider.cs" />
-    <Compile Include="Models\KeyBehaviorCacheEntryModel.cs" />
-    <Compile Include="Models\PageLink.cs" />
     <Compile Include="Models\PatternMatch.cs" />
     <Compile Include="Models\Profile.cs" />
-    <Compile Include="Models\Score.cs" />
-    <Compile Include="Models\VisitInformation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates.cs" />
     <Compile Include="Texts\Captions.cs" />

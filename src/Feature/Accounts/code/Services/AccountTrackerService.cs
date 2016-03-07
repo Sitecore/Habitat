@@ -1,11 +1,13 @@
 ﻿namespace Sitecore.Feature.Accounts.Services
 {
+  using System;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Data.Items;
   using Sitecore.Analytics.Outcome.Extensions;
   using Sitecore.Analytics.Outcome.Model;
   using Sitecore.Data;
   using Sitecore.Diagnostics;
+  using Sitecore.Exceptions;
 
   public class AccountTrackerService : IAccountTrackerService
   {
@@ -30,9 +32,17 @@
 
     public void IdentifyContact(string identifier)
     {
-      if (Tracker.Current != null && Tracker.Current.IsActive)
+      try
       {
-        Tracker.Current.Session.Identify(identifier);
+        if (Tracker.Current != null && Tracker.Current.IsActive)
+        {
+          Tracker.Current.Session.Identify(identifier);
+        }
+      }
+      catch (ItemNotFoundException ex)
+      {
+        //Error can happen if previous user profile has been deleted
+        Log.Error($"Could not identify the user '{identifier}'", ex, this);
       }
     }
 

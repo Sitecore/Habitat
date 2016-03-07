@@ -5,8 +5,10 @@
   using System.Linq;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Data.Items;
+  using Sitecore.Analytics.Patterns;
   using Sitecore.Cintel.Reporting.Contact.ProfilePatternMatch.Processors;
   using Sitecore.Common;
+  using Sitecore.Data;
   using Sitecore.Data.Fields;
   using Sitecore.Feature.Demo.Models;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
@@ -25,24 +27,48 @@
       return profiles.GetItems().Select(i => new ProfileItem(i));
     }
 
-    public bool HasMatchingPattern(ProfileItem currentProfile)
+    public bool HasMatchingPattern(ProfileItem currentProfile, ProfilingTypes type)
     {
-      var userPattern = Tracker.Current.Interaction.Profiles[currentProfile.Name];
-      if (userPattern?.PatternId == null)
+      if (type == ProfilingTypes.Historic)
       {
-        return false;
+        var userPattern = Tracker.Current.Contact.BehaviorProfiles[currentProfile.ID];
+        if (userPattern == null || ID.IsNullOrEmpty(userPattern.PatternId))
+        {
+          return false;
+        }
+        return Context.Database.GetItem(userPattern.PatternId) != null;
       }
-      var matchingPattern = Context.Database.GetItem(userPattern.PatternId.Value.ToID());
-      return matchingPattern != null;
+      else
+      {
+        var userPattern = Tracker.Current.Interaction.Profiles[currentProfile.Name];
+        if (userPattern?.PatternId == null)
+        {
+          return false;
+        }
+        return Context.Database.GetItem(userPattern.PatternId.Value.ToID()) != null;
+      }
     }
 
-    public IEnumerable<PatternMatch> GetPatternsWithGravityShare(ProfileItem visibleProfile)
+    public IEnumerable<PatternMatch> GetPatternsWithGravityShare(ProfileItem visibleProfile, ProfilingTypes type)
     {
-
-      var userPattern = visibleProfile.PatternSpace.CreatePattern(Tracker.Current.Interaction.Profiles[visibleProfile.Name]);
+      var userPattern = type == ProfilingTypes.Historic ? GetHistoricMatchedPattern(visibleProfile) : GetActiveMatchedPattern(visibleProfile);
 
       var patterns = PopulateProfilePatternMatchesWithXdbData.GetPatternsWithGravityShare(visibleProfile, userPattern);
-      return patterns.Select(patternKeyValuePair => CreatePatternMatch(visibleProfile, patternKeyValuePair));
+      return patterns.Select(patternKeyValuePair => CreatePatternMatch(visibleProfile, patternKeyValuePair)).OrderByDescending(pm => pm.MatchPercentage);
+    }
+
+    private Pattern GetActiveMatchedPattern(ProfileItem visibleProfile)
+    {
+      return visibleProfile.PatternSpace.CreatePattern(Tracker.Current.Interaction.Profiles[visibleProfile.Name]);
+    }
+
+    private Pattern GetHistoricMatchedPattern(ProfileItem profile)
+    {
+      var behaviorProfile = Tracker.Current.Contact.BehaviorProfiles[profile.ID];
+      if (behaviorProfile == null)
+        return null;
+      IProfileData profileData = new BehaviorProfileDecorator(profile, behaviorProfile);
+      return profile.PatternSpace.CreatePattern(profileData);
     }
 
     private static PatternMatch CreatePatternMatch(ProfileItem visibleProfile, KeyValuePair<PatternCardItem, double> patternKeyValuePair)

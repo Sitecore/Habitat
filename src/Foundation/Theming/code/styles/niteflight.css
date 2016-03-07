@@ -109,6 +109,9 @@
   src: local("Bitter-Bold"), url("../fonts/bitter-v7-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/bitter-v7-latin-700.woff2") format("woff2"), url("../fonts/bitter-v7-latin-700.woff") format("woff"), url("../fonts/bitter-v7-latin-700.ttf") format("truetype"), url("../fonts/bitter-v7-latin-700.svg#Bitter") format("svg");
   /* Legacy iOS */ }
 
+.hover:not(:hover) .hover-only {
+  display: none; }
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -2723,7 +2726,10 @@ table th[class*="col-"] {
         .table-responsive > .table-bordered > tfoot > tr:last-child > td {
           border-bottom: 0; } }
 
-table > thead > tr > td, table > thead > tr > th, table > tbody > tr > td, table > tbody > tr > th, .table > thead > tr > td, .table > thead > tr > th, .table > tbody > tr > td, .table > tbody > tr > th {
+table.table-borderless tbody tr td, table.table-borderless tbody tr th, table.table-borderless thead tr th, .table.table-borderless tbody tr td, .table.table-borderless tbody tr th, .table.table-borderless thead tr th {
+  border: none; }
+
+table:not(.table-condensed) > thead > tr > td, table:not(.table-condensed) > thead > tr > th, table:not(.table-condensed) > tbody > tr > td, table:not(.table-condensed) > tbody > tr > th, .table:not(.table-condensed) > thead > tr > td, .table:not(.table-condensed) > thead > tr > th, .table:not(.table-condensed) > tbody > tr > td, .table:not(.table-condensed) > tbody > tr > th {
   padding: 12px 15px; }
 
 .bg-primary table, .bg-dark table, .bg-media table, .bg-primary .table, .bg-dark .table, .bg-media .table {
@@ -7005,7 +7011,10 @@ table th[class*="col-"] {
         .table-responsive > .table-bordered > tfoot > tr:last-child > td {
           border-bottom: 0; } }
 
-table > thead > tr > td, table > thead > tr > th, table > tbody > tr > td, table > tbody > tr > th, .table > thead > tr > td, .table > thead > tr > th, .table > tbody > tr > td, .table > tbody > tr > th {
+table.table-borderless tbody tr td, table.table-borderless tbody tr th, table.table-borderless thead tr th, .table.table-borderless tbody tr td, .table.table-borderless tbody tr th, .table.table-borderless thead tr th {
+  border: none; }
+
+table:not(.table-condensed) > thead > tr > td, table:not(.table-condensed) > thead > tr > th, table:not(.table-condensed) > tbody > tr > td, table:not(.table-condensed) > tbody > tr > th, .table:not(.table-condensed) > thead > tr > td, .table:not(.table-condensed) > thead > tr > th, .table:not(.table-condensed) > tbody > tr > td, .table:not(.table-condensed) > tbody > tr > th {
   padding: 12px 15px; }
 
 .bg-primary table, .bg-dark table, .bg-media table, .bg-primary .table, .bg-dark .table, .bg-media .table {
