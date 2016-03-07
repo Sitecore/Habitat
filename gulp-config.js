@@ -1,9 +1,11 @@
 module.exports = function () {
-    var config = {
+  var config = {
     websiteRoot: "C:\\websites\\Habitat.local\\Website",
     sitecoreLibraries: "C:\\websites\\Habitat.local\\Website\\bin",
     solutionName: "Habitat",
-    buildConfiguration: "Debug"
+    buildConfiguration: "Debug",
+	unicornSecret: "kl3KGocnbp3L9ncCZYRPwFwiW7jW2UhE02T3GZU6sL5rTCKZzsRyRYLtGzuh8Li",
+	runCleanBuilds: false
     }
-    return config;
+  return config;
 }
