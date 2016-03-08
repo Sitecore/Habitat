@@ -1,0 +1,14 @@
+﻿---
+ID: 37fced17-913a-4abb-9eec-3bf745334326
+Parent: 7dbf666b-066f-4767-b690-b02b1d22e191
+Template: 067ec866-b3fb-485b-bb49-6151fb086e78
+Path: /sitecore/content/Habitat/Global/Map Points/Sitecore Offices
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160129T052359Z
