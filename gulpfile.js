@@ -9,11 +9,8 @@ var runSequence = require("run-sequence");
 var path = require("path");
 var config = require("./gulp-config.js")();
 var nugetRestore = require('gulp-nuget-restore');
-var exec = require('child_process').exec;
 var fs = require('fs');
-var glob = require('glob');
-var async = require('async');
-var xml2js = require('xml2js');
+var unicorn = require("./scripts/unicorn.js");
 module.exports.config = config;
 
 gulp.task("default", function (callback) {
@@ -70,122 +67,17 @@ gulp.task("04-Apply-Xml-Transform", function () {
 });
 
 gulp.task("05-Sync-Unicorn", function (callback) {
-  var getUnicornSecret = function (callback) {
-    var unicornConfigFile = __dirname + '/src/Foundation/Serialization/code/App_config/Include/Foundation/Foundation.Serialization.config';
-    return fs.readFile(unicornConfigFile, function (err, data) {
-      if (err !== null) return callback(err);
-
-      var parser = new xml2js.Parser();
-      parser.parseString(data, function (err, result) {
-        if (err !== null) return callback(err);
-
-        var secret = result.configuration.sitecore[0].unicorn[0].authenticationProvider[0].SharedSecret[0];
-        return callback(err, secret);
-      });
-    });
-  }
-
-  var getUnicornUrl = function (callback) {
-    var publishFile = __dirname + '/publishsettings.targets';
-    return fs.readFile(publishFile, function (err, data) {
-      if (err !== null) return callback(err);      
-
-      var parser = new xml2js.Parser();
-      parser.parseString(data, function (err, result) {
-        if (err !== null) return callback(err);
-
-        var url = result.Project.PropertyGroup[0].publishUrl[0];
-        return callback(err, url += "/unicorn.aspx");
-      });
-    });
-  }
-
-  var getUnicornConfiguration = function (configFile, callback) {
-    return fs.readFile(configFile, function (err, data) {
-      if (err !== null) return callback(err);      
-
-      var parser = new xml2js.Parser();
-      parser.parseString(data, function (err, result) {
-        if (err !== null) return callback(err);
-
-        var configuration = result.configuration.sitecore[0].unicorn[0].configurations[0].configuration[0].$.name;
-        return callback(err, configuration);
-      });
-    });
-  }
-
-  var getUnicornConfigurations = function (filesGlob, callback) {
-    var configurations;
-    
-    glob(filesGlob, function(err, files) {
-      async.each(
-        files,
-        function(file, cb) {
-          getUnicornConfiguration(file, function(err, configuration) {
-            if (err)
-              return callback(err);
-            if (configuration) {
-              configurations = (configurations ? configurations + "^" : "") + configuration;
-            }
-            cb();
-          });
-        },
-        function (err) {
-          callback(null, configurations);
-        }
-      )}
-    );
-  }
-
-  var getAllUnicornConfigurations = function (filesGlobs, callback) {
-    var allConfigurations;
-    
-    async.eachSeries(
-      filesGlobs,
-      function(filesGlob, cb) {
-        getUnicornConfigurations(filesGlob, function(err, configurations) {
-          if (err)
-            return callback(err);
-          if (configurations) {
-            allConfigurations = (allConfigurations ? allConfigurations + "^" : "") + configurations;
-          }
-          cb();
-        });
-      },
-      function (err) {
-        callback(null, allConfigurations);
-      }      
-    )
-  }
-
-  return getUnicornSecret(function (err, secret) {
-    if (err !== null) return callback(err);
-
-    return getUnicornUrl(function(err, url) {
-      if (err !== null) return callback(err);
-
-      return getAllUnicornConfigurations(
-        [
-          "./src/Foundation/Serialization/code/App_Config/Include/*/*.Serialization.config",
-          "./src/Foundation/!(Serialization)/code/App_Config/Include/*/*.Serialization.config",
-          "./src/Feature/**/code/App_Config/Include/*/*.Serialization.config",
-          "./src/Project/Common/code/App_Config/Include/*/*.Serialization.config",
-          "./src/Project/!(Common)/code/App_Config/Include/*/*.Serialization.config"
-        ],
-        function(err, configurations) 
-        {
-          if (err !== null) return callback(err);
-
-          var syncScript = "./Sync.ps1 -secret " + secret + " -url " + url + " -configurations " + configurations;
-          var options = { cwd: "./scripts/Unicorn/" };
-          return exec("powershell \"" + syncScript + "\"", options, function(err, stdout, stderr) {
-            console.log(stdout);
-            console.log(stderr);
-            return callback(err);
-          });
-      });
-    });
-  });
+  var options = new Object;
+  options.serializationConfigFiles = [
+    __dirname + "/src/Foundation/Serialization/code/App_Config/Include/*/*.Serialization.config",
+    __dirname + "/src/Foundation/!(Serialization)/code/App_Config/Include/*/*.Serialization.config",
+    __dirname + "/src/Feature/**/code/App_Config/Include/*/*.Serialization.config",
+    __dirname + "/src/Project/Common/code/App_Config/Include/*/*.Serialization.config",
+    __dirname + "/src/Project/!(Common)/code/App_Config/Include/*/*.Serialization.config"];
+  options.publishingSettingsFiles = __dirname + "/publishsettings.targets";
+  options.serializationSettingsConfig = __dirname + "/src/Foundation/Serialization/code/App_config/Include/Foundation/Foundation.Serialization.config"
+  
+  unicorn(callback, options);
 });
 
 /*****************************
