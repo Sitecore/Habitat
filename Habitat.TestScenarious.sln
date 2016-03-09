@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Sitecor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.FAQ.Specflow", "specs\Feature.FAQ\Sitecore.Feature.FAQ.Specflow\Sitecore.Feature.FAQ.Specflow.csproj", "{2CA40993-1A11-4F2C-993E-960A9BD36D01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Maps", "specs\Feature.Maps\Sitecore.Feature.Maps\Sitecore.Feature.Maps.csproj", "{74CD4A0F-EED0-4DB7-BF04-3D45CA7BCBF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{2CA40993-1A11-4F2C-993E-960A9BD36D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CA40993-1A11-4F2C-993E-960A9BD36D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CA40993-1A11-4F2C-993E-960A9BD36D01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74CD4A0F-EED0-4DB7-BF04-3D45CA7BCBF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74CD4A0F-EED0-4DB7-BF04-3D45CA7BCBF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74CD4A0F-EED0-4DB7-BF04-3D45CA7BCBF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74CD4A0F-EED0-4DB7-BF04-3D45CA7BCBF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
