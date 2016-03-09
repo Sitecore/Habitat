@@ -11,6 +11,8 @@ var config = require("./gulp-config.js")();
 var nugetRestore = require('gulp-nuget-restore');
 var fs = require('fs');
 var unicorn = require("./scripts/unicorn.js");
+var habitat = require("./scripts/habitat.js");
+
 module.exports.config = config;
 
 gulp.task("default", function (callback) {
@@ -67,17 +69,17 @@ gulp.task("04-Apply-Xml-Transform", function () {
 });
 
 gulp.task("05-Sync-Unicorn", function (callback) {
-  var options = new Object;
-  options.serializationConfigFiles = [
+  var options = {};
+  options.configurationConfigFiles = [
     __dirname + "/src/Foundation/Serialization/code/App_Config/Include/*/*.Serialization.config",
     __dirname + "/src/Foundation/!(Serialization)/code/App_Config/Include/*/*.Serialization.config",
     __dirname + "/src/Feature/**/code/App_Config/Include/*/*.Serialization.config",
     __dirname + "/src/Project/Common/code/App_Config/Include/*/*.Serialization.config",
     __dirname + "/src/Project/!(Common)/code/App_Config/Include/*/*.Serialization.config"];
-  options.publishingSettingsFiles = __dirname + "/publishsettings.targets";
-  options.serializationSettingsConfig = __dirname + "/src/Foundation/Serialization/code/App_config/Include/Foundation/Foundation.Serialization.config"
+  options.siteHostName = habitat.getSiteUrl();
+  options.authenticationConfigFile = __dirname + "/src/Foundation/Serialization/code/App_config/Include/Foundation/Foundation.Serialization.config";
   
-  unicorn(callback, options);
+  unicorn(function() { return callback() }, options);
 });
 
 /*****************************
