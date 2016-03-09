@@ -134,7 +134,7 @@
   <ItemGroup>
     <Compile Include="Indexing\NewsIndexContentProvider.cs" />
     <Compile Include="Repositories\INewsRepository.cs" />
-    <Compile Include="Controller\NewsController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Repositories\INewsRepositoryFactory.cs" />
     <Compile Include="Repositories\NewsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

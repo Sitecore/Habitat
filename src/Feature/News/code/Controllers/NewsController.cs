@@ -1,11 +1,11 @@
-﻿namespace Sitecore.Feature.News.Controller
+﻿namespace Sitecore.Feature.News.Controllers
 {
-  using System.Web.Mvc;
-  using Sitecore.Feature.News.Repositories;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
-  using Sitecore.Mvc.Presentation;
+    using System.Web.Mvc;
+    using Sitecore.Feature.News.Repositories;
+    using Sitecore.Foundation.SitecoreExtensions.Extensions;
+    using Sitecore.Mvc.Presentation;
 
-  public class NewsController : Controller
+    public class NewsController : Controller
   {
     private readonly INewsRepositoryFactory newsRepositoryFactory;
 
