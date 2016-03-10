@@ -15,29 +15,29 @@
 }
 
 @{
-    var elements = GroupMemberRepository.Get(Model.Item).ToArray();
+  var elements = GroupMemberRepository.Get(Model.Item).ToArray();
 }
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    @foreach (Item item in elements)
+    {
 
-@foreach (Item item in elements)
-{
-    var ID = Guid.NewGuid().ToString();
-
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingcollapse0">
-                <div class="panel-title">
-                    <a role="button" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@ID">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        @Html.Sitecore().Field(Templates.Faq.Fields.Question.ToString(), item)
-                    </a>
-                </div>
-            </div>
-            <div id=@ID class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingcollapse0">
-                <div class="panel-body">
-                    @Html.Sitecore().Field(Templates.Faq.Fields.Answer.ToString(), item)
-                </div>
+        var ID = Guid.NewGuid().ToString();
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingcollapse0">
+            <div class="panel-title">
+                <a role="button" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@ID">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    @Html.Sitecore().Field(Templates.Faq.Fields.Question.ToString(), item)
+                </a>
             </div>
         </div>
-        <!-- /.panel -->
+        <div id=@ID class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingcollapse0">
+            <div class="panel-body">
+                @Html.Sitecore().Field(Templates.Faq.Fields.Answer.ToString(), item)
+            </div>
+        </div>
     </div>
-}
+
+    <!-- /.panel -->
+    }
+</div>

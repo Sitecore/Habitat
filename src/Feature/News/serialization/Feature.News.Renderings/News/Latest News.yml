@@ -17,7 +17,7 @@ SharedFields:
   Value: {6D309FC1-D6B1-43B1-A31C-1FECB7B9303F}
 - ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
   Hint: Controller
-  Value: Sitecore.Feature.News.Controller.NewsController, Sitecore.Feature.News
+  Value: Sitecore.Feature.News.Controllers.NewsController, Sitecore.Feature.News
 Languages:
 - Language: en
   Versions:
