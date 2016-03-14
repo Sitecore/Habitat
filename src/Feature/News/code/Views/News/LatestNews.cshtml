@@ -10,13 +10,13 @@
       <li class="media">
         <div class="media-body">
           <date>
-            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
+            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date, item, new
              {
                format = "MMMM dd, yyyy"
              })
           </date>
           <h4 class="media-heading">
-            <a href="@item.Url()">@Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), item)</a>
+            <a href="@item.Url()">@Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, item)</a>
           </h4>
         </div>
       </li>

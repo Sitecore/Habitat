@@ -17,10 +17,10 @@
     </a>
     <div class="caption">
         <h3 class="teaser-heading">
-            @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title.ToString(), Model.Item)
+            @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title, Model.Item)
         </h3>
         <p>
-            @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary.ToString(), Model.Item)
+            @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary, Model.Item)
         </p>
         <a href="@Model.Item.Url()" class="btn btn-default">
             @DictionaryRepository.Get("/PageContent/Teaser/Read more", "Read more")

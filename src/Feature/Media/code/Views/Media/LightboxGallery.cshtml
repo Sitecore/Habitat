@@ -35,7 +35,7 @@
       if (!string.IsNullOrWhiteSpace(linkFieldUrl))
       {
         <div class="block-grid-item">
-          <a href="@linkFieldUrl" data-type="image" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item))" data-toggle="lightbox" data-gallery="@galleryId">
+          <a href="@linkFieldUrl" data-type="image" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description, element.Item))" data-toggle="lightbox" data-gallery="@galleryId">
             @thumbnail
           </a>
         </div>
@@ -44,7 +44,7 @@
     else
     {
       <div class="block-grid-item">
-        <a href="@element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions(maxWidth, 0, false))" data-type="image" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item))" data-toggle="lightbox" data-gallery="@galleryId">
+        <a href="@element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions(maxWidth, 0, false))" data-type="image" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description, element.Item))" data-toggle="lightbox" data-gallery="@galleryId">
           @thumbnail
         </a>
       </div>
