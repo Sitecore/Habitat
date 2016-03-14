@@ -6,7 +6,16 @@
 
   public class ReferralRepository
   {
-    private readonly CampaignRepository campaignRepository = new CampaignRepository();
+    private readonly ICampaignRepository campaignRepository;
+
+    public ReferralRepository(ICampaignRepository campaignRepository)
+    {
+      this.campaignRepository = campaignRepository;
+    }
+
+    public ReferralRepository():this(new CampaignRepository())
+    {
+    }
 
     public Referral Get()
     {

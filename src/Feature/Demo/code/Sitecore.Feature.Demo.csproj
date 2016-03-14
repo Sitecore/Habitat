@@ -171,6 +171,7 @@
     <Compile Include="Models\Repository\DeviceRepository.cs" />
     <Compile Include="Models\Repository\EngagementPlanStateRepository.cs" />
     <Compile Include="Models\Repository\GoalRepository.cs" />
+    <Compile Include="Models\Repository\ICampaignRepository.cs" />
     <Compile Include="Models\Repository\LocationRepository.cs" />
     <Compile Include="Models\Repository\OutcomeRepository.cs" />
     <Compile Include="Models\Repository\PageViewRepository.cs" />

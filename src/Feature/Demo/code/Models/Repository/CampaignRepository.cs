@@ -11,7 +11,7 @@
   using Sitecore.Marketing.Taxonomy;
   using Sitecore.Marketing.Taxonomy.Extensions;
 
-  internal class CampaignRepository
+  internal class CampaignRepository : ICampaignRepository
   {
     public Campaign GetCurrent()
     {

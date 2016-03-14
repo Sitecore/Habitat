@@ -10,6 +10,7 @@
   using Sitecore.Common;
   using Sitecore.Data;
   using Sitecore.Data.Fields;
+  using Sitecore.Diagnostics;
   using Sitecore.Feature.Demo.Models;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Resources.Media;
@@ -51,6 +52,8 @@
 
     public IEnumerable<PatternMatch> GetPatternsWithGravityShare(ProfileItem visibleProfile, ProfilingTypes type)
     {
+      Assert.ArgumentNotNull(visibleProfile, nameof(visibleProfile));
+
       var userPattern = type == ProfilingTypes.Historic ? GetHistoricMatchedPattern(visibleProfile) : GetActiveMatchedPattern(visibleProfile);
 
       var patterns = PopulateProfilePatternMatchesWithXdbData.GetPatternsWithGravityShare(visibleProfile, userPattern);

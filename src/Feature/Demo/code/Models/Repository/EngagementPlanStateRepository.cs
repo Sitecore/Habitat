@@ -21,7 +21,7 @@ namespace Sitecore.Feature.Demo.Models.Repository
           EngagementPlanTitle = stateContext.PlanItem.DisplayName,
           Title = stateContext.StateItem.DisplayName,
           Date = stateContext.EntryDateTime
-        });
+        }).ToArray();
       }
       catch (Exception ex)
       {

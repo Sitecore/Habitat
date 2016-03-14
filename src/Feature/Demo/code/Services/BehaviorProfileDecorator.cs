@@ -21,7 +21,7 @@ namespace Sitecore.Feature.Demo.Services
 
     public IEnumerator<KeyValuePair<string, float>> GetEnumerator()
     {
-      return GetScores() as IEnumerator<KeyValuePair<string, float>>;
+      return GetScores().GetEnumerator();
     }
 
     private IEnumerable<KeyValuePair<string, float>> GetScores()
@@ -37,7 +37,7 @@ namespace Sitecore.Feature.Demo.Services
 
     IEnumerator IEnumerable.GetEnumerator()
     {
-      return GetScores() as IEnumerator<KeyValuePair<string, float>>;
+      return GetScores().GetEnumerator();
     }
 
     public int Count

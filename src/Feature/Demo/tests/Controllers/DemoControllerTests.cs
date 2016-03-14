@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Feature.Demo.Tests.Controllers
 {
+  using System.Collections.Generic;
   using System.Web.Mvc;
   using FluentAssertions;
   using NSubstitute;
@@ -12,6 +13,8 @@
   using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
   using Ploeh.AutoFixture.AutoNSubstitute;
+  using Ploeh.AutoFixture.Xunit2;
+  using Sitecore.Analytics.Model.Entities;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.FakeDb;
@@ -90,6 +93,41 @@
       controller.ControllerContext = ctx;
       controller.EndVisit();
       ctx.HttpContext.Session.Received(1).Abandon();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void ExperienceData_NullTracker_ReturnNull([Greedy]DemoController demoController )
+    {
+      demoController.ExperienceData().Should().BeNull();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void ExperienceData_NullInteraction_ReturnNull(ITracker tracker, [Greedy]DemoController demoController)
+    {
+      using (new TrackerSwitcher(tracker))
+      {
+        demoController.ExperienceData().Should().BeNull();
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void ExperienceData_InitializedTracker_ReturnExperienceData(IKeyBehaviorCache keyBehaviorCache,Session session, CurrentInteraction currentInteraction, ITracker tracker, [Frozen]IContactProfileProvider contactProfileProvider, [Frozen]IProfileProvider profileProvider, [Greedy]DemoController demoController)
+    {
+      tracker.Interaction.Returns(currentInteraction);
+      tracker.Session.Returns(session);
+      var attachments = new Dictionary<string, object>()
+      {
+        ["KeyBehaviorCache"] = new Sitecore.Analytics.Tracking.KeyBehaviorCache(keyBehaviorCache)
+      };
+      tracker.Contact.Attachments.Returns(attachments);
+
+      using (new TrackerSwitcher(tracker))
+      {
+        demoController.ExperienceData().Should().BeOfType<ViewResult>().Which.Model.Should().BeOfType<ExperienceData>();
+      }
     }
   }
 }
