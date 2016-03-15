@@ -367,6 +367,9 @@
     <Content Include="styles\white-wonder\_templates.scss" />
     <Content Include="styles\white-wonder\_vendor.scss" />
     <Content Include="styles\editor.scss" />
+    <Content Include="styles\components\atoms\_breadcrumb.scss" />
+    <Content Include="styles\components\_hover.scss" />
+    <Content Include="styles\components\atoms\_badges.scss" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

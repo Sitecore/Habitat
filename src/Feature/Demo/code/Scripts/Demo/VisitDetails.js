@@ -1,12 +1,12 @@
 ﻿jQuery(function() {
   jQuery("head").on("visit-info:refresh", function() {
-    var panel = jQuery(".visit-info");
+    var panel = jQuery("#experiencedata");
     jQuery.ajax(
     {
-      url: "/api/Demo/VisitDetails",
+      url: "/api/Demo/ExperienceData",
       method: "get",
       cache: false,
-      success: function(data) {
+      success: function (data) {
         panel.replaceWith(data);
       }
     });

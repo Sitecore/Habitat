@@ -5,9 +5,6 @@ Template: 867f774a-195e-49d3-8e40-01f18410bb02
 Path: /sitecore/content/Habitat/Home/Edit Profile
 DB: master
 SharedFields:
-- ID: 5585a30d-b115-4753-93ce-422c3455deb2
-  Hint: ShowInNavigation
-  Value: 
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   Hint: __Sortorder
   Value: 800

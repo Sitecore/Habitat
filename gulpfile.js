@@ -195,9 +195,9 @@ gulp.task("Publish-All-Configs", function () {
 *****************************/
 gulp.task("Auto-Publish-Css", function () {
   var root = "./src";
-  var roots = [root + "/**/stylesheets", "!" + root + "/**/obj/**/stylesheets"];
+  var roots = [root + "/**/styles", "!" + root + "/**/obj/**/styles"];
   var files = "/**/*.css";
-  var destination = config.websiteRoot + "\\stylesheets";
+  var destination = config.websiteRoot + "\\styles";
   gulp.src(roots, { base: root }).pipe(
     foreach(function (stream, rootFolder) {
       gulp.watch(rootFolder.path + files, function (event) {

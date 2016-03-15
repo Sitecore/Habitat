@@ -9,7 +9,7 @@
   using FluentAssertions;
   using Sitecore.Data;
   using Sitecore.FakeDb;
-  using Sitecore.Feature.News.Controller;
+  using Sitecore.Feature.News.Controllers;
   using Sitecore.Feature.News.Repositories;
   using Sitecore.Feature.News.Tests.Extensions;
   using Sitecore.Mvc.Common;

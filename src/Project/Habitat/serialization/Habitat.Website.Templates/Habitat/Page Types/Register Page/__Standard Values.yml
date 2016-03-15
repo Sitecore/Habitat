@@ -5,9 +5,6 @@ Template: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Path: /sitecore/templates/Project/Habitat/Page Types/Register Page/__Standard Values
 DB: master
 SharedFields:
-- ID: 5585a30d-b115-4753-93ce-422c3455deb2
-  Hint: ShowInNavigation
-  Value: 
 - ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
   Hint: __Renderings
   Type: layout
@@ -39,8 +36,7 @@ SharedFields:
         <r ds="{D24907F7-1A25-43DC-A5A2-FCB1E55EBBB6}" id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}" ph="/footer/section/col-narrow-3" uid="{47F5A079-6F63-4219-BC45-1A221B200906}" />
         <r ds="{98E48045-DFC7-4A70-9BED-5C40AB6558A6}" id="{CA748838-E6D5-4BAD-9126-CAD10DD1B0DB}" ph="/footer/section/col-narrow-4" uid="{84124EE2-E678-4144-8316-0D6874866604}" />
         <r id="{7DAE9F23-890F-4E06-99A7-CCEDB74D3D8E}" ph="postfooter" uid="{A3BAD4D4-8E21-4B30-8C4C-B04163653D62}" />
-        <r id="{A6CFB41B-C613-4A2B-A5EE-4A374015914D}" ph="page-sidebar" uid="{A1AC1D8A-E47C-4766-8D0F-89BB3BBC9A81}" />
-        <r id="{24D6D94B-FF87-4A6C-9AA0-4CBF21488C05}" ph="page-sidebar" uid="{A1AC1D8A-E47C-4766-8D0F-89BB3BBC9A81}" />
+        <r id="{CED18F24-62C2-445E-B0D9-045E3325297B}" ph="page-sidebar" uid="{20AB9BAA-C112-4567-A701-564423E650D2}" />
       </d>
     </r>
 Languages:

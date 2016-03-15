@@ -11,7 +11,7 @@
       "indentWidth": 2,
       "outputStyle": "nested",
       "Precision": 5,
-      "includePath": "stylesheets/",
+      "includePath": "styles/",
       "relativeUrls": false
     },
     "coffeescript": {

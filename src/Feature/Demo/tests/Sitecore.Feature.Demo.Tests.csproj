@@ -129,10 +129,11 @@
   <ItemGroup>
     <Compile Include="AutoProfileDbDataAttribute.cs" />
     <Compile Include="Controllers\DemoControllerTests.cs" />
-    <Compile Include="Models\BehaviorProfileTests.cs" />
-    <Compile Include="Models\ContactInformation.cs" />
+    <Compile Include="Models\Repositories\CampaignRepositoryTests.cs" />
+    <Compile Include="Models\Repositories\ReferralRepositoryTests.cs" />
+    <Compile Include="Models\Repositories\VisitsRepositoryTests.cs" />
+    <Compile Include="Services\BehaviorProfileDecoratorTests.cs" />
     <Compile Include="Services\ProfileProviderTests.cs" />
-    <Compile Include="Models\VisitInformationTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +163,7 @@
       <Name>Sitecore.Feature.Demo</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

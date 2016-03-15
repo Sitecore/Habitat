@@ -5,6 +5,7 @@ namespace Sitecore.Feature.Demo.Models
   using Sitecore.Data.Items;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Text;
+  using static Sitecore.Configuration.Factory;
 
   public class DemoContent
   {
@@ -26,7 +27,7 @@ namespace Sitecore.Feature.Demo.Models
 
     private string ReplaceTokens(string content)
     {
-      var replacer = Factory.GetMasterVariablesReplacer();
+      var replacer = GetMasterVariablesReplacer();
       using (new ReplacerContextSwitcher(GetReplacementTokens()))
         return replacer.Replace(content, Item);
     }

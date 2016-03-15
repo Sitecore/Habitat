@@ -2,10 +2,16 @@
 
 table, .table {
 
-  & > thead, & > tbody {
-    & > tr {
-      & > td, & > th {
-        padding: 12px 15px;
+  &.table-borderless tbody tr td, &.table-borderless tbody tr th, &.table-borderless thead tr th {
+    border: none;
+  }
+
+  &:not(.table-condensed) {
+    & > thead, & > tbody {
+      & > tr {
+        & > td, & > th {
+          padding: 12px 15px;
+        }
       }
     }
   }

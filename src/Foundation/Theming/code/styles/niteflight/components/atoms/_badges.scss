@@ -1,9 +1,7 @@
 $badge-bg: $color-primary;
 
-
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/badges";
-
-
+@import "components/atoms/badges";
 
 .badge {
 
