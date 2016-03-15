@@ -13,13 +13,16 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
   [Binding]
   public class AccountStepsBase : StepsBase
   {
-    public Site Site => new Site();
+    public AccountLocators Site => new AccountLocators();
 
-    public SiteBase SiteBase = new SiteBase();
-
-    public SiteNavigation SiteNavigation => new SiteNavigation();
+    public CommonLocators SiteBase = new CommonLocators();
 
     public AccountSettings Settings => new AccountSettings();
+
+    public CommonActions CommonActions => new CommonActions();
+
+    public CommonResults CommonResults => new CommonResults();
+
 
     public MockupOfExternalPageFeature MockupOfExternalPageFeature = new MockupOfExternalPageFeature();
 

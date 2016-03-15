@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using FluentAssertions;
 using OpenQA.Selenium.Support.UI;
+using Sitecore.Feature.Accounts.Specflow.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Extensions;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
 using TechTalk.SpecFlow;
@@ -13,7 +14,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     [Given(@"Edit profile page is opened")]
     public void GivenEditProfilePageIsOpened()
     {
-      Driver.Navigate().GoToUrl(BaseSettings.EditUserProfileUrl);
+      SiteBase.NavigateToPage(BaseSettings.EditUserProfileUrl);
     }
 
 
@@ -149,20 +150,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void ThenSystemShowsFollowingErrorMessageForTheEditProfile(Table table)
     {
       var textMessages = table.Rows.Select(x => x.Values.First());
-
-      foreach (var textMessage in textMessages)
-      {
-        var found = false;
-        foreach (var webElement in Site.PageErrorMessages)
-        {
-          found = webElement.Text == textMessage;
-          if (found)
-          {
-            break;
-          }
-        }
-        found.Should().BeTrue();
-      }
+      textMessages.All(m => AccountLocators.AccountErrorMessages.Any(x => x.Text == m));
     }
 
   }

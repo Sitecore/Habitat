@@ -18,48 +18,24 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void ThenSystemShowsFollowingAvalilableSites(Table table)
     {
       var values = table.Rows.Select(x => x.Values.First());
-      //1
-      foreach (var value in values)
-      {
-        var found = false;
-        foreach (var webElement in SiteBase.SiteSwitcherIconDropDownChildElements)
-        {
-          found = webElement.Text == value;
-          if (found)
-          {
-            break;
-          }
-        }
-        found.Should().BeFalse();
-      }
+      values.All(v => CommonLocators.SiteSwitcherIconDropDownChildElements.Any(x => x.Text == v)).Should().BeTrue();
     }
 
     [Then(@"(.*) value is selected by default")]
     public void ThenValueIsSelectedByDefault(string value)
     {
-     
-      var element = SiteBase.SiteSwitcherIconDropDownChildElements.First(el => el.Text.Equals(value, StringComparison.InvariantCultureIgnoreCase));
-      element.GetAttribute("class").Should().Contain("active");
+      CommonLocators.DropDownActiveValues.Any(v =>v.Text.Equals(value, StringComparison.InvariantCultureIgnoreCase)).Should().BeTrue();
     }
 
     [When(@"Actor selects (.*) from siteswitcher combo-box")]
     public void WhenActorSelectsFromSiteswitcherComboBox(string link)
     {
-      var element = SiteBase.SiteSwitcherIconDropDownChildElements.First(el => el.Text.Equals(link, StringComparison.InvariantCultureIgnoreCase));
+      var element = CommonLocators.SiteSwitcherIconDropDownChildElements.First(el => el.Text.Equals(link, StringComparison.InvariantCultureIgnoreCase));
       element.Click();
     }
 
-    [Then(@"URl contains (.*) site url")]
-    public void ThenURlContainsDemoSite(string site)
-    {
-      Driver.Url.Equals(BaseSettings.DemoSiteURL);
-    }
 
-    [Then(@"Demo site title equals to (.*)")]
-    public void ThenDemoSiteTitleEqualsTo(string title)
-    {
-      SiteBase.DemoSiteLogo.GetAttribute("title").Equals(title);
-    }
+
 
 
   }

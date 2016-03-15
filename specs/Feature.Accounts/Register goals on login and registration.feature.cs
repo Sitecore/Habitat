@@ -74,11 +74,11 @@ namespace Sitecore.Feature.Accounts.Specflow
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Register goals on login and registration")]
         [Xunit.TraitAttribute("Description", "Account_Register goals on login and registration_UC1_Register new user")]
-        [Xunit.TraitAttribute("Category", "Ready")]
+        [Xunit.TraitAttribute("Category", "NeedUpdateStepWithRemovingDataFromAnalytic")]
         public virtual void Account_RegisterGoalsOnLoginAndRegistration_UC1_RegisterNewUser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Register goals on login and registration_UC1_Register new user", new string[] {
-                        "Ready"});
+                        "NeedUpdateStepWithRemovingDataFromAnalytic"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -89,7 +89,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Password",
                         "ConfirmPassword"});
             table1.AddRow(new string[] {
-                        "kov@sitecore.net",
+                        "kov1@sitecore.net",
                         "k",
                         "k"});
 #line 7
@@ -114,11 +114,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Register goals on login and registration")]
         [Xunit.TraitAttribute("Description", "Account_Register goals on login and registration_UC2_Login with new user")]
-        [Xunit.TraitAttribute("Category", "Ready")]
+        [Xunit.TraitAttribute("Category", "NeedUpdateStepWithRemovingDataFromAnalytic")]
         public virtual void Account_RegisterGoalsOnLoginAndRegistration_UC2_LoginWithNewUser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Register goals on login and registration_UC2_Login with new user", new string[] {
-                        "Ready"});
+                        "NeedUpdateStepWithRemovingDataFromAnalytic"});
 #line 18
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -131,13 +131,9 @@ this.ScenarioSetup(scenarioInfo);
                         "k",
                         "k"});
 #line 19
- testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table3, "Given ");
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table3, "Given ");
 #line 22
- testRunner.And("User was logged out from the Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 23
- testRunner.And("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 24
- testRunner.And("User clicks Login from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor selects User icon on Navigation bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
@@ -145,11 +141,11 @@ this.ScenarioSetup(scenarioInfo);
             table4.AddRow(new string[] {
                         "kov10@sitecore.net",
                         "k"});
-#line 25
+#line 23
  testRunner.When("Actor enteres following data into Login form fields", ((string)(null)), table4, "When ");
-#line 28
- testRunner.And("User clicks Login button on Login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
+#line 26
+ testRunner.And("Actor clicks Login button on User form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -160,7 +156,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Login"});
             table5.AddRow(new string[] {
                         "Login"});
-#line 30
+#line 28
  testRunner.Then("Profile Activity Goals section for kov10@sitecore.net contains", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -169,12 +165,12 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Register goals on login and registration")]
         [Xunit.TraitAttribute("Description", "Account_Register goals on login and registration_UC3_Login twice with new user")]
-        [Xunit.TraitAttribute("Category", "Ready")]
+        [Xunit.TraitAttribute("Category", "NeedUpdateStepWithRemovingDataFromAnalytic")]
         public virtual void Account_RegisterGoalsOnLoginAndRegistration_UC3_LoginTwiceWithNewUser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Register goals on login and registration_UC3_Login twice with new user", new string[] {
-                        "Ready"});
-#line 38
+                        "NeedUpdateStepWithRemovingDataFromAnalytic"});
+#line 36
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -182,48 +178,42 @@ this.ScenarioSetup(scenarioInfo);
                         "Password",
                         "ConfirmPassword"});
             table6.AddRow(new string[] {
-                        "kov10@sitecore.net",
+                        "kov11@sitecore.net",
                         "k",
                         "k"});
-#line 39
- testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table6, "Given ");
-#line 42
- testRunner.And("User was logged out from the Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 43
- testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 44
- testRunner.And("User clicks Login from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table6, "Given ");
+#line 40
+ testRunner.When("Actor selects User icon on Navigation bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
             table7.AddRow(new string[] {
-                        "kov10@sitecore.net",
+                        "kov11@sitecore.net",
                         "k"});
-#line 45
+#line 41
  testRunner.And("Actor enteres following data into Login form fields", ((string)(null)), table7, "And ");
-#line 48
- testRunner.And("User clicks Login button on Login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 49
- testRunner.And("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 50
- testRunner.And("User clicks Log out on User Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
- testRunner.And("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
- testRunner.And("User clicks Login from drop-down menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+ testRunner.And("Actor clicks Login button on User form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+ testRunner.And("Actor selects User icon on Navigation bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+ testRunner.And("Actor clicks Logout button on User form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+ testRunner.And("Actor selects User icon on Navigation bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
             table8.AddRow(new string[] {
-                        "kov10@sitecore.net",
+                        "kov11@sitecore.net",
                         "k"});
-#line 53
+#line 48
  testRunner.And("Actor enteres following data into Login form fields", ((string)(null)), table8, "And ");
-#line 56
- testRunner.And("User clicks Login button on Login form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 57
+#line 51
+ testRunner.And("Actor clicks Login button on User form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -236,7 +226,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Login"});
             table9.AddRow(new string[] {
                         "Login"});
-#line 58
+#line 53
  testRunner.Then("Profile Activity Goals section for kov10@sitecore.net contains", ((string)(null)), table9, "Then ");
 #line hidden
             this.ScenarioCleanup();

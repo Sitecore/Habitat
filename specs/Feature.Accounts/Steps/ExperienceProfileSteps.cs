@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Sitecore.Feature.Accounts.Specflow.Infrastructure;
@@ -15,6 +16,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     [Then(@"Profile Activity Goals section for (.*) contains")]
     public void ThenProfileActivityGoalsSectionForKovSitecore_NetContains(string userName, Table table)
     {
+      Thread.Sleep(TimeSpan.FromSeconds(5));
       var contactID = GetContactId(userName);
       var queryUrl = BaseSettings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}/intel/goals";
 

@@ -13,17 +13,9 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
 {
   public class MockupOfExternalPage:DemoStepsBase
   {
-    [Then(@"URl contains Demo site url")]
-    public void ThenURlContainsDemoSiteUrl()
-    {
-      Driver.Url.Equals(BaseSettings.DemoSiteURL);
-    }
 
-    [Then(@"Demo site title equals to (.*)")]
-    public void ThenDemoSiteTitleEqualsTo(string title)
-    {
-      SiteBase.DemoSiteLogo.GetAttribute("title").Equals(title);
-    }
+
+
 
     [Then(@"Following buttons are present on the Demo site page")]
     public void ThenFollowingButtonsArePresentOnTheDemoSitePage(Table table)
@@ -36,7 +28,7 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
     [Given(@"Mockup of Google page is opened")]
     public void GivenMockupOfGooglePageIsOpened()
     {
-      Driver.Navigate().GoToUrl(BaseSettings.DemoSiteURL);
+      SiteBase.NavigateToPage(BaseSettings.DemoSiteURL);
     }
 
     [When(@"Actor enters (.*) text in to search field")]
@@ -45,12 +37,13 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
       SiteDemo.GoogleSearchFieldMockup.SendKeys(text);
     }
 
-    [When(@"Actor clicks (.*) button")]
+    //TODO: Re-work 
+/*    [When(@"Actor clicks (.*) button")]
     public void WhenActorClicksGoogleSearchButton(string button)
     {
       var element = SiteDemo.DemoSiteButton.Single(el =>el.GetAttribute("value") == button);
       element.Click();
-    }
+    }*/
 
     [When(@"Actor clicks (.*)‎ link")]
     public void WhenActorClicksSitecoreHabitat_FlexibilitySimplicityExtensibilityLink(string link)

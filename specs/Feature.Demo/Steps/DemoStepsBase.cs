@@ -16,9 +16,11 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
   {
     public SiteDemo SiteDemo = new SiteDemo();
 
-    public SiteBase SiteBase = new SiteBase();
+    public CommonLocators SiteBase = new CommonLocators();
 
     public BaseSettings BaseSettings = new BaseSettings();
+
+    public CommonResults CommonResults => new CommonResults();
 
   }
 }

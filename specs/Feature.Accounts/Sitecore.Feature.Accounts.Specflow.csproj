@@ -100,8 +100,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Forgot Password.feature</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\AccountsActions.cs" />
     <Compile Include="Infrastructure\GoalSearchResult.cs" />
-    <Compile Include="Infrastructure\Site.cs" />
+    <Compile Include="Infrastructure\AccountLocators.cs" />
     <Compile Include="Log out.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -154,7 +155,7 @@
     <Compile Include="Settings.cs" />
     <Compile Include="Steps\EditUserProfile.cs" />
     <Compile Include="Infrastructure\SearchEntity.cs" />
-    <Compile Include="Steps\SiteNavigation.cs" />
+    <Compile Include="Steps\SiteNavigationSteps.cs" />
     <Compile Include="Steps\AccountStepsBase.cs" />
     <Compile Include="Steps\ExperienceProfileSteps.cs" />
     <Compile Include="Steps\SiteswitcherSteps.cs" />
@@ -187,7 +188,6 @@
     </None>
     <None Include="Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Page after login.feature">

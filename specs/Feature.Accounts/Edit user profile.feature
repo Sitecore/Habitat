@@ -6,10 +6,10 @@ Scenario: Account_Edit user profile_UC1_Open Edit Profile page
 	Given User with following data is registered in Habitat
 	| Email              | Password | ConfirmPassword |
 	| kov10@sitecore.net | k        | k               |
-	When Actor moves cursor over the User icon
-	And User clicks Edit Details from drop-down menu
-	Then EDITPROFILE title presents on page
-	And Page URL ends on /EditProfile
+	When Actor selects User icon on Navigation bar
+	And Actor clicks Edit details button on User form
+	Then Update your profile information title presents on page
+	And Page URL ends on /Edit-Profile
 
 
 

@@ -33,7 +33,7 @@ namespace Sitecore.Feature.Accounts.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SiteDemo switcher", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Site switcher", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -72,12 +72,12 @@ namespace Sitecore.Feature.Accounts.Specflow
         }
         
         [Xunit.FactAttribute()]
-        [Xunit.TraitAttribute("FeatureTitle", "SiteDemo switcher")]
-        [Xunit.TraitAttribute("Description", "SiteDemo switcher_UC1_List of available sites")]
+        [Xunit.TraitAttribute("FeatureTitle", "Site switcher")]
+        [Xunit.TraitAttribute("Description", "Site switcher_UC1_List of available sites")]
         [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void SiteSwitcher_UC1_ListOfAvailableSites()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("SiteDemo switcher_UC1_List of available sites", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Site switcher_UC1_List of available sites", new string[] {
                         "Ready"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
@@ -87,26 +87,26 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("Actor moves on siteswitcher combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "SiteDemo name"});
+                        "Site name"});
             table1.AddRow(new string[] {
-                        "Habitat - Example SiteDemo"});
+                        "Habitat - Example Site"});
             table1.AddRow(new string[] {
                         "Demo"});
 #line 11
  testRunner.Then("System shows following avalilable sites", ((string)(null)), table1, "Then ");
 #line 15
- testRunner.And("Habitat - Example SiteDemo value is selected by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Habitat - Example Site value is selected by default", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Xunit.FactAttribute()]
-        [Xunit.TraitAttribute("FeatureTitle", "SiteDemo switcher")]
-        [Xunit.TraitAttribute("Description", "SiteDemo switcher_UC2_Select new site")]
+        [Xunit.TraitAttribute("FeatureTitle", "Site switcher")]
+        [Xunit.TraitAttribute("Description", "Site switcher_UC2_Select new site")]
         [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void SiteSwitcher_UC2_SelectNewSite()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("SiteDemo switcher_UC2_Select new site", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Site switcher_UC2_Select new site", new string[] {
                         "Ready"});
 #line 18
 this.ScenarioSetup(scenarioInfo);

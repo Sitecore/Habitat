@@ -1,4 +1,6 @@
-﻿namespace Sitecore.Feature.Accounts.Specflow.Steps
+﻿using Sitecore.Feature.Accounts.Specflow.Infrastructure;
+
+namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
   using System;
   using System.Linq;
@@ -21,41 +23,8 @@
     public void ThenUserInfoIsShownOnUserPopup(Table table)
     {
       var values = table.Rows.Select(x => x.Values.First());
-      //1
-      foreach (var value in values)
-      {
-        var found = false;
-        foreach (var webElement in Site.ShowUserInfoPopupFields)
-        {
-          found = webElement.Text == value;
-          if (found)
-          {
-            break;
-          }
-        }
-        found.Should().BeFalse();
-      }
+      values.All(v => Site.ShowUserInfoPopupFields.Any(x => x.Text == v)).Should().BeTrue();
     }
-
-
-
-
-
-    [Then(@"Habitat website is opened on Main Page (.*)")]
-    [Then(@"Page URL ends on (.*)")]
-    public void ThenPageUrlEndsOnExpected(string urlEnding)
-    {
-      Driver.Url.EndsWith(urlEnding).Should().BeTrue();
-    }
-
-    [Then(@"Page URL not ends on (.*)")]
-    public void ThenPageURLNotEndsOn(string urlEnding)
-    {
-      Driver.Url.EndsWith(urlEnding).Should().BeFalse();
-    }
-
-
-
     [Then(@"(.*) title presents on page")]
     public void ThenRegisterTitlePresentsOnPage(string title)
     {
@@ -72,77 +41,37 @@
     [Then(@"(.*) button presents")]
     public void ThenRegisterButtonPresents(string btn)
     {
-      Site.SubmitButton.GetAttribute("Value").Should().BeEquivalentTo(btn);
+      SiteBase.SubmitButton.GetAttribute("Value").Should().BeEquivalentTo(btn);
     }
 
     [Then(@"Register fields present on page")]
     public void ThenRegisterFieldsPresentOnPage(Table table)
     {
       var fields = table.Rows.Select(x => x.Values.First());
-      var elements = Site.FormFields.Select(el => el.GetAttribute("name"));
+      var elements = CommonLocators.RegisterPageFields.Select(el => el.GetAttribute("name"));
       elements.Should().Contain(fields);
     }
 
-    [Then(@"Following buttons present under User drop-drop down menu")]
+    [Then(@"Following buttons present under User icon")]
     public void ThenFollowingButtonsPresentUnderUserDropDropDownMenu(Table table)
     {
       var buttons = table.Rows.Select(x => x.Values.First());
-      //1
-      foreach (var button in buttons)
-      {
-        var found = false;
-        foreach (var webElement in Site.UserIconDropDownButtons)
-        {
-          found = webElement.Text == button;
-          if (found)
-          {
-            break;
-          }
-        }
-        found.Should().BeFalse();
-      }
-      //2
-      //            buttons.All(b => SiteDemo.DropDownButtons.Any(x => x.Text == b)).Should().BeTrue();
+      buttons.All(b => CommonLocators.UserIconButtons.Any(x => x.Text == b)).Should().BeTrue();
+         
     }
 
-    [Then(@"Following buttons is no longer present under User drop-drop down menu")]
+    [Then(@"Following buttons is no longer present under User icon")]
     public void ThenFollowingButtonsIsNoLongerPresentUnderUserDropDropDownMenu(Table table)
     {
       var buttons = table.Rows.Select(x => x.Values.First());
-      //1
-      foreach (var button in buttons)
-      {
-        var found = false;
-        foreach (var webElement in Site.UserIconDropDownButtons)
-        {
-          found = webElement.Text == button;
-          if (found)
-          {
-            break;
-          }
-        }
-        found.Should().BeFalse();
-      }
+      buttons.All(b => CommonLocators.UserIconButtons.Any(x => x.Text == b)).Should().BeFalse();
     }
 
     [Then(@"User info is not shown on User popup")]
     public void ThenUserInfoIsNotShownOnUserPopup(Table table)
     {
       var fields = table.Rows.Select(x => x.Values.First());
-      //1
-      foreach (var field in fields)
-      {
-        var found = false;
-        foreach (var webElement in Site.EditUserProfileTextFields)
-        {
-          found = webElement.Text == field;
-          if (found)
-          {
-            break;
-          }
-        }
-        found.Should().BeFalse();
-      }
+      fields.All(f => Site.EditUserProfileTextFields.Any(x => x.Text == f)).Should().BeFalse();
     }
 
 
@@ -154,7 +83,7 @@
       var row = table.Rows.First();
       foreach (var key in row.Keys)
       {
-        Site.FormFields.GetField(key).SendKeys(row[key]);
+        CommonLocators.RegisterPageFields.GetField(key).SendKeys(row[key]);
       }
       //Following code will remove create user from DB after use case ends
       ContextExtensions.CleanupPool.Add(new TestCleanupAction
@@ -169,20 +98,17 @@
       var row = table.Rows.First();
       foreach (var key in row.Keys)
       {
-        Site.FormFields.GetField(key).SendKeys(row[key]);
+        CommonLocators.RegisterPageFields.GetField(key).SendKeys(row[key]);
       }
     }
-
-
-
-
     [Given(@"User with following data is registered")]
     public void GivenUserWithFollowingDataIsRegistered(Table table)
     {
       Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
       WhenActorEntersFollowingDataInToTheRegisterFields(table);
-      Site.SubmitButton.Click();
-      new SiteNavigation().WhenActorMovesCursorOverTheUserIcon();
+      SiteBase.SubmitButton.Click();
+      //TODO: change with click user item
+      //new SiteNavigationSteps().WhenActorMovesCursorOverTheUserIcon();
       WhenUserSelectsRegisterFromDropDownMenu("Logout");
     }
 
@@ -191,7 +117,7 @@
     {
       Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
       WhenActorEntersFollowingDataInToTheRegisterFields(table);
-      Site.SubmitButton.Click();
+      SiteBase.SubmitButton.Click();
 
       table.Rows
         .Select(row => row["Email"]).ToList()
@@ -218,70 +144,25 @@
     [Given(@"User was logged out from the Habitat")]
     public void GivenUserWasLoggedOutFromTheHabitat()
     {
-      new SiteNavigation().WhenActorMovesCursorOverTheUserIcon();
-      Site.SubmitButton.Click();
-    }
-
-    [Given(@"User clicks (.*) from drop-down menu")]
-    [When(@"User clicks (.*) from drop-down menu")]
-    public void WhenUserClicksLoginFromDropDownMenu(string linkText)
-    {
-      Driver.FindElement(By.LinkText(linkText.ToUpperInvariant())).Click();
-    }
-
-   
-
-    [Given(@"User is registered in Habitat and logged out")]
-    public void GivenUserIsRegisteredInHabitatAndLoggedOut(Table table)
-    {
-      Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
-      WhenActorEntersFollowingDataInToTheRegisterFields(table);
-      Site.SubmitButton.Click();
-      new SiteNavigation().WhenActorMovesCursorOverTheUserIcon();
-      Site.SubmitButton.Click();
-    }
-
-    [Given(@"User was deleted from the System")]
-    public void GivenUserWasDeletedFromTheSystem()
-    {
-      Cleanup();
-    }
-
-    [Given(@"Login form is opened")]
-    public void GivenLoginFormIsOpened()
-    {
-      SiteNavigation.GivenHabitatWebsiteIsOpenedOnMainPage();
-      SiteNavigation.WhenActorMovesCursorOverTheUserIcon();
-      WhenUserClicksLoginFromDropDownMenu("Login");
+      //TODO: change with click user item
+      //new SiteNavigationSteps().WhenActorMovesCursorOverTheUserIcon();
+      SiteBase.SubmitButton.Click();
     }
 
 
-    [Then(@"Login popup is no longer presents")]
+    [Then(@"Login drop-down popup is no longer presents")]
     public void ThenLoginPopupIsNoLongerPresents()
     {
-      var element = Site.LoginFormPopup;
+      var element = Site.UserFormDropDownPopup;
 
       element.Displayed.Should().BeFalse();
     }
 
-    [Then(@"Following links present under User drop-drop down menu")]
+    [Then(@"Following links present under User popup")]
     public void ThenFollowingLinksPresentUnderUserDropDropDownMenu(Table table)
     {
       var buttonsLinks = table.Rows.Select(x => x.Values.First());
-      //1
-      foreach (var buttonLink in buttonsLinks)
-      {
-        var found = false;
-        foreach (var webElement in Site.UserIconDropDownButtonLinks)
-        {
-          found = webElement.Text == buttonLink;
-          if (found)
-          {
-            break;
-          }
-        }
-        found.Should().BeFalse();
-      }
+      buttonsLinks.All(l => CommonLocators.UserIconDropDownButtonLinks.Any(x => x.Text == l)).Should().BeTrue();
     }
 
     [Then(@"Habitat Main page presents")]
@@ -291,6 +172,12 @@
       (absoluteUri.Equals("/") || absoluteUri.Equals("/en")).Should().BeTrue();
     }
 
+    [Then(@"Following links is no longer present under User popup")]
+    public void ThenFollowingLinksIsNoLongerPresentUnderUserPopup(Table table)
+    {
+      var buttonsLinks = table.Rows.Select(x => x.Values.First());
+      buttonsLinks.All(l => CommonLocators.UserIconDropDownButtonLinks.Any(x => x.Text == l)).Should().BeFalse();
+    }
 
 
 
