@@ -49,18 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bower.json" />
-    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.svg" />
-    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.eot" />
-    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.ttf" />
-    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.woff" />
-    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.woff2" />
-    <Content Include="bower_components\font-awesome\fonts\FontAwesome.otf" />
-    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.eot" />
-    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.ttf" />
-    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.woff" />
-    <Content Include="bower_components\bootstrap-sass\assets\fonts\bootstrap\glyphicons-halflings-regular.woff2" />
     <None Include="bundleconfig.json" />
-    <Content Include="bower_components\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="scripts\carousel.js" />
     <Content Include="scripts\counter.js" />
     <Content Include="scripts\disable-wffm-bootstrap.js" />
@@ -149,6 +139,11 @@
     <Content Include="fonts\open-sans-v13-latin-regular.ttf" />
     <Content Include="fonts\open-sans-v13-latin-regular.woff" />
     <Content Include="fonts\open-sans-v13-latin-regular.woff2" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
