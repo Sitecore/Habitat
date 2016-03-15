@@ -53,13 +53,11 @@ gulp.task("04-Optional-Copy-Local-Assemblies", function () {
 
   var root = "./src";
   var projects = root + "/**/code/bin";
-  gulp.src(projects, { base: root })
-    .pipe(foreach(function (stream, file) {
+  return gulp.src(projects, { base: root }).pipe(foreach(function (stream, file) {
       console.log("copying to " + file.path);
-      gulp.src(files)
-        .pipe(gulp.dest(file.path));
-      return stream;
-    }));
+      return gulp.src(files).pipe(newer(file.path)).pipe(gulp.dest(file.path));
+  }));
+
 });
 
 /*****************************
