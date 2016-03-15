@@ -1,7 +1,7 @@
 ﻿Feature: Trigger an outcome on customer registration
 	
 
-@InDesgin
+@NeedUpdateStepWithRemovingDataFromAnalytic
 Scenario: Trigger an outcome on customer registration_UC1_Empty registration outcome 
 	Given Value set to item field
 	| ItemPath                  | FieldName       | FieldValue |
@@ -18,7 +18,7 @@ Scenario: Trigger an outcome on customer registration_UC1_Empty registration out
 
 
 
-@InDesgin	
+@NeedUpdateStepWithRemovingDataFromAnalytic	
 Scenario: Trigger an outcome on customer registration_UC2_Custom registration outcome
 	Given Outcome set to item field
 	| ItemPath                  | FieldName       | FieldValue          |

@@ -74,11 +74,11 @@ namespace Sitecore.Feature.Accounts.Specflow
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Trigger an outcome on customer registration")]
         [Xunit.TraitAttribute("Description", "Trigger an outcome on customer registration_UC1_Empty registration outcome")]
-        [Xunit.TraitAttribute("Category", "InDesgin")]
+        [Xunit.TraitAttribute("Category", "NeedUpdateStepWithRemovingDataFromAnalytic")]
         public virtual void TriggerAnOutcomeOnCustomerRegistration_UC1_EmptyRegistrationOutcome()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trigger an outcome on customer registration_UC1_Empty registration outcome", new string[] {
-                        "InDesgin"});
+                        "NeedUpdateStepWithRemovingDataFromAnalytic"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -125,11 +125,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Trigger an outcome on customer registration")]
         [Xunit.TraitAttribute("Description", "Trigger an outcome on customer registration_UC2_Custom registration outcome")]
-        [Xunit.TraitAttribute("Category", "InDesgin")]
+        [Xunit.TraitAttribute("Category", "NeedUpdateStepWithRemovingDataFromAnalytic")]
         public virtual void TriggerAnOutcomeOnCustomerRegistration_UC2_CustomRegistrationOutcome()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trigger an outcome on customer registration_UC2_Custom registration outcome", new string[] {
-                        "InDesgin"});
+                        "NeedUpdateStepWithRemovingDataFromAnalytic"});
 #line 22
 this.ScenarioSetup(scenarioInfo);
 #line hidden
