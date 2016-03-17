@@ -16,6 +16,8 @@
       Fixture.Customizations.Add(new Postprocessor(new ContentAttributeRelay(), new AddContentDbItemsCommand()));
       Fixture.Customizations.Add(new Postprocessor(new AttributeRelay<ReplaceSearchProviderAttribute>(), new ReplaceSearchAttributeCommand()));
       Fixture.Customizations.Add(new ResolvePipelineSpecimenBuilder());
+      Fixture.Customizations.Insert(0, new RegisterViewToEngineBuilder());
+      Fixture.Customizations.Add(new HtmlHelperBuilder());
     }
   }
 }

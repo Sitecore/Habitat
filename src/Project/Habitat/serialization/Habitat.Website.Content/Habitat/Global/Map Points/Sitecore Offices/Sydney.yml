@@ -1,0 +1,25 @@
+﻿---
+ID: 94a4feef-5a85-47ed-95be-d4761a5595d2
+Parent: 37fced17-913a-4abb-9eec-3bf745334326
+Template: 11c28d16-9b88-456e-a42b-d4b5a82867e3
+Path: /sitecore/content/Habitat/Global/Map Points/Sitecore Offices/Sydney
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 0295c01d-214c-4c23-afc2-3f0b4e88b643
+      Hint: MapPointAddress
+      Value: |
+        Level 4, 50 Pitt St
+        Sydney, NSW, 2000
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160129T052419Z
+    - ID: f12c22bb-e57d-4fab-96e1-1229e4e7ff0e
+      Hint: MapPointName
+      Value: Sitecore Australia
+    - ID: f686ac8e-1d33-45db-8e1a-1b40cd491e7a
+      Hint: MapPointLocation
+      Value: -33.86347491441307,151.2091726748688

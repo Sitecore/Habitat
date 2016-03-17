@@ -1,0 +1,99 @@
+﻿@using System.Globalization
+@using Sitecore.Feature.Demo.Texts
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.StringExtensions
+@model Sitecore.Feature.Demo.Models.PersonalInfo
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      <a href="#personalInfoPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
+        <span class="fa fa-user"></span>
+        @DictionaryRepository.Get("/Demo/PersonalInfo/Title", "Personal Information")
+        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+      </a>
+    </h3>
+  </div>
+  <div id="personalInfoPanel" class="panel-collapse collapse">
+    <div class="panel-body">
+      <div class="media">
+        <div class="media-left">
+          <span class="fa fa-user"></span>
+        </div>
+        <div class="media-body ">
+          <h4 class="media-title">
+            @if (!string.IsNullOrWhiteSpace(Model.FullName))
+            {
+              @Model.FullName
+            }
+            else if (Model.IsIdentified)
+            {
+              @DictionaryRepository.Get("/Demo/PersonalInfo/IdentifiedUser", "You are known")
+            }
+            else
+            {
+              @DictionaryRepository.Get("/Demo/PersonalInfo/AnonymousUser", "You are anonymous")
+            }
+          </h4>
+          <dl>
+            @foreach (var property in Model.Properties)
+            {
+              <dt>@property.Key</dt>
+              <dd>@property.Value</dd>
+            }
+          </dl>
+        </div>
+        <div class="media-right">
+          @if (Model.PhotoUrl != null)
+          {
+            <img src="@Model.PhotoUrl" width="50"/>
+          }
+          else if (Model.IsIdentified)
+          {
+            <span class="fa fa-user-plus icon-lg"></span>
+          }
+          else
+          {
+            <span class="fa fa-user-secret icon-lg"></span>
+          }
+        </div>
+      </div>
+      @if (Model.Location != null)
+      {
+        <div class="media">
+          <div class="media-left">
+            <span class="fa fa-globe"></span>
+          </div>
+          <div class="media-body ">
+            <h4 class="media-title">
+              @DictionaryRepository.Get("/Demo/Referral/Location", "Location")
+            </h4>
+            <div class="text-nowrap" title="@Model.Location.City, @Model.Location.Country">
+              @Model.Location.City, @Model.Location.Country
+            </div>
+          </div>
+        </div>
+      }
+      @if (Model.Device != null)
+      {
+        <div class="media">
+          <div class="media-left">
+            <span class="fa fa-tablet"></span>
+          </div>
+          <div class="media-body ">
+            <h4 class="media-title">
+              @DictionaryRepository.Get("/Demo/Referral/Device", "Device")
+            </h4>
+            <div class="text-nowrap">
+              <dl>
+                <dt>@DictionaryRepository.Get("/Demo/Referral/DeviceTitle", "Device")</dt>
+                <dd>@Model.Device.Title</dd>
+                <dt>@DictionaryRepository.Get("/Demo/Referral/DeviceBrowser", "Browser")</dt>
+                <dd>@Model.Device.Browser</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

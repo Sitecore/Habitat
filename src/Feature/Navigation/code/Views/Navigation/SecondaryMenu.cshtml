@@ -10,14 +10,12 @@
   }
 }
 
-<nav class="secondary-menu panel panel-default">
-  <div class="panel-heading">
+<h4>
     <a href="@Model.Url" target="@Model.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), Model.Item)</a>
-  </div>
-  <div class="panel-body">
+</h4>
+<div class="sidebar sidebar-static">
     @if (Model.Children != null)
     {
       @Html.Partial("_SecondaryMenuItems", Model.Children)
     }
-  </div>
-</nav>
+</div>
