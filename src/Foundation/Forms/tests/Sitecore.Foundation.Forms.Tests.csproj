@@ -42,6 +42,9 @@
       <HintPath>..\..\..\..\packages\FluentAssertions.4.0.1\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\..\..\lib\Sitecore\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Moq, Version=4.1.1308.2321, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Moq.4.1.1308.2321\lib\net40\Moq.dll</HintPath>
       <Private>True</Private>
