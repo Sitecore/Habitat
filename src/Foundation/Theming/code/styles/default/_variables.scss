@@ -1,15 +1,21 @@
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif: "Bitter", Georgia, serif;
 
-$color-primary: #5C646B;
+$font-family-base: $font-family-serif;
 
-$color-secondary: #79A0B9;
-$color-secondary-dark: #6A96B1;
-$color-secondary-light: #80A6BD;
-$color-secondary-lighter: #88ABC1;
+$color-primary: #C8244F;
+
+$color-secondary: #424C5F;
+$color-secondary-dark: #2E384E;
+$color-secondary-light: #4D5668;
+$color-secondary-lighter: #586071;
 $color-secondary-lightest: #d5d7dc;
 
 $brand-primary: $color-primary;
+$brand-success: #24C890;
+$brand-info: #24ABC8;
+$brand-warning: #ABC824;
+$brand-danger: #E65757;
 $gray-base: rgb(2, 3, 4);
 $gray: #999;
 $gray-light: #F2F3F4;
@@ -20,9 +26,9 @@ $text-color: $color-secondary;
 $main-bg: #FFF;
 $navbar-bg: $main-bg;
 
-$border-radius-base: 20px;
-$border-radius-large: 30px;
-$border-radius-small: 10px;
+$border-radius-base: 0px;
+$border-radius-large: 0px;
+$border-radius-small: 0px;
 
 $link-color: $brand-primary;
 
@@ -59,9 +65,14 @@ $btn-warning-border: $brand-warning;
 $btn-danger-bg: $brand-danger;
 $btn-danger-border: $brand-danger;
 
-$footer-text-color: #FFF;
+$counter-default-bg: $color-secondary-dark;
 
-$jumbotron-border-radius: 0px;
+$dropdown-menu-border-radius: $border-radius-base;
+$dropdown-header-color: $brand-primary;
+
+$footer-text-color: $text-color;
+
+$jumbotron-border-radius: $border-radius-large;
 
 $label-default-bg: $color-secondary;
 $label-success-bg: $brand-success;
@@ -90,7 +101,7 @@ $panel-warning-heading-bg: $brand-warning;
 $panel-warning-border: $brand-warning;
 $panel-danger-heading-bg: $brand-danger;
 $panel-danger-border: $brand-danger;
-$panel-border-radius: 0px;
+$panel-border-radius: 0;
 $panel-default-heading-bg: #FFF;
 $panel-footer-bg: #FFF;
 $panel-heading-padding: 20px 15px;
@@ -125,4 +136,6 @@ $media-list-divided-border-color: $list-divided-border-color;
 
 $mega-dropdown-menu-padding: 30px 10px;
 
-$bg-media-overlay-color: #5C646B;
+$well-border-radius: 0px;
+
+$bg-media-overlay-color: #000011;

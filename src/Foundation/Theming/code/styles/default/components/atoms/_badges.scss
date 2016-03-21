@@ -7,11 +7,15 @@
 
 .badge {
 
-  color: $text-color;
+  color: #FFF;
 
   .glyphicon + & {
     position: absolute;
     top: 50%;
     left: 4px;
+  }
+
+  .bg-primary &, .bg-dark &, .bg-primary &.bg-primary {
+    background-color: rgba(0,0,0,.4) !important;
   }
 }

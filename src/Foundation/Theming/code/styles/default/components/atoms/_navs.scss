@@ -1,0 +1,217 @@
+
+
+
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/navs";
+
+.nav {
+  margin-top: 0;
+
+  & > li {
+    & > a {
+      font-weight: bold;
+    }
+  }
+  li {
+    font-family: 'Open Sans', sans-serif;
+    &.divider {
+      height: 1px;
+      width: 100%;
+      background-color: rgba(255,255,255,0.2);
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#20FFFFFF', endColorstr='#20FFFFFF');
+      display: block;
+    }
+    &.divider-right {
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    &.divider-left {
+      border-left: 1px solid rgba(255,255,255,0.2);
+    }
+
+    a {
+      //font-weight: bold;
+
+      &:hover {
+        color: $text-color;
+      }
+
+      .bg-primary &, .bg-dark &, .bg-media & {
+        &:hover {
+          color: $text-color;
+        }
+      }
+
+      .bg-white & {
+        color: #000;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .open {
+    & > a {
+      border-color: transparent;
+      color: $text-color;
+      &:hover, &:focus {
+        border-color: transparent;
+        .bg-primary &, .bg-dark &, .bg-media & {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  .dropdown {
+    &-menu {
+      min-width: 300px;
+      padding: 15px;
+      color: $text-color;
+
+      & > .active {
+        & > a {
+          color: $brand-primary;
+          font-weight: bold;
+        }
+      }
+      & > li {
+        & > a {
+          font-weight: normal;
+          color: $text-color;
+          &.btn {
+            font-weight: bold;
+          }
+        }
+      }
+
+      .media-list {
+        .media {
+          margin-top: 0;
+        }
+      }
+
+      @media all and (max-width: $screen-xs-max) {
+        min-width: auto;
+      }
+    }
+  }
+
+  &-responsive-scroll {
+    overflow-x: auto;
+    /*&:before {
+      content: ' ';
+      display: block;
+      width: 20px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.0001) 100%);
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.0001) 100%);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#00000000', GradientType=1)
+    }
+    &:after {
+      content: ' ';
+      display: block;
+      width: 20px;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.0001) 0%, rgba(255, 255, 255, 1) 100%);
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.0001) 0%, rgba(255, 255, 255, 1) 100%);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#FFFFFFFF', GradientType=1);
+    }*/
+    &.nav-justified {
+      & > li {
+        display: table-cell;
+        width: 1%;
+        min-width: 150px;
+
+        @media all and (max-width: $screen-xs-max) {
+          width: 60%;
+        }
+      }
+    }
+  }
+
+  &-pills {
+    & > li {
+      &.active {
+        & > a {
+          background-color: transparent;
+          &:hover {
+            background-color: transparent;
+          }
+          .bg-white & {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+
+  &-right {
+    & > li {
+      float: right !important;
+    }
+  }
+
+
+  &-service {
+    margin-right: -15px !important;
+
+    & > li {
+      & > a {
+        font-weight: lighter;
+        color: #FFF;
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+
+        .bg-white & {
+          color: #000;
+          &:hover, &:active, &:focus {
+            color: #000;
+          }
+        }
+
+        &:hover, &:active, &:focus {
+          background-color: transparent;
+          color: #FFF;
+        }
+      }
+      &.dropdown {
+        &.open {
+          & > a {
+            background-color: rgba(0,0,0,0.2);
+            filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#20000000', endColorstr='#20000000');
+          }
+        }
+        li {
+          padding: 0;
+          a {
+            font-weight: normal;
+            padding-left: 0;
+            padding-right: 0;
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+
+  &-social {
+    margin-left: -15px !important;
+    & > li {
+      & > a {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        background-color: transparent !important;
+      }
+    }
+  }
+}

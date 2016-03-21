@@ -1,9 +1,6 @@
-@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/tables";
+
 
 table, .table {
-  &.table-borderless tbody tr td, &.table-borderless tbody tr th, &.table-borderless thead tr th {
-    border: none;
-  }
 
   & > tbody {
     & > tr {
@@ -13,12 +10,10 @@ table, .table {
     }
   }
 
-  &:not(.table-condensed) {
-    & > thead, & > tbody {
-      & > tr {
-        & > td, & > th {
-          padding: 12px 15px;
-        }
+  & > thead, & > tbody {
+    & > tr {
+      & > td, & > th {
+        padding: 12px 15px;
       }
     }
   }

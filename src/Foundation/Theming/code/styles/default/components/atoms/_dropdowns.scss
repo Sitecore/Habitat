@@ -1,0 +1,63 @@
+
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
+
+
+.dropdown, .dropup {
+  &-header {
+      font-size: 16px;
+      color: $dropdown-header-color;
+
+      @media (max-width: $screen-sm-max) {
+        color: #FFF;
+        font-weight: bold;
+      }
+  }
+
+  &-toggle {
+    margin-bottom: 0 !important;
+  }
+
+  &.open {
+    .dropdown-toggle {
+      background-color: rgba(0,0,0,0.2);
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#20000000', endColorstr='#20000000');
+    }
+    & > a {
+      & > .caret {
+        transform: rotate(180deg);
+        -ms-transform: rotatet(180deg);
+      }
+    }
+  }
+
+  &-menu {
+    border-radius: $dropdown-menu-border-radius;
+    .bg-primary &, .bg-dark &, .bg-media & {
+      color: $text-color;
+    }
+    & > .active {
+      & > a, & > a:hover, & > a:active, & > a:focus {
+        color: $brand-primary;
+        background-color: transparent;
+        font-weight: bold;
+      }
+    }
+    li {
+      a {
+        padding: 3px 20px;
+        font-weight: normal;
+        color: $text-color;
+
+        &:hover {
+          text-decoration: underline;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.caret {
+  margin-left: 10px;
+}

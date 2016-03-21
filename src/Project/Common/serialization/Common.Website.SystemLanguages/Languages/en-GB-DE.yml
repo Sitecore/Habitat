@@ -1,0 +1,37 @@
+﻿---
+ID: 6a176180-2d29-4617-959e-15964fed2b6d
+Parent: 64c4f646-a3fa-4205-b98e-4de2c609b60f
+Template: f68f13a6-3395-426a-b9a1-fa2dc60d94eb
+Path: /sitecore/system/Languages/en-GB-DE
+DB: master
+SharedFields:
+- ID: 0620f810-9294-4f14-af9f-f5772efca0b2
+  Hint: Regional Iso Code
+  Value: en-GB-DE
+- ID: 49e5e8f3-ed4a-4a06-abe1-b9408951dee9
+  Hint: Charset
+  Value: iso-8859-1
+- ID: 8728d8ff-66d9-40c2-8b34-c4fc1466942e
+  Hint: Encoding
+  Value: utf-8
+- ID: 990596ce-0024-43f3-bf4c-a991bfa69b45
+  Hint: Code page
+  Value: 65001
+- ID: c437e416-8948-427d-a982-8ed37ae3f553
+  Hint: Iso
+  Value: en
+Languages:
+- Language: en
+  Fields:
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Hint: __Display name
+    Value: Germany-English
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160316T223509Z
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
