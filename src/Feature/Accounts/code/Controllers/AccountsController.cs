@@ -16,6 +16,7 @@ namespace Sitecore.Feature.Accounts.Controllers
   using Sitecore.Feature.Accounts.Texts;
   using Sitecore.Foundation.SitecoreExtensions.Attributes;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Services;
 
   public class AccountsController : Controller
   {
@@ -25,7 +26,7 @@ namespace Sitecore.Feature.Accounts.Controllers
     private readonly IUserProfileService userProfileService;
     private readonly IContactProfileService contactProfileService;
 
-    public AccountsController() : this(new AccountRepository(new AccountTrackerService(new AccountsSettingsService())), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService(), new ContactProfileService())
+    public AccountsController() : this(new AccountRepository(new AccountTrackerService(new AccountsSettingsService(), new TrackerService())), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService(), new ContactProfileService())
     {
     }
 

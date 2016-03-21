@@ -82,6 +82,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Outcome">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
@@ -178,6 +181,7 @@
     <Compile Include="Repositories\ImageRepositoryTests.cs" />
     <Compile Include="Repositories\DatabaseRepository.cs" />
     <Compile Include="SearchSettingsTests.cs" />
+    <Compile Include="Services\TrackerServiceTests.cs" />
     <Compile Include="Services\XmlParserServiceTests.cs" />
     <Compile Include="Services\ContactProfileProviderTests.cs" />
   </ItemGroup>
