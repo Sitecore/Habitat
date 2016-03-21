@@ -1,17 +1,17 @@
 ﻿---
-ID: 04c5299e-a260-497d-a436-7dbc51c330b2
-Parent: d046e7a5-9ee2-4cba-8484-c601561f66d9
-Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
-Path: /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-4
+ID: "04c5299e-a260-497d-a436-7dbc51c330b2"
+Parent: "d046e7a5-9ee2-4cba-8484-c601561f66d9"
+Template: "5c547d4e-7111-4995-95b0-6b561751bf2e"
+Path: "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-4"
 DB: master
 SharedFields:
-- ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
+- ID: "7256bdab-1fd2-49dd-b205-cb4873d2917c"
   Hint: Placeholder Key
-  Value: col-narrow-4
-- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Value: "col-narrow-4"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 400
-- ID: e391b526-d0c5-439d-803e-17512eae6222
+- ID: "e391b526-d0c5-439d-803e-17512eae6222"
   Hint: Allowed Controls
   Type: TreelistEx
   Value: |
@@ -37,11 +37,12 @@ SharedFields:
     {781C6B36-4B02-46EA-8ADC-B92A11877F10}
     {7DFD9396-CB94-4174-9721-9419A2AA68E3}
     {52A898D9-6D20-43FD-9798-1578B14A117C}
+    {5E555541-E0C6-4F8A-A8C5-33D2FBDE19FE}
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150921T020150Z
