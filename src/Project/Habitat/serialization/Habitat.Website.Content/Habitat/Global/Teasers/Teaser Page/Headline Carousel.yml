@@ -1,0 +1,17 @@
+﻿---
+ID: "842f4bfe-9900-4de9-b37d-c510a2aa64bd"
+Parent: "e151cdef-1a9f-449d-a87c-5cf5741fa857"
+Template: "061574e1-59dd-4b62-9680-1c84efbe6773"
+Path: /sitecore/content/Habitat/Global/Teasers/Teaser Page/Headline Carousel
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160322T051400Z
+    - ID: "4a59d072-5b41-4a79-a157-2b2ccac10f2b"
+      Hint: TeaserTitle
+      Value: Carousel
