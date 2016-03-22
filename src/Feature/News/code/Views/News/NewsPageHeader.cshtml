@@ -10,6 +10,9 @@
 }
 
 <div class="container">
+  <div class="label label-info">
+    <time>@Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new { format = "MMMM dd, yyyy" })</time>
+  </div>
   <h1>
     @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), Model.Item)
     @if (Model.Item.Fields[Templates.NewsArticle.Fields.Summary].HasValue || Sitecore.Context.PageMode.IsExperienceEditor)
@@ -20,7 +23,4 @@
       </small>
     }
   </h1>
-  <p>
-    <time>@Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new { format = "MMMM dd, yyyy" })</time>
-  </p>
 </div>
