@@ -10,19 +10,19 @@
 }
 
 <div class="well">
-  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Title) || Sitecore.Context.PageMode.IsPageEditor)
+  @if (Model.Item.FieldHasValue(Templates.TeaserHeadline.Fields.Title) || Sitecore.Context.PageMode.IsExperienceEditor)
   {
     <h4>
-      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
+      @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title.ToString(), Model.Item)
     </h4>
   }
-  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Summary) || Sitecore.Context.PageMode.IsPageEditor)
+  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Summary) || Sitecore.Context.PageMode.IsExperienceEditor)
   {
     <p>
       @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
     </p>
   }
-  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Link) || Sitecore.Context.PageMode.IsPageEditor)
+  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Link) || Sitecore.Context.PageMode.IsExperienceEditor)
   {
     @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
 {

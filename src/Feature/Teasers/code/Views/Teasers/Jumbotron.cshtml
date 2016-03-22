@@ -12,7 +12,7 @@
 }
 <div class="jumbotron text-center bg-media" style="background-image: @Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image).ToCssUrlValue()">
   <h2>
-    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
+    @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title.ToString(), Model.Item)
   </h2>
   <p class="">
     @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)

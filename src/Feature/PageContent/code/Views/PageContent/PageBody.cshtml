@@ -9,7 +9,7 @@
   return;
 }
 
-@if (!Sitecore.Context.PageMode.IsPageEditor && !Html.Sitecore().HasValue(Templates.HasPageContent.Fields.Body.ToString()))
+@if (!Sitecore.Context.PageMode.IsExperienceEditor && !Html.Sitecore().HasValue(Templates.HasPageContent.Fields.Body.ToString()))
 {
   return;
 }

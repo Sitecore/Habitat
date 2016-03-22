@@ -1,0 +1,15 @@
+﻿@using Sitecore.Feature.Teasers
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Feature.Teasers.Models.DynamicTeaserModel
+
+@using (Html.BeginEditFrame(Model.Item.ID.ToString(), ""))
+{
+  <div class="owl-carousel" data-options='{"items": 3, "navigation": false, "navigationText": ["<", ">"], "autoPlay": @(Sitecore.Context.PageMode.IsExperienceEditor ? "false" : "true")}'>
+    @for (var i = 0; i < Model.Items.Count(); i++)
+    {
+      <div>
+        @Html.Sitecore().DynamicPlaceholder($"teaser-placeholder-{i+1}")
+      </div>
+    }
+  </div>
+}
