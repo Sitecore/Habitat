@@ -47,8 +47,8 @@
       accountTrackerService.TrackRegistration();
 
       //Assert
-      trackerService.TrackPageEvent(ConfigSettings.RegistrationGoalId);
-      trackerService.TrackOutcome(outcomeID);
+      trackerService.Received().TrackPageEvent(ConfigSettings.RegistrationGoalId);
+      trackerService.Received().TrackOutcome(outcomeID);
     }
   }
 }
