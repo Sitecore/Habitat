@@ -39,7 +39,7 @@
       @Html.Sitecore().Placeholder("footer")
     </footer>
 
-    @if (!Sitecore.Context.PageMode.IsExperienceEditor)
+    @if (Sitecore.Context.PageMode.IsNormal)
     {
       <div class="off-canvas-sidebar off-canvas-sidebar-right">
         <div class="btn-group-vertical hover" role="group">
