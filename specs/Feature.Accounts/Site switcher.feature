@@ -1,34 +1,26 @@
 ﻿Feature: Site switcher
 	
 
-@InDesign
+@Ready
 Scenario: Site switcher_UC1_List of available sites
-	Given Value set to item field
-	| ItemPath               | Field      | Value |
-	| /Sitecore/Content/Demo | ShowInMenu | 1     |
-	And Habitat website is opened on Main Page
-	When Actor clicks on siteswitcher combo-box
+#	Given Value set to item field
+#	| ItemPath               | Field      | Value |
+#	| /Sitecore/Content/Demo | ShowInMenu | 1     |
+	Given Habitat website is opened on Main Page
+	When Actor moves on siteswitcher combo-box
 	Then System shows following avalilable sites
-	| Site name |
-	| Habitat   |
-	| Demo      |
-	And <Habitat> value is selected by default 
+	| Site name              |
+	| Habitat - Example Site |
+	| Demo                   |
+	And Habitat - Example Site value is selected by default 
 
-@InDesign
+@Ready
 Scenario: Site switcher_UC2_Select new site
 	Given Habitat website is opened on Main Page
-	When Actor clicks on siteswitcher combo-box
-	And Actor selects <Demo> from siteswitcher combo-box
-	Then Actor present on Demo website
+	When Actor moves on siteswitcher combo-box
+	And Actor selects Demo from siteswitcher combo-box
+	Then URl contains Demo site url
+	And Demo site title equals to <Google>
 
-
-@InDesign
-Scenario: Site switcher_UC3_Return to previous site
-	Given Habitat website is opened on Main Page
-	When Actor clicks on siteswitcher combo-box
-	And Actor selects <Demo> from siteswitcher combo-box
-	And Actor clicks on siteswitcher combo-box
-	And Actor selects <Habitat> from siteswitcher combo-box
-	Then Actor present on Habitat website
 
 

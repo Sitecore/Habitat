@@ -114,6 +114,54 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "WFFM forms")]
+        [Xunit.TraitAttribute("Description", "WFFM forms integration_UC2_Few webforms on one page")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        public virtual void WFFMFormsIntegration_UC2_FewWebformsOnOnePage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WFFM forms integration_UC2_Few webforms on one page", new string[] {
+                        "NeedImplementation"});
+#line 24
+this.ScenarioSetup(scenarioInfo);
+#line 25
+ testRunner.Given("New Page was created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 26
+ testRunner.And("Webfrom \'Get Our Newsletter\' was added to layout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.And("Webfrom \'Leave a message\' was added to layout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemPath",
+                        "FieldName",
+                        "FieldValue"});
+            table2.AddRow(new string[] {
+                        "Get Our Newsletter",
+                        "Is Ajax Mvc Form",
+                        "0"});
+            table2.AddRow(new string[] {
+                        "Leave a message",
+                        "Is Ajax Mvc Form",
+                        "0"});
+#line 28
+ testRunner.And("Value set to item field", ((string)(null)), table2, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WebForm",
+                        "FieldName",
+                        "Field value"});
+            table3.AddRow(new string[] {
+                        "Get Our Newsletter",
+                        "Email",
+                        "kov@sitecore.net"});
+#line 32
+ testRunner.When("User inputs data to webForm", ((string)(null)), table3, "When ");
+#line 35
+ testRunner.Then("No form validation errors on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable

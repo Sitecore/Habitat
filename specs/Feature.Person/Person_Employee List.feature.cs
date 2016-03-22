@@ -364,6 +364,102 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
+        [Xunit.TraitAttribute("Description", "Person_Employee List_UC9_Default search query with custom Search Result Limit")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        public virtual void Person_EmployeeList_UC9_DefaultSearchQueryWithCustomSearchResultLimit()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC9_Default search query with custom Search Result Limit", new string[] {
+                        "NeedImplementation"});
+#line 102
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item path",
+                        "Control ID",
+                        "Data Source"});
+            table18.AddRow(new string[] {
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
+                        "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "text:CEO"});
+#line 103
+ testRunner.Given("Control properties were defined for item", ((string)(null)), table18, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item path",
+                        "Control ID",
+                        "SearchResultLimit"});
+            table19.AddRow(new string[] {
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
+                        "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "1"});
+#line 106
+ testRunner.And("Control properties were defined for item", ((string)(null)), table19, "And ");
+#line 109
+ testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 110
+ testRunner.When("Actor goes to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Person"});
+            table20.AddRow(new string[] {
+                        "JOHN DOE"});
+#line 111
+ testRunner.Then("Following persons are shown", ((string)(null)), table20, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
+        [Xunit.TraitAttribute("Description", "Person_Employee List_UC10_Default search query with null Search Result Limit")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        public virtual void Person_EmployeeList_UC10_DefaultSearchQueryWithNullSearchResultLimit()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC10_Default search query with null Search Result Limit", new string[] {
+                        "NeedImplementation"});
+#line 117
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item path",
+                        "Control ID",
+                        "Data Source"});
+            table21.AddRow(new string[] {
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
+                        "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "text:CEO"});
+#line 118
+ testRunner.Given("Control properties were defined for item", ((string)(null)), table21, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item path",
+                        "Control ID",
+                        "SearchResultLimit"});
+            table22.AddRow(new string[] {
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
+                        "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "@empty"});
+#line 121
+ testRunner.And("Control properties were defined for item", ((string)(null)), table22, "And ");
+#line 124
+ testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 125
+ testRunner.When("Actor goes to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Person"});
+            table23.AddRow(new string[] {
+                        "JOHN HOWARD"});
+            table23.AddRow(new string[] {
+                        "JOHN DOE"});
+#line 126
+ testRunner.Then("Following persons are shown", ((string)(null)), table23, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
