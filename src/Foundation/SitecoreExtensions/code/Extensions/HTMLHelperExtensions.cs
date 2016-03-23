@@ -5,6 +5,7 @@
   using System.Web.Mvc;
   using DynamicPlaceholders.Mvc.Extensions;
   using Sitecore.Data;
+  using Sitecore.Data.IDTables;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
   using Sitecore.Foundation.SitecoreExtensions.Controls;
@@ -53,6 +54,12 @@
     {
       Assert.ArgumentNotNullOrEmpty(fieldID, nameof(fieldID));
       return helper.Field(fieldID.ToString());
+    }
+
+    public static HtmlString Field(this SitecoreHelper helper, ID fieldID, Item item)
+    {
+      Assert.ArgumentNotNullOrEmpty(fieldID, nameof(fieldID));
+      return helper.Field(fieldID.ToString(), item);
     }
 
     public static MvcHtmlString PageEditorError(this SitecoreHelper helper, string errorMessage)
