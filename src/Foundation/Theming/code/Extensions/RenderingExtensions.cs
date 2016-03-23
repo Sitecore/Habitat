@@ -1,7 +1,9 @@
 ﻿namespace Sitecore.Foundation.Theming.Extensions
 {
   using System;
+  using System.Web.Mvc;
   using Sitecore.Data;
+  using Sitecore.Foundation.Theming.Extensions.Controls;
   using Sitecore.Mvc.Presentation;
 
   public static class RenderingExtensions
@@ -22,6 +24,11 @@
     public static bool IsContainerFluid([NotNull] this Rendering rendering)
     {
       return MainUtil.GetBool(rendering.Parameters[Constants.HasContainerLayoutParameters.IsFluid], false);
+    }
+
+    public static BackgroundRendering RenderBackground([NotNull] this Rendering rendering, HtmlHelper helper)
+    {
+      return new BackgroundRendering(helper.ViewContext.Writer, rendering.GetBackgroundClass());
     }
   }
 }

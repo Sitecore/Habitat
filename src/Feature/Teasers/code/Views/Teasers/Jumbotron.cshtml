@@ -12,6 +12,12 @@
   return;
 }
 <div class="jumbotron text-center @(Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Image) ? "bg-media" : Model.Rendering.GetBackgroundClass())" style="background-image: @Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image).ToCssUrlValue()">
+  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Label) || Sitecore.Context.PageMode.IsExperienceEditor)
+  {
+    <span class="label">
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Label.ToString(), Model.Item)
+    </span>
+  }
   <h2>
     @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title.ToString(), Model.Item)
   </h2>
@@ -19,7 +25,7 @@
     @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
   </p>
   @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
-  {
-    @class = "btn btn-primary btn-lg"
-  })
+                                                                                     {
+                                                                                       @class = "btn btn-primary btn-lg"
+                                                                                     })
 </div>

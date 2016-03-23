@@ -31,6 +31,7 @@
 
       public struct Fields
       {
+        public static readonly ID Label = new ID("{3F7E7E3A-4E8E-4639-B079-FC5AEFF172F5}");
         public static readonly ID Summary = new ID("{13D97A52-7C4E-407C-960D-FADDE8A3C1B1}");
         public static readonly ID Image = new ID("{0F6B5546-E0AB-4487-81DE-640C1AA1B65B}");
         public static readonly ID Link = new ID("{E8AB122C-6F54-4D4E-AEC6-F81ADDC558FC}");

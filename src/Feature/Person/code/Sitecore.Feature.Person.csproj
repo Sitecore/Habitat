@@ -150,6 +150,10 @@
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
       <Private>True</Private>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Theming\code\Sitecore.Foundation.Theming.csproj">
+      <Project>{98DE0D1D-26F1-4CCA-847C-4E0FC2DBA5FC}</Project>
+      <Name>Sitecore.Foundation.Theming</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -162,7 +166,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55507</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

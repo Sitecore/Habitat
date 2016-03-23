@@ -11,6 +11,12 @@
 }
 
 <div class="well @Model.Rendering.GetBackgroundClass()">
+  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Label) || Sitecore.Context.PageMode.IsExperienceEditor)
+  {
+    <span class="label">
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Label.ToString(), Model.Item)
+    </span>
+  }
   @if (Model.Item.FieldHasValue(Templates.TeaserHeadline.Fields.Title) || Sitecore.Context.PageMode.IsExperienceEditor)
   {
     <h4>
@@ -25,9 +31,6 @@
   }
   @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Link) || Sitecore.Context.PageMode.IsExperienceEditor)
   {
-    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
-{
-  @class = "btn btn-default"
-})
+    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new { @class = "btn btn-default" })
   }
 </div>

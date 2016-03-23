@@ -5,10 +5,12 @@
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 @{
   var repository = new RenderingPropertiesRepository();
   var twitterFeedProperties = repository.Get<TwitterFeedRenderingProperties>();
+  var background = Model.Rendering.GetBackgroundClass();
 }
 @if (!Model?.Item?.IsDerived(Templates.TwitterFeed.ID) ?? true)
 {
@@ -18,10 +20,10 @@
 
 @if (Model?.Item != null)
 {
-  <div class="well">
+  <div class="well @background">
     <h4>@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</h4>
     <div>
-      <a class="twitter-timeline" href="@Model.Item.LinkFieldUrl(Templates.TwitterFeed.Fields.TwitterUrl)" data-widget-id="@Model.Item.Fields[Templates.TwitterFeed.Fields.WidgetId].Value" data-tweet-limit="@twitterFeedProperties.TweetsToShow" data-chrome="noheader nofooter noscrollbar noborders transparent">@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</a>
+      <a class="twitter-timeline" href="@Model.Item.LinkFieldUrl(Templates.TwitterFeed.Fields.TwitterUrl)" data-widget-id="@Model.Item.Fields[Templates.TwitterFeed.Fields.WidgetId].Value" data-tweet-limit="@twitterFeedProperties.TweetsToShow" data-chrome="noheader nofooter noscrollbar noborders @(string.IsNullOrEmpty(background) ? "transparent" : "")">@Html.Sitecore().Field(Templates.TwitterFeed.Fields.FeedTitle.ToString(), Model.Item)</a>
 
     </div>
   </div>

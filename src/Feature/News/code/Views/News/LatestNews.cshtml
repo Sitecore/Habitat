@@ -1,8 +1,10 @@
 ﻿@using Sitecore.Feature.News
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.Foundation.Theming.Extensions
+@using Sitecore.Mvc.Presentation
 @model IEnumerable<Sitecore.Data.Items.Item>
-<div class="well">
+<div class="well @RenderingContext.Current.Rendering.GetBackgroundClass()">
   <h5 class="text-uppercase">@DictionaryRepository.Get("/news/latest news/title", "News")</h5>
   <ul class="media-list">
     @foreach (var item in Model)

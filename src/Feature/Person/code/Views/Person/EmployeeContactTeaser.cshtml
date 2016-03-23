@@ -3,6 +3,7 @@
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @if (!Model?.Item?.IsDerived(Templates.Employee.ID) ?? true)
@@ -11,7 +12,7 @@
   return;
 }
 
-<div class="teaser teaser-default employee-teaser">
+<div class="teaser teaser-default employee-teaser @Model.Rendering.GetBackgroundClass()">
 	<div class="teaser-heading">
 		<h3>
 			@Model.Item.Field(Templates.Person.Fields.Name)
