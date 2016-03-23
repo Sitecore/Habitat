@@ -1,10 +1,9 @@
-﻿namespace Sitecore.Habitat.Website
+﻿namespace Sitecore.Foundation.SitecoreExtensions
 {
   public struct Constants
   {
-    public struct LayoutParameters
+    public struct DynamicPlaceholdersLayoutParameters
     {
-      public static string IsFluid => "ContainerIsFluid";
       public static string UseStaticPlaceholderNames => "UseStaticPlaceholderNames";
     }
   }

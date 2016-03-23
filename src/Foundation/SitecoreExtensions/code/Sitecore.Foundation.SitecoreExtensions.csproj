@@ -139,6 +139,7 @@
   <ItemGroup>
     <Compile Include="Attributes\SkipAnalyticsTrackingAttribute.cs" />
     <Compile Include="Attributes\ValidateRenderingIdAttribute.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Controllers\BaseRenderingController.cs" />
     <Compile Include="Controls\EditFrameRendering.cs" />
     <Compile Include="Extensions\RenderingParameterExtensions.cs" />
