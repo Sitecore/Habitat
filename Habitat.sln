@@ -116,6 +116,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Person.Tests", "src\Feature\Person\tests\Sitecore.Feature.Person.Tests.csproj", "{931B6ABB-1791-44F8-9727-4110FB59C961}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Theming", "Theming", "{F7F6C8C8-67C9-40D9-946F-62630C39102A}"
+	ProjectSection(SolutionItems) = preProject
+		src\Project\Habitat\code\Constants.cs = src\Project\Habitat\code\Constants.cs
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Theming", "src\Foundation\Theming\code\Sitecore.Foundation.Theming.csproj", "{98DE0D1D-26F1-4CCA-847C-4E0FC2DBA5FC}"
 EndProject

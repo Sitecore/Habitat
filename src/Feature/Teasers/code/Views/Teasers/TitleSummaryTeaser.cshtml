@@ -2,6 +2,7 @@
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.TeaserContent.ID) ?? true)
 {
@@ -9,7 +10,7 @@
   return;
 }
 
-<div class="well">
+<div class="well @Model.Rendering.GetBackgroundClass()">
   @if (Model.Item.FieldHasValue(Templates.TeaserHeadline.Fields.Title) || Sitecore.Context.PageMode.IsExperienceEditor)
   {
     <h4>

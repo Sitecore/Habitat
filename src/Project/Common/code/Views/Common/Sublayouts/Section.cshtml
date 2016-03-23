@@ -4,10 +4,10 @@
 @using Sitecore.Feature.Media
 @using Sitecore.Feature.Media.Infrastructure
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Theming.Extensions
 @using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-@{ var useStaticPlaceholderNames = MainUtil.GetBool(Model.Rendering.Parameters[Sitecore.Habitat.Website.Constants.LayoutParameters.UseStaticPlaceholderNames], false); }
-<section class="section section-full">
-  @Html.Sitecore().DynamicPlaceholder("section", useStaticPlaceholderNames)
+<section class="section section-full @Model.Rendering.GetBackgroundClass()">
+  @Html.Sitecore().DynamicPlaceholder("section", Model.Rendering.GetUseStaticPlaceholderNames())
 </section>
