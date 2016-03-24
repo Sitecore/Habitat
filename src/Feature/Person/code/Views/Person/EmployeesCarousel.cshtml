@@ -1,0 +1,40 @@
+﻿@using Sitecore.Feature.Person
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.Foundation.Theming.Extensions
+@model Sitecore.Foundation.SitecoreExtensions.Rendering.QueryableDatasourceRenderingModel
+
+@{
+  if (Model?.Items == null || !Model.Items.All(i => i.IsDerived(Templates.Person.ID)) || !Model.Items.Any())
+  {
+    @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+  }
+  var options = Model.Rendering.GetCarouselOptions();
+}
+
+<div class="owl-carousel" data-options='{"items": @options.ItemsShown, "navigation": @(options.ShowNavigation ? "true" : "false"), "navigationText": ["<", ">"], "autoPlay": @(options.AutoPlay ? "true" : "false") }'>
+  @foreach (var item in Model.Items)
+  {
+    <div class="mosaic mosaic-bar-bottom mosaic-overlay-show">
+      <div class="mosaic-overlay">
+        <label>@item.Field(Templates.Person.Fields.Title)</label>
+        <h4>
+          @item.Field(Templates.Person.Fields.Name)
+        </h4>
+        <div class="btn-group-xs">
+          <a href="@item.Url()" target="_blank" class="btn btn-default text-uppercase">
+            @DictionaryRepository.Get("/Person/EmployeeList/Read More", "Read more")
+          </a>
+        </div>
+      </div>
+      <div class="mosaic-backdrop">
+        <a href="@item.Url()">
+          @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, item, mw: 750, cssClass: "img-responsive")
+        </a>
+      </div>
+    </div>
+  }
+</div>

@@ -20,8 +20,13 @@
   }
 }
 
-<div class="thumbnail lightbox-item">
-	<a href="@Model.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink)" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" data-gallery="page">
-		@thumbnail
-	</a>
+<div class="thumbnail mosaic mosaic-circle lightbox-item lightbox-image">
+  <div class="mosaic-overlay mosaic-overlay-no-pointer">
+    <span class="fa fa-play-circle icon-lg"></span>
+  </div>
+  <div class="mosaic-backdrop">
+    <a href="@Model.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink)" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" data-gallery="page">
+      @thumbnail
+    </a>
+  </div>
 </div>

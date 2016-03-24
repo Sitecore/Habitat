@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Extensions\CarouselOptions.cs" />
     <Compile Include="Extensions\Controls\BackgroundRendering.cs" />
     <Compile Include="Extensions\RenderingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +86,10 @@
     </Content>
     <Content Include="styles\niteflight.scss" />
     <Content Include="styles\niteflight\_variables.scss" />
+    <Content Include="styles\vendor.css" />
+    <Content Include="styles\vendor.min.css">
+      <DependentUpon>vendor.css</DependentUpon>
+    </Content>
     <Content Include="styles\white-wonder.css">
       <DependentUpon>white-wonder.scss</DependentUpon>
     </Content>

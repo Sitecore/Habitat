@@ -1,9 +1,8 @@
 $grid-float-breakpoint: $screen-sm-min;
 
-
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/grid";
 
-$grid-gutter-width: 30;
+$grid-gutter-width: 30px;
 
 // Custom implementation of block grid here
 
@@ -38,7 +37,7 @@ $grid-gutter-width: 30;
 .block-grid-item {
   display: inline;
   margin: 0;
-  padding: ($grid-gutter-width/2);
+  padding: $grid-gutter-width/2;
   height: auto;
   float: left;
   list-style: none;

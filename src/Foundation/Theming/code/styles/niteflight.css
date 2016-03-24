@@ -4211,7 +4211,7 @@ pre {
 .block-grid-item {
   display: inline;
   margin: 0;
-  padding: 15;
+  padding: 15px;
   height: auto;
   float: left;
   list-style: none; }
@@ -5378,8 +5378,8 @@ select[multiple].input-lg,
   min-height: 27px; }
 
 .form-horizontal .form-group {
-  margin-left: -15;
-  margin-right: -15; }
+  margin-left: -15px;
+  margin-right: -15px; }
   .form-horizontal .form-group:before, .form-horizontal .form-group:after {
     content: " ";
     display: table; }
@@ -5393,7 +5393,7 @@ select[multiple].input-lg,
     padding-top: 7px; } }
 
 .form-horizontal .has-feedback .form-control-feedback {
-  right: 15; }
+  right: 15px; }
 
 @media (min-width: 768px) {
   .form-horizontal .form-group-lg .control-label {
@@ -7484,8 +7484,8 @@ select[multiple].input-lg,
   min-height: 27px; }
 
 .form-horizontal .form-group {
-  margin-left: -15;
-  margin-right: -15; }
+  margin-left: -15px;
+  margin-right: -15px; }
   .form-horizontal .form-group:before, .form-horizontal .form-group:after {
     content: " ";
     display: table; }
@@ -7499,7 +7499,7 @@ select[multiple].input-lg,
     padding-top: 7px; } }
 
 .form-horizontal .has-feedback .form-control-feedback {
-  right: 15; }
+  right: 15px; }
 
 @media (min-width: 768px) {
   .form-horizontal .form-group-lg .control-label {
@@ -9579,8 +9579,8 @@ li.active {
   .container .jumbotron,
   .container-fluid .jumbotron {
     border-radius: 0px;
-    padding-left: 15;
-    padding-right: 15; }
+    padding-left: 15px;
+    padding-right: 15px; }
   .jumbotron .container {
     max-width: 100%; }
   @media screen and (min-width: 768px) {
@@ -10511,8 +10511,9 @@ li.active {
     background-color: rgba(0, 0, 0, 0.4);
     color: #FFF;
     padding: 20px;
-    opacity: 0;
-    pointer-events: none; }
+    opacity: 0; }
+    .mosaic-overlay.mosaic-overlay-no-pointer {
+      pointer-events: none; }
     .mosaic-cover .mosaic-overlay {
       background-color: rgba(0, 0, 0, 0.8); }
     .mosaic-bar-bottom .mosaic-overlay, .mosaic-bar-top .mosaic-overlay {
@@ -10533,8 +10534,7 @@ li.active {
       color: #FFF;
       border-radius: 50%;
       line-height: 1;
-      opacity: 0;
-      pointer-events: none; }
+      opacity: 0; }
       @media (max-width: 991px) {
         .mosaic-circle .mosaic-overlay {
           opacity: 1; } }
@@ -10544,13 +10544,13 @@ li.active {
           height: 80px;
           opacity: 1;
           margin: -40px 0 0 -40px; } }
-      .mosaic-circle .mosaic-overlay > .glyphicon {
+      .mosaic-circle .mosaic-overlay > .glyphicon, .mosaic-circle .mosaic-overlay > .fa {
         position: absolute;
         top: 50%;
         left: 50%;
         margin: -24px 0 0 -24px; }
         @media (max-width: 767px) {
-          .mosaic-circle .mosaic-overlay > .glyphicon {
+          .mosaic-circle .mosaic-overlay > .glyphicon, .mosaic-circle .mosaic-overlay > .fa {
             margin: -16px 0 0 -16px; } }
 
 .well .media-list {

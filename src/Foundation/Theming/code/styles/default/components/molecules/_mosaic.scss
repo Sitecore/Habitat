@@ -68,7 +68,9 @@
     color: #FFF;
     padding: 20px;
     opacity: 0;
-    pointer-events: none;
+    &.mosaic-overlay-no-pointer {
+      pointer-events: none;
+    }
 
     .mosaic-cover & {
       background-color: rgba(0,0,0,.8);
@@ -104,7 +106,6 @@
       border-radius: 50%;
       line-height: 1;
       opacity: 0;
-      pointer-events: none;
       @media (max-width: $screen-sm-max) {
         opacity: 1;
       }
@@ -114,7 +115,7 @@
         opacity: 1;
         margin: -40px 0 0 -40px;
       }
-      & > .glyphicon {
+      & > .glyphicon, & > .fa {
         position: absolute;
         top: 50%;
         left: 50%;
