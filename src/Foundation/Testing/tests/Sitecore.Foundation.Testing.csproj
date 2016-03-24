@@ -119,6 +119,7 @@
   <ItemGroup>
     <Compile Include="Attributes\RegisterViewAttribute.cs" />
     <Compile Include="Builders\HtmlHelperBuilder.cs" />
+    <Compile Include="Builders\HttpContextBuilder.cs" />
     <Compile Include="Commands\AddContentDbItemsCommand.cs" />
     <Compile Include="Builders\AttributeRelay.cs" />
     <Compile Include="Attributes\AutoDbDataAttribute.cs" />
@@ -128,8 +129,10 @@
     <Compile Include="Attributes\ResolvePipelineAttribute.cs" />
     <Compile Include="Builders\ResolvePipelineSpecimenBuilder.cs" />
     <Compile Include="Builders\RegisterViewToEngineBuilder.cs" />
+    <Compile Include="HttpContextMockFactory.cs" />
     <Compile Include="Pipelines\EmptyPipeline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SitecoreMockFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

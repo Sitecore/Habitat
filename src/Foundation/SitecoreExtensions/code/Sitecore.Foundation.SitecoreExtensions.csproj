@@ -76,6 +76,9 @@
     <Reference Include="Sitecore.Analytics.Model">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Analytics.Outcome">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
@@ -160,6 +163,10 @@
     <Compile Include="Services\FieldRendererService.cs" />
     <Compile Include="Services\ContactProfileProvider.cs" />
     <Compile Include="Services\IContactProfileProvider.cs" />
+    <Compile Include="Services\ISheerService.cs" />
+    <Compile Include="Services\ITrackerService.cs" />
+    <Compile Include="Services\SheerService.cs" />
+    <Compile Include="Services\TrackerService.cs" />
     <Compile Include="Services\XmlParserService.cs" />
   </ItemGroup>
   <ItemGroup>

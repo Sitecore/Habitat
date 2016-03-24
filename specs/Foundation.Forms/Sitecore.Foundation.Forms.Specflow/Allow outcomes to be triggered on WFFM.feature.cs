@@ -84,7 +84,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
  testRunner.Given("Form Designer is opened for Web Form for Marketers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.And("Form <> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Form <Leave an Email> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
  testRunner.And("User clicks on Submit button of Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
@@ -131,7 +131,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 27
  testRunner.Given("Form Designer is opened for Web Form for Marketers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 28
- testRunner.And("Form <> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Form <Leave an Email> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
  testRunner.And("User clicks on Submit button of Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
@@ -186,7 +186,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 52
  testRunner.Given("Form Designer is opened for Web Form for Marketers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 53
- testRunner.And("Form <> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Form <Leave an Email> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
  testRunner.And("User clicks on Submit button of Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 55
@@ -201,7 +201,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Message"});
             table3.AddRow(new string[] {
-                        ""});
+                        "Please, select outcome"});
 #line 59
  testRunner.Then("System shows warning message", ((string)(null)), table3, "Then ");
 #line hidden
@@ -236,7 +236,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 70
  testRunner.And("Form Designer is opened for Web Form for Marketers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 71
- testRunner.And("Form <> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Form <Leave an Email> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 72
  testRunner.And("User clicks on Submit button of Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73
