@@ -84,7 +84,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 6
  testRunner.Given("Form Designer is opened for Web Form for Marketers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.And("Form <> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Form <Leave an Email> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
  testRunner.And("User clicks on Submit button of Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 9
@@ -98,21 +98,23 @@ this.ScenarioSetup(scenarioInfo);
 #line 13
  testRunner.And("User clicks OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.And("User navigates to Forms page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Save and Close button on Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
- testRunner.And("User enters <kovWFFM@sitecore.net> to the Email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to Forms page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.And("User clicks <Submit> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters <kovWFFM@sitecore.net> to the Email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks <Submit> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
+ testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
  testRunner.And("Actor expands <Personal Information> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table1.AddRow(new string[] {
                         "Sales Lead"});
-#line 19
+#line 20
  testRunner.Then("<Outcomes> contains following values", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -126,39 +128,41 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Allow outcomes to be triggered on WFFM_UC2_Assign few Form Actions", new string[] {
                         "NeedImplementation"});
-#line 26
-this.ScenarioSetup(scenarioInfo);
 #line 27
- testRunner.Given("Form Designer is opened for Web Form for Marketers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 28
- testRunner.And("Form <> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Form Designer is opened for Web Form for Marketers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 29
- testRunner.And("User clicks on Submit button of Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Form <Leave an Email> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.And("User selects Edit link on Submit Save Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on Submit button of Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
- testRunner.When("User selects Save Actions combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User selects Edit link on Submit Save Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
- testRunner.And("User selects <Register an Outcome> action", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects Save Actions combo-box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 33
- testRunner.And("User clicks <Add> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects <Register an Outcome> action", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
- testRunner.And("User selects <Register an Outcome> from Added Save Actions list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks <Add> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.And("User clicks Edit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects <Register an Outcome> from Added Save Actions list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
- testRunner.And("User selects <Sales Lead> from list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Edit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
- testRunner.And("User clicks OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects <Marketing Lead> from list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
- testRunner.And("User navigates to Forms page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 39
- testRunner.And("User enters <kovWFFM2@sitecore.net> to the Email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Save and Close button on Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
- testRunner.And("User clicks <Submit> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User navigates to Forms page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
- testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User enters <kovWFFM2@sitecore.net> to the Email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 42
+ testRunner.And("User clicks <Submit> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+ testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
  testRunner.And("Actor expands <Personal Information> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -167,7 +171,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Sales Lead"});
             table2.AddRow(new string[] {
                         "Marketing Lead"});
-#line 43
+#line 45
  testRunner.Then("<Outcomes> contains following values", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -181,28 +185,28 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Allow outcomes to be triggered on WFFM_UC3_Try to assign folder with outcomes", new string[] {
                         "NeedImplementation"});
-#line 51
-this.ScenarioSetup(scenarioInfo);
-#line 52
- testRunner.Given("Form Designer is opened for Web Form for Marketers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 53
- testRunner.And("Form <> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 54
- testRunner.And("User clicks on Submit button of Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Form Designer is opened for Web Form for Marketers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 55
- testRunner.And("User selects <Register an Outcome> from Added Save Actions list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Form <Leave an Email> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
- testRunner.And("User clicks Edit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks on Submit button of Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
- testRunner.And("User selects <Habitat> folder from list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects <Register an Outcome> from Added Save Actions list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
+ testRunner.And("User clicks Edit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 59
+ testRunner.And("User selects <Habitat> folder from list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
  testRunner.And("User clicks OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Message"});
             table3.AddRow(new string[] {
-                        ""});
-#line 59
+                        "Please, select outcome"});
+#line 61
  testRunner.Then("System shows warning message", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -218,7 +222,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Allow outcomes to be triggered on WFFM_UC4_Assign outocome under some folder with" +
                     " outcomes", new string[] {
                         "NeedImplementation"});
-#line 66
+#line 68
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -231,41 +235,50 @@ this.ScenarioSetup(scenarioInfo);
                         "EE43C2F0-6277-4144-B144-8CA2CEFCCF12",
                         "QA Lead",
                         "Outcome group/Lead management funnel"});
-#line 67
+#line 69
  testRunner.Given("Sitecore item should be created", ((string)(null)), table4, "Given ");
-#line 70
- testRunner.And("Form Designer is opened for Web Form for Marketers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
- testRunner.And("Form <> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
- testRunner.And("User clicks on Submit button of Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
- testRunner.And("User selects Edit link on Submit Save Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 74
- testRunner.When("User selects <Register an Outcome> from Added Save Actions list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 75
- testRunner.And("User clicks Edit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 76
- testRunner.And("User selects <QA Lead> from list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
- testRunner.And("User clicks OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 78
- testRunner.And("User navigates to Forms page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
- testRunner.And("User enters <kovWFFM3@sitecore.net> to the Email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 80
- testRunner.And("User clicks <Submit> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 81
- testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 82
- testRunner.And("Actor expands <Personal Information> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "field value"});
+                        "Under item path"});
             table5.AddRow(new string[] {
-                        "QA Lead"});
+                        "/sitecore/system/Marketing Control Panel/Outcomes/Habitat"});
+#line 72
+ testRunner.And("Following outcome should be deployed", ((string)(null)), table5, "And ");
+#line 75
+ testRunner.And("Form Designer is opened for Web Form for Marketers", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+ testRunner.And("Form <Leave an Email> is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
+ testRunner.And("User clicks on Submit button of Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 78
+ testRunner.And("User selects Edit link on Submit Save Actions", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+ testRunner.When("User selects <Register an Outcome> from Added Save Actions list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 80
+ testRunner.And("User clicks Edit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And("User selects <QA Lead> from list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.And("User clicks OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
- testRunner.Then("<Outcomes> contains following values", ((string)(null)), table5, "Then ");
+ testRunner.And("User clicks Save and Close button on Form Designer", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+ testRunner.And("User navigates to Forms page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+ testRunner.And("User enters <kovWFFM3@sitecore.net> to the Email field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+ testRunner.And("User clicks <Submit> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 87
+ testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+ testRunner.And("Actor expands <Personal Information> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "field value"});
+            table6.AddRow(new string[] {
+                        "QA Lead"});
+#line 89
+ testRunner.Then("<Outcomes> contains following values", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

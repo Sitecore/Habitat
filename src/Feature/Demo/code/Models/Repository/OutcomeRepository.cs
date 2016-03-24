@@ -5,10 +5,12 @@
   using System.Linq;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Model;
+  using Sitecore.Analytics.Outcome;
   using Sitecore.Analytics.Outcome.Extensions;
   using Sitecore.Analytics.Outcome.Model;
   using Sitecore.Analytics.Tracking;
   using Sitecore.Common;
+  using Sitecore.Configuration;
   using Sitecore.Data;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Marketing.Definitions;
@@ -19,10 +21,20 @@
 
   internal class OutcomeRepository
   {
+    private readonly OutcomeManager outcomeManager;
+
+    public OutcomeRepository(OutcomeManager outcomeManager)
+    {
+      this.outcomeManager = outcomeManager;
+    }
+
+    public OutcomeRepository() : this(Factory.CreateObject("outcome/outcomeManager", true) as OutcomeManager)
+    {
+    }
+
     public IEnumerable<Outcome> GetAll()
     {
-      var outcomes = Tracker.Current.GetContactOutcomes();
-      return outcomes.Select(Create);
+      return this.GetCurrentOutcomes().Concat(this.GetHistoricalOutcomes()).Select(this.Create);
     }
 
     private Outcome Create(IOutcome outcome)
@@ -44,6 +56,16 @@
       var outcomeGroupTaxonomyManager = TaxonomyManager.Provider.GetOutcomeGroupManager();
       var outcomeGroup = outcomeGroupTaxonomyManager.GetOutcomeGroup(outcome.OutcomeGroupUri, Context.Language.CultureInfo);
       return outcomeGroup == null ? null : outcomeGroupTaxonomyManager.GetFullName(outcomeGroup.Uri, "/");
+    }
+
+    private IEnumerable<IOutcome> GetCurrentOutcomes()
+    {
+      return Tracker.Current.GetContactOutcomes();
+    }
+
+    private IEnumerable<IOutcome> GetHistoricalOutcomes()
+    {
+      return this.outcomeManager.GetForEntity<IOutcome>(new ID(Tracker.Current.Contact.ContactId));
     }
 
     private static IOutcomeDefinition GetOutcomeDefinition(ID outcomeId)
