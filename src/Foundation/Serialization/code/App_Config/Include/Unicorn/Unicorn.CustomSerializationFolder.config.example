@@ -26,10 +26,6 @@
 				<targetDataStore type="Rainbow.Storage.SerializationFileSystemDataStore, Rainbow">
 					<patch:attribute name="physicalRootPath">c:\path-to-source\Unicorn\$(configurationName)</patch:attribute>
 				</targetDataStore>
-
-				<predicate type="Unicorn.Predicates.SerializationPresetPredicate, Unicorn" singleInstance="true">
-					<include database="master" path="/sitecore/content/global-settings" />
-				</predicate>
 			</defaults>
 		</unicorn>
 	</sitecore>

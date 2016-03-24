@@ -2,7 +2,6 @@
 {
   using FluentAssertions;
   using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Feature.News.Repositories;
   using Sitecore.Foundation.Indexing.Repositories;
   using Sitecore.Foundation.Indexing.Tests.Extensions;
   using Xunit;

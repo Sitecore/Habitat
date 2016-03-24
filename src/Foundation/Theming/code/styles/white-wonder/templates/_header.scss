@@ -1,0 +1,22 @@
+header {
+  &.page-header {
+
+  }
+}
+
+.header {
+
+  &-fixed {
+    position: fixed;
+    padding: 0;
+    z-index: 1030;
+    width: 100%;
+    top: 0;
+    background-color: $color-secondary-dark;
+
+    .navbar-fixed-top {
+      position: relative;
+      width: 100%;
+    }
+  }
+}

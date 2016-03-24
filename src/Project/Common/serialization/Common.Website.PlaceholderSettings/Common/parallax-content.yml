@@ -8,6 +8,9 @@ SharedFields:
 - ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
   Hint: Placeholder Key
   Value: parallax-content
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 1100
 - ID: e391b526-d0c5-439d-803e-17512eae6222
   Hint: Allowed Controls
   Type: TreelistEx

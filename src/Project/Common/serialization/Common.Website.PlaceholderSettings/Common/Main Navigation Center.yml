@@ -1,0 +1,35 @@
+﻿---
+ID: 25b089c2-b771-4f68-aaa8-f7b683a280fa
+Parent: 6ca1a082-5054-4aa0-88da-39489a7d1cce
+Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
+Path: /sitecore/layout/Placeholder Settings/Project/Common/Main Navigation Center
+DB: master
+SharedFields:
+- ID: 14d0728a-82f9-4b01-ab16-1fe1577cede2
+  Hint: Editable
+  Value: 
+- ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
+  Hint: Placeholder Key
+  Value: navbar-center
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 100
+- ID: e391b526-d0c5-439d-803e-17512eae6222
+  Hint: Allowed Controls
+  Type: TreelistEx
+  Value: |
+    {A47C8288-7D4C-45FF-B75F-4AEDBF58A02D}
+    {53B085DB-6824-4941-9F28-9011CB151832}
+    {8832BA30-99C3-4D20-9B1C-237D910A153F}
+Languages:
+- Language: en
+  Fields:
+  - ID: 87871ff5-1965-46d6-884f-01d6a0b9c4c1
+    Hint: Description
+    Value: Central area of the main navigation bar
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160216T010658Z
