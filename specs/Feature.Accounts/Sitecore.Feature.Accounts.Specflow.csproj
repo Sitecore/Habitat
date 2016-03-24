@@ -134,6 +134,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Save user details in xDB.feature</DependentUpon>
     </Compile>
+    <Compile Include="Serialise users and roles.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Serialise users and roles.feature</DependentUpon>
+    </Compile>
     <Compile Include="Show user info on popup.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -205,6 +210,10 @@
     <None Include="Save user details in xDB.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Save user details in xDB.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Serialise users and roles.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Serialise users and roles.feature.cs</LastGenOutput>
     </None>
     <None Include="Show user info on popup.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

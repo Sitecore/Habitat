@@ -10,7 +10,8 @@ Scenario: Allow outcomes to be triggered on WFFM_UC2_Assign Form Action
 	When User selects <Register an Outcome> from Added Save Actions list
 	And User clicks Edit button
 	And User selects <Sales Lead> from list
-	And User clicks OK button	
+	And User clicks OK button
+	And User clicks Save and Close button on Form Designer	
 	And User navigates to Forms page 
 	And User enters <kovWFFM@sitecore.net> to the Email field
 	And User clicks <Submit> button
@@ -33,8 +34,9 @@ Scenario: Allow outcomes to be triggered on WFFM_UC2_Assign few Form Actions
 	And User clicks <Add> button 
 	And User selects <Register an Outcome> from Added Save Actions list
 	And User clicks Edit button
-	And User selects <Sales Lead> from list
+	And User selects <Marketing Lead> from list
 	And User clicks OK button
+	And User clicks Save and Close button on Form Designer
 	And User navigates to Forms page 
 	And User enters <kovWFFM2@sitecore.net> to the Email field
 	And User clicks <Submit> button
@@ -67,6 +69,9 @@ Scenario: Allow outcomes to be triggered on WFFM_UC4_Assign outocome under some 
 	Given Sitecore item should be created
 	| Under item path                                           | Template ID                          | Item name | Group                                |
 	| /sitecore/system/Marketing Control Panel/Outcomes/Habitat | EE43C2F0-6277-4144-B144-8CA2CEFCCF12 | QA Lead   | Outcome group/Lead management funnel |
+	And Following outcome should be deployed
+	| Under item path                                           |
+	| /sitecore/system/Marketing Control Panel/Outcomes/Habitat |
 	And Form Designer is opened for Web Form for Marketers
 	And Form <Leave an Email> is selected
 	And User clicks on Submit button of Form Designer
@@ -74,7 +79,8 @@ Scenario: Allow outcomes to be triggered on WFFM_UC4_Assign outocome under some 
 	When User selects <Register an Outcome> from Added Save Actions list
 	And User clicks Edit button
 	And User selects <QA Lead> from list
-	And User clicks OK button	
+	And User clicks OK button
+	And User clicks Save and Close button on Form Designer	
 	And User navigates to Forms page 
 	And User enters <kovWFFM3@sitecore.net> to the Email field
 	And User clicks <Submit> button
