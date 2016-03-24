@@ -1,0 +1,95 @@
+﻿---
+ID: "fbda72a7-7867-455a-b91e-36b2d9d56660"
+Parent: "4bc8a78c-44a7-46eb-8126-040d3f12caa0"
+Template: "ffb1da32-2764-47db-83b0-95b843546a7e"
+Path: /sitecore/system/Modules/Web Forms for Marketers/Habitat/Leave an Email
+DB: master
+SharedFields:
+- ID: "46fb324a-9741-43bd-a0c9-5081a39d40aa"
+  Hint: Show Introduction
+  Value: 0
+- ID: "a42052f7-6c18-424a-a2a1-7a72054cb1a6"
+  Hint: Show Title
+  Value: 1
+- ID: "a7f779b9-5fcf-45cc-866b-7c973f5c4fac"
+  Hint: Save Actions
+  Value: |
+    <?xml version="1.0" encoding="utf-16"?>
+    <li xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <g id="{E5EABB1F-40BC-45BB-8D87-3B6C239B521B}" displayName="Actions" onclick="javascript:return scForm.postEvent(this,event,'forms:addaction')">
+        <li id="{90538392-5648-4326-B506-E1913ED1DAA8}" unicid="BC4E474A256840CA9BF9953DD44E1DC2">
+          <parameters>&amp;lt;outcome&amp;gt;{BF6B8EE3-9FFB-4C58-9CB4-301C1C710F89}&amp;lt;/outcome&amp;gt;</parameters>
+        </li>
+      </g>
+    </li>
+- ID: "af08c32b-f101-44a4-baae-677383e8eb02"
+  Hint: Check Actions
+  Value: |
+    <?xml version="1.0" encoding="utf-16"?>
+    <li xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <g id="{10FE9225-5E6C-4896-9CD2-880D6D48C4CC}" displayName="Check Actions">
+        <li id="{2D5B5061-747A-4477-BD41-E746EAFEB231}" unicid="89F18F7C96F4469A9470057CE421A115">
+          <parameters />
+        </li>
+      </g>
+    </li>
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <event
+        name="Submit Success Event"
+        id="{2FF08489-2A47-4F04-8D8E-0C25A294B2C4}" />
+      <event
+        name="Form Submit"
+        id="{A2C2CF51-9360-4084-9BA0-1A15F1A41096}" />
+      <event
+        name="Field Completed"
+        id="{F0113A93-570A-4F69-8C7C-BA08037D1E34}" />
+      <event
+        name="Field Not Completed"
+        id="{7E86B2F5-ACEC-4C60-8922-4EB5AE5D9874}" />
+      <event
+        name="Field Out of Boundary"
+        id="{F3D7B20C-675C-4707-84CC-5E5B4481B0EE}" />
+      <event
+        name="Form Check Action Error"
+        id="{7144C4C9-E56A-4529-B3C1-A1DEDC454AB8}" />
+      <event
+        name="Form Save Action Failure"
+        id="{DE302E25-E5AF-465E-8BB1-5C3E8145615D}" />
+      <event
+        name="Invalid Field Syntax"
+        id="{844BBD40-91F6-42CE-8823-5EA4D089ECA2}" />
+      <event
+        name="Newsletter Signup"
+        id="{1779CC42-EF7A-4C58-BF19-FA85D30755C9}" />
+    </tracking>
+- ID: "faeacd39-b059-4f46-bec4-74ba468a97b8"
+  Hint: Show Footer
+  Value: 0
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Leave an Email
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160321T132837Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: "6739fa82-a9b4-40f1-aefe-3d67ae3e8dfc"
+      Hint: Title Tag
+      Value: H1
+    - ID: "86d6a401-5a20-49c9-a2f8-0312398ee946"
+      Hint: Title
+      Value: Leave an Email
+    - ID: "9c4c1994-5140-49d3-bad7-db997816f816"
+      Hint: Success Page
+      Value: "<link id=\"{00000000-0000-0000-0000-000000000000}\" />"

@@ -1,7 +1,15 @@
 ﻿@using Sitecore.Feature.Person
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Mvc.Presentation.RenderingModel
+
+@if (!Model?.Item?.IsDerived(Templates.Person.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  return;
+}
 
 <div class="teaser teaser-default employee-teaser">
   <div class="teaser-heading">
@@ -21,7 +29,7 @@
     @Model.Item.Field(Templates.Person.Fields.Summary)
   </div>
   <div class="teaser-footer">
-    <a href="@Model.Item.Url()" class="btn btn-default">
+    <a href="@Model.Item.Url()" class="btn btn-hollow">
       @DictionaryRepository.Get("/Person/EmployeeTeaser/Read more", "Read more")
     </a>
   </div>

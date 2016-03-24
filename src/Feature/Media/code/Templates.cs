@@ -4,6 +4,16 @@
 
   public struct Templates
   {
+    public struct BackgroundType
+    {
+      public static ID ID = new ID("{55A5BDAD-EB69-40F5-8195-CDA182E48EE4}");
+
+      public struct Fields
+      {
+        public static readonly ID Class = new ID("{AF6B8E5C-10A2-46BE-8310-407434EC1055}");
+      }
+    }
+
     public struct HasMedia
     {
       public static ID ID = new ID("{A44E450E-BA3F-4FAF-9C53-C63241CC34EB}");

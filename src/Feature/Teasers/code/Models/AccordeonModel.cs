@@ -6,7 +6,7 @@
 
   public class AccordeonModel
   {
-    public AccordeonModel(Item item)
+    public AccordeonModel()
     {
       this.Id = $"accordion-{Guid.NewGuid().ToString("N")}";
     }

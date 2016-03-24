@@ -1,0 +1,10 @@
+$tooltip-bg: $brand-primary;
+$tooltip-arrow-color: $brand-primary;
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
+
+.tooltip {
+  &-inner {
+    padding: 6px 12px;
+  }
+}

@@ -20,7 +20,7 @@ Languages:
       Value: This video explains how to get started with the Habitat example site - this site - which is available on Github.
     - ID: 4ff62b0a-d73b-4436-bea2-023154f2ffc4
       Hint: MediaThumbnail
-      Value: "<image mediaid=\"{792CB39C-6AE3-4815-BA99-0368B3A4E2CA}\" />"
+      Value: "<image mediaid=\"{792CB39C-6AE3-4815-BA99-0368B3A4E2CA}\" ></image>"
     - ID: 63dda48b-b0cb-45a7-9a1b-b26ddb41009b
       Hint: MediaTitle
       Value: Getting started with Habitat

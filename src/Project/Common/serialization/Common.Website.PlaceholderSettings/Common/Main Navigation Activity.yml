@@ -1,0 +1,36 @@
+﻿---
+ID: b1af956b-e1e8-4e6a-88f0-b263e472eda3
+Parent: 6ca1a082-5054-4aa0-88da-39489a7d1cce
+Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
+Path: /sitecore/layout/Placeholder Settings/Project/Common/Main Navigation Activity
+DB: master
+SharedFields:
+- ID: 14d0728a-82f9-4b01-ab16-1fe1577cede2
+  Hint: Editable
+  Value: 
+- ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
+  Hint: Placeholder Key
+  Value: navbar-activity
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 900
+- ID: e391b526-d0c5-439d-803e-17512eae6222
+  Hint: Allowed Controls
+  Type: TreelistEx
+  Value: |
+    {28BD7068-7FF6-4CE6-98E6-85CFE9967E14}
+    {2695013C-DD51-410B-9983-F271F16C727D}
+    {604ECBB6-2BBF-45AF-AC6E-BA9F853E7A03}
+    {8C3A2CFC-18FB-4BF5-8584-50EA88978ED6}
+Languages:
+- Language: en
+  Fields:
+  - ID: 87871ff5-1965-46d6-884f-01d6a0b9c4c1
+    Hint: Description
+    Value: Navigation are for special activities, for example login, languages, search etc.
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160216T005347Z

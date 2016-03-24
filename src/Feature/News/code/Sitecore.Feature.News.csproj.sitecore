@@ -1,0 +1,23 @@
+﻿<Project>
+  <PropertyGroup>
+    <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
+  </PropertyGroup>
+  <File Include="Views\News\NewsList.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{6D309FC1-D6B1-43B1-A31C-1FECB7B9303F}</Item>
+  </File>
+  <File Include="Views\News\NewsArticle.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{F366176E-2C2B-4AF2-B356-BCF8BD657C58}</Item>
+  </File>
+  <File Include="Views\News\NewsPageHeader.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{ABCB6064-2121-4A38-986C-4A21323226AB}</Item>
+  </File>
+  <File Include="Views\News\NewsMetadata.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{692E10B7-6E59-4253-BD64-9A2633FD735F}</Item>
+  </File>
+  <File Include="Views\News\LatestNews.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{BDD730EB-F808-4C65-B94A-D2F03672EAFB}</Item>
+  </File>
+  <File Include="Views\News\NewsTeaser.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}</Item>
+  </File>
+</Project>

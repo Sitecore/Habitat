@@ -1,7 +1,13 @@
 ﻿@using Sitecore.Feature.Teasers
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
-
+@if (!Model?.Item?.IsDerived(Templates.TeaserContent.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  return;
+}
 
 <div class="thumbnail teaser">
   <a href="@Model.Item.LinkFieldUrl(Templates.TeaserContent.Fields.Link)">
