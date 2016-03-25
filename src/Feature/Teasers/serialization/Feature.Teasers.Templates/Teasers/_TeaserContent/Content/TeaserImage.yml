@@ -1,25 +1,28 @@
 ﻿---
-ID: 0f6b5546-e0ab-4487-81de-640c1aa1b65b
-Parent: 2bf8c08f-c6ca-49aa-b722-15e12b5e796d
-Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+ID: "0f6b5546-e0ab-4487-81de-640c1aa1b65b"
+Parent: "2bf8c08f-c6ca-49aa-b722-15e12b5e796d"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
 Path: /sitecore/templates/Feature/Teasers/_TeaserContent/Content/TeaserImage
 DB: master
 SharedFields:
-- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type
   Value: Image
+- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
+  Hint: __Security
+  Value: "ar|sitecore\Everyone|pe|!*|+field:read|pd|!*|+field:read|ar|modules\Feature Teasers Admin|pe|+field:write|pd|+field:write|"
 Languages:
 - Language: en
   Fields:
-  - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+  - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
     Hint: Title
     Value: Teaser Image
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Teaser Image
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151026T001108Z
