@@ -16,6 +16,17 @@
   </Metadata>
   <SaveProject>True</SaveProject>
   <Sources>
+	<accounts>
+      <Entries/>
+      <Converter>
+        <AccountToEntryConverter>
+          <Transforms />
+        </AccountToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>Roles</Name>
+    </accounts>
     <xfiles>
       <Entries />
       <Converter>
