@@ -74,7 +74,7 @@ module.exports = function (callback, options) {
 
   var syncScript = "./Sync.ps1 -secret " + secret + " -url " + url + " -configurations " + configurations;
   var options = { cwd: __dirname + "/Unicorn/" };
-  return exec("powershell \"" + syncScript + "\"", options, function(err, stdout, stderr) {
+  return exec("powershell -executionpolicy unrestricted \"" + syncScript + "\"", options, function(err, stdout, stderr) {
     if (err !== null) throw err;
     console.log(stdout);
     callback();
