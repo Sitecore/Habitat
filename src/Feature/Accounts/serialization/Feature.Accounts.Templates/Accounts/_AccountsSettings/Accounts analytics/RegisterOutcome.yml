@@ -1,40 +1,43 @@
 ﻿---
-ID: 835fa523-d28a-46a2-a589-6aa4a5bf0846
-Parent: 3680f19f-1b76-4de0-bfae-8e608dc16380
-Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+ID: "835fa523-d28a-46a2-a589-6aa4a5bf0846"
+Parent: "3680f19f-1b76-4de0-bfae-8e608dc16380"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
 Path: /sitecore/templates/Feature/Accounts/_AccountsSettings/Accounts analytics/RegisterOutcome
 DB: master
 SharedFields:
-- ID: 1eb8ae32-e190-44a6-968d-ed904c794ebf
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
   Hint: Source
   Value: Datasource=/sitecore/system/Marketing Control Panel/Outcomes&IncludeTemplatesForSelection=outcome definition&AllowMultipleSelection=no
-- ID: 21828437-ea4b-40a1-8c61-4ce60ea41db6
+- ID: "21828437-ea4b-40a1-8c61-4ce60ea41db6"
   Hint: Validate Button
   Type: tree list
-  Value: {65807297-BCB8-4F22-9FDF-0976FE7C6ADD}
-- ID: 337e20e1-999a-4eea-85ad-b58a03ae75cc
+  Value: "{65807297-BCB8-4F22-9FDF-0976FE7C6ADD}"
+- ID: "337e20e1-999a-4eea-85ad-b58a03ae75cc"
   Hint: Quick Action Bar
   Type: tree list
-  Value: {65807297-BCB8-4F22-9FDF-0976FE7C6ADD}
-- ID: 53c432c4-7122-4e2d-8296-db4184fd1735
+  Value: "{65807297-BCB8-4F22-9FDF-0976FE7C6ADD}"
+- ID: "53c432c4-7122-4e2d-8296-db4184fd1735"
   Hint: Workflow
   Type: tree list
-  Value: {65807297-BCB8-4F22-9FDF-0976FE7C6ADD}
-- ID: 9c903e29-650d-4af2-b9bd-526d5c14a1a5
+  Value: "{65807297-BCB8-4F22-9FDF-0976FE7C6ADD}"
+- ID: "9c903e29-650d-4af2-b9bd-526d5c14a1a5"
   Hint: Validator Bar
   Type: tree list
-  Value: {65807297-BCB8-4F22-9FDF-0976FE7C6ADD}
-- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  Value: "{65807297-BCB8-4F22-9FDF-0976FE7C6ADD}"
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type
   Value: Droptree
-- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 100
+- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
+  Hint: __Security
+  Value: "ar|sitecore\Everyone|pe|!*|+field:read|pd|!*|+field:read|ar|modules\Feature Accounts Admin|pe|+field:write|pd|+field:write|"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151207T165402Z
