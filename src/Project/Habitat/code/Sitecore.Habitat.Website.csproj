@@ -247,7 +247,7 @@
   </Target>
   <Target Name="ApplyTransform">
     <ItemGroup>
-      <Transforms Include="*.transform" />
+      <Transforms Include="domains.config.transform" />
     </ItemGroup>
     <TransformXml Source="$(WebConfigToTransform)" Transform="@(Transforms)" Destination="$(WebConfigToTransform)" Condition="Exists(@(Transforms))" />
   </Target>
