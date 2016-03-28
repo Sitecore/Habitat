@@ -21,7 +21,8 @@ gulp.task("default", function (callback) {
     "01-Copy-Sitecore-Lib",
     "02-Nuget-Restore",
     "03-Publish-All-Projects",
-    "04-Apply-Xml-Transform", 
+    "04-Apply-Xml-Transform",
+    "04-1-Apply-Xml-Transform-Domains",
     "05-Sync-Unicorn", 
 	callback);
 });
@@ -65,6 +66,26 @@ gulp.task("04-Apply-Xml-Transform", function () {
           }
         }));
     }));
+
+});
+
+gulp.task("04-1-Apply-Xml-Transform-Domains", function () {
+    return gulp.src("./src/Foundation/**/code/*.csproj")
+      .pipe(foreach(function (stream, file) {
+          return stream
+            .pipe(debug({ title: "Applying transform project:" }))
+            .pipe(msbuild({
+                targets: ["ApplyTransform"],
+                configuration: config.buildConfiguration,
+                logCommand: false,
+                verbosity: "normal",
+                maxcpucount: 0,
+                toolsVersion: 14.0,
+                properties: {
+                    WebConfigToTransform: config.websiteRoot + "\\App_Config\\Security\\domains.config"
+                }
+            }));
+      }));
 
 });
 
