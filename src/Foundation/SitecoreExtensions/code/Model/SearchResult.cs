@@ -1,4 +1,4 @@
-namespace Sitecore.Foundation.SitecoreExtensions.Rendering
+namespace Sitecore.Foundation.SitecoreExtensions.Model
 {
   using System.Collections.Generic;
   using Sitecore.ContentSearch;

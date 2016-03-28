@@ -1,10 +1,10 @@
-﻿namespace Sitecore.Foundation.MultiSite.Commands
+﻿namespace Sitecore.Foundation.Multisite.Commands
 {
   using System.Collections.Specialized;
   using System.Text.RegularExpressions;
   using Sitecore.Data;
   using Sitecore.Data.Items;
-  using Sitecore.Foundation.MultiSite.Providers;
+  using Sitecore.Foundation.Multisite.Providers;
   using Sitecore.Shell.Framework.Commands;
   using Sitecore.Text;
   using Sitecore.Web.UI.Sheer;

@@ -13,6 +13,7 @@
   using Sitecore.Foundation.Indexing;
   using Sitecore.Foundation.Indexing.Models;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class SearchControllerTests
@@ -35,7 +36,7 @@
     {
       settingsRepository.Get(Arg.Any<string>()).Returns(searchSettings);
       var controller = new SearchController(serviceRepository, settingsRepository, queryRepository, renderingPropertiesRepository);
-      var result = controller.SearchSettings(query) as ViewResult;
+      var result = controller.SearchResultsHeader(query) as ViewResult;
       result.Model.Should().BeOfType<SearchSettings>();
     }
 

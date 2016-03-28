@@ -155,6 +155,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Captions.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -167,14 +168,13 @@
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="App_Config\Include\Project\z.Habitat.DevSettings.config">
       <SubType>Designer</SubType>
     </Content>
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
-    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Website\Layouts\Default.cshtml" />
-    <Content Include="web.config.transform" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Website\Sublayouts\" />
@@ -248,7 +248,7 @@
     <ItemGroup>
       <Transforms Include="*.transform" />
     </ItemGroup>
-    <TransformXml Source="$(WebConfigToTransform)" Transform="@(Transforms)" Destination="$(WebConfigToTransform)" />
+    <TransformXml Source="$(WebConfigToTransform)" Transform="@(Transforms)" Destination="$(WebConfigToTransform)" Condition="Exists(@(Transforms))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -111,6 +111,7 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\Feature.Language.Serialization.config" />
     <Content Include="packages.config" />
+    <Content Include="App_Config\Include\Feature\Feature.Language.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Language\LanguageSelector.cshtml" />
     <None Include="Views\web.config" />
@@ -123,9 +124,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.MultiSite.csproj">
+    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.Multisite.csproj">
       <Project>{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7}</Project>
-      <Name>Sitecore.Foundation.MultiSite</Name>
+      <Name>Sitecore.Foundation.Multisite</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>

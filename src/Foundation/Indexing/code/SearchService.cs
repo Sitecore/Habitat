@@ -12,12 +12,23 @@
   using Sitecore.ContentSearch.Utilities;
   using Sitecore.Data;
   using Sitecore.Data.Items;
+  using Sitecore.Diagnostics;
   using Sitecore.Foundation.Indexing.Infrastructure;
   using Sitecore.Foundation.Indexing.Models;
 
   public class SearchService
   {
     public ISearchSettings Settings { get; set; }
+
+    public SitecoreIndexableItem ContextItem
+    {
+      get
+      {
+        var contextItem = Settings.Root ?? Context.Item;
+        Assert.IsNotNull(contextItem, "Could not determine a context item for the search");
+        return contextItem;
+      }
+    }
 
     public SearchService(ISearchSettings settings)
     {
@@ -27,16 +38,17 @@
 
     public virtual ISearchResults Search(IQuery query)
     {
-      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
+      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)ContextItem).CreateSearchContext())
       {
         var root = this.Settings.Root;
         var queryable = context.GetQueryable<SearchResultItem>();
         queryable = SetQueryRoot(queryable, root);
         queryable = this.FilterOnPresentationOnly(queryable);
         queryable = FilterOnLanguage(queryable);
+        queryable = FilterOnVersion(queryable);
         if (this.Settings.Templates != null && this.Settings.Templates.Any())
         {
-          queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Templates));
+          queryable = queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Templates));
         }
         else
         {
@@ -64,11 +76,13 @@
 
     public virtual ISearchResults FindAll(int skip, int take)
     {
-      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
+      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)ContextItem).CreateSearchContext())
       {
         var root = this.Settings.Root;
         var queryable = context.GetQueryable<SearchResultItem>();
         queryable = SetQueryRoot(queryable, root);
+        queryable = FilterOnLanguage(queryable);
+        queryable = FilterOnVersion(queryable);
         queryable = queryable.Where(PredicateBuilder.True<SearchResultItem>());
         if (this.Settings.Templates != null && this.Settings.Templates.Any())
         {
@@ -137,6 +151,12 @@
     private static IQueryable<SearchResultItem> FilterOnLanguage(IQueryable<SearchResultItem> queryable)
     {
       queryable = queryable.Filter(item => item.Language == Context.Language.Name);
+      return queryable;
+    }
+
+    private static IQueryable<SearchResultItem> FilterOnVersion(IQueryable<SearchResultItem> queryable)
+    {
+      queryable = queryable.Cast<IndexedItem>().Filter(item => item.IsLatestVersion);
       return queryable;
     }
 

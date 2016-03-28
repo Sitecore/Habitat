@@ -1,0 +1,20 @@
+﻿<Project>
+  <PropertyGroup>
+    <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
+  </PropertyGroup>
+  <File Include="Views\Navigation\Breadcrumb.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{E6BA23C6-08F7-43D0-BE00-BB2129D6F288}</Item>
+  </File>
+  <File Include="Views\Navigation\LinkMenu.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{69B9C355-004B-4268-BB1E-2F725B8752B7}</Item>
+  </File>
+  <File Include="Views\Navigation\NavigationLinks.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{F366FBA9-EF26-4007-988A-63CB64649C46}</Item>
+  </File>
+  <File Include="Views\Navigation\PrimaryMenu.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{53B085DB-6824-4941-9F28-9011CB151832}</Item>
+  </File>
+  <File Include="Views\Navigation\SecondaryMenu.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{3F7AD288-FA57-441F-AD79-CA60DC0C0A8D}</Item>
+  </File>
+</Project>

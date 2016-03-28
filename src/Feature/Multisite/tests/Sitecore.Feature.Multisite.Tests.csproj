@@ -7,8 +7,8 @@
     <ProjectGuid>{B2D57490-58A9-4F73-A34E-B4076713F712}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.Feature.MultiSite.Tests</RootNamespace>
-    <AssemblyName>Sitecore.Feature.MultiSite.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Feature.Multisite.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Feature.Multisite.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,38 +30,40 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentAssertions">
-      <HintPath>..\..\..\..\packages\FluentAssertions.4.1.0\lib\net45\FluentAssertions.dll</HintPath>
-    </Reference>
-    <Reference Include="FluentAssertions.Core">
-      <HintPath>..\..\..\..\packages\FluentAssertions.4.1.0\lib\net45\FluentAssertions.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="NSubstitute, Version=1.5.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\NSubstitute.1.5.0.0\lib\NET40\NSubstitute.dll</HintPath>
+    <Reference Include="FluentAssertions, Version=4.2.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\FluentAssertions.4.2.2\lib\net45\FluentAssertions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ploeh.AutoFixture, Version=3.37.3.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\AutoFixture.3.37.3\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+    <Reference Include="FluentAssertions.Core, Version=4.2.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\FluentAssertions.4.2.2\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ploeh.AutoFixture.AutoNSubstitute, Version=3.37.3.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\AutoFixture.AutoNSubstitute.3.37.3\lib\net40\Ploeh.AutoFixture.AutoNSubstitute.dll</HintPath>
+    <Reference Include="NSubstitute, Version=1.9.2.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\NSubstitute.1.9.2.0\lib\net45\NSubstitute.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Ploeh.AutoFixture.Xunit2, Version=3.37.1.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\AutoFixture.Xunit2.3.37.1\lib\net45\Ploeh.AutoFixture.Xunit2.dll</HintPath>
+    <Reference Include="Ploeh.AutoFixture, Version=3.40.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\AutoFixture.3.40.0\lib\net40\Ploeh.AutoFixture.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture.AutoNSubstitute, Version=3.40.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\AutoFixture.AutoNSubstitute.3.40.0\lib\net40\Ploeh.AutoFixture.AutoNSubstitute.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ploeh.AutoFixture.Xunit2, Version=3.40.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\AutoFixture.Xunit2.3.40.0\lib\net45\Ploeh.AutoFixture.Xunit2.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Analytics, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.FakeDb, Version=0.35.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.FakeDb.0.35.0\lib\net45\Sitecore.FakeDb.dll</HintPath>
+    <Reference Include="Sitecore.FakeDb, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.FakeDb.1.0.0\lib\net45\Sitecore.FakeDb.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.FakeDb.AutoFixture, Version=0.35.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.FakeDb.AutoFixture.0.35.0\lib\net45\Sitecore.FakeDb.AutoFixture.dll</HintPath>
+    <Reference Include="Sitecore.FakeDb.AutoFixture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.FakeDb.AutoFixture.1.0.0\lib\net45\Sitecore.FakeDb.AutoFixture.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -113,17 +115,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="App_Config\FieldTypes.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.MultiSite.csproj">
+    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.Multisite.csproj">
       <Project>{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7}</Project>
-      <Name>Sitecore.Foundation.MultiSite</Name>
+      <Name>Sitecore.Foundation.Multisite</Name>
     </ProjectReference>
-    <ProjectReference Include="..\code\Sitecore.Feature.MultiSite.csproj">
+    <ProjectReference Include="..\code\Sitecore.Feature.Multisite.csproj">
       <Project>{64CB17EE-49BF-44A6-98F0-4F72EE89073B}</Project>
-      <Name>Sitecore.Feature.MultiSite</Name>
+      <Name>Sitecore.Feature.Multisite</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

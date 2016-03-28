@@ -1,0 +1,33 @@
+﻿---
+ID: 8dc4eac1-57c2-45f0-b9ac-0d96cb1707cf
+Parent: d77856c3-8a5e-452c-8854-f2965edf25e0
+Template: d77856c3-8a5e-452c-8854-f2965edf25e0
+Path: /sitecore/templates/Feature/Maps/_MapRenderingParameters/__Standard Values
+DB: master
+SharedFields:
+- ID: 3094d236-5985-4c4f-ae6a-e30740885532
+  Hint: Caching
+  Value: 0|0|0|0|0|0|0|0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151209T141740Z
+    - ID: 3016477a-1dac-460c-a3e2-0e8834e685bd
+      Hint: CenterLocation
+      Value: -5.055576,3.803790
+    - ID: 3fdda0ea-96ef-4533-b658-e071a2a8e052
+      Hint: EnableMapTypeControl
+      Value: 1
+    - ID: 405a9441-2f1c-4278-a3dd-3d9f818227be
+      Hint: ZoomLevel
+      Value: 0
+    - ID: 90d0bbdc-ea74-4d9a-a570-dafd6edc5f92
+      Hint: MapType
+      Value: roadmap
+    - ID: c77614fb-8ef2-4418-a486-6cf014b70f22
+      Hint: EnableZoomControl
+      Value: 1

@@ -1,7 +1,7 @@
-﻿@using Sitecore.Feature.MultiSite
+﻿@using Sitecore.Feature.Multisite
 @using Sitecore.Mvc
 
-@model Sitecore.Feature.MultiSite.Models.SiteConfigurations
+@model Sitecore.Feature.Multisite.Models.SiteConfigurations
 
 @{
   if (Model.Items.Count() <= 1)
@@ -11,17 +11,17 @@
   var currentSite = (Model.Current == null ? Request.Url?.Host : Model.Current.Name);
 }
 
-<li class="dropdown sites">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="@currentSite">
+<li class="dropdown hidden-xs">
+  <a href="#" class="btn dropdown-toggle" data-toggle="dropdown" title="@currentSite">
     <i class="fa fa-home"></i>
   </a>
   <ul class="dropdown-menu">
-      @foreach (var site in Model.Items)
-      {
-        var cssClass = (site.IsCurrent ? "active" : "");
-        <li class="@cssClass">
-          <a href="@site.Url">@site.Title</a>
-        </li>
-      }
+    @foreach (var site in Model.Items)
+    {
+      var cssClass = (site.IsCurrent ? "active" : "");
+      <li class="@cssClass">
+        <a href="@site.Url">@site.Title</a>
+      </li>
+    }
   </ul>
 </li>

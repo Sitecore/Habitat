@@ -23,6 +23,8 @@
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
   using Sitecore.Feature.Accounts.Texts;
+  using Sitecore.Foundation.Alerts;
+  using Sitecore.Foundation.Alerts.Models;
   using Sitecore.Globalization;
   using Sitecore.Security;
   using Sitecore.Security.Accounts;
@@ -79,19 +81,19 @@
 
     [Theory]
     [AutoDbData]
-    public void LoginDialogShouldReturnViewIfNotValid(IAccountRepository repo, [NoAutoProperties] AccountsController controller, LoginInfo info)
+    public void _LoginShouldReturnViewIfNotValid(IAccountRepository repo, [NoAutoProperties] AccountsController controller, LoginInfo info)
     {
-      var result = controller.LoginDialog(info);
+      var result = controller._Login(info);
       result.Should().BeOfType<ViewResult>();
     }
 
     [Theory]
     [AutoDbData]
-    public void LoginDialogShouldRedirectIfLoggedIn(Database db, [Content] DbItem item, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
+    public void _LoginShouldRedirectIfLoggedIn(Database db, [Content] DbItem item, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
     {
       var controller = new AccountsController(repo, service, accountSetting, null, null);
       repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => true);
-      var result = controller.LoginDialog(info);
+      var result = controller._Login(info);
       result.Should().BeOfType<JsonResult>();
       ((result as JsonResult).Data as LoginResult).RedirectUrl.Should().BeEquivalentTo(info.ReturnUrl);
     }
@@ -295,7 +297,7 @@
         repo.RestorePassword(Arg.Any<string>()).Returns("new password");
         repo.Exists(Arg.Any<string>()).Returns(true);
         var result = controller.ForgotPassword(model);
-        result.Should().BeOfType<ViewResult>().Which.ViewName.Should().Be("InfoMessage");
+        result.Should().BeOfType<ViewResult>().Which.ViewName.Should().Be(ViewPath.InfoMessage);
       }
     }
 

@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sitecore.Foundation.MultiSite.Tests.Pipelines
+﻿namespace Sitecore.Foundation.Multisite.Tests.Pipelines
 {
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Text;
+  using System.Threading.Tasks;
   using FluentAssertions;
   using NSubstitute;
   using Ploeh.AutoFixture.AutoNSubstitute;
@@ -13,9 +12,9 @@ namespace Sitecore.Foundation.MultiSite.Tests.Pipelines
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.FakeDb;
-  using Sitecore.Foundation.MultiSite.Pipelines;
-  using Sitecore.Foundation.MultiSite.Providers;
-  using Sitecore.Foundation.MultiSite.Tests.Extensions;
+  using Sitecore.Foundation.Multisite.Pipelines;
+  using Sitecore.Foundation.Multisite.Providers;
+  using Sitecore.Foundation.Multisite.Tests.Extensions;
   using Sitecore.Pipelines.GetRenderingDatasource;
   using Xunit;
 

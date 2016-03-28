@@ -1,5 +1,6 @@
 [Oo]bj/
 src/**/[Bb]in/
+specs/**/[Bb]in/
 .nuget/
 _ReSharper.*
 packages/
@@ -22,3 +23,4 @@ vars.user.cmd
 temp/
 *.ncrunchproject
 *.ncrunchsolution
+.vscode

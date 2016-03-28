@@ -1,0 +1,14 @@
+.template {
+  &-show-grid {
+
+    .container {
+      height: 100%;
+    }
+
+
+    [class^='col-'], [class*='col-'] {
+      border:1px solid #000 !important;
+      min-height: 400px;
+    }
+  }
+}

@@ -4,6 +4,16 @@
 
   public struct Templates
   {
+    public struct BackgroundType
+    {
+      public static ID ID = new ID("{55A5BDAD-EB69-40F5-8195-CDA182E48EE4}");
+
+      public struct Fields
+      {
+        public static readonly ID Class = new ID("{AF6B8E5C-10A2-46BE-8310-407434EC1055}");
+      }
+    }
+
     public struct HasMedia
     {
       public static ID ID = new ID("{A44E450E-BA3F-4FAF-9C53-C63241CC34EB}");
@@ -45,5 +55,18 @@
         public static readonly ID VideoLink = new ID("{2628705D-9434-4448-978C-C3BF166FA1EB}");
       }
     }
+    public struct HasParallaxBackground
+    {
+      public static ID ID = new ID("{27B8BFA4-5943-40A3-837F-110432483752}");
+
+      public struct Fields
+      {
+        public static readonly ID BackgroundMedia = new ID("{407DD3E3-024A-4A40-96E1-6ED588851197}");
+        public static readonly ID IsParallaxEnabled = new ID("{A1340A3C-4AF5-4E88-8E4C-34C10E557315}");
+        public static readonly ID ParallaxSpeed = new ID("{6E58CF7E-AAE9-4DD6-8DA2-19C818AD2D8F}");
+      }
+    }
   }
+
+
 }

@@ -5,24 +5,13 @@ Template: 6ef8f8a0-c567-495b-9e00-8775a268a486
 Path: /sitecore/content/Habitat/Home/Register
 DB: master
 SharedFields:
-- ID: 5585a30d-b115-4753-93ce-422c3455deb2
-  Hint: ShowInNavigation
-  Value: 0
+- ID: b0a67b2a-8b07-4e0b-8809-69f751709806
+  Hint: __Tracking
+  Type: Tracking
+  Value: <tracking />
 - ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   Hint: __Sortorder
   Value: 600
-- ID: f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e
-  Hint: __Renderings
-  Type: layout
-  Value: |
-    <r xmlns:p="p" xmlns:s="s" p:p="1">
-      <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-        <r uid="{47F5A079-6F63-4219-BC45-1A221B200906}">
-          <p:d />
-        </r>
-        <r uid="{F57684CD-F181-4D99-83F8-869BD554234E}" s:id="{B683EFB4-161D-4FDF-9A90-CC8637766C9C}" s:ph="/page-layout/col-narrow-2" />
-      </d>
-    </r>
 Languages:
 - Language: en
   Versions:
@@ -36,4 +25,7 @@ Languages:
       Value: 20151104T135644Z
     - ID: c30a013f-3cc8-4961-9837-1c483277084a
       Hint: Title
+      Value: Register
+    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      Hint: BrowserTitle
       Value: Register

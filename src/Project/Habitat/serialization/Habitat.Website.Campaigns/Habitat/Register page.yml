@@ -1,0 +1,35 @@
+﻿---
+ID: 5704c80f-7dd3-4913-93c9-b2af1d485801
+Parent: b4a8ab5d-33a4-44d4-8e79-3039575bb8fb
+Template: 94fd1606-139e-46ee-86ff-bc5bf3c79804
+Path: /sitecore/system/Marketing Control Panel/Campaigns/Habitat/Register page
+DB: master
+SharedFields:
+- ID: a4f985d9-98b3-4b52-aaaf-4344f6e747c6
+  Hint: __Workflow
+  Value: {689E2994-4656-4C58-9112-7826CB46EE69}
+Languages:
+- Language: en
+  Fields:
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Hint: __Display name
+    Value: Register page
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 0f47d1b4-bcb4-4f7f-9065-6ecb46aab9a1
+      Hint: Title
+      Value: Register page
+    - ID: 1c534a2d-0b6d-4e89-8fca-6289475a3a46
+      Hint: Enroll in Engagement Plan
+      Type: TreelistEx
+      Value: {505F2357-AB77-4CE8-991C-70AC53AEF39F}
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160105T150829Z
+    - ID: 3e431de1-525e-47a3-b6b0-1ccbec3a8c98
+      Hint: __Workflow state
+      Value: {EDCBB550-BED3-490F-82B8-7B2F14CCD26E}
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: 

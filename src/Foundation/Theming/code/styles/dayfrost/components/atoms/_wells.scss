@@ -1,0 +1,17 @@
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/wells";
+
+
+.well {
+   & > h5 {
+    font-weight: lighter;
+  }
+
+  date {
+    opacity: 0.6;
+  }
+
+  .btn {
+    margin-bottom: 10px;
+  }
+}
