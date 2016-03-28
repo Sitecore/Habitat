@@ -16,8 +16,8 @@
   </Metadata>
   <SaveProject>True</SaveProject>
   <Sources>
-	<accounts>
-      <Entries/>
+    <accounts>
+      <Entries />
       <Converter>
         <AccountToEntryConverter>
           <Transforms />
@@ -69,6 +69,20 @@
       <Exclude />
       <Name>Habitat items</Name>
     </xitems>
+    <xfiles>
+      <Entries>
+        <x-item>/App_Config/Security/Domains.config</x-item>
+      </Entries>
+      <Converter>
+        <FileToEntryConverter>
+          <Root>/</Root>
+          <Transforms />
+        </FileToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>DomainsConfig</Name>
+    </xfiles>
   </Sources>
   <Converter>
     <TrivialConverter>
