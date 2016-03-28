@@ -70,7 +70,7 @@ gulp.task("04-Apply-Xml-Transform", function () {
 });
 
 gulp.task("04-1-Apply-Xml-Transform-Domains", function () {
-    return gulp.src("./src/Foundation/**/code/*.csproj")
+    return gulp.src("./src/**/code/*.csproj")
       .pipe(foreach(function (stream, file) {
           return stream
             .pipe(debug({ title: "Applying transform project:" }))
