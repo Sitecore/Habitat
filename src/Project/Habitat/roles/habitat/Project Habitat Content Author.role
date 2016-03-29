@@ -1,0 +1,7 @@
+----role----
+name: habitat\Project Habitat Content Author
+
+----parent-roles----
+rolename: sitecore\Designer
+rolename: habitat\Project Habitat Modules Admin
+rolename: sitecore\Author
