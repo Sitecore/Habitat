@@ -70,12 +70,6 @@ gulp.task("04-Apply-Xml-Transform", function () {
 
 gulp.task("05-Sync-Unicorn", function (callback) {
   var options = {};
-  options.configurationConfigFiles = [
-    __dirname + "/src/Foundation/Serialization/code/App_Config/Include/*/*.Serialization.config",
-    __dirname + "/src/Foundation/!(Serialization)/code/App_Config/Include/*/*.Serialization.config",
-    __dirname + "/src/Feature/**/code/App_Config/Include/*/*.Serialization.config",
-    __dirname + "/src/Project/Common/code/App_Config/Include/*/*.Serialization.config",
-    __dirname + "/src/Project/!(Common)/code/App_Config/Include/*/*.Serialization.config"];
   options.siteHostName = habitat.getSiteUrl();
   options.authenticationConfigFile = __dirname + "/src/Foundation/Serialization/code/App_config/Include/Foundation/Foundation.Serialization.config";
   
