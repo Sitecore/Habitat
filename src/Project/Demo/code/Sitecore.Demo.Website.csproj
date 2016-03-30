@@ -139,11 +139,15 @@
     <Error Condition="!Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
-  <Target Name="ApplyTransform">
+   <Target Name="ApplyTransform">
     <ItemGroup>
-      <Transforms Include="*.transform" />
+      <Transforms Include="**\*.transform" Exclude="obj\**">
+      </Transforms>
+      <ConfigsToTransform Include="@(Transforms-&gt;Replace('.transform',''))">
+        <TransformPath>%(Transforms.Identity)</TransformPath>
+      </ConfigsToTransform>
     </ItemGroup>
-    <TransformXml Source="$(WebConfigToTransform)" Transform="@(Transforms)" Destination="$(WebConfigToTransform)" Condition="Exists(@(Transforms))" />
+    <TransformXml Source="$(WebConfigToTransform)\%(ConfigsToTransform.Identity)" Transform="%(ConfigsToTransform.TransformPath)" Destination="$(WebConfigToTransform)\%(ConfigsToTransform.Identity)" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
