@@ -25,7 +25,7 @@ SharedFields:
   Value: /sitecore/content/Habitat/Home
 - ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
   Hint: __Security
-  Value: "ar|habitat\Project Habitat Modules Admin|pe|+item:write|+item:read|!*|pd|+item:write|+item:read|!*|"
+  Value: "ar|habitat\Project Habitat Content Author|pe|+item:write|+item:read|!*|pd|+item:write|+item:read|!*|"
 - ID: "ed71d374-8c33-4561-991d-77482ae01330"
   Hint: AccountsDetailsPage
   Value: /sitecore/content/Habitat/Home/Edit Profile

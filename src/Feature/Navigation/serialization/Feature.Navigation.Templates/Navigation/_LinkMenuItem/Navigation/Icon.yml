@@ -13,7 +13,7 @@ SharedFields:
   Value: 200
 - ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
   Hint: __Security
-  Value: "ar|modules\Feature Navigation Admin|pe|+field:write|pd|+field:write|"
+  Value: "ar|modules\Feature Navigation Admin|pe|+field:write|pd|+field:write|ar|Everyone|pe|!*|+field:read|pd|!*|+field:read|"
 Languages:
 - Language: en
   Versions:

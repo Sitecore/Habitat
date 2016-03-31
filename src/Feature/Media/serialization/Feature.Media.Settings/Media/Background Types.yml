@@ -7,7 +7,7 @@ DB: master
 SharedFields:
 - ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
   Hint: __Security
-  Value: "ar|sitecore\Everyone|pe|-item:create|pd|-item:create|ar|modules\Feature Media Admin|pe|+item:create|pd|+item:create|"
+  Value: "ar|modules\Feature Media Admin|pe|+item:create|pd|+item:create|"
 Languages:
 - Language: en
   Versions:

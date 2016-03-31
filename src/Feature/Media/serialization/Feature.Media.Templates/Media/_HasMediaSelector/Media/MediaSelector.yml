@@ -16,7 +16,7 @@ SharedFields:
   Value: 100
 - ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
   Hint: __Security
-  Value: "ar|modules\Feature Media Admin|pe|+field:write|pd|+field:write|ar|sitecore\Everyone|pe|!*|+field:read|pd|!*|+field:read|"
+  Value: "ar|modules\Feature Media Admin|pe|+field:write|pd|+field:write|ar|Everyone|pe|!*|+field:read|pd|!*|+field:read|"
 Languages:
 - Language: en
   Fields:
