@@ -13,6 +13,11 @@ body {
 
   * {
     transition: all 0.2s ease;
+    /*&:focus {
+      outline-color: $brand-primary;
+      outline-width: 1px;
+      outline-style: solid;
+    }*/
   }
 
   &.bg-media {

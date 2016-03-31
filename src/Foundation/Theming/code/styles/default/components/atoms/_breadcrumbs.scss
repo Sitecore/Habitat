@@ -18,7 +18,7 @@
     & + li {
       &:before {
         color: $breadcrumb-color;
-        .bg-primary &, .bg-dark &, .bg-media & {
+        .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
           color: #FFF;
         }
         .bg-white & {
@@ -29,7 +29,7 @@
 
     a {
       color: $breadcrumb-color;
-      .bg-primary &, .bg-dark &, .bg-media & {
+      .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
         color: #FFF;
       }
       .bg-white & {
@@ -41,7 +41,7 @@
       font-size: 24px;
       font-weight: 800;
 
-      .bg-primary &, .bg-dark &, .bg-media & {
+      .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
         color: #FFF;
       }
 

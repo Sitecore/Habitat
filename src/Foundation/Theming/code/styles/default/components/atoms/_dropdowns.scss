@@ -8,14 +8,27 @@
       font-size: 16px;
       color: $dropdown-header-color;
 
-      @media (max-width: $screen-sm-max) {
-        color: #FFF;
+      .bg-white & {
+        color: #000;
         font-weight: bold;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        color: $dropdown-header-color;
+        //font-weight: bold;
+        .bg-primary &, .bg-secondary &, .bg-media & {
+          color: #FFF;
+          font-weight: bold;
+        }
       }
   }
 
   &-toggle {
     margin-bottom: 0 !important;
+    &:focus {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+    }
   }
 
   &.open {
@@ -33,7 +46,7 @@
 
   &-menu {
     border-radius: $dropdown-menu-border-radius;
-    .bg-primary &, .bg-dark &, .bg-media & {
+    .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
       color: $text-color;
     }
     & > .active {

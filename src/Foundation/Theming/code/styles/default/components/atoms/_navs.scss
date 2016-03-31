@@ -35,7 +35,7 @@
         color: $text-color;
       }
 
-      .bg-primary &, .bg-dark &, .bg-media & {
+      .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
         &:hover {
           color: $text-color;
         }
@@ -56,7 +56,7 @@
       color: $text-color;
       &:hover, &:focus {
         border-color: transparent;
-        .bg-primary &, .bg-dark &, .bg-media & {
+        .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
           background-color: transparent;
         }
       }

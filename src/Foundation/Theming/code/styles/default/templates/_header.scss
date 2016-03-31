@@ -19,16 +19,14 @@ header {
     left: 0;
     background-color: $color-secondary-dark;
 
+    @media (max-width: $screen-sm-max) {
+      max-height: 100%;
+      overflow-y: auto;
+    }
+
     &.bg-transparent {
       background-color: rgba(0,0,0,.15) !important;
       filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#15000000', endColorstr='#15000000');
-      & + main {
-        margin-top: -125px;
-
-        .bg-media {
-          padding-top: 145px;
-        }
-      }
     }
 
     .navbar-fixed-top {

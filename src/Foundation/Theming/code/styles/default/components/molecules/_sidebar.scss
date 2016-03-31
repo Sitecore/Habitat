@@ -1,4 +1,4 @@
-
+;
 
 
 .off-canvas-sidebar {
@@ -31,7 +31,55 @@
   transition: all 0.4s ease;
   margin-bottom: 30px;
 
-  .bg-primary &, .bg-dark &, .bg-media & {
+  &-toggle {
+    border-color: transparent;
+    position: relative;
+    margin-right: 15px;
+    padding: 13px 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: $brand-primary;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: $sidebar-toggle-border-radius;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    display: block;
+    width: 100%;
+
+    &.collapsed {
+      border-bottom-left-radius: $sidebar-toggle-border-radius;
+      border-bottom-right-radius: $sidebar-toggle-border-radius;
+    }
+
+    .text {
+      color: #FFF;
+      position: absolute;
+      left: 40px;
+      top: 11px;
+    }
+
+    .icon-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 1px;
+      background-color: #FFF;
+      & + .icon-bar {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  &-collapse {
+    display: block;
+
+    @media (max-width: $screen-xs-max) {
+      display: none;
+    }
+  }
+
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
     background-color: transparent;
     color: #FFF;
   }
@@ -78,7 +126,7 @@
         color: $sidebar-nav-item-color;
         background-color: $sidebar-nav-item-bg;
         font-weight: normal;
-        .bg-primary &, .bg-dark &, .bg-media & {
+        .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
           color: #FFF;
         }
         &:hover {
@@ -89,7 +137,7 @@
         a {
           color: $sidebar-nav-item-color-active;
           font-weight: 800;
-          .bg-primary &, .bg-dark &, .bg-media & {
+          .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
             color: #FFF;
           }
           &:hover {

@@ -3,6 +3,69 @@
 body {
   background-color: #FFF;
 
+  &.sc-editor-enabled {
+    margin-top: 185px;
+  }
+
+
+  header {
+    &.header-fixed {
+      & + main {
+        padding-top: 82px;
+
+        @media all and (max-width: $screen-sm-max) {
+          padding-top: 78px;
+        }
+
+        @media all and (max-width: $screen-xs-max) {
+          padding-top: 70px;
+        }
+      }
+      &.header-has-top {
+        & + main {
+          padding-top: 118px;
+
+          @media all and (max-width: $screen-sm-max) {
+            padding-top: 78px;
+          }
+
+          @media all and (max-width: $screen-xs-max) {
+            padding-top: 70px;
+          }
+        }
+        &.header-logo-center {
+          & + main {
+            @media (min-width: $screen-md-min) {
+              padding-top: 165px;
+            }
+          }
+        }
+      }
+      &.header-logo-center {
+        & + main {
+          padding-top: 125px;
+
+          @media all and (max-width: $screen-sm-max) {
+            padding-top: 115px;
+          }
+
+          @media all and (max-width: $screen-xs-max) {
+            padding-top: 111px;
+          }
+
+        }
+      }
+      &.bg-transparent {
+        & + main {
+          padding-top: 0;
+          & > * {
+            padding-top: 82px;
+          }
+        }
+      }
+    }
+  }
+
   &.home {
     .page-header {
       margin: 0;
@@ -12,17 +75,6 @@ body {
   }
 
   &.header-top {
-    #main-container {
-      padding-top: 118px;
-
-      @media all and (max-width: $screen-sm-max) {
-        padding-top: 80px;
-      }
-
-      @media all and (max-width: $screen-xs-max) {
-        padding-top: 70px;
-      }
-    }
 
   }
 
@@ -34,13 +86,6 @@ body {
 
   #main-container {
     background-color: $main-bg;
-    padding-top: 78px;
-
-
-
-    @media all and (max-width: $screen-xs-max) {
-      padding-top: 88px;
-    }
 
     main {
       background-color: $main-bg;
@@ -49,13 +94,7 @@ body {
       //padding:0; - This breaks the responsive grid.
     }
 
-    @media all and (max-width: $screen-sm-max) {
-      padding-top: 70px;
-    }
 
-    @media all and (max-width: $screen-xs-max) {
-      padding-top: 70px;
-    }
   }
   &.pagelayout-fixed {
     #main-container {
@@ -71,8 +110,4 @@ body {
       }
     }
   }
-}
-
-.container {
-  position: relative;
 }

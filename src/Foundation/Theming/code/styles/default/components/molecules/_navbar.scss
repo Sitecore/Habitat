@@ -30,6 +30,8 @@
       background-color: #FFF;
     }
 
+
+
     &-search {
       .is-searching & {
         margin-right: -15px;
@@ -124,7 +126,7 @@
         background-color: $color-secondary-light;
         border: none;
 
-        .bg-primary & {
+        .bg-primary &, .bg-secondary & {
           color: $color-primary;
           background-color: #FFF;
         }
@@ -238,20 +240,18 @@
 
   &-left {
     z-index: 1;
-    //position: relative;
+    float: left;
+
     .is-searching & {
       z-index: 0;
     }
   }
 
   &-left + &-center {
-    display: block;
-    position: absolute;
-    top: 0px;
-    left: 0;
+    display: inline-block;
     text-align: center;
-    width: 100%;
     height: 100%;
+    z-index: 0;
 
     @media all and (max-width: $screen-xs-max) {
       display: block;
@@ -259,9 +259,28 @@
     }
   }
 
+  &-left + &-right {
+    .is-searching & {
+      .navbar-toggle-search {
+        margin-top: 10px;
+        padding-bottom: 0px;
+      }
+    }
+    .navbar-form {
+      margin-top: 0px !important;
+      input {
+        @media (max-width: $screen-xs-max) {
+          padding: 20px 70px 20px 15px !important;
+          box-sizing: border-box;
+          //margin-top: -30px !important;
+        }
+      }
+    }
+  }
+
   &-center {
     display: block;
-    position: relative;
+    //position: relative;
     text-align: center;
 
     @media all and (max-width: $screen-xs-max) {
@@ -315,7 +334,7 @@
     }
 
     @media all and (max-width: $screen-xs-max) {
-      margin: 17px 0 10px 0;
+      margin: 16px 0 10px 0;
 
       &.has-tagline {
         margin: 10px 0 0 0;
@@ -329,7 +348,6 @@
       }
       .tagline {
         margin-top: 0px;
-        display: block;
         text-align: left;
         .bg-transparent & {
           color: $navbar-bg;
@@ -384,6 +402,12 @@
             color: lighten($color-secondary, 20%);
             background-color: rgba(0,0,0,.2);
             filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#20000000,endColorstr=#20000000);
+            .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+              color: #FFF;
+            }
+            .bg-white & {
+              color: #000;
+            }
           }
           & > .active {
             & > a {
@@ -414,6 +438,24 @@
   }
 
   &-default {
+    .navbar-collapse {
+      .navbar-nav {
+        .open {
+          .dropdown-menu {
+            & > li {
+              & > a {
+                @media (max-width: $screen-xs-max) {
+                  color: #FFF;
+                  &:hover {
+                    color: #FFF;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     .navbar-nav {
       & > .open {
         & > a, & > a:focus, & > a:hover {
@@ -424,16 +466,29 @@
 
         .dropdown-menu {
           & > li {
+            &.disabled {
+              a {
+                color: #777777;
+                &:hover {
+                  color: #777777;
+                }
+              }
+            }
             &.active {
               a {
                 color: $brand-primary;
+                background-color: transparent;
               }
             }
             & > a {
               color: $text-color;
 
+              &:hover {
+                color: $text-color;
+              }
+
               @media (max-width: $screen-sm-max) {
-                color: #FFF;
+                color: $text-color;
               }
 
               &.active {
@@ -453,6 +508,12 @@
       }
       .icon-bar {
         background-color: #FFF;
+        .bg-white & {
+          background-color: #000;
+        }
+      }
+      .bg-white & {
+
       }
     }
   }

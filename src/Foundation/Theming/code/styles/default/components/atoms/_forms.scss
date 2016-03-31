@@ -3,10 +3,10 @@
 
 form {
 
-  input.form-control {
+  .form-control {
     background-color: transparent;
     //border: none;
-    padding: 0;
+    //padding: 0;
   }
 
   &.form-signin, &.form-register {
@@ -19,56 +19,59 @@ form {
   }
 }
 
+.checkbox {
+  label {
+    vertical-align: middle;
+    //padding-left: 0;
+  }
+}
+
 input {
   line-height: normal;
+  &[type="text"], &[type="password"] {
+    &.form-control {
+      padding: 0 10px;
+    }
+  }
   &.form-control {
+
     &:focus {
       box-shadow: none;
       background-color: #FFF;
     }
   }
-
+  
   .input-group &[type="text"] {
     padding-left: 10px;
   }
 
   &[type="checkbox"] {
     border: none;
-    position: relative;
-    margin-top: 2px;
+    margin-top: 0px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 0px;
+    height: 15px;
+    width: 15px;
 
     &:checked {
       &:before {
-        background-color: $text-color;
-      }
-      &:after {
-        opacity: 1;
+        border: 5px solid $text-color;
+        background-color: #FFF;
+        box-sizing: border-box;
       }
     }
     &:before {
-      width: 14px;
-      height: 14px;
+      width: 15px;
+      height: 15px;
       display: block;
       position: absolute;
       content: ' ';
-      background-color: $text-color;
+      background-color: $gray-light;
       border: 2px solid $text-color;
-      top: -2px;
+      top: 0px;
       left: 0;
       visibility: visible;
-    }
-    &:after {
-      width: 6px;
-      height: 6px;
-      content: ' ';
-      position: absolute;
-      top: calc(50% - 2px);
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: block;
-      background-color: #FFF;
-      opacity: 0;
-      transition: all 0.2s ease;
     }
   }
 
@@ -90,9 +93,14 @@ input {
       display: inline-block;
       color: $color-secondary-dark;
 
-      .bg-primary &, .bg-dark &, .bg-media & {
+      .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
         border-color: #FFF;
         color: #FFF;
+      }
+
+      .bg-white & {
+        border-color: #000;
+        color: #000;
       }
 
       &:after {
@@ -110,6 +118,10 @@ input {
         background-color: $color-secondary-dark;
         color: #FFF;
 
+        .bg-white & {
+          background-color: #000;
+        }
+
         &:after {
           content: "\e027";
         }
@@ -118,6 +130,10 @@ input {
       &:hover {
         background-color: $color-secondary-dark;
         color: #FFF;
+
+        .bg-white & {
+          background-color: #000;
+        }
       }
     }
   }
@@ -149,6 +165,14 @@ textarea {
   color: $color-secondary-light;
   border-radius: 0;
   padding-left: 8px;
+
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    color: #FFF;
+  }
+
+  .bg-white & {
+    color: #000;
+  }
 
   &[readonly] {
     background-color: #eee;
@@ -196,7 +220,14 @@ textarea {
 }
 
 .help-block {
-  margin-top: 10px;
+  margin-top: 0px;
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    color: #FFF;
+  }
+
+  .bg-white & {
+    color: #000;
+  }
 }
 
 .form-control-feedback, .help-block {
@@ -209,5 +240,24 @@ textarea {
   }
   .has-error & {
     color: $brand-danger;
+  }
+}
+
+
+select {
+  padding: 10px 0;
+  &.form-control {
+    padding: 10px 0;
+  }
+}
+
+textarea {
+  &:focus {
+    background-color: #FFF;
+  }
+  &.form-control {
+    &:focus {
+      background-color: #FFF;
+    }
   }
 }

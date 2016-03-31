@@ -108,9 +108,10 @@ $panel-heading-padding: 20px 15px;
 
 $progress-bar-bg: #F2F3F4;
 $progress-bar-padding: 5px;
-$progress-bar-font-size: 15px;
+$progress-bar-font-size: 14px;
 $progress-bar-font-weight: 800;
-$progress-bar-height: $line-height-computed + 2 * $progress-bar-padding;
+$progress-bar-height: auto;
+$progress-bar-min-height: 20px;
 
 $thumbnail-border: transparent;
 
@@ -131,6 +132,7 @@ $sidebar-nav-item-color: $text-color;
 $sidebar-nav-item-bg-active: transparent;
 $sidebar-nav-item-color-active: $brand-primary;
 $sidebar-nav-item-border-color-active: $color-secondary-lightest;
+$sidebar-toggle-border-radius: 0px;
 
 $media-list-divided-border-color: $list-divided-border-color;
 

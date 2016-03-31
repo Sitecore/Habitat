@@ -3,6 +3,12 @@
 
 .jumbotron {
 
+  background-color: transparent;
+
+  & > .container {
+    max-width: 1170px;
+  }
+
   .container & {
     border-radius: $jumbotron-border-radius;
   }
@@ -22,7 +28,7 @@
       font-size: 12px;
     }
     &.lead {
-      font-size: 20px;
+      font-size: 18px;
       @media (max-width: $screen-sm-max) {
         font-size: 14px;
       }

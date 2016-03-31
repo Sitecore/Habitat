@@ -9,11 +9,17 @@
   }
 
   .tagline {
+
+    display: block;
+    @media (max-width: $screen-xs-max) {
+      display: none;
+    }
+
     .navbar-center .navbar-brand & {
       text-align: center;
     }
 
-    .bg-primary &, .bg-transparent & {
+    .bg-primary &, .bg-secondary &, .bg-transparent & {
       color: #FFF;
     }
   }
@@ -21,6 +27,15 @@
   img, svg {
     height: 35px;
     width: 150px;
+    margin-top: 0px;
+
+    .has-tagline & {
+      margin-top: 0px;
+
+      @media (max-width: $screen-xs-max) {
+        margin-top: 5px;
+      }
+    }
 
     @media all and (max-width: $screen-sm-max) {
       height: 25px;
@@ -30,7 +45,6 @@
     @media all and (max-width: $screen-xs-max) {
 
     }
-
 
     * {
       fill: #FFF !important;

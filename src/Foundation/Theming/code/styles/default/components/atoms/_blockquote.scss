@@ -36,6 +36,16 @@ blockquote, .blockquote {
       text-transform: uppercase;
       font-weight: bold;
       color: $color-secondary;
+
+      .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+        color: #FFF;
+        background-color: transparent !important;
+      }
+
+      .bg-white & {
+        color: #000;
+      }
+
       &:last-child {
         margin-bottom: 10px;
       }
@@ -60,7 +70,7 @@ blockquote, .blockquote {
     color: lighten($text-color, 30%);
     font-style: italic;
 
-    .bg-primary &, .bg-dark &, .bg-media & {
+    .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
       color: #FFF;
     }
 

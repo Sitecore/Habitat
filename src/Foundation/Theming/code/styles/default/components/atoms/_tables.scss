@@ -10,16 +10,19 @@ table, .table {
     }
   }
 
-  .bg-primary &, .bg-dark &, .bg-media & {
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
     color: #FFF;
+    .active, .success, .warning, .danger, .info {
+      color: $text-color;
+    }
   }
 
   &.table-striped {
     tbody {
       tr {
         &:nth-of-type(odd) {
-          .bg-primary &, .bg-dark &, .bg-media & {
-            color: $gray;
+          .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+            color: $text-color;
           }
         }
       }
@@ -31,8 +34,8 @@ table, .table {
       &:nth-child(even) {
         background-color: #f9f9f9;
 
-        .bg-primary &, .bg-dark &, .bg-media & {
-          color: $gray;
+        .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+          color: $text-color;
         }
       }
     }

@@ -10,6 +10,7 @@
   border: none;
   padding: 0;
   border-radius: 0;
+  background-color: transparent;
   &.bg-primary, &.bg-dark, &.bg-media {
     .caption {
       color: #FFF;
@@ -21,9 +22,9 @@
     }
   }
 
-  .bg-primary &, .bg-dark &, .bg-media & {
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
     .caption {
-      padding: 10px;
+      color: #FFF;
     }
   }
 
@@ -71,12 +72,12 @@
 
   .btn {
     &.btn-primary {
-      .bg-primary &, .bg-dark &, .bg-media & {
+      .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
         color: #FFF;
         border: none;
       }
     }
-    .bg-primary &, .bg-dark &, .bg-media & {
+    .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
       color: $text-color;
       border-color: $text-color;
       &:hover {

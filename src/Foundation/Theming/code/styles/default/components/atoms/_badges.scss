@@ -15,7 +15,7 @@
     left: 4px;
   }
 
-  .bg-primary &, .bg-dark &, .bg-primary &.bg-primary {
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-primary &, .bg-secondary &.bg-primary {
     background-color: rgba(0,0,0,.4) !important;
   }
 }

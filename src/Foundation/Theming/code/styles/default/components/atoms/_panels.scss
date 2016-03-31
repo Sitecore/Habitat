@@ -23,14 +23,15 @@
     &[role="tab"] {
       .panel-title {
         transition: all 0s ease;
-        a {
+        a, a:active, a:focus {
           transition: all 0s ease;
+          text-decoration: none;
           span {
             transition: all 0s ease;
           }
         }
       }
-      &:hover {
+      &:hover, &:focus, &:active {
         background-color: $color-secondary-dark;
         color: #FFF;
         .bg-dark & {
@@ -87,14 +88,23 @@
     box-shadow: none;
     border: none;
     .panel-heading, .panel-body, .panel-footer {
-      padding: 20px 0;
+      //padding: 20px 0;
+      padding-left: 0;
       background-color: transparent;
-      color: #FFF;
+      color: $text-color;
       border-top: none !important;
-      border-bottom: 1px solid $color-secondary-lighter;
+      border-bottom: 1px solid currentColor;
+
+      .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+        color: #FFF;
+      }
+
+      .bg-white & {
+        color: #000;
+      }
     }
     .panel-heading {
-      padding: 0;
+      //padding: 0;
 
       .panel-title {
         position: relative;
@@ -137,7 +147,7 @@
       }
     }
     .panel-body {
-      opacity: 0.4;
+      color: lighten($text-color, 20%);
     }
   }
 

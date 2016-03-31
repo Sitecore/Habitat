@@ -31,6 +31,9 @@
       font-size: 14px;
     }
   }
+  .bg-primary &-primary, .bg-secondary &-primary {
+    background-color: rgba(0,0,0,.4) !important;
+  }
 }
 
 [class^="label-"],

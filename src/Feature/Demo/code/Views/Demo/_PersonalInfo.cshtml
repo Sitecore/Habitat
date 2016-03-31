@@ -4,16 +4,16 @@
 @using Sitecore.StringExtensions
 @model Sitecore.Feature.Demo.Models.PersonalInfo
 <div class="panel panel-primary">
-  <div class="panel-heading">
+  <div class="panel-heading" role="tab">
     <h3 class="panel-title">
-      <a href="#personalInfoPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
+      <a role="button" href="#personalInfoPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
         <span class="fa fa-user"></span>
         @DictionaryRepository.Get("/Demo/PersonalInfo/Title", "Personal Information")
         <span class="glyphicon glyphicon-chevron-down pull-right"></span>
       </a>
     </h3>
   </div>
-  <div id="personalInfoPanel" class="panel-collapse collapse">
+  <div id="personalInfoPanel" class="panel-collapse collapse" role="tabpanel">
     <div class="panel-body">
       <div class="media">
         <div class="media-left">
