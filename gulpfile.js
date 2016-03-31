@@ -21,7 +21,7 @@ gulp.task("default", function (callback) {
     "01-Copy-Sitecore-Lib",
     "02-Nuget-Restore",
     "03-Publish-All-Projects",
-    "04-Apply-Xml-Transform", 
+    "04-Apply-Xml-Transform",
     "05-Sync-Unicorn", 
 	callback);
 });
@@ -49,7 +49,7 @@ gulp.task("03-Publish-All-Projects", function (callback) {
 });
 
 gulp.task("04-Apply-Xml-Transform", function () {
-  return gulp.src("./src/Project/**/code/*.csproj")
+  return gulp.src("./src/**/code/*.csproj")
     .pipe(foreach(function (stream, file) {
       return stream
         .pipe(debug({ title: "Applying transform project:" }))
@@ -61,7 +61,7 @@ gulp.task("04-Apply-Xml-Transform", function () {
           maxcpucount: 0,
           toolsVersion: 14.0,
           properties: {
-            WebConfigToTransform: config.websiteRoot + "\\web.config"
+            WebConfigToTransform: config.websiteRoot
           }
         }));
     }));
