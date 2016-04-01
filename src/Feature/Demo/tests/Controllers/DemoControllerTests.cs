@@ -1,6 +1,7 @@
 ﻿namespace Sitecore.Feature.Demo.Tests.Controllers
 {
   using System.Collections.Generic;
+  using System.Net;
   using System.Web.Mvc;
   using FluentAssertions;
   using NSubstitute;
@@ -81,7 +82,7 @@
       //arrange
       var controller = new DemoController(contact, profile);
       controller.ControllerContext = ctx;
-      controller.EndVisit().As<RedirectResult>().Url.Should().Be("/");
+      controller.EndVisit().As<HttpStatusCodeResult>().StatusCode.Should().Be((int)HttpStatusCode.OK);
     }
 
     [Theory]

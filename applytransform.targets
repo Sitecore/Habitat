@@ -1,0 +1,12 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="ApplyTransform">
+    <ItemGroup>
+      <Transforms Include="**\*.transform" Exclude="obj\**">
+      </Transforms>
+      <ConfigsToTransform Include="@(Transforms-&gt;Replace('.transform',''))">
+        <TransformPath>%(Transforms.Identity)</TransformPath>
+      </ConfigsToTransform>
+    </ItemGroup>
+    <TransformXml Source="$(WebConfigToTransform)\%(ConfigsToTransform.Identity)" Transform="%(ConfigsToTransform.TransformPath)" Destination="$(WebConfigToTransform)\%(ConfigsToTransform.Identity)"  Condition="Exists(%(ConfigsToTransform.TransformPath))"/>
+  </Target>
+</Project>

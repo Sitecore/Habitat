@@ -1,0 +1,8 @@
+----role----
+name: modules\Feature Multisite Admin
+
+----role-in-role----
+rolename: habitat\Project Habitat Modules Admin
+
+----parent-roles----
+rolename: modules\Foundation Multisite Admin
