@@ -107,7 +107,7 @@ var publishProjects = function (location, dest) {
   dest = dest || config.websiteRoot;
   var targets = ["Build"];
   if (config.runCleanBuilds) {
-	targets = ["Clean", "Build"]
+    targets = ["Clean", "Build"];
   }
   console.log("publish to " + dest + " folder");
   return gulp.src([location + "/**/code/*.csproj"])
@@ -117,10 +117,11 @@ var publishProjects = function (location, dest) {
         .pipe(msbuild({
           targets: targets,
           configuration: config.buildConfiguration,
-          logCommand: false,
+          logCommand: false, //Enable to debug
           verbosity: "minimal",
           maxcpucount: 0,
           toolsVersion: 14.0,
+          //stdout: true,  //Enable to debug
           properties: {
             DeployOnBuild: "true",
             DeployDefaultTarget: "WebPublish",
