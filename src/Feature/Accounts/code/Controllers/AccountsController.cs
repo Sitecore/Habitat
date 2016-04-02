@@ -14,7 +14,9 @@ namespace Sitecore.Feature.Accounts.Controllers
   using Sitecore.Feature.Accounts.Repositories;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Texts;
+  using Sitecore.Foundation.SitecoreExtensions.Attributes;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Services;
 
   public class AccountsController : Controller
   {
@@ -24,7 +26,7 @@ namespace Sitecore.Feature.Accounts.Controllers
     private readonly IUserProfileService userProfileService;
     private readonly IContactProfileService contactProfileService;
 
-    public AccountsController() : this(new AccountRepository(new AccountTrackerService(new AccountsSettingsService())), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService(), new ContactProfileService())
+    public AccountsController() : this(new AccountRepository(new AccountTrackerService(new AccountsSettingsService(), new TrackerService())), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService(), new ContactProfileService())
     {
     }
 
@@ -37,7 +39,6 @@ namespace Sitecore.Feature.Accounts.Controllers
       this.contactProfileService = contactProfileService;
     }
 
-    [HttpGet]
     [AccountsRedirectAuthenticated]
     public ActionResult Register()
     {
@@ -47,6 +48,7 @@ namespace Sitecore.Feature.Accounts.Controllers
     [HttpPost]
     [ValidateModel]
     [AccountsRedirectAuthenticated]
+    [ValidateRenderingId]
     public ActionResult Register(RegistrationInfo registrationInfo)
     {
       if (this.accountRepository.Exists(registrationInfo.Email))
@@ -76,7 +78,6 @@ namespace Sitecore.Feature.Accounts.Controllers
       }
     }
 
-    [HttpGet]
     [AccountsRedirectAuthenticated]
     public ActionResult Login()
     {
@@ -85,6 +86,8 @@ namespace Sitecore.Feature.Accounts.Controllers
 
     [HttpPost]
     [ValidateModel]
+    [ValidateRenderingId]
+
     public ActionResult Login(LoginInfo loginInfo)
     {
       return this.Login(loginInfo, redirectUrl => new RedirectResult(redirectUrl));
@@ -111,7 +114,7 @@ namespace Sitecore.Feature.Accounts.Controllers
 
     [HttpPost]
     [ValidateModel]
-    public ActionResult LoginDialog(LoginInfo loginInfo)
+    public ActionResult _Login(LoginInfo loginInfo)
     {
       return this.Login(loginInfo, redirectUrl => this.Json(new LoginResult
       {
@@ -127,7 +130,6 @@ namespace Sitecore.Feature.Accounts.Controllers
       return this.Redirect(Context.Site.GetRootItem().Url());
     }
 
-    [HttpGet]
     [AccountsRedirectAuthenticated]
     public ActionResult ForgotPassword()
     {
@@ -161,7 +163,6 @@ namespace Sitecore.Feature.Accounts.Controllers
       }
     }
 
-    [HttpGet]
     [RedirectUnauthenticated]
     public ActionResult EditProfile()
     {

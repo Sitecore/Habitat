@@ -1,5 +1,7 @@
 ﻿@using Sitecore.Foundation.Assets
 @using Sitecore.Foundation.Assets.Models
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Habitat.Website
 @using Sitecore.Mvc.Analytics.Extensions
 @inherits WebViewPage
 @{
@@ -8,59 +10,63 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]-->
 <!--[if !IE]><!-->
-<html lang="en">
+<html lang="@Sitecore.Context.Language.CultureInfo.TwoLetterISOLanguageName">
 <!--<![endif]-->
 <head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	@if (!Sitecore.Context.PageMode.IsPageEditor)
-	{
-	@Html.Sitecore().Placeholder("head")
-	}
-	<!-- Latest compiled and minified JavaScript -->
-	@RenderAssetsService.Current.RenderScript(ScriptLocation.Head)
-	@RenderAssetsService.Current.RenderStyles()
-	@Html.Sitecore().VisitorIdentification()
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  @if (!Sitecore.Context.PageMode.IsExperienceEditor)
+  {
+    @Html.Sitecore().Placeholder("head")
+  }
+  <!-- Latest compiled and minified JavaScript -->
+  @RenderAssetsService.Current.RenderScript(ScriptLocation.Head)
+  @RenderAssetsService.Current.RenderStyles()
+  @Html.Sitecore().VisitorIdentification()
 </head>
-<body class="@(Sitecore.Context.PageMode.IsNormal ? "" : (Sitecore.Context.PageMode.IsPageEditor ? "pagemode-edit" : "pagemode-preview"))">
-	<header>
-		<div class="topbar">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="pull-left">@Html.Sitecore().Placeholder("topbarleft")</div>
-						<div class="pull-right">@Html.Sitecore().Placeholder("topbarright")</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="mainnavbar">
-			<div class="container-fluid">
-				@Html.Sitecore().Placeholder("navbar")
-			</div>
-		</div>
-	</header>
-	<div class="page-layout">
-		@Html.Sitecore().Placeholder("page-layout")
-	</div>
-	<footer>
-		@Html.Sitecore().Placeholder("footer")
-	</footer>
+<body class="header-static @(Sitecore.Context.PageMode.IsNormal ? "" : (Sitecore.Context.PageMode.IsExperienceEditor ? "pagemode-edit" : "pagemode-preview"))">
+  <div id="main-container">
+    <header class="header-static">
+      @Html.Sitecore().Placeholder("header-top")
 
-	@if (!Sitecore.Context.PageMode.IsPageEditor)
-	{
-	<div id="sidebar-wrapper">
-		<a href="#sidebar" class="sidebar-toggle">
-			<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-		</a>
-		<div id="sidebar">
-			@Html.Sitecore().Placeholder("page-sidebar")
-		</div>
-	</div>
-	}
+      @Html.Sitecore().Placeholder("navbar")
+    </header>
+    <main role="main">
+      @Html.Sitecore().Placeholder("page-layout")
+    </main>
+    <footer>
+      @Html.Sitecore().Placeholder("footer")
+    </footer>
 
-	@RenderAssetsService.Current.RenderScript(ScriptLocation.Body)
+    @if (Sitecore.Context.Site.NoOverlay())
+    {
+      <div class="off-canvas-sidebar off-canvas-sidebar-right">
+        <div class="btn-group-vertical hover" role="group">
+          <button type="button" class="btn btn-info sidebar-closed" data-toggle="sidebar" title="@Captions.OpenVisitDetailsPanel" data-side="right">
+            <span class="glyphicon glyphicon-info-sign icon-md "></span>
+          </button>
+          <button type="button" class="btn btn-info btn-lg sidebar-opened" style="display: none" data-toggle="sidebar" title="@Captions.CloseVisitDetailsPanel" data-side="right">
+            <span class="glyphicon glyphicon-remove"></span>
+            <span class="hover-only">Close</span>
+          </button>
+          <button href="#" onclick="jQuery('head').trigger('visit-info:refresh')" style="display: none" class="btn btn-success sidebar-opened" title="@Captions.RefreshVisitDetailsPanel">
+            <span class="glyphicon glyphicon-refresh"></span>
+            <span class="hover-only">Refresh</span>
+          </button>
+          <button href="#" onclick="jQuery('head').trigger('visit-info:endVisit')" class="btn btn-danger sidebar-opened" style="display: none" title="@Captions.EndVisit">
+            <span class="glyphicon glyphicon-eye-close"></span>
+            <span class="hover-only">End Visit</span>
+          </button>
+        </div>
+
+        <div class="sidebar sidebar-fixed-right">
+          @Html.Sitecore().Placeholder("page-sidebar")
+        </div>
+      </div>
+    }
+  </div>
+  @RenderAssetsService.Current.RenderScript(ScriptLocation.Body)
 </body>
 </html>

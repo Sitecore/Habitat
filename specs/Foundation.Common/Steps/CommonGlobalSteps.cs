@@ -34,7 +34,7 @@
 
     public void EditItem(string idOrPath, string fieldName, string fieldValue, string db = "Master")
     {
-      ContextExtensions.UtfService.EditItem(idOrPath, fieldName, fieldValue, Settings.UserName, Settings.Password, (Database)Enum.Parse(typeof(Database), db));
+      ContextExtensions.UtfService.EditItem(idOrPath, fieldName, fieldValue, BaseSettings.UserName, BaseSettings.Password, (Database)Enum.Parse(typeof(Database), db));
     }
 
     private static void CleanupExecute(TestCleanupAction payload)
@@ -47,7 +47,7 @@
       if (payload.ActionType == ActionType.CleanFieldValue)
       {
         var fieldPayload = payload.GetPayload<EditFieldPayload>();
-        ContextExtensions.UtfService.EditItem(fieldPayload.ItemIdOrPath, fieldPayload.FieldName, fieldPayload.FieldValue, Settings.UserName, Settings.Password, fieldPayload.Database);
+        ContextExtensions.UtfService.EditItem(fieldPayload.ItemIdOrPath, fieldPayload.FieldName, fieldPayload.FieldValue, BaseSettings.UserName, BaseSettings.Password, fieldPayload.Database);
         return;
       }
 
@@ -63,11 +63,11 @@
         EditItem(field.ItemPath, field.FieldName, field.FieldValue);
       }
     }
-
+    [Given(@"Actor Ends user visit")]
     [When(@"Actor Ends user visit")]
     public void WhenActorEndsUserVisit()
     {
-      FeatureContext.Current.Get<IWebDriver>().Navigate().GoToUrl(Settings.EndVisitUrl);
+      FeatureContext.Current.Get<IWebDriver>().Navigate().GoToUrl(BaseSettings.EndVisitUrl);
     }
 
 

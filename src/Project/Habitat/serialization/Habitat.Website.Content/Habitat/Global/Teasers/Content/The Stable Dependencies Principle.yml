@@ -15,7 +15,7 @@ Languages:
     Fields:
     - ID: 13d97a52-7c4e-407c-960d-fadde8a3c1b1
       Hint: TeaserSummary
-      Value: The dependencies between packages should be in the direction of the stability of the packages. A package should only depend upon packages that are more stable than it is.&nbsp;
+      Value: The dependencies between packages should be in the direction of the stability of the packages. A package should only depend upon packages that are more stable than it is. 
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20151210T020019Z

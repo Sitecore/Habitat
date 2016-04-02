@@ -1,0 +1,14 @@
+﻿<Project>
+  <PropertyGroup>
+    <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
+  </PropertyGroup>
+  <File Include="Views\Identity\ContactInformation.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{CA748838-E6D5-4BAD-9126-CAD10DD1B0DB}</Item>
+  </File>
+  <File Include="Views\Identity\Copyright.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{7DAE9F23-890F-4E06-99A7-CCEDB74D3D8E}</Item>
+  </File>
+  <File Include="Views\Identity\Logo.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+    <Item DatabaseName="master">{A47C8288-7D4C-45FF-B75F-4AEDBF58A02D}</Item>
+  </File>
+</Project>

@@ -97,3 +97,34 @@ Scenario: Person_Employee List_UC8_Custom search query_New language of the item 
 	| JOHN HOWARD |
 	| JOHN DOE    |
 
+
+@NeedImplementation
+Scenario: Person_Employee List_UC9_Default search query with custom Search Result Limit		
+	Given Control properties were defined for item
+	| Item path                                                            | Control ID                             | Data Source |
+	| /sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List | {DC19892A-B345-4EFE-AAA2-6E27A801A733} | text:CEO    |
+	And Control properties were defined for item
+	| Item path                                                            | Control ID                             | SearchResultLimit |
+	| /sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List | {DC19892A-B345-4EFE-AAA2-6E27A801A733} | 1                 |
+	And Habitat website is opened on Main Page
+	When Actor goes to Employees-List page	
+	Then Following persons are shown
+	| Person   |
+	| JOHN DOE |
+	
+
+@NeedImplementation
+Scenario: Person_Employee List_UC10_Default search query with null Search Result Limit		
+	Given Control properties were defined for item
+	| Item path                                                            | Control ID                             | Data Source |
+	| /sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List | {DC19892A-B345-4EFE-AAA2-6E27A801A733} | text:CEO    |
+	And Control properties were defined for item
+	| Item path                                                            | Control ID                             | SearchResultLimit |
+	| /sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List | {DC19892A-B345-4EFE-AAA2-6E27A801A733} | @empty            |
+	And Habitat website is opened on Main Page
+	When Actor goes to Employees-List page	
+	Then Following persons are shown
+	| Person      |
+	| JOHN HOWARD |
+	| JOHN DOE    |	 
+

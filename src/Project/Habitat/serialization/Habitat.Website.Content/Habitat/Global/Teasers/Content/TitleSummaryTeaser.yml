@@ -15,7 +15,7 @@ Languages:
     Fields:
     - ID: 13d97a52-7c4e-407c-960d-fadde8a3c1b1
       Hint: TeaserSummary
-      Value: The dependency structure between packages must not contain cyclic dependencies.&nbsp;
+      Value: The dependency structure between packages must not contain cyclic dependencies. 
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20151210T015837Z

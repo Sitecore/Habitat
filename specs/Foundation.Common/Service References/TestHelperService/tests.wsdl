@@ -17,6 +17,121 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetUserProperties">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserPropertiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserPropertiesResult" type="tns:ArrayOfSerializableKeyValuePairOfStringString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSerializableKeyValuePairOfStringString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SerializableKeyValuePairOfStringString" nillable="true" type="tns:SerializableKeyValuePairOfStringString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SerializableKeyValuePairOfStringString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContactTags">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tagName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactTagsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactTagsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContactSystemInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactSystemInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactSystemInfoResult" type="tns:SystemInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SystemInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="VisitCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Value" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContactPersonalInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identifier" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactPersonalInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactPersonalInfoResult" type="tns:PersonalInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PersonalInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Surname" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContactEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactEmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactPhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="identifier" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactPhoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactPhoneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="DeleteUser">
         <s:complexType>
           <s:sequence>
@@ -43,6 +158,64 @@
       <s:element name="IndexMasterDatabasesResponse">
         <s:complexType />
       </s:element>
+      <s:element name="UploadMediaItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itemPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileContent" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadMediaItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadMediaItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttachToMediaItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itemPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileContent" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttachToMediaItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AttachToMediaItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RenameItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itemPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RenameItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RenameItemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSiteHostName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="siteName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="hostName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetSiteHostNameResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="CreateUserSoapIn">
@@ -50,6 +223,42 @@
   </wsdl:message>
   <wsdl:message name="CreateUserSoapOut">
     <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPropertiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserProperties" />
+  </wsdl:message>
+  <wsdl:message name="GetUserPropertiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactTagsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactTags" />
+  </wsdl:message>
+  <wsdl:message name="GetContactTagsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactTagsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactSystemInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactSystemInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetContactSystemInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactSystemInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactPersonalInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactPersonalInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetContactPersonalInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactPersonalInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactEmail" />
+  </wsdl:message>
+  <wsdl:message name="GetContactEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactPhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactPhone" />
+  </wsdl:message>
+  <wsdl:message name="GetContactPhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactPhoneResponse" />
   </wsdl:message>
   <wsdl:message name="DeleteUserSoapIn">
     <wsdl:part name="parameters" element="tns:DeleteUser" />
@@ -69,10 +278,58 @@
   <wsdl:message name="IndexMasterDatabasesSoapOut">
     <wsdl:part name="parameters" element="tns:IndexMasterDatabasesResponse" />
   </wsdl:message>
+  <wsdl:message name="UploadMediaItemSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadMediaItem" />
+  </wsdl:message>
+  <wsdl:message name="UploadMediaItemSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadMediaItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="AttachToMediaItemSoapIn">
+    <wsdl:part name="parameters" element="tns:AttachToMediaItem" />
+  </wsdl:message>
+  <wsdl:message name="AttachToMediaItemSoapOut">
+    <wsdl:part name="parameters" element="tns:AttachToMediaItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="RenameItemSoapIn">
+    <wsdl:part name="parameters" element="tns:RenameItem" />
+  </wsdl:message>
+  <wsdl:message name="RenameItemSoapOut">
+    <wsdl:part name="parameters" element="tns:RenameItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetSiteHostNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SetSiteHostName" />
+  </wsdl:message>
+  <wsdl:message name="SetSiteHostNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SetSiteHostNameResponse" />
+  </wsdl:message>
   <wsdl:portType name="AutoTestsHelperServiceSoap">
     <wsdl:operation name="CreateUser">
       <wsdl:input message="tns:CreateUserSoapIn" />
       <wsdl:output message="tns:CreateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProperties">
+      <wsdl:input message="tns:GetUserPropertiesSoapIn" />
+      <wsdl:output message="tns:GetUserPropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactTags">
+      <wsdl:input message="tns:GetContactTagsSoapIn" />
+      <wsdl:output message="tns:GetContactTagsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactSystemInfo">
+      <wsdl:input message="tns:GetContactSystemInfoSoapIn" />
+      <wsdl:output message="tns:GetContactSystemInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPersonalInfo">
+      <wsdl:input message="tns:GetContactPersonalInfoSoapIn" />
+      <wsdl:output message="tns:GetContactPersonalInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactEmail">
+      <wsdl:input message="tns:GetContactEmailSoapIn" />
+      <wsdl:output message="tns:GetContactEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPhone">
+      <wsdl:input message="tns:GetContactPhoneSoapIn" />
+      <wsdl:output message="tns:GetContactPhoneSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="DeleteUser">
       <wsdl:input message="tns:DeleteUserSoapIn" />
@@ -88,11 +345,85 @@
       <wsdl:input message="tns:IndexMasterDatabasesSoapIn" />
       <wsdl:output message="tns:IndexMasterDatabasesSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="UploadMediaItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create new media item</wsdl:documentation>
+      <wsdl:input message="tns:UploadMediaItemSoapIn" />
+      <wsdl:output message="tns:UploadMediaItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AttachToMediaItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Attach file content to media item</wsdl:documentation>
+      <wsdl:input message="tns:AttachToMediaItemSoapIn" />
+      <wsdl:output message="tns:AttachToMediaItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RenameItem">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rename item</wsdl:documentation>
+      <wsdl:input message="tns:RenameItemSoapIn" />
+      <wsdl:output message="tns:RenameItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetSiteHostName">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Configure host name for habitat site item</wsdl:documentation>
+      <wsdl:input message="tns:SetSiteHostNameSoapIn" />
+      <wsdl:output message="tns:SetSiteHostNameSoapOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="AutoTestsHelperServiceSoap" type="tns:AutoTestsHelperServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="CreateUser">
       <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProperties">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetUserProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactTags">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactTags" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactSystemInfo">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactSystemInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPersonalInfo">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactPersonalInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactEmail">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPhone">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactPhone" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -127,11 +458,101 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="UploadMediaItem">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/UploadMediaItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttachToMediaItem">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/AttachToMediaItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenameItem">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/RenameItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSiteHostName">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/SetSiteHostName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="AutoTestsHelperServiceSoap12" type="tns:AutoTestsHelperServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="CreateUser">
       <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserProperties">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetUserProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactTags">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactTags" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactSystemInfo">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactSystemInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPersonalInfo">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactPersonalInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactEmail">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactPhone">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetContactPhone" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -159,6 +580,42 @@
     </wsdl:operation>
     <wsdl:operation name="IndexMasterDatabases">
       <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/IndexMasterDatabases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadMediaItem">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/UploadMediaItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttachToMediaItem">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/AttachToMediaItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenameItem">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/RenameItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetSiteHostName">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/SetSiteHostName" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
