@@ -1,0 +1,24 @@
+﻿@using Sitecore.Feature.Media
+@using Sitecore.Feature.Media.Infrastructure
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@if (!Model?.Item?.IsDerived(Templates.HasParallaxBackground.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasParallaxBackground.ID))
+  return;
+}
+
+@if (Model.Item == null || !Model.Item.IsDerived(Templates.HasParallaxBackground.ID))
+{
+  @Html.Sitecore().PageEditorError(DictionaryRepository.Get("/Media/Parallax/Invalid parallax source", "Parallax source is invalid"))
+}
+else
+{
+  <div class="parallax" @Model.Item.RenderParallaxMediaAttributes()>
+      @Html.Sitecore().DynamicPlaceholder("parallax-content")
+  </div>
+}

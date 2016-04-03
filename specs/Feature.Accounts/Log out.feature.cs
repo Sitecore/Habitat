@@ -87,53 +87,33 @@ this.ScenarioSetup(scenarioInfo);
                         "Password",
                         "ConfirmPassword"});
             table1.AddRow(new string[] {
-                        "kovLogout1@sitecore.net",
+                        "kov10@sitecore.net",
                         "k",
                         "k"});
 #line 6
  testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table1, "Given ");
 #line 9
- testRunner.When("Actor selects User icon on Navigation bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.And("Actor clicks Logout button on User form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Log out on User Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("Actor selects User icon on Navigation bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 12
  testRunner.Then("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Button name"});
             table2.AddRow(new string[] {
                         "Logout"});
-#line 13
- testRunner.And("Following buttons is no longer present under User icon", ((string)(null)), table2, "And ");
+#line 12
+ testRunner.And("Following buttons is no longer present under User drop-drop down menu", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Link name"});
+                        "Button name"});
             table3.AddRow(new string[] {
-                        "Edit details"});
-#line 16
- testRunner.And("Following links is no longer present under User popup", ((string)(null)), table3, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field name"});
-            table4.AddRow(new string[] {
-                        "Email"});
-            table4.AddRow(new string[] {
-                        "Password"});
-#line 19
- testRunner.And("Following fields present on User form", ((string)(null)), table4, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Login Form Buttons"});
-            table5.AddRow(new string[] {
                         "Login"});
-            table5.AddRow(new string[] {
-                        "Forgot your password?"});
-            table5.AddRow(new string[] {
+            table3.AddRow(new string[] {
                         "Register"});
-#line 23
- testRunner.And("Following buttons present under User icon", ((string)(null)), table5, "And ");
+#line 15
+ testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table3, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -146,63 +126,43 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Log out_UC2_Session expired", new string[] {
                         "NeedImplementation"});
-#line 31
+#line 21
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table6.AddRow(new string[] {
-                        "kovLogout2@sitecore.net",
+            table4.AddRow(new string[] {
+                        "kov10@sitecore.net",
                         "k",
                         "k"});
-#line 32
- testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table6, "Given ");
-#line 35
+#line 22
+ testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table4, "Given ");
+#line 25
  testRunner.And("Session was expired", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 36
- testRunner.When("Actor selects User icon on Navigation bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 37
- testRunner.And("Actor clicks Logout button on User form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 38
- testRunner.And("Actor selects User icon on Navigation bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 39
+#line 26
+ testRunner.When("Actor moves cursor over the User icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
+ testRunner.And("User clicks Log out on User Icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
  testRunner.Then("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Button name"});
-            table7.AddRow(new string[] {
+            table5.AddRow(new string[] {
                         "Logout"});
-#line 40
- testRunner.And("Following buttons is no longer present under User icon", ((string)(null)), table7, "And ");
+#line 29
+ testRunner.And("Following buttons is no longer present under User drop-drop down menu", ((string)(null)), table5, "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Link name"});
-            table8.AddRow(new string[] {
-                        "Edit details"});
-#line 43
- testRunner.And("Following links is no longer present under User popup", ((string)(null)), table8, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Field name"});
-            table9.AddRow(new string[] {
-                        "Email"});
-            table9.AddRow(new string[] {
-                        "Password"});
-#line 46
- testRunner.And("Following fields present on User form", ((string)(null)), table9, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Login Form Buttons"});
-            table10.AddRow(new string[] {
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Button name"});
+            table6.AddRow(new string[] {
                         "Login"});
-            table10.AddRow(new string[] {
-                        "Forgot your password?"});
-            table10.AddRow(new string[] {
+            table6.AddRow(new string[] {
                         "Register"});
-#line 50
- testRunner.And("Following buttons present under User icon", ((string)(null)), table10, "And ");
+#line 32
+ testRunner.And("Following buttons present under User drop-drop down menu", ((string)(null)), table6, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -5,7 +5,7 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.HasPageContent.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasPageContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasPageContent.ID))
   return;
 }
 
@@ -14,4 +14,18 @@
   return;
 }
 
-@Html.Sitecore().Field(Templates.HasPageContent.Fields.Body.ToString())
+<div class="article body">
+  @if (Sitecore.Context.PageMode.IsPageEditor)
+  {
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        Summary
+      </div>
+      <div class="panel-body">
+        @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary.ToString())
+      </div>
+    </div>
+  }
+
+  @Html.Sitecore().Field(Templates.HasPageContent.Fields.Body.ToString())
+</div>

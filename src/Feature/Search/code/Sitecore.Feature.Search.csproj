@@ -139,7 +139,7 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Search\GlobalSearch.cshtml" />
     <Content Include="Views\Search\SearchResults.cshtml" />
-    <Content Include="Views\Search\SearchResultsHeader.cshtml" />
+    <Content Include="Views\Search\SearchSettings.cshtml" />
     <Content Include="Views\Search\PagedSearchResults.cshtml" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">

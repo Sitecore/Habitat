@@ -165,10 +165,9 @@
     }
 
     [Theory, AutoDbData]
-    public void GetPageLinkOrDefaultShouldReturnPageNotFoundUrlIfDefaultIsNull(Item item, ID id, AccountsSettingsService accountSettingsService)
+    public void GetPageLinkOrDefaultShouldThrowIfDefaultIsNull(Item item, ID id, AccountsSettingsService accountSettingsService)
     {
-      var result = accountSettingsService.GetPageLinkOrDefault(item, id, null);
-      result.Should().Be(AccountsSettingsService.PageNotFoundUrl);
+      accountSettingsService.Invoking(x => x.GetPageLinkOrDefault(item, id, null)).ShouldThrow<ArgumentNullException>();
     }
 
     [Theory, AutoDbData]

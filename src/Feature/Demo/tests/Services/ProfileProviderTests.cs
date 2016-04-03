@@ -10,11 +10,9 @@ namespace Sitecore.Feature.Demo.Tests.Services
   using Sitecore.Collections;
   using Sitecore.Data;
   using Sitecore.Data.Items;
-  using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.FakeDb.Sites;
   using Sitecore.Feature.Demo.Services;
-  using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Sites;
   using Xunit;
 
@@ -125,7 +123,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
         using (new SiteContextSwitcher(fakeSiteContext))
         {
           var provider = new ProfileProvider();
-          provider.HasMatchingPattern(new ProfileItem(profileItem), ProfilingTypes.Active).Should().BeFalse();
+          provider.HasMatchingPattern(new ProfileItem(profileItem)).Should().BeFalse();
         }
       }
     }
@@ -151,7 +149,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
         using (new SiteContextSwitcher(fakeSiteContext))
         {
           var provider = new ProfileProvider();
-          provider.HasMatchingPattern(new ProfileItem(profileItem), ProfilingTypes.Active).Should().BeTrue();
+          provider.HasMatchingPattern(new ProfileItem(profileItem)).Should().BeTrue();
         }
       }
     }
@@ -176,7 +174,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
         using (new SiteContextSwitcher(fakeSiteContext))
         {
           var provider = new ProfileProvider();
-          provider.HasMatchingPattern(new ProfileItem(profileItem), ProfilingTypes.Active).Should().BeFalse();
+          provider.HasMatchingPattern(new ProfileItem(profileItem)).Should().BeFalse();
         }
       }
     }
@@ -201,70 +199,9 @@ namespace Sitecore.Feature.Demo.Tests.Services
         using (new SiteContextSwitcher(fakeSiteContext))
         {
           var provider = new ProfileProvider();
-          provider.HasMatchingPattern(new ProfileItem(profileItem), ProfilingTypes.Active).Should().BeFalse();
+          provider.HasMatchingPattern(new ProfileItem(profileItem)).Should().BeFalse();
         }
       }
-    }
-
-    [Theory]
-    [AutoProfileDbData]
-    public void HasMatchingPattern_HistoricProfileProfileNotExitsts_ReturnFalse([Content] Item profileItem, Contact contact, ITracker tracker, Profile profile)
-    {
-      //Arrange
-      tracker.Contact.Returns(contact);
-      contact.BehaviorProfiles[Arg.Is(profileItem.ID)].Returns(x => null);
-
-      var fakeSiteContext = new FakeSiteContext("fake")
-      {
-        Database = Database.GetDatabase("master")
-      };
-      //Act
-      using (new TrackerSwitcher(tracker))
-      {
-        using (new SiteContextSwitcher(fakeSiteContext))
-        {
-          var provider = new ProfileProvider();
-          var result = provider.HasMatchingPattern(new ProfileItem(profileItem), ProfilingTypes.Historic);
-          //Assert 
-          result.Should().BeFalse();
-        }
-      }
-    }
-
-    [Theory]
-    [AutoProfileDbData]
-    public void HasMatchingPattern_HistoricProfileAndItemExists_ShouldReturnTrue([Content] Item profileItem, Contact contact, ITracker tracker, Profile profile)
-    {
-      //Arrange
-      tracker.Contact.Returns(contact);
-      var behaviorPattern = Substitute.For<IBehaviorProfileContext>();
-      behaviorPattern.PatternId.Returns(profileItem.ID);
-      contact.BehaviorProfiles[Arg.Is(profileItem.ID)].Returns(behaviorPattern);
-
-      var pattern = profileItem.Add("fakePattern", new TemplateID(PatternCardItem.TemplateID));
-      profile.PatternId = pattern.ID.Guid;
-      var fakeSiteContext = new FakeSiteContext("fake")
-      {
-        Database = Database.GetDatabase("master")
-      };
-
-
-      using (new TrackerSwitcher(tracker))
-      {
-        using (new SiteContextSwitcher(fakeSiteContext))
-        {
-          var provider = new ProfileProvider();
-          provider.HasMatchingPattern(new ProfileItem(profileItem), ProfilingTypes.Historic).Should().BeTrue();
-        }
-      }
-    }
-
-    [Theory]
-    [AutoDbData]
-    public void GetPatternsWithGravityShare_NullProfile_ThrowArgumentNullException(ProfilingTypes profilingTypes, ProfileProvider profileProvider)
-    {
-      //Act
-      profileProvider.Invoking(x => x.GetPatternsWithGravityShare(null, profilingTypes)).ShouldThrow<ArgumentNullException>();
     }
   }
 }

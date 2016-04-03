@@ -1,186 +1,153 @@
 ﻿Feature: Edit user profile
 	
 
-@Ready
+@NeedImplementation
 Scenario: Account_Edit user profile_UC1_Open Edit Profile page
 	Given User with following data is registered in Habitat
 	| Email              | Password | ConfirmPassword |
 	| kov10@sitecore.net | k        | k               |
-	When Actor selects User icon on Navigation bar
-	And Actor clicks Edit details button on User form
-	Then Update your profile information title presents on page
-	And Page URL ends on /Edit-Profile
+	When Actor moves cursor over the User icon
+	And User clicks Edit Profile from drop-down menu
+	Then EDITPROFILE title presents on page
+	And Page URL ends on /Edit Profile
 
 
 
-@Ready
+@InDesign
 Scenario: Account_Edit user profile_UC2_Update all fields_First time
-	Given User is registered in Habitat and logged out 
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And User was Login to Habitat
-	| Email            | Password |
-	| kov@sitecore.net | k        |
-	And Edit profile page is opened
+	Given User with following data is registered in Habitat
+	| Email              | Password | ConfirmPassword |
+	| kov10@sitecore.net | k        | k               |
+	And Habitat website is opened on Edit Profile page
 	When User inputs data in to the fields
-	| LastName | FirstName  | PhoneNumber     |
-	| Teltov   | Konstantin | +38(067)3333333 |
-	And User selects Swiming from Interests drop-down list
-	And User clicks Update button on Edit User Profile page
-	Then Following User info presents for kov@sitecore.net in User Profile
-	 | LastName | FirstName  | Phone           | Interest |
-	 | Teltov   | Konstantin | +38(067)3333333 | Swiming  |
+	| Last Name | First Name | Phone number    |
+	| Teltov    | Konstantin | +38(067)3333333 |
+	And User selects <Swiming> from Interests drop-down list
+	And User clicks Save button
+	And User opens Sitecore by Admin user
+	And User opens User Manager
+	And User clicks on <kov@sitecore.net> in user names list 
+	And User presses Edit button on the ribbon 
+	And User selects Profile tab on Edit User popup 
+	Then Following User info presents 
+	 | Last Name | First Name | Phone number    | Interests |
+	 | Teltov    | Konstantin | +38(067)3333333 | Swiming   |
 
-@Ready
+@InDesign
 Scenario: Account_Edit user profile_UC3_Update all fields_Change user info
-	Given User is registered in Habitat and logged out 
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And User was Login to Habitat
-	| Email            | Password |
-	| kov@sitecore.net | k        |
-	And User inputs data on User Profile page and clicks Update button
-	| LastName | FirstName  | PhoneNumber     | Interests |
-	| Teltov   | Konstantin | +38(067)3333333 | Swiming   | 
-	When User updates data in to the fields
-	| LastName | FirstName | PhoneNumber     |
-	| Maximov  | Stas      | +38(067)8888888 |
-	And User selects Skiing from Interests drop-down list
-	And User clicks Update button on Edit User Profile page
-	Then Following User info presents for kov@sitecore.net in User Profile
-	 | LastName | FirstName | Phone           | Interest |
-	 | Maximov  | Stas      | +38(067)8888888 | Skiing   |
+	Given Habitat user was created and updated with following info
+	| Last Name | First Name | Phone number    | Interests |
+	| Teltov    | Konstantin | +38(067)3333333 | Swiming   | 
+	And Habitat website is opened on Edit Profile page
+	When User inputs data in to the fields
+	| Last Name | First Name | Phone number    |
+	| Maximov   | Stas       | +38(067)8888888 |
+	And User selects <Skiing> from Interests drop-down list
+	And User clicks Save button
+	And User opens Sitecore by Admin user
+	And User opens User Manager
+	And User clicks on <kov@sitecore.net> in user names list 
+	And User presses Edit button on the ribbon 
+	And User selects Profile tab on Edit User popup 
+	Then Following User info presents 
+	 | Last Name | First Name | Phone number    | Interests |
+	 | Maximov   | Stas       | +38(067)8888888 | Skiing    |
 	
 
-@Ready
+@InDesign
 Scenario: Account_Edit user profile_UC4_Update one of the fields_First time
-	Given User is registered in Habitat and logged out 
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And User was Login to Habitat
-	| Email            | Password |
-	| kov@sitecore.net | k        |
-	And Edit profile page is opened
-	And All User profile fields are empty
-	| FirstName | LastName | PhoneNumber | Interests |
-	| empty     | empty    | empty       | empty     |
+	Given Habitat website is opened on Edit Profile page
 	When User inputs data in to the fields
-	| LastName |
-	| Teltov   |
-	And User clicks Update button on Edit User Profile page 
-	Then Following User info presents for kov@sitecore.net in User Profile
-	 | LastName | FirstName | Phone  | Interest |
-	 | Teltov   | @empty    | @empty | @empty   |
+	| Last Name |
+	| Teltov    | 
+	And User clicks Save button
+	And User opens Sitecore by Admin user
+	And User opens User Manager
+	And User clicks on <kov@sitecore.net> in user names list 
+	And User presses Edit button on the ribbon 
+	And User selects Profile tab on Edit User popup 
+	Then Following User info presents 
+	 | Last Name |
+	 | Teltov    |
+	 And Following user info absents
+	  | First Name | Phone number | Interests |
+	  | empty      | empty        | empty     | 
 
-	  
-	   
 
-
-@Ready
+@InDesign
 Scenario: Account_Edit user profile_UC5_Update one of the fields_Change user info
-	Given User is registered in Habitat and logged out 
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And User was Login to Habitat
-	| Email            | Password |
-	| kov@sitecore.net | k        |
-	And User inputs data on User Profile page and clicks Update button
-	| LastName | FirstName  | PhoneNumber     | Interests |
-	| Teltov   | Konstantin | +38(067)3333333 | Swiming   | 
-	And Edit profile page is opened
+	Given Habitat user was created and updated with following info
+	| Last Name | First Name | Phone number    | Interests |
+	| Teltov    | Konstantin | +38(067)3333333 | Swiming   |  
+	And Habitat website is opened on Edit Profile page
 	When User inputs data in to the fields
-	| LastName |
-	| Maximov  |
-	And User clicks Update button on Edit User Profile page  
-	Then Following User info presents for kov@sitecore.net in User Profile
-	 | LastName | FirstName  | Phone           | Interest |
-	 | Maximov  | Konstantin | +38(067)3333333 | Swiming  |
+	| Last Name |
+	| Maximov   |  
+	And User clicks Save button
+	And User opens Sitecore by Admin user
+	And User opens User Manager
+	And User clicks on <kov@sitecore.net> in user names list 
+	And User presses Edit button on the ribbon 
+	And User selects Profile tab on Edit User popup 
+	Then Following User info presents 
+	| Last Name | First Name | Phone number    | Interests |
+	| Maximov   | Konstantin | +38(067)3333333 | Swiming   |
 
 
-@Ready
+@InDesign
 Scenario: Account_Edit user profile_UC6_Phone validation_Two plus symbols in the begining
-	Given User is registered in Habitat and logged out 
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And User was Login to Habitat
-	| Email            | Password |
-	| kov@sitecore.net | k        |
-	And Edit profile page is opened
+	Given Habitat website is opened on Edit Profile page
 	When User inputs data in to the fields
-	| PhoneNumber    |
+	| Phone number   |
 	| ++380673333333 |
-	And User clicks Update button on Edit User Profile page
+	And User clicks Save button
 	Then System shows following error message for the Edit Profile
 	| Error message                                      |
 	| Phone number should contain only +, ( ) and digits | 
 
-@Ready
-Scenario: Account_Edit user profile_UC7_Phone validation_Brackets without number 
-	Given User is registered in Habitat and logged out 
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And User was Login to Habitat
-	| Email            | Password |
-	| kov@sitecore.net | k        |
-	And Edit profile page is opened
+@InDesign
+Scenario: Account_Edit user profile_UC6_Phone validation_Brackets without number 
+	Given Habitat website is opened on Edit Profile page
 	When User inputs data in to the fields
-	| PhoneNumber     |
+	| Phone number    |
 	| +()380673333333 |
-	And User clicks Update button on Edit User Profile page
+	And User clicks Save button
 	Then System shows following error message for the Edit Profile
 	| Error message                                      |
 	| Phone number should contain only +, ( ) and digits | 
 
 
-@Ready
-Scenario: Account_Edit user profile_UC8_Phone validation_Digits in phone field
-	Given User is registered in Habitat and logged out 
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And User was Login to Habitat
-	| Email            | Password |
-	| kov@sitecore.net | k        |
-	And Edit profile page is opened
+@InDesign
+Scenario: Account_Edit user profile_UC6_Phone validation_Digits in phone field
+	Given Habitat website is opened on Edit Profile page
 	When User inputs data in to the fields
-	| PhoneNumber  |
+	| Phone number |
 	| +38067Kostia |
-	And User clicks Update button on Edit User Profile page
+	And User clicks Save button
 	Then System shows following error message for the Edit Profile
 	| Error message                                      |
 	| Phone number should contain only +, ( ) and digits | 
 
 
-@Ready
-Scenario: Account_Edit user profile_UC9_Phone validation_Phone number lenght should be less than 20
-	Given User is registered in Habitat and logged out 
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And User was Login to Habitat
-	| Email            | Password |
-	| kov@sitecore.net | k        |
-	And Edit profile page is opened
+@InDesign
+Scenario: Account_Edit user profile_UC6_Phone validation_Phone number lenght should be less than 20
+	Given Habitat website is opened on Edit Profile page
 	When User inputs data in to the fields
-	| PhoneNumber           |
+	| Phone number          |
 	| +38067333333333333331 |
-	And User clicks Update button on Edit User Profile page
+	And User clicks Save button
 	Then System shows following error message for the Edit Profile
 	| Error message                              |
 	| Phone number lenght should be less than 20 | 
 
 
-@Ready
-Scenario: Account_Edit user profile_UC10_Empty user profile is saved
-	Given User is registered in Habitat and logged out 
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And User was Login to Habitat
-	| Email            | Password |
-	| kov@sitecore.net | k        |
-	And Edit profile page is opened
-	And All User profile fields are empty
-	| FirstName | LastName | PhoneNumber | Interests |
-	| empty     | empty    | empty       | empty     |
-	And User clicks Update button on Edit User Profile page
-	Then Following User info presents for kov@sitecore.net in User Profile
-	 | LastName | FirstName | Phone  | Interest |
-	 | @empty   | @empty    | @empty | @empty   |
+@InDesign
+Scenario: Account_Edit user profile_UC7_Empty user profile is saved
+	Given Habitat website is opened on Edit Profile page
+	When User clicks Save button
+	And User opens Sitecore by Admin user
+	And User opens User Manager
+	And User clicks on <kov@sitecore.net> in user names list 
+	And User presses Edit button on the ribbon 
+	And User selects Profile tab on Edit User popup 
+	Then No any user profile fields present

@@ -10,13 +10,13 @@
 }
 
 <nav>
-  <ul class="nav nav-service navbar-nav nav-pills">
+  <ul class="nav nav-pills">
     @foreach (var item in Model.Items)
     {
       var liclass = "";
       if (item.Item.Fields[Templates.LinkMenuItem.Fields.DividerBefore].IsChecked())
       {
-        liclass = "divider-left";
+        liclass = "divider";
       }
 	    <li class="@liclass">
 		    <a href="@item.Url" target="@item.Target" title="@item.Item[Templates.Navigable.Fields.NavigationTitle]">

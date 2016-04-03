@@ -50,28 +50,16 @@
   <File Include="Views\Common\Sublayouts\Inner\Inner 2 Column 8-4.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{45CE489D-FA30-473E-9751-142BD06CCB33}</Item>
   </File>
-  <File Include="Views\Common\Sublayouts\PageHeader.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+  <File Include="Views\Common\Sublayouts\PageHeading.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{A2216CA7-B205-4042-A345-72117D0086C3}</Item>
   </File>
-  <File Include="Views\Common\Sublayouts\ArticleAsideLeft.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+  <File Include="Views\Common\Sublayouts\PageSidebarLeft.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{EADA94FA-315F-4DF2-AC49-13346DFDAF12}</Item>
   </File>
-  <File Include="Views\Common\Sublayouts\ArticleAsideRight.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
+  <File Include="Views\Common\Sublayouts\PageSidebarRight.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{CF750731-1275-4CC7-A9E6-809515CB4DD1}</Item>
   </File>
   <File Include="Views\Common\Sublayouts\Navbar.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{E26A158B-FA1E-4E9B-8622-E4458243FF46}</Item>
-  </File>
-  <File Include="Views\Common\Sublayouts\HeaderTop.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{C28B9C5F-8E01-42EC-ADF6-3324FAF92C7D}</Item>
-  </File>
-  <File Include="Views\Common\Sublayouts\4 Column 2-2-4-4.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{98D6BC34-0185-42A0-B53B-CEB7B17008B6}</Item>
-  </File>
-  <File Include="Views\Common\Sublayouts\ArticleAsideBoth.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{A85A0B65-D3B7-48B8-B362-F17AA3CA7DF1}</Item>
-  </File>
-  <File Include="Views\Common\Sublayouts\NavbarActivity.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{8832BA30-99C3-4D20-9B1C-237D910A153F}</Item>
   </File>
 </Project>

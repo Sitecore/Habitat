@@ -1,6 +1,4 @@
-﻿using Sitecore.Foundation.Common.Specflow.Steps;
-
-namespace Sitecore.Feature.Accounts.Specflow.Steps
+﻿namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
   using System;
   using System.Collections.Generic;
@@ -17,74 +15,63 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
   [Binding]
   internal class RegisterPage : AccountStepsBase
   {
-
     [Given(@"Habitat website is opened on Register page")]
     public void GivenHabitatWebsiteIsOpenedOnRegisterPage()
     {
-      SiteBase.NavigateToPage(BaseSettings.RegisterPageUrl);
+      Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
     }
 
+
+    [When(@"Actor clicks (.*) button")]
+    public void WhenActorClicksRegisterButton(string btn)
+    {
+      Site.SubmitButton.Click();
+    }
 
     [Then(@"System shows following message for the Email field")]
     public void ThenSystemShowsFollowingMessageForTheEmailField(Table table)
     {
       var textMessages = table.Rows.Select(x => x.Values.First());
-      textMessages.All(m => AccountLocators.AccountErrorMessages.Any(x => x.Text == m)).Should().BeTrue();
+
+      foreach (var textMessage in textMessages)
+      {
+        var found = false;
+        foreach (var webElement in Site.AccountErrorMessages)
+        {
+          found = webElement.Text == textMessage;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeTrue();
+      }
     }
 
 
     [Then(@"User Outcome contains value")]
     public void ThenUserOutcomeContainsValue(Table table)
     {
-      Thread.Sleep(TimeSpan.FromSeconds(5));
       foreach (var row in table.Rows)
       {
+        var c = new WebClient();
+        c.Headers.Add(HttpRequestHeader.Accept, "application/json");
         var email = row["email"];
+        var username = email.Split('@').First();
+        var searchResult = JsonConvert.DeserializeObject<SearchEntity>(c.DownloadString(Settings.SearchContactUrl + username));
+        var contactID = searchResult.Data.Dataset.ContactSearchResults.First(x => x.PreferredEmailAddress == email).ContactId;
+        var outcomeUrl = Settings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}/intel/outcome-detail";
 
-        var contactID = GetContactId(email);
-        var queryUrl = BaseSettings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}/intel/outcome-detail";
-        var outcomes = GetAnalytycsEntities<SearchEntity>(queryUrl);
+        var outcomes = JsonConvert.DeserializeObject<SearchEntity>(c.DownloadString(outcomeUrl));
         var expectedOutcome = row["Outcome value"];
         outcomes.Data.Dataset.OutcomeDetail
           .Any(x => x.OutcomeDefinitionDisplayName == expectedOutcome)
           .Should().Be(!string.IsNullOrEmpty(expectedOutcome));
-      }
-
-    }
-
-    
-
-
-    [Then(@"Following User info presents")]
-    public void ThenFollowingUserInfoPresents(Table table)
-    {
-
-
-
-      foreach (var row in table.Rows)
-      {
-        var email = row["email"];
-        var contactID = GetContactId(email);
-        var queryUrl = BaseSettings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}";
-
-        var contact = GetAnalytycsEntities<ContactEntity>(queryUrl);
-
-
-        var expectedFirstName = row["First Name"];
-        contact.FirstName.Should().Be(expectedFirstName);
-
-        var expectedLastName = row["Last Name"];
-        contact.SurName.Should().Be(expectedLastName);
-
-        var expectedPhoneNumber = row["Phone number"];
 
 
       }
 
     }
-
-
-
 
     [When(@"Wating for timeout (.*) s")]
     public void WhenWatingForTimeoutS(int seconds)
@@ -114,6 +101,4 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       }
     }
   }
-
-
 }

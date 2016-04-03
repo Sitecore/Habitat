@@ -8,7 +8,5 @@ namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
     [JsonProperty("outcome-detail")]
     public OutcomeDetail[] OutcomeDetail { get; set; }
     public ContactSearchResult[] ContactSearchResults { get; set; }
-    [JsonProperty("goals")]
-    public GoalSearchResult[] Goals { get; set; }
   }
 }

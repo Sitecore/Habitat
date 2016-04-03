@@ -4,25 +4,21 @@
 @{
   if (Model == null || Model.Items == null)
   {
-      return;
+    return;
   }
 }
 
-<ul class="nav nav-pills nav-stacked">
-    @foreach (var item in Model.Items)
+<div class="list-group">
+  @foreach (var item in Model.Items)
+  {
+    var hasChildren = item.IsActive && item.Children != null && item.Children.Items.Any();
+    var activeClass = (item.IsActive ? " active" : string.Empty);
+    <a href="@item.Url" target="@item.Target" class="list-group-item @activeClass">
+      @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
+    </a>
+    if (hasChildren)
     {
-
-        var hasChildren = item.IsActive && item.Children != null && item.Children.Items.Any();
-        var openClass = ((item.IsActive && hasChildren) ? "open" : string.Empty);
-    <li class="@openClass">
-        <a href="@item.Url" target="@item.Target">
-            @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
-        </a>
-        @if (hasChildren)
-        {
-        @Html.Partial("_SecondaryMenuItems", item.Children)
-        }
-    </li>
-
+      @Html.Partial("_SecondaryMenuItems", item.Children)
     }
-</ul>
+  }
+</div>

@@ -6,7 +6,7 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.HasMediaImage.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaImage.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaImage.ID))
   return;
 }
 
@@ -14,16 +14,20 @@
 @{
   const int ThumbnailWidth = 750;
   const int maxWidth = 1200;
-  var thumbnailField = Model.Item.FieldHasValue(Templates.HasMedia.Fields.Thumbnail) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
-  var thumbnail = Html.Sitecore().ImageField(thumbnailField.ToString(), Model.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
+  var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail.ToString(), @Model.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
   if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
   {
-    return;
+	  thumbnail = Html.Sitecore().ImageField(Templates.HasMediaImage.Fields.Image.ToString(), @Model.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
+  }
+  if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
+  {
+	  return;
   }
 }
 
-<div class="thumbnail lightbox-item">
+<div class="lightbox lightbox-image">
 	<a href="@Model.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions(maxWidth, 0, false))" data-type="image" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), Model.Item))" data-toggle="lightbox" data-gallery="page">
 		@thumbnail
+		<span class="overlay"><i class="fa fa-search fa-2x"></i></span>
 	</a>
 </div>

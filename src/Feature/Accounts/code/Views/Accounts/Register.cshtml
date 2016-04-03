@@ -3,66 +3,62 @@
 @using Sitecore.Mvc.Configuration
 @model Sitecore.Feature.Accounts.Models.RegistrationInfo
 
-@using (Html.BeginRouteForm(MvcSettings.SitecoreRouteName, FormMethod.Post, new
-                                                                            {
-                                                                              @class = "form-signin"
-                                                                            }))
+@using (Html.BeginRouteForm(MvcSettings.SitecoreRouteName, FormMethod.Post))
 {
-  @Html.FormHandler()
+  @Html.Sitecore().FormHandler()
   <div class="form-group @Html.ValidationErrorFor(x => x.Email, "has-error")">
     @Html.LabelFor(x => x.Email, new
-                                 {
-                                   @class = "control-label"
-                                 })
+    {
+      @class = "control-label"
+    })
+
+    @Html.ValidationMessageFor(x => x.Email, "", new
+    {
+      @class = "help-block"
+    })
 
     @Html.TextBoxFor(x => x.Email, new
-                                   {
-                                     @class = "form-control",
-                                     id = "registerEmail",
-                                     @placeholder = Captions.PlaceholderRegisterEmail
-                                   })
-    @Html.ValidationMessageFor(x => x.Email, "", new
-                                                 {
-                                                   @class = "help-block"
-                                                 }, "p")
+    {
+      @class = "form-control",
+      id = "registerEmail"
+    })
   </div>
 
   <div class="form-group @Html.ValidationErrorFor(x => x.Password, "has-error")">
     @Html.LabelFor(x => x.Password, new
-                                    {
-                                      @class = "control-label"
-                                    })
+    {
+      @class = "control-label"
+    })
 
+    @Html.ValidationMessageFor(x => x.Password, "", new
+    {
+      @class = "help-block"
+    })
 
     @Html.PasswordFor(x => x.Password, new
-                                       {
-                                         @class = "form-control",
-                                         id = "registerPassword",
-                                         @placeholder = Captions.PlaceholderRegisterPassword
-                                       })
-    @Html.ValidationMessageFor(x => x.Password, "", new
-                                                    {
-                                                      @class = "help-block"
-                                                    }, "p")
+    {
+      @class = "form-control",
+      id = "registerPassword"
+    })
   </div>
 
   <div class="form-group @Html.ValidationErrorFor(x => x.ConfirmPassword, "has-error")">
     @Html.LabelFor(x => x.ConfirmPassword, new
-                                           {
-                                             @class = "control-label"
-                                           })
+    {
+      @class = "control-label"
+    })
+
+    @Html.ValidationMessageFor(x => x.ConfirmPassword, "", new
+    {
+      @class = "help-block"
+    })
 
     @Html.PasswordFor(x => x.ConfirmPassword, new
-                                              {
-                                                @class = "form-control",
-                                                id = "registerConfirmPassword",
-                                                @placeholder = Captions.PlaceholderRegisterConfirmPassword
-                                              })
-    @Html.ValidationMessageFor(x => x.ConfirmPassword, "", new
-                                                           {
-                                                             @class = "help-block"
-                                                           }, "p")
+    {
+      @class = "form-control",
+      id = "registerConfirmPassword"
+    })
   </div>
 
-  <input type="submit" class="btn btn-primary btn-lg btn-block" value="@Captions.Register"/>
+  <input type="submit" class="btn btn-default" value="@Captions.Register"/>
 }

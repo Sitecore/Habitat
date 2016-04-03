@@ -1,23 +1,17 @@
 ﻿@using Sitecore.Feature.PageContent
-@using Sitecore.Foundation.Alerts
-@using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-@if (!Model?.Item?.IsDerived(Templates.HasPageContent.ID) ?? true)
-{
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasPageContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
-  return;
+@{
+  var section = Model.Item.GetAncestorOrSelfOfTemplate(Templates.HasPageContent.ID);
+  if (section == null)
+  {
+    return;
+  }
 }
 
-<header>
+<div class="section-title">
   <h1>
-    @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title.ToString(), Model.Item)
+    @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title.ToString(), @section)
   </h1>
-  @if (Model.Item.Fields[Templates.HasPageContent.Fields.Summary].HasValue || Sitecore.Context.PageMode.IsExperienceEditor)
-  {
-    <div class="lead">
-      @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary.ToString(), Model.Item)
-    </div>
-  }
-</header>
+</div>

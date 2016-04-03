@@ -3,7 +3,6 @@ ID: f0519e91-3b1e-47b0-91c0-710c6df5ad34
 Parent: 3809601d-3c89-4dba-8ce3-39738f43f92d
 Template: 467c2144-4454-4518-b1de-e31b4cbbff33
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List/John Doe
-DB: master
 Languages:
 - Language: en
   Versions:

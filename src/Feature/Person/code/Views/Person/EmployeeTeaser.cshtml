@@ -7,7 +7,7 @@
 
 @if (!Model?.Item?.IsDerived(Templates.Person.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID))
   return;
 }
 
@@ -29,7 +29,7 @@
     @Model.Item.Field(Templates.Person.Fields.Summary)
   </div>
   <div class="teaser-footer">
-    <a href="@Model.Item.Url()" class="btn btn-hollow">
+    <a href="@Model.Item.Url()" class="btn btn-default">
       @DictionaryRepository.Get("/Person/EmployeeTeaser/Read more", "Read more")
     </a>
   </div>

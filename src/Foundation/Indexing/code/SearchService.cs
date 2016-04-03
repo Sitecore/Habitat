@@ -12,23 +12,12 @@
   using Sitecore.ContentSearch.Utilities;
   using Sitecore.Data;
   using Sitecore.Data.Items;
-  using Sitecore.Diagnostics;
   using Sitecore.Foundation.Indexing.Infrastructure;
   using Sitecore.Foundation.Indexing.Models;
 
   public class SearchService
   {
     public ISearchSettings Settings { get; set; }
-
-    public SitecoreIndexableItem ContextItem
-    {
-      get
-      {
-        var contextItem = Settings.Root ?? Context.Item;
-        Assert.IsNotNull(contextItem, "Could not determine a context item for the search");
-        return contextItem;
-      }
-    }
 
     public SearchService(ISearchSettings settings)
     {
@@ -38,7 +27,7 @@
 
     public virtual ISearchResults Search(IQuery query)
     {
-      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)ContextItem).CreateSearchContext())
+      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
       {
         var root = this.Settings.Root;
         var queryable = context.GetQueryable<SearchResultItem>();
@@ -76,7 +65,7 @@
 
     public virtual ISearchResults FindAll(int skip, int take)
     {
-      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)ContextItem).CreateSearchContext())
+      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
       {
         var root = this.Settings.Root;
         var queryable = context.GetQueryable<SearchResultItem>();

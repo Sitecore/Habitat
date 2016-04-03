@@ -1,0 +1,30 @@
+﻿---
+ID: 5b7a1a96-87d0-42d9-a637-c58e3a4605ca
+Parent: 4997b6bd-c0e8-4ada-81eb-ff1d91d4a5cb
+Template: 27b8bfa4-5943-40a3-837f-110432483752
+Path: /sitecore/content/Habitat/Global/Media/Parallax/Parallax Picture
+DB: master
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 1100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160112T110153Z
+    - ID: 407dd3e3-024a-4a40-96e1-6ed588851197
+      Hint: BackgroundMedia
+      Value: "<link text=\"\" linktype=\"internal\" class=\"\" title=\"\" target=\"\" querystring=\"\" id=\"{91C40066-B282-4030-95DA-4919E51CAADB}\" />"
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: 6e58cf7e-aae9-4dd6-8da2-19c818ad2d8f
+      Hint: ParallaxSpeed
+      Value: 1.0
+    - ID: a1340a3c-4af5-4e88-8e4c-34c10e557315
+      Hint: IsParallaxEnabled
+      Value: 1

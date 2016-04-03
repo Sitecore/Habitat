@@ -8,21 +8,4 @@
     public Data Data { get; set; }
 
   }
-
-
-
-  public class ContactEntity
-  {
-    [JsonProperty("firstName")]
-    public string FirstName { get; set; }
-
-    [JsonProperty("surName")]
-    public string SurName { get; set; }
-
-    [JsonProperty("phoneNumbers")]
-    public object[] PhoneNumbers { get; set; }
-    
-
-
-  }
 }

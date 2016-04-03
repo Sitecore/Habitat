@@ -7,47 +7,60 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.HasMediaSelector.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaSelector.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaSelector.ID))
   return;
 }
 
+
+
 @{
-  var galleryId = "gallery" + Guid.NewGuid().ToString("N");
+	var galleryId = "gallery" + Guid.NewGuid().ToString("N");
   var elements = MediaSelectorElementsRepository.Get(Model.Item).ToArray();
 }
 
+<div class="gallery">
+	<div class="row">
+		@foreach (var element in elements)
+		{
+			const int ThumbnailWidth = 750;
+			const int maxWidth = 1200;
+			var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail.ToString(), element.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
+			if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
+			{
+				thumbnail = Html.Sitecore().ImageField(Templates.HasMediaImage.Fields.Image.ToString(), element.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
+			}
+			if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
+			{
+				continue;
+			}
 
-<div class="block-grid-lg-4 block-grid-md-3 block-grid-sm-2 block-grid-xs-1" id="@galleryId">
-  @foreach (var element in elements)
-  {
-    const int ThumbnailWidth = 750;
-    const int maxWidth = 1200;
-    var thumbnailField = element.Item.FieldHasValue(Templates.HasMedia.Fields.Thumbnail) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
-    var thumbnail = Html.Sitecore().ImageField(thumbnailField.ToString(), element.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
-    if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
-    {
-      continue;
-    }
-
-    if (element.Item.IsDerived(Templates.HasMediaVideo.ID))
-    {
-      var linkFieldUrl = element.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink);
-      if (!string.IsNullOrWhiteSpace(linkFieldUrl))
-      {
-        <div class="block-grid-item">
-          <a href="@linkFieldUrl" data-type="image" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item))" data-toggle="lightbox" data-gallery="@galleryId">
-            @thumbnail
-          </a>
-        </div>
-      }
-    }
-    else
-    {
-      <div class="block-grid-item">
-        <a href="@element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions(maxWidth, 0, false))" data-type="image" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item))" data-toggle="lightbox" data-gallery="@galleryId">
-          @thumbnail
-        </a>
-      </div>
-    }
-  }
+			var columnWidth = string.IsNullOrEmpty(element.Active) ? "col-xs-4" : "col-md-12";
+			if (element.Item.IsDerived(Templates.HasMediaVideo.ID))
+			{
+				var linkFieldUrl = element.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink);
+				if (!string.IsNullOrWhiteSpace(linkFieldUrl))
+				{
+			  <div class="@columnWidth">
+				  <div class="lightbox">
+					  <a href="@linkFieldUrl" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item))" data-toggle="lightbox" data-gallery="@galleryId">
+						  @thumbnail
+						  <span class="overlay"><i class="fa fa-play-circle fa-2x"></i></span>
+					  </a>
+				  </div>
+			  </div>
+			  }
+		  }
+		  else
+		  {
+		    <div class="@columnWidth">
+			    <div class="lightbox">
+				    <a href="@element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions(maxWidth, 0, false))" data-type="image" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item))" data-toggle="lightbox" data-gallery="@galleryId">
+					    @thumbnail
+					    <span class="overlay"><i class="fa fa-search fa-2x"></i></span>
+				    </a>
+			    </div>
+		    </div>
+		  }
+		}
+	</div>
 </div>

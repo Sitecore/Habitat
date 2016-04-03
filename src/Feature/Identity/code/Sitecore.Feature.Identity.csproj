@@ -108,7 +108,6 @@
     <Content Include="Views\Identity\Logo.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Identity\Copyright.cshtml" />
-    <Content Include="Views\Identity\ContactInformation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>

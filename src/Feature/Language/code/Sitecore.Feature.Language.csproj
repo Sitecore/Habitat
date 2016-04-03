@@ -111,7 +111,6 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\Feature.Language.Serialization.config" />
     <Content Include="packages.config" />
-    <Content Include="App_Config\Include\Feature\Feature.Language.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Language\LanguageSelector.cshtml" />
     <None Include="Views\web.config" />

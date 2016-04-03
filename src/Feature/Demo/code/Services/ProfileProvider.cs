@@ -1,16 +1,12 @@
 ﻿namespace Sitecore.Feature.Demo.Services
 {
-  using System;
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Data.Items;
-  using Sitecore.Analytics.Patterns;
   using Sitecore.Cintel.Reporting.Contact.ProfilePatternMatch.Processors;
   using Sitecore.Common;
-  using Sitecore.Data;
   using Sitecore.Data.Fields;
-  using Sitecore.Diagnostics;
   using Sitecore.Feature.Demo.Models;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Resources.Media;
@@ -28,60 +24,30 @@
       return profiles.GetItems().Select(i => new ProfileItem(i));
     }
 
-    public bool HasMatchingPattern(ProfileItem currentProfile, ProfilingTypes type)
+    public bool HasMatchingPattern(ProfileItem currentProfile)
     {
-      if (type == ProfilingTypes.Historic)
+      var userPattern = Tracker.Current.Interaction.Profiles[currentProfile.Name];
+      if (userPattern?.PatternId == null)
       {
-        var userPattern = Tracker.Current.Contact.BehaviorProfiles[currentProfile.ID];
-        if (userPattern == null || ID.IsNullOrEmpty(userPattern.PatternId))
-        {
-          return false;
-        }
-        return Context.Database.GetItem(userPattern.PatternId) != null;
+        return false;
       }
-      else
-      {
-        var userPattern = Tracker.Current.Interaction.Profiles[currentProfile.Name];
-        if (userPattern?.PatternId == null)
-        {
-          return false;
-        }
-        return Context.Database.GetItem(userPattern.PatternId.Value.ToID()) != null;
-      }
+      var matchingPattern = Context.Database.GetItem(userPattern.PatternId.Value.ToID());
+      return matchingPattern != null;
     }
 
-    public IEnumerable<PatternMatch> GetPatternsWithGravityShare(ProfileItem visibleProfile, ProfilingTypes type)
+    public IEnumerable<PatternMatch> GetPatternsWithGravityShare(ProfileItem visibleProfile)
     {
-      Assert.ArgumentNotNull(visibleProfile, nameof(visibleProfile));
-
-      var userPattern = type == ProfilingTypes.Historic ? GetHistoricMatchedPattern(visibleProfile) : GetActiveMatchedPattern(visibleProfile);
+    
+      var userPattern = visibleProfile.PatternSpace.CreatePattern(Tracker.Current.Interaction.Profiles[visibleProfile.Name]);
 
       var patterns = PopulateProfilePatternMatchesWithXdbData.GetPatternsWithGravityShare(visibleProfile, userPattern);
-      return patterns.Select(patternKeyValuePair => CreatePatternMatch(visibleProfile, patternKeyValuePair)).OrderByDescending(pm => pm.MatchPercentage);
-    }
-
-    private Pattern GetActiveMatchedPattern(ProfileItem visibleProfile)
-    {
-      return visibleProfile.PatternSpace.CreatePattern(Tracker.Current.Interaction.Profiles[visibleProfile.Name]);
-    }
-
-    private Pattern GetHistoricMatchedPattern(ProfileItem profile)
-    {
-      var behaviorProfile = Tracker.Current.Contact.BehaviorProfiles[profile.ID];
-      if (behaviorProfile == null)
-        return null;
-      IProfileData profileData = new BehaviorProfileDecorator(profile, behaviorProfile);
-      return profile.PatternSpace.CreatePattern(profileData);
-    }
-
-    private static PatternMatch CreatePatternMatch(ProfileItem visibleProfile, KeyValuePair<PatternCardItem, double> patternKeyValuePair)
-    {
-      return new PatternMatch(visibleProfile.NameField, patternKeyValuePair.Key.NameField, GetPatternImageUrl(patternKeyValuePair), patternKeyValuePair.Value);
-    }
-
-    private static string GetPatternImageUrl(KeyValuePair<PatternCardItem, double> patternKeyValuePair)
-    {
-      return patternKeyValuePair.Key.Image?.MediaItem == null ? string.Empty : patternKeyValuePair.Key.Image.ImageUrl(new MediaUrlOptions { Width = 50, MaxWidth = 50 });
+      return from patternKeyValuePair in patterns
+        let src = patternKeyValuePair.Key.Image.ImageUrl(new MediaUrlOptions
+        {
+          Width = 50,
+          MaxWidth = 50
+        })
+        select new PatternMatch(visibleProfile.NameField, patternKeyValuePair.Key.NameField, src, patternKeyValuePair.Value);
     }
   }
 }

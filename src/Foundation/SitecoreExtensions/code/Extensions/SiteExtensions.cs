@@ -4,8 +4,6 @@
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Items;
-  using Sitecore.ExperienceEditor.Utils;
-  using Sitecore.ExperienceExplorer.Business.Managers;
   using Sitecore.Sites;
 
   public static class SiteExtensions
@@ -34,7 +32,5 @@
 
       return site.Database.GetItem(Context.Site.StartPath);
     }
-
-    public static bool NoOverlay(this SiteContext siteContext) => siteContext.DisplayMode == DisplayMode.Normal && !ModuleManager.IsExpViewModeActive && !WebEditUtility.IsDebugActive(siteContext);
   }
 }

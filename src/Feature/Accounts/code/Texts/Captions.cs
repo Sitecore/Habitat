@@ -40,14 +40,9 @@
     public static string FirstName => DictionaryRepository.Get("/Accounts/Captions/FirstName", "First name");
     public static string LastName => DictionaryRepository.Get("/Accounts/Captions/LastName", "Last name");
     public static string PhoneNumber => DictionaryRepository.Get("/Accounts/Captions/PhoneNumber", "Phone number");
-    public static string PlaceholderLoginEmail => DictionaryRepository.Get("/Accounts/Captions/Login E-mail Placeholder", "Enter your e-mail");
-    public static string PlaceholderLoginPassword => DictionaryRepository.Get("/Accounts/Captions/Login Password Placeholder", "Enter your password");
-    public static string PlaceholderEditProfilePhone => DictionaryRepository.Get("/Accounts/Captions/Edit Profile Phone Placeholder", "Please enter your contact phone number");
-    public static string PlaceholderEditProfileLastName => DictionaryRepository.Get("/Accounts/Captions/Edit Profile Last Name Placeholder", "Please enter your last name");
-    public static string PlaceholderEditProfileFirstName => DictionaryRepository.Get("/Accounts/Captions/Edit Profile First Name Placeholder", "Please enter your first name");
-    public static string PlaceholderRegisterEmail => DictionaryRepository.Get("/Accounts/Captions/Register Email Placeholder", "Please enter your e-mail address");
-    public static string PlaceholderRegisterPassword => DictionaryRepository.Get("/Accounts/Captions/Register Password Placeholder", "Please enter your new password");
-    public static string PlaceholderRegisterConfirmPassword => DictionaryRepository.Get("/Accounts/Captions/Register Confirm Password Placeholder", "Please confirm you new password");
-    public static string PlaceholderForgotPasswordEmailPlaceholder => DictionaryRepository.Get("/Accounts/Captions/Forgot Password Email Placeholder", "Please enter the e-mail address you used to register");
+    
+
+
+
   }
 }

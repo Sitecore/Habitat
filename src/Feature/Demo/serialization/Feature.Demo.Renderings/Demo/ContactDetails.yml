@@ -1,0 +1,24 @@
+﻿---
+ID: a6cfb41b-c613-4a2b-a5ee-4a374015914d
+Parent: db86a052-120c-4d95-a6cd-078fcc0cdb39
+Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
+Path: /sitecore/layout/Renderings/Feature/Demo/ContactDetails
+DB: master
+SharedFields:
+- ID: 94069f66-609c-48b0-8281-521c30fb269d
+  Hint: Open Properties after Add
+  Value: -
+- ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
+  Hint: Controller Action
+  Value: ContactDetails
+- ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
+  Hint: Controller
+  Value: Sitecore.Feature.Demo.Controllers.DemoController, Sitecore.Feature.Demo
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151106T055056Z

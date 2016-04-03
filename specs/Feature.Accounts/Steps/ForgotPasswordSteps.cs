@@ -1,7 +1,4 @@
-﻿using Sitecore.Feature.Accounts.Specflow.Infrastructure;
-using Sitecore.Foundation.Common.Specflow.Infrastructure;
-
-namespace Sitecore.Feature.Accounts.Specflow.Steps
+﻿namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
   using System;
   using System.Linq;
@@ -28,13 +25,26 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void ThenSystemShowsFollowingErrorMessageForTheEMailField(Table table)
     {
       var textMessages = table.Rows.Select(x => x.Values.First());
-      textMessages.All(m => AccountLocators.AccountErrorMessages.Any(x => x.Text == m)).Should().BeTrue();
+
+      foreach (var textMessage in textMessages)
+      {
+        var found = false;
+        foreach (var webElement in Site.PageErrorMessages)
+        {
+          found = webElement.Text == textMessage;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeTrue();
+      }
     }
 
     [When(@"Actor clicks (.*) button on Reset Password page")]
     public void WhenActorClicksResetPasswordButtonOnResetPasswordPage(string btn)
     {
-      var button = CommonLocators.LoginPageButtons.First(el => el.GetAttribute("value").Equals(btn, StringComparison.CurrentCultureIgnoreCase));
+      var button = Site.LoginPageButtons.First(el => el.Text.Equals(btn, StringComparison.CurrentCultureIgnoreCase) || el.GetAttribute("value").Equals(btn, StringComparison.CurrentCultureIgnoreCase));
       button.Click();
     }
 
@@ -52,29 +62,47 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void ThenSystenShowsFollowingAlertMessage(Table table)
     {
       var alertMessage = table.Rows.Select(el => el.Values.First());
-      Site.PageAlertSuccessfullInfo.Text.Should().Contain(alertMessage.First());
+      Site.PageAlertInfo.Text.Should().Contain(alertMessage.First());
     }
 
-    [Then(@"Following buttons present on Forgot Password page")]
-    public void ThenFollowingButtonsPresentOnForgotPasswordPage(Table table)
-    {
-      var buttons = table.Rows.Select(x => x.Values.First());
-      buttons.All(b => CommonLocators.LoginPageButtons.Any(x => x.GetAttribute("value") == b)).Should().BeTrue();
-    }
-
-
-    [Then(@"Following buttons is no longer present on Forgot Password page")]
+    [Then(@"Then Following buttons is no longer present on Forgot Password page")]
     public void ThenThenFollowingButtonsIsNoLongerPresentOnForgotPasswordPage(Table table)
     {
       var buttons = table.Rows.Select(x => x.Values.First());
-      buttons.All(b => CommonLocators.LoginPageButtons.Any(x => x.GetAttribute("value") == b)).Should().BeFalse();
+      //1
+      foreach (var button in buttons)
+      {
+        var found = false;
+        foreach (var webElement in Site.LoginPageButtons)
+        {
+          found = webElement.Text == button;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeFalse();
+      }
     }
 
     [Then(@"Following fields is no longer present on Forgot Password page")]
     public void ThenFollowingFieldsIsNoLongerPresentOnForgotPasswordPage(Table table)
     {
       var fields = table.Rows.Select(x => x.Values.First());
-      fields.All(f => Site.LoginFormFields.Any(x => x.Text == f)).Should().BeFalse();
+      //1
+      foreach (var field in fields)
+      {
+        var found = false;
+        foreach (var webElement in Site.LoginFormFields)
+        {
+          found = webElement.Text == field;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeFalse();
+      }
     }
   }
 }

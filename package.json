@@ -4,30 +4,24 @@
   "description": "Sitecore Habitat Node Dependencies",
   "main": "gulpfile.js",
   "dependencies": {
-    "async": "^1.5.2",
-    "glob": "^7.0.3",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
     "gulp-debug": "^2.1.2",
-    "gulp-exec": "^2.1.2",
-    "gulp-foreach": "^0.1.0",
     "gulp-load-plugins": "^1.0.0",
+    "gulp-foreach": "^0.1.0",
     "gulp-msbuild": "0.2.13",
-    "gulp-newer": "^1.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-rimraf": "^0.2.0",
     "gulp-sass": "^2.0.4",
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
-    "rimraf": "^2.4.3",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-newer": "^1.0.0",
     "run-sequence": "^1.1.4",
     "vinyl": "^1.1.0",
-    "xml2js": "^0.4.16",
+    "gulp-rimraf": "^0.2.0",
+    "rimraf": "^2.4.3",    
     "xmlpoke": "^0.1.12"
   },
-  "devDependencies": {
-    "gulp-nuget-restore": "^0.4.0"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

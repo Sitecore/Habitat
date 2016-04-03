@@ -1,58 +1,68 @@
 ﻿Feature: Register goals on login and registration
 	
 
-@NeedUpdateStepWithRemovingDataFromAnalytic
+@NeedImplimentation
 Scenario: Account_Register goals on login and registration_UC1_Register new user
 	Given Habitat website is opened on Register page
 	When Actor enters following data in to the register fields
-	| Email             | Password | ConfirmPassword |
-	| kov1@sitecore.net | k        | k               |
+	| Email            | Password | ConfirmPassword |
+	| kov@sitecore.net | k        | k               |
 	And Actor clicks Register button
-	And Actor Ends user visit
-	Then Profile Activity Goals section for kov@sitecore.net contains
-	| Goal     |
-	| Register |
-	| Login    |
+#Following then steps were taked from Demo-->Show Tracking info feature. 
+	And User clicks on <Info-sign> in the right down corner
+	And User expands Goals section
+	Then Then Following Goals section contains
+	| Goal name with score |
+	| Register page (0)    |
+	| Login (0)            |
  
-@NeedUpdateStepWithRemovingDataFromAnalytic
+@NeedImplimentation	
 Scenario: Account_Register goals on login and registration_UC2_Login with new user
-	Given User is registered in Habitat and logged out
+	Given User with following data is registered in Habitat
 	| Email              | Password | ConfirmPassword |
 	| kov10@sitecore.net | k        | k               |
-	And Actor selects User icon on Navigation bar
+	And User was logged out from the Habitat
+	And Actor moves cursor over the User icon
+	And User clicks Login from drop-down menu
 	When Actor enteres following data into Login form fields
 	| Email              | Password |
 	| kov10@sitecore.net | k        |
-	And Actor clicks Login button on User form
-	And Actor Ends user visit
-	Then Profile Activity Goals section for kov10@sitecore.net contains
-	| Goal     |
-	| Register |
-	| Login    |
-	| Login    |
+	And User clicks Login button on Login form
+	#Following then steps were taked from Demo-->Show Tracking info feature. 
+	And User clicks on <Info-sign> in the right down corner
+	And User expands Goals section
+	Then Then Following Goals section contains
+	| Goal name with score |
+	| Register page(0)     |
+	| Login(0)             |
+	| Login(0)             | 
 
 
-@NeedUpdateStepWithRemovingDataFromAnalytic
+@NeedImplimentation
 Scenario: Account_Register goals on login and registration_UC3_Login twice with new user
-	Given User is registered in Habitat and logged out
+	Given User with following data is registered in Habitat
 	| Email              | Password | ConfirmPassword |
-	| kov11@sitecore.net | k        | k               |
-	When Actor selects User icon on Navigation bar
+	| kov10@sitecore.net | k        | k               |
+	And User was logged out from the Habitat
+	When Actor moves cursor over the User icon
+	And User clicks Login from drop-down menu
 	And Actor enteres following data into Login form fields
 	| Email              | Password |
-	| kov11@sitecore.net | k        |
-	And Actor clicks Login button on User form
-	And Actor selects User icon on Navigation bar
-	And Actor clicks Logout button on User form
-	And Actor selects User icon on Navigation bar
+	| kov10@sitecore.net | k        |
+	And User clicks Login button on Login form
+	And Actor moves cursor over the User icon
+	And User clicks Log out on User Icon
+	And User clicks Login from drop-down menu
 	And Actor enteres following data into Login form fields
 	| Email              | Password |
-	| kov11@sitecore.net | k        |
-	And Actor clicks Login button on User form
-	And Actor Ends user visit
-	Then Profile Activity Goals section for kov10@sitecore.net contains
-	| Goal     |
-	| Register |
-	| Login    |
-	| Login    |
-	| Login    |  
+	| kov10@sitecore.net | k        |
+	And User clicks Login button on Login form
+	#Following then steps were taked from Demo-->Show Tracking info feature. 
+	And User clicks on <Info-sign> in the right down corner
+	And User expands Goals section
+	Then Then Following Goals section contains
+	| Goal name with score |
+	| Register page(0)     |
+	| Login(0)             |
+	| Login(0)             |
+	| Login(0)             |  

@@ -31,12 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentAssertions, Version=4.2.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FluentAssertions.4.2.2\lib\net45\FluentAssertions.dll</HintPath>
+    <Reference Include="FluentAssertions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentAssertions.4.2.1\lib\net45\FluentAssertions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FluentAssertions.Core, Version=4.2.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FluentAssertions.4.2.2\lib\net45\FluentAssertions.Core.dll</HintPath>
+    <Reference Include="FluentAssertions.Core, Version=4.2.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FluentAssertions.4.2.1\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -59,12 +59,12 @@
       <HintPath>..\..\packages\SpecFlow.2.0.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebDriver, Version=2.52.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Selenium.WebDriver.2.52.0\lib\net40\WebDriver.dll</HintPath>
+    <Reference Include="WebDriver, Version=2.50.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Selenium.WebDriver.2.50.1\lib\net40\WebDriver.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=2.52.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Selenium.Support.2.52.0\lib\net40\WebDriver.Support.dll</HintPath>
+    <Reference Include="WebDriver.Support, Version=2.50.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Selenium.Support.2.50.1\lib\net40\WebDriver.Support.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
@@ -100,9 +100,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Forgot Password.feature</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\AccountsActions.cs" />
-    <Compile Include="Infrastructure\GoalSearchResult.cs" />
-    <Compile Include="Infrastructure\AccountLocators.cs" />
+    <Compile Include="Infrastructure\Site.cs" />
     <Compile Include="Log out.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,11 +132,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Save user details in xDB.feature</DependentUpon>
     </Compile>
-    <Compile Include="Serialise users and roles.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Serialise users and roles.feature</DependentUpon>
-    </Compile>
     <Compile Include="Show user info on popup.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -160,11 +153,8 @@
     <Compile Include="Settings.cs" />
     <Compile Include="Steps\EditUserProfile.cs" />
     <Compile Include="Infrastructure\SearchEntity.cs" />
-    <Compile Include="Steps\SiteNavigationSteps.cs" />
+    <Compile Include="Steps\SiteNavigation.cs" />
     <Compile Include="Steps\AccountStepsBase.cs" />
-    <Compile Include="Steps\ExperienceProfileSteps.cs" />
-    <Compile Include="Steps\SiteswitcherSteps.cs" />
-    <Compile Include="Steps\xDBSteps.cs" />
     <Compile Include="Trigger an outcome on customer registration.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -193,6 +183,7 @@
     </None>
     <None Include="Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Page after login.feature">
@@ -211,10 +202,6 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Save user details in xDB.feature.cs</LastGenOutput>
     </None>
-    <None Include="Serialise users and roles.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Serialise users and roles.feature.cs</LastGenOutput>
-    </None>
     <None Include="Show user info on popup.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Show user info on popup.feature.cs</LastGenOutput>
@@ -232,10 +219,6 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Feature.Demo\Sitecore.Feature.Demo.Specflow.csproj">
-      <Project>{da6d2488-72d8-4d4f-8528-8cf91789e577}</Project>
-      <Name>Sitecore.Feature.Demo.Specflow</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Foundation.Common\Sitecore.Foundation.Common.Specflow.csproj">
       <Project>{e0c9af4f-fc51-42e6-b7b9-1e173ac0589d}</Project>
       <Name>Sitecore.Foundation.Common.Specflow</Name>

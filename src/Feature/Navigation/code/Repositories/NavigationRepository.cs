@@ -39,7 +39,6 @@
       for (var i = 0; i < items.Items.Count - 1; i++)
       {
         items.Items[i].Level = i;
-        items.Items[i].IsActive = i == (items.Items.Count-1);
       }
 
       return items;
@@ -68,7 +67,7 @@
 
     private bool IncludeInNavigation(Item item, bool forceShowInMenu = false)
     {
-      return item.HasContextLanguage() && item.IsDerived(Templates.Navigable.ID) && (forceShowInMenu || MainUtil.GetBool(item[Templates.Navigable.Fields.ShowInNavigation], false));
+      return item.IsDerived(Templates.Navigable.ID) && (forceShowInMenu || MainUtil.GetBool(item[Templates.Navigable.Fields.ShowInNavigation], false));
     }
 
     public NavigationItem GetSecondaryMenuItem()

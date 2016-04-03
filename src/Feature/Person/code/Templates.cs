@@ -26,7 +26,7 @@
 
       public struct Fields
       {
-        public static readonly ID CiteOrigin = new ID("{BF83983A-473F-4A49-BE8E-7D563AA5687E}");
+        public static readonly ID Company = new ID("{BF83983A-473F-4A49-BE8E-7D563AA5687E}");
         public static readonly ID Quote = new ID("{0DE53078-0DA4-40CC-BBCA-63AA96A0A1EF}");
       }
     }

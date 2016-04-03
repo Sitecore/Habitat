@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using Sitecore.Feature.Accounts.Specflow.Infrastructure;
-using Sitecore.Foundation.Common.Specflow.Infrastructure;
-
-namespace Sitecore.Feature.Accounts.Specflow.Steps
+﻿namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
   using System;
   using System.Linq;
@@ -10,7 +6,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
   using Sitecore.Foundation.Common.Specflow.Extensions;
   using TechTalk.SpecFlow;
 
-  internal class LoginSteps : AccountStepsBase 
+  internal class LoginSteps : AccountStepsBase
   {
     [Then(@"(.*) title presents on Login form")]
     public void ThenLoginTitlePresentsOnLoginForm(string title)
@@ -25,7 +21,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     }
 
 
-    [Then(@"Following fields present on User form")]
+    [Then(@"Following fields present on Login form")]
     public void ThenFollowingFieldsPresentOnLoginForm(Table table)
     {
       var fields = table.Rows.Select(x => x.Values.First());
@@ -33,12 +29,18 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       elements.Should().Contain(fields);
     }
 
+    [Then(@"Following buttons present on Login Form")]
+    public void ThenFollowingButtonsPresentOnLoginForm(Table table)
+    {
+      var buttons = table.Rows.Select(x => x.Values.First());
+      var elements = Site.LoginFormButtons.Select(el => el.GetAttribute("text"));
+      elements.Should().Contain(buttons);
+    }
 
-    [Given(@"Actor clicks Login button on User form")]
-    [When(@"Actor clicks (.*) button on User form")]
+    [When(@"User clicks (.*) button on Login form")]
     public void WhenUserClicksLoginButtonOnLoginForm(string btn)
     {
-      var elements = CommonLocators.UserIconButtons.First(el => el.Text.Equals(btn, StringComparison.InvariantCultureIgnoreCase));
+      var elements = Site.LoginFormButtons.First(el => el.Text.Equals(btn, StringComparison.InvariantCultureIgnoreCase));
       elements.Click();
     }
 
@@ -46,21 +48,41 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void ThenSystemShowsFollowingErrorMessageForTheLoginForm(Table table)
     {
       var textMessages = table.Rows.Select(x => x.Values.First());
-      textMessages.All(m => AccountLocators.AccountErrorMessages.Any(x => x.Text == m)).Should().BeTrue();
+
+      foreach (var textMessage in textMessages)
+      {
+        var found = false;
+        foreach (var webElement in Site.LoginFormErrorMessages)
+        {
+          found = webElement.Text == textMessage;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeTrue();
+      }
     }
 
-    [When(@"Actor enteres following data into Login form fields")]
+    [When(@"Actor enteres following data into fields")]
     public void WhenActorEnteresFollowingDataIntoFields(Table table)
     {
       var row = table.Rows.First();
       foreach (var key in row.Keys)
       {
-        var text = row[key];
-        Site.LoginFormFields.GetField(key).SendKeys(text);
+        Site.LoginFormFields.GetField(key).SendKeys(row[key]);
       }
     }
 
-    
+    [When(@"Actor enteres following data into Login form fields")]
+    public void WhenActorEnteresFollowingDataIntoLoginFormFields(Table table)
+    {
+      var row = table.Rows.First();
+      foreach (var key in row.Keys)
+      {
+        Site.LoginFormFields.GetField(key).SendKeys(row[key]);
+      }
+    }
 
     [Then(@"Following fields present on Login page")]
     public void ThenFollowingFieldsPresentOnLoginPage(Table table)
@@ -74,7 +96,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void ThenFollowingButtonsPresentOnLoginPage(Table table)
     {
       var buttons = table.Rows.Select(x => x.Values.First());
-      var elements = CommonLocators.LoginPageButtons.Select(el => el.GetAttribute("value"));
+      var elements = Site.LoginPageButtons.Select(el => el.GetAttribute("value"));
       elements.Should().Contain(buttons);
     }
 
@@ -82,14 +104,14 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void ThenFollowingLinksPresentOnLoginPage(Table table)
     {
       var links = table.Rows.Select(x => x.Values.First());
-      var elements = CommonLocators.LoginPageLinks.Select(el => el.Text);
+      var elements = Site.LoginPageLinks.Select(el => el.Text);
       links.All(x => elements.Contains(x, StringComparer.InvariantCultureIgnoreCase)).Should().BeTrue();
     }
 
     [When(@"Actor clicks (.*) link")]
     public void WhenActorClicksForgotYourPasswordLink(string btnLink)
     {
-      var forgotPasslink = CommonLocators.LoginPageLinks.First(el => el.Text.Equals(btnLink, StringComparison.InvariantCultureIgnoreCase));
+      var forgotPasslink = Site.LoginPageLinks.First(el => el.Text.Equals(btnLink, StringComparison.InvariantCultureIgnoreCase));
       forgotPasslink.Click();
     }
 
@@ -97,7 +119,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     [When(@"User clicks (.*) button on Login page")]
     public void WhenUserClicksLoginButtonOnLoginPage(string btn)
     {
-      var elements = CommonLocators.LoginPageButtons.First(el => el.GetAttribute("value").Contains(btn));
+      var elements = Site.LoginPageButtons.First(el => el.GetAttribute("value").Contains(btn));
       elements.Click();
     }
 
@@ -105,7 +127,20 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void ThenSystemShowsFollowingErrorMessageForTheLoginPage(Table table)
     {
       var textMessages = table.Rows.Select(x => x.Values.First());
-      textMessages.All(m => AccountLocators.AccountErrorMessages.Any(x => x.Text == m));
+
+      foreach (var textMessage in textMessages)
+      {
+        var found = false;
+        foreach (var webElement in Site.PageErrorMessages)
+        {
+          found = webElement.Text == textMessage;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeTrue();
+      }
     }
 
     [When(@"Actor enteres following data into Login page fields")]
@@ -117,30 +152,5 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
         Site.LoginPageFields.GetField(key).SendKeys(row[key]);
       }
     }
-    [Given(@"User was (.*) to Habitat")]
-    public void GivenUserWasLoginToHabitat(string btn, Table table)
-    {
-      SiteBase.NavigateToPage(BaseSettings.LoginPageUrl);
-
-      var row = table.Rows.First();
-      foreach (var key in row.Keys)
-      {
-        Site.LoginPageFields.GetField(key).SendKeys(row[key]);
-      }
-
-      var elements = CommonLocators.LoginPageButtons.First(el => el.GetAttribute("value").Contains(btn));
-      elements.Click();
-    }
-
-
-    [Given(@"Actor selects User icon on Navigation bar")]
-    [When(@"Actor selects User icon on Navigation bar")]
-    public void WhenActorSelectsUserIconOnNavigationBar()
-    {
-      AccountsActions.OpenUserDialog();
-    }
-
-
-
   }
 }
