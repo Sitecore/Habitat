@@ -1,20 +1,20 @@
 ﻿function login(componentid) {
-  var logincontrol = jQuery("#" + componentid);
+  var logincontrol = $("#" + componentid);
   var usernameField = logincontrol.find("#popupLoginEmail");
   var passwordField = logincontrol.find("#popupLoginPassword");
-  jQuery.ajax(
+  $.ajax(
   {
-    url: "/api/Accounts/_Login",
+    url: "/api/Accounts/LoginDialog",
     method: "POST",
     data: {
-      email: usernameField.val(),
+                email: usernameField.val(),
       password: passwordField.val()
     },
     success: function (data) {
         if (data.RedirectUrl != null && data.RedirectUrl != undefined) {
             window.location.href = window.location.href;
         } else {
-            var body = logincontrol.find(".login-body");
+            var body = logincontrol.find(".modal-body");
             var parent = body.parent();
             body.remove();
             parent.html(data);

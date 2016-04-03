@@ -2,26 +2,20 @@ using Sitecore.Foundation.Alerts.Exceptions;
 
 namespace Sitecore.Feature.Demo.Controllers
 {
-  using System;
-  using System.Net;
-  using System.Threading.Tasks;
-  using System.Web;
   using System.Web.Mvc;
   using Sitecore.Analytics;
   using Sitecore.Feature.Demo.Models;
   using Sitecore.Feature.Demo.Services;
-  using Sitecore.Foundation.SitecoreExtensions.Attributes;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Mvc.Controllers;
   using Sitecore.Mvc.Presentation;
 
-  [SkipAnalyticsTracking]
   public class DemoController : SitecoreController
   {
     private readonly IContactProfileProvider contactProfileProvider;
     private readonly IProfileProvider profileProvider;
-    
+
     public DemoController():this(new ContactProfileProvider(), new ProfileProvider())
     {
     }
@@ -31,13 +25,20 @@ namespace Sitecore.Feature.Demo.Controllers
       this.profileProvider = profileProvider;
     }
 
-    public ActionResult ExperienceData()
+    public ActionResult VisitDetails()
     {
       if (Tracker.Current == null || Tracker.Current.Interaction == null)
         return null;
-      return View(new ExperienceData(contactProfileProvider, profileProvider));
+      return View("VisitDetails", new VisitInformation(profileProvider));
     }
-    
+
+    public ActionResult ContactDetails()
+    {
+      if (Tracker.Current == null || Tracker.Current.Contact == null)
+        return null;
+      return View("ContactDetails", new ContactInformation(contactProfileProvider));
+    }
+
     public ActionResult DemoContent()
     {
       if (RenderingContext.Current.ContextItem == null ||
@@ -52,7 +53,7 @@ namespace Sitecore.Feature.Demo.Controllers
     public ActionResult EndVisit()
     {
       this.Session.Abandon();
-      return new HttpStatusCodeResult(HttpStatusCode.OK);
+      return this.Redirect("/");
     }
   }
 }

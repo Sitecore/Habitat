@@ -1,8 +1,0 @@
-﻿<Project>
-  <PropertyGroup>
-    <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
-  </PropertyGroup>
-  <File Include="Views\Metadata\PageMetadata.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{E7AE3F87-CF66-40F2-A9F5-33ECF08BC777}</Item>
-  </File>
-</Project>

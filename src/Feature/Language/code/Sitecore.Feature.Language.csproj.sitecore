@@ -1,8 +1,0 @@
-﻿<Project>
-  <PropertyGroup>
-    <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
-  </PropertyGroup>
-  <File Include="Views\Language\LanguageSelector.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{2695013C-DD51-410B-9983-F271F16C727D}</Item>
-  </File>
-</Project>

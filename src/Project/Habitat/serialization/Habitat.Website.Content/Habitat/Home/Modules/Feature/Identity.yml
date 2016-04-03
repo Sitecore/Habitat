@@ -9,16 +9,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
-      Hint: __Final Renderings
-      Type: Layout
-      Value: |
-        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
-          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-            <r uid="{4BAA8F11-90C7-4BF3-B5D8-C59381B81189}" p:before="r[@uid='{D4399158-183A-41E7-AA4C-86F7D7E68D76}']" s:id="{CA748838-E6D5-4BAD-9126-CAD10DD1B0DB}" s:ph="/page-layout/section-narrow/col-narrow-1_d4399158-183a-41e7-aa4c-86f7d7e68d76" />
-            <r uid="{D4399158-183A-41E7-AA4C-86F7D7E68D76}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:id="{831876B6-F9F1-463E-9DD5-7F93F1640590}" s:ph="/page-layout/section-narrow" />
-          </d>
-        </r>
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       Hint: NavigationTitle
       Value: Identity

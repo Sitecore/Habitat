@@ -81,19 +81,19 @@
 
     [Theory]
     [AutoDbData]
-    public void _LoginShouldReturnViewIfNotValid(IAccountRepository repo, [NoAutoProperties] AccountsController controller, LoginInfo info)
+    public void LoginDialogShouldReturnViewIfNotValid(IAccountRepository repo, [NoAutoProperties] AccountsController controller, LoginInfo info)
     {
-      var result = controller._Login(info);
+      var result = controller.LoginDialog(info);
       result.Should().BeOfType<ViewResult>();
     }
 
     [Theory]
     [AutoDbData]
-    public void _LoginShouldRedirectIfLoggedIn(Database db, [Content] DbItem item, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
+    public void LoginDialogShouldRedirectIfLoggedIn(Database db, [Content] DbItem item, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
     {
       var controller = new AccountsController(repo, service, accountSetting, null, null);
       repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => true);
-      var result = controller._Login(info);
+      var result = controller.LoginDialog(info);
       result.Should().BeOfType<JsonResult>();
       ((result as JsonResult).Data as LoginResult).RedirectUrl.Should().BeEquivalentTo(info.ReturnUrl);
     }

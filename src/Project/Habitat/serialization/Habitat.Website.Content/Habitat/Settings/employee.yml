@@ -20,4 +20,4 @@ Languages:
       Value: sitecore\admin
     - ID: 5fe1cc43-f86c-459c-a379-cd75950d85af
       Hint: DatasourceLocation
-      Value: /sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List
+      Value: /sitecore/content/Habitat/Global/Persons

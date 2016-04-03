@@ -12,12 +12,11 @@
 
   public class AccountsSettingsService : IAccountsSettingsService
   {
-    public const string PageNotFoundUrl = "/404";
     public static AccountsSettingsService Instance => new AccountsSettingsService();
 
     public virtual string GetPageLink(Item contextItem, ID fieldID)
     {
-      var item = GetAccountsSettingsItem(contextItem);
+      var item = GetSettingsItem(contextItem);
 
       if (item == null)
       {
@@ -36,8 +35,9 @@
 
 
 
-    public virtual string GetPageLinkOrDefault(Item contextItem, ID field, Item defaultItem = null)
+    public virtual string GetPageLinkOrDefault(Item contextItem, ID field, Item defaultItem)
     {
+      Assert.ArgumentNotNull(defaultItem, nameof(defaultItem));
       try
       {
         return this.GetPageLink(contextItem, field);
@@ -45,13 +45,13 @@
       catch (Exception ex)
       {
         Log.Warn(ex.Message, ex, this);
-        return defaultItem?.Url() ?? PageNotFoundUrl;
+        return defaultItem.Url();
       }
     }
 
     public virtual ID GetRegistrationOutcome(Item contextItem)
     {
-      var item = GetAccountsSettingsItem(contextItem);
+      var item = GetSettingsItem(contextItem);
 
       if (item == null)
       {
@@ -62,7 +62,7 @@
       return field?.TargetID;
     }
 
-    public virtual Item GetAccountsSettingsItem(Item contextItem)
+    private static Item GetSettingsItem(Item contextItem)
     {
       Item item = null;
 
@@ -77,7 +77,7 @@
 
     public MailMessage GetForgotPasswordMailTemplate()
     {
-      var settingsItem = GetAccountsSettingsItem(null);
+      var settingsItem = GetSettingsItem(null);
       InternalLinkField link = settingsItem.Fields[Templates.AccountsSettings.Fields.ForgotPasswordMailTemplate];
       var mailTemplateItem = link.TargetItem;
 

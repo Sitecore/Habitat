@@ -3,19 +3,18 @@ ID: 18cdd4ce-cdbe-4bdc-9d5a-6249f7f0ec17
 Parent: 8664a57f-f2c9-4b18-b4e5-d3fed495d212
 Template: ab86861a-6030-46c5-b394-e8f99e8b87db
 Path: /sitecore/templates/Project/Common/Content Types/MetaKeyword
-DB: master
 SharedFields:
 - ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
-  Hint: __Icon
+  # __Icon
   Value: Office/32x32/graph.png
 - ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
-  Hint: __Base template
+  # __Base template
   Type: tree list
   Value: |
     {1930BBEB-7805-471A-A3BE-4858AC7CF696}
     {409F883A-0DC8-431A-9508-7316B59B92BE}
 - ID: f7d48a55-2158-4f02-9356-756654404f73
-  Hint: __Standard values
+  # __Standard values
   Value: {DB8EBAEB-1204-4890-91CA-051385E52F80}
 Languages:
 - Language: en
@@ -23,8 +22,8 @@ Languages:
   - Version: 1
     Fields:
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
-      Hint: __Created
+      # __Created
       Value: 20160106T162302Z
     - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
-      Hint: __Created by
+      # __Created by
       Value: sitecore\admin

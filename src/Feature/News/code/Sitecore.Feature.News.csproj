@@ -116,8 +116,6 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\News\NewsTeaser.cshtml" />
-    <Content Include="Views\News\NewsPageHeader.cshtml" />
-    <Content Include="Views\News\NewsMetadata.cshtml" />
     <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -134,7 +132,7 @@
   <ItemGroup>
     <Compile Include="Indexing\NewsIndexContentProvider.cs" />
     <Compile Include="Repositories\INewsRepository.cs" />
-    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controller\NewsController.cs" />
     <Compile Include="Repositories\INewsRepositoryFactory.cs" />
     <Compile Include="Repositories\NewsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

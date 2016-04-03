@@ -1,22 +1,18 @@
 ﻿@using Sitecore
 @model Sitecore.Mvc.Presentation.RenderingModel
-<nav class="navbar navbar-default navbar-static" id="mainNavbar">
+<nav class="navbar navbar-default">
   <div class="container">
-    <div class="navbar-left">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#siteNavbar" aria-expanded="false">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-navigation" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
-      @Html.Sitecore().Placeholder("navbar-left")
+      @Html.Sitecore().Placeholder("navbar-header")
     </div>
-    <div class="navbar-center">
-      @Html.Sitecore().Placeholder("navbar-center")
-    </div>
-    <div class="navbar-right">
-      @Html.Sitecore().Placeholder("navbar-right")
+    <div class="collapse navbar-collapse" id="primary-navigation">
+      @Html.Sitecore().Placeholder("navbar-content")
     </div>
   </div>
 </nav>

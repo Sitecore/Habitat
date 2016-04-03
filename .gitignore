@@ -23,4 +23,3 @@ vars.user.cmd
 temp/
 *.ncrunchproject
 *.ncrunchsolution
-.vscode

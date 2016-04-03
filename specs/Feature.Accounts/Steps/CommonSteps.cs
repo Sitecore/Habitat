@@ -1,6 +1,4 @@
-﻿using Sitecore.Feature.Accounts.Specflow.Infrastructure;
-
-namespace Sitecore.Feature.Accounts.Specflow.Steps
+﻿namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
   using System;
   using System.Linq;
@@ -23,8 +21,33 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void ThenUserInfoIsShownOnUserPopup(Table table)
     {
       var values = table.Rows.Select(x => x.Values.First());
-      values.All(v => Site.ShowUserInfoPopupFields.Any(x => x.Text == v)).Should().BeTrue();
+      //1
+      foreach (var value in values)
+      {
+        var found = false;
+        foreach (var webElement in Site.ShowUserInfoPopupFields)
+        {
+          found = webElement.Text == value;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeFalse();
+      }
     }
+
+
+
+
+
+    [Then(@"Habitat website is opened on Main Page (.*)")]
+    [Then(@"Page URL ends on (.*)")]
+    public void ThenPageUrlEndsOnExpected(string urlEnding)
+    {
+      Driver.Url.EndsWith(urlEnding).Should().BeTrue();
+    }
+
     [Then(@"(.*) title presents on page")]
     public void ThenRegisterTitlePresentsOnPage(string title)
     {
@@ -41,37 +64,77 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     [Then(@"(.*) button presents")]
     public void ThenRegisterButtonPresents(string btn)
     {
-      SiteBase.SubmitButton.GetAttribute("Value").Should().BeEquivalentTo(btn);
+      Site.SubmitButton.Text.Should().BeEquivalentTo(btn);
     }
 
     [Then(@"Register fields present on page")]
     public void ThenRegisterFieldsPresentOnPage(Table table)
     {
       var fields = table.Rows.Select(x => x.Values.First());
-      var elements = CommonLocators.RegisterPageFields.Select(el => el.GetAttribute("name"));
+      var elements = Site.FormFields.Select(el => el.GetAttribute("name"));
       elements.Should().Contain(fields);
     }
 
-    [Then(@"Following buttons present under User icon")]
+    [Then(@"Following buttons present under User drop-drop down menu")]
     public void ThenFollowingButtonsPresentUnderUserDropDropDownMenu(Table table)
     {
       var buttons = table.Rows.Select(x => x.Values.First());
-      buttons.All(b => CommonLocators.UserIconButtons.Any(x => x.Text == b)).Should().BeTrue();
-         
+      //1
+      foreach (var button in buttons)
+      {
+        var found = false;
+        foreach (var webElement in Site.UserIconDropDownButtons)
+        {
+          found = webElement.Text == button;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeFalse();
+      }
+      //2
+      //            buttons.All(b => Site.DropDownButtons.Any(x => x.Text == b)).Should().BeTrue();
     }
 
-    [Then(@"Following buttons is no longer present under User icon")]
+    [Then(@"Following buttons is no longer present under User drop-drop down menu")]
     public void ThenFollowingButtonsIsNoLongerPresentUnderUserDropDropDownMenu(Table table)
     {
       var buttons = table.Rows.Select(x => x.Values.First());
-      buttons.All(b => CommonLocators.UserIconButtons.Any(x => x.Text == b)).Should().BeFalse();
+      //1
+      foreach (var button in buttons)
+      {
+        var found = false;
+        foreach (var webElement in Site.UserIconDropDownButtons)
+        {
+          found = webElement.Text == button;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeFalse();
+      }
     }
 
     [Then(@"User info is not shown on User popup")]
     public void ThenUserInfoIsNotShownOnUserPopup(Table table)
     {
       var fields = table.Rows.Select(x => x.Values.First());
-      fields.All(f => Site.EditUserProfileTextFields.Any(x => x.Text == f)).Should().BeFalse();
+      //1
+      foreach (var field in fields)
+      {
+        var found = false;
+        foreach (var webElement in Site.EditUserProfileTextFields)
+        {
+          found = webElement.Text == field;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeFalse();
+      }
     }
 
 
@@ -83,7 +146,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       var row = table.Rows.First();
       foreach (var key in row.Keys)
       {
-        CommonLocators.RegisterPageFields.GetField(key).SendKeys(row[key]);
+        Site.FormFields.GetField(key).SendKeys(row[key]);
       }
       //Following code will remove create user from DB after use case ends
       ContextExtensions.CleanupPool.Add(new TestCleanupAction
@@ -92,32 +155,23 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
         Payload = "extranet\\" + row["Email"]
       });
     }
-    [When(@"Actor enters following data in to the register fields with misssed email")]
-    public void WhenActorEntersFollowingDataInToTheRegisterFieldsWithMisssedEmail(Table table)
-    {
-      var row = table.Rows.First();
-      foreach (var key in row.Keys)
-      {
-        CommonLocators.RegisterPageFields.GetField(key).SendKeys(row[key]);
-      }
-    }
+
     [Given(@"User with following data is registered")]
     public void GivenUserWithFollowingDataIsRegistered(Table table)
     {
-      Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
+      Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
       WhenActorEntersFollowingDataInToTheRegisterFields(table);
-      SiteBase.SubmitButton.Click();
-      //TODO: change with click user item
-      //new SiteNavigationSteps().WhenActorMovesCursorOverTheUserIcon();
+      Site.SubmitButton.Click();
+      new SiteNavigation().WhenActorMovesCursorOverTheUserIcon();
       WhenUserSelectsRegisterFromDropDownMenu("Logout");
     }
 
     [Given(@"User with following data is registered in Habitat")]
     public void GivenUserWithFollowingDataIsRegisteredInHabitat(Table table)
     {
-      Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
+      Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
       WhenActorEntersFollowingDataInToTheRegisterFields(table);
-      SiteBase.SubmitButton.Click();
+      Site.SubmitButton.Click();
 
       table.Rows
         .Select(row => row["Email"]).ToList()
@@ -135,7 +189,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void GivenSessionWasExpired()
     {
       Driver.FindElement(By.CssSelector("body")).SendKeys(Keys.Control + 't');
-      Driver.Navigate().GoToUrl(BaseSettings.EndSessionUrl);
+      Driver.Navigate().GoToUrl(Settings.EndSessionUrl);
       Driver.FindElement(By.CssSelector("body")).SendKeys(Keys.Control + 'w');
     }
 
@@ -144,25 +198,70 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     [Given(@"User was logged out from the Habitat")]
     public void GivenUserWasLoggedOutFromTheHabitat()
     {
-      //TODO: change with click user item
-      //new SiteNavigationSteps().WhenActorMovesCursorOverTheUserIcon();
-      SiteBase.SubmitButton.Click();
+      new SiteNavigation().WhenActorMovesCursorOverTheUserIcon();
+      Site.SubmitButton.Click();
+    }
+
+    [Given(@"User clicks (.*) from drop-down menu")]
+    [When(@"User clicks (.*) from drop-down menu")]
+    public void WhenUserClicksLoginFromDropDownMenu(string linkText)
+    {
+      Driver.FindElement(By.LinkText(linkText.ToUpperInvariant())).Click();
+    }
+
+   
+
+    [Given(@"User is registered in Habitat and logged out")]
+    public void GivenUserIsRegisteredInHabitatAndLoggedOut(Table table)
+    {
+      Driver.Navigate().GoToUrl(Settings.RegisterPageUrl);
+      WhenActorEntersFollowingDataInToTheRegisterFields(table);
+      Site.SubmitButton.Click();
+      new SiteNavigation().WhenActorMovesCursorOverTheUserIcon();
+      Site.SubmitButton.Click();
+    }
+
+    [Given(@"User was deleted from the System")]
+    public void GivenUserWasDeletedFromTheSystem()
+    {
+      Cleanup();
+    }
+
+    [Given(@"Login form is opened")]
+    public void GivenLoginFormIsOpened()
+    {
+      SiteNavigation.GivenHabitatWebsiteIsOpenedOnMainPage();
+      SiteNavigation.WhenActorMovesCursorOverTheUserIcon();
+      WhenUserClicksLoginFromDropDownMenu("Login");
     }
 
 
-    [Then(@"Login drop-down popup is no longer presents")]
+    [Then(@"Login popup is no longer presents")]
     public void ThenLoginPopupIsNoLongerPresents()
     {
-      var element = Site.UserFormDropDownPopup;
+      var element = Site.LoginFormPopup;
 
       element.Displayed.Should().BeFalse();
     }
 
-    [Then(@"Following links present under User popup")]
+    [Then(@"Following links present under User drop-drop down menu")]
     public void ThenFollowingLinksPresentUnderUserDropDropDownMenu(Table table)
     {
       var buttonsLinks = table.Rows.Select(x => x.Values.First());
-      buttonsLinks.All(l => CommonLocators.UserIconDropDownButtonLinks.Any(x => x.Text == l)).Should().BeTrue();
+      //1
+      foreach (var buttonLink in buttonsLinks)
+      {
+        var found = false;
+        foreach (var webElement in Site.UserIconDropDownButtonLinks)
+        {
+          found = webElement.Text == buttonLink;
+          if (found)
+          {
+            break;
+          }
+        }
+        found.Should().BeFalse();
+      }
     }
 
     [Then(@"Habitat Main page presents")]
@@ -171,15 +270,5 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       var absoluteUri = new Uri(Driver.Url).AbsolutePath;
       (absoluteUri.Equals("/") || absoluteUri.Equals("/en")).Should().BeTrue();
     }
-
-    [Then(@"Following links is no longer present under User popup")]
-    public void ThenFollowingLinksIsNoLongerPresentUnderUserPopup(Table table)
-    {
-      var buttonsLinks = table.Rows.Select(x => x.Values.First());
-      buttonsLinks.All(l => CommonLocators.UserIconDropDownButtonLinks.Any(x => x.Text == l)).Should().BeFalse();
-    }
-
-
-
   }
 }

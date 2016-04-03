@@ -1,31 +1,25 @@
 ﻿---
-ID: "ac3fd4db-8266-476d-9635-67814d91e901"
-Parent: "24dd5b45-8c1e-47b9-ae47-b02cde8a4a87"
-Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+ID: ac3fd4db-8266-476d-9635-67814d91e901
+Parent: 24dd5b45-8c1e-47b9-ae47-b02cde8a4a87
+Template: 455a3e98-a627-4b40-8035-e683a0331ac7
 Path: /sitecore/templates/Feature/PageContent/_HasPageContent/Content/Summary
 DB: master
 SharedFields:
-- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
-  Hint: Source
-  Value: /sitecore/system/Settings/Html Editor Profiles/Rich Text Limited
-- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
   Hint: Type
   Value: Rich Text
-- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   Hint: __Sortorder
   Value: 200
-- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
-  Hint: __Security
-  Value: "ar|modules\Feature PageContent Admin|pe|+field:write|pd|+field:write|ar|Everyone|pe|!*|+field:read|pd|!*|+field:read|"
 Languages:
 - Language: en
   Fields:
-  - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
+  - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
     Hint: Title
-    Value: "Summary - shown in listings"
+    Value: Summary - shown in listings
   Versions:
   - Version: 1
     Fields:
-    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20130920T135201

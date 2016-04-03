@@ -15,7 +15,7 @@ Languages:
     Fields:
     - ID: 0f6b5546-e0ab-4487-81de-640c1aa1b65b
       Hint: TeaserImage
-      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{08E01453-5709-43F0-9F2F-9B7A65BA5666}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"074\" vspace=\"\" ></image>"
+      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{08E01453-5709-43F0-9F2F-9B7A65BA5666}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"074\" vspace=\"\" />"
     - ID: 13d97a52-7c4e-407c-960d-fadde8a3c1b1
       Hint: TeaserSummary
       Value: By controlling dependencies and technical design extensibility will be assured.

@@ -78,11 +78,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Compatible Renderings.feature</DependentUpon>
     </Compile>
-    <Compile Include="Page Image.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Page Image.feature</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WFFM forms integration.feature.cs">
       <AutoGen>True</AutoGen>
@@ -97,10 +92,6 @@
       <LastGenOutput>Compatible Renderings.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <None Include="Page Image.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Page Image.feature.cs</LastGenOutput>
-    </None>
     <None Include="WFFM forms integration.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>WFFM forms integration.feature.cs</LastGenOutput>

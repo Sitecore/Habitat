@@ -9,7 +9,6 @@
   using log4net.Appender;
   using log4net.Config;
   using NSubstitute;
-  using Sitecore.Data;
   using Sitecore.FakeDb.Sites;
   using Sitecore.Foundation.Alerts;
   using Sitecore.Foundation.Alerts.Extensions;
@@ -72,42 +71,6 @@
         //Assert
         view.Received().Render(Arg.Is<ViewContext>(v=>v.ViewData.Model.As<InfoMessage>().Type == InfoMessage.MessageType.Error), Arg.Any<TextWriter>());
       }
-    }
-
-    [Theory]
-    [AutoDbData]
-    public void PageEditorError_EditMode_RenderErrorViewFriendlyMessage(string errorMessage, string friendlyMessage, FakeSiteContext siteContext, [RegisterView(ViewPath.InfoMessage)]IView view, HtmlHelper helper)
-    {
-      //Arrange
-      typeof(SiteContext).GetField("displayMode", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(siteContext, DisplayMode.Edit);
-
-      //Act
-      MvcHtmlString result;
-      using (new SiteContextSwitcher(siteContext))
-      {
-        result = AlertHtmlHelpers.PageEditorError(helper, errorMessage, friendlyMessage, ID.NewID, ID.NewID);
-
-        //Assert
-        view.Received().Render(Arg.Is<ViewContext>(v => v.ViewData.Model.As<InfoMessage>().Type == InfoMessage.MessageType.Error), Arg.Any<TextWriter>());
-      }
-    }
-
-    [Theory]
-    [AutoDbData]
-    public void PageEditorErrorFriendlyMessage_NormalMode_ReturnEmptyString(string errorMessage, string  friendlyMessage, FakeSiteContext siteContext)
-    {
-      //Arrange
-      typeof(SiteContext).GetField("displayMode", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(siteContext, DisplayMode.Normal);
-
-      //Act
-      MvcHtmlString result;
-      using (new SiteContextSwitcher(siteContext))
-      {
-        result = AlertHtmlHelpers.PageEditorError(null, errorMessage, friendlyMessage, ID.NewID, ID.NewID);
-      }
-
-      //Assert
-      result.ToString().Should().BeEmpty();
     }
   }
 }
