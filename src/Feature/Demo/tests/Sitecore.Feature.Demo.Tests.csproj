@@ -133,6 +133,7 @@
   <ItemGroup>
     <Compile Include="AutoProfileDbDataAttribute.cs" />
     <Compile Include="Controllers\DemoControllerTests.cs" />
+    <Compile Include="DemoContentItem.cs" />
     <Compile Include="Models\Repositories\CampaignRepositoryTests.cs" />
     <Compile Include="Models\Repositories\ReferralRepositoryTests.cs" />
     <Compile Include="Models\Repositories\VisitsRepositoryTests.cs" />
