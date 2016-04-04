@@ -15,11 +15,11 @@
   </a>
   <div class="caption">
     <h3 class="teaser-heading">
-      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title, Model.Item)
     </h3>
     <hr/>
     <p class="read-more">
-      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link, Model.Item, new
       {
         @class = "btn btn-default"
       })

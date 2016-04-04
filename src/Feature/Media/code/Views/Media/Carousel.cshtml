@@ -43,9 +43,9 @@
             </video>
           }
 
-          <h3>@Html.Sitecore().Field(Templates.HasMedia.Fields.Title.ToString(), element.Item)</h3>
+          <h3>@Html.Sitecore().Field(Templates.HasMedia.Fields.Title, element.Item)</h3>
           <div class="lead">
-            @Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item)
+            @Html.Sitecore().Field(Templates.HasMedia.Fields.Description, element.Item)
           </div>
         </div>
       </div>

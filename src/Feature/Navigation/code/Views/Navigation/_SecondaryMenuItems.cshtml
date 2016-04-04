@@ -1,4 +1,5 @@
 ﻿@using Sitecore.Feature.Navigation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Feature.Navigation.Models.NavigationItems
 
 @{
@@ -16,7 +17,7 @@
         var openClass = ((item.IsActive && hasChildren) ? "open" : string.Empty);
     <li class="@openClass">
         <a href="@item.Url" target="@item.Target">
-            @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
+            @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, item.Item)
         </a>
         @if (hasChildren)
         {
