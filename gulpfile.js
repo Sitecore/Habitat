@@ -31,7 +31,11 @@ gulp.task("default", function (callback) {
 *****************************/
 gulp.task("01-Copy-Sitecore-Lib", function () {
   console.log("Copying Sitecore Libraries");
+
+  fs.statSync(config.sitecoreLibraries);
+
   var files = config.sitecoreLibraries + "/**/*";
+  
   return gulp.src(files).pipe(gulp.dest("./lib/Sitecore"));
 });
 
