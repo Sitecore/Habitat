@@ -28,14 +28,12 @@ gulp.task("CI-Prepare-Package-Files", function (callback) {
     });
 
     var excludeList = [
-      config.websiteRoot + "\\bin\\{Sitecore,Lucene,Newtonsoft,Unicorn,Kamsar,Rainbow,System,Microsoft.Web.Infrastructure}*dll",
+      config.websiteRoot + "\\bin\\{Sitecore,Lucene,Newtonsoft,System,Microsoft.Web.Infrastructure}*dll",
       config.websiteRoot + "\\compilerconfig.json.defaults",
       config.websiteRoot + "\\packages.config",
-      config.websiteRoot + "\\App_Config\\Include\\Rainbow*",
-      config.websiteRoot + "\\App_Config\\Include\\Unicorn\\*",
-      config.websiteRoot + "\\App_Config\\Include\\Habitat\\*Serialization.config",
+      config.websiteRoot + "\\App_Config\\Include\\{Feature,Foundation,Project}\\*Serialization.config",
       "!" + config.websiteRoot + "\\bin\\Sitecore.Support*dll",
-      "!" + config.websiteRoot + "\\bin\\Sitecore.{Feature,Foundation,Habitat}*dll"
+      "!" + config.websiteRoot + "\\bin\\Sitecore.{Feature,Foundation,Habitat,Demo,Common}*dll"
     ];
     console.log(excludeList);
 
