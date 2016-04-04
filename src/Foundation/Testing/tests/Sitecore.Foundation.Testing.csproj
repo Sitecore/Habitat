@@ -132,7 +132,6 @@
     <Compile Include="HttpContextMockFactory.cs" />
     <Compile Include="Pipelines\EmptyPipeline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SitecoreMockFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
