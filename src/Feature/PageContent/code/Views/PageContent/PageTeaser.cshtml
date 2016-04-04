@@ -13,7 +13,7 @@
 
 <div class="thumbnail">
     <a href="@Model.Item.Url()">
-        @Html.Sitecore().ImageField(Templates.HasPageContent.Fields.Image.ToString(), Model.Item, mw: 500, cssClass: "img-responsive")
+        @Html.Sitecore().ImageField(Templates.HasPageContent.Fields.Image, Model.Item, mw: 500, cssClass: "img-responsive")
     </a>
     <div class="caption">
         <h3 class="teaser-heading">

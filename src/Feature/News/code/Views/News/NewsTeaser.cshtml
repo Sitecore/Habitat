@@ -16,7 +16,7 @@
 	</h3>
 	<div class="teaser-image">
 		<a href="@Model.Item.Url()">
-			@Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), Model.Item, mw: 750, cssClass: "img-responsive")
+			@Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image, Model.Item, mw: 750, cssClass: "img-responsive")
 		</a>
 	</div>
 	<div class="teaser-body">

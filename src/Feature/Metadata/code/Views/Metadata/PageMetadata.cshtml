@@ -22,7 +22,7 @@
   }
 }
 <title>@Html.Sitecore().Field(Templates.PageMetadata.Fields.BrowserTitle, Model.Item) @Html.Sitecore().Field(Templates.SiteMetadata.Fields.SiteBrowserTitle, siteMetadata)</title>
-<meta name="keywords" content="@MetadataRepository.GetKeywords(Model.Item).ToString()"/>
+<meta name="keywords" content="@MetadataRepository.GetKeywords(Model.Item)"/>
 <meta name="description" content="@Html.Sitecore().Field(Templates.PageMetadata.Fields.Description, Model.Item)"/>
 @{
   if (!MainUtil.GetBool(Model.Item[Templates.PageMetadata.Fields.CanIndex], true))

@@ -16,6 +16,17 @@
   /// </summary>
   public static class HtmlHelperExtensions
   {
+    public static HtmlString ImageField(this SitecoreHelper helper, ID fieldID, int mh = 0, int mw = 0, string cssClass = null, bool disableWebEditing = false)
+    {
+      return helper.Field(fieldID.ToString(), new
+      {
+        mh,
+        mw,
+        DisableWebEdit = disableWebEditing,
+        @class = cssClass ?? ""
+      });
+    }
+
     public static HtmlString ImageField(this SitecoreHelper helper, ID fieldID, Item item, int mh = 0, int mw = 0, string cssClass = null, bool disableWebEditing = false)
     {
       return helper.Field(fieldID.ToString(), item, new
