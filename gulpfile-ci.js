@@ -22,11 +22,6 @@ gulp.task("CI-Publish", function (callback) {
 });
 
 gulp.task("CI-Prepare-Package-Files", function (callback) {
-    var foldersToExclude = [config.websiteRoot + "\\App_config\\include\\Unicorn"];
-    foldersToExclude.forEach(function (item, index, array) {
-        rimrafDir.sync(config.websiteRoot + item);
-    });
-
     var excludeList = [
       config.websiteRoot + "\\bin\\{Sitecore,Lucene,Newtonsoft,System,Microsoft.Web.Infrastructure}*dll",
       config.websiteRoot + "\\compilerconfig.json.defaults",
