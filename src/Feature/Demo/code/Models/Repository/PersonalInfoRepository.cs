@@ -130,8 +130,8 @@
 
     private string FormatAddress(IAddress address)
     {
-      var streetAddress = string.Join(Environment.NewLine, address.StreetLine1, address.StreetLine2, address.StreetLine3, address.StreetLine4).Trim();
-      var cityAddress = string.Join(", ", address.City, address.StateProvince, address.PostalCode).Trim();
+      var streetAddress = string.Join(Environment.NewLine, (new List<string> { address.StreetLine1, address.StreetLine2, address.StreetLine3, address.StreetLine4}).Where(line=>!string.IsNullOrEmpty(line))).Trim();
+      var cityAddress = string.Join(", ", (new List<string> { address.City, address.StateProvince, address.PostalCode }).Where(line => !string.IsNullOrEmpty(line))).Trim();
       return string.Join(Environment.NewLine, streetAddress, cityAddress, address.Country).Trim();
     }
 
