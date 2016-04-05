@@ -406,6 +406,149 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Serialise users and roles")]
+        [Xunit.TraitAttribute("Description", "Serialise users and roles_UC4_Admin user with multisite admin rights")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        public virtual void SerialiseUsersAndRoles_UC4_AdminUserWithMultisiteAdminRights()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Serialise users and roles_UC4_Admin user with multisite admin rights", new string[] {
+                        "NeedImplementation"});
+#line 160
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Role"});
+            table6.AddRow(new string[] {
+                        "habitat\\Project Habitat Content Author"});
+            table6.AddRow(new string[] {
+                        "modules\\Feature Multisite Admin"});
+#line 161
+ testRunner.Given("User with following role logged to Sitecore", ((string)(null)), table6, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Base Templates"});
+            table7.AddRow(new string[] {
+                        "Standard template"});
+            table7.AddRow(new string[] {
+                        "_AccountSettings"});
+            table7.AddRow(new string[] {
+                        "_Interesr"});
+            table7.AddRow(new string[] {
+                        "_MailTemplate"});
+            table7.AddRow(new string[] {
+                        "_ProfileSettings"});
+            table7.AddRow(new string[] {
+                        "_CampaignToken"});
+            table7.AddRow(new string[] {
+                        "_DemoContent"});
+            table7.AddRow(new string[] {
+                        "_LinkToken"});
+            table7.AddRow(new string[] {
+                        "_ProfillingSettings"});
+            table7.AddRow(new string[] {
+                        "_TextToken"});
+            table7.AddRow(new string[] {
+                        "_Token"});
+            table7.AddRow(new string[] {
+                        "_FAQ"});
+            table7.AddRow(new string[] {
+                        "_FAQ Group"});
+            table7.AddRow(new string[] {
+                        "_Identity"});
+            table7.AddRow(new string[] {
+                        "_LanguageSettings"});
+            table7.AddRow(new string[] {
+                        "_MapPoint"});
+            table7.AddRow(new string[] {
+                        "Map Type"});
+            table7.AddRow(new string[] {
+                        "Background Type"});
+            table7.AddRow(new string[] {
+                        "_HasMedia"});
+            table7.AddRow(new string[] {
+                        "_HasMediaImage"});
+            table7.AddRow(new string[] {
+                        "_HasMediaSelector"});
+            table7.AddRow(new string[] {
+                        "_HasMediaVideo"});
+            table7.AddRow(new string[] {
+                        "_HasParallaxBackground"});
+            table7.AddRow(new string[] {
+                        "_MediaSiteExtension"});
+            table7.AddRow(new string[] {
+                        "_Keyword"});
+            table7.AddRow(new string[] {
+                        "_PageMetadata"});
+            table7.AddRow(new string[] {
+                        "_SiteMetadata"});
+            table7.AddRow(new string[] {
+                        "_SiteConfiguration"});
+            table7.AddRow(new string[] {
+                        "_Link"});
+            table7.AddRow(new string[] {
+                        "_LinkMenuItem"});
+            table7.AddRow(new string[] {
+                        "_NavigationRoot"});
+            table7.AddRow(new string[] {
+                        "_Navigable"});
+            table7.AddRow(new string[] {
+                        "_NewsArticle"});
+            table7.AddRow(new string[] {
+                        "_HasPageContent"});
+            table7.AddRow(new string[] {
+                        "_Employee"});
+            table7.AddRow(new string[] {
+                        "_Person"});
+            table7.AddRow(new string[] {
+                        "_Quote"});
+            table7.AddRow(new string[] {
+                        "_SearchResults"});
+            table7.AddRow(new string[] {
+                        "_TwitterFeed"});
+            table7.AddRow(new string[] {
+                        "_OpenGraph"});
+            table7.AddRow(new string[] {
+                        "_Accordeon"});
+            table7.AddRow(new string[] {
+                        "_TeaserContent"});
+            table7.AddRow(new string[] {
+                        "Datasource Configuration"});
+            table7.AddRow(new string[] {
+                        "_Site"});
+            table7.AddRow(new string[] {
+                        "_SiteSettings"});
+            table7.AddRow(new string[] {
+                        "_IndexedItem"});
+            table7.AddRow(new string[] {
+                        "_RenderingAssets"});
+            table7.AddRow(new string[] {
+                        "_PageAssets"});
+            table7.AddRow(new string[] {
+                        "FAQ"});
+            table7.AddRow(new string[] {
+                        "FAQ Group"});
+            table7.AddRow(new string[] {
+                        "Interest"});
+#line 165
+ testRunner.And("item based on following templates created under /sitecore/content/Habitat/", ((string)(null)), table7, "And ");
+#line 218
+ testRunner.When("User opens item in Content Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 219
+ testRunner.And("User clicks <Lock and Edit> link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item name"});
+            table8.AddRow(new string[] {
+                        "Datasource Location"});
+            table8.AddRow(new string[] {
+                        "Datasource Template"});
+#line 220
+ testRunner.Then("following item fields enabled", ((string)(null)), table8, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
         [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
         [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
         public class FixtureData : System.IDisposable
