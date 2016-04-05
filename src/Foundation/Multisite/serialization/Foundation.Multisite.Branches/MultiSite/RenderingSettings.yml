@@ -1,29 +1,29 @@
 ﻿---
-ID: "05db4668-538b-4e6e-9c89-b6ab7374aa3c"
-Parent: "ddf31f45-d997-46b1-accb-05c980792c75"
-Template: "b2613cc1-a748-46a3-a0db-3774574bd339"
+ID: 05db4668-538b-4e6e-9c89-b6ab7374aa3c
+Parent: ddf31f45-d997-46b1-accb-05c980792c75
+Template: b2613cc1-a748-46a3-a0db-3774574bd339
 Path: /sitecore/templates/Branches/Foundation/Multisite/RenderingSettings
 DB: master
-BranchID: "f6b0e6f1-2451-4c72-94fd-22d7b93b592a"
+BranchID: f6b0e6f1-2451-4c72-94fd-22d7b93b592a
 SharedFields:
-- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
   Hint: __Icon
   Value: Apps/32x32/Routes.png
-- ID: "854cc8f6-94ad-4521-a4b6-44ed8f794c98"
+- ID: 854cc8f6-94ad-4521-a4b6-44ed8f794c98
   Hint: Command
-  Value: "multisite:createdatasourcesetting(parentID=$ParentID)"
+  Value: multisite:createdatasourcesetting
 Languages:
 - Language: en
   Fields:
-  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
     Hint: __Display name
     Value: Datasource Configuration
   Versions:
   - Version: 1
     Fields:
-    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20151224T105326Z
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
       Hint: __Created by
       Value: sitecore\admin

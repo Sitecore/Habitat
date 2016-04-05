@@ -15,8 +15,9 @@
 
     public override void Execute(CommandContext context)
     {
+      var item = context.Items[0];
       var parameters = new NameValueCollection();
-      parameters.Add("item", context.Parameters["parentID"]);
+      parameters.Add("item", item.ID.ToString());
       Context.ClientPage.Start(this, "Run", parameters);
     }
 
