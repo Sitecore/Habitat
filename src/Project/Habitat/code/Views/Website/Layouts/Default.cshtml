@@ -1,5 +1,6 @@
 ﻿@using Sitecore.Foundation.Assets
 @using Sitecore.Foundation.Assets.Models
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Habitat.Website
 @using Sitecore.Mvc.Analytics.Extensions
 @inherits WebViewPage
@@ -39,7 +40,7 @@
       @Html.Sitecore().Placeholder("footer")
     </footer>
 
-    @if (Sitecore.Context.PageMode.IsNormal)
+    @if (Sitecore.Context.Site.NoOverlay())
     {
       <div class="off-canvas-sidebar off-canvas-sidebar-right">
         <div class="btn-group-vertical hover" role="group">

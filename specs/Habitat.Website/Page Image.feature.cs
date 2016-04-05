@@ -84,7 +84,7 @@ namespace Habitat.Website.Specflow
 #line 4
 this.ScenarioSetup(scenarioInfo);
 #line 5
- testRunner.Given("Experience Editor application is launched", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
  testRunner.And("/Modules/Foundation/Sitecore-Extensions page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
@@ -94,9 +94,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.And("User selects <PageImage> rendering", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("user clicks Select button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Select button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then("PageImage control inserted on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("PageImage control presents on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -114,7 +114,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 15
- testRunner.Given("Experience Editor application is launched", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 16
  testRunner.And("/Modules/Feature/Person page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
@@ -124,9 +124,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 19
  testRunner.And("User selects <PageImage> rendering", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 20
- testRunner.And("user clicks Select button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Select button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.Then("PageImage control inserted on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("PageImage control presents on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -147,27 +147,37 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("User selects Content Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Column name"});
+                        "Item path",
+                        "Allowed Controls"});
             table1.AddRow(new string[] {
-                        "col-narrow-1"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-1",
+                        "PageImage"});
             table1.AddRow(new string[] {
-                        "col-narrow-2"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-2",
+                        "PageImage"});
             table1.AddRow(new string[] {
-                        "col-narrow-3"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-3",
+                        "PageImage"});
             table1.AddRow(new string[] {
-                        "col-narrow-4"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-4",
+                        "PageImage"});
             table1.AddRow(new string[] {
-                        "col-narrow-5"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-5",
+                        "PageImage"});
             table1.AddRow(new string[] {
-                        "col-narrow-6"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-6",
+                        "PageImage"});
             table1.AddRow(new string[] {
-                        "col-wide-1"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-1",
+                        "PageImage"});
             table1.AddRow(new string[] {
-                        "col-wide-2"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-2",
+                        "PageImage"});
             table1.AddRow(new string[] {
-                        "col-wide-3"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-3",
+                        "PageImage"});
 #line 27
- testRunner.Then("PageImage control presents in all Wide and Narrow columns", ((string)(null)), table1, "Then ");
+ testRunner.Then("Items contain fields", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -180,22 +190,30 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Page Image_UC4_Make sure picture can be changed in control", new string[] {
                         "NeedImplementation"});
-#line 40
-this.ScenarioSetup(scenarioInfo);
 #line 41
- testRunner.Given("Experience Editor application is launched", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 42
- testRunner.And("/Modules/Feature/Person page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 43
- testRunner.And("PageImage rendering is inserted into col-wide-1 placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("/Modules/Features/Page Content page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 44
- testRunner.When("User clicks <Edit related item> command", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("User selects col-narrow-1 placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
- testRunner.And("User sets </Default Website/cover> value into Image field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks <Add here> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 46
- testRunner.And("User saves changes", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects <PageImage> rendering", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 47
- testRunner.Then("changes applied on the /Modules/Feature/Person page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("User clicks Select button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+ testRunner.When("User selects PageImage rendering", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 49
+ testRunner.And("User clicks <Edit related item> command", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
+ testRunner.And("User selects new picture <Habitat-002-square>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 51
+ testRunner.And("User Save and Close button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+ testRunner.Then("<Habitat-002-square> picture presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -208,22 +226,28 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Page Image_UC5_Remove PageImage control", new string[] {
                         "NeedImplementation"});
-#line 50
-this.ScenarioSetup(scenarioInfo);
-#line 51
- testRunner.Given("Experience Editor application is launched", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 52
- testRunner.And("/Modules/Feature/Person page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 53
- testRunner.And("PageImage rendering is inserted into col-wide-1 placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
- testRunner.When("User selects <PageImage> rendering", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 55
- testRunner.And("User clicks <Remove> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 56
- testRunner.And("User saves changes on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 57
- testRunner.Then("PageImage control is no longer present on the /Modules/Feature/Person page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("/Modules/Features/Page Content page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.And("User selects col-narrow-1 placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 59
+ testRunner.And("User clicks <Add here> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+ testRunner.And("User selects <PageImage> rendering", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
+ testRunner.And("User clicks Select button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+ testRunner.When("User selects <PageImage> rendering", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 63
+ testRunner.And("User clicks <Remove> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+ testRunner.And("User saves changes on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.Then("PageImage control is no longer present on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -89,27 +89,37 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("User selects Content Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Column name"});
+                        "Item path",
+                        "Allowed Controls"});
             table1.AddRow(new string[] {
-                        "col-narrow-1"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-1",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-narrow-2"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-2",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-narrow-3"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-3",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-narrow-4"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-4",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-narrow-5"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-5",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-narrow-6"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-6",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-wide-1"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-1",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-wide-2"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-2",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-wide-3"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-3",
+                        "MVC Form"});
 #line 8
- testRunner.Then("MVC form controls presents in all Wide and Narrow columns", ((string)(null)), table1, "Then ");
+ testRunner.Then("Items contain fields", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
