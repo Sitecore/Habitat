@@ -101,10 +101,10 @@
       {
         formattedPhone += $"+{phoneNumber.CountryCode}";
       }
-      formattedPhone += string.Join(" ", formattedPhone, phoneNumber.Number).Trim();
+      formattedPhone = string.Join(" ", formattedPhone, phoneNumber.Number).Trim();
       if (!string.IsNullOrEmpty(phoneNumber.Extension))
       {
-        formattedPhone += string.Join("p", formattedPhone, phoneNumber.Extension).Trim();
+        formattedPhone = string.Join("p", formattedPhone, phoneNumber.Extension).Trim();
       }
 
       return formattedPhone;
