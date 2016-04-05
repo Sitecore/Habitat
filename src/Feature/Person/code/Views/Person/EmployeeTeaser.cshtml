@@ -1,8 +1,8 @@
 ﻿@using Sitecore.Feature.Person
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
-@using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @if (!Model?.Item?.IsDerived(Templates.Person.ID) ?? true)
@@ -30,7 +30,7 @@
   </div>
   <div class="teaser-footer">
     <a href="@Model.Item.Url()" class="btn btn-hollow">
-      @DictionaryRepository.Get("/Person/EmployeeTeaser/Read more", "Read more")
+      @Html.Sitecore().Dictionary("/Person/EmployeeTeaser/Read more", "Read more")
     </a>
   </div>
 </div>

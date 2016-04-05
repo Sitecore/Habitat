@@ -1,5 +1,5 @@
 ﻿using Sitecore.Data;
-using Sitecore.Foundation.SitecoreExtensions.Repositories;
+using Sitecore.Foundation.Dictionary.Repositories;
 
 namespace Sitecore.Foundation.Alerts
 {

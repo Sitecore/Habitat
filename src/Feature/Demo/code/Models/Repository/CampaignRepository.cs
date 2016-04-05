@@ -5,7 +5,7 @@
   using Sitecore.Analytics.Tracking;
   using Sitecore.Common;
   using Sitecore.Data;
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Marketing.Definitions;
   using Sitecore.Marketing.Definitions.Campaigns;
   using Sitecore.Marketing.Taxonomy;
@@ -22,28 +22,30 @@
       var campaignId = Tracker.Current.Interaction.CampaignId.Value.ToID();
       var campaign = GetCampaignDefinition(campaignId);
 
-      return new Campaign()
-      {
-        Title = campaign?.Name ?? DictionaryRepository.Get("/Demo/Campaigns/UnknownCampaign", "(Unknown)"),
-        IsActive = true,
-        Date = Tracker.Current.Interaction.StartDateTime,
-        Channel = GetChannel(campaign)
-      };
+      return new Campaign
+             {
+               Title = campaign?.Name ?? DictionaryRepository.Get("/Demo/Campaigns/UnknownCampaign", "(Unknown)"),
+               IsActive = true,
+               Date = Tracker.Current.Interaction.StartDateTime,
+               Channel = GetChannel(campaign)
+             };
     }
 
     private string GetChannel(ICampaignActivityDefinition campaign)
     {
       if (campaign?.ChannelUri == null)
+      {
         return null;
+      }
       var channelTaxonomyManager = TaxonomyManager.Provider.GetChannelManager();
-      var channel = channelTaxonomyManager.GetChannel(campaign.ChannelUri, Sitecore.Context.Language.CultureInfo);
+      var channel = channelTaxonomyManager.GetChannel(campaign.ChannelUri, Context.Language.CultureInfo);
       return channel == null ? null : channelTaxonomyManager.GetFullName(channel.Uri, "/");
     }
 
     private static ICampaignActivityDefinition GetCampaignDefinition(ID campaignId)
     {
       var campaigns = DefinitionManagerFactory.Default.GetDefinitionManager<ICampaignActivityDefinition>();
-      var campaign = campaigns.Get(campaignId, Sitecore.Context.Language.CultureInfo);
+      var campaign = campaigns.Get(campaignId, Context.Language.CultureInfo);
       return campaign;
     }
 
@@ -54,13 +56,13 @@
       {
         var campaign = GetCampaignDefinition(cachedCampaign.Id.ToID());
 
-        yield return new Campaign()
-        {
-          Title = campaign?.Name ?? DictionaryRepository.Get("/Demo/Campaigns/UnknownCampaign", "(Unknown)"),
-          IsActive = false,
-          Date = cachedCampaign.DateTime,
-          Channel = GetChannel(campaign)
-        };
+        yield return new Campaign
+                     {
+                       Title = campaign?.Name ?? DictionaryRepository.Get("/Demo/Campaigns/UnknownCampaign", "(Unknown)"),
+                       IsActive = false,
+                       Date = cachedCampaign.DateTime,
+                       Channel = GetChannel(campaign)
+                     };
       }
     }
   }

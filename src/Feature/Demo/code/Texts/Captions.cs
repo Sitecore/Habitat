@@ -1,6 +1,6 @@
 ﻿namespace Sitecore.Feature.Demo.Texts
 {
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.Dictionary.Repositories;
 
   public class Captions
   {
@@ -22,7 +22,7 @@
       public static string EndVisit => DictionaryRepository.Get("/Demo/VisitDetails/EndVisit", "End Visit");
       public static string EndVisitDescription => DictionaryRepository.Get("/Demo/VisitDetails/EndVisit/Description", "End the current visit and submits it to the Sitecore Experience Database");
       public static string RefreshVisitDetailsDescription => DictionaryRepository.Get("/Demo/VisitDetails/EndVisit/RefreshVisitDescription", "Refresh visit details panel");
-      
+
       public static string Refresh => DictionaryRepository.Get("/Demo/VisitDetails/Refresh", "Refresh");
 
       public class Device
@@ -70,7 +70,6 @@
       public static string Outcomes => DictionaryRepository.Get("/Demo/ContactDetails/Outcomes", "Outcomes");
       public static string PageEvents => DictionaryRepository.Get("/Demo/ContactDetails/PageEvents", "Page Events");
       public static string Venues => DictionaryRepository.Get("/Demo/ContactDetails/Venues", "Venues");
-
     }
   }
 }

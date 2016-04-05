@@ -1,6 +1,6 @@
 ﻿namespace Sitecore.Feature.Accounts.Texts
 {
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.Dictionary.Repositories;
 
   public static class Captions
   {

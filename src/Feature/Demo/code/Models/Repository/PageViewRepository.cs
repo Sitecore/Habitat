@@ -4,21 +4,20 @@
   using System.Linq;
   using Sitecore.Analytics.Core;
   using Sitecore.Analytics.Tracking;
-  using Sitecore.Data.Managers;
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.Dictionary.Repositories;
 
   internal class PageViewRepository
   {
     public PageView Get(ICurrentPageContext pageContext)
     {
-      return new PageView()
+      return new PageView
              {
                Duration = GetDuration(pageContext),
                HasEngagementValue = pageContext.PageEvents.Any(pe => pe.Value > 0),
                HasMvTest = HasMvTest(pageContext),
                HasPersonalisation = HasPersonalisation(pageContext),
                Path = GetCleanPath(pageContext)
-      };
+             };
     }
 
     private static bool HasPersonalisation(ICurrentPageContext pageContext)

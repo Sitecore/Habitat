@@ -1,6 +1,6 @@
 ﻿namespace Sitecore.Habitat.Website
 {
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.Dictionary.Repositories;
 
   public static class Captions
   {

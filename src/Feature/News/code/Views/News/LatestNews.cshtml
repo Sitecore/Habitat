@@ -1,9 +1,9 @@
 ﻿@using Sitecore.Feature.News
+@using Sitecore.Foundation.Dictionary
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
-@using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model IEnumerable<Sitecore.Data.Items.Item>
 <div class="well bg-primary">
-  <h5 class="text-uppercase">@DictionaryRepository.Get("/news/latest news/title", "News")</h5>
+  <h5 class="text-uppercase">@Html.Sitecore().Dictionary("/news/latest news/title", "News")</h5>
   <ul class="media-list">
     @foreach (var item in Model)
     {
@@ -23,6 +23,6 @@
     }
   </ul>
   <a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-default">
-    @DictionaryRepository.Get("/news/latest news/read more", "Read more")
+    @Html.Sitecore().Dictionary("/news/latest news/read more", "Read more")
   </a>
 </div>

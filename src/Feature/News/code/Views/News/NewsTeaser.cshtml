@@ -1,8 +1,8 @@
 ﻿@using Sitecore.Feature.News
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
-@using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.NewsArticle.ID) ?? true)
 {
@@ -11,26 +11,26 @@
 }
 
 <div class="teaser teaser-default">
-	<h3 class="teaser-heading">
-		@Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, Model.Item)
-	</h3>
-	<div class="teaser-image">
-		<a href="@Model.Item.Url()">
-			@Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image, Model.Item, mw: 750, cssClass: "img-responsive")
-		</a>
-	</div>
-	<div class="teaser-body">
-		<div class="metadata">
-			@Html.Sitecore().Field(Templates.NewsArticle.Fields.Date, new
-   {
-	   format = "MMMM dd, yyyy"
-   })
-		</div>
-		@Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, Model.Item)
-	</div>
-	<div class="teaser-footer">
-		<a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-default">
-			@DictionaryRepository.Get("/news/news teaser/read more", "Read more")
-		</a>
-	</div>
+  <h3 class="teaser-heading">
+    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, Model.Item)
+  </h3>
+  <div class="teaser-image">
+    <a href="@Model.Item.Url()">
+      @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image, Model.Item, mw: 750, cssClass: "img-responsive")
+    </a>
+  </div>
+  <div class="teaser-body">
+    <div class="metadata">
+      @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date, new
+                                                                {
+                                                                  format = "MMMM dd, yyyy"
+                                                                })
+    </div>
+    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, Model.Item)
+  </div>
+  <div class="teaser-footer">
+    <a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-default">
+      @Html.Sitecore().Dictionary("/news/news teaser/read more", "Read more")
+    </a>
+  </div>
 </div>

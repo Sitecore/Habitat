@@ -1,14 +1,13 @@
 ﻿@using System.Globalization
 @using Sitecore.Feature.Demo.Texts
-@using Sitecore.Foundation.SitecoreExtensions.Repositories
-@using Sitecore.StringExtensions
+@using Sitecore.Foundation.Dictionary
 @model Sitecore.Feature.Demo.Models.PersonalInfo
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">
       <a href="#personalInfoPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
         <span class="fa fa-user"></span>
-        @DictionaryRepository.Get("/Demo/PersonalInfo/Title", "Personal Information")
+        @Html.Sitecore().Dictionary("/Demo/PersonalInfo/Title", "Personal Information")
         <span class="glyphicon glyphicon-chevron-down pull-right"></span>
       </a>
     </h3>
@@ -27,11 +26,11 @@
             }
             else if (Model.IsIdentified)
             {
-              @DictionaryRepository.Get("/Demo/PersonalInfo/IdentifiedUser", "You are known")
+              @Html.Sitecore().Dictionary("/Demo/PersonalInfo/IdentifiedUser", "You are known")
             }
             else
             {
-              @DictionaryRepository.Get("/Demo/PersonalInfo/AnonymousUser", "You are anonymous")
+              @Html.Sitecore().Dictionary("/Demo/PersonalInfo/AnonymousUser", "You are anonymous")
             }
           </h4>
           <dl>
@@ -65,7 +64,7 @@
           </div>
           <div class="media-body ">
             <h4 class="media-title">
-              @DictionaryRepository.Get("/Demo/Referral/Location", "Location")
+              @Html.Sitecore().Dictionary("/Demo/Referral/Location", "Location")
             </h4>
             <div class="text-nowrap" title="@Model.Location.City, @Model.Location.Country">
               @Model.Location.City, @Model.Location.Country
@@ -81,13 +80,13 @@
           </div>
           <div class="media-body ">
             <h4 class="media-title">
-              @DictionaryRepository.Get("/Demo/Referral/Device", "Device")
+              @Html.Sitecore().Dictionary("/Demo/Referral/Device", "Device")
             </h4>
             <div class="text-nowrap">
               <dl>
-                <dt>@DictionaryRepository.Get("/Demo/Referral/DeviceTitle", "Device")</dt>
+                <dt>@Html.Sitecore().Dictionary("/Demo/Referral/DeviceTitle", "Device")</dt>
                 <dd>@Model.Device.Title</dd>
-                <dt>@DictionaryRepository.Get("/Demo/Referral/DeviceBrowser", "Browser")</dt>
+                <dt>@Html.Sitecore().Dictionary("/Demo/Referral/DeviceBrowser", "Browser")</dt>
                 <dd>@Model.Device.Browser</dd>
               </dl>
             </div>

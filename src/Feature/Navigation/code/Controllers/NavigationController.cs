@@ -4,7 +4,7 @@
   using Sitecore.Feature.Navigation.Repositories;
   using Sitecore.Foundation.Alerts.Extensions;
   using Sitecore.Foundation.Alerts.Models;
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Mvc.Presentation;
 
   public class NavigationController : Controller

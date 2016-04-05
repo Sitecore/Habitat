@@ -1,12 +1,12 @@
 ﻿namespace Sitecore.Feature.Accounts.Texts
 {
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.Dictionary.Repositories;
 
   public static class Errors
   {
     public static string Required => DictionaryRepository.Get("/Accounts/Errors/Required", "Please enter a value for {0}");
 
-    public static string IvalidEmailAddress => DictionaryRepository.Get("/Accounts/Errors/IvalidEmailAddress", "Please enter a valid email address");
+    public static string InvalidEmailAddress => DictionaryRepository.Get("/Accounts/Errors/InvalidEmailAddress", "Please enter a valid email address");
 
     public static string MinimumPasswordLength => DictionaryRepository.Get("/Accounts/Errors/MinimumPasswordLength", "Please enter a password with at lease {1} characters");
 
