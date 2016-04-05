@@ -1,6 +1,7 @@
 ﻿namespace Sitecore.Foundation.Multisite.Commands
 {
-  using System.Collections.Specialized;
+    using System;
+    using System.Collections.Specialized;
   using System.Text.RegularExpressions;
   using Sitecore.Data;
   using Sitecore.Data.Items;
@@ -16,7 +17,13 @@
     public override void Execute(CommandContext context)
     {
       var parameters = new NameValueCollection();
-      parameters.Add("item", context.Parameters["parentID"]);
+      var parentId = context.Parameters["parentID"];
+      if (String.IsNullOrEmpty(parentId))
+      {
+        var item = context.Items[0];
+        parentId = item.ID.ToString();
+      }
+      parameters.Add("item", parentId);
       Context.ClientPage.Start(this, "Run", parameters);
     }
 
