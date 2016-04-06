@@ -12,7 +12,7 @@
 
   public class PageContentIndexContentProvider : IndexContentProviderBase
   {
-    public override string ContentType => DictionaryRepository.Get("/pagecontent/search/contenttype", "Page");
+    public override string ContentType => DictionaryPhraseRepository.Current.Get("/Page Content/Search/Content Type", "Page");
 
     public override IEnumerable<ID> SupportedTemplates => new[] {Templates.HasPageContent.ID};
 

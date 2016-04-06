@@ -40,7 +40,7 @@
       var pageName = RemoveLanguage(page).Replace("//", "/").Remove(0, 1).Replace(".aspx", "");
       if (pageName == string.Empty || IsLanguage(pageName))
       {
-        pageName = DictionaryRepository.Get("/Demo/PageView/Home", "Home");
+        pageName = DictionaryPhraseRepository.Current.Get("/Demo/Page View/Home", "Home");
       }
       if (pageName.Contains("/"))
       {

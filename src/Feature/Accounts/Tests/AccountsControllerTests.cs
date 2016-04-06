@@ -341,7 +341,7 @@
         var result = controller.ForgotPassword(model);
         result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
         result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(model.Email))
-          .WhichValue.Errors.Should().Contain(x => x.ErrorMessage == Errors.UserDoesNotExist);
+          .WhichValue.Errors.Should().Contain(x => x.ErrorMessage == AccountsController.UserDoesNotExistError);
       }
     }
     
@@ -367,7 +367,7 @@
       var result = controller.Register(registrationInfo);
       result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(registrationInfo);
       result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(registrationInfo.Email))
-        .WhichValue.Errors.Should().Contain(x => x.ErrorMessage == Errors.UserAlreadyExists);
+        .WhichValue.Errors.Should().Contain(x => x.ErrorMessage == AccountsController.UserAlreadyExistsError);
     }
   }
 

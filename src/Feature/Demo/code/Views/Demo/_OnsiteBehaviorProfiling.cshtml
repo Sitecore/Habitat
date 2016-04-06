@@ -5,7 +5,7 @@
   @if (!Model.Any())
   {
     <div class="alert alert-info">
-      @Html.Sitecore().Dictionary("/Demo/OnsiteBehavior/NoProfiling", "You have not been profiled yet")
+      @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/No Profiling", "You have not been profiled yet")
     </div>
   }
   else

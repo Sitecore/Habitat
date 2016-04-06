@@ -1,0 +1,17 @@
+﻿---
+ID: "3242d3aa-c3ec-4205-95cc-49e50194e67a"
+Parent: "41be1721-f509-41b8-a4fb-8084a780ceec"
+Template: "98e4bdc6-9b43-4eb2-baa3-d4303c35852e"
+Path: /sitecore/content/Habitat/Global/Dictionary/Page Content/Page Teaser
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160406T055316Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: extranet\Anonymous

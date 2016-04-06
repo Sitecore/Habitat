@@ -1,0 +1,20 @@
+﻿---
+ID: "0b41abcd-01ee-4292-9788-11b043fb6066"
+Parent: "a237409f-43fd-41ab-92a7-666711d3f626"
+Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
+Path: /sitecore/content/Habitat/Global/Dictionary/Demo/Referral/DeviceTitle
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160406T054841Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: extranet\Anonymous
+    - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
+      Hint: Phrase
+      Value: Device

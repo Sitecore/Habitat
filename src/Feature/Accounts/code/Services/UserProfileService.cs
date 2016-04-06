@@ -6,6 +6,7 @@
   using Sitecore.Data.Items;
   using Sitecore.Feature.Accounts.Models;
   using Sitecore.Feature.Accounts.Texts;
+  using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Security;
 
   public class UserProfileService : IUserProfileService
@@ -90,7 +91,7 @@
     {
       if (!this.profileSettingsService.GetInterests().Contains(model.Interest) && !string.IsNullOrEmpty(model.Interest))
       {
-        modelState.AddModelError("Interest", Errors.WrongInterest);
+        modelState.AddModelError("Interest", DictionaryPhraseRepository.Current.Get("/Accounts/Edit Profile/Interest Not Found", "Please select an interest from the list."));
       }
 
       return modelState.IsValid;

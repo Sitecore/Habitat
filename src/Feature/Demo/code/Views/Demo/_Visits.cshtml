@@ -1,21 +1,22 @@
 ﻿@using Sitecore.Feature.Demo.Texts
 @using Sitecore.Foundation.Dictionary
+@using Sitecore.Foundation.Dictionary.Repositories
 @model Sitecore.Feature.Demo.Models.Visits
 <div class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">
       <a href="#visitsPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
         <span class="fa fa-heart"></span>
-        @Captions.VisitDetails.Engagement
-        <span class="badge" title="@Captions.VisitDetails.EngagementValue" data-toggle="tooltip" data-placement="bottom">
+        @Html.Sitecore().DictionaryField("/Demo/Visit Details/Engagement", "Engagement")
+        <span class="badge" title="@Html.Sitecore().Dictionary("/Demo/Visit Details/Engagement Value", "Engagement Value")" data-toggle="tooltip" data-placement="bottom">
           <span class="fa fa-heart"></span>
           @Model.EngagementValue
         </span>
-        <span class="badge" title="@Captions.VisitDetails.PagesViewed" data-toggle="tooltip" data-placement="bottom">
+        <span class="badge" title="@Html.Sitecore().Dictionary("/Demo/Visit Details/Pages Viewed", "Pages Viewed")" data-toggle="tooltip" data-placement="bottom">
           <span class="fa fa-eye"></span>
           @Model.TotalPageViews
         </span>
-        <span class="badge" title="@Captions.ContactDetails.NumberOfVisits" data-toggle="tooltip" data-placement="bottom">
+        <span class="badge" title="@Html.Sitecore().Dictionary("/Demo/Contact Details/Number Of Visits", "Number of Visits")" data-toggle="tooltip" data-placement="bottom">
           <span class="fa fa-history"></span>
           @Model.TotalVisits
         </span>
@@ -32,7 +33,7 @@
 
         <div class="media-body ">
           <h4 class="media-title">
-            @Html.Sitecore().Dictionary("/Demo/Visits/EngagementValue", "Engagement value:")
+            @Html.Sitecore().DictionaryField("/Demo/Visits/Engagement Value", "Engagement value:")
             <strong class="pull-right">@Model.EngagementValue</strong>
           </h4>
         </div>
@@ -43,7 +44,7 @@
         </div>
         <div class="media-body ">
           <h4 class="media-title">
-            @Html.Sitecore().Dictionary("/Demo/Visits/PagesThisVisit", "Pages seen in this visit:")
+            @Html.Sitecore().DictionaryField("/Demo/Visits/Pages This Visit", "Pages seen in this visit:")
             <strong class="pull-right">@Model.TotalPageViews</strong>
           </h4>
           <table class="table table-condensed table-borderless">
@@ -64,15 +65,15 @@
                 <td>
                   @if (pageView.HasEngagementValue)
                   {
-                    <span class="fa fa-heart" title="@Html.Sitecore().Dictionary("/Demo/Visits/HasPersonalisation", "Page has engagement value")"></span>
+                    <span class="fa fa-heart" title="@Html.Sitecore().Dictionary("/Demo/Visits/Has Personalisation", "Page has engagement value")"></span>
                   }
                   @if (pageView.HasMvTest)
                   {
-                    <span class="fa fa-flask" title="@Html.Sitecore().Dictionary("/Demo/Visits/HasTest", "Page has a test")"></span>
+                    <span class="fa fa-flask" title="@Html.Sitecore().Dictionary("/Demo/Visits/Has Test", "Page has a test")"></span>
                   }
                   @if (pageView.HasPersonalisation)
                   {
-                    <span class="fa fa-street-view" title="@Html.Sitecore().Dictionary("/Demo/Visits/HasPersonalisation", "Page has personalisation")"></span>
+                    <span class="fa fa-street-view" title="@Html.Sitecore().Dictionary("/Demo/Visits/Has Personalisation", "Page has personalisation")"></span>
                   }
                 </td>
               </tr>
@@ -92,7 +93,7 @@
         </div>
         <div class="media-body">
           <h4 class="media-title">
-            @Html.Sitecore().Dictionary("/Demo/Visits/TotalVisits", "Visits to the site:")
+            @Html.Sitecore().DictionaryField("/Demo/Visits/Total Visits", "Visits to the site:")
             @if (Model.TotalVisits > 1)
             {
               <strong class="pull-right">@Model.TotalVisits</strong>
@@ -101,7 +102,7 @@
           @if (Model.TotalVisits <= 1)
           {
             <div class="alert alert-info">
-              @Html.Sitecore().Dictionary("/Demo/Visits/FirstVisit", "This is your first visit to the site.")
+              @Html.Sitecore().DictionaryField("/Demo/Visits/First Visit", "This is your first visit to the site.")
             </div>
           }
         </div>
@@ -114,7 +115,7 @@
           </div>
           <div class="media-body ">
             <h4 class="media-title">
-              @Html.Sitecore().Dictionary("/Demo/PersonalInfo/Engagement", "Engagement plans:")
+              @Html.Sitecore().DictionaryField("/Demo/Visits/Engagement Plans", "Engagement plans:")
             </h4>
             <table class="table table-condensed table-borderless">
               @foreach (var state in Model.EngagementPlanStates)

@@ -24,7 +24,7 @@
 
       return new Campaign
              {
-               Title = campaign?.Name ?? DictionaryRepository.Get("/Demo/Campaigns/UnknownCampaign", "(Unknown)"),
+               Title = campaign?.Name ?? DictionaryPhraseRepository.Current.Get("/Demo/Campaigns/Unknown Campaign", "(Unknown)"),
                IsActive = true,
                Date = Tracker.Current.Interaction.StartDateTime,
                Channel = GetChannel(campaign)
@@ -58,7 +58,7 @@
 
         yield return new Campaign
                      {
-                       Title = campaign?.Name ?? DictionaryRepository.Get("/Demo/Campaigns/UnknownCampaign", "(Unknown)"),
+                       Title = campaign?.Name ?? DictionaryPhraseRepository.Current.Get("/Demo/Campaigns/Unknown Campaign", "(Unknown)"),
                        IsActive = false,
                        Date = cachedCampaign.DateTime,
                        Channel = GetChannel(campaign)

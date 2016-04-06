@@ -12,7 +12,7 @@
 
   public class NewsIndexContentProvider : IndexContentProviderBase
   {
-    public override string ContentType => DictionaryRepository.Get("/news/search/contenttype", "News");
+    public override string ContentType => DictionaryPhraseRepository.Current.Get("/News/Search/Content Type", "News");
 
     public override IEnumerable<ID> SupportedTemplates => new[] {Templates.NewsArticle.ID};
 

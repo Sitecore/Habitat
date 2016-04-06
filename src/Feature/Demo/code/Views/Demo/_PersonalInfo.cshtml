@@ -7,7 +7,7 @@
     <h3 class="panel-title">
       <a href="#personalInfoPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
         <span class="fa fa-user"></span>
-        @Html.Sitecore().Dictionary("/Demo/PersonalInfo/Title", "Personal Information")
+        @Html.Sitecore().DictionaryField("/Demo/Personal Info/Title", "Personal Information")
         <span class="glyphicon glyphicon-chevron-down pull-right"></span>
       </a>
     </h3>
@@ -26,11 +26,11 @@
             }
             else if (Model.IsIdentified)
             {
-              @Html.Sitecore().Dictionary("/Demo/PersonalInfo/IdentifiedUser", "You are known")
+              @Html.Sitecore().DictionaryField("/Demo/Personal Info/Identified User", "You are known")
             }
             else
             {
-              @Html.Sitecore().Dictionary("/Demo/PersonalInfo/AnonymousUser", "You are anonymous")
+              @Html.Sitecore().DictionaryField("/Demo/Personal Info/Anonymous User", "You are anonymous")
             }
           </h4>
           <dl>
@@ -64,7 +64,7 @@
           </div>
           <div class="media-body ">
             <h4 class="media-title">
-              @Html.Sitecore().Dictionary("/Demo/Referral/Location", "Location")
+              @Html.Sitecore().DictionaryField("/Demo/Referral/Location", "Location")
             </h4>
             <div class="text-nowrap" title="@Model.Location.City, @Model.Location.Country">
               @Model.Location.City, @Model.Location.Country
@@ -80,13 +80,13 @@
           </div>
           <div class="media-body ">
             <h4 class="media-title">
-              @Html.Sitecore().Dictionary("/Demo/Referral/Device", "Device")
+              @Html.Sitecore().DictionaryField("/Demo/Referral/Device", "Device")
             </h4>
             <div class="text-nowrap">
               <dl>
-                <dt>@Html.Sitecore().Dictionary("/Demo/Referral/DeviceTitle", "Device")</dt>
+                <dt>@Html.Sitecore().DictionaryField("/Demo/Referral/DeviceTitle", "Device")</dt>
                 <dd>@Model.Device.Title</dd>
-                <dt>@Html.Sitecore().Dictionary("/Demo/Referral/DeviceBrowser", "Browser")</dt>
+                <dt>@Html.Sitecore().DictionaryField("/Demo/Referral/DeviceBrowser", "Browser")</dt>
                 <dd>@Model.Device.Browser</dd>
               </dl>
             </div>

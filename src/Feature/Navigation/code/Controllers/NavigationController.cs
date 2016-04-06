@@ -53,7 +53,7 @@
     {
       if (string.IsNullOrEmpty(RenderingContext.Current.Rendering.DataSource))
       {
-        return Context.PageMode.IsExperienceEditor ? this.InfoMessage(new InfoMessage(DictionaryRepository.Get("/navigation/linkmenu/noitems", "This menu has no items."), InfoMessage.MessageType.Warning)) : null;
+        return Context.PageMode.IsExperienceEditor ? this.InfoMessage(new InfoMessage(DictionaryPhraseRepository.Current.Get("/Navigation/Link Menu/No Items", "This menu has no items."), InfoMessage.MessageType.Warning)) : null;
       }
       var item = RenderingContext.Current.Rendering.Item;
       var items = _navigationRepository.GetLinkMenuItems(item);

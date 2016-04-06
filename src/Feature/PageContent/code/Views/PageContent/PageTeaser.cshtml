@@ -23,7 +23,7 @@
             @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary, Model.Item)
         </p>
         <a href="@Model.Item.Url()" class="btn btn-default">
-            @Html.Sitecore().Dictionary("/PageContent/Teaser/Read more", "Read more")
+            @Html.Sitecore().DictionaryField("/Page Content/Page Teaser/Read more", "Read more")
         </a>
     </div>
 </div>

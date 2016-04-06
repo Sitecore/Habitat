@@ -1,0 +1,20 @@
+﻿---
+ID: "b537ec52-b7d4-4e1a-81ab-a194426c6552"
+Parent: "c9fba019-13a2-408c-83c8-de964c26fe88"
+Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
+Path: /sitecore/content/Habitat/Global/Dictionary/Demo/VisitDetails/PagesViewed
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160406T054840Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: extranet\Anonymous
+    - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
+      Hint: Phrase
+      Value: Pages Viewed

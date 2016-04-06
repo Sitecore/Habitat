@@ -30,7 +30,7 @@
 
         yield return new Goal
                      {
-                       Title = goal?.Name ?? DictionaryRepository.Get("/Demo/Goals/UnknownGoal", "(Unknown)"),
+                       Title = goal?.Name ?? DictionaryPhraseRepository.Current.Get("/Demo/Goals/Unknown Goal", "(Unknown)"),
                        Date = cachedGoal.DateTime,
                        EngagementValue = goal?.EngagementValuePoints ?? 0,
                        IsCurrentVisit = false

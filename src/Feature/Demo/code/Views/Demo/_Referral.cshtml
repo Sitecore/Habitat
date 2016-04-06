@@ -8,7 +8,7 @@
     <h4 class="panel-title">
       <a href="#referralPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
         <span class="fa fa-bullhorn"></span>
-        @Html.Sitecore().Dictionary("/Demo/Referral/Title", "Referral")
+        @Html.Sitecore().DictionaryField("/Demo/Referral/Title", "Referral")
         <span class="glyphicon glyphicon-chevron-down pull-right"></span>
       </a>
     </h4>
@@ -21,12 +21,12 @@
         </div>
         <div class="media-body ">
           <h4 class="media-title">
-            @Html.Sitecore().Dictionary("/Demo/Referral/Referrer", "Referrer")
+            @Html.Sitecore().DictionaryField("/Demo/Referral/Referrer", "Referrer")
           </h4>
           @if (string.IsNullOrEmpty(Model.ReferringSite))
           {
-            <div class="text-nowrap" title="@Html.Sitecore().Dictionary("/Demo/Referral/ReferrerUnknown", "Direct traffic")">
-              @Html.Sitecore().Dictionary("/Demo/Referral/ReferrerUnknown", "Direct traffic")
+            <div class="text-nowrap" title="@Html.Sitecore().Dictionary("/Demo/Referral/Referrer Unknown", "Direct traffic")">
+              @Html.Sitecore().DictionaryField("/Demo/Referral/Referrer Unknown", "Direct traffic")
             </div>
           }
           else
@@ -43,7 +43,7 @@
         </div>
         <div class="media-body ">
           <h4 class="media-title">
-            @Html.Sitecore().Dictionary("/Demo/Referral/Campaigns", "Campaigns")
+            @Html.Sitecore().DictionaryField("/Demo/Referral/Campaigns", "Campaigns")
             @if (Model.Campaigns.Any())
             {
               <strong class="pull-right">@Model.TotalNoOfCampaigns</strong>
@@ -52,7 +52,7 @@
           @if (!Model.Campaigns.Any())
           {
             <div class="alert alert-info">
-              @Html.Sitecore().Dictionary("/Demo/Referral/NoCampaigns", "You have not been associated with any campaigns")
+              @Html.Sitecore().DictionaryField("/Demo/Referral/No Campaigns", "You have not been associated with any campaigns")
             </div>
           }
           else
@@ -65,7 +65,7 @@
                     <small>
                       @if (campaign.IsActive)
                       {
-                        <strong>@Html.Sitecore().Dictionary("/Demo/Referral/ActiveCampaign", "Active")</strong>
+                        <strong>@Html.Sitecore().DictionaryField("/Demo/Referral/Active Campaign", "Active")</strong>
                       }
                       else
                       {

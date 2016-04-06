@@ -37,7 +37,7 @@
       var definition = GetOutcomeDefinition(outcome.DefinitionId);
       return new Outcome
              {
-               Title = definition?.Name ?? DictionaryRepository.Get("/Demo/Outcomes/UnknownOutcome", "(Unknown)"),
+               Title = definition?.Name ?? DictionaryPhraseRepository.Current.Get("/Demo/Outcomes/Unknown Outcome", "(Unknown)"),
                Date = outcome.DateTime,
                IsCurrentVisit = outcome.InteractionId.ToGuid() == Tracker.Current.Interaction.InteractionId,
                OutcomeGroup = GetOutcomeGroup(definition)

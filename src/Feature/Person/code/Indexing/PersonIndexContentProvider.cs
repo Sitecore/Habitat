@@ -14,7 +14,7 @@
 
   public class PersonIndexContentProvider : IndexContentProviderBase
   {
-    public override string ContentType => DictionaryRepository.Get("/person/search/contenttype", "Person");
+    public override string ContentType => DictionaryPhraseRepository.Current.Get("/Person/Search/Content Type", "Person");
 
     public override IEnumerable<ID> SupportedTemplates => new[]
     {

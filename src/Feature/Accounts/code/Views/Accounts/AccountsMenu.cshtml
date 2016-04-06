@@ -4,6 +4,8 @@
 @using Sitecore.Feature.Accounts.Texts
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary
+@using Sitecore.Foundation.Dictionary.Repositories
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 
@@ -25,9 +27,9 @@
     <div class="dropdown-menu">
       @if (!(Sitecore.Context.IsLoggedIn && Sitecore.Context.PageMode.IsNormal))
       {
-        <h4>@Captions.Login</h4>
+        <h4>@DictionaryPhraseRepository.Current.Get("/Accounts/Accounts Menu/Login", "Login")</h4>
         <form id="loginModal">
-          @Html.Partial("~/Views/Accounts/_Login.cshtml", new LoginInfo())
+          @Html.Partial("_Login", new LoginInfo())
         </form>
       }
       else
@@ -37,16 +39,16 @@
           if (!string.IsNullOrWhiteSpace(Sitecore.Context.User.Profile.FullName))
           {
             <div class="form-group">
-              <label class="control-label">@Captions.Name</label>
+              <label class="control-label">@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Email", "Name")</label>
               <div class="form-control-static">@Sitecore.Context.User.Profile.FullName</div>
             </div>
           }
           <div class="form-group">
-            <label class="control-label">@Captions.Email</label>
+            <label class="control-label">@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Email", "E-mail")</label>
             <div class="form-control-static">@Sitecore.Context.User.Profile.Email</div>
           </div>
-          <a class="btn btn-block btn-primary" href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Model.Item, Templates.AccountsSettings.Fields.AccountsDetailsPage)">@Captions.EditDetails</a>
-          <button type="submit" class="btn btn-block btn-default">@Captions.Logout</button>
+          <a class="btn btn-block btn-primary" href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Model.Item, Templates.AccountsSettings.Fields.AccountsDetailsPage)">@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Edit Details", "Edit details")</a>
+          <button type="submit" class="btn btn-block btn-default">@DictionaryPhraseRepository.Current.Get("/Accounts/Accounts Menu/Logout", "Logout")</button>
         }
       }
     </div>

@@ -196,8 +196,6 @@
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Services\AccountsSettingsService.cs" />
     <Compile Include="Templates.cs" />
-    <Compile Include="Texts\Captions.cs" />
-    <Compile Include="Texts\Errors.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj">
