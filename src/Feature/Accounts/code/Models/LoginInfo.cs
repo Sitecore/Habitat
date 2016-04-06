@@ -2,7 +2,6 @@
 {
   using System.ComponentModel.DataAnnotations;
   using Sitecore.Feature.Accounts.Attributes;
-  using Sitecore.Feature.Accounts.Texts;
   using Sitecore.Foundation.Dictionary.Repositories;
 
   public class LoginInfo

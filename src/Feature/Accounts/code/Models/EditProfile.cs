@@ -2,7 +2,6 @@
 {
   using System.Collections.Generic;
   using System.ComponentModel.DataAnnotations;
-  using Sitecore.Feature.Accounts.Texts;
   using Sitecore.Foundation.Dictionary.Repositories;
 
   public class EditProfile

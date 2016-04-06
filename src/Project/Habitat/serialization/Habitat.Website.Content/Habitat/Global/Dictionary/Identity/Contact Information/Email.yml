@@ -1,6 +1,6 @@
 ﻿---
-ID: "8dfa1cc0-c116-4b11-8ebd-b486f7dd84f7"
-Parent: "9ceb53cd-b855-4f9d-88b5-4257ac6c4669"
+ID: "74fb35c2-3d88-4ec3-bc5b-9127ffc875b6"
+Parent: "4886ce4c-36b6-47e8-b4b7-77784dad9616"
 Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
 Path: /sitecore/content/Habitat/Global/Dictionary/Identity/Contact Information/Email
 DB: master
@@ -11,10 +11,10 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20160406T054838Z
+      Value: 20160406T232644Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: extranet\Anonymous
+      Value: sitecore\admin
     - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
       Hint: Phrase
       Value: Email

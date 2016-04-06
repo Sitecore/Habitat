@@ -1,5 +1,5 @@
 ﻿---
-ID: "b51845ac-f79c-4e00-a15e-b0a3e99f9d87"
+ID: "5144951a-af91-4e09-9686-d9486fbd0167"
 Parent: "bb4ecaf5-be3b-4be7-b6bc-6bcc0b5bb77f"
 Template: "98e4bdc6-9b43-4eb2-baa3-d4303c35852e"
 Path: /sitecore/content/Habitat/Global/Dictionary/Accounts
@@ -11,7 +11,4 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20160406T054837Z
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: extranet\Anonymous
+      Value: 20160406T232638Z

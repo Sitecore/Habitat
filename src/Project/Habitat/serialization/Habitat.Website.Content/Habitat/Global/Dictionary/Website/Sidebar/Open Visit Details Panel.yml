@@ -1,6 +1,6 @@
 ﻿---
-ID: "acc227b3-837e-429b-aa3f-a86c69f0aa13"
-Parent: "a4da62df-e177-4775-af41-1ff0a0447980"
+ID: "df0a7c6a-117e-4e30-9a3b-2adcd23c7e1f"
+Parent: "b93751fc-450f-4080-abe0-92afc018b1d5"
 Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
 Path: /sitecore/content/Habitat/Global/Dictionary/Website/Sidebar/Open Visit Details Panel
 DB: master
@@ -11,10 +11,10 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20160406T054838Z
+      Value: 20160406T232644Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: extranet\Anonymous
+      Value: sitecore\admin
     - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
       Hint: Phrase
       Value: Open visit details panel

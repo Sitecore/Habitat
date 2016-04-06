@@ -1,6 +1,6 @@
 ﻿---
-ID: "69b91f33-7243-484c-b9ef-e9ca4ef5070c"
-Parent: "a4da62df-e177-4775-af41-1ff0a0447980"
+ID: "e04c6860-137f-4606-84a7-93a65a4bb2a6"
+Parent: "b93751fc-450f-4080-abe0-92afc018b1d5"
 Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
 Path: /sitecore/content/Habitat/Global/Dictionary/Website/Sidebar/End Visit
 DB: master
@@ -11,10 +11,10 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20160406T054839Z
+      Value: 20160406T232644Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: extranet\Anonymous
+      Value: sitecore\admin
     - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
       Hint: Phrase
       Value: End the current visit and submit it to the Sitecore Experience Database

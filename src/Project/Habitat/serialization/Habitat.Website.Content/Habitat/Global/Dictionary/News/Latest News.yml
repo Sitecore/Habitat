@@ -1,6 +1,6 @@
 ﻿---
-ID: "af4e4da1-cb45-4d5b-956f-2d3423168d8c"
-Parent: "205eb932-17a2-47b6-82bf-f749d542fbc3"
+ID: "e8794f01-3927-439e-aaca-ccadbe12ca34"
+Parent: "45814a6a-69b2-48bd-9b14-8853bd13319a"
 Template: "98e4bdc6-9b43-4eb2-baa3-d4303c35852e"
 Path: /sitecore/content/Habitat/Global/Dictionary/News/Latest News
 DB: master
@@ -11,7 +11,4 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20160406T055116Z
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: extranet\Anonymous
+      Value: 20160406T232643Z

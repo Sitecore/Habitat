@@ -1,5 +1,4 @@
 ﻿@using System.Globalization
-@using Sitecore.Feature.Demo.Texts
 @using Sitecore.Foundation.Dictionary
 @model Sitecore.Feature.Demo.Models.PersonalInfo
 <div class="panel panel-primary">
@@ -84,9 +83,9 @@
             </h4>
             <div class="text-nowrap">
               <dl>
-                <dt>@Html.Sitecore().DictionaryField("/Demo/Referral/DeviceTitle", "Device")</dt>
+                <dt>@Html.Sitecore().DictionaryField("/Demo/Referral/Device Title", "Device")</dt>
                 <dd>@Model.Device.Title</dd>
-                <dt>@Html.Sitecore().DictionaryField("/Demo/Referral/DeviceBrowser", "Browser")</dt>
+                <dt>@Html.Sitecore().DictionaryField("/Demo/Referral/Device Browser", "Browser")</dt>
                 <dd>@Model.Device.Browser</dd>
               </dl>
             </div>

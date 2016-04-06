@@ -1,0 +1,20 @@
+﻿---
+ID: "9f49cc2b-821b-48a3-9a2e-a28e7c892c99"
+Parent: "b19c4f7b-37c3-4a9e-86ff-3a6398ee6f1b"
+Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
+Path: /sitecore/content/Habitat/Global/Dictionary/Person/Search/Content Type
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160406T234824Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: extranet\Anonymous
+    - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
+      Hint: Phrase
+      Value: Person

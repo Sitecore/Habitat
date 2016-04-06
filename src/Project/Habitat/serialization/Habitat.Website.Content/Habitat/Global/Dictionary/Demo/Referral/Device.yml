@@ -1,6 +1,6 @@
 ﻿---
-ID: "b66cd49f-23d6-4be5-b20b-a333ae9883fd"
-Parent: "a237409f-43fd-41ab-92a7-666711d3f626"
+ID: "d1f222e1-71d9-4f2a-9a6f-f91cf9b9ea0f"
+Parent: "514eb72c-3f43-4265-8ef3-8ab65a1ff96f"
 Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
 Path: /sitecore/content/Habitat/Global/Dictionary/Demo/Referral/Device
 DB: master
@@ -11,10 +11,10 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20160406T054841Z
+      Value: 20160406T232706Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: extranet\Anonymous
+      Value: sitecore\admin
     - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
       Hint: Phrase
       Value: Device

@@ -1,5 +1,4 @@
-﻿@using Sitecore.Feature.Demo.Texts
-@using Sitecore.Foundation.Dictionary
+﻿@using Sitecore.Foundation.Dictionary
 @using Sitecore.Foundation.Dictionary.Repositories
 @model Sitecore.Feature.Demo.Models.Visits
 <div class="panel panel-primary">
@@ -7,16 +6,16 @@
     <h3 class="panel-title">
       <a href="#visitsPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
         <span class="fa fa-heart"></span>
-        @Html.Sitecore().DictionaryField("/Demo/Visit Details/Engagement", "Engagement")
-        <span class="badge" title="@Html.Sitecore().Dictionary("/Demo/Visit Details/Engagement Value", "Engagement Value")" data-toggle="tooltip" data-placement="bottom">
+        @Html.Sitecore().DictionaryField("/Demo/Visits/Engagement", "Engagement")
+        <span class="badge" title="@Html.Sitecore().Dictionary("/Demo/Visits/Engagement Value", "Engagement Value")" data-toggle="tooltip" data-placement="bottom">
           <span class="fa fa-heart"></span>
           @Model.EngagementValue
         </span>
-        <span class="badge" title="@Html.Sitecore().Dictionary("/Demo/Visit Details/Pages Viewed", "Pages Viewed")" data-toggle="tooltip" data-placement="bottom">
+        <span class="badge" title="@Html.Sitecore().Dictionary("/Demo/Visits/Pages Viewed", "Pages Viewed")" data-toggle="tooltip" data-placement="bottom">
           <span class="fa fa-eye"></span>
           @Model.TotalPageViews
         </span>
-        <span class="badge" title="@Html.Sitecore().Dictionary("/Demo/Contact Details/Number Of Visits", "Number of Visits")" data-toggle="tooltip" data-placement="bottom">
+        <span class="badge" title="@Html.Sitecore().Dictionary("/Demo/Visits/Number Of Visits", "Number of Visits")" data-toggle="tooltip" data-placement="bottom">
           <span class="fa fa-history"></span>
           @Model.TotalVisits
         </span>

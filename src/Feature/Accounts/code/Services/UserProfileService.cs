@@ -5,7 +5,6 @@
   using System.Web.Mvc;
   using Sitecore.Data.Items;
   using Sitecore.Feature.Accounts.Models;
-  using Sitecore.Feature.Accounts.Texts;
   using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Security;
 

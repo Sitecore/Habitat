@@ -1,6 +1,6 @@
 ﻿---
-ID: "9ceb53cd-b855-4f9d-88b5-4257ac6c4669"
-Parent: "f68c0558-d5cb-4e46-86e6-08e42a8255ed"
+ID: "4886ce4c-36b6-47e8-b4b7-77784dad9616"
+Parent: "70718e48-d922-45c2-ad67-f866435dfde5"
 Template: "98e4bdc6-9b43-4eb2-baa3-d4303c35852e"
 Path: /sitecore/content/Habitat/Global/Dictionary/Identity/Contact Information
 DB: master
@@ -11,7 +11,4 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20160406T054838Z
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: extranet\Anonymous
+      Value: 20160406T232644Z

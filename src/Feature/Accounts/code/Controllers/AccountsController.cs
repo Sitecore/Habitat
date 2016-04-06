@@ -13,7 +13,6 @@ namespace Sitecore.Feature.Accounts.Controllers
   using Sitecore.Feature.Accounts.Models;
   using Sitecore.Feature.Accounts.Repositories;
   using Sitecore.Feature.Accounts.Services;
-  using Sitecore.Feature.Accounts.Texts;
   using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Attributes;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;

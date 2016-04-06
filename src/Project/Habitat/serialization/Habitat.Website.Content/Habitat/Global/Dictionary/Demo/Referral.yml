@@ -1,6 +1,6 @@
 ﻿---
-ID: "a237409f-43fd-41ab-92a7-666711d3f626"
-Parent: "42afc170-c117-4902-ab1b-afb6f2e8e7ae"
+ID: "514eb72c-3f43-4265-8ef3-8ab65a1ff96f"
+Parent: "4b4c7560-6143-4cf4-bb18-3e67d23cd226"
 Template: "98e4bdc6-9b43-4eb2-baa3-d4303c35852e"
 Path: /sitecore/content/Habitat/Global/Dictionary/Demo/Referral
 DB: master
@@ -11,7 +11,4 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20160406T054840Z
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: extranet\Anonymous
+      Value: 20160406T232706Z

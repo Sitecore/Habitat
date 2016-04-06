@@ -22,7 +22,6 @@
   using Sitecore.Feature.Accounts.Repositories;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
-  using Sitecore.Feature.Accounts.Texts;
   using Sitecore.Foundation.Alerts;
   using Sitecore.Foundation.Alerts.Models;
   using Sitecore.Globalization;

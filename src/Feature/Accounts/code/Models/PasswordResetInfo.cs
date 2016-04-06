@@ -1,7 +1,6 @@
 ﻿namespace Sitecore.Feature.Accounts.Models
 {
   using System.ComponentModel.DataAnnotations;
-  using Sitecore.Feature.Accounts.Texts;
   using Sitecore.Foundation.Dictionary.Repositories;
 
   public class PasswordResetInfo
@@ -12,8 +11,8 @@
     [DataType(DataType.EmailAddress)]
     public string Email { get; set; }
 
-    public static string EmailCaption => DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Pasword/Email", "E-mail");
-    public static string Required => DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Pasword/Required", "Please enter a value for {0}");
-    public static string InvalidEmailAddress => DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Pasword/Invalid Email Address", "Please enter a valid email address");
+    public static string EmailCaption => DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Password/Email", "E-mail");
+    public static string Required => DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Password/Required", "Please enter a value for {0}");
+    public static string InvalidEmailAddress => DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Password/Invalid Email Address", "Please enter a valid email address");
   }
 }

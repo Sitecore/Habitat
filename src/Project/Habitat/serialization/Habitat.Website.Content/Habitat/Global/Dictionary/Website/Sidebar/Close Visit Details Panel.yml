@@ -1,6 +1,6 @@
 ﻿---
-ID: "636cef4d-7128-4cfa-b94b-ec2a1f2162af"
-Parent: "a4da62df-e177-4775-af41-1ff0a0447980"
+ID: "7d6f8c8f-02a5-47f6-b47f-7f0e1f7ad27d"
+Parent: "b93751fc-450f-4080-abe0-92afc018b1d5"
 Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
 Path: /sitecore/content/Habitat/Global/Dictionary/Website/Sidebar/Close Visit Details Panel
 DB: master
@@ -11,10 +11,10 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20160406T054839Z
+      Value: 20160406T232644Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: extranet\Anonymous
+      Value: sitecore\admin
     - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
       Hint: Phrase
       Value: Close visit details panel
