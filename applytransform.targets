@@ -7,6 +7,6 @@
         <TransformPath>%(Transforms.Identity)</TransformPath>
       </ConfigsToTransform>
     </ItemGroup>
-    <TransformXml Source="$(WebConfigToTransform)\%(ConfigsToTransform.Identity)" Transform="%(ConfigsToTransform.TransformPath)" Destination="$(WebConfigToTransform)\%(ConfigsToTransform.Identity)" />
+    <TransformXml Source="$(WebConfigToTransform)\%(ConfigsToTransform.Identity)" Transform="%(ConfigsToTransform.TransformPath)" Destination="$(WebConfigToTransform)\%(ConfigsToTransform.Identity)" Condition="Exists(@(Transforms))"/>
   </Target>
 </Project>
