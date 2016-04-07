@@ -8,52 +8,88 @@ var newer = require("gulp-newer");
 var runSequence = require("run-sequence");
 var path = require("path");
 var config = require("./gulp-config.js")();
+var nugetRestore = require('gulp-nuget-restore');
+var fs = require('fs');
+var unicorn = require("./scripts/unicorn.js");
+var habitat = require("./scripts/habitat.js");
+
 module.exports.config = config;
+
+gulp.task("default", function (callback) {
+  config.runCleanBuilds = true;
+  return runSequence(
+    "01-Copy-Sitecore-Lib",
+    "02-Nuget-Restore",
+    "03-Publish-All-Projects",
+    "04-Apply-Xml-Transform",
+    "05-Sync-Unicorn", 
+	callback);
+});
 
 /*****************************
   Initial setup
 *****************************/
 gulp.task("01-Copy-Sitecore-Lib", function () {
   console.log("Copying Sitecore Libraries");
+
+  fs.statSync(config.sitecoreLibraries);
+
   var files = config.sitecoreLibraries + "/**/*";
-  gulp.src(files)
-    .pipe(gulp.dest("./lib/Sitecore"));
+  
+  return gulp.src(files).pipe(gulp.dest("./lib/Sitecore"));
 });
 
-gulp.task("02-Publish-All-Projects", function (callback) {
-  runSequence(
+gulp.task("02-Nuget-Restore", function (callback) {
+  var solution = "./" + config.solutionName + ".sln";
+  return gulp.src(solution).pipe(nugetRestore());	
+});
+
+
+gulp.task("03-Publish-All-Projects", function (callback) {
+  return runSequence(
     "Publish-Foundation-Projects",
     "Publish-Feature-Projects",
     "Publish-Project-Projects", callback);
 });
 
-gulp.task("03-Apply-Xml-Transform", function () {
-  return gulp.src("./src/Project/**/code/*.csproj")
+gulp.task("04-Apply-Xml-Transform", function () {
+  var layerPathFilters = ["./src/Foundation/**/code/*.csproj", "./src/Feature/**/code/*.csproj", "./src/Project/**/code/*.csproj"];
+  return gulp.src(layerPathFilters)
     .pipe(foreach(function (stream, file) {
-      return stream
-        .pipe(debug({ title: "Applying transform project:" }))
-        .pipe(msbuild({
-          targets: ["ApplyTransform"],
-          configuration: config.buildConfiguration,
-          logCommand: false,
-          verbosity: "normal",
-          maxcpucount: 0,
-          toolsVersion: 14.0,
-          properties: {
-            WebConfigToTransform: config.websiteRoot + "\\web.config"
-          }
-        }));
+        return stream
+          .pipe(debug({ title: "Applying transform project:" }))
+          .pipe(msbuild({
+              targets: ["ApplyTransform"],
+              configuration: config.buildConfiguration,
+              logCommand: false,
+              verbosity: "normal",
+              maxcpucount: 0,
+              toolsVersion: 14.0,
+              properties: {
+                  WebConfigToTransform: config.websiteRoot
+              }
+          }));
     }));
-
 });
 
-gulp.task("04-Optional-Copy-Local-Assemblies", function () {
+gulp.task("05-Sync-Unicorn", function (callback) {
+  var options = {};
+  options.siteHostName = habitat.getSiteUrl();
+  options.authenticationConfigFile = __dirname + "/src/Foundation/Serialization/code/App_config/Include/Foundation/Foundation.Serialization.config";
+  
+  unicorn(function() { return callback() }, options);
+});
+
+/*****************************
+  Copy assemblies to all local projects
+*****************************/
+gulp.task("Copy-Local-Assemblies", function () {
   console.log("Copying site assemblies to all local projects");
   var files = config.sitecoreLibraries + "/**/*";
 
   var root = "./src";
   var projects = root + "/**/code/bin";
-  gulp.src(projects, { base: root })
+  return gulp.src(projects, { base: root })
     .pipe(foreach(function (stream, file) {
       console.log("copying to " + file.path);
       gulp.src(files)
@@ -67,13 +103,17 @@ gulp.task("04-Optional-Copy-Local-Assemblies", function () {
 *****************************/
 var publishProjects = function (location, dest) {
   dest = dest || config.websiteRoot;
+  var targets = ["Build"];
+  if (config.runCleanBuilds) {
+	targets = ["Clean", "Build"]
+  }
   console.log("publish to " + dest + " folder");
   return gulp.src([location + "/**/code/*.csproj"])
     .pipe(foreach(function (stream, file) {
       return stream
         .pipe(debug({ title: "Building project:" }))
         .pipe(msbuild({
-          targets: ["Build"],
+          targets: targets,
           configuration: config.buildConfiguration,
           logCommand: false,
           verbosity: "minimal",
@@ -153,9 +193,9 @@ gulp.task("Publish-All-Configs", function () {
 *****************************/
 gulp.task("Auto-Publish-Css", function () {
   var root = "./src";
-  var roots = [root + "/**/stylesheets", "!" + root + "/**/obj/**/stylesheets"];
+  var roots = [root + "/**/styles", "!" + root + "/**/obj/**/styles"];
   var files = "/**/*.css";
-  var destination = config.websiteRoot + "\\stylesheets";
+  var destination = config.websiteRoot + "\\styles";
   gulp.src(roots, { base: root }).pipe(
     foreach(function (stream, rootFolder) {
       gulp.watch(rootFolder.path + files, function (event) {

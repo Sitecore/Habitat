@@ -7,23 +7,23 @@
   <li class="media media-align-middle">
     <div class="media-left ">
       <a href="@item.Url()">
-        @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), item, mw: 150)
+        @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image, item, mw: 150)
       </a>
     </div>
 
     <div class="media-body ">
       <h3 class="media-title">
         <a href="@item.Url()">
-          @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), item)
+          @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, item)
         </a>
       </h3>
       <p>
-        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary.ToString(), item)
+        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, item)
       </p>
     </div>
     <div class="media-right">
       <div class="label label-info">
-        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
+        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date, item, new
  {
    format = "MMMM dd, yyyy"
  })

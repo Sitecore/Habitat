@@ -2,8 +2,12 @@
 @import "fonts";
 @import "dayfrost/fonts";
 
+@import "bower_components/font-awesome/scss/font-awesome";
+
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+@import "components/hover";
 
 @import "dayfrost/variables";
 @import "dayfrost/overrides";

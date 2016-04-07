@@ -1,24 +1,27 @@
 ﻿---
-ID: 0bc0aedf-a6d0-4f74-933c-bd1779cd40b2
-Parent: 63f46290-a2e0-4504-8af7-2d83b15c368e
-Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+ID: "0bc0aedf-a6d0-4f74-933c-bd1779cd40b2"
+Parent: "63f46290-a2e0-4504-8af7-2d83b15c368e"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
 Path: /sitecore/templates/Feature/Demo/_DemoContent/Demo/HTML Content
 DB: master
 SharedFields:
-- ID: a791f095-2521-4b4d-bef9-21dda221f608
+- ID: "a791f095-2521-4b4d-bef9-21dda221f608"
   Hint: __Style
-  Value: height:500px
-- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+  Value: "height:500px"
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type
-  Value: Multi-Line Text
-- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Value: "Multi-Line Text"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 100
+- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
+  Hint: __Security
+  Value: "ar|Everyone|pe|!*|+field:read|pd|+field:read|!*|ar|modules\Feature Demo Admin|pe|+field:write|pd|+field:write|"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151109T234519Z

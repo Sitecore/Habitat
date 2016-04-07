@@ -18,13 +18,13 @@
   <address>
     @if (Sitecore.Context.PageMode.IsExperienceEditor || identity.FieldHasValue(Templates.Identity.Fields.OrganisationName))
     {
-      <strong>@Html.Sitecore().Field(Templates.Identity.Fields.OrganisationName.ToString(), identity)</strong><br>
+      <strong>@Html.Sitecore().Field(Templates.Identity.Fields.OrganisationName, identity)</strong><br>
     }
-    @Html.Sitecore().Field(Templates.Identity.Fields.OrganisationAddress.ToString(), identity)
+    @Html.Sitecore().Field(Templates.Identity.Fields.OrganisationAddress, identity)
     @if (Sitecore.Context.PageMode.IsExperienceEditor || identity.FieldHasValue(Templates.Identity.Fields.OrganisationPhone))
     {
       <br/>
-      <i class="fa fa-phone"></i> @Html.Sitecore().Field(Templates.Identity.Fields.OrganisationPhone.ToString(), identity)
+      <i class="fa fa-phone"></i> @Html.Sitecore().Field(Templates.Identity.Fields.OrganisationPhone, identity)
     }
   </address>
 
@@ -32,7 +32,7 @@
   {
     <address>
       <strong>@DictionaryRepository.Get("/identity/contact information/email", "Email")</strong><br>
-      @Html.Sitecore().Field(Templates.Identity.Fields.OrganisationEmail.ToString(), identity)
+      @Html.Sitecore().Field(Templates.Identity.Fields.OrganisationEmail, identity)
     </address>
   }
 </div>

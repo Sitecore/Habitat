@@ -16,6 +16,7 @@
   public class QueryableDatasourceRenderingModel : RenderingModel
   {
     private readonly IRenderingPropertiesRepository renderingPropertiesRepository;
+    private const int DefaultMaxResults = 10;
 
     public QueryableDatasourceRenderingSettings Settings => renderingPropertiesRepository.Get<QueryableDatasourceRenderingSettings>();
 
@@ -34,21 +35,21 @@
     {
       base.Initialize(rendering);
       ResolveDatasourceTemplate(rendering);
+      ParseRenderingDataSource(rendering);
     }
 
     public virtual IEnumerable<Item> Items
     {
       get
       {
-        var dataSource = Rendering.DataSource;
-        if (string.IsNullOrEmpty(dataSource))
+        if (string.IsNullOrEmpty(DatasourceString))
         {
           return Enumerable.Empty<Item>();
         }
 
         using (var providerSearchContext = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
         {
-          var items = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(dataSource));
+          var items = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(DatasourceString));
           var searchResultItems = items.Cast<SearchResult>();
           if (DatasourceTemplate != null)
           {
@@ -60,13 +61,31 @@
             .Where(x => x.IsLatestVersion)
             .Where(x => !x.Paths.Contains(ItemIDs.TemplateRoot))
             .Where(x => !x.Name.Equals(Sitecore.Constants.StandardValuesItemName, StringComparison.InvariantCultureIgnoreCase))
-            .Take(Settings.SearchResultsLimit)
+            .Take(MaxResults)
             .Select(current => current != null ? current.GetItem() : null)
             .ToArray()
             .Where(item => item != null);
         }
       }
     }
+
+    private int MaxResults => Settings.SearchResultsLimit > 0 ? Settings.SearchResultsLimit : DefaultMaxResults;
+
+    private void ParseRenderingDataSource(Rendering rendering)
+    {
+      var dataSource = rendering.DataSource;
+      if (string.IsNullOrWhiteSpace(dataSource))
+      {
+        dataSource = "+location:" + Rendering.Item.ID;
+      }
+      if (MainUtil.IsID(dataSource))
+      {
+        dataSource = "+location:" + dataSource;
+      }
+      this.DatasourceString =  dataSource;
+    }
+
+    public string DatasourceString { get; set; }
 
 
     private void ResolveDatasourceTemplate(Rendering rendering)

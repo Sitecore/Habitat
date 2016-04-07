@@ -12,12 +12,12 @@
 
 <header>
   <h1>
-    @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title.ToString(), Model.Item)
+    @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title, Model.Item)
   </h1>
   @if (Model.Item.Fields[Templates.HasPageContent.Fields.Summary].HasValue || Sitecore.Context.PageMode.IsExperienceEditor)
   {
-    <p class="lead">
-      @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary.ToString(), Model.Item)
-    </p>
+    <div class="lead">
+      @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary, Model.Item)
+    </div>
   }
 </header>

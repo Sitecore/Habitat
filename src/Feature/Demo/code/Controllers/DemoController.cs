@@ -2,6 +2,10 @@ using Sitecore.Foundation.Alerts.Exceptions;
 
 namespace Sitecore.Feature.Demo.Controllers
 {
+  using System;
+  using System.Net;
+  using System.Threading.Tasks;
+  using System.Web;
   using System.Web.Mvc;
   using Sitecore.Analytics;
   using Sitecore.Feature.Demo.Models;
@@ -17,7 +21,7 @@ namespace Sitecore.Feature.Demo.Controllers
   {
     private readonly IContactProfileProvider contactProfileProvider;
     private readonly IProfileProvider profileProvider;
-
+    
     public DemoController():this(new ContactProfileProvider(), new ProfileProvider())
     {
     }
@@ -27,20 +31,13 @@ namespace Sitecore.Feature.Demo.Controllers
       this.profileProvider = profileProvider;
     }
 
-    public ActionResult VisitDetails()
+    public ActionResult ExperienceData()
     {
       if (Tracker.Current == null || Tracker.Current.Interaction == null)
         return null;
-      return View("VisitDetails", new VisitInformation(profileProvider));
+      return View(new ExperienceData(contactProfileProvider, profileProvider));
     }
-
-    public ActionResult ContactDetails()
-    {
-      if (Tracker.Current == null || Tracker.Current.Contact == null)
-        return null;
-      return View("ContactDetails", new ContactInformation(contactProfileProvider));
-    }
-
+    
     public ActionResult DemoContent()
     {
       if (RenderingContext.Current.ContextItem == null ||
@@ -55,7 +52,7 @@ namespace Sitecore.Feature.Demo.Controllers
     public ActionResult EndVisit()
     {
       this.Session.Abandon();
-      return this.Redirect("/");
+      return new HttpStatusCodeResult(HttpStatusCode.OK);
     }
   }
 }

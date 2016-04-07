@@ -89,27 +89,85 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("User selects Content Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Column name"});
+                        "Item path",
+                        "Allowed Controls"});
             table1.AddRow(new string[] {
-                        "col-narrow-1"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-1",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-narrow-2"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-2",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-narrow-3"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-3",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-narrow-4"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-4",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-narrow-5"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-5",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-narrow-6"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-6",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-wide-1"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-1",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-wide-2"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-2",
+                        "MVC Form"});
             table1.AddRow(new string[] {
-                        "col-wide-3"});
+                        "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-3",
+                        "MVC Form"});
 #line 8
- testRunner.Then("MVC form controls presents in all Wide and Narrow columns", ((string)(null)), table1, "Then ");
+ testRunner.Then("Items contain fields", ((string)(null)), table1, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "WFFM forms")]
+        [Xunit.TraitAttribute("Description", "WFFM forms integration_UC2_Few webforms on one page")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        public virtual void WFFMFormsIntegration_UC2_FewWebformsOnOnePage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WFFM forms integration_UC2_Few webforms on one page", new string[] {
+                        "NeedImplementation"});
+#line 24
+this.ScenarioSetup(scenarioInfo);
+#line 25
+ testRunner.Given("New Page was created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 26
+ testRunner.And("Webfrom \'Get Our Newsletter\' was added to layout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.And("Webfrom \'Leave a message\' was added to layout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemPath",
+                        "FieldName",
+                        "FieldValue"});
+            table2.AddRow(new string[] {
+                        "Get Our Newsletter",
+                        "Is Ajax Mvc Form",
+                        "0"});
+            table2.AddRow(new string[] {
+                        "Leave a message",
+                        "Is Ajax Mvc Form",
+                        "0"});
+#line 28
+ testRunner.And("Value set to item field", ((string)(null)), table2, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "WebForm",
+                        "FieldName",
+                        "Field value"});
+            table3.AddRow(new string[] {
+                        "Get Our Newsletter",
+                        "Email",
+                        "kov@sitecore.net"});
+#line 32
+ testRunner.When("User inputs data to webForm", ((string)(null)), table3, "When ");
+#line 35
+ testRunner.Then("No form validation errors on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

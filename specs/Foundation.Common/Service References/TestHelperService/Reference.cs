@@ -8,8 +8,198 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sitecore.Foundation.Common.Specflow.Service_References.TestHelperService {
+namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SerializableKeyValuePairOfStringString", Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    [System.SerializableAttribute()]
+    public partial class SerializableKeyValuePairOfStringString : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string KeyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Key {
+            get {
+                return this.KeyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.KeyField, value) != true)) {
+                    this.KeyField = value;
+                    this.RaisePropertyChanged("Key");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ValueField, value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", ItemName="string")]
+    [System.SerializableAttribute()]
+    public class ArrayOfString : System.Collections.Generic.List<string> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SystemInfo", Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    [System.SerializableAttribute()]
+    public partial class SystemInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int VisitCountField;
+        
+        private int ValueField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int VisitCount {
+            get {
+                return this.VisitCountField;
+            }
+            set {
+                if ((this.VisitCountField.Equals(value) != true)) {
+                    this.VisitCountField = value;
+                    this.RaisePropertyChanged("VisitCount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public int Value {
+            get {
+                return this.ValueField;
+            }
+            set {
+                if ((this.ValueField.Equals(value) != true)) {
+                    this.ValueField = value;
+                    this.RaisePropertyChanged("Value");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PersonalInfo", Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    [System.SerializableAttribute()]
+    public partial class PersonalInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SurnameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Surname {
+            get {
+                return this.SurnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SurnameField, value) != true)) {
+                    this.SurnameField = value;
+                    this.RaisePropertyChanged("Surname");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx", ConfigurationName="TestHelperService.AutoTestsHelperServiceSoap")]
@@ -17,17 +207,59 @@ namespace Sitecore.Foundation.Common.Specflow.Service_References.TestHelperServi
         
         // CODEGEN: Generating message contract since element name userName from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser", ReplyAction="*")]
-        CreateUserResponse CreateUser(CreateUserRequest request);
+        Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserResponse CreateUser(Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser", ReplyAction="*")]
-        System.Threading.Tasks.Task<CreateUserResponse> CreateUserAsync(CreateUserRequest request);
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserResponse> CreateUserAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequest request);
+        
+        // CODEGEN: Generating message contract since element name userName from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetUserProperties", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponse GetUserProperties(Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetUserProperties", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponse> GetUserPropertiesAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequest request);
+        
+        // CODEGEN: Generating message contract since element name identifier from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetContactTags", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsResponse GetContactTags(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetContactTags", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsResponse> GetContactTagsAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsRequest request);
+        
+        // CODEGEN: Generating message contract since element name identifier from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetContactSystemInfo", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoResponse GetContactSystemInfo(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetContactSystemInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoResponse> GetContactSystemInfoAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoRequest request);
+        
+        // CODEGEN: Generating message contract since element name identifier from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetContactPersonalInfo", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoResponse GetContactPersonalInfo(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetContactPersonalInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoResponse> GetContactPersonalInfoAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoRequest request);
+        
+        // CODEGEN: Generating message contract since element name identifier from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetContactEmail", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailResponse GetContactEmail(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetContactEmail", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailResponse> GetContactEmailAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailRequest request);
+        
+        // CODEGEN: Generating message contract since element name identifier from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetContactPhone", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneResponse GetContactPhone(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetContactPhone", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneResponse> GetContactPhoneAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/DeleteUser", ReplyAction="*")]
-        DeleteUserResponse DeleteUser(DeleteUserRequest request);
+        Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserResponse DeleteUser(Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/DeleteUser", ReplyAction="*")]
-        System.Threading.Tasks.Task<DeleteUserResponse> DeleteUserAsync(DeleteUserRequest request);
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserResponse> DeleteUserAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/IndexDatabases", ReplyAction="*")]
         void IndexDatabases();
@@ -40,6 +272,34 @@ namespace Sitecore.Foundation.Common.Specflow.Service_References.TestHelperServi
         
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/IndexMasterDatabases", ReplyAction="*")]
         System.Threading.Tasks.Task IndexMasterDatabasesAsync();
+        
+        // CODEGEN: Generating message contract since element name itemPath from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/UploadMediaItem", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemResponse UploadMediaItem(Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/UploadMediaItem", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemResponse> UploadMediaItemAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemRequest request);
+        
+        // CODEGEN: Generating message contract since element name itemPath from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/AttachToMediaItem", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemResponse AttachToMediaItem(Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/AttachToMediaItem", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemResponse> AttachToMediaItemAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemRequest request);
+        
+        // CODEGEN: Generating message contract since element name itemPath from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/RenameItem", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemResponse RenameItem(Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/RenameItem", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemResponse> RenameItemAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemRequest request);
+        
+        // CODEGEN: Generating message contract since element name siteName from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/SetSiteHostName", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameResponse SetSiteHostName(Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/SetSiteHostName", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameResponse> SetSiteHostNameAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -49,12 +309,12 @@ namespace Sitecore.Foundation.Common.Specflow.Service_References.TestHelperServi
     public partial class CreateUserRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateUser", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
-        public CreateUserRequestBody Body;
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequestBody Body;
         
         public CreateUserRequest() {
         }
         
-        public CreateUserRequest(CreateUserRequestBody Body) {
+        public CreateUserRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -87,12 +347,12 @@ namespace Sitecore.Foundation.Common.Specflow.Service_References.TestHelperServi
     public partial class CreateUserResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateUserResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
-        public CreateUserResponseBody Body;
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserResponseBody Body;
         
         public CreateUserResponse() {
         }
         
-        public CreateUserResponse(CreateUserResponseBody Body) {
+        public CreateUserResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -118,15 +378,435 @@ namespace Sitecore.Foundation.Common.Specflow.Service_References.TestHelperServi
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetUserPropertiesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetUserProperties", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequestBody Body;
+        
+        public GetUserPropertiesRequest() {
+        }
+        
+        public GetUserPropertiesRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetUserPropertiesRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string userName;
+        
+        public GetUserPropertiesRequestBody() {
+        }
+        
+        public GetUserPropertiesRequestBody(string userName) {
+            this.userName = userName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetUserPropertiesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetUserPropertiesResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponseBody Body;
+        
+        public GetUserPropertiesResponse() {
+        }
+        
+        public GetUserPropertiesResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetUserPropertiesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.SerializableKeyValuePairOfStringString[] GetUserPropertiesResult;
+        
+        public GetUserPropertiesResponseBody() {
+        }
+        
+        public GetUserPropertiesResponseBody(Sitecore.Foundation.Common.Specflow.TestHelperService.SerializableKeyValuePairOfStringString[] GetUserPropertiesResult) {
+            this.GetUserPropertiesResult = GetUserPropertiesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetContactTagsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetContactTags", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsRequestBody Body;
+        
+        public GetContactTagsRequest() {
+        }
+        
+        public GetContactTagsRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetContactTagsRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string identifier;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string tagName;
+        
+        public GetContactTagsRequestBody() {
+        }
+        
+        public GetContactTagsRequestBody(string identifier, string tagName) {
+            this.identifier = identifier;
+            this.tagName = tagName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetContactTagsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetContactTagsResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsResponseBody Body;
+        
+        public GetContactTagsResponse() {
+        }
+        
+        public GetContactTagsResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetContactTagsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.ArrayOfString GetContactTagsResult;
+        
+        public GetContactTagsResponseBody() {
+        }
+        
+        public GetContactTagsResponseBody(Sitecore.Foundation.Common.Specflow.TestHelperService.ArrayOfString GetContactTagsResult) {
+            this.GetContactTagsResult = GetContactTagsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetContactSystemInfoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetContactSystemInfo", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoRequestBody Body;
+        
+        public GetContactSystemInfoRequest() {
+        }
+        
+        public GetContactSystemInfoRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetContactSystemInfoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string identifier;
+        
+        public GetContactSystemInfoRequestBody() {
+        }
+        
+        public GetContactSystemInfoRequestBody(string identifier) {
+            this.identifier = identifier;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetContactSystemInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetContactSystemInfoResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoResponseBody Body;
+        
+        public GetContactSystemInfoResponse() {
+        }
+        
+        public GetContactSystemInfoResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetContactSystemInfoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.SystemInfo GetContactSystemInfoResult;
+        
+        public GetContactSystemInfoResponseBody() {
+        }
+        
+        public GetContactSystemInfoResponseBody(Sitecore.Foundation.Common.Specflow.TestHelperService.SystemInfo GetContactSystemInfoResult) {
+            this.GetContactSystemInfoResult = GetContactSystemInfoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetContactPersonalInfoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetContactPersonalInfo", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoRequestBody Body;
+        
+        public GetContactPersonalInfoRequest() {
+        }
+        
+        public GetContactPersonalInfoRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetContactPersonalInfoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string identifier;
+        
+        public GetContactPersonalInfoRequestBody() {
+        }
+        
+        public GetContactPersonalInfoRequestBody(string identifier) {
+            this.identifier = identifier;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetContactPersonalInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetContactPersonalInfoResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoResponseBody Body;
+        
+        public GetContactPersonalInfoResponse() {
+        }
+        
+        public GetContactPersonalInfoResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetContactPersonalInfoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.PersonalInfo GetContactPersonalInfoResult;
+        
+        public GetContactPersonalInfoResponseBody() {
+        }
+        
+        public GetContactPersonalInfoResponseBody(Sitecore.Foundation.Common.Specflow.TestHelperService.PersonalInfo GetContactPersonalInfoResult) {
+            this.GetContactPersonalInfoResult = GetContactPersonalInfoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetContactEmailRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetContactEmail", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailRequestBody Body;
+        
+        public GetContactEmailRequest() {
+        }
+        
+        public GetContactEmailRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetContactEmailRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string identifier;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string emailKey;
+        
+        public GetContactEmailRequestBody() {
+        }
+        
+        public GetContactEmailRequestBody(string identifier, string emailKey) {
+            this.identifier = identifier;
+            this.emailKey = emailKey;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetContactEmailResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetContactEmailResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailResponseBody Body;
+        
+        public GetContactEmailResponse() {
+        }
+        
+        public GetContactEmailResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetContactEmailResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetContactEmailResult;
+        
+        public GetContactEmailResponseBody() {
+        }
+        
+        public GetContactEmailResponseBody(string GetContactEmailResult) {
+            this.GetContactEmailResult = GetContactEmailResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetContactPhoneRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetContactPhone", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneRequestBody Body;
+        
+        public GetContactPhoneRequest() {
+        }
+        
+        public GetContactPhoneRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetContactPhoneRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string identifier;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string phoneKey;
+        
+        public GetContactPhoneRequestBody() {
+        }
+        
+        public GetContactPhoneRequestBody(string identifier, string phoneKey) {
+            this.identifier = identifier;
+            this.phoneKey = phoneKey;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetContactPhoneResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetContactPhoneResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneResponseBody Body;
+        
+        public GetContactPhoneResponse() {
+        }
+        
+        public GetContactPhoneResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetContactPhoneResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetContactPhoneResult;
+        
+        public GetContactPhoneResponseBody() {
+        }
+        
+        public GetContactPhoneResponseBody(string GetContactPhoneResult) {
+            this.GetContactPhoneResult = GetContactPhoneResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class DeleteUserRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteUser", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
-        public DeleteUserRequestBody Body;
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserRequestBody Body;
         
         public DeleteUserRequest() {
         }
         
-        public DeleteUserRequest(DeleteUserRequestBody Body) {
+        public DeleteUserRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -155,12 +835,12 @@ namespace Sitecore.Foundation.Common.Specflow.Service_References.TestHelperServi
     public partial class DeleteUserResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DeleteUserResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
-        public DeleteUserResponseBody Body;
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserResponseBody Body;
         
         public DeleteUserResponse() {
         }
         
-        public DeleteUserResponse(DeleteUserResponseBody Body) {
+        public DeleteUserResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -182,13 +862,302 @@ namespace Sitecore.Foundation.Common.Specflow.Service_References.TestHelperServi
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface AutoTestsHelperServiceSoapChannel : AutoTestsHelperServiceSoap, System.ServiceModel.IClientChannel {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UploadMediaItemRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadMediaItem", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemRequestBody Body;
+        
+        public UploadMediaItemRequest() {
+        }
+        
+        public UploadMediaItemRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemRequestBody Body) {
+            this.Body = Body;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AutoTestsHelperServiceSoapClient : System.ServiceModel.ClientBase<AutoTestsHelperServiceSoap>, AutoTestsHelperServiceSoap {
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class UploadMediaItemRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string itemPath;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string fileName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public byte[] fileContent;
+        
+        public UploadMediaItemRequestBody() {
+        }
+        
+        public UploadMediaItemRequestBody(string itemPath, string fileName, byte[] fileContent) {
+            this.itemPath = itemPath;
+            this.fileName = fileName;
+            this.fileContent = fileContent;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UploadMediaItemResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UploadMediaItemResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemResponseBody Body;
+        
+        public UploadMediaItemResponse() {
+        }
+        
+        public UploadMediaItemResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class UploadMediaItemResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string UploadMediaItemResult;
+        
+        public UploadMediaItemResponseBody() {
+        }
+        
+        public UploadMediaItemResponseBody(string UploadMediaItemResult) {
+            this.UploadMediaItemResult = UploadMediaItemResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AttachToMediaItemRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AttachToMediaItem", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemRequestBody Body;
+        
+        public AttachToMediaItemRequest() {
+        }
+        
+        public AttachToMediaItemRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class AttachToMediaItemRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string itemPath;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string fileName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public byte[] fileContent;
+        
+        public AttachToMediaItemRequestBody() {
+        }
+        
+        public AttachToMediaItemRequestBody(string itemPath, string fileName, byte[] fileContent) {
+            this.itemPath = itemPath;
+            this.fileName = fileName;
+            this.fileContent = fileContent;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AttachToMediaItemResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AttachToMediaItemResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemResponseBody Body;
+        
+        public AttachToMediaItemResponse() {
+        }
+        
+        public AttachToMediaItemResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class AttachToMediaItemResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AttachToMediaItemResult;
+        
+        public AttachToMediaItemResponseBody() {
+        }
+        
+        public AttachToMediaItemResponseBody(string AttachToMediaItemResult) {
+            this.AttachToMediaItemResult = AttachToMediaItemResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RenameItemRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RenameItem", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemRequestBody Body;
+        
+        public RenameItemRequest() {
+        }
+        
+        public RenameItemRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class RenameItemRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string itemPath;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string newName;
+        
+        public RenameItemRequestBody() {
+        }
+        
+        public RenameItemRequestBody(string itemPath, string newName) {
+            this.itemPath = itemPath;
+            this.newName = newName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class RenameItemResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="RenameItemResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemResponseBody Body;
+        
+        public RenameItemResponse() {
+        }
+        
+        public RenameItemResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class RenameItemResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string RenameItemResult;
+        
+        public RenameItemResponseBody() {
+        }
+        
+        public RenameItemResponseBody(string RenameItemResult) {
+            this.RenameItemResult = RenameItemResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SetSiteHostNameRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SetSiteHostName", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameRequestBody Body;
+        
+        public SetSiteHostNameRequest() {
+        }
+        
+        public SetSiteHostNameRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class SetSiteHostNameRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string siteName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string hostName;
+        
+        public SetSiteHostNameRequestBody() {
+        }
+        
+        public SetSiteHostNameRequestBody(string siteName, string hostName) {
+            this.siteName = siteName;
+            this.hostName = hostName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SetSiteHostNameResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SetSiteHostNameResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameResponseBody Body;
+        
+        public SetSiteHostNameResponse() {
+        }
+        
+        public SetSiteHostNameResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class SetSiteHostNameResponseBody {
+        
+        public SetSiteHostNameResponseBody() {
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface AutoTestsHelperServiceSoapChannel : Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AutoTestsHelperServiceSoapClient : System.ServiceModel.ClientBase<Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap>, Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap {
         
         public AutoTestsHelperServiceSoapClient() {
         }
@@ -210,55 +1179,211 @@ namespace Sitecore.Foundation.Common.Specflow.Service_References.TestHelperServi
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CreateUserResponse AutoTestsHelperServiceSoap.CreateUser(CreateUserRequest request) {
+        Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.CreateUser(Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequest request) {
             return base.Channel.CreateUser(request);
         }
         
         public bool CreateUser(string userName, string password) {
-            CreateUserRequest inValue = new CreateUserRequest();
-            inValue.Body = new CreateUserRequestBody();
+            Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
-            CreateUserResponse retVal = ((AutoTestsHelperServiceSoap)(this)).CreateUser(inValue);
+            Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).CreateUser(inValue);
             return retVal.Body.CreateUserResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CreateUserResponse> AutoTestsHelperServiceSoap.CreateUserAsync(CreateUserRequest request) {
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.CreateUserAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequest request) {
             return base.Channel.CreateUserAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CreateUserResponse> CreateUserAsync(string userName, string password) {
-            CreateUserRequest inValue = new CreateUserRequest();
-            inValue.Body = new CreateUserRequestBody();
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserResponse> CreateUserAsync(string userName, string password) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
-            return ((AutoTestsHelperServiceSoap)(this)).CreateUserAsync(inValue);
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).CreateUserAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        DeleteUserResponse AutoTestsHelperServiceSoap.DeleteUser(DeleteUserRequest request) {
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetUserProperties(Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequest request) {
+            return base.Channel.GetUserProperties(request);
+        }
+        
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.SerializableKeyValuePairOfStringString[] GetUserProperties(string userName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequestBody();
+            inValue.Body.userName = userName;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetUserProperties(inValue);
+            return retVal.Body.GetUserPropertiesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetUserPropertiesAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequest request) {
+            return base.Channel.GetUserPropertiesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponse> GetUserPropertiesAsync(string userName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequestBody();
+            inValue.Body.userName = userName;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetUserPropertiesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetContactTags(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsRequest request) {
+            return base.Channel.GetContactTags(request);
+        }
+        
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.ArrayOfString GetContactTags(string identifier, string tagName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsRequestBody();
+            inValue.Body.identifier = identifier;
+            inValue.Body.tagName = tagName;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetContactTags(inValue);
+            return retVal.Body.GetContactTagsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetContactTagsAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsRequest request) {
+            return base.Channel.GetContactTagsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsResponse> GetContactTagsAsync(string identifier, string tagName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsRequestBody();
+            inValue.Body.identifier = identifier;
+            inValue.Body.tagName = tagName;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetContactTagsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetContactSystemInfo(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoRequest request) {
+            return base.Channel.GetContactSystemInfo(request);
+        }
+        
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.SystemInfo GetContactSystemInfo(string identifier) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoRequestBody();
+            inValue.Body.identifier = identifier;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetContactSystemInfo(inValue);
+            return retVal.Body.GetContactSystemInfoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetContactSystemInfoAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoRequest request) {
+            return base.Channel.GetContactSystemInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoResponse> GetContactSystemInfoAsync(string identifier) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactSystemInfoRequestBody();
+            inValue.Body.identifier = identifier;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetContactSystemInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetContactPersonalInfo(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoRequest request) {
+            return base.Channel.GetContactPersonalInfo(request);
+        }
+        
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.PersonalInfo GetContactPersonalInfo(string identifier) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoRequestBody();
+            inValue.Body.identifier = identifier;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetContactPersonalInfo(inValue);
+            return retVal.Body.GetContactPersonalInfoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetContactPersonalInfoAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoRequest request) {
+            return base.Channel.GetContactPersonalInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoResponse> GetContactPersonalInfoAsync(string identifier) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPersonalInfoRequestBody();
+            inValue.Body.identifier = identifier;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetContactPersonalInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetContactEmail(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailRequest request) {
+            return base.Channel.GetContactEmail(request);
+        }
+        
+        public string GetContactEmail(string identifier, string emailKey) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailRequestBody();
+            inValue.Body.identifier = identifier;
+            inValue.Body.emailKey = emailKey;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetContactEmail(inValue);
+            return retVal.Body.GetContactEmailResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetContactEmailAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailRequest request) {
+            return base.Channel.GetContactEmailAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailResponse> GetContactEmailAsync(string identifier, string emailKey) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailRequestBody();
+            inValue.Body.identifier = identifier;
+            inValue.Body.emailKey = emailKey;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetContactEmailAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetContactPhone(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneRequest request) {
+            return base.Channel.GetContactPhone(request);
+        }
+        
+        public string GetContactPhone(string identifier, string phoneKey) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneRequestBody();
+            inValue.Body.identifier = identifier;
+            inValue.Body.phoneKey = phoneKey;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetContactPhone(inValue);
+            return retVal.Body.GetContactPhoneResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetContactPhoneAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneRequest request) {
+            return base.Channel.GetContactPhoneAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneResponse> GetContactPhoneAsync(string identifier, string phoneKey) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactPhoneRequestBody();
+            inValue.Body.identifier = identifier;
+            inValue.Body.phoneKey = phoneKey;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetContactPhoneAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.DeleteUser(Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserRequest request) {
             return base.Channel.DeleteUser(request);
         }
         
         public bool DeleteUser(string userName) {
-            DeleteUserRequest inValue = new DeleteUserRequest();
-            inValue.Body = new DeleteUserRequestBody();
+            Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserRequestBody();
             inValue.Body.userName = userName;
-            DeleteUserResponse retVal = ((AutoTestsHelperServiceSoap)(this)).DeleteUser(inValue);
+            Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).DeleteUser(inValue);
             return retVal.Body.DeleteUserResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<DeleteUserResponse> AutoTestsHelperServiceSoap.DeleteUserAsync(DeleteUserRequest request) {
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.DeleteUserAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserRequest request) {
             return base.Channel.DeleteUserAsync(request);
         }
         
-        public System.Threading.Tasks.Task<DeleteUserResponse> DeleteUserAsync(string userName) {
-            DeleteUserRequest inValue = new DeleteUserRequest();
-            inValue.Body = new DeleteUserRequestBody();
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserResponse> DeleteUserAsync(string userName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserRequestBody();
             inValue.Body.userName = userName;
-            return ((AutoTestsHelperServiceSoap)(this)).DeleteUserAsync(inValue);
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).DeleteUserAsync(inValue);
         }
         
         public void IndexDatabases() {
@@ -275,6 +1400,117 @@ namespace Sitecore.Foundation.Common.Specflow.Service_References.TestHelperServi
         
         public System.Threading.Tasks.Task IndexMasterDatabasesAsync() {
             return base.Channel.IndexMasterDatabasesAsync();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.UploadMediaItem(Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemRequest request) {
+            return base.Channel.UploadMediaItem(request);
+        }
+        
+        public string UploadMediaItem(string itemPath, string fileName, byte[] fileContent) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemRequestBody();
+            inValue.Body.itemPath = itemPath;
+            inValue.Body.fileName = fileName;
+            inValue.Body.fileContent = fileContent;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).UploadMediaItem(inValue);
+            return retVal.Body.UploadMediaItemResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.UploadMediaItemAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemRequest request) {
+            return base.Channel.UploadMediaItemAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemResponse> UploadMediaItemAsync(string itemPath, string fileName, byte[] fileContent) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.UploadMediaItemRequestBody();
+            inValue.Body.itemPath = itemPath;
+            inValue.Body.fileName = fileName;
+            inValue.Body.fileContent = fileContent;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).UploadMediaItemAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.AttachToMediaItem(Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemRequest request) {
+            return base.Channel.AttachToMediaItem(request);
+        }
+        
+        public string AttachToMediaItem(string itemPath, string fileName, byte[] fileContent) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemRequestBody();
+            inValue.Body.itemPath = itemPath;
+            inValue.Body.fileName = fileName;
+            inValue.Body.fileContent = fileContent;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).AttachToMediaItem(inValue);
+            return retVal.Body.AttachToMediaItemResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.AttachToMediaItemAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemRequest request) {
+            return base.Channel.AttachToMediaItemAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemResponse> AttachToMediaItemAsync(string itemPath, string fileName, byte[] fileContent) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.AttachToMediaItemRequestBody();
+            inValue.Body.itemPath = itemPath;
+            inValue.Body.fileName = fileName;
+            inValue.Body.fileContent = fileContent;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).AttachToMediaItemAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.RenameItem(Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemRequest request) {
+            return base.Channel.RenameItem(request);
+        }
+        
+        public string RenameItem(string itemPath, string newName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemRequestBody();
+            inValue.Body.itemPath = itemPath;
+            inValue.Body.newName = newName;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).RenameItem(inValue);
+            return retVal.Body.RenameItemResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.RenameItemAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemRequest request) {
+            return base.Channel.RenameItemAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemResponse> RenameItemAsync(string itemPath, string newName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.RenameItemRequestBody();
+            inValue.Body.itemPath = itemPath;
+            inValue.Body.newName = newName;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).RenameItemAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.SetSiteHostName(Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameRequest request) {
+            return base.Channel.SetSiteHostName(request);
+        }
+        
+        public void SetSiteHostName(string siteName, string hostName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameRequestBody();
+            inValue.Body.siteName = siteName;
+            inValue.Body.hostName = hostName;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).SetSiteHostName(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.SetSiteHostNameAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameRequest request) {
+            return base.Channel.SetSiteHostNameAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameResponse> SetSiteHostNameAsync(string siteName, string hostName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameRequestBody();
+            inValue.Body.siteName = siteName;
+            inValue.Body.hostName = hostName;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).SetSiteHostNameAsync(inValue);
         }
     }
 }

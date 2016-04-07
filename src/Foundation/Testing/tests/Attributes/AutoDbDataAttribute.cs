@@ -18,6 +18,7 @@
       Fixture.Customizations.Add(new ResolvePipelineSpecimenBuilder());
       Fixture.Customizations.Insert(0, new RegisterViewToEngineBuilder());
       Fixture.Customizations.Add(new HtmlHelperBuilder());
+      Fixture.Customizations.Add(new HttpContextBuilder());
     }
   }
 }

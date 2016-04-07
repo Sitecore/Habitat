@@ -11,16 +11,16 @@
 
 <div class="container">
   <h1>
-    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), Model.Item)
+    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, Model.Item)
     @if (Model.Item.Fields[Templates.NewsArticle.Fields.Summary].HasValue || Sitecore.Context.PageMode.IsExperienceEditor)
     {
       <br />
       <small>
-        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary.ToString(), Model.Item)
+        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, Model.Item)
       </small>
     }
   </h1>
   <p>
-    <time>@Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new { format = "MMMM dd, yyyy" })</time>
+    <time>@Html.Sitecore().Field(Templates.NewsArticle.Fields.Date, new { format = "MMMM dd, yyyy" })</time>
   </p>
 </div>
