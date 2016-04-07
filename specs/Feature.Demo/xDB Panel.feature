@@ -298,10 +298,25 @@ Scenario: xDB Panel_UC24_Available on another page
 
 @NeedImplementation 		
 Scenario: xDB Panel_UC25_Not available in Edit mode
-	Given Habitat website is opened on Main Page
-	When Habitat website is opened on Main Page in Edit mode
-	Then <Open visit details panel> slidebar unavailable 
+	Given User registered and login on Habitat website
+	When  User opens Main Page and switch  to Edit mode
+	Then <xDB> panel be unavailable from right side of window 
+
+Scenario: xDB Panel_UC26_Not available in Preview mode
+    Given User registered and login on Habitat website
+	When  User opens Main Page and switch to Preview mode
+	Then <xDB> panel be unavailable from right side of window 
+
+Scenario: xDB Panel_UC27_Not available in Explore mode
+	Given User registered and login on Habitat website
+	When  User opens Main Page and switch to Explore mode
+	Then <xDB> panel be unavailable from right side of window 
+
+Scenario: xDB Panel_UC28_Not available in Debug mode
+	Given User registered and login on Habitat website
+	When  User opens Main Page and switch to Debug mode
+	Then <xDB> panel be unavailable from right side of window
 
 
 @Need design after Bug 37617 is fixed		
-Scenario: xDB Panel_UC26_Tooltips
+Scenario: xDB Panel_UC29_Tooltips

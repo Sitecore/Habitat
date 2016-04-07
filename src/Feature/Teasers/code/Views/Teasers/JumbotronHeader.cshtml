@@ -14,13 +14,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h1>@Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)</h1>
+        <h1>@Html.Sitecore().Field(Templates.TeaserContent.Fields.Title, Model.Item)</h1>
 
         <p class="lead">
-          @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
+          @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item)
         </p>
 
-        @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new { @class = "btn btn-hollow btn-lg" })
+        @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link, Model.Item, new { @class = "btn btn-hollow btn-lg" })
       </div>
     </div>
   </div>

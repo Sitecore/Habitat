@@ -1,28 +1,31 @@
 ﻿---
-ID: 11f41661-e5fe-44e7-b8da-7cff2d39b4b2
-Parent: 0e03b0c2-fd98-4729-9e95-2b3c9170685f
-Template: 455a3e98-a627-4b40-8035-e683a0331ac7
+ID: "11f41661-e5fe-44e7-b8da-7cff2d39b4b2"
+Parent: "0e03b0c2-fd98-4729-9e95-2b3c9170685f"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
 Path: /sitecore/templates/Feature/Social/_OpenGraph/Facebook Open Graph/OpenGraphImage
 DB: master
 SharedFields:
-- ID: ab162cc0-dc80-4abf-8871-998ee5d7ba32
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type
   Value: Image
-- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 300
+- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
+  Hint: __Security
+  Value: "ar|Everyone|pe|!*|+field:read|pd|!*|+field:read|ar|modules\Feature Social Admin|pe|+field:write|pd|+field:write|"
 Languages:
 - Language: en
   Fields:
-  - ID: 19a69332-a23e-4e70-8d16-b2640cb24cc8
+  - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
     Hint: Title
-    Value: Open Graph Image - Thumbnail shown when sharing on Facebook. Leave empty to use normal thumbnail.
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Value: "Open Graph Image - Thumbnail shown when sharing on Facebook. Leave empty to use normal thumbnail."
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Open Graph Image
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20130920T134439

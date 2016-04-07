@@ -23,6 +23,8 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
 
     public CommonResults CommonResults => new CommonResults();
 
+    public NavigationStepsBase NavigationStepsBase => new NavigationStepsBase();
+
 
     public MockupOfExternalPageFeature MockupOfExternalPageFeature = new MockupOfExternalPageFeature();
 

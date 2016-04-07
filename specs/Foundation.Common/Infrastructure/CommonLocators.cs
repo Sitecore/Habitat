@@ -56,5 +56,29 @@ namespace Sitecore.Foundation.Common.Specflow.Infrastructure
     public static IEnumerable<IWebElement> LoginPageButtons
       => Driver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.btn-block")).Where(el => el.Displayed).ToList();
 
+    public static IEnumerable<IWebElement> OpenXDBSlidebar
+      => Driver.WaitUntilElementsPresent(By.CssSelector(".btn.btn-info.sidebar-closed"));
+
+    public static IEnumerable<IWebElement> XDBpanelHeader
+      => Driver.WaitUntilElementsPresent(By.CssSelector(".panel-title.collapsed"));
+
+    public static IEnumerable<IWebElement> UserIconOnPersonalInformation
+      => Driver.FindElements(By.CssSelector(".panel-body div div .fa.fa-user"));
+
+    public static IEnumerable<IWebElement> MediaTitleOnPersonalInformation
+      => Driver.FindElements(By.CssSelector(".panel-body div div .media-title"));
+
+    public static IEnumerable<IWebElement> IdentificationUknownStatusIcon
+      => Driver.FindElements(By.CssSelector(".panel-body div div .fa.fa-user-secret.icon-lg"));
+
+    public static IEnumerable<IWebElement> IdentificationKnownStatusIcon
+      => Driver.FindElements(By.CssSelector(".fa.fa-user-plus.icon-lg")); 
+
+    public static IEnumerable<IWebElement> XDBpanelMediaBody
+      => Driver.FindElements(By.CssSelector(".media-body"));
+
+    public static IEnumerable<IWebElement> ManageXDBpanelButtons
+      => Driver.FindElements(By.CssSelector(".hover-only"));
+
   }
 }
