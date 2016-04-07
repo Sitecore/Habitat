@@ -1,0 +1,18 @@
+﻿@using Sitecore.Feature.Teasers
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Theming.Extensions
+@using Sitecore.Mvc.Presentation
+@model Sitecore.Feature.Teasers.Models.DynamicTeaserModel
+
+@using (Html.BeginEditFrame(Model.Item.ID.ToString(), ""))
+{
+  var options = RenderingContext.Current.Rendering.GetCarouselOptions();
+  <div class="owl-carousel" data-options='{"items": @options.ItemsShown, "navigation": @(options.ShowNavigation ? "true" : "false"), "navigationText": ["<", ">"], "autoPlay": @(options.AutoPlay ? "true" : "false") }'>
+    @for (var i = 0; i < Model.Items.Count(); i++)
+    {
+      <div>
+        @Html.Sitecore().DynamicPlaceholder($"teaser-placeholder-{i + 1}")
+      </div>
+    }
+  </div>
+  }

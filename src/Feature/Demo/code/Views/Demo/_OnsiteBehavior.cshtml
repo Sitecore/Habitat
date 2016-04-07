@@ -2,16 +2,16 @@
 @using Sitecore.StringExtensions
 @model Sitecore.Feature.Demo.Models.OnsiteBehavior
 <div class="panel panel-primary">
-  <div class="panel-heading">
+  <div class="panel-heading" role="tab">
     <h4 class="panel-title">
-      <a href="#onsiteBehaviorPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
+      <a role="button" href="#onsiteBehaviorPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
         <span class="fa fa-bullseye"></span>
         @DictionaryRepository.Get("/Demo/OnsiteBehavior/Title", "Onsite Behavior")
         <span class="glyphicon glyphicon-chevron-down pull-right"></span>
       </a>
     </h4>
   </div>
-  <div id="onsiteBehaviorPanel" class="panel-collapse collapse">
+  <div id="onsiteBehaviorPanel" class="panel-collapse collapse" role="tabpanel">
     <div class="panel-body">
       <div class="media">
         <div class="media-left">

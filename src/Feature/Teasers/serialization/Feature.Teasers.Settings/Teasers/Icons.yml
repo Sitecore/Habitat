@@ -1,0 +1,22 @@
+﻿---
+ID: "2e066b18-eb55-41a6-b933-27063a7c3c55"
+Parent: "f9d1dbcc-b318-44ec-8df5-f6377058d3d0"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/system/Settings/Feature/Teasers/Icons
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{E90D00B6-0BE9-48E0-9C3F-047274024270}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160322T034614Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: sitecore\admin
