@@ -12,12 +12,6 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
   [Binding]
   class TestDataSetup: StepsBase
   {
-    [Given(@"Habitat website is opened on Main Page")]
-    public void GivenHabitatWebsiteIsOpenedOnMainPage()
-    {
-      SiteBase.NavigateToPage(BaseSettings.BaseUrl);
-    }
-
     [Given(@"User is registered in Habitat and logged out")]
     public void GivenUserIsRegisteredInHabitatAndLoggedOut(Table table)
     {
