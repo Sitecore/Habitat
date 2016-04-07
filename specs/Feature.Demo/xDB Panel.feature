@@ -301,17 +301,17 @@ Scenario: xDB Panel_UC25_Not available in Edit mode
 	Given User registered and login on Habitat website
 	When  User opens Main Page and switch  to Edit mode
 	Then <xDB> panel be unavailable from right side of window 
-
+@NeedImplementation
 Scenario: xDB Panel_UC26_Not available in Preview mode
     Given User registered and login on Habitat website
 	When  User opens Main Page and switch to Preview mode
 	Then <xDB> panel be unavailable from right side of window 
-
+@NeedImplementation
 Scenario: xDB Panel_UC27_Not available in Explore mode
 	Given User registered and login on Habitat website
 	When  User opens Main Page and switch to Explore mode
 	Then <xDB> panel be unavailable from right side of window 
-
+@NeedImplementation
 Scenario: xDB Panel_UC28_Not available in Debug mode
 	Given User registered and login on Habitat website
 	When  User opens Main Page and switch to Debug mode

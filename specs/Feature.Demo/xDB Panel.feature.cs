@@ -887,9 +887,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "xDB Panel")]
         [Xunit.TraitAttribute("Description", "xDB Panel_UC26_Not available in Preview mode")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
         public virtual void XDBPanel_UC26_NotAvailableInPreviewMode()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC26_Not available in Preview mode", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC26_Not available in Preview mode", new string[] {
+                        "NeedImplementation"});
 #line 305
 this.ScenarioSetup(scenarioInfo);
 #line 306
@@ -905,9 +907,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "xDB Panel")]
         [Xunit.TraitAttribute("Description", "xDB Panel_UC27_Not available in Explore mode")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
         public virtual void XDBPanel_UC27_NotAvailableInExploreMode()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC27_Not available in Explore mode", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC27_Not available in Explore mode", new string[] {
+                        "NeedImplementation"});
 #line 310
 this.ScenarioSetup(scenarioInfo);
 #line 311
@@ -923,9 +927,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "xDB Panel")]
         [Xunit.TraitAttribute("Description", "xDB Panel_UC28_Not available in Debug mode")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
         public virtual void XDBPanel_UC28_NotAvailableInDebugMode()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC28_Not available in Debug mode", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC28_Not available in Debug mode", new string[] {
+                        "NeedImplementation"});
 #line 315
 this.ScenarioSetup(scenarioInfo);
 #line 316
