@@ -1,6 +1,7 @@
 ﻿@using Sitecore.Feature.Identity
 @using Sitecore.Feature.Identity.Repositories
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Links
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 
@@ -10,9 +11,13 @@
   {
     return;
   }
+  //TODO: Resolve context site from item (implement in Foundation.Multisite)
+  var homeUrl = Sitecore.Context.Site?.GetStartItem()?.GetUrl() ?? "/";
 }
-<div class="logo">
-  <a class="navbar-brand" href="/">
-    @Html.Sitecore().ImageField(Templates.Identity.Fields.Logo.ToString(), identity, 20)
-  </a>
-</div>
+
+<a class="navbar-brand" href="@homeUrl">
+  <span class="logo">
+    @Html.Sitecore().ImageField(Templates.Identity.Fields.Logo, identity)
+    <!-- TODO: add tagline field to logo, add .has-tagline to .logo <small class="tagline">Niteflight</small> -->
+  </span>
+</a>

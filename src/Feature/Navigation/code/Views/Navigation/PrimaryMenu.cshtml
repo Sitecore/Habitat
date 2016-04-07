@@ -1,41 +1,43 @@
 ﻿@using Sitecore.Feature.Navigation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Feature.Navigation.Models.NavigationItems
-<ul class="nav navbar-nav primary-nav">
-  @if (Model?.Items != null)
-  {
-    foreach (var item in Model.Items)
-    {
-      var hasChildren = item.Children != null && item.Children.Items.Any();
-      var cssClass = (item.IsActive ? "active" : string.Empty);
-      if (hasChildren)
-      {
-        cssClass += " dropdown";
-      }
 
-      <li class="@cssClass">
-        @if (hasChildren)
+<div class="collapse navbar-collapse" id="siteNavbar">
+  <ul class="nav navbar-nav">
+    @if (Model?.Items != null)
+    {
+      foreach (var item in Model.Items)
+      {
+        var hasChildren = item.Children != null && item.Children.Items.Any();
+        var cssClass = "";
+        if (hasChildren)
         {
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-            @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
-            <span class="caret"></span>
-          </a>
-                <ul class="dropdown-menu">
-                  @foreach (var subitem in item.Children.Items)
-                  {
-                    <li class="@(subitem.IsActive ? "active" : string.Empty)">
-                      <a href="@subitem.Url" target="@subitem.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), subitem.Item)</a>
-                    </li>
-                  }
-                </ul>
+          cssClass += " dropdown";
         }
-        else
-        {
-          <a href="@item.Url" target="@item.Target">
-            @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
-          </a>
-        }
-      </li>
+
+        <li class="@cssClass">
+          @if (hasChildren)
+          {
+            <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, item.Item)<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              @foreach (var subitem in item.Children.Items)
+            {
+                <li>
+                  <a href="@subitem.Url" target="@subitem.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, subitem.Item)</a>
+                </li>
+              }
+            </ul>
+          }
+          else
+          {
+            <a class="text-uppercase" href="@item.Url" target="@item.Target">
+              @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, item.Item)
+            </a>
+          }
+        </li>
+      }
     }
-  }
-  @Html.Sitecore().Placeholder("primarymenuitems")
-</ul>
+  </ul>
+</div>

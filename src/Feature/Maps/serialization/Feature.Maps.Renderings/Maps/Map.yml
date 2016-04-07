@@ -1,0 +1,36 @@
+﻿---
+ID: 7dfd9396-cb94-4174-9721-9419a2aa68e3
+Parent: 02eda08e-78e1-409c-9655-a2f43abe09f3
+Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+Path: /sitecore/layout/Renderings/Feature/Maps/Map
+DB: master
+SharedFields:
+- ID: 4867d192-326a-4aa4-81ef-ea430e224aff
+  Hint: Css assets
+  Value: /styles/maps/maps.min.css
+- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+  Hint: Path
+  Value: /Views/Maps/Map.cshtml
+- ID: 7d24e54f-5c16-4314-90c9-6051aa1a7da1
+  Hint: Parameters Template
+  Value: {D77856C3-8A5E-452C-8854-F2965EDF25E0}
+- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  Hint: Datasource Location
+  Value: site:mappoints
+- ID: e514a1eb-ddba-44f7-8528-82ca2280f778
+  Hint: JavaScript assets
+  Value: |
+    /scripts/maps/markerclusterer.js
+    /scripts/maps/maps.js
+    
+- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
+  Hint: Open Properties after Add
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151204T050308Z

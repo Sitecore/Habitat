@@ -1,0 +1,38 @@
+﻿@using Sitecore.Feature.Identity
+@using Sitecore.Feature.Identity.Repositories
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@{
+  var identity = IdentityRepository.Get(Model.Item);
+  if (identity == null)
+  {
+    return;
+  }
+}
+
+<div class="well">
+  <h4>@DictionaryRepository.Get("/identity/contact information/title", "Contact information")</h4>
+
+  <address>
+    @if (Sitecore.Context.PageMode.IsExperienceEditor || identity.FieldHasValue(Templates.Identity.Fields.OrganisationName))
+    {
+      <strong>@Html.Sitecore().Field(Templates.Identity.Fields.OrganisationName, identity)</strong><br>
+    }
+    @Html.Sitecore().Field(Templates.Identity.Fields.OrganisationAddress, identity)
+    @if (Sitecore.Context.PageMode.IsExperienceEditor || identity.FieldHasValue(Templates.Identity.Fields.OrganisationPhone))
+    {
+      <br/>
+      <i class="fa fa-phone"></i> @Html.Sitecore().Field(Templates.Identity.Fields.OrganisationPhone, identity)
+    }
+  </address>
+
+  @if (Sitecore.Context.PageMode.IsExperienceEditor || identity.FieldHasValue(Templates.Identity.Fields.OrganisationEmail))
+  {
+    <address>
+      <strong>@DictionaryRepository.Get("/identity/contact information/email", "Email")</strong><br>
+      @Html.Sitecore().Field(Templates.Identity.Fields.OrganisationEmail, identity)
+    </address>
+  }
+</div>

@@ -1,14 +1,22 @@
 ﻿@using Sitecore.Feature.Social
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Links
 @using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
-<meta property="og:title" content="@Html.Sitecore().Field(Templates.OpenGraph.Fields.Title.ToString(), @Model.Item)"/>
+@if (!Model?.Item?.IsDerived(Templates.OpenGraph.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.OpenGraph.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  return;
+}
+
+<meta property="og:title" content="@Html.Sitecore().Field(Templates.OpenGraph.Fields.Title, @Model.Item)"/>
 <meta property="og:image" content="@Model.Item.ImageUrl(Templates.OpenGraph.Fields.Image, new MediaUrlOptions
                                    {
                                      AbsolutePath = true
                                    })"/>
-<meta property="og:description" content="@Html.Sitecore().Field(Templates.OpenGraph.Fields.Description.ToString(), @Model.Item)"/>
+<meta property="og:description" content="@Html.Sitecore().Field(Templates.OpenGraph.Fields.Description, @Model.Item)"/>
 <meta property="og:url" content="@Model.Item.Url(new UrlOptions
                                  {
                                    AlwaysIncludeServerUrl = true

@@ -2,6 +2,7 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\..\..\..\applytransform.targets" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,6 +46,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj">
+      <Project>{5cf5fa06-ab27-4df5-a471-ed57ef3e4ae9}</Project>
+      <Name>Sitecore.Foundation.Alerts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\Indexing\code\Sitecore.Foundation.Indexing.csproj">
       <Project>{80213F24-577F-4F0B-A3B8-62485EA4D2F3}</Project>
       <Name>Sitecore.Foundation.Indexing</Name>
@@ -119,6 +124,7 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Navigation\_SecondaryMenuItems.cshtml" />
     <Content Include="Views\Navigation\LinkMenu.cshtml" />
+    <Content Include="Views\Navigation\NavigationLinks.cshtml" />
     <None Include="Views\Web.config" />
     <Content Include="Views\Navigation\PrimaryMenu.cshtml" />
     <Content Include="Views\Navigation\SecondaryMenu.cshtml" />
@@ -153,7 +159,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>55973</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

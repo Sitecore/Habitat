@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\..\..\..\applytransform.targets" />
   <Import Project="..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -148,12 +149,10 @@
     <Content Include="Views\Accounts\Login.cshtml" />
     <Content Include="Views\Accounts\AccountsMenu.cshtml" />
     <Content Include="Views\Accounts\ForgotPassword.cshtml" />
-    <Content Include="Views\Accounts\AccountsDetails.cshtml" />
     <Content Include="Views\Accounts\Register.cshtml" />
-    <Content Include="Views\Accounts\InfoMessage.cshtml" />
-    <Content Include="Views\Accounts\LoginDialog.cshtml" />
+    <Content Include="Views\Accounts\_Login.cshtml" />
     <Content Include="Views\Accounts\EditProfile.cshtml" />
-    <None Include="Views\Web.config" />
+    <Content Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -171,7 +170,6 @@
     <Compile Include="Attributes\RedirectAuthenticatedAttribute.cs" />
     <Compile Include="Attributes\RedirectUnauthenticatedAttribute.cs" />
     <Compile Include="Attributes\ValidateModelAttribute.cs" />
-    <Compile Include="Models\InfoMessage.cs" />
     <Compile Include="Models\LoginInfo.cs" />
     <Compile Include="Models\EditProfile.cs" />
     <Compile Include="Services\ContactProfileService.cs" />
@@ -186,7 +184,6 @@
     <Compile Include="Services\UserProfileProvider.cs" />
     <Compile Include="Services\UserProfileService.cs" />
     <Compile Include="ConfigSettings.cs" />
-    <Compile Include="WebApiConfig.cs" />
     <Compile Include="Models\LoginResult.cs" />
     <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,12 +201,18 @@
     <Compile Include="Texts\Errors.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj">
+      <Project>{5cf5fa06-ab27-4df5-a471-ed57ef3e4ae9}</Project>
+      <Name>Sitecore.Foundation.Alerts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

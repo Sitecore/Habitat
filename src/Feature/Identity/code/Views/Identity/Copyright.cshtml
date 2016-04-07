@@ -1,5 +1,6 @@
 ﻿@using Sitecore.Feature.Identity
 @using Sitecore.Feature.Identity.Repositories
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @{
@@ -9,6 +10,6 @@
     return;
   }
 }
-<div class="copyright">
-  @Html.Sitecore().Field(Templates.Identity.Fields.Copyright.ToString(), identity)
-</div>
+<small class="copyright">
+  @Html.Sitecore().Field(Templates.Identity.Fields.Copyright, identity)
+</small>

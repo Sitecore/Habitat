@@ -1,0 +1,30 @@
+﻿---
+ID: f2f572cd-b60d-4d44-bb9c-07fbb68de621
+Parent: b308118b-6c6f-438f-908a-66d657634a7d
+Template: bfdc1f27-3d2d-495f-89a3-0951f882420b
+Path: /sitecore/content/Habitat/Global/FAQ/What is Habitat
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160301T100336Z
+    - ID: 57f39c75-51f0-4888-903e-724dfdcc8a38
+      Hint: Answer
+      Value: |
+        <p style="color: #333333; margin-bottom: 16px;">Habitat is a Sitecore solution example built on a modular architecture. The architecture and methodology focuses on:</p>
+        <ul style="color: #333333; margin-bottom: 16px; padding: 0px 0px 0px 2em;">
+            <li>Simplicity -&nbsp;<em>A consistent and discoverable architecture</em></li>
+            <li>Flexibility -&nbsp;<em>Change and add quickly and without worry</em></li>
+            <li>Extensibility -&nbsp;<em>Simply add new features without steep learning curve</em></li>
+        </ul>
+        <p style="color: #333333;">For more information, please check out the&nbsp;<a href="https://github.com/Sitecore/Habitat/wiki" style="color: #4078c0; text-decoration: none;">Habitat Wiki</a></p>
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: 9588b6d5-3e6a-4c16-bd37-98da6f1dde52
+      Hint: Question
+      Value: What is Habitat?

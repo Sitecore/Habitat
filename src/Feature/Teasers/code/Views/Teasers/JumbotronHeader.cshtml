@@ -1,0 +1,27 @@
+﻿@using Sitecore.Feature.Teasers
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@if (!Model?.Item?.IsDerived(Templates.TeaserContent.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  return;
+}
+
+<div class="jumbotron jumbotron-xl bg-media" style="background-image: @Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image).ToCssUrlValue()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>@Html.Sitecore().Field(Templates.TeaserContent.Fields.Title, Model.Item)</h1>
+
+        <p class="lead">
+          @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item)
+        </p>
+
+        @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link, Model.Item, new { @class = "btn btn-hollow btn-lg" })
+      </div>
+    </div>
+  </div>
+</div>

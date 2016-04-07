@@ -1,6 +1,5 @@
 ﻿namespace Sitecore.Foundation.Indexing.Repositories
 {
-  using Sitecore.Feature.News.Repositories;
   using Sitecore.Foundation.Indexing;
 
   public class SearchServiceRepository : ISearchServiceRepository

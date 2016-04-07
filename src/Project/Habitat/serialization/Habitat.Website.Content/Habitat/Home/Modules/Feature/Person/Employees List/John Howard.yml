@@ -3,6 +3,7 @@ ID: 50a4942d-c644-4ad9-8452-78bd786c48a2
 Parent: 3809601d-3c89-4dba-8ce3-39738f43f92d
 Template: 467c2144-4454-4518-b1de-e31b4cbbff33
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List/John Howard
+DB: master
 Languages:
 - Language: en
   Versions:
@@ -11,19 +12,19 @@ Languages:
     - ID: 0cc9785e-54fe-4fae-93e4-d0d2ae75f339
       Hint: Biography
       Value: |
-        As Chief Marketing Officer, John is responsible for all aspects of the company&rsquo;s global marketing organization, including strategy, branding, product marketing, corporate communications and field-marketing.<br>
-        John has developed and led growth and digital innovation strategies for more than 20 years, primarily in the enterprise tech industry. He is a change agent that believes in the power of participation and the evolving role technology plays in connecting businesses with their customers.<br>
-        Prior to that, John&nbsp;served as Global SVP of Marketing, helping some of the most noted brands and retailers to bring authentic customer conversations to the heart of their businesses. John&nbsp;was VP of Global Marketing for a $55 Bn division at Germin. In his role, John&nbsp;led a number of global initiatives to evolve Germin&rsquo;s brand, drive demand, and build loyalty with customers around the globe. &nbsp;He was instrumental in defining and launching Germin&rsquo;s social strategy and approach. Prior to Germin, Anderson held a variety of marketing positions at BNN International, Sunny MacroSystems, and&nbsp;AgileTech.<br>
-        <br>
-        Howard is a frequent speaker at industry marketing events such as BlaBlaSummit, ITSys Summit, Googly, and Teamforce. &nbsp;He was named a top digital marketer by BtoB magazine two years running.<br>
-        <br>
-        John&nbsp;holds a BA in Finance from National University and a Master&rsquo;s degree in Marketing from the  School of  Management.
+        <p>Entrepreneurial-spirited, pioneering technologist with 10+ years of executive-level experience identifying, qualifying, building
+        consensus for, and implementing enabling technologies and enterprise systems that facilitate business processes and strategic
+        objectives. Powerful blend of technology vision and business acumen results in consistent development of powerful business
+        strategies supported by cost-effective, high-performance IT infrastructures and applications. </p>
+        <p>Broad expertise in IT, network, and
+        telecommunications architecture/infrastructure design, full project life cycle management, client/vendor relationship management,
+        and financial/operational management. Ably manage M&A, reorganization, and process improvement initiatives.</p>
     - ID: 0ee2f208-1fee-42fc-8051-6696d49a92bf
       Hint: OpenGraphTitle
       Value: John Doe
     - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
       Hint: NavigationTitle
-      Value: John Doe
+      Value: John Howard
     - ID: 25b4cee3-a61a-4dc3-bb52-775dd509dbb5
       Hint: Mobile
       Value: +1 202 555 0148
@@ -47,13 +48,13 @@ Languages:
       Value: "<link linktype=\"external\" url=\"http://twitter.com\" anchor=\"\" target=\"\" />"
     - ID: 76972fcd-4bb0-4255-864e-077745efdf50
       Hint: Title
-      Value: CMO
+      Value: CTO
     - ID: 8d0e8ee3-21c4-4ae2-a2f1-53d3f3ebe501
       Hint: Telephone
       Value: +1 202 555 0162
     - ID: b897023c-15d2-49f3-8974-06fa5fb7ad00
       Hint: Summary
-      Value: John is a highly accomplished executive with extensive marketing, operational and global business management experience.
+      Value: John is our super-geeky CTO.
     - ID: c9baf3eb-8cfa-4bf6-9b19-51d38db5fc38
       Hint: Picture
       Value: "<image mediapath=\"/Habitat/Images/Square/Habitat-075-square\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Habitat/Images/Square/Habitat-075-square\" mediaid=\"{9DF6B8F9-46D3-4EBF-B29F-1018443D85AD}\"></image>"

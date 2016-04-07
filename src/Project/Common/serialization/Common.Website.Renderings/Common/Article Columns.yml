@@ -1,0 +1,18 @@
+﻿---
+ID: a033c041-5aee-4b43-a0f7-119f790553d5
+Parent: 4935d7de-c715-46e5-862e-44adf1bc61e8
+Template: 7ee0975b-0698-493e-b3a2-0b2ef33d0522
+Path: /sitecore/layout/Renderings/Project/Common/Article Columns
+DB: master
+SharedFields:
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 700
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151116T034651Z

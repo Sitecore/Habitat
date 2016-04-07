@@ -6,15 +6,17 @@ namespace Sitecore.Feature.Demo.Models
     {
     }
 
-    public PatternMatch(string profile, string pattern, string image)
+    public PatternMatch(string profile, string pattern, string image, double matchPercentage)
     {
-      this.Profile = profile;
-      this.PatternName = pattern;
-      this.Image = image;
+      Profile = profile;
+      PatternName = pattern;
+      Image = image;
+      MatchPercentage = matchPercentage;
     }
 
     public string Profile { get; set; }
     public string PatternName { get; set; }
     public string Image { get; set; }
+    public double MatchPercentage { get; set; }
   }
 }

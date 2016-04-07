@@ -2,6 +2,7 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\..\..\..\applytransform.targets" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -106,10 +107,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\PageContent\PageSummary.cshtml" />
-    <Content Include="Views\PageContent\PageImage.cshtml" />
+    <Content Include="Views\PageContent\PageImageHeader.cshtml" />
     <Content Include="Views\PageContent\PageBody.cshtml" />
-    <Content Include="Views\PageContent\PageTitle.cshtml" />
+    <Content Include="Views\PageContent\PageHeaderTitle.cshtml" />
     <Content Include="App_Config\Include\Feature\Feature.PageContent.config">
       <SubType>Designer</SubType>
     </Content>
@@ -118,6 +118,8 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\PageContent\ChildPageList.cshtml" />
     <Content Include="Views\PageContent\PageTeaser.cshtml" />
+    <Content Include="Views\PageContent\PageTitle.cshtml" />
+    <Content Include="Views\PageContent\PageImage.cshtml" />
     <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -135,6 +137,10 @@
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj">
+      <Project>{5CF5FA06-AB27-4DF5-A471-ED57EF3E4AE9}</Project>
+      <Name>Sitecore.Foundation.Alerts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\Indexing\code\Sitecore.Foundation.Indexing.csproj">
       <Project>{80213F24-577F-4F0B-A3B8-62485EA4D2F3}</Project>
       <Name>Sitecore.Foundation.Indexing</Name>
@@ -155,7 +161,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59548</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

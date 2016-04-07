@@ -50,7 +50,7 @@ Languages:
       Value: 20150824T175742Z
     - ID: 3437eaac-6ee8-460b-a33d-da1f714b5a93
       Hint: NewsImage
-      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{40EA01F7-1897-4ED0-8721-76511278B6A5}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"087\" vspace=\"\" />"
+      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{40EA01F7-1897-4ED0-8721-76511278B6A5}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"087\" vspace=\"\" ></image>"
     - ID: 801612c7-5e98-4e3c-80d2-a34d0eebcbda
       Hint: NewsBody
       Value: |

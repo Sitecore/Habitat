@@ -1,0 +1,30 @@
+﻿---
+ID: d201a487-5099-48a1-8189-55944f70c6cb
+Parent: 4935d7de-c715-46e5-862e-44adf1bc61e8
+Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+Path: /sitecore/layout/Renderings/Project/Common/Section
+DB: master
+SharedFields:
+- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+  Hint: Path
+  Value: /Views/Common/Sublayouts/Section.cshtml
+- ID: 7d24e54f-5c16-4314-90c9-6051aa1a7da1
+  Hint: Parameters Template
+  Value: {8373E4E5-C79C-4123-9284-BABD9601C565}
+- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  Hint: Datasource Location
+  Value: site:background
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 1800
+- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
+  Hint: Open Properties after Add
+  Value: -
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20160203T101526Z

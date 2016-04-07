@@ -1,23 +1,26 @@
 ﻿@using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Feature.Teasers.Models.AccordeonModel
-
-<div class="accordeon" id="@Model.Id" role="tablist" aria-multiselectable="true">
-  @{
-    var index = 0;
-    foreach (var element in Model.Elements)
-    {
-      var isExpanded = Sitecore.Context.PageMode.IsPageEditor || index == 0;
-      index++;
-      <div class="teaser teaser-default">
-        <h4 class="teaser-heading" role="tab" id="@element.HeaderId">
-          <a role="button" data-toggle="collapse" data-parent="#@Model.Id" href="#@element.PanelId" aria-expanded="false" aria-controls="@element.PanelId">
-            @element.Title
-          </a>
-        </h4>
-        <div id="@element.PanelId" class="teaser-body collapse @(isExpanded ? "in" : "")" role="tabpanel" aria-labelledby="@element.HeaderId">
-          @Html.Sitecore().DynamicPlaceholder($"teaser-placeholder-{index}")
+<div class="panel-group" id="@Model.Id" role="tablist" aria-multiselectable="true">
+    @{
+      var index = 0;
+      foreach (var element in Model.Elements)
+      {
+          var isExpanded = Sitecore.Context.PageMode.IsPageEditor || index == 0;
+          index++;
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title" id="@element.HeaderId">
+                    <a role="button" data-toggle="collapse" data-parent="#@Model.Id" href="#@element.PanelId" aria-expanded="false" aria-controls="@element.PanelId">
+                        @element.Title
+                    </a>
+                </h4>
+            </div>
+            <div id="@element.PanelId" class="panel-collapse  collapse @(isExpanded ? "in" : "")" role="tabpanel" aria-labelledby="@element.HeaderId">
+                <div class="panel-body">
+                    @Html.Sitecore().DynamicPlaceholder($"teaser-placeholder-{index}")
+                </div>
+            </div>
         </div>
-      </div>
+      }
     }
-  }
 </div>

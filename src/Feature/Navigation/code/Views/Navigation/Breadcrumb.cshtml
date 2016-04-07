@@ -1,11 +1,13 @@
 ﻿@using Sitecore.Feature.Navigation
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Feature.Navigation.Models.NavigationItems
-<ol class="breadcrumb">
-  @foreach (var item in Model.Items)
-  {
-    <li class="@(item.IsActive ? "active" : string.Empty)">
-      <a href="@item.Item.Url()">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)</a>
-    </li>
-  }
-</ol>
+<div class="container">
+  <ol class="breadcrumb">
+    @foreach (var item in Model.Items)
+    {
+      <li class="@(item.IsActive ? "active" : string.Empty)">
+        <a href="@item.Item.Url()">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, item.Item)</a>
+      </li>
+    }
+  </ol>
+</div>

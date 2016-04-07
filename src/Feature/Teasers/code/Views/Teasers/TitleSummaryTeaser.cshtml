@@ -1,28 +1,32 @@
 ﻿@using Sitecore.Feature.Teasers
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Templates.TeaserContent.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  return;
+}
 
-
-<div class="teaser teaser-default teaser">
+<div class="well">
   @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Title) || Sitecore.Context.PageMode.IsPageEditor)
   {
-		<h3 class="teaser-heading">
-			@Html.Sitecore().Field(Templates.TeaserContent.Fields.Title.ToString(), Model.Item)
-		</h3>
-	}
-	@if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Summary) || Sitecore.Context.PageMode.IsPageEditor)
-	{
-	<div class="teaser-body">
-		@Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
-	</div>
-	}
-	@if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Link) || Sitecore.Context.PageMode.IsPageEditor)
-	{
-	<div class="teaser-footer">
-		@Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
-   {
-	   @class = "btn btn-default"
-   })
-	</div>
-	}
+    <h4>
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title, Model.Item)
+    </h4>
+  }
+  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Summary) || Sitecore.Context.PageMode.IsPageEditor)
+  {
+    <p>
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item)
+    </p>
+  }
+  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Link) || Sitecore.Context.PageMode.IsPageEditor)
+  {
+    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link, Model.Item, new
+{
+  @class = "btn btn-default"
+})
+  }
 </div>

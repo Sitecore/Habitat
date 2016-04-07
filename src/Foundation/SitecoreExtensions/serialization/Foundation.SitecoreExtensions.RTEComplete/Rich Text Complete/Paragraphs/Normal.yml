@@ -1,0 +1,82 @@
+﻿---
+ID: c7b3011c-2eca-4fad-9184-bd8b755d1709
+Parent: 018ea12b-93e9-4868-8e0e-e802176be1be
+Template: 2b421e6f-e820-4a04-9a4a-e421a0262b61
+Path: /sitecore/system/Settings/Html Editor Profiles/Rich Text Complete/Paragraphs/Normal
+DB: core
+BranchID: 14d0d756-dd94-4cfa-aed6-6d2585535700
+SharedFields:
+- ID: 433e22b5-06aa-4a97-a4ac-7cb059ebbac6
+  Hint: Value
+  Value: <p>
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Hint: __Sortorder
+  Value: 10
+Languages:
+- Language: da
+  Fields:
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Hint: __Display name
+    Value: Normal
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151003T031120Z
+    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+      Hint: Header
+      Value: Normal
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
+- Language: de-DE
+  Fields:
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Hint: __Display name
+    Value: normal
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151003T030830Z
+    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+      Hint: Header
+      Value: normal
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20060130T125527
+    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+      Hint: Header
+      Value: Normal
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\Admin
+    - ID: c8f93afe-bfd4-4e8f-9c61-152559854661
+      Hint: __Valid from
+      Value: 20060130T125527
+- Language: ja-JP
+  Fields:
+  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+    Hint: __Display name
+    Value: 通常
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Hint: __Created
+      Value: 20151003T031000Z
+    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+      Hint: Header
+      Value: 通常
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Hint: __Created by
+      Value: sitecore\admin

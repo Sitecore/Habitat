@@ -1,19 +1,12 @@
 ﻿@using Sitecore.Feature.News
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
+@if (!Model?.Item?.IsDerived(Templates.NewsArticle.ID) ?? true)
+{
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.NewsArticle.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID);
+  return;
+}
 
-<div class="news">
-  <h2>
-    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), Model.Item)
-  </h2>
-
-  <div class="well">
-    <span class="text-muted">
-      @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new { format = "MMMM dd, yyyy" })
-    </span>
-  </div>
-  @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), Model.Item, mw: 1000, cssClass: "img-responsive image")
-  <div class="body">
-    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Body.ToString(), Model.Item)
-  </div>
-</div>
+@Html.Sitecore().Field(Templates.NewsArticle.Fields.Body, Model.Item)
