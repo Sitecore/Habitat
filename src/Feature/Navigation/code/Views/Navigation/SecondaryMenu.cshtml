@@ -11,7 +11,7 @@
 }
 
 <h4>
-    <a href="@Model.Url" target="@Model.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), Model.Item)</a>
+    <a href="@Model.Url" target="@Model.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, Model.Item)</a>
 </h4>
 <div class="sidebar sidebar-static">
     @if (Model.Children != null)

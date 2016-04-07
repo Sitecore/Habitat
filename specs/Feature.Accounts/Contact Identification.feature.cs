@@ -74,35 +74,26 @@ namespace Sitecore.Feature.Accounts.Specflow
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Contact Identification")]
-        [Xunit.TraitAttribute("Description", "Accounts_Contact Identification_UC1_Identification is shown in the demo contact p" +
-            "anel")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
-        public virtual void Accounts_ContactIdentification_UC1_IdentificationIsShownInTheDemoContactPanel()
+        [Xunit.TraitAttribute("Description", "Accounts_Contact Identification_UC1_Anonymus user")]
+        [Xunit.TraitAttribute("Category", "Ready")]
+        public virtual void Accounts_ContactIdentification_UC1_AnonymusUser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Contact Identification_UC1_Identification is shown in the demo contact p" +
-                    "anel", new string[] {
-                        "NeedImplementation"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Contact Identification_UC1_Anonymus user", new string[] {
+                        "Ready"});
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 9
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.When("Actor clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Actor selects Open visit details panel slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.And("Actor expands Identification section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor expands Personal Information header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.Then("Contact ID term with it\'s ID presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User icon presents on Personal Information header section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 13
- testRunner.And("Identifier is empty", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Personal Information header contains You are anonymous label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.And("Identification status is <None>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number of visits"});
-            table1.AddRow(new string[] {
-                        "1"});
-#line 15
- testRunner.And("System shows following info on Contact panel title", ((string)(null)), table1, "And ");
+ testRunner.And("Identification secret icon presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -111,61 +102,70 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.TraitAttribute("FeatureTitle", "Contact Identification")]
         [Xunit.TraitAttribute("Description", "Accounts_Contact Identification_UC2_Identification is shown in the demo contact p" +
             "anel for just registered user")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Accounts_ContactIdentification_UC2_IdentificationIsShownInTheDemoContactPanelForJustRegisteredUser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Contact Identification_UC2_Identification is shown in the demo contact p" +
                     "anel for just registered user", new string[] {
-                        "NeedImplementation"});
-#line 20
+                        "Ready"});
+#line 17
 this.ScenarioSetup(scenarioInfo);
-#line 21
- testRunner.Given("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password",
                         "ConfirmPassword"});
-            table2.AddRow(new string[] {
-                        "kov@sitecore.net",
+            table1.AddRow(new string[] {
+                        "kovContact@sitecore.net",
                         "k",
                         "k"});
-#line 22
- testRunner.And("Actor entered following data in to the register fields", ((string)(null)), table2, "And ");
+#line 18
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table1, "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Email",
+                        "Password"});
+            table2.AddRow(new string[] {
+                        "kovContact@sitecore.net",
+                        "k"});
+#line 21
+ testRunner.And("User was Login to Habitat", ((string)(null)), table2, "And ");
+#line 24
+ testRunner.When("Actor selects Open visit details panel slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 25
- testRunner.And("Actor clicked Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor expands Personal Information header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.When("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Then("User icon presents on Personal Information header section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 27
- testRunner.And("User expands Identification section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 28
- testRunner.Then("Contact ID term with it\'s ID presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 29
- testRunner.And("Identifier is <extranet\\kov@sitecore.net>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 30
- testRunner.And("Identification status is <Known>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Personal Information header contains You are known label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number of visits"});
+                        "Text"});
             table3.AddRow(new string[] {
-                        "1"});
-#line 31
- testRunner.And("System shows following info on Contact panel title", ((string)(null)), table3, "And ");
+                        "Email (Primary)"});
+            table3.AddRow(new string[] {
+                        "kovContact@sitecore.net"});
+            table3.AddRow(new string[] {
+                        "Identification"});
+            table3.AddRow(new string[] {
+                        "extranet\\kovContact@sitecore.net"});
+#line 28
+ testRunner.And("xDB Panel Body text contains", ((string)(null)), table3, "And ");
+#line 34
+ testRunner.And("Identification known icon presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Contact Identification")]
-        [Xunit.TraitAttribute("Description", "Accounts_Contact Identification_UC3_Identification is shown in the demo contact p" +
-            "anel for logged in user")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
-        public virtual void Accounts_ContactIdentification_UC3_IdentificationIsShownInTheDemoContactPanelForLoggedInUser()
+        [Xunit.TraitAttribute("Description", "Accounts_Contact Identification_UC3_Start a new session")]
+        [Xunit.TraitAttribute("Category", "Ready")]
+        public virtual void Accounts_ContactIdentification_UC3_StartANewSession()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Contact Identification_UC3_Identification is shown in the demo contact p" +
-                    "anel for logged in user", new string[] {
-                        "NeedImplementation"});
-#line 36
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Contact Identification_UC3_Start a new session", new string[] {
+                        "Ready"});
+#line 39
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -173,171 +173,178 @@ this.ScenarioSetup(scenarioInfo);
                         "Password",
                         "ConfirmPassword"});
             table4.AddRow(new string[] {
-                        "kov@sitecore.net",
+                        "kovContact@sitecore.net",
                         "k",
                         "k"});
-#line 37
- testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table4, "Given ");
 #line 40
- testRunner.And("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table4, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number of visits"});
-            table5.AddRow(new string[] {
-                        "1"});
-#line 41
- testRunner.And("System contained following info on Contact panel title", ((string)(null)), table5, "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table6.AddRow(new string[] {
-                        "kov@sitecore.net",
+            table5.AddRow(new string[] {
+                        "kovContact@sitecore.net",
                         "k"});
-#line 44
- testRunner.When("Actor enteres following data into Login page fields", ((string)(null)), table6, "When ");
+#line 43
+ testRunner.And("User was Login to Habitat", ((string)(null)), table5, "And ");
+#line 46
+ testRunner.When("Actor selects Open visit details panel slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 47
- testRunner.And("Actor clicks Login button on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor clicks End Visit button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
- testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor selects Open visit details panel slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
- testRunner.And("User expands Identification section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor expands Personal Information header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 50
- testRunner.Then("Contact ID term with it\'s ID presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User icon presents on Personal Information header section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 51
- testRunner.And("Identifier is <extranet\\kov@sitecore.net>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 52
- testRunner.And("Identification status is <Known>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Personal Information header contains You are known label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number of visits"});
-            table7.AddRow(new string[] {
-                        "2"});
-#line 53
- testRunner.And("System shows following info on Contact panel title", ((string)(null)), table7, "And ");
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Text"});
+            table6.AddRow(new string[] {
+                        "Email (Primary)"});
+            table6.AddRow(new string[] {
+                        "kovContact@sitecore.net"});
+            table6.AddRow(new string[] {
+                        "Identification"});
+            table6.AddRow(new string[] {
+                        "extranet\\kovContact@sitecore.net"});
+#line 52
+ testRunner.And("xDB Panel Body text contains", ((string)(null)), table6, "And ");
+#line 58
+ testRunner.And("Identification known icon presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Contact Identification")]
-        [Xunit.TraitAttribute("Description", "Accounts_Contact Identification_UC4_Start a new session")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
-        public virtual void Accounts_ContactIdentification_UC4_StartANewSession()
+        [Xunit.TraitAttribute("Description", "Accounts_Contact Identification_UC4_Clear browser cookies")]
+        [Xunit.TraitAttribute("Category", "Ready")]
+        public virtual void Accounts_ContactIdentification_UC4_ClearBrowserCookies()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Contact Identification_UC4_Start a new session", new string[] {
-                        "NeedImplementation"});
-#line 59
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Contact Identification_UC4_Clear browser cookies", new string[] {
+                        "Ready"});
+#line 63
 this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Email",
+                        "Password",
+                        "ConfirmPassword"});
+            table7.AddRow(new string[] {
+                        "kovContact@sitecore.net",
+                        "k",
+                        "k"});
+#line 64
+ testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table7, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
-                        "Password",
-                        "ConfirmPassword"});
+                        "Password"});
             table8.AddRow(new string[] {
-                        "kov@sitecore.net",
-                        "k",
+                        "kovContact@sitecore.net",
                         "k"});
-#line 60
- testRunner.Given("User is registered in Habitat and logged in", ((string)(null)), table8, "Given ");
-#line 63
- testRunner.And("Identification section in the demo contact panel is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 64
- testRunner.And("Contact ID term with it\'s ID presented", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 65
- testRunner.And("Identifier was <extranet\\kov@sitecore.net>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 66
- testRunner.And("Identification status was <Known>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+ testRunner.And("User was Login to Habitat", ((string)(null)), table8, "And ");
+#line 70
+ testRunner.When("Actor deletes all browser cookies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 71
+ testRunner.And("Actor selects Open visit details panel slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+ testRunner.And("Actor expands Personal Information header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+ testRunner.Then("User icon presents on Personal Information header section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 74
+ testRunner.And("Personal Information header contains You are known label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number of visits"});
+                        "Text"});
             table9.AddRow(new string[] {
-                        "2"});
-#line 67
- testRunner.And("System shown following info on Contact panel title", ((string)(null)), table9, "And ");
-#line 70
- testRunner.When("User clicks END VISIT button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 71
- testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 72
- testRunner.And("User expands Identification section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 73
- testRunner.Then("System shows the same Contact ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number of visits"});
-            table10.AddRow(new string[] {
-                        "3"});
-#line 74
- testRunner.And("System shows following info on Contact panel title", ((string)(null)), table10, "And ");
+                        "Email (Primary)"});
+            table9.AddRow(new string[] {
+                        "kovContact@sitecore.net"});
+            table9.AddRow(new string[] {
+                        "Identification"});
+            table9.AddRow(new string[] {
+                        "extranet\\kovContact@sitecore.net"});
+#line 75
+ testRunner.And("xDB Panel Body text contains", ((string)(null)), table9, "And ");
+#line 81
+ testRunner.And("Identification known icon presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Contact Identification")]
-        [Xunit.TraitAttribute("Description", "Accounts_Contact Identification_UC5_Clear browser cookies")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
-        public virtual void Accounts_ContactIdentification_UC5_ClearBrowserCookies()
+        [Xunit.TraitAttribute("Description", "Accounts_Contact Identification_UC5_Inspect info for known user")]
+        [Xunit.TraitAttribute("Category", "InProgress")]
+        public virtual void Accounts_ContactIdentification_UC5_InspectInfoForKnownUser()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Contact Identification_UC5_Clear browser cookies", new string[] {
-                        "NeedImplementation"});
-#line 80
-this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Email",
-                        "Password",
-                        "ConfirmPassword"});
-            table11.AddRow(new string[] {
-                        "kov@sitecore.net",
-                        "k",
-                        "k"});
-#line 81
-testRunner.Given("User is registered in Habitat and logged in", ((string)(null)), table11, "Given ");
-#line 84
- testRunner.And("Identification section in the demo contact panel is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 85
- testRunner.And("Contact ID term with it\'s ID presented", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Contact Identification_UC5_Inspect info for known user", new string[] {
+                        "InProgress"});
 #line 86
- testRunner.And("Identifier was <extranet\\kov@sitecore.net>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+this.ScenarioSetup(scenarioInfo);
 #line 87
- testRunner.And("Identification status was <Known>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number of visits"});
-            table12.AddRow(new string[] {
-                        "2"});
-#line 88
- testRunner.And("System shown following info on Contact panel title", ((string)(null)), table12, "And ");
-#line 91
- testRunner.When("clear browser cookies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Email",
                         "Password"});
-            table13.AddRow(new string[] {
-                        "kov@sitecore.net",
-                        "k"});
+            table10.AddRow(new string[] {
+                        "johnsmith@gmail.com",
+                        "j"});
+#line 88
+ testRunner.And("User was Login to Habitat", ((string)(null)), table10, "And ");
+#line 91
+ testRunner.When("Actor selects Open visit details panel slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 92
- testRunner.And("login with following user", ((string)(null)), table13, "And ");
-#line 95
- testRunner.And("User clicks on <Info-sign> in the right down corner", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 96
- testRunner.And("User expands Identification section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 97
- testRunner.Then("System shows the same Contact ID", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 98
- testRunner.And("Identifier is <extranet\\kov@sitecore.net>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 99
- testRunner.And("Identification status is <Known>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor expands Personal Information header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
+ testRunner.Then("User icon presents on Personal Information header section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 94
+ testRunner.And("Personal Information header contains You are known label", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Number of visits"});
-            table14.AddRow(new string[] {
-                        "3"});
-#line 100
- testRunner.And("System shows following info on Contact panel title", ((string)(null)), table14, "And ");
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Text"});
+            table11.AddRow(new string[] {
+                        "Gender"});
+            table11.AddRow(new string[] {
+                        "Male"});
+            table11.AddRow(new string[] {
+                        "Job Title"});
+            table11.AddRow(new string[] {
+                        "Intern"});
+            table11.AddRow(new string[] {
+                        "Address (main)"});
+            table11.AddRow(new string[] {
+                        "153 SE 15th Rd Miami, , 33129 USA"});
+            table11.AddRow(new string[] {
+                        "Email (Primary)"});
+            table11.AddRow(new string[] {
+                        "JohnSmith@gmail.com"});
+            table11.AddRow(new string[] {
+                        "Phone (cell)"});
+            table11.AddRow(new string[] {
+                        "+775 45454456"});
+            table11.AddRow(new string[] {
+                        "Phone (work)"});
+            table11.AddRow(new string[] {
+                        "+775 3434567653 ext 15"});
+            table11.AddRow(new string[] {
+                        "Preferred Language"});
+            table11.AddRow(new string[] {
+                        "en"});
+            table11.AddRow(new string[] {
+                        "Identification"});
+            table11.AddRow(new string[] {
+                        "extranet\\JohnSmith@gmail.com"});
+#line 95
+ testRunner.And("xDB Panel Body text contains", ((string)(null)), table11, "And ");
+#line 113
+ testRunner.And("Identification known icon presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -15,7 +15,7 @@
   const int ThumbnailWidth = 750;
   const int maxWidth = 1200;
   var thumbnailField = Model.Item.FieldHasValue(Templates.HasMedia.Fields.Thumbnail) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
-  var thumbnail = Html.Sitecore().ImageField(thumbnailField.ToString(), Model.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
+  var thumbnail = Html.Sitecore().ImageField(thumbnailField, Model.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
   if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
   {
     return;

@@ -23,7 +23,7 @@
     const int ThumbnailWidth = 750;
     const int maxWidth = 1200;
     var thumbnailField = element.Item.FieldHasValue(Templates.HasMedia.Fields.Thumbnail) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
-    var thumbnail = Html.Sitecore().ImageField(thumbnailField.ToString(), element.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
+    var thumbnail = Html.Sitecore().ImageField(thumbnailField, element.Item, mw: ThumbnailWidth, cssClass: "img-responsive");
     if (string.IsNullOrWhiteSpace(thumbnail?.ToString()))
     {
       continue;
@@ -47,14 +47,14 @@
             var linkFieldUrl = element.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink);
             if (!string.IsNullOrWhiteSpace(linkFieldUrl))
             {
-              <a href="@linkFieldUrl" data-type="image" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item))" data-toggle="lightbox" data-gallery="@galleryId">
+              <a href="@linkFieldUrl" data-type="image" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description, element.Item))" data-toggle="lightbox" data-gallery="@galleryId">
                 @thumbnail
               </a>
             }
           }
           else
           {
-            <a href="@element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions(maxWidth, 0, false))" data-type="image" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description.ToString(), element.Item))" data-toggle="lightbox" data-gallery="@galleryId">
+            <a href="@element.Item.ImageUrl(Templates.HasMediaImage.Fields.Image, new MediaUrlOptions(maxWidth, 0, false))" data-type="image" data-title="@element.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description, element.Item))" data-toggle="lightbox" data-gallery="@galleryId">
               @thumbnail
             </a>
           }

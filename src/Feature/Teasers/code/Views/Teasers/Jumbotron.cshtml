@@ -15,17 +15,17 @@
   @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Label) || Sitecore.Context.PageMode.IsExperienceEditor)
   {
     <span class="label">
-      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Label.ToString(), Model.Item)
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Label, Model.Item)
     </span>
   }
   <h2>
-    @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title.ToString(), Model.Item)
+    @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title, Model.Item)
   </h2>
   <p class="">
-    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
+    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item)
   </p>
-  @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
-                                                                                     {
-                                                                                       @class = "btn btn-primary btn-lg"
-                                                                                     })
+  @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link, Model.Item, new
+  {
+    @class = "btn btn-primary btn-lg"
+  })
 </div>

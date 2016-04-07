@@ -20,20 +20,20 @@
  })
     </span>
     <h3>
-      @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), Model.Item)
+      @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, Model.Item)
     </h3>
   </header>
   <div>
     <a href="@Model.Item.Url()">
-      @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image.ToString(), Model.Item, mw: 750, cssClass: "img-responsive")
+      @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image, Model.Item, mw: 750, cssClass: "img-responsive")
     </a>
   </div>
-	<div class="caption">
+  <div class="caption">
     <p>
-      @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary.ToString(), Model.Item)
+      @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, Model.Item)
     </p>
     <a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-default">
       @DictionaryRepository.Get("/news/news teaser/read more", "Read more")
     </a>
-	</div>
+  </div>
 </div>

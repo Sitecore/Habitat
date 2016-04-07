@@ -44,5 +44,47 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     {
       Driver.Url.Equals(BaseSettings.DemoSiteURL);
     }
+
+    [Then(@"User icon presents on Personal Information header section")]
+    public void ThenUserIconPresentsOnPersonalInformationHeaderSection()
+    {
+      CommonLocators.UserIconOnPersonalInformation.Should().NotBeNull();
+    }
+
+
+    [Then(@"Personal Information header contains (.*) label")]
+    public void ThenPersonalInformationHeaderContainsLable(string label)
+    {
+      CommonLocators.MediaTitleOnPersonalInformation.First(el => el.GetAttribute("innerText").Contains(label)).Should().NotBeNull();
+    }
+
+    [Then(@"Identification secret icon presents")]
+    public void ThenIdentificationSecterIconPresents()
+    {
+      CommonLocators.IdentificationUknownStatusIcon.Should().NotBeNull();
+    }
+
+    [Then(@"Identification known icon presents")]
+    public void ThenIdentificationKnownIconPresents()
+    {
+      CommonLocators.IdentificationKnownStatusIcon.Should().NotBeNull();
+    }
+
+
+    [Then(@"xDB Panel Body text contains")]
+    public void ThenXDBPanelBodyTextContains(Table table)
+    {
+      var bodyText = table.Rows.Select(x => x.Values.First());
+      bodyText.All(t => CommonLocators.XDBpanelMediaBody.Any(x => x.GetAttribute("innerText").Contains(t))).Should().BeTrue();
+    }
+
+
+    [When(@"Actor clicks (.*) button on xDB panel")]
+    public void WhenActorClicksButtonOnXDBPanel(string button)
+    {
+      CommonLocators.ManageXDBpanelButtons.First(el => el.Text.Contains(button)).Click();
+    }
+
+
   }
 }

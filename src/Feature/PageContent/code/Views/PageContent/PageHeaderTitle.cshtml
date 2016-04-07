@@ -12,12 +12,12 @@
 
 <div class="container m-b-1">
   <h1>
-    @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title.ToString(), @section)
+    @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title, @section)
     @if (section.Fields[Templates.HasPageContent.Fields.Summary].HasValue || Sitecore.Context.PageMode.IsExperienceEditor)
     {
       <br/>
       <small>
-        @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary.ToString(), @section)
+        @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary, @section)
       </small>   
     }
   </h1>
