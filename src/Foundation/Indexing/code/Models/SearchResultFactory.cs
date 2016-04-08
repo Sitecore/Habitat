@@ -4,9 +4,10 @@ namespace Sitecore.Foundation.Indexing.Models
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.Data.Items;
   using Sitecore.Foundation.Indexing.Infrastructure;
+  using Sitecore.Foundation.Indexing.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
-  public class SearchResultRepository
+  public class SearchResultFactory
   {
     public static ISearchResult Create(SearchResultItem result)
     {
@@ -18,15 +19,14 @@ namespace Sitecore.Foundation.Indexing.Models
 
     private static void FormatResultUsingFirstSupportedProvider(SearchResultItem result, Item item, ISearchResult formattedResult)
     {
-      var formatter = FindFirstSupportedFormatter(item) ?? IndexContentProviderRepository.Default;
+      var formatter = FindFirstSupportedFormatter(item) ?? IndexingProviderRepository.DefaultSearchResultFormatter;
       formattedResult.ContentType = formatter.ContentType;
       formatter.FormatResult(result, formattedResult);
     }
 
-    private static IndexContentProviderBase FindFirstSupportedFormatter(Item item)
+    private static ISearchResultFormatter FindFirstSupportedFormatter(Item item)
     {
-      var formatter = IndexContentProviderRepository.All.FirstOrDefault(provider => provider.SupportedTemplates.Any(item.IsDerived));
-      return formatter;
+      return IndexingProviderRepository.SearchResultFormatters.FirstOrDefault(provider => provider.SupportedTemplates.Any(item.IsDerived));
     }
   }
 }

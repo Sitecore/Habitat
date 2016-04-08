@@ -10,5 +10,6 @@ namespace Sitecore.Foundation.Indexing.Models
     string ContentType { get; set; }
     string Description { get; set; }
     Uri Url { get; set; }
+    string ViewName { get; set; }
   }
 }

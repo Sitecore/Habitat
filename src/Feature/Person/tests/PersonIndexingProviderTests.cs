@@ -8,12 +8,12 @@
 	using Sitecore.Data;
 	using Xunit;
 
-	public class PersonIndexContentProviderTests
+	public class PersonIndexingProviderTests
 	{
 		[Fact]
 		public void SupportedTemplatesShouldReturnAtLeastOneTemplate()
 		{
-			var provider = new PersonIndexContentProvider();
+			var provider = new PersonIndexingProvider();
 			var templates = provider.SupportedTemplates;
 			var supportedTemplates = templates as ID[] ?? templates.ToArray();
 			supportedTemplates.Should().NotBeNull();
@@ -23,7 +23,7 @@
 		[Fact]
 		public void SupportedTemplatesShouldOnlyReturnTemplatesInModule()
 		{
-			var provider = new PersonIndexContentProvider();
+			var provider = new PersonIndexingProvider();
 			var templates = provider.SupportedTemplates;
 			var supportedTemplates = templates as ID[] ?? templates.ToArray();
 			supportedTemplates.Should().NotBeNull();

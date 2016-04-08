@@ -53,6 +53,9 @@
       <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
@@ -101,7 +104,12 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pipelines\GetLocalDatasourceLocation.cs" />
+    <Compile Include="Extensions\ItemExtensions.cs" />
+    <Compile Include="Infrastructure\Indexing\LocalDatasourceIndexContentProvider.cs" />
+    <Compile Include="Infrastructure\Indexing\LocalDatasourceContentField.cs" />
+    <Compile Include="Infrastructure\Pipelines\GetLocalDatasourceDependencies.cs" />
+    <Compile Include="Infrastructure\Pipelines\GetLocalDatasourceLocation.cs" />
+    <Compile Include="Infrastructure\Processors\DuplicateItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Templates.cs" />
@@ -112,6 +120,16 @@
     </Content>
     <Content Include="App_Config\Include\Foundation\Foundation.LocalDatasource.Serialization.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Indexing\code\Sitecore.Foundation.Indexing.csproj">
+      <Project>{80213F24-577F-4F0B-A3B8-62485EA4D2F3}</Project>
+      <Name>Sitecore.Foundation.Indexing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
+      <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
+      <Name>Sitecore.Foundation.SitecoreExtensions</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,25 @@
+﻿@using Sitecore.Feature.Person
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Foundation.Indexing.Models.ISearchResult
+<div class="media">
+  <div class="media-body ">
+    <h2 class="media-title">
+      <a href="@Model.Url">@Html.Raw(Model.Title)</a>
+    </h2>
+    @if (!string.IsNullOrWhiteSpace(Model.Description))
+    {
+      @Html.Raw(Model.Description)
+    }
+    <p>
+      <span class="label label-info">@Model.ContentType</span>
+    </p>
+  </div>
+  @if (Model.Item.FieldHasValue(Templates.Person.Fields.Picture))
+  {
+    <div class="media-left">
+      <a href="@Model.Url">
+        @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 150)
+      </a>
+    </div>
+  }
+</div>

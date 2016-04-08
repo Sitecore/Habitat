@@ -6,18 +6,24 @@
   @foreach (var result in Model.Results)
   {
     <li>
-      <a href="#">
+      @if (result.ViewName != null)
+      {
+        @Html.Partial(result.ViewName, result);
+      }
+      else
+      {
         <h2>
           <a href="@result.Url">@Html.Raw(result.Title)</a>
         </h2>
-        @if (!string.IsNullOrWhiteSpace(result.Description))
+
+        if (!string.IsNullOrWhiteSpace(result.Description))
         {
           @Html.Raw(result.Description)
         }
         <p>
           <span class="label label-info">@result.ContentType</span>
         </p>
-      </a>
+      }
     </li>
   }
 </ul>

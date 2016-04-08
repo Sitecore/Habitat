@@ -1,11 +1,12 @@
-﻿namespace Sitecore.Foundation.Indexing.Models
+﻿namespace Sitecore.Foundation.Indexing.Repositories
 {
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.ContentSearch.Linq;
   using Sitecore.ContentSearch.SearchTypes;
+  using Sitecore.Foundation.Indexing.Models;
 
-  public class SearchResultsRepository
+  public class SearchResultsFactory
   {
     public static ISearchResults Create(SearchResults<SearchResultItem> results, IQuery query)
     {
@@ -20,7 +21,7 @@
 
     private static IEnumerable<ISearchResult> CreateSearchResults(SearchResults<SearchResultItem> results)
     {
-      return results.Hits.Select(h => SearchResultRepository.Create(h.Document)).ToArray();
+      return results.Hits.Select(h => SearchResultFactory.Create(h.Document)).ToArray();
     }
   }
 }

@@ -2,6 +2,7 @@
 {
   using System;
   using System.Collections.Generic;
+  using System.Configuration.Provider;
   using System.Linq.Expressions;
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.Data;
@@ -10,25 +11,25 @@
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Web.UI.WebControls;
 
-  public class PageContentIndexContentProvider : IndexContentProviderBase
+  public class PageContentIndexingProvider : ProviderBase, ISearchResultFormatter, IQueryPredicateProvider
   {
-    public override string ContentType => DictionaryRepository.Get("/pagecontent/search/contenttype", "Page");
+    public string ContentType => DictionaryRepository.Get("/pagecontent/search/contenttype", "Page");
 
-    public override IEnumerable<ID> SupportedTemplates => new[]
+    public IEnumerable<ID> SupportedTemplates => new[]
     {
       Templates.HasPageContent.ID
     };
 
-    public override Expression<Func<SearchResultItem, bool>> GetQueryPredicate(IQuery query)
+    public Expression<Func<SearchResultItem, bool>> GetQueryPredicate(IQuery query)
     {
       var fieldNames = new[]
       {
         Templates.HasPageContent.Fields.Title_FieldName, Templates.HasPageContent.Fields.Summary_FieldName, Templates.HasPageContent.Fields.Body_FieldName
       };
-      return this.GetFreeTextPredicate(fieldNames, query);
+      return GetFreeTextPredicateService.GetFreeTextPredicate(fieldNames, query);
     }
 
-    public override void FormatResult(SearchResultItem item, ISearchResult formattedResult)
+    public void FormatResult(SearchResultItem item, ISearchResult formattedResult)
     {
       var contentItem = item.GetItem();
       formattedResult.Title = FieldRenderer.Render(contentItem, Templates.HasPageContent.Fields.Title.ToString());
