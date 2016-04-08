@@ -2,6 +2,7 @@
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.TeaserContent.ID) ?? true)
 {
@@ -9,24 +10,27 @@
   return;
 }
 
-<div class="well">
-  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Title) || Sitecore.Context.PageMode.IsPageEditor)
+<div class="well @Model.Rendering.GetBackgroundClass()">
+  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Label) || Sitecore.Context.PageMode.IsExperienceEditor)
+  {
+    <span class="label">
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Label, Model.Item)
+    </span>
+  }
+  @if (Model.Item.FieldHasValue(Templates.TeaserHeadline.Fields.Title) || Sitecore.Context.PageMode.IsExperienceEditor)
   {
     <h4>
-      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title, Model.Item)
+      @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title.ToString(), Model.Item)
     </h4>
   }
-  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Summary) || Sitecore.Context.PageMode.IsPageEditor)
+  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Summary) || Sitecore.Context.PageMode.IsExperienceEditor)
   {
     <p>
       @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item)
     </p>
   }
-  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Link) || Sitecore.Context.PageMode.IsPageEditor)
+  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Link) || Sitecore.Context.PageMode.IsExperienceEditor)
   {
-    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link, Model.Item, new
-{
-  @class = "btn btn-default"
-})
+    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link, Model.Item, new { @class = "btn btn-default" })
   }
 </div>

@@ -1,0 +1,37 @@
+header {
+  &.page-header {
+
+  }
+}
+
+.header {
+
+  &-static {
+    background-color: $color-secondary-dark;
+  }
+
+  &-fixed {
+    position: fixed;
+    padding: 0;
+    z-index: 1030;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: $color-secondary-dark;
+
+    @media (max-width: $screen-sm-max) {
+      max-height: 100%;
+      overflow-y: auto;
+    }
+
+    &.bg-transparent {
+      background-color: rgba(0,0,0,.15) !important;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#15000000', endColorstr='#15000000');
+    }
+
+    .navbar-fixed-top {
+      position: relative;
+      width: 100%;
+    }
+  }
+}

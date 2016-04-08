@@ -3,6 +3,9 @@
 @model Sitecore.Foundation.Indexing.Models.ISearchResult
 <div class="media">
   <div class="media-body ">
+    <div>
+      <span class="label label-info">@Model.ContentType</span>
+    </div>
     <h2 class="media-title">
       <a href="@Model.Url">@Html.Raw(Model.Title)</a>
     </h2>
@@ -10,9 +13,6 @@
     {
       @Html.Raw(Model.Description)
     }
-    <p>
-      <span class="label label-info">@Model.ContentType</span>
-    </p>
   </div>
   @if (Model.Item.FieldHasValue(Templates.Person.Fields.Picture))
   {

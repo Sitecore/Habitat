@@ -20,7 +20,7 @@ Languages:
       Value: <p>Video introducing the concepts and thoughts behind the Sitecore Habitat methodology</p>
     - ID: "4ff62b0a-d73b-4436-bea2-023154f2ffc4"
       Hint: MediaThumbnail
-      Value: "<image mediaid=\"{AC09E83E-3473-4F94-B1DA-CB2BD5ADD401}\" />"
+      Value: "<image mediaid=\"{AC09E83E-3473-4F94-B1DA-CB2BD5ADD401}\" ></image>"
     - ID: "63dda48b-b0cb-45a7-9a1b-b26ddb41009b"
       Hint: MediaTitle
       Value: Habitat Introduction

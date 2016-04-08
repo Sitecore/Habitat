@@ -5,6 +5,7 @@
   using System.Web.Mvc;
   using DynamicPlaceholders.Mvc.Extensions;
   using Sitecore.Data;
+  using Sitecore.Data.IDTables;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
   using Sitecore.Foundation.SitecoreExtensions.Controls;

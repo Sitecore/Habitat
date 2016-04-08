@@ -4,101 +4,110 @@ As a sales person
 I want to show that Sitecore tracks the indentifiction of a visitor 
 so that I can show the we know a person across visits
 
-@NeedImplementation
-Scenario: Accounts_Contact Identification_UC1_Identification is shown in the demo contact panel
+@Ready
+Scenario: Accounts_Contact Identification_UC1_Anonymus user 
 	Given Habitat website is opened on Main Page
-	When Actor clicks on <Info-sign> in the right down corner
-	And Actor expands Identification section
-	Then Contact ID term with it's ID presents
-	And Identifier is empty
-	And Identification status is <None>
-	And System shows following info on Contact panel title
-	| Number of visits | 
-	| 1                | 
+	When Actor selects Open visit details panel slidebar
+	And Actor expands Personal Information header on xDB panel
+	Then User icon presents on Personal Information header section 
+	And Personal Information header contains You are anonymous label 
+	And Identification secret icon presents 
 
-@NeedImplementation
+@Ready
 Scenario: Accounts_Contact Identification_UC2_Identification is shown in the demo contact panel for just registered user
-	Given Habitat website is opened on Register page
-	And Actor entered following data in to the register fields
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And Actor clicked Register button
-	When User clicks on <Info-sign> in the right down corner
-	And User expands Identification section
-	Then Contact ID term with it's ID presents
-	And Identifier is <extranet\kov@sitecore.net>
-	And Identification status is <Known>
-	And System shows following info on Contact panel title
-	| Number of visits | 
-	| 1                | 
-
-@NeedImplementation
-Scenario: Accounts_Contact Identification_UC3_Identification is shown in the demo contact panel for logged in user
-	Given User is registered in Habitat and logged out 
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And Habitat website is opened on Login page
-	And System contained following info on Contact panel title
-	| Number of visits | 
-	| 1                | 
-	When Actor enteres following data into Login page fields
-	| Email              |Password |
-	| kov@sitecore.net   |k        |
-	And Actor clicks Login button on Login page
-	And User clicks on <Info-sign> in the right down corner
-	And User expands Identification section
-	Then Contact ID term with it's ID presents
-	And Identifier is <extranet\kov@sitecore.net>
-	And Identification status is <Known>
-	And System shows following info on Contact panel title
-	| Number of visits | 
-	| 2                | 
+	Given User is registered in Habitat and logged out
+	| Email                   | Password | ConfirmPassword |
+	| kovContact@sitecore.net | k        | k               |
+	And User was Login to Habitat
+	| Email                   | Password |
+	| kovContact@sitecore.net | k        |
+	When Actor selects Open visit details panel slidebar
+	And Actor expands Personal Information header on xDB panel
+	Then User icon presents on Personal Information header section
+	And Personal Information header contains You are known label
+	And xDB Panel Body text contains
+	| Text                             |
+	| Email (Primary)                  |
+	| kovContact@sitecore.net          |
+	| Identification                   |
+	| extranet\kovContact@sitecore.net |
+	And Identification known icon presents
 
 
-@NeedImplementation
-Scenario: Accounts_Contact Identification_UC4_Start a new session
-	Given User is registered in Habitat and logged in 
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And Identification section in the demo contact panel is opened
-	And Contact ID term with it's ID presented
-	And Identifier was <extranet\kov@sitecore.net>
-	And Identification status was <Known>
-	And System shown following info on Contact panel title
-	| Number of visits | 
-	| 2                | 
-	When User clicks END VISIT button
-	And User clicks on <Info-sign> in the right down corner
-	And User expands Identification section
-	Then System shows the same Contact ID
-	And System shows following info on Contact panel title
-	| Number of visits | 
-	| 3                | 
+
+@Ready
+Scenario: Accounts_Contact Identification_UC3_Start a new session
+	Given User is registered in Habitat and logged out
+	| Email                   | Password | ConfirmPassword |
+	| kovContact@sitecore.net | k        | k               |
+	And User was Login to Habitat
+	| Email                   | Password |
+	| kovContact@sitecore.net | k        |
+	When Actor selects Open visit details panel slidebar
+	And Actor clicks End Visit button on xDB panel
+	And Actor selects Open visit details panel slidebar
+	And Actor expands Personal Information header on xDB panel
+	Then User icon presents on Personal Information header section
+	And Personal Information header contains You are known label
+	And xDB Panel Body text contains
+	| Text                             |
+	| Email (Primary)                  |
+	| kovContact@sitecore.net          |
+	| Identification                   |
+	| extranet\kovContact@sitecore.net |
+	And Identification known icon presents
 
 
-@NeedImplementation
-Scenario: Accounts_Contact Identification_UC5_Clear browser cookies
-Given User is registered in Habitat and logged in 
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And Identification section in the demo contact panel is opened
-	And Contact ID term with it's ID presented
-	And Identifier was <extranet\kov@sitecore.net>
-	And Identification status was <Known>
-	And System shown following info on Contact panel title
-	| Number of visits | 
-	| 2                | 
-	When clear browser cookies
-	And login with following user
-	| Email            | Password |
-	| kov@sitecore.net | k        |
-	And User clicks on <Info-sign> in the right down corner
-	And User expands Identification section
-	Then System shows the same Contact ID
-	And Identifier is <extranet\kov@sitecore.net>
-	And Identification status is <Known>
-	And System shows following info on Contact panel title
-	| Number of visits | 
-	| 3                | 
 
-	
+@Ready
+Scenario: Accounts_Contact Identification_UC4_Clear browser cookies
+	Given User is registered in Habitat and logged out
+	| Email                   | Password | ConfirmPassword |
+	| kovContact@sitecore.net | k        | k               |
+	And User was Login to Habitat
+	| Email                   | Password |
+	| kovContact@sitecore.net | k        |
+	When Actor deletes all browser cookies 
+	And Actor selects Open visit details panel slidebar
+	And Actor expands Personal Information header on xDB panel
+	Then User icon presents on Personal Information header section
+	And Personal Information header contains You are known label
+	And xDB Panel Body text contains
+	| Text                             |
+	| Email (Primary)                  |
+	| kovContact@sitecore.net          |
+	| Identification                   |
+	| extranet\kovContact@sitecore.net |
+	And Identification known icon presents
+
+
+
+@InProgress
+Scenario: Accounts_Contact Identification_UC5_Inspect info for known user
+	Given Habitat website is opened on Main Page
+	And User was Login to Habitat
+	| Email               | Password |
+	| johnsmith@gmail.com | j        |
+	When Actor selects Open visit details panel slidebar
+	And Actor expands Personal Information header on xDB panel
+	Then User icon presents on Personal Information header section
+	And Personal Information header contains You are known label
+	And xDB Panel Body text contains
+	| Text                              |
+	| Gender                            |
+	| Male                              |
+	| Job Title                         |
+	| Intern                            |
+	| Address (main)                    |
+	| 153 SE 15th Rd Miami, , 33129 USA |
+	| Email (Primary)                   |
+	| JohnSmith@gmail.com               |
+	| Phone (cell)                      |
+	| +775 45454456                     |
+	| Phone (work)                      |
+	| +775 3434567653 ext 15            |
+	| Preferred Language                |
+	| en                                |
+	| Identification                    |
+	| extranet\JohnSmith@gmail.com      |
+	And Identification known icon presents

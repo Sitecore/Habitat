@@ -36,6 +36,11 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
 
     public CommonLocators SiteBase =new CommonLocators();
 
+    public static void DeleteAllBrowserCookies()
+    {
+      Driver.Manage().Cookies.DeleteAllCookies();
+    }
+
 
   }
 }

@@ -1,17 +1,17 @@
 ﻿---
-ID: 2e4bdd9e-f7a0-4bb6-8a4f-8a8c1a52e512
-Parent: d046e7a5-9ee2-4cba-8484-c601561f66d9
-Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
-Path: /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-huge
+ID: "2e4bdd9e-f7a0-4bb6-8a4f-8a8c1a52e512"
+Parent: "d046e7a5-9ee2-4cba-8484-c601561f66d9"
+Template: "5c547d4e-7111-4995-95b0-6b561751bf2e"
+Path: "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-huge"
 DB: master
 SharedFields:
-- ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
+- ID: "7256bdab-1fd2-49dd-b205-cb4873d2917c"
   Hint: Placeholder Key
-  Value: col-huge
-- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Value: "col-huge"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 0
-- ID: e391b526-d0c5-439d-803e-17512eae6222
+- ID: "e391b526-d0c5-439d-803e-17512eae6222"
   Hint: Allowed Controls
   Type: TreelistEx
   Value: |
@@ -19,29 +19,25 @@ SharedFields:
     {A25C9850-AAB7-46A6-84B7-0DFAB32FC357}
     {EE5A9F3D-C2CB-4710-8053-04D1A7135EBE}
     {7DFD9396-CB94-4174-9721-9419A2AA68E3}
-    {914673DC-FC44-4660-B6EB-FF421FAAC2F9}
     {F2CCA16D-7524-4E99-8EE0-78FF6394A3B3}
     {4E541395-9332-4F1D-87F0-E7F4920C2036}
-    {F366176E-2C2B-4AF2-B356-BCF8BD657C58}
     {6D309FC1-D6B1-43B1-A31C-1FECB7B9303F}
     {84924ABF-F983-4AF5-9002-EA0237A53DA9}
-    {907018D8-CC53-4D34-AD67-3FDF0A25832A}
     {DC19892A-B345-4EFE-AAA2-6E27A801A733}
-    {E52D0AE8-2989-44E5-BEA1-EA30C17B2080}
-    {D460006D-1069-414C-AD24-4821EBA45F70}
+    {D0B4FD9F-3AEE-4AD7-BBC4-F37F0A1A3309}
     {5899FE6B-2AD7-4243-B1F9-3BC664CF0A7C}
-    {B683EFB4-161D-4FDF-9A90-CC8637766C9C}
-    {9B05C591-03CE-4684-9D8A-CCCE99C399ED}
-    {41EA568D-C3AF-45DF-B1D0-B7813CD06093}
+    {5D35C31F-0770-4498-BAB8-C88BEF41F153}
+    {DDC6F993-6689-432E-90C7-B2865947DFD5}
+    {AB7270E4-9B87-4A24-94B0-B98C216B9F03}
 Languages:
 - Language: en
   Fields:
-  - ID: 87871ff5-1965-46d6-884f-01d6a0b9c4c1
+  - ID: "87871ff5-1965-46d6-884f-01d6a0b9c4c1"
     Hint: Description
     Value: Full Page Column
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150921T033504Z

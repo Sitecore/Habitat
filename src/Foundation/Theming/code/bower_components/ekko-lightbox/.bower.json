@@ -42,6 +42,5 @@
   },
   "_source": "git://github.com/ashleydw/lightbox.git",
   "_target": "~4.0.1",
-  "_originalSource": "ekko-lightbox",
-  "_direct": true
+  "_originalSource": "ekko-lightbox"
 }

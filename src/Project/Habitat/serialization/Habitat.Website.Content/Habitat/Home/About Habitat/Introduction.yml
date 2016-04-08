@@ -120,9 +120,6 @@ Languages:
               p:before="r[@uid='{A85893F9-5DF5-4C28-AC0F-67AD85D29661}']"
               s:id="{D201A487-5099-48A1-8189-55944F70C6CB}"
               s:ph="page-layout" />
-            <r
-              uid="{025588CB-DFC0-4B02-8223-0015C525AE52}"
-              s:par="" />
           </d>
         </r>
     - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
@@ -138,7 +135,7 @@ Languages:
       Hint: Summary
       Value: |
         Sitecore Habitat is a set of principles and conventions focused on increasing productivity and quality in Sitecore projects.
-        
+        <div> </div>
     - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
       Hint: Title
       Value: Introduction to Habitat

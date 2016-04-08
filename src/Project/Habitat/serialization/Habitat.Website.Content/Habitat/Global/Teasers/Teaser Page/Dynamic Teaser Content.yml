@@ -1,0 +1,18 @@
+﻿---
+ID: "1ce39f86-2f0b-4f4c-b94d-8ec78a04a827"
+Parent: "e151cdef-1a9f-449d-a87c-5cf5741fa857"
+Template: "f5f30cdc-9003-4015-84ec-c3a7e3e50d5e"
+Path: /sitecore/content/Habitat/Global/Teasers/Teaser Page/Dynamic Teaser Content
+DB: master
+SharedFields:
+- ID: "9e942565-677f-491c-a0ac-6b930e37342a"
+  Hint: Active
+  Value: 0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20150903T121817Z

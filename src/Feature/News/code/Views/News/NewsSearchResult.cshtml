@@ -4,21 +4,20 @@
 <div class="media">
   <div class="media-body">
     <div class="media-title">
+      <div>
+        <span class="label label-info">@Model.ContentType</span>
+      </div>
       <h2>
         <a href="@Model.Url">@Html.Raw(Model.Title)</a>
       </h2>
+      <small>
+        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date, Model.Item, new { format = "MMMM dd, yyyy" })
+      </small>
     </div>
-
     @if (!string.IsNullOrWhiteSpace(Model.Description))
     {
       @Html.Raw(Model.Description)
     }
-    <p>
-      <span class="label label-info">@Model.ContentType</span>
-      <date class="p-l-1">
-        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date, Model.Item, new { format = "MMMM dd, yyyy" })
-      </date>
-    </p>
   </div>
   @if (Model.Item.FieldHasValue(Templates.NewsArticle.Fields.Image))
   {
