@@ -22,7 +22,8 @@ gulp.task("default", function (callback) {
     "02-Nuget-Restore",
     "03-Publish-All-Projects",
     "04-Apply-Xml-Transform",
-    "05-Sync-Unicorn", 
+    "05-Sync-Unicorn",
+    "06-Deploy-Transforms",
 	callback);
 });
 
@@ -78,6 +79,12 @@ gulp.task("05-Sync-Unicorn", function (callback) {
   options.authenticationConfigFile = __dirname + "/src/Foundation/Serialization/code/App_config/Include/Foundation/Foundation.Serialization.config";
   
   unicorn(function() { return callback() }, options);
+});
+
+
+gulp.task("06-Deploy-Transforms", function () {
+    return gulp.src("./src/**/*.transform")
+        .pipe(gulp.dest(config.websiteRoot+"/temp/transforms"));
 });
 
 /*****************************

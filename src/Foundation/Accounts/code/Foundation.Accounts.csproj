@@ -82,7 +82,7 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Users.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Users.DataProvider.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Accounts.config" />
-    <Content Include="App_Config\Security\domains.config.transform" />
+    <None Include="App_Config\Security\domains.config.transform" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
