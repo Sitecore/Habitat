@@ -83,7 +83,7 @@ gulp.task("05-Sync-Unicorn", function (callback) {
 
 
 gulp.task("06-Deploy-Transforms", function () {
-    return gulp.src("./src/**/*.transform")
+    return gulp.src("./src/**/code/**/*.transform")
         .pipe(gulp.dest(config.websiteRoot+"/temp/transforms"));
 });
 

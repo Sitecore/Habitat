@@ -70,9 +70,7 @@
       <Name>Habitat items</Name>
     </xitems>
     <xfiles>
-      <Entries>
-        <x-item>/App_Config/Security/Domains.config</x-item>
-      </Entries>
+      <Entries />
       <Converter>
         <FileToEntryConverter>
           <Root>/</Root>
