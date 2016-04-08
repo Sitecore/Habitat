@@ -39,17 +39,12 @@
         var transforms = this.transformProvider.GetTransformsByLayer(transformsLayer);
         foreach (var transform in transforms)
         {
-          var fileToTransformPath = Regex.Replace(transform, "^.*\\/code", "~").Replace(".transform", "");
+          var fileToTransformPath = Regex.Replace(transform, "^.*\\\\code", "~").Replace(".transform", "");
+          Diagnostics.Log.Warn($"{transform} - {fileToTransformPath}", this);
           var fileToTransform = this.filePathResolver.MapPath(fileToTransformPath);
           this.ApplyTransform(fileToTransform, transform, fileToTransform);
         }
       }
-
-      var webConfigTransform = this.filePathResolver.MapPath("~/web.config.transform");
-      if (webConfigTransform == null)
-      {
-        return;
-      } 
     }
 
     protected void ApplyTransform(string sourceFilePath, string transformFilePath, string targetFilePath)
