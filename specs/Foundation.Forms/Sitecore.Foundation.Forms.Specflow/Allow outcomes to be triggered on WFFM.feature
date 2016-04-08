@@ -91,7 +91,7 @@ Scenario: Allow outcomes to be triggered on WFFM_UC4_Assign outocome under some 
 	| QA Lead     |
 
 
-@NeedImplementation 
+@Ready 
 Scenario: Allow outcomes to be triggered on WFFM_UC5_Triggger outcome on Demo form 
 	Given Habitat website is opened on Forms page
 	When Actor enteres following data into Leave an Email form fields

@@ -286,11 +286,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Allow outcomes to be triggered on WFFM")]
         [Xunit.TraitAttribute("Description", "Allow outcomes to be triggered on WFFM_UC5_Triggger outcome on Demo form")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void AllowOutcomesToBeTriggeredOnWFFM_UC5_TrigggerOutcomeOnDemoForm()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Allow outcomes to be triggered on WFFM_UC5_Triggger outcome on Demo form", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 95
 this.ScenarioSetup(scenarioInfo);
 #line 96

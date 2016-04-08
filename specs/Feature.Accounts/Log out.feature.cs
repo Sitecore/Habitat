@@ -141,11 +141,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Log out")]
         [Xunit.TraitAttribute("Description", "Accounts_Log out_UC2_Session expired")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Accounts_LogOut_UC2_SessionExpired()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Log out_UC2_Session expired", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 31
 this.ScenarioSetup(scenarioInfo);
 #line hidden

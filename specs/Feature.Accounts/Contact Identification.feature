@@ -82,7 +82,7 @@ Scenario: Accounts_Contact Identification_UC4_Clear browser cookies
 
 
 
-@InProgress
+@Ready
 Scenario: Accounts_Contact Identification_UC5_Inspect info for known user
 	Given Habitat website is opened on Main Page
 	And User was Login to Habitat

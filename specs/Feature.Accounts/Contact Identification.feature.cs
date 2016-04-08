@@ -280,11 +280,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Contact Identification")]
         [Xunit.TraitAttribute("Description", "Accounts_Contact Identification_UC5_Inspect info for known user")]
-        [Xunit.TraitAttribute("Category", "InProgress")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Accounts_ContactIdentification_UC5_InspectInfoForKnownUser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Contact Identification_UC5_Inspect info for known user", new string[] {
-                        "InProgress"});
+                        "Ready"});
 #line 86
 this.ScenarioSetup(scenarioInfo);
 #line 87

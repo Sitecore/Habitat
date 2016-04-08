@@ -76,11 +76,11 @@ namespace Sitecore.Feature.Demo.Specflow
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Mockup of External page")]
         [Xunit.TraitAttribute("Description", "Demo_UC1_Show Google search engine mockup")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Demo_UC1_ShowGoogleSearchEngineMockup()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_UC1_Show Google search engine mockup", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 8
 this.ScenarioSetup(scenarioInfo);
 #line 9
@@ -107,11 +107,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Mockup of External page")]
         [Xunit.TraitAttribute("Description", "Demo_UC2_Show predefined keyword")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Demo_UC2_ShowPredefinedKeyword()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_UC2_Show predefined keyword", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 20
 this.ScenarioSetup(scenarioInfo);
 #line 21
@@ -134,11 +134,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Mockup of External page")]
         [Xunit.TraitAttribute("Description", "Demo_UC3_Adwords link on the Google search results mockup")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Demo_UC3_AdwordsLinkOnTheGoogleSearchResultsMockup()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_UC3_Adwords link on the Google search results mockup", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 31
 this.ScenarioSetup(scenarioInfo);
 #line 32
@@ -158,11 +158,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Mockup of External page")]
         [Xunit.TraitAttribute("Description", "Demo_UC4_Campaign is triggered on the website")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Demo_UC4_CampaignIsTriggeredOnTheWebsite()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Demo_UC4_Campaign is triggered on the website", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 41
 this.ScenarioSetup(scenarioInfo);
 #line 42

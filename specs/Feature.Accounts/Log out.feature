@@ -27,7 +27,7 @@ Scenario: Accounts_Log out_UC1_Simple log out
 	| Register              |
 
 
-@NeedImplementation 
+@Ready 
 Scenario: Accounts_Log out_UC2_Session expired
 	Given User with following data is registered in Habitat
 	| Email                   | Password | ConfirmPassword |

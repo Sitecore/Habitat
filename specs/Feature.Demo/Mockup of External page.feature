@@ -4,7 +4,7 @@ In order to start a demo story from an external page
 As a technical presales consultant
 I want to be able to show a mockup of an external page, e.g. search engine page with adword links to a campaign on the website
 
-	@NeedImplementation
+	@Ready
 Scenario: Demo_UC1_Show Google search engine mockup
 	Given Habitat website is opened on Main Page
 	When Actor navigates to Demo site 
@@ -16,7 +16,7 @@ Scenario: Demo_UC1_Show Google search engine mockup
 	| I'm Feeling Lucky   |
 
 	
-	@NeedImplementation
+	@Ready
 Scenario: Demo_UC2_Show predefined keyword
 	Given Mockup of Google page is opened
 	When Actor enters test search text in to search field
@@ -27,7 +27,7 @@ Scenario: Demo_UC2_Show predefined keyword
 
 	
 
-	@NeedImplementation
+	@Ready
 Scenario: Demo_UC3_Adwords link on the Google search results mockup
 	Given Mockup of Google page is opened
 	When Actor enters new test search text in to search field
@@ -37,7 +37,7 @@ Scenario: Demo_UC3_Adwords link on the Google search results mockup
 
 
 
-	@NeedImplementation
+	@Ready
 Scenario: Demo_UC4_Campaign is triggered on the website
 	Given Mockup of Google page is opened
 	When Actor enters new test search text in to search field

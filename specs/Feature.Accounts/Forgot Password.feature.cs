@@ -275,11 +275,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Forgot Password")]
         [Xunit.TraitAttribute("Description", "Accounts_Forgot Password_UC6_Try to reset password for unknown user")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Accounts_ForgotPassword_UC6_TryToResetPasswordForUnknownUser()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Forgot Password_UC6_Try to reset password for unknown user", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 83
 this.ScenarioSetup(scenarioInfo);
 #line hidden
