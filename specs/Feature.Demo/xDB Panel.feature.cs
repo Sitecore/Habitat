@@ -879,7 +879,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 302
  testRunner.When("User opens Main Page and switch  to Edit mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 303
- testRunner.Then("<xDB> panel be unavailable from right side of window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("<Open visit details panel> icon is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -887,17 +887,19 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "xDB Panel")]
         [Xunit.TraitAttribute("Description", "xDB Panel_UC26_Not available in Preview mode")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
         public virtual void XDBPanel_UC26_NotAvailableInPreviewMode()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC26_Not available in Preview mode", ((string[])(null)));
-#line 305
-this.ScenarioSetup(scenarioInfo);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC26_Not available in Preview mode", new string[] {
+                        "NeedImplementation"});
 #line 306
-    testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 307
- testRunner.When("User opens Main Page and switch to Preview mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 308
- testRunner.Then("<xDB> panel be unavailable from right side of window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("User opens Main Page and switch to Preview mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 309
+ testRunner.Then("<Open visit details panel> icon is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -905,17 +907,19 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "xDB Panel")]
         [Xunit.TraitAttribute("Description", "xDB Panel_UC27_Not available in Explore mode")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
         public virtual void XDBPanel_UC27_NotAvailableInExploreMode()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC27_Not available in Explore mode", ((string[])(null)));
-#line 310
-this.ScenarioSetup(scenarioInfo);
-#line 311
- testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC27_Not available in Explore mode", new string[] {
+                        "NeedImplementation"});
 #line 312
- testRunner.When("User opens Main Page and switch to Explore mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 313
- testRunner.Then("<xDB> panel be unavailable from right side of window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 314
+ testRunner.When("User opens Main Page and switch to Explore mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 315
+ testRunner.Then("<Open visit details panel> icon is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -923,17 +927,19 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "xDB Panel")]
         [Xunit.TraitAttribute("Description", "xDB Panel_UC28_Not available in Debug mode")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
         public virtual void XDBPanel_UC28_NotAvailableInDebugMode()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC28_Not available in Debug mode", ((string[])(null)));
-#line 315
-this.ScenarioSetup(scenarioInfo);
-#line 316
- testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 317
- testRunner.When("User opens Main Page and switch to Debug mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC28_Not available in Debug mode", new string[] {
+                        "NeedImplementation"});
 #line 318
- testRunner.Then("<xDB> panel be unavailable from right side of window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+this.ScenarioSetup(scenarioInfo);
+#line 319
+ testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 320
+ testRunner.When("User opens Main Page and switch to Debug mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 321
+ testRunner.Then("<Open visit details panel> icon is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -958,7 +964,7 @@ this.ScenarioSetup(scenarioInfo);
                         "37617",
                         "is",
                         "fixed"});
-#line 322
+#line 325
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
