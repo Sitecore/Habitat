@@ -1,14 +1,14 @@
 ﻿@using Sitecore
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
-@using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
-<div class="@Model.Rendering.GetContainerClass()">
+@{ var useStaticPlaceholderNames = MainUtil.GetBool(Model.Rendering.Parameters[Sitecore.Habitat.Website.Constants.LayoutParameters.UseStaticPlaceholderNames], false); }
+<div class="container@(MainUtil.GetBool(Model.Rendering.Parameters[Sitecore.Habitat.Website.Constants.LayoutParameters.IsFluid], false) ? "-fluid" : "" )">
   <div class="row">
     <div class="col-md-9">
-      @Html.Sitecore().DynamicPlaceholder("col-wide-1", Model.Rendering.GetUseStaticPlaceholderNames())
+      @Html.Sitecore().DynamicPlaceholder("col-wide-1", useStaticPlaceholderNames)
     </div>
     <div class="col-md-3">
-      @Html.Sitecore().DynamicPlaceholder("col-narrow-1", Model.Rendering.GetUseStaticPlaceholderNames())
+      @Html.Sitecore().DynamicPlaceholder("col-narrow-1", useStaticPlaceholderNames)
     </div>
   </div>
 </div>

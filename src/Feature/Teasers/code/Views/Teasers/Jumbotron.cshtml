@@ -3,7 +3,6 @@
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
-@using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @if (!Model?.Item?.IsDerived(Templates.TeaserContent.ID) ?? true)
@@ -11,15 +10,9 @@
   @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
 }
-<div class="jumbotron text-center @(Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Image) ? "bg-media" : Model.Rendering.GetBackgroundClass())" style="background-image: @Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image).ToCssUrlValue()">
-  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Label) || Sitecore.Context.PageMode.IsExperienceEditor)
-  {
-    <span class="label">
-      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Label, Model.Item)
-    </span>
-  }
+<div class="jumbotron text-center bg-media" style="background-image: @Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image).ToCssUrlValue()">
   <h2>
-    @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title, Model.Item)
+    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title, Model.Item)
   </h2>
   <p class="">
     @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item)

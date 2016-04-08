@@ -4,7 +4,6 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "bootstrap-block-grid": "~1.1.2",
-    "modernizr": "~2.8.3",
     "hover": "Hover#~2.0.2",
     "animate.css": "~3.5.0",
     "wow": "wowjs#~1.1.2",
@@ -14,8 +13,7 @@
     "jquery": "~2.2.0",
     "font-awesome": "4.4.0",
     "ekko-lightbox": "~4.0.1",
-    "ace-builds": "~1.2.2",
-    "imagesloaded": "~4.1.0"
+    "modernizr": "~2.8.3"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -25,11 +23,6 @@
         "assets/javascripts/bootstrap.js"
       ]
     },
-    "font-awesome": {
-      "main": [
-        "fonts/*"
-      ]
-    },
     "OwlCarousel": {
       "main": [
         "owl-carousel/owl.carousel.min.js",
@@ -37,8 +30,5 @@
       ]
     }
   },
-  "devDependencies": {},
-  "resolutions": {
-    "jquery": "~2"
-  }
+  "devDependencies": {}
 }

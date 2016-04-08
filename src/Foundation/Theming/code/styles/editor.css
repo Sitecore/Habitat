@@ -475,7 +475,7 @@ mark {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 800; }
-  .bg-primary h1 small, .bg-secondary h1 small, .bg-dark h1 small, .bg-media h1 small, .bg-primary h2 small, .bg-secondary h2 small, .bg-dark h2 small, .bg-media h2 small, .bg-primary h3 small, .bg-secondary h3 small, .bg-dark h3 small, .bg-media h3 small, .bg-primary h4 small, .bg-secondary h4 small, .bg-dark h4 small, .bg-media h4 small, .bg-primary h5 small, .bg-secondary h5 small, .bg-dark h5 small, .bg-media h5 small, .bg-primary h6 small, .bg-secondary h6 small, .bg-dark h6 small, .bg-media h6 small {
+  .bg-primary h1 small, .bg-dark h1 small, .bg-media h1 small, .bg-primary h2 small, .bg-dark h2 small, .bg-media h2 small, .bg-primary h3 small, .bg-dark h3 small, .bg-media h3 small, .bg-primary h4 small, .bg-dark h4 small, .bg-media h4 small, .bg-primary h5 small, .bg-dark h5 small, .bg-media h5 small, .bg-primary h6 small, .bg-dark h6 small, .bg-media h6 small {
     color: #FFF; }
 
 p {
@@ -485,13 +485,6 @@ p {
 
 .lead {
   line-height: 1.8; }
-
-li.active {
-  color: #337ab7;
-  font-weight: bold; }
-  li.active a {
-    color: #337ab7;
-    font-weight: bold; }
 
 table {
   background-color: transparent; }
@@ -718,19 +711,20 @@ table th[class*="col-"] {
         .table-responsive > .table-bordered > tfoot > tr:last-child > td {
           border-bottom: 0; } }
 
-table > thead > tr > td, table > thead > tr > th, table > tbody > tr > td, table > tbody > tr > th, .table > thead > tr > td, .table > thead > tr > th, .table > tbody > tr > td, .table > tbody > tr > th {
+table.table-borderless tbody tr td, table.table-borderless tbody tr th, table.table-borderless thead tr th, .table.table-borderless tbody tr td, .table.table-borderless tbody tr th, .table.table-borderless thead tr th {
+  border: none; }
+
+table:not(.table-condensed) > thead > tr > td, table:not(.table-condensed) > thead > tr > th, table:not(.table-condensed) > tbody > tr > td, table:not(.table-condensed) > tbody > tr > th, .table:not(.table-condensed) > thead > tr > td, .table:not(.table-condensed) > thead > tr > th, .table:not(.table-condensed) > tbody > tr > td, .table:not(.table-condensed) > tbody > tr > th {
   padding: 12px 15px; }
 
-.bg-primary table, .bg-secondary table, .bg-dark table, .bg-media table, .bg-primary .table, .bg-secondary .table, .bg-dark .table, .bg-media .table {
+.bg-primary table, .bg-dark table, .bg-media table, .bg-primary .table, .bg-dark .table, .bg-media .table {
   color: #FFF; }
-  .bg-primary table .active, .bg-primary table .success, .bg-primary table .warning, .bg-primary table .danger, .bg-primary table .info, .bg-secondary table .active, .bg-secondary table .success, .bg-secondary table .warning, .bg-secondary table .danger, .bg-secondary table .info, .bg-dark table .active, .bg-dark table .success, .bg-dark table .warning, .bg-dark table .danger, .bg-dark table .info, .bg-media table .active, .bg-media table .success, .bg-media table .warning, .bg-media table .danger, .bg-media table .info, .bg-primary .table .active, .bg-primary .table .success, .bg-primary .table .warning, .bg-primary .table .danger, .bg-primary .table .info, .bg-secondary .table .active, .bg-secondary .table .success, .bg-secondary .table .warning, .bg-secondary .table .danger, .bg-secondary .table .info, .bg-dark .table .active, .bg-dark .table .success, .bg-dark .table .warning, .bg-dark .table .danger, .bg-dark .table .info, .bg-media .table .active, .bg-media .table .success, .bg-media .table .warning, .bg-media .table .danger, .bg-media .table .info {
-    color: #333333; }
 
-.bg-primary table.table-striped tbody tr:nth-of-type(odd), .bg-secondary table.table-striped tbody tr:nth-of-type(odd), .bg-dark table.table-striped tbody tr:nth-of-type(odd), .bg-media table.table-striped tbody tr:nth-of-type(odd), .bg-primary .table.table-striped tbody tr:nth-of-type(odd), .bg-secondary .table.table-striped tbody tr:nth-of-type(odd), .bg-dark .table.table-striped tbody tr:nth-of-type(odd), .bg-media .table.table-striped tbody tr:nth-of-type(odd) {
-  color: #333333; }
+.bg-primary table.table-striped tbody tr:nth-of-type(odd), .bg-dark table.table-striped tbody tr:nth-of-type(odd), .bg-media table.table-striped tbody tr:nth-of-type(odd), .bg-primary .table.table-striped tbody tr:nth-of-type(odd), .bg-dark .table.table-striped tbody tr:nth-of-type(odd), .bg-media .table.table-striped tbody tr:nth-of-type(odd) {
+  color: #555555; }
 
 table.table-striped-vertical th:nth-child(even), table.table-striped-vertical td:nth-child(even), .table.table-striped-vertical th:nth-child(even), .table.table-striped-vertical td:nth-child(even) {
   background-color: #f9f9f9; }
-  .bg-primary table.table-striped-vertical th:nth-child(even), .bg-secondary table.table-striped-vertical th:nth-child(even), .bg-dark table.table-striped-vertical th:nth-child(even), .bg-media table.table-striped-vertical th:nth-child(even), .bg-primary table.table-striped-vertical td:nth-child(even), .bg-secondary table.table-striped-vertical td:nth-child(even), .bg-dark table.table-striped-vertical td:nth-child(even), .bg-media table.table-striped-vertical td:nth-child(even), .bg-primary .table.table-striped-vertical th:nth-child(even), .bg-secondary .table.table-striped-vertical th:nth-child(even), .bg-dark .table.table-striped-vertical th:nth-child(even), .bg-media .table.table-striped-vertical th:nth-child(even), .bg-primary .table.table-striped-vertical td:nth-child(even), .bg-secondary .table.table-striped-vertical td:nth-child(even), .bg-dark .table.table-striped-vertical td:nth-child(even), .bg-media .table.table-striped-vertical td:nth-child(even) {
-    color: #333333; }
+  .bg-primary table.table-striped-vertical th:nth-child(even), .bg-dark table.table-striped-vertical th:nth-child(even), .bg-media table.table-striped-vertical th:nth-child(even), .bg-primary table.table-striped-vertical td:nth-child(even), .bg-dark table.table-striped-vertical td:nth-child(even), .bg-media table.table-striped-vertical td:nth-child(even), .bg-primary .table.table-striped-vertical th:nth-child(even), .bg-dark .table.table-striped-vertical th:nth-child(even), .bg-media .table.table-striped-vertical th:nth-child(even), .bg-primary .table.table-striped-vertical td:nth-child(even), .bg-dark .table.table-striped-vertical td:nth-child(even), .bg-media .table.table-striped-vertical td:nth-child(even) {
+    color: #555555; }
 

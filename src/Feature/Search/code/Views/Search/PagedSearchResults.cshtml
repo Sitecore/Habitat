@@ -17,7 +17,7 @@
   }
 }
 @Html.Partial("../Search/SearchResults", Model.Results)
-@if (Model.TotalResults > 0 && Model.LastPage > Model.FirstPage)
+@if (Model.TotalResults > 0)
 {
   <nav class="text-center">
     <ul class="pagination">

@@ -1,7 +1,7 @@
 ﻿---
-ID: "b488057d-9e60-42d5-9ed0-71f722fa5fb1"
-Parent: "ea13174a-b43e-4f68-b474-b41188771a9e"
-Template: "f0369e1a-9030-4a05-a09c-ef09b664ed27"
+ID: b488057d-9e60-42d5-9ed0-71f722fa5fb1
+Parent: ea13174a-b43e-4f68-b474-b41188771a9e
+Template: f0369e1a-9030-4a05-a09c-ef09b664ed27
 Path: /sitecore/content/Habitat/Global/Media/Lightbox Image Documentation
 DB: master
 Languages:
@@ -9,18 +9,18 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20151116T041930Z
-    - ID: "302c9f8d-f703-4f76-a4ab-73d222648232"
+    - ID: 302c9f8d-f703-4f76-a4ab-73d222648232
       Hint: MediaDescription
       Value: The image lightbox shows a thumbnail on the page but offers a higher resolution version when clicked. Multiple lightboxes will provide a gallery where the visitor can click through them.&nbsp;
-    - ID: "4ff62b0a-d73b-4436-bea2-023154f2ffc4"
+    - ID: 4ff62b0a-d73b-4436-bea2-023154f2ffc4
       Hint: MediaThumbnail
-      Value: "<image mediaid=\"{D079BD07-949D-4426-A05A-DAB9CBFE9CE8}\" ></image>"
-    - ID: "63dda48b-b0cb-45a7-9a1b-b26ddb41009b"
+      Value: "<image mediaid=\"{D079BD07-949D-4426-A05A-DAB9CBFE9CE8}\" />"
+    - ID: 63dda48b-b0cb-45a7-9a1b-b26ddb41009b
       Hint: MediaTitle
       Value: Image Lightbox
-    - ID: "9f51dead-ad6e-41c2-9759-7be17eb474a4"
+    - ID: 9f51dead-ad6e-41c2-9759-7be17eb474a4
       Hint: MediaImage
       Value: "<image mediaid=\"{D079BD07-949D-4426-A05A-DAB9CBFE9CE8}\" />"

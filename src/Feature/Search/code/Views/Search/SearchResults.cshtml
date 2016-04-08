@@ -7,9 +7,6 @@
   {
     <li>
       <a href="#">
-        <div>
-          <span class="label label-info">@result.ContentType</span>
-        </div>
         <h2>
           <a href="@result.Url">@Html.Raw(result.Title)</a>
         </h2>
@@ -17,6 +14,9 @@
         {
           @Html.Raw(result.Description)
         }
+        <p>
+          <span class="label label-info">@result.ContentType</span>
+        </p>
       </a>
     </li>
   }

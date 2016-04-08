@@ -1,0 +1,22 @@
+$list-divided-border-color: #eee;
+
+.list {
+
+  & > .disabled {
+    & > a {
+      color: #777;
+      &:hover {
+        cursor: not-allowed;
+        background-color: transparent;
+        background-image: none;
+        text-decoration: none;
+      }
+    }
+  }
+  &-divided {
+    li {
+      padding: 20px 0;
+      border-bottom: 1px solid $list-divided-border-color;
+    }
+  }
+}
