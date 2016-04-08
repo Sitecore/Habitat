@@ -10,7 +10,7 @@
   }
 }
 
-<div class="container m-b-1">
+<div class="container">
   <h1>
     @Html.Sitecore().Field(Templates.HasPageContent.Fields.Title, @section)
     @if (section.Fields[Templates.HasPageContent.Fields.Summary].HasValue || Sitecore.Context.PageMode.IsExperienceEditor)

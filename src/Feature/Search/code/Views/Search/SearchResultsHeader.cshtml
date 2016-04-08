@@ -24,7 +24,7 @@
       {
         //TODO: show total number of results when implemented
         <h1 class="text-center">
-          @string.Format(DictionaryRepository.Get("/search/header/title with results", "Your search for '{0}' yielded the following results:"), Model.Query, totalResults)
+          @string.Format(DictionaryRepository.Get("/search/header/title with results", "Your search for {0} yielded the following results:"), Model.Query, totalResults)
         </h1>
       }
     }

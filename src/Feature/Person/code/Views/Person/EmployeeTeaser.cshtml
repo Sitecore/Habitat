@@ -3,7 +3,6 @@
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
-@using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @if (!Model?.Item?.IsDerived(Templates.Person.ID) ?? true)
@@ -12,19 +11,26 @@
   return;
 }
 
-<div class="mosaic mosaic-bar-bottom mosaic-overlay-show">
-  <div class="mosaic-overlay">
-    <label>@Model.Item.Field(Templates.Person.Fields.Title)</label>
-    <h4>
+<div class="teaser teaser-default employee-teaser">
+  <div class="teaser-heading">
+    <h3>
       @Model.Item.Field(Templates.Person.Fields.Name)
-    </h4>
-    <a href="@Model.Item.Url()" target="_blank" class="btn btn-primary text-uppercase btn-xs">
-      @DictionaryRepository.Get("/Person/EmployeeList/Read More", "Read more")
-    </a>
+    </h3>
+    <p class="title metadata">
+      @Model.Item.Field(Templates.Person.Fields.Title)
+    </p>
   </div>
-  <div class="mosaic-backdrop">
-    <a href="@Model.Item.Url()">
-      @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 750, cssClass: "img-responsive")
+	<div class="teaser-image">
+		<a href="@Model.Item.Url()">
+			@Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 750, cssClass: "img-responsive")
+		</a>
+	</div>
+  <div class="teaser-body">
+    @Model.Item.Field(Templates.Person.Fields.Summary)
+  </div>
+  <div class="teaser-footer">
+    <a href="@Model.Item.Url()" class="btn btn-hollow">
+      @DictionaryRepository.Get("/Person/EmployeeTeaser/Read more", "Read more")
     </a>
   </div>
 </div>

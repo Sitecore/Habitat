@@ -1,0 +1,13 @@
+aside {
+  .bg-dark &, .bg-primary &, .bg-media & {
+    header {
+      color: #FFF;
+      p {
+        color: #FFF;
+      }
+    }
+    p {
+      color: #FFF;
+    }
+  }
+}

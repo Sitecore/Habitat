@@ -3,7 +3,6 @@
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
-@using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @if (!Model?.Item?.IsDerived(Templates.Quote.ID) ?? true)
@@ -12,7 +11,7 @@
   return;
 }
 
-<blockquote class="blockquote-center @Model.Rendering.GetBackgroundClass()">
+<blockquote class="blockquote-center">
   <header>
     @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mh: 150, cssClass: "img-responsive")
     <p>

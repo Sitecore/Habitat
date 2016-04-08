@@ -13,20 +13,15 @@
 @*TODO: Page editor mode*@
 @{
   const int thumbnailWidth = 750;
-  var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail, @Model.Item, mw: thumbnailWidth, cssClass: "img-responsive");
+  var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail.ToString(), @Model.Item, mw: thumbnailWidth, cssClass: "img-responsive");
   if (thumbnail == null || string.IsNullOrWhiteSpace(thumbnail.ToString()))
   {
     return;
   }
 }
 
-<div class="thumbnail mosaic mosaic-circle lightbox-item lightbox-image">
-  <div class="mosaic-overlay mosaic-overlay-no-pointer">
-    <span class="fa fa-play-circle icon-lg"></span>
-  </div>
-  <div class="mosaic-backdrop">
-    <a href="@Model.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink)" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description, Model.Item))" data-toggle="lightbox" data-gallery="page">
-      @thumbnail
-    </a>
-  </div>
+<div class="thumbnail lightbox-item">
+	<a href="@Model.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink)" data-title="@Model.Item[Templates.HasMedia.Fields.Title]" data-footer="@Html.Encode(Html.Sitecore().Field(Templates.HasMedia.Fields.Description, Model.Item))" data-toggle="lightbox" data-gallery="page">
+		@thumbnail
+	</a>
 </div>
