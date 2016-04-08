@@ -16,7 +16,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     [When(@"Actor clicks (.*) button")]
     public void ActorClicksSubmitTypeButton(string btn)
     {
-      SiteBase.SubmitButton.Click();
+      CommonLocators.SubmitButton.Click();
     }
 
     public static void OpenUserDialog()

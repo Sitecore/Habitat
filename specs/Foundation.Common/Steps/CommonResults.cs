@@ -35,7 +35,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     [Then(@"Demo site title equals to (.*)")]
     public void ThenDemoSiteTitleEqualsTo(string title)
     {
-      SiteBase.DemoSiteLogo.GetAttribute("title").Equals(title);
+      CommonLocators.DemoSiteLogo.GetAttribute("title").Equals(title);
     }
 
 

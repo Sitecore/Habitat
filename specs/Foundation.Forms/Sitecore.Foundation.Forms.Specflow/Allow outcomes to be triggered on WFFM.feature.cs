@@ -74,11 +74,11 @@ namespace Sitecore.Foundation.Forms.Specflow
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Allow outcomes to be triggered on WFFM")]
         [Xunit.TraitAttribute("Description", "Allow outcomes to be triggered on WFFM_UC2_Assign Form Action")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "ManualOnly")]
         public virtual void AllowOutcomesToBeTriggeredOnWFFM_UC2_AssignFormAction()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Allow outcomes to be triggered on WFFM_UC2_Assign Form Action", new string[] {
-                        "NeedImplementation"});
+                        "ManualOnly"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -106,9 +106,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 17
  testRunner.And("User clicks <Submit> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor selects Open visit details panel slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 19
- testRunner.And("Actor expands <Personal Information> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor expands Personal Information header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
@@ -123,11 +123,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Allow outcomes to be triggered on WFFM")]
         [Xunit.TraitAttribute("Description", "Allow outcomes to be triggered on WFFM_UC2_Assign few Form Actions")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "ManualOnly")]
         public virtual void AllowOutcomesToBeTriggeredOnWFFM_UC2_AssignFewFormActions()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Allow outcomes to be triggered on WFFM_UC2_Assign few Form Actions", new string[] {
-                        "NeedImplementation"});
+                        "ManualOnly"});
 #line 27
 this.ScenarioSetup(scenarioInfo);
 #line 28
@@ -161,9 +161,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 42
  testRunner.And("User clicks <Submit> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
- testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor selects Open visit details panel slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 44
- testRunner.And("Actor expands <Personal Information> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor expands Personal Information header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
@@ -180,11 +180,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Allow outcomes to be triggered on WFFM")]
         [Xunit.TraitAttribute("Description", "Allow outcomes to be triggered on WFFM_UC3_Try to assign folder with outcomes")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "ManualOnly")]
         public virtual void AllowOutcomesToBeTriggeredOnWFFM_UC3_TryToAssignFolderWithOutcomes()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Allow outcomes to be triggered on WFFM_UC3_Try to assign folder with outcomes", new string[] {
-                        "NeedImplementation"});
+                        "ManualOnly"});
 #line 53
 this.ScenarioSetup(scenarioInfo);
 #line 54
@@ -216,12 +216,12 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.TraitAttribute("FeatureTitle", "Allow outcomes to be triggered on WFFM")]
         [Xunit.TraitAttribute("Description", "Allow outcomes to be triggered on WFFM_UC4_Assign outocome under some folder with" +
             " outcomes")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "ManualOnly")]
         public virtual void AllowOutcomesToBeTriggeredOnWFFM_UC4_AssignOutocomeUnderSomeFolderWithOutcomes()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Allow outcomes to be triggered on WFFM_UC4_Assign outocome under some folder with" +
                     " outcomes", new string[] {
-                        "NeedImplementation"});
+                        "ManualOnly"});
 #line 68
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -269,16 +269,56 @@ this.ScenarioSetup(scenarioInfo);
 #line 86
  testRunner.And("User clicks <Submit> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 87
- testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor selects Open visit details panel slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 88
- testRunner.And("Actor expands <Personal Information> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor expands Personal Information header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table6.AddRow(new string[] {
                         "QA Lead"});
 #line 89
- testRunner.Then("<Outcomes> contains following values", ((string)(null)), table6, "Then ");
+ testRunner.Then("Outcomes contains following values", ((string)(null)), table6, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Allow outcomes to be triggered on WFFM")]
+        [Xunit.TraitAttribute("Description", "Allow outcomes to be triggered on WFFM_UC5_Triggger outcome on Demo form")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        public virtual void AllowOutcomesToBeTriggeredOnWFFM_UC5_TrigggerOutcomeOnDemoForm()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Allow outcomes to be triggered on WFFM_UC5_Triggger outcome on Demo form", new string[] {
+                        "NeedImplementation"});
+#line 95
+this.ScenarioSetup(scenarioInfo);
+#line 96
+ testRunner.Given("Habitat website is opened on Forms page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Email"});
+            table7.AddRow(new string[] {
+                        "kovOutcome@sitecore.net"});
+#line 97
+ testRunner.When("Actor enteres following data into Leave an Email form fields", ((string)(null)), table7, "When ");
+#line 100
+ testRunner.And("Actor clicks Submit button on Leave an Email form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 101
+ testRunner.And("Actor selects Open visit details panel slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 102
+ testRunner.And("Actor expands Onsite Behavior header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "field value"});
+            table8.AddRow(new string[] {
+                        "Now"});
+            table8.AddRow(new string[] {
+                        "Lead management funnel"});
+            table8.AddRow(new string[] {
+                        "Opportunity"});
+#line 103
+ testRunner.Then("Outcomes contains following values", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

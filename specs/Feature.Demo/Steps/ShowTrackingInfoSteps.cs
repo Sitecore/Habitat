@@ -14,7 +14,7 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
     public void ThenCampaignPresentsOnCampaignSectionOfTheShowTrackingInfo(Table table)
     {
       var campaigns = table.Rows.Select(v => v.Values.First());
-      var elements = SiteDemo.TrackingInfoCampaignList;
+      var elements = DemoLocators.TrackingInfoCampaignList;
       
       elements.Should().Contain(campaigns);
 

@@ -8,7 +8,7 @@ using TechTalk.SpecFlow;
 
 namespace Sitecore.Feature.Demo.Specflow.Infrastructure
 {
-  public class SiteDemo
+  public class DemoLocators
   {
     public IWebDriver Driver => FeatureContext.Current.Get<IWebDriver>();
 

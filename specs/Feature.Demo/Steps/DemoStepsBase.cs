@@ -14,13 +14,13 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
   [Binding]
   public class DemoStepsBase:StepsBase
   {
-    public SiteDemo SiteDemo = new SiteDemo();
 
-    public CommonLocators SiteBase = new CommonLocators();
+    public DemoLocators DemoLocators = new DemoLocators();
 
-    public BaseSettings BaseSettings = new BaseSettings();
+    public CommonLocators BaseLocators => new CommonLocators();
 
-    public CommonResults CommonResults => new CommonResults();
+    public BaseSettings BaseSettings => new BaseSettings();
 
+    public CommonResults CommonResults => new CommonResults();   
   }
 }

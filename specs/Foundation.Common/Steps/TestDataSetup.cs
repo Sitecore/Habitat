@@ -16,7 +16,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     public void GivenUserIsRegisteredInHabitatAndLoggedOut(Table table)
     {
       //Go to Register page
-      SiteBase.NavigateToPage(BaseSettings.RegisterPageUrl);
+      CommonLocators.NavigateToPage(BaseSettings.RegisterPageUrl);
       //Enter data to the fields
       var row = table.Rows.First();
       foreach (var key in row.Keys)
@@ -30,7 +30,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
         Payload = "extranet\\" + row["Email"]
       });
       //Click Register button
-      SiteBase.SubmitButton.Click(); 
+      CommonLocators.SubmitButton.Click(); 
       //Actor selects user dialog
       CommonActions.OpenUserDialog();
       //Actor clicks Logout button

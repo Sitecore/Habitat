@@ -17,7 +17,7 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
     [When(@"Actor navigates to (.*) site")]
     public void WhenActorNavigatesToDemoSite(string link)
     {
-      SiteBase.SiteSwitcherIcon.Click();
+      CommonLocators.SiteSwitcherIcon.Click();
       var element = CommonLocators.SiteSwitcherIconDropDownChildElements.First(el => el.Text.Equals(link, StringComparison.InvariantCultureIgnoreCase));
       element.Click();
 

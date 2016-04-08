@@ -81,7 +81,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Infrastructure\SiteDemo.cs" />
+    <Compile Include="Infrastructure\DemoLocators.cs" />
     <Compile Include="Mockup of External page.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

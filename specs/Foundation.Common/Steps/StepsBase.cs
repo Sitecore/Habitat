@@ -27,14 +27,14 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
       set { FeatureContext.Current.Set(value); }
     }
 
-    
+    public static CommonLocators CommonLocators => new CommonLocators();
 
     public void Cleanup()
     {
       new CommonGlobalSteps().Cleanup();
     }
 
-    public CommonLocators SiteBase =new CommonLocators();
+    
 
     public static void DeleteAllBrowserCookies()
     {

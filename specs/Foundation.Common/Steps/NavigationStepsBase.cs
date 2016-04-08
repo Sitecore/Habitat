@@ -18,7 +18,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     [Given(@"Habitat website is opened on Main Page")]
     public void GivenHabitatWebsiteIsOpenedOnMainPage()
     {
-      SiteBase.NavigateToPage(BaseSettings.BaseUrl);
+      CommonLocators.NavigateToPage(BaseSettings.BaseUrl);
     }
 
     [When(@"Actor selects (.*) slidebar")]
@@ -27,6 +27,10 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
       CommonLocators.OpenXDBSlidebar.First(el => el.GetAttribute("title").Contains(button)).Click();
     }
 
-
+    [Given(@"Habitat website is opened on Forms page")]
+    public void GivenHabitatWebsiteIsOpenedOnFormsPage()
+    {
+      CommonLocators.NavigateToPage(BaseSettings.FormsPageUrl);
+    }
   }
 }

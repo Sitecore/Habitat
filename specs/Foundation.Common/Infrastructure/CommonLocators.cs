@@ -31,6 +31,9 @@ namespace Sitecore.Foundation.Common.Specflow.Infrastructure
     public IWebElement DemoSiteLogo
       => Driver.FindElement(By.CssSelector("#hplogo"));
 
+    public IEnumerable<IWebElement> OnsideBehaviorData
+      = Driver.FindElements(By.CssSelector(".list-unstyled li div"));
+
     public void NavigateToPage(string url)
     {
       Driver.Navigate().GoToUrl(url);
@@ -80,5 +83,6 @@ namespace Sitecore.Foundation.Common.Specflow.Infrastructure
     public static IEnumerable<IWebElement> ManageXDBpanelButtons
       => Driver.FindElements(By.CssSelector(".hover-only"));
 
+    
   }
 }
