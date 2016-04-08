@@ -1,0 +1,39 @@
+footer {
+  #main-container > & {
+    background-color: $color-secondary-dark;
+    padding-top: 20px;
+    color: #FFF;
+  }
+
+  .nav {
+    li {
+      a {
+        color: #FFF;
+      }
+    }
+    &-service {
+      li {
+        a {
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  padding: 20px 0;
+  color: #FFF;
+  font-size: 12px;
+  .nav {
+    display: inline-block;
+    li {
+      display: inline-block;
+      float: left;
+      font-size: 12px;
+    }
+  }
+  small {
+    font-size: 12px;
+  }
+}
