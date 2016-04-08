@@ -80,6 +80,12 @@ gulp.task("05-Sync-Unicorn", function (callback) {
   unicorn(function() { return callback() }, options);
 });
 
+
+gulp.task("06-Deploy-Transforms", function () {
+    return gulp.src("./src/**/*.transform")
+        .pipe(gulp.dest(config.websiteRoot+"/temp/transforms"));
+});
+
 /*****************************
   Copy assemblies to all local projects
 *****************************/

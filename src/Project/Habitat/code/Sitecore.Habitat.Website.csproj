@@ -169,7 +169,7 @@
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="packages.config" />
-    <Content Include="App_Config\Security\domains.config.transform" />
+    <None Include="App_Config\Security\domains.config.transform" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="App_Config\Include\Project\z.Habitat.DevSettings.config">
       <SubType>Designer</SubType>

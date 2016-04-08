@@ -166,7 +166,7 @@
     <Content Include="Views\Common\Sublayouts\ArticleAsideBoth.cshtml" />
     <Content Include="Views\Common\Sublayouts\NavbarActivity.cshtml" />
     <None Include="Views\Web.config" />
-    <Content Include="web.config.transform" />
+    <None Include="web.config.transform" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">

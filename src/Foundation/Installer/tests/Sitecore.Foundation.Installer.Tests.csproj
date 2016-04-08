@@ -89,6 +89,7 @@
     <Compile Include="AutoSububstituteDataAttribute.cs" />
     <Compile Include="PostStepTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransformsProviderTests.cs" />
     <Compile Include="XdtTransformEngineTests.cs" />
   </ItemGroup>
   <ItemGroup>
