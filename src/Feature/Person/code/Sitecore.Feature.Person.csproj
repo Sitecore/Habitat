@@ -111,7 +111,6 @@
     </Content>
     <Content Include="Views\Person\EmployeesList.cshtml" />
     <Content Include="Views\Person\EmployeeSearchResult.cshtml" />
-    <Content Include="Views\Person\EmployeesCarousel.cshtml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
