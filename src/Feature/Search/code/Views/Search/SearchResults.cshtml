@@ -19,7 +19,7 @@
           <a href="@result.Url">@Html.Raw(result.Title)</a>
         </h2>
 
-        @if (!string.IsNullOrWhiteSpace(result.Description))
+        if (!string.IsNullOrWhiteSpace(result.Description))
         {
           @Html.Raw(result.Description)
         }

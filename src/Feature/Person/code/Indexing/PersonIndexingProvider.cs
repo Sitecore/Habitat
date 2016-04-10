@@ -14,7 +14,7 @@
 
   public class PersonIndexingProvider : ProviderBase, ISearchResultFormatter, IQueryPredicateProvider
   {
-    public string ContentType => DictionaryRepository.Get("/person/search/contenttype", "Person");
+    public string ContentType => DictionaryRepository.Get("/person/search/contenttype", "Employee");
 
     public IEnumerable<ID> SupportedTemplates => new[]
     {
