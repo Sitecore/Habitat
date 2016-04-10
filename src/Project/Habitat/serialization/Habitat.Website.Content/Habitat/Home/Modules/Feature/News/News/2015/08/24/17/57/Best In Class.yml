@@ -1,14 +1,14 @@
 ﻿---
-ID: 88d7f189-43af-4704-94ea-daa482f9dba5
-Parent: f5c343aa-35de-4262-9f29-e7af52d601cd
-Template: b69277ad-e917-4b9f-9136-a12e0a3e462f
+ID: "88d7f189-43af-4704-94ea-daa482f9dba5"
+Parent: "f5c343aa-35de-4262-9f29-e7af52d601cd"
+Template: "b69277ad-e917-4b9f-9136-a12e0a3e462f"
 Path: /sitecore/content/Habitat/Home/Modules/Feature/News/News/2015/08/24/17/57/Best In Class
 DB: master
 SharedFields:
-- ID: 9dafca1d-d618-4616-86b8-a8acd6b28a63
+- ID: "9dafca1d-d618-4616-86b8-a8acd6b28a63"
   Hint: __Bucket Parent Reference
-  Value: {439EC71A-4231-45C8-B075-975BD41099A7}
-- ID: c464d2d7-3382-428a-bcdf-0963c60ba0e3
+  Value: "{439EC71A-4231-45C8-B075-975BD41099A7}"
+- ID: "c464d2d7-3382-428a-bcdf-0963c60ba0e3"
   Hint: NewsDate
   Value: 20150924T175742Z
 Languages:
@@ -16,25 +16,47 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1"
+          s:xsd="http://www.w3.org/2001/XMLSchema">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{DAE436A6-7FCD-496C-8FFE-FD4390407EB5}"
+              p:before="r[@uid='{32989D01-241F-476F-A09E-165676D21833}']"
+              s:ds="{E9E0AC91-854D-4E27-AA3C-134235209CE2}"
+              s:id="{F49C9252-47F3-406B-B311-E26EE4D1149B}"
+              s:ph="/page-layout/section-narrow/col-wide-1_32989d01-241f-476f-a09e-165676d21833" />
+            <r
+              uid="{32989D01-241F-476F-A09E-165676D21833}"
+              p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']"
+              s:id="{03112E88-1499-4132-9D5F-E213AFD2019C}"
+              s:ph="/page-layout/section-narrow" />
+          </d>
+        </r>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150824T175742Z
-    - ID: 3437eaac-6ee8-460b-a33d-da1f714b5a93
+    - ID: "3437eaac-6ee8-460b-a33d-da1f714b5a93"
       Hint: NewsImage
       Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{7C3BBB56-BE70-4F1B-86A3-3D7C505D74AD}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"178\" vspace=\"\" ></image>"
-    - ID: 801612c7-5e98-4e3c-80d2-a34d0eebcbda
+    - ID: "801612c7-5e98-4e3c-80d2-a34d0eebcbda"
       Hint: NewsBody
       Value: |
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas. Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus. Sed consectetur, est ac venenatis consequat, nisi tellus euismod tortor, nec volutpat tortor lectus in nisi. Nulla facilisi. Phasellus ultricies rutrum odio, sed ultricies tortor ornare vel. Nunc a leo justo. Pellentesque elementum quam eget mauris gravida convallis at at sem. Integer vitae lectus dui. Quisque facilisis enim purus, et fringilla velit mollis eget. Nullam vitae nisi ullamcorper, congue quam ac, porttitor urna. Maecenas sed nisi rhoncus lacus consectetur commodo.</p>
         <p>Nam finibus ornare augue, eget ullamcorper erat. Vivamus a tortor blandit, fermentum mauris quis, ullamcorper ex. Donec et lacus in augue aliquet elementum. Mauris nec molestie neque. Suspendisse eu quam commodo, iaculis turpis vel, laoreet lacus. Nullam tempus ornare volutpat. Praesent imperdiet eleifend mi, sit amet eleifend urna dapibus eu. Duis euismod lectus eget metus convallis tristique. Quisque eget neque non nibh consectetur lobortis. Nam condimentum eros sed dui molestie, vel gravida sem accumsan. Mauris in purus dolor.</p>
-    - ID: 9d08271a-1672-44dd-b7ef-0a6ec34fcba7
+    - ID: "9d08271a-1672-44dd-b7ef-0a6ec34fcba7"
       Hint: NewsSummary
       Value: |
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas.</p>
         <p>Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus.</p>
-    - ID: bd9ecd4a-c0b0-4233-a3cd-d995519ac87b
+    - ID: "bd9ecd4a-c0b0-4233-a3cd-d995519ac87b"
       Hint: NewsTitle
-      Value: Sitecore XP rated Best In Class - again
-    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+      Value: "Sitecore XP rated Best In Class - again"
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
       Hint: BrowserTitle
       Value: News article
