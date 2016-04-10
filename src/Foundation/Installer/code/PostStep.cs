@@ -1,6 +1,10 @@
 ﻿namespace Sitecore.Foundation.Installer
 {
+  using System.Collections.Generic;
   using System.Collections.Specialized;
+  using System.IO;
+  using System.Linq;
+  using System.Text.RegularExpressions;
   using Sitecore.Foundation.Installer.XmlTransform;
   using Sitecore.Install.Framework;
 
@@ -8,27 +12,44 @@
   {
     private readonly IXdtTransformEngine xdtTransformEngine;
     private readonly IFilePathResolver filePathResolver;
+    private readonly ITransformsProvider transformProvider;
 
-    public PostStep() : this(new XdtTransformEngine(),new FilePathResolver())
+    private readonly List<string> transformsOrder = new List<string>()
+    {
+      "Foundation",
+      "Feature",
+      "Project"
+    };
+
+    public PostStep() : this(new XdtTransformEngine(),new FilePathResolver(), new TransformProvider())
     {
     }
 
-    public PostStep(IXdtTransformEngine xdtTransformEngine, IFilePathResolver filePathResolver)
+    public PostStep(IXdtTransformEngine xdtTransformEngine, IFilePathResolver filePathResolver, ITransformsProvider transformsProvider)
     {
       this.xdtTransformEngine = xdtTransformEngine;
       this.filePathResolver = filePathResolver;
+      this.transformProvider = transformsProvider;
     }
 
     public void Run(ITaskOutput output, NameValueCollection metaData)
     {
-      var webConfig = this.filePathResolver.MapPath("~/web.config");
-      var webConfigTransform = this.filePathResolver.MapPath("~/web.config.transform");
-      if (webConfigTransform == null)
+      foreach (var transformsLayer in transformsOrder)
       {
-        return;
+        var transforms = this.transformProvider.GetTransformsByLayer(transformsLayer);
+        foreach (var transform in transforms)
+        {
+          var fileToTransformPath = Regex.Replace(transform, "^.*\\\\code", "~").Replace(".transform", "");
+          Diagnostics.Log.Warn($"{transform} - {fileToTransformPath}", this);
+          var fileToTransform = this.filePathResolver.MapPath(fileToTransformPath);
+          this.ApplyTransform(fileToTransform, transform, fileToTransform);
+        }
       }
+    }
 
-      this.xdtTransformEngine.ApplyConfigTransformation(webConfig, webConfigTransform, webConfig);
+    protected void ApplyTransform(string sourceFilePath, string transformFilePath, string targetFilePath)
+    {
+      this.xdtTransformEngine.ApplyConfigTransformation(sourceFilePath, transformFilePath, targetFilePath);
     }
   }
 }

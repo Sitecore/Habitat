@@ -22,7 +22,8 @@ gulp.task("default", function (callback) {
     "02-Nuget-Restore",
     "03-Publish-All-Projects",
     "04-Apply-Xml-Transform",
-    "05-Sync-Unicorn", 
+    "05-Sync-Unicorn",
+    "06-Deploy-Transforms",
 	callback);
 });
 
@@ -80,6 +81,12 @@ gulp.task("05-Sync-Unicorn", function (callback) {
   unicorn(function() { return callback() }, options);
 });
 
+
+gulp.task("06-Deploy-Transforms", function () {
+    return gulp.src("./src/**/code/**/*.transform")
+        .pipe(gulp.dest(config.websiteRoot+"/temp/transforms"));
+});
+
 /*****************************
   Copy assemblies to all local projects
 *****************************/
@@ -105,7 +112,7 @@ var publishProjects = function (location, dest) {
   dest = dest || config.websiteRoot;
   var targets = ["Build"];
   if (config.runCleanBuilds) {
-    targets = ["Clean", "Build"];
+	targets = ["Clean", "Build"]
   }
   console.log("publish to " + dest + " folder");
   return gulp.src([location + "/**/code/*.csproj"])
@@ -115,11 +122,10 @@ var publishProjects = function (location, dest) {
         .pipe(msbuild({
           targets: targets,
           configuration: config.buildConfiguration,
-          logCommand: false, //Enable to debug
+          logCommand: false,
           verbosity: "minimal",
           maxcpucount: 0,
           toolsVersion: 14.0,
-          //stdout: true,  //Enable to debug
           properties: {
             DeployOnBuild: "true",
             DeployDefaultTarget: "WebPublish",

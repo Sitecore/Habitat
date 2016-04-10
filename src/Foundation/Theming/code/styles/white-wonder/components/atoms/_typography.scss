@@ -1,0 +1,68 @@
+h1, h2, h3, h4, h5, h6, p, a, small {
+  word-wrap: break-all;
+  word-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 70px;
+
+  @media all and (max-width: $screen-xs-max) {
+    font-size: 40px;
+  }
+}
+
+h2 {
+  font-size: 50px;
+
+  @media all and (max-width: $screen-xs-max) {
+    font-size: 30px;
+  }
+}
+
+h3 {
+  font-size: 32px;
+  @media all and (max-width: $screen-xs-max) {
+    font-size: 22px;
+  }
+}
+
+h4 {
+  font-size: 26px;
+  @media all and (max-width: $screen-xs-max) {
+    font-size: 18px;
+  }
+}
+
+h5 {
+  font-size: 22px;
+  @media all and (max-width: $screen-xs-max) {
+    font-size: 15px;
+  }
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.8;
+
+  &.lead {
+    font-size: 22px;
+  }
+}
+
+.lead {
+  line-height: 1.8;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+mark {
+  background-color: $gray-light;
+}

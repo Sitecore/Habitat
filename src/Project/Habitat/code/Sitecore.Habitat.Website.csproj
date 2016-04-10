@@ -157,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Captions.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -168,7 +169,7 @@
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="packages.config" />
-    <Content Include="App_Config\Security\domains.config.transform" />
+    <None Include="App_Config\Security\domains.config.transform" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="App_Config\Include\Project\z.Habitat.DevSettings.config">
       <SubType>Designer</SubType>
@@ -176,13 +177,6 @@
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Website\Layouts\Default.cshtml" />
-    <None Include="web.config" />
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Website\Sublayouts\" />

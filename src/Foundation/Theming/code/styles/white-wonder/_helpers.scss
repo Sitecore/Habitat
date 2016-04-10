@@ -1,0 +1,175 @@
+.bg {
+  &-primary {
+    background-color: $brand-primary !important;
+    color: #FFF;
+
+    a {
+      color: #FFF;
+    }
+
+    .input-group {
+      input[type="text"], input[type="password"] {
+        background-color: #FFF;
+        color: #000;
+        padding: 16px 20px;
+        height: 51px;
+        margin-top: 0;
+      }
+      .btn {
+        background-color: $gray-lighter;
+        padding: 16px 20px;
+        border: none;
+        font-weight: normal;
+      }
+    }
+
+    .nav {
+      a {
+        color: #FFF;
+        text-align: left;
+        padding-left: 0;
+      }
+    }
+  }
+  &-secondary {
+    background-color: $gray-base !important;
+    color: #FFF;
+    &-dark {
+      color: #FFF !important;
+      background-color:  !important;
+      p {
+        opacity: 0.4;
+        &.lead {
+          opacity: 1;
+        }
+      }
+    }
+    &-light {
+      color: #FFF;
+      background-color: $color-secondary-light !important;
+    }
+    &-lighter {
+      color: #FFF;
+      background-color: $color-secondary-lighter !important;
+    }
+  }
+  &-white {
+    background-color: #FFF;
+    color: #000;
+  }
+  &-black {
+    background-color: #000;
+    color: #FFF;
+  }
+  &-dark {
+    background-color: $gray-base;
+    color: #FFF;
+  }
+  &-gray {
+    background-color: $gray-light;
+    color: #FFF;
+  }
+  &-transparent {
+    background-color: transparent !important;
+  }
+
+  &-media {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    position: relative;
+    overflow: hidden;
+
+    &-overlay {
+      &-dark {
+        position: relative;
+
+        & > * {
+          z-index: 2;
+          position: relative;
+        }
+        &:before {
+          content:' ';
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: #000;
+          opacity: 0.7;
+          z-index: 1;
+        }
+      }
+    }
+
+    & > * {
+      z-index: 1;
+      position: relative;
+    }
+
+    & > .video-bg {
+      position: absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:auto;
+      z-index: 0;
+    }
+  }
+}
+
+.pull {
+  &-right {
+    &-lg {
+      @media all and (min-width: $screen-lg-min) {
+        float: right;
+      }
+    }
+  }
+  &-left {
+    &-lg {
+      @media all and (min-width: $screen-lg-min) {
+        float: left;
+      }
+    }
+  }
+}
+
+.row {
+
+  &-vertical-align {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+
+    [class^="col-"], [class*="col-"] {
+      display: table-cell;
+      vertical-align: middle;
+      float: none;
+    }
+  }
+
+  &-no-gutter {
+    [class^="col-"], [class*="col-"] {
+      padding: 0 !important;
+    }
+  }
+}
+
+
+.border {
+  &-bottom {
+    border-bottom: 1px solid #000;
+  }
+  &-right {
+    border-right: 1px solid #000;
+  }
+}
+
+.text {
+  &-white {
+    color: #FFF !important;
+  }
+}

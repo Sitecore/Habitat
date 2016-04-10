@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\..\..\..\applytransform.targets" />
   <Import Project="..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\..\..\..\applytransform.targets" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -135,7 +134,7 @@
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Foundation\Theming\code\Sitecore.Foundation.Theming.csproj">
-      <Project>{98DE0D1D-26F1-4CCA-847C-4E0FC2DBA5FC}</Project>
+      <Project>{98de0d1d-26f1-4cca-847c-4e0fc2dba5fc}</Project>
       <Name>Sitecore.Foundation.Theming</Name>
     </ProjectReference>
   </ItemGroup>

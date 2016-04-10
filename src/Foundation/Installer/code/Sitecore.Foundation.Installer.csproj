@@ -158,22 +158,17 @@
   <ItemGroup>
     <Compile Include="XmlTransform\FilePathResolver.cs" />
     <Compile Include="XmlTransform\IFilePathResolver.cs" />
+    <Compile Include="XmlTransform\ITransformsProvider.cs" />
     <Compile Include="XmlTransform\IXdtTransformEngine.cs" />
     <Compile Include="PostStep.cs" />
+    <Compile Include="XmlTransform\TransformProvider.cs" />
     <Compile Include="XmlTransform\XdtTransformEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="web.config.transform" />
+    <None Include="web.config.transform" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
-    <None Include="web.config" />
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

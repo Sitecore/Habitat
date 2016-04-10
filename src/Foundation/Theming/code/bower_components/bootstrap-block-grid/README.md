@@ -1,9 +1,6 @@
 # bootstrap-block-grid
 **block grid** library (css & sass) for [twitter bootstrap](https://github.com/twbs/bootstrap) (version 3 & 4), based on the native [zurb foundation feature](http://foundation.zurb.com/sites/docs/v/5.5.3/components/block_grid.html)
 
-[![npm version](https://badge.fury.io/js/bootstrap-block-grid.png)](https://badge.fury.io/js/bootstrap-block-grid)
-[![Bower version](https://badge.fury.io/bo/bootstrap-block-grid.png)](https://badge.fury.io/bo/bootstrap-block-grid)
-
 ## demo
 [demo on plnkr](http://plnkr.co/qkyOlC)
 
@@ -18,33 +15,33 @@
     1. when using bower
     ```html
     <!-- bootstrap 3 -->
-    <link rel="stylesheet" href="bower_components/bootstrap-block-grid/dist/bootstrap3-block-grid.min.css">
+    <script src="bower_components/bootstrap-block-grid/dist/bootstrap3-block-grid.min.css"></script>
     <!-- bootstrap 4 -->
-    <link rel="stylesheet" href="bower_components/bootstrap-block-grid/dist/bootstrap4-block-grid.min.css">
+    <script src="bower_components/bootstrap-block-grid/dist/bootstrap4-block-grid.min.css"></script>
     ```
 
     2. when using npm
     ```html
     <!-- bootstrap 3 -->
-    <link rel="stylesheet" href="node_modules/bootstrap-block-grid/dist/bootstrap3-block-grid.min.css">
+    <script src="node_modules/bootstrap-block-grid/dist/bootstrap3-block-grid.min.css"></script>
     <!-- bootstrap 4 -->
-    <link rel="stylesheet" href="node_modules/bootstrap-block-grid/dist/bootstrap4-block-grid.min.css">
+    <script src="node_modules/bootstrap-block-grid/dist/bootstrap4-block-grid.min.css"></script>
     ```
 
     3. when using CDN files from jsdelivr
     ```html
     <!-- bootstrap 3 -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.block-grid/latest/bootstrap3-block-grid.min.css">
+    <script src="//cdn.jsdelivr.net/bootstrap.block-grid/1.1.4/bootstrap3-block-grid.min.css"></script>
     <!-- bootstrap 4 -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/bootstrap.block-grid/latest/bootstrap4-block-grid.min.css">
+    <script src="//cdn.jsdelivr.net/bootstrap.block-grid/1.1.4/bootstrap4-block-grid.min.css"></script>
     ```
 
     4. when using downloaded files
     ```html
     <!-- bootstrap 3 -->
-    <link rel="stylesheet" href="bootstrap3-block-grid.min.css">
+    <script src="bootstrap3-block-grid.min.css"></script>
     <!-- bootstrap 4 -->
-    <link rel="stylesheet" href="bootstrap4-block-grid.min.css">
+    <script src="bootstrap4-block-grid.min.css"></script>
     ```
 
 3. Sample Markup
@@ -96,5 +93,5 @@
     - `block-grid-lg-12`
 
 
-# license
+# licence
 MIT

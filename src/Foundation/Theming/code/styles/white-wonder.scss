@@ -1,36 +1,39 @@
-@import "default/variables";
-@import "default/fonts";
+@import "variables";
+@import "fonts";
+@import "white-wonder/fonts";
+
+@import "bower_components/font-awesome/scss/font-awesome";
 
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 
 @import "white-wonder/variables";
 @import "white-wonder/overrides";
-@import "default/mixins";
+@import "white-wonder/mixins";
 
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/print";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
 
 // Core CSS
-@import "default/scaffolding";
+@import "white-wonder/scaffolding";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/type";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/code";
-@import "default/grid";
+@import "white-wonder/grid";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/tables";
-@import "default/components/atoms/forms";
-@import "default/components/atoms/buttons";
+@import "white-wonder/components/atoms/forms";
+@import "white-wonder/components/atoms/buttons";
 
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
 
-@import "default/global";
+@import "white-wonder/global";
 
-@import "default/components/atoms";
-@import "default/components/molecules";
-@import "default/components/organisms";
-@import "default/pages";
-@import "default/templates";
-@import "default/vendor";
+@import "white-wonder/components/atoms";
+@import "white-wonder/components/molecules";
+@import "white-wonder/components/organisms";
+@import "white-wonder/pages";
+@import "white-wonder/templates";
+@import "white-wonder/vendor";
 
 //Components with JS
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/modals";
@@ -39,8 +42,8 @@
 
 
 //Extra utilities
-@import "default/helpers";
-@import "default/utilities";
+@import "white-wonder/helpers";
+@import "white-wonder/utilities";
 
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
 

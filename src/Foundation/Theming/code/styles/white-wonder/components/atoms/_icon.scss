@@ -1,0 +1,34 @@
+.icon {
+  &-md {
+    font-size: 24px;
+    @media all and (max-width: $screen-xs-max) {
+      font-size: 18px;
+    }
+  }
+  &-lg {
+    font-size: 48px;
+    @media all and (max-width: $screen-xs-max) {
+      font-size: 32px;
+    }
+  }
+  &-xl {
+    font-size: 64px;
+
+    @media all and (max-width: $screen-xs-max) {
+      font-size: 40px;
+    }
+  }
+  &-xxl {
+    font-size: 92px;
+    @media all and (max-width: $screen-xs-max) {
+      font-size: 60px;
+    }
+  }
+  &-centered {
+    display: block;
+    text-align: center;
+  }
+  &-spacing {
+    padding:25px 0;
+  }
+}

@@ -2,7 +2,7 @@
 [class*="block-grid-"] {
   display: block;
   margin: -15px;
-  padding: 0 .9375rem;
+  padding: 0;
 }
 
 [class*="block-grid-"]:before,
