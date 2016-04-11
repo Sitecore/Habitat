@@ -62,6 +62,12 @@
       <HintPath>..\..\..\..\packages\Microsoft.Web.Xdt.2.1.1\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\..\..\lib\Sitecore\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\..\..\lib\Sitecore\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -156,6 +162,12 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IProcessRunner.cs" />
+    <Compile Include="MongoRestore\IMongoPathsProvider.cs" />
+    <Compile Include="MongoRestore\MongoPathsProvider.cs" />
+    <Compile Include="MongoRestore\MongoRestoreService.cs" />
+    <Compile Include="ProcessException.cs" />
+    <Compile Include="ProcessRunner.cs" />
     <Compile Include="XmlTransform\FilePathResolver.cs" />
     <Compile Include="XmlTransform\IFilePathResolver.cs" />
     <Compile Include="XmlTransform\ITransformsProvider.cs" />
@@ -167,6 +179,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="web.config.transform" />
+    <Content Include="App_Data\MongoData\libeay32.dll" />
+    <Content Include="App_Data\MongoData\mongorestore.exe" />
+    <Content Include="App_Data\MongoData\ssleay32.dll" />
+    <Content Include="web.config.transform" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
   </ItemGroup>
