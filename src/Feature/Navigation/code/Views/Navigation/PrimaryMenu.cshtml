@@ -1,4 +1,5 @@
 ﻿@using Sitecore.Feature.Navigation
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Feature.Navigation.Models.NavigationItems
 
 <div class="collapse navbar-collapse" id="siteNavbar">
@@ -18,13 +19,13 @@
           @if (hasChildren)
           {
             <a href="@item.Url" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)<span class="caret"></span>
+              @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, item.Item)<span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
               @foreach (var subitem in item.Children.Items)
             {
                 <li>
-                  <a href="@subitem.Url" target="@subitem.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), subitem.Item)</a>
+                  <a href="@subitem.Url" target="@subitem.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, subitem.Item)</a>
                 </li>
               }
             </ul>
@@ -32,7 +33,7 @@
           else
           {
             <a class="text-uppercase" href="@item.Url" target="@item.Target">
-              @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)
+              @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, item.Item)
             </a>
           }
         </li>

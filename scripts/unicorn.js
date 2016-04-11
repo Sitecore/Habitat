@@ -23,58 +23,12 @@ module.exports = function (callback, options) {
     return secret;
   }
 
-  var getUnicornConfiguration = function (configFile) {
-    var data = fs.readFileSync(configFile);
-
-    var configuration;
-    var parser = new xml2js.Parser();
-    parser.parseString(data, function (err, result) {
-      if (err !== null) throw err;
-
-      var configurationNodes = result.configuration.sitecore[0].unicorn[0].configurations[0].configuration;
-      for (var i = 0; i < configurationNodes.length; i++) {
-        configuration = (configuration ? configuration + "^" : "") + configurationNodes[i].$.name;
-      } 
-    });
-    return configuration;
-  }
-
-  var getUnicornConfigurations = function (filesGlob) {
-    var configurations;
-    
-    var files = glob.sync(filesGlob);
-    for (var i = 0; i < files.length; i++) {
-      var file = files[i];
-      var configuration = getUnicornConfiguration(file);
-      if (configuration) {
-        configurations = (configurations ? configurations + "^" : "") + configuration;
-      }
-    }
-    return configurations;
-  };
-
-  var getOrderedUnicornConfigurations = function (filesGlobs) {
-    if (options.configurations)
-      return options.configurations;
-
-    var allConfigurations;
-    
-    for (var i = 0; i < filesGlobs.length; i++) {
-      var configurations = getUnicornConfigurations(filesGlobs[i]);
-      if (configurations) {
-        allConfigurations = (allConfigurations ? allConfigurations + "^" : "") + configurations;
-      }
-    }
-    return allConfigurations;
-  }
-
   var secret = getUnicornSecret();
   var url = options.siteHostName + "/unicorn.aspx";
-  var configurations = getOrderedUnicornConfigurations(options.configurationConfigFiles);
 
-  var syncScript = "./Sync.ps1 -secret " + secret + " -url " + url + " -configurations " + configurations;
+  var syncScript = "./Sync.ps1 -secret " + secret + " -url " + url;
   var options = { cwd: __dirname + "/Unicorn/" };
-  return exec("powershell \"" + syncScript + "\"", options, function(err, stdout, stderr) {
+  return exec("powershell -executionpolicy unrestricted \"" + syncScript + "\"", options, function(err, stdout, stderr) {
     if (err !== null) throw err;
     console.log(stdout);
     callback();

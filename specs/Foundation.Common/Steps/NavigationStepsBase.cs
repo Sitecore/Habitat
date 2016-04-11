@@ -10,6 +10,7 @@ using TechTalk.SpecFlow;
 
 namespace Sitecore.Foundation.Common.Specflow.Steps
 {
+  [Binding]
   public class NavigationStepsBase:StepsBase
   {
 
@@ -20,21 +21,11 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
       SiteBase.NavigateToPage(BaseSettings.BaseUrl);
     }
 
-    [Given(@"Actor moves cursor over the User icon")]
-    [When(@"Actor moves cursor over the User icon")]
-    public void WhenActorMovesCursorOverTheUserIcon()
+    [When(@"Actor selects (.*) slidebar")]
+    public void WhenActorSelectsSlidebar(string button)
     {
-      //TODO: Old code
-      /*
-      SiteBase.UserIcon.MoveToElement();
-
-#warning hack for selenium hover behavoiur
-      var dropdown = SiteBase.UserIcon.FindElement(By.XPath("../../ul"));
-      var js = Driver as IJavaScriptExecutor;
-      js?.ExecuteScript("arguments[0].style.display='block'", dropdown);*/
+      CommonLocators.OpenXDBSlidebar.First(el => el.GetAttribute("title").Contains(button)).Click();
     }
-
-
 
 
   }
