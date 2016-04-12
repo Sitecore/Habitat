@@ -1,0 +1,42 @@
+
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/labels";
+
+.label {
+  border-radius: 0;
+  padding: 0;
+
+  &-default {
+    color: #FFF;
+  }
+
+  h1 &, h2 &, h3 &, h4 &, h5 &, h6 & {
+    margin: 0 10px;
+  }
+
+  &-square {
+    width: 70px;
+    height: 70px;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+    font-size: 20px;
+    display: block;
+    line-height: 70px;
+
+    @media all and (max-width: $screen-xs-max) {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+    }
+  }
+  .bg-primary &-primary, .bg-secondary &-primary {
+    background-color: rgba(0,0,0,.4) !important;
+  }
+}
+
+[class^="label-"],
+[class*=" label-"] {
+  padding: .2em .6em .3em;
+}

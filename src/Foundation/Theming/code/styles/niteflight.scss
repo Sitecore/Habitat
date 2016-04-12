@@ -1,39 +1,39 @@
-@import "variables";
-@import "fonts";
-@import "niteflight/fonts";
+@import "bower_components/font-awesome/scss/font-awesome";
 
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 
-@import "components/hover";
+@import "default/variables";
+@import "fonts";
+@import "default/fonts";
 
 @import "niteflight/variables";
 @import "niteflight/overrides";
-@import "niteflight/mixins";
+@import "default/mixins";
 
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/print";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
 
 // Core CSS
-@import "niteflight/scaffolding";
+@import "default/scaffolding";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/type";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/code";
-@import "niteflight/grid";
-@import "niteflight/components/atoms/tables";
-@import "niteflight/components/atoms/forms";
-@import "niteflight/components/atoms/buttons";
+@import "default/grid";
+@import "default/components/atoms/tables";
+@import "default/components/atoms/forms";
+@import "default/components/atoms/buttons";
 
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
 
-@import "niteflight/global";
+@import "default/global";
 
-@import "niteflight/components/atoms";
-@import "niteflight/components/molecules";
-@import "niteflight/components/organisms";
-@import "niteflight/pages";
-@import "niteflight/templates";
-@import "niteflight/vendor";
+@import "default/components/atoms";
+@import "default/components/molecules";
+@import "default/components/organisms";
+@import "default/pages";
+@import "default/templates";
+@import "default/vendor";
 
 //Components with JS
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/modals";
@@ -42,8 +42,8 @@
 
 
 //Extra utilities
-@import "niteflight/helpers";
-@import "niteflight/utilities";
+@import "default/helpers";
+@import "default/utilities";
 
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
 
