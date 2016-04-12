@@ -79,9 +79,6 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150824T171748Z
-    - ID: "31d027bb-fab5-4e1a-a66d-9f5b0fd4f005"
-      Hint: LogoTagLine
-      Value: Sitecore Solution Example
     - ID: "378b7d87-5775-4eb6-86b7-282d5359b1c6"
       Hint: UserProfile
       Value: "{14523428-879D-491C-9DF0-1417E82A4311}"
@@ -104,7 +101,7 @@ Languages:
       Value: habitat.local
     - ID: "e748d808-64c1-4dec-9718-f35cf9689e4b"
       Hint: Logo
-      Value: "<image mediapath=\"/Default Website/sc_logo\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Default Website/sc_logo\" mediaid=\"{60CB73C9-D101-4248-95FF-AF8AF939B7ED}\" />"
+      Value: "<image mediapath=\"/Default Website/sc_logo\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Default Website/sc_logo\" mediaid=\"{461A93BF-5471-4AF2-BF36-D638F5660CB5}\" />"
     - ID: "efd4980a-030c-497c-8880-40b6030ac28b"
       Hint: OrganisationName
       Value: Sitecore Corporation

@@ -1,28 +1,25 @@
 ﻿---
-ID: "fec0e62a-01fd-40e5-88f3-e5229fe79527"
-Parent: "4534144f-68bb-4fb5-9da3-664ca5dd8e9d"
-Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+ID: fec0e62a-01fd-40e5-88f3-e5229fe79527
+Parent: 4534144f-68bb-4fb5-9da3-664ca5dd8e9d
+Template: ab86861a-6030-46c5-b394-e8f99e8b87db
 Path: /sitecore/templates/Feature/Teasers/_TeaserContent
 DB: master
 SharedFields:
-- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
   Hint: __Icon
   Value: Applications/32x32/form_blue.png
-- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
   Hint: __Base template
   Type: tree list
-  Value: "{C80D124B-B9AC-432E-8C26-DBF3A7F18D20}"
-- ID: "f7d48a55-2158-4f02-9356-756654404f73"
-  Hint: __Standard values
-  Value: "{FF12FA13-D8E7-4806-8251-D7819B7AAE5A}"
+  Value: {1930BBEB-7805-471A-A3BE-4858AC7CF696}
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20150831T113721Z
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
       Hint: __Created by
       Value: sitecore\admin

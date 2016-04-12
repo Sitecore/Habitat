@@ -25,54 +25,51 @@
 
     internal void Add(Asset requirement, bool preventAddToCache = false)
     {
-      lock (_items)
+      if (requirement.AddOnceToken != null)
       {
-        if (requirement.AddOnceToken != null)
+        if (this._items.Any(x => x.AddOnceToken != null && x.AddOnceToken == requirement.AddOnceToken))
         {
-          if (this._items.Any(x => x.AddOnceToken != null && x.AddOnceToken == requirement.AddOnceToken))
-          {
-            return;
-          }
+          return;
         }
-
-        if (requirement.File != null)
-        {
-          if (this._items.Any(x => x.File != null && x.File == requirement.File))
-          {
-            return;
-          }
-        }
-
-        if (!preventAddToCache)
-        {
-          if (RenderingContext.Current != null)
-          {
-            var rendering = RenderingContext.Current.Rendering;
-            if (rendering != null && rendering.Caching.Cacheable)
-            {
-              AssetRequirementList cachedRequirements;
-
-              var renderingId = rendering.RenderingItem.ID;
-
-              if (!this._seenRenderings.Contains(renderingId))
-              {
-                this._seenRenderings.Add(renderingId);
-                cachedRequirements = new AssetRequirementList();
-              }
-              else
-              {
-                cachedRequirements = _cache.Get(renderingId) ?? new AssetRequirementList();
-              }
-
-              cachedRequirements.Add(requirement);
-              _cache.Set(renderingId, cachedRequirements);
-            }
-          }
-        }
-
-        // Passed the checks, add the requirement.
-        this._items.Add(requirement);
       }
+
+      if (requirement.File != null)
+      {
+        if (this._items.Any(x => x.File != null && x.File == requirement.File))
+        {
+          return;
+        }
+      }
+
+      if (!preventAddToCache)
+      {
+        if (RenderingContext.Current != null)
+        {
+          var rendering = RenderingContext.Current.Rendering;
+          if (rendering != null && rendering.Caching.Cacheable)
+          {
+            AssetRequirementList cachedRequirements;
+
+            var renderingId = rendering.RenderingItem.ID;
+
+            if (!this._seenRenderings.Contains(renderingId))
+            {
+              this._seenRenderings.Add(renderingId);
+              cachedRequirements = new AssetRequirementList();
+            }
+            else
+            {
+              cachedRequirements = _cache.Get(renderingId) ?? new AssetRequirementList();
+            }
+
+            cachedRequirements.Add(requirement);
+            _cache.Set(renderingId, cachedRequirements);
+          }
+        }
+      }
+
+      // Passed the checks, add the requirement.
+      this._items.Add(requirement);
     }
 
     public void Add(ID renderingID)

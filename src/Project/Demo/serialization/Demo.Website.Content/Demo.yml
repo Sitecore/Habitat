@@ -1,14 +1,14 @@
 ﻿---
-ID: "99631735-7d1e-4343-b73e-6b5b46340f40"
-Parent: "0de95ae4-41ab-4d01-9eb0-67441b7c2450"
-Template: "49c651ba-4004-40a9-9b0f-e95d0573f3ae"
+ID: 99631735-7d1e-4343-b73e-6b5b46340f40
+Parent: 0de95ae4-41ab-4d01-9eb0-67441b7c2450
+Template: 49c651ba-4004-40a9-9b0f-e95d0573f3ae
 Path: /sitecore/content/Demo
 DB: master
 SharedFields:
-- ID: "39c4902e-9960-4469-aeef-e878e9c8218f"
+- ID: 39c4902e-9960-4469-aeef-e878e9c8218f
   Hint: __Hidden
   Value: 1
-- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
   Hint: __Sortorder
   Value: 200
 Languages:
@@ -16,7 +16,7 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: "0bc0aedf-a6d0-4f74-933c-bd1779cd40b2"
+    - ID: 0bc0aedf-a6d0-4f74-933c-bd1779cd40b2
       Hint: HTML Content
       Value: |
         <!doctype html>
@@ -4407,15 +4407,15 @@ Languages:
           </div>
         </body>
         </html>
-    - ID: "12537182-f35c-403f-afb5-747d55c450b8"
+    - ID: 12537182-f35c-403f-afb5-747d55c450b8
       Hint: ShowInMenu
-      Value: 
-    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Value: 1
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20151109T235920Z
-    - ID: "b8027200-aab0-4876-b454-dbb85add9e3c"
+    - ID: b8027200-aab0-4876-b454-dbb85add9e3c
       Hint: HostName
       Value: demo.habitat.local
-    - ID: "f07811d3-41e9-440a-9d81-310c1d78bed6"
+    - ID: f07811d3-41e9-440a-9d81-310c1d78bed6
       Hint: Title
       Value: Demo
