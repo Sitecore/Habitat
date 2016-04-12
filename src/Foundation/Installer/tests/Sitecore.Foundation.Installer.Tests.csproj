@@ -86,6 +86,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -110,9 +111,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountsEnableActionTests.cs" />
     <Compile Include="AutoSububstituteDataAttribute.cs" />
     <Compile Include="MongoRestore\MongoRestoreProcessorTests.cs" />
     <Compile Include="MongoRestore\MongoRestoreServiceTests.cs" />
+    <Compile Include="PostStepTests.cs" />
     <Compile Include="XmlTransformActionTests.cs" />
     <Compile Include="ProcessRunnerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

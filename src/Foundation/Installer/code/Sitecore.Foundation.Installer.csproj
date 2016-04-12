@@ -166,6 +166,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountsEnableAction.cs" />
     <Compile Include="IPostStepAction.cs" />
     <Compile Include="IProcessRunner.cs" />
     <Compile Include="MongoRestore\IMongoPathsProvider.cs" />
@@ -197,9 +198,7 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Security\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\Assets\code\Sitecore.Foundation.Assets.csproj">
       <Project>{7E46FF93-EE05-412C-AC47-2A59A13DA73C}</Project>

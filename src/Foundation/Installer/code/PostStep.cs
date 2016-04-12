@@ -19,7 +19,7 @@
           var postStepActionType = Type.GetType(postStepAction);
           if (postStepActionType == null)
           {
-            throw new Exception("type was null");
+            throw new Exception($"Can't find specified type with name {postStepAction}");
           }
 
           Log.Info(postStepAction + " post step action was started", this);
