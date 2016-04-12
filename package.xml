@@ -7,7 +7,7 @@
       <Revision />
       <License />
       <Comment />
-      <Attributes />
+      <Attributes>Sitecore.Foundation.Installer.MongoRestore.MongoRestoreAction, Sitecore.Foundation.Installer|Sitecore.Foundation.Installer.XmlTransform.XmlTransformAction, Sitecore.Foundation.Installer</Attributes>
       <Readme />
       <Publisher />
       <PostStep>Sitecore.Foundation.Installer.PostStep, Sitecore.Foundation.Installer</PostStep>

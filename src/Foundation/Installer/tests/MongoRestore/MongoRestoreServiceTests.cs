@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Foundation.Installer.Tests.MongoRestore
 {
+  using System;
   using System.Collections.Generic;
   using System.Linq;
   using FluentAssertions;
@@ -23,7 +24,7 @@
       //Act
       sut.RestoreDatabase("wrongConnnection");
       //Assert      
-      appender.Events.Should().OnlyContain(x => x.Level == Level.ERROR);
+      appender.Events.Should().Contain(x => x.Level == Level.ERROR);
     }
 
     [Theory]
@@ -35,7 +36,27 @@
       //Act
       sut.RestoreDatabase("sql");
       //Assert      
-      appender.Events.Should().OnlyContain(x => x.Level == Level.ERROR);
+      appender.Events.Should().Contain(x => x.Level == Level.ERROR);
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void RestoreDatabase_NoConnection_DontCallRestore([Frozen]IProcessRunner processRunner, [Greedy]MongoRestoreService sut)
+    {
+      //Act
+      sut.RestoreDatabase("wrongConnnection");
+      //Assert      
+      processRunner.DidNotReceive().Run(Arg.Any<string>(), Arg.Any<string>());
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void RestoreDatabase_NotMongoConnection_DontCallRestore([Frozen]IProcessRunner processRunner, [Greedy]MongoRestoreService sut)
+    {
+      //Act
+      sut.RestoreDatabase("sql");
+      //Assert      
+      processRunner.DidNotReceive().Run(Arg.Any<string>(), Arg.Any<string>());
     }
 
     [Theory]
@@ -73,18 +94,40 @@
     [Theory]
     [AutoDbData]
     public void RestoreDatabases_Call_RestoreAllDumps(
-      List<string> dumpNames,
       [Frozen]IMongoPathsProvider mongoPathsProvider,
-      [Frozen]IProcessRunner processRunner
+      [Frozen]IProcessRunner processRunner,
+      [Greedy]MongoRestoreService sut
       )
     {
       //Arrange
+      var dumpNames = new List<string>() { "analytics", "tracking.live", "tracking.history", "tracking.contact" };
+      var dbNames = new List<string>() { "habitat_local_analytics", "habitat_local_tracking_live", "habitat_local_tracking_history", "habitat_local_tracking_contact" };
       mongoPathsProvider.GetDumpNames().Returns(dumpNames);
-      var sut = Substitute.ForPartsOf<MongoRestoreService>(mongoPathsProvider, processRunner);
+      
       //Act
       sut.RestoreDatabases();
-      //Assert      
-      sut.Received(dumpNames.Count).RestoreDatabase(Arg.Is<string>(x => dumpNames.Contains(x)));
+      //Assert
+      dbNames.ForEach(db=>processRunner.Received().Run(Arg.Any<string>(),Arg.Is<string>(arg=>arg.Contains($"--db {db}"))));
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void IsRstored_NoConnection_ReturnFalse(
+      [Frozen]IMongoPathsProvider mongoPathsProvider,
+      [Frozen]IProcessRunner processRunner,
+      [Greedy]MongoRestoreService sut)
+    {
+      sut.IsRestored("wrongConnection").Should().BeFalse();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void IsRstored_NotMongoConnection_ReturnFalse(
+      [Frozen]IMongoPathsProvider mongoPathsProvider,
+      [Frozen]IProcessRunner processRunner,
+      [Greedy]MongoRestoreService sut)
+    {
+      sut.Invoking(x => x.IsRestored("sql")).ShouldThrow<FormatException>();
     }
   }
 }

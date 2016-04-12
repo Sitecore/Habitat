@@ -5,7 +5,7 @@
   using MongoDB.Driver;
   using Sitecore.Diagnostics;
 
-  public class MongoRestoreService
+  public class MongoRestoreService : IMongoRestoreService
   {
     public const string LogToken = "[MongoRestore]:";
 
@@ -24,10 +24,14 @@
 
     public void RestoreDatabases()
     {
+      Log.Info($"{LogToken} Starting restore for all databases", this);
+
       foreach (var dumpName in this.mongoFileProvider.GetDumpNames())
       {
         this.RestoreDatabase(dumpName);
       }
+
+      Log.Info($"{LogToken} Databases restoring has been finished", this);
     }
 
     public void RestoreDatabase(string dumpName)
@@ -37,6 +41,8 @@
       {
         Log.Error($"{LogToken} Connection string with name {dumpName} wasn't found", this);
       }
+
+      Log.Info($"{LogToken} Starting restore for {dumpName} database", this);
 
       try
       {
@@ -48,6 +54,35 @@
       catch (Exception ex)
       {
         Log.Error($"{LogToken} {ex.Message}", ex, this);
+      }
+    }
+
+    public bool IsRestored(string connectionName)
+    {
+      MongoServer server = null;
+      var connectionString = ConfigurationManager.ConnectionStrings[connectionName]?.ConnectionString;
+
+      if (string.IsNullOrEmpty(connectionString))
+      {
+        return false;
+      }
+
+      try
+      {
+        var mongoUrl = new MongoUrl(connectionString);
+        var mongoClient = new MongoClient(mongoUrl);
+        server = mongoClient.GetServer();
+
+        return server.DatabaseExists(mongoUrl.DatabaseName);
+      }
+      catch (FormatException ex)
+      {
+        Log.Error("Wrong connection string format", ex, this);
+        throw;
+      }
+      finally
+      {
+        server?.Disconnect();
       }
     }
 

@@ -7,7 +7,7 @@
 
   public class MongoPathsProvider : IMongoPathsProvider
   {
-    public const string DefaultDumpLocation = "App_Data/MongoData";
+    public const string DefaultDumpLocation = "~/App_Data/MongoData";
 
     private readonly IFilePathResolver filePathResolver;
     private readonly string baseLocation;
@@ -26,6 +26,6 @@
 
     public string MongoRestoreExe => Path.Combine(this.baseLocation, "mongorestore.exe");
 
-    public IEnumerable<string> GetDumpNames() => Directory.GetDirectories(this.baseLocation).Select(Path.GetDirectoryName);
+    public IEnumerable<string> GetDumpNames() => Directory.GetDirectories(this.baseLocation).Select(Path.GetFileName);
   }
 }
