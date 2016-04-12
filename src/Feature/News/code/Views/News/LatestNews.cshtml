@@ -2,7 +2,7 @@
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model IEnumerable<Sitecore.Data.Items.Item>
-<div class="well bg-primary">
+<div class="well">
   <h5 class="text-uppercase">@DictionaryRepository.Get("/news/latest news/title", "News")</h5>
   <ul class="media-list">
     @foreach (var item in Model)
@@ -10,13 +10,13 @@
       <li class="media">
         <div class="media-body">
           <date>
-            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date, item, new
+            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
              {
                format = "MMMM dd, yyyy"
              })
           </date>
           <h4 class="media-heading">
-            <a href="@item.Url()">@Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, item)</a>
+            <a href="@item.Url()">@Html.Sitecore().Field(Templates.NewsArticle.Fields.Title.ToString(), item)</a>
           </h4>
         </div>
       </li>

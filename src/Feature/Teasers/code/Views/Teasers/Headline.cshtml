@@ -3,14 +3,14 @@
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
-@if (!Model?.Item?.IsDerived(Templates.TeaserContent.ID) ?? true)
+@if (!Model?.Item?.IsDerived(Templates.TeaserHeadline.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserHeadline.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
 }
 
 <div class="headline">
-  <h2>
-    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title, Model.Item)
+  <h2 class="text-center">
+    @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title.ToString(), Model.Item)
   </h2>
 </div>

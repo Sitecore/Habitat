@@ -1,0 +1,42 @@
+﻿@using Sitecore.Feature.Teasers
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Feature.Teasers.Models.DynamicTeaserModel
+
+<div class="panel-group" id="@Model.Id" role="tablist" aria-multiselectable="true">
+  @using (Html.BeginEditFrame(Model.Item.ID.ToString(), ""))
+  {
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+      @foreach (var element in Model.Items)
+      {
+        var isActive = element.IsActive;
+        <li role="presentation" class="@(isActive ? "active" : "")" id="@element.HeaderId">
+          <a href="#@element.PanelId" role="tab" data-toggle="tab" aria-expanded="@isActive">
+            @if (element.Item == null)
+            {
+              @element.Title
+            }
+            else
+            {
+              if (element.Icon != null)
+              {
+                <span class="@element.Icon"></span>
+              }
+              @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title.ToString(), element.Item)
+            }
+          </a>
+        </li>
+      }
+    </ul>
+    var index = 0;
+    <div class="tab-content">
+      @foreach (var element in Model.Items)
+      {
+        index++;
+        var isActive = element.IsActive;
+        <div role="tabpanel" class="tab-pane @(isActive ? "active" : "")" id="@element.PanelId">
+          @Html.Sitecore().DynamicPlaceholder($"teaser-placeholder-{index}")
+        </div>
+      }
+    </div>
+  }
+</div>

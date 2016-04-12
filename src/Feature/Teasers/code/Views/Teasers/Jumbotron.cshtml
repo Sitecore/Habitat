@@ -12,12 +12,12 @@
 }
 <div class="jumbotron text-center bg-media" style="background-image: @Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image).ToCssUrlValue()">
   <h2>
-    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Title, Model.Item)
+    @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title.ToString(), Model.Item)
   </h2>
   <p class="">
-    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item)
+    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary.ToString(), Model.Item)
   </p>
-  @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link, Model.Item, new
+  @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link.ToString(), Model.Item, new
   {
     @class = "btn btn-primary btn-lg"
   })

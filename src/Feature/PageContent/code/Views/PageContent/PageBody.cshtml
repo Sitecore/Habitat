@@ -9,9 +9,11 @@
   return;
 }
 
-@if (!Sitecore.Context.PageMode.IsPageEditor && !Html.Sitecore().HasValue(Templates.HasPageContent.Fields.Body.ToString()))
+@if (!Sitecore.Context.PageMode.IsExperienceEditor && !Html.Sitecore().HasValue(Templates.HasPageContent.Fields.Body.ToString()))
 {
   return;
 }
 
-@Html.Sitecore().Field(Templates.HasPageContent.Fields.Body)
+<div class="m-b-2">
+  @Html.Sitecore().Field(Templates.HasPageContent.Fields.Body)
+</div>

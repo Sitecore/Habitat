@@ -18,6 +18,9 @@
 <a class="navbar-brand" href="@homeUrl">
   <span class="logo">
     @Html.Sitecore().ImageField(Templates.Identity.Fields.Logo, identity)
-    <!-- TODO: add tagline field to logo, add .has-tagline to .logo <small class="tagline">Niteflight</small> -->
+    @if (hasTagline)
+    {
+      <small class="tagline">@Html.Sitecore().Field(Templates.Identity.Fields.LogoTagLine, identity)</small>
+    }
   </span>
 </a>
