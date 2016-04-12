@@ -1,1 +1,93 @@
 ﻿---
+ID: "6f29d455-c5e8-426c-ae31-123f75204d7b"
+Parent: "f7434df7-e32e-4f8c-a50e-27c476f4dc32"
+Template: "94a8c8e9-690b-4e65-98e7-f95800222767"
+Path: /sitecore/content/Habitat/Home/Modules/Feature/FAQ
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {94A8C8E9-690B-4E65-98E7-F95800222767}
+    {8FF3D369-A508-4D2F-84A5-9B6C6BF5E537}
+    {BA1EB1BD-E705-4BE6-A432-06B7F1B2F2CC}
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1"
+      s:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{8C9F3988-6CA4-4992-BFDA-E97ADD057A75}"
+          p:before="r[@uid='{EA1DC45B-54BB-4B3A-B49A-45C69DCBE88A}']"
+          s:ds="{7A015A8A-E7F5-4DC2-8BEF-1A3E1708B39C}"
+          s:id="{52A898D9-6D20-43FD-9798-1578B14A117C}"
+          s:ph="/page-layout/section_ae5aa048-6552-4479-85d5-2cfc1c1e4304/col-wide-1_8bbcd4a3-ff5a-459e-81ae-d24c6c5435a2" />
+        <r
+          uid="{EA1DC45B-54BB-4B3A-B49A-45C69DCBE88A}"
+          p:before="r[@uid='{8BBCD4A3-FF5A-459E-81AE-D24C6C5435A2}']"
+          s:id="{3F7AD288-FA57-441F-AD79-CA60DC0C0A8D}"
+          s:ph="/page-layout/section_ae5aa048-6552-4479-85d5-2cfc1c1e4304/col-narrow-1_8bbcd4a3-ff5a-459e-81ae-d24c6c5435a2" />
+        <r
+          uid="{8BBCD4A3-FF5A-459E-81AE-D24C6C5435A2}"
+          p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']"
+          s:id="{AB7054DD-B8E3-41D6-A75F-B54F2F37D08B}"
+          s:ph="/page-layout/section_ae5aa048-6552-4479-85d5-2cfc1c1e4304" />
+        <r
+          uid="{AE5AA048-6552-4479-85D5-2CFC1C1E4304}"
+          p:before="r[@uid='{20E3883C-C16D-41D7-B5D3-C4AC60D8386D}']"
+          s:id="{D201A487-5099-48A1-8189-55944F70C6CB}"
+          s:ph="page-layout" />
+        <r
+          uid="{66422117-69C1-4B62-9323-482F16C4F244}">
+          <p:d />
+        </r>
+        <r
+          uid="{0DE72BFC-0F5B-482B-B04C-D70AF5EC1185}"
+          p:before="r[@uid='{A85893F9-5DF5-4C28-AC0F-67AD85D29661}']"
+          s:id="{45B8E1D9-D522-49E0-B9B7-04C965CC7089}"
+          s:ph="/page-layout/page-header" />
+        <r
+          uid="{20AB9BAA-C112-4567-A701-564423E650D2}">
+          <p:d />
+        </r>
+        <r
+          uid="{D542B8DD-A7C7-4D05-8D9B-347B4ED90D24}"
+          s:id="{CED18F24-62C2-445E-B0D9-045E3325297B}"
+          s:ph="page-sidebar" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1"
+          s:xsd="http://www.w3.org/2001/XMLSchema" />
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: FAQ
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160229T165159Z
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
+      Hint: Image
+      Value: "<image mediaid=\"{74F43420-14E8-47DD-BC03-C31A7B5471F2}\" />"
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
+      Hint: Summary
+      Value: <p>The FAQ module features a handy accordion control to show questions and answers.</p>
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: FAQ
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: FAQ

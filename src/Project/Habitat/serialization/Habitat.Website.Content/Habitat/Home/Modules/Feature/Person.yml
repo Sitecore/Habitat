@@ -1,1 +1,90 @@
 ﻿---
+ID: "cac2e25b-3a13-4e1b-ab8c-5b71fd613077"
+Parent: "f7434df7-e32e-4f8c-a50e-27c476f4dc32"
+Template: "94a8c8e9-690b-4e65-98e7-f95800222767"
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Person
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1"
+          s:xsd="http://www.w3.org/2001/XMLSchema">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{C537F478-CE17-4868-86C9-C2CF901B9094}"
+              p:before="r[@uid='{336339FD-F457-42D4-BCF6-0724BFB3EBA4}']"
+              s:ds="{50A4942D-C644-4AD9-8452-78BD786C48A2}"
+              s:id="{7B7DD1F9-A0DB-45D9-9A3F-B704BB28903E}"
+              s:ph="/page-layout/section-narrow/col-wide-1_cb65dff5-6265-4d54-9166-8971aa1c72da" />
+            <r
+              uid="{336339FD-F457-42D4-BCF6-0724BFB3EBA4}"
+              p:before="r[@uid='{5F98D356-A982-4811-9BBB-377260257043}']"
+              s:ds="{F0519E91-3B1E-47B0-91C0-710C6DF5AD34}"
+              s:id="{EBB6DC33-F281-49BE-B273-29ECCD6085A8}"
+              s:ph="/page-layout/section-narrow/col-wide-1_161b8d27-ea7c-4dc2-a3d0-793116476ebf" />
+            <r
+              uid="{5F98D356-A982-4811-9BBB-377260257043}"
+              p:before="r[@uid='{161B8D27-EA7C-4DC2-A3D0-793116476EBF}']"
+              s:ds="{779041C8-F089-4E63-A054-D718F42EE16D}"
+              s:id="{A1AD34DD-535E-47AF-A911-34C57CCC26F6}"
+              s:ph="/page-layout/section-narrow/col-narrow-1_161b8d27-ea7c-4dc2-a3d0-793116476ebf" />
+            <r
+              uid="{161B8D27-EA7C-4DC2-A3D0-793116476EBF}"
+              p:before="r[@uid='{CB65DFF5-6265-4D54-9166-8971AA1C72DA}']"
+              s:id="{831876B6-F9F1-463E-9DD5-7F93F1640590}"
+              s:ph="/page-layout/section-narrow" />
+            <r
+              uid="{CB65DFF5-6265-4D54-9166-8971AA1C72DA}"
+              p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']"
+              s:id="{45CE489D-FA30-473E-9751-142BD06CCB33}"
+              s:ph="/page-layout/section-narrow" />
+            <r
+              uid="{2A208CAB-AD2B-4DF0-9C7A-EAC1552D8001}"
+              p:before="r[@uid='{4841D21D-4A27-4D46-A345-F5D9C5A8CF72}']"
+              s:ds="{6169D2C5-0C44-42AA-9CA7-DC5AACBF7029}"
+              s:id="{EE5A9F3D-C2CB-4710-8053-04D1A7135EBE}"
+              s:ph="/page-layout/col-wide-1" />
+            <r
+              uid="{4841D21D-4A27-4D46-A345-F5D9C5A8CF72}"
+              p:before="r[@uid='{78FADC05-200F-418F-AFDF-9ACADC8D784F}']"
+              s:ds="location:{CAC2E25B-3A13-4E1B-AB8C-5B71FD613077}"
+              s:id="{D0B4FD9F-3AEE-4AD7-BBC4-F37F0A1A3309}"
+              s:par="SearchResultsLimit=10"
+              s:ph="/page-layout/col-wide-1" />
+            <r
+              uid="{78FADC05-200F-418F-AFDF-9ACADC8D784F}"
+              p:before="r[@uid='{E2040FB7-4151-456D-9315-5973E4EB4D9D}']"
+              s:ds="{B462BF38-CBF6-42BB-A822-BB7F29C8AF26}"
+              s:id="{EE5A9F3D-C2CB-4710-8053-04D1A7135EBE}"
+              s:ph="/page-layout/col-wide-1" />
+          </d>
+        </r>
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: Person
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20151130T234428Z
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
+      Hint: Image
+      Value: "<image mediapath=\"/Habitat/Images/Square/Habitat-042-square\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Habitat/Images/Square/Habitat-042-square\" mediaid=\"{B00F14C3-62DA-4568-AFC8-91AA8F75229A}\" />"
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
+      Hint: Summary
+      Value: "The Person module contains person-related functionality and content, e.g. employee pages, personal contact info and quotes."
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: Person
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: Person
+    - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
+      Hint: Body
+      Value: "<span style=\"line-height: 24.2857px;\">The Person module contains person-related functionality and content, e.g. employee pages, personal contact info and quotes.</span>"

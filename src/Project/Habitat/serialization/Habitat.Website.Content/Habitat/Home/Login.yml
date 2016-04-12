@@ -1,1 +1,30 @@
 ﻿---
+ID: "bb711e1e-f13f-4176-8231-ba55c8da126d"
+Parent: "dac24edd-44fb-42ef-9ecd-1e8daf706386"
+Template: "ecc4e901-9c5f-4043-b11e-cfa868d1bb73"
+Path: /sitecore/content/Habitat/Home/Login
+DB: master
+SharedFields:
+- ID: "5585a30d-b115-4753-93ce-422c3455deb2"
+  Hint: ShowInNavigation
+  Value: 
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 700
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: Login
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20151105T104238Z
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: Login
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: Login
