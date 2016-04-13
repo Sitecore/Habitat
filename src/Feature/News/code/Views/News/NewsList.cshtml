@@ -4,14 +4,17 @@
 <ul class="media-list media-list-divided">
 @foreach (var item in Model)
 {
-  <li class="media media-align-middle">
-    <div class="media-left ">
+  <li class="media">
+    <div class="media-left">
       <a href="@item.Url()">
         @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image, item, mw: 150)
       </a>
     </div>
 
-    <div class="media-body ">
+    <div class="media-body">
+      <div class="label label-info">
+        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new { format = "MMMM dd, yyyy" })
+      </div>
       <h3 class="media-title">
         <a href="@item.Url()">
           @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, item)

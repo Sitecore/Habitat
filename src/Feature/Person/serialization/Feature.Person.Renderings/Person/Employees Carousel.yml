@@ -1,8 +1,8 @@
 ﻿---
-ID: "dc19892a-b345-4efe-aaa2-6e27a801a733"
+ID: "d0b4fd9f-3aee-4ad7-bbc4-f37f0a1a3309"
 Parent: "918adf7b-f0e9-422c-8dee-757215ce3407"
 Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
-Path: /sitecore/layout/Renderings/Feature/Person/Employees List
+Path: /sitecore/layout/Renderings/Feature/Person/Employees Carousel
 DB: master
 SharedFields:
 - ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
@@ -10,7 +10,7 @@ SharedFields:
   Value: /sitecore/templates/Feature/Person/_Employee
 - ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
   Hint: Path
-  Value: /Views/Person/EmployeesList.cshtml
+  Value: /Views/Person/EmployeesCarousel.cshtml
 - ID: "7d24e54f-5c16-4314-90c9-6051aa1a7da1"
   Hint: Parameters Template
   Value: "{4738312C-22B8-4E77-9B9C-86BCDCEE6635}"

@@ -17,7 +17,11 @@ SharedFields:
 - ID: "e441abe7-2ca3-4640-ae26-3789967925d7"
   Hint: Compatible Renderings
   Type: Treelist
-  Value: "{DDC6F993-6689-432E-90C7-B2865947DFD5}"
+  Value: |
+    {A25C9850-AAB7-46A6-84B7-0DFAB32FC357}
+    {E47303E0-90FD-4E81-B2B5-CA4E8C1C36B4}
+    {781C6B36-4B02-46EA-8ADC-B92A11877F10}
+    {FDFCD088-3C9E-49C4-97FF-2DDE5D339BA0}
 Languages:
 - Language: en
   Versions:
