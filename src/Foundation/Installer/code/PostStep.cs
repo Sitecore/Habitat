@@ -2,6 +2,8 @@
 {
   using System;
   using System.Collections.Specialized;
+  using System.Diagnostics;
+  using System.Linq;
   using Sitecore.Diagnostics;
   using Sitecore.Install.Framework;
 
@@ -9,8 +11,8 @@
   {
     public void Run(ITaskOutput output, NameValueCollection metaData)
     {
-      var getPostStepActionList =
-        metaData["Attributes"].Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+      Debugger.Break();
+      var getPostStepActionList = metaData["Attributes"].Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries).Select(x=>x.Split('=')[1]);
 
       foreach (var postStepAction in getPostStepActionList)
       {
