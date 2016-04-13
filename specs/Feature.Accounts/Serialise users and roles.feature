@@ -224,7 +224,7 @@ Scenario: Serialise users and roles_UC4_Admin user with multisite admin rights
 	Given User <UserRoles3>/u with following role was created in Habitat under <habitat> domain
 	| Role                                   |
 	| habitat\Project Habitat Content Author |
-	| habitat\Project Habitat Modules Admin  |                 
+	| modules\Feature Multisite Admin        |                 
 	When User navigates to Content Editor with user
 	| User name  | Password |
 	| UserRoles3 | u        |

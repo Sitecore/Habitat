@@ -220,7 +220,7 @@ this.ScenarioSetup(scenarioInfo);
             table6.AddRow(new string[] {
                         "habitat\\Project Habitat Content Author"});
             table6.AddRow(new string[] {
-                        "habitat\\Project Habitat Modules Admin"});
+                        "modules\\Feature Multisite Admin"});
 #line 224
  testRunner.Given("User <UserRoles3>/u with following role was created in Habitat under <habitat> do" +
                     "main", ((string)(null)), table6, "Given ");
