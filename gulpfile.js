@@ -76,7 +76,7 @@ gulp.task("04-Apply-Xml-Transform", function () {
 gulp.task("05-Sync-Unicorn", function (callback) {
   var options = {};
   options.siteHostName = habitat.getSiteUrl();
-  options.authenticationConfigFile = __dirname + "/src/Foundation/Serialization/code/App_config/Include/Foundation/Foundation.Serialization.config";
+  options.authenticationConfigFile = __dirname + "/src/Foundation/Serialization/code/App_config/Include/Unicorn/Unicorn.UI.config";
   
   unicorn(function() { return callback() }, options);
 });

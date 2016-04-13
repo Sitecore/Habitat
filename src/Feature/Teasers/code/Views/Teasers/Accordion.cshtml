@@ -10,8 +10,8 @@
       var isExpanded = Sitecore.Context.PageMode.IsExperienceEditor || element.IsActive;
       index++;
       <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title" id="@element.HeaderId">
+        <div class="panel-heading" role="tab">
+          <div class="panel-title" id="@element.HeaderId">
             <a role="button" data-toggle="collapse" data-parent="#@Model.Id" href="#@element.PanelId" aria-expanded="false" aria-controls="@element.PanelId">
               @if (element.Item == null)
               {
@@ -26,7 +26,7 @@
                 @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title.ToString(), element.Item)
               }
             </a>
-          </h4>
+          </div>
         </div>
         <div id="@element.PanelId" class="panel-collapse  collapse @(isExpanded ? "in" : "")" role="tabpanel" aria-labelledby="@element.HeaderId">
           <div class="panel-body">
