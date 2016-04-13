@@ -16,6 +16,7 @@
   public class QueryableDatasourceRenderingModel : RenderingModel
   {
     private readonly IRenderingPropertiesRepository renderingPropertiesRepository;
+    private IEnumerable<Item> items;
     private const int DefaultMaxResults = 10;
 
     public QueryableDatasourceRenderingSettings Settings => renderingPropertiesRepository.Get<QueryableDatasourceRenderingSettings>();
@@ -38,34 +39,25 @@
       ParseRenderingDataSource(rendering);
     }
 
-    public virtual IEnumerable<Item> Items
-    {
-      get
-      {
-        if (string.IsNullOrEmpty(DatasourceString))
-        {
-          return Enumerable.Empty<Item>();
-        }
+    public virtual IEnumerable<Item> Items => items ?? (items = GetItemsFromDatasourceQuery().ToArray());
 
-        using (var providerSearchContext = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
+    private IEnumerable<Item> GetItemsFromDatasourceQuery()
+    {
+      if (string.IsNullOrEmpty(DatasourceString))
+      {
+        return Enumerable.Empty<Item>();
+      }
+
+      using (var providerSearchContext = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
+      {
+        var query = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(DatasourceString));
+        var searchResultItems = query.Cast<SearchResult>();
+        if (DatasourceTemplate != null)
         {
-          var items = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(DatasourceString));
-          var searchResultItems = items.Cast<SearchResult>();
-          if (DatasourceTemplate != null)
-          {
-            var templateId = IdHelper.NormalizeGuid(DatasourceTemplate.ID);
-            searchResultItems = searchResultItems.Where(x => x.Templates.Contains(templateId));
-          }
-          return searchResultItems
-            .Where(x => x.Language == Context.Language.Name)
-            .Where(x => x.IsLatestVersion)
-            .Where(x => !x.Paths.Contains(ItemIDs.TemplateRoot))
-            .Where(x => !x.Name.Equals(Sitecore.Constants.StandardValuesItemName, StringComparison.InvariantCultureIgnoreCase))
-            .Take(MaxResults)
-            .Select(current => current != null ? current.GetItem() : null)
-            .ToArray()
-            .Where(item => item != null);
+          var templateId = IdHelper.NormalizeGuid(DatasourceTemplate.ID);
+          searchResultItems = searchResultItems.Where(x => x.Templates.Contains(templateId));
         }
+        return searchResultItems.Where(x => x.Language == Context.Language.Name).Where(x => x.IsLatestVersion).Where(x => !x.Paths.Contains(ItemIDs.TemplateRoot)).Where(x => !x.Name.Equals(Sitecore.Constants.StandardValuesItemName, StringComparison.InvariantCultureIgnoreCase)).Take(MaxResults).Select(current => current != null ? current.GetItem() : null).ToArray().Where(item => item != null);
       }
     }
 
