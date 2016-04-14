@@ -6,10 +6,12 @@
 @foreach (var item in Model.Item.Children.Where(i => i.IsDerived(Templates.HasPageContent.ID) && i.HasContextLanguage()))
 {
   <div class="block-grid-item">
-    @using (Html.Sitecore().SwitchContextItem(item))
-    {
-      @Html.Sitecore().ViewRendering("/Views/PageContent/PageTeaser")
-    }
+    <div>
+      @using (Html.Sitecore().SwitchContextItem(item))
+      {
+        @Html.Sitecore().ViewRendering("/Views/PageContent/PageTeaser")
+      }
+    </div>
   </div>
 }
 </div>

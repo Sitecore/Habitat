@@ -18,10 +18,12 @@ header {
     top: 0;
     left: 0;
     background-color: $color-secondary-dark;
+    box-sizing: border-box;
 
     @media (max-width: $screen-sm-max) {
       max-height: 100%;
-      overflow-y: auto;
+      //overflow-y: auto;
+      width: calc(100% - 15px);
     }
 
     &.bg-transparent {

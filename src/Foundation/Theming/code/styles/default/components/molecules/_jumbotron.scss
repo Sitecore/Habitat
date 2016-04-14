@@ -39,6 +39,12 @@
     font-size: 16px;
     margin-bottom: 0;
     color: $text-color;
+    .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+      color: #FFF;
+    }
+    .bg-white & {
+      color: #000;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
