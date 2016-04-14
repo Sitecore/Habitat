@@ -1,9 +1,11 @@
-﻿@using Sitecore.Feature.Media
+﻿@using Sitecore.Data.Fields
+@using Sitecore.Feature.Media
 @using Sitecore.Feature.Media.Infrastructure.Repositories
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.Foundation.Theming.Extensions
 @using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.HasMediaSelector.ID) ?? true)
@@ -15,12 +17,19 @@
 @{
   var carouselId = "carousel" + Guid.NewGuid().ToString("N");
   var elements = MediaSelectorElementsRepository.Get(Model.Item).ToArray();
+  int? carouselHeight = null;
 }
 <div id="@carouselId" class="carousel slide" data-ride="carousel" @(Sitecore.Context.PageMode.IsExperienceEditor ? "data-interval" : "")>
   <ol class="carousel-indicators">
     @for (var i = 0; i < elements.Length; i++)
     {
-      <li data-target="#@carouselId" data-slide-to="@i" class="@elements[i].Active"></li>
+        <li data-target="#@carouselId" data-slide-to="@i" class="@elements[i].Active"></li>
+        int height;
+        var field = elements[i].Item.IsDerived(Templates.HasMediaVideo.ID) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
+        if (int.TryParse(((ImageField)elements[i].Item.Fields[field]).Height, out height) && height > (carouselHeight ?? 0))
+        {
+            carouselHeight = height;
+        }
     }
   </ol>
 
@@ -32,7 +41,11 @@
           var style = "background-image: ";
           var field = element.Item.IsDerived(Templates.HasMediaVideo.ID) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
           style += element.Item.ImageUrl(field, new MediaUrlOptions()).ToCssUrlValue();
-        
+          var fixedHeight = Model.Rendering.IsFixedHeight();
+          if (fixedHeight && carouselHeight.HasValue)
+          {
+              style += "; height:" + carouselHeight + "px;";
+          }
         }
 
         <div class="jumbotron bg-media" style="@style">
