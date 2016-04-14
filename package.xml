@@ -107,20 +107,6 @@
       <Exclude />
       <Name>transforms</Name>
     </files>
-    <xfiles>
-      <Entries>
-        <x-item>/App_Config/Security/Domains.config</x-item>
-      </Entries>
-      <Converter>
-        <FileToEntryConverter>
-          <Root>/</Root>
-          <Transforms />
-        </FileToEntryConverter>
-      </Converter>
-      <Include />
-      <Exclude />
-      <Name>Domains config</Name>
-    </xfiles>
   </Sources>
   <Converter>
     <TrivialConverter>

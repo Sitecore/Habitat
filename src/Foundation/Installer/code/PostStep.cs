@@ -63,7 +63,10 @@
         var packageName = $"{metaData["PackageName"]}.zip";
         var installer = new Installer();
         var file = Installer.GetFilename(packageName);
-        installer.InstallSecurity(PathUtils.MapPath(file));
+        if (File.Exists(file))
+        {
+          installer.InstallSecurity(PathUtils.MapPath(file));
+        }
       }
     }
   }
