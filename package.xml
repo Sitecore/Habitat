@@ -69,8 +69,7 @@
       <Exclude />
       <Name>Habitat items</Name>
     </xitems>
-    <xfiles>
-      <Entries />
+    <files>
       <Converter>
         <FileToEntryConverter>
           <Root>/</Root>
@@ -86,18 +85,7 @@
           </Transforms>
         </FileToEntryConverter>
       </Converter>
-      <Include />
-      <Exclude />
-      <Name>DomainsConfig</Name>
-    </xfiles>
-    <files>
       <Root>/temp/transforms</Root>
-      <Converter>
-        <FileToEntryConverter>
-          <Root>/</Root>
-          <Transforms />
-        </FileToEntryConverter>
-      </Converter>
       <Include>
         <FileNameFilter>
           <Pattern />
@@ -119,6 +107,20 @@
       <Exclude />
       <Name>transforms</Name>
     </files>
+    <xfiles>
+      <Entries>
+        <x-item>/App_Config/Security/Domains.config</x-item>
+      </Entries>
+      <Converter>
+        <FileToEntryConverter>
+          <Root>/</Root>
+          <Transforms />
+        </FileToEntryConverter>
+      </Converter>
+      <Include />
+      <Exclude />
+      <Name>Domains config</Name>
+    </xfiles>
   </Sources>
   <Converter>
     <TrivialConverter>
