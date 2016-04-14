@@ -11,7 +11,6 @@
   {
     public void Run(ITaskOutput output, NameValueCollection metaData)
     {
-      Debugger.Break();
       var getPostStepActionList = metaData["Attributes"].Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries).Select(x=>x.Substring(x.IndexOf('=')+1));
 
       foreach (var postStepAction in getPostStepActionList)

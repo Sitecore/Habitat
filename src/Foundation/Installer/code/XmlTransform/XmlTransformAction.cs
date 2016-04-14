@@ -23,6 +23,10 @@
       this.transformProvider = transformsProvider;
     }
 
+    public XmlTransformAction():this(new XdtTransformEngine(), new FilePathResolver(), new TransformProvider())
+    {
+    }
+
     public void Run()
     {
       foreach (var transformsLayer in this.transformsOrder)

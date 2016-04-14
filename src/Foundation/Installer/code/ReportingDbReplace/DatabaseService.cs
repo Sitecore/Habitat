@@ -1,11 +1,13 @@
 ﻿namespace Sitecore.Foundation.Installer.ReportingDbReplace
 {
   using System;
+  using System.Collections.Specialized;
   using System.Data.SqlClient;
   using System.IO;
   using Microsoft.SqlServer.Management.Common;
   using Microsoft.SqlServer.Management.Smo;
   using Sitecore.Diagnostics;
+  using Sitecore.Mvc.Extensions;
 
   public class DatabaseService : IDatabaseService
   {
@@ -13,24 +15,18 @@
     {
       var connection = new SqlConnectionStringBuilder(connectionString);
       ServerConnection serverConnection = null;
+      Database database = null;
       try
       {
         serverConnection = new ServerConnection(new SqlConnection(connectionString));
         var server = new Server(serverConnection);
 
-        var database = server.Databases[connection.InitialCatalog];
-        var reportinPrimaryPath = database.PrimaryFilePath;
+        database = server.Databases[connection.InitialCatalog];
+        var reportingPrimaryPath = database.FileGroups[0].Files[0].FileName;
         
         server.KillAllProcesses(database.Name);
-        database.SetOffline();
-
-        File.Copy(dbReplacementPath, reportinPrimaryPath, true);
-        foreach (LogFile logFile in database.LogFiles)
-        {
-          logFile.Drop();
-        }
-
-        database.SetOnline();
+        server.DetachDatabase(connection.InitialCatalog, true);
+        server.AttachDatabase(database.Name,new StringCollection() {dbReplacementPath}, AttachOptions.RebuildLog);
       }
       catch (Exception ex)
       {
