@@ -10,7 +10,7 @@ using TechTalk.SpecFlow;
 
 namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
-  [Binding]
+  [Binding, Scope(Tag = "UI")]
   public class AccountStepsBase : StepsBase
   {
     public AccountLocators Site => new AccountLocators();

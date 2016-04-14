@@ -1,4 +1,5 @@
-﻿Feature: Compatible Renderings
+﻿@UI
+Feature: Compatible Renderings
 	As an editor 
 	I want to be able to switch between layouts 
 	So that I have flexibility in the layout of the pages

@@ -17,6 +17,7 @@ namespace Sitecore.Feature.Accounts.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class EditUserProfileFeature : Xunit.IClassFixture<EditUserProfileFeature.FixtureData>, System.IDisposable
     {
         
@@ -33,7 +34,8 @@ namespace Sitecore.Feature.Accounts.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Edit user profile", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Edit user profile", null, ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,7 +81,7 @@ namespace Sitecore.Feature.Accounts.Specflow
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC1_Open Edit Profile page", new string[] {
                         "Ready"});
-#line 5
+#line 6
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -90,15 +92,15 @@ this.ScenarioSetup(scenarioInfo);
                         "kov10@sitecore.net",
                         "k",
                         "k"});
-#line 6
+#line 7
  testRunner.Given("User with following data is registered in Habitat", ((string)(null)), table1, "Given ");
-#line 9
- testRunner.When("Actor selects User icon on Navigation bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.And("Actor clicks Edit details button on User form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Actor selects User icon on Navigation bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Then("Update your profile information title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("Actor clicks Edit details button on User form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
+ testRunner.Then("Update your profile information title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 13
  testRunner.And("Page URL ends on /Edit-Profile", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -112,7 +114,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC2_Update all fields_First time", new string[] {
                         "Ready"});
-#line 17
+#line 18
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -123,7 +125,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 18
+#line 19
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table2, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -132,9 +134,9 @@ this.ScenarioSetup(scenarioInfo);
             table3.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 21
+#line 22
  testRunner.And("User was Login to Habitat", ((string)(null)), table3, "And ");
-#line 24
+#line 25
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -145,11 +147,11 @@ this.ScenarioSetup(scenarioInfo);
                         "Teltov",
                         "Konstantin",
                         "+38(067)3333333"});
-#line 25
+#line 26
  testRunner.When("User inputs data in to the fields", ((string)(null)), table4, "When ");
-#line 28
- testRunner.And("User selects Swiming from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
+ testRunner.And("User selects Swiming from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -162,7 +164,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Konstantin",
                         "+38(067)3333333",
                         "Swiming"});
-#line 30
+#line 31
  testRunner.Then("Following User info presents for kov@sitecore.net in User Profile", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -176,7 +178,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC3_Update all fields_Change user info", new string[] {
                         "Ready"});
-#line 35
+#line 36
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -187,7 +189,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 36
+#line 37
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table6, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -196,7 +198,7 @@ this.ScenarioSetup(scenarioInfo);
             table7.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 39
+#line 40
  testRunner.And("User was Login to Habitat", ((string)(null)), table7, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -209,7 +211,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Konstantin",
                         "+38(067)3333333",
                         "Swiming"});
-#line 42
+#line 43
  testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table8, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -220,11 +222,11 @@ this.ScenarioSetup(scenarioInfo);
                         "Maximov",
                         "Stas",
                         "+38(067)8888888"});
-#line 45
+#line 46
  testRunner.When("User updates data in to the fields", ((string)(null)), table9, "When ");
-#line 48
- testRunner.And("User selects Skiing from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
+ testRunner.And("User selects Skiing from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -237,7 +239,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Stas",
                         "+38(067)8888888",
                         "Skiing"});
-#line 50
+#line 51
  testRunner.Then("Following User info presents for kov@sitecore.net in User Profile", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -251,7 +253,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC4_Update one of the fields_First time", new string[] {
                         "Ready"});
-#line 56
+#line 57
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -262,7 +264,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 57
+#line 58
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table11, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -271,9 +273,9 @@ this.ScenarioSetup(scenarioInfo);
             table12.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 60
+#line 61
  testRunner.And("User was Login to Habitat", ((string)(null)), table12, "And ");
-#line 63
+#line 64
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -286,16 +288,16 @@ this.ScenarioSetup(scenarioInfo);
                         "empty",
                         "empty",
                         "empty"});
-#line 64
+#line 65
  testRunner.And("All User profile fields are empty", ((string)(null)), table13, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "LastName"});
             table14.AddRow(new string[] {
                         "Teltov"});
-#line 67
+#line 68
  testRunner.When("User inputs data in to the fields", ((string)(null)), table14, "When ");
-#line 70
+#line 71
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -308,7 +310,7 @@ this.ScenarioSetup(scenarioInfo);
                         "@empty",
                         "@empty",
                         "@empty"});
-#line 71
+#line 72
  testRunner.Then("Following User info presents for kov@sitecore.net in User Profile", ((string)(null)), table15, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -322,7 +324,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC5_Update one of the fields_Change user info", new string[] {
                         "Ready"});
-#line 80
+#line 81
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -333,7 +335,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 81
+#line 82
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table16, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -342,7 +344,7 @@ this.ScenarioSetup(scenarioInfo);
             table17.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 84
+#line 85
  testRunner.And("User was Login to Habitat", ((string)(null)), table17, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -355,18 +357,18 @@ this.ScenarioSetup(scenarioInfo);
                         "Konstantin",
                         "+38(067)3333333",
                         "Swiming"});
-#line 87
+#line 88
  testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table18, "And ");
-#line 90
+#line 91
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "LastName"});
             table19.AddRow(new string[] {
                         "Maximov"});
-#line 91
+#line 92
  testRunner.When("User inputs data in to the fields", ((string)(null)), table19, "When ");
-#line 94
+#line 95
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -379,7 +381,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Konstantin",
                         "+38(067)3333333",
                         "Swiming"});
-#line 95
+#line 96
  testRunner.Then("Following User info presents for kov@sitecore.net in User Profile", ((string)(null)), table20, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -393,7 +395,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC6_Phone validation_Two plus symbols in the begining", new string[] {
                         "Ready"});
-#line 101
+#line 102
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -404,7 +406,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 102
+#line 103
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table21, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -413,25 +415,25 @@ this.ScenarioSetup(scenarioInfo);
             table22.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 105
+#line 106
  testRunner.And("User was Login to Habitat", ((string)(null)), table22, "And ");
-#line 108
+#line 109
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "PhoneNumber"});
             table23.AddRow(new string[] {
                         "++380673333333"});
-#line 109
+#line 110
  testRunner.When("User inputs data in to the fields", ((string)(null)), table23, "When ");
-#line 112
+#line 113
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "Error message"});
             table24.AddRow(new string[] {
                         "Phone number should contain only +, ( ) and digits"});
-#line 113
+#line 114
  testRunner.Then("System shows following error message for the Edit Profile", ((string)(null)), table24, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -445,7 +447,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC7_Phone validation_Brackets without number", new string[] {
                         "Ready"});
-#line 118
+#line 119
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
@@ -456,7 +458,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 119
+#line 120
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table25, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
@@ -465,25 +467,25 @@ this.ScenarioSetup(scenarioInfo);
             table26.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 122
+#line 123
  testRunner.And("User was Login to Habitat", ((string)(null)), table26, "And ");
-#line 125
+#line 126
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "PhoneNumber"});
             table27.AddRow(new string[] {
                         "+()380673333333"});
-#line 126
+#line 127
  testRunner.When("User inputs data in to the fields", ((string)(null)), table27, "When ");
-#line 129
+#line 130
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
                         "Error message"});
             table28.AddRow(new string[] {
                         "Phone number should contain only +, ( ) and digits"});
-#line 130
+#line 131
  testRunner.Then("System shows following error message for the Edit Profile", ((string)(null)), table28, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -497,7 +499,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC8_Phone validation_Digits in phone field", new string[] {
                         "Ready"});
-#line 136
+#line 137
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
@@ -508,7 +510,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 137
+#line 138
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table29, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -517,25 +519,25 @@ this.ScenarioSetup(scenarioInfo);
             table30.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 140
+#line 141
  testRunner.And("User was Login to Habitat", ((string)(null)), table30, "And ");
-#line 143
+#line 144
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "PhoneNumber"});
             table31.AddRow(new string[] {
                         "+38067Kostia"});
-#line 144
+#line 145
  testRunner.When("User inputs data in to the fields", ((string)(null)), table31, "When ");
-#line 147
+#line 148
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "Error message"});
             table32.AddRow(new string[] {
                         "Phone number should contain only +, ( ) and digits"});
-#line 148
+#line 149
  testRunner.Then("System shows following error message for the Edit Profile", ((string)(null)), table32, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -551,7 +553,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC9_Phone validation_Phone number lenght should be less" +
                     " than 20", new string[] {
                         "Ready"});
-#line 154
+#line 155
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
@@ -562,7 +564,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 155
+#line 156
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table33, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
@@ -571,25 +573,25 @@ this.ScenarioSetup(scenarioInfo);
             table34.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 158
+#line 159
  testRunner.And("User was Login to Habitat", ((string)(null)), table34, "And ");
-#line 161
+#line 162
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "PhoneNumber"});
             table35.AddRow(new string[] {
                         "+38067333333333333331"});
-#line 162
+#line 163
  testRunner.When("User inputs data in to the fields", ((string)(null)), table35, "When ");
-#line 165
+#line 166
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table36 = new TechTalk.SpecFlow.Table(new string[] {
                         "Error message"});
             table36.AddRow(new string[] {
                         "Phone number lenght should be less than 20"});
-#line 166
+#line 167
  testRunner.Then("System shows following error message for the Edit Profile", ((string)(null)), table36, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -603,7 +605,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account_Edit user profile_UC10_Empty user profile is saved", new string[] {
                         "Ready"});
-#line 172
+#line 173
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table37 = new TechTalk.SpecFlow.Table(new string[] {
@@ -614,7 +616,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 173
+#line 174
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table37, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table38 = new TechTalk.SpecFlow.Table(new string[] {
@@ -623,9 +625,9 @@ this.ScenarioSetup(scenarioInfo);
             table38.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 176
+#line 177
  testRunner.And("User was Login to Habitat", ((string)(null)), table38, "And ");
-#line 179
+#line 180
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table39 = new TechTalk.SpecFlow.Table(new string[] {
@@ -638,9 +640,9 @@ this.ScenarioSetup(scenarioInfo);
                         "empty",
                         "empty",
                         "empty"});
-#line 180
+#line 181
  testRunner.And("All User profile fields are empty", ((string)(null)), table39, "And ");
-#line 183
+#line 184
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table40 = new TechTalk.SpecFlow.Table(new string[] {
@@ -653,7 +655,7 @@ this.ScenarioSetup(scenarioInfo);
                         "@empty",
                         "@empty",
                         "@empty"});
-#line 184
+#line 185
  testRunner.Then("Following User info presents for kov@sitecore.net in User Profile", ((string)(null)), table40, "Then ");
 #line hidden
             this.ScenarioCleanup();

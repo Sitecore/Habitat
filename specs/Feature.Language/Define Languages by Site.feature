@@ -1,4 +1,5 @@
-﻿Feature: Define Languages by Site
+﻿@UI
+Feature: Define Languages by Site
 
 	As an editor 
 	I want to be able to define the supported languages on a per site basis 

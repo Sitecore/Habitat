@@ -1,4 +1,5 @@
-﻿Feature: Handle invalid or null datasources
+﻿@UI
+Feature: Handle invalid or null datasources
 	
 
 @NeedImplementation

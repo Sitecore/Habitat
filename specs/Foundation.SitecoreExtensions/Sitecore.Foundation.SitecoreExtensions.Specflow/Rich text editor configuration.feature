@@ -1,4 +1,5 @@
-﻿Feature: Rich text editor configuration
+﻿@UI
+Feature: Rich text editor configuration
 	
 
 @NeedImplementation

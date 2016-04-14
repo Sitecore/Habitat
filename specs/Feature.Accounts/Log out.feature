@@ -1,4 +1,5 @@
-﻿Feature: Log out
+﻿@UI
+Feature: Log out
 	
 
 @Ready 

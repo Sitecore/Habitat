@@ -1,4 +1,5 @@
-﻿Feature: Person_Employee List
+﻿@UI
+Feature: Person_Employee List
 	
 
 @NeedImplementation

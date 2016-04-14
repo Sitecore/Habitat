@@ -19,11 +19,12 @@
       Thread.Sleep(3000);
     }
 
-    [BeforeFeature]
+    [BeforeFeature("UI")] 
     public static void Setup()
     {
       FeatureContext.Current.Set((IWebDriver)new FirefoxDriver()); ;
     }
+    
     [AfterScenario]
     public void Cleanup()
     {
@@ -48,6 +49,13 @@
       {
         var fieldPayload = payload.GetPayload<EditFieldPayload>();
         ContextExtensions.UtfService.EditItem(fieldPayload.ItemIdOrPath, fieldPayload.FieldName, fieldPayload.FieldValue, BaseSettings.UserName, BaseSettings.Password, fieldPayload.Database);
+        return;
+      }
+
+      if (payload.ActionType == ActionType.DeleteItem)
+      {
+        var fieldPayload = payload.GetPayload<EditFieldPayload>();
+        ContextExtensions.UtfService.DeleteItem(fieldPayload.ItemIdOrPath, fieldPayload.Database, false);
         return;
       }
 

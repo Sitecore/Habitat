@@ -1,4 +1,5 @@
-﻿Feature: Media Background
+﻿@UI
+Feature: Media Background
 
 	
 

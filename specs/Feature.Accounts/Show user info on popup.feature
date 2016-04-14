@@ -1,4 +1,5 @@
-﻿Feature: Show user info on popup
+﻿@UI
+Feature: Show user info on popup
 	
 @Ready
 Scenario: Account_Show user info on popup_UC1_Only email is shown 

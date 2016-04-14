@@ -1,4 +1,5 @@
-﻿Feature: Maps
+﻿@UI
+Feature: Maps
 	
 
 @NeedImplementation

@@ -17,6 +17,7 @@ namespace Sitecore.Feature.Accounts.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class PageAfterLoginFeature : Xunit.IClassFixture<PageAfterLoginFeature.FixtureData>, System.IDisposable
     {
         
@@ -33,7 +34,8 @@ namespace Sitecore.Feature.Accounts.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Page after login", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Page after login", null, ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,7 +81,7 @@ namespace Sitecore.Feature.Accounts.Specflow
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Page after login_UC1_Define custom page", new string[] {
                         "Ready"});
-#line 5
+#line 6
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -90,7 +92,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 6
+#line 7
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -101,9 +103,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
                         "/sitecore/content/Habitat/Home/Modules/Feature/Demo"});
-#line 9
+#line 10
  testRunner.And("Value set to item field", ((string)(null)), table2, "And ");
-#line 12
+#line 13
  testRunner.When("Actor opens Habitat website on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -112,13 +114,13 @@ this.ScenarioSetup(scenarioInfo);
             table3.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 13
+#line 14
  testRunner.And("Actor enteres following data into Login page fields", ((string)(null)), table3, "And ");
-#line 16
- testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 17
- testRunner.Then("Page URL ends on /Demo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
+ testRunner.Then("Page URL ends on /Demo", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
  testRunner.And("Demo title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -132,7 +134,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Page after login_UC2_Define custom page_defined page does not exists", new string[] {
                         "Ready"});
-#line 23
+#line 24
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -143,7 +145,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 24
+#line 25
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table4, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -154,9 +156,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
                         "/sitecore/content/Habitat/Home/KOV"});
-#line 27
+#line 28
  testRunner.And("Value set to item field", ((string)(null)), table5, "And ");
-#line 30
+#line 31
  testRunner.And("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -165,13 +167,13 @@ this.ScenarioSetup(scenarioInfo);
             table6.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 31
+#line 32
  testRunner.When("Actor enteres following data into Login page fields", ((string)(null)), table6, "When ");
-#line 34
- testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.Then("Page URL not ends on /KOV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
+ testRunner.Then("Page URL not ends on /KOV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 37
  testRunner.And("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -185,7 +187,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Page after login_UC3_Define custom page_empty value", new string[] {
                         "Ready"});
-#line 39
+#line 40
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -196,7 +198,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 40
+#line 41
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table7, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -207,9 +209,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
                         ""});
-#line 43
+#line 44
  testRunner.And("Value set to item field", ((string)(null)), table8, "And ");
-#line 46
+#line 47
  testRunner.And("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -218,11 +220,11 @@ this.ScenarioSetup(scenarioInfo);
             table9.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 47
+#line 48
  testRunner.When("Actor enteres following data into Login page fields", ((string)(null)), table9, "When ");
-#line 50
- testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
+ testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
  testRunner.Then("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -236,7 +238,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Page after login_UC4_After login page for new registered user", new string[] {
                         "Ready"});
-#line 55
+#line 56
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -247,9 +249,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
                         "/sitecore/content/Habitat/Home/Modules/Feature/News"});
-#line 56
+#line 57
  testRunner.Given("Value set to item field", ((string)(null)), table10, "Given ");
-#line 59
+#line 60
  testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -260,13 +262,13 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 60
+#line 61
  testRunner.When("Actor enters following data in to the register fields", ((string)(null)), table11, "When ");
-#line 63
- testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
- testRunner.Then("Page URL ends on /News", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
+ testRunner.Then("Page URL ends on /News", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 66
  testRunner.And("News title presents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -280,7 +282,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Page after login_UC5_Login pop up returns user to default page", new string[] {
                         "Ready"});
-#line 69
+#line 70
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
@@ -291,7 +293,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
                         "/sitecore/content/Habitat/Home/Register"});
-#line 70
+#line 71
  testRunner.Given("Value set to item field", ((string)(null)), table12, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -302,9 +304,9 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 73
+#line 74
  testRunner.And("User is registered in Habitat and logged out", ((string)(null)), table13, "And ");
-#line 76
+#line 77
  testRunner.And("Actor selects User icon on Navigation bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -313,11 +315,11 @@ this.ScenarioSetup(scenarioInfo);
             table14.AddRow(new string[] {
                         "kov@sitecore.net",
                         "k"});
-#line 77
+#line 78
  testRunner.When("Actor enteres following data into Login form fields", ((string)(null)), table14, "When ");
-#line 80
- testRunner.And("Actor clicks Login button on User form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 81
+ testRunner.And("Actor clicks Login button on User form", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
  testRunner.Then("Habitat Main page presents", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -331,7 +333,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Page after login_UC6_Double redirect logic for Register page", new string[] {
                         "Ready"});
-#line 84
+#line 85
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -342,7 +344,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 85
+#line 86
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table15, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -353,9 +355,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
                         "/sitecore/content/Habitat/Home/Register"});
-#line 88
+#line 89
  testRunner.And("Value set to item field", ((string)(null)), table16, "And ");
-#line 91
+#line 92
  testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
@@ -366,11 +368,11 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 92
+#line 93
  testRunner.When("Actor enters following data in to the register fields", ((string)(null)), table17, "When ");
-#line 95
- testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 96
+ testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
  testRunner.Then("Habitat website is opened on Main Page /en", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -384,7 +386,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Page after login_UC7_Double redirect logic for Accounts page", new string[] {
                         "Ready"});
-#line 100
+#line 101
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -395,7 +397,7 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 101
+#line 102
  testRunner.Given("User is registered in Habitat and logged out", ((string)(null)), table18, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -406,9 +408,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/Sitecore/Content/Habitat",
                         "AfterLoginPage",
                         "/sitecore/content/Habitat/Home/Modules/Feature/Accounts"});
-#line 104
+#line 105
  testRunner.And("Value set to item field", ((string)(null)), table19, "And ");
-#line 107
+#line 108
  testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
@@ -419,11 +421,11 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 108
+#line 109
  testRunner.When("Actor enters following data in to the register fields", ((string)(null)), table20, "When ");
-#line 111
- testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 112
+ testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 113
  testRunner.Then("Habitat website is opened on Main Page /en", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

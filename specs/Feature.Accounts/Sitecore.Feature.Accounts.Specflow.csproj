@@ -160,6 +160,7 @@
     <Compile Include="Settings.cs" />
     <Compile Include="Steps\EditUserProfile.cs" />
     <Compile Include="Infrastructure\SearchEntity.cs" />
+    <Compile Include="Steps\RolesSteps.cs" />
     <Compile Include="Steps\SiteNavigationSteps.cs" />
     <Compile Include="Steps\AccountStepsBase.cs" />
     <Compile Include="Steps\ExperienceProfileSteps.cs" />
@@ -193,7 +194,7 @@
     </None>
     <None Include="Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Login1.feature.cs</LastGenOutput>
+      <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
     <None Include="Page after login.feature">

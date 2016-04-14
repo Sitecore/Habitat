@@ -1,4 +1,5 @@
-﻿Feature: Register goals on login and registration
+﻿@UI
+Feature: Register goals on login and registration
 	
 
 @NeedUpdateStepWithRemovingDataFromAnalytic

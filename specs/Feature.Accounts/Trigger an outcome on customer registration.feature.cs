@@ -17,6 +17,7 @@ namespace Sitecore.Feature.Accounts.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class TriggerAnOutcomeOnCustomerRegistrationFeature : Xunit.IClassFixture<TriggerAnOutcomeOnCustomerRegistrationFeature.FixtureData>, System.IDisposable
     {
         
@@ -33,7 +34,8 @@ namespace Sitecore.Feature.Accounts.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Trigger an outcome on customer registration", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Trigger an outcome on customer registration", null, ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,7 +81,7 @@ namespace Sitecore.Feature.Accounts.Specflow
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trigger an outcome on customer registration_UC1_Empty registration outcome", new string[] {
                         "NeedUpdateStepWithRemovingDataFromAnalytic"});
-#line 5
+#line 6
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -90,9 +92,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat",
                         "RegisterOutcome",
                         ""});
-#line 6
+#line 7
  testRunner.Given("Value set to item field", ((string)(null)), table1, "Given ");
-#line 9
+#line 10
  testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -103,11 +105,11 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 10
+#line 11
  testRunner.When("Actor enters following data in to the register fields", ((string)(null)), table2, "When ");
-#line 13
- testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
+ testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
  testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -116,7 +118,7 @@ this.ScenarioSetup(scenarioInfo);
             table3.AddRow(new string[] {
                         "kov@sitecore.net",
                         ""});
-#line 15
+#line 16
  testRunner.Then("User Outcome contains value", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -130,7 +132,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Trigger an outcome on customer registration_UC2_Custom registration outcome", new string[] {
                         "NeedUpdateStepWithRemovingDataFromAnalytic"});
-#line 22
+#line 23
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -141,9 +143,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat",
                         "RegisterOutcome",
                         "Outcomes/Sales Lead"});
-#line 23
+#line 24
  testRunner.Given("Outcome set to item field", ((string)(null)), table4, "Given ");
-#line 26
+#line 27
  testRunner.And("Habitat website is opened on Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -154,13 +156,13 @@ this.ScenarioSetup(scenarioInfo);
                         "kov@sitecore.net",
                         "k",
                         "k"});
-#line 27
+#line 28
  testRunner.When("Actor enters following data in to the register fields", ((string)(null)), table5, "When ");
-#line 30
- testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor clicks Register button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 32
+ testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
  testRunner.And("Wating for timeout 30 s", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -169,7 +171,7 @@ this.ScenarioSetup(scenarioInfo);
             table6.AddRow(new string[] {
                         "kov@sitecore.net",
                         "Sales Lead"});
-#line 33
+#line 34
  testRunner.Then("User Outcome contains value", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();

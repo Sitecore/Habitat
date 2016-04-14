@@ -1,4 +1,5 @@
-﻿Feature: Trigger an outcome on customer registration
+﻿@UI
+Feature: Trigger an outcome on customer registration
 	
 
 @NeedUpdateStepWithRemovingDataFromAnalytic

@@ -1,4 +1,5 @@
-﻿Feature: Page Image
+﻿@UI
+Feature: Page Image
 	 
 @NeedImplementation
 Scenario: Page Image_UC1_Make sure Page Image control available for PH col-narrow in Experience Editor

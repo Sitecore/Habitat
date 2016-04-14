@@ -17,6 +17,7 @@ namespace Sitecore.Feature.Maps
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class MapsFeature : Xunit.IClassFixture<MapsFeature.FixtureData>, System.IDisposable
     {
         
@@ -33,7 +34,8 @@ namespace Sitecore.Feature.Maps
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Maps", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Maps", null, ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,7 +81,7 @@ namespace Sitecore.Feature.Maps
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Maps_UC1_Add new map", new string[] {
                         "NeedImplementation"});
-#line 5
+#line 6
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -90,7 +92,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Global/Map Points",
                         "067EC866-B3FB-485B-BB49-6151FB086E78",
                         "Custom Maps"});
-#line 6
+#line 7
  testRunner.Given("New item was created", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -111,7 +113,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Wembley",
                         "London, GB",
                         "51.550501,-0.3048409000000447"});
-#line 9
+#line 10
  testRunner.And("New item was created", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -122,9 +124,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/Modules/Feature/Maps",
                         "Map",
                         "/sitecore/content/Habitat/Global/Map Points"});
-#line 13
+#line 14
  testRunner.When("User defines final layout on page", ((string)(null)), table3, "When ");
-#line 16
+#line 17
  testRunner.Then("Custom Maps present on Maps page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

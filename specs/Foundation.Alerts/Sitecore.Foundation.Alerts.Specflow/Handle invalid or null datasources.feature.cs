@@ -17,6 +17,7 @@ namespace Sitecore.Foundation.Alerts.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class HandleInvalidOrNullDatasourcesFeature : Xunit.IClassFixture<HandleInvalidOrNullDatasourcesFeature.FixtureData>, System.IDisposable
     {
         
@@ -33,7 +34,8 @@ namespace Sitecore.Foundation.Alerts.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Handle invalid or null datasources", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Handle invalid or null datasources", null, ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,7 +81,7 @@ namespace Sitecore.Foundation.Alerts.Specflow
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Handle invalid or null datasources_UC1_Experince editor view_Invalid datasource", new string[] {
                         "NeedImplementation"});
-#line 5
+#line 6
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -90,9 +92,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home",
                         "Carousel",
                         "Leeds United"});
-#line 6
+#line 7
  testRunner.Given("Datasource is defined for the Control", ((string)(null)), table1, "Given ");
-#line 9
+#line 10
  testRunner.When("Habitat website is opened on Main Page in Edit mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -100,7 +102,7 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "Data source isn\'t set or have wrong template. Template {AE4635AF-CFBF-4BF6-9B50-0" +
                             "0BE23A910C0} is required"});
-#line 10
+#line 11
  testRunner.Then("Alert message is shown for item", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -114,7 +116,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Handle invalid or null datasources_UC2_Normal mode_Invalid datasource", new string[] {
                         "NeedImplementation"});
-#line 17
+#line 18
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -125,11 +127,11 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home",
                         "Carousel",
                         "Leeds United"});
-#line 18
+#line 19
  testRunner.Given("Datasource is defined for the Control", ((string)(null)), table3, "Given ");
-#line 21
- testRunner.When("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 22
+ testRunner.When("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
  testRunner.Then("Item element absents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -143,7 +145,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Handle invalid or null datasources_UC3_Experince editor view_null datasource", new string[] {
                         "NeedImplementation"});
-#line 26
+#line 27
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -154,9 +156,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home",
                         "Carousel",
                         ""});
-#line 27
+#line 28
  testRunner.Given("Datasource is defined for the Control", ((string)(null)), table4, "Given ");
-#line 30
+#line 31
  testRunner.When("Habitat website is opened on Main Page in Edit mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -164,7 +166,7 @@ this.ScenarioSetup(scenarioInfo);
             table5.AddRow(new string[] {
                         "Data source isn\'t set or have wrong template. Template {AE4635AF-CFBF-4BF6-9B50-0" +
                             "0BE23A910C0} is required"});
-#line 31
+#line 32
  testRunner.Then("Alert message is shown for item", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -178,7 +180,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Handle invalid or null datasources_UC4_Normal mode_null datasource", new string[] {
                         "NeedImplementation"});
-#line 38
+#line 39
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -189,11 +191,11 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home",
                         "Carousel",
                         ""});
-#line 39
+#line 40
  testRunner.Given("Datasource is defined for the Control", ((string)(null)), table6, "Given ");
-#line 42
- testRunner.When("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 43
+ testRunner.When("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 44
  testRunner.Then("Item element absents on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

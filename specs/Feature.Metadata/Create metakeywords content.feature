@@ -1,4 +1,5 @@
-﻿Feature: Create metakeywords content
+﻿@UI
+Feature: Create metakeywords content
 
 	As an editor 
 	I want to easily select meta keywords 

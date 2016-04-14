@@ -17,6 +17,7 @@ namespace Sitecore.Foundation.MultiSite.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class GettingASiteContextItemFeature : Xunit.IClassFixture<GettingASiteContextItemFeature.FixtureData>, System.IDisposable
     {
         
@@ -33,7 +34,8 @@ namespace Sitecore.Foundation.MultiSite.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Getting a Site Context Item", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Getting a Site Context Item", null, ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,7 +81,7 @@ namespace Sitecore.Foundation.MultiSite.Specflow
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC1_Define custom rendering_Verify item name created", new string[] {
                         "NeedImplementation"});
-#line 5
+#line 6
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -94,11 +96,11 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/layout/Renderings/Feature/Social/TwitterFeed",
                         "Datasource Template",
                         ""});
-#line 6
+#line 7
  testRunner.Given("Value set to item field", ((string)(null)), table1, "Given ");
-#line 10
- testRunner.When("Setting item with Setting template was inserted under /sitecore/content/Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
+ testRunner.When("Setting item with Setting template was inserted under /sitecore/content/Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
  testRunner.And("RenderingSettings item based on Template {C82DC5FF-09EF-4403-96D3-3CAF377B8C5B} w" +
                     "as inserted under /sitecore/content/Habitat/Settings/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -106,7 +108,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Item Name"});
             table2.AddRow(new string[] {
                         "twitter"});
-#line 12
+#line 13
  testRunner.Then("Following items present under /sitecore/content/Habitat/Settings", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -122,7 +124,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC2_Define custom rendering_List of the available cus" +
                     "tom items", new string[] {
                         "NeedImplementation"});
-#line 17
+#line 18
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -137,11 +139,11 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/layout/Renderings/Feature/Social/TwitterFeed",
                         "Datasource Template",
                         ""});
-#line 18
+#line 19
  testRunner.Given("Value set to item field", ((string)(null)), table3, "Given ");
-#line 22
- testRunner.When("Setting item with Setting template was inserted under /sitecore/content/Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
+ testRunner.When("Setting item with Setting template was inserted under /sitecore/content/Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
  testRunner.And("RenderingSettings item based on Template {C82DC5FF-09EF-4403-96D3-3CAF377B8C5B} w" +
                     "as inserted under /sitecore/content/Habitat/Settings/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -157,16 +159,16 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Settings/twitter",
                         "DatasourceTemplate",
                         "/sitecore/templates/Project/Common/Content Types/Social/Twitter Feed"});
-#line 24
+#line 25
  testRunner.And("Value set to item field", ((string)(null)), table4, "And ");
-#line 28
+#line 29
  testRunner.And("Twitter Feed item <CustomTwitter> with Twitter Feed template was inserted under /" +
                     "sitecore/content/Habitat/Global/Social/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 29
- testRunner.And("User opens Experience Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.And("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User opens Experience Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
+ testRunner.And("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
  testRunner.And("User clicks <Associate a content item with this component.> button on <scChromeTo" +
                     "olbar undefined>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -176,7 +178,7 @@ this.ScenarioSetup(scenarioInfo);
                         "sitecorehabitat"});
             table5.AddRow(new string[] {
                         "CustomTwitter"});
-#line 32
+#line 33
  testRunner.Then("Following items present in tree", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -190,7 +192,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC3_Define custom rendering_Apply custom item", new string[] {
                         "NeedImplementation"});
-#line 39
+#line 40
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -205,11 +207,11 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/layout/Renderings/Feature/Social/TwitterFeed",
                         "Datasource Template",
                         ""});
-#line 40
+#line 41
  testRunner.Given("Value set to item field", ((string)(null)), table6, "Given ");
-#line 44
- testRunner.When("Setting item with Setting template was inserted under /sitecore/content/Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 45
+ testRunner.When("Setting item with Setting template was inserted under /sitecore/content/Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 46
  testRunner.And("RenderingSettings item based on Template {C82DC5FF-09EF-4403-96D3-3CAF377B8C5B} w" +
                     "as inserted under /sitecore/content/Habitat/Settings/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -225,22 +227,22 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Settings/twitter",
                         "DatasourceTemplate",
                         "/sitecore/templates/Project/Common/Content Types/Social/Twitter Feed"});
-#line 46
+#line 47
  testRunner.And("Value set to item field", ((string)(null)), table7, "And ");
-#line 50
+#line 51
  testRunner.And("Twitter Feed item <CustomTwitter> with Twitter Feed template was inserted under /" +
                     "sitecore/content/Habitat/Global/Social/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
- testRunner.And("User opens Experience Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
- testRunner.And("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User opens Experience Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53
+ testRunner.And("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 54
  testRunner.And("User clicks <Associate a content item with this component.> button on <scChromeTo" +
                     "olbar undefined>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 54
+#line 55
  testRunner.And("User clicks on <CustomTwitter> item and presses OK button on Select the Associate" +
                     "d Content popup", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 55
+#line 56
  testRunner.Then("<Tweets by @CustomTwitter> text presents on Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -256,7 +258,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC4_Define custom rendering_Item is not available on " +
                     "another site", new string[] {
                         "NeedImplementation"});
-#line 59
+#line 60
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -271,11 +273,11 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/layout/Renderings/Feature/Social/TwitterFeed",
                         "Datasource Template",
                         ""});
-#line 60
+#line 61
  testRunner.Given("Value set to item field", ((string)(null)), table8, "Given ");
-#line 64
- testRunner.When("Setting item with Setting template was inserted under /sitecore/content/Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 65
+ testRunner.When("Setting item with Setting template was inserted under /sitecore/content/Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 66
  testRunner.And("RenderingSettings item based on Template {C82DC5FF-09EF-4403-96D3-3CAF377B8C5B} w" +
                     "as inserted under /sitecore/content/Habitat/Settings/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -291,20 +293,20 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Settings/twitter",
                         "DatasourceTemplate",
                         "/sitecore/templates/Project/Common/Content Types/Social/Twitter Feed"});
-#line 66
+#line 67
  testRunner.And("Value set to item field", ((string)(null)), table9, "And ");
-#line 70
+#line 71
  testRunner.And("Twitter Feed item <CustomTwitter> with Twitter Feed template was inserted under /" +
                     "sitecore/content/Habitat/Global/Social/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 71
- testRunner.And("User copies Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 72
- testRunner.And("User removes Settings under Copy of Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User copies Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 73
- testRunner.And("User opens Experience Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User removes Settings under Copy of Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
- testRunner.And("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User opens Experience Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
+ testRunner.And("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
  testRunner.And("User clicks <Associate a content item with this component.> button on <scChromeTo" +
                     "olbar undefined>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -312,7 +314,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Item name"});
             table10.AddRow(new string[] {
                         "sitecorehabitat"});
-#line 76
+#line 77
  testRunner.Then("Following items present in tree", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -328,7 +330,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC5_Define sitecore rendering_List of the available r" +
                     "endering items", new string[] {
                         "NeedImplementation"});
-#line 83
+#line 84
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -343,13 +345,13 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/layout/Renderings/Feature/Social/TwitterFeed",
                         "Datasource Template",
                         "{89D988BC-A9A7-43F5-A9FD-A05B0B164720}"});
-#line 84
+#line 85
  testRunner.Given("Value set to item field", ((string)(null)), table11, "Given ");
-#line 88
- testRunner.When("User opens Experience Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 89
- testRunner.And("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User opens Experience Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 90
+ testRunner.And("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 91
  testRunner.And("User clicks <Associate a content item with this component.> button on <scChromeTo" +
                     "olbar undefined>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -357,7 +359,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Item name"});
             table12.AddRow(new string[] {
                         "sitecorehabitat"});
-#line 91
+#line 92
  testRunner.Then("Following items present in tree", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -373,7 +375,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Getting a Site Context Item_UC6_Define sitecore rendering_Datacource settings emp" +
                     "ty", new string[] {
                         "NeedImplementation"});
-#line 97
+#line 98
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
@@ -388,18 +390,18 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/layout/Renderings/Feature/Social/TwitterFeed",
                         "Datasource Template",
                         "{89D988BC-A9A7-43F5-A9FD-A05B0B164720}"});
-#line 98
+#line 99
  testRunner.Given("Value set to item field", ((string)(null)), table13, "Given ");
-#line 102
- testRunner.When("Setting item with Setting template was inserted under /sitecore/content/Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 103
+ testRunner.When("Setting item with Setting template was inserted under /sitecore/content/Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 104
  testRunner.And("User presses RendringSettings under /sitecore/content/Habitat/Settings", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item path"});
             table14.AddRow(new string[] {
                         "App Center Sync/Feature/Social"});
-#line 104
+#line 105
  testRunner.Then("There is no item under following path", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();

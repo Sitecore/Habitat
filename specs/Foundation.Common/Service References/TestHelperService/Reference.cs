@@ -15,6 +15,13 @@ namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", ItemName="string")]
+    [System.SerializableAttribute()]
+    public class ArrayOfString : System.Collections.Generic.List<string> {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SerializableKeyValuePairOfStringString", Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
     [System.SerializableAttribute()]
     public partial class SerializableKeyValuePairOfStringString : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -72,13 +79,6 @@ namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", ItemName="string")]
-    [System.SerializableAttribute()]
-    public class ArrayOfString : System.Collections.Generic.List<string> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -211,6 +211,34 @@ namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser", ReplyAction="*")]
         System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserResponse> CreateUserAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequest request);
+        
+        // CODEGEN: Generating message contract since element name userName from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/SetRoleForUser", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserResponse SetRoleForUser(Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/SetRoleForUser", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserResponse> SetRoleForUserAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequest request);
+        
+        // CODEGEN: Generating message contract since element name userName from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetRolesForUser", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserResponse GetRolesForUser(Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetRolesForUser", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserResponse> GetRolesForUserAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserRequest request);
+        
+        // CODEGEN: Generating message contract since element name GetAllRolesResult from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetAllRoles", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesResponse GetAllRoles(Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetAllRoles", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesResponse> GetAllRolesAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesRequest request);
+        
+        // CODEGEN: Generating message contract since element name database from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetFieldSecurityRight", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightResponse GetFieldSecurityRight(Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetFieldSecurityRight", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightResponse> GetFieldSecurityRightAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetUserProperties", ReplyAction="*")]
@@ -371,6 +399,291 @@ namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
         
         public CreateUserResponseBody(bool CreateUserResult) {
             this.CreateUserResult = CreateUserResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SetRoleForUserRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SetRoleForUser", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequestBody Body;
+        
+        public SetRoleForUserRequest() {
+        }
+        
+        public SetRoleForUserRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class SetRoleForUserRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string userName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string roleName;
+        
+        public SetRoleForUserRequestBody() {
+        }
+        
+        public SetRoleForUserRequestBody(string userName, string roleName) {
+            this.userName = userName;
+            this.roleName = roleName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SetRoleForUserResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SetRoleForUserResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserResponseBody Body;
+        
+        public SetRoleForUserResponse() {
+        }
+        
+        public SetRoleForUserResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class SetRoleForUserResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool SetRoleForUserResult;
+        
+        public SetRoleForUserResponseBody() {
+        }
+        
+        public SetRoleForUserResponseBody(bool SetRoleForUserResult) {
+            this.SetRoleForUserResult = SetRoleForUserResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetRolesForUserRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRolesForUser", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserRequestBody Body;
+        
+        public GetRolesForUserRequest() {
+        }
+        
+        public GetRolesForUserRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetRolesForUserRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string userName;
+        
+        public GetRolesForUserRequestBody() {
+        }
+        
+        public GetRolesForUserRequestBody(string userName) {
+            this.userName = userName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetRolesForUserResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRolesForUserResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserResponseBody Body;
+        
+        public GetRolesForUserResponse() {
+        }
+        
+        public GetRolesForUserResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetRolesForUserResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.ArrayOfString GetRolesForUserResult;
+        
+        public GetRolesForUserResponseBody() {
+        }
+        
+        public GetRolesForUserResponseBody(Sitecore.Foundation.Common.Specflow.TestHelperService.ArrayOfString GetRolesForUserResult) {
+            this.GetRolesForUserResult = GetRolesForUserResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllRolesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllRoles", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesRequestBody Body;
+        
+        public GetAllRolesRequest() {
+        }
+        
+        public GetAllRolesRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllRolesRequestBody {
+        
+        public GetAllRolesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllRolesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllRolesResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesResponseBody Body;
+        
+        public GetAllRolesResponse() {
+        }
+        
+        public GetAllRolesResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetAllRolesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.ArrayOfString GetAllRolesResult;
+        
+        public GetAllRolesResponseBody() {
+        }
+        
+        public GetAllRolesResponseBody(Sitecore.Foundation.Common.Specflow.TestHelperService.ArrayOfString GetAllRolesResult) {
+            this.GetAllRolesResult = GetAllRolesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetFieldSecurityRightRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetFieldSecurityRight", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequestBody Body;
+        
+        public GetFieldSecurityRightRequest() {
+        }
+        
+        public GetFieldSecurityRightRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetFieldSecurityRightRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string database;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string itemIdOrPath;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string fieldId;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string userName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string right;
+        
+        public GetFieldSecurityRightRequestBody() {
+        }
+        
+        public GetFieldSecurityRightRequestBody(string database, string itemIdOrPath, string fieldId, string userName, string right) {
+            this.database = database;
+            this.itemIdOrPath = itemIdOrPath;
+            this.fieldId = fieldId;
+            this.userName = userName;
+            this.right = right;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetFieldSecurityRightResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetFieldSecurityRightResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightResponseBody Body;
+        
+        public GetFieldSecurityRightResponse() {
+        }
+        
+        public GetFieldSecurityRightResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetFieldSecurityRightResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public object GetFieldSecurityRightResult;
+        
+        public GetFieldSecurityRightResponseBody() {
+        }
+        
+        public GetFieldSecurityRightResponseBody(object GetFieldSecurityRightResult) {
+            this.GetFieldSecurityRightResult = GetFieldSecurityRightResult;
         }
     }
     
@@ -1203,6 +1516,114 @@ namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).CreateUserAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.SetRoleForUser(Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequest request) {
+            return base.Channel.SetRoleForUser(request);
+        }
+        
+        public bool SetRoleForUser(string userName, string roleName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequestBody();
+            inValue.Body.userName = userName;
+            inValue.Body.roleName = roleName;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).SetRoleForUser(inValue);
+            return retVal.Body.SetRoleForUserResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.SetRoleForUserAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequest request) {
+            return base.Channel.SetRoleForUserAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserResponse> SetRoleForUserAsync(string userName, string roleName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequestBody();
+            inValue.Body.userName = userName;
+            inValue.Body.roleName = roleName;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).SetRoleForUserAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetRolesForUser(Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserRequest request) {
+            return base.Channel.GetRolesForUser(request);
+        }
+        
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.ArrayOfString GetRolesForUser(string userName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserRequestBody();
+            inValue.Body.userName = userName;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetRolesForUser(inValue);
+            return retVal.Body.GetRolesForUserResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetRolesForUserAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserRequest request) {
+            return base.Channel.GetRolesForUserAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserResponse> GetRolesForUserAsync(string userName) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserRequestBody();
+            inValue.Body.userName = userName;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetRolesForUserAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetAllRoles(Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesRequest request) {
+            return base.Channel.GetAllRoles(request);
+        }
+        
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.ArrayOfString GetAllRoles() {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesRequestBody();
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetAllRoles(inValue);
+            return retVal.Body.GetAllRolesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetAllRolesAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesRequest request) {
+            return base.Channel.GetAllRolesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesResponse> GetAllRolesAsync() {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesRequestBody();
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetAllRolesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetFieldSecurityRight(Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequest request) {
+            return base.Channel.GetFieldSecurityRight(request);
+        }
+        
+        public object GetFieldSecurityRight(string database, string itemIdOrPath, string fieldId, string userName, string right) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequestBody();
+            inValue.Body.database = database;
+            inValue.Body.itemIdOrPath = itemIdOrPath;
+            inValue.Body.fieldId = fieldId;
+            inValue.Body.userName = userName;
+            inValue.Body.right = right;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetFieldSecurityRight(inValue);
+            return retVal.Body.GetFieldSecurityRightResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetFieldSecurityRightAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequest request) {
+            return base.Channel.GetFieldSecurityRightAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightResponse> GetFieldSecurityRightAsync(string database, string itemIdOrPath, string fieldId, string userName, string right) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequestBody();
+            inValue.Body.database = database;
+            inValue.Body.itemIdOrPath = itemIdOrPath;
+            inValue.Body.fieldId = fieldId;
+            inValue.Body.userName = userName;
+            inValue.Body.right = right;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetFieldSecurityRightAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

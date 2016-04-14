@@ -17,6 +17,7 @@ namespace Sitecore.Feature.Media.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class VideoInMediaCarouselFeature : Xunit.IClassFixture<VideoInMediaCarouselFeature.FixtureData>, System.IDisposable
     {
         
@@ -33,7 +34,8 @@ namespace Sitecore.Feature.Media.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Video in Media Carousel", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Video in Media Carousel", null, ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,18 +81,18 @@ namespace Sitecore.Feature.Media.Specflow
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Video in Media Carousel_UC1_Review default video item", new string[] {
                         "NeedIMplementation"});
-#line 5
-this.ScenarioSetup(scenarioInfo);
 #line 6
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 7
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
  testRunner.When("User opens Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Video path"});
             table1.AddRow(new string[] {
                         "/-/media/Habitat/Videos/Sitecore-Experience.mp4"});
-#line 8
+#line 9
  testRunner.Then("Following video presents", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -104,16 +106,16 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Video in Media Carousel_UC2_New video was added to Carousel", new string[] {
                         "NeedIMplementation"});
-#line 15
-this.ScenarioSetup(scenarioInfo);
 #line 16
+this.ScenarioSetup(scenarioInfo);
+#line 17
  testRunner.Given("Habitat Content Editor was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Video test source"});
             table2.AddRow(new string[] {
                         "\\Habitat\\src\\Domain\\Navigation\\specs\\TestData\\Media Carousel\\Sitecore CMS.mp4"});
-#line 17
+#line 18
  testRunner.And("<Sitecore CMS.mp4> video should be added to Media library Habitat, Saved and Publ" +
                     "ished", ((string)(null)), table2, "And ");
 #line hidden
@@ -121,28 +123,28 @@ this.ScenarioSetup(scenarioInfo);
                         "Image test source"});
             table3.AddRow(new string[] {
                         "\\Habitat\\src\\Domain\\Navigation\\specs\\TestData\\Media Carousel\\HabitatTest.jpg"});
-#line 21
+#line 22
  testRunner.And("<Sitecore CMS.mp4> thumbnail should be added to Media library Habitat, Saved and " +
                     "Published", ((string)(null)), table3, "And ");
-#line 25
+#line 26
  testRunner.When("User starts Video item creation under Habitat Shared Media", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 27
- testRunner.And("User inserts <Sitecore CMS.mp4 path> into Link to video: field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
- testRunner.And("User inserts <Habitat-001-wide path> image into Thumbnail field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User inserts <Sitecore CMS.mp4 path> into Link to video: field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
- testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User inserts <Habitat-001-wide path> image into Thumbnail field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 30
- testRunner.And("User selects Carousel item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 32
- testRunner.And("User moves <Sitecore CMS.mp4> item to Selected section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
  testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 31
+ testRunner.And("User selects Carousel item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+ testRunner.And("User moves <Sitecore CMS.mp4> item to Selected section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.And("User publishes /sitecore/content/Shared/Media item with sub-items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
- testRunner.And("User opens Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User publishes /sitecore/content/Shared/Media item with sub-items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
+ testRunner.And("User opens Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
  testRunner.Then("Carousel element presents at Habitat Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -151,14 +153,14 @@ this.ScenarioSetup(scenarioInfo);
                         "/-/media/Habitat/Videos/Sitecore-Experience.mp4"});
             table4.AddRow(new string[] {
                         "/-/media/Habitat/Videos/Sitecore CMS.mp4"});
-#line 38
+#line 39
  testRunner.And("Following video presents", ((string)(null)), table4, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Thumbnail path"});
             table5.AddRow(new string[] {
                         "/-/media/Habitat/Images/Wide/HabitatTest.jpg"});
-#line 42
+#line 43
  testRunner.And("Following thumbnail presents", ((string)(null)), table5, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -174,56 +176,56 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Video in Media Carousel_UC3_New video was added to Carousel_Link to video field i" +
                     "s empty and thumbnail filled", new string[] {
                         "NeedIMplementation"});
-#line 48
-this.ScenarioSetup(scenarioInfo);
 #line 49
+this.ScenarioSetup(scenarioInfo);
+#line 50
  testRunner.Given("Habitat Content Editor was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Image test source"});
             table6.AddRow(new string[] {
                         "\\Habitat\\src\\Domain\\Navigation\\specs\\TestData\\Media Carousel\\HabitatTest.jpg"});
-#line 50
+#line 51
  testRunner.And("<Sitecore CMS.mp4> thumbnail should be added to Media library Habitat, Saved and " +
                     "Published", ((string)(null)), table6, "And ");
-#line 53
+#line 54
  testRunner.When("User starts Video item creation under Habitat Shared Media", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 55
- testRunner.And("User inserts <Habitat-001-wide path> image into Thumbnail field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 56
- testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User inserts <Habitat-001-wide path> image into Thumbnail field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 57
- testRunner.And("User selects Carousel item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 59
- testRunner.And("User moves <Sitecore CMS.mp4> item to Selected section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
  testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.And("User selects Carousel item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+ testRunner.And("User moves <Sitecore CMS.mp4> item to Selected section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 62
- testRunner.And("User publishes /sitecore/content/Shared/Media item with sub-items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 63
- testRunner.And("User opens Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User publishes /sitecore/content/Shared/Media item with sub-items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
+ testRunner.And("User opens Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
  testRunner.Then("Carousel element presents at Habitat Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Video path"});
             table7.AddRow(new string[] {
                         "/-/media/Habitat/Videos/Sitecore-Experience.mp4"});
-#line 65
+#line 66
  testRunner.And("Following video presents", ((string)(null)), table7, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Video path"});
             table8.AddRow(new string[] {
                         "/-/media/Habitat/Videos/Sitecore CMS.mp4"});
-#line 68
+#line 69
  testRunner.And("Following video absents", ((string)(null)), table8, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Thumbnail path"});
             table9.AddRow(new string[] {
                         "/-/media/Habitat/Images/Wide/HabitatTest.jpg"});
-#line 71
+#line 72
  testRunner.And("Following thumbnail presents", ((string)(null)), table9, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -239,54 +241,54 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Video in Media Carousel_UC4_New video was added to Carousel_Link to video field i" +
                     "s empty and thumbnail empty", new string[] {
                         "NeedIMplementation"});
-#line 76
-this.ScenarioSetup(scenarioInfo);
 #line 77
+this.ScenarioSetup(scenarioInfo);
+#line 78
  testRunner.Given("Habitat Content Editor was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Video source"});
             table10.AddRow(new string[] {
                         "\\Habitat\\src\\Domain\\Navigation\\specs\\TestData\\Media Carousel\\Sitecore CMS.mp4"});
-#line 78
+#line 79
  testRunner.And("<Sitecore CMS.mp4> video should be added to Media library Habitat, Saved and Publ" +
                     "ished", ((string)(null)), table10, "And ");
-#line 82
+#line 83
  testRunner.When("User starts Video item creation under Habitat Shared Media", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 84
- testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 85
- testRunner.And("User selects Carousel item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 87
- testRunner.And("User moves <Sitecore CMS.mp4> item to Selected section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
  testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
+ testRunner.And("User selects Carousel item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+ testRunner.And("User moves <Sitecore CMS.mp4> item to Selected section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 90
- testRunner.And("User publishes /sitecore/content/Shared/Media item with sub-items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91
- testRunner.And("User opens Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User publishes /sitecore/content/Shared/Media item with sub-items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 92
+ testRunner.And("User opens Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 93
  testRunner.Then("Carousel element presents at Habitat Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Video path"});
             table11.AddRow(new string[] {
                         "/-/media/Habitat/Videos/Sitecore-Experience.mp4"});
-#line 93
+#line 94
  testRunner.And("Following video presents", ((string)(null)), table11, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Video path"});
             table12.AddRow(new string[] {
                         "/-/media/Habitat/Videos/Sitecore CMS.mp4"});
-#line 96
+#line 97
  testRunner.And("Following video absents", ((string)(null)), table12, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Thumbnail path"});
             table13.AddRow(new string[] {
                         "/-/media/Habitat/Images/Wide/HabitatTest.jpg"});
-#line 99
+#line 100
  testRunner.And("Following thumbnail absents", ((string)(null)), table13, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -302,35 +304,35 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Video in Media Carousel_UC5_New video was added to Carousel_Link to video field i" +
                     "s filled and thumbnail empty", new string[] {
                         "NeedIMplementation"});
-#line 104
-this.ScenarioSetup(scenarioInfo);
 #line 105
+this.ScenarioSetup(scenarioInfo);
+#line 106
  testRunner.Given("Habitat Content Editor was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Video source"});
             table14.AddRow(new string[] {
                         "\\Habitat\\src\\Domain\\Navigation\\specs\\TestData\\Media Carousel\\Sitecore CMS.mp4"});
-#line 106
+#line 107
  testRunner.And("<Sitecore CMS.mp4> video should be added to Media library Habitat, Saved and Publ" +
                     "ished", ((string)(null)), table14, "And ");
-#line 110
+#line 111
  testRunner.When("User starts Video item creation under Habitat Shared Media", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 112
- testRunner.And("User inserts <Sitecore CMS.mp4 path> into Link to video: field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 113
- testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User inserts <Sitecore CMS.mp4 path> into Link to video: field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 114
- testRunner.And("User selects Carousel item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
- testRunner.And("User moves <Sitecore CMS.mp4> item to Selected section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 118
  testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+ testRunner.And("User selects Carousel item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 117
+ testRunner.And("User moves <Sitecore CMS.mp4> item to Selected section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 119
- testRunner.And("User publishes /sitecore/content/Shared/Media item with sub-items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 120
- testRunner.And("User opens Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User publishes /sitecore/content/Shared/Media item with sub-items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 121
+ testRunner.And("User opens Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 122
  testRunner.Then("Carousel element presents at Habitat Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -339,14 +341,14 @@ this.ScenarioSetup(scenarioInfo);
                         "/-/media/Habitat/Videos/Sitecore-Experience.mp4"});
             table15.AddRow(new string[] {
                         "/-/media/Habitat/Videos/Sitecore CMS.mp4"});
-#line 122
+#line 123
  testRunner.And("Following video presents", ((string)(null)), table15, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Thumbnail path"});
             table16.AddRow(new string[] {
                         "/-/media/Habitat/Images/Wide/HabitatTest.jpg"});
-#line 126
+#line 127
  testRunner.And("Following thumbnail absents", ((string)(null)), table16, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -360,28 +362,28 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Video in Media Carousel_UC6_Video was removed from carousel", new string[] {
                         "NeedIMplementation"});
-#line 131
-this.ScenarioSetup(scenarioInfo);
 #line 132
- testRunner.Given("Habitat Content Editor was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 133
+ testRunner.Given("Habitat Content Editor was opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 134
  testRunner.When("And User selects Carousel item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 135
+#line 136
  testRunner.And("User removes <Sitecore-Experience.mp4> item from Selected section", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 137
- testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 138
- testRunner.And("User publishes /sitecore/content/Shared/Media item with sub-items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Save button on Content Editor Ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 139
- testRunner.And("User opens Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User publishes /sitecore/content/Shared/Media item with sub-items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 140
+ testRunner.And("User opens Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 141
  testRunner.Then("Carousel element presents at Habitat Home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Video path"});
             table17.AddRow(new string[] {
                         "/-/media/Habitat/Videos/Sitecore-Experience.mp4"});
-#line 141
+#line 142
  testRunner.And("Following video absents", ((string)(null)), table17, "And ");
 #line hidden
             this.ScenarioCleanup();

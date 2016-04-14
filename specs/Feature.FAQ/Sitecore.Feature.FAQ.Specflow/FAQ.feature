@@ -1,4 +1,5 @@
-﻿Feature: FAQ
+﻿@UI
+Feature: FAQ
 	
 
 @InDesign

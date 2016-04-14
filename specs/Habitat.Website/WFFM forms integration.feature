@@ -1,4 +1,5 @@
-﻿Feature: WFFM forms
+﻿@UI
+Feature: WFFM forms
 	
 
 @NeedImplementation

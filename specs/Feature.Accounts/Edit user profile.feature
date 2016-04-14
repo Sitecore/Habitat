@@ -1,4 +1,5 @@
-﻿Feature: Edit user profile
+﻿@UI
+Feature: Edit user profile
 	
 
 @Ready

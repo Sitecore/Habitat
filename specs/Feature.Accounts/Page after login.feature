@@ -1,4 +1,5 @@
-﻿Feature: Page after login
+﻿@UI
+Feature: Page after login
 	
 
 @Ready
