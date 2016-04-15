@@ -55,13 +55,14 @@ Scenario: Serialise users and roles_UC4_Admin user with multisite admin rights
 	Given User habitat\UserRoles with u password and following roles created in Habitat
 	| Role                                   |
 	| habitat\Project Habitat Content Author |
-	| modules\Feature Multisite Admin  |         
-
-  Then habitat\UserRoles has  Write access to following item fields
-  | Item name           |
-	| DatasourceLocation  |
-	| DatasourceTemplate  |
-
-
+	| habitat\Project Habitat Modules Admin  |                 
+	When User navigates to Content Editor with user
+	| User name  | Password |
+	| UserRoles3 | u        |
+#For manual testing: User clicks <Lock and Edit> link
+	Then Only following item fields are enabled and all other are disabled
+	| Item name            |
+	| Datasource Location  |
+	| Datasource Template  |
 
 
