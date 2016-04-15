@@ -98,5 +98,57 @@
       var bgClass = rendering.GetBackgroundClass();
       bgClass.Should().BeEmpty();
     }
+
+    [Theory]
+    [AutoDbData]
+    public void IsContainerFluid_ParameterIsSet_ShouldReturnTrue([Substitute] Rendering rendering)
+    {
+      var parameters = new RenderingParameters($"{Constants.HasContainerLayoutParameters.IsFluid}=1");
+      rendering.Parameters.Returns(parameters);
+      var isFluid = rendering.IsContainerFluid();
+      isFluid.Should().BeTrue();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void IsContainerFluid_ParameterIsSetToZero_ShouldReturnFalse([Substitute] Rendering rendering)
+    {
+      var parameters = new RenderingParameters($"{Constants.HasContainerLayoutParameters.IsFluid}=0");
+      rendering.Parameters.Returns(parameters);
+      var isFluid = rendering.IsContainerFluid();
+      isFluid.Should().BeFalse();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void IsContainerFluid_ParameterIsNotSet_ShouldReturnFalse([Substitute] Rendering rendering)
+    {
+      var parameters = new RenderingParameters("");
+      rendering.Parameters.Returns(parameters);
+      var isFluid = rendering.IsContainerFluid();
+      isFluid.Should().BeFalse();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void GetContainerClass_IsFluidSetToTrue_ShouldReturnContainerFluid([Substitute] Rendering rendering)
+    {
+      var parameters = new RenderingParameters($"{Constants.HasContainerLayoutParameters.IsFluid}=1");
+      rendering.Parameters.Returns(parameters);
+      var containerClass = rendering.GetContainerClass();
+      containerClass.ShouldBeEquivalentTo("container-fluid");
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void GetContainerClass_IsFluidSetToFalse_ShouldReturnContainer([Substitute] Rendering rendering)
+    {
+      var parameters = new RenderingParameters($"{Constants.HasContainerLayoutParameters.IsFluid}=0");
+      rendering.Parameters.Returns(parameters);
+      var containerClass = rendering.GetContainerClass();
+      containerClass.ShouldBeEquivalentTo("container");
+    }
+
+
   }
 }
