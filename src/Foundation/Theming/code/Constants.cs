@@ -12,6 +12,11 @@
       public static string Background => "Background";
     }
 
+    public struct IsFixedHeightLayoutParameters
+    {
+      public static string FixedHeight => "Fixed height";
+    }
+
     public struct CarouselLayoutParameters
     {
       public static string ItemsShown => "ItemsShown";

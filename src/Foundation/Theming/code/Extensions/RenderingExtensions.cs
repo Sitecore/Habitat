@@ -30,7 +30,7 @@
 
     public static bool IsFixedHeight([NotNull] this Rendering rendering)
     {
-      var isFixed = MainUtil.GetBool(rendering.Parameters["Fixed height"] ?? "", false);
+      var isFixed = MainUtil.GetBool(rendering.Parameters[Constants.IsFixedHeightLayoutParameters.FixedHeight] ?? "", false);
       return isFixed;
     }
 
