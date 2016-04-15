@@ -28,6 +28,12 @@
       return item?[Templates.Style.Fields.Class] ?? "";
     }
 
+    public static bool IsFixedHeight([NotNull] this Rendering rendering)
+    {
+      var isFixed = MainUtil.GetBool(rendering.Parameters[Constants.IsFixedHeightLayoutParameters.FixedHeight] ?? "", false);
+      return isFixed;
+    }
+
     public static string GetContainerClass([NotNull] this Rendering rendering)
     {
       return rendering.IsContainerFluid() ? "container-fluid" : "container";
