@@ -55,12 +55,12 @@ Scenario: Serialise users and roles_UC4_Admin user with multisite admin rights
 	Given User habitat\UserRoles with u password and following roles created in Habitat
 	| Role                                   |
 	| habitat\Project Habitat Content Author |
-	| habitat\Project Habitat Modules Admin  |         
+	| modules\Feature Multisite Admin  |         
 
   Then habitat\UserRoles has  Write access to following item fields
-  | Item name            |
-	| Datasource Location  |
-	| Datasource Template  |
+  | Item name           |
+	| DatasourceLocation  |
+	| DatasourceTemplate  |
 
 
 

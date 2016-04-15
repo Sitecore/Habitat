@@ -196,16 +196,16 @@ this.ScenarioSetup(scenarioInfo);
             table4.AddRow(new string[] {
                         "habitat\\Project Habitat Content Author"});
             table4.AddRow(new string[] {
-                        "habitat\\Project Habitat Modules Admin"});
+                        "modules\\Feature Multisite Admin"});
 #line 55
  testRunner.Given("User habitat\\UserRoles with u password and following roles created in Habitat", ((string)(null)), table4, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item name"});
             table5.AddRow(new string[] {
-                        "Datasource Location"});
+                        "DatasourceLocation"});
             table5.AddRow(new string[] {
-                        "Datasource Template"});
+                        "DatasourceTemplate"});
 #line 60
   testRunner.Then("habitat\\UserRoles has  Write access to following item fields", ((string)(null)), table5, "Then ");
 #line hidden

@@ -131,6 +131,9 @@
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

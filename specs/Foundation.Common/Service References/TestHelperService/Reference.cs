@@ -240,6 +240,13 @@ namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetFieldSecurityRight", ReplyAction="*")]
         System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightResponse> GetFieldSecurityRightAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequest request);
         
+        // CODEGEN: Generating message contract since element name database from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetItemSecurityRight", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightResponse GetItemSecurityRight(Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetItemSecurityRight", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightResponse> GetItemSecurityRightAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightRequest request);
+        
         // CODEGEN: Generating message contract since element name userName from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetUserProperties", ReplyAction="*")]
         Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponse GetUserProperties(Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesRequest request);
@@ -676,14 +683,94 @@ namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
     [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
     public partial class GetFieldSecurityRightResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public object GetFieldSecurityRightResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool GetFieldSecurityRightResult;
         
         public GetFieldSecurityRightResponseBody() {
         }
         
-        public GetFieldSecurityRightResponseBody(object GetFieldSecurityRightResult) {
+        public GetFieldSecurityRightResponseBody(bool GetFieldSecurityRightResult) {
             this.GetFieldSecurityRightResult = GetFieldSecurityRightResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetItemSecurityRightRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetItemSecurityRight", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightRequestBody Body;
+        
+        public GetItemSecurityRightRequest() {
+        }
+        
+        public GetItemSecurityRightRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetItemSecurityRightRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string database;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string itemIdOrPath;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string userName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string right;
+        
+        public GetItemSecurityRightRequestBody() {
+        }
+        
+        public GetItemSecurityRightRequestBody(string database, string itemIdOrPath, string userName, string right) {
+            this.database = database;
+            this.itemIdOrPath = itemIdOrPath;
+            this.userName = userName;
+            this.right = right;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetItemSecurityRightResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetItemSecurityRightResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightResponseBody Body;
+        
+        public GetItemSecurityRightResponse() {
+        }
+        
+        public GetItemSecurityRightResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetItemSecurityRightResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool GetItemSecurityRightResult;
+        
+        public GetItemSecurityRightResponseBody() {
+        }
+        
+        public GetItemSecurityRightResponseBody(bool GetItemSecurityRightResult) {
+            this.GetItemSecurityRightResult = GetItemSecurityRightResult;
         }
     }
     
@@ -1598,7 +1685,7 @@ namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
             return base.Channel.GetFieldSecurityRight(request);
         }
         
-        public object GetFieldSecurityRight(string database, string itemIdOrPath, string fieldId, string userName, string right) {
+        public bool GetFieldSecurityRight(string database, string itemIdOrPath, string fieldId, string userName, string right) {
             Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequest();
             inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightRequestBody();
             inValue.Body.database = database;
@@ -1624,6 +1711,37 @@ namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
             inValue.Body.userName = userName;
             inValue.Body.right = right;
             return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetFieldSecurityRightAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetItemSecurityRight(Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightRequest request) {
+            return base.Channel.GetItemSecurityRight(request);
+        }
+        
+        public bool GetItemSecurityRight(string database, string itemIdOrPath, string userName, string right) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightRequestBody();
+            inValue.Body.database = database;
+            inValue.Body.itemIdOrPath = itemIdOrPath;
+            inValue.Body.userName = userName;
+            inValue.Body.right = right;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetItemSecurityRight(inValue);
+            return retVal.Body.GetItemSecurityRightResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetItemSecurityRightAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightRequest request) {
+            return base.Channel.GetItemSecurityRightAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightResponse> GetItemSecurityRightAsync(string database, string itemIdOrPath, string userName, string right) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightRequestBody();
+            inValue.Body.database = database;
+            inValue.Body.itemIdOrPath = itemIdOrPath;
+            inValue.Body.userName = userName;
+            inValue.Body.right = right;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetItemSecurityRightAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

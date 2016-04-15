@@ -21,11 +21,11 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     {
 
       var database = Database.Master;
-      var templateID = ContextExtensions.UtfService.CreateItem("tempTemplate", "/sitecore/templates", "/sitecore/templates/System/Templates/Template", "sitecore\\admin", "b", database);
-      var itemID = ContextExtensions.UtfService.CreateItem("tmpItem", "/sitecore/content", templateID, BaseSettings.UserName, BaseSettings.Password, database);
-
+      var templateID = ContextExtensions.UtfService.CreateItem("tempTemplate"+DateTime.Now.Millisecond, "/sitecore/templates", "/sitecore/templates/System/Templates/Template", "sitecore\\admin", "b", database);
       //set base templates with applied habitat security
       ContextExtensions.UtfService.EditItem(templateID, "__base template", Settings.RolesTemplates, BaseSettings.UserName, BaseSettings.Password, database);
+
+      var itemID = ContextExtensions.UtfService.CreateItem("tmpItem" + DateTime.Now.Millisecond, "/sitecore/content/Habitat", templateID, BaseSettings.UserName, BaseSettings.Password, database);
 
       //get all available field from base templates
       var fields = Settings.RolesTemplates.Split('|')
@@ -37,15 +37,16 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       ScenarioContext.Current.Set(fields, "fields");
       ScenarioContext.Current.Set(itemID, "item");
 
-      ContextExtensions.CleanupPool.Add(new TestCleanupAction()
-      {
-        ActionType = ActionType.DeleteItem,
-        Payload = new EditFieldPayload() { Database = database, ItemIdOrPath = templateID }
-      });
+   
       ContextExtensions.CleanupPool.Add(new TestCleanupAction()
       {
         ActionType = ActionType.DeleteItem,
         Payload = new EditFieldPayload() { Database = database, ItemIdOrPath = itemID }
+      });
+      ContextExtensions.CleanupPool.Add(new TestCleanupAction()
+      {
+        ActionType = ActionType.DeleteItem,
+        Payload = new EditFieldPayload() { Database = database, ItemIdOrPath = templateID }
       });
     }
 
@@ -108,7 +109,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
 
       foreach (var field in fields)
       {
-        ContextExtensions.HelperService.GetFieldSecurityRight("master", item, field, username, access).Should().Be(allow);
+        ContextExtensions.HelperService.GetFieldSecurityRight("master", item, field, username, access).Should().Be(allow, "'{0}' should have {1} allow '{2}' right",field,permission,access);
       }
     }
 
