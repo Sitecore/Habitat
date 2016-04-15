@@ -1,7 +1,7 @@
 ﻿Feature: Serialise users and roles
 
 
-@NeedImplementation
+@Ready
 Scenario: Serialise users and roles_UC1_Habitat modules roles available in Role Manager
 	
 	Then Following roles available
@@ -29,7 +29,7 @@ Scenario: Serialise users and roles_UC1_Habitat modules roles available in Role 
 	| modules\Foundation Multisite Admin     |
 
 
-@NeedImplementation
+@Ready
 Scenario: Serialise users and roles_UC2_Non-admin user without modules admin rights
 	Given User habitat\UserRoles with u password and following roles created in Habitat
 	| Role                                   |
@@ -39,7 +39,7 @@ Scenario: Serialise users and roles_UC2_Non-admin user without modules admin rig
 	#Then All available item fields are disabled
 
 
-@NeedImplementation
+@Ready
 Scenario: Serialise users and roles_UC3_Admin user with modules admin rights
 	Given User habitat\UserRoles with u password and following roles created in Habitat
 	| Role                                   |
@@ -50,7 +50,7 @@ Scenario: Serialise users and roles_UC3_Admin user with modules admin rights
   Then habitat\UserRoles has  Write access to all available item fields
 
 
-	@NeedImplementation
+@Ready
 Scenario: Serialise users and roles_UC4_Admin user with multisite admin rights
 	Given User habitat\UserRoles with u password and following roles created in Habitat
 	| Role                                   |
