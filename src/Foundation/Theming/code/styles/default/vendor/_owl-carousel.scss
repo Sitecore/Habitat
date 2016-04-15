@@ -5,7 +5,9 @@
 
   .owl {
     &-item {
-
+      & > * {
+        width: 100%;
+      }
     }
     &-prev, &-next {
       position: absolute;

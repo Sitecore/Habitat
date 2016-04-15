@@ -1,11 +1,14 @@
 ﻿namespace Sitecore.Foundation.Installer
 {
+  using System;
   using System.Collections.Generic;
   using System.Collections.Specialized;
   using System.IO;
   using System.Linq;
   using System.Text.RegularExpressions;
   using Sitecore.Foundation.Installer.XmlTransform;
+  using Sitecore.Install;
+  using Sitecore.Install.Files;
   using Sitecore.Install.Framework;
 
   public class PostStep : IPostStep
@@ -40,16 +43,31 @@
         foreach (var transform in transforms)
         {
           var fileToTransformPath = Regex.Replace(transform, "^.*\\\\code", "~").Replace(".transform", "");
-          Diagnostics.Log.Warn($"{transform} - {fileToTransformPath}", this);
           var fileToTransform = this.filePathResolver.MapPath(fileToTransformPath);
           this.ApplyTransform(fileToTransform, transform, fileToTransform);
         }
       }
+
+      this.InstallSecurity(metaData);
     }
 
     protected void ApplyTransform(string sourceFilePath, string transformFilePath, string targetFilePath)
     {
       this.xdtTransformEngine.ApplyConfigTransformation(sourceFilePath, transformFilePath, targetFilePath);
+    }
+
+    protected void InstallSecurity(NameValueCollection metaData)
+    {
+      if (metaData != null)
+      {
+        var packageName = $"{metaData["PackageName"]}.zip";
+        var installer = new Installer();
+        var file = Installer.GetFilename(packageName);
+        if (File.Exists(file))
+        {
+          installer.InstallSecurity(PathUtils.MapPath(file));
+        }
+      }
     }
   }
 }
