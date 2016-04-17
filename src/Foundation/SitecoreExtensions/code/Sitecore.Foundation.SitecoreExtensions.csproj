@@ -80,6 +80,9 @@
     <Reference Include="Sitecore.Analytics.Outcome">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.Client">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.ContentSearch">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
@@ -150,6 +153,7 @@
     <Compile Include="Extensions\ItemExtensions.cs" />
     <Compile Include="Extensions\HTMLHelperExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="FieldEditor\FieldEditorAll.cs" />
     <Compile Include="HtmlHelpers\FormHelpers.cs" />
     <Compile Include="HtmlHelpers\ValidationHelpers.cs" />
     <Compile Include="Model\File.cs" />
