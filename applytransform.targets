@@ -1,12 +1,22 @@
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="ApplyTransform" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(MSBuildToolsVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
   <Target Name="ApplyTransform">
     <ItemGroup>
-      <Transforms Include="**\*.transform" Exclude="obj\**">
-      </Transforms>
-      <ConfigsToTransform Include="@(Transforms-&gt;Replace('.transform',''))">
+      <Transforms Include="$(ProjectDir)\**\*.transform" Exclude="$(ProjectDir)\obj\**" />
+      
+      <ConfigsToTransform Include="@(Transforms->Replace('.transform','')->Replace('$(ProjectDir)',''))" Condition="Exists(@(Transforms))">
         <TransformPath>%(Transforms.Identity)</TransformPath>
       </ConfigsToTransform>
     </ItemGroup>
-    <TransformXml Source="$(WebConfigToTransform)\%(ConfigsToTransform.Identity)" Transform="%(ConfigsToTransform.TransformPath)" Destination="$(WebConfigToTransform)\%(ConfigsToTransform.Identity)" Condition="Exists(@(Transforms))"/>
+    <Message Text="@(ConfigsToTransform)"     ></Message>
+    <Message Text="@(Transforms)"     ></Message>
+
+    <TransformXml Source="$(WebConfigToTransform)\%(ConfigsToTransform.Identity)" 
+                  Transform="%(ConfigsToTransform.TransformPath)"
+                  Destination="$(WebConfigToTransform)\%(ConfigsToTransform.Identity)" 
+                  Condition="Exists(@(Transforms))"/>  
+  
+  
   </Target>
+
 </Project>
