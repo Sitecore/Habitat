@@ -10,7 +10,7 @@ SharedFields:
   Value: /Views/Teasers/Jumbotron.cshtml
 - ID: "7d24e54f-5c16-4314-90c9-6051aa1a7da1"
   Hint: Parameters Template
-  Value: "{A2A233A1-6701-48A9-B5F8-EFEAB74B655F}"
+  Value: "{20748D57-4EF6-49A8-B7E6-13818795E3B5}"
 - ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
   Value: "site:jumbotronteaser"
