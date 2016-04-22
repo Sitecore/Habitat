@@ -101,7 +101,6 @@
     <Compile Include="Infrastructure\MediaTemplate.cs" />
     <Compile Include="Infrastructure\VideoTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Extensions\MediaSelectorElementsRepositoryTests.cs" />
     <Compile Include="Repositories\MediaSelectorElementsRepositoryTests.cs" />
     <Compile Include="Infrastructure\MediaSelectorTemplate.cs" />
   </ItemGroup>

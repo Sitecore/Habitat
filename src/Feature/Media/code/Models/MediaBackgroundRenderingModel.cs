@@ -1,16 +1,11 @@
-﻿namespace Sitecore.Feature.Media.Infrastructure.Models
+﻿namespace Sitecore.Feature.Media.Models
 {
   using System;
   using System.Collections.Generic;
   using System.Linq;
-  using System.Text;
   using System.Web;
-  using System.Xml.Linq;
-  using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Resources.Media;
-  using Sitecore.Web;
-  using static System.String;
 
   public class MediaBackgroundRenderingModel
   {
@@ -30,7 +25,7 @@
           return this.MediaItem.MimeType.Split(new []{'/'}, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
         }
 
-        return Empty;
+        return String.Empty;
       }
     }
 
@@ -43,7 +38,7 @@
           return this.MediaItem.MimeType.Split(new [] {'/'}, StringSplitOptions.RemoveEmptyEntries).Last();  
         }
 
-        return Empty;
+        return String.Empty;
       }
     }
 
@@ -60,7 +55,7 @@
           classes.Add("bg-parallax");
         }
 
-        return Join(" ", classes);
+        return String.Join(" ", classes);
       }
     }
 
@@ -70,10 +65,10 @@
       {
         if (!this.IsMedia)
         {
-          return Empty;
+          return String.Empty;
         }
 
-        var mediaUrl = Empty;
+        var mediaUrl = String.Empty;
         var item = this.MediaItem;
         if (item != null)
         {
@@ -93,7 +88,7 @@
           return MediaManager.GetMediaUrl(this.MediaItem);
         }
 
-        return Empty;
+        return String.Empty;
       }
     }
 
@@ -101,7 +96,7 @@
     {
       get
       {
-        if (!IsNullOrEmpty(this.Type) && this.Type.Equals("bg-media"))
+        if (!String.IsNullOrEmpty(this.Type) && this.Type.Equals("bg-media"))
         {
           return true;
         }
@@ -116,7 +111,7 @@
       {
         if (this.mediaItem == null)
         {
-          if (!IsNullOrEmpty(this.Media))
+          if (!String.IsNullOrEmpty(this.Media))
           {
             var id = HttpUtility.UrlDecode(this.Media);
             //var linkElement = XElement.Parse(linkValue);

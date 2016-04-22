@@ -1,11 +1,8 @@
-﻿@using Sitecore.Data.Fields
-@using Sitecore.Feature.Media
-@using Sitecore.Feature.Media.Infrastructure.Repositories
+﻿@using Sitecore.Feature.Media
+@using Sitecore.Feature.Media.Repositories
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
-@using Sitecore.Foundation.SitecoreExtensions.Repositories
-@using Sitecore.Foundation.Theming.Extensions
 @using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.HasMediaSelector.ID) ?? true)
@@ -17,19 +14,13 @@
 @{
   var carouselId = "carousel" + Guid.NewGuid().ToString("N");
   var elements = MediaSelectorElementsRepository.Get(Model.Item).ToArray();
-  int? carouselHeight = null;
 }
+
 <div id="@carouselId" class="carousel slide" data-ride="carousel" @(Sitecore.Context.PageMode.IsExperienceEditor ? "data-interval" : "")>
   <ol class="carousel-indicators">
     @for (var i = 0; i < elements.Length; i++)
-    {
-        <li data-target="#@carouselId" data-slide-to="@i" class="@elements[i].Active"></li>
-        int height;
-        var field = elements[i].Item.IsDerived(Templates.HasMediaVideo.ID) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
-        if (int.TryParse(((ImageField)elements[i].Item.Fields[field]).Height, out height) && height > (carouselHeight ?? 0))
-        {
-            carouselHeight = height;
-        }
+      {
+      <li data-target="#@carouselId" data-slide-to="@i" class="@elements[i].Active"></li>
     }
   </ol>
 
@@ -41,37 +32,38 @@
           var style = "background-image: ";
           var field = element.Item.IsDerived(Templates.HasMediaVideo.ID) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
           style += element.Item.ImageUrl(field, new MediaUrlOptions()).ToCssUrlValue();
-          var fixedHeight = Model.Rendering.IsFixedHeight();
-          if (fixedHeight && carouselHeight.HasValue)
-          {
-              style += "; height:" + carouselHeight + "px;";
-          }
         }
 
-        <div class="jumbotron bg-media" style="@style">
+        <div class="jumbotron jumbotron-xl bg-media" style="@style">
           @if (element.Item.IsDerived(Templates.HasMediaVideo.ID))
           {
-            <video autoplay="" loop="" muted="" class="video-bg img-responsive">
+            <video autoplay="" loop="" muted="" class="video-bg">
               <source src="@element.Item.MediaUrl(Templates.HasMediaVideo.Fields.VideoLink)" type="video/mp4">
             </video>
           }
 
-          <h3>@Html.Sitecore().Field(Templates.HasMedia.Fields.Title, element.Item)</h3>
-          <div class="lead">
-            @Html.Sitecore().Field(Templates.HasMedia.Fields.Description, element.Item)
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h1>@Html.Sitecore().Field(Templates.HasMedia.Fields.Title, element.Item)</h1>
+                <p class="lead">
+                  @Html.Sitecore().Field(Templates.HasMedia.Fields.Description, element.Item)
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-          }
+    }
   </div>
 
-  <!-- Controls -->
   <a class="left carousel-control" href="#@carouselId" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">@DictionaryRepository.Get("/media/carousel/previous", "Previous")</span>
+    <span class="sr-only">Previous</span>
   </a>
   <a class="right carousel-control" href="#@carouselId" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">@DictionaryRepository.Get("/media/carousel/next", "Next")</span>
+    <span class="sr-only">Next</span>
   </a>
+
 </div>

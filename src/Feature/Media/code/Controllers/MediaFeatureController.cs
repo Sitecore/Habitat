@@ -5,10 +5,11 @@
   using System.Linq;
   using System.Web;
   using System.Web.Mvc;
-  using Sitecore.Feature.Media.Infrastructure.Models;
+  using Sitecore.Feature.Media.Models;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
 
-  public class MediaController : Controller
+  //Should be MediaController but this clashes with Sitecore.Controllers.MediaController
+  public class MediaFeatureController : Controller
   {
     public ActionResult SectionMedia()
     {

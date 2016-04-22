@@ -165,13 +165,6 @@
     <Content Include="Views\Common\Sublayouts\ArticleAsideBoth.cshtml" />
     <Content Include="Views\Common\Sublayouts\NavbarActivity.cshtml" />
     <None Include="Views\Web.config" />
-    <None Include="web.config" />
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
     <None Include="web.config.transform" />
   </ItemGroup>
   <ItemGroup>
