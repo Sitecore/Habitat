@@ -1,6 +1,7 @@
 ﻿namespace Sitecore.Foundation.Installer.Tests
 {
   using System;
+  using System.Collections.Specialized;
   using System.Web.Security;
   using FluentAssertions;
   using NSubstitute;
@@ -23,7 +24,7 @@
       provider.GetUser(Arg.Any<string>(), Arg.Any<bool>()).Returns(x => new MembershipUserCollection() { enabledUser, disabledUser }[x.Arg<string>()]);
 
       //Act
-      accountsEnableAction.Run();
+      accountsEnableAction.Run(new NameValueCollection());
       //Assert      
       disabledUser.IsApproved.Should().BeTrue();
       enabledUser.IsApproved.Should().BeTrue();

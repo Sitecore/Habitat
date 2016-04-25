@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Foundation.Installer.ReportingDbReplace
 {
+  using System.Collections.Specialized;
   using System.Configuration;
   using System.IO;
   using Sitecore.Diagnostics;
@@ -20,7 +21,7 @@
     {
     }
 
-    public void Run()
+    public void Run(NameValueCollection metaData)
     {
       if (File.Exists(this.reportingDbLocation))
       {

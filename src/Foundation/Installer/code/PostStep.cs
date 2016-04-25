@@ -26,7 +26,7 @@
           Log.Info(postStepAction + " post step action was started", this);
 
           var activator = (IPostStepAction)Activator.CreateInstance(postStepActionType);
-          activator.Run();
+          activator.Run(metaData);
         }
         catch (Exception ex)
         {

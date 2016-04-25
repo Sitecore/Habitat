@@ -63,7 +63,7 @@
     {
       public static int CallCount;
 
-      public void Run()
+      public void Run(NameValueCollection nameValueCollection)
       {
         CallCount++;
       }

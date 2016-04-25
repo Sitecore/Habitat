@@ -1,0 +1,21 @@
+
+
+
+
+.media-list {
+
+  .well & {
+    margin: 40px 0;
+  }
+
+  &-divided {
+    & > * {
+      padding: 20px 0;
+      border-bottom: 1px solid $media-list-divided-border-color;
+
+      &.panel {
+        padding: 20px;
+      }
+    }
+  }
+}

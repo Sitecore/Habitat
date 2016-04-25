@@ -1,6 +1,7 @@
 ﻿namespace Sitecore.Foundation.Installer.XmlTransform
 {
   using System.Collections.Generic;
+  using System.Collections.Specialized;
   using System.Text.RegularExpressions;
 
   public class XmlTransformAction:IPostStepAction
@@ -27,7 +28,7 @@
     {
     }
 
-    public void Run()
+    public void Run(NameValueCollection metaData)
     {
       foreach (var transformsLayer in this.transformsOrder)
       {

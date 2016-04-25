@@ -7,8 +7,10 @@
       "bower_components/bootstrap-sass/assets/javascripts/bootstrap.js",
       "bower_components/shufflejs/dist/jquery.shuffle.js",
       "bower_components/wow/dist/wow.js",
-      "bower_components/ekko-lightbox/dist/ekko-lightbox.js",
       "bower_components/OwlCarousel/owl-carousel/owl.carousel.js",
+      "bower_components/ekko-lightbox/dist/ekko-lightbox.js",
+      "bower_components/ev-emitter/ev-emitter.js",
+      "bower_components/imagesloaded/imagesloaded.js",
       "scripts/carousel.js",
       "scripts/counter.js",
       "scripts/form.js",
@@ -18,7 +20,8 @@
       "scripts/search.js",
       "scripts/sidebar.js",
       "scripts/theming.js",
-      "scripts/tooltip.js"
+      "scripts/tooltip.js",
+      "scripts/media-query.js"
     ],
     "sourceMap": true
   },

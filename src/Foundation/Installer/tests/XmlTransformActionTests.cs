@@ -1,6 +1,7 @@
 ﻿namespace Sitecore.Foundation.Installer.Tests
 {
   using System.Collections.Generic;
+  using System.Collections.Specialized;
   using NSubstitute;
   using Sitecore.Foundation.Installer.XmlTransform;
   using Xunit;
@@ -15,7 +16,7 @@
       transform.GetTransformsByLayer(Arg.Any<string>()).Returns(new List<string>() {"web.config.transform"});
 
       //act
-      postStep.Run();
+      postStep.Run(new NameValueCollection());
       xdt.Received().ApplyConfigTransformation(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>());
     }
 
@@ -29,7 +30,7 @@
       var postStep = new XmlTransformAction(xdt, path, transform);
 
       //act
-      postStep.Run();
+      postStep.Run(new NameValueCollection());
       xdt.DidNotReceive().ApplyConfigTransformation(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>());
     }
 

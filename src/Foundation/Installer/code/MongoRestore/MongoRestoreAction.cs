@@ -1,5 +1,7 @@
 ﻿namespace Sitecore.Foundation.Installer.MongoRestore
 {
+  using System.Collections.Specialized;
+
   public class MongoRestoreAction:IPostStepAction
   {
     private readonly IMongoRestoreService mongoRestoreService;
@@ -13,7 +15,7 @@
     {
     }
 
-    public void Run()
+    public void Run(NameValueCollection metaData)
     {
       if (MongoRestoreSettings.RestoreMongoDatabases)
       {
