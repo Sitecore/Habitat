@@ -13,7 +13,9 @@
       <article>
         @Html.Sitecore().DynamicPlaceholder("col-wide-1", Model.Rendering.GetUseStaticPlaceholderNames())
       </article>
-      @Html.Sitecore().DynamicPlaceholder("section-narrow", Model.Rendering.GetUseStaticPlaceholderNames())
+      <div>
+        @Html.Sitecore().DynamicPlaceholder("section-narrow", Model.Rendering.GetUseStaticPlaceholderNames())
+      </div>
     </div>
   </div>
 </div>

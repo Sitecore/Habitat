@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Feature.Media.Infrastructure.Models
+﻿namespace Sitecore.Feature.Media.Models
 {
   using Sitecore.Data.Items;
 

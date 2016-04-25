@@ -1,9 +1,9 @@
-﻿namespace Sitecore.Feature.Media.Infrastructure.Repositories
+﻿namespace Sitecore.Feature.Media.Repositories
 {
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.Data.Items;
-  using Sitecore.Feature.Media.Infrastructure.Models;
+  using Sitecore.Feature.Media.Models;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Mvc.Extensions;
 

@@ -2,25 +2,4 @@
   <PropertyGroup>
     <Site Server="habitat.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
   </PropertyGroup>
-  <File Include="Views\Media\LightboxImage.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{F49C9252-47F3-406B-B311-E26EE4D1149B}</Item>
-  </File>
-  <File Include="Views\Media\LightboxVideo.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{0534F12C-804E-4532-A832-5D61FE9EC6ED}</Item>
-  </File>
-  <File Include="Views\Media\Carousel.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{E86BFEB1-F3FC-4E37-B693-A5550D6789EE}</Item>
-  </File>
-  <File Include="Views\Media\LightboxGallery.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{4E541395-9332-4F1D-87F0-E7F4920C2036}</Item>
-  </File>
-  <File Include="Views\Media\PageHeaderMedia.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{26B33DEB-F1DB-4338-B043-AAF2F90E04A3}</Item>
-  </File>
-  <File Include="Views\Media\SectionMedia.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{1149A3C7-C69A-4E6B-A6C3-32687EC2F8D4}</Item>
-  </File>
-  <File Include="Views\Media\PageHeaderCarousel.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
-    <Item DatabaseName="master">{8B28417B-A5B3-44F1-BFCC-FE1D907336E7}</Item>
-  </File>
 </Project>

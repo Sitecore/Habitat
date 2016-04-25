@@ -36,13 +36,13 @@ gulp.task("01-Copy-Sitecore-Lib", function () {
   fs.statSync(config.sitecoreLibraries);
 
   var files = config.sitecoreLibraries + "/**/*";
-  
+
   return gulp.src(files).pipe(gulp.dest("./lib/Sitecore"));
 });
 
 gulp.task("02-Nuget-Restore", function (callback) {
   var solution = "./" + config.solutionName + ".sln";
-  return gulp.src(solution).pipe(nugetRestore());	
+  return gulp.src(solution).pipe(nugetRestore());
 });
 
 
@@ -57,19 +57,20 @@ gulp.task("04-Apply-Xml-Transform", function () {
   var layerPathFilters = ["./src/Foundation/**/code/*.csproj", "./src/Feature/**/code/*.csproj", "./src/Project/**/code/*.csproj"];
   return gulp.src(layerPathFilters)
     .pipe(foreach(function (stream, file) {
-        return stream
-          .pipe(debug({ title: "Applying transform project:" }))
-          .pipe(msbuild({
-              targets: ["ApplyTransform"],
-              configuration: config.buildConfiguration,
-              logCommand: false,
-              verbosity: "normal",
-              maxcpucount: 0,
-              toolsVersion: 14.0,
-              properties: {
-                  WebConfigToTransform: config.websiteRoot
-              }
-          }));
+      return gulp.src("./applytransform.targets")
+        .pipe(debug({ title: "Applying transform project:" }))
+        .pipe(msbuild({
+          targets: ["ApplyTransform"],
+          configuration: config.buildConfiguration,
+          logCommand: false,
+          verbosity: "normal",
+          maxcpucount: 0,
+          toolsVersion: 14.0,
+          properties: {
+            WebConfigToTransform: config.websiteRoot,
+            ProjectDir: path.dirname(file.path)
+          }
+        }));
     }));
 });
 
@@ -77,14 +78,14 @@ gulp.task("05-Sync-Unicorn", function (callback) {
   var options = {};
   options.siteHostName = habitat.getSiteUrl();
   options.authenticationConfigFile = config.websiteRoot + "/App_config/Include/Unicorn/Unicorn.UI.config";
-  
+
   unicorn(function() { return callback() }, options);
 });
 
 
 gulp.task("06-Deploy-Transforms", function () {
-    return gulp.src("./src/**/code/**/*.transform")
-        .pipe(gulp.dest(config.websiteRoot+"/temp/transforms"));
+  return gulp.src("./src/**/code/**/*.transform")
+      .pipe(gulp.dest(config.websiteRoot + "/temp/transforms"));
 });
 
 /*****************************
@@ -112,7 +113,7 @@ var publishProjects = function (location, dest) {
   dest = dest || config.websiteRoot;
   var targets = ["Build"];
   if (config.runCleanBuilds) {
-	targets = ["Clean", "Build"]
+    targets = ["Clean", "Build"]
   }
   console.log("publish to " + dest + " folder");
   return gulp.src([location + "/**/code/*.csproj"])
