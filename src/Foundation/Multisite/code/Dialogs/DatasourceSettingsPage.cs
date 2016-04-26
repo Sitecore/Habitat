@@ -16,24 +16,13 @@
     private const string DialogRootSettingName = "Foundation.Multisite.DatasourceDialogRoot";
 
     protected DataContext DataContext;
-    /// <summary>
-    /// The dialog.
-    /// 
-    /// </summary>
     protected XmlControl Dialog;
-    /// <summary>
-    /// The items.
-    /// 
-    /// </summary>
     protected Border Items;
-    /// <summary>
-    /// The treeview.
-    /// 
-    /// </summary>
     protected TreeviewEx Treeview;
+
     protected override void OnLoad(EventArgs e)
     {
-      Assert.ArgumentNotNull((object)e, "e");
+      Assert.ArgumentNotNull(e, nameof(e));
       base.OnLoad(e);
       if (Context.ClientPage.IsEvent)
         return;
@@ -45,17 +34,11 @@
       }
     }
 
-    protected string Root
-    {
-      get
-      {
-        return Settings.GetSetting(DialogRootSettingName, "/sitecore/layout/renderings/feature");
-      }
-    }
+    protected string Root => Settings.GetSetting(DialogRootSettingName, "/sitecore/layout/renderings/feature");
 
     protected void OK_Click()
     {
-      Item selectionItem = this.Treeview.GetSelectionItem();
+      var selectionItem = this.Treeview.GetSelectionItem();
       if (selectionItem == null)
       {
         SheerResponse.Alert("Select an item.");
@@ -69,14 +52,14 @@
 
     protected override void OnOK(object sender, EventArgs args)
     {
-      Assert.ArgumentNotNull(sender, "sender");
-      Assert.ArgumentNotNull((object)args, "args");
+      Assert.ArgumentNotNull(sender, nameof(sender));
+      Assert.ArgumentNotNull(args, nameof(args));
       this.OK_Click();
     }
 
     protected virtual void SetDialogResult(Item selectedItem)
     {
-      Assert.ArgumentNotNull((object)selectedItem, "selectedItem");
+      Assert.ArgumentNotNull(selectedItem, nameof(selectedItem));
       SheerResponse.SetDialogValue(selectedItem.ID.ToString());
     }
 

@@ -1,7 +1,7 @@
 ﻿---
-ID: 4b58c03d-2fff-43cf-95a2-e2ef7b5ec90a
-Parent: 31d40630-a6a8-4047-9454-a228c332d9ed
-Template: 3f3cae5e-63d2-4f75-95d9-23eb01827aa9
+ID: "4b58c03d-2fff-43cf-95a2-e2ef7b5ec90a"
+Parent: "31d40630-a6a8-4047-9454-a228c332d9ed"
+Template: "3f3cae5e-63d2-4f75-95d9-23eb01827aa9"
 Path: /sitecore/content/Demo/search/destination
 DB: master
 Languages:
@@ -9,12 +9,12 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151110T230307Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: sitecore\admin
-    - ID: 7b9f4fe3-6285-4969-9784-b96d49973161
+    - ID: "7b9f4fe3-6285-4969-9784-b96d49973161"
       Hint: Token Value
-      Value: http://habitat.local
+      Value: "http://habitat.local"

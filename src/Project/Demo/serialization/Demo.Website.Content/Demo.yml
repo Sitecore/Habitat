@@ -7,6 +7,7 @@ DB: master
 SharedFields:
 - ID: "39c4902e-9960-4469-aeef-e878e9c8218f"
   Hint: __Hidden
+  Type: Checkbox
   Value: 1
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
@@ -4407,9 +4408,6 @@ Languages:
           </div>
         </body>
         </html>
-    - ID: "12537182-f35c-403f-afb5-747d55c450b8"
-      Hint: ShowInMenu
-      Value: 
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151109T235920Z

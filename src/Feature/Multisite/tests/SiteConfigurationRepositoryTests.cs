@@ -49,14 +49,5 @@
       var sites = definitions.Items.ToList();
       sites.Count.Should().BeGreaterThan(0);
     }
-
-    public class SiteTemplate : DbTemplate
-    {
-      public SiteTemplate()
-      {
-        this.Add(Foundation.Multisite.Templates.Site.Fields.HostName);
-        this.Add(Multisite.Templates.SiteConfiguration.Fields.ShowInMenu);
-      }
-    }
   }
 }

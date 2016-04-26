@@ -38,6 +38,9 @@
       <HintPath>..\..\..\..\packages\FluentAssertions.4.1.1\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\..\..\..\packages\Moq.4.1.1308.2321\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="NSubstitute, Version=1.5.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\NSubstitute.1.5.0.0\lib\NET40\NSubstitute.dll</HintPath>
       <Private>True</Private>
@@ -99,15 +102,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConfigurationDatasourceProviderTests.cs" />
-    <Compile Include="ConfigurationSiteDefinitionProviderTests.cs" />
-    <Compile Include="DatasourceProviderFactoryTests.cs" />
     <Compile Include="Extensions\AutoDbDataAttribute.cs" />
-    <Compile Include="ItemDatasourceProviderTests.cs" />
-    <Compile Include="ItemSiteDefinitionProviderTests.cs" />
+    <Compile Include="DatasourceProviderTests.cs" />
+    <Compile Include="SiteDefinitionProviderTests.cs" />
     <Compile Include="Pipelines\GetDatasourceLocationAndTemplateFromSiteTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SettingsProviderTests.cs" />
+    <Compile Include="SiteSettingsProviderTests.cs" />
     <Compile Include="SiteContextTests.cs" />
     <Compile Include="DatasourceConfigurationServiceTests.cs" />
   </ItemGroup>

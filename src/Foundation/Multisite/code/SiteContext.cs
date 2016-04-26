@@ -7,18 +7,22 @@
 
   public class SiteContext
   {
-    public virtual SiteDefinition GetSiteDefinition(Item item)
+    private readonly ISiteDefinitionsProvider siteDefinitionsProvider;
+
+    public SiteContext() : this(new SiteDefinitionsProvider())
+    {    
+    }
+
+    public SiteContext(ISiteDefinitionsProvider siteDefinitionsProvider)
+    {
+      this.siteDefinitionsProvider = siteDefinitionsProvider;
+    }
+
+    public virtual SiteDefinition GetSiteDefinition([NotNull]Item item)
     {
       Assert.ArgumentNotNull(item, nameof(item));
 
-      var itemSiteDefinitionsProvider = new ItemSiteDefinitionsProvider();
-      var siteDefinition = itemSiteDefinitionsProvider.GetContextSiteDefinition(item);
-      if (siteDefinition != null)
-      {
-        return siteDefinition;
-      }
-      var configSiteDefinitionsProvider = new ConfigurationSiteDefinitionsProvider();
-      return configSiteDefinitionsProvider.GetContextSiteDefinition(item);
+      return this.siteDefinitionsProvider.GetContextSiteDefinition(item);
     }
   }
 }
