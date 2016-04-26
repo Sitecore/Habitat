@@ -53,6 +53,7 @@
     @media all and (max-width: $screen-xs-max) {
       float: left;
       width: 100%;
+      //max-height: 400px;
     }
   }
 
@@ -241,6 +242,10 @@
   &-left {
     z-index: 1;
     float: left;
+
+    @media (max-width: $screen-xs-max) {
+      float: none;
+    }
 
     .is-searching & {
       z-index: 0;

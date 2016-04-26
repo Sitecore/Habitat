@@ -40,6 +40,7 @@ body {
             }
           }
         }
+
       }
       &.header-logo-center {
         & + main {
@@ -56,13 +57,22 @@ body {
         }
       }
       &.bg-transparent {
+        &.header-has-top {
+          & + main .jumbotron > *:nth-child(1) {
+            padding-top: 124px;
+          }
+        }
         & + main {
           padding-top: 0;
-          & > * {
+          & .jumbotron > *:nth-child(1) {
             padding-top: 82px;
           }
         }
       }
+    }
+    &.bg-transparent {
+      background-color: rgba(0,0,0,.15) !important;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#15000000', endColorstr='#15000000');
     }
   }
 

@@ -8,7 +8,19 @@ jQuery.noConflict();
       $grid.shuffle({
         itemSelector: '[data-groups]'
       });
-      $(this).imagesLoaded().always(function(instance) {
+      $grid.get(0).addEventListener(Shuffle.EventType.LAYOUT, function() {
+        $(this).find('img').imagesLoaded().always(function(instance) {
+          console.log('loading image!');
+          $grid.shuffle('update');
+        }).done(function() {
+          $grid.shuffle('update');
+          console.log('done loading');
+          setTimeout(function() {
+            $grid.shuffle('update');
+          }, 1000);
+        });
+      });
+      $(this).find('img').imagesLoaded().always(function(instance) {
         console.log('loading image!');
         $grid.shuffle('update');
       }).done(function() {

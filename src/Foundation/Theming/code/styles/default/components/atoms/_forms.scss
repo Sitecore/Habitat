@@ -32,7 +32,13 @@ input {
   line-height: normal;
   &[type="text"], &[type="password"] {
     &.form-control {
-      padding: 0 10px;
+      padding: 0 0px;
+      &[readonly] {
+        padding: 0 10px;
+      }
+      &:focus {
+        padding: 0 10px;
+      }
     }
   }
   &.form-control {
@@ -167,6 +173,9 @@ textarea {
   border-width: 1px;
   &.form-control {
     border-width: 1px;
+  }
+  &:focus {
+    padding: 8px;
   }
 }
 

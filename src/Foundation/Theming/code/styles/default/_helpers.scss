@@ -107,6 +107,20 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+
+  &-primary, &-secondary, &-dark, &-media {
+    color: #FFF;
+     & .dropdown-menu:not(.bg-primary):not(.bg-secondary):not(.bg-dark):not(.bg-media), {
+      color: $text-color !important;
+      .btn {
+        &-default {
+          color: $text-color !important;
+          border-color: $text-color !important;
+        }
+      }
+    }
+  }
 }
 
 .pull {
