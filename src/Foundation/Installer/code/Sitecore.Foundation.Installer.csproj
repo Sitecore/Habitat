@@ -204,13 +204,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\Foundation.Installer.config" />
-    <None Include="web.config.transform" />
     <Content Include="App_Data\MongoData\libeay32.dll" />
     <Content Include="App_Data\MongoData\mongorestore.exe" />
     <Content Include="App_Data\MongoData\ssleay32.dll" />
-    <Content Include="web.config.transform" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="web.config.transform" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
