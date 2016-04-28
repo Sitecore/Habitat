@@ -1,37 +1,72 @@
 ﻿namespace Sitecore.Foundation.Installer.Tests
 {
-  using System.Collections.Generic;
+  using System.Collections.Specialized;
+  using FluentAssertions;
+  using log4net.Appender;
+  using log4net.Config;
+  using log4net.spi;
   using NSubstitute;
-  using Sitecore.Foundation.Installer.XmlTransform;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class PostStepTests
   {
     [Theory]
-    [AutoSububstituteData]
-    public void RunShouldCallXdtTransform(IXdtTransformEngine xdt, IFilePathResolver path, ITransformsProvider transform)
+    [AutoDbData]
+    public void Run_CorrectPostStepAction_CallPostStep(PostStep postStep)
     {
-      var postStep = new PostStep(xdt, path, transform);
-      transform.GetTransformsByLayer(Arg.Any<string>()).Returns(new List<string>() {"web.config.transform"});
+      //Arrange
+      FakePostStepAction.CallCount = 0;
+      var nameValueCollection = new NameValueCollection();
+      nameValueCollection.Add("Attributes", "name1=Sitecore.Foundation.Installer.Tests.PostStepTests+FakePostStepAction, Sitecore.Foundation.Installer.Tests");
+      
+      //Act
+      postStep.Run(null, nameValueCollection);
 
-      //act
-      postStep.Run(null, null);
-      xdt.Received().ApplyConfigTransformation(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>());
+      //Assert
+      FakePostStepAction.CallCount.Should().Be(1);
     }
-
 
     [Theory]
-    [AutoSububstituteData]
-    public void RunShouldNotCallXdtTransformIfTransformFileIsMissing(IXdtTransformEngine xdt, IFilePathResolver path, ITransformsProvider transform)
+    [AutoDbData]
+    public void Run_TwoCorrectPostStepAction_CallBothPostSteps(PostStep postStep)
     {
-      path.MapPath(Arg.Any<string>()).Returns((string)null);
-      transform.GetTransformsByLayer(Arg.Any<string>()).Returns(new List<string>());
-      var postStep = new PostStep(xdt, path, transform);
+      //Arrange
+      FakePostStepAction.CallCount = 0;
+      var nameValueCollection = new NameValueCollection();
+      nameValueCollection.Add("Attributes", "name1=Sitecore.Foundation.Installer.Tests.PostStepTests+FakePostStepAction, Sitecore.Foundation.Installer.Tests|name2=Sitecore.Foundation.Installer.Tests.PostStepTests+FakePostStepAction, Sitecore.Foundation.Installer.Tests|");
 
-      //act
-      postStep.Run(null, null);
-      xdt.DidNotReceive().ApplyConfigTransformation(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>());
+      //Act
+      postStep.Run(null, nameValueCollection);
+
+      //Assert
+      FakePostStepAction.CallCount.Should().Be(2);
     }
 
+    [Theory]
+    [AutoDbData]
+    public void Run_NotExistingType_LogError(MemoryAppender appender, PostStep postStep)
+    {
+      //Arrange
+      BasicConfigurator.Configure(appender);
+      var nameValueCollection = new NameValueCollection();
+      nameValueCollection.Add("Attributes", "NotExistingType");
+
+      //Act
+      postStep.Run(null, nameValueCollection);
+
+      //Assert
+      appender.Events.Should().Contain(x => x.Level == Level.ERROR && x.RenderedMessage.Contains("NotExistingType"));
+    }
+
+    public class FakePostStepAction:IPostStepAction
+    {
+      public static int CallCount;
+
+      public void Run(NameValueCollection nameValueCollection)
+      {
+        CallCount++;
+      }
+    }
   }
 }
