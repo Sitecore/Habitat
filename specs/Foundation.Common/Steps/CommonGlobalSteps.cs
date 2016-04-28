@@ -38,6 +38,10 @@
       ContextExtensions.UtfService.EditItem(idOrPath, fieldName, fieldValue, BaseSettings.UserName, BaseSettings.Password, (Database)Enum.Parse(typeof(Database), db));
     }
 
+    public void GetChildItem()
+    {
+    }
+
     private static void CleanupExecute(TestCleanupAction payload)
     {
       if (payload.ActionType == ActionType.RemoveUser)

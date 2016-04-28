@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,6 +86,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Rich text editor configuration.feature</DependentUpon>
     </Compile>
+    <Compile Include="Steps\ContentEditorSteps.cs" />
+    <Compile Include="Steps\SitecoreExtensionsStepsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -96,6 +99,15 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Foundation.Common\Sitecore.Foundation.Common.Specflow.csproj">
+      <Project>{E0C9AF4F-FC51-42E6-B7B9-1E173AC0589D}</Project>
+      <Name>Sitecore.Foundation.Common.Specflow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Infrastructure\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

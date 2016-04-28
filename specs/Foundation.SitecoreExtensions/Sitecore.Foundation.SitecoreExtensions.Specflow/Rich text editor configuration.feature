@@ -1,8 +1,8 @@
-﻿@UI
+﻿@Service
 Feature: Rich text editor configuration
 	
 
-@NeedImplementation
+@OnlyManual
 Scenario: Rich text editor configuration_UC1_Default rich text editor defined
 	Given Value set to item field
 	| ItemPath                                | FieldName | FieldValue |
@@ -27,7 +27,7 @@ Scenario: Rich text editor configuration_UC1_Default rich text editor defined
 
 
 
-@NeedImplementation
+@OnlyManual
 Scenario: Rich text editor configuration_UC2_Limitted rich text editor defined
 	Given Value set to item field
 	| ItemPath                                | FieldName | FieldValue                                                       |
@@ -50,7 +50,7 @@ Scenario: Rich text editor configuration_UC2_Limitted rich text editor defined
 	| Redo                        |
 	| FindAndReplace              |
 
-@NeedImplementation
+@OnlyManual
 Scenario: Rich text editor configuration_UC3_Complete rich text editor defined
 	Given Value set to item field
 	| ItemPath                                | FieldName | FieldValue                                                        |
@@ -93,3 +93,19 @@ Scenario: Rich text editor configuration_UC3_Complete rich text editor defined
 	| AjaxSpellCheck              |
 	| XhtmlValidator              |
 	| Help                        |
+
+
+@NeedImplementation
+Scenario: Rich text editor configuration_UC4_Assert Custom Html profiles are present
+	Then Following items are present under /sitecore/system/Settings/Html Editor Profiles item in Core db
+	| Html profile       |
+	| Rich Text Complete |
+	| Rich Text Limited  |
+	| Rich Text Default  | 
+
+@NeedImplementation
+Scenario: Rich text editor configuration_UC5_Assert Page Content has correct Rich Text Editor values 
+	Then Page Content has correct Rich Text Editor sources
+	| itemPath                                                                | fieldName | fieldValue                                                        |
+	| /sitecore/templates/Feature/PageContent/_HasPageContent/Content/Summary | Source    | /sitecore/system/Settings/Html Editor Profiles/Rich Text Limited  |
+	| /sitecore/templates/Feature/PageContent/_HasPageContent/Content/Body    | Source    | /sitecore/system/Settings/Html Editor Profiles/Rich Text Complete |
