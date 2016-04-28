@@ -48,46 +48,40 @@
             @DictionaryRepository.Get("/Demo/Visits/PagesThisVisit", "Pages seen in this visit:")
             <strong class="pull-right">@Model.TotalPageViews</strong>
           </h4>
-          <table class="table table-condensed table-borderless">
-            @foreach (var pageView in Model.PageViews)
-            {
-              <tr>
-                <td>@pageView.Path</td>
-                <td>
-                  @if (pageView.Duration == TimeSpan.Zero)
-                  {
-                    <span>-</span>
-                  }
-                  else
-                  {
-                    @pageView.Duration.ToString(@"mm\:ss")
-                  }
-                </td>
-                <td>
-                  @if (pageView.HasEngagementValue)
-                  {
-                    <span class="fa fa-heart" title="@DictionaryRepository.Get("/Demo/Visits/HasPersonalisation", "Page has engagement value")"></span>
-                  }
-                  @if (pageView.HasMvTest)
-                  {
-                    <span class="fa fa-flask" title="@DictionaryRepository.Get("/Demo/Visits/HasTest", "Page has a test")"></span>
-                  }
-                  @if (pageView.HasPersonalisation)
-                  {
-                    <span class="fa fa-street-view" title="@DictionaryRepository.Get("/Demo/Visits/HasPersonalisation", "Page has personalisation")"></span>
-                  }
-                </td>
-              </tr>
-            }
-            @if (Model.TotalPageViews > Model.PageViews.Count())
-            {
-              <tr>
-                <td colspan="3">...</td>
-              </tr>
-            }
-          </table>
         </div>
       </div>
+      <table class="table table-condensed table-borderless">
+        @foreach (var pageView in Model.PageViews)
+        {
+          <tr>
+            <td class="text-muted text-nowrap">
+              @if (pageView.HasEngagementValue)
+              {
+                <span class="fa fa-heart" title="@DictionaryRepository.Get("/Demo/Visits/HasPersonalisation", "Page has engagement value")"></span>
+              }
+              @if (pageView.HasMvTest)
+              {
+                <span class="fa fa-flask" title="@DictionaryRepository.Get("/Demo/Visits/HasTest", "Page has a test")"></span>
+              }
+              @if (pageView.HasPersonalisation)
+              {
+                <span class="fa fa-street-view" title="@DictionaryRepository.Get("/Demo/Visits/HasPersonalisation", "Page has personalisation")"></span>
+              }
+            </td>
+            <td class="text-nowrap" title="@pageView.FullPath">@pageView.Path</td>
+            <td>
+              @if (pageView.Duration == TimeSpan.Zero)
+              {
+                <span>-</span>
+              }
+              else
+              {
+                @pageView.Duration.ToString(@"mm\:ss")
+              }
+            </td>
+          </tr>
+        }
+      </table>
       <div class="media">
         <div class="media-left">
           <span class="fa fa-history"></span>
