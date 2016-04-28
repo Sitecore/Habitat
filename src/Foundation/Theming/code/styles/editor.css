@@ -497,8 +497,8 @@ table {
   background-color: transparent; }
 
 caption {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 12px 15px;
+  padding-bottom: 12px 15px;
   color: #777777;
   text-align: left; }
 
@@ -515,7 +515,7 @@ th {
   .table > tbody > tr > td,
   .table > tfoot > tr > th,
   .table > tfoot > tr > td {
-    padding: 8px;
+    padding: 12px 15px;
     line-height: 1.42857;
     vertical-align: top;
     border-top: 1px solid #ddd; }
@@ -718,9 +718,6 @@ table th[class*="col-"] {
         .table-responsive > .table-bordered > tfoot > tr:last-child > td {
           border-bottom: 0; } }
 
-table > thead > tr > td, table > thead > tr > th, table > tbody > tr > td, table > tbody > tr > th, .table > thead > tr > td, .table > thead > tr > th, .table > tbody > tr > td, .table > tbody > tr > th {
-  padding: 12px 15px; }
-
 .bg-primary table, .bg-secondary table, .bg-dark table, .bg-media table, .bg-primary .table, .bg-secondary .table, .bg-dark .table, .bg-media .table {
   color: #FFF; }
   .bg-primary table .active, .bg-primary table .success, .bg-primary table .warning, .bg-primary table .danger, .bg-primary table .info, .bg-secondary table .active, .bg-secondary table .success, .bg-secondary table .warning, .bg-secondary table .danger, .bg-secondary table .info, .bg-dark table .active, .bg-dark table .success, .bg-dark table .warning, .bg-dark table .danger, .bg-dark table .info, .bg-media table .active, .bg-media table .success, .bg-media table .warning, .bg-media table .danger, .bg-media table .info, .bg-primary .table .active, .bg-primary .table .success, .bg-primary .table .warning, .bg-primary .table .danger, .bg-primary .table .info, .bg-secondary .table .active, .bg-secondary .table .success, .bg-secondary .table .warning, .bg-secondary .table .danger, .bg-secondary .table .info, .bg-dark .table .active, .bg-dark .table .success, .bg-dark .table .warning, .bg-dark .table .danger, .bg-dark .table .info, .bg-media .table .active, .bg-media .table .success, .bg-media .table .warning, .bg-media .table .danger, .bg-media .table .info {
@@ -733,4 +730,19 @@ table.table-striped-vertical th:nth-child(even), table.table-striped-vertical td
   background-color: #f9f9f9; }
   .bg-primary table.table-striped-vertical th:nth-child(even), .bg-secondary table.table-striped-vertical th:nth-child(even), .bg-dark table.table-striped-vertical th:nth-child(even), .bg-media table.table-striped-vertical th:nth-child(even), .bg-primary table.table-striped-vertical td:nth-child(even), .bg-secondary table.table-striped-vertical td:nth-child(even), .bg-dark table.table-striped-vertical td:nth-child(even), .bg-media table.table-striped-vertical td:nth-child(even), .bg-primary .table.table-striped-vertical th:nth-child(even), .bg-secondary .table.table-striped-vertical th:nth-child(even), .bg-dark .table.table-striped-vertical th:nth-child(even), .bg-media .table.table-striped-vertical th:nth-child(even), .bg-primary .table.table-striped-vertical td:nth-child(even), .bg-secondary .table.table-striped-vertical td:nth-child(even), .bg-dark .table.table-striped-vertical td:nth-child(even), .bg-media .table.table-striped-vertical td:nth-child(even) {
     color: #333333; }
+
+table.table-borderless, .table.table-borderless {
+  border: none; }
+  table.table-borderless > thead > tr > th,
+  table.table-borderless > thead > tr > td,
+  table.table-borderless > tbody > tr > th,
+  table.table-borderless > tbody > tr > td,
+  table.table-borderless > tfoot > tr > th,
+  table.table-borderless > tfoot > tr > td, .table.table-borderless > thead > tr > th,
+  .table.table-borderless > thead > tr > td,
+  .table.table-borderless > tbody > tr > th,
+  .table.table-borderless > tbody > tr > td,
+  .table.table-borderless > tfoot > tr > th,
+  .table.table-borderless > tfoot > tr > td {
+    border: none; }
 

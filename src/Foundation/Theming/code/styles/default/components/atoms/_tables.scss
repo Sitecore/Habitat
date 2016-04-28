@@ -1,14 +1,8 @@
+$table-cell-padding: 12px 15px;
+
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/tables";
 
 table, .table {
-
-  & > thead, & > tbody {
-    & > tr {
-      & > td, & > th {
-        padding: 12px 15px;
-      }
-    }
-  }
 
   .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
     color: #FFF;
@@ -40,4 +34,19 @@ table, .table {
       }
     }
   }
+
+  &.table-borderless {
+    border: none;
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th,
+        > td {
+          border: none;
+        }
+      }
+    }
+  }
+
 }
