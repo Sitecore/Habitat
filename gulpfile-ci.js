@@ -47,21 +47,13 @@ gulp.task("CI-Enumerate-Files", function () {
       }));
 });
 
+
 gulp.task("CI-Update-Xml", function (cb) {
     xmlpoke("./package.xml", function (xml) {
         for (var idx in packageFiles) {
             xml.add("project/Sources/xfiles/Entries/x-item", packageFiles[idx]);
         }
     });
-    cb();
-});
-
-gulp.task("CI-Enumerate-Items", function(cb) {
-    gulp.src("/**/serialization/*.yml")
-        .pipe(foreach(function(stream, file) {
-            var name = file.name;
-            return stream;
-        }));
     cb();
 });
 

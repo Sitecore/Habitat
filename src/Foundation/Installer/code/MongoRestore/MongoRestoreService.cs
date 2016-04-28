@@ -50,6 +50,7 @@
 
         var arguments = this.GetArgumentsLine(mongoUrl.Server.ToString(), mongoUrl.DatabaseName, this.mongoFileProvider.GetDumpDirectory(dumpName));
         this.processRunner.Run(this.mongoFileProvider.MongoRestoreExe, arguments);
+        this.MarkAsRestored(mongoUrl);
       }
       catch (Exception ex)
       {
@@ -73,7 +74,7 @@
         var mongoClient = new MongoClient(mongoUrl);
         server = mongoClient.GetServer();
 
-        return server.DatabaseExists(mongoUrl.DatabaseName);
+        return server.GetDatabase(mongoUrl.DatabaseName).CollectionExists(MongoRestoreSettings.RestoredDbTokenCollection);
       }
       catch (FormatException ex)
       {
@@ -84,6 +85,23 @@
       {
         server?.Disconnect();
       }
+    }
+
+    private void MarkAsRestored(MongoUrl mongoUrl)
+    {
+      MongoServer server = null;
+      try
+      {
+        var mongoClient = new MongoClient(mongoUrl);
+        server = mongoClient.GetServer();
+
+        server.GetDatabase(mongoUrl.DatabaseName).CreateCollection(MongoRestoreSettings.RestoredDbTokenCollection);
+      }
+      finally
+      {
+        server?.Disconnect();
+      }
+
     }
 
     protected virtual string GetArgumentsLine(string host, string databaseName, string dumbPath) => $"--host {host} --db {databaseName} --dir {dumbPath}";
