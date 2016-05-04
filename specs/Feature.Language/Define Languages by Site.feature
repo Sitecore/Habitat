@@ -4,75 +4,81 @@
 	I want to be able to define the supported languages on a per site basis 
 	so that different sites can have different languages
 
-@NeedImplementation
+@Ready
 Scenario: Define Languages by Site_UC1_Set one language on the site
-	Given <en> is Selected on the following item
-	| ItemPath                  | Field                | 
-	| /sitecore/content/Habitat | Supported Languages  | 
-	When User opens Habitat website
+    #Only for manual testing: Admin user is logged into Content Editor application
+    Given en is Selected on the following item
+	| ItemPath                  | FieldName            | FieldValue |
+	| /sitecore/content/Habitat | Supported Languages  | en         |
+	When Habitat website is opened on Main Page
 	Then there is no Globe icon in the Main menu on the top of the page
 
 
-@NeedImplementation
+@Ready
 Scenario: Define Languages by Site_UC2_No specific languages are defined on the site
-	Given Admin user is logged into Content Editor application
-	And Following languages defined in Sitecore
-	| Item path                        |
-	| /sitecore/system/Languages/ar-AE |
-	| /sitecore/system/Languages/da    |
-	| /sitecore/system/Languages/de-AT |
-	| /sitecore/system/Languages/en    |
-	| /sitecore/system/Languages/fr-BE |
-	| /sitecore/system/Languages/ja-JP |
-	| /sitecore/system/Languages/ru-RU |
-	When Admin opens following item
-	| ItemPath                  | Field                | 
+	#Only for manual testing: Admin user is logged into Content Editor application
+	Given Following languages defined in Sitecore
+	| ItemPath                         | FieldName |
+	| /sitecore/system/Languages/ar-AE | Iso       |
+	| /sitecore/system/Languages/da    | Iso       |
+	| /sitecore/system/Languages/de-AT | Iso       |
+	| /sitecore/system/Languages/en    | Iso       |
+	| /sitecore/system/Languages/fr-BE | Iso       |
+	| /sitecore/system/Languages/ja-JP | Iso       |
+	| /sitecore/system/Languages/ru-RU | Iso       |
+    #Only for manual testing: When Admin opens following item
+	| ItemPath                  | FieldName            | 
 	| /sitecore/content/Habitat | Supported Languages  |
-	And Admin clicks <Deselect all> link
-	And Admin saves changes on item
-	And User opens Habitat website
+	When Value set to item field
+	| ItemPath                  | FieldName           | FieldValue |
+	| /sitecore/content/Habitat | Supported Languages |            |
+	#Only for manual testing: And Admin clicks Deselect all link
+	#Only for manual testing: And Admin saves changes on item
+	And Habitat website is opened on Main Page
 	And User clicks Globe icon 
 	Then following items available in the list
 	| Item name                             |
-	| English                               |
-	| dansk                                 |
+	| English								|
+	| dansk									|
 	| français (Belgique)                   |
 	| Deutsch (Österreich)                  |
 	| 日本語 (日本)                          |
-	| (العربية (الإمارات العربية المتحدة |
+	| (العربية (الإمارات العربية المتحدة	|
 	| русский (Россия)                      |
 
 
-@NeedImplementation
+@Ready
 Scenario: Define Languages by Site_UC3_Check that language with country code appears in the list
-	Given Admin user is logged into Content Editor application
-	And Following languages defined in Sitecore
-	| Item path                        |
-	| /sitecore/system/Languages/ar-AE |
-	| /sitecore/system/Languages/da    |
-	| /sitecore/system/Languages/de-AT |
-	| /sitecore/system/Languages/en    |
-	| /sitecore/system/Languages/fr-BE |
-	| /sitecore/system/Languages/ja-JP |
-	| /sitecore/system/Languages/ru-RU |
-	When Admin opens following item
-	| ItemPath                  | Field                | 
-	| /sitecore/content/Habitat | Supported Languages  |
-	And Admin clicks following items in the <All> list
-	| Language |
-	| de-AT    |
-	| fr-BE    |
-	And Admin saves changes on item
-	And User opens Habitat website
+	#Only for manual testing:Given Admin user is logged into Content Editor application
+	Given Following languages defined in Sitecore
+	| Item path                        |FieldName |
+	| /sitecore/system/Languages/ar-BH |	Regional Iso Code       |
+	| /sitecore/system/Languages/da    |	Regional Iso Code       |
+	| /sitecore/system/Languages/en    |	Regional Iso Code       |
+	#Only for manual testing: When Admin opens following item
+	#| ItemPath                  | Field                | 
+	#| /sitecore/content/Habitat | Supported Languages  |
+	When The following languages have been selected
+	| ItemPath                  | FieldName           | FieldValue |
+	| /sitecore/content/Habitat | Supported Languages |ar-BH	   |
+	| /sitecore/content/Habitat | Supported Languages |da		   |
+	| /sitecore/content/Habitat | Supported Languages |en		   |
+	#Only for manual testing:And Admin clicks following items in the <All> list
+	#| Language |
+	#| de-AT    |
+	#| fr-BE    |
+	#And Admin saves changes on item
+	And Habitat website is opened on Main Page
 	And User clicks Globe icon 
 	Then following items available in the list
-	| Item name             |
-	| français (Belgique)   |
-	| Deutsch (Österreich)  |
+	| Item name			    |
+	| English               |
+	| dansk				    |
+	| العربية (البحرين)	|
 	
-@NeedImplementation
+@Ready
 Scenario: Define Languages by Site_UC4_Switch between languages on the site
-	Given Habitat website is opened
+	Given Habitat website is opened on Main Page
 	When User clicks Globe icon
 	And User selects DANSK from the list 
-	Then site language is switched to danish
+	Then Page URL ends on da/

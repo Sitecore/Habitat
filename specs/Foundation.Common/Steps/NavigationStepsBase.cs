@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentAssertions;
 using OpenQA.Selenium;
 using Sitecore.Foundation.Common.Specflow.Extensions;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
@@ -16,12 +17,20 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
 
 
     [Given(@"Habitat website is opened on Main Page")]
+    [When(@"Habitat website is opened on Main Page")]
     public void GivenHabitatWebsiteIsOpenedOnMainPage()
     {
       CommonLocators.NavigateToPage(BaseSettings.BaseUrl);
     }
 
-    [When(@"Actor selects (.*) slidebar")]
+        [When(@"User clicks Globe icon")]
+        public void WhenUserClicksGlobeIcon()
+        {
+            CommonLocators.GlobeIcon.FindElement(By.CssSelector(".fa.fa-globe")).Click();
+        }
+
+
+        [When(@"Actor selects (.*) slidebar")]
     public void WhenActorSelectsSlidebar(string button)
     {
       CommonLocators.OpenXDBSlidebar.First(el => el.GetAttribute("title").Contains(button)).Click();
