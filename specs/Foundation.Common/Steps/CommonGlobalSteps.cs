@@ -38,10 +38,12 @@
       ContextExtensions.UtfService.EditItem(idOrPath, fieldName, fieldValue, BaseSettings.UserName, BaseSettings.Password, (Database)Enum.Parse(typeof(Database), db));
     }
 
-    public void GetChildItem()
-    {
-    }
+        public void GetItemFieldValue(string idOrPath, string fieldName, string fieldValue, string db = "Master")
+        {
+            ContextExtensions.UtfService.GetItemFieldValue(idOrPath, fieldName,(Database)Enum.Parse(typeof(Database), db));
+        }
 
+       
     private static void CleanupExecute(TestCleanupAction payload)
     {
       if (payload.ActionType == ActionType.RemoveUser)
@@ -68,6 +70,7 @@
 
 
     [Given(@"Value set to item field")]
+        [When(@"Value set to item field")]
     public void GivenValueSetToItemField(IEnumerable<ItemFieldDefinition> fields)
     {
       foreach (var field in fields)
@@ -75,6 +78,19 @@
         EditItem(field.ItemPath, field.FieldName, field.FieldValue);
       }
     }
+        
+        [Given(@"en is Selected on the following item")]
+        [Given(@"Following languages defined in Sitecore")]
+        [When(@"Admin opens following item")]
+        [When(@"The following languages have been selected")]
+        public void GivenValueGetItemField(IEnumerable<ItemFieldDefinition> fields)
+        {
+            foreach (var field in fields)
+            {
+                GetItemFieldValue(field.ItemPath, field.FieldName, field.FieldValue);
+            }
+        }
+
     [Given(@"Actor Ends user visit")]
     [When(@"Actor Ends user visit")]
     public void WhenActorEndsUserVisit()

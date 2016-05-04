@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluentAssertions;
 using OpenQA.Selenium;
+using Sitecore.Foundation.Common.Specflow.Extensions;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
 using TechTalk.SpecFlow;
 
@@ -36,6 +38,12 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
       StepsBase.DeleteAllBrowserCookies();
     }
 
+    [When(@"User selects DANSK from the list")]
+    public void WhenUserSelectsDANSKFromTheList()
+    {
+        CommonLocators.GlobeIconList.First(el => el.Text.Contains("dansk")).Click();
+    }
 
-  }
+
+    }
 }

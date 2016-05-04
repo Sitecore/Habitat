@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
+using OpenQA.Selenium;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
 using TechTalk.SpecFlow;
 
@@ -85,6 +86,17 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
       CommonLocators.ManageXDBpanelButtons.First(el => el.Text.Contains(button)).Click();
     }
 
+        [Then(@"there is no Globe icon in the Main menu on the top of the page")]
+        public void ThenThereIsNoGlobeIconInTheMainMenuOnTheTopOfThePage()
+        {
+            CommonLocators.GlobeIcon.FindElements(By.CssSelector(".fa.fa-globe")).Should().BeEmpty();
+        }
 
-  }
+        [Then(@"following items available in the list")]
+        public void ThenFollowingItemsAvailableInTheList(Table table)
+        {
+            var globeList = table.Rows.Select(x => x.Values.First());
+            globeList.All(z => CommonLocators.GlobeIconList.Any(x => x.Text == z)).Should().BeTrue();
+        }
+    }
 }

@@ -77,24 +77,26 @@ namespace Sitecore.Feature.Language.Specflow
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Define Languages by Site")]
         [Xunit.TraitAttribute("Description", "Define Languages by Site_UC1_Set one language on the site")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void DefineLanguagesBySite_UC1_SetOneLanguageOnTheSite()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Define Languages by Site_UC1_Set one language on the site", new string[] {
-                        "NeedImplementation"});
-#line 9
+                        "Ready"});
+#line 8
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
-                        "Field"});
+                        "FieldName",
+                        "FieldValue"});
             table1.AddRow(new string[] {
                         "/sitecore/content/Habitat",
-                        "Supported Languages"});
+                        "Supported Languages",
+                        "en"});
 #line 10
- testRunner.Given("<en> is Selected on the following item", ((string)(null)), table1, "Given ");
+    testRunner.Given("en is Selected on the following item", ((string)(null)), table1, "Given ");
 #line 13
- testRunner.When("User opens Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
  testRunner.Then("there is no Globe icon in the Main menu on the top of the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -104,50 +106,60 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Define Languages by Site")]
         [Xunit.TraitAttribute("Description", "Define Languages by Site_UC2_No specific languages are defined on the site")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void DefineLanguagesBySite_UC2_NoSpecificLanguagesAreDefinedOnTheSite()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Define Languages by Site_UC2_No specific languages are defined on the site", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 18
 this.ScenarioSetup(scenarioInfo);
-#line 19
- testRunner.Given("Admin user is logged into Content Editor application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Item path"});
+                        "ItemPath",
+                        "FieldName"});
             table2.AddRow(new string[] {
-                        "/sitecore/system/Languages/ar-AE"});
+                        "/sitecore/system/Languages/ar-AE",
+                        "Iso"});
             table2.AddRow(new string[] {
-                        "/sitecore/system/Languages/da"});
+                        "/sitecore/system/Languages/da",
+                        "Iso"});
             table2.AddRow(new string[] {
-                        "/sitecore/system/Languages/de-AT"});
+                        "/sitecore/system/Languages/de-AT",
+                        "Iso"});
             table2.AddRow(new string[] {
-                        "/sitecore/system/Languages/en"});
+                        "/sitecore/system/Languages/en",
+                        "Iso"});
             table2.AddRow(new string[] {
-                        "/sitecore/system/Languages/fr-BE"});
+                        "/sitecore/system/Languages/fr-BE",
+                        "Iso"});
             table2.AddRow(new string[] {
-                        "/sitecore/system/Languages/ja-JP"});
+                        "/sitecore/system/Languages/ja-JP",
+                        "Iso"});
             table2.AddRow(new string[] {
-                        "/sitecore/system/Languages/ru-RU"});
+                        "/sitecore/system/Languages/ru-RU",
+                        "Iso"});
+            table2.AddRow(new string[] {
+                        "ItemPath",
+                        "FieldName"});
+            table2.AddRow(new string[] {
+                        "/sitecore/content/Habitat",
+                        "Supported Languages"});
 #line 20
- testRunner.And("Following languages defined in Sitecore", ((string)(null)), table2, "And ");
+ testRunner.Given("Following languages defined in Sitecore", ((string)(null)), table2, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
-                        "Field"});
+                        "FieldName",
+                        "FieldValue"});
             table3.AddRow(new string[] {
                         "/sitecore/content/Habitat",
-                        "Supported Languages"});
-#line 29
- testRunner.When("Admin opens following item", ((string)(null)), table3, "When ");
+                        "Supported Languages",
+                        ""});
 #line 32
- testRunner.And("Admin clicks <Deselect all> link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 33
- testRunner.And("Admin saves changes on item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 34
- testRunner.And("User opens Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 35
+ testRunner.When("Value set to item field", ((string)(null)), table3, "When ");
+#line 37
+ testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
  testRunner.And("User clicks Globe icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -166,7 +178,7 @@ this.ScenarioSetup(scenarioInfo);
                         "(العربية (الإمارات العربية المتحدة"});
             table4.AddRow(new string[] {
                         "русский (Россия)"});
-#line 36
+#line 39
  testRunner.Then("following items available in the list", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -176,68 +188,63 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.TraitAttribute("FeatureTitle", "Define Languages by Site")]
         [Xunit.TraitAttribute("Description", "Define Languages by Site_UC3_Check that language with country code appears in the" +
             " list")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void DefineLanguagesBySite_UC3_CheckThatLanguageWithCountryCodeAppearsInTheList()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Define Languages by Site_UC3_Check that language with country code appears in the" +
                     " list", new string[] {
-                        "NeedImplementation"});
-#line 48
+                        "Ready"});
+#line 51
 this.ScenarioSetup(scenarioInfo);
-#line 49
- testRunner.Given("Admin user is logged into Content Editor application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Item path"});
+                        "Item path",
+                        "FieldName"});
             table5.AddRow(new string[] {
-                        "/sitecore/system/Languages/ar-AE"});
+                        "/sitecore/system/Languages/ar-BH",
+                        "Regional Iso Code"});
             table5.AddRow(new string[] {
-                        "/sitecore/system/Languages/da"});
+                        "/sitecore/system/Languages/da",
+                        "Regional Iso Code"});
             table5.AddRow(new string[] {
-                        "/sitecore/system/Languages/de-AT"});
-            table5.AddRow(new string[] {
-                        "/sitecore/system/Languages/en"});
-            table5.AddRow(new string[] {
-                        "/sitecore/system/Languages/fr-BE"});
-            table5.AddRow(new string[] {
-                        "/sitecore/system/Languages/ja-JP"});
-            table5.AddRow(new string[] {
-                        "/sitecore/system/Languages/ru-RU"});
-#line 50
- testRunner.And("Following languages defined in Sitecore", ((string)(null)), table5, "And ");
+                        "/sitecore/system/Languages/en",
+                        "Regional Iso Code"});
+#line 53
+ testRunner.Given("Following languages defined in Sitecore", ((string)(null)), table5, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
-                        "Field"});
+                        "FieldName",
+                        "FieldValue"});
             table6.AddRow(new string[] {
                         "/sitecore/content/Habitat",
-                        "Supported Languages"});
-#line 59
- testRunner.When("Admin opens following item", ((string)(null)), table6, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Language"});
-            table7.AddRow(new string[] {
-                        "de-AT"});
-            table7.AddRow(new string[] {
-                        "fr-BE"});
-#line 62
- testRunner.And("Admin clicks following items in the <All> list", ((string)(null)), table7, "And ");
-#line 66
- testRunner.And("Admin saves changes on item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 67
- testRunner.And("User opens Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 68
+                        "Supported Languages",
+                        "ar-BH"});
+            table6.AddRow(new string[] {
+                        "/sitecore/content/Habitat",
+                        "Supported Languages",
+                        "da"});
+            table6.AddRow(new string[] {
+                        "/sitecore/content/Habitat",
+                        "Supported Languages",
+                        "en"});
+#line 61
+ testRunner.When("The following languages have been selected", ((string)(null)), table6, "When ");
+#line 71
+ testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
  testRunner.And("User clicks Globe icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item name"});
-            table8.AddRow(new string[] {
-                        "français (Belgique)"});
-            table8.AddRow(new string[] {
-                        "Deutsch (Österreich)"});
-#line 69
- testRunner.Then("following items available in the list", ((string)(null)), table8, "Then ");
+            table7.AddRow(new string[] {
+                        "English"});
+            table7.AddRow(new string[] {
+                        "dansk"});
+            table7.AddRow(new string[] {
+                        "العربية (البحرين)"});
+#line 73
+ testRunner.Then("following items available in the list", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -245,21 +252,21 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Define Languages by Site")]
         [Xunit.TraitAttribute("Description", "Define Languages by Site_UC4_Switch between languages on the site")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void DefineLanguagesBySite_UC4_SwitchBetweenLanguagesOnTheSite()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Define Languages by Site_UC4_Switch between languages on the site", new string[] {
-                        "NeedImplementation"});
-#line 75
+                        "Ready"});
+#line 80
 this.ScenarioSetup(scenarioInfo);
-#line 76
- testRunner.Given("Habitat website is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 77
+#line 81
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 82
  testRunner.When("User clicks Globe icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 78
+#line 83
  testRunner.And("User selects DANSK from the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 79
- testRunner.Then("site language is switched to danish", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 84
+ testRunner.Then("Page URL ends on da/", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
