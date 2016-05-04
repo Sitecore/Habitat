@@ -17,6 +17,85 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SetRoleForUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRoleForUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetRoleForUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRolesForUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRolesForUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRolesForUserResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllRoles">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllRolesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFieldSecurityRight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemIdOrPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fieldId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="right" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFieldSecurityRightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFieldSecurityRightResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemSecurityRight">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="database" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="itemIdOrPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="right" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetItemSecurityRightResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetItemSecurityRightResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetUserProperties">
         <s:complexType>
           <s:sequence>
@@ -57,11 +136,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="ArrayOfString">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="GetContactSystemInfo">
         <s:complexType>
           <s:sequence>
@@ -224,6 +298,36 @@
   <wsdl:message name="CreateUserSoapOut">
     <wsdl:part name="parameters" element="tns:CreateUserResponse" />
   </wsdl:message>
+  <wsdl:message name="SetRoleForUserSoapIn">
+    <wsdl:part name="parameters" element="tns:SetRoleForUser" />
+  </wsdl:message>
+  <wsdl:message name="SetRoleForUserSoapOut">
+    <wsdl:part name="parameters" element="tns:SetRoleForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesForUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRolesForUser" />
+  </wsdl:message>
+  <wsdl:message name="GetRolesForUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRolesForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllRoles" />
+  </wsdl:message>
+  <wsdl:message name="GetAllRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFieldSecurityRightSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFieldSecurityRight" />
+  </wsdl:message>
+  <wsdl:message name="GetFieldSecurityRightSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFieldSecurityRightResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemSecurityRightSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItemSecurityRight" />
+  </wsdl:message>
+  <wsdl:message name="GetItemSecurityRightSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemSecurityRightResponse" />
+  </wsdl:message>
   <wsdl:message name="GetUserPropertiesSoapIn">
     <wsdl:part name="parameters" element="tns:GetUserProperties" />
   </wsdl:message>
@@ -307,6 +411,26 @@
       <wsdl:input message="tns:CreateUserSoapIn" />
       <wsdl:output message="tns:CreateUserSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SetRoleForUser">
+      <wsdl:input message="tns:SetRoleForUserSoapIn" />
+      <wsdl:output message="tns:SetRoleForUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForUser">
+      <wsdl:input message="tns:GetRolesForUserSoapIn" />
+      <wsdl:output message="tns:GetRolesForUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoles">
+      <wsdl:input message="tns:GetAllRolesSoapIn" />
+      <wsdl:output message="tns:GetAllRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldSecurityRight">
+      <wsdl:input message="tns:GetFieldSecurityRightSoapIn" />
+      <wsdl:output message="tns:GetFieldSecurityRightSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemSecurityRight">
+      <wsdl:input message="tns:GetItemSecurityRightSoapIn" />
+      <wsdl:output message="tns:GetItemSecurityRightSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="GetUserProperties">
       <wsdl:input message="tns:GetUserPropertiesSoapIn" />
       <wsdl:output message="tns:GetUserPropertiesSoapOut" />
@@ -370,6 +494,51 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="CreateUser">
       <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRoleForUser">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/SetRoleForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForUser">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetRolesForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoles">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetAllRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldSecurityRight">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetFieldSecurityRight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemSecurityRight">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetItemSecurityRight" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -499,6 +668,51 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="CreateUser">
       <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRoleForUser">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/SetRoleForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRolesForUser">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetRolesForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRoles">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetAllRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFieldSecurityRight">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetFieldSecurityRight" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemSecurityRight">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetItemSecurityRight" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

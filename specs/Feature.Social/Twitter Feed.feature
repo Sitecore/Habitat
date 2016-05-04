@@ -1,4 +1,5 @@
-﻿Feature: Twitter Feed
+﻿@UI
+Feature: Twitter Feed
 
 	In order visitors can follow twitter posts on the website
 	As an editor

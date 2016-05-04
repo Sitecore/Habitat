@@ -1,4 +1,5 @@
-﻿Feature: Allow outcomes to be triggered on WFFM
+﻿@UI
+Feature: Allow outcomes to be triggered on WFFM
 	
 
 @ManualOnly

@@ -17,6 +17,7 @@ namespace Sitecore.Feature.Social.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class TwitterFeedFeature : Xunit.IClassFixture<TwitterFeedFeature.FixtureData>, System.IDisposable
     {
         
@@ -34,7 +35,8 @@ namespace Sitecore.Feature.Social.Specflow
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Twitter Feed", "\tIn order visitors can follow twitter posts on the website\r\n\tAs an editor\r\n\tI wan" +
-                    "t to be able to add a twitter feed on pages", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "t to be able to add a twitter feed on pages", ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,18 +82,18 @@ namespace Sitecore.Feature.Social.Specflow
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_UC1_Twitter feed presents on the page", new string[] {
                         "NeedImplementation"});
-#line 8
-this.ScenarioSetup(scenarioInfo);
 #line 9
- testRunner.Given("Habitat website is opened on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 10
+ testRunner.Given("Habitat website is opened on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 11
  testRunner.When("Actor scroll down the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Text"});
             table1.AddRow(new string[] {
                         "Tweets by @sitecorehabitat"});
-#line 11
+#line 12
  testRunner.Then("block with following title is present on the page", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -105,32 +107,32 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_UC2_Add twitter rendering on the page", new string[] {
                         "NeedImplementation"});
-#line 17
-this.ScenarioSetup(scenarioInfo);
 #line 18
- testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 19
- testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 20
- testRunner.And("Button <Add a new component> is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.And("<Select a Rendering> dialog is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Button <Add a new component> is clicked", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
- testRunner.When("Admin selects TwitterFeed rendering", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("<Select a Rendering> dialog is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 23
- testRunner.And("Admin clicks Select button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Admin selects TwitterFeed rendering", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 24
- testRunner.And("Admin selects sitecorehabitat datasource", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Admin clicks Select button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
- testRunner.And("Admin clicks OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Admin selects sitecorehabitat datasource", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
+ testRunner.And("Admin clicks OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
  testRunner.And("Admin saves changes on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "Text"});
             table2.AddRow(new string[] {
                         "Tweets by @sitecorehabitat"});
-#line 27
+#line 28
  testRunner.Then("block with following title is present on the page", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -144,17 +146,17 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_UC3_Remove twitter rendering from page", new string[] {
                         "NeedImplementation"});
-#line 33
-this.ScenarioSetup(scenarioInfo);
 #line 34
- testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 35
- testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 36
- testRunner.And("TwitterFeed component is present on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 37
- testRunner.When("Admin clicks <Remove component> button on the rendering menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("TwitterFeed component is present on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 38
+ testRunner.When("Admin clicks <Remove component> button on the rendering menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 39
  testRunner.Then("TwitterFeed is no longer present on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -168,22 +170,22 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_UC4_Edit rendering title", new string[] {
                         "NeedImplementation"});
-#line 42
-this.ScenarioSetup(scenarioInfo);
 #line 43
- testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 44
- testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 45
+ testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
  testRunner.And("TwitterFeed component is present on the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "FeedTitle Value"});
             table3.AddRow(new string[] {
                         "Tweets by @sitecorehabitat"});
-#line 46
+#line 47
  testRunner.And("FeedTitle contains following value", ((string)(null)), table3, "And ");
-#line 49
+#line 50
  testRunner.When("Admin clicks <Edit related item> button on the rendering menu", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -194,14 +196,14 @@ this.ScenarioSetup(scenarioInfo);
                         "Twitter Feed",
                         "FeedTitle",
                         "Tweets by @sitecore"});
-#line 50
+#line 51
  testRunner.And("Edit following value", ((string)(null)), table4, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "FeedTitle Value"});
             table5.AddRow(new string[] {
                         "Tweets by @sitecore"});
-#line 53
+#line 54
  testRunner.Then("FeedTitle contains following value", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -215,7 +217,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_UC5_Make sure latest posts are shown on the page", new string[] {
                         "NeedImplementation"});
-#line 59
+#line 60
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -224,15 +226,15 @@ this.ScenarioSetup(scenarioInfo);
             table6.AddRow(new string[] {
                         "@sitecorehabitat",
                         "Sitecore54"});
-#line 60
+#line 61
  testRunner.Given("@sitecorehabitat account is registered on twitter.com", ((string)(null)), table6, "Given ");
-#line 63
- testRunner.And("@sitecorehabitat posted new tweet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 64
- testRunner.And("TwitterFeed based on @sitecorehabitat added on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("@sitecorehabitat posted new tweet", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65
- testRunner.When("user refreshes main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("TwitterFeed based on @sitecorehabitat added on main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 66
+ testRunner.When("user refreshes main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 67
  testRunner.Then("new tweet appears in the TwitterFeed component on the main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -246,38 +248,38 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_UC6_Add new datasource", new string[] {
                         "NeedImplementation"});
-#line 70
-this.ScenarioSetup(scenarioInfo);
 #line 71
- testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 72
- testRunner.And("Content Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 73
- testRunner.And("/sitecore/content/Shared/Social/Twitter feeds item is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Content Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 74
- testRunner.When("Admin clicks TwitterFeed button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("/sitecore/content/Shared/Social/Twitter feeds item is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 75
- testRunner.And("Admin enters <TwitterFeed1> name on Message dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Admin clicks TwitterFeed button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 76
+ testRunner.And("Admin enters <TwitterFeed1> name on Message dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 77
  testRunner.And("Admin clicks OK button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Value"});
             table7.AddRow(new string[] {
                         "641815052882804737"});
-#line 77
+#line 78
  testRunner.And("Admin enters followind data WidgetId field", ((string)(null)), table7, "And ");
-#line 80
- testRunner.And("Admin saves changes on the item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 81
- testRunner.And("Admin opens Experience Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Admin saves changes on the item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 82
- testRunner.And("Admin clicks <Add a new component> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Admin opens Experience Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
- testRunner.And("Admin selects TwitterFeed rendering on the <Select a Rendering> dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Admin clicks <Add a new component> button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 84
- testRunner.And("Admin clicks Select button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Admin selects TwitterFeed rendering on the <Select a Rendering> dialog", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 85
+ testRunner.And("Admin clicks Select button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 86
  testRunner.Then("<TwitterFeed1> datasource available in the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -293,22 +295,22 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Social_Twitter Feed_Bug36084_ Place settinfg for configuration number of tweets o" +
                     "n Control Properties dialog", new string[] {
                         "NeedImplementation"});
-#line 88
-this.ScenarioSetup(scenarioInfo);
 #line 89
- testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 90
- testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Admin user is logged into Habitat", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 91
+ testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 92
  testRunner.And("<TwitterFeed> component with <2> tweets on it is present in the bottom of the pag" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 92
- testRunner.And("<Control Properties> dialog for <TwitterFeed> rendering is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 93
- testRunner.When("Admin changes <TweetsToShow> field value to <4>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("<Control Properties> dialog for <TwitterFeed> rendering is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 94
- testRunner.And("Admin saves changes on the item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Admin changes <TweetsToShow> field value to <4>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 95
+ testRunner.And("Admin saves changes on the item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
  testRunner.Then("<TwitterFeed> component with <4> tweets on it is present in the bottom of the pag" +
                     "e", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

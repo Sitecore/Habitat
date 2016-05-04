@@ -17,6 +17,7 @@ namespace Sitecore.Feature.Demo.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class XDBPanelFeature : Xunit.IClassFixture<XDBPanelFeature.FixtureData>, System.IDisposable
     {
         
@@ -33,7 +34,8 @@ namespace Sitecore.Feature.Demo.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "xDB Panel", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "xDB Panel", null, ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,13 +81,13 @@ namespace Sitecore.Feature.Demo.Specflow
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC1_Open Main Panel view", new string[] {
                         "NeedImplementation"});
-#line 5
-this.ScenarioSetup(scenarioInfo);
 #line 6
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
+ testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 9
  testRunner.Then("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -98,7 +100,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Onsite Behavior"});
             table1.AddRow(new string[] {
                         "Referral"});
-#line 9
+#line 10
  testRunner.And("xDB panel contains following headers", ((string)(null)), table1, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -112,15 +114,15 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC2_Close Panel", new string[] {
                         "NeedImplementation"});
-#line 18
-this.ScenarioSetup(scenarioInfo);
 #line 19
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 20
- testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 21
- testRunner.When("Actor clicks <Close> button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
+ testRunner.When("Actor clicks <Close> button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
  testRunner.Then("xDB panel is closed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -134,13 +136,13 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC3_Refresh visit details panel", new string[] {
                         "NeedImplementation"});
-#line 26
-this.ScenarioSetup(scenarioInfo);
 #line 27
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 28
- testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 29
+ testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
  testRunner.When("Actor opens Habitat Main page in a new tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -151,13 +153,13 @@ this.ScenarioSetup(scenarioInfo);
                         "kov10@sitecore.net",
                         "k",
                         "k"});
-#line 30
+#line 31
  testRunner.And("Actor registers a new User in Habitat", ((string)(null)), table2, "And ");
-#line 33
- testRunner.And("Actor returns to previous tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 34
- testRunner.And("Actor clicks <Refresh> button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor returns to previous tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
+ testRunner.And("Actor clicks <Refresh> button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
  testRunner.And("Actor expands <Onsite Behavior> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -166,7 +168,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Register"});
             table3.AddRow(new string[] {
                         "Login"});
-#line 36
+#line 37
  testRunner.Then("Trigger Goals field contains values", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -180,24 +182,24 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC4_End visit", new string[] {
                         "NeedImplementation"});
-#line 44
-this.ScenarioSetup(scenarioInfo);
 #line 45
-  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 46
-  testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 47
-  testRunner.When("Actor clicks <End Visit> button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 48
-  testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("Actor clicks <End Visit> button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 49
+  testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 50
   testRunner.And("Actor expands Engagement header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Number of visits"});
             table4.AddRow(new string[] {
                         "2"});
-#line 50
+#line 51
   testRunner.Then("<Engagement header> contains following values", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -211,11 +213,11 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC5_Engagement header_Main view", new string[] {
                         "NeedImplementation"});
-#line 56
-this.ScenarioSetup(scenarioInfo);
 #line 57
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 58
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 59
  testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -226,7 +228,7 @@ this.ScenarioSetup(scenarioInfo);
                         "0",
                         "1",
                         "2"});
-#line 59
+#line 60
  testRunner.Then("<Engagement header> contains following values", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -240,20 +242,20 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC6_Engagement header_Engagement value_First open", new string[] {
                         "NeedImplementation"});
-#line 65
-this.ScenarioSetup(scenarioInfo);
 #line 66
-  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 67
-  testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 68
+  testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
   testRunner.When("Actor expands <Engagement header> on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table6.AddRow(new string[] {
                         "0"});
-#line 69
+#line 70
   testRunner.Then("<Engagement value> field contains", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -279,7 +281,7 @@ this.ScenarioSetup(scenarioInfo);
                         "37402",
                         "is",
                         "implemented"});
-#line 76
+#line 77
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
@@ -293,33 +295,33 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC8_Engagement header_Pages seen in this visit_Ten latest pages", new string[] {
                         "NeedImplementation"});
-#line 80
-this.ScenarioSetup(scenarioInfo);
 #line 81
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 82
- testRunner.When("Actor goes to More-Info page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 83
- testRunner.And("Actor goes to Feature page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Actor goes to More-Info page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 84
- testRunner.And("Actor goes to Person page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor goes to Feature page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 85
- testRunner.And("Actor goes to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor goes to Person page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 86
- testRunner.And("Actor goes to Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor goes to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 87
- testRunner.And("Actor goes to Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 88
- testRunner.And("Actor goes to Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 89
- testRunner.And("Actor goes to Getting-Started page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 90
  testRunner.And("Actor goes to Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+ testRunner.And("Actor goes to Register page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 89
+ testRunner.And("Actor goes to Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 90
+ testRunner.And("Actor goes to Getting-Started page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 91
- testRunner.And("Actor goes to More-Info page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor goes to Main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 92
- testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor goes to More-Info page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 93
+ testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
  testRunner.And("Actor expands <Engagement header> on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -344,9 +346,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/Home"});
             table7.AddRow(new string[] {
                         "/More-Info"});
-#line 94
+#line 95
  testRunner.Then("<Pages seen in this visit> field contains", ((string)(null)), table7, "Then ");
-#line 106
+#line 107
  testRunner.And("Some pages have info about time actor had spent on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -360,35 +362,35 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC9_Engagement header_Visits to the site", new string[] {
                         "NeedImplementation"});
-#line 110
-this.ScenarioSetup(scenarioInfo);
 #line 111
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 112
- testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 113
- testRunner.When("Actor clicks <End Visit> button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 114
- testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Actor clicks <End Visit> button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 115
- testRunner.And("Actor clicks <End Visit> button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 116
  testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 116
+ testRunner.And("Actor clicks <End Visit> button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 117
+ testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
  testRunner.And("Actor expands <Engagement header> on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table8.AddRow(new string[] {
                         "3"});
-#line 118
+#line 119
  testRunner.Then("<Visits to the site> field contains", ((string)(null)), table8, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Number of visits"});
             table9.AddRow(new string[] {
                         "2"});
-#line 121
+#line 122
  testRunner.And("<Engagement header> contains following values", ((string)(null)), table9, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -402,20 +404,20 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC10_Personal Information header_Contact identification_Anonymus", new string[] {
                         "NeedImplementation"});
-#line 127
-this.ScenarioSetup(scenarioInfo);
 #line 128
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 129
- testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 130
+ testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 131
  testRunner.And("Actor expands <Personal Information> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Contact identification"});
             table10.AddRow(new string[] {
                         "You are anonymous"});
-#line 131
+#line 132
  testRunner.Then("<Personal Information> contains following values", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -443,7 +445,7 @@ this.ScenarioSetup(scenarioInfo);
                         "37402",
                         "is",
                         "implemented"});
-#line 138
+#line 139
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
@@ -457,13 +459,13 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC12_Personal Information header_Device detection", new string[] {
                         "NeedImplementation"});
-#line 142
-this.ScenarioSetup(scenarioInfo);
 #line 143
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 144
- testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 145
+ testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 146
  testRunner.And("Actor expands <Personal Information> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -472,7 +474,7 @@ this.ScenarioSetup(scenarioInfo);
             table11.AddRow(new string[] {
                         "Misc, Windows PC",
                         "Unidentified"});
-#line 146
+#line 147
  testRunner.Then("<Device> contains following values", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -486,20 +488,20 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC13_Onsite Behavior_Profiling_Contact have not been profiled", new string[] {
                         "NeedImplementation"});
-#line 153
-this.ScenarioSetup(scenarioInfo);
 #line 154
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 155
- testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 156
+ testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 157
  testRunner.And("Actor expands <Personal Information> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table12.AddRow(new string[] {
                         "You have not been profiled yet"});
-#line 157
+#line 158
  testRunner.Then("<Profiling> contains following values", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -525,7 +527,7 @@ this.ScenarioSetup(scenarioInfo);
                         "37402",
                         "is",
                         "implemented"});
-#line 164
+#line 165
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
@@ -539,20 +541,20 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC15_Onsite Behavior_Triggered goals_No triggered goals", new string[] {
                         "NeedImplementation"});
-#line 169
-this.ScenarioSetup(scenarioInfo);
 #line 170
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 171
- testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 172
+ testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 173
  testRunner.And("Actor expands <Personal Information> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table13.AddRow(new string[] {
                         "You have triggered no goals so far"});
-#line 173
+#line 174
  testRunner.Then("<Triggered goals> contains following values", ((string)(null)), table13, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -566,11 +568,11 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC16_Onsite Behavior_Triggered goals_Trigger", new string[] {
                         "NeedImplementation"});
-#line 179
-this.ScenarioSetup(scenarioInfo);
 #line 180
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 181
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 182
  testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -581,9 +583,9 @@ this.ScenarioSetup(scenarioInfo);
                         "kov10@sitecore.net",
                         "k",
                         "k"});
-#line 182
+#line 183
  testRunner.When("Actor registers a new User in Habitat", ((string)(null)), table14, "When ");
-#line 185
+#line 186
  testRunner.And("Actor logged out", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -592,9 +594,9 @@ this.ScenarioSetup(scenarioInfo);
             table15.AddRow(new string[] {
                         "kov10@sitecore.net",
                         "k"});
-#line 186
+#line 187
  testRunner.And("Actor logins to Habitat with a user", ((string)(null)), table15, "And ");
-#line 189
+#line 190
  testRunner.And("Actor expands <Onsite Behavior> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
@@ -605,7 +607,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Login"});
             table16.AddRow(new string[] {
                         "Login"});
-#line 190
+#line 191
  testRunner.Then("<Triggered goals> contains following values", ((string)(null)), table16, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -619,20 +621,20 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC17_Onsite Behavior_Outcomes_No outcomes have been reached", new string[] {
                         "NeedImplementation"});
-#line 199
-this.ScenarioSetup(scenarioInfo);
 #line 200
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 201
- testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 202
+ testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 203
  testRunner.When("Actor expands <Onsite Behavior> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table17.AddRow(new string[] {
                         "You have reached no outcomes"});
-#line 203
+#line 204
  testRunner.Then("<Outcomes> contains following values", ((string)(null)), table17, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -646,7 +648,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC18_Onsite Behavior_Outcomes_Triggered outcome", new string[] {
                         "NeedImplementation"});
-#line 212
+#line 213
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -657,20 +659,20 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat",
                         "RegisterOutcome",
                         "Outcomes/Sales Lead"});
-#line 213
+#line 214
  testRunner.Given("Outcome set to item field", ((string)(null)), table18, "Given ");
-#line 216
- testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 217
- testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 218
+ testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 219
  testRunner.When("Actor expands <Onsite Behavior> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table19.AddRow(new string[] {
                         "Sales Lead"});
-#line 219
+#line 220
  testRunner.Then("<Outcomes> contains following values", ((string)(null)), table19, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -684,20 +686,20 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC19_Referral_Referrer_Direct referrer", new string[] {
                         "NeedImplementation"});
-#line 225
-this.ScenarioSetup(scenarioInfo);
 #line 226
-  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 227
-  testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 228
+  testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 229
   testRunner.When("Actor expands <Referral> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table20.AddRow(new string[] {
                         "Direct traffic"});
-#line 229
+#line 230
   testRunner.Then("<Outcomes> contains following values", ((string)(null)), table20, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -711,24 +713,24 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC20_Referral_Referrer_Referrel after second visit", new string[] {
                         "NeedImplementation"});
-#line 236
-this.ScenarioSetup(scenarioInfo);
 #line 237
-  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 238
-  testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 239
-  testRunner.When("Actor clicks <End Visit> button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 240
-  testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("Actor clicks <End Visit> button on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 241
+  testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 242
   testRunner.And("Actor expands <Referral> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table21.AddRow(new string[] {
                         "Habitat website url"});
-#line 242
+#line 243
   testRunner.Then("<Outcomes> contains following values", ((string)(null)), table21, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -744,26 +746,26 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC21_Referral_Referrer_From another site", new string[] {
                         "Bug",
                         "35882:"});
-#line 249
-this.ScenarioSetup(scenarioInfo);
 #line 250
- testRunner.Given("Mockup of Google page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 251
- testRunner.When("Actor enters new test search text in to search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Mockup of Google page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 252
- testRunner.And("Actor clicks Google Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Actor enters new test search text in to search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 253
- testRunner.And("Actor clicks Sitecore Habitat - Flexibility, Simplicity, Extensibility‎ link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor clicks Google Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 254
- testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor clicks Sitecore Habitat - Flexibility, Simplicity, Extensibility‎ link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 255
+ testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 256
   testRunner.And("Actor expands <Referral> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table22.AddRow(new string[] {
                         "Demo website url"});
-#line 256
+#line 257
   testRunner.Then("<Outcomes> contains following values", ((string)(null)), table22, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -777,20 +779,20 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC22_Referral_Campaigns_No associated campaigns", new string[] {
                         "NeedImplementation"});
-#line 263
-this.ScenarioSetup(scenarioInfo);
 #line 264
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 265
- testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 266
+ testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 267
  testRunner.And("Actor expands <Referral> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table23.AddRow(new string[] {
                         "You have not been associated with any campaigns"});
-#line 267
+#line 268
  testRunner.Then("<Campaigns> contains following values", ((string)(null)), table23, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -806,26 +808,26 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC23_Referral_Campaigns_No associated campaigns", new string[] {
                         "Bug",
                         "35882:"});
-#line 273
-this.ScenarioSetup(scenarioInfo);
 #line 274
- testRunner.Given("Mockup of Google page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 275
- testRunner.When("Actor enters new test search text in to search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("Mockup of Google page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 276
- testRunner.And("Actor clicks Google Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("Actor enters new test search text in to search field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 277
- testRunner.And("Actor clicks Sitecore Habitat - Flexibility, Simplicity, Extensibility‎ link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor clicks Google Search button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 278
- testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor clicks Sitecore Habitat - Flexibility, Simplicity, Extensibility‎ link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 279
+ testRunner.And("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 280
  testRunner.And("Actor expands <Referral> header on xDB panel", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
                         "field value"});
             table24.AddRow(new string[] {
                         "Facebook Content Messages"});
-#line 280
+#line 281
  testRunner.Then("<Campaigns> contains following values", ((string)(null)), table24, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -839,13 +841,13 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC24_Available on another page", new string[] {
                         "NeedImplementation"});
-#line 286
-this.ScenarioSetup(scenarioInfo);
 #line 287
-  testRunner.Given("Habitat website is opened on Feature page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 288
-  testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.Given("Habitat website is opened on Feature page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 289
+  testRunner.When("Actor selects <Open visit details panel> slidebar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 290
  testRunner.Then("xDB panel has opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
@@ -858,7 +860,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Onsite Behavior"});
             table25.AddRow(new string[] {
                         "Referral"});
-#line 290
+#line 291
  testRunner.And("xDB panel contains following headers", ((string)(null)), table25, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -872,13 +874,13 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC25_Not available in Edit mode", new string[] {
                         "NeedImplementation"});
-#line 300
-this.ScenarioSetup(scenarioInfo);
 #line 301
- testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 302
- testRunner.When("User opens Main Page and switch  to Edit mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 303
+ testRunner.When("User opens Main Page and switch  to Edit mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 304
  testRunner.Then("<Open visit details panel> icon is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -892,13 +894,13 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC26_Not available in Preview mode", new string[] {
                         "NeedImplementation"});
-#line 306
-this.ScenarioSetup(scenarioInfo);
 #line 307
-    testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 308
- testRunner.When("User opens Main Page and switch to Preview mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 309
+ testRunner.When("User opens Main Page and switch to Preview mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 310
  testRunner.Then("<Open visit details panel> icon is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -912,13 +914,13 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC27_Not available in Explore mode", new string[] {
                         "NeedImplementation"});
-#line 312
-this.ScenarioSetup(scenarioInfo);
 #line 313
- testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 314
- testRunner.When("User opens Main Page and switch to Explore mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 315
+ testRunner.When("User opens Main Page and switch to Explore mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 316
  testRunner.Then("<Open visit details panel> icon is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -932,13 +934,13 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("xDB Panel_UC28_Not available in Debug mode", new string[] {
                         "NeedImplementation"});
-#line 318
-this.ScenarioSetup(scenarioInfo);
 #line 319
- testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 320
- testRunner.When("User opens Main Page and switch to Debug mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("User registered and login on Habitat website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 321
+ testRunner.When("User opens Main Page and switch to Debug mode", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 322
  testRunner.Then("<Open visit details panel> icon is available", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -964,7 +966,7 @@ this.ScenarioSetup(scenarioInfo);
                         "37617",
                         "is",
                         "fixed"});
-#line 325
+#line 326
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();

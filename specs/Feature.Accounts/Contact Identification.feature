@@ -1,4 +1,5 @@
-﻿Feature: Contact Identification
+﻿@UI
+Feature: Contact Identification
 	
 As a sales person 
 I want to show that Sitecore tracks the indentifiction of a visitor 

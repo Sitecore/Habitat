@@ -1,4 +1,5 @@
-﻿Feature: Forgot Password
+﻿@UI
+Feature: Forgot Password
 
 
 

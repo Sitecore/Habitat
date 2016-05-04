@@ -1,4 +1,5 @@
-﻿Feature: Site switcher
+﻿@UI
+Feature: Site switcher
 	
 
 @Ready

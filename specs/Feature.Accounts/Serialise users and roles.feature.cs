@@ -74,17 +74,13 @@ namespace Sitecore.Feature.Accounts.Specflow
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Serialise users and roles")]
         [Xunit.TraitAttribute("Description", "Serialise users and roles_UC1_Habitat modules roles available in Role Manager")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void SerialiseUsersAndRoles_UC1_HabitatModulesRolesAvailableInRoleManager()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Serialise users and roles_UC1_Habitat modules roles available in Role Manager", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
-#line 6
- testRunner.Given("User is logged to sitecore as Admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 7
- testRunner.When("User selects Role Manager", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Role"});
@@ -139,11 +135,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Serialise users and roles")]
         [Xunit.TraitAttribute("Description", "Serialise users and roles_UC2_Non-admin user without modules admin rights")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void SerialiseUsersAndRoles_UC2_Non_AdminUserWithoutModulesAdminRights()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Serialise users and roles_UC2_Non-admin user without modules admin rights", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 34
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -152,19 +148,9 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "habitat\\Project Habitat Content Author"});
 #line 90
- testRunner.Given("User <UserRoles1>/u with following role was created in Habitat under <habitat> do" +
-                    "main", ((string)(null)), table2, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "User name",
-                        "Password"});
-            table3.AddRow(new string[] {
-                        "UserRoles1",
-                        "u"});
-#line 93
- testRunner.When("User navigates to Content Editor with user", ((string)(null)), table3, "When ");
-#line 97
- testRunner.Then("All available item fields are disabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Given("User habitat\\UserRoles with u password and following roles created in Habitat", ((string)(null)), table2, "Given ");
+#line 94
+ testRunner.Then("habitat\\UserRoles has Deny Write access to all available item fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -172,12 +158,37 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Serialise users and roles")]
         [Xunit.TraitAttribute("Description", "Serialise users and roles_UC3_Admin user with modules admin rights")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void SerialiseUsersAndRoles_UC3_AdminUserWithModulesAdminRights()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Serialise users and roles_UC3_Admin user with modules admin rights", new string[] {
-                        "NeedImplementation"});
-#line 101
+                        "Ready"});
+#line 99
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Role"});
+            table3.AddRow(new string[] {
+                        "habitat\\Project Habitat Content Author"});
+            table3.AddRow(new string[] {
+                        "habitat\\Project Habitat Modules Admin"});
+#line 155
+ testRunner.Given("User habitat\\UserRoles with u password and following roles created in Habitat", ((string)(null)), table3, "Given ");
+#line 160
+ testRunner.Then("habitat\\UserRoles has  Write access to all available item fields", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Serialise users and roles")]
+        [Xunit.TraitAttribute("Description", "Serialise users and roles_UC4_Admin user with multisite admin rights")]
+        [Xunit.TraitAttribute("Category", "Ready")]
+        public virtual void SerialiseUsersAndRoles_UC4_AdminUserWithMultisiteAdminRights()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Serialise users and roles_UC4_Admin user with multisite admin rights", new string[] {
+                        "Ready"});
+#line 164
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -186,62 +197,17 @@ this.ScenarioSetup(scenarioInfo);
                         "habitat\\Project Habitat Content Author"});
             table4.AddRow(new string[] {
                         "habitat\\Project Habitat Modules Admin"});
-#line 157
- testRunner.Given("User <UserRoles2>/u with following role was created in Habitat under <habitat> do" +
-                    "main", ((string)(null)), table4, "Given ");
+#line 220
+ testRunner.Given("User habitat\\UserRoles with u password and following roles created in Habitat", ((string)(null)), table4, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                        "User name",
-                        "Password"});
-            table5.AddRow(new string[] {
-                        "UserRoles2",
-                        "u"});
-#line 161
- testRunner.When("User navigates to Content Editor with user", ((string)(null)), table5, "When ");
-#line 165
- testRunner.Then("All available item fields are enabled", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.FactAttribute()]
-        [Xunit.TraitAttribute("FeatureTitle", "Serialise users and roles")]
-        [Xunit.TraitAttribute("Description", "Serialise users and roles_UC4_Admin user with multisite admin rights")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
-        public virtual void SerialiseUsersAndRoles_UC4_AdminUserWithMultisiteAdminRights()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Serialise users and roles_UC4_Admin user with multisite admin rights", new string[] {
-                        "NeedImplementation"});
-#line 168
-this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Role"});
-            table6.AddRow(new string[] {
-                        "habitat\\Project Habitat Content Author"});
-            table6.AddRow(new string[] {
-                        "habitat\\Project Habitat Modules Admin"});
-#line 224
- testRunner.Given("User <UserRoles3>/u with following role was created in Habitat under <habitat> do" +
-                    "main", ((string)(null)), table6, "Given ");
-#line hidden
-            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
-                        "User name",
-                        "Password"});
-            table7.AddRow(new string[] {
-                        "UserRoles3",
-                        "u"});
-#line 228
- testRunner.When("User navigates to Content Editor with user", ((string)(null)), table7, "When ");
-#line hidden
-            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item name"});
-            table8.AddRow(new string[] {
-                        "Datasource Location"});
-            table8.AddRow(new string[] {
-                        "Datasource Template"});
-#line 232
- testRunner.Then("Only following item fields are enabled and all other are disabled", ((string)(null)), table8, "Then ");
+            table5.AddRow(new string[] {
+                        "DatasourceLocation"});
+            table5.AddRow(new string[] {
+                        "DatasourceTemplate"});
+#line 228
+    testRunner.Then("habitat\\UserRoles has  Write access to following item fields", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

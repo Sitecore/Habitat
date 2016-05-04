@@ -17,6 +17,7 @@ namespace Habitat.Website.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class WFFMFormsFeature : Xunit.IClassFixture<WFFMFormsFeature.FixtureData>, System.IDisposable
     {
         
@@ -33,7 +34,8 @@ namespace Habitat.Website.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WFFM forms", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "WFFM forms", null, ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -81,11 +83,11 @@ namespace Habitat.Website.Specflow
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WFFM forms integration_UC1_Verify MVC forms present in all Wide and Narrow column" +
                     "s", new string[] {
                         "NeedImplementation"});
-#line 5
-this.ScenarioSetup(scenarioInfo);
 #line 6
- testRunner.Given("User is logged to Sitecore as Admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 7
+ testRunner.Given("User is logged to Sitecore as Admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 8
  testRunner.When("User selects Content Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -118,7 +120,7 @@ this.ScenarioSetup(scenarioInfo);
             table1.AddRow(new string[] {
                         "/sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-3",
                         "MVC Form"});
-#line 8
+#line 9
  testRunner.Then("Items contain fields", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -132,13 +134,13 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WFFM forms integration_UC2_Few webforms on one page", new string[] {
                         "NeedImplementation"});
-#line 24
-this.ScenarioSetup(scenarioInfo);
 #line 25
- testRunner.Given("New Page was created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 26
- testRunner.And("Webfrom \'Get Our Newsletter\' was added to layout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("New Page was created", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 27
+ testRunner.And("Webfrom \'Get Our Newsletter\' was added to layout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
  testRunner.And("Webfrom \'Leave a message\' was added to layout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -153,7 +155,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Leave a message",
                         "Is Ajax Mvc Form",
                         "0"});
-#line 28
+#line 29
  testRunner.And("Value set to item field", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -164,9 +166,9 @@ this.ScenarioSetup(scenarioInfo);
                         "Get Our Newsletter",
                         "Email",
                         "kov@sitecore.net"});
-#line 32
+#line 33
  testRunner.When("User inputs data to webForm", ((string)(null)), table3, "When ");
-#line 35
+#line 36
  testRunner.Then("No form validation errors on page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

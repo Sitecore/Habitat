@@ -1,4 +1,5 @@
-﻿Feature: Login
+﻿@UI
+Feature: Login
 
 In order to access secure pages
 As a website visitor
@@ -256,10 +257,4 @@ Scenario: Accounts_Login page_UC16_Login from Forgot Password page(bug coverage)
 	And Following links present under User popup
 	| Link name    |
 	| Edit details |
-
-
-
-	 
-
-
-
+  

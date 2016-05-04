@@ -1,4 +1,5 @@
-﻿Feature: Buckets
+﻿@UI
+Feature: Buckets
 	As a news editor 
 	I want an easy structure for my news 
 	so that I dont have to worry about where to put articles.

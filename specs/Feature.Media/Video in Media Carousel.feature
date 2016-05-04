@@ -1,4 +1,5 @@
-﻿Feature: Video in Media Carousel
+﻿@UI
+Feature: Video in Media Carousel
 	
 
 @NeedIMplementation

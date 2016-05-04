@@ -17,6 +17,7 @@ namespace Sitecore.Feature.News.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class BucketsFeature : Xunit.IClassFixture<BucketsFeature.FixtureData>, System.IDisposable
     {
         
@@ -34,7 +35,8 @@ namespace Sitecore.Feature.News.Specflow
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Buckets", "\tAs a news editor \r\n\tI want an easy structure for my news \r\n\tso that I dont have " +
-                    "to worry about where to put articles.", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "to worry about where to put articles.", ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,22 +82,22 @@ namespace Sitecore.Feature.News.Specflow
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("News_Buckets_UC1_Create a new news article in a news folder_Content Editor", new string[] {
                         "NeedImplementation"});
-#line 7
-this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("Content Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 9
+ testRunner.Given("Content Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 10
  testRunner.And("Admin user is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item Path"});
             table1.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/News/News"});
-#line 10
+#line 11
  testRunner.And("User selects following item in the Content Tree", ((string)(null)), table1, "And ");
-#line 13
- testRunner.When("User selects <News Article> in the Insert chunk of Home tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 14
+ testRunner.When("User selects <News Article> in the Insert chunk of Home tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
  testRunner.And("clicks OK on the Message window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -103,7 +105,7 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/News/News/year/month/date/hours/mi" +
                             "nutes/News Article"});
-#line 15
+#line 16
  testRunner.Then("news article is automatically placed in a bucket with following item path ia adde" +
                     "d", ((string)(null)), table2, "Then ");
 #line hidden
@@ -118,21 +120,21 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("News_Buckets_UC2_Create a new news article in a news folder_Experience Editor", new string[] {
                         "NeedImplementation"});
-#line 21
-this.ScenarioSetup(scenarioInfo);
 #line 22
- testRunner.Given("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 23
- testRunner.And("Admin user is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 24
- testRunner.And("Home/Modules/Feature/News/News page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Admin user is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 25
- testRunner.When("User clicks <Insert page> button on the ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("Home/Modules/Feature/News/News page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
- testRunner.And("User selects <News Article>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User clicks <Insert page> button on the ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 27
- testRunner.And("clicks OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User selects <News Article>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 28
+ testRunner.And("clicks OK", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
  testRunner.Then("breadcrumbs contains following path <Home>Modules>Feature>News>News>year>month>da" +
                     "te>hours>minutes>News Article>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -147,30 +149,30 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("News_Buckets_UC3_Create new news folder", new string[] {
                         "NeedImplementation"});
-#line 32
-this.ScenarioSetup(scenarioInfo);
 #line 33
- testRunner.Given("Content Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 34
- testRunner.And("Admin user is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("Content Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 35
+ testRunner.And("Admin user is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
  testRunner.And("Content Tree is expanded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item Path"});
             table3.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/News"});
-#line 36
+#line 37
  testRunner.And("following item is selected", ((string)(null)), table3, "And ");
-#line 39
- testRunner.And("<Insert from Template> dialog is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
- testRunner.When("User selects </Project/Habitat/Page Types/News List> template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("<Insert from Template> dialog is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 41
- testRunner.And("clicks Insert button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects </Project/Habitat/Page Types/News List> template", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 42
- testRunner.And("User inserts new <News Article>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("clicks Insert button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
+ testRunner.And("User inserts new <News Article>", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
  testRunner.Then("new bucketed folder created under News", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -184,24 +186,24 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("News_Buckets_UC4_Publish news article placed in a bucket", new string[] {
                         "NeedImplementation"});
-#line 47
-this.ScenarioSetup(scenarioInfo);
 #line 48
- testRunner.Given("Content Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 49
+ testRunner.Given("Content Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 50
  testRunner.And("Admin user is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item Path"});
             table4.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/News/News"});
-#line 50
+#line 51
  testRunner.And("User selects following item in the Content Tree", ((string)(null)), table4, "And ");
-#line 53
- testRunner.When("User selects <News Article> in the Insert chunk of Home tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 54
- testRunner.And("clicks OK on the Message window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User selects <News Article> in the Insert chunk of Home tab", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 55
+ testRunner.And("clicks OK on the Message window", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
  testRunner.And("User click Publish Site on the ribbon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -209,14 +211,14 @@ this.ScenarioSetup(scenarioInfo);
             table5.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/News/News/year/month/date/hours/mi" +
                             "nutes/News Article"});
-#line 56
+#line 57
  testRunner.And("User opens following item in Experience Editor mode", ((string)(null)), table5, "And ");
-#line 59
- testRunner.And("Admin logs out from sitecore backend", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 60
+ testRunner.And("Admin logs out from sitecore backend", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
  testRunner.And("follows the link http://habitat.test5ua1.dk.sitecore.net/Modules/Feature/News/New" +
                     "s", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 61
+#line 62
  testRunner.Then("new empty news article is in the bottom of the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

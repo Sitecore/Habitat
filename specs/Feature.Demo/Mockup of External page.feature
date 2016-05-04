@@ -1,4 +1,5 @@
-﻿Feature: Mockup of External page
+﻿@UI
+Feature: Mockup of External page
 
 In order to start a demo story from an external page
 As a technical presales consultant

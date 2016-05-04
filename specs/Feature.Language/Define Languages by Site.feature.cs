@@ -17,6 +17,7 @@ namespace Sitecore.Feature.Language.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class DefineLanguagesBySiteFeature : Xunit.IClassFixture<DefineLanguagesBySiteFeature.FixtureData>, System.IDisposable
     {
         
@@ -34,7 +35,8 @@ namespace Sitecore.Feature.Language.Specflow
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Define Languages by Site", "\tAs an editor \r\n\tI want to be able to define the supported languages on a per sit" +
-                    "e basis \r\n\tso that different sites can have different languages", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "e basis \r\n\tso that different sites can have different languages", ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         

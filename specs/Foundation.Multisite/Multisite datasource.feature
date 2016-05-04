@@ -1,4 +1,5 @@
-﻿Feature: Multisite datasource
+﻿@UI
+Feature: Multisite datasource
 	
 @NeedImplementation
 Scenario: Multisite datasource_UC1_Standard path

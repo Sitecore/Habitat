@@ -17,6 +17,7 @@ namespace Sitecore.Feature.FAQ.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class FAQFeature : Xunit.IClassFixture<FAQFeature.FixtureData>, System.IDisposable
     {
         
@@ -33,7 +34,8 @@ namespace Sitecore.Feature.FAQ.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FAQ", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "FAQ", null, ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,7 +81,7 @@ namespace Sitecore.Feature.FAQ.Specflow
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("FAQ_UC1_Add new questions", new string[] {
                         "InDesign"});
-#line 5
+#line 6
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -100,7 +102,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FAQ4",
                         "What is DST?",
                         "DST is Demo Solution Team"});
-#line 6
+#line 7
  testRunner.Given("New FAQ questions were created and added", ((string)(null)), table1, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -112,9 +114,9 @@ this.ScenarioSetup(scenarioInfo);
             table2.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/FAQ/FAQ Group",
                         "FAQ4"});
-#line 10
+#line 11
  testRunner.When("User moves following items to selected in multilist field and saves changes", ((string)(null)), table2, "When ");
-#line 14
+#line 15
  testRunner.And("User navigates to FAQ page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -126,7 +128,7 @@ this.ScenarioSetup(scenarioInfo);
             table3.AddRow(new string[] {
                         "What is DST?",
                         "DST is Demo Solution Team"});
-#line 15
+#line 16
  testRunner.Then("Following questions with answers should be present on FAQ page", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -140,7 +142,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("FAQ_UC2_Add new group", new string[] {
                         "InDesign"});
-#line 22
+#line 23
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -155,7 +157,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FAQ5",
                         "Who is MAN UTD fan?",
                         "Kostas is MAN UTD fan"});
-#line 23
+#line 24
  testRunner.Given("New FAQ questions were created and added", ((string)(null)), table4, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -166,7 +168,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/Modules/Feature/FAQ",
                         "BA1EB1BD-E705-4BE6-A432-06B7F1B2F2CC",
                         "FAQ Group 2"});
-#line 26
+#line 27
  testRunner.When("New FAQ group was created", ((string)(null)), table5, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -175,7 +177,7 @@ this.ScenarioSetup(scenarioInfo);
             table6.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/FAQ/FAQ Group 2",
                         "FAQ5"});
-#line 29
+#line 30
  testRunner.And("User moves following items to selected in multilist field and saves changes", ((string)(null)), table6, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -186,7 +188,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/Modules/Feature/FAQ/",
                         "FAQ Accordion",
                         "/sitecore/content/Habitat/Home/Modules/Feature/FAQ/FAQ Group 2"});
-#line 32
+#line 33
  testRunner.And("User defines final layout on page", ((string)(null)), table7, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -195,7 +197,7 @@ this.ScenarioSetup(scenarioInfo);
             table8.AddRow(new string[] {
                         "Who is MAN UTD fan?",
                         "Kostas is MAN UTD fan"});
-#line 35
+#line 36
  testRunner.Then("Following questions with answers should be present on FAQ page", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -209,7 +211,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("FAQ_UC3_No questions available on page", new string[] {
                         "InDesign"});
-#line 41
+#line 42
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -220,7 +222,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/Modules/Feature/FAQ",
                         "BA1EB1BD-E705-4BE6-A432-06B7F1B2F2CC",
                         "FAQ Group 3"});
-#line 42
+#line 43
  testRunner.Given("New FAQ group was created", ((string)(null)), table9, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -231,7 +233,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/Modules/Feature/FAQ/",
                         "FAQ Accordion",
                         "/sitecore/content/Habitat/Home/Modules/Feature/FAQ/FAQ Group 2"});
-#line 45
+#line 46
  testRunner.When("User defines final layout on page", ((string)(null)), table10, "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -246,7 +248,7 @@ this.ScenarioSetup(scenarioInfo);
             table11.AddRow(new string[] {
                         "What is DST?",
                         "DST is Demo Solution Team"});
-#line 48
+#line 49
  testRunner.Then("Following questions with answers should not be present on FAQ page", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();

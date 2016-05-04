@@ -1,5 +1,4 @@
-﻿@UI
-Feature: Show Tracking Information
+﻿Feature: Show Tracking Information
 	
 
 @NeedImplementation

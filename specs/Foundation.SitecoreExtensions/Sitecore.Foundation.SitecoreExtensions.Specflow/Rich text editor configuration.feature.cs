@@ -17,6 +17,7 @@ namespace Sitecore.Foundation.SitecoreExtensions.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "Service")]
     public partial class RichTextEditorConfigurationFeature : Xunit.IClassFixture<RichTextEditorConfigurationFeature.FixtureData>, System.IDisposable
     {
         
@@ -33,7 +34,8 @@ namespace Sitecore.Foundation.SitecoreExtensions.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Rich text editor configuration", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Rich text editor configuration", null, ProgrammingLanguage.CSharp, new string[] {
+                        "Service"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,12 +76,12 @@ namespace Sitecore.Foundation.SitecoreExtensions.Specflow
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Rich text editor configuration")]
         [Xunit.TraitAttribute("Description", "Rich text editor configuration_UC1_Default rich text editor defined")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "OnlyManual")]
         public virtual void RichTextEditorConfiguration_UC1_DefaultRichTextEditorDefined()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rich text editor configuration_UC1_Default rich text editor defined", new string[] {
-                        "NeedImplementation"});
-#line 5
+                        "OnlyManual"});
+#line 6
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -90,15 +92,15 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/templates/Feature/PageContent",
                         "Summary",
                         "@empty"});
-#line 6
+#line 7
  testRunner.Given("Value set to item field", ((string)(null)), table1, "Given ");
-#line 9
- testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.When("User navigates to News page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("User clicks on News Summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to News page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 12
+ testRunner.And("User clicks on News Summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
  testRunner.And("User opens Rich Text Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -125,7 +127,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Redo"});
             table2.AddRow(new string[] {
                         "FindAndReplace"});
-#line 13
+#line 14
  testRunner.Then("Following classes present in a Rich Text Editor popup", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -134,12 +136,12 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Rich text editor configuration")]
         [Xunit.TraitAttribute("Description", "Rich text editor configuration_UC2_Limitted rich text editor defined")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "OnlyManual")]
         public virtual void RichTextEditorConfiguration_UC2_LimittedRichTextEditorDefined()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rich text editor configuration_UC2_Limitted rich text editor defined", new string[] {
-                        "NeedImplementation"});
-#line 30
+                        "OnlyManual"});
+#line 31
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -150,15 +152,15 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/templates/Feature/PageContent",
                         "Summary",
                         "/sitecore/system/Settings/Html Editor Profiles/Rich Text Limited"});
-#line 31
+#line 32
  testRunner.Given("Value set to item field", ((string)(null)), table3, "Given ");
-#line 34
- testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 35
- testRunner.When("User navigates to News page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 36
- testRunner.And("User clicks on News Summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to News page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 37
+ testRunner.And("User clicks on News Summary", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
  testRunner.And("User opens Rich Text Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -185,7 +187,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Redo"});
             table4.AddRow(new string[] {
                         "FindAndReplace"});
-#line 38
+#line 39
  testRunner.Then("Following classes present in a Rich Text Editor popup", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -194,12 +196,12 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Rich text editor configuration")]
         [Xunit.TraitAttribute("Description", "Rich text editor configuration_UC3_Complete rich text editor defined")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "OnlyManual")]
         public virtual void RichTextEditorConfiguration_UC3_CompleteRichTextEditorDefined()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rich text editor configuration_UC3_Complete rich text editor defined", new string[] {
-                        "NeedImplementation"});
-#line 53
+                        "OnlyManual"});
+#line 54
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -210,15 +212,15 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/templates/Feature/PageContent",
                         "Body",
                         "/sitecore/system/Settings/Html Editor Profiles/Rich Text Complete"});
-#line 54
+#line 55
  testRunner.Given("Value set to item field", ((string)(null)), table5, "Given ");
-#line 57
- testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
- testRunner.When("User navigates to News page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("Experience Editor application is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 59
- testRunner.And("User clicks on News Body", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("User navigates to News page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 60
+ testRunner.And("User clicks on News Body", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
  testRunner.And("User opens Rich Text Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -287,8 +289,65 @@ this.ScenarioSetup(scenarioInfo);
                         "XhtmlValidator"});
             table6.AddRow(new string[] {
                         "Help"});
-#line 61
+#line 62
  testRunner.Then("Following classes present in a Rich Text Editor popup", ((string)(null)), table6, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Rich text editor configuration")]
+        [Xunit.TraitAttribute("Description", "Rich text editor configuration_UC4_Assert Custom Html profiles are present")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        public virtual void RichTextEditorConfiguration_UC4_AssertCustomHtmlProfilesArePresent()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rich text editor configuration_UC4_Assert Custom Html profiles are present", new string[] {
+                        "NeedImplementation"});
+#line 99
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Html profile"});
+            table7.AddRow(new string[] {
+                        "Rich Text Complete"});
+            table7.AddRow(new string[] {
+                        "Rich Text Limited"});
+            table7.AddRow(new string[] {
+                        "Rich Text Default"});
+#line 100
+ testRunner.Then("Following items are present under /sitecore/system/Settings/Html Editor Profiles " +
+                    "item in Core db", ((string)(null)), table7, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Rich text editor configuration")]
+        [Xunit.TraitAttribute("Description", "Rich text editor configuration_UC5_Assert Page Content has correct Rich Text Edit" +
+            "or values")]
+        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        public virtual void RichTextEditorConfiguration_UC5_AssertPageContentHasCorrectRichTextEditorValues()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rich text editor configuration_UC5_Assert Page Content has correct Rich Text Edit" +
+                    "or values", new string[] {
+                        "NeedImplementation"});
+#line 107
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "itemPath",
+                        "fieldName",
+                        "fieldValue"});
+            table8.AddRow(new string[] {
+                        "/sitecore/templates/Feature/PageContent/_HasPageContent/Content/Summary",
+                        "Source",
+                        "/sitecore/system/Settings/Html Editor Profiles/Rich Text Limited"});
+            table8.AddRow(new string[] {
+                        "/sitecore/templates/Feature/PageContent/_HasPageContent/Content/Body",
+                        "Source",
+                        "/sitecore/system/Settings/Html Editor Profiles/Rich Text Complete"});
+#line 108
+ testRunner.Then("Page Content has correct Rich Text Editor sources", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

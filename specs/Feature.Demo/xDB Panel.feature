@@ -1,4 +1,5 @@
-﻿Feature: xDB Panel
+﻿@UI
+Feature: xDB Panel
 	
 
 @NeedImplementation

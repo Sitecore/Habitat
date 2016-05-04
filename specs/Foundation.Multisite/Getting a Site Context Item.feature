@@ -1,4 +1,5 @@
-﻿Feature: Getting a Site Context Item
+﻿@UI
+Feature: Getting a Site Context Item
 	
 
 @NeedImplementation

@@ -1,4 +1,5 @@
-﻿Feature: Save user details in xDB
+﻿@UI
+Feature: Save user details in xDB
 	
 
 @NeedUpdateStepWithRemovingDataFromAnalytic

@@ -1,10 +1,10 @@
 ﻿Feature: Serialise users and roles
 
 
-@NeedImplementation
+@Ready
 Scenario: Serialise users and roles_UC1_Habitat modules roles available in Role Manager
-	Given User is logged to sitecore as Admin
-	When User selects Role Manager
+#For manual testing:	Given User is logged to sitecore as Admin
+#For manual testing:	When User selects Role Manager
 	Then Following roles available
 	| Role                                   |
 	| habitat\Project Habitat Content Author |
@@ -30,7 +30,7 @@ Scenario: Serialise users and roles_UC1_Habitat modules roles available in Role 
 	| modules\Foundation Multisite Admin     |
 
 
-@NeedImplementation
+@Ready
 Scenario: Serialise users and roles_UC2_Non-admin user without modules admin rights
 #InitialCondition:
 #Package "Serialise users and roles PBI 37273-1.0.zip" should be uploaded.
@@ -87,17 +87,15 @@ Scenario: Serialise users and roles_UC2_Non-admin user without modules admin rig
 #	| FAQ                      |
 #	| FAQ Group                |
 #	| Interest                 |  
-	Given User <UserRoles1>/u with following role was created in Habitat under <habitat> domain
+	Given User habitat\UserRoles with u password and following roles created in Habitat
 	| Role                                   |
 	| habitat\Project Habitat Content Author |              
-	When User navigates to Content Editor with user
-	| User name  | Password |
-	| UserRoles1 | u        |
 #For manual testing: User clicks <Lock and Edit> link
-	Then All available item fields are disabled
+	Then habitat\UserRoles has Deny Write access to all available item fields
+	#Then All available item fields are disabled
 
 
-@NeedImplementation
+@Ready
 Scenario: Serialise users and roles_UC3_Admin user with modules admin rights
 #InitialCondition:
 #Package "Serialise users and roles PBI 37273-1.0.zip" should be uploaded.
@@ -153,18 +151,16 @@ Scenario: Serialise users and roles_UC3_Admin user with modules admin rights
 #	| _PageAssets              |
 #	| FAQ                      |
 #	| FAQ Group                |
-#	| Interest                 |  
-	Given User <UserRoles2>/u with following role was created in Habitat under <habitat> domain
+#	| Interest                 | 	
+	Given User habitat\UserRoles with u password and following roles created in Habitat
 	| Role                                   |
 	| habitat\Project Habitat Content Author |
-	| habitat\Project Habitat Modules Admin  |             
-	When User navigates to Content Editor with user
-	| User name  | Password |
-	| UserRoles2 | u        |
-#For manual testing: User clicks <Lock and Edit> link
-	Then All available item fields are enabled
+	| habitat\Project Habitat Modules Admin  |
+#For manual testing: User clicks <Lock and Edit> link	             
+	Then habitat\UserRoles has  Write access to all available item fields
 
-	@NeedImplementation
+
+@Ready
 Scenario: Serialise users and roles_UC4_Admin user with multisite admin rights
 #InitialCondition:
 #Package "Serialise users and roles PBI 37273-1.0.zip" should be uploaded.
@@ -220,18 +216,17 @@ Scenario: Serialise users and roles_UC4_Admin user with multisite admin rights
 #	| _PageAssets              |
 #	| FAQ                      |
 #	| FAQ Group                |
-#	| Interest                 | 
-	Given User <UserRoles3>/u with following role was created in Habitat under <habitat> domain
+#	| Interest                 |
+	Given User habitat\UserRoles with u password and following roles created in Habitat
 	| Role                                   |
 	| habitat\Project Habitat Content Author |
 	| habitat\Project Habitat Modules Admin  |                 
-	When User navigates to Content Editor with user
-	| User name  | Password |
-	| UserRoles3 | u        |
-#For manual testing: User clicks <Lock and Edit> link
-	Then Only following item fields are enabled and all other are disabled
-	| Item name            |
-	| Datasource Location  |
-	| Datasource Template  |
-
+#For manual testing: When User navigates to Content Editor with user
+#	| User name  | Password |
+#	| UserRoles3 | u        |
+#For manual testing: User clicks <Lock and Edit> link  
+    Then habitat\UserRoles has  Write access to following item fields
+    | Item name           |
+  	| DatasourceLocation  |
+  	| DatasourceTemplate  |
 

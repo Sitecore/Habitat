@@ -1,4 +1,5 @@
-﻿Feature: Paged Search Result
+﻿@UI
+Feature: Paged Search Result
 	In order to find the content I am searching for
 	As a website visitor
 	I want to be able to browse through multiple pages of search results

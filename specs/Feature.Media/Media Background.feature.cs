@@ -17,6 +17,7 @@ namespace Sitecore.Feature.Media.Specflow
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [Xunit.TraitAttribute("Category", "UI")]
     public partial class MediaBackgroundFeature : Xunit.IClassFixture<MediaBackgroundFeature.FixtureData>, System.IDisposable
     {
         
@@ -33,7 +34,8 @@ namespace Sitecore.Feature.Media.Specflow
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Media Background", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Media Background", null, ProgrammingLanguage.CSharp, new string[] {
+                        "UI"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -79,11 +81,11 @@ namespace Sitecore.Feature.Media.Specflow
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Media Background_Parallax_UC1_Image background with paralax", new string[] {
                         "NeedImplementation"});
-#line 6
-this.ScenarioSetup(scenarioInfo);
 #line 7
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 8
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 9
  testRunner.When("Actor opens Parallax page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -96,7 +98,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/-/media/Habitat/Images/Square/Habitat-019-square.jpg",
                         "parallax",
                         "1.0"});
-#line 9
+#line 10
  testRunner.Then("Following parallax control presents on page", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -110,11 +112,11 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Media Background_Parallax_UC2_Image background without paralax", new string[] {
                         "NeedImplementation"});
-#line 14
-this.ScenarioSetup(scenarioInfo);
 #line 15
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 16
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 17
  testRunner.When("Actor opens Parallax page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
@@ -125,7 +127,7 @@ this.ScenarioSetup(scenarioInfo);
                         "parallax",
                         "/-/media/Habitat/Images/Square/Habitat-019-square.jpg",
                         "static"});
-#line 18
+#line 19
  testRunner.Then("Following parallax control presents on page", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -139,11 +141,11 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Media Background_Parallax_UC3_Video background with paralax", new string[] {
                         "NeedImplementation"});
-#line 24
-this.ScenarioSetup(scenarioInfo);
 #line 25
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 26
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 27
  testRunner.When("Actor opens Parallax page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -156,7 +158,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/-/media/Habitat/Videos/Sitecore-Experience-Platform-on-Microsoft-Azure.mp4",
                         "parallax",
                         "1.0"});
-#line 27
+#line 28
  testRunner.Then("Following parallax control presents on page", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -170,11 +172,11 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Media Background_Parallax_UC4_Video background without paralax", new string[] {
                         "NeedImplementation"});
-#line 32
-this.ScenarioSetup(scenarioInfo);
 #line 33
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 34
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 35
  testRunner.When("Actor opens Parallax page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -185,7 +187,7 @@ this.ScenarioSetup(scenarioInfo);
                         "parallax",
                         "/-/media/Habitat/Videos/Sitecore-Experience-Platform-on-Microsoft-Azure.mp4",
                         "static"});
-#line 35
+#line 36
  testRunner.Then("Following parallax control presents on page", ((string)(null)), table4, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -199,7 +201,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Media Background_Parallax_UC5_Change from parallax to static", new string[] {
                         "NeedImplementation"});
-#line 41
+#line 42
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -210,9 +212,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Global/Media/Parallax/Parallax Picture",
                         "Is Parallax Enabled",
                         "0"});
-#line 42
+#line 43
  testRunner.Given("Value set to item field", ((string)(null)), table5, "Given ");
-#line 45
+#line 46
  testRunner.When("Actor opens Parallax page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
@@ -223,7 +225,7 @@ this.ScenarioSetup(scenarioInfo);
                         "parallax",
                         "/-/media/Habitat/Images/Square/Habitat-019-square.jpg",
                         "static"});
-#line 46
+#line 47
  testRunner.Then("Following parallax control presents on page", ((string)(null)), table6, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -237,7 +239,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Media Background_Parallax_UC6_Change from static to parallax", new string[] {
                         "NeedImplementation"});
-#line 52
+#line 53
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -248,9 +250,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Global/Media/Parallax/Static Background Picture",
                         "Is Parallax Enabled",
                         "1"});
-#line 53
+#line 54
  testRunner.Given("Value set to item field", ((string)(null)), table7, "Given ");
-#line 56
+#line 57
  testRunner.When("Actor opens Parallax page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -263,7 +265,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/-/media/Habitat/Images/Square/Habitat-019-square.jpg",
                         "static",
                         "1.0"});
-#line 58
+#line 59
  testRunner.Then("Following parallax control presents on page", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -277,7 +279,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Media Background_Parallax_UC6_Change parallax speed", new string[] {
                         "NeedImplementation"});
-#line 64
+#line 65
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -288,9 +290,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Global/Media/Parallax/Parallax Picture",
                         "Parallax Speed",
                         "1.5"});
-#line 65
+#line 66
  testRunner.Given("Value set to item field", ((string)(null)), table9, "Given ");
-#line 68
+#line 69
  testRunner.When("Actor opens Parallax page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -303,7 +305,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/-/media/Habitat/Images/Square/Habitat-019-square.jpg",
                         "static",
                         "1.5"});
-#line 69
+#line 70
  testRunner.Then("Following parallax control presents on page", ((string)(null)), table10, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -317,11 +319,11 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Media Background_Parallax_UC8_Inverted parallax", new string[] {
                         "NeedImplementation"});
-#line 76
-this.ScenarioSetup(scenarioInfo);
 #line 77
- testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 78
+ testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 79
  testRunner.When("Actor opens Parallax page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
@@ -334,7 +336,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/-/media/Habitat/Images/Square/Habitat-019-square.jpg",
                         "parallax",
                         "-1.0"});
-#line 80
+#line 81
  testRunner.Then("Following parallax control presents on page", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -348,18 +350,18 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Media Background_Parallax_UC9_Paralax template is available as Insert Options", new string[] {
                         "NeedImplementation"});
-#line 86
-this.ScenarioSetup(scenarioInfo);
 #line 87
- testRunner.Given("Actor has opened Habitat Content editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 88
+ testRunner.Given("Actor has opened Habitat Content editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 89
  testRunner.When("User selects /sitecore/content/Habitat/Global/Media/Parallax item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Insert option"});
             table12.AddRow(new string[] {
                         "Parallax"});
-#line 89
+#line 90
  testRunner.Then("Following sub-items are available as Insert Options", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();

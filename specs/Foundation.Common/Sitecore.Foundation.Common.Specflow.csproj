@@ -110,6 +110,9 @@
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.DeleteUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetAllRolesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactEmailResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -125,6 +128,15 @@
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetContactTagsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetFieldSecurityRightResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetItemSecurityRightResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -135,6 +147,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.SerializableKeyValuePairOfStringString.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.SetSiteHostNameResponse.datasource">

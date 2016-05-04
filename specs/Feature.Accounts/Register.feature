@@ -1,4 +1,5 @@
-﻿Feature: Register
+﻿@UI
+Feature: Register
 
 @Ready
 Scenario: Accounts_Register_UC1_Open Register page
