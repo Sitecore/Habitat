@@ -15,8 +15,8 @@
   @foreach (var item in Model.Items)
   {
     <div class="block-grid-item">
-      <div>
-        <div class="mosaic mosaic-bar-bottom">
+      <div style="max-width:100%">
+        <div class="mosaic mosaic-bar-bottom" style="max-width:100%">
           <div class="mosaic-overlay">
             <label>@item.Field(Templates.Person.Fields.Title)</label>
             <h4>
