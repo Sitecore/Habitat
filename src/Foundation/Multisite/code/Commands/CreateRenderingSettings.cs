@@ -1,8 +1,6 @@
 ﻿namespace Sitecore.Foundation.Multisite.Commands
 {
-    using System;
-    using System.Collections.Specialized;
-  using System.Text.RegularExpressions;
+  using System.Collections.Specialized;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.Foundation.Multisite.Providers;
@@ -18,7 +16,7 @@
     {
       var parameters = new NameValueCollection();
       var parentId = context.Parameters["parentID"];
-      if (String.IsNullOrEmpty(parentId))
+      if (string.IsNullOrEmpty(parentId))
       {
         var item = context.Items[0];
         parentId = item.ID.ToString();
