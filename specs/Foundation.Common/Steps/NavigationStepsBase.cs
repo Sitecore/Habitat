@@ -11,17 +11,17 @@ using TechTalk.SpecFlow;
 
 namespace Sitecore.Foundation.Common.Specflow.Steps
 {
-  [Binding]
-  public class NavigationStepsBase:StepsBase
-  {
-
-
-    [Given(@"Habitat website is opened on Main Page")]
-    [When(@"Habitat website is opened on Main Page")]
-    public void GivenHabitatWebsiteIsOpenedOnMainPage()
+    [Binding]
+    public class NavigationStepsBase : StepsBase
     {
-      CommonLocators.NavigateToPage(BaseSettings.BaseUrl);
-    }
+
+
+        [Given(@"Habitat website is opened on Main Page")]
+        [When(@"Habitat website is opened on Main Page")]
+        public void GivenHabitatWebsiteIsOpenedOnMainPage()
+        {
+            CommonLocators.NavigateToPage(BaseSettings.BaseUrl);
+        }
 
         [When(@"User clicks Globe icon")]
         public void WhenUserClicksGlobeIcon()
@@ -31,15 +31,23 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
 
 
         [When(@"Actor selects (.*) slidebar")]
-    public void WhenActorSelectsSlidebar(string button)
-    {
-      CommonLocators.OpenXDBSlidebar.First(el => el.GetAttribute("title").Contains(button)).Click();
-    }
+        public void WhenActorSelectsSlidebar(string button)
+        {
+            CommonLocators.OpenXDBSlidebar.First(el => el.GetAttribute("title").Contains(button)).Click();
+        }
 
-    [Given(@"Habitat website is opened on Forms page")]
-    public void GivenHabitatWebsiteIsOpenedOnFormsPage()
-    {
-      CommonLocators.NavigateToPage(BaseSettings.FormsPageUrl);
+        [Given(@"Habitat website is opened on Forms page")]
+        public void GivenHabitatWebsiteIsOpenedOnFormsPage()
+        {
+            CommonLocators.NavigateToPage(BaseSettings.FormsPageUrl);
+        }
+
+        [Then(@"Habitat website is opened on Getting Started page")]
+        public void ThenHabitatWebsiteIsOpenedOnGettingStartedPage()
+        {
+            CommonLocators.NavigateToPage(BaseSettings.GettingStartedPageUrl);
+        }
+
+
     }
-  }
 }

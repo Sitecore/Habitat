@@ -7,34 +7,34 @@ Feature: Define Languages by Site
 
 @Ready
 Scenario: Define Languages by Site_UC1_Set one language on the site
-    #Only for manual testing: Admin user is logged into Content Editor application
+    #Step for manual testing only: Admin user is logged into Content Editor application
     Given en is Selected on the following item
-	| ItemPath                  | FieldName            | FieldValue |
-	| /sitecore/content/Habitat | Supported Languages  | en         |
+	| ItemPath                  | FieldName           | FieldValue							    |
+	| /sitecore/content/Habitat | SupportedLanguages  | {AF584191-45C9-4201-8740-5409F4CF8BDD}  |
 	When Habitat website is opened on Main Page
 	Then there is no Globe icon in the Main menu on the top of the page
 
 
 @Ready
 Scenario: Define Languages by Site_UC2_No specific languages are defined on the site
-	#Only for manual testing: Admin user is logged into Content Editor application
+	#Step for manual testing only: Admin user is logged into Content Editor application
 	Given Following languages defined in Sitecore
-	| ItemPath                         | FieldName |
-	| /sitecore/system/Languages/ar-AE | Iso       |
-	| /sitecore/system/Languages/da    | Iso       |
-	| /sitecore/system/Languages/de-AT | Iso       |
-	| /sitecore/system/Languages/en    | Iso       |
-	| /sitecore/system/Languages/fr-BE | Iso       |
-	| /sitecore/system/Languages/ja-JP | Iso       |
-	| /sitecore/system/Languages/ru-RU | Iso       |
-    #Only for manual testing: When Admin opens following item
-	| ItemPath                  | FieldName            | 
-	| /sitecore/content/Habitat | Supported Languages  |
+	| ItemPath                         |
+	| /sitecore/system/Languages/ar-AE |
+	| /sitecore/system/Languages/da    |
+	| /sitecore/system/Languages/de-AT |
+	| /sitecore/system/Languages/en    |
+	| /sitecore/system/Languages/fr-BE |
+	| /sitecore/system/Languages/ja-JP |
+	| /sitecore/system/Languages/ru-RU |
+    #Step for manual testing only: When Admin opens following item
+	#| ItemPath                  | FieldName            | 
+	#| /sitecore/content/Habitat | Supported Languages  |
 	When Value set to item field
-	| ItemPath                  | FieldName           | FieldValue |
-	| /sitecore/content/Habitat | Supported Languages |            |
-	#Only for manual testing: And Admin clicks Deselect all link
-	#Only for manual testing: And Admin saves changes on item
+	| ItemPath                  | FieldName          | FieldValue |
+	| /sitecore/content/Habitat | SupportedLanguages |            |
+	#Step for manual testing only: And Admin clicks Deselect all link
+	#Step for manual testing only: And Admin saves changes on item
 	And Habitat website is opened on Main Page
 	And User clicks Globe icon 
 	Then following items available in the list
@@ -47,24 +47,21 @@ Scenario: Define Languages by Site_UC2_No specific languages are defined on the 
 	| (العربية (الإمارات العربية المتحدة	|
 	| русский (Россия)                      |
 
-
 @Ready
 Scenario: Define Languages by Site_UC3_Check that language with country code appears in the list
-	#Only for manual testing:Given Admin user is logged into Content Editor application
+	#Step for manual testing only:Given Admin user is logged into Content Editor application
 	Given Following languages defined in Sitecore
-	| Item path                        |FieldName |
-	| /sitecore/system/Languages/ar-BH |	Regional Iso Code       |
-	| /sitecore/system/Languages/da    |	Regional Iso Code       |
-	| /sitecore/system/Languages/en    |	Regional Iso Code       |
-	#Only for manual testing: When Admin opens following item
+	| Item path                        |
+	| /sitecore/system/Languages/ar-BH |
+	| /sitecore/system/Languages/da    |
+	| /sitecore/system/Languages/en    |
+	#Step for manual testing only: When Admin opens following item
 	#| ItemPath                  | Field                | 
 	#| /sitecore/content/Habitat | Supported Languages  |
 	When The following languages have been selected
-	| ItemPath                  | FieldName           | FieldValue |
-	| /sitecore/content/Habitat | Supported Languages |ar-BH	   |
-	| /sitecore/content/Habitat | Supported Languages |da		   |
-	| /sitecore/content/Habitat | Supported Languages |en		   |
-	#Only for manual testing:And Admin clicks following items in the <All> list
+	| ItemPath                  | FieldName          | FieldValue        |
+	| /sitecore/content/Habitat | SupportedLanguages |  {AF584191-45C9-4201-8740-5409F4CF8BDD}\|{2403D44D-A04E-4C4F-B00B-5CE8CF531254}\|{D22B4F9D-21E5-40A2-A99B-7CD22E550D4F}  |
+	#Step for manual testing only:And Admin clicks following items in the <All> list
 	#| Language |
 	#| de-AT    |
 	#| fr-BE    |
