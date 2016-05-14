@@ -1,9 +1,8 @@
 ﻿namespace Sitecore.Feature.Demo.Models
 {
-  using System.Web.Mvc;
-  using Services;
-  using Foundation.SitecoreExtensions.Services;
   using Sitecore.Feature.Demo.Models.Repository;
+  using Sitecore.Feature.Demo.Services;
+  using Sitecore.Foundation.SitecoreExtensions.Services;
 
   public class ExperienceData
   {
@@ -15,10 +14,10 @@
       this.contactProfileProvider = contactProfileProvider;
       this.profileProvider = profileProvider;
 
-      Visits = new VisitsRepository(contactProfileProvider).Get();
-      PersonalInfo = new PersonalInfoRepository(contactProfileProvider).Get();
-      OnsiteBehavior = new OnsiteBehaviorRepository(profileProvider).Get();
-      Referral = new ReferralRepository().Get();
+      this.Visits = new VisitsRepository(contactProfileProvider).Get();
+      this.PersonalInfo = new PersonalInfoRepository(contactProfileProvider).Get();
+      this.OnsiteBehavior = new OnsiteBehaviorRepository(profileProvider).Get();
+      this.Referral = new ReferralRepository().Get();
     }
 
     public Visits Visits { get; set; }

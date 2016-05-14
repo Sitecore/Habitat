@@ -4,10 +4,6 @@ Parent: "59d216d1-035c-4497-97b4-e3c5e9f1c06b"
 Template: "e269fbb5-3750-427a-9149-7aa950b49301"
 Path: /sitecore/templates/Feature/Accounts/_AccountsSettings/Accounts
 DB: master
-SharedFields:
-- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
-  Hint: __Security
-  Value: 
 Languages:
 - Language: en
   Versions:

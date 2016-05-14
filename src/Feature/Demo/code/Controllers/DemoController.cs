@@ -3,6 +3,8 @@ namespace Sitecore.Feature.Demo.Controllers
   using System.Net;
   using System.Web.Mvc;
   using Sitecore.Analytics;
+  using Sitecore.ExperienceEditor.Utils;
+  using Sitecore.ExperienceExplorer.Business.Managers;
   using Sitecore.Feature.Demo.Models;
   using Sitecore.Feature.Demo.Services;
   using Sitecore.Foundation.Alerts.Exceptions;
@@ -11,6 +13,7 @@ namespace Sitecore.Feature.Demo.Controllers
   using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Mvc.Controllers;
   using Sitecore.Mvc.Presentation;
+  using Sitecore.Sites;
 
   [SkipAnalyticsTracking]
   public class DemoController : SitecoreController
@@ -34,6 +37,9 @@ namespace Sitecore.Feature.Demo.Controllers
       {
         return null;
       }
+      if (Context.Site.DisplayMode != DisplayMode.Normal || ModuleManager.IsExpViewModeActive || WebEditUtility.IsDebugActive(Context.Site))
+        return new EmptyResult();
+
       return this.View(new ExperienceData(this.contactProfileProvider, this.profileProvider));
     }
 

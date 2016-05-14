@@ -15,7 +15,7 @@
   </div>
   <h1>
     @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, Model.Item)
-    @if (Model.Item.Fields[Templates.NewsArticle.Fields.Summary].HasValue || Sitecore.Context.PageMode.IsExperienceEditor)
+    @if (Model.Item.FieldHasValue(Templates.NewsArticle.Fields.Summary) || Sitecore.Context.PageMode.IsExperienceEditor)
     {
       <br />
       <small>

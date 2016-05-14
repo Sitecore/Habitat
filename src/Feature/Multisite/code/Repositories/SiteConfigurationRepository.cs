@@ -48,7 +48,7 @@
 
     private static SiteConfiguration CreateSiteConfiguration(SiteDefinition siteConfiguration)
     {
-      var title = siteConfiguration.Item.GetString(Multisite.Templates.SiteConfiguration.Fields.Title);
+      var title = siteConfiguration.Item[Multisite.Templates.SiteConfiguration.Fields.Title];
       if (string.IsNullOrEmpty(title))
       {
         title = siteConfiguration.Name;
@@ -58,7 +58,7 @@
                HostName = siteConfiguration.HostName,
                Name = siteConfiguration.Name,
                Title = title,
-               ShowInMenu = siteConfiguration.Item.GetCheckBoxValue(Multisite.Templates.SiteConfiguration.Fields.ShowInMenu),
+               ShowInMenu = siteConfiguration.Item.Fields[Multisite.Templates.SiteConfiguration.Fields.ShowInMenu].IsChecked(),
                IsCurrent = siteConfiguration.IsCurrent
              };
     }

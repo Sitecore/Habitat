@@ -4,7 +4,7 @@ namespace Sitecore.Foundation.SitecoreExtensions.Model
   using Sitecore.ContentSearch;
   using Sitecore.ContentSearch.SearchTypes;
 
-  internal class SearchResult : SearchResultItem
+  public class SearchResult : SearchResultItem
   {
     [IndexField("all_templates")]
     public List<string> Templates { get; set; }

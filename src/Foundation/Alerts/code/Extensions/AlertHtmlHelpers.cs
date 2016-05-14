@@ -20,6 +20,16 @@
       return helper.Partial(ViewPath.InfoMessage, InfoMessage.Error(errorMessage));
     }
 
+    public static MvcHtmlString PageEditorInfo(this HtmlHelper helper, string infoMessage)
+    {
+      if (Context.PageMode.IsNormal)
+      {
+        return new MvcHtmlString(string.Empty);
+      }
+
+      return helper.Partial(ViewPath.InfoMessage, InfoMessage.Info(infoMessage));
+    }
+
     public static MvcHtmlString PageEditorError(this HtmlHelper helper, string errorMessage, string friendlyMessage, ID contextItemId, ID renderingId)
     {
       Log.Error($@"Presentation error: {errorMessage}, Context item ID: {contextItemId}, Rendering ID: {renderingId}", typeof(AlertHtmlHelpers));

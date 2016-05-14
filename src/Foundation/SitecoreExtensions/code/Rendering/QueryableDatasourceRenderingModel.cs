@@ -19,12 +19,12 @@
     private IEnumerable<Item> items;
     private const int DefaultMaxResults = 10;
 
-    public QueryableDatasourceRenderingSettings Settings => renderingPropertiesRepository.Get<QueryableDatasourceRenderingSettings>();
+    public QueryableDatasourceRenderingSettings Settings => this.renderingPropertiesRepository.Get<QueryableDatasourceRenderingSettings>();
 
-    public QueryableDatasourceRenderingModel():this(new RenderingPropertiesRepository())
+    public QueryableDatasourceRenderingModel() : this(new RenderingPropertiesRepository())
     {
-      
     }
+
     public QueryableDatasourceRenderingModel(IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       this.renderingPropertiesRepository = renderingPropertiesRepository;
@@ -35,46 +35,46 @@
     public override void Initialize(Rendering rendering)
     {
       base.Initialize(rendering);
-      ResolveDatasourceTemplate(rendering);
-      ParseRenderingDataSource(rendering);
+      this.ResolveDatasourceTemplate(rendering);
+      this.ParseRenderingDataSource(rendering);
     }
 
-    public virtual IEnumerable<Item> Items => items ?? (items = GetItemsFromDatasourceQuery().ToArray());
+    public virtual IEnumerable<Item> Items => this.items ?? (this.items = this.GetItemsFromDatasourceQuery().ToArray());
 
     private IEnumerable<Item> GetItemsFromDatasourceQuery()
     {
-      if (string.IsNullOrEmpty(DatasourceString))
+      if (string.IsNullOrEmpty(this.DatasourceString))
       {
         return Enumerable.Empty<Item>();
       }
 
       using (var providerSearchContext = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
       {
-        var query = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(DatasourceString));
+        var query = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(this.DatasourceString));
         var searchResultItems = query.Cast<SearchResult>();
-        if (DatasourceTemplate != null)
+        if (this.DatasourceTemplate != null)
         {
-          var templateId = IdHelper.NormalizeGuid(DatasourceTemplate.ID);
+          var templateId = IdHelper.NormalizeGuid(this.DatasourceTemplate.ID);
           searchResultItems = searchResultItems.Where(x => x.Templates.Contains(templateId));
         }
-        return searchResultItems.Where(x => x.Language == Context.Language.Name).Where(x => x.IsLatestVersion).Where(x => !x.Paths.Contains(ItemIDs.TemplateRoot)).Where(x => !x.Name.Equals(Sitecore.Constants.StandardValuesItemName, StringComparison.InvariantCultureIgnoreCase)).Take(MaxResults).Select(current => current != null ? current.GetItem() : null).ToArray().Where(item => item != null);
+        return searchResultItems.Where(x => x.Language == Context.Language.Name).Where(x => x.IsLatestVersion).Where(x => !x.Paths.Contains(ItemIDs.TemplateRoot)).Where(x => !x.Name.Equals(Sitecore.Constants.StandardValuesItemName, StringComparison.InvariantCultureIgnoreCase)).Take(this.MaxResults).Select(current => current != null ? current.GetItem() : null).ToArray().Where(item => item != null);
       }
     }
 
-    private int MaxResults => Settings.SearchResultsLimit > 0 ? Settings.SearchResultsLimit : DefaultMaxResults;
+    private int MaxResults => this.Settings.SearchResultsLimit > 0 ? this.Settings.SearchResultsLimit : DefaultMaxResults;
 
     private void ParseRenderingDataSource(Rendering rendering)
     {
       var dataSource = rendering.DataSource;
       if (string.IsNullOrWhiteSpace(dataSource))
       {
-        dataSource = "+location:" + Rendering.Item.ID;
+        dataSource = "+location:" + this.Rendering.Item.ID;
       }
       if (MainUtil.IsID(dataSource))
       {
         dataSource = "+location:" + dataSource;
       }
-      this.DatasourceString =  dataSource;
+      this.DatasourceString = dataSource;
     }
 
     public string DatasourceString { get; set; }
@@ -83,17 +83,17 @@
     private void ResolveDatasourceTemplate(Rendering rendering)
     {
       var getRenderingDatasourceArgs = new GetRenderingDatasourceArgs(rendering.RenderingItem.InnerItem)
-      {
-        FallbackDatasourceRoots = new List<Item>
-        {
-          Context.Database.GetRootItem()
-        },
-        ContentLanguage = rendering.Item?.Language,
-        ContextItemPath = rendering.Item?.Paths.FullPath ?? PageItem.Paths.FullPath
-      };
+                                       {
+                                         FallbackDatasourceRoots = new List<Item>
+                                                                   {
+                                                                     Context.Database.GetRootItem()
+                                                                   },
+                                         ContentLanguage = rendering.Item?.Language,
+                                         ContextItemPath = rendering.Item?.Paths.FullPath ?? this.PageItem.Paths.FullPath
+                                       };
       CorePipeline.Run("getRenderingDatasource", getRenderingDatasourceArgs);
 
-      DatasourceTemplate = getRenderingDatasourceArgs.Prototype;
+      this.DatasourceTemplate = getRenderingDatasourceArgs.Prototype;
     }
   }
 }

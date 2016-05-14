@@ -36,7 +36,7 @@
     private  Item GetRootItem(Item configurationItem)
     {
       Item rootItem = null;
-      if (configurationItem.Fields[Templates.SearchResults.Fields.Root].HasValue)
+      if (configurationItem.FieldHasValue(Templates.SearchResults.Fields.Root))
       {
         rootItem = ((ReferenceField)configurationItem.Fields[Templates.SearchResults.Fields.Root]).TargetItem;
       }
