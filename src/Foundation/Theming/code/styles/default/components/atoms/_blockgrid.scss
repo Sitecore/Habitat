@@ -28,7 +28,7 @@
   & > .block-grid-item {
     width: (100%/$per-row);
 
-    $nth-equation: #{$per-row}n + '+ 1';
+    $nth-equation: (#{$per-row}n) + '+ 1';
     &:nth-of-type(n) { clear: none; }
     &:nth-of-type(#{$nth-equation}) { clear: both; }
   }
