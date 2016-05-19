@@ -14,13 +14,7 @@ namespace Sitecore.Feature.News.Repositories
   {
     public override ISearchSettings Get()
     {
-      var settings = new SearchSettingsBase();
-      settings.Templates = new List<ID>
-      {
-        Templates.NewsArticle.ID
-      };
-
-      return settings;
+      return new SearchSettingsBase { Templates = new [] { Templates.NewsArticle.ID } };
     }
   }
 }
