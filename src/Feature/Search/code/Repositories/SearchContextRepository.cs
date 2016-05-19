@@ -9,12 +9,9 @@
 
   public class SearchContextRepository : ISearchContextRepository
   {
-    public virtual SearchContext Get(string query)
+    public virtual SearchContext Get()
     {
-      if (query == null)
-      {
-        query = HttpContext.Current == null ? "" : HttpContext.Current.Request["query"];
-      }
+      var query = HttpContext.Current == null ? "" : HttpContext.Current.Request["query"];
 
       var configurationItem = RenderingContext.Current.Rendering.Item;
       if (configurationItem == null || !configurationItem.IsDerived(Templates.SearchResults.ID))
@@ -40,11 +37,6 @@
         rootItem = ((ReferenceField)configurationItem.Fields[Templates.SearchResults.Fields.Root]).TargetItem;
       }
       return rootItem ?? Context.Site.GetRootItem();
-    }
-
-    public SearchContext Get()
-    {
-      return this.Get(null);
     }
   }
 }

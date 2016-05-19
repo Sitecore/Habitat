@@ -14,7 +14,10 @@
     public QueryRepository QueryRepository { get; }
     public IRenderingPropertiesRepository RenderingPropertiesRepository { get; }
 
-    public SearchController() : this(new SearchServiceRepository(), new SearchContextRepository(), new QueryRepository(), new RenderingPropertiesRepository())
+    public SearchController() : this(new SearchContextRepository(), new QueryRepository(), new RenderingPropertiesRepository())
+    {
+    }
+    public SearchController(ISearchContextRepository contextRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository) : this(new SearchServiceRepository(contextRepository.Get()), contextRepository, queryRepository, renderingPropertiesRepository)
     {
     }
 
@@ -36,12 +39,12 @@
 
     public ActionResult GlobalSearch()
     {
-      return this.View("GlobalSearch", this.GetSearchSettings());
+      return this.View("GlobalSearch", this.GetSearchContext());
     }
 
     public ActionResult SearchResultsHeader(string query)
     {
-      return this.View("SearchResultsHeader", this.GetSearchSettings());
+      return this.View("SearchResultsHeader", this.GetSearchContext());
     }
 
     public ActionResult PagedSearchResults(string query, int? page)
@@ -87,9 +90,9 @@
       return this.QueryRepository.Get(query);
     }
 
-    private SearchContext GetSearchSettings(string query = null)
+    private SearchContext GetSearchContext()
     {
-      return this.SearchContextRepository.Get(query);
+      return this.SearchContextRepository.Get();
     }
   }
 }

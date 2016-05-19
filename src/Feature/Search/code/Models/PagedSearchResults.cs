@@ -4,7 +4,7 @@
 
   public class PagedSearchResults : IPageable
   {
-    public const int DefaultResultsOnPage = 4;
+    public const int DefaultResultsOnPage = 10;
     public const int DefaultPagesToShow = 5;
 
     private int resultsOnPage;

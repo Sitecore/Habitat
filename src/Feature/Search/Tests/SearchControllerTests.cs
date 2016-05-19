@@ -1,9 +1,11 @@
 ﻿namespace Sitecore.Feature.Search.Tests
 {
+  using System;
   using System.Web;
   using System.Web.Mvc;
   using FluentAssertions;
   using NSubstitute;
+  using NSubstitute.Core;
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Feature.Search.Controllers;
@@ -20,11 +22,12 @@
   {
     [Theory]
     [AutoDbData]
-    public void PagedSearchResults_ShouldReturnModel([Substitute] SearchService service, ISearchServiceRepository serviceRepository, ISearchContextRepository contextRepository, QueryRepository queryRepository, string query, ISearchResults searchResults, [Substitute] SearchController searchController, IRenderingPropertiesRepository renderingPropertiesRepository, [Substitute] PagingSettings pagingSettings)
+    public void PagedSearchResults_ShouldReturnModel([Substitute] SearchService service, [Substitute] PagingSettings pagingSettings, [Substitute]SearchContext searchContext, [Frozen]ISearchContextRepository contextRepository, QueryRepository queryRepository, ISearchServiceRepository serviceRepository, string query, ISearchResults searchResults, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       renderingPropertiesRepository.Get<PagingSettings>().Returns(pagingSettings);
       service.Search(Arg.Any<IQuery>()).Returns(searchResults);
       serviceRepository.Get().Returns(service);
+      contextRepository.Get().Returns(searchContext);
       var controller = new SearchController(serviceRepository, contextRepository, queryRepository, renderingPropertiesRepository);
       var result = controller.PagedSearchResults(query, null) as ViewResult;
       result.Model.Should().BeOfType<PagedSearchResults>();
@@ -34,7 +37,7 @@
     [AutoDbData]
     public void SearchResultsHeader_ShouldReturnModel(ISearchResults searchResults, [Substitute] SearchService service, SearchContext searchContext, ISearchServiceRepository serviceRepository, ISearchContextRepository contextRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
     {
-      contextRepository.Get(Arg.Any<string>()).Returns(searchContext);
+      contextRepository.Get().Returns(searchContext);
       var controller = new SearchController(serviceRepository, contextRepository, queryRepository, renderingPropertiesRepository);
       var result = controller.SearchResultsHeader(query) as ViewResult;
       result.Model.Should().BeOfType<SearchContext>();

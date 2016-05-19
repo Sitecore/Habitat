@@ -5,6 +5,5 @@
   public interface ISearchContextRepository
   {
     SearchContext Get();
-    SearchContext Get(string query);
   }
 }
