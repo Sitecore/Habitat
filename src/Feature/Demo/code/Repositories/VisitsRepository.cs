@@ -1,11 +1,11 @@
-﻿namespace Sitecore.Feature.Demo.Models.Repository
+﻿namespace Sitecore.Feature.Demo.Repositories
 {
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Tracking;
+  using Sitecore.Feature.Demo.Models;
   using Sitecore.Foundation.SitecoreExtensions.Services;
-  using Sitecore.Mvc.Extensions;
 
   public class VisitsRepository
   {
@@ -19,20 +19,20 @@
 
     public Visits Get()
     {
-      var allPageViews = GetAllPageViews().ToArray();
+      var allPageViews = this.GetAllPageViews().ToArray();
       return new Visits
              {
-               EngagementValue = GetEngagementValue(),
+               EngagementValue = this.GetEngagementValue(),
                PageViews = allPageViews.Take(10),
                TotalPageViews = allPageViews.Count(),
-               TotalVisits = GetTotalVisits(),
-               EngagementPlanStates = engagementPlanStateRepository.GetCurrent().ToArray(),
-              };
+               TotalVisits = this.GetTotalVisits(),
+               EngagementPlanStates = this.engagementPlanStateRepository.GetCurrent().ToArray()
+             };
     }
 
     private int GetEngagementValue()
     {
-      return contactProfileProvider.Contact.System.Value;
+      return this.contactProfileProvider.Contact.System.Value;
     }
 
     private IEnumerable<PageView> GetAllPageViews()
@@ -43,7 +43,7 @@
 
     private int GetTotalVisits()
     {
-      return contactProfileProvider.Contact.System?.VisitCount ?? 1;
+      return this.contactProfileProvider.Contact.System?.VisitCount ?? 1;
     }
   }
 }

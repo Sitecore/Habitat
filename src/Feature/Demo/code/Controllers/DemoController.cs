@@ -48,7 +48,6 @@ namespace Sitecore.Feature.Demo.Controllers
       return this.View("_ExperienceDataContent", new ExperienceData(this.contactProfileProvider, this.profileProvider));
     }
 
-
     public ActionResult DemoContent()
     {
       if (RenderingContext.Current.ContextItem == null || !RenderingContext.Current.ContextItem.IsDerived(Templates.DemoContent.ID))

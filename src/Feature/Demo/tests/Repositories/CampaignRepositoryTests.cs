@@ -1,11 +1,10 @@
-﻿namespace Sitecore.Feature.Demo.Tests.Models.Repositories
+﻿namespace Sitecore.Feature.Demo.Tests.Repositories
 {
-  using System;
   using FluentAssertions;
   using NSubstitute;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Tracking;
-  using Sitecore.Feature.Demo.Models.Repository;
+  using Sitecore.Feature.Demo.Repositories;
   using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 

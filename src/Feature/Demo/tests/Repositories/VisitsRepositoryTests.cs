@@ -1,17 +1,15 @@
-﻿namespace Sitecore.Feature.Demo.Tests.Models.Repositories
+﻿namespace Sitecore.Feature.Demo.Tests.Repositories
 {
   using System.Collections.Generic;
   using System.Linq;
   using FluentAssertions;
   using NSubstitute;
-  using NSubstitute.Extensions;
   using Ploeh.AutoFixture;
-  using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Model;
   using Sitecore.Analytics.Tracking;
-  using Sitecore.Feature.Demo.Models.Repository;
+  using Sitecore.Feature.Demo.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
@@ -27,7 +25,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Get_SeveralVisits_ReturnsTotalVisitsCount(int visitCount, ITracker tracker, [Frozen]IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
+    public void Get_SeveralVisits_ReturnsTotalVisitsCount(int visitCount, ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
     {
       //Arrange
       this.InitTracker(tracker);
@@ -45,7 +43,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Get_Value_ReturnsEngagementValue(int value, ITracker tracker, [Frozen]IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
+    public void Get_Value_ReturnsEngagementValue(int value, ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
     {
       //Arrange
       this.InitTracker(tracker);
@@ -63,13 +61,19 @@
 
     [Theory]
     [AutoDbData]
-    public void Get_PageViews_DoNotReturnCancelledPages(ITracker tracker, [Frozen]IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
+    public void Get_PageViews_DoNotReturnCancelledPages(ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
     {
       //Arrange
       this.InitTracker(tracker);
-      var pages = new List<ICurrentPageContext>(){ this.GeneratePage(false),this.GeneratePage(true),this.GeneratePage(false) };
+      var pages = new List<ICurrentPageContext>
+                  {
+                    this.GeneratePage(false),
+                    this.GeneratePage(true),
+                    this.GeneratePage(false)
+                  };
       tracker.Interaction.GetPages().Returns(pages);
-      contactProfileProvider.Contact.Returns(x => tracker.Contact); ;
+      contactProfileProvider.Contact.Returns(x => tracker.Contact);
+      ;
 
       using (new TrackerSwitcher(tracker))
       {
@@ -83,32 +87,39 @@
 
     [Theory]
     [AutoDbData]
-    public void Get_PageViews_ReturnReversedPages(ITracker tracker, [Frozen]IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
+    public void Get_PageViews_ReturnReversedPages(ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
     {
       //Arrange
       this.InitTracker(tracker);
-      var pages = new List<ICurrentPageContext>() { this.GeneratePage(path:"/0"), this.GeneratePage(path: "/1"), this.GeneratePage(path: "/2") };
+      var pages = new List<ICurrentPageContext>
+                  {
+                    this.GeneratePage(path: "/0"),
+                    this.GeneratePage(path: "/1"),
+                    this.GeneratePage(path: "/2")
+                  };
       tracker.Interaction.GetPages().Returns(pages);
-      contactProfileProvider.Contact.Returns(x => tracker.Contact); ;
+      contactProfileProvider.Contact.Returns(x => tracker.Contact);
+      ;
 
       using (new TrackerSwitcher(tracker))
       {
         //Act
         var visits = visitsRepository.Get();
         //Assert 
-        visits.PageViews.Select(x=>x.Path).Should().BeEquivalentTo(new []{"2", "1", "0"});
+        visits.PageViews.Select(x => x.Path).Should().BeEquivalentTo("2", "1", "0");
       }
     }
 
     [Theory]
     [AutoDbData]
-    public void Get_PageViews_ReturnOnly10Pages(ITracker tracker, [Frozen]IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
+    public void Get_PageViews_ReturnOnly10Pages(ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
     {
       //Arrange
       this.InitTracker(tracker);
       var pages = Enumerable.Repeat(this.GeneratePage(), 15);
       tracker.Interaction.GetPages().Returns(pages);
-      contactProfileProvider.Contact.Returns(x => tracker.Contact); ;
+      contactProfileProvider.Contact.Returns(x => tracker.Contact);
+      ;
 
       using (new TrackerSwitcher(tracker))
       {
@@ -125,8 +136,11 @@
     {
       var page = Substitute.For<ICurrentPageContext>();
       page.IsCancelled.Returns(isCancelled);
-      page.Url.Returns(new UrlData() { Path = path ?? new Fixture().Create<string>("http://") });
-      
+      page.Url.Returns(new UrlData
+                       {
+                         Path = path ?? new Fixture().Create("http://")
+                       });
+
       return page;
     }
   }

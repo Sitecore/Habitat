@@ -1,4 +1,4 @@
-namespace Sitecore.Feature.Demo.Models.Repository
+namespace Sitecore.Feature.Demo.Repositories
 {
   using System;
   using System.Collections.Generic;
@@ -6,6 +6,7 @@ namespace Sitecore.Feature.Demo.Models.Repository
   using Sitecore.Analytics;
   using Sitecore.Analytics.Automation.Data;
   using Sitecore.Diagnostics;
+  using Sitecore.Feature.Demo.Models;
 
   internal class EngagementPlanStateRepository
   {
@@ -17,11 +18,11 @@ namespace Sitecore.Feature.Demo.Models.Repository
         var engagementStates = automationStateManager.GetAutomationStates().ToArray();
 
         return engagementStates.Select(stateContext => new EngagementPlanState
-        {
-          EngagementPlanTitle = stateContext.PlanItem.DisplayName,
-          Title = stateContext.StateItem.DisplayName,
-          Date = stateContext.EntryDateTime
-        }).ToArray();
+                                                       {
+                                                         EngagementPlanTitle = stateContext.PlanItem.DisplayName,
+                                                         Title = stateContext.StateItem.DisplayName,
+                                                         Date = stateContext.EntryDateTime
+                                                       }).ToArray();
       }
       catch (Exception ex)
       {

@@ -1,6 +1,6 @@
 ﻿namespace Sitecore.Feature.Demo.Models
 {
-  using Sitecore.Feature.Demo.Models.Repository;
+  using Sitecore.Feature.Demo.Repositories;
   using Sitecore.Feature.Demo.Services;
   using Sitecore.Foundation.SitecoreExtensions.Services;
 

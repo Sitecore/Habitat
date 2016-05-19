@@ -1,9 +1,10 @@
-﻿namespace Sitecore.Feature.Demo.Models.Repository
+﻿namespace Sitecore.Feature.Demo.Repositories
 {
   using System;
   using System.Linq;
   using Sitecore.Analytics.Core;
   using Sitecore.Analytics.Tracking;
+  using Sitecore.Feature.Demo.Models;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
 
   internal class PageViewRepository
@@ -18,7 +19,7 @@
                HasPersonalisation = HasPersonalisation(pageContext),
                Path = this.GetCleanPath(pageContext),
                FullPath = this.GetFullPath(pageContext)
-      };
+             };
     }
 
     private static bool HasPersonalisation(ICurrentPageContext pageContext)

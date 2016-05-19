@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Feature.Demo.Models.Repository
+﻿namespace Sitecore.Feature.Demo.Repositories
 {
   using System.Collections.Generic;
   using System.Linq;
@@ -7,6 +7,7 @@
   using Sitecore.Analytics.Tracking;
   using Sitecore.Common;
   using Sitecore.Data;
+  using Sitecore.Feature.Demo.Models;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Marketing.Definitions;
   using Sitecore.Marketing.Definitions.Goals;
@@ -15,8 +16,8 @@
   {
     public IEnumerable<Goal> GetAll()
     {
-      var current = GetCurrent();
-      var historic = GetHistoric();
+      var current = this.GetCurrent();
+      var historic = this.GetHistoric();
 
       return current.Union(historic);
     }
@@ -27,7 +28,7 @@
       foreach (var cachedGoal in keyBehaviourCache.Goals)
       {
         var goal = GetGoalDefinition(cachedGoal.Id.ToID());
- 
+
         yield return new Goal
                      {
                        Title = goal?.Name ?? DictionaryRepository.Get("/Demo/Goals/UnknownGoal", "(Unknown)"),
@@ -47,7 +48,7 @@
 
     private IEnumerable<Goal> GetCurrent()
     {
-      return Tracker.Current.Interaction.GetPages().SelectMany(page => page.PageEvents.Where(pe => pe.IsGoal)).Reverse().Select(Create);
+      return Tracker.Current.Interaction.GetPages().SelectMany(page => page.PageEvents.Where(pe => pe.IsGoal)).Reverse().Select(this.Create);
     }
 
     private Goal Create(PageEventData pageEventData)
@@ -63,7 +64,7 @@
 
     public IEnumerable<Goal> GetLatest()
     {
-      return GetAll().Take(10);
+      return this.GetAll().Take(10);
     }
   }
 }

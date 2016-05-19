@@ -1,7 +1,8 @@
-namespace Sitecore.Feature.Demo.Models.Repository
+namespace Sitecore.Feature.Demo.Repositories
 {
   using Sitecore.Analytics;
   using Sitecore.CES.DeviceDetection;
+  using Sitecore.Feature.Demo.Models;
 
   internal class DeviceRepository
   {
@@ -9,9 +10,9 @@ namespace Sitecore.Feature.Demo.Models.Repository
 
     public Device GetCurrent()
     {
-      if (_current != null)
+      if (this._current != null)
       {
-        return _current;
+        return this._current;
       }
 
       if (!DeviceDetectionManager.IsEnabled || !DeviceDetectionManager.IsReady || string.IsNullOrEmpty(Tracker.Current.Interaction.UserAgent))
@@ -19,16 +20,16 @@ namespace Sitecore.Feature.Demo.Models.Repository
         return null;
       }
 
-      return _current = CreateDevice(DeviceDetectionManager.GetDeviceInformation(Tracker.Current.Interaction.UserAgent));
+      return this._current = this.CreateDevice(DeviceDetectionManager.GetDeviceInformation(Tracker.Current.Interaction.UserAgent));
     }
 
     private Device CreateDevice(DeviceInformation deviceInformation)
     {
-      return new Device()
+      return new Device
              {
                Title = string.Join(", ", deviceInformation.DeviceVendor, deviceInformation.DeviceModelName),
                Browser = deviceInformation.Browser
-              };
+             };
     }
   }
 }

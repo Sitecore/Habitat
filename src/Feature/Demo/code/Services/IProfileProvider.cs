@@ -4,12 +4,6 @@
   using Sitecore.Analytics.Data.Items;
   using Sitecore.Feature.Demo.Models;
 
-  public enum ProfilingTypes
-  {
-    Active,
-    Historic
-  }
-
   public interface IProfileProvider
   {
     IEnumerable<ProfileItem> GetSiteProfiles();
