@@ -2,27 +2,21 @@
 {
   using System;
   using System.Collections.Specialized;
-  using System.IO;
-  using System.Reflection;
   using System.Web;
-  using System.Web.SessionState;
   using FluentAssertions;
   using NSubstitute;
-  using Ploeh.AutoFixture;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Foundation.Forms.ActionEditors;
   using Sitecore.Foundation.Forms.Services;
-  using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Foundation.Testing;
   using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class BaseActionEditorTests
   {
-
     [Theory]
     [AutoDbData]
-    public void ParametersXml_EmptyParametersXml_ReturnEmptyParameters(HttpContext context, [Frozen]ISheerService sheerService)
+    public void ParametersXml_EmptyParametersXml_ReturnEmptyParameters(HttpContext context, [Frozen] ISheerService sheerService)
     {
       //Arrange
       var baseActionEditor = new BaseActionEditorMock(sheerService);
@@ -33,7 +27,7 @@
 
     [Theory]
     [AutoDbData]
-    public void ParametersXml_ParametersXmlIsSet_ReturnParameters([Frozen]ISheerService sheerService)
+    public void ParametersXml_ParametersXmlIsSet_ReturnParameters([Frozen] ISheerService sheerService)
     {
       //Arrange
       var parametersXml = @"<outcome>{9016E456-95CB-42E9-AD58-997D6D77AE83}</outcome>";
@@ -48,27 +42,27 @@
 
     [Theory]
     [AutoDbData]
-    public void OnOk_EmptyParameters_ReturnDashRsult(HttpContext context, [Frozen]ISheerService sheerService)
+    public void OnOk_EmptyParameters_ReturnDashRsult(HttpContext context, [Frozen] ISheerService sheerService)
     {
       //Arrange
       var baseActionEditor = new BaseActionEditorMock(sheerService);
       HttpContext.Current = context;
       //Act
-      baseActionEditor.OnOkMock(this,new EventArgs());
-      
+      baseActionEditor.OnOkMock(this, new EventArgs());
+
       //Assert
       sheerService.Received().SetDialogValue("-");
     }
 
     [Theory]
     [AutoDbData]
-    public void OnOk_ParametersAreSet_ReturnParametersXml(HttpContext context, [Frozen]ISheerService sheerService)
+    public void OnOk_ParametersAreSet_ReturnParametersXml(HttpContext context, [Frozen] ISheerService sheerService)
     {
       //Arrange
       var baseActionEditor = new BaseActionEditorMock(sheerService);
       HttpContext.Current = context;
       baseActionEditor.ParametersMock.Add("outcome", "{00889a5e-81da-459f-8bd8-853983ba7a84}");
-      
+
       //Act
       baseActionEditor.OnOkMock(this, new EventArgs());
 

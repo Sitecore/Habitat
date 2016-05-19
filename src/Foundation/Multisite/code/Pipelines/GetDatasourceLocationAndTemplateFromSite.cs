@@ -1,7 +1,6 @@
 ﻿namespace Sitecore.Foundation.Multisite.Pipelines
 {
   using System.Linq;
-  using System.Text.RegularExpressions;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
   using Sitecore.Foundation.Multisite.Providers;
@@ -18,7 +17,7 @@
 
     public GetDatasourceLocationAndTemplateFromSite(DatasourceProviderFactory factory)
     {
-      providerFactory = factory;
+      this.providerFactory = factory;
     }
 
     public void Process(GetRenderingDatasourceArgs args)
@@ -31,8 +30,8 @@
         return;
       }
 
-      ResolveDatasource(args);
-      ResolveDatasourceTemplate(args);
+      this.ResolveDatasource(args);
+      this.ResolveDatasourceTemplate(args);
     }
 
     protected virtual void ResolveDatasource(GetRenderingDatasourceArgs args)
@@ -46,7 +45,7 @@
       }
 
       var datasources = new Item[] {};
-      var provider = providerFactory.GetProvider(args.ContentDatabase);
+      var provider = this.providerFactory.GetProvider(args.ContentDatabase);
       if (provider != null)
       {
         datasources = provider.GetDatasources(name, contextItem);
@@ -54,7 +53,7 @@
 
       if (!datasources.Any())
       {
-        provider = providerFactory.GetFallbackProvider(args.ContentDatabase);
+        provider = this.providerFactory.GetFallbackProvider(args.ContentDatabase);
         if (provider == null)
         {
           return;
@@ -77,7 +76,7 @@
       }
 
       Item datasourceTemplate = null;
-      var provider = providerFactory.GetProvider(args.ContentDatabase);
+      var provider = this.providerFactory.GetProvider(args.ContentDatabase);
       if (provider != null)
       {
         datasourceTemplate = provider.GetDatasourceTemplate(name, contextItem);
@@ -85,7 +84,7 @@
 
       if (datasourceTemplate == null)
       {
-        provider = providerFactory.GetFallbackProvider(args.ContentDatabase);
+        provider = this.providerFactory.GetFallbackProvider(args.ContentDatabase);
         if (provider != null)
         {
           datasourceTemplate = provider.GetDatasourceTemplate(name, contextItem);
@@ -94,6 +93,5 @@
 
       args.Prototype = datasourceTemplate;
     }
-
   }
 }

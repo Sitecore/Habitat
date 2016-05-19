@@ -1,8 +1,8 @@
-﻿using System.Web.Mvc;
-using Sitecore.Foundation.Alerts.Models;
-
-namespace Sitecore.Foundation.Alerts.Extensions
+﻿namespace Sitecore.Foundation.Alerts.Extensions
 {
+  using System.Web.Mvc;
+  using Sitecore.Foundation.Alerts.Models;
+
   public static class AlertControllerExtensions
   {
     public static ViewResult InfoMessage(this Controller controller, InfoMessage infoMessage)
@@ -12,13 +12,13 @@ namespace Sitecore.Foundation.Alerts.Extensions
         controller.ViewData.Model = infoMessage;
       }
 
-      return new ViewResult()
-      {
-        ViewName = ViewPath.InfoMessage,
-        ViewData = controller.ViewData,
-        TempData = controller.TempData,
-        ViewEngineCollection = controller.ViewEngineCollection
-      };
+      return new ViewResult
+             {
+               ViewName = Constants.InfoMessageView,
+               ViewData = controller.ViewData,
+               TempData = controller.TempData,
+               ViewEngineCollection = controller.ViewEngineCollection
+             };
     }
   }
 }

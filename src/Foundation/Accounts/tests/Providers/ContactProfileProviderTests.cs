@@ -1,4 +1,6 @@
-﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests.Services
+﻿using ContactProfileProvider = Sitecore.Foundation.Accounts.Providers.ContactProfileProvider;
+
+namespace Sitecore.Foundation.Accounts.Tests.Providers
 {
   using System.Collections.Generic;
   using System.Collections.ObjectModel;
@@ -10,7 +12,6 @@
   using Sitecore.Analytics.Model.Entities;
   using Sitecore.Analytics.Model.Framework;
   using Sitecore.Analytics.Tracking;
-  using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 

@@ -6,6 +6,7 @@
   using Sitecore.Analytics.Model;
   using Sitecore.Analytics.Model.Entities;
   using Sitecore.Feature.Demo.Models;
+  using Sitecore.Foundation.Accounts.Providers;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Services;

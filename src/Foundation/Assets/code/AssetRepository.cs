@@ -4,7 +4,6 @@
   using System.Collections.Generic;
   using System.Linq;
   using System.Xml;
-  using Sitecore;
   using Sitecore.Data;
   using Sitecore.Diagnostics;
   using Sitecore.Foundation.Assets.Models;
@@ -25,7 +24,7 @@
 
     internal void Add(Asset requirement, bool preventAddToCache = false)
     {
-      lock (_items)
+      lock (this._items)
       {
         if (requirement.AddOnceToken != null)
         {

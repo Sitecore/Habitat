@@ -5,6 +5,7 @@
   using Sitecore.Analytics;
   using Sitecore.Analytics.Tracking;
   using Sitecore.Feature.Demo.Models;
+  using Sitecore.Foundation.Accounts.Providers;
   using Sitecore.Foundation.SitecoreExtensions.Services;
 
   public class VisitsRepository

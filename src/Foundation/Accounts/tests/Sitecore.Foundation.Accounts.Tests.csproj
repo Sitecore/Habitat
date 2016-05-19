@@ -5,16 +5,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{21D1A592-8E0D-4463-B68E-FA7EB6EF7182}</ProjectGuid>
+    <ProjectGuid>{461905E3-1D1F-4A75-A4AF-0EFBC0B35F07}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sitecore.Foundation.Forms.Tests</RootNamespace>
-    <AssemblyName>Sitecore.Foundation.Forms.Tests</AssemblyName>
+    <RootNamespace>Sitecore.Foundation.Accounts.Tests</RootNamespace>
+    <AssemblyName>Sitecore.Foundation.Accounts.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,23 +34,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentAssertions, Version=4.0.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\FluentAssertions.4.0.1\lib\net45\FluentAssertions.dll</HintPath>
+    <Reference Include="FluentAssertions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\FluentAssertions.4.1.0\lib\net45\FluentAssertions.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FluentAssertions.Core, Version=4.0.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\FluentAssertions.4.0.1\lib\net45\FluentAssertions.Core.dll</HintPath>
+    <Reference Include="FluentAssertions.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\FluentAssertions.4.1.0\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="HtmlAgilityPack">
-      <HintPath>..\..\..\..\lib\Sitecore\HtmlAgilityPack.dll</HintPath>
-    </Reference>
-    <Reference Include="Moq, Version=4.1.1308.2321, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Moq.4.1.1308.2321\lib\net40\Moq.dll</HintPath>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NSubstitute, Version=1.5.0.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\NSubstitute.1.5.0.0\lib\NET40\NSubstitute.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NSubstitute, Version=1.9.2.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\NSubstitute.1.9.2.0\lib\net45\NSubstitute.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ploeh.AutoFixture, Version=3.40.0.0, Culture=neutral, PublicKeyToken=b24654c590009d4f, processorArchitecture=MSIL">
@@ -65,8 +66,32 @@
       <HintPath>..\..\..\..\packages\AutoFixture.Xunit2.3.40.0\lib\net45\Ploeh.AutoFixture.Xunit2.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Analytics">
+    <Reference Include="Sitecore.Abstractions, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Core, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Model, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Analytics.Outcome">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.FakeDb, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.FakeDb.1.0.0\lib\net45\Sitecore.FakeDb.dll</HintPath>
@@ -78,19 +103,46 @@
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Logging">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="sitecore.nexus">
       <HintPath>..\..\..\..\lib\Sitecore\sitecore.nexus.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.WFFM.Abstractions">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.WFFM.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.WFFM.Actions">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.WFFM.Actions.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -116,26 +168,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SaveActions\BaseActionEditorTests.cs" />
-    <Compile Include="SaveActions\RegisterOutcomeTests.cs" />
+    <Compile Include="Providers\ContactProfileProviderTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
-      <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
-      <Name>Sitecore.Foundation.SitecoreExtensions</Name>
-    </ProjectReference>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\Testing\tests\Sitecore.Foundation.Testing.csproj">
       <Project>{7CC3D72B-4518-4B78-BE48-630A263C0F5B}</Project>
       <Name>Sitecore.Foundation.Testing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\code\Sitecore.Foundation.Forms.csproj">
-      <Project>{A7B7EC6A-5804-4352-9655-06EB07F033FA}</Project>
-      <Name>Sitecore.Foundation.Forms</Name>
+    <ProjectReference Include="..\code\Sitecore.Foundation.Accounts.csproj">
+      <Project>{ce34a3b7-b91a-41ba-8b16-c1e131e1c621}</Project>
+      <Name>Sitecore.Foundation.Accounts</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

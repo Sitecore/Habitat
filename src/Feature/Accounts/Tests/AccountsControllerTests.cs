@@ -267,7 +267,7 @@
         repo.RestorePassword(Arg.Any<string>()).Returns("new password");
         repo.Exists(Arg.Any<string>()).Returns(true);
         var result = controller.ForgotPassword(model);
-        result.Should().BeOfType<ViewResult>().Which.ViewName.Should().Be(ViewPath.InfoMessage);
+        result.Should().BeOfType<ViewResult>().Which.ViewName.Should().Be(Constants.InfoMessageView);
       }
     }
 

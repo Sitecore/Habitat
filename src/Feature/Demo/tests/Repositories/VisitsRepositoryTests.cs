@@ -10,6 +10,7 @@
   using Sitecore.Analytics.Model;
   using Sitecore.Analytics.Tracking;
   using Sitecore.Feature.Demo.Repositories;
+  using Sitecore.Foundation.Accounts.Providers;
   using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
@@ -99,7 +100,6 @@
                   };
       tracker.Interaction.GetPages().Returns(pages);
       contactProfileProvider.Contact.Returns(x => tracker.Contact);
-      ;
 
       using (new TrackerSwitcher(tracker))
       {

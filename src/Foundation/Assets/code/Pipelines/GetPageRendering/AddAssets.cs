@@ -3,7 +3,6 @@
   using System.Collections.Generic;
   using System.Linq;
   using System.Xml;
-  using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;

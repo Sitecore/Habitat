@@ -111,7 +111,7 @@
     <Compile Include="Models\InfoMessage.cs" />
     <Compile Include="Pipelines\MvcException\InvalidDatasourceItemExceptionProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewPath.cs" />
+    <Compile Include="Constants.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />

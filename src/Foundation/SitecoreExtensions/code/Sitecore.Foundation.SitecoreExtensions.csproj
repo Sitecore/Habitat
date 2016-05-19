@@ -153,8 +153,6 @@
     <Compile Include="Repositories\IRenderingPropertiesRepository.cs" />
     <Compile Include="Repositories\RenderingPropertiesRepository.cs" />
     <Compile Include="Services\FieldRendererService.cs" />
-    <Compile Include="Services\ContactProfileProvider.cs" />
-    <Compile Include="Services\IContactProfileProvider.cs" />
     <Compile Include="Services\ITrackerService.cs" />
     <Compile Include="Services\TrackerService.cs" />
   </ItemGroup>
@@ -178,9 +176,6 @@
     <None Include="web.Release.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v14.0\WebApplications\Microsoft.WebApplication.targets" />

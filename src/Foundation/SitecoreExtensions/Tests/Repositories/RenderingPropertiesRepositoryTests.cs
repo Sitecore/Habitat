@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests.Repositories
 {
   using FluentAssertions;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;

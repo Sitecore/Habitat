@@ -199,6 +199,10 @@
     <Compile Include="Texts\Errors.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\Accounts\code\Sitecore.Foundation.Accounts.csproj">
+      <Project>{CE34A3B7-B91A-41BA-8B16-C1E131E1C621}</Project>
+      <Name>Sitecore.Foundation.Accounts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj">
       <Project>{5cf5fa06-ab27-4df5-a471-ed57ef3e4ae9}</Project>
       <Name>Sitecore.Foundation.Alerts</Name>
