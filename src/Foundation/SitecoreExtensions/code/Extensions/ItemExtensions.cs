@@ -160,7 +160,7 @@
       return !int.TryParse(item.Fields[fieldId].Value, out result) ? new int?() : result;
     }
 
-    public static IEnumerable<Item> GetMultiListValues(this Item item, ID fieldId)
+    public static IEnumerable<Item> GetMultiListValueItems(this Item item, ID fieldId)
     {
       return new MultilistField(item.Fields[fieldId]).GetItems();
     }
