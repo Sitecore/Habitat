@@ -1,4 +1,4 @@
-namespace Sitecore.Foundation.SitecoreExtensions.Rendering
+namespace Sitecore.Foundation.Indexing.Rendering
 {
   public class QueryableDatasourceRenderingSettings
   {

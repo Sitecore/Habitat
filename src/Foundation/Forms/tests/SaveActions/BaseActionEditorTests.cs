@@ -11,6 +11,7 @@
   using Ploeh.AutoFixture;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Foundation.Forms.ActionEditors;
+  using Sitecore.Foundation.Forms.Services;
   using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Foundation.Testing;
   using Sitecore.Foundation.Testing.Attributes;

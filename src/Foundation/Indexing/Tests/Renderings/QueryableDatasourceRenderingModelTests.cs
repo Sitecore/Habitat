@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests.Renderings
+﻿namespace Sitecore.Foundation.Indexing.Tests.Renderings
 {
   using System;
   using System.Collections.Generic;
@@ -16,8 +16,8 @@
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.FakeDb.Pipelines;
-  using Sitecore.Foundation.SitecoreExtensions.Model;
-  using Sitecore.Foundation.SitecoreExtensions.Rendering;
+  using Sitecore.Foundation.Indexing.Models;
+  using Sitecore.Foundation.Indexing.Rendering;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Foundation.Testing.Pipelines;
@@ -38,7 +38,7 @@
         var castedArgs = args as GetRenderingDatasourceArgs;
         if (castedArgs != null)
         {
-          castedArgs.Prototype = Item;
+          castedArgs.Prototype = this.Item;
         }
       }
     }
@@ -373,14 +373,14 @@
     }
 
 
-    private static IQueryable<SearchResult> GetResults(IEnumerable<DbItem> contentItems)
+    private static IQueryable<IndexedItem> GetResults(IEnumerable<DbItem> contentItems)
     {
-      var list = new List<SearchResult>();
+      var list = new List<IndexedItem>();
 
       foreach (var item in contentItems)
       {
-        var searchResultItem = Substitute.For<SearchResult>();
-        searchResultItem.Templates = new List<string>
+        var searchResultItem = Substitute.For<IndexedItem>();
+        searchResultItem.AllTemplates = new List<string>
         {
           IdHelper.NormalizeGuid(item.TemplateID)
         };

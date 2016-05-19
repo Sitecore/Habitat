@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.SitecoreExtensions.Services
+﻿namespace Sitecore.Foundation.Forms.Services
 {
   using Sitecore.Web.UI.Sheer;
 

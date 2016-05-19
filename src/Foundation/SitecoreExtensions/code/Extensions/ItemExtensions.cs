@@ -10,7 +10,6 @@
   using Sitecore.Data.Items;
   using Sitecore.Data.Managers;
   using Sitecore.Diagnostics;
-  using Sitecore.Foundation.SitecoreExtensions.Model;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Globalization;

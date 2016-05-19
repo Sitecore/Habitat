@@ -3,7 +3,7 @@
   using FluentAssertions;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Foundation.Indexing.Repositories;
-  using Sitecore.Foundation.Indexing.Tests.Extensions;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class SearchServiceRepositoryTests

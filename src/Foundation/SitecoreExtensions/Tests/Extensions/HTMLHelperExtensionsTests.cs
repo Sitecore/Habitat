@@ -13,7 +13,7 @@ namespace Sitecore.Foundation.SitecoreExtensions.Tests.HtmlHelper
   using FluentAssertions.Xml;
   using Sitecore.Extensions;
   using Sitecore.Extensions.XElementExtensions;
-  using Sitecore.Foundation.SitecoreExtensions.HtmlHelpers;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Mvc;
@@ -22,23 +22,23 @@ namespace Sitecore.Foundation.SitecoreExtensions.Tests.HtmlHelper
   using Sitecore.Mvc.Presentation;
   using Xunit;
 
-  public class FormHelpersTests
+  public class HTMLHelperExtensionsTests
   {
     [Theory]
     [AutoDbData]
-    public void FormHandler_CurrentRenderingNull_ShouldReturnNull(HtmlHelper helper)
+    public void AddUniqueFormId_CurrentRenderingNull_ShouldReturnNull(HtmlHelper helper)
     {
-      helper.FormHandler().Should().BeNull();
+      helper.AddUniqueFormId().Should().BeNull();
     }
 
     [Theory]
     [AutoDbData]
-    public void FormHandler_CurrentRenderingNotNull_ShouldReturnHiddenInput(HtmlHelper helper)
+    public void AddUniqueFormId_CurrentRenderingNotNull_ShouldReturnHiddenInput(HtmlHelper helper)
     {
       var id = Guid.NewGuid();
       ContextService.Get().Push(new RenderingContext() {Rendering =  new Rendering() {UniqueId = id} });
       helper.Sitecore().CurrentRendering.Should().NotBeNull();
-      var xml = XDocument.Parse(helper.FormHandler().ToString());
+      var xml = XDocument.Parse(helper.AddUniqueFormId().ToString());
       xml.Root.Name.LocalName.Should().Be("input");
       xml.Root.GetAttributeValue("name").Should().Be("uid");
       Guid.Parse(xml.Root.GetAttributeValue("value")).Should().Be(id);

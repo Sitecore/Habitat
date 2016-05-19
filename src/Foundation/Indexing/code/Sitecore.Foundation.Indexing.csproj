@@ -145,6 +145,8 @@
     <Compile Include="Models\SearchResults.cs" />
     <Compile Include="Models\SearchResultsRepository.cs" />
     <Compile Include="Models\SearchSettingsBase.cs" />
+    <Compile Include="Rendering\QueryableDatasourceRenderingModel.cs" />
+    <Compile Include="Rendering\QueryableDatasourceRenderingSettings.cs" />
     <Compile Include="Repositories\ISearchServiceRepository.cs" />
     <Compile Include="Repositories\ISearchSettingsRepository.cs" />
     <Compile Include="Repositories\SearchServiceRepository.cs" />

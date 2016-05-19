@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.SitecoreExtensions.Rendering
+﻿namespace Sitecore.Foundation.Indexing.Rendering
 {
   using System;
   using System.Collections.Generic;
@@ -7,7 +7,7 @@
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.ContentSearch.Utilities;
   using Sitecore.Data.Items;
-  using Sitecore.Foundation.SitecoreExtensions.Model;
+  using Sitecore.Foundation.Indexing.Models;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Mvc.Presentation;
   using Sitecore.Pipelines;
@@ -51,11 +51,11 @@
       using (var providerSearchContext = ContentSearchManager.GetIndex((SitecoreIndexableItem)Context.Item).CreateSearchContext())
       {
         var query = LinqHelper.CreateQuery<SearchResultItem>(providerSearchContext, SearchStringModel.ParseDatasourceString(this.DatasourceString));
-        var searchResultItems = query.Cast<SearchResult>();
+        var searchResultItems = query.Cast<IndexedItem>();
         if (this.DatasourceTemplate != null)
         {
           var templateId = IdHelper.NormalizeGuid(this.DatasourceTemplate.ID);
-          searchResultItems = searchResultItems.Where(x => x.Templates.Contains(templateId));
+          searchResultItems = searchResultItems.Where(x => x.AllTemplates.Contains(templateId));
         }
         return searchResultItems.Where(x => x.Language == Context.Language.Name).Where(x => x.IsLatestVersion).Where(x => !x.Paths.Contains(ItemIDs.TemplateRoot)).Where(x => !x.Name.Equals(Sitecore.Constants.StandardValuesItemName, StringComparison.InvariantCultureIgnoreCase)).Take(this.MaxResults).Select(current => current != null ? current.GetItem() : null).ToArray().Where(item => item != null);
       }
@@ -83,14 +83,14 @@
     private void ResolveDatasourceTemplate(Rendering rendering)
     {
       var getRenderingDatasourceArgs = new GetRenderingDatasourceArgs(rendering.RenderingItem.InnerItem)
-                                       {
-                                         FallbackDatasourceRoots = new List<Item>
+      {
+        FallbackDatasourceRoots = new List<Item>
                                                                    {
                                                                      Context.Database.GetRootItem()
                                                                    },
-                                         ContentLanguage = rendering.Item?.Language,
-                                         ContextItemPath = rendering.Item?.Paths.FullPath ?? this.PageItem.Paths.FullPath
-                                       };
+        ContentLanguage = rendering.Item?.Language,
+        ContextItemPath = rendering.Item?.Paths.FullPath ?? this.PageItem.Paths.FullPath
+      };
       CorePipeline.Run("getRenderingDatasource", getRenderingDatasourceArgs);
 
       this.DatasourceTemplate = getRenderingDatasourceArgs.Prototype;
