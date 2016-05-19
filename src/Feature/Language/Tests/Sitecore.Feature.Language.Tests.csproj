@@ -105,8 +105,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\AutoDbDataAttribute.cs" />
-    <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="LanguageFactoryTests.cs" />
     <Compile Include="LanguageRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -119,6 +117,10 @@
     <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.Multisite.csproj">
       <Project>{cfa2ae87-7f8d-4ca6-bb72-b16380190db7}</Project>
       <Name>Sitecore.Foundation.Multisite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Testing\tests\Sitecore.Foundation.Testing.csproj">
+      <Project>{7CC3D72B-4518-4B78-BE48-630A263C0F5B}</Project>
+      <Name>Sitecore.Foundation.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\code\Sitecore.Feature.Language.csproj">
       <Project>{aca65632-ee93-422b-b25e-8e31969694f5}</Project>

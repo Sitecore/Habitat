@@ -1,17 +1,15 @@
-﻿namespace Sitecore.Feature.Language.Infrastructure.Repositories
+﻿namespace Sitecore.Feature.Language.Repositories
 {
   using System.Collections.Generic;
   using System.Linq;
-  using Sitecore;
   using Sitecore.Data.Fields;
-  using Sitecore.Feature.Language.Infrastructure.Factories;
   using Sitecore.Feature.Language.Models;
   using Sitecore.Foundation.Multisite;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public static class LanguageRepository
   {
-    public static IEnumerable<Language> GetAll()
+    private static IEnumerable<Language> GetAll()
     {
       var languages = Context.Database.GetLanguages();
       return languages.Select(LanguageFactory.Create);
@@ -26,8 +24,8 @@
     {
       var languages = GetAll();
       var siteContext = new SiteContext();
-      var siteDefinition = siteContext.GetSiteDefinition(Sitecore.Context.Item);
-      
+      var siteDefinition = siteContext.GetSiteDefinition(Context.Item);
+
       if (siteDefinition?.Item == null || !siteDefinition.Item.IsDerived(Feature.Language.Templates.LanguageSettings.ID))
       {
         return languages;
@@ -44,6 +42,6 @@
       languages = languages.Where(language => supportedLanguages.Any(item => item.Name.Equals(language.Name)));
 
       return languages;
-    } 
+    }
   }
 }
