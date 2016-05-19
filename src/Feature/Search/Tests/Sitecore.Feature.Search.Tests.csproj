@@ -152,8 +152,7 @@
     <Compile Include="PagedSearchResultsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchControllerTests.cs" />
-    <Compile Include="SearchServiceRepositoryTests.cs" />
-    <Compile Include="SearchSettingsRepositoryTests.cs" />
+    <Compile Include="SearchContextRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

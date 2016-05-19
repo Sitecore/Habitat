@@ -1,6 +1,5 @@
-﻿@using Sitecore.Feature.Search.Text
-@using Sitecore.Foundation.SitecoreExtensions.Repositories
-@model Sitecore.Feature.Search.Models.SearchSettings
+﻿@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@model Sitecore.Feature.Search.Models.SearchContext
 
 <div class="container ">
   @{
@@ -35,7 +34,7 @@
   <form action="@Model.SearchResultsUrl" method="GET" class="text-center form-inline">
     <div class="form-group">
       <div class="input-group">
-        <input type="text" name="query" placeholder="@Model.SearchBoxTitle" value="@Model.Query" class="form-control" autocomplete="off" />
+        <input type="text" name="query" placeholder="@Model.SearchBoxTitle" value="@Model.Query" class="form-control" autocomplete="off"/>
         <span class="input-group-btn">
           <button class="btn btn-default" type="submit"><i class="fa fa-search"></i> @DictionaryRepository.Get("/search/header/search again", "Search again")</button>
         </span>

@@ -4,7 +4,6 @@
   using System.Collections.Generic;
   using System.Linq;
   using System.Linq.Expressions;
-  using Sitecore;
   using Sitecore.ContentSearch;
   using Sitecore.ContentSearch.Linq;
   using Sitecore.ContentSearch.Linq.Utilities;
@@ -24,7 +23,7 @@
     {
       get
       {
-        var contextItem = Settings.Root ?? Context.Item;
+        var contextItem = this.Settings.Root ?? Context.Item;
         Assert.IsNotNull(contextItem, "Could not determine a context item for the search");
         return contextItem;
       }
@@ -38,7 +37,7 @@
 
     public virtual ISearchResults Search(IQuery query)
     {
-      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)ContextItem).CreateSearchContext())
+      using (var context = ContentSearchManager.GetIndex(this.ContextItem).CreateSearchContext())
       {
         var root = this.Settings.Root;
         var queryable = context.GetQueryable<SearchResultItem>();
@@ -76,7 +75,7 @@
 
     public virtual ISearchResults FindAll(int skip, int take)
     {
-      using (var context = ContentSearchManager.GetIndex((SitecoreIndexableItem)ContextItem).CreateSearchContext())
+      using (var context = ContentSearchManager.GetIndex(this.ContextItem).CreateSearchContext())
       {
         var root = this.Settings.Root;
         var queryable = context.GetQueryable<SearchResultItem>();
@@ -175,6 +174,5 @@
       }
       return queryable.Where(contentPredicates);
     }
-    
   }
 }

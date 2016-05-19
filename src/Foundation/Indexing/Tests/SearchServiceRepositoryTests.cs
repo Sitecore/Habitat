@@ -2,6 +2,7 @@
 {
   using FluentAssertions;
   using Ploeh.AutoFixture.Xunit2;
+  using Sitecore.Foundation.Indexing.Models;
   using Sitecore.Foundation.Indexing.Repositories;
   using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
@@ -10,7 +11,7 @@
   {
     [Theory]
     [AutoDbData]
-    public void Get_ReturnsSearchService([Frozen] ISearchSettingsRepository settingRepository, SearchServiceRepository serviceRepository)
+    public void Get_ReturnsSearchService([Frozen] ISearchSettings settings, SearchServiceRepository serviceRepository)
     {
       var result = serviceRepository.Get();
       result.Should().BeOfType<SearchService>();

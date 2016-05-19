@@ -134,7 +134,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SearchSettingsRepositoryTests.cs" />
     <Compile Include="MapsPointsRepositoryTests.cs" />
     <Compile Include="MapsControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

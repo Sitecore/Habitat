@@ -10,7 +10,7 @@
   {
     private readonly Foundation.Indexing.Repositories.ISearchServiceRepository searchServiceRepository;
 
-    public MapPointRepository() : this(new Foundation.Indexing.Repositories.SearchServiceRepository(new SearchSettingsRepository()))
+    public MapPointRepository() : this(new Foundation.Indexing.Repositories.SearchServiceRepository(new Foundation.Indexing.Models.SearchSettingsBase { Templates = new[] { Templates.MapPoint.ID } }))
     {
     }
 

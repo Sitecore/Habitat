@@ -1,16 +1,15 @@
 ﻿namespace Sitecore.Feature.Search.Repositories
 {
   using System.Web;
-  using Sitecore;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Feature.Search.Models;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Mvc.Presentation;
 
-  public class SearchSettingsRepository : ISearchSettingsRepository
+  public class SearchContextRepository : ISearchContextRepository
   {
-    public virtual SearchSettings Get(string query)
+    public virtual SearchContext Get(string query)
     {
       if (query == null)
       {
@@ -23,17 +22,17 @@
         return null;
       }
 
-      return new SearchSettings
+      return new SearchContext
              {
                ConfigurationItem = configurationItem,
                Query = query,
                SearchBoxTitle = configurationItem[Templates.SearchResults.Fields.SearchBoxTitle],
                SearchResultsUrl = configurationItem.Url(),
-               Root = GetRootItem(configurationItem)
+               Root = this.GetRootItem(configurationItem)
              };
     }
 
-    private  Item GetRootItem(Item configurationItem)
+    private Item GetRootItem(Item configurationItem)
     {
       Item rootItem = null;
       if (configurationItem.FieldHasValue(Templates.SearchResults.Fields.Root))
@@ -43,7 +42,7 @@
       return rootItem ?? Context.Site.GetRootItem();
     }
 
-    public SearchSettings Get()
+    public SearchContext Get()
     {
       return this.Get(null);
     }

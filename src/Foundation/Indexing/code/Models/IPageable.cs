@@ -1,6 +1,6 @@
 ﻿namespace Sitecore.Foundation.Indexing.Models
 {
-  public interface IPageble
+  public interface IPageable
   {
     int TotalPagesCount { get; }
 

@@ -4,6 +4,7 @@
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.Data.Items;
+  using Sitecore.Foundation.Indexing.Models;
   using Sitecore.Foundation.Indexing.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
@@ -13,7 +14,7 @@
 
     private readonly ISearchServiceRepository searchServiceRepository;
 
-    public NewsRepository(Item contextItem) : this(contextItem, new SearchServiceRepository(new SearchSettingsRepository()))
+    public NewsRepository(Item contextItem) : this(contextItem, new SearchServiceRepository(new SearchSettingsBase { Templates = new[] { Templates.NewsArticle.ID } }))
     {
     }
 
