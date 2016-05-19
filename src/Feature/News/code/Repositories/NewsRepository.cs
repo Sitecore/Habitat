@@ -3,9 +3,7 @@
   using System;
   using System.Collections.Generic;
   using System.Linq;
-  using Sitecore.Data;
   using Sitecore.Data.Items;
-  using Sitecore.Foundation.Indexing;
   using Sitecore.Foundation.Indexing.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
@@ -15,7 +13,9 @@
 
     private readonly ISearchServiceRepository searchServiceRepository;
 
-    public NewsRepository(Item contextItem) : this(contextItem, new SearchServiceRepository(new SearchSettingsRepository())) { }
+    public NewsRepository(Item contextItem) : this(contextItem, new SearchServiceRepository(new SearchSettingsRepository()))
+    {
+    }
 
     public NewsRepository(Item contextItem, ISearchServiceRepository searchServiceRepository)
     {
@@ -28,7 +28,6 @@
         throw new ArgumentException("Item must derive from NewsFolder", nameof(contextItem));
       }
       this.ContextItem = contextItem;
-
       this.searchServiceRepository = searchServiceRepository;
     }
 
@@ -36,12 +35,14 @@
     {
       var searchService = this.searchServiceRepository.Get();
       searchService.Settings.Root = this.ContextItem;
+      //TODO: Refactor for scalability
       var results = searchService.FindAll();
       return results.Results.Select(x => x.Item).OrderByDescending(i => i[Templates.NewsArticle.Fields.Date]);
     }
 
     public IEnumerable<Item> GetLatestNews(int count)
     {
+      //TODO: Refactor for scalability
       return this.Get().Take(count);
     }
   }

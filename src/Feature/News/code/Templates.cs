@@ -6,7 +6,7 @@
   {
     public struct NewsArticle
     {
-      public static ID ID = new ID("{2F75C8AF-35FC-4A88-B585-7595203F442C}");
+      public static readonly ID ID = new ID("{2F75C8AF-35FC-4A88-B585-7595203F442C}");
 
       public struct Fields
       {
