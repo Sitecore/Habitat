@@ -106,8 +106,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\AutoDbDataAttribute.cs" />
-    <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="MultisiteControllerTests.cs" />
     <Compile Include="SiteConfigurationRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,6 +119,10 @@
     <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.Multisite.csproj">
       <Project>{CFA2AE87-7F8D-4CA6-BB72-B16380190DB7}</Project>
       <Name>Sitecore.Foundation.Multisite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Testing\tests\Sitecore.Foundation.Testing.csproj">
+      <Project>{7CC3D72B-4518-4B78-BE48-630A263C0F5B}</Project>
+      <Name>Sitecore.Foundation.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\code\Sitecore.Feature.Multisite.csproj">
       <Project>{64CB17EE-49BF-44A6-98F0-4F72EE89073B}</Project>
