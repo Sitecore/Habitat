@@ -3,15 +3,15 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 <div class="block-grid-md-4 block-grid-sm-3 block-grid-xs-1">
-@foreach (var item in Model.Item.Children.Where(i => i.IsDerived(Templates.HasPageContent.ID) && i.HasContextLanguage()))
-{
-  <div class="block-grid-item">
-    <div>
-      @using (Html.Sitecore().SwitchContextItem(item))
-      {
-        @Html.Sitecore().ViewRendering("/Views/PageContent/PageTeaser")
-      }
+  @foreach (var item in Model.Item.Children.Where(i => i.IsDerived(Templates.HasPageContent.ID) && i.HasContextLanguage()))
+  {
+    <div class="block-grid-item">
+      <div>
+        @using (Html.Sitecore().SwitchContextItem(item))
+        {
+          @Html.Sitecore().ViewRendering("/Views/PageContent/PageTeaser")
+        }
+      </div>
     </div>
-  </div>
-}
+  }
 </div>
