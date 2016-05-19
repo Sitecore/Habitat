@@ -14,22 +14,17 @@
   {
     public IDictionary<string, string> GetCustomProperties(UserProfile userProfile)
     {
-      Assert.ArgumentNotNull(userProfile, "userProfile");
+      Assert.ArgumentNotNull(userProfile, nameof(userProfile));
 
       var template = this.GetProfileTemplate(userProfile.ProfileItemId);
 
-      if (template != null)
-      {
-        return template.GetFields(false).ToDictionary(k => k.Name, v => userProfile[v.Name]);
-      }
-
-      return new Dictionary<string, string>();
+      return template?.GetFields(false).ToDictionary(k => k.Name, v => userProfile[v.Name]) ?? new Dictionary<string, string>();
     }
 
     public void SetCustomProfile(UserProfile userProfile, IDictionary<string, string> properties)
     {
-      Assert.ArgumentNotNull(userProfile, "userProfile");
-      Assert.ArgumentNotNull(properties, "properties");
+      Assert.ArgumentNotNull(userProfile, nameof(userProfile));
+      Assert.ArgumentNotNull(properties, nameof(properties));
 
       foreach (var property in properties)
       {
@@ -52,19 +47,13 @@
       {
         ID profileId;
 
-        if (ID.TryParse(profileItemId, out profileId))
-        {
-          var database = Database.GetDatabase(Settings.ProfileItemDatabase);
-          var item = database?.GetItem(profileId);
+        if (!ID.TryParse(profileItemId, out profileId))
+          return null;
+        var database = Database.GetDatabase(Settings.ProfileItemDatabase);
+        var item = database?.GetItem(profileId);
 
-          if (item != null)
-          {
-            return TemplateManager.GetTemplate(item);
-          }
-        }
+        return item != null ? TemplateManager.GetTemplate(item) : null;
       }
-
-      return null;
     }
   }
 }

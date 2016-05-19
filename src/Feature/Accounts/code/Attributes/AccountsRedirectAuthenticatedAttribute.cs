@@ -4,7 +4,7 @@
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
-  public class AccountsRedirectAuthenticatedAttribute: RedirectAuthenticatedAttribute
+  public class AccountsRedirectAuthenticatedAttribute : RedirectAuthenticatedAttribute
   {
     private readonly IAccountsSettingsService accountsSettingsService;
 

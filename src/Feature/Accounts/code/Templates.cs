@@ -2,11 +2,11 @@
 {
   using Sitecore.Data;
 
-  public class Templates
+  public struct Templates
   {
     public struct AccountsSettings
     {
-      public static ID ID = new ID("{59D216D1-035C-4497-97B4-E3C5E9F1C06B}");
+      public static readonly ID ID = new ID("{59D216D1-035C-4497-97B4-E3C5E9F1C06B}");
 
       public struct Fields
       {
@@ -22,7 +22,7 @@
 
     public struct MailTemplate
     {
-      public static ID ID = new ID("{26DF8F38-7E1B-43D2-85DD-68DF05FA276B}");
+      public static readonly ID ID = new ID("{26DF8F38-7E1B-43D2-85DD-68DF05FA276B}");
 
       public struct Fields
       {
@@ -34,7 +34,7 @@
 
     public struct Interest
     {
-       public static ID ID = new ID("{C9B1855E-CA80-4414-B5BA-956CB67DC5A9}");
+       public static readonly ID ID = new ID("{C9B1855E-CA80-4414-B5BA-956CB67DC5A9}");
 
       public struct Fields
       {
@@ -44,7 +44,7 @@
 
     public struct ProfileSettigs
     {
-      public static ID ID = new ID("{2D9AA1E4-3359-4F02-9EAA-5CF972FD990D}");
+      public static readonly ID ID = new ID("{2D9AA1E4-3359-4F02-9EAA-5CF972FD990D}");
 
       public struct Fields
       {
@@ -55,7 +55,7 @@
 
     public struct UserProfile
     {
-      public static ID ID = new ID("{696D276B-786A-4D1E-B8BB-8E139DB7BE7C}");
+      public static readonly ID ID = new ID("{696D276B-786A-4D1E-B8BB-8E139DB7BE7C}");
 
       public struct Fields
       {

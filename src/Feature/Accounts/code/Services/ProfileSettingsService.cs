@@ -2,8 +2,8 @@
 {
   using System.Collections.Generic;
   using System.Linq;
-  using Sitecore;
   using Sitecore.Configuration;
+  using Sitecore.Data;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
@@ -18,10 +18,10 @@
       {
         var item = GetSettingsItem(Context.Item);
         Assert.IsNotNull(item, "Page with profile settings isn't specified");
-        var database = Sitecore.Data.Database.GetDatabase(Settings.ProfileItemDatabase);
+        var database = Database.GetDatabase(Settings.ProfileItemDatabase);
         var profileField = item.Fields[Templates.ProfileSettigs.Fields.UserProfile];
         var targetItem = database.GetItem(profileField.Value);
-        
+
         return targetItem;
       }
     }
