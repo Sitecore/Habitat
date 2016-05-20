@@ -1,7 +1,7 @@
 ﻿---
-ID: 7a015a8a-e7f5-4dc2-8bef-1a3e1708b39c
-Parent: 6f29d455-c5e8-426c-ae31-123f75204d7b
-Template: ba1eb1bd-e705-4be6-a432-06b7f1b2f2cc
+ID: "7a015a8a-e7f5-4dc2-8bef-1a3e1708b39c"
+Parent: "6f29d455-c5e8-426c-ae31-123f75204d7b"
+Template: "ba1eb1bd-e705-4be6-a432-06b7f1b2f2cc"
 Path: /sitecore/content/Habitat/Home/Modules/Feature/FAQ/FAQ Group
 DB: master
 Languages:
@@ -9,13 +9,13 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20160301T100314Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: sitecore\admin
-    - ID: 631da648-e2a5-4e3b-9733-c9c066c41eae
+    - ID: "631da648-e2a5-4e3b-9733-c9c066c41eae"
       Hint: Group Member
       Type: Multilist
       Value: |

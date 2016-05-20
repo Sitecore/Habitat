@@ -1,14 +1,14 @@
 ﻿---
-ID: a99866e5-08e7-44d8-8a52-f8e26bcd3714
-Parent: 85086bb5-0365-48d7-98b1-cb9b1b6392ca
-Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+ID: "a99866e5-08e7-44d8-8a52-f8e26bcd3714"
+Parent: "85086bb5-0365-48d7-98b1-cb9b1b6392ca"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
 Path: /sitecore/templates/Project/Habitat/Page Types/News List
 DB: master
 SharedFields:
-- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: Network/16x16/news_view.png
-- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
   Hint: __Base template
   Type: tree list
   Value: |
@@ -18,17 +18,17 @@ SharedFields:
     {91962B60-25F6-428F-8D10-02AA1E49D6A5}
     {BDD24F35-05E8-4466-8798-7D3DD6A6C991}
     {74889B26-061C-4D6A-8CDB-422665FC34EC}
-- ID: f7d48a55-2158-4f02-9356-756654404f73
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
   Hint: __Standard values
-  Value: {9ABC1BBC-1506-49E6-890C-82A79C36F246}
+  Value: "{9ABC1BBC-1506-49E6-890C-82A79C36F246}"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150824T175244Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: sitecore\admin

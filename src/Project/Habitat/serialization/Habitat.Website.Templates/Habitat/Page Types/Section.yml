@@ -1,14 +1,14 @@
 ﻿---
-ID: 8ee208f9-a6a6-41e2-88a0-c188737a178c
-Parent: 85086bb5-0365-48d7-98b1-cb9b1b6392ca
-Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+ID: "8ee208f9-a6a6-41e2-88a0-c188737a178c"
+Parent: "85086bb5-0365-48d7-98b1-cb9b1b6392ca"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
 Path: /sitecore/templates/Project/Habitat/Page Types/Section
 DB: master
 SharedFields:
-- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: Business/32x32/index.png
-- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
   Hint: __Base template
   Type: tree list
   Value: |
@@ -18,17 +18,17 @@ SharedFields:
     {BDD24F35-05E8-4466-8798-7D3DD6A6C991}
     {A1CBA309-D22B-46D5-80F8-2972C185363F}
     {8FD6C8B6-A9A4-4322-947E-90CE3D94916D}
-- ID: f7d48a55-2158-4f02-9356-756654404f73
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
   Hint: __Standard values
-  Value: {D8C5D4F5-0C90-47BF-A117-332FEA1A7C44}
+  Value: "{D8C5D4F5-0C90-47BF-A117-332FEA1A7C44}"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150824T175419Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: sitecore\admin

@@ -1,15 +1,15 @@
 ﻿---
-ID: 439ec71a-4231-45c8-b075-975bd41099a7
-Parent: ea258531-d346-4200-b673-471cf1544506
-Template: a99866e5-08e7-44d8-8a52-f8e26bcd3714
+ID: "439ec71a-4231-45c8-b075-975bd41099a7"
+Parent: "ea258531-d346-4200-b673-471cf1544506"
+Template: "a99866e5-08e7-44d8-8a52-f8e26bcd3714"
 Path: /sitecore/content/Habitat/Home/Modules/Feature/News/News
 DB: master
 SharedFields:
-- ID: a0cb3965-8884-4c7a-8815-b6b2e5ced162
+- ID: "a0cb3965-8884-4c7a-8815-b6b2e5ced162"
   Hint: __Editors
   Type: TreelistEx
-  Value: {59F53BBB-D1F5-4E38-8EBA-0D73109BB59B}
-- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Value: "{59F53BBB-D1F5-4E38-8EBA-0D73109BB59B}"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 300
 Languages:
@@ -17,18 +17,18 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
       Hint: NavigationTitle
       Value: News List
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150824T175319Z
-    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
       Value: Click here for an example of the a News List.&nbsp;
-    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
       Hint: Title
       Value: Latest News
-    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
       Hint: BrowserTitle
       Value: News

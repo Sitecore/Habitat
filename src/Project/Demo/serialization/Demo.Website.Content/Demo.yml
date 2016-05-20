@@ -4411,9 +4411,6 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151109T235920Z
-    - ID: "b8027200-aab0-4876-b454-dbb85add9e3c"
-      Hint: HostName
-      Value: demo.habitat.local
     - ID: "f07811d3-41e9-440a-9d81-310c1d78bed6"
       Hint: Title
       Value: Demo

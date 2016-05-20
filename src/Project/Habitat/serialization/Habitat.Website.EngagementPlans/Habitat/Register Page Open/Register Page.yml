@@ -1,38 +1,38 @@
 ﻿---
-ID: 505f2357-ab77-4ce8-991c-70ac53aef39f
-Parent: dc5c0fb3-f8bc-4311-916b-b5f885793aad
-Template: 8ce2707a-3742-4a89-933b-065e5be02bc9
+ID: "505f2357-ab77-4ce8-991c-70ac53aef39f"
+Parent: "dc5c0fb3-f8bc-4311-916b-b5f885793aad"
+Template: "8ce2707a-3742-4a89-933b-065e5be02bc9"
 Path: /sitecore/system/Marketing Control Panel/Engagement Plans/Habitat/Register Page Open/Register Page
 DB: master
 SharedFields:
-- ID: 07ce07cb-078c-415e-8f92-96690babd6c7
+- ID: "07ce07cb-078c-415e-8f92-96690babd6c7"
   Hint: Time interval
   Value: 0
-- ID: 3f72bc07-de92-483e-a724-d430769d9ba4
+- ID: "3f72bc07-de92-483e-a724-d430769d9ba4"
   Hint: Designer ID
-  Value: 8a37a137-f315-48f3-a074-0ef69277ff8c
-- ID: 575a25c8-5c6f-4530-a48f-f38e23e9dbd5
+  Value: "8a37a137-f315-48f3-a074-0ef69277ff8c"
+- ID: "575a25c8-5c6f-4530-a48f-f38e23e9dbd5"
   Hint: Page Event Subscription
   Type: TreelistEx
-  Value: {8FFB183B-DA1A-4C74-8F3A-9729E9FCFF6A}
-- ID: 7642ed71-348b-4b88-8634-cc7b28949472
+  Value: "{8FFB183B-DA1A-4C74-8F3A-9729E9FCFF6A}"
+- ID: "7642ed71-348b-4b88-8634-cc7b28949472"
   Hint: Origin ID
-  Value: 00000000-0000-0000-0000-000000000000
+  Value: "00000000-0000-0000-0000-000000000000"
 Languages:
 - Language: en
   Fields:
-  - ID: 06f2d72a-1924-4b9a-ba1e-186ce4e57efd
+  - ID: "06f2d72a-1924-4b9a-ba1e-186ce4e57efd"
     Hint: Description
     Value: 
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Register page opened
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151118T142010Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: sitecore\admin

@@ -1,7 +1,7 @@
 ﻿---
-ID: f4477b0f-b874-4385-a3d7-ed1c1a868db0
-Parent: 7dbf666b-066f-4767-b690-b02b1d22e191
-Template: 067ec866-b3fb-485b-bb49-6151fb086e78
+ID: "f4477b0f-b874-4385-a3d7-ed1c1a868db0"
+Parent: "7dbf666b-066f-4767-b690-b02b1d22e191"
+Template: "067ec866-b3fb-485b-bb49-6151fb086e78"
 Path: /sitecore/content/Habitat/Global/Map Points/Sydney Beaches
 DB: master
 Languages:
@@ -9,6 +9,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20160204T042525Z
