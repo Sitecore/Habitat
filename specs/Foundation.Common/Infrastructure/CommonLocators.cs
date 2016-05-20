@@ -39,6 +39,11 @@ namespace Sitecore.Foundation.Common.Specflow.Infrastructure
             Driver.Navigate().GoToUrl(url);
         }
 
+        public void ExperianceEditor(string url)
+        {
+            Driver.Navigate().GoToUrl(url);
+        }
+
         public IWebElement SubmitButton => Driver.FindElement(By.CssSelector("input[type=submit]"));
 
         public static IEnumerable<IWebElement> RegisterPageFields
@@ -88,5 +93,8 @@ namespace Sitecore.Foundation.Common.Specflow.Infrastructure
         public static IEnumerable<IWebElement> GlobeIconList
           => Driver.WaitUntilElementsPresent(By.CssSelector(".navbar-right .dropdown.open .dropdown-menu a"));
         public static IEnumerable<IWebElement> MetakeywordTag => Driver.FindElements(By.CssSelector("meta[name=keywords]"));
+
+        public static IEnumerable<IWebElement> TwitterPlaceholder => Driver.WaitUntilElementsPresent(By.CssSelector(".row.scEnabledChrome .col-md-4"));
+        public static IEnumerable<IWebElement> TwitterCommand => Driver.WaitUntilElementsPresent(By.CssSelector(".scChromeToolbar.undefined .scChromeCommand img"));
     }
 }

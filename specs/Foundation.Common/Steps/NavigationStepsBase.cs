@@ -42,11 +42,24 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
             CommonLocators.NavigateToPage(BaseSettings.FormsPageUrl);
         }
 
-        [Then(@"Habitat website is opened on Getting Started page")]
-        public void ThenHabitatWebsiteIsOpenedOnGettingStartedPage()
+        [When(@"User opens Experience Editor")]
+        public void WhenUserOpensExperienceEditor()
         {
-            CommonLocators.NavigateToPage(BaseSettings.GettingStartedPageUrl);
+            CommonLocators.ExperianceEditor(BaseSettings.ExperianceEditorUrl);
         }
+
+        [When(@"User selects Twitter placeholder")]
+        public void WhenUserSelectsTwitterPlaceholder()
+        {
+            CommonLocators.TwitterPlaceholder.First().Click();
+        }
+
+        [When(@"User clicks (.*) button on scChromeToolbar undefined")]
+        public void WhenUserClicksButtonOn(string p0)
+        {
+           CommonLocators.TwitterCommand.First(el=>el.Text.Contains(p0)).Click();
+        }
+
 
 
     }

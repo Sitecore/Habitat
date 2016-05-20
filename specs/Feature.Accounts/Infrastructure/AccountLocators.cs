@@ -38,8 +38,10 @@ namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
 
     public IEnumerable<IWebElement> LoginPageFields
       => Driver.FindElements(By.CssSelector("#loginEmail, #loginPassword"));
+   public IEnumerable<IWebElement> LoginPageFieldsBackend
+  => Driver.FindElements(By.CssSelector("#UserName, #Password"));
 
-    public IWebElement LoginFormTitle => Driver.FindElement(By.CssSelector(".dropdown-menu h4"));
+        public IWebElement LoginFormTitle => Driver.FindElement(By.CssSelector(".dropdown-menu h4"));
 
     public IWebElement UserFormDropDownPopup
       => Driver.FindElement(By.CssSelector(".dropdown-menu"));

@@ -21,7 +21,8 @@
 
     public static IWebElement GetField(this IEnumerable<IWebElement> elements, string formField)
     {
-      return elements.First(x => x.GetAttribute("name") == formField);
+            return elements.First(x => x.GetAttribute("name") == formField);
+       
     }
     public static IWebElement WaitUntilElementPresent(this IWebDriver driver, By selector)
     {

@@ -8,7 +8,6 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
 
   public class SiteNavigationSteps : AccountStepsBase
   {
-    
 
     [When(@"Actor opens Habitat website on Login page")]
     [Given(@"Habitat website is opened on Login page")]
@@ -24,7 +23,13 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       SiteBase.NavigateToPage(BaseSettings.ForgotPasswordPageUrl);
     }
 
-    [When(@"Actor moves on siteswitcher combo-box")]
+        [Then(@"Habitat website is opened on Getting Started page")]
+        public void ThenHabitatWebsiteIsOpenedOnGettingStartedPage()
+        {
+            CommonLocators.NavigateToPage(BaseSettings.GettingStartedPageUrl);
+        }
+
+        [When(@"Actor moves on siteswitcher combo-box")]
     public void WhenActorMovesOnSiteswitcherCombo_Box()
     {
       SiteBase.SiteSwitcherIcon.MoveToElement();

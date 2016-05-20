@@ -43,18 +43,6 @@
       <HintPath>..\..\packages\SpecFlow.2.0.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="WebDriver, Version=2.48.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\Selenium.WebDriver.2.48.2\lib\net40\WebDriver.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="WebDriver.Support, Version=2.48.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\Selenium.Support.2.48.2\lib\net40\WebDriver.Support.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="xunit, Version=1.7.0.1540, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\xunit.1.7.0.1540\lib\xunit.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
       <Private>True</Private>
@@ -69,10 +57,6 @@
     </Reference>
     <Reference Include="xunit.execution.desktop, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\xunit.extensibility.execution.2.1.0\lib\net45\xunit.execution.desktop.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="xunit.extensions, Version=1.7.0.1540, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\xunit.extensions.1.7.0.1540\lib\xunit.extensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -90,7 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Getting a Site Context Item.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Getting a Site Context Item.feature.cs</LastGenOutput>
@@ -103,6 +89,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Feature.Accounts\Sitecore.Feature.Accounts.Specflow.csproj">
+      <Project>{cf95188d-0e98-44fa-bb40-d1ea083a09fb}</Project>
+      <Name>Sitecore.Feature.Accounts.Specflow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foundation.Common\Sitecore.Foundation.Common.Specflow.csproj">
+      <Project>{e0c9af4f-fc51-42e6-b7b9-1e173ac0589d}</Project>
+      <Name>Sitecore.Foundation.Common.Specflow</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

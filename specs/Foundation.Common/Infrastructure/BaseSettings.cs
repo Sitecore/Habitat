@@ -29,5 +29,6 @@
 
     public static string FormsPageUrl =>BaseSettings.BaseUrl + ConfigurationManager.AppSettings["formsPageUrl"];
     public static string GettingStartedPageUrl => BaseSettings.BaseUrl + ConfigurationManager.AppSettings["GettingStartedPageUrl"];
+        public static string ExperianceEditorUrl => BaseSettings.BaseUrl + ConfigurationManager.AppSettings["ExperianceEditorUrl"];
     }
 }

@@ -108,7 +108,8 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       textMessages.All(m => AccountLocators.AccountErrorMessages.Any(x => x.Text == m));
     }
 
-    [When(@"Actor enteres following data into Login page fields")]
+        [Given(@"Actor enteres following data into Login page fields")]
+        [When(@"Actor enteres following data into Login page fields")]
     public void WhenActorEnteresFollowingDataIntoLoginPageFields(Table table)
     {
       var row = table.Rows.First();
@@ -117,7 +118,22 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
         Site.LoginPageFields.GetField(key).SendKeys(row[key]);
       }
     }
-    [Given(@"User was (.*) to Habitat")]
+        [Given(@"Actor enteres following data into Login page fieldss")]
+        public void GivenActorEnteresFollowingDataIntoLoginPageFieldss(Table table)
+        {
+            var row = table.Rows.First();
+            foreach (var key in row.Keys)
+            {
+                Site.LoginPageFieldsBackend.GetField(key).SendKeys(row[key]);
+            }
+        }
+
+
+
+
+
+
+        [Given(@"User was (.*) to Habitat")]
     public void GivenUserWasLoginToHabitat(string btn, Table table)
     {
       SiteBase.NavigateToPage(BaseSettings.LoginPageUrl);
