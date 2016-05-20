@@ -1,10 +1,9 @@
 ﻿namespace Sitecore.Feature.Accounts.Attributes
 {
   using System.Web.Mvc;
-  using Sitecore;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
-  public class RedirectUnauthenticatedAttribute: ActionFilterAttribute, IAuthorizationFilter
+  public class RedirectUnauthenticatedAttribute : ActionFilterAttribute, IAuthorizationFilter
   {
     public void OnAuthorization(AuthorizationContext filterContext)
     {

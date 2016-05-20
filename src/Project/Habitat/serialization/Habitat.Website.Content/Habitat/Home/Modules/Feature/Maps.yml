@@ -1,7 +1,7 @@
 ﻿---
-ID: c0a33dd0-efdb-43c0-88ef-b46c39c5cbda
-Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
-Template: 94a8c8e9-690b-4e65-98e7-f95800222767
+ID: "c0a33dd0-efdb-43c0-88ef-b46c39c5cbda"
+Parent: "f7434df7-e32e-4f8c-a50e-27c476f4dc32"
+Template: "94a8c8e9-690b-4e65-98e7-f95800222767"
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Maps
 DB: master
 Languages:
@@ -9,35 +9,54 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
       Hint: __Final Renderings
       Type: Layout
       Value: |
-        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
-          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-            <r uid="{1D14E75C-3F43-4665-B2E2-B21B89EAF728}" p:before="r[@uid='{D9CA2CCD-729B-41C0-988D-A5DD7961E6AD}']" s:ds="{F4477B0F-B874-4385-A3D7-ED1C1A868DB0}" s:id="{7DFD9396-CB94-4174-9721-9419A2AA68E3}" s:par="MapType=terrain&amp;CenterLocation=-33.832724, 151.289431&amp;ZoomLevel=10&amp;EnableCenterMapControl&amp;EnableZoomControl&amp;EnableMapTypeControl&amp;EnableScaleControl&amp;EnableStreetViewControl&amp;EnableRotateControl" s:ph="/page-layout/section-narrow/col-wide-1_27c81c8d-b50a-4a27-b728-114c314d417b" />
-            <r uid="{D9CA2CCD-729B-41C0-988D-A5DD7961E6AD}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:ds="{37FCED17-913A-4ABB-9EEC-3BF745334326}" s:id="{7DFD9396-CB94-4174-9721-9419A2AA68E3}" s:par="MapType=roadmap&amp;CenterLocation=55.6749167,12.561860199999956&amp;ZoomLevel=0&amp;EnableCenterMapControl&amp;EnableZoomControl=1&amp;EnableMapTypeControl=1&amp;EnableScaleControl&amp;EnableStreetViewControl&amp;EnableRotateControl" s:ph="/page-layout/section-narrow/col-wide-2_27c81c8d-b50a-4a27-b728-114c314d417b" />
-            <r uid="{27C81C8D-B50A-4A27-B728-114C314D417B}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/section-narrow" />
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1"
+          s:xsd="http://www.w3.org/2001/XMLSchema">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{1D14E75C-3F43-4665-B2E2-B21B89EAF728}"
+              p:before="r[@uid='{D9CA2CCD-729B-41C0-988D-A5DD7961E6AD}']"
+              s:ds="{F4477B0F-B874-4385-A3D7-ED1C1A868DB0}"
+              s:id="{7DFD9396-CB94-4174-9721-9419A2AA68E3}"
+              s:par="MapType=terrain&amp;CenterLocation=-33.832724, 151.289431&amp;ZoomLevel=10&amp;EnableCenterMapControl&amp;EnableZoomControl&amp;EnableMapTypeControl&amp;EnableScaleControl&amp;EnableStreetViewControl&amp;EnableRotateControl"
+              s:ph="/page-layout/section-narrow/col-wide-1_27c81c8d-b50a-4a27-b728-114c314d417b" />
+            <r
+              uid="{D9CA2CCD-729B-41C0-988D-A5DD7961E6AD}"
+              p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']"
+              s:ds="{37FCED17-913A-4ABB-9EEC-3BF745334326}"
+              s:id="{7DFD9396-CB94-4174-9721-9419A2AA68E3}"
+              s:par="MapType=roadmap&amp;CenterLocation=55.6749167,12.561860199999956&amp;ZoomLevel=0&amp;EnableCenterMapControl&amp;EnableZoomControl=1&amp;EnableMapTypeControl=1&amp;EnableScaleControl&amp;EnableStreetViewControl&amp;EnableRotateControl"
+              s:ph="/page-layout/section-narrow/col-wide-2_27c81c8d-b50a-4a27-b728-114c314d417b" />
+            <r
+              uid="{27C81C8D-B50A-4A27-B728-114C314D417B}"
+              p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']"
+              s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}"
+              s:ph="/page-layout/section-narrow" />
           </d>
         </r>
-    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
       Hint: NavigationTitle
       Value: Maps
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20160129T051509Z
-    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
       Value: "<image mediaid=\"{F53A3B36-7FC8-4C58-B4CE-25963AB803B6}\" />"
-    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
       Value: The Maps module allows you to add maps with points to the pages of your website.
-    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
       Hint: Title
       Value: Maps
-    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
       Hint: BrowserTitle
       Value: Maps
-    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+    - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
       Value: <p>The Maps module allows you to add maps to the pages of your website. A map can show one or more map points which are stored in a central folder for reuse.</p>

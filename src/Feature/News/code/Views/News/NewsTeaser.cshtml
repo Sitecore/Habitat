@@ -15,9 +15,9 @@
   <header class="thumbnail-header">
     <span class="label">
       @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new
- {
-   format = "MMMM dd, yyyy"
- })
+                                                                           {
+                                                                             format = "MMMM dd, yyyy"
+                                                                           })
     </span>
     <h3>
       @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, Model.Item)
@@ -28,12 +28,12 @@
       @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image, Model.Item, mw: 750, cssClass: "img-responsive")
     </a>
   </div>
-	<div class="caption">
+  <div class="caption">
     <p>
-		@Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, Model.Item)
+      @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, Model.Item)
     </p>
     <a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-default">
       @DictionaryRepository.Get("/news/news teaser/read more", "Read more")
     </a>
-	</div>
+  </div>
 </div>

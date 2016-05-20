@@ -4,7 +4,7 @@
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.Foundation.Theming.Extensions
-@model Sitecore.Foundation.SitecoreExtensions.Rendering.QueryableDatasourceRenderingModel
+@model Sitecore.Foundation.Indexing.Rendering.QueryableDatasourceRenderingModel
 
 @{
   if (Model?.Items == null || !Model.Items.All(i => i.IsDerived(Templates.Person.ID)) || !Model.Items.Any())

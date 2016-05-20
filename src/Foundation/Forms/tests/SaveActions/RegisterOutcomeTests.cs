@@ -13,7 +13,7 @@
   {
     [Theory]
     [AutoDbData]
-    public void Execute_NullOutcome_DoNotRegisterOutcome([Frozen]ITrackerService trackerService, [Greedy]RegisterOutcome registerOutcome)
+    public void Execute_NullOutcome_DoNotRegisterOutcome([Frozen] ITrackerService trackerService, [Greedy] RegisterOutcome registerOutcome)
     {
       //Arrange
       registerOutcome.Outcome = null;
@@ -27,7 +27,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Execute_EmptyOutcome_DoNotRegisterOutcome([Frozen]ITrackerService trackerService, [Greedy]RegisterOutcome registerOutcome)
+    public void Execute_EmptyOutcome_DoNotRegisterOutcome([Frozen] ITrackerService trackerService, [Greedy] RegisterOutcome registerOutcome)
     {
       //Arrange
       registerOutcome.Outcome = string.Empty;
@@ -41,7 +41,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Execute_OutcomeIsNotID_DoNotRegisterOutcome(string outcome, [Frozen]ITrackerService trackerService, [Greedy]RegisterOutcome registerOutcome)
+    public void Execute_OutcomeIsNotID_DoNotRegisterOutcome(string outcome, [Frozen] ITrackerService trackerService, [Greedy] RegisterOutcome registerOutcome)
     {
       //Arrange
       registerOutcome.Outcome = outcome;
@@ -55,7 +55,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Execute_OutcomeIsNotOutcomeID_DoNotRegisterOutcome(Db db, ID outcomeId, ID templateId, [Frozen]ITrackerService trackerService, [Greedy]RegisterOutcome registerOutcome)
+    public void Execute_OutcomeIsNotOutcomeID_DoNotRegisterOutcome(Db db, ID outcomeId, ID templateId, [Frozen] ITrackerService trackerService, [Greedy] RegisterOutcome registerOutcome)
     {
       //Arrange
       db.Add(new DbItem("WrongOutcome", outcomeId, templateId));
@@ -70,10 +70,10 @@
 
     [Theory]
     [AutoDbData]
-    public void Execute_OutcomeID_RegisterOutcome(Db db, ID outcomeId, [Frozen]ITrackerService trackerService, [Greedy]RegisterOutcome registerOutcome)
+    public void Execute_OutcomeID_RegisterOutcome(Db db, ID outcomeId, [Frozen] ITrackerService trackerService, [Greedy] RegisterOutcome registerOutcome)
     {
       //Arrange
-      db.Add(new DbItem("WrongOutcome", outcomeId, Constants.OutcomeTemplateId));
+      db.Add(new DbItem("WrongOutcome", outcomeId, Templates.Outcome.ID));
       registerOutcome.Outcome = outcomeId.ToString();
 
       //Act

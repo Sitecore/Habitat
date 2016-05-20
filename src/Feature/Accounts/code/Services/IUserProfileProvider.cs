@@ -6,6 +6,6 @@
   public interface IUserProfileProvider
   {
     IDictionary<string, string> GetCustomProperties(UserProfile userProfile);
-    void SetCustomProfile(UserProfile userProfile, IDictionary<string,string> properties);
+    void SetCustomProfile(UserProfile userProfile, IDictionary<string, string> properties);
   }
 }

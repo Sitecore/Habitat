@@ -1,7 +1,7 @@
 ﻿---
-ID: 06ec763e-5dd8-4c4e-9c8e-781b3f42c19b
-Parent: f7434df7-e32e-4f8c-a50e-27c476f4dc32
-Template: 94a8c8e9-690b-4e65-98e7-f95800222767
+ID: "06ec763e-5dd8-4c4e-9c8e-781b3f42c19b"
+Parent: "f7434df7-e32e-4f8c-a50e-27c476f4dc32"
+Template: "94a8c8e9-690b-4e65-98e7-f95800222767"
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Accounts
 DB: master
 Languages:
@@ -9,37 +9,60 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 04bf00db-f5fb-41f7-8ab7-22408372a981
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
       Hint: __Final Renderings
       Type: Layout
       Value: |
-        <r xmlns:p="p" xmlns:s="s" p:p="1" s:xsd="http://www.w3.org/2001/XMLSchema">
-          <d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
-            <r uid="{B0638AD4-91B4-473A-8285-A35538E5C287}" p:before="r[@uid='{BE168088-8A34-42CC-AE71-AA53F3802D72}']" s:id="{41EA568D-C3AF-45DF-B1D0-B7813CD06093}" s:ph="/page-layout/section-narrow/col-wide-1_927d47ad-a496-49b3-bd5b-c5f93d8bc701" />
-            <r uid="{BE168088-8A34-42CC-AE71-AA53F3802D72}" p:before="r[@uid='{F7A89D2B-5C2D-40FF-AE07-459FCBB1C231}']" s:id="{B683EFB4-161D-4FDF-9A90-CC8637766C9C}" s:ph="/page-layout/section-narrow/col-wide-2_977cec4d-6e99-4fa9-ba2d-2377465a45ba" />
-            <r uid="{F7A89D2B-5C2D-40FF-AE07-459FCBB1C231}" p:before="r[@uid='{977CEC4D-6E99-4FA9-BA2D-2377465A45BA}']" s:id="{5899FE6B-2AD7-4243-B1F9-3BC664CF0A7C}" s:ph="/page-layout/section-narrow/col-wide-1_977cec4d-6e99-4fa9-ba2d-2377465a45ba" />
-            <r uid="{977CEC4D-6E99-4FA9-BA2D-2377465A45BA}" p:before="r[@uid='{927D47AD-A496-49B3-BD5B-C5F93D8BC701}']" s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}" s:ph="/page-layout/section-narrow" />
-            <r uid="{927D47AD-A496-49B3-BD5B-C5F93D8BC701}" p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']" s:id="{03112E88-1499-4132-9D5F-E213AFD2019C}" s:ph="/page-layout/section-narrow" />
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1"
+          s:xsd="http://www.w3.org/2001/XMLSchema">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{B0638AD4-91B4-473A-8285-A35538E5C287}"
+              p:before="r[@uid='{BE168088-8A34-42CC-AE71-AA53F3802D72}']"
+              s:id="{41EA568D-C3AF-45DF-B1D0-B7813CD06093}"
+              s:ph="/page-layout/section-narrow/col-wide-1_927d47ad-a496-49b3-bd5b-c5f93d8bc701" />
+            <r
+              uid="{BE168088-8A34-42CC-AE71-AA53F3802D72}"
+              p:before="r[@uid='{F7A89D2B-5C2D-40FF-AE07-459FCBB1C231}']"
+              s:id="{B683EFB4-161D-4FDF-9A90-CC8637766C9C}"
+              s:ph="/page-layout/section-narrow/col-wide-2_977cec4d-6e99-4fa9-ba2d-2377465a45ba" />
+            <r
+              uid="{F7A89D2B-5C2D-40FF-AE07-459FCBB1C231}"
+              p:before="r[@uid='{977CEC4D-6E99-4FA9-BA2D-2377465A45BA}']"
+              s:id="{5899FE6B-2AD7-4243-B1F9-3BC664CF0A7C}"
+              s:ph="/page-layout/section-narrow/col-wide-1_977cec4d-6e99-4fa9-ba2d-2377465a45ba" />
+            <r
+              uid="{977CEC4D-6E99-4FA9-BA2D-2377465A45BA}"
+              p:before="r[@uid='{927D47AD-A496-49B3-BD5B-C5F93D8BC701}']"
+              s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}"
+              s:ph="/page-layout/section-narrow" />
+            <r
+              uid="{927D47AD-A496-49B3-BD5B-C5F93D8BC701}"
+              p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']"
+              s:id="{03112E88-1499-4132-9D5F-E213AFD2019C}"
+              s:ph="/page-layout/section-narrow" />
           </d>
         </r>
-    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
       Hint: NavigationTitle
       Value: Accounts
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151116T023546Z
-    - ID: 9492e0bb-9df9-46e7-8188-ec795c4ade44
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
       Value: "<image mediaid=\"{044D7223-0C4F-43AC-95BF-7D30FB66AB7B}\" />"
-    - ID: ac3fd4db-8266-476d-9635-67814d91e901
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
       Value: The accounts module handles user accounts and user profiles including login, registration, forgot password and profile editing.
-    - ID: c30a013f-3cc8-4961-9837-1c483277084a
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
       Hint: Title
       Value: Accounts
-    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
       Hint: BrowserTitle
       Value: Accounts
-    - ID: d74f396d-5c5e-4916-bd0a-bfd58b6b1967
+    - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
       Value: "<span style=\"line-height: 24.2857px;\">The accounts module handles user accounts and user profiles including login, registration, forgot password and profile editing.</span>"

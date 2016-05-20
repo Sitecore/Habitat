@@ -8,10 +8,10 @@
   {
     public void Process(PipelineArgs args)
     {
-      RouteTable.Routes.MapRoute(
-        name: "Feature.Demo.Api",
-        url: "api/demo/{action}",
-        defaults: new { controller = "Demo" });
+      RouteTable.Routes.MapRoute("Feature.Demo.Api", "api/demo/{action}", new
+                                                                          {
+                                                                            controller = "Demo"
+                                                                          });
     }
   }
 }

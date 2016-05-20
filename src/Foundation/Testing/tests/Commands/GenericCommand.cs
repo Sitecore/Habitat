@@ -12,7 +12,7 @@
         return;
       }
 
-      ExecuteAction(castedSpecimen, context);
+      this.ExecuteAction(castedSpecimen, context);
     }
 
     protected abstract void ExecuteAction(T specimen, ISpecimenContext context);

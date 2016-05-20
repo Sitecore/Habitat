@@ -18,7 +18,10 @@
       this.processRunner = processRunner;
     }
 
-    public MongoRestoreService() : this(new MongoPathsProvider(), new ProcessRunner() { LogPrefix = LogToken })
+    public MongoRestoreService() : this(new MongoPathsProvider(), new ProcessRunner
+                                                                  {
+                                                                    LogPrefix = LogToken
+                                                                  })
     {
     }
 
@@ -101,7 +104,6 @@
       {
         server?.Disconnect();
       }
-
     }
 
     protected virtual string GetArgumentsLine(string host, string databaseName, string dumbPath) => $"--host {host} --db {databaseName} --dir {dumbPath}";

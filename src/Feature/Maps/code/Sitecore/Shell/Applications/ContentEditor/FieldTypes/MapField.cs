@@ -10,7 +10,6 @@ namespace Sitecore.Feature.Maps.Sitecore.Shell.Applications.ContentEditor.FieldT
   using System.Web.UI.WebControls;
   using Diagnostics;
 
-  [ExcludeFromCodeCoverage]
   public class MapField : ContentEditor_Text, IContentField
   {
     private readonly int mapWidth = 600;
@@ -24,94 +23,88 @@ namespace Sitecore.Feature.Maps.Sitecore.Shell.Applications.ContentEditor.FieldT
       base.Render(output);
 
       //render other control
-      var value = GetValue();
+      var value = this.GetValue();
+      if (string.IsNullOrEmpty(value))
+        return;
+      //get lat lng
+      var position = value.Split(',');
 
-     
-      if (!string.IsNullOrEmpty(value))
-      {
-        //get lat lng
-        var position = value.Split(',');
+      if (position.Count() != 2)
+        return;
+      double lat = 0;
+      double lng = 0;
 
-        if (position.Count() == 2)
-        {
-          double lat = 0;
-          double lng = 0;
+      double.TryParse(position[0], out lat);
+      double.TryParse(position[1], out lng);
 
-          double.TryParse(position[0], out lat);
-          double.TryParse(position[1], out lng);
+      var mapImageCtrl = new Image
+                         {
+                           ID = this.ID + "_Img_MapView",
+                           CssClass = "imageMapView",
+                           Width = this.mapWidth,
+                           Height = this.mapHeight,
+                           ImageUrl = this.GetMapImageUrl()
+                         };
+      mapImageCtrl.Style.Add("padding-top", "5px");
 
-          var mapImageCtrl = new Image();
-          mapImageCtrl.ID = ID + "_Img_MapView";
-          mapImageCtrl.CssClass = "imageMapView";
-          mapImageCtrl.Width = mapWidth;
-          mapImageCtrl.Height = mapHeight;
-          mapImageCtrl.ImageUrl = GetMapImageUrl();
-          mapImageCtrl.Style.Add("padding-top", "5px");
-
-          mapImageCtrl.RenderControl(output);
-        }     
-      }
+      mapImageCtrl.RenderControl(output);
     }
 
     private string GetMapImageUrl()
     {
-      return string.Format("http://maps.googleapis.com/maps/api/staticmap?center={0}&zoom={1}&size={2}x{3}&sensor=false&maptype=roadmap&&markers=color:blue%7Clabel:Location%7C{0}",
-                  GetValue(),
-                  mapZoomFactor,
-                  mapWidth,
-                  mapHeight);
-    }  
+      return string.Format("http://maps.googleapis.com/maps/api/staticmap?center={0}&zoom={1}&size={2}x{3}&sensor=false&maptype=roadmap&&markers=color:blue%7Clabel:Location%7C{0}", this.GetValue(), this.mapZoomFactor, this.mapWidth, this.mapHeight);
+    }
 
     public string GetValue()
     {
-      return Value;
+      return this.Value;
     }
 
     public void SetValue(string value)
     {
-      Value = value;
+      this.Value = value;
     }
 
     public override void HandleMessage(Web.UI.Sheer.Message message)
     {
-      if (message["id"] != ID || string.IsNullOrWhiteSpace(message.Name))
+      if (message["id"] != this.ID || string.IsNullOrWhiteSpace(message.Name))
         return;
 
       switch (message.Name)
       {
-        case "map:setLocation": 
+        case "map:setLocation":
           Sitecore_Context.ClientPage.Start(this, "SetLocation");
           return;
-        case "map:clearLocation": 
+        case "map:clearLocation":
           Sitecore_Context.ClientPage.Start(this, "ClearLocation");
           return;
       }
 
-      if (Value.Length > 0)
+      if (this.Value.Length > 0)
       {
-        SetModified();
+        this.SetModified();
       }
 
-      Value = string.Empty;
+      this.Value = string.Empty;
     }
 
     protected void SetLocation(Web.UI.Sheer.ClientPipelineArgs args)
-    {      
+    {
       if (args.IsPostBack)
-      {        
-        if (args.HasResult && Value.Equals(args.Result) == false)
-        {          
-          SetModified();          
-          SetValue(args.Result);
+      {
+        if (args.HasResult && this.Value.Equals(args.Result) == false)
+        {
+          this.SetModified();
+          this.SetValue(args.Result);
         }
       }
       else
       {
         //show popup        
-        var url = UIUtil.GetUri("control:MapLocationPickerDialog");        
-        var value = GetValue();
+        var url = UIUtil.GetUri("control:MapLocationPickerDialog");
+        var value = this.GetValue();
         if (!string.IsNullOrEmpty(value))
-        {         
+        {
           url = $"{url}&value={value}";
         }
         Web.UI.Sheer.SheerResponse.ShowModalDialog(url, "800", "600", "", true);
@@ -120,9 +113,9 @@ namespace Sitecore.Feature.Maps.Sitecore.Shell.Applications.ContentEditor.FieldT
     }
 
     protected void ClearLocation(Web.UI.Sheer.ClientPipelineArgs args)
-    {    
-      SetValue(string.Empty);     
-      SetModified();
+    {
+      this.SetValue(string.Empty);
+      this.SetModified();
     }
   }
 }

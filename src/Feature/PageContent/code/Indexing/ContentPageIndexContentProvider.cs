@@ -14,17 +14,11 @@
   {
     public override string ContentType => DictionaryRepository.Get("/pagecontent/search/contenttype", "Page");
 
-    public override IEnumerable<ID> SupportedTemplates => new[]
-    {
-      Templates.HasPageContent.ID
-    };
+    public override IEnumerable<ID> SupportedTemplates => new[] {Templates.HasPageContent.ID};
 
     public override Expression<Func<SearchResultItem, bool>> GetQueryPredicate(IQuery query)
     {
-      var fieldNames = new[]
-      {
-        Templates.HasPageContent.Fields.Title_FieldName, Templates.HasPageContent.Fields.Summary_FieldName, Templates.HasPageContent.Fields.Body_FieldName
-      };
+      var fieldNames = new[] {Templates.HasPageContent.Fields.Title_FieldName, Templates.HasPageContent.Fields.Summary_FieldName, Templates.HasPageContent.Fields.Body_FieldName};
       return this.GetFreeTextPredicate(fieldNames, query);
     }
 

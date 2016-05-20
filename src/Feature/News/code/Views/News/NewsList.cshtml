@@ -2,28 +2,31 @@
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model IEnumerable<Sitecore.Data.Items.Item>
 <ul class="media-list media-list-divided">
-@foreach (var item in Model)
-{
-  <li class="media">
-    <div class="media-left">
-      <a href="@item.Url()">
-        @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image, item, mw: 150)
-      </a>
-    </div>
-
-    <div class="media-body">
-      <div class="label label-info">
-        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new { format = "MMMM dd, yyyy" })
-      </div>
-      <h3 class="media-title">
+  @foreach (var item in Model)
+  {
+    <li class="media">
+      <div class="media-left">
         <a href="@item.Url()">
-          @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, item)
+          @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image, item, mw: 150)
         </a>
-      </h3>
-      <p>
-        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, item)
-      </p>
-    </div>
-  </li>
-}
+      </div>
+
+      <div class="media-body">
+        <div class="label label-info">
+          @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), item, new
+                                                                                     {
+                                                                                       format = "MMMM dd, yyyy"
+                                                                                     })
+        </div>
+        <h3 class="media-title">
+          <a href="@item.Url()">
+            @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, item)
+          </a>
+        </h3>
+        <p>
+          @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, item)
+        </p>
+      </div>
+    </li>
+  }
 </ul>

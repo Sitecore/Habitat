@@ -25,13 +25,13 @@
     public void TrackLogin_Call_ShouldTrackLoginGoal(string identifier, Db db, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
     {
       //Arrange
-      db.Add(new DbItem("Item", ConfigSettings.LoginGoalId));
+      db.Add(new DbItem("Item", AccountTrackerService.LoginGoalId));
 
       //Act
       accountTrackerService.TrackLogin(identifier);
 
       //Assert
-      trackerService.Received().TrackPageEvent(Arg.Is<ID>(ConfigSettings.LoginGoalId));
+      trackerService.Received().TrackPageEvent(Arg.Is<ID>(AccountTrackerService.LoginGoalId));
     }
 
     [Theory, AutoDbData]
@@ -40,14 +40,14 @@
       // Arrange
       accountsSettingsService.GetRegistrationOutcome(Arg.Any<Item>()).Returns(outcomeID);
 
-      db.Add(new DbItem("Item", ConfigSettings.RegistrationGoalId));
-      db.Add(new DbItem("Item", ConfigSettings.LoginGoalId));
+      db.Add(new DbItem("Item", AccountTrackerService.RegistrationGoalId));
+      db.Add(new DbItem("Item", AccountTrackerService.LoginGoalId));
 
       //Act
       accountTrackerService.TrackRegistration();
 
       //Assert
-      trackerService.Received().TrackPageEvent(ConfigSettings.RegistrationGoalId);
+      trackerService.Received().TrackPageEvent(AccountTrackerService.RegistrationGoalId);
       trackerService.Received().TrackOutcome(outcomeID);
     }
   }

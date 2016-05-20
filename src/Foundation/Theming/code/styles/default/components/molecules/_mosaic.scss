@@ -1,6 +1,6 @@
 .mosaic {
   position: relative;
-  display: inline-block;
+  display: block;
   overflow: hidden;
   &:hover, &-overlay-show {
     .mosaic-overlay {
@@ -27,7 +27,7 @@
   &.mosaic-cover, &.mosaic-cover-corner {
     .mosaic-overlay {
       z-index: 0;
-    },
+    }
     .mosaic-backdrop {
       position: relative;
       z-index: 1;

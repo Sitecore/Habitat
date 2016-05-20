@@ -20,13 +20,14 @@
   using Sitecore.Data.Items;
   using Sitecore.Foundation.Indexing.Models;
   using Sitecore.Foundation.Indexing.Repositories;
+  using Sitecore.Foundation.Indexing.Services;
   using Sitecore.Search;
 
   public class NewsRepositoryTests
   {
     [Theory]
     [AutoDbData]
-    public void Get_ReturnsListOfNews([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository, string itemName, [Substitute] SearchService searchService, ISearchSettings searchSettings)
+    public void Get_ReturnsListOfNews([Frozen] ISearchServiceRepository searchServiceRepository, string itemName, [Substitute] SearchService searchService, ISearchSettings searchSettings)
     {
       var id = ID.NewID;
       searchService.Settings.Returns(searchSettings);
@@ -43,7 +44,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Constructor_NullAs1Parameter_ThrowArgumentNullException([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository)
+    public void Constructor_NullAs1Parameter_ThrowArgumentNullException([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen]ISearchSettings searchSettings)
     {
       Action act = () => new NewsRepository(null);
       act.ShouldThrow<ArgumentNullException>();
@@ -51,7 +52,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Constructor_ItemNotDerivedFromNewsFolterTemplate_ThrowArgumentNullException([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository, Item contextItem)
+    public void Constructor_ItemNotDerivedFromNewsFolterTemplate_ThrowArgumentNullException([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettings searchSettings, Item contextItem)
     {
       Action act = () => new NewsRepository(contextItem, searchServiceRepository);
       act.ShouldThrow<ArgumentException>();
@@ -59,7 +60,7 @@
 
     [Theory]
     [AutoDbData]
-    public void GetLatestNews_IntegerAs1Parameter_ReturnsNumberOfNewsEquelToParameterValue([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettingsRepository searchSettingsRepository, string itemName, [Substitute] SearchService searchService, ISearchSettings searchSettings, ISearchResults searchResults, List<Item> collection)
+    public void GetLatestNews_IntegerAs1Parameter_ReturnsNumberOfNewsEquelToParameterValue([Frozen] ISearchServiceRepository searchServiceRepository, string itemName, [Substitute] SearchService searchService, ISearchSettings searchSettings, ISearchResults searchResults, List<Item> collection)
     {
       var id = ID.NewID;
       searchService.Settings.Returns(searchSettings);

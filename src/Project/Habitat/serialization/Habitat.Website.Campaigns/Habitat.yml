@@ -1,7 +1,7 @@
 ﻿---
-ID: b4a8ab5d-33a4-44d4-8e79-3039575bb8fb
-Parent: ec095310-746f-4c1b-a73f-941863564dc2
-Template: 56682fe6-9679-4b69-9589-60c99aa08bec
+ID: "b4a8ab5d-33a4-44d4-8e79-3039575bb8fb"
+Parent: "ec095310-746f-4c1b-a73f-941863564dc2"
+Template: "56682fe6-9679-4b69-9589-60c99aa08bec"
 Path: /sitecore/system/Marketing Control Panel/Campaigns/Habitat
 DB: master
 Languages:
@@ -9,6 +9,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20160105T150814Z

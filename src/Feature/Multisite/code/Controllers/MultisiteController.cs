@@ -7,8 +7,8 @@
   {
     private readonly ISiteConfigurationRepository multisiteRepository;
 
-    public MultisiteController() :this(new SiteConfigurationRepository())
-    {  
+    public MultisiteController() : this(new SiteConfigurationRepository())
+    {
     }
 
     public MultisiteController(ISiteConfigurationRepository multisiteRepository)
@@ -18,7 +18,7 @@
 
     public ActionResult SwitchSite()
     {
-      var definitions = multisiteRepository.Get();
+      var definitions = this.multisiteRepository.Get();
       return this.View(definitions);
     }
   }

@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -110,22 +111,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\CreateRenderingSettings.cs" />
-    <Compile Include="DatasourceProviderFactory.cs" />
     <Compile Include="Dialogs\DatasourceSettingsPage.cs" />
     <Compile Include="Providers\DatasourceConfigurationService.cs" />
-    <Compile Include="Providers\ISettingsProvider.cs" />
+    <Compile Include="Providers\ISiteSettingsProvider.cs" />
     <Compile Include="Pipelines\GetDatasourceLocationAndTemplateFromSite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\ConfigurationDatasourceProvider.cs" />
-    <Compile Include="Providers\ConfigurationSiteDefinitionsProvider.cs" />
     <Compile Include="Providers\IDatasourceProvider.cs" />
     <Compile Include="Providers\ISiteDefinitionsProvider.cs" />
-    <Compile Include="Providers\ItemDataSourceProvider.cs" />
-    <Compile Include="Providers\ItemSiteDefinitionsProvider.cs" />
-    <Compile Include="Providers\SettingsProvider.cs" />
-    <Compile Include="Providers\SiteDefinitionsProviderBase.cs" />
+    <Compile Include="Providers\DatasourceProvider.cs" />
+    <Compile Include="Providers\SiteDefinitionsProvider.cs" />
+    <Compile Include="Providers\SiteSettingsProvider.cs" />
     <Compile Include="SiteContext.cs" />
-    <Compile Include="SiteDefinitionItem.cs" />
+    <Compile Include="SiteDefinition.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>

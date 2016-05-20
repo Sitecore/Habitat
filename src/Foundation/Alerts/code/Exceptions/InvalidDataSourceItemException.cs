@@ -1,12 +1,12 @@
-﻿using System;
-using System.Runtime.Serialization;
-
-namespace Sitecore.Foundation.Alerts.Exceptions
+﻿namespace Sitecore.Foundation.Alerts.Exceptions
 {
+  using System;
+  using System.Runtime.Serialization;
+
   [Serializable]
   public class InvalidDataSourceItemException : Exception
   {
-    public InvalidDataSourceItemException():base("Data source isn't set or have wrong template")
+    public InvalidDataSourceItemException() : base("Data source isn't set or have wrong template")
     {
     }
 
@@ -18,9 +18,7 @@ namespace Sitecore.Foundation.Alerts.Exceptions
     {
     }
 
-    protected InvalidDataSourceItemException(
-      SerializationInfo info,
-      StreamingContext context) : base(info, context)
+    protected InvalidDataSourceItemException(SerializationInfo info, StreamingContext context) : base(info, context)
     {
     }
   }

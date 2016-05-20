@@ -1,13 +1,13 @@
 ﻿@using Sitecore.Feature.Accounts
 @using Sitecore.Feature.Accounts.Services
 @using Sitecore.Feature.Accounts.Texts
-@using Sitecore.Foundation.SitecoreExtensions.HtmlHelpers
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Mvc
 @model Sitecore.Feature.Accounts.Models.LoginInfo
 
 @using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post, new { @class = "form-signin" }))
 {
-  @Html.FormHandler()
+  @Html.AddUniqueFormId()
   @Html.ValidationSummary(true)
   <div class="form-group @Html.ValidationErrorFor(x=>x.Email, "has-error")">
     @Html.LabelFor(x => x.Email, new { @class = "control-label" })

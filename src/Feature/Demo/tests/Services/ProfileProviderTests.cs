@@ -13,6 +13,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.FakeDb.Sites;
+  using Sitecore.Feature.Demo.Models;
   using Sitecore.Feature.Demo.Services;
   using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Sites;
@@ -22,7 +23,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
   {
     [Theory]
     [AutoProfileDbData]
-    public void LoadProfiles_SettingWithProfiles_ShouldReturnExistentProfilesEnumerable([Content] Item item, CurrentInteraction currentInteraction, ITracker tracker, Profile profile)
+    public void LoadProfiles_SettingWithProfiles_ShouldReturnExistentProfilesEnumerable([Content] Item item, CurrentInteraction currentInteraction, ITracker tracker, Analytics.Tracking.Profile profile)
     {
       var profileSettingItem = item.Add("profileSetting", new TemplateID(Templates.ProfilingSettings.ID));
       var profileItem = item.Add("profile", new TemplateID(ProfileItem.TemplateID));
@@ -55,7 +56,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
 
     [Theory]
     [AutoProfileDbData]
-    public void LoadProfiles_SettingsIsEmpty_ShouldReturnExistentProfilesEnumerable([Content] Item item, CurrentInteraction currentInteraction, ITracker tracker, Profile profile)
+    public void LoadProfiles_SettingsIsEmpty_ShouldReturnExistentProfilesEnumerable([Content] Item item, CurrentInteraction currentInteraction, ITracker tracker, Analytics.Tracking.Profile profile)
     {
       var profileSettingItem = item.Add("profileSetting", new TemplateID(Templates.ProfilingSettings.ID));
       var profileItem = item.Add("profile", new TemplateID(ProfileItem.TemplateID));
@@ -107,7 +108,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
 
     [Theory]
     [AutoProfileDbData]
-    public void HasMatchingPattern_ItemNotExists_ShouldReturnFalse([Content] Item profileItem, CurrentInteraction currentInteraction, ITracker tracker, Profile profile)
+    public void HasMatchingPattern_ItemNotExists_ShouldReturnFalse([Content] Item profileItem, CurrentInteraction currentInteraction, ITracker tracker, Analytics.Tracking.Profile profile)
     {
       tracker.Interaction.Returns(currentInteraction);
       currentInteraction.Profiles[null].ReturnsForAnyArgs(profile);
@@ -133,7 +134,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
 
     [Theory]
     [AutoProfileDbData]
-    public void HasMatchingPattern_ItemExists_ShouldReturnTrue([Content] Item profileItem, CurrentInteraction currentInteraction, ITracker tracker, Profile profile)
+    public void HasMatchingPattern_ItemExists_ShouldReturnTrue([Content] Item profileItem, CurrentInteraction currentInteraction, ITracker tracker, Analytics.Tracking.Profile profile)
     {
       tracker.Interaction.Returns(currentInteraction);
       currentInteraction.Profiles[null].ReturnsForAnyArgs(profile);
@@ -159,10 +160,10 @@ namespace Sitecore.Feature.Demo.Tests.Services
 
     [Theory]
     [AutoProfileDbData]
-    public void HasMatchingPattern_TrackerReturnsNull_ShouldReturnFalse([Content] Item profileItem, CurrentInteraction currentInteraction, ITracker tracker, Profile profile)
+    public void HasMatchingPattern_TrackerReturnsNull_ShouldReturnFalse([Content] Item profileItem, CurrentInteraction currentInteraction, ITracker tracker, Analytics.Tracking.Profile profile)
     {
       tracker.Interaction.Returns(currentInteraction);
-      currentInteraction.Profiles[null].ReturnsForAnyArgs((Profile)null);
+      currentInteraction.Profiles[null].ReturnsForAnyArgs((Analytics.Tracking.Profile)null);
 
 
       var fakeSiteContext = new FakeSiteContext("fake")
@@ -184,7 +185,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
 
     [Theory]
     [AutoProfileDbData]
-    public void HasMatchingPattern_TrackerReturnsProfileWithoutID_ShouldReturnFalse([Content] Item profileItem, CurrentInteraction currentInteraction, ITracker tracker, Profile profile)
+    public void HasMatchingPattern_TrackerReturnsProfileWithoutID_ShouldReturnFalse([Content] Item profileItem, CurrentInteraction currentInteraction, ITracker tracker, Analytics.Tracking.Profile profile)
     {
       tracker.Interaction.Returns(currentInteraction);
       currentInteraction.Profiles[null].ReturnsForAnyArgs(profile);
@@ -208,7 +209,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
 
     [Theory]
     [AutoProfileDbData]
-    public void HasMatchingPattern_HistoricProfileProfileNotExitsts_ReturnFalse([Content] Item profileItem, Contact contact, ITracker tracker, Profile profile)
+    public void HasMatchingPattern_HistoricProfileProfileNotExitsts_ReturnFalse([Content] Item profileItem, Contact contact, ITracker tracker, Analytics.Tracking.Profile profile)
     {
       //Arrange
       tracker.Contact.Returns(contact);
@@ -233,7 +234,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
 
     [Theory]
     [AutoProfileDbData]
-    public void HasMatchingPattern_HistoricProfileAndItemExists_ShouldReturnTrue([Content] Item profileItem, Contact contact, ITracker tracker, Profile profile)
+    public void HasMatchingPattern_HistoricProfileAndItemExists_ShouldReturnTrue([Content] Item profileItem, Contact contact, ITracker tracker, Analytics.Tracking.Profile profile)
     {
       //Arrange
       tracker.Contact.Returns(contact);

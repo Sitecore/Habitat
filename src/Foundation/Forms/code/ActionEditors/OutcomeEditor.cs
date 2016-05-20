@@ -2,13 +2,13 @@
 {
   using System;
   using Sitecore.Data;
-  using Sitecore.Foundation.SitecoreExtensions.Services;
+  using Sitecore.Foundation.Forms.Services;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Web.UI.HtmlControls;
-  using Sitecore.Web.UI.Sheer;
 
   public class OutcomeEditor : BaseActionEditor
   {
-    public OutcomeEditor(ISheerService sheerService): base(sheerService)
+    public OutcomeEditor(ISheerService sheerService) : base(sheerService)
     {
     }
 
@@ -37,9 +37,9 @@
     protected override void OnOK(object sender, EventArgs args)
     {
       var item = this.ItemLister?.GetSelectionItem();
-      if (item == null || item.TemplateID != Constants.OutcomeTemplateId)
+      if (item == null || !item.IsDerived(Templates.Outcome.ID))
       {
-        SheerResponse.Alert("Please, select outcome");
+        this.SheerService.Alert("Please, select outcome");
         return;
       }
 

@@ -22,25 +22,14 @@
       {
         if (this.MediaItem != null)
         {
-          return this.MediaItem.MimeType.Split(new []{'/'}, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
+          return this.MediaItem.MimeType.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault();
         }
 
-        return String.Empty;
+        return string.Empty;
       }
     }
 
-    public string MediaFormat
-    {
-      get
-      {
-        if (this.MediaItem != null)
-        {
-          return this.MediaItem.MimeType.Split(new [] {'/'}, StringSplitOptions.RemoveEmptyEntries).Last();  
-        }
-
-        return String.Empty;
-      }
-    }
+    public string MediaFormat => this.MediaItem != null ? this.MediaItem.MimeType.Split(new[] {'/'}, StringSplitOptions.RemoveEmptyEntries).Last() : string.Empty;
 
     public string CssClass
     {
@@ -55,7 +44,7 @@
           classes.Add("bg-parallax");
         }
 
-        return String.Join(" ", classes);
+        return string.Join(" ", classes);
       }
     }
 
@@ -65,10 +54,10 @@
       {
         if (!this.IsMedia)
         {
-          return String.Empty;
+          return string.Empty;
         }
 
-        var mediaUrl = String.Empty;
+        var mediaUrl = string.Empty;
         var item = this.MediaItem;
         if (item != null)
         {
@@ -79,47 +68,22 @@
       }
     }
 
-    public string MediaUrl
-    {
-      get
-      {
-        if (this.MediaItem != null)
-        {
-          return MediaManager.GetMediaUrl(this.MediaItem);
-        }
+    public string MediaUrl => this.MediaItem != null ? MediaManager.GetMediaUrl(this.MediaItem) : string.Empty;
 
-        return String.Empty;
-      }
-    }
-
-    public bool IsMedia
-    {
-      get
-      {
-        if (!String.IsNullOrEmpty(this.Type) && this.Type.Equals("bg-media"))
-        {
-          return true;
-        }
-
-        return false;
-      }
-    }
+    public bool IsMedia => !string.IsNullOrEmpty(this.Type) && this.Type.Equals("bg-media");
 
     protected MediaItem MediaItem
     {
       get
       {
-        if (this.mediaItem == null)
-        {
-          if (!String.IsNullOrEmpty(this.Media))
-          {
-            var id = HttpUtility.UrlDecode(this.Media);
-            //var linkElement = XElement.Parse(linkValue);
-            //var id = linkElement.Attribute("id")?.Value;
-            var item = Context.Database.GetItem(id);
-            this.mediaItem = new MediaItem(item);
-          }
-        }
+        if (this.mediaItem != null)
+          return this.mediaItem;
+        if (string.IsNullOrEmpty(this.Media))
+          return this.mediaItem;
+
+        var id = HttpUtility.UrlDecode(this.Media);
+        var item = Context.Database.GetItem(id);
+        this.mediaItem = new MediaItem(item);
 
         return this.mediaItem;
       }

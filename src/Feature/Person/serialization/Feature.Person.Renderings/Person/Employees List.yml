@@ -19,7 +19,7 @@ SharedFields:
   Value: 
 - ID: "ddab263e-b42e-419a-aa6f-081b7393ca38"
   Hint: Model
-  Value: Sitecore.Foundation.SitecoreExtensions.Rendering.QueryableDatasourceRenderingModel, Sitecore.Foundation.SitecoreExtensions
+  Value: /sitecore/layout/Models/Foundation/Indexing/QueryableDatasourceRenderingModel
 - ID: "ef7c5528-7307-4e19-863b-da19eed6a9ed"
   Hint: Open Properties after Add
   Value: 1

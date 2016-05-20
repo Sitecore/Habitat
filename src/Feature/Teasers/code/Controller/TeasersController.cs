@@ -17,7 +17,7 @@
       var dataSourceItem = RenderingContext.Current.Rendering.Item;
       if (!dataSourceItem?.IsDerived(Templates.DynamicTeaser.ID) ?? true)
       {
-        return Context.PageMode.IsExperienceEditor ? this.InfoMessage(new InfoMessage(AlertTexts.InvalidDataSourceTemplateFriendlyMessage, InfoMessage.MessageType.Error)) : null;
+        return this.GetInvalidDataSourceActionResult();
       }
 
       var model = new DynamicTeaserModel(dataSourceItem);
@@ -29,7 +29,7 @@
       var dataSourceItem = RenderingContext.Current.Rendering.Item;
       if (!dataSourceItem?.IsDerived(Templates.DynamicTeaser.ID) ?? true)
       {
-        return Context.PageMode.IsExperienceEditor ? this.InfoMessage(new InfoMessage(AlertTexts.InvalidDataSourceTemplateFriendlyMessage, InfoMessage.MessageType.Error)) : null;
+        return this.GetInvalidDataSourceActionResult();
       }
 
       var model = new DynamicTeaserModel(dataSourceItem);
@@ -41,11 +41,16 @@
       var dataSourceItem = RenderingContext.Current.Rendering.Item;
       if (!dataSourceItem?.IsDerived(Templates.DynamicTeaser.ID) ?? true)
       {
-        return Context.PageMode.IsExperienceEditor ? this.InfoMessage(new InfoMessage(AlertTexts.InvalidDataSourceTemplateFriendlyMessage, InfoMessage.MessageType.Error)) : null;
+        return this.GetInvalidDataSourceActionResult();
       }
 
       var model = new DynamicTeaserModel(dataSourceItem);
       return this.View("Carousel", model);
+    }
+
+    private ViewResult GetInvalidDataSourceActionResult()
+    {
+      return Context.PageMode.IsExperienceEditor ? this.InfoMessage(new InfoMessage(AlertTexts.InvalidDataSourceTemplateFriendlyMessage, InfoMessage.MessageType.Error)) : null;
     }
   }
 }

@@ -3,7 +3,6 @@
   using System;
   using System.Collections.Generic;
   using System.Linq;
-  using Sitecore;
   using Sitecore.Data.Items;
   using Sitecore.Feature.Navigation.Models;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
@@ -25,21 +24,20 @@
 
     public Item GetNavigationRoot(Item contextItem)
     {
-      return contextItem.GetAncestorOrSelfOfTemplate(Templates.NavigationRoot.ID) ??
-             Sitecore.Context.Site.GetContextItem(Templates.NavigationRoot.ID);
+      return contextItem.GetAncestorOrSelfOfTemplate(Templates.NavigationRoot.ID) ?? Context.Site.GetContextItem(Templates.NavigationRoot.ID);
     }
 
     public NavigationItems GetBreadcrumb()
     {
       var items = new NavigationItems
-      {
-        Items = this.GetNavigationHierarchy(true).Reverse().ToList()
-      };
+                  {
+                    Items = this.GetNavigationHierarchy(true).Reverse().ToList()
+                  };
 
       for (var i = 0; i < items.Items.Count - 1; i++)
       {
         items.Items[i].Level = i;
-        items.Items[i].IsActive = i == (items.Items.Count-1);
+        items.Items[i].IsActive = i == items.Items.Count - 1;
       }
 
       return items;
@@ -95,8 +93,7 @@
     {
       var primaryMenuItems = this.GetPrimaryMenu();
       //Find the active primary menu item
-      var activePrimaryMenuItem =
-        primaryMenuItems.Items.FirstOrDefault(i => i.Item.ID != this.NavigationRoot.ID && i.IsActive);
+      var activePrimaryMenuItem = primaryMenuItems.Items.FirstOrDefault(i => i.Item.ID != this.NavigationRoot.ID && i.IsActive);
       return activePrimaryMenuItem?.Item;
     }
 
@@ -117,13 +114,13 @@
     private NavigationItem CreateNavigationItem(Item item, int level, int maxLevel = -1)
     {
       return new NavigationItem
-      {
-        Item = item,
-        Url = (item.IsDerived(Templates.Link.ID) ? item.LinkFieldUrl(Templates.Link.Fields.Link) : item.Url()),
-        Target = (item.IsDerived(Templates.Link.ID) ? item.LinkFieldTarget(Templates.Link.Fields.Link) : ""),
-        IsActive = this.IsItemActive(item),
-        Children = this.GetChildNavigationItems(item, level + 1, maxLevel)
-      };
+             {
+               Item = item,
+               Url = item.IsDerived(Templates.Link.ID) ? item.LinkFieldUrl(Templates.Link.Fields.Link) : item.Url(),
+               Target = item.IsDerived(Templates.Link.ID) ? item.LinkFieldTarget(Templates.Link.Fields.Link) : "",
+               IsActive = this.IsItemActive(item),
+               Children = this.GetChildNavigationItems(item, level + 1, maxLevel)
+             };
     }
 
     private NavigationItems GetChildNavigationItems(Item parentItem, int level, int maxLevel)
@@ -134,9 +131,9 @@
       }
       var childItems = parentItem.Children.Where(item => this.IncludeInNavigation(item)).Select(i => this.CreateNavigationItem(i, level, maxLevel));
       return new NavigationItems
-      {
-        Items = childItems.ToList()
-      };
+             {
+               Items = childItems.ToList()
+             };
     }
 
     private bool IsItemActive(Item item)

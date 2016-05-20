@@ -1,5 +1,5 @@
 ﻿@using Sitecore.Feature.Accounts.Texts
-@using Sitecore.Foundation.SitecoreExtensions.HtmlHelpers
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Mvc.Configuration
 @model Sitecore.Feature.Accounts.Models.RegistrationInfo
 
@@ -8,7 +8,7 @@
                                                                               @class = "form-signin"
                                                                             }))
 {
-  @Html.FormHandler()
+  @Html.AddUniqueFormId()
   <div class="form-group @Html.ValidationErrorFor(x => x.Email, "has-error")">
     @Html.LabelFor(x => x.Email, new
                                  {

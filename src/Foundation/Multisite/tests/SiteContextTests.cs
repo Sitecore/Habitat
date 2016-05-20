@@ -6,9 +6,11 @@
   using System.Text;
   using System.Threading.Tasks;
   using FluentAssertions;
+  using NSubstitute;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.FakeDb;
+  using Sitecore.Foundation.Multisite.Providers;
   using Sitecore.Foundation.Multisite.Tests.Extensions;
   using Xunit;
 
@@ -16,34 +18,35 @@
   {
     [Theory]
     [AutoDbData]
-    public void GetSiteDefinition_ItemInSiteHierarcy_ShouldReturnHierarchicalSiteDefinition(SiteContext siteContext, DbItem item , Db db, string siteName)
+    public void GetSiteDefinition_ProviderReturnsDefinition_ShouldReturnDefinition(ISiteDefinitionsProvider provider, DbItem item, Db db, string siteName)
     {
       var siteDefinitionId = ID.NewID;
-      db.Add(new DbItem(siteName, siteDefinitionId, Templates.Site.ID) {item});
-      var contextItem = db.GetItem(item.ID);
+      db.Add(new DbItem(siteName, siteDefinitionId, Templates.Site.ID) { item });
       var definitionItem = db.GetItem(siteDefinitionId);
+
+      var definition = new SiteDefinition();
+      definition.Item = definitionItem;
+      provider.GetContextSiteDefinition(Arg.Any<Item>()).Returns(definition);
+
+      var siteContext = new SiteContext(provider);
+
+      var contextItem = db.GetItem(item.ID);
       var siteDefinition = siteContext.GetSiteDefinition(contextItem);
+
       siteDefinition.Item.ID.ShouldBeEquivalentTo(definitionItem.ID);
     }
 
     [Theory]
     [AutoDbData]
-    public void GetSiteDefinition_ItemOutsideSiteHierarcy_ShouldReturnContextSiteDefinition(SiteContext siteContext, DbItem item, Db db, string siteName)
+    public void GetSiteDefinition_ProviderReturnsEmpty_ShouldReturnNull(ISiteDefinitionsProvider provider, DbItem item, Db db, string siteName)
     {
-      var siteDefinitionId = ID.NewID;
-      var home = new DbItem("home", ID.NewID);
-      db.Add(new DbItem(siteName, siteDefinitionId, Templates.Site.ID) { home });
-      var definitionItem = db.GetItem(siteDefinitionId);
-
       db.Add(item);
       var contextItem = db.GetItem(item.ID);
 
-      var fakeSite = new Sitecore.FakeDb.Sites.FakeSiteContext(new Sitecore.Collections.StringDictionary { { "name", siteName }, { "database", db.Database.Name }, { "rootPath", "/sitecore/content/" + siteName }, { "startItem", "/home" } });
-      using (new Sitecore.Sites.SiteContextSwitcher(fakeSite))
-      {
-        var siteDefinition = siteContext.GetSiteDefinition(contextItem);
-        siteDefinition.Item.ID.ShouldBeEquivalentTo(definitionItem.ID);
-      }
+      provider.GetContextSiteDefinition(Arg.Any<Item>()).Returns((SiteDefinition)null);
+
+      var siteContext = new SiteContext(provider);
+      siteContext.GetSiteDefinition(contextItem).ShouldBeEquivalentTo(null);
     }
   }
 }

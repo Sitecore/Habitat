@@ -10,6 +10,7 @@ SharedFields:
   Value: "{84ABDA34-F9B1-4D3A-A69B-E28F39697069}"
 - ID: "acd3122b-f975-433e-9802-35bc5f8fe2b4"
   Hint: Required
+  Type: Checkbox
   Value: 1
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder

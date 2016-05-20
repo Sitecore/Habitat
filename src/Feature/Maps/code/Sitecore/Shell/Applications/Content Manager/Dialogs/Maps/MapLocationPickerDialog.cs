@@ -20,15 +20,15 @@
       base.OnLoad(e);
 
       var value = WebUtil.GetQueryString("value");
-      if (!string.IsNullOrWhiteSpace(value) && string.IsNullOrWhiteSpace(TxtSelectedLocation.Value))
+      if (!string.IsNullOrWhiteSpace(value) && string.IsNullOrWhiteSpace(this.TxtSelectedLocation.Value))
       {
-        TxtSelectedLocation.Value = value;
+        this.TxtSelectedLocation.Value = value;
       }
     }
 
     protected override void OnOK(object sender, EventArgs args)
     {
-      Web.UI.Sheer.SheerResponse.SetDialogValue(TxtSelectedLocation.Value);
+      Web.UI.Sheer.SheerResponse.SetDialogValue(this.TxtSelectedLocation.Value);
       base.OnOK(sender, args);
     }
 

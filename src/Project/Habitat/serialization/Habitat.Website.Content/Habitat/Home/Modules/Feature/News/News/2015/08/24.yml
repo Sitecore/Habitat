@@ -1,7 +1,7 @@
 ﻿---
-ID: 9c801257-6607-4682-aa95-6a7b0c47f6f1
-Parent: f6b4cb44-2962-4561-9af2-271664ac9449
-Template: adb6ca4f-03ef-4f47-b9ac-9ce2ba53ff97
+ID: "9c801257-6607-4682-aa95-6a7b0c47f6f1"
+Parent: "f6b4cb44-2962-4561-9af2-271664ac9449"
+Template: "adb6ca4f-03ef-4f47-b9ac-9ce2ba53ff97"
 Path: /sitecore/content/Habitat/Home/Modules/Feature/News/News/2015/08/24
 DB: master
 Languages:
@@ -9,6 +9,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151210T043731Z

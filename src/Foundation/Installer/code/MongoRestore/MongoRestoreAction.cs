@@ -2,7 +2,7 @@
 {
   using System.Collections.Specialized;
 
-  public class MongoRestoreAction:IPostStepAction
+  public class MongoRestoreAction : IPostStepAction
   {
     private readonly IMongoRestoreService mongoRestoreService;
 
@@ -11,7 +11,7 @@
       this.mongoRestoreService = mongoRestoreService;
     }
 
-    public MongoRestoreAction():this(new MongoRestoreService())
+    public MongoRestoreAction() : this(new MongoRestoreService())
     {
     }
 

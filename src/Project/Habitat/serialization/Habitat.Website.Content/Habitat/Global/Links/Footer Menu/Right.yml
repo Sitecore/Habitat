@@ -1,7 +1,7 @@
 ﻿---
-ID: b4d87e66-d2c5-4c06-8f9a-08aeaf38055a
-Parent: 0f916de7-60ac-4833-b480-865f26f1dd56
-Template: ac7394d5-2aa7-4fdb-a7d8-b1b87f9fa661
+ID: "b4d87e66-d2c5-4c06-8f9a-08aeaf38055a"
+Parent: "0f916de7-60ac-4833-b480-865f26f1dd56"
+Template: "ac7394d5-2aa7-4fdb-a7d8-b1b87f9fa661"
 Path: /sitecore/content/Habitat/Global/Links/Footer Menu/Right
 DB: master
 Languages:
@@ -9,6 +9,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150910T105359Z

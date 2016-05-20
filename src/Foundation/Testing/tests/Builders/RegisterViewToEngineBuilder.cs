@@ -24,11 +24,11 @@
 
     private void SetView(string viewName, IView view)
     {
-      ViewEngineMock localViewEngine = ViewEngines.Engines.OfType<ViewEngineMock>().SingleOrDefault() ?? new ViewEngineMock();
+      var localViewEngine = ViewEngines.Engines.OfType<ViewEngineMock>().SingleOrDefault() ?? new ViewEngineMock();
       ViewEngines.Engines.Clear();
       ViewEngines.Engines.Add(localViewEngine);
 
-      localViewEngine.Views[viewName]= view;
+      localViewEngine.Views[viewName] = view;
     }
 
     public class ViewEngineMock : IViewEngine
@@ -37,22 +37,22 @@
 
       public ViewEngineResult FindPartialView(ControllerContext controllerContext, string partialViewName, bool useCache)
       {
-        if (!Views.ContainsKey(partialViewName))
+        if (!this.Views.ContainsKey(partialViewName))
         {
           throw new InvalidOperationException($"Can't fined registered view with name {partialViewName}");
         }
 
-        return new ViewEngineResult(Views[partialViewName], this);
+        return new ViewEngineResult(this.Views[partialViewName], this);
       }
 
       public ViewEngineResult FindView(ControllerContext controllerContext, string viewName, string masterName, bool useCache)
       {
-        if (!Views.ContainsKey(viewName))
+        if (!this.Views.ContainsKey(viewName))
         {
           throw new InvalidOperationException($"Can't fined registered view with name {viewName}");
         }
 
-        return new ViewEngineResult(Views[viewName], this);
+        return new ViewEngineResult(this.Views[viewName], this);
       }
 
       public void ReleaseView(ControllerContext controllerContext, IView view)

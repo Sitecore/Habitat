@@ -88,7 +88,7 @@
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -148,12 +148,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="PagedSearchResultsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchControllerTests.cs" />
-    <Compile Include="SearchServiceRepositoryTests.cs" />
-    <Compile Include="SearchSettingsRepositoryTests.cs" />
+    <Compile Include="SearchContextRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

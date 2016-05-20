@@ -14,17 +14,11 @@
   {
     public override string ContentType => DictionaryRepository.Get("/news/search/contenttype", "News");
 
-    public override IEnumerable<ID> SupportedTemplates => new[]
-    {
-      Templates.NewsArticle.ID
-    };
+    public override IEnumerable<ID> SupportedTemplates => new[] {Templates.NewsArticle.ID};
 
     public override Expression<Func<SearchResultItem, bool>> GetQueryPredicate(IQuery query)
     {
-      var fieldNames = new[]
-      {
-        Templates.NewsArticle.Fields.Title_FieldName, Templates.NewsArticle.Fields.Summary_FieldName, Templates.NewsArticle.Fields.Body_FieldName
-      };
+      var fieldNames = new[] {Templates.NewsArticle.Fields.Title_FieldName, Templates.NewsArticle.Fields.Summary_FieldName, Templates.NewsArticle.Fields.Body_FieldName};
       return this.GetFreeTextPredicate(fieldNames, query);
     }
 

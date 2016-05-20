@@ -1,19 +1,16 @@
-﻿using Sitecore.Foundation.Alerts;
-using Sitecore.Foundation.Alerts.Extensions;
-using Sitecore.Foundation.Alerts.Models;
-
-namespace Sitecore.Feature.Accounts.Controllers
+﻿namespace Sitecore.Feature.Accounts.Controllers
 {
   using System;
   using System.Web.Mvc;
   using System.Web.Security;
-  using Sitecore;
   using Sitecore.Diagnostics;
   using Sitecore.Feature.Accounts.Attributes;
   using Sitecore.Feature.Accounts.Models;
   using Sitecore.Feature.Accounts.Repositories;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Texts;
+  using Sitecore.Foundation.Alerts.Extensions;
+  using Sitecore.Foundation.Alerts.Models;
   using Sitecore.Foundation.SitecoreExtensions.Attributes;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Foundation.SitecoreExtensions.Services;
@@ -61,10 +58,7 @@ namespace Sitecore.Feature.Accounts.Controllers
       try
       {
         this.accountRepository.RegisterUser(registrationInfo.Email, registrationInfo.Password, this.userProfileService.GetUserDefaultProfileId());
-        if (this.contactProfileService != null)
-        {
-          this.contactProfileService.SetPreferredEmail(registrationInfo.Email);
-        }
+        this.contactProfileService?.SetPreferredEmail(registrationInfo.Email);
 
         var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
         return this.Redirect(link);
@@ -87,7 +81,6 @@ namespace Sitecore.Feature.Accounts.Controllers
     [HttpPost]
     [ValidateModel]
     [ValidateRenderingId]
-
     public ActionResult Login(LoginInfo loginInfo)
     {
       return this.Login(loginInfo, redirectUrl => new RedirectResult(redirectUrl));
@@ -117,9 +110,9 @@ namespace Sitecore.Feature.Accounts.Controllers
     public ActionResult _Login(LoginInfo loginInfo)
     {
       return this.Login(loginInfo, redirectUrl => this.Json(new LoginResult
-      {
-        RedirectUrl = redirectUrl
-      }));
+                                                            {
+                                                              RedirectUrl = redirectUrl
+                                                            }));
     }
 
     [HttpPost]
@@ -197,13 +190,10 @@ namespace Sitecore.Feature.Accounts.Controllers
       }
 
       this.userProfileService.SetProfile(Context.User.Profile, profile);
-      if (this.contactProfileService != null)
-      {
-        this.contactProfileService.SetProfile(profile);
-      }
+      this.contactProfileService?.SetProfile(profile);
 
-      Session["EditProfileMessage"] = new InfoMessage(Captions.EditProfileSuccess);
-      return this.Redirect(Request.RawUrl);
+      this.Session["EditProfileMessage"] = new InfoMessage(Captions.EditProfileSuccess);
+      return this.Redirect(this.Request.RawUrl);
     }
   }
 }

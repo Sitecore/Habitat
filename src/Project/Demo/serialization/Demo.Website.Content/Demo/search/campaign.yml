@@ -1,7 +1,7 @@
 ﻿---
-ID: 8afcfecf-6ca3-4fd6-b055-96b0231441e6
-Parent: 31d40630-a6a8-4047-9454-a228c332d9ed
-Template: 51b1726b-4290-4908-a2da-b169194ae80c
+ID: "8afcfecf-6ca3-4fd6-b055-96b0231441e6"
+Parent: "31d40630-a6a8-4047-9454-a228c332d9ed"
+Template: "51b1726b-4290-4908-a2da-b169194ae80c"
 Path: /sitecore/content/Demo/search/campaign
 DB: master
 Languages:
@@ -9,12 +9,12 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151111T024034Z
-    - ID: 3b485bd9-deae-4aaf-9c32-4106c4214162
+    - ID: "3b485bd9-deae-4aaf-9c32-4106c4214162"
       Hint: Token Value
-      Value: {0BFFAF94-F523-452A-9F2A-1FA3292D4647}
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Value: "{0BFFAF94-F523-452A-9F2A-1FA3292D4647}"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: sitecore\admin

@@ -19,7 +19,7 @@
 
     [Display(Name = nameof(Captions.Interests), ResourceType = typeof(Captions))]
     public string Interest { get; set; }
-    
+
     public IEnumerable<string> InterestTypes { get; set; }
   }
 }

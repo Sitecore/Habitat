@@ -10,6 +10,8 @@
 
   public class ValidateRenderingIdAttribute : ActionMethodSelectorAttribute
   {
+    internal const string FormUniqueid = "uid";
+
     public override bool IsValidForRequest(ControllerContext controllerContext, MethodInfo methodInfo)
     {
       var ignoreCase = StringComparison.InvariantCultureIgnoreCase;
@@ -23,7 +25,7 @@
         return false;
       }
       string renderingId;
-      if (!httpRequest.GetHttpMethodOverride().Equals(HttpVerbs.Post.ToString(), ignoreCase) || string.IsNullOrEmpty(renderingId = httpRequest.Form["uid"]))
+      if (!httpRequest.GetHttpMethodOverride().Equals(HttpVerbs.Post.ToString(), ignoreCase) || string.IsNullOrEmpty(renderingId = httpRequest.Form[FormUniqueid]))
       {
         return true;
       }
