@@ -6,13 +6,13 @@ namespace Sitecore.Feature.Demo.Repositories
 
   internal class DeviceRepository
   {
-    private Device _current;
+    private Device current;
 
     public Device GetCurrent()
     {
-      if (this._current != null)
+      if (this.current != null)
       {
-        return this._current;
+        return this.current;
       }
 
       if (!DeviceDetectionManager.IsEnabled || !DeviceDetectionManager.IsReady || string.IsNullOrEmpty(Tracker.Current.Interaction.UserAgent))
@@ -20,7 +20,7 @@ namespace Sitecore.Feature.Demo.Repositories
         return null;
       }
 
-      return this._current = this.CreateDevice(DeviceDetectionManager.GetDeviceInformation(Tracker.Current.Interaction.UserAgent));
+      return this.current = this.CreateDevice(DeviceDetectionManager.GetDeviceInformation(Tracker.Current.Interaction.UserAgent));
     }
 
     private Device CreateDevice(DeviceInformation deviceInformation)

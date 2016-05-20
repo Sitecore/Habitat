@@ -73,7 +73,7 @@
     public void Execute_OutcomeID_RegisterOutcome(Db db, ID outcomeId, [Frozen] ITrackerService trackerService, [Greedy] RegisterOutcome registerOutcome)
     {
       //Arrange
-      db.Add(new DbItem("WrongOutcome", outcomeId, Constants.OutcomeTemplateId));
+      db.Add(new DbItem("WrongOutcome", outcomeId, Templates.Outcome.ID));
       registerOutcome.Outcome = outcomeId.ToString();
 
       //Act

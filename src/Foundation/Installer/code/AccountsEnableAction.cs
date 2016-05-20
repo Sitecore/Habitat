@@ -4,13 +4,12 @@
   using System.IO;
   using System.Web.Security;
   using Sitecore.Diagnostics;
-  using Sitecore.SecurityModel;
   using Sitecore.Install;
   using Sitecore.Install.Files;
+  using Sitecore.SecurityModel;
 
   public class AccountsEnableAction : IPostStepAction
   {
-
     protected void InstallSecurity(NameValueCollection metaData)
     {
       if (metaData != null)
@@ -33,13 +32,12 @@
       {
         foreach (MembershipUser user in Membership.GetAllUsers())
         {
-          if (!user.IsApproved)
-          {
-            Log.Info($"Enabling user {user.UserName}", this);
+          if (user.IsApproved)
+            continue;
+          Log.Info($"Enabling user {user.UserName}", this);
 
-            user.IsApproved = true;
-            Membership.UpdateUser(user);
-          }
+          user.IsApproved = true;
+          Membership.UpdateUser(user);
         }
       }
     }

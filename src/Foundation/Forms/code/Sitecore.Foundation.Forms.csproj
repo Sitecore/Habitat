@@ -108,6 +108,7 @@
     <Compile Include="SaveActions\RegisterOutcome.cs" />
     <Compile Include="Services\ISheerService.cs" />
     <Compile Include="Services\SheerService.cs" />
+    <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">

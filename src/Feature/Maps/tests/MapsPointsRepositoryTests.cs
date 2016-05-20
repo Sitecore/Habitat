@@ -52,7 +52,7 @@
 
     [Theory]
     [AutoDbData]
-    public void GetAll_PointFolderItemPassed_ShouldCallSearchService(Db db,Foundation.Indexing.Repositories.ISearchServiceRepository searchRepo, [Substitute]Foundation.Indexing.SearchService service)
+    public void GetAll_PointFolderItemPassed_ShouldCallSearchService(Db db,Foundation.Indexing.Repositories.ISearchServiceRepository searchRepo, [Substitute]Foundation.Indexing.Services.SearchService service)
     {
       var itemid = ID.NewID;
       db.Add(new DbItem("point", itemid, Templates.MapPointsFolder.ID));
@@ -66,7 +66,7 @@
 
     [Theory]
     [AutoDbData]
-    public void GetAll_PointFolderItemPassed_ShouldReturnsItemsFromSearchService([Content]Data.Items.Item[] items,Db db, Foundation.Indexing.Repositories.ISearchServiceRepository searchRepo, [Substitute]Foundation.Indexing.SearchService service, Foundation.Indexing.Models.ISearchResults results, Foundation.Indexing.Models.ISearchResult result)
+    public void GetAll_PointFolderItemPassed_ShouldReturnsItemsFromSearchService([Content]Data.Items.Item[] items,Db db, Foundation.Indexing.Repositories.ISearchServiceRepository searchRepo, [Substitute]Foundation.Indexing.Services.SearchService service, Foundation.Indexing.Models.ISearchResults results, Foundation.Indexing.Models.ISearchResult result)
     {
       var itemid = ID.NewID;
       db.Add(new DbItem("point", itemid, Templates.MapPointsFolder.ID));

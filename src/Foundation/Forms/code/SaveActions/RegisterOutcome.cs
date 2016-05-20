@@ -4,6 +4,7 @@
   using Sitecore.Analytics.Outcome;
   using Sitecore.Data;
   using Sitecore.Diagnostics;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.WFFM.Abstractions.Actions;
   using Sitecore.WFFM.Actions.Base;
@@ -32,7 +33,7 @@
       }
 
       var outcomeItem = Context.Database.GetItem(new ID(this.Outcome));
-      if (outcomeItem == null || outcomeItem.TemplateID != Constants.OutcomeTemplateId)
+      if (outcomeItem == null || outcomeItem.IsDerived(Templates.Outcome.ID))
       {
         Log.Warn("Can't register an outcome. Wrong outcome definition", this);
         return;

@@ -1,6 +1,5 @@
 ﻿namespace Sitecore.Foundation.Theming.Extensions
 {
-  using System;
   using System.Web.Mvc;
   using Sitecore.Data;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
@@ -16,7 +15,7 @@
                ItemsShown = rendering.GetIntegerParameter(Constants.CarouselLayoutParameters.ItemsShown, 3),
                AutoPlay = rendering.GetIntegerParameter(Constants.CarouselLayoutParameters.Autoplay, 1) == 1,
                ShowNavigation = rendering.GetIntegerParameter(Constants.CarouselLayoutParameters.ShowNavigation) == 1
-      };
+             };
     }
 
     public static string GetBackgroundClass([NotNull] this Rendering rendering)
@@ -38,6 +37,7 @@
     {
       return rendering.IsContainerFluid() ? "container-fluid" : "container";
     }
+
     public static bool IsContainerFluid([NotNull] this Rendering rendering)
     {
       return MainUtil.GetBool(rendering.Parameters[Constants.HasContainerLayoutParameters.IsFluid], false);

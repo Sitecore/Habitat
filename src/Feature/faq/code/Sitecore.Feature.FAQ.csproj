@@ -120,10 +120,7 @@
     <Compile Include="Repositories\FaqRepository.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj">
       <Project>{5cf5fa06-ab27-4df5-a471-ed57ef3e4ae9}</Project>

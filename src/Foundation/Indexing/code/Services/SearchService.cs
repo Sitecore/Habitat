@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.Indexing
+﻿namespace Sitecore.Foundation.Indexing.Services
 {
   using System;
   using System.Collections.Generic;

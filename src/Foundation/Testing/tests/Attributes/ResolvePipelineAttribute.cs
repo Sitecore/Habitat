@@ -8,12 +8,11 @@
 
     public ResolvePipelineAttribute(string pipelineName)
     {
-      PipelineName = pipelineName;
+      this.PipelineName = pipelineName;
     }
 
     public ResolvePipelineAttribute()
     {
-      
     }
   }
 }

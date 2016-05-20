@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-namespace Sitecore.Foundation.Installer.XmlTransform
+﻿namespace Sitecore.Foundation.Installer.XmlTransform
 {
+  using System.Collections.Generic;
   using System.IO;
+  using System.Linq;
 
-  public class TransformProvider: ITransformsProvider
+  public class TransformProvider : ITransformsProvider
   {
     private readonly IFilePathResolver filePathResolver;
-    public TransformProvider():this(new FilePathResolver())
+
+    public TransformProvider() : this(new FilePathResolver())
     {
     }
 

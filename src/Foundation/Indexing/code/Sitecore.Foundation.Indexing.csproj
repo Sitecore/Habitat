@@ -149,7 +149,7 @@
     <Compile Include="Rendering\QueryableDatasourceRenderingSettings.cs" />
     <Compile Include="Repositories\ISearchServiceRepository.cs" />
     <Compile Include="Repositories\SearchServiceRepository.cs" />
-    <Compile Include="SearchService.cs" />
+    <Compile Include="Services\SearchService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>

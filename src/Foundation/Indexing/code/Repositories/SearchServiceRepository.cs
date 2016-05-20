@@ -2,6 +2,7 @@
 {
   using Sitecore.Foundation.Indexing;
   using Sitecore.Foundation.Indexing.Models;
+  using Sitecore.Foundation.Indexing.Services;
 
   public class SearchServiceRepository : ISearchServiceRepository
   {

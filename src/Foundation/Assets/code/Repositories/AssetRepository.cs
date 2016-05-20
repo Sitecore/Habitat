@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.Assets
+﻿namespace Sitecore.Foundation.Assets.Repositories
 {
   using System;
   using System.Collections.Generic;

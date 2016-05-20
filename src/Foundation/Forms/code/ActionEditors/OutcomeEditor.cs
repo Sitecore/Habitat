@@ -3,6 +3,7 @@
   using System;
   using Sitecore.Data;
   using Sitecore.Foundation.Forms.Services;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Web.UI.HtmlControls;
 
   public class OutcomeEditor : BaseActionEditor
@@ -36,7 +37,7 @@
     protected override void OnOK(object sender, EventArgs args)
     {
       var item = this.ItemLister?.GetSelectionItem();
-      if (item == null || item.TemplateID != Constants.OutcomeTemplateId)
+      if (item == null || item.IsDerived(Templates.Outcome.ID))
       {
         this.SheerService.Alert("Please, select outcome");
         return;

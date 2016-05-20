@@ -5,13 +5,14 @@
   using System.Web.Routing;
   using NSubstitute;
   using Ploeh.AutoFixture.Kernel;
-  public class HtmlHelperBuilder: ISpecimenBuilder
+
+  public class HtmlHelperBuilder : ISpecimenBuilder
   {
     public object Create(object request, ISpecimenContext context)
     {
       if (typeof(HtmlHelper).Equals(request))
       {
-        return GetHtmlHelper();
+        return this.GetHtmlHelper();
       }
 
       return new NoSpecimen();
@@ -19,11 +20,10 @@
 
     private HtmlHelper GetHtmlHelper(string routeController = "", string routeAction = "")
     {
-      return new HtmlHelper(GetViewContext(routeController, routeAction), new ViewPage());
+      return new HtmlHelper(this.GetViewContext(routeController, routeAction), new ViewPage());
     }
 
-    private ViewContext GetViewContext(string routeController = "",
-           string routeAction = "")
+    private ViewContext GetViewContext(string routeController = "", string routeAction = "")
     {
       var routeData = new RouteData();
       routeData.Values["controller"] = routeController;
@@ -36,8 +36,7 @@
 
       httpContext.Request.Returns(httpRequest);
       httpContext.Response.Returns(httpResponse);
-      httpResponse.ApplyAppPathModifier(Arg.Any<string>())
-                  .Returns(string.Format("/{0}/{1}", routeController, routeAction));
+      httpResponse.ApplyAppPathModifier(Arg.Any<string>()).Returns(string.Format("/{0}/{1}", routeController, routeAction));
 
       viewContext.HttpContext = httpContext;
       viewContext.RequestContext = new RequestContext(httpContext, routeData);
