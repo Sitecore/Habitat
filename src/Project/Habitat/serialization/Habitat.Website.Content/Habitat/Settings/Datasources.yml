@@ -1,0 +1,14 @@
+﻿---
+ID: "fdb21766-a746-4b18-9b6d-66f69125772d"
+Parent: "c7c95984-e060-42d9-bbc6-b45c18768905"
+Template: "7a98be60-9f59-4064-82c2-58da63562fa5"
+Path: /sitecore/content/Habitat/Settings/Datasources
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160426T022931Z

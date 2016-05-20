@@ -7,8 +7,7 @@ namespace Sitecore.Foundation.Multisite.Tests.Extensions
 
   public class AutoDbDataAttribute : AutoDataAttribute
   {
-    public AutoDbDataAttribute()
-      : base(new Fixture().Customize(new AutoNSubstituteCustomization()))
+    public AutoDbDataAttribute() : base(new Fixture().Customize(new AutoNSubstituteCustomization()))
     {
       this.Fixture.Customize(new AutoDbCustomization());
     }

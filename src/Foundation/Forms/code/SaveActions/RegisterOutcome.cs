@@ -33,7 +33,7 @@
       }
 
       var outcomeItem = Context.Database.GetItem(new ID(this.Outcome));
-      if (outcomeItem == null || outcomeItem.IsDerived(Templates.Outcome.ID))
+      if (outcomeItem == null || !outcomeItem.IsDerived(Templates.Outcome.ID))
       {
         Log.Warn("Can't register an outcome. Wrong outcome definition", this);
         return;

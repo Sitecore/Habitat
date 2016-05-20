@@ -27,42 +27,27 @@
 
     [Theory]
     [AutoDbData]
-    public void GetSiteDefinitions_ShouldReturnSiteDefinitiosModel([Frozen] ISiteDefinitionsProvider siteDefinitionProvider, [Greedy] SiteConfigurationRepository repository, string name)
+    public void GetSiteDefinitions_ShouldReturnSiteDefinitiosModel([Frozen]ISiteDefinitionsProvider siteDefinitionProvider, [Greedy] SiteConfigurationRepository repository, string name)
     {
       var id = ID.NewID;
       var db = new Db
-               {
-                 new DbItem(name, id, Multisite.Templates.SiteConfiguration.ID)
-                 {
-                   new DbField(Multisite.Templates.SiteConfiguration.Fields.ShowInMenu)
-                   {
-                     {"en", "1"}
-                   }
-                 }
-               };
+      {
+        new DbItem(name, id, Multisite.Templates.SiteConfiguration.ID)
+        {
+          new DbField(Multisite.Templates.SiteConfiguration.Fields.ShowInMenu)
+          {
+            {"en", "1"}
+          }
+        }
+      };
 
       var item = db.GetItem(id);
 
-      siteDefinitionProvider.SiteDefinitions.Returns(new List<SiteDefinition>
-                                                     {
-                                                       new SiteDefinition
-                                                       {
-                                                         Item = item
-                                                       }
-                                                     });
+      siteDefinitionProvider.SiteDefinitions.Returns(new List<SiteDefinition> { new SiteDefinition { Item = item } });
       var definitions = repository.Get();
       definitions.Should().BeOfType<SiteConfigurations>();
       var sites = definitions.Items.ToList();
       sites.Count.Should().BeGreaterThan(0);
-    }
-
-    public class SiteTemplate : DbTemplate
-    {
-      public SiteTemplate()
-      {
-        this.Add(Templates.Site.Fields.HostName);
-        this.Add(Multisite.Templates.SiteConfiguration.Fields.ShowInMenu);
-      }
     }
   }
 }

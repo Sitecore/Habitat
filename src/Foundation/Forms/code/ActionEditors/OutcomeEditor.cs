@@ -37,7 +37,7 @@
     protected override void OnOK(object sender, EventArgs args)
     {
       var item = this.ItemLister?.GetSelectionItem();
-      if (item == null || item.IsDerived(Templates.Outcome.ID))
+      if (item == null || !item.IsDerived(Templates.Outcome.ID))
       {
         this.SheerService.Alert("Please, select outcome");
         return;

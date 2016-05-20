@@ -7,7 +7,8 @@ DB: master
 SharedFields:
 - ID: "308e88f5-cd6e-4f8f-bafe-95a47dedefdc"
   Hint: Editable
-  Value: 
+  Type: Checkbox
+  Value: 1
 - ID: "94069f66-609c-48b0-8281-521c30fb269d"
   Hint: Open Properties after Add
   Value: 
