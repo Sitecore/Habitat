@@ -95,7 +95,7 @@ Scenario: Rich text editor configuration_UC3_Complete rich text editor defined
 	| Help                        |
 
 
-@NeedImplementation
+@Ready
 Scenario: Rich text editor configuration_UC4_Assert Custom Html profiles are present
 	Then Following items are present under /sitecore/system/Settings/Html Editor Profiles item in Core db
 	| Html profile       |
@@ -103,7 +103,7 @@ Scenario: Rich text editor configuration_UC4_Assert Custom Html profiles are pre
 	| Rich Text Limited  |
 	| Rich Text Default  | 
 
-@NeedImplementation
+@Ready
 Scenario: Rich text editor configuration_UC5_Assert Page Content has correct Rich Text Editor values 
 	Then Page Content has correct Rich Text Editor sources
 	| itemPath                                                                | fieldName | fieldValue                                                        |

@@ -76,17 +76,17 @@ namespace Sitecore.Feature.Specflow
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
         [Xunit.TraitAttribute("Description", "Person_Employee List_UC1_Default search query")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Person_EmployeeList_UC1_DefaultSearchQuery()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC1_Default search query", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.When("Actor goes to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "Person"});
@@ -95,7 +95,7 @@ this.ScenarioSetup(scenarioInfo);
             table1.AddRow(new string[] {
                         "JOHN DOE"});
 #line 9
- testRunner.Then("Following persons are shown", ((string)(null)), table1, "Then ");
+ testRunner.Then("Only following persons are shown", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -112,9 +112,9 @@ this.ScenarioSetup(scenarioInfo);
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Item path",
-                        "Control ID",
-                        "Data Source"});
+                        "ItemPath",
+                        "ControlId",
+                        "DataSource"});
             table2.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
@@ -124,14 +124,14 @@ this.ScenarioSetup(scenarioInfo);
 #line 20
  testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
- testRunner.When("Actor goes to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                         "Person"});
             table3.AddRow(new string[] {
                         "JOHN DOE"});
 #line 22
- testRunner.Then("Following persons are shown", ((string)(null)), table3, "Then ");
+ testRunner.Then("Only following persons are shown", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -158,7 +158,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 28
  testRunner.Given("Control properties were defined for item", ((string)(null)), table4, "Given ");
 #line 31
- testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Person"});
@@ -169,7 +169,7 @@ this.ScenarioSetup(scenarioInfo);
             table5.AddRow(new string[] {
                         "$NAME"});
 #line 32
- testRunner.Then("Following persons are shown", ((string)(null)), table5, "Then ");
+ testRunner.Then("Only following persons are shown", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -196,7 +196,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 41
  testRunner.Given("Control properties were defined for item", ((string)(null)), table6, "Given ");
 #line 44
- testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Person"});
@@ -207,7 +207,7 @@ this.ScenarioSetup(scenarioInfo);
             table7.AddRow(new string[] {
                         "$NAME"});
 #line 45
- testRunner.Then("Following persons are shown", ((string)(null)), table7, "Then ");
+ testRunner.Then("Only following persons are shown", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -236,7 +236,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 54
  testRunner.Given("Control properties were defined for item", ((string)(null)), table8, "Given ");
 #line 57
- testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Person"});
@@ -245,7 +245,7 @@ this.ScenarioSetup(scenarioInfo);
             table9.AddRow(new string[] {
                         "JOHN DOE"});
 #line 58
- testRunner.Then("Following persons are shown", ((string)(null)), table9, "Then ");
+ testRunner.Then("Only following persons are shown", ((string)(null)), table9, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -272,14 +272,14 @@ this.ScenarioSetup(scenarioInfo);
 #line 65
  testRunner.Given("Control properties were defined for item", ((string)(null)), table10, "Given ");
 #line 68
- testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Person"});
             table11.AddRow(new string[] {
                         "JOHN HOWARD"});
 #line 69
- testRunner.Then("Following persons are shown", ((string)(null)), table11, "Then ");
+ testRunner.Then("Only following persons are shown", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -312,6 +312,8 @@ this.ScenarioSetup(scenarioInfo);
                         "John Doe"});
 #line 79
  testRunner.And("New item version was added", ((string)(null)), table13, "And ");
+#line 82
+ testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Person"});
@@ -319,8 +321,8 @@ this.ScenarioSetup(scenarioInfo);
                         "JOHN HOWARD"});
             table14.AddRow(new string[] {
                         "JOHN DOE"});
-#line 82
- testRunner.Then("Following persons are shown", ((string)(null)), table14, "Then ");
+#line 83
+ testRunner.Then("Only following persons are shown", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -333,7 +335,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC8_Custom search query_New language of the item is defined", new string[] {
                         "InDesign"});
-#line 89
+#line 90
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
@@ -344,15 +346,17 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
                         "text:John;template:{467c2144-4454-4518-b1de-e31b4cbbff33}"});
-#line 90
+#line 91
  testRunner.Given("Control properties were defined for item", ((string)(null)), table15, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item name"});
             table16.AddRow(new string[] {
                         "John Howard"});
-#line 93
+#line 94
  testRunner.And("New item Language version was added", ((string)(null)), table16, "And ");
+#line 97
+ testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Person"});
@@ -360,8 +364,8 @@ this.ScenarioSetup(scenarioInfo);
                         "JOHN HOWARD"});
             table17.AddRow(new string[] {
                         "JOHN DOE"});
-#line 96
- testRunner.Then("Following persons are shown", ((string)(null)), table17, "Then ");
+#line 98
+ testRunner.Then("Only following persons are shown", ((string)(null)), table17, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -374,7 +378,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC9_Default search query with custom Search Result Limit", new string[] {
                         "NeedImplementation"});
-#line 103
+#line 105
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
@@ -385,7 +389,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
                         "text:CEO"});
-#line 104
+#line 106
  testRunner.Given("Control properties were defined for item", ((string)(null)), table18, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
@@ -396,19 +400,17 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
                         "1"});
-#line 107
+#line 109
  testRunner.And("Control properties were defined for item", ((string)(null)), table19, "And ");
-#line 110
- testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 111
- testRunner.When("Actor goes to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 112
+ testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Person"});
             table20.AddRow(new string[] {
                         "JOHN DOE"});
-#line 112
- testRunner.Then("Following persons are shown", ((string)(null)), table20, "Then ");
+#line 113
+ testRunner.Then("Only following persons are shown", ((string)(null)), table20, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -421,7 +423,7 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC10_Default search query with null Search Result Limit", new string[] {
                         "NeedImplementation"});
-#line 118
+#line 119
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
@@ -432,7 +434,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
                         "text:CEO"});
-#line 119
+#line 120
  testRunner.Given("Control properties were defined for item", ((string)(null)), table21, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
@@ -443,12 +445,10 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
                         "@empty"});
-#line 122
+#line 123
  testRunner.And("Control properties were defined for item", ((string)(null)), table22, "And ");
-#line 125
- testRunner.And("Habitat website is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 126
- testRunner.When("Actor goes to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
                         "Person"});
@@ -457,7 +457,7 @@ this.ScenarioSetup(scenarioInfo);
             table23.AddRow(new string[] {
                         "JOHN DOE"});
 #line 127
- testRunner.Then("Following persons are shown", ((string)(null)), table23, "Then ");
+ testRunner.Then("Only following persons are shown", ((string)(null)), table23, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

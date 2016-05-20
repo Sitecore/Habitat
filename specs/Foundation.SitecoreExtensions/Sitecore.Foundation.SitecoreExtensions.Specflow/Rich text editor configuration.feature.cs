@@ -298,11 +298,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Rich text editor configuration")]
         [Xunit.TraitAttribute("Description", "Rich text editor configuration_UC4_Assert Custom Html profiles are present")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void RichTextEditorConfiguration_UC4_AssertCustomHtmlProfilesArePresent()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rich text editor configuration_UC4_Assert Custom Html profiles are present", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 99
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -325,12 +325,12 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.TraitAttribute("FeatureTitle", "Rich text editor configuration")]
         [Xunit.TraitAttribute("Description", "Rich text editor configuration_UC5_Assert Page Content has correct Rich Text Edit" +
             "or values")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void RichTextEditorConfiguration_UC5_AssertPageContentHasCorrectRichTextEditorValues()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Rich text editor configuration_UC5_Assert Page Content has correct Rich Text Edit" +
                     "or values", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 107
 this.ScenarioSetup(scenarioInfo);
 #line hidden
