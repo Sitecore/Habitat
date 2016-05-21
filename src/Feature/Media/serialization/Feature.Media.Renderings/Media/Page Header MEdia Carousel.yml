@@ -11,6 +11,9 @@ SharedFields:
 - ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
   Value: "site:carousel"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: "<image mediaid=\"{71E17F51-7532-4539-AFE1-89DB633FDDAC}\" />"
 Languages:
 - Language: en
   Versions:

@@ -17,6 +17,9 @@ SharedFields:
 - ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
   Value: 
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: "<image mediaid=\"{08BE2D91-6E1A-48F3-B316-64B8635ADB52}\" />"
 - ID: "ddab263e-b42e-419a-aa6f-081b7393ca38"
   Hint: Model
   Value: Sitecore.Foundation.SitecoreExtensions.Rendering.QueryableDatasourceRenderingModel, Sitecore.Foundation.SitecoreExtensions

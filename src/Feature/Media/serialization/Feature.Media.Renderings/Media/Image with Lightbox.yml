@@ -11,6 +11,9 @@ SharedFields:
 - ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
   Value: "site:lightboximage"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: "<image mediaid=\"{36E30543-EB94-40FB-937B-0F778C8987BE}\" />"
 Languages:
 - Language: en
   Versions:
