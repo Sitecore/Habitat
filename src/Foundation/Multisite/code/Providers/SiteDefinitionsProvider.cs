@@ -2,6 +2,7 @@
 {
   using System;
   using System.Collections.Generic;
+  using System.Configuration;
   using System.Linq;
   using Sitecore.Data;
   using Sitecore.Data.Items;
@@ -55,10 +56,19 @@
              {
                Item = siteItem,
                Name = site.Name,
-               HostName = site.TargetHostName,
+               HostName = GetHostName(site),
                IsCurrent = this.IsCurrent(site),
                Site = site
              };
+    }
+
+    private static string GetHostName(SiteInfo site)
+    {
+      if (!string.IsNullOrEmpty(site.TargetHostName))
+        return site.TargetHostName;
+      if (Uri.CheckHostName(site.HostName) != UriHostNameType.Unknown)
+        return site.HostName;
+      throw new ConfigurationErrorsException($"Cannot determine hostname for site '{site}'");
     }
 
     private static bool IsSite([NotNull] Item item)

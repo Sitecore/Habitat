@@ -1,6 +1,8 @@
 ﻿namespace Sitecore.Foundation.Multisite.Tests
 {
+  using System;
   using System.Collections.Generic;
+  using System.Configuration;
   using System.Linq;
   using System.Xml;
   using FluentAssertions;
@@ -65,6 +67,87 @@
 
     [Theory]
     [AutoDbData]
+    public void SiteDefinitions_HostnameSetToInvalidHost_ShouldThrowConfigurationError(Db db, string siteName, DbItem rootItem)
+    {
+      var currentSite = SetupSite(db, siteName, rootItem, null, "*.test.com");
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new[] { currentSite });
+
+      var context = new SiteContext(currentSite);
+      using (new SiteContextSwitcher(context))
+      {
+        Action a = () => { var siteDefinitions = provider.SiteDefinitions; };
+        a.ShouldThrow<ConfigurationErrorsException>();
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void SiteDefinitions_TargetHostnameNotSet_ShouldReturnHostName(Db db, string siteName, DbItem rootItem)
+    {
+      const string siteHostName = "www.test.com";
+      var currentSite = SetupSite(db, siteName, rootItem, null, siteHostName);
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new[] { currentSite });
+
+      var context = new SiteContext(currentSite);
+      using (new SiteContextSwitcher(context))
+      {
+        var site = provider.SiteDefinitions.First();
+        site.HostName.Should().BeEquivalentTo(siteHostName);
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void SiteDefinitions_TargetHostnameSet_ShouldReturnTargetHostName(Db db, string siteName, DbItem rootItem, string targetHostName)
+    {
+      var currentSite = SetupSite(db, siteName, rootItem, targetHostName);
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new[] { currentSite });
+
+      var context = new SiteContext(currentSite);
+      using (new SiteContextSwitcher(context))
+      {
+        var site = provider.SiteDefinitions.First();
+        site.HostName.Should().BeEquivalentTo(targetHostName);
+      }
+    }
+
+    private static SiteInfo SetupSite(Db db, string siteName, DbItem rootItem, string targetHostName = null, string hostName = null)
+    {
+      var siteRoot = new DbItem("siteRoot", ID.NewID, Templates.Site.ID)
+                     {
+                       rootItem
+                     };
+      db.Add(siteRoot);
+
+      var siteSettings = new StringDictionary()
+                         {
+                           {"name", siteName},
+                           {"rootPath", siteRoot.FullPath},
+                           {"targetHostName", targetHostName},
+                           {"hostName", hostName},
+                           {"database", db.Database.Name}
+                         };
+      var currentSite = new SiteInfo(siteSettings);
+      return currentSite;
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void SiteDefinitions_NoHostnameSet_ShouldThrow(Db db, string siteName, string hostName, DbItem rootItem)
+    {
+      var currentSite = SetupSite(db, siteName, rootItem, null, null);
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new[] { currentSite });
+
+      var context = new SiteContext(currentSite);
+      using (new SiteContextSwitcher(context))
+      {
+        Action a = () => { var siteDefinitions = provider.SiteDefinitions; };
+        a.ShouldThrow<ConfigurationErrorsException>();
+      }
+    }
+
+    [Theory]
+    [AutoDbData]
     public void GetContextSiteDefinition_ContextItemInsideHierarchy_ShouldReturnHierarchicalSiteDefinition(Db db, string siteName, string hostName, DbItem contextItem)
     {
       var hierarchicalSiteRoot = new DbItem("siteRoot", ID.NewID, Templates.Site.ID) { contextItem };
@@ -94,8 +177,9 @@
       var context = new SiteContext(currentSite);
       using (new SiteContextSwitcher(context))
       {
-        provider.GetContextSiteDefinition(db.GetItem(contextItem.ID)).IsCurrent.ShouldBeEquivalentTo(false);
-        provider.GetContextSiteDefinition(db.GetItem(contextItem.ID)).Name.ShouldBeEquivalentTo(hierarchicalSite.Name);
+        var contextSiteDefinition = provider.GetContextSiteDefinition(db.GetItem(contextItem.ID));
+        contextSiteDefinition.IsCurrent.ShouldBeEquivalentTo(false);
+        contextSiteDefinition.Name.ShouldBeEquivalentTo(hierarchicalSite.Name);
       }
     }
 
