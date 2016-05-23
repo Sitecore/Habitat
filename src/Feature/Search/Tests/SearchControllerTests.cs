@@ -23,7 +23,7 @@
   {
     [Theory]
     [AutoDbData]
-    public void PagedSearchResults_ShouldReturnModel([Substitute] SearchService service, [Substitute] PagingSettings pagingSettings, [Substitute]SearchContext searchContext, [Frozen]ISearchContextRepository contextRepository, QueryRepository queryRepository, ISearchServiceRepository serviceRepository, string query, ISearchResults searchResults, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void PagedSearchResults_ShouldReturnModel([Substitute]SearchService service, PagingSettings pagingSettings, SearchContext searchContext, ISearchContextRepository contextRepository, QueryRepository queryRepository, ISearchServiceRepository serviceRepository, string query, ISearchResults searchResults, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       renderingPropertiesRepository.Get<PagingSettings>().Returns(pagingSettings);
       service.Search(Arg.Any<IQuery>()).Returns(searchResults);
@@ -36,7 +36,7 @@
 
     [Theory]
     [AutoDbData]
-    public void SearchResultsHeader_ShouldReturnModel(ISearchResults searchResults, [Substitute] SearchService service, SearchContext searchContext, ISearchServiceRepository serviceRepository, ISearchContextRepository contextRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
+    public void SearchResultsHeader_ShouldReturnModel(ISearchResults searchResults, [Substitute]SearchService service, SearchContext searchContext, ISearchServiceRepository serviceRepository, ISearchContextRepository contextRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
     {
       contextRepository.Get().Returns(searchContext);
       var controller = new SearchController(serviceRepository, contextRepository, queryRepository, renderingPropertiesRepository);
@@ -46,7 +46,7 @@
 
     [Theory]
     [AutoDbData]
-    public void SearchResults_ShouldReturnModel([Substitute] ControllerContext controllerContext, [Substitute] HttpContextBase context, ISearchResults searchResults, [Substitute] SearchService service, ISearchServiceRepository serviceRepository, ISearchContextRepository contextRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
+    public void SearchResults_ShouldReturnModel([Substitute]ControllerContext controllerContext, [Substitute]HttpContextBase context, ISearchResults searchResults, [Substitute]SearchService service, ISearchServiceRepository serviceRepository, ISearchContextRepository contextRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
     {
       service.Search(Arg.Any<IQuery>()).Returns(searchResults);
       serviceRepository.Get().Returns(service);
@@ -61,7 +61,7 @@
 
     [Theory]
     [AutoDbData]
-    public void GlobalSearch_ShouldReturnModel(ISearchResults searchResults, [Substitute] SearchService service, [Substitute] SearchContext context, ISearchServiceRepository serviceRepository, ISearchContextRepository contextRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
+    public void GlobalSearch_ShouldReturnModel(ISearchResults searchResults, [Substitute]SearchService service, SearchContext context, ISearchServiceRepository serviceRepository, ISearchContextRepository contextRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
     {
       service.Search(Arg.Any<IQuery>()).Returns(searchResults);
       serviceRepository.Get().Returns(service);
