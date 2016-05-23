@@ -15,7 +15,7 @@
   {
     [Theory]
     [AutoDbData]
-    public void Get_ShouldReturnSearchContext(Item item)
+    public void Get_ShouldReturnSearchContext()
     {
       var itemId = ID.NewID;
       var db = new Db
@@ -41,14 +41,14 @@
 
     [Theory]
     [AutoDbData]
-    public void Get_NoHttpContextQuery_ShouldReturnNull(Item item)
+    public void Get_NoHttpContextQuery_ShouldReturnNull()
     {
       var context = new RenderingContext
                     {
                       Rendering = new Rendering
                                   {
-                                    Item = item
-                                  }
+                                    Item = null
+                      }
                     };
       ContextService.Get().Push(context);
       var repository = new SearchContextRepository();

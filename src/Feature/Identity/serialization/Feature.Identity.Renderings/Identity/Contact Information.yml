@@ -11,6 +11,9 @@ SharedFields:
 - ID: "7d24e54f-5c16-4314-90c9-6051aa1a7da1"
   Hint: Parameters Template
   Value: "{A2A233A1-6701-48A9-B5F8-EFEAB74B655F}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: "<image mediaid=\"{F75B4475-4C84-4D87-A271-76A1902CE4F2}\" />"
 Languages:
 - Language: en
   Versions:

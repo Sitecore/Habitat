@@ -11,6 +11,9 @@ SharedFields:
 - ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
   Value: "site:lightboxvideo"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: "<image mediaid=\"{DE10A098-50D8-40C6-ADC3-DFF480F88940}\" />"
 Languages:
 - Language: en
   Versions:
