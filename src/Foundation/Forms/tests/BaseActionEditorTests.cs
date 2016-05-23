@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.Forms.Tests.SaveActions
+﻿namespace Sitecore.Foundation.Forms.Tests
 {
   using System;
   using System.Collections.Specialized;

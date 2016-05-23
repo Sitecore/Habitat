@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.Forms.Tests.SaveActions
+﻿namespace Sitecore.Foundation.Forms.Tests
 {
   using NSubstitute;
   using Ploeh.AutoFixture.Xunit2;

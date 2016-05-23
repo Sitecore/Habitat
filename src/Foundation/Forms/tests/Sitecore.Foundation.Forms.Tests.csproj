@@ -144,8 +144,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SaveActions\BaseActionEditorTests.cs" />
-    <Compile Include="SaveActions\RegisterOutcomeTests.cs" />
+    <Compile Include="BaseActionEditorTests.cs" />
+    <Compile Include="RegisterOutcomeTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
