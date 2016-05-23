@@ -112,8 +112,8 @@ this.ScenarioSetup(scenarioInfo);
 #line 15
  testRunner.And("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
- testRunner.And("User clicks <Associate a content item with this component.> button on scChromeToo" +
-                    "lbar undefined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User clicks Associate a content item with this component. button on scChromeToolb" +
+                    "ar undefined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

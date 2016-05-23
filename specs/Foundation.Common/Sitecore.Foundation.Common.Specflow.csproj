@@ -84,6 +84,7 @@
     <Compile Include="Steps\CommonActions.cs" />
     <Compile Include="Steps\CommonGlobalSteps.cs" />
     <Compile Include="Steps\CommonResults.cs" />
+    <Compile Include="Steps\ControlProperties.cs" />
     <Compile Include="Steps\EditFieldPayload.cs" />
     <Compile Include="Infrastructure\ItemFieldDefinition.cs" />
     <Compile Include="Steps\NavigationStepsBase.cs" />
@@ -98,6 +99,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.ArrayOfString.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -135,6 +139,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetRolesForUserResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TestHelperService\Sitecore.Foundation.Common.Specflow.TestHelperService.GetUserPropertiesResponse.datasource">

@@ -13,5 +13,11 @@
     {
       return itemFields.CreateSet<ItemFieldDefinition>();
     }
+
+    [StepArgumentTransformation]
+    public IEnumerable<ControlProperties> ControlPropertiesTransform(Table itemFields)
+    {
+      return itemFields.CreateSet<ControlProperties>();
+    }
   }
 }

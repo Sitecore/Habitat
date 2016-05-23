@@ -103,21 +103,23 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
         [Xunit.TraitAttribute("Description", "Person_Employee List_UC2_Custom search query_text type was defined")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Person_EmployeeList_UC2_CustomSearchQuery_TextTypeWasDefined()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC2_Custom search query_text type was defined", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 16
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
                         "ControlId",
-                        "DataSource"});
+                        "Type",
+                        "Value"});
             table2.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "DataSource",
                         "text:CEO"});
 #line 17
  testRunner.Given("Control properties were defined for item", ((string)(null)), table2, "Given ");
@@ -139,21 +141,23 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
         [Xunit.TraitAttribute("Description", "Person_Employee List_UC3_Custom search query_field type was defined")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Person_EmployeeList_UC3_CustomSearchQuery_FieldTypeWasDefined()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC3_Custom search query_field type was defined", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 27
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item path",
                         "Control ID",
-                        "Data Source"});
+                        "Type",
+                        "Value"});
             table4.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "DataSource",
                         "template:{467c2144-4454-4518-b1de-e31b4cbbff33}"});
 #line 28
  testRunner.Given("Control properties were defined for item", ((string)(null)), table4, "Given ");
@@ -166,8 +170,6 @@ this.ScenarioSetup(scenarioInfo);
                         "JOHN HOWARD"});
             table5.AddRow(new string[] {
                         "JOHN DOE"});
-            table5.AddRow(new string[] {
-                        "$NAME"});
 #line 32
  testRunner.Then("Only following persons are shown", ((string)(null)), table5, "Then ");
 #line hidden
@@ -177,25 +179,27 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
         [Xunit.TraitAttribute("Description", "Person_Employee List_UC4_Custom search query_field and text types were defined")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Person_EmployeeList_UC4_CustomSearchQuery_FieldAndTextTypesWereDefined()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC4_Custom search query_field and text types were defined", new string[] {
-                        "NeedImplementation"});
-#line 40
+                        "Ready"});
+#line 39
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item path",
                         "Control ID",
-                        "Data Source"});
+                        "Type",
+                        "Value"});
             table6.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "DataSource",
                         "text:John;template:{467c2144-4454-4518-b1de-e31b4cbbff33}"});
-#line 41
+#line 40
  testRunner.Given("Control properties were defined for item", ((string)(null)), table6, "Given ");
-#line 44
+#line 43
  testRunner.And("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -204,9 +208,7 @@ this.ScenarioSetup(scenarioInfo);
                         "JOHN HOWARD"});
             table7.AddRow(new string[] {
                         "JOHN DOE"});
-            table7.AddRow(new string[] {
-                        "$NAME"});
-#line 45
+#line 44
  testRunner.Then("Only following persons are shown", ((string)(null)), table7, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -216,26 +218,28 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
         [Xunit.TraitAttribute("Description", "Person_Employee List_UC5_Custom search query_field and text types were defined_In" +
             "clude criteria logic")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Person_EmployeeList_UC5_CustomSearchQuery_FieldAndTextTypesWereDefined_IncludeCriteriaLogic()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC5_Custom search query_field and text types were defined_In" +
                     "clude criteria logic", new string[] {
-                        "NeedImplementation"});
-#line 53
+                        "Ready"});
+#line 51
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item path",
                         "Control ID",
-                        "Data Source"});
+                        "Type",
+                        "Value"});
             table8.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "DataSource",
                         "text:John;+template:{467c2144-4454-4518-b1de-e31b4cbbff33}"});
-#line 54
+#line 52
  testRunner.Given("Control properties were defined for item", ((string)(null)), table8, "Given ");
-#line 57
+#line 55
  testRunner.And("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -244,7 +248,7 @@ this.ScenarioSetup(scenarioInfo);
                         "JOHN HOWARD"});
             table9.AddRow(new string[] {
                         "JOHN DOE"});
-#line 58
+#line 56
  testRunner.Then("Only following persons are shown", ((string)(null)), table9, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -253,32 +257,34 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
         [Xunit.TraitAttribute("Description", "Person_Employee List_UC6_Custom search query_Exclude criteria logic")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Person_EmployeeList_UC6_CustomSearchQuery_ExcludeCriteriaLogic()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC6_Custom search query_Exclude criteria logic", new string[] {
-                        "NeedImplementation"});
-#line 64
+                        "Ready"});
+#line 62
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item path",
                         "Control ID",
-                        "Data Source"});
+                        "Type",
+                        "Value"});
             table10.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "DataSource",
                         "text:John;-text:CEO"});
-#line 65
+#line 63
  testRunner.Given("Control properties were defined for item", ((string)(null)), table10, "Given ");
-#line 68
+#line 66
  testRunner.And("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Person"});
             table11.AddRow(new string[] {
                         "JOHN HOWARD"});
-#line 69
+#line 67
  testRunner.Then("Only following persons are shown", ((string)(null)), table11, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -287,32 +293,36 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
         [Xunit.TraitAttribute("Description", "Person_Employee List_UC7_Custom search query_New version of the item is defined")]
-        [Xunit.TraitAttribute("Category", "InDesign")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Person_EmployeeList_UC7_CustomSearchQuery_NewVersionOfTheItemIsDefined()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC7_Custom search query_New version of the item is defined", new string[] {
-                        "InDesign"});
-#line 75
+                        "Ready"});
+#line 73
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item path",
                         "Control ID",
-                        "Data Source"});
+                        "Type",
+                        "Value"});
             table12.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "DataSource",
                         "text:John;template:{467c2144-4454-4518-b1de-e31b4cbbff33}"});
-#line 76
+#line 74
  testRunner.Given("Control properties were defined for item", ((string)(null)), table12, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Item name"});
+                        "Item path",
+                        "Language"});
             table13.AddRow(new string[] {
-                        "John Doe"});
-#line 79
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List/John Doe",
+                        "de"});
+#line 77
  testRunner.And("New item version was added", ((string)(null)), table13, "And ");
-#line 82
+#line 80
  testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
@@ -321,7 +331,7 @@ this.ScenarioSetup(scenarioInfo);
                         "JOHN HOWARD"});
             table14.AddRow(new string[] {
                         "JOHN DOE"});
-#line 83
+#line 81
  testRunner.Then("Only following persons are shown", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -330,42 +340,57 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
         [Xunit.TraitAttribute("Description", "Person_Employee List_UC8_Custom search query_New language of the item is defined")]
-        [Xunit.TraitAttribute("Category", "InDesign")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Person_EmployeeList_UC8_CustomSearchQuery_NewLanguageOfTheItemIsDefined()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC8_Custom search query_New language of the item is defined", new string[] {
-                        "InDesign"});
-#line 90
+                        "Ready"});
+#line 88
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item path",
                         "Control ID",
-                        "Data Source"});
+                        "Type",
+                        "Value"});
             table15.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "DataSource",
                         "text:John;template:{467c2144-4454-4518-b1de-e31b4cbbff33}"});
-#line 91
+#line 89
  testRunner.Given("Control properties were defined for item", ((string)(null)), table15, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Item name"});
+                        "Item path",
+                        "Language"});
             table16.AddRow(new string[] {
-                        "John Howard"});
-#line 94
- testRunner.And("New item Language version was added", ((string)(null)), table16, "And ");
-#line 97
- testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
+                        "en"});
+#line 92
+ testRunner.And("New item version was added", ((string)(null)), table16, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Person"});
+                        "ItemPath",
+                        "FieldName",
+                        "FieldValue"});
             table17.AddRow(new string[] {
-                        "JOHN HOWARD"});
-            table17.AddRow(new string[] {
-                        "JOHN DOE"});
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List/John Howard",
+                        "Name",
+                        "John Howard"});
+#line 95
+ testRunner.And("Value set to item field", ((string)(null)), table17, "And ");
 #line 98
- testRunner.Then("Only following persons are shown", ((string)(null)), table17, "Then ");
+ testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Person"});
+            table18.AddRow(new string[] {
+                        "JOHN HOWARD"});
+            table18.AddRow(new string[] {
+                        "JOHN DOE"});
+#line 99
+ testRunner.Then("Only following persons are shown", ((string)(null)), table18, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -373,44 +398,48 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
         [Xunit.TraitAttribute("Description", "Person_Employee List_UC9_Default search query with custom Search Result Limit")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Person_EmployeeList_UC9_DefaultSearchQueryWithCustomSearchResultLimit()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC9_Default search query with custom Search Result Limit", new string[] {
-                        "NeedImplementation"});
-#line 105
-this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Item path",
-                        "Control ID",
-                        "Data Source"});
-            table18.AddRow(new string[] {
-                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
-                        "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
-                        "text:CEO"});
+                        "Ready"});
 #line 106
- testRunner.Given("Control properties were defined for item", ((string)(null)), table18, "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item path",
                         "Control ID",
-                        "SearchResultLimit"});
+                        "Type",
+                        "Value"});
             table19.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
-                        "1"});
-#line 109
- testRunner.And("Control properties were defined for item", ((string)(null)), table19, "And ");
-#line 112
- testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "DataSource",
+                        "text:CEO"});
+#line 107
+ testRunner.Given("Control properties were defined for item", ((string)(null)), table19, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Person"});
+                        "Item path",
+                        "Control ID",
+                        "Type",
+                        "Value"});
             table20.AddRow(new string[] {
-                        "JOHN DOE"});
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
+                        "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "SearchResultLimit",
+                        "1"});
+#line 110
+ testRunner.And("Control properties were defined for item", ((string)(null)), table20, "And ");
 #line 113
- testRunner.Then("Only following persons are shown", ((string)(null)), table20, "Then ");
+ testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Person"});
+            table21.AddRow(new string[] {
+                        "JOHN DOE"});
+#line 114
+ testRunner.Then("Only following persons are shown", ((string)(null)), table21, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -418,46 +447,50 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Person_Employee List")]
         [Xunit.TraitAttribute("Description", "Person_Employee List_UC10_Default search query with null Search Result Limit")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void Person_EmployeeList_UC10_DefaultSearchQueryWithNullSearchResultLimit()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Person_Employee List_UC10_Default search query with null Search Result Limit", new string[] {
-                        "NeedImplementation"});
-#line 119
-this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Item path",
-                        "Control ID",
-                        "Data Source"});
-            table21.AddRow(new string[] {
-                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
-                        "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
-                        "text:CEO"});
+                        "Ready"});
 #line 120
- testRunner.Given("Control properties were defined for item", ((string)(null)), table21, "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item path",
                         "Control ID",
-                        "SearchResultLimit"});
+                        "Type",
+                        "Value"});
             table22.AddRow(new string[] {
                         "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
                         "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
-                        "@empty"});
-#line 123
- testRunner.And("Control properties were defined for item", ((string)(null)), table22, "And ");
-#line 126
- testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+                        "DataSource",
+                        "template:{467c2144-4454-4518-b1de-e31b4cbbff33}"});
+#line 121
+ testRunner.Given("Control properties were defined for item", ((string)(null)), table22, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Person"});
+                        "Item path",
+                        "Control ID",
+                        "Type",
+                        "Value"});
             table23.AddRow(new string[] {
-                        "JOHN HOWARD"});
-            table23.AddRow(new string[] {
-                        "JOHN DOE"});
+                        "/sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List",
+                        "{DC19892A-B345-4EFE-AAA2-6E27A801A733}",
+                        "SearchResultLimit",
+                        ""});
+#line 124
+ testRunner.And("Control properties were defined for item", ((string)(null)), table23, "And ");
 #line 127
- testRunner.Then("Only following persons are shown", ((string)(null)), table23, "Then ");
+ testRunner.When("Actor navigates to Employees-List page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Person"});
+            table24.AddRow(new string[] {
+                        "JOHN HOWARD"});
+            table24.AddRow(new string[] {
+                        "JOHN DOE"});
+#line 128
+ testRunner.Then("Only following persons are shown", ((string)(null)), table24, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

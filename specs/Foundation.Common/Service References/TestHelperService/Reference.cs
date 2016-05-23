@@ -212,6 +212,20 @@ namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser", ReplyAction="*")]
         System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserResponse> CreateUserAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.CreateUserRequest request);
         
+        // CODEGEN: Generating message contract since element name itemIdOrPath from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetTemplateId", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdResponse GetTemplateId(Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/GetTemplateId", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdResponse> GetTemplateIdAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdRequest request);
+        
+        // CODEGEN: Generating message contract since element name itemIdOrPath from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/AddItemVersion", ReplyAction="*")]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionResponse AddItemVersion(Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/AddItemVersion", ReplyAction="*")]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionResponse> AddItemVersionAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionRequest request);
+        
         // CODEGEN: Generating message contract since element name userName from namespace http://sitecore.net/AutoTestsHelperService.asmx is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://sitecore.net/AutoTestsHelperService.asmx/SetRoleForUser", ReplyAction="*")]
         Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserResponse SetRoleForUser(Sitecore.Foundation.Common.Specflow.TestHelperService.SetRoleForUserRequest request);
@@ -406,6 +420,146 @@ namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
         
         public CreateUserResponseBody(bool CreateUserResult) {
             this.CreateUserResult = CreateUserResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTemplateIdRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTemplateId", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdRequestBody Body;
+        
+        public GetTemplateIdRequest() {
+        }
+        
+        public GetTemplateIdRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetTemplateIdRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string itemIdOrPath;
+        
+        public GetTemplateIdRequestBody() {
+        }
+        
+        public GetTemplateIdRequestBody(string itemIdOrPath) {
+            this.itemIdOrPath = itemIdOrPath;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetTemplateIdResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetTemplateIdResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdResponseBody Body;
+        
+        public GetTemplateIdResponse() {
+        }
+        
+        public GetTemplateIdResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class GetTemplateIdResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string GetTemplateIdResult;
+        
+        public GetTemplateIdResponseBody() {
+        }
+        
+        public GetTemplateIdResponseBody(string GetTemplateIdResult) {
+            this.GetTemplateIdResult = GetTemplateIdResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddItemVersionRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddItemVersion", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionRequestBody Body;
+        
+        public AddItemVersionRequest() {
+        }
+        
+        public AddItemVersionRequest(Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class AddItemVersionRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string itemIdOrPath;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string language;
+        
+        public AddItemVersionRequestBody() {
+        }
+        
+        public AddItemVersionRequestBody(string itemIdOrPath, string language) {
+            this.itemIdOrPath = itemIdOrPath;
+            this.language = language;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddItemVersionResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddItemVersionResponse", Namespace="http://sitecore.net/AutoTestsHelperService.asmx", Order=0)]
+        public Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionResponseBody Body;
+        
+        public AddItemVersionResponse() {
+        }
+        
+        public AddItemVersionResponse(Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://sitecore.net/AutoTestsHelperService.asmx")]
+    public partial class AddItemVersionResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public bool AddItemVersionResult;
+        
+        public AddItemVersionResponseBody() {
+        }
+        
+        public AddItemVersionResponseBody(bool AddItemVersionResult) {
+            this.AddItemVersionResult = AddItemVersionResult;
         }
     }
     
@@ -1603,6 +1757,58 @@ namespace Sitecore.Foundation.Common.Specflow.TestHelperService {
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).CreateUserAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetTemplateId(Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdRequest request) {
+            return base.Channel.GetTemplateId(request);
+        }
+        
+        public string GetTemplateId(string itemIdOrPath) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdRequestBody();
+            inValue.Body.itemIdOrPath = itemIdOrPath;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetTemplateId(inValue);
+            return retVal.Body.GetTemplateIdResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.GetTemplateIdAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdRequest request) {
+            return base.Channel.GetTemplateIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdResponse> GetTemplateIdAsync(string itemIdOrPath) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.GetTemplateIdRequestBody();
+            inValue.Body.itemIdOrPath = itemIdOrPath;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).GetTemplateIdAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionResponse Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.AddItemVersion(Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionRequest request) {
+            return base.Channel.AddItemVersion(request);
+        }
+        
+        public bool AddItemVersion(string itemIdOrPath, string language) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionRequestBody();
+            inValue.Body.itemIdOrPath = itemIdOrPath;
+            inValue.Body.language = language;
+            Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionResponse retVal = ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).AddItemVersion(inValue);
+            return retVal.Body.AddItemVersionResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionResponse> Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap.AddItemVersionAsync(Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionRequest request) {
+            return base.Channel.AddItemVersionAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionResponse> AddItemVersionAsync(string itemIdOrPath, string language) {
+            Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionRequest inValue = new Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionRequest();
+            inValue.Body = new Sitecore.Foundation.Common.Specflow.TestHelperService.AddItemVersionRequestBody();
+            inValue.Body.itemIdOrPath = itemIdOrPath;
+            inValue.Body.language = language;
+            return ((Sitecore.Foundation.Common.Specflow.TestHelperService.AutoTestsHelperServiceSoap)(this)).AddItemVersionAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

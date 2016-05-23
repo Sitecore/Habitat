@@ -13,7 +13,7 @@ Scenario: Multisite datasource_UC1_Standard path
 	| /sitecore/layout/Renderings/Feature/Social/Twitter Feed| Datasource Location	   | /sitecore/content/Habitat/Global/Social	  |
 	When User opens Experience Editor 
 	And User selects Twitter placeholder
-	And User clicks <Associate a content item with this component.> button on scChromeToolbar undefined
+	And User clicks Associate a content item with this component. button on scChromeToolbar undefined
 	#Then Following items present in tree
 	#| Item name       |
 	#| sitecorehabitat | 
