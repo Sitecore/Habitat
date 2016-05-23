@@ -5,6 +5,10 @@ Template: "8707a0b7-4a7d-44e4-abd6-a1ccb21049cf"
 Path: /sitecore/templates/Project/Habitat/Page Types/Forgot Password Page/__Standard Values
 DB: master
 SharedFields:
+- ID: "5585a30d-b115-4753-93ce-422c3455deb2"
+  Hint: ShowInNavigation
+  Type: Checkbox
+  Value: 0
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Type: layout
