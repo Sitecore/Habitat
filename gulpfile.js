@@ -54,11 +54,12 @@ gulp.task("03-Publish-All-Projects", function (callback) {
 });
 
 gulp.task("04-Apply-Xml-Transform", function () {
-  var layerPathFilters = ["./src/Foundation/**/code/*.csproj", "./src/Feature/**/code/*.csproj", "./src/Project/**/code/*.csproj"];
+  var layerPathFilters = ["./src/**/*.transform", "!.src/**/obj/**/App_Config", "!.src/**/bin/**/App_Config"];
   return gulp.src(layerPathFilters)
     .pipe(foreach(function (stream, file) {
+      var fileToTransform = file.path.replace(/.+code\\(.+)\.transform/, "$1");
       return gulp.src("./applytransform.targets")
-        .pipe(debug({ title: "Applying transform project:" }))
+        .pipe(debug({ title: "Applying congiuration transform: " + file.path }))
         .pipe(msbuild({
           targets: ["ApplyTransform"],
           configuration: config.buildConfiguration,
@@ -68,7 +69,8 @@ gulp.task("04-Apply-Xml-Transform", function () {
           toolsVersion: 14.0,
           properties: {
             WebConfigToTransform: config.websiteRoot,
-            ProjectDir: path.dirname(file.path)
+            TransformFile: file.path,
+            FileToTransform: fileToTransform
           }
         }));
     }));
