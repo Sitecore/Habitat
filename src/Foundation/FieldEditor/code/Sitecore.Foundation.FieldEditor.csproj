@@ -115,12 +115,11 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="Infrastructure\EditAllFieldsCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\GetFieldsToEditService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
