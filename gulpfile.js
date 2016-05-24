@@ -5,6 +5,7 @@ var foreach = require("gulp-foreach");
 var rename = require("gulp-rename");
 var watch = require("gulp-watch");
 var newer = require("gulp-newer");
+var util = require("gulp-util");
 var runSequence = require("run-sequence");
 var path = require("path");
 var config = require("./gulp-config.js")();
@@ -54,12 +55,12 @@ gulp.task("03-Publish-All-Projects", function (callback) {
 });
 
 gulp.task("04-Apply-Xml-Transform", function () {
-  var layerPathFilters = ["./src/**/*.transform", "!.src/**/obj/**/App_Config", "!.src/**/bin/**/App_Config"];
+  var layerPathFilters = ["./src/Foundation/**/*.transform", "./src/Feature/**/*.transform", "./src/Project/**/*.transform", "!.src/**/obj/**/App_Config", "!.src/**/bin/**/App_Config"];
   return gulp.src(layerPathFilters)
     .pipe(foreach(function (stream, file) {
       var fileToTransform = file.path.replace(/.+code\\(.+)\.transform/, "$1");
+      util.log("Applying configuration transform: " + file.path);
       return gulp.src("./applytransform.targets")
-        .pipe(debug({ title: "Applying congiuration transform: " + file.path }))
         .pipe(msbuild({
           targets: ["ApplyTransform"],
           configuration: config.buildConfiguration,
