@@ -32,9 +32,9 @@
       item.Add(field2);
       db.Add(item);
       var testItem = db.GetItem(item.ID);
-      var expectedResult = field1.Name + "|" + field2.Name;
+      var expectedResult = new [] {field1.Name + "|" + field2.Name, field2.Name + "|" + field1.Name};
 
-      GetFieldsToEditService.GetFieldsToEdit(testItem).Should().BeEquivalentTo(expectedResult);
+      GetFieldsToEditService.GetFieldsToEdit(testItem).Should().BeOneOf(expectedResult);
     }
 
     [Theory]
