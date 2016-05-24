@@ -1,0 +1,103 @@
+﻿---
+ID: "7354d99b-e902-4d5c-891b-d56032d8651e"
+Parent: "5ff3a6bc-e410-4d52-aa8e-9e819ab71926"
+Template: "02404208-46d4-49bf-988b-eb363a52a1c9"
+Path: /sitecore/content/Applications/WebEdit/Default Rendering Buttons/Edit related item
+DB: core
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/16x16/cubes.png
+- ID: "1bb289d6-44d7-4fcc-af15-db32b841f957"
+  Hint: Click
+  Value: "chrome:common:edititem({command:\"webedit:open\"})"
+- ID: "b6cecdef-740c-406f-bce4-06ab367e623a"
+  Hint: Type
+  Value: Common
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 1000
+- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
+  Hint: __Security
+  Value: "ar|sitecore\Sitecore Minimal Page Editor|pd|-item:read|pe|-item:read|ar|sitecore\Sitecore Limited Page Editor|pd|-item:read|pe|-item:read|"
+- ID: "e8cc41c7-c304-4282-b782-e21ca32d324c"
+  Hint: Icon
+  Value: Office/16x16/cubes.png
+Languages:
+- Language: da
+  Fields:
+  - ID: "371e0d96-4f00-4b80-ad14-6284e00493ba"
+    Hint: Tooltip
+    Value: Rediger elementet i indholdsredigeringsværktøjet.
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Rediger relateret element
+  - ID: "c523aba8-d1a1-4dcb-aeee-52635a4ab2ae"
+    Hint: Header
+    Value: Rediger det relaterede element
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20151207T115219Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: sitecore\admin
+- Language: "de-DE"
+  Fields:
+  - ID: "371e0d96-4f00-4b80-ad14-6284e00493ba"
+    Hint: Tooltip
+    Value: Das Item im Content Editor bearbeiten
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Verbundenes Item bearbeiten
+  - ID: "c523aba8-d1a1-4dcb-aeee-52635a4ab2ae"
+    Hint: Header
+    Value: Das zugehörige Item bearbeiten.
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20151207T115346Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: sitecore\admin
+- Language: en
+  Fields:
+  - ID: "371e0d96-4f00-4b80-ad14-6284e00493ba"
+    Hint: Tooltip
+    Value: Edit the related item in the Content Editor.
+  - ID: "c523aba8-d1a1-4dcb-aeee-52635a4ab2ae"
+    Hint: Header
+    Value: Edit the related item
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20080214T132300Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: sitecore\admin
+- Language: "ja-JP"
+  Fields:
+  - ID: "371e0d96-4f00-4b80-ad14-6284e00493ba"
+    Hint: Tooltip
+    Value: 関連するアイテムをコンテンツ エディターで編集します
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: 関連アイテムの編集
+  - ID: "c523aba8-d1a1-4dcb-aeee-52635a4ab2ae"
+    Hint: Header
+    Value: 関連アイテムの編集
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20151207T115506Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: sitecore\admin
