@@ -82,7 +82,6 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
 
     [Given(@"Value set to item field")]
     [Given(@"en is Selected on the following item")]
-    [When(@"The following languages have been selected")]
     [When(@"Value set to item field")]
     [When(@"The sitecore keyword has been selected")]
     public void GivenValueSetToItemField(IEnumerable<ItemFieldDefinition> fields)
@@ -92,6 +91,22 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
         EditItem(field.ItemPath, field.FieldName, field.FieldValue);
       }
     }
+
+    [Given(@"The following languages have been selected")]
+    [When(@"The following languages have been selected")]
+    public void WhenTheFollowingLanguagesHaveBeenSelected(IEnumerable<ItemFieldDefinition> items)
+    {
+      foreach (var item in items)
+      {
+        var languagePaths = item.FieldValue.Split(new []{';'}, StringSplitOptions.RemoveEmptyEntries).Select(x=>$"{ItemService.LanguageRootPath}/{x}");
+        var languageIds = languagePaths.Select(x => ContextExtensions.UtfService.ItemExistsByPath(x, Database.Master));
+        var fieldValue = string.Join("|", languageIds);
+
+        EditItem(item.ItemPath, item.FieldName, fieldValue);
+      }
+      
+    }
+
 
     [Given(@"Following languages defined in Sitecore")]
     [Given(@"The following Metadata keywords are defined in Sitecore")]
@@ -104,6 +119,21 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
         ItemShouldExists(field.ItemPath);
       }
     }
+
+
+    [Given(@"Following additional languages were defined in Sitecore")]
+    public void GivenFollowingAdditionalLanguagesWereDefinedInSitecore(IEnumerable<LanguageModel> languages)
+    {
+      foreach (var language in languages)
+      {        
+        if (LanguageProvider.LangaugeExists(language.ItemPath))
+        {
+          LanguageProvider.AddLanguage(language);
+        }
+      }
+    }
+
+
 
     [Given(@"Admin create a new Metakeyword")]
     public void CreateItem(IEnumerable<ItemFieldDefinition> fields)
@@ -181,18 +211,6 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
         ContextExtensions.HelperService.AddItemVersion(versionInfo.IdOrPath, versionInfo.Language);
       }
     }
-
-    public void NewItemVersionWasAdded(Table table)
-    {
-      var versionInfos = table.Rows.Select(x => new { IdOrPath = x[0], ItemName = x[1] });
-
-      foreach (var versionInfo in versionInfos)
-      {
-        ContextExtensions.HelperService.AddItemVersion(versionInfo.IdOrPath, versionInfo.ItemName);
-      }
-    }
-
-
     [AfterFeature]
     public static void TeardownTest()
     {

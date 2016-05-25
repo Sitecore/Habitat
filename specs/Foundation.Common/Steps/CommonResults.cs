@@ -93,7 +93,13 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
             CommonLocators.GlobeIcon.FindElements(By.CssSelector(".fa.fa-globe")).Should().BeEmpty();
         }
 
-        [Then(@"following items available in the list")]
+        [Then(@"Globe icon was hided")]
+        public void ThenGlobeIconWasHided()
+        {
+            CommonLocators.GlobeIconExists().Should().BeFalse();
+        }
+
+        [Then(@"Following items available in the list")]
         public void ThenFollowingItemsAvailableInTheList(Table table)
         {
             var globeList = table.Rows.Select(x => x.Values.First());

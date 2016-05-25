@@ -19,5 +19,11 @@
     {
       return itemFields.CreateSet<ControlProperties>();
     }
+
+    [StepArgumentTransformation]
+    public IEnumerable<LanguageModel> LangugageModelTransform(Table itemFields)
+    {
+      return itemFields.CreateSet<LanguageModel>();
+    }
   }
 }

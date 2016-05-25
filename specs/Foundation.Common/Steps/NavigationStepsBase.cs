@@ -29,8 +29,11 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
             CommonLocators.GlobeIcon.FindElement(By.CssSelector(".fa.fa-globe")).Click();
         }
 
+        
 
-        [When(@"Actor selects (.*) slidebar")]
+
+
+    [When(@"Actor selects (.*) slidebar")]
         public void WhenActorSelectsSlidebar(string button)
         {
             CommonLocators.OpenXDBSlidebar.First(el => el.GetAttribute("title").Contains(button)).Click();
