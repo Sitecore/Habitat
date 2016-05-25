@@ -151,7 +151,7 @@
 
     public static bool FieldHasValue(this Item item, ID fieldID)
     {
-      return item.Fields[fieldID] != null && item.Fields[fieldID].HasValue && !string.IsNullOrWhiteSpace(item.Fields[fieldID].Value);
+      return item.Fields[fieldID] != null && !string.IsNullOrWhiteSpace(item.Fields[fieldID].Value);
     }
 
     public static int? GetInteger(this Item item, ID fieldId)
