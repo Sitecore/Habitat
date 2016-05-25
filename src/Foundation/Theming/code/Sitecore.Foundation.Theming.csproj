@@ -198,7 +198,6 @@
     <Content Include="fonts\open-sans-v13-latin-800.svg" />
     <Content Include="fonts\open-sans-v13-latin-italic.svg" />
     <Content Include="fonts\open-sans-v13-latin-regular.svg" />
-    <Content Include="packages.config" />
     <Content Include="fonts\bitter-v7-latin-700.eot" />
     <Content Include="fonts\bitter-v7-latin-700.ttf" />
     <Content Include="fonts\bitter-v7-latin-700.woff" />
@@ -256,6 +255,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">

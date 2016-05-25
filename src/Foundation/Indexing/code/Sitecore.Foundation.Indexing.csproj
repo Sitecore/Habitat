@@ -116,8 +116,8 @@
     <Content Include="App_Config\Include\Foundation\Foundation.Indexing.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="packages.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Indexing.config" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="web.config" />
     <None Include="web.Debug.config">

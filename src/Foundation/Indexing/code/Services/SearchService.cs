@@ -16,7 +16,7 @@
 
   public class SearchService
   {
-    public ISearchSettings Settings { get; set; }
+    public virtual ISearchSettings Settings { get; set; }
 
     public SitecoreIndexableItem ContextItem
     {

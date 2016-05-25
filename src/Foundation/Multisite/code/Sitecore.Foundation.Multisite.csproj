@@ -102,10 +102,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Multisite.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="packages.config" />
     <Content Include="sitecore\shell\Applications\Dialogs\Multisite\DatasourceSettings.xml" />
     <None Include="Web.config" />
   </ItemGroup>
