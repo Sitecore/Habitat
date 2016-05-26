@@ -28,19 +28,19 @@
     {
       get
       {
-        if (_items != null)
+        if (this._items != null)
         {
-          return _items;
+          return this._items;
         }
-        _items = CreateDynamicTeaserItems();
-        SetActiveItem(_items);
-        return _items;
+        this._items = this.CreateDynamicTeaserItems();
+        this.SetActiveItem(this._items);
+        return this._items;
       }
     }
 
     private DynamicTeaserItem[] CreateDynamicTeaserItems()
     {
-      var childItems = Item.Children.Where(i => i.IsDerived(Templates.TeaserHeadline.ID)).ToArray();
+      var childItems = this.Item.Children.Where(i => i.IsDerived(Templates.TeaserHeadline.ID)).ToArray();
       DynamicTeaserItem[] returnItems = {};
       if (childItems.Any())
       {
@@ -48,7 +48,7 @@
       }
       else
       {
-        var count = Item.GetInteger(Templates.DynamicTeaser.Fields.Count);
+        var count = this.Item.GetInteger(Templates.DynamicTeaser.Fields.Count);
         if (count.HasValue)
         {
           returnItems = new object[count.Value].Select(o => new DynamicTeaserItem()).ToArray();
@@ -57,11 +57,11 @@
       return returnItems;
     }
 
-    private void SetActiveItem(DynamicTeaserItem[] items)
+    private void SetActiveItem(IReadOnlyList<DynamicTeaserItem> items)
     {
       if (!items.Any())
         return;
-      var active = Item.GetInteger(Templates.DynamicTeaser.Fields.Active);
+      var active = this.Item.GetInteger(Templates.DynamicTeaser.Fields.Active);
       if (active.HasValue)
       {
         var activeItem = items.ElementAtOrDefault(active.Value);
