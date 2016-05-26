@@ -181,6 +181,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Theming.Tests", "src\Foundation\Theming\tests\Sitecore.Foundation.Theming.Tests.csproj", "{A4C73B2A-8F4A-48C5-BFEE-EA31B3DC34D3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Accounts.Tests", "src\Foundation\Accounts\tests\Sitecore.Foundation.Accounts.Tests.csproj", "{461905E3-1D1F-4A75-A4AF-0EFBC0B35F07}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FieldEditor", "FieldEditor", "{6B260718-681F-41DB-AAFE-13BA15BB6711}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.FieldEditor", "src\Foundation\FieldEditor\code\Sitecore.Foundation.FieldEditor.csproj", "{812C16C9-1E8A-42DC-A1C0-6896D570F63A}"
