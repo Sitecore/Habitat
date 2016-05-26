@@ -140,8 +140,8 @@
     <Content Include="App_Config\Include\Feature\Feature.Demo.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="packages.config" />
     <Content Include="App_Config\Include\Feature\Feature.Demo.config" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Demo\_KeyBehaviourCacheList.cshtml" />
     <Content Include="Scripts\Demo\VisitDetails.js" />

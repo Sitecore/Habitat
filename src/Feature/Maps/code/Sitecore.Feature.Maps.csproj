@@ -112,7 +112,6 @@
     <Content Include="App_Config\Include\Feature\Feature.Maps.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="packages.config" />
     <Content Include="App_Config\Include\Feature\Feature.Maps.config">
       <SubType>Designer</SubType>
     </Content>
@@ -133,6 +132,7 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Styles\maps\maps.scss" />
     <None Include="Web.Debug.config">

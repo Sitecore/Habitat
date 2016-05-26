@@ -3,7 +3,6 @@
   using System;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
   public class DynamicTeaserItem
   {
@@ -11,7 +10,7 @@
     {
       this.Item = headline;
       this.Title = headline[Templates.TeaserHeadline.Fields.Title];
-      this.Icon = GetIcon(headline);
+      this.Icon = this.GetIcon(headline);
     }
 
     private string GetIcon(Item headline)
@@ -28,10 +27,13 @@
 
     [CanBeNull]
     public Item Item { get; set; }
+
     [CanBeNull]
     public string Title { get; private set; }
+
     [CanBeNull]
     public string Icon { get; set; }
+
     public bool IsActive { get; set; }
     public string HeaderId { get; private set; }
     public string PanelId { get; private set; }
