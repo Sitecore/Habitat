@@ -76,44 +76,220 @@ namespace Sitecore.Foundation.MultiSite.Specflow
         [Xunit.FactAttribute()]
         [Xunit.TraitAttribute("FeatureTitle", "Multisite datasource")]
         [Xunit.TraitAttribute("Description", "Multisite datasource_UC1_Standard path")]
-        [Xunit.TraitAttribute("Category", "InProgress")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void MultisiteDatasource_UC1_StandardPath()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multisite datasource_UC1_Standard path", new string[] {
-                        "InProgress"});
+                        "Ready"});
 #line 5
 this.ScenarioSetup(scenarioInfo);
-#line 6
-    testRunner.Given("Habitat website is opened on Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "UserName",
-                        "Password"});
-            table1.AddRow(new string[] {
-                        "admin",
-                        "b"});
-#line 7
- testRunner.And("Actor enteres following data into Login page fieldss", ((string)(null)), table1, "And ");
-#line 10
- testRunner.And("Actor clicks Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "ItemPath",
                         "fieldName",
                         "fieldValue"});
-            table2.AddRow(new string[] {
+            table1.AddRow(new string[] {
                         "/sitecore/layout/Renderings/Feature/Social/Twitter Feed",
                         "Datasource Location",
                         "/sitecore/content/Habitat/Global/Social"});
+#line 6
+ testRunner.Given("Value set to item field", ((string)(null)), table1, "Given ");
+#line 9
+ testRunner.And("Experience Editor is opened on Social Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 10
+ testRunner.When("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.Given("Value set to item field", ((string)(null)), table2, "Given ");
-#line 14
- testRunner.When("User opens Experience Editor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
- testRunner.And("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
  testRunner.And("User clicks Associate a content item with this component. button on scChromeToolb" +
                     "ar undefined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item name"});
+            table2.AddRow(new string[] {
+                        "sitecorehabitat"});
+#line 12
+ testRunner.Then("Following items present in datasource tree", ((string)(null)), table2, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Multisite datasource")]
+        [Xunit.TraitAttribute("Description", "Multisite datasource_UC2_Query path")]
+        [Xunit.TraitAttribute("Category", "Ready")]
+        public virtual void MultisiteDatasource_UC2_QueryPath()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multisite datasource_UC2_Query path", new string[] {
+                        "Ready"});
+#line 18
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemPath",
+                        "fieldName",
+                        "fieldValue"});
+            table3.AddRow(new string[] {
+                        "/sitecore/layout/Renderings/Feature/Social/Twitter Feed",
+                        "Datasource Location",
+                        "query:/sitecore/content/Habitat/Global/Social"});
+#line 19
+ testRunner.Given("Value set to item field", ((string)(null)), table3, "Given ");
+#line 22
+ testRunner.And("Experience Editor is opened on Social Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 23
+ testRunner.When("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
+ testRunner.And("User clicks Associate a content item with this component. button on scChromeToolb" +
+                    "ar undefined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item name"});
+            table4.AddRow(new string[] {
+                        "sitecorehabitat"});
+#line 25
+ testRunner.Then("Following items present in datasource tree", ((string)(null)), table4, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Multisite datasource")]
+        [Xunit.TraitAttribute("Description", "Multisite datasource_UC3_Query with condition")]
+        [Xunit.TraitAttribute("Category", "Ready")]
+        public virtual void MultisiteDatasource_UC3_QueryWithCondition()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multisite datasource_UC3_Query with condition", new string[] {
+                        "Ready"});
+#line 31
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemPath",
+                        "fieldName",
+                        "fieldValue"});
+            table5.AddRow(new string[] {
+                        "/sitecore/layout/Renderings/Feature/Social/Twitter Feed",
+                        "Datasource Location",
+                        "query:/sitecore/content//*[@@templatename=\'Social Feeds Folder\']"});
+#line 32
+ testRunner.Given("Value set to item field", ((string)(null)), table5, "Given ");
+#line 35
+ testRunner.And("Experience Editor is opened on Social Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 36
+ testRunner.When("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 37
+ testRunner.And("User clicks Associate a content item with this component. button on scChromeToolb" +
+                    "ar undefined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item name"});
+            table6.AddRow(new string[] {
+                        "sitecorehabitat"});
+#line 38
+ testRunner.Then("Following items present in datasource tree", ((string)(null)), table6, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Multisite datasource")]
+        [Xunit.TraitAttribute("Description", "Multisite datasource_UC4_Relative path")]
+        [Xunit.TraitAttribute("Category", "Ready")]
+        public virtual void MultisiteDatasource_UC4_RelativePath()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multisite datasource_UC4_Relative path", new string[] {
+                        "Ready"});
+#line 44
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemPath",
+                        "fieldName",
+                        "fieldValue"});
+            table7.AddRow(new string[] {
+                        "/sitecore/layout/Renderings/Feature/Social/Twitter Feed",
+                        "Datasource Location",
+                        "./Models"});
+#line 45
+ testRunner.Given("Value set to item field", ((string)(null)), table7, "Given ");
+#line 48
+ testRunner.And("Experience Editor is opened on Social Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 49
+ testRunner.When("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 50
+ testRunner.And("User clicks Associate a content item with this component. button on scChromeToolb" +
+                    "ar undefined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item name"});
+            table8.AddRow(new string[] {
+                        "Project"});
+            table8.AddRow(new string[] {
+                        "Feature"});
+            table8.AddRow(new string[] {
+                        "Foundation"});
+#line 51
+ testRunner.Then("Following items present in datasource tree", ((string)(null)), table8, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemPath",
+                        "fieldName",
+                        "fieldValue"});
+            table9.AddRow(new string[] {
+                        "/sitecore/layout/Renderings/Feature/Social/Twitter Feed",
+                        "Datasource Location",
+                        "/sitecore/content/Habitat/Global/Social"});
+#line 57
+ testRunner.And("Value set to item field", ((string)(null)), table9, "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.FactAttribute()]
+        [Xunit.TraitAttribute("FeatureTitle", "Multisite datasource")]
+        [Xunit.TraitAttribute("Description", "Multisite datasource_UC5_Item id")]
+        [Xunit.TraitAttribute("Category", "Ready")]
+        public virtual void MultisiteDatasource_UC5_ItemId()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multisite datasource_UC5_Item id", new string[] {
+                        "Ready"});
+#line 62
+this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemPath",
+                        "fieldName",
+                        "fieldValue"});
+            table10.AddRow(new string[] {
+                        "/sitecore/layout/Renderings/Feature/Social/Twitter Feed",
+                        "Datasource Location",
+                        "{20507226-1C3B-4D7A-89D4-DE00706E59B6}"});
+#line 63
+ testRunner.Given("Value set to item field", ((string)(null)), table10, "Given ");
+#line 66
+ testRunner.And("Experience Editor is opened on Social Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+ testRunner.When("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 68
+ testRunner.And("User clicks Associate a content item with this component. button on scChromeToolb" +
+                    "ar undefined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Item name"});
+            table11.AddRow(new string[] {
+                        "sitecorehabitat"});
+#line 69
+ testRunner.Then("Following items present in datasource tree", ((string)(null)), table11, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                        "ItemPath",
+                        "fieldName",
+                        "fieldValue"});
+            table12.AddRow(new string[] {
+                        "/sitecore/layout/Renderings/Feature/Social/Twitter Feed",
+                        "Datasource Location",
+                        "/sitecore/content/Habitat/Global/Social"});
+#line 73
+ testRunner.And("Value set to item field", ((string)(null)), table12, "And ");
 #line hidden
             this.ScenarioCleanup();
         }

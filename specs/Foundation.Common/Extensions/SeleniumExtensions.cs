@@ -39,5 +39,21 @@
 
       return driver.FindElements(selector);
     }
+
+    public static IEnumerable<IWebElement> WaitUntilElementsInvisible(this IWebDriver driver, By selector)
+    {
+      var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
+      wait.Until(ExpectedConditions.InvisibilityOfElementLocated(selector));
+
+      return driver.FindElements(selector);
+    }
+
+    public static IEnumerable<IWebElement> WaitUntilElementsVisible(this IWebDriver driver, By selector)
+    {
+      var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
+      wait.Until(ExpectedConditions.ElementIsVisible(selector));
+
+      return driver.FindElements(selector);
+    }
   }
 }

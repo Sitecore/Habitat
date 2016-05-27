@@ -96,7 +96,32 @@ namespace Sitecore.Foundation.Common.Specflow.Infrastructure
           => Driver.WaitUntilElementsPresent(By.CssSelector(".navbar-right .dropdown.open .dropdown-menu a"));
     public static IEnumerable<IWebElement> MetakeywordTag => Driver.FindElements(By.CssSelector("meta[name=keywords]"));
 
-    public static IEnumerable<IWebElement> TwitterPlaceholder => Driver.WaitUntilElementsPresent(By.CssSelector(".row.scEnabledChrome .col-md-4"));
-    public static IEnumerable<IWebElement> TwitterCommand => Driver.WaitUntilElementsPresent(By.CssSelector(".scChromeToolbar.undefined .scChromeCommand img"));
+    public static IEnumerable<IWebElement> DatasourceCommand => Driver.WaitUntilElementsPresent(By.CssSelector(".scChromeToolbar.undefined a.scChromeCommand[title='Associate a content item with this component.']"));
+
+    public static IEnumerable<IWebElement> SitecoreLoginFields => Driver.WaitUntilElementsPresent(By.CssSelector("#UserName, #Password"));
+
+    public static IEnumerable<IWebElement> TwitterPlaceholder => Driver.FindElements(By.CssSelector(".well.bg-dark.scEnabledChrome"));
+
+    public static IEnumerable<IWebElement> TwitterTreeContent
+      => Driver.FindElements(By.CssSelector(".scContentTreeNodeTitle"));
+
+
+
+    public static void WaitRibbonPreLoadingIndicatorInvisible()
+    {
+      Driver.WaitUntilElementsInvisible(By.CssSelector("#ribbonPreLoadingIndicator"));
+    }
+
+    public static void NavigateToExperienceEditorDialogWindow()
+    {
+      Driver.SwitchTo().Frame(Driver.FindElement(By.Id("jqueryModalDialogsFrame")));
+      Driver.SwitchTo().Frame(Driver.FindElement(By.Id("scContentIframeId0")));
+    }
+
+    public static void NavigateFromExperienceEditorDialogWindow()
+    {
+      Driver.SwitchTo().DefaultContent();
+    }
+    
   }
 }

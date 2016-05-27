@@ -81,6 +81,8 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
 
 
     [Given(@"Value set to item field")]
+    [When(@"Value set to item field")]
+    [Then(@"Value set to item field")]
     [Given(@"en is Selected on the following item")]
     [When(@"Value set to item field")]
     [When(@"The sitecore keyword has been selected")]

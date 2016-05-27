@@ -19,6 +19,8 @@
     public static string EndSessionUrl => BaseUrl + ConfigurationManager.AppSettings["endSessionUrl"];
     public static string UtfHelperService => BaseUrl + ConfigurationManager.AppSettings["utfProxyUrl"];
     public static string UserName => "sitecore\\admin";
+
+    public static string UserNameOnUi => "admin";
     public static string Password => "b";
 
     public static string EndVisitUrl => BaseUrl + ConfigurationManager.AppSettings["endVisitUrl"];
@@ -31,6 +33,9 @@
 
     public static string EmployeeList => BaseUrl + ConfigurationManager.AppSettings["employeeList"];
     public static string GettingStartedPageUrl => BaseSettings.BaseUrl + ConfigurationManager.AppSettings["GettingStartedPageUrl"];
-        public static string ExperianceEditorUrl => BaseSettings.BaseUrl + ConfigurationManager.AppSettings["ExperianceEditorUrl"];
-    }
+    public static string ExperianceEditorUrl => BaseSettings.BaseUrl + ConfigurationManager.AppSettings["ExperianceEditorUrl"];
+
+    public static string SocialPageExperienceEditorUrl => BaseSettings.BaseUrl + ConfigurationManager.AppSettings["SocialPageExperienceEditorUrl"];
+
+  }
 }
