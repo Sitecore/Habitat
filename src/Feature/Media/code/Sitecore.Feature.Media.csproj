@@ -114,7 +114,7 @@
     <Content Include="Views\MediaFeature\LightboxImage.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\MediaFeature\LightboxVideo.cshtml" />
-    <Content Include="Views\MediaFeature\Carousel.cshtml" />
+    <Content Include="Views\MediaFeature\MediaCarousel.cshtml" />
     <Content Include="App_Config\Include\Feature\Feature.Media.Serialization.config" />
     <Content Include="packages.config" />
     <Content Include="Views\MediaFeature\LightboxGallery.cshtml" />

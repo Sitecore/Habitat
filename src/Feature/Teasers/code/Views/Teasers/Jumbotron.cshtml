@@ -1,4 +1,5 @@
 ﻿@using Newtonsoft.Json.Serialization
+@using Sitecore.Analytics.Model.Framework
 @using Sitecore.Data.Fields
 @using Sitecore.Feature.Teasers
 @using Sitecore.Foundation.Alerts
@@ -8,36 +9,48 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.TeaserContent.ID) ?? true)
 {
-@Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
-    return;
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  return;
 }
 
 @{
   var fixedHeight = Model.Rendering.IsFixedHeight();
+  var height = Model.Rendering.GetHeight();
   var style = Model.Item.ImageUrl(Templates.TeaserContent.Fields.Image).ToCssUrlValue();
   if (fixedHeight)
   {
-      var height = 0;
+    if (height == 0)
+    {
       int.TryParse(((ImageField)Model.Item.Fields[Templates.TeaserContent.Fields.Image]).Height, out height);
-      style += "; height:" + height + "px;";
+    }
+    style += "; height:" + height + "px;";
   }
+
+  var isMedia = Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Image) || Model.Item.FieldHasValue(Templates.TeaserVideoContent.Fields.VideoLink);
 }
 
-<div class="jumbotron text-center @(Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Image) ? "bg-media" : Model.Rendering.GetBackgroundClass())" style="background-image: @style">
-    @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Label) || Sitecore.Context.PageMode.IsExperienceEditor)
-    {
+<div class="jumbotron text-center @(isMedia ? "bg-media" : Model.Rendering.GetBackgroundClass())" style="background-image: @style">
+  @if (Model.Item.IsDerived(Templates.TeaserVideoContent.ID))
+  {
+    <video autoplay="" loop="" muted="" class="video-bg img-responsive">
+      <source src="@Model.Item.MediaUrl(Templates.TeaserVideoContent.Fields.VideoLink)" type="video/mp4">
+    </video>
+  }
+
+  @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Label) || Sitecore.Context.PageMode.IsExperienceEditor)
+  {
     <span class="label">
-        @Html.Sitecore().Field(Templates.TeaserContent.Fields.Label, Model.Item)
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Label, Model.Item)
     </span>
-    }
-    <h2>
-        @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title, Model.Item)
-    </h2>
-    <p class="">
-        @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item)
-    </p>
-    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link, Model.Item, new
-    {
-        @class = "btn btn-primary btn-lg"
-    })
+  }
+  <h2>
+    @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title, Model.Item)
+  </h2>
+  <p class="">
+    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item)
+  </p>
+  @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link, Model.Item, new
+{
+  @class = "btn btn-primary btn-lg"
+})
 </div>
