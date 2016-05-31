@@ -115,7 +115,8 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Teasers\Headline.cshtml" />
     <Content Include="Views\Teasers\JumbotronHeader.cshtml" />
-    <Content Include="Views\Teasers\Carousel.cshtml" />
+    <Content Include="Views\Teasers\TeaserCarousel.cshtml" />
+    <Content Include="Views\Teasers\JumbotronCarousel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -127,6 +128,7 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\DynamicTeaserModelExtensions.cs" />
     <Compile Include="Models\DynamicTeaserItem.cs" />
     <Compile Include="Controller\TeasersController.cs" />
     <Compile Include="Models\DynamicTeaserModel.cs" />

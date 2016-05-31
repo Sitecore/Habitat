@@ -38,6 +38,16 @@
       }
     }
 
+    public struct TeaserVideoContent
+    {
+      public static ID ID = new ID("{04075EB6-6D94-4BF2-9AEB-D29A89CDBA00}");
+
+      public struct Fields
+      {
+        public static readonly ID VideoLink = new ID("{AC846A16-FD3F-4243-A21F-668A21010C44}");
+      }
+    }
+
     public struct Icon
     {
       public static ID ID = new ID("{E90D00B6-0BE9-48E0-9C3F-047274024270}");
