@@ -8,11 +8,19 @@
 {
   var options = RenderingContext.Current.Rendering.GetCarouselOptions();
   <div class="owl-carousel" data-options='{"items": @options.ItemsShown, "navigation": @(options.ShowNavigation ? "true" : "false"), "navigationText": ["<", ">"], "autoPlay": @(options.AutoPlay ? "true" : "false") }'>
-    @for (var i = 0; i < Model.Items.Count(); i++)
+    @{ var items = Model.Items.ToList(); }
+    @for (var i = 0; i < items.Count; i++)
     {
       <div>
-        @Html.Sitecore().DynamicPlaceholder($"teaser-placeholder-{i + 1}")
+        @if (items[i].Item != null)
+        {
+          @Html.Sitecore().ViewRendering("TitleImageSummaryTeaser.cshtml", new { DataSource = items[i].Item.Paths.FullPath })
+        }
+        else
+        {
+          @Html.Sitecore().DynamicPlaceholder($"teaser-placeholder-{i + 1}")
+        }
       </div>
     }
   </div>
-  }
+      }

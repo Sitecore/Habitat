@@ -29,7 +29,6 @@
       return MainUtil.GetBool(rendering.Parameters[Constants.DynamicPlaceholdersLayoutParameters.UseStaticPlaceholderNames], false);
     }
 
-
     public static string GetImageUrlParameter(this Rendering rendering, string parameterName, MediaUrlOptions options = null)
     {
       if (rendering == null)
