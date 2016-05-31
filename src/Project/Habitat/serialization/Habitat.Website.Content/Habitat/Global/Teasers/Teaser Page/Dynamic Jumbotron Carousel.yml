@@ -1,0 +1,21 @@
+﻿---
+ID: "e1a22712-d965-4f2d-bb6c-23aeec7ccb27"
+Parent: "e151cdef-1a9f-449d-a87c-5cf5741fa857"
+Template: "f5f30cdc-9003-4015-84ec-c3a7e3e50d5e"
+Path: /sitecore/content/Habitat/Global/Teasers/Teaser Page/Dynamic Jumbotron Carousel
+DB: master
+SharedFields:
+- ID: "9e942565-677f-491c-a0ac-6b930e37342a"
+  Hint: Active
+  Value: 0
+- ID: "a33f9523-96c4-4e42-b6d7-1e861718d373"
+  Hint: Count
+  Value: 3
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160531T094909Z

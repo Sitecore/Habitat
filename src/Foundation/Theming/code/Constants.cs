@@ -15,6 +15,8 @@
     public struct IsFixedHeightLayoutParameters
     {
       public static string FixedHeight => "Fixed height";
+
+      public static string Height => "Height";
     }
 
     public struct CarouselLayoutParameters
