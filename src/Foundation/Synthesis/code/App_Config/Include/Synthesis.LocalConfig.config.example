@@ -1,0 +1,92 @@
+<!--
+	Synthesis Local Config patch example
+	This is a base file you can make a copy of to configure your Synthesis.
+	
+	This file contains essential settings you will almost always want to alter.
+	Additional settings are available to patch that are not listed here; 
+	see Synthesis.config and the other default config files for examples of what is available.
+	
+	So not alter default config files! Always patch your changes into your own patch (like a copy of this).
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+	<sitecore>
+		<synthesis>
+			<providers>
+				<templateInputProvider>
+					<!-- INCLUDED PATHS
+						One or more Template Specs to include templates from for code generation.
+						If no included paths are defined, nothing will be generated.
+						
+						Template Specs can be one of the following:
+						- Name ("Standard Template"). Matches any template regardless of location with this name.
+						- ID ("{516F709D-C3E4-4652-868F-6C2AAD9921A1}"). Matches a template or template folder (includes all children) with the given ID.
+						- Path ("/sitecore/Templates/My Template"). Matches a path in Sitecore. If a folder, applies to all children. If a template, applies to the specific template.
+						- Wildcard ("/sitecore/Templates/*/Foo", "Foo*"). Matches any template with a name or path that the wildcard matches.
+						
+						When using UseTemplatePathForNamespace = true, make sure the 
+						TemplatePathRoot setting is configured to be at a higher level
+						than all the included paths to avoid confusing namespaces.
+						
+						IMPORTANT: You may use any element name to declare each path,
+						but you can't use the same element name more than once.
+					-->
+					<includedPaths hint="list:AddTemplatePath">
+						<sites>/sitecore/Templates/MyStuff</sites>
+					</includedPaths>
+				</templateInputProvider>
+				
+				<generatorParametersProvider>
+					<!--  ITEM NAMESPACE
+						The root namespace to use for the generated items.
+						E.g. your "Foo" template would be "Synthesis.Model.Concrete.Foo"
+						if this setting were set to "Synthesis.Model.Concrete"
+					-->
+					<ItemNamespace>Synthesis.Model.Concrete</ItemNamespace>
+
+					<!--  INTERFACE NAMESPACE
+						The root namespace to use for the generated interfaces.
+						E.g. your "Foo" template would be "Synthesis.Model.IFooItem"
+						if this setting were set to "Synthesis.Model"
+					-->
+					<InterfaceNamespace>Synthesis.Model</InterfaceNamespace>
+
+					<!--  MODEL OUTPUT PATH
+						Path to write the output the generated code to. 
+						Must have write access. Must end in ".cs"
+						If the path begins with ~, it will be treated as site-root-relative, 
+						otherwise it will be treated as an absolute path.
+					
+						Escaping the site root path IS supported (i.e. ~/../MyProject/Model/Model.Concrete.cs)
+						sc.variable values (eg $(dataFolder)) are not supported here. If you need variable expansion 
+						see Synthesis.ModelOutputBasePath in Synthesis.config.
+					-->
+					<ModelOutputPath>~/Synthesis.Model.cs</ModelOutputPath>
+
+					<!-- TEMPLATE PATH ROOT
+						Sets the root Sitecore template path used to calculate relative output namespaces.
+						
+						For example if the InterfaceNamespace is "Foo.Model" and this is "/sitecore/templates"
+						and the "/sitecore/templates/Shared/Bar" template is generated, it will result in 
+						Foo.Model.Shared.IBarItem as the interface class name.
+					-->
+					<TemplatePathRoot>/sitecore/templates</TemplatePathRoot>
+				</generatorParametersProvider>
+
+				<!--  TYPE LIST PROVIDER
+					Provides a set of types that should be considered when looking for template types to synchronize or initialize
+				
+					In other words, this provider should return all types in the assemblies that Synthesis' generated content
+					lives in. It is appropriate for the provider to maintain an instance cache of these types as it will be invoked several times during initialization.
+					
+					IMPORTANT: You may use any element name to declare each assembly,
+					but you can't use the same element name more than once.
+				-->
+				<typeListProvider type="Synthesis.Configuration.ConfigurationTypeListProvider, Synthesis">
+					<assemblies hint="list:AddAssembly">
+						<myproject>MyProject.*</myproject>
+					</assemblies>
+				</typeListProvider>
+			</providers>
+		</synthesis>
+	</sitecore>
+</configuration>

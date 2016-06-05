@@ -40,8 +40,44 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Synthesis, Version=8.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Synthesis.Core.8.2.1-RC01\lib\net45\Synthesis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Synthesis.Mvc, Version=8.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Synthesis.Mvc.Core.8.2.1-RC01\lib\net45\Synthesis.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,22 +91,14 @@
     <Compile Include="HabitatModelRegistration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Synthesis\Source\Synthesis.Mvc\Synthesis.Mvc.csproj">
-      <Project>{97c803d2-5e32-4d5c-8ecb-ee49d759a953}</Project>
-      <Name>Synthesis.Mvc</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\..\..\Synthesis\Source\Synthesis\Synthesis.csproj">
-      <Project>{ebae2c10-079d-4eb1-9e46-82cec35d7f4b}</Project>
-      <Name>Synthesis</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\Foundation.Synthesis.config" />
     <Content Include="App_Config\Include\Synthesis.config" />
     <Content Include="App_Config\Include\Synthesis.ControlPanel.config" />
     <Content Include="App_Config\Include\Synthesis.Mvc.config" />
+    <Content Include="packages.config" />
+    <Content Include="App_Config\Include\Synthesis.LocalConfig.config.example" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="App_Config\Include\Synthesis.Startup.config" />
   </ItemGroup>

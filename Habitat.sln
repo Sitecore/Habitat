@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
@@ -189,6 +189,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.FieldEditor.Tests", "src\Foundation\FieldEditor\tests\Sitecore.Foundation.FieldEditor.Tests.csproj", "{F1585C81-8BFD-44D5-8601-C4A4CF5BEA33}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Teasers.Tests", "src\Feature\Teasers\tests\Sitecore.Feature.Teasers.Tests.csproj", "{E2E3E9FC-15EB-4212-A6BD-A0D9590541E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Synthesis", "Synthesis", "{1CC5F04F-877C-47E0-BE59-F24D02510DA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Synthesis", "src\Foundation\Synthesis\code\Sitecore.Foundation.Synthesis.csproj", "{BE451EDA-4956-4259-9873-23E808ACB240}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -596,6 +600,14 @@ Global
 		{E2E3E9FC-15EB-4212-A6BD-A0D9590541E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E2E3E9FC-15EB-4212-A6BD-A0D9590541E4}.Release|x64.ActiveCfg = Release|Any CPU
 		{E2E3E9FC-15EB-4212-A6BD-A0D9590541E4}.Release|x64.Build.0 = Release|Any CPU
+		{BE451EDA-4956-4259-9873-23E808ACB240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE451EDA-4956-4259-9873-23E808ACB240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE451EDA-4956-4259-9873-23E808ACB240}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BE451EDA-4956-4259-9873-23E808ACB240}.Debug|x64.Build.0 = Debug|Any CPU
+		{BE451EDA-4956-4259-9873-23E808ACB240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE451EDA-4956-4259-9873-23E808ACB240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE451EDA-4956-4259-9873-23E808ACB240}.Release|x64.ActiveCfg = Release|Any CPU
+		{BE451EDA-4956-4259-9873-23E808ACB240}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -683,5 +695,7 @@ Global
 		{812C16C9-1E8A-42DC-A1C0-6896D570F63A} = {6B260718-681F-41DB-AAFE-13BA15BB6711}
 		{F1585C81-8BFD-44D5-8601-C4A4CF5BEA33} = {6B260718-681F-41DB-AAFE-13BA15BB6711}
 		{E2E3E9FC-15EB-4212-A6BD-A0D9590541E4} = {8AE5D37C-D340-4D66-8BAE-48A7ED60BCE8}
+		{1CC5F04F-877C-47E0-BE59-F24D02510DA8} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
+		{BE451EDA-4956-4259-9873-23E808ACB240} = {1CC5F04F-877C-47E0-BE59-F24D02510DA8}
 	EndGlobalSection
 EndGlobal
