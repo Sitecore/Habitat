@@ -68,7 +68,7 @@
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="Synthesis, Version=8.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Synthesis.Core.8.2.1-RC01\lib\net45\Synthesis.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Synthesis.Core.8.2.1-RC02\lib\net45\Synthesis.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
