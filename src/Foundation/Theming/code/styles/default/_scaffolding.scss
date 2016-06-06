@@ -1,0 +1,123 @@
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+
+body {
+  background-color: #FFF;
+
+  &.sc-editor-enabled {
+    margin-top: 185px;
+  }
+
+
+  header {
+    &.header-fixed {
+      & + main {
+        padding-top: 82px;
+
+        @media all and (max-width: $screen-sm-max) {
+          padding-top: 78px;
+        }
+
+        @media all and (max-width: $screen-xs-max) {
+          padding-top: 70px;
+        }
+      }
+      &.header-has-top {
+        & + main {
+          padding-top: 118px;
+
+          @media all and (max-width: $screen-sm-max) {
+            padding-top: 78px;
+          }
+
+          @media all and (max-width: $screen-xs-max) {
+            padding-top: 70px;
+          }
+        }
+        &.header-logo-center {
+          & + main {
+            @media (min-width: $screen-md-min) {
+              padding-top: 165px;
+            }
+          }
+        }
+
+      }
+      &.header-logo-center {
+        & + main {
+          padding-top: 125px;
+
+          @media all and (max-width: $screen-sm-max) {
+            padding-top: 115px;
+          }
+
+          @media all and (max-width: $screen-xs-max) {
+            padding-top: 111px;
+          }
+
+        }
+      }
+      &.bg-transparent {
+        &.header-has-top {
+          & + main .jumbotron > *:nth-child(1) {
+            padding-top: 124px;
+          }
+        }
+        & + main {
+          padding-top: 0;
+          & .jumbotron > *:nth-child(1) {
+            padding-top: 82px;
+          }
+        }
+      }
+    }
+    &.bg-transparent {
+      background-color: rgba(0,0,0,.15) !important;
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#15000000', endColorstr='#15000000');
+    }
+  }
+
+  &.home {
+    .page-header {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+  }
+
+  &.header-top {
+
+  }
+
+  &.header-static {
+    #main-container {
+      padding-top: 0;
+    }
+  }
+
+  #main-container {
+    background-color: $main-bg;
+
+    main {
+      background-color: $main-bg;
+    }
+    .container-fluid, .container {
+      //padding:0; - This breaks the responsive grid.
+    }
+
+
+  }
+  &.pagelayout-fixed {
+    #main-container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: $container-lg;
+      .navbar {
+        &.navbar-fixed-top {
+          margin-left: auto;
+          margin-right: auto;
+          max-width: $container-lg;
+        }
+      }
+    }
+  }
+}

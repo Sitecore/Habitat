@@ -1,22 +1,25 @@
 ﻿---
-ID: 26b33deb-f1db-4338-b043-aaf2f90e04a3
-Parent: c41e1360-7356-4397-9126-cf27db1f600e
-Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
+ID: "26b33deb-f1db-4338-b043-aaf2f90e04a3"
+Parent: "c41e1360-7356-4397-9126-cf27db1f600e"
+Template: "2a3e91a0-7987-44b5-ab34-35c2d9de83b9"
 Path: /sitecore/layout/Renderings/Feature/Media/Page Header with Media
 DB: master
 SharedFields:
-- ID: 13f89250-ad6b-4548-882e-118a12c18094
+- ID: "13f89250-ad6b-4548-882e-118a12c18094"
   Hint: Parameters Template
-  Value: {B962A806-D708-4001-B0A3-3FA31F2263C5}
-- ID: 94069f66-609c-48b0-8281-521c30fb269d
+  Value: "{B962A806-D708-4001-B0A3-3FA31F2263C5}"
+- ID: "94069f66-609c-48b0-8281-521c30fb269d"
   Hint: Open Properties after Add
   Value: 1
-- ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: "<image mediaid=\"{3562E417-E541-4F54-848E-ECB0B855699A}\" />"
+- ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
   Hint: Controller Action
   Value: PageHeaderMedia
-- ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
+- ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
   Hint: Controller
-  Value: Sitecore.Feature.Media.Controllers.MediaController, Sitecore.Feature.Media
+  Value: Sitecore.Feature.Media.Controllers.MediaFeatureController, Sitecore.Feature.Media
 Languages:
 - Language: en
   Versions:

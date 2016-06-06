@@ -1,0 +1,8 @@
+﻿@model Sitecore.Feature.Demo.Models.ExperienceData
+
+<div class="panel-group" id="experiencedata">
+  @Html.Partial("_Visits", Model.Visits)
+  @Html.Partial("_PersonalInfo", Model.PersonalInfo)
+  @Html.Partial("_OnsiteBehavior", Model.OnsiteBehavior)
+  @Html.Partial("_Referral", Model.Referral)
+</div>

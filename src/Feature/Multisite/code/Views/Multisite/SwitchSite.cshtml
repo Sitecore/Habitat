@@ -16,7 +16,7 @@
     <i class="fa fa-home"></i>
   </a>
   <ul class="dropdown-menu">
-    @foreach (var site in Model.Items)
+    @foreach (var site in Model.Items.Where(i => i.ShowInMenu))
     {
       var cssClass = (site.IsCurrent ? "active" : "");
       <li class="@cssClass">

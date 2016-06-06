@@ -1,17 +1,20 @@
 ﻿---
-ID: 69b9c355-004b-4268-bb1e-2f725b8752b7
-Parent: 9ce7afd3-6b9f-4955-9b00-164b9c91ecd2
-Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
+ID: "69b9c355-004b-4268-bb1e-2f725b8752b7"
+Parent: "9ce7afd3-6b9f-4955-9b00-164b9c91ecd2"
+Template: "2a3e91a0-7987-44b5-ab34-35c2d9de83b9"
 Path: /sitecore/layout/Renderings/Feature/Navigation/Menu with links
 DB: master
 SharedFields:
-- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
-  Value: site:linkmenu
-- ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
+  Value: "site:linkmenu"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: "<image mediaid=\"{D9DDF883-571B-4987-A3A4-77DDB35E41AD}\" />"
+- ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
   Hint: Controller Action
   Value: LinkMenu
-- ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
+- ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
   Hint: Controller
   Value: Sitecore.Feature.Navigation.Controllers.NavigationController, Sitecore.Feature.Navigation
 Languages:
