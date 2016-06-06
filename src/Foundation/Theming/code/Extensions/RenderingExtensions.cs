@@ -34,6 +34,11 @@
       return isFixed;
     }
 
+    public static int GetHeight([NotNull] this Rendering rendering)
+    {
+      return MainUtil.GetInt(rendering.Parameters[Constants.IsFixedHeightLayoutParameters.Height] ?? "", 0);
+    }
+
     public static string GetContainerClass([NotNull] this Rendering rendering)
     {
       return rendering.IsContainerFluid() ? "container-fluid" : "container";

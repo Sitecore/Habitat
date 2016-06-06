@@ -107,6 +107,7 @@
   <ItemGroup>
     <Compile Include="Extensions\AutoDbDataAttribute.cs" />
     <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
+    <Compile Include="Extensions\AutoLanguageDbDataAttribute.cs" />
     <Compile Include="LanguageFactoryTests.cs" />
     <Compile Include="LanguageRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
