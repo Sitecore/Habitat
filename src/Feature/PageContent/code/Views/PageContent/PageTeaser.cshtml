@@ -3,6 +3,7 @@
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.Dictionary
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @if (!Model?.Item?.IsDerived(Templates.HasPageContent.ID) ?? true)
@@ -23,7 +24,7 @@
             @Html.Sitecore().Field(Templates.HasPageContent.Fields.Summary, Model.Item)
         </p>
         <a href="@Model.Item.Url()" class="btn btn-default">
-            @Html.Sitecore().DictionaryField("/Page Content/Page Teaser/Read more", "Read more")
+            @Html.Sitecore().Dictionary("/PageContent/Teaser/Read more", "Read more")
         </a>
     </div>
 </div>

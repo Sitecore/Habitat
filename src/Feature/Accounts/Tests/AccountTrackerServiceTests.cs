@@ -17,6 +17,7 @@
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
   using Sitecore.Foundation.SitecoreExtensions.Services;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class AccountTrackerServiceTests

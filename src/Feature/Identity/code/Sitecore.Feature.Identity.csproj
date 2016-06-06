@@ -136,6 +136,10 @@
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Theming\code\Sitecore.Foundation.Theming.csproj">
+      <Project>{98de0d1d-26f1-4cca-847c-4e0fc2dba5fc}</Project>
+      <Name>Sitecore.Foundation.Theming</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

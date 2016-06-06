@@ -1,9 +1,9 @@
-$max-xs: 767px;
+$screen-xs-max: 767px;
 
-$min-sm: $max-xs+1;
-$max-sm: 991px;
+$screen-sm-min: $screen-xs-max+1;
+$screen-sm-max: 991px;
 
-$min-md: $max-sm+1;
-$max-md: 1199px;
+$screen-md-min: $screen-sm-max+1;
+$screen-md-max: 1199px;
 
-$min-lg: $max-md+1;
+$screen-lg-min: $screen-md-max+1;

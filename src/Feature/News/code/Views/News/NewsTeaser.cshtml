@@ -3,6 +3,8 @@
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.Dictionary
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.NewsArticle.ID) ?? true)
 {
@@ -10,27 +12,29 @@
   return;
 }
 
-<div class="teaser teaser-default">
-  <h3 class="teaser-heading">
-    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, Model.Item)
-  </h3>
-  <div class="teaser-image">
+<div class="thumbnail @Model.Rendering.GetBackgroundClass() m-b-1">
+  <header class="thumbnail-header">
+    <span class="label">
+      @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new
+ {
+   format = "MMMM dd, yyyy"
+ })
+    </span>
+    <h3>
+      @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, Model.Item)
+    </h3>
+  </header>
+  <div>
     <a href="@Model.Item.Url()">
       @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image, Model.Item, mw: 750, cssClass: "img-responsive")
     </a>
   </div>
-  <div class="teaser-body">
-    <div class="metadata">
-      @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date, new
-                                                                {
-                                                                  format = "MMMM dd, yyyy"
-                                                                })
-    </div>
-    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, Model.Item)
-  </div>
-  <div class="teaser-footer">
+	<div class="caption">
+    <p>
+		@Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, Model.Item)
+    </p>
     <a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-default">
-      @Html.Sitecore().DictionaryField("/News/News Teaser/Read More", "Read more")
+      @Html.Sitecore().Dictionary("/news/news teaser/read more", "Read more")
     </a>
-  </div>
+	</div>
 </div>

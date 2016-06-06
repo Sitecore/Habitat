@@ -5817,6 +5817,3 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-.hover:not(:hover) .hover-only {
-  display: none; }
-

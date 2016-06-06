@@ -1,6 +1,7 @@
 ﻿@using Sitecore.Feature.Accounts
 @using Sitecore.Feature.Accounts.Models
 @using Sitecore.Feature.Accounts.Services
+@using Sitecore.Feature.Accounts.Texts
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.Dictionary
@@ -26,7 +27,7 @@
     <div class="dropdown-menu">
       @if (!(Sitecore.Context.IsLoggedIn && Sitecore.Context.PageMode.IsNormal))
       {
-        <h4>@DictionaryPhraseRepository.Current.Get("/Accounts/Accounts Menu/Login", "Login")</h4>
+        <h4>@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Login", "Login")</h4>
         <form id="loginModal">
           @Html.Partial("~/Views/Accounts/_Login.cshtml", new LoginInfo())
         </form>

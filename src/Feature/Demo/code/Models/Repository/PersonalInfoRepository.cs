@@ -101,10 +101,10 @@
       {
         formattedPhone += $"+{phoneNumber.CountryCode}";
       }
-      formattedPhone += string.Join(" ", formattedPhone, phoneNumber.Number).Trim();
+      formattedPhone = string.Join(" ", formattedPhone, phoneNumber.Number).Trim();
       if (!string.IsNullOrEmpty(phoneNumber.Extension))
       {
-        formattedPhone += string.Join("p", formattedPhone, phoneNumber.Extension).Trim();
+        formattedPhone = string.Join("x", formattedPhone, phoneNumber.Extension).Trim();
       }
 
       return formattedPhone;
@@ -130,19 +130,8 @@
 
     private string FormatAddress(IAddress address)
     {
-      var streetAddress = string.Join(Environment.NewLine, new
-                                                           {
-                                                             address.StreetLine1,
-                                                             address.StreetLine2,
-                                                             address.StreetLine3,
-                                                             address.StreetLine4
-                                                           }).Trim();
-      var cityAddress = string.Join(", ", new
-                                          {
-                                            address.City,
-                                            address.StateProvince,
-                                            address.PostalCode
-                                          }).Trim();
+      var streetAddress = string.Join(Environment.NewLine, (new List<string> { address.StreetLine1, address.StreetLine2, address.StreetLine3, address.StreetLine4}).Where(line=>!string.IsNullOrEmpty(line))).Trim();
+      var cityAddress = string.Join(", ", (new List<string> { address.City, address.StateProvince, address.PostalCode }).Where(line => !string.IsNullOrEmpty(line))).Trim();
       return string.Join(Environment.NewLine, streetAddress, cityAddress, address.Country).Trim();
     }
 

@@ -2,6 +2,7 @@
 {
   using System.Collections.Generic;
   using System.Linq;
+  using System.Web;
   using System.Web.Mvc;
   using FluentAssertions;
   using NSubstitute;
@@ -13,11 +14,20 @@
   using Sitecore.Feature.Accounts.Models;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
+  using Sitecore.Foundation.Dictionary.Repositories;
+  using Sitecore.Foundation.Testing;
+  using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Security;
   using Xunit;
 
   public class UserProfileServiceTests
   {
+    public UserProfileServiceTests()
+    {
+      HttpContext.Current = HttpContextMockFactory.Create();
+      HttpContext.Current.Items["DictionaryPhraseRepository.Current"] = Substitute.For<IDictionaryPhraseRepository>();
+    }
+
     [Theory, AutoDbDataWithExtension(typeof(AutoConfiguredNSubstituteCustomization))]
     public void GetUserDefaultProfileIdShouldReturnId([Frozen] Item item, IProfileSettingsService profileSettingsService, IUserProfileProvider userProfileProvider, [Greedy] UserProfileService userProfileService)
     {

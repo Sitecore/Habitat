@@ -3,6 +3,8 @@
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.Dictionary
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @if (!Model?.Item?.IsDerived(Templates.Employee.ID) ?? true)
@@ -11,82 +13,78 @@
   return;
 }
 
-<div class="teaser teaser-default employee-teaser">
-	<div class="teaser-heading">
-		<h3>
-			@Model.Item.Field(Templates.Person.Fields.Name)
-		</h3>
-		<p class="title metadata">@Model.Item.Field(Templates.Person.Fields.Title)</p>
-	</div>
-	<div class="teaser-image">
-		@Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 750, cssClass: "img-responsive")
-	</div>
-	<div class="teaser-body">
-		<p>@Model.Item.Field(Templates.Person.Fields.Summary)</p>
-		<ul class="nav nav-pills">
-			@if (Sitecore.Context.PageMode.IsPageEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.Telephone))
-			{
-				<li>
-					<a href="tel:@Model.Item[Templates.Employee.Fields.Telephone]">
-						<i class="fa fa-phone"></i> @Model.Item.Field(Templates.Employee.Fields.Telephone)
-					</a>
-				</li>
-			}
-			@if (Sitecore.Context.PageMode.IsPageEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.Mobile))
-			{
-				<li>
-					<a href="tel:@Model.Item[Templates.Employee.Fields.Mobile]">
-						<i class="fa fa-mobile"></i> @Model.Item.Field(Templates.Employee.Fields.Mobile)
-					</a>
-				</li>
-			}
-			@if (Sitecore.Context.PageMode.IsPageEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.Email))
-			{
-				<li>
-					<a href="mailto:@Model.Item[Templates.Employee.Fields.Email]">
-						<i class="fa fa-envelope"></i> @Model.Item.Field(Templates.Employee.Fields.Email)
-					</a>
-				</li>
-			}
-		</ul>
-		<ul class="nav nav-pills">
-			@if (Sitecore.Context.PageMode.IsPageEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.TwitterLink))
-			{
-				<li>
-					<a href="@Model.Item.LinkFieldUrl(Templates.Employee.Fields.TwitterLink)" target="_blank">
-						<i class="fa fa-twitter"></i>
-					</a>
-				</li>
-			}
-			@if (Sitecore.Context.PageMode.IsPageEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.FacebookLink))
-			{
-				<li>
-					<a href="@Model.Item.LinkFieldUrl(Templates.Employee.Fields.FacebookLink)" target="_blank">
-						<i class="fa fa-facebook"></i>
-					</a>
-				</li>
-			}
-			@if (Sitecore.Context.PageMode.IsPageEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.LinkedInLink))
-			{
-				<li>
-					<a href="@Model.Item.LinkFieldUrl(Templates.Employee.Fields.LinkedInLink)" target="_blank">
-						<i class="fa fa-linkedin"></i>
-					</a>
-				</li>
-			}
-			@if (Sitecore.Context.PageMode.IsPageEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.BlogLink))
-			{
-				<li>
-					<a href="@Model.Item.LinkFieldUrl(Templates.Employee.Fields.BlogLink)" target="_blank">
-						<i class="fa fa-book"></i>
-					</a>
-				</li>
-			}
-		</ul>
-	</div>
-	<div class="teaser-footer">
-		<a href="@Model.Item.Url()" class="btn btn-default btn-sm">
-			@Html.Sitecore().DictionaryField("/Person/Employee Contact Teaser/Read more", "Read more")
-		</a>
-	</div>
-</div>
+<aside class="@Model.Rendering.GetBackgroundClass()">
+  <div class="mosaic mosaic-bar-bottom mosaic-overlay-show">
+    <div class="mosaic-overlay">
+      <label>@Model.Item.Field(Templates.Person.Fields.Title)</label>
+      <h4>
+        @Model.Item.Field(Templates.Person.Fields.Name)
+      </h4>
+    </div>
+    <div class="mosaic-backdrop">
+      <a href="@Model.Item.Url()">
+        @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 750, cssClass: "img-responsive")
+      </a>
+    </div>
+  </div>
+
+  <div class="caption">
+    <ul class="list list-unstyled">
+      @if (Sitecore.Context.PageMode.IsExperienceEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.Telephone))
+      {
+        <li>
+          <a href="tel:@Model.Item[Templates.Employee.Fields.Telephone]" class="btn btn-link" role="button">
+            <span class="fa fa-phone fa-lg"></span> @Model.Item.Field(Templates.Employee.Fields.Telephone)
+          </a>
+        </li>
+      }
+      @if (Sitecore.Context.PageMode.IsExperienceEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.Mobile))
+      {
+        <li>
+          <a href="tel:@Model.Item[Templates.Employee.Fields.Mobile]" class="btn btn-link" role="button">
+            <span class="fa fa-mobile fa-lg"></span> @Model.Item.Field(Templates.Employee.Fields.Mobile)
+          </a>
+        </li>
+      }
+      @if (Sitecore.Context.PageMode.IsExperienceEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.Email))
+      {
+        <li>
+          <a href="mailto:@Model.Item[Templates.Employee.Fields.Email]" class="btn btn-link" role="button">
+            <span class="fa fa-envelope fa-lg"></span> @Model.Item.Field(Templates.Employee.Fields.Email)
+          </a>
+        </li>
+      }
+    </ul>
+    <div>
+      <span class="btn-group">
+        @if (Sitecore.Context.PageMode.IsExperienceEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.BlogLink))
+      {
+          <a href="@Model.Item.LinkFieldUrl(Templates.Employee.Fields.BlogLink)" target="_blank" class="btn btn-info">
+            <i class="fa fa-globe"></i>
+          </a>
+        }
+        @if (Sitecore.Context.PageMode.IsExperienceEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.TwitterLink))
+      {
+          <a href="@Model.Item.LinkFieldUrl(Templates.Employee.Fields.TwitterLink)" target="_blank" class="btn btn-social-icon btn-twitter">
+            <i class="fa fa-twitter"></i>
+          </a>
+        }
+        @if (Sitecore.Context.PageMode.IsExperienceEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.FacebookLink))
+      {
+          <a href="@Model.Item.LinkFieldUrl(Templates.Employee.Fields.FacebookLink)" target="_blank" class="btn btn-social-icon btn-facebook">
+            <i class="fa fa-facebook"></i>
+          </a>
+        }
+        @if (Sitecore.Context.PageMode.IsExperienceEditor || Model.Item.FieldHasValue(Templates.Employee.Fields.LinkedInLink))
+      {
+          <a href="@Model.Item.LinkFieldUrl(Templates.Employee.Fields.LinkedInLink)" target="_blank" class="btn btn-social-icon btn-linkedin">
+            <i class="fa fa-linkedin"></i>
+          </a>
+        }
+      </span>
+      <a href="@Model.Item.Url()" class="btn btn-default">
+        @Html.Sitecore().Dictionary("/Person/EmployeeContactTeaser/Read more", "Read more")
+      </a>
+    </div>
+  </div>
+</aside>

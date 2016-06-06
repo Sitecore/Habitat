@@ -17,6 +17,7 @@
   using Sitecore.Feature.Accounts.Repositories;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
+  using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Security.Accounts;
   using Sitecore.Security.Authentication;
   using Sitecore.Security.Domains;
@@ -25,7 +26,7 @@
   public class AccountsRepositoryTests
   {
     [Theory]
-    [AutoDbData]
+    [AutoFakeUserData]
     public void RestorePasswordShouldCallResetPassword(FakeMembershipUser user, MembershipProvider membershipProvider, AccountRepository repo)
     {
       user.ProviderName.Returns("fake");
@@ -42,7 +43,7 @@
 
 
     [Theory]
-    [AutoDbData]
+    [AutoFakeUserData]
     public void RestorePasswordShouldReturnsNewPassword(FakeMembershipUser user, MembershipProvider membershipProvider, AccountRepository repo)
     {
       user.ProviderName.Returns("fake");
@@ -217,7 +218,7 @@
     }
 
     [Theory]
-    [AutoDbData]
+    [AutoFakeUserData]
     public void RegisterShouldCreateUserWithEmailAndPassword(FakeMembershipUser user, MembershipProvider membershipProvider, RegistrationInfo registrationInfo, string userProfile, AccountRepository repository)
     {
       user.ProviderName.Returns("fake");
@@ -237,7 +238,7 @@
     }
 
     [Theory]
-    [AutoDbData]
+    [AutoFakeUserData]
     public void RegisterShouldCreateLoginUser(FakeMembershipUser user, [Substitute] MembershipProvider membershipProvider, [Substitute] AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository, string profileId)
     {
       user.ProviderName.Returns("fake");
@@ -260,7 +261,7 @@
     }
 
     [Theory]
-    [AutoDbData]
+    [AutoFakeUserData]
     public void Register_ValidUser_ShouldTrackRegistraionEvents(FakeMembershipUser user, [Substitute]MembershipProvider membershipProvider, [Substitute]AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, [Frozen]IAccountTrackerService accountTrackerService, AccountRepository repository, string profileId)
     {
       user.UserName.Returns("name");

@@ -5,7 +5,7 @@
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.Feature.Media.Infrastructure.Repositories;
+  using Sitecore.Feature.Media.Repositories;
   using Sitecore.Feature.Media.Tests.Infrastructure;
   using Sitecore.Foundation.Testing.Attributes;
   using Xunit;

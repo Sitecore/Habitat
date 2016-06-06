@@ -1,7 +1,6 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Extensions
 {
   using System;
-  using Sitecore;
   using Sitecore.Mvc.Presentation;
   using Sitecore.Resources.Media;
   using Sitecore.Xml;
@@ -23,6 +22,11 @@
 
       int returnValue;
       return !int.TryParse(parameter, out returnValue) ? defaultValue : returnValue;
+    }
+
+    public static bool GetUseStaticPlaceholderNames([NotNull] this Rendering rendering)
+    {
+      return MainUtil.GetBool(rendering.Parameters[Constants.DynamicPlaceholdersLayoutParameters.UseStaticPlaceholderNames], false);
     }
 
     public static string GetImageUrlParameter(this Rendering rendering, string parameterName, MediaUrlOptions options = null)

@@ -1,24 +1,27 @@
 ﻿---
-ID: 1149a3c7-c69a-4e6b-a6c3-32687ec2f8d4
-Parent: c41e1360-7356-4397-9126-cf27db1f600e
-Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
+ID: "1149a3c7-c69a-4e6b-a6c3-32687ec2f8d4"
+Parent: "c41e1360-7356-4397-9126-cf27db1f600e"
+Template: "2a3e91a0-7987-44b5-ab34-35c2d9de83b9"
 Path: /sitecore/layout/Renderings/Feature/Media/Section with Media
 DB: master
 SharedFields:
-- ID: 13f89250-ad6b-4548-882e-118a12c18094
+- ID: "13f89250-ad6b-4548-882e-118a12c18094"
   Hint: Parameters Template
-  Value: {B962A806-D708-4001-B0A3-3FA31F2263C5}
-- ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
+  Value: "{B962A806-D708-4001-B0A3-3FA31F2263C5}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: "<image mediaid=\"{A2AA26F9-520E-4DD8-84C6-22219E99EDE3}\" />"
+- ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
   Hint: Controller Action
   Value: SectionMedia
-- ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
+- ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
   Hint: Controller
-  Value: Sitecore.Feature.Media.Controllers.MediaController, Sitecore.Feature.Media
+  Value: Sitecore.Feature.Media.Controllers.MediaFeatureController, Sitecore.Feature.Media
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20160205T101855Z

@@ -1,10 +1,14 @@
-﻿@using Sitecore.Foundation.Dictionary
+﻿@using System.Globalization
+@using Sitecore.Feature.Demo.Texts
+@using Sitecore.Foundation.Dictionary
 @using Sitecore.Foundation.Dictionary.Repositories
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Sitecore.StringExtensions
 @model Sitecore.Feature.Demo.Models.Visits
 <div class="panel panel-primary">
-  <div class="panel-heading">
+  <div class="panel-heading" role="tab">
     <h3 class="panel-title">
-      <a href="#visitsPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
+      <a role="button" href="#visitsPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
         <span class="fa fa-heart"></span>
         @Html.Sitecore().DictionaryField("/Demo/Visits/Engagement", "Engagement")
         <span class="badge" title="@Html.Sitecore().Dictionary("/Demo/Visits/Engagement Value", "Engagement Value")" data-toggle="tooltip" data-placement="bottom">
@@ -23,7 +27,7 @@
       </a>
     </h3>
   </div>
-  <div id="visitsPanel" class="panel-collapse collapse">
+  <div id="visitsPanel" class="panel-collapse collapse" role="tabpanel">
     <div class="panel-body">
       <div class="media">
         <div class="media-left">
@@ -46,46 +50,40 @@
             @Html.Sitecore().DictionaryField("/Demo/Visits/Pages This Visit", "Pages seen in this visit:")
             <strong class="pull-right">@Model.TotalPageViews</strong>
           </h4>
-          <table class="table table-condensed table-borderless">
-            @foreach (var pageView in Model.PageViews)
-            {
-              <tr>
-                <td>@pageView.Path</td>
-                <td>
-                  @if (pageView.Duration == TimeSpan.Zero)
-                  {
-                    <span>-</span>
-                  }
-                  else
-                  {
-                    @pageView.Duration.ToString(@"mm\:ss")
-                  }
-                </td>
-                <td>
-                  @if (pageView.HasEngagementValue)
-                  {
-                    <span class="fa fa-heart" title="@Html.Sitecore().Dictionary("/Demo/Visits/Has Personalisation", "Page has engagement value")"></span>
-                  }
-                  @if (pageView.HasMvTest)
-                  {
-                    <span class="fa fa-flask" title="@Html.Sitecore().Dictionary("/Demo/Visits/Has Test", "Page has a test")"></span>
-                  }
-                  @if (pageView.HasPersonalisation)
-                  {
-                    <span class="fa fa-street-view" title="@Html.Sitecore().Dictionary("/Demo/Visits/Has Personalisation", "Page has personalisation")"></span>
-                  }
-                </td>
-              </tr>
-            }
-            @if (Model.TotalPageViews > Model.PageViews.Count())
-            {
-              <tr>
-                <td colspan="3">...</td>
-              </tr>
-            }
-          </table>
         </div>
       </div>
+      <table class="table table-condensed table-borderless">
+        @foreach (var pageView in Model.PageViews)
+        {
+          <tr>
+            <td class="text-muted text-nowrap">
+              @if (pageView.HasEngagementValue)
+              {
+                <span class="fa fa-heart" title="@Html.Sitecore().Dictionary("/Demo/Visits/Has Personalisation", "Page has engagement value")"></span>
+              }
+              @if (pageView.HasMvTest)
+              {
+                <span class="fa fa-flask" title="@Html.Sitecore().Dictionary("/Demo/Visits/Has Test", "Page has a test")"></span>
+              }
+              @if (pageView.HasPersonalisation)
+              {
+                <span class="fa fa-street-view" title="@Html.Sitecore().Dictionary("/Demo/Visits/Has Personalisation", "Page has personalisation")"></span>
+              }
+            </td>
+            <td class="text-nowrap" title="@pageView.FullPath">@pageView.Path</td>
+            <td>
+              @if (pageView.Duration == TimeSpan.Zero)
+              {
+                <span>-</span>
+              }
+              else
+              {
+                @pageView.Duration.ToString(@"mm\:ss")
+              }
+            </td>
+          </tr>
+        }
+      </table>
       <div class="media">
         <div class="media-left">
           <span class="fa fa-history"></span>
@@ -120,9 +118,7 @@
               @foreach (var state in Model.EngagementPlanStates)
               {
                 <tr>
-                  <td colspan="2">
-                    <small>@state.EngagementPlanTitle</small>
-                  </td>
+                  <td colspan="2"><small>@state.EngagementPlanTitle</small></td>
                 </tr>
                 <tr>
                   <td>@state.Date.ToString("dd-MM hh:mm")</td>

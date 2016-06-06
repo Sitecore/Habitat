@@ -1,34 +1,38 @@
 ﻿namespace Sitecore.Foundation.Installer
 {
+  using System;
   using System.Collections.Specialized;
-  using Sitecore.Foundation.Installer.XmlTransform;
+  using System.Diagnostics;
+  using System.Linq;
+  using Sitecore.Diagnostics;
   using Sitecore.Install.Framework;
 
   public class PostStep : IPostStep
   {
-    private readonly IXdtTransformEngine xdtTransformEngine;
-    private readonly IFilePathResolver filePathResolver;
-
-    public PostStep() : this(new XdtTransformEngine(),new FilePathResolver())
-    {
-    }
-
-    public PostStep(IXdtTransformEngine xdtTransformEngine, IFilePathResolver filePathResolver)
-    {
-      this.xdtTransformEngine = xdtTransformEngine;
-      this.filePathResolver = filePathResolver;
-    }
-
     public void Run(ITaskOutput output, NameValueCollection metaData)
     {
-      var webConfig = this.filePathResolver.MapPath("~/web.config");
-      var webConfigTransform = this.filePathResolver.MapPath("~/web.config.transform");
-      if (webConfigTransform == null)
-      {
-        return;
-      }
+      var getPostStepActionList = metaData["Attributes"].Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries).OrderBy(x=>x).Select(x=>x.Substring(x.IndexOf('=')+1));
 
-      this.xdtTransformEngine.ApplyConfigTransformation(webConfig, webConfigTransform, webConfig);
+      foreach (var postStepAction in getPostStepActionList)
+      {
+        try
+        {
+          var postStepActionType = Type.GetType(postStepAction);
+          if (postStepActionType == null)
+          {
+            throw new Exception($"Can't find specified type with name {postStepAction}");
+          }
+
+          Log.Info(postStepAction + " post step action was started", this);
+
+          var activator = (IPostStepAction)Activator.CreateInstance(postStepActionType);
+          activator.Run(metaData);
+        }
+        catch (Exception ex)
+        {
+          Log.Error(postStepAction + " post step action has failed", ex, this);
+        }
+      }
     }
   }
 }

@@ -1,21 +1,24 @@
 ﻿---
-ID: 0534f12c-804e-4532-a832-5d61fe9ec6ed
-Parent: c41e1360-7356-4397-9126-cf27db1f600e
-Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+ID: "0534f12c-804e-4532-a832-5d61fe9ec6ed"
+Parent: "c41e1360-7356-4397-9126-cf27db1f600e"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
 Path: /sitecore/layout/Renderings/Feature/Media/Video with Lightbox
 DB: master
 SharedFields:
-- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
   Hint: Path
-  Value: /Views/Media/LightboxVideo.cshtml
-- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  Value: /Views/MediaFeature/LightboxVideo.cshtml
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
-  Value: site:lightboxvideo
+  Value: "site:lightboxvideo"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: "<image mediaid=\"{DE10A098-50D8-40C6-ADC3-DFF480F88940}\" />"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150901T060522Z

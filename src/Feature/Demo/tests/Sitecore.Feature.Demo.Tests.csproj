@@ -74,12 +74,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.FakeDb, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.FakeDb.1.0.0\lib\net45\Sitecore.FakeDb.dll</HintPath>
+    <Reference Include="Sitecore.FakeDb, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.FakeDb.1.0.1\lib\net45\Sitecore.FakeDb.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.FakeDb.AutoFixture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.FakeDb.AutoFixture.1.0.0\lib\net45\Sitecore.FakeDb.AutoFixture.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.FakeDb.NSubstitute, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.FakeDb.NSubstitute.1.0.0\lib\net45\Sitecore.FakeDb.NSubstitute.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Kernel">
@@ -129,6 +133,7 @@
   <ItemGroup>
     <Compile Include="AutoProfileDbDataAttribute.cs" />
     <Compile Include="Controllers\DemoControllerTests.cs" />
+    <Compile Include="DemoContentItem.cs" />
     <Compile Include="Models\Repositories\CampaignRepositoryTests.cs" />
     <Compile Include="Models\Repositories\ReferralRepositoryTests.cs" />
     <Compile Include="Models\Repositories\VisitsRepositoryTests.cs" />
@@ -140,7 +145,9 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
@@ -149,6 +156,10 @@
     <ProjectReference Include="..\..\..\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj">
       <Project>{5CF5FA06-AB27-4DF5-A471-ED57EF3E4AE9}</Project>
       <Name>Sitecore.Foundation.Alerts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Dictionary\code\Sitecore.Foundation.Dictionary.csproj">
+      <Project>{0D6BA4D8-C469-4AE9-9EBB-93BDF7D7E78F}</Project>
+      <Name>Sitecore.Foundation.Dictionary</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>

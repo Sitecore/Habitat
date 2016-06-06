@@ -1,0 +1,33 @@
+mark {
+  background-color: $gray-light;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  small {
+    .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+      color: #FFF;
+    }
+  }
+}
+
+p {
+  font-family: 'Bitter';
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.lead {
+  line-height: 1.8;
+}
+
+li {
+  &.active {
+    color: $brand-primary;
+    font-weight: bold;
+    a {
+      color: $brand-primary;
+      font-weight: bold;
+    }
+  }
+}

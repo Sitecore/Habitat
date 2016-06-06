@@ -1,0 +1,18 @@
+﻿---
+ID: "e2d7d0ee-0b30-43c6-b509-9ed69abf36f0"
+Parent: "e151cdef-1a9f-449d-a87c-5cf5741fa857"
+Template: "f5f30cdc-9003-4015-84ec-c3a7e3e50d5e"
+Path: /sitecore/content/Habitat/Global/Teasers/Teaser Page/Teaser Carousel
+DB: master
+SharedFields:
+- ID: "a33f9523-96c4-4e42-b6d7-1e861718d373"
+  Hint: Count
+  Value: 6
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160322T051423Z

@@ -7,7 +7,7 @@
       <Revision />
       <License />
       <Comment />
-      <Attributes />
+      <Attributes>1 mongorestore=Sitecore.Foundation.Installer.MongoRestore.MongoRestoreAction, Sitecore.Foundation.Installer|2 xmltransform=Sitecore.Foundation.Installer.XmlTransform.XmlTransformAction, Sitecore.Foundation.Installer|3 enableaccounts=Sitecore.Foundation.Installer.AccountsEnableAction, Sitecore.Foundation.Installer|4 replacereportingdb=Sitecore.Foundation.Installer.ReportingDbReplace.ReplaceReportingDbAction, Sitecore.Foundation.Installer|</Attributes>
       <Readme />
       <Publisher />
       <PostStep>Sitecore.Foundation.Installer.PostStep, Sitecore.Foundation.Installer</PostStep>
@@ -69,20 +69,44 @@
       <Exclude />
       <Name>Habitat items</Name>
     </xitems>
-    <xfiles>
-      <Entries>
-        <x-item>/App_Config/Security/Domains.config</x-item>
-      </Entries>
+    <files>
       <Converter>
         <FileToEntryConverter>
           <Root>/</Root>
-          <Transforms />
+          <Transforms>
+            <InstallerConfigurationTransform>
+              <Options>
+                <BehaviourOptions>
+                  <ItemMode>Undefined</ItemMode>
+                  <ItemMergeMode>Undefined</ItemMergeMode>
+                </BehaviourOptions>
+              </Options>
+            </InstallerConfigurationTransform>
+          </Transforms>
         </FileToEntryConverter>
       </Converter>
-      <Include />
+      <Root>/temp/transforms</Root>
+      <Include>
+        <FileNameFilter>
+          <Pattern />
+          <AcceptDirectories>False</AcceptDirectories>
+        </FileNameFilter>
+        <FileDateFilter>
+          <FilterType>CreatedFilter</FilterType>
+          <ActionDateTo />
+          <ActionDateFrom />
+          <NotOlderThan />
+        </FileDateFilter>
+        <FileDateFilter>
+          <FilterType>ModifiedFilter</FilterType>
+          <ActionDateTo />
+          <ActionDateFrom />
+          <NotOlderThan />
+        </FileDateFilter>
+      </Include>
       <Exclude />
-      <Name>DomainsConfig</Name>
-    </xfiles>
+      <Name>transforms</Name>
+    </files>
   </Sources>
   <Converter>
     <TrivialConverter>

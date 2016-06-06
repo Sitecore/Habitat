@@ -26,7 +26,7 @@
     {
 
       var currentDefinition = this.siteContext.GetSiteDefinition(contextItem);
-      if (currentDefinition == null)
+      if (currentDefinition?.Item == null)
       {
         return null;
       }
