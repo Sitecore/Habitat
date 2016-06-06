@@ -3,12 +3,16 @@
 	using System.Collections.Generic;
 	using System.Linq;
 	using FluentAssertions;
+	using NSubstitute;
+	using Sitecore.ContentSearch.SearchTypes;
 	using Sitecore.Foundation.Indexing.Models;
 	using Sitecore.Feature.Person.Indexing;
 	using Sitecore.Data;
+	using Sitecore.Foundation.Testing.Attributes;
 	using Xunit;
 
-	public class PersonIndexingProviderTests
+
+  public class PersonIndexingProviderTests
 	{
 		[Fact]
 		public void SupportedTemplatesShouldReturnAtLeastOneTemplate()
@@ -35,5 +39,51 @@
 		{
 			return typeof(Templates).GetNestedTypes().Select(nt => nt.GetField("ID")).Where(f => f != null && f.FieldType == typeof(ID) && f.IsStatic).Select(f => (ID)f.GetValue(null)).ToArray();
 		}
-	}
+
+
+    [Theory]
+    [AutoDbData]
+    public void ContentType_ShouldBeEmployee(PersonIndexingProvider provider)
+    {
+      provider.ContentType.Should().Be("Employee");
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void SupportedTemplates_ContainsNewsArticleTemplate(PersonIndexingProvider provider)
+    {
+      provider.SupportedTemplates.Should().Contain(Templates.Employee.ID);
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void GetQueryPredicate_WrongTemplate_ShouldReturnFalse(PersonIndexingProvider provider, IQuery query)
+    {
+      provider.GetQueryPredicate(query).Compile().Invoke(new SearchResultItem()).Should().BeFalse();
+    }
+
+    [Theory]
+    [InlineAutoDbData("Summary")]
+    [InlineAutoDbData("Name")]
+    [InlineAutoDbData("Title")]
+    public void GetQueryPredicate_PersonItemWithSearchContent_ShouldReturnTrue(string fieldName, PersonIndexingProvider provider, IQuery query, string queryText)
+    {
+      var item = Substitute.For<SearchResultItem>();
+      query.QueryText.Returns(queryText);
+      item[fieldName].Returns(queryText);
+      provider.GetQueryPredicate(query).Compile().Invoke(item).Should().BeTrue();
+    }
+
+    [Theory]
+    [InlineAutoDbData("Summary")]
+    [InlineAutoDbData("Name")]
+    [InlineAutoDbData("Title")]
+    public void GetQueryPredicate_PersonItemWithWrongContent_ShouldReturnFalse(string fieldName, PersonIndexingProvider provider, IQuery query, string queryText, string contentText)
+    {
+      var item = Substitute.For<SearchResultItem>();
+      query.QueryText.Returns(queryText);
+      item[fieldName].Returns(contentText);
+      provider.GetQueryPredicate(query).Compile().Invoke(item).Should().BeFalse();
+    }
+  }
 }
