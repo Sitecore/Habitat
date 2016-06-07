@@ -16,19 +16,28 @@
   using Sitecore.Rules.Conditions.ItemConditions;
   using Xunit;
   using Ploeh.AutoFixture.AutoNSubstitute;
+  using Sitecore.Collections;
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.Data.Items;
+  using Sitecore.FakeDb.AutoFixture;
+  using Sitecore.FakeDb.Sites;
   using Sitecore.Feature.News.Indexing;
   using Sitecore.Foundation.Indexing.Models;
   using Sitecore.Foundation.Indexing.Repositories;
   using Sitecore.Search;
+  using Sitecore.Sites;
 
   public class NewsIndexingProviderTests
   {
     [Theory]
     [AutoDbData]
-    public void ContentType_ShouldBeNews(NewsIndexingProvider provider)
+    public void ContentType_ShouldBeNews(NewsIndexingProvider provider, [Content] Item dictionaryRoot)
     {
+      Context.Site = new FakeSiteContext(new StringDictionary()
+      {
+        ["dictionaryPath"] = dictionaryRoot.Paths.FullPath,
+        ["database"] = "master"
+      });
       provider.ContentType.Should().Be("News");
     }
 

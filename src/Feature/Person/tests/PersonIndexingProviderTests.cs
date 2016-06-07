@@ -4,10 +4,14 @@
 	using System.Linq;
 	using FluentAssertions;
 	using NSubstitute;
+	using Sitecore.Collections;
 	using Sitecore.ContentSearch.SearchTypes;
 	using Sitecore.Foundation.Indexing.Models;
 	using Sitecore.Feature.Person.Indexing;
 	using Sitecore.Data;
+	using Sitecore.Data.Items;
+	using Sitecore.FakeDb.AutoFixture;
+	using Sitecore.FakeDb.Sites;
 	using Sitecore.Foundation.Testing.Attributes;
 	using Xunit;
 
@@ -43,8 +47,13 @@
 
     [Theory]
     [AutoDbData]
-    public void ContentType_ShouldBeEmployee(PersonIndexingProvider provider)
+    public void ContentType_ShouldBeEmployee(PersonIndexingProvider provider, [Content] Item dictionaryRoot)
     {
+      Context.Site = new FakeSiteContext(new StringDictionary()
+      {
+        ["dictionaryPath"] = dictionaryRoot.Paths.FullPath,
+        ["database"] = "master"
+      });
       provider.ContentType.Should().Be("Employee");
     }
 
