@@ -1,11 +1,11 @@
-﻿@using Sitecore.Foundation.SitecoreExtensions.Repositories
+﻿@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.StringExtensions
 @model IEnumerable<Sitecore.Feature.Demo.Models.Profile>
 <div role="tabpanel" class="tab-pane @((bool)Html.ViewData["active"] ? "active" : "") m-t-1" id="@Html.ViewData["id"]">
   @if (!Model.Any())
   {
     <div class="alert alert-info">
-      @DictionaryRepository.Get("/Demo/OnsiteBehavior/NoProfiling", "You have not been profiled yet")
+      @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/No Profiling", "You have not been profiled yet")
     </div>
   }
   else

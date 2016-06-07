@@ -136,6 +136,10 @@
       <Project>{5CF5FA06-AB27-4DF5-A471-ED57EF3E4AE9}</Project>
       <Name>Sitecore.Foundation.Alerts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Dictionary\code\Sitecore.Foundation.Dictionary.csproj">
+      <Project>{0d6ba4d8-c469-4ae9-9ebb-93bdf7d7e78f}</Project>
+      <Name>Sitecore.Foundation.Dictionary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>

@@ -1,0 +1,21 @@
+﻿---
+ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
+Parent: "9474c138-6912-4664-b7d6-0f0e42fbf95f"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Foundation/Dictionary/DictionaryEntry/Dictionary/Phrase
+DB: master
+SharedFields:
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: "Single-Line Text"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160405T225512Z

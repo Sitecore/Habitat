@@ -5,7 +5,9 @@
   using System.Linq;
   using System.Text;
   using System.Threading.Tasks;
+  using System.Web;
   using FluentAssertions;
+  using NSubstitute;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.FakeDb;
@@ -13,10 +15,18 @@
   using Sitecore.Feature.News.Repositories;
   using Sitecore.Feature.News.Tests.Extensions;
   using Sitecore.Foundation.Alerts.Exceptions;
+  using Sitecore.Foundation.Dictionary.Repositories;
+  using Sitecore.Foundation.Testing;
   using Xunit;
 
   public class NewsRepositoryFactoryTests
   {
+    public NewsRepositoryFactoryTests()
+    {
+      HttpContext.Current = HttpContextMockFactory.Create();
+      HttpContext.Current.Items["DictionaryPhraseRepository.Current"] = Substitute.For<IDictionaryPhraseRepository>();
+    }
+
     [Theory]
     [AutoDbData]
     public void Create_ShouldReturnNewsRepository(NewsRepositoryFactory factory, Db db, string itemName, ID itemId)

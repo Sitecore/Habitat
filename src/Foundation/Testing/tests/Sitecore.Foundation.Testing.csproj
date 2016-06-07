@@ -117,7 +117,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\CoreDbAttribute.cs" />
     <Compile Include="Attributes\RegisterViewAttribute.cs" />
+    <Compile Include="Builders\CoreDbCustomization.cs" />
     <Compile Include="Builders\HtmlHelperBuilder.cs" />
     <Compile Include="Builders\HttpContextBuilder.cs" />
     <Compile Include="Commands\AddContentDbItemsCommand.cs" />

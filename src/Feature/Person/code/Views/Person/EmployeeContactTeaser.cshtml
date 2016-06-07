@@ -1,6 +1,7 @@
 ﻿@using Sitecore.Feature.Person
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.Foundation.Theming.Extensions
@@ -82,7 +83,7 @@
         }
       </span>
       <a href="@Model.Item.Url()" class="btn btn-default">
-        @DictionaryRepository.Get("/Person/EmployeeContactTeaser/Read more", "Read more")
+        @Html.Sitecore().Dictionary("/Person/EmployeeContactTeaser/Read more", "Read more")
       </a>
     </div>
   </div>

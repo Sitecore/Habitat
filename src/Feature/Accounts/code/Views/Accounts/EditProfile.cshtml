@@ -1,9 +1,7 @@
 ﻿@using System.Web.Mvc.Html
-@using Sitecore.Analytics.Tracking
-@using Sitecore.Feature.Accounts.Models
-@using Sitecore.Feature.Accounts.Texts
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Models
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.HtmlHelpers
 @using Sitecore.Mvc.Configuration
@@ -20,7 +18,7 @@
   <div class="form-group @Html.ValidationErrorFor(x => x.FirstName, "has-error")">
     @Html.LabelFor(x => x.FirstName, new { @class = "control-label" })
 
-    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", id = "firstName", @placeholder = Captions.PlaceholderEditProfileFirstName })
+    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", id = "firstName", @placeholder = Html.Sitecore().Dictionary("/Accounts/Edit Profile/Edit Profile First Name Placeholder", "Please enter your first name") })
 
     @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "help-block" }, "p")
   </div>
@@ -28,7 +26,7 @@
   <div class="form-group @Html.ValidationErrorFor(x => x.LastName, "has-error")">
     @Html.LabelFor(x => x.LastName, new { @class = "control-label" })
 
-    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", id = "lastName", @placeholder = Captions.PlaceholderEditProfileLastName })
+    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", id = "lastName", @placeholder = Html.Sitecore().Dictionary("/Accounts/Edit Profile/Edit Profile Last Name Placeholder", "Please enter your last name") })
 
     @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "help-block" }, "p")
   </div>
@@ -36,7 +34,7 @@
   <div class="form-group @Html.ValidationErrorFor(x => x.PhoneNumber, "has-error")">
     @Html.LabelFor(x => x.PhoneNumber, new { @class = "control-label" })
 
-    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", id = "phoneNumber", @placeholder = Captions.PlaceholderEditProfilePhone })
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", id = "phoneNumber", @placeholder = Html.Sitecore().Dictionary("/Accounts/Edit Profile/Edit Profile Phone Placeholder", "Please enter your contact phone number") })
 
     @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "help-block" }, "p")
   </div>
@@ -49,5 +47,5 @@
     @Html.ValidationMessageFor(x => x.Interest, "", new { @class = "help-block" }, "p")
 </div>
 
-    <input type="submit" class="btn btn-primary btn-lg btn-block" value="@Captions.Update" />
+    <input type="submit" class="btn btn-primary btn-lg btn-block" value="@Html.Sitecore().DictionaryField("/Accounts/Edit Profile/Update", "Update")" />
 }

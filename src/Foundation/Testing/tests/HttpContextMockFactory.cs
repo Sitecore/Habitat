@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Foundation.Testing
 {
+  using System.Collections.Generic;
   using System.IO;
   using System.Reflection;
   using System.Web;
@@ -10,7 +11,12 @@
     public static HttpContext Create()
     {
       var httpRequest = new HttpRequest("", "http://google.com/", "");
-
+      httpRequest.Browser = new HttpBrowserCapabilities();
+      httpRequest.Browser.Capabilities = new Dictionary<string, string>()
+      {
+        ["browser"]="IE"
+      };
+      
       return Create(httpRequest);
     }
 

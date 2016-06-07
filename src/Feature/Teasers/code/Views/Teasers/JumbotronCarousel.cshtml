@@ -1,6 +1,6 @@
 ﻿@using Sitecore.Feature.Teasers.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
-@using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Feature.Teasers.Models.DynamicTeaserModel
 
@@ -60,11 +60,11 @@
     <!-- Controls -->
     <a class="left carousel-control" href="#@carouselId" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">@DictionaryRepository.Get("/teaser/carousel/previous", "Previous")</span>
+      <span class="sr-only">@Html.Sitecore().Dictionary("/teaser/carousel/previous", "Previous")</span>
     </a>
     <a class="right carousel-control" href="#@carouselId" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">@DictionaryRepository.Get("/teaser/carousel/next", "Next")</span>
+      <span class="sr-only">@Html.Sitecore().Dictionary("/teaser/carousel/next", "Next")</span>
     </a>
   </div>
 }

@@ -9,7 +9,6 @@
 
   public class GetDatasourceLocationAndTemplateFromSite
   {
-    private const string DatasourceLocationFieldName = "Datasource Location";
     private readonly DatasourceProviderFactory providerFactory;
 
     public GetDatasourceLocationAndTemplateFromSite() : this(new DatasourceProviderFactory())
@@ -25,7 +24,7 @@
     {
       Assert.ArgumentNotNull(args, nameof(args));
 
-      var datasource = args.RenderingItem[DatasourceLocationFieldName];
+      var datasource = args.RenderingItem[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
       if (!DatasourceConfigurationService.IsSiteDatasourceLocation(datasource))
       {
         return;
@@ -38,7 +37,7 @@
     protected virtual void ResolveDatasource(GetRenderingDatasourceArgs args)
     {
       var contextItem = args.ContentDatabase.GetItem(args.ContextItemPath);
-      var source = args.RenderingItem["Datasource Location"];
+      var source = args.RenderingItem[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
       var name = DatasourceConfigurationService.GetSiteDatasourceConfigurationName(source);
       if (string.IsNullOrEmpty(name))
       {
@@ -69,7 +68,7 @@
     protected virtual void ResolveDatasourceTemplate(GetRenderingDatasourceArgs args)
     {
       var contextItem = args.ContentDatabase.GetItem(args.ContextItemPath);
-      var datasourceLocation = args.RenderingItem["Datasource Location"];
+      var datasourceLocation = args.RenderingItem[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
       var name = DatasourceConfigurationService.GetSiteDatasourceConfigurationName(datasourceLocation);
       if (string.IsNullOrEmpty(name))
       {

@@ -1,6 +1,6 @@
 ﻿@using Sitecore.Feature.Accounts
 @using Sitecore.Feature.Accounts.Services
-@using Sitecore.Feature.Accounts.Texts
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.HtmlHelpers
 @using Sitecore.Mvc
 @model Sitecore.Feature.Accounts.Models.LoginInfo
@@ -11,22 +11,22 @@
   @Html.ValidationSummary(true)
   <div class="form-group @Html.ValidationErrorFor(x=>x.Email, "has-error")">
     @Html.LabelFor(x => x.Email, new { @class = "control-label" })
-    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", id = "loginEmail", @placeholder = Captions.PlaceholderLoginEmail })
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", id = "loginEmail", @placeholder = Html.Sitecore().Dictionary("/Accounts/Login/Login E-mail Placeholder", "Enter your e-mail") })
     @Html.ValidationMessageFor(x => x.Email, "", new { @class = "help-block" }, "p")
   </div>
   <div class="form-group @Html.ValidationErrorFor(x=>x.Password, "has-error")">
-    @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "loginPassword", @placeholder = Captions.PlaceholderLoginPassword })
+    @Html.PasswordFor(x => x.Password, new { @class = "form-control", id = "loginPassword", @placeholder = Html.Sitecore().Dictionary("/Accounts/Login/Login Password Placeholder", "Enter your password") })
     @Html.LabelFor(x => x.Password, new { @class = "control-label" })
     @Html.ValidationMessageFor(x => x.Password, "", new { @class = "help-block" }, "p")
   </div>
   @Html.ValidationMessage("invalidCredentials", new { @class = "alert alert-danger" }, "div")
   <div class="row">
     <div class="col-lg-6">
-      <input type="submit" class="btn btn-primary btn-lg btn-block" value="@Captions.Login" />
+      <input type="submit" class="btn btn-primary btn-lg btn-block" value="@Html.Sitecore().Dictionary("/Accounts/Login/Login", "Login")" />
     </div>
     <div class="col-lg-6">
-      <a href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.RegisterPage)" class="btn btn-default btn-lg btn-block">@Captions.Register</a>
+      <a href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.RegisterPage)" class="btn btn-default btn-lg btn-block">@Html.Sitecore().DictionaryField("/Accounts/Login/Register", "Register")</a>
     </div>
   </div>
-  <a href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)" class="btn btn-link">@Captions.ForgotYourPassword</a>
+  <a href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)" class="btn btn-link">@Html.Sitecore().DictionaryField("/Accounts/Login/Forgot Your Password", "Forgot your password?")</a>
 }

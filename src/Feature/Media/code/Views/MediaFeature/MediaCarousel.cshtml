@@ -3,8 +3,8 @@
 @using Sitecore.Feature.Media.Repositories
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
-@using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.Foundation.Theming.Extensions
 @using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
@@ -68,10 +68,10 @@
   <!-- Controls -->
   <a class="left carousel-control" href="#@carouselId" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">@DictionaryRepository.Get("/media/carousel/previous", "Previous")</span>
+    <span class="sr-only">@Html.Sitecore().Dictionary("/media/carousel/previous", "Previous")</span>
   </a>
   <a class="right carousel-control" href="#@carouselId" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">@DictionaryRepository.Get("/media/carousel/next", "Next")</span>
+    <span class="sr-only">@Html.Sitecore().Dictionary("/media/carousel/next", "Next")</span>
   </a>
 </div>
