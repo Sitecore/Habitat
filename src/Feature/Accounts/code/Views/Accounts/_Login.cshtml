@@ -1,7 +1,6 @@
 ﻿@using Sitecore.Feature.Accounts
 @using Sitecore.Feature.Accounts.Services
-@using Sitecore.Foundation.Dictionary
-@using Sitecore.Foundation.Dictionary.Repositories
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.HtmlHelpers
 @using Sitecore.Mvc
 @model Sitecore.Feature.Accounts.Models.LoginInfo
@@ -16,7 +15,7 @@
                                    {
                                      @class = "form-control",
                                      id = "popupLoginEmail",
-                                     @placeholder = DictionaryPhraseRepository.Current.Get("/Accounts/Login/Login E-mail Placeholder", "Enter your e-mail")
+                                     @placeholder = Html.Sitecore().Dictionary("/Accounts/Login/Login E-mail Placeholder", "Enter your e-mail")
                                    })
     @Html.ValidationMessageFor(x => x.Email, "", new
                                                  {
@@ -32,7 +31,7 @@
                                        {
                                          @class = "form-control",
                                          id = "popupLoginPassword",
-                                         @placeholder = DictionaryPhraseRepository.Current.Get("/Accounts/Login/Login Password Placeholder", "Enter your password")
+                                         @placeholder = Html.Sitecore().Dictionary("/Accounts/Login/Login Password Placeholder", "Enter your password")
                                        })
     @Html.ValidationMessageFor(x => x.Password, "", new
                                                     {

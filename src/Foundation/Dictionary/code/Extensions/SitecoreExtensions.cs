@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.Dictionary
+﻿namespace Sitecore.Foundation.Dictionary.Extensions
 {
   using System.Web;
   using Sitecore.Foundation.Dictionary.Repositories;

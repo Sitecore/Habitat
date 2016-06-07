@@ -1,12 +1,7 @@
 ﻿@using Sitecore.Feature.Accounts
 @using Sitecore.Feature.Accounts.Models
 @using Sitecore.Feature.Accounts.Services
-@using Sitecore.Feature.Accounts.Texts
-@using Sitecore.Foundation.Alerts
-@using Sitecore.Foundation.Alerts.Extensions
-@using Sitecore.Foundation.Dictionary
-@using Sitecore.Foundation.Dictionary.Repositories
-@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @{
@@ -48,7 +43,7 @@
             <div class="form-control-static">@Sitecore.Context.User.Profile.Email</div>
           </div>
           <a class="btn btn-block btn-primary" href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Model.Item, Templates.AccountsSettings.Fields.AccountsDetailsPage)">@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Edit Details", "Edit details")</a>
-          <button type="submit" class="btn btn-block btn-default">@DictionaryPhraseRepository.Current.Get("/Accounts/Accounts Menu/Logout", "Logout")</button>
+          <button type="submit" class="btn btn-block btn-default">@Html.Sitecore().Dictionary("/Accounts/Accounts Menu/Logout", "Logout")</button>
         }
       }
     </div>

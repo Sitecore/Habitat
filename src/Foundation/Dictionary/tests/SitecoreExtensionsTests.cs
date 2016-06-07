@@ -6,6 +6,7 @@
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Sitecore.Data;
   using Sitecore.Data.Items;
+  using Sitecore.Foundation.Dictionary.Extensions;
   using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Foundation.Testing;
   using Sitecore.Foundation.Testing.Attributes;
