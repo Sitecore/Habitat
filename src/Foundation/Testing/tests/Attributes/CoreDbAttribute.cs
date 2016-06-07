@@ -1,10 +1,11 @@
-﻿namespace Sitecore.Feature.Accounts.Tests.Extensions
+﻿namespace Sitecore.Foundation.Testing.Attributes
 {
   using System;
   using System.Reflection;
   using Ploeh.AutoFixture;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.FakeDb;
+  using Sitecore.Foundation.Testing.Builders;
 
   [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = true)]
   public class CoreDbAttribute : CustomizeAttribute

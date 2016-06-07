@@ -1,4 +1,4 @@
-namespace Sitecore.Feature.Accounts.Tests.Extensions
+namespace Sitecore.Foundation.Testing.Builders
 {
   using System.Linq;
   using Ploeh.AutoFixture;

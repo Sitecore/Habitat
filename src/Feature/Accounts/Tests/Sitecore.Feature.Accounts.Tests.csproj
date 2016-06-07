@@ -175,8 +175,6 @@
     <Compile Include="ContactProfileServiceTests.cs" />
     <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="Extensions\AutoFakeUserDataAttribute.cs" />
-    <Compile Include="Extensions\CoreDbAttribute.cs" />
-    <Compile Include="Extensions\CoreDbCustomization.cs" />
     <Compile Include="Extensions\AutoEmailDataAttribute.cs" />
     <Compile Include="AccountSettingsServiceTests.cs" />
     <Compile Include="Extensions\RightKeysAttribute.cs" />
