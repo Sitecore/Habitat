@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
@@ -193,6 +193,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.FieldEditor.Tests", "src\Foundation\FieldEditor\tests\Sitecore.Foundation.FieldEditor.Tests.csproj", "{F1585C81-8BFD-44D5-8601-C4A4CF5BEA33}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Teasers.Tests", "src\Feature\Teasers\tests\Sitecore.Feature.Teasers.Tests.csproj", "{E2E3E9FC-15EB-4212-A6BD-A0D9590541E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.LocalDatasource.Tests", "src\Foundation\LocalDatasource\tests\Sitecore.Foundation.LocalDatasource.Tests.csproj", "{1E797ECB-D017-4ED6-8706-BC89B556F26C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -608,6 +610,14 @@ Global
 		{E2E3E9FC-15EB-4212-A6BD-A0D9590541E4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E2E3E9FC-15EB-4212-A6BD-A0D9590541E4}.Release|x64.ActiveCfg = Release|Any CPU
 		{E2E3E9FC-15EB-4212-A6BD-A0D9590541E4}.Release|x64.Build.0 = Release|Any CPU
+		{1E797ECB-D017-4ED6-8706-BC89B556F26C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E797ECB-D017-4ED6-8706-BC89B556F26C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E797ECB-D017-4ED6-8706-BC89B556F26C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1E797ECB-D017-4ED6-8706-BC89B556F26C}.Debug|x64.Build.0 = Debug|Any CPU
+		{1E797ECB-D017-4ED6-8706-BC89B556F26C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E797ECB-D017-4ED6-8706-BC89B556F26C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E797ECB-D017-4ED6-8706-BC89B556F26C}.Release|x64.ActiveCfg = Release|Any CPU
+		{1E797ECB-D017-4ED6-8706-BC89B556F26C}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -697,5 +707,6 @@ Global
 		{812C16C9-1E8A-42DC-A1C0-6896D570F63A} = {6B260718-681F-41DB-AAFE-13BA15BB6711}
 		{F1585C81-8BFD-44D5-8601-C4A4CF5BEA33} = {6B260718-681F-41DB-AAFE-13BA15BB6711}
 		{E2E3E9FC-15EB-4212-A6BD-A0D9590541E4} = {8AE5D37C-D340-4D66-8BAE-48A7ED60BCE8}
+		{1E797ECB-D017-4ED6-8706-BC89B556F26C} = {65673857-6BDF-408E-ACD8-417A0BCCAB7A}
 	EndGlobalSection
 EndGlobal
