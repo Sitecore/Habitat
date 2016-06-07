@@ -101,6 +101,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetLocalDatasourceLocationTests.cs" />
+    <Compile Include="UpdateLocalDatasourceReferencesService.cs" />
+    <Compile Include="ItemReferenceReplacerTests.cs" />
     <Compile Include="ItemExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
