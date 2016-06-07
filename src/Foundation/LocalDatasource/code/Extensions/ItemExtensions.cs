@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Sitecore.Foundation.LocalDatasource.Extensions
+﻿namespace Sitecore.Foundation.LocalDatasource.Extensions
 {
+  using System;
+  using System.Linq;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
@@ -34,7 +31,11 @@ namespace Sitecore.Foundation.LocalDatasource.Extensions
     public static Item[] GetLocalDatasourceDependencies(this Item item)
     {
       if (!item.HasLocalDatasourceFolder())
-        return new Item[] { };
+      {
+        return new Item[]
+        {
+        };
+      }
 
       var itemLinks = Globals.LinkDatabase.GetReferences(item).Where(r => (r.SourceFieldID == FieldIDs.LayoutField || r.SourceFieldID == FieldIDs.FinalLayoutField) && r.TargetDatabaseName == item.Database.Name);
       return itemLinks.Select(l => l.GetTargetItem()).Where(i => i != null && i.IsLocalDatasourceItem(item)).Distinct().ToArray();
@@ -46,7 +47,8 @@ namespace Sitecore.Foundation.LocalDatasource.Extensions
       {
         throw new ArgumentNullException(nameof(dataSourceItem));
       }
-      return dataSourceItem.Axes.IsDescendantOf(ofItem.GetLocalDatasourceFolder());
+      var datasourceFolder = ofItem.GetLocalDatasourceFolder();
+      return datasourceFolder != null && dataSourceItem.Axes.IsDescendantOf(datasourceFolder);
     }
 
     public static bool IsLocalDatasourceItem([NotNull] this Item dataSourceItem)
@@ -57,9 +59,10 @@ namespace Sitecore.Foundation.LocalDatasource.Extensions
       }
 
       if (MainUtil.IsID(Settings.LocalDatasourceFolderTemplate))
+      {
         return dataSourceItem.Parent?.TemplateID.Equals(ID.Parse(Settings.LocalDatasourceFolderTemplate)) ?? false;
-      else
-        return dataSourceItem.Parent?.TemplateName.Equals(Settings.LocalDatasourceFolderTemplate, StringComparison.InvariantCultureIgnoreCase) ?? false;
+      }
+      return dataSourceItem.Parent?.TemplateName.Equals(Settings.LocalDatasourceFolderTemplate, StringComparison.InvariantCultureIgnoreCase) ?? false;
     }
 
     public static Item GetParentLocalDatasourceFolder([NotNull] this Item dataSourceItem)
@@ -72,12 +75,10 @@ namespace Sitecore.Foundation.LocalDatasource.Extensions
       var template = dataSourceItem.Database.GetTemplate(Settings.LocalDatasourceFolderTemplate);
       if (template == null)
       {
-        Log.Warn($"Cannot find the local datasource folder template '{Settings.LocalDatasourceFolderTemplate}'", null);
+        Log.Warn($"Cannot find the local datasource folder template '{Settings.LocalDatasourceFolderTemplate}'", dataSourceItem);
         return null;
       }
       return dataSourceItem.Axes.GetAncestors().LastOrDefault(i => i.IsDerived(template.ID));
     }
-
   }
-
 }
