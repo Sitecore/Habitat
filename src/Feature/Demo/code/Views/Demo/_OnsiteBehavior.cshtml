@@ -1,12 +1,11 @@
-﻿@using Sitecore.Foundation.SitecoreExtensions.Repositories
-@using Sitecore.StringExtensions
+﻿@using Sitecore.Foundation.Dictionary.Extensions
 @model Sitecore.Feature.Demo.Models.OnsiteBehavior
 <div class="panel panel-primary">
   <div class="panel-heading" role="tab">
     <h4 class="panel-title">
       <a role="button" href="#onsiteBehaviorPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
         <span class="fa fa-bullseye"></span>
-        @DictionaryRepository.Get("/Demo/OnsiteBehavior/Title", "Onsite Behavior")
+        @Html.Sitecore().DictionaryField("/Demo/Onsite Behavior/Title", "Onsite Behavior")
         <span class="glyphicon glyphicon-chevron-down pull-right"></span>
       </a>
     </h4>
@@ -19,13 +18,13 @@
         </div>
         <div class="media-body ">
           <h4 class="media-title">
-            @DictionaryRepository.Get("/Demo/OnsiteBehavior/Profiling", "Profiling")
+            @Html.Sitecore().DictionaryField("/Demo/Onsite Behavior/Profiling", "Profiling")
           </h4>
           <div class="media-body">
             @if (!Model.HistoricProfiles.Any() && !Model.ActiveProfiles.Any())
             {
               <div class="alert alert-info">
-                @DictionaryRepository.Get("/Demo/OnsiteBehavior/NoProfiling", "You have not been profiled yet")
+                @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/No Profiling", "You have not been profiled yet")
               </div>
             }
             else
@@ -34,10 +33,10 @@
               {
                 <ul class="nav nav-tabs nav-justified">
                   <li class="active">
-                    <a href="#onSiteBehaviorProfileCurrent" data-toggle="tab">@DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Current Visit")</a>
+                    <a href="#onSiteBehaviorProfileCurrent" data-toggle="tab">@Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Current Visit", "Current Visit")</a>
                   </li>
                   <li>
-                    <a href="#onSiteBehaviorProfileHistoric" data-toggle="tab">@DictionaryRepository.Get("/Demo/OnsiteBehavior/Historic", "Historic")</a>
+                    <a href="#onSiteBehaviorProfileHistoric" data-toggle="tab">@Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Historic", "Historic")</a>
                   </li>
                 </ul>
               }
@@ -58,7 +57,7 @@
         </div>
         <div class="media-body ">
           <h4 class="media-title">
-            @DictionaryRepository.Get("/Demo/OnsiteBehavior/GoalsTriggered", "Triggered goals")
+            @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Goals Triggered", "Triggered goals")
             @if (Model.Goals.Any())
             {
               <strong class="pull-right">@Model.Goals.Count()</strong>
@@ -67,7 +66,7 @@
           @if (!Model.Goals.Any())
           {
             <div class="alert alert-info">
-              @DictionaryRepository.Get("/Demo/OnsiteBehavior/NoGoals", "You have triggered no goals so far")
+              @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/No Goals", "You have triggered no goals so far")
             </div>
           }
           else
@@ -77,7 +76,7 @@
               {
                 <li>
                   <div>
-                    <small>@(goal.IsCurrentVisit ? @DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Now") : goal.Date.ToString("dd-MM HH:MM"))</small>
+                    <small>@(goal.IsCurrentVisit ? @Html.Sitecore().Dictionary("//Demo/Onsite Behavior/Current Visit", "Now") : goal.Date.ToString("dd-MM HH:MM"))</small>
                   </div>
                     <div class="text-nowrap">
                       @goal.Title
@@ -98,7 +97,7 @@
         </div>
         <div class="media-body ">
           <h4 class="media-title">
-            @DictionaryRepository.Get("/Demo/OnsiteBehavior/Outcomes", "Outcomes")
+            @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Outcomes", "Outcomes")
             @if (Model.Outcomes.Any())
             {
               <strong class="pull-right">@Model.Outcomes.Count()</strong>
@@ -107,7 +106,7 @@
           @if (!Model.Outcomes.Any())
           {
             <div class="alert alert-info">
-              @DictionaryRepository.Get("/Demo/OnsiteBehavior/NoOutcomes", "You have reached no outcomes")
+              @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/No Outcomes", "You have reached no outcomes")
             </div>
           }
           else
@@ -116,7 +115,7 @@
               @foreach (var outcome in Model.Outcomes)
               {
                 <li>
-                  <div><small>@(!outcome.IsCurrentVisit ? outcome.Date.ToString("dd-MM HH:MM") : @DictionaryRepository.Get("/Demo/OnsiteBehavior/CurrentVisit", "Now"))</small></div>
+                  <div><small>@(!outcome.IsCurrentVisit ? outcome.Date.ToString("dd-MM HH:MM") : @Html.Sitecore().Dictionary("//Demo/Onsite Behavior/Current Visit", "Now"))</small></div>
                   <div><small>@outcome.OutcomeGroup</small></div>
                   <div>@outcome.Title</div>
                 </li>

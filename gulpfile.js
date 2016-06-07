@@ -128,6 +128,7 @@ var publishProjects = function (location, dest) {
           configuration: config.buildConfiguration,
           logCommand: false,
           verbosity: "minimal",
+          stdout: true,
           maxcpucount: 0,
           toolsVersion: 14.0,
           properties: {

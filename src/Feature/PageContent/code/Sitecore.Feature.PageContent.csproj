@@ -140,6 +140,10 @@
       <Project>{5CF5FA06-AB27-4DF5-A471-ED57EF3E4AE9}</Project>
       <Name>Sitecore.Foundation.Alerts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Dictionary\code\Sitecore.Foundation.Dictionary.csproj">
+      <Project>{0D6BA4D8-C469-4AE9-9EBB-93BDF7D7E78F}</Project>
+      <Name>Sitecore.Foundation.Dictionary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\Indexing\code\Sitecore.Foundation.Indexing.csproj">
       <Project>{80213F24-577F-4F0B-A3B8-62485EA4D2F3}</Project>
       <Name>Sitecore.Foundation.Indexing</Name>

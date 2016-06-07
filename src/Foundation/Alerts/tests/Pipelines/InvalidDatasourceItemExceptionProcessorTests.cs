@@ -2,10 +2,12 @@
 {
   using System;
   using System.Reflection;
+  using System.Web;
   using System.Web.Mvc;
   using FluentAssertions;
   using log4net.Appender;
   using log4net.Config;
+  using NSubstitute;
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Data;
@@ -13,6 +15,8 @@
   using Sitecore.Foundation.Alerts;
   using Sitecore.Foundation.Alerts.Exceptions;
   using Sitecore.Foundation.Alerts.Pipelines.MvcException;
+  using Sitecore.Foundation.Dictionary.Repositories;
+  using Sitecore.Foundation.Testing;
   using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Mvc.Pipelines.MvcEvents.Exception;
   using Sitecore.Sites;
@@ -20,6 +24,12 @@
 
   public class InvalidDatasourceItemExceptionProcessorTests
   {
+    public InvalidDatasourceItemExceptionProcessorTests()
+    {
+      HttpContext.Current = HttpContextMockFactory.Create();
+      HttpContext.Current.Items["DictionaryPhraseRepository.Current"] = Substitute.For<IDictionaryPhraseRepository>();
+    }
+
     [Theory]
     [AutoDbData]
     public void Process_HandledException_DontSetView(FakeSiteContext siteContext, InvalidDatasourceItemExceptionProcessor processor, [Modest]ExceptionContext exceptionContext, [Substitute]ExceptionArgs exceptionArgs)

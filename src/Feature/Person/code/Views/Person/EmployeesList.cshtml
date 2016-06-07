@@ -1,6 +1,7 @@
 ﻿@using Sitecore.Feature.Person
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Foundation.SitecoreExtensions.Rendering.QueryableDatasourceRenderingModel
@@ -48,7 +49,7 @@
                 </a>
               }
               <a href="@item.Url()" target="_blank" class="btn btn-primary text-uppercase">
-                @DictionaryRepository.Get("/Person/EmployeeList/Read More", "About...")
+                @Html.Sitecore().Dictionary("/Person/EmployeeList/Read More", "About...")
               </a>
             </div>
           </div>

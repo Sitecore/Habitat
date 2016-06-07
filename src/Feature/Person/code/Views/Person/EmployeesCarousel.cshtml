@@ -1,6 +1,7 @@
 ﻿@using Sitecore.Feature.Person
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.Foundation.Theming.Extensions
@@ -26,7 +27,7 @@
         </h4>
         <div class="btn-group-xs">
           <a href="@item.Url()" class="btn btn-default text-uppercase">
-            @DictionaryRepository.Get("/Person/EmployeeList/Read More", "Read more")
+            @Html.Sitecore().Dictionary("/Person/EmployeeList/Read More", "Read more")
           </a>
         </div>
       </div>

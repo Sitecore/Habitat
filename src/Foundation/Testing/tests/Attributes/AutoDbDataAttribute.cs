@@ -1,9 +1,12 @@
 ﻿namespace Sitecore.Foundation.Testing.Attributes
 {
+  using NSubstitute;
+  using Ploeh.AutoFixture;
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Kernel;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.FakeDb.AutoFixture;
+  using Sitecore.FakeDb.Security.Accounts;
   using Sitecore.Foundation.Testing.Builders;
   using Sitecore.Foundation.Testing.Commands;
 

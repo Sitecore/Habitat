@@ -1,7 +1,7 @@
 ﻿@using Sitecore.Feature.Identity
 @using Sitecore.Feature.Identity.Repositories
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
-@using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
 
@@ -14,7 +14,7 @@
 }
 
 <div class="well @Model.Rendering.GetBackgroundClass()">
-  <h4>@DictionaryRepository.Get("/identity/contact information/title", "Contact information")</h4>
+  <h4>@Html.Sitecore().Dictionary("/identity/contact information/title", "Contact information")</h4>
 
   <address>
     @if (Sitecore.Context.PageMode.IsExperienceEditor || identity.FieldHasValue(Templates.Identity.Fields.OrganisationName))
@@ -32,7 +32,7 @@
   @if (Sitecore.Context.PageMode.IsExperienceEditor || identity.FieldHasValue(Templates.Identity.Fields.OrganisationEmail))
   {
     <address>
-      <strong>@DictionaryRepository.Get("/identity/contact information/email", "Email")</strong><br>
+      <strong>@Html.Sitecore().Dictionary("/identity/contact information/email", "Email")</strong><br>
       @Html.Sitecore().Field(Templates.Identity.Fields.OrganisationEmail, identity)
     </address>
   }

@@ -42,12 +42,14 @@
       sourceProvider.GetDatasources(Arg.Any<string>(), Arg.Any<Item>()).Returns(sources);
       sourceProvider.GetDatasourceTemplate(Arg.Any<string>(), Arg.Any<Item>()).Returns(sourceTemplate);
       factory.GetProvider(Arg.Any<Database>()).Returns(sourceProvider);
+
       var setting = settingName.Replace("-", string.Empty);
-      renderingItem.Add(new DbField("Datasource Location") { { "en", $"site:{setting}" } });
+      renderingItem.Add(new DbField("Datasource Location", Templates.DatasourceConfiguration.Fields.DatasourceLocation) { { "en", $"site:{setting}" } });
       db.Add(renderingItem);
       var rendering = db.GetItem(renderingItem.ID);
       var args = new GetRenderingDatasourceArgs(rendering);
       processor.Process(args);
+      
       args.DatasourceRoots.Should().Contain(sources);
       args.Prototype.Should().Be(sourceTemplate);
     }
@@ -62,7 +64,7 @@
       factory.GetProvider(Arg.Any<Database>()).Returns((IDatasourceProvider)null);
       factory.GetFallbackProvider(Arg.Any<Database>()).Returns(sourceProvider);
       var setting = settingName.Replace("-", string.Empty);
-      renderingItem.Add(new DbField("Datasource Location") { { "en", $"site:{setting}" } });
+      renderingItem.Add(new DbField("Datasource Location", Templates.DatasourceConfiguration.Fields.DatasourceLocation) { { "en", $"site:{setting}" } });
       db.Add(renderingItem);
       var rendering = db.GetItem(renderingItem.ID);
       var args = new GetRenderingDatasourceArgs(rendering);

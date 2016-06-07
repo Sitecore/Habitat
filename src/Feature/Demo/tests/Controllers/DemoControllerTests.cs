@@ -2,6 +2,7 @@
 {
   using System.Collections.Generic;
   using System.Net;
+  using System.Web;
   using System.Web.Mvc;
   using FluentAssertions;
   using NSubstitute;
@@ -20,11 +21,19 @@
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.Foundation.Alerts.Exceptions;
+  using Sitecore.Foundation.Dictionary.Repositories;
+  using Sitecore.Foundation.Testing;
   using Sitecore.Mvc.Common;
   using Sitecore.Mvc.Presentation;
 
   public class DemoControllerTests
   {
+    public DemoControllerTests()
+    {
+      HttpContext.Current = HttpContextMockFactory.Create();
+      HttpContext.Current.Items["DictionaryPhraseRepository.Current"] = Substitute.For<IDictionaryPhraseRepository>();
+    }
+
     [Theory]
     [AutoDbData]
     public void DemoContent_RenderingContextItemInitialized_ShouldReturnDemoContentView(

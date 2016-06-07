@@ -4,6 +4,7 @@
   using System.Linq;
   using Sitecore.Analytics.Core;
   using Sitecore.Analytics.Tracking;
+  using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
 
   internal class PageViewRepository
@@ -41,7 +42,7 @@
       var pageName = RemoveLanguage(page).Replace("//", "/").Remove(0, 1).Replace(".aspx", "");
       if (pageName == string.Empty || this.IsLanguage(pageName))
       {
-        pageName = DictionaryRepository.Get("/Demo/PageView/Home", "Home");
+        pageName = DictionaryPhraseRepository.Current.Get("/Demo/PageView/Home", "Home");
       }
       return pageName;
     }

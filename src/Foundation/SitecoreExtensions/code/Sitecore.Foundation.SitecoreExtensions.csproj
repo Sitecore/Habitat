@@ -159,7 +159,6 @@
     <Compile Include="Model\SearchResult.cs" />
     <Compile Include="Rendering\QueryableDatasourceRenderingSettings.cs" />
     <Compile Include="Repositories\DatabaseRepository.cs" />
-    <Compile Include="Repositories\DictionaryRepository.cs" />
     <Compile Include="Repositories\FileRepository.cs" />
     <Compile Include="Repositories\ImageRepository.cs" />
     <Compile Include="Repositories\IRenderingPropertiesRepository.cs" />

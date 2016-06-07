@@ -10,11 +10,12 @@
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.Data;
+  using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Web.UI.WebControls;
 
   public class PersonIndexingProvider : ProviderBase, ISearchResultFormatter, IQueryPredicateProvider
   {
-    public string ContentType => DictionaryRepository.Get("/person/search/contenttype", "Employee");
+    public override string ContentType => DictionaryPhraseRepository.Current.Get("/Person/Search/Content Type", "Employee");
 
     public IEnumerable<ID> SupportedTemplates => new[]
     {

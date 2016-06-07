@@ -6,26 +6,20 @@
   using System.Linq.Expressions;
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.Data;
+  using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Foundation.Indexing.Infrastructure;
   using Sitecore.Foundation.Indexing.Models;
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Web.UI.WebControls;
 
   public class PageContentIndexingProvider : ProviderBase, ISearchResultFormatter, IQueryPredicateProvider
   {
-    public string ContentType => DictionaryRepository.Get("/pagecontent/search/contenttype", "Page");
+    public override string ContentType => DictionaryPhraseRepository.Current.Get("/Page Content/Search/Content Type", "Page");
 
     public IEnumerable<ID> SupportedTemplates => new[]
-    {
-      Templates.HasPageContent.ID
-    };
 
     public Expression<Func<SearchResultItem, bool>> GetQueryPredicate(IQuery query)
     {
-      var fieldNames = new[]
-      {
-        Templates.HasPageContent.Fields.Title_FieldName, Templates.HasPageContent.Fields.Summary_FieldName, Templates.HasPageContent.Fields.Body_FieldName
-      };
+      var fieldNames = new[] {Templates.HasPageContent.Fields.Title_FieldName, Templates.HasPageContent.Fields.Summary_FieldName, Templates.HasPageContent.Fields.Body_FieldName};
       return GetFreeTextPredicateService.GetFreeTextPredicate(fieldNames, query);
     }
 
