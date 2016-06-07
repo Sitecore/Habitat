@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sitecore.Foundation.LocalDatasource.Tests
+﻿namespace Sitecore.Foundation.LocalDatasource.Tests
 {
+  using System.Linq;
   using FluentAssertions;
   using Sitecore.Configuration;
   using Sitecore.Data;
@@ -21,10 +16,15 @@ namespace Sitecore.Foundation.LocalDatasource.Tests
   {
     [Theory]
     [AutoDbData]
-    public void Process_LocalDatasourceExists_ShouldResolveDatasourceRoot(GetLocalDatasourceLocation processor,Db db, [Content]Item contextItem)
+    public void Process_LocalDatasourceExists_ShouldResolveDatasourceRoot(GetLocalDatasourceLocation processor, Db db, [Content] Item contextItem)
     {
       //arrange
-      db.Add(new DbItem("rendering") { { Templates.RenderingOptions.Fields.SupportsLocalDatasource, "1"}});
+      db.Add(new DbItem("rendering")
+      {
+        {
+          Templates.RenderingOptions.Fields.SupportsLocalDatasource, "1"
+        }
+      });
 
       var datasourceFolder = contextItem.Add("_Local", contextItem.Template);
 
@@ -41,10 +41,15 @@ namespace Sitecore.Foundation.LocalDatasource.Tests
 
     [Theory]
     [AutoDbData]
-    public void Process_LocalDatasourceNotExist_ShouldCreateDatasourceRoot(GetLocalDatasourceLocation processor, Db db, [Content]Item contextItem, [Content]DbTemplate template)
+    public void Process_LocalDatasourceNotExist_ShouldCreateDatasourceRoot(GetLocalDatasourceLocation processor, Db db, [Content] Item contextItem, [Content] DbTemplate template)
     {
       //arrange
-      db.Add(new DbItem("rendering") { { Templates.RenderingOptions.Fields.SupportsLocalDatasource, "1" } });
+      db.Add(new DbItem("rendering")
+      {
+        {
+          Templates.RenderingOptions.Fields.SupportsLocalDatasource, "1"
+        }
+      });
 
       var renderingItem = db.GetItem("/sitecore/content/rendering");
       var getRenderingDatasourceArgs = new GetRenderingDatasourceArgs(renderingItem)
@@ -54,7 +59,9 @@ namespace Sitecore.Foundation.LocalDatasource.Tests
 
       //act
       using (new SettingsSwitcher("Foundation.LocalDatasource.LocalDatasourceFolderTemplate", template.ID.ToString()))
+      {
         processor.Process(getRenderingDatasourceArgs);
+      }
       //assert
       var datasourceFolder = contextItem.GetChildren().First();
       getRenderingDatasourceArgs.DatasourceRoots.First().ID.Should().Be(datasourceFolder.ID);
@@ -64,10 +71,15 @@ namespace Sitecore.Foundation.LocalDatasource.Tests
 
     [Theory]
     [AutoDbData]
-    public void Process_ContextItemNotSet_ShouldReturnEmptyRoots(GetLocalDatasourceLocation processor, Db db, [Content]Item contextItem, [Content]DbTemplate template)
+    public void Process_ContextItemNotSet_ShouldReturnEmptyRoots(GetLocalDatasourceLocation processor, Db db, [Content] Item contextItem, [Content] DbTemplate template)
     {
       //arrange
-      db.Add(new DbItem("rendering") { { Templates.RenderingOptions.Fields.SupportsLocalDatasource, "1" } });
+      db.Add(new DbItem("rendering")
+      {
+        {
+          Templates.RenderingOptions.Fields.SupportsLocalDatasource, "1"
+        }
+      });
 
       var renderingItem = db.GetItem("/sitecore/content/rendering");
       var getRenderingDatasourceArgs = new GetRenderingDatasourceArgs(renderingItem)
@@ -84,7 +96,7 @@ namespace Sitecore.Foundation.LocalDatasource.Tests
 
     [Theory]
     [AutoDbData]
-    public void Process_SupportsLocalDatasourceFieldNotSet_ShouldReturnEmptyRoots(GetLocalDatasourceLocation processor, Db db, [Content]Item renderingItem)
+    public void Process_SupportsLocalDatasourceFieldNotSet_ShouldReturnEmptyRoots(GetLocalDatasourceLocation processor, Db db, [Content] Item renderingItem)
     {
       var getRenderingDatasourceArgs = new GetRenderingDatasourceArgs(renderingItem);
 
@@ -97,10 +109,15 @@ namespace Sitecore.Foundation.LocalDatasource.Tests
 
     [Theory]
     [AutoDbData]
-    public void Process_DatasourceTemplateNotSet_ShouldReturnEmptyRoots(GetLocalDatasourceLocation processor, Db db, [Content]Item contextItem)
+    public void Process_DatasourceTemplateNotSet_ShouldReturnEmptyRoots(GetLocalDatasourceLocation processor, Db db, [Content] Item contextItem)
     {
       //arrange
-      db.Add(new DbItem("rendering") { { Templates.RenderingOptions.Fields.SupportsLocalDatasource, "1" } });
+      db.Add(new DbItem("rendering")
+      {
+        {
+          Templates.RenderingOptions.Fields.SupportsLocalDatasource, "1"
+        }
+      });
 
       var renderingItem = db.GetItem("/sitecore/content/rendering");
       var getRenderingDatasourceArgs = new GetRenderingDatasourceArgs(renderingItem)
@@ -110,10 +127,11 @@ namespace Sitecore.Foundation.LocalDatasource.Tests
 
       //act
       using (new SettingsSwitcher("Foundation.LocalDatasource.LocalDatasourceFolderTemplate", ID.NewID.ToString()))
+      {
         processor.Process(getRenderingDatasourceArgs);
+      }
       //assert
       getRenderingDatasourceArgs.DatasourceRoots.Should().BeEmpty();
     }
-
   }
 }

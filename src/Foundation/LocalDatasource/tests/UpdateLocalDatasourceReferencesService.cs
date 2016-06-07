@@ -1,21 +1,17 @@
 ﻿namespace Sitecore.Foundation.LocalDatasource.Tests
 {
-  using System;
   using System.Linq;
   using FluentAssertions;
   using NSubstitute;
-  using Sitecore.Configuration;
+  using Ploeh.AutoFixture.AutoNSubstitute;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.FakeDb;
-  using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.Foundation.LocalDatasource.Extensions;
+  using Sitecore.FakeDb.Links;
+  using Sitecore.Foundation.LocalDatasource.Services;
   using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Links;
   using Xunit;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Sitecore.Diagnostics;
-  using Sitecore.Foundation.LocalDatasource.Services;
 
   public class UpdateLocalDatasourceReferencesServiceTests
   {
@@ -25,12 +21,38 @@
     {
       var datasourceItemId = ID.NewID;
 
-      db.Add(new DbItem("source") {Children = { new DbItem("_Local") { new DbItem("DatasourceItem") }}, Fields = { "testField"}});;
-      db.Add(new DbItem("target") {Children = { new DbItem("_Local") { new DbItem("DatasourceItem") }}, Fields = { "testField"}});;
-      
-      
+      db.Add(new DbItem("source")
+      {
+        Children =
+        {
+          new DbItem("_Local")
+          {
+            new DbItem("DatasourceItem")
+          }
+        },
+        Fields =
+        {
+          "testField"
+        }
+      });
+      ;
+      db.Add(new DbItem("target")
+      {
+        Children =
+        {
+          new DbItem("_Local")
+          {
+            new DbItem("DatasourceItem")
+          }
+        },
+        Fields =
+        {
+          "testField"
+        }
+      });
+      ;
 
-     
+
       var sourceItem = db.GetItem("/sitecore/content/source");
       var targetItem = db.GetItem("/sitecore/content/target");
       var datasourceItem = db.GetItem("/sitecore/content/source/_Local/DatasourceItem");
@@ -41,7 +63,7 @@
       };
 
       linkDb.GetReferences(sourceItem).Returns(itemLinks.ToArray());
-      using (new Sitecore.FakeDb.Links.LinkDatabaseSwitcher(linkDb))
+      using (new LinkDatabaseSwitcher(linkDb))
       {
         using (new EditContext(targetItem))
         {
@@ -55,7 +77,5 @@
         targetItem["__Renderings"].Should().Be(expectedValue);
       }
     }
-
-    
   }
 }

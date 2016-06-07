@@ -199,6 +199,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Teasers.Tests", "src\Feature\Teasers\tests\Sitecore.Feature.Teasers.Tests.csproj", "{E2E3E9FC-15EB-4212-A6BD-A0D9590541E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.LocalDatasource.Tests", "src\Foundation\LocalDatasource\tests\Sitecore.Foundation.LocalDatasource.Tests.csproj", "{1E797ECB-D017-4ED6-8706-BC89B556F26C}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Dictionary.Tests", "src\Foundation\Dictionary\tests\Sitecore.Foundation.Dictionary.Tests.csproj", "{C6AED40E-22F8-49EC-AA3E-D9323E207A9D}"
 EndProject
 Global

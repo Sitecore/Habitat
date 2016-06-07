@@ -13,13 +13,16 @@
 
   public class PageContentIndexingProvider : ProviderBase, ISearchResultFormatter, IQueryPredicateProvider
   {
-    public override string ContentType => DictionaryPhraseRepository.Current.Get("/Page Content/Search/Content Type", "Page");
+    public  string ContentType => DictionaryPhraseRepository.Current.Get("/Page Content/Search/Content Type", "Page");
 
     public IEnumerable<ID> SupportedTemplates => new[]
+    {
+      Templates.HasPageContent.ID
+    };
 
     public Expression<Func<SearchResultItem, bool>> GetQueryPredicate(IQuery query)
     {
-      var fieldNames = new[] {Templates.HasPageContent.Fields.Title_FieldName, Templates.HasPageContent.Fields.Summary_FieldName, Templates.HasPageContent.Fields.Body_FieldName};
+      var fieldNames = new[] { Templates.HasPageContent.Fields.Title_FieldName, Templates.HasPageContent.Fields.Summary_FieldName, Templates.HasPageContent.Fields.Body_FieldName };
       return GetFreeTextPredicateService.GetFreeTextPredicate(fieldNames, query);
     }
 

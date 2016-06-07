@@ -13,9 +13,9 @@
 
   public class NewsIndexingProvider : ProviderBase, ISearchResultFormatter, IQueryPredicateProvider
   {
-    public override string ContentType => DictionaryPhraseRepository.Current.Get("/News/Search/Content Type", "News");
+    public string ContentType => DictionaryPhraseRepository.Current.Get("/News/Search/Content Type", "News");
 
-    public override IEnumerable<ID> SupportedTemplates => new[] {Templates.NewsArticle.ID};
+    public IEnumerable<ID> SupportedTemplates => new[] {Templates.NewsArticle.ID};
 
     public Expression<Func<SearchResultItem, bool>> GetQueryPredicate(IQuery query)
     {
