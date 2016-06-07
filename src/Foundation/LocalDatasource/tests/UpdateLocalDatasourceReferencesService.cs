@@ -1,4 +1,4 @@
-﻿namespace Sitecore.Foundation.Datasource.Tests
+﻿namespace Sitecore.Foundation.LocalDatasource.Tests
 {
   using System;
   using System.Linq;
