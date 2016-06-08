@@ -164,11 +164,11 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC4_Accounts module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC4_Accounts module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC4_AccountsModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC4_Accounts module", new string[] {
-                        "NeedImplementation"});
+                        "Ready"});
 #line 45
 this.ScenarioSetup(scenarioInfo);
 #line hidden
@@ -178,8 +178,6 @@ this.ScenarioSetup(scenarioInfo);
                         "Edit Profile"});
             table2.AddRow(new string[] {
                         "Forgot Password"});
-            table2.AddRow(new string[] {
-                        "Password"});
             table2.AddRow(new string[] {
                         "Login"});
             table2.AddRow(new string[] {
@@ -195,12 +193,12 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC5_Demo module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC5_Demo module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Bug")]
         public virtual void CompatibleRenderings_UC5_DemoModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC5_Demo module", new string[] {
-                        "NeedImplementation"});
-#line 59
+                        "Bug"});
+#line 58
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -209,8 +207,8 @@ this.ScenarioSetup(scenarioInfo);
                         "xDB Contact Details"});
             table3.AddRow(new string[] {
                         "xDB Visit Details"});
-#line 60
- testRunner.Then("<Feature/Demo> module contains compatible renderings", ((string)(null)), table3, "Then ");
+#line 59
+ testRunner.Then("Feature/Demo module contains compatible renderings", ((string)(null)), table3, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
@@ -218,7 +216,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Demo Content"});
             table4.AddRow(new string[] {
                         "xDB Panel"});
-#line 64
+#line 63
  testRunner.And("Feature/Demo module contains incompatible renderings", ((string)(null)), table4, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -227,19 +225,19 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC6_FAQ module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC6_FAQ module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC6_FAQModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC6_FAQ module", new string[] {
-                        "NeedImplementation"});
-#line 73
+                        "Ready"});
+#line 72
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
             table5.AddRow(new string[] {
                         "FAQ Accordion"});
-#line 74
+#line 73
  testRunner.Then("Feature/FAQ module contains incompatible renderings", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -248,29 +246,29 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC7_Identity module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC7_Identity module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC7_IdentityModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC7_Identity module", new string[] {
-                        "NeedImplementation"});
-#line 81
+                        "Ready"});
+#line 80
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
             table6.AddRow(new string[] {
                         "Contact Information"});
-#line 82
+#line 81
  testRunner.Then("Feature/Identity module contains incompatible renderings", ((string)(null)), table6, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                         "Compatible renderings"});
             table7.AddRow(new string[] {
-                        "Identity_Copyright"});
+                        "Copyright"});
             table7.AddRow(new string[] {
-                        "Identity_Logo"});
-#line 85
- testRunner.And("<Feature/Identity> module contains compatible renderings", ((string)(null)), table7, "And ");
+                        "Logo"});
+#line 84
+ testRunner.And("Feature/Identity module contains compatible renderings", ((string)(null)), table7, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -278,19 +276,19 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC8_Language")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC8_Language")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC8_Language()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC8_Language", new string[] {
-                        "NeedImplementation"});
-#line 93
+                        "Ready"});
+#line 92
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
             table8.AddRow(new string[] {
                         "Language menu"});
-#line 94
+#line 93
  testRunner.Then("Feature/Language module contains incompatible renderings", ((string)(null)), table8, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -299,20 +297,20 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC9_Maps module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC9_Maps module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC9_MapsModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC9_Maps module", new string[] {
-                        "NeedImplementation"});
-#line 101
+                        "Ready"});
+#line 100
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
             table9.AddRow(new string[] {
                         "Map"});
-#line 102
- testRunner.Then("Feature/Map module contains incompatible renderings", ((string)(null)), table9, "Then ");
+#line 101
+ testRunner.Then("Feature/Maps module contains incompatible renderings", ((string)(null)), table9, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -320,12 +318,12 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC10_Media module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC10_Media module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC10_MediaModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC10_Media module", new string[] {
-                        "NeedImplementation"});
-#line 109
+                        "Ready"});
+#line 108
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table10 = new TechTalk.SpecFlow.Table(new string[] {
@@ -334,8 +332,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Media Carousel"});
             table10.AddRow(new string[] {
                         "Media Gallery"});
-#line 110
- testRunner.Then("<Feature/Media> module contains compatible renderings", ((string)(null)), table10, "Then ");
+#line 109
+ testRunner.Then("Feature/Media module contains compatible renderings", ((string)(null)), table10, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table11 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
@@ -349,7 +347,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Section with Media"});
             table11.AddRow(new string[] {
                         "Video with Lightbox"});
-#line 114
+#line 113
  testRunner.And("Feature/Media module contains incompatible renderings", ((string)(null)), table11, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -358,19 +356,19 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC11_Metadata module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC11_Metadata module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC11_MetadataModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC11_Metadata module", new string[] {
-                        "NeedImplementation"});
-#line 125
+                        "Ready"});
+#line 124
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
             table12.AddRow(new string[] {
                         "HTML Metadata"});
-#line 126
+#line 125
  testRunner.Then("Feature/Metadata module contains incompatible renderings", ((string)(null)), table12, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -379,20 +377,20 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC12_Multisute module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC12_Multisute module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC12_MultisuteModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC12_Multisute module", new string[] {
-                        "NeedImplementation"});
-#line 133
+                        "Ready"});
+#line 132
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
             table13.AddRow(new string[] {
                         "Site Menu"});
-#line 134
- testRunner.Then("Feature/Multisute module contains incompatible renderings", ((string)(null)), table13, "Then ");
+#line 133
+ testRunner.Then("Feature/Multisite module contains incompatible renderings", ((string)(null)), table13, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -400,33 +398,28 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC13_Navigation module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC13_Navigation module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC13_NavigationModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC13_Navigation module", new string[] {
-                        "NeedImplementation"});
-#line 141
+                        "Ready"});
+#line 140
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table14 = new TechTalk.SpecFlow.Table(new string[] {
                         "Compatible renderings"});
             table14.AddRow(new string[] {
+                        "Breadcrumb"});
+            table14.AddRow(new string[] {
+                        "Primary Menu"});
+            table14.AddRow(new string[] {
+                        "Secondary Menu"});
+            table14.AddRow(new string[] {
                         "Menu with links"});
             table14.AddRow(new string[] {
                         "Navigation Links"});
-#line 142
- testRunner.Then("<Feature/Navigation> module contains compatible renderings", ((string)(null)), table14, "Then ");
-#line hidden
-            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Compatible renderings"});
-            table15.AddRow(new string[] {
-                        "Breadcrumb"});
-            table15.AddRow(new string[] {
-                        "Primary Menu"});
-            table15.AddRow(new string[] {
-                        "Secondary Menu"});
-#line 146
- testRunner.And("Feature/Navigation module contains incompatible renderings", ((string)(null)), table15, "And ");
+#line 141
+ testRunner.Then("Feature/Navigation module contains incompatible renderings", ((string)(null)), table14, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -434,35 +427,35 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC14_News module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC14_News module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Bug")]
         public virtual void CompatibleRenderings_UC14_NewsModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC14_News module", new string[] {
-                        "NeedImplementation"});
-#line 155
+                        "Bug"});
+#line 151
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table15 = new TechTalk.SpecFlow.Table(new string[] {
                         "Compatible renderings"});
-            table16.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "Latest News"});
-            table16.AddRow(new string[] {
+            table15.AddRow(new string[] {
                         "News List"});
-#line 156
- testRunner.Then("<Feature/News> module contains compatible renderings", ((string)(null)), table16, "Then ");
+#line 152
+ testRunner.Then("Feature/News module contains compatible renderings", ((string)(null)), table15, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table16 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
-            table17.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "News Content Header Title"});
-            table17.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "News Related Content"});
-            table17.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "News Article"});
-            table17.AddRow(new string[] {
+            table16.AddRow(new string[] {
                         "News Article Teaser"});
-#line 160
- testRunner.And("Feature/News module contains incompatible renderings", ((string)(null)), table17, "And ");
+#line 156
+ testRunner.And("Feature/News module contains incompatible renderings", ((string)(null)), table16, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -470,37 +463,37 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC15_PageContent module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC15_PageContent module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Bug")]
         public virtual void CompatibleRenderings_UC15_PageContentModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC15_PageContent module", new string[] {
-                        "NeedImplementation"});
-#line 171
+                        "Bug"});
+#line 167
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table17 = new TechTalk.SpecFlow.Table(new string[] {
                         "Compatible renderings"});
-            table18.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Page Body"});
-            table18.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Page Content Header Title"});
-            table18.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Page Image Header"});
-            table18.AddRow(new string[] {
+            table17.AddRow(new string[] {
                         "Page Teaser"});
-#line 172
- testRunner.Then("<Feature/PageContent> module contains compatible renderings", ((string)(null)), table18, "Then ");
+#line 168
+ testRunner.Then("Feature/PageContent module contains compatible renderings", ((string)(null)), table17, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table18 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
-            table19.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "Child Page List"});
-            table19.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "Page Title"});
-            table19.AddRow(new string[] {
+            table18.AddRow(new string[] {
                         "PageImage"});
-#line 178
- testRunner.And("Feature/PageContent module contains incompatible renderings", ((string)(null)), table19, "And ");
+#line 174
+ testRunner.And("Feature/PageContent module contains incompatible renderings", ((string)(null)), table18, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -508,39 +501,39 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC16_Person module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC16_Person module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC16_PersonModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC16_Person module", new string[] {
-                        "NeedImplementation"});
-#line 187
+                        "Ready"});
+#line 183
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table19 = new TechTalk.SpecFlow.Table(new string[] {
                         "Compatible renderings"});
-            table20.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Employee Contact Teaser"});
-            table20.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Employee Details"});
-            table20.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Employee Header Contact"});
-            table20.AddRow(new string[] {
+            table19.AddRow(new string[] {
                         "Employee Teaser"});
-#line 188
- testRunner.Then("<Feature/Person> module contains compatible renderings", ((string)(null)), table20, "Then ");
+#line 184
+ testRunner.Then("Feature/Person module contains compatible renderings", ((string)(null)), table19, "Then ");
 #line hidden
-            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
-            table21.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Employee Header"});
-            table21.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Employees Carousel"});
-            table21.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Employees List"});
-            table21.AddRow(new string[] {
+            table20.AddRow(new string[] {
                         "Quote"});
-#line 194
- testRunner.And("Feature/Person module contains incompatible renderings", ((string)(null)), table21, "And ");
+#line 190
+ testRunner.And("Feature/Person module contains incompatible renderings", ((string)(null)), table20, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -548,22 +541,27 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC17_Search module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC17_Search module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC17_SearchModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC17_Search module", new string[] {
-                        "NeedImplementation"});
-#line 209
+                        "Ready"});
+#line 205
 this.ScenarioSetup(scenarioInfo);
+#line hidden
+            TechTalk.SpecFlow.Table table21 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Compatible renderings"});
+            table21.AddRow(new string[] {
+                        "Paged Search Results"});
+            table21.AddRow(new string[] {
+                        "Search Results"});
+#line 206
+ testRunner.Then("Feature/Search module contains compatible renderings", ((string)(null)), table21, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table22 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
             table22.AddRow(new string[] {
                         "Global Search"});
-            table22.AddRow(new string[] {
-                        "Paged Search Results"});
-            table22.AddRow(new string[] {
-                        "Search Results"});
             table22.AddRow(new string[] {
                         "Search Results Header"});
 #line 210
@@ -575,12 +573,12 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC18_Social module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC18_Social module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC18_SocialModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC18_Social module", new string[] {
-                        "NeedImplementation"});
-#line 221
+                        "Ready"});
+#line 219
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table23 = new TechTalk.SpecFlow.Table(new string[] {
@@ -589,7 +587,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Facebook Open Graph Metadata"});
             table23.AddRow(new string[] {
                         "Twitter Feed"});
-#line 222
+#line 220
  testRunner.Then("Feature/Social module contains incompatible renderings", ((string)(null)), table23, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -598,12 +596,12 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC19_Teasers module")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC19_Teasers module")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Bug")]
         public virtual void CompatibleRenderings_UC19_TeasersModule()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC19_Teasers module", new string[] {
-                        "NeedImplementation"});
-#line 231
+                        "Bug"});
+#line 229
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table24 = new TechTalk.SpecFlow.Table(new string[] {
@@ -616,8 +614,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Content Teaser with Image and Summary"});
             table24.AddRow(new string[] {
                         "Content Teaser with Summary"});
-#line 232
- testRunner.Then("<Feature/Teasers> module contains compatible renderings", ((string)(null)), table24, "Then ");
+#line 230
+ testRunner.Then("Feature/Teasers module contains compatible renderings", ((string)(null)), table24, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table25 = new TechTalk.SpecFlow.Table(new string[] {
                         "Compatible renderings"});
@@ -625,8 +623,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Accordion"});
             table25.AddRow(new string[] {
                         "Tabs"});
-#line 238
- testRunner.And("<Feature/Teasers> module contains compatible renderings", ((string)(null)), table25, "And ");
+#line 236
+ testRunner.And("Feature/Teasers module contains compatible renderings", ((string)(null)), table25, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Compatible renderings"});
@@ -634,8 +632,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Jumbotron Carousel"});
             table26.AddRow(new string[] {
                         "Teaser Carousel"});
-#line 242
- testRunner.And("<Feature/Teasers> module contains compatible renderings", ((string)(null)), table26, "And ");
+#line 240
+ testRunner.And("Feature/Teasers module contains compatible renderings", ((string)(null)), table26, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
@@ -643,7 +641,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Headline"});
             table27.AddRow(new string[] {
                         "Call to Action Header"});
-#line 246
+#line 244
  testRunner.And("Feature/Teasers module contains incompatible renderings", ((string)(null)), table27, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -652,12 +650,12 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC20_Project common")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC20_Project common")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Bug")]
         public virtual void CompatibleRenderings_UC20_ProjectCommon()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC20_Project common", new string[] {
-                        "NeedImplementation"});
-#line 254
+                        "Bug"});
+#line 252
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
@@ -668,8 +666,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Article Aside Both"});
             table28.AddRow(new string[] {
                         "Article Aside Left"});
-#line 255
- testRunner.Then("<Project/Common> module contains compatible renderings", ((string)(null)), table28, "Then ");
+#line 253
+ testRunner.Then("Project/Common module contains compatible renderings", ((string)(null)), table28, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
@@ -685,7 +683,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Section"});
             table29.AddRow(new string[] {
                         "Footer"});
-#line 260
+#line 258
  testRunner.And("Project/Common module contains incompatible renderings", ((string)(null)), table29, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -694,12 +692,12 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC21_Project Section Columns")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC21_Project Section Columns")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Bug")]
         public virtual void CompatibleRenderings_UC21_ProjectSectionColumns()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC21_Project Section Columns", new string[] {
-                        "NeedImplementation"});
-#line 273
+                        "Bug"});
+#line 271
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
@@ -712,8 +710,8 @@ this.ScenarioSetup(scenarioInfo);
                         "2 Column 8-4"});
             table30.AddRow(new string[] {
                         "2 Column 9-3"});
-#line 274
- testRunner.Then("<Project/Common/Section Columns> module contains compatible renderings", ((string)(null)), table30, "Then ");
+#line 272
+ testRunner.Then("Project/Common/Section Columns module contains compatible renderings", ((string)(null)), table30, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Compatible renderings"});
@@ -721,8 +719,8 @@ this.ScenarioSetup(scenarioInfo);
                         "3 Column 3-3-6"});
             table31.AddRow(new string[] {
                         "3 Column 6-3-3"});
-#line 280
- testRunner.And("<Project/Common/Section Columns> module contains compatible renderings", ((string)(null)), table31, "And ");
+#line 278
+ testRunner.And("Project/Common/Section Columns module contains compatible renderings", ((string)(null)), table31, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
@@ -738,7 +736,7 @@ this.ScenarioSetup(scenarioInfo);
                         "4 Column 3-3-3-3"});
             table32.AddRow(new string[] {
                         "6 Column 2-2-2-2-2-2"});
-#line 284
+#line 282
  testRunner.And("Project/Common/Section Columns module contains incompatible renderings", ((string)(null)), table32, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -747,12 +745,12 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.FactAttribute(DisplayName="Compatible Renderings_UC22_Project Article Columns")]
         [Xunit.TraitAttribute("FeatureTitle", "Compatible Renderings")]
         [Xunit.TraitAttribute("Description", "Compatible Renderings_UC22_Project Article Columns")]
-        [Xunit.TraitAttribute("Category", "NeedImplementation")]
+        [Xunit.TraitAttribute("Category", "Ready")]
         public virtual void CompatibleRenderings_UC22_ProjectArticleColumns()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC22_Project Article Columns", new string[] {
-                        "NeedImplementation"});
-#line 298
+                        "Ready"});
+#line 296
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
@@ -765,8 +763,8 @@ this.ScenarioSetup(scenarioInfo);
                         "Inner 2 Column 6-6"});
             table33.AddRow(new string[] {
                         "Inner 2 Column 8-4"});
-#line 299
- testRunner.Then("<Project/Common/Section Columns> module contains compatible renderings", ((string)(null)), table33, "Then ");
+#line 297
+ testRunner.Then("Project/Common/Article Columns module contains compatible renderings", ((string)(null)), table33, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
