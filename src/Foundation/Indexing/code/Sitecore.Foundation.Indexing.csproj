@@ -129,11 +129,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="Infrastructure\IndexContentProviderBase.cs" />
-    <Compile Include="Infrastructure\IndexContentProviderRepository.cs" />
-    <Compile Include="Infrastructure\AllTemplatesComputedField.cs" />
-    <Compile Include="Infrastructure\FallbackIndexContentProvider.cs" />
-    <Compile Include="Infrastructure\HasPresentationComputedField.cs" />
+    <Compile Include="Services\GetFreeTextPredicateService.cs" />
+    <Compile Include="Infrastructure\Fields\HasSearchResultFormatterComputedField.cs" />
+    <Compile Include="Repositories\IndexingProviderRepository.cs" />
+    <Compile Include="Infrastructure\Fields\AllTemplatesComputedField.cs" />
+    <Compile Include="Infrastructure\Providers\FallbackIndexingProvider.cs" />
+    <Compile Include="Infrastructure\Fields\HasPresentationComputedField.cs" />
+    <Compile Include="Models\IQueryPredicateProvider.cs" />
+    <Compile Include="Models\ISearchResultFormatter.cs" />
     <Compile Include="Models\IndexedItem.cs" />
     <Compile Include="Models\IPageble.cs" />
     <Compile Include="Models\IQuery.cs" />
@@ -141,9 +144,9 @@
     <Compile Include="Models\ISearchResults.cs" />
     <Compile Include="Models\ISearchSettings.cs" />
     <Compile Include="Models\SearchResult.cs" />
-    <Compile Include="Models\SearchResultRepository.cs" />
+    <Compile Include="Models\SearchResultFactory.cs" />
     <Compile Include="Models\SearchResults.cs" />
-    <Compile Include="Models\SearchResultsRepository.cs" />
+    <Compile Include="Repositories\SearchResultsRepository.cs" />
     <Compile Include="Models\SearchSettingsBase.cs" />
     <Compile Include="Repositories\ISearchServiceRepository.cs" />
     <Compile Include="Repositories\ISearchSettingsRepository.cs" />

@@ -1,0 +1,52 @@
+﻿@using Sitecore.Feature.Person
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Foundation.Indexing.Models.ISearchResult
+<div class="media">
+  <div class="media-body ">
+    <div>
+      <span class="label label-info">@Model.ContentType</span>
+      <span class="label label-default">@Model.Item.Field(Templates.Person.Fields.Title)</span>
+    </div>
+    <h2 class="media-title">
+      <a href="@Model.Url">@Html.Raw(Model.Title)</a>
+    </h2>
+    @if (!string.IsNullOrWhiteSpace(Model.Description))
+    {
+      @Html.Raw(Model.Description)
+    }
+    <ul class="nav nav-pills">
+      @if (Model.Item.FieldHasValue(Templates.Employee.Fields.Telephone))
+      {
+        <li>
+          <a href="tel:@Model.Item[Templates.Employee.Fields.Telephone]">
+            <i class="fa fa-phone"></i> @Model.Item.Field(Templates.Employee.Fields.Telephone)
+          </a>
+        </li>
+      }
+      @if (Model.Item.FieldHasValue(Templates.Employee.Fields.Mobile))
+      {
+        <li>
+          <a href="tel:@Model.Item[Templates.Employee.Fields.Mobile]">
+            <i class="fa fa-mobile"></i> @Model.Item.Field(Templates.Employee.Fields.Mobile)
+          </a>
+        </li>
+      }
+      @if (Model.Item.FieldHasValue(Templates.Employee.Fields.Email))
+      {
+        <li>
+          <a href="mailto:@Model.Item[Templates.Employee.Fields.Email]">
+            <i class="fa fa-envelope"></i> @Model.Item.Field(Templates.Employee.Fields.Email)
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+  @if (Model.Item.FieldHasValue(Templates.Person.Fields.Picture))
+  {
+    <div class="media-left">
+      <a href="@Model.Url">
+        @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mw: 150)
+      </a>
+    </div>
+  }
+</div>

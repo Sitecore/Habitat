@@ -29,5 +29,7 @@ namespace Sitecore.Foundation.Indexing.Models
         this._url = value;
       }
     }
+
+    public string ViewName { get; set; }
   }
 }
