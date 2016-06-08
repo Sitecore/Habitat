@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace Sitecore.Foundation.Common.Specflow.Infrastructure
 {
   public static class ItemService
   {
     public const string LanguageRootPath = "/sitecore/system/Languages";
+    public const string RenderingsRootPath = "/sitecore/layout/Renderings";
 
     public static string GetNameFromPath(string path)
     {
@@ -17,6 +14,9 @@ namespace Sitecore.Foundation.Common.Specflow.Infrastructure
 
     public const string LanguageTemplateId = "/sitecore/templates/System/Language";
 
-
+    public static string GetModuleRenderingPath(string module, string renderingName)
+    {
+      return $"{RenderingsRootPath}/{module}/{renderingName}";
+    }
   }
 }
