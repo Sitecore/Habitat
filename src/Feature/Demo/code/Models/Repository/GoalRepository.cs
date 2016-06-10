@@ -23,6 +23,7 @@
 
     private IEnumerable<Goal> GetHistoric()
     {
+      Tracker.Current.Contact.LoadKeyBehaviorCache();
       var keyBehaviourCache = Tracker.Current.Contact.GetKeyBehaviorCache();
       foreach (var cachedGoal in keyBehaviourCache.Goals)
       {

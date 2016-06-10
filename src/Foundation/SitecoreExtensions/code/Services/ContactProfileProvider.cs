@@ -48,6 +48,7 @@
       {
         try
         {
+          Contact?.LoadKeyBehaviorCache();
           return Contact?.GetKeyBehaviorCache();
         }
         catch (Exception e)

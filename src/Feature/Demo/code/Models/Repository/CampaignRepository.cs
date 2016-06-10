@@ -51,6 +51,7 @@
 
     public IEnumerable<Campaign> GetHistoric()
     {
+      Tracker.Current.Contact.LoadKeyBehaviorCache();
       var keyBehaviourCache = Tracker.Current.Contact.GetKeyBehaviorCache();
       foreach (var cachedCampaign in keyBehaviourCache.Campaigns)
       {
