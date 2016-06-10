@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Maps", "sp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Forms.Specflow", "specs\Foundation.Forms\Sitecore.Foundation.Forms.Specflow\Sitecore.Foundation.Forms.Specflow.csproj", "{A2109083-3927-4B8D-A4E7-62930B9B99B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.LocalDatasource", "specs\Foundation.LocalDatasource\Sitecore.Foundation.LocalDatasource\Sitecore.Foundation.LocalDatasource.csproj", "{81A13371-FAB6-478D-B119-01CA4C9F26F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Indexing", "specs\Foundation.Indexing\Sitecore.Foundation.Indexing\Sitecore.Foundation.Indexing.csproj", "{DD436B0A-A184-4F16-99B8-C8D1396639BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{A2109083-3927-4B8D-A4E7-62930B9B99B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2109083-3927-4B8D-A4E7-62930B9B99B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2109083-3927-4B8D-A4E7-62930B9B99B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81A13371-FAB6-478D-B119-01CA4C9F26F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81A13371-FAB6-478D-B119-01CA4C9F26F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81A13371-FAB6-478D-B119-01CA4C9F26F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81A13371-FAB6-478D-B119-01CA4C9F26F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD436B0A-A184-4F16-99B8-C8D1396639BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD436B0A-A184-4F16-99B8-C8D1396639BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD436B0A-A184-4F16-99B8-C8D1396639BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD436B0A-A184-4F16-99B8-C8D1396639BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
