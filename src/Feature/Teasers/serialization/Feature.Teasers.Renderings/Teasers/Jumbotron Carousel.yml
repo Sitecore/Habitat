@@ -14,6 +14,10 @@ SharedFields:
 - ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
   Hint: Controller Action
   Value: JumbotronCarousel
+- ID: "e441abe7-2ca3-4640-ae26-3789967925d7"
+  Hint: Compatible Renderings
+  Type: Treelist
+  Value: "{5D35C31F-0770-4498-BAB8-C88BEF41F153}"
 - ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
   Hint: Controller
   Value: Sitecore.Feature.Teasers.Controller.TeasersController, Sitecore.Feature.Teasers

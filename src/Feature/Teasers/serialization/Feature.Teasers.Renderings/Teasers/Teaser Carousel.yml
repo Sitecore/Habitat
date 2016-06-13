@@ -17,7 +17,7 @@ SharedFields:
 - ID: "e441abe7-2ca3-4640-ae26-3789967925d7"
   Hint: Compatible Renderings
   Type: Treelist
-  Value: "{A25C9850-AAB7-46A6-84B7-0DFAB32FC357}"
+  Value: "{2A750168-7DBE-4995-B609-B08963579EB3}"
 - ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
   Hint: Controller
   Value: Sitecore.Feature.Teasers.Controller.TeasersController, Sitecore.Feature.Teasers
