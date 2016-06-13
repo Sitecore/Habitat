@@ -614,40 +614,45 @@ this.ScenarioSetup(scenarioInfo);
             table25.AddRow(new string[] {
                         "Call to Action"});
             table25.AddRow(new string[] {
-                        "Content Teaser with Image"});
-            table25.AddRow(new string[] {
-                        "Content Teaser with Image and Summary"});
-            table25.AddRow(new string[] {
-                        "Content Teaser with Summary"});
+                        "Call to Action Header"});
 #line 233
  testRunner.Then("Feature/Teasers module contains compatible renderings", ((string)(null)), table25, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table26 = new TechTalk.SpecFlow.Table(new string[] {
                         "Compatible renderings"});
             table26.AddRow(new string[] {
-                        "Accordion"});
+                        "Content Teaser with Image"});
             table26.AddRow(new string[] {
-                        "Tabs"});
-#line 239
- testRunner.And("Feature/Teasers module contains compatible renderings", ((string)(null)), table26, "And ");
+                        "Content Teaser with Image and Summary"});
+            table26.AddRow(new string[] {
+                        "Content Teaser with Summary"});
+#line 237
+  testRunner.Then("Feature/Teasers module contains compatible renderings", ((string)(null)), table26, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table27 = new TechTalk.SpecFlow.Table(new string[] {
                         "Compatible renderings"});
             table27.AddRow(new string[] {
-                        "Jumbotron Carousel"});
+                        "Accordion"});
             table27.AddRow(new string[] {
-                        "Teaser Carousel"});
-#line 243
+                        "Tabs"});
+#line 242
  testRunner.And("Feature/Teasers module contains compatible renderings", ((string)(null)), table27, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table28 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Compatible renderings"});
+            table28.AddRow(new string[] {
+                        "Jumbotron Carousel"});
+            table28.AddRow(new string[] {
+                        "Teaser Carousel"});
+#line 246
+ testRunner.And("Feature/Teasers module contains compatible renderings", ((string)(null)), table28, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
-            table28.AddRow(new string[] {
+            table29.AddRow(new string[] {
                         "Headline"});
-            table28.AddRow(new string[] {
-                        "Call to Action Header"});
-#line 247
- testRunner.And("Feature/Teasers module contains incompatible renderings", ((string)(null)), table28, "And ");
+#line 250
+ testRunner.And("Feature/Teasers module contains incompatible renderings", ((string)(null)), table29, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -660,36 +665,36 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC20_Project common", new string[] {
                         "Bug"});
-#line 255
+#line 257
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Compatible renderings"});
-            table29.AddRow(new string[] {
-                        "Article Aside Right"});
-            table29.AddRow(new string[] {
-                        "Article Aside Both"});
-            table29.AddRow(new string[] {
-                        "Article Aside Left"});
-#line 256
- testRunner.Then("Project/Common module contains compatible renderings", ((string)(null)), table29, "Then ");
-#line hidden
             TechTalk.SpecFlow.Table table30 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Compatible renderings"});
+            table30.AddRow(new string[] {
+                        "Article Aside Right"});
+            table30.AddRow(new string[] {
+                        "Article Aside Both"});
+            table30.AddRow(new string[] {
+                        "Article Aside Left"});
+#line 258
+ testRunner.Then("Project/Common module contains compatible renderings", ((string)(null)), table30, "Then ");
+#line hidden
+            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
-            table30.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "Main Navigation Activity"});
-            table30.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "Header Topbar"});
-            table30.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "Main Navigation"});
-            table30.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "Page Header"});
-            table30.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "Section"});
-            table30.AddRow(new string[] {
+            table31.AddRow(new string[] {
                         "Footer"});
-#line 261
- testRunner.And("Project/Common module contains incompatible renderings", ((string)(null)), table30, "And ");
+#line 263
+ testRunner.And("Project/Common module contains incompatible renderings", ((string)(null)), table31, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -702,47 +707,47 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC21_Project Section Columns", new string[] {
                         "Bug"});
-#line 274
+#line 276
 this.ScenarioSetup(scenarioInfo);
-#line hidden
-            TechTalk.SpecFlow.Table table31 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Compatible renderings"});
-            table31.AddRow(new string[] {
-                        "2 Column 3-9"});
-            table31.AddRow(new string[] {
-                        "2 Column 4-8"});
-            table31.AddRow(new string[] {
-                        "2 Column 8-4"});
-            table31.AddRow(new string[] {
-                        "2 Column 9-3"});
-#line 275
- testRunner.Then("Project/Common/Section Columns module contains compatible renderings", ((string)(null)), table31, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table32 = new TechTalk.SpecFlow.Table(new string[] {
                         "Compatible renderings"});
             table32.AddRow(new string[] {
-                        "3 Column 3-3-6"});
+                        "2 Column 3-9"});
             table32.AddRow(new string[] {
-                        "3 Column 6-3-3"});
-#line 281
- testRunner.And("Project/Common/Section Columns module contains compatible renderings", ((string)(null)), table32, "And ");
+                        "2 Column 4-8"});
+            table32.AddRow(new string[] {
+                        "2 Column 8-4"});
+            table32.AddRow(new string[] {
+                        "2 Column 9-3"});
+#line 277
+ testRunner.Then("Project/Common/Section Columns module contains compatible renderings", ((string)(null)), table32, "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table33 = new TechTalk.SpecFlow.Table(new string[] {
+                        "Compatible renderings"});
+            table33.AddRow(new string[] {
+                        "3 Column 3-3-6"});
+            table33.AddRow(new string[] {
+                        "3 Column 6-3-3"});
+#line 283
+ testRunner.And("Project/Common/Section Columns module contains compatible renderings", ((string)(null)), table33, "And ");
+#line hidden
+            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
                         "Incompatible renderings"});
-            table33.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "1 Column"});
-            table33.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "2 Column 6-6"});
-            table33.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "3 Column 4-4-4"});
-            table33.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "4 Column 2-2-4-4"});
-            table33.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "4 Column 3-3-3-3"});
-            table33.AddRow(new string[] {
+            table34.AddRow(new string[] {
                         "6 Column 2-2-2-2-2-2"});
-#line 285
- testRunner.And("Project/Common/Section Columns module contains incompatible renderings", ((string)(null)), table33, "And ");
+#line 287
+ testRunner.And("Project/Common/Section Columns module contains incompatible renderings", ((string)(null)), table34, "And ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -755,21 +760,21 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Compatible Renderings_UC22_Project Article Columns", new string[] {
                         "Ready"});
-#line 299
+#line 301
 this.ScenarioSetup(scenarioInfo);
 #line hidden
-            TechTalk.SpecFlow.Table table34 = new TechTalk.SpecFlow.Table(new string[] {
+            TechTalk.SpecFlow.Table table35 = new TechTalk.SpecFlow.Table(new string[] {
                         "Compatible renderings"});
-            table34.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "Inner 1 Column"});
-            table34.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "Inner 2 Column 4-8"});
-            table34.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "Inner 2 Column 6-6"});
-            table34.AddRow(new string[] {
+            table35.AddRow(new string[] {
                         "Inner 2 Column 8-4"});
-#line 300
- testRunner.Then("Project/Common/Article Columns module contains compatible renderings", ((string)(null)), table34, "Then ");
+#line 302
+ testRunner.Then("Project/Common/Article Columns module contains compatible renderings", ((string)(null)), table35, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

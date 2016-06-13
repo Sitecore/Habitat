@@ -231,8 +231,11 @@ Scenario: Compatible Renderings_UC18_Social module
 @Bug
 Scenario: Compatible Renderings_UC19_Teasers module
 	Then Feature/Teasers module contains compatible renderings
+	| Compatible renderings |
+	| Call to Action        |
+	| Call to Action Header |
+  Then Feature/Teasers module contains compatible renderings
 	| Compatible renderings                 |
-	| Call to Action                        |
 	| Content Teaser with Image             |
 	| Content Teaser with Image and Summary |
 	| Content Teaser with Summary           |
@@ -247,7 +250,6 @@ Scenario: Compatible Renderings_UC19_Teasers module
 	And Feature/Teasers module contains incompatible renderings
 	| Incompatible renderings |
 	| Headline                |
-	| Call to Action Header   |
 
 	 													
 #Project common cases

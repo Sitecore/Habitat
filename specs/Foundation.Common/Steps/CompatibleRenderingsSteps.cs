@@ -43,7 +43,8 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
         var compatibleRenderings = ContextExtensions.UtfService.GetItemFieldValue(rendering.Path, "Compatible Renderings", Database.Master);
         var compatibleRenderingIds = compatibleRenderings.Split(new[] {'|'}, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
 
-        compatibleRenderingIds.Should().BeEquivalentTo(otherRenderings.Select(x=>x.Id));
+        var compatibleRenderingsExpectedValue = string.Join("|", otherRenderings.Select(x=>x.Id));
+        compatibleRenderingIds.Should().BeEquivalentTo(otherRenderings.Select(x=>x.Id), "{0} should have {1} compatible renderings",rendering.Path, compatibleRenderingsExpectedValue);
       }
     }
   }
