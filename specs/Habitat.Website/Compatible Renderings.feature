@@ -153,12 +153,15 @@ Scenario: Compatible Renderings_UC14_News module
 	| Compatible renderings |
 	| Latest News           |
 	| News List             |
+	And Feature/News module contains compatible renderings
+	| Compatible renderings |
+	| News Article          |
+	| News Article Teaser   |
 	And Feature/News module contains incompatible renderings
 	| Incompatible renderings   |
 	| News Content Header Title |
 	| News Related Content      |
-	| News Article              |
-	| News Article Teaser       |
+	
 
 
 
