@@ -67,6 +67,14 @@
     <Reference Include="Sitecore.Mvc">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Synthesis, Version=8.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Synthesis.Core.8.2.1\lib\net45\Synthesis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Synthesis.Mvc, Version=8.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Synthesis.Mvc.Core.8.2.1\lib\net45\Synthesis.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -118,6 +126,8 @@
     <Content Include="Views\News\NewsTeaser.cshtml" />
     <Content Include="Views\News\NewsPageHeader.cshtml" />
     <Content Include="Views\News\NewsMetadata.cshtml" />
+    <Content Include="Views\News\SynthesisNewsList.cshtml" />
+    <Content Include="Views\News\SynthesisLatestNews.cshtml" />
     <None Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -133,6 +143,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Indexing\NewsIndexContentProvider.cs" />
+    <Compile Include="ModelRegistration.cs" />
+    <Compile Include="Models\Synthesis.Model.cs" />
     <Compile Include="Repositories\INewsRepository.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Repositories\INewsRepositoryFactory.cs" />
@@ -140,6 +152,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\NewsRepositoryFactory.cs" />
     <Compile Include="Repositories\SearchSettingsRepository.cs" />
+    <Compile Include="Repositories\SynthesisNewsRepository.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +167,10 @@
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Synthesis\code\Sitecore.Foundation.Synthesis.csproj">
+      <Project>{be451eda-4956-4259-9873-23e808acb240}</Project>
+      <Name>Sitecore.Foundation.Synthesis</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

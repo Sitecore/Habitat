@@ -5,7 +5,9 @@ using Sitecore.Foundation.Alerts.Exceptions;
 
 namespace Sitecore.Feature.News.Repositories
 {
-  public class NewsRepositoryFactory : INewsRepositoryFactory
+	using Sitecore.Feature.News.Models.Feature.News;
+
+	public class NewsRepositoryFactory : INewsRepositoryFactory
   {
     public INewsRepository Create(Item contextItem)
     {
@@ -19,4 +21,18 @@ namespace Sitecore.Feature.News.Repositories
       }
     }
   }
+	public class SynthesisNewsRepositoryFactory : ISynthesisNewsRepositoryFactory
+	{
+		public ISynthesisNewsRepository Create(I_NewsFolderItem newsFolder)
+		{
+			try
+			{
+				return new SynthesisNewsRepository(newsFolder);
+			}
+			catch (ArgumentException ex)
+			{
+				throw new InvalidDataSourceItemException($"{AlertTexts.InvalidDataSource}", ex);
+			}
+		}
+	}
 }

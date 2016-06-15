@@ -2,8 +2,15 @@
 
 namespace Sitecore.Feature.News.Repositories
 {
-  public interface INewsRepositoryFactory
-  {
-    INewsRepository Create(Item contextItem);
-  }
+	using Sitecore.Feature.News.Models.Feature.News;
+
+	public interface INewsRepositoryFactory
+	{
+		INewsRepository Create(Item contextItem);
+	}
+
+	public interface ISynthesisNewsRepositoryFactory
+	{
+		ISynthesisNewsRepository Create(I_NewsFolderItem newsFolder);
+	}
 }

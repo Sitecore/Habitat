@@ -1,0 +1,29 @@
+﻿@using Synthesis.Mvc.Helpers
+@model IEnumerable<Sitecore.Feature.News.Models.Feature.News.I_NewsArticleItem>
+
+<ul class="media-list media-list-divided">
+	@foreach (var item in Model)
+	{
+		<li class="media">
+			<div class="media-left">
+				<a href="@item.Url">
+					@Html.ImageFor(m => item.NewsImage, maxWidth: 150);
+				</a>
+			</div>
+
+			<div class="media-body">
+				<div class="label label-info">
+					@Html.DateTimeFor(m => item.NewsDate, format: "MMMM dd, yyyy")
+				</div>
+				<h3 class="media-title">
+					<a href="@item.Url">
+						@Html.TextFor(m => item.NewsTitle)
+					</a>
+				</h3>
+				<p>
+					@Html.TextFor(m => item.NewsSummary)
+				</p>
+			</div>
+		</li>
+	}
+</ul>

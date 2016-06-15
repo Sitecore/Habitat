@@ -10,7 +10,7 @@
 
 		protected override string ConfigurationName => this.GetType().Assembly.GetName().Name;
 
-		protected string HabitatModuleName => this.ConfigurationName.Substring(this.ConfigurationName.LastIndexOf(".", StringComparison.Ordinal) + 1);
+		protected virtual string HabitatModuleName => this.ConfigurationName.Substring(this.ConfigurationName.LastIndexOf(".", StringComparison.Ordinal) + 1);
 
 		protected override IEnumerable<string> IncludedTemplates
 		{

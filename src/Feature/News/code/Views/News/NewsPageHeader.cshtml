@@ -5,22 +5,44 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 @if (!Model?.Item?.IsDerived(Templates.NewsArticle.ID) ?? true)
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.NewsArticle.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
-  return;
+	@Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.NewsArticle.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+	return;
 }
 
 <div class="container">
-  <div class="label label-info">
-    <time>@Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new { format = "MMMM dd, yyyy" })</time>
-  </div>
-  <h1>
-    @Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, Model.Item)
-    @if (Model.Item.Fields[Templates.NewsArticle.Fields.Summary].HasValue || Sitecore.Context.PageMode.IsExperienceEditor)
-    {
-      <br />
-      <small>
-        @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, Model.Item)
-      </small>
-    }
-  </h1>
+	<div class="label label-info">
+		<time>@Html.Sitecore().Field(Templates.NewsArticle.Fields.Date.ToString(), new { format = "MMMM dd, yyyy" })</time>
+	</div>
+	<h1>
+		@Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, Model.Item)
+		@if (Model.Item.Fields[Templates.NewsArticle.Fields.Summary].HasValue || Sitecore.Context.PageMode.IsExperienceEditor)
+		{
+			<br />
+			<small>
+				@Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, Model.Item)
+			</small>
+		}
+	</h1>
 </div>
+
+
+@*
+@using Synthesis.Mvc.Helpers
+@model Sitecore.Feature.News.Models.Feature.News.I_NewsArticleItem
+
+<div class="container">
+	<div class="label label-info">
+		<time>@Html.DateTimeFor(m => m.NewsDate, format: "MMMM dd, yyyy")</time>
+	</div>
+	<h1>
+		@Html.TextFor(m => m.NewsTitle) (Synthesis)
+		@if (Model.NewsSummary.HasTextValue || Sitecore.Context.PageMode.IsExperienceEditor)
+		{
+			<br />
+			<small>
+				@Html.TextFor(m => m.NewsSummary)
+			</small>
+		}
+	</h1>
+</div>
+*@

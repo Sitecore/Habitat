@@ -24,7 +24,24 @@
       return !int.TryParse(parameter, out returnValue) ? defaultValue : returnValue;
     }
 
-    public static bool GetUseStaticPlaceholderNames([NotNull] this Rendering rendering)
+		public static int GetIntegerParameter(this RenderingParameters rendering, string parameterName, int defaultValue = 0)
+		{
+			if (rendering == null)
+			{
+				throw new ArgumentNullException(nameof(rendering));
+			}
+
+			var parameter = rendering[parameterName];
+			if (string.IsNullOrEmpty(parameter))
+			{
+				return defaultValue;
+			}
+
+			int returnValue;
+			return !int.TryParse(parameter, out returnValue) ? defaultValue : returnValue;
+		}
+
+		public static bool GetUseStaticPlaceholderNames([NotNull] this Rendering rendering)
     {
       return MainUtil.GetBool(rendering.Parameters[Constants.DynamicPlaceholdersLayoutParameters.UseStaticPlaceholderNames], false);
     }

@@ -1,0 +1,28 @@
+﻿@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Repositories
+@using Synthesis.Mvc.Helpers
+@model IEnumerable<Sitecore.Feature.News.Models.Feature.News.I_NewsArticleItem>
+
+<div class="well">
+	<h5 class="text-uppercase">@DictionaryRepository.Get("/news/latest news/title", "News")</h5>
+	<ul class="media-list">
+		@foreach (var item in Model)
+		{
+			<li class="media">
+				<div class="media-body">
+					<date>
+						@Html.DateTimeFor(m => item.NewsDate, format: "MMMM dd, yyyy")
+					</date>
+					<h4 class="media-heading">
+						<a href="@item.Url">
+							@Html.TextFor(m => item.NewsTitle)
+						</a>
+					</h4>
+				</div>
+			</li>
+		}
+	</ul>
+	<a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-default">
+		@DictionaryRepository.Get("/news/latest news/read more", "Read more")
+	</a>
+</div>

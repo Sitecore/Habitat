@@ -84,6 +84,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
@@ -95,6 +99,10 @@
     </Reference>
     <Reference Include="Sitecore.Mvc.Analytics">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Synthesis, Version=8.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Synthesis.Core.8.2.1\lib\net45\Synthesis.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -155,6 +163,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModelRegistration.cs" />
+    <Compile Include="Models\Synthesis.Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -179,14 +189,30 @@
     <Folder Include="Views\Website\Sublayouts\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Feature\Multisite\code\Sitecore.Feature.Multisite.csproj">
+      <Project>{64cb17ee-49bf-44a6-98f0-4f72ee89073b}</Project>
+      <Name>Sitecore.Feature.Multisite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\feature\News\code\Sitecore.Feature.News.csproj">
+      <Project>{1aad6f22-9b6d-4688-8ea5-1ae7044031f7}</Project>
+      <Name>Sitecore.Feature.News</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\Assets\code\Sitecore.Foundation.Assets.csproj">
       <Project>{7E46FF93-EE05-412C-AC47-2A59A13DA73C}</Project>
       <Name>Sitecore.Foundation.Assets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Multisite\code\Sitecore.Foundation.Multisite.csproj">
+      <Project>{cfa2ae87-7f8d-4ca6-bb72-b16380190db7}</Project>
+      <Name>Sitecore.Foundation.Multisite</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
       <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Synthesis\code\Sitecore.Foundation.Synthesis.csproj">
+      <Project>{be451eda-4956-4259-9873-23e808acb240}</Project>
+      <Name>Sitecore.Foundation.Synthesis</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

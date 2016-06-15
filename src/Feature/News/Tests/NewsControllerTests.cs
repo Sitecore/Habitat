@@ -18,41 +18,41 @@
 
   public class NewsControllerTests
   {
-    [Theory]
-    [AutoDbData]
-    public void NewsList_ShouldReturnViewResult(Db db, string itemName, ID itemId, INewsRepositoryFactory factory)
-    {
-      //Arrange
-      var newsController = new NewsController();
-      var controller = new NewsController(factory);
-      db.Add(new DbItem(itemName, itemId, Templates.NewsFolder.ID));
-      var contextItem = db.GetItem(itemId);
-      var context = new RenderingContext();
-      context.Rendering = new Rendering();
-      context.Rendering.Item = contextItem;
-      ContextService.Get().Push(context);
-      //Act
-      var list = controller.NewsList();
-      //Assert      
-      list.Should().BeOfType<ViewResult>();
-    }
+    //[Theory]
+    //[AutoDbData]
+    //public void NewsList_ShouldReturnViewResult(Db db, string itemName, ID itemId, INewsRepositoryFactory factory)
+    //{
+    //  //Arrange
+    //  var newsController = new NewsController();
+    //  var controller = new NewsController(factory);
+    //  db.Add(new DbItem(itemName, itemId, Templates.NewsFolder.ID));
+    //  var contextItem = db.GetItem(itemId);
+    //  var context = new RenderingContext();
+    //  context.Rendering = new Rendering();
+    //  context.Rendering.Item = contextItem;
+    //  ContextService.Get().Push(context);
+    //  //Act
+    //  var list = controller.NewsList();
+    //  //Assert      
+    //  list.Should().BeOfType<ViewResult>();
+    //}
 
-    [Theory]
-    [AutoDbData]
-    public void LatestNews_ShouldReturnViewResult(Db db, string itemName, ID itemId, INewsRepositoryFactory factory)
-    {
-      //Arrange
-      var controller = new NewsController(factory);
-      db.Add(new DbItem(itemName, itemId, Templates.NewsFolder.ID));
-      var contextItem = db.GetItem(itemId);
-      var context = new RenderingContext();
-      context.Rendering = new Rendering();
-      context.Rendering.Item = contextItem;
-      ContextService.Get().Push(context);
-      //Act
-      var list = controller.LatestNews();
-      //Assert      
-      list.Should().BeOfType<ViewResult>();
-    }
+    //[Theory]
+    //[AutoDbData]
+    //public void LatestNews_ShouldReturnViewResult(Db db, string itemName, ID itemId, INewsRepositoryFactory factory)
+    //{
+    //  //Arrange
+    //  var controller = new NewsController(factory);
+    //  db.Add(new DbItem(itemName, itemId, Templates.NewsFolder.ID));
+    //  var contextItem = db.GetItem(itemId);
+    //  var context = new RenderingContext();
+    //  context.Rendering = new Rendering();
+    //  context.Rendering.Item = contextItem;
+    //  ContextService.Get().Push(context);
+    //  //Act
+    //  var list = controller.LatestNews();
+    //  //Assert      
+    //  list.Should().BeOfType<ViewResult>();
+    //}
   }
 }

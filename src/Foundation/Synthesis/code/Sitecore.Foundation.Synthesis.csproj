@@ -45,11 +45,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Synthesis, Version=8.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Synthesis.Core.8.2.1-RC02\lib\net45\Synthesis.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Synthesis.Core.8.2.1\lib\net45\Synthesis.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Synthesis.Mvc, Version=8.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Synthesis.Mvc.Core.8.2.1-RC02\lib\net45\Synthesis.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Synthesis.Mvc.Core.8.2.1\lib\net45\Synthesis.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -86,6 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProjectModelRegistration.cs" />
     <Compile Include="FeatureModelRegistration.cs" />
     <Compile Include="FoundationModelRegistration.cs" />
     <Compile Include="HabitatModelRegistration.cs" />
