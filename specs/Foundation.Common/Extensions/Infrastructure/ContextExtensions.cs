@@ -1,4 +1,5 @@
-﻿using Sitecore.Foundation.Common.Specflow.TestHelperService;
+﻿using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
+using Sitecore.Foundation.Common.Specflow.TestHelperService;
 
 namespace Sitecore.Foundation.Common.Specflow.Infrastructure
 {

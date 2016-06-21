@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
 using TechTalk.SpecFlow;
 

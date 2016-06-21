@@ -41,12 +41,12 @@ Scenario: Multisite datasource_UC3_Query with condition
 
 
 @Ready
-Scenario: Multisite datasource_UC4_Relative path
+Scenario: Multisite datasource_UC4_Relative path has defined
 	Given Value set to item field
-	| ItemPath                                                | fieldName           | fieldValue |
-	| /sitecore/layout/Renderings/Feature/Social/Twitter Feed | Datasource Location | ./Models   |
-	And Experience Editor is opened on Social Page 
-	When User selects Twitter placeholder
+	| ItemPath                                                             | fieldName           | fieldValue |
+	| /sitecore/layout/Renderings/Feature/Media/Page Header Media Carousel | Datasource Location | ./Modules  |
+	And Experience Editor is opened on Main Page
+	When User selects Page Header Media Carousel placeholder
 	And User clicks Associate a content item with this component. button on scChromeToolbar undefined
 	Then Following items present in datasource tree
 	| Item name  |
@@ -55,8 +55,8 @@ Scenario: Multisite datasource_UC4_Relative path
 	| Foundation |
 #Following step just returns system to default value
 	And Value set to item field
-	| ItemPath                                                | fieldName           | fieldValue                              |
-	| /sitecore/layout/Renderings/Feature/Social/Twitter Feed | Datasource Location | /sitecore/content/Habitat/Global/Social |
+	| ItemPath                                                | fieldName           | fieldValue    |
+	| /sitecore/layout/Renderings/Feature/Social/Twitter Feed | Datasource Location | site:carousel |
 
 @Ready
 Scenario: Multisite datasource_UC5_Item id

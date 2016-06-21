@@ -3,6 +3,7 @@ using FluentAssertions;
 using OpenQA.Selenium.Support.UI;
 using Sitecore.Feature.Accounts.Specflow.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Extensions;
+using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
 using TechTalk.SpecFlow;
 

@@ -27,9 +27,9 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     }
 
     [When(@"Actor expands (.*) header on xDB panel")]
-    public static void WhenActorExpandsHeaderOnXDBPanel(string header)
+    public static void WhenActorExpandsHeaderOnXdbPanel(string header)
     {
-      CommonLocators.XDBpanelHeader.First(el => el.Text.Equals(header)).Click();
+      CommonLocators.XdBpanelHeader.First(el => el.Text.Equals(header)).Click();
     }
 
     [When(@"Actor deletes all browser cookies")]
@@ -39,7 +39,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     }
 
     [When(@"User selects DANSK from the list")]
-    public void WhenUserSelectsDANSKFromTheList()
+    public void WhenUserSelectsDanskFromTheList()
     {
         CommonLocators.GlobeIconList.First(el => el.Text.Contains("dansk")).Click();
     }

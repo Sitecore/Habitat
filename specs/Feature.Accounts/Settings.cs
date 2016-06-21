@@ -1,4 +1,5 @@
-﻿using Sitecore.Foundation.Common.Specflow.Steps;
+﻿using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
+using Sitecore.Foundation.Common.Specflow.Steps;
 
 namespace Sitecore.Feature.Accounts.Specflow
 {

@@ -1,27 +1,23 @@
-﻿@UI
-Feature: WFFM forms
+﻿Feature: WFFM forms integration
 	
 
-@NeedImplementation
+@Ready
 Scenario: WFFM forms integration_UC1_Verify MVC forms present in all Wide and Narrow columns
-	Given User is logged to Sitecore as Admin
-	When User selects Content Editor
-	Then Items contain fields
-	| Item path                                                                 | Allowed Controls |
-	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-1 | MVC Form         |
-	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-2 | MVC Form         |
-	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-3 | MVC Form         |
-	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-4 | MVC Form         |
-	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-5 | MVC Form         |
-	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-6 | MVC Form         |
-	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-1   | MVC Form         |
-	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-2   | MVC Form         |
-	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-3   | MVC Form         |
-	
-	
+	Then Items contain MVC controls 
+	| ItemPath                                                                  | AllowedControls |
+	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-1 | Mvc Form        |
+	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-2 | Mvc Form        |
+	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-3 | Mvc Form        |
+	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-4 | Mvc Form        |
+	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-5 | Mvc Form        |
+	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-narrow-6 | Mvc Form        |
+	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-1   | Mvc Form        |
+	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-2   | Mvc Form        |
+	| /sitecore/layout/Placeholder Settings/Project/Common/Columns/col-wide-3   | Mvc Form        |
+
 	  
 
-@NeedImplementation
+@OnlyManual
 Scenario: WFFM forms integration_UC2_Few webforms on one page
 	Given New Page was created
 	And Webfrom 'Get Our Newsletter' was added to layout	

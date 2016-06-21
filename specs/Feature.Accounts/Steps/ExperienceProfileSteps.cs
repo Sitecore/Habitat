@@ -6,6 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Sitecore.Feature.Accounts.Specflow.Infrastructure;
+using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
 using TechTalk.SpecFlow;
 
@@ -17,8 +18,8 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void ThenProfileActivityGoalsSectionForKovSitecore_NetContains(string userName, Table table)
     {
       Thread.Sleep(TimeSpan.FromSeconds(5));
-      var contactID = GetContactId(userName);
-      var queryUrl = BaseSettings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}/intel/goals";
+      var contactId = GetContactId(userName);
+      var queryUrl = BaseSettings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactId}/intel/goals";
 
       var entities = GetAnalytycsEntities<SearchEntity>(queryUrl);
       foreach (var row in table.Rows)

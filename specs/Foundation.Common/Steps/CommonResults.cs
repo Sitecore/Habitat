@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
 using OpenQA.Selenium;
+using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
 using TechTalk.SpecFlow;
 
@@ -29,7 +30,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     }
 
     [Then(@"Page URL not ends on (.*)")]
-    public void ThenPageURLNotEndsOn(string urlEnding)
+    public void ThenPageUrlNotEndsOn(string urlEnding)
     {
       Driver.Url.EndsWith(urlEnding).Should().BeFalse();
     }
@@ -44,7 +45,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     [Then(@"URl contains (.*) site url")]
     public void ThenURlContainsDemoSite(string site)
     {
-      Driver.Url.Equals(BaseSettings.DemoSiteURL);
+      Driver.Url.Equals(BaseSettings.DemoSiteUrl);
     }
 
     [Then(@"User icon presents on Personal Information header section")]
@@ -74,17 +75,17 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
 
 
     [Then(@"xDB Panel Body text contains")]
-    public void ThenXDBPanelBodyTextContains(Table table)
+    public void ThenXdbPanelBodyTextContains(Table table)
     {
       var bodyText = table.Rows.Select(x => x.Values.First());
-      bodyText.All(t => CommonLocators.XDBpanelMediaBody.Any(x => x.GetAttribute("innerText").Contains(t))).Should().BeTrue();
+      bodyText.All(t => CommonLocators.XdBpanelMediaBody.Any(x => x.GetAttribute("innerText").Contains(t))).Should().BeTrue();
     }
 
 
     [When(@"Actor clicks (.*) button on xDB panel")]
-    public void WhenActorClicksButtonOnXDBPanel(string button)
+    public void WhenActorClicksButtonOnXdbPanel(string button)
     {
-      CommonLocators.ManageXDBpanelButtons.First(el => el.Text.Contains(button)).Click();
+      CommonLocators.ManageXdBpanelButtons.First(el => el.Text.Contains(button)).Click();
     }
 
     [Then(@"there is no Globe icon in the Main menu on the top of the page")]

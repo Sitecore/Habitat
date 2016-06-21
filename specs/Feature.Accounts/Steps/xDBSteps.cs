@@ -9,7 +9,7 @@ using TechTalk.SpecFlow;
 
 namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
-  public class xDBSteps : AccountStepsBase
+  public class XDbSteps : AccountStepsBase
   {
     [Then(@"Contact collection Tags\.(.*)\.Values section for (.*) consist of")]
     public void ThenContactCollectionTags_Interests_ValuesSectionConsistOf(string tagName, string userName, Table table)

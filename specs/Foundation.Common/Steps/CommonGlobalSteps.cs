@@ -2,6 +2,7 @@
 using System.Xml;
 using System.Xml.Linq;
 using FluentAssertions;
+using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 
 namespace Sitecore.Foundation.Common.Specflow.Steps
 {

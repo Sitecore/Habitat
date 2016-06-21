@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Sitecore.Feature.Demo.Specflow.Infrastructure;
 using Sitecore.Feature.Demo.Specflow.Settings;
+using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Steps;
 using TechTalk.SpecFlow;

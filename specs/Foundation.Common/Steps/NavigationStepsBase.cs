@@ -8,6 +8,7 @@ using FluentAssertions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using Sitecore.Foundation.Common.Specflow.Extensions;
+using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
 using TechTalk.SpecFlow;
 
@@ -38,7 +39,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     [When(@"Actor selects (.*) slidebar")]
     public void WhenActorSelectsSlidebar(string button)
     {
-      CommonLocators.OpenXDBSlidebar.First(el => el.GetAttribute("title").Contains(button)).Click();
+      CommonLocators.OpenXdbSlidebar.First(el => el.GetAttribute("title").Contains(button)).Click();
     }
 
     [Given(@"Habitat website is opened on Forms page")]
@@ -62,6 +63,17 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
       js.ExecuteScript(@"document.querySelector('.well.bg-dark.scEnabledChrome').click()");
     }
 
+    [When(@"User selects Page Header Media Carousel placeholder")]
+    public void WhenUserSelectsPageHeaderMediaCarouselPlaceholder()
+    {
+      CommonLocators.WaitRibbonPreLoadingIndicatorInvisible();
+
+      var js = Driver as IJavaScriptExecutor;
+      js.ExecuteScript(@"document.querySelector('.jumbotron.jumbotron-xl.bg-media').click()");
+    }
+
+
+
     [When(@"User clicks (.*) button on scChromeToolbar undefined")]
     public void WhenUserClicksButtonOn(string button)
     {
@@ -78,6 +90,16 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
       CommonLocators.SitecoreLoginFields.First(x => x.GetAttribute("name").Equals("Password", StringComparison.CurrentCultureIgnoreCase)).SendKeys(BaseSettings.Password);
       CommonLocators.SubmitButton.Click();
     }
+
+    [Given(@"Experience Editor is opened on Main Page")]
+    public void GivenExperienceEditorIsOpenedOnMainPage()
+    {
+      CommonLocators.NavigateToPage(BaseSettings.MainPageExperienceEditorUrl);
+      CommonLocators.SitecoreLoginFields.First(x => x.GetAttribute("name").Equals("UserName", StringComparison.InvariantCultureIgnoreCase)).SendKeys(BaseSettings.UserNameOnUi);
+      CommonLocators.SitecoreLoginFields.First(x => x.GetAttribute("name").Equals("Password", StringComparison.CurrentCultureIgnoreCase)).SendKeys(BaseSettings.Password);
+      CommonLocators.SubmitButton.Click();
+    }
+
 
 
   }

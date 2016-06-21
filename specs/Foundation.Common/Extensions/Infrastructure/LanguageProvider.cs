@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
 
 namespace Sitecore.Foundation.Common.Specflow.Infrastructure

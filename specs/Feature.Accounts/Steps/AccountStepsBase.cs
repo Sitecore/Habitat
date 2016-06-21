@@ -46,9 +46,9 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
         var username = email.Split('@').First();
         var searchResult =
           JsonConvert.DeserializeObject<SearchEntity>(webClient.DownloadString(Settings.SearchContactUrl + username));
-        var contactID =
+        var contactId =
           searchResult.Data.Dataset.ContactSearchResults.First(x => x.PreferredEmailAddress == email).ContactId;
-        return contactID;
+        return contactId;
       }
     }
   }

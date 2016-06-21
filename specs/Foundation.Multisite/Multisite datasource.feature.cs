@@ -190,13 +190,13 @@ this.ScenarioSetup(scenarioInfo);
             this.ScenarioCleanup();
         }
         
-        [Xunit.FactAttribute(DisplayName="Multisite datasource_UC4_Relative path")]
+        [Xunit.FactAttribute(DisplayName="Multisite datasource_UC4_Relative path has defined")]
         [Xunit.TraitAttribute("FeatureTitle", "Multisite datasource")]
-        [Xunit.TraitAttribute("Description", "Multisite datasource_UC4_Relative path")]
+        [Xunit.TraitAttribute("Description", "Multisite datasource_UC4_Relative path has defined")]
         [Xunit.TraitAttribute("Category", "Ready")]
-        public virtual void MultisiteDatasource_UC4_RelativePath()
+        public virtual void MultisiteDatasource_UC4_RelativePathHasDefined()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multisite datasource_UC4_Relative path", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multisite datasource_UC4_Relative path has defined", new string[] {
                         "Ready"});
 #line 44
 this.ScenarioSetup(scenarioInfo);
@@ -206,15 +206,15 @@ this.ScenarioSetup(scenarioInfo);
                         "fieldName",
                         "fieldValue"});
             table7.AddRow(new string[] {
-                        "/sitecore/layout/Renderings/Feature/Social/Twitter Feed",
+                        "/sitecore/layout/Renderings/Feature/Media/Page Header Media Carousel",
                         "Datasource Location",
-                        "./Models"});
+                        "./Modules"});
 #line 45
  testRunner.Given("Value set to item field", ((string)(null)), table7, "Given ");
 #line 48
- testRunner.And("Experience Editor is opened on Social Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("Experience Editor is opened on Main Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 49
- testRunner.When("User selects Twitter placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("User selects Page Header Media Carousel placeholder", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 50
  testRunner.And("User clicks Associate a content item with this component. button on scChromeToolb" +
                     "ar undefined", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -237,7 +237,7 @@ this.ScenarioSetup(scenarioInfo);
             table9.AddRow(new string[] {
                         "/sitecore/layout/Renderings/Feature/Social/Twitter Feed",
                         "Datasource Location",
-                        "/sitecore/content/Habitat/Global/Social"});
+                        "site:carousel"});
 #line 57
  testRunner.And("Value set to item field", ((string)(null)), table9, "And ");
 #line hidden

@@ -9,7 +9,7 @@ using TechTalk.SpecFlow;
 namespace Sitecore.Foundation.Common.Specflow.Steps
 {
   [Binding]
-  public class xDBPanelResults : StepsBase
+  public class XDbPanelResults : StepsBase
   {
     [Then(@"Outcomes contains following values")]
     public void ThenContainsFollowingValues(Table table)

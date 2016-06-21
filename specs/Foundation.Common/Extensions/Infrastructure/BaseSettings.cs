@@ -1,7 +1,7 @@
-﻿namespace Sitecore.Foundation.Common.Specflow.Infrastructure
-{
-  using System.Configuration;
+﻿using System.Configuration;
 
+namespace Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure
+{
   public class BaseSettings
   {
     public static string BaseUrl => ConfigurationManager.AppSettings["baseUrl"];
@@ -25,17 +25,19 @@
 
     public static string EndVisitUrl => BaseUrl + ConfigurationManager.AppSettings["endVisitUrl"];
 
-    public static string DemoSiteURL => ConfigurationManager.AppSettings["demoSiteUrl"];
+    public static string DemoSiteUrl => ConfigurationManager.AppSettings["demoSiteUrl"];
 
     public static string DemoSiteCampaignUrl => ConfigurationManager.AppSettings["demoSiteCampaignUrl"];
 
-    public static string FormsPageUrl =>BaseSettings.BaseUrl + ConfigurationManager.AppSettings["formsPageUrl"];
+    public static string FormsPageUrl =>BaseUrl + ConfigurationManager.AppSettings["formsPageUrl"];
 
     public static string EmployeeList => BaseUrl + ConfigurationManager.AppSettings["employeeList"];
-    public static string GettingStartedPageUrl => BaseSettings.BaseUrl + ConfigurationManager.AppSettings["GettingStartedPageUrl"];
-    public static string ExperianceEditorUrl => BaseSettings.BaseUrl + ConfigurationManager.AppSettings["ExperianceEditorUrl"];
+    public static string GettingStartedPageUrl => BaseUrl + ConfigurationManager.AppSettings["GettingStartedPageUrl"];
+    public static string ExperianceEditorUrl => BaseUrl + ConfigurationManager.AppSettings["ExperianceEditorUrl"];
 
-    public static string SocialPageExperienceEditorUrl => BaseSettings.BaseUrl + ConfigurationManager.AppSettings["SocialPageExperienceEditorUrl"];
+    public static string SocialPageExperienceEditorUrl => BaseUrl + ConfigurationManager.AppSettings["SocialPageExperienceEditorUrl"];
+
+    public static string MainPageExperienceEditorUrl => BaseUrl + ConfigurationManager.AppSettings["MainPageExperienceEditorUrl"];
 
   }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sitecore.Foundation.Common.Specflow.Extensions;
+using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Steps;
 using Sitecore.Foundation.Forms.Specflow.Infrostructure;
@@ -24,7 +25,7 @@ namespace Sitecore.Foundation.Forms.Specflow.Steps
 
     public FormLocators FormLocators = new FormLocators();
 
-    public xDBPanelResults XDbPanelResults = new xDBPanelResults();
+    public XDbPanelResults XDbPanelResults = new XDbPanelResults();
 
 
   }

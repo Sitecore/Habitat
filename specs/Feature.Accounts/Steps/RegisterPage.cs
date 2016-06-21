@@ -1,4 +1,5 @@
-﻿using Sitecore.Foundation.Common.Specflow.Steps;
+﻿using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
+using Sitecore.Foundation.Common.Specflow.Steps;
 
 namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
@@ -41,8 +42,8 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       {
         var email = row["email"];
 
-        var contactID = GetContactId(email);
-        var queryUrl = BaseSettings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}/intel/outcome-detail";
+        var contactId = GetContactId(email);
+        var queryUrl = BaseSettings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactId}/intel/outcome-detail";
         var outcomes = GetAnalytycsEntities<SearchEntity>(queryUrl);
         var expectedOutcome = row["Outcome value"];
         outcomes.Data.Dataset.OutcomeDetail
@@ -64,8 +65,8 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       foreach (var row in table.Rows)
       {
         var email = row["email"];
-        var contactID = GetContactId(email);
-        var queryUrl = BaseSettings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactID}";
+        var contactId = GetContactId(email);
+        var queryUrl = BaseSettings.BaseUrl + $"/sitecore/api/ao/proxy/contacts/{contactId}";
 
         var contact = GetAnalytycsEntities<ContactEntity>(queryUrl);
 

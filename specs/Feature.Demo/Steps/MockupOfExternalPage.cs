@@ -8,6 +8,7 @@ using Sitecore.Foundation.Common.Specflow.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Steps;
 using TechTalk.SpecFlow;
 using OpenQA.Selenium.Support.UI;
+using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 
 namespace Sitecore.Feature.Demo.Specflow.Steps
 {
@@ -28,7 +29,7 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
     [Given(@"Mockup of Google page is opened")]
     public void GivenMockupOfGooglePageIsOpened()
     {
-      CommonLocators.NavigateToPage(BaseSettings.DemoSiteURL);
+      CommonLocators.NavigateToPage(BaseSettings.DemoSiteUrl);
     }
 
     [When(@"Actor enters (.*) text in to search field")]
@@ -64,7 +65,7 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
     [Then(@"Page url contains Campaign ID")]
     public void ThenPageUrlContainsCampaignId()
     {
-      Driver.Url.Equals(Foundation.Common.Specflow.Infrastructure.BaseSettings.DemoSiteCampaignUrl);
+      Driver.Url.Equals(BaseSettings.DemoSiteCampaignUrl);
     }
 
 
