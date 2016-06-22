@@ -106,7 +106,7 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Identity\Logo.cshtml" />
-    <Content Include="Views\Web.config" />
+    <None Include="Views\Web.config" />
     <Content Include="Views\Identity\Copyright.cshtml" />
     <Content Include="Views\Identity\ContactInformation.cshtml" />
     <None Include="Web.Debug.config">

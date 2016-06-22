@@ -2,7 +2,7 @@
 {
   using System.Web.Hosting;
 
-  public class FilePathResolver:IFilePathResolver
+  public class FilePathResolver : IFilePathResolver
   {
     public string MapPath(string relativePath)
     {

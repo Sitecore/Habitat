@@ -2,7 +2,7 @@
 {
   using System.Web.Mvc;
 
-  public class ValidateModelAttribute: ActionFilterAttribute
+  public class ValidateModelAttribute : ActionFilterAttribute
   {
     public override void OnActionExecuting(ActionExecutingContext filterContext)
     {
@@ -10,11 +10,11 @@
 
       if (!viewData.ModelState.IsValid)
       {
-        filterContext.Result = new ViewResult()
-        {
-          ViewData = viewData,
-          TempData = filterContext.Controller.TempData
-        };
+        filterContext.Result = new ViewResult
+                               {
+                                 ViewData = viewData,
+                                 TempData = filterContext.Controller.TempData
+                               };
       }
     }
   }

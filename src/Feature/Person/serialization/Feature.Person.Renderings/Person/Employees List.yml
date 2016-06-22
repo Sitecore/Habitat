@@ -22,7 +22,7 @@ SharedFields:
   Value: "<image mediaid=\"{A9F7775D-946D-458B-A2E0-D7BE50A99240}\" />"
 - ID: "ddab263e-b42e-419a-aa6f-081b7393ca38"
   Hint: Model
-  Value: Sitecore.Foundation.SitecoreExtensions.Rendering.QueryableDatasourceRenderingModel, Sitecore.Foundation.SitecoreExtensions
+  Value: /sitecore/layout/Models/Foundation/Indexing/QueryableDatasourceRenderingModel
 - ID: "ef7c5528-7307-4e19-863b-da19eed6a9ed"
   Hint: Open Properties after Add
   Value: 1

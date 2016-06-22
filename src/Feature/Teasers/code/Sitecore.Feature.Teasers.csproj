@@ -133,7 +133,6 @@
     <Compile Include="Controller\TeasersController.cs" />
     <Compile Include="Models\DynamicTeaserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\HumanFriendlyIntegerService.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>

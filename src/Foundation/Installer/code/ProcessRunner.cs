@@ -1,6 +1,5 @@
 ﻿namespace Sitecore.Foundation.Installer
 {
-  using System;
   using System.ComponentModel;
   using System.Diagnostics;
   using Sitecore.Diagnostics;
@@ -12,19 +11,22 @@
     public void Run(string commandPath, string arguments)
     {
       var processStartInfo = new ProcessStartInfo(commandPath, arguments)
-      {
-        WindowStyle = ProcessWindowStyle.Hidden,
-        UseShellExecute = false,
-        RedirectStandardOutput = true,
-        RedirectStandardError = true,
-      };
+                             {
+                               WindowStyle = ProcessWindowStyle.Hidden,
+                               UseShellExecute = false,
+                               RedirectStandardOutput = true,
+                               RedirectStandardError = true
+                             };
 
       this.RunProcess(processStartInfo);
     }
 
     protected virtual void RunProcess(ProcessStartInfo processStartInfo)
     {
-      using (var process = new Process() { StartInfo = processStartInfo })
+      using (var process = new Process
+                           {
+                             StartInfo = processStartInfo
+                           })
       {
         process.OutputDataReceived += this.ReadOutputLine;
         string error;

@@ -19,7 +19,7 @@
 
     [Display(Name = nameof(InterestsCaption), ResourceType = typeof(EditProfile))]
     public string Interest { get; set; }
-    
+
     public IEnumerable<string> InterestTypes { get; set; }
 
     public static string FirstNameCaption => DictionaryPhraseRepository.Current.Get("/Accounts/Edit Profile/First Name", "First name");

@@ -119,11 +119,9 @@
     <Compile Include="Repositories\QueryRepository.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Models\SearchQuery.cs" />
-    <Compile Include="Repositories\ISearchServiceRepository.cs" />
-    <Compile Include="Repositories\ISearchSettingsRepository.cs" />
-    <Compile Include="Repositories\SearchServiceRepository.cs" />
-    <Compile Include="Repositories\SearchSettingsRepository.cs" />
-    <Compile Include="Models\SearchSettings.cs" />
+    <Compile Include="Repositories\ISearchContextRepository.cs" />
+    <Compile Include="Repositories\SearchContextRepository.cs" />
+    <Compile Include="Models\SearchContext.cs" />
     <Compile Include="Templates.cs" />
     <Compile Include="Models\SearchResult.cs" />
     <Compile Include="Models\SearchResults.cs" />
@@ -148,10 +146,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\Foundation\Dictionary\code\Sitecore.Foundation.Dictionary.csproj">
       <Project>{0D6BA4D8-C469-4AE9-9EBB-93BDF7D7E78F}</Project>

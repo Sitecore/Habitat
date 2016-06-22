@@ -1,7 +1,7 @@
 ﻿---
-ID: 50a4942d-c644-4ad9-8452-78bd786c48a2
-Parent: 3809601d-3c89-4dba-8ce3-39738f43f92d
-Template: 467c2144-4454-4518-b1de-e31b4cbbff33
+ID: "50a4942d-c644-4ad9-8452-78bd786c48a2"
+Parent: "3809601d-3c89-4dba-8ce3-39738f43f92d"
+Template: "467c2144-4454-4518-b1de-e31b4cbbff33"
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List/John Howard
 DB: master
 Languages:
@@ -9,7 +9,7 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 0cc9785e-54fe-4fae-93e4-d0d2ae75f339
+    - ID: "0cc9785e-54fe-4fae-93e4-d0d2ae75f339"
       Hint: Biography
       Value: |
         <p>Entrepreneurial-spirited, pioneering technologist with 10+ years of executive-level experience identifying, qualifying, building
@@ -19,48 +19,48 @@ Languages:
         <p>Broad expertise in IT, network, and
         telecommunications architecture/infrastructure design, full project life cycle management, client/vendor relationship management,
         and financial/operational management. Ably manage M&A, reorganization, and process improvement initiatives.</p>
-    - ID: 0ee2f208-1fee-42fc-8051-6696d49a92bf
+    - ID: "0ee2f208-1fee-42fc-8051-6696d49a92bf"
       Hint: OpenGraphTitle
       Value: John Doe
-    - ID: 1b483e91-d8c4-4d19-ba03-462074b55936
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
       Hint: NavigationTitle
       Value: John Howard
-    - ID: 25b4cee3-a61a-4dc3-bb52-775dd509dbb5
+    - ID: "25b4cee3-a61a-4dc3-bb52-775dd509dbb5"
       Hint: Mobile
       Value: +1 202 555 0148
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151201T000649Z
-    - ID: 26cd59ab-3639-488f-bafd-58d2b217755a
+    - ID: "26cd59ab-3639-488f-bafd-58d2b217755a"
       Hint: Name
       Value: John Howard
-    - ID: 2b13dfab-3450-45ef-93f4-beaa6f544fa6
+    - ID: "2b13dfab-3450-45ef-93f4-beaa6f544fa6"
       Hint: LinkedInLink
       Value: "<link linktype=\"external\" url=\"http://linkedin.com\" anchor=\"\" target=\"\" />"
-    - ID: 5978b330-1d46-4065-8751-f74bf17d815e
+    - ID: "5978b330-1d46-4065-8751-f74bf17d815e"
       Hint: Email
       Value: john.doe@sitecorehabitat.com
-    - ID: 69a846d9-4c7f-435c-a8dc-87e2d7359cfa
+    - ID: "69a846d9-4c7f-435c-a8dc-87e2d7359cfa"
       Hint: BlogLink
       Value: "<link linktype=\"external\" url=\"http://MyBlog.com\" anchor=\"\" target=\"\" />"
-    - ID: 6de98ef7-1209-40a3-a63e-16dbef015211
+    - ID: "6de98ef7-1209-40a3-a63e-16dbef015211"
       Hint: TwitterLink
       Value: "<link linktype=\"external\" url=\"http://twitter.com\" anchor=\"\" target=\"\" />"
-    - ID: 76972fcd-4bb0-4255-864e-077745efdf50
+    - ID: "76972fcd-4bb0-4255-864e-077745efdf50"
       Hint: Title
       Value: CTO
-    - ID: 8d0e8ee3-21c4-4ae2-a2f1-53d3f3ebe501
+    - ID: "8d0e8ee3-21c4-4ae2-a2f1-53d3f3ebe501"
       Hint: Telephone
       Value: +1 202 555 0162
-    - ID: b897023c-15d2-49f3-8974-06fa5fb7ad00
+    - ID: "b897023c-15d2-49f3-8974-06fa5fb7ad00"
       Hint: Summary
-      Value: John is our super-geeky CTO.
-    - ID: c9baf3eb-8cfa-4bf6-9b19-51d38db5fc38
+      Value: "John is our super-geeky CTO."
+    - ID: "c9baf3eb-8cfa-4bf6-9b19-51d38db5fc38"
       Hint: Picture
       Value: "<image mediapath=\"/Habitat/Images/Square/Habitat-075-square\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Habitat/Images/Square/Habitat-075-square\" mediaid=\"{9DF6B8F9-46D3-4EBF-B29F-1018443D85AD}\"></image>"
-    - ID: ca0479ce-0bfe-4522-83de-ba688b380a78
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
       Hint: BrowserTitle
       Value: John Doe
-    - ID: d31889c0-e34c-4904-a6f3-f3d92d314aa9
+    - ID: "d31889c0-e34c-4904-a6f3-f3d92d314aa9"
       Hint: FacebookLink
       Value: "<link text=\"\" linktype=\"external\" url=\"www.facebook.com\" anchor=\"\" title=\"\" class=\"\" querystring=\"\" target=\"\" id=\"\" />"

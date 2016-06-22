@@ -2,7 +2,7 @@
 {
   using System;
 
-  public class RegisterViewAttribute :Attribute
+  public class RegisterViewAttribute : Attribute
   {
     public string Name { get; private set; }
 

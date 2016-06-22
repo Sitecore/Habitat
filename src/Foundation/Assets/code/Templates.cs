@@ -6,7 +6,7 @@
   {
     public struct RenderingAssets
     {
-      public static ID ID = new ID("{7CEAC341-B953-4C69-B907-EE44302BF6AE}");
+      public static readonly ID ID = new ID("{7CEAC341-B953-4C69-B907-EE44302BF6AE}");
 
       public struct Fields
       {

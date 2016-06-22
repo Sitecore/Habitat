@@ -41,17 +41,7 @@ Languages:
     - ID: "65885c44-8fcd-4a7f-94f1-ee63703fe193"
       Hint: Alt
       Value: Logo
-- Language: en
-  Versions:
-  - Version: 1
-    Fields:
-    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
-      Hint: __Created
-      Value: 20160331T034808Z
-    - ID: "65885c44-8fcd-4a7f-94f1-ee63703fe193"
-      Hint: Alt
-      Value: Habitat Logo
-- Language: "de"
+- Language: de
   Versions:
   - Version: 1
     Fields:
@@ -64,3 +54,13 @@ Languages:
     - ID: "65885c44-8fcd-4a7f-94f1-ee63703fe193"
       Hint: Alt
       Value: Logo
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160331T034808Z
+    - ID: "65885c44-8fcd-4a7f-94f1-ee63703fe193"
+      Hint: Alt
+      Value: Habitat Logo

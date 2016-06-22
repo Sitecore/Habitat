@@ -3,6 +3,7 @@ namespace Sitecore.Feature.Language.Tests.Extensions
   using Ploeh.AutoFixture;
   using Sitecore.FakeDb;
   using Sitecore.Foundation.Multisite;
+  using Sitecore.Foundation.Testing.Attributes;
 
   public class AutoLanguageDbDataAttribute : AutoDbDataAttribute
   {

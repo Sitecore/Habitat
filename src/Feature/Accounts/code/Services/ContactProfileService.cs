@@ -1,7 +1,7 @@
 ﻿namespace Sitecore.Feature.Accounts.Services
 {
-  using Sitecore;
   using Sitecore.Feature.Accounts.Models;
+  using Sitecore.Foundation.Accounts.Providers;
   using Sitecore.Foundation.SitecoreExtensions.Services;
 
   public class ContactProfileService : IContactProfileService
@@ -42,17 +42,17 @@
     public void SetPreferredPhoneNumber(string phone)
     {
       var phones = this.contactProfileProvider.PhoneNumbers;
-      if (phones != null)
+      if (phones == null)
+        return;
+
+      phones.Preferred = PrimaryPhoneKey;
+      if (phones.Entries.Contains(PrimaryPhoneKey))
       {
-        phones.Preferred = PrimaryPhoneKey;
-        if (phones.Entries.Contains(PrimaryPhoneKey))
-        {
-          phones.Entries[PrimaryPhoneKey].Number = phone;
-        }
-        else
-        {
-          phones.Entries.Create(PrimaryPhoneKey).Number = phone;
-        }
+        phones.Entries[PrimaryPhoneKey].Number = phone;
+      }
+      else
+      {
+        phones.Entries.Create(PrimaryPhoneKey).Number = phone;
       }
     }
 
@@ -66,16 +66,15 @@
 
     public void SetProfile(EditProfile editProfileModel)
     {
-      if (this.contactProfileProvider.Contact != null)
-      {
-        var personalInfo = this.contactProfileProvider.PersonalInfo;
-        personalInfo.FirstName = editProfileModel.FirstName;
-        personalInfo.Surname = editProfileModel.LastName;
-        this.SetTag(InterestsTagName, editProfileModel.Interest ?? string.Empty);
-        this.SetPreferredPhoneNumber(editProfileModel.PhoneNumber);
-        this.SetPreferredEmail(Context.User.Profile.Email);
-        this.contactProfileProvider.Flush();
-      }
+      if (this.contactProfileProvider.Contact == null)
+        return;
+      var personalInfo = this.contactProfileProvider.PersonalInfo;
+      personalInfo.FirstName = editProfileModel.FirstName;
+      personalInfo.Surname = editProfileModel.LastName;
+      this.SetTag(InterestsTagName, editProfileModel.Interest ?? string.Empty);
+      this.SetPreferredPhoneNumber(editProfileModel.PhoneNumber);
+      this.SetPreferredEmail(Context.User.Profile.Email);
+      this.contactProfileProvider.Flush();
     }
   }
 }

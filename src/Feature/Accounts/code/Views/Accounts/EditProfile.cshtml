@@ -3,17 +3,16 @@
 @using Sitecore.Foundation.Alerts.Models
 @using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
-@using Sitecore.Foundation.SitecoreExtensions.HtmlHelpers
 @using Sitecore.Mvc.Configuration
 @model Sitecore.Feature.Accounts.Models.EditProfile
 
 @using (Html.BeginRouteForm(MvcSettings.SitecoreRouteName, FormMethod.Post, new { @class = "form-signin" }))
 {
-  @Html.FormHandler()
+  @Html.AddUniqueFormId()
   var info = Session.GetAndRemove("EditProfileMessage") as InfoMessage;
   if (info != null)
   {
-    Html.RenderPartial(ViewPath.InfoMessage, info);
+    Html.RenderPartial(Constants.InfoMessageView, info);
   }
   <div class="form-group @Html.ValidationErrorFor(x => x.FirstName, "has-error")">
     @Html.LabelFor(x => x.FirstName, new { @class = "control-label" })

@@ -34,7 +34,5 @@
 
       return site.Database.GetItem(Context.Site.StartPath);
     }
-
-    public static bool NoOverlay(this SiteContext siteContext) => siteContext.DisplayMode == DisplayMode.Normal && !ModuleManager.IsExpViewModeActive && !WebEditUtility.IsDebugActive(siteContext);
   }
 }

@@ -13,7 +13,7 @@
 
 <blockquote class="blockquote-center @Model.Rendering.GetBackgroundClass()">
   <header>
-    @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, mh: 150, cssClass: "img-responsive")
+    @Html.Sitecore().ImageField(Templates.Person.Fields.Picture, Model.Item, 150, cssClass: "img-responsive")
     <p>
       @Model.Item.Field(Templates.Person.Fields.Name)
     </p>
@@ -26,4 +26,3 @@
     @Model.Item.Field(Templates.Quote.Fields.Quote)
   </p>
 </blockquote>
-

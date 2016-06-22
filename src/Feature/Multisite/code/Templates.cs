@@ -6,7 +6,7 @@
   {
     public struct SiteConfiguration
     {
-      public static ID ID = new ID("{0FCCFE4F-B087-498F-BD26-5CDFFC522C9A}");
+      public static readonly ID ID = new ID("{0FCCFE4F-B087-498F-BD26-5CDFFC522C9A}");
 
       public struct Fields
       {

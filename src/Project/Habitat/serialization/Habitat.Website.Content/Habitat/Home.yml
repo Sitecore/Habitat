@@ -118,6 +118,12 @@ Languages:
               s:id="{1149A3C7-C69A-4E6B-A6C3-32687EC2F8D4}"
               s:par="UseStaticPlaceholderNames&amp;Type=bg-secondary&amp;Media&amp;Parallax"
               s:ph="page-layout" />
+            <r
+              uid="{47F5A079-6F63-4219-BC45-1A221B200906}"
+              s:par="Background=%7BBD2F308A-E00A-4372-ADBB-BD64712A54FA%7D" />
+            <r
+              uid="{84124EE2-E678-4144-8316-0D6874866604}"
+              s:par="Background=%7BBD2F308A-E00A-4372-ADBB-BD64712A54FA%7D" />
           </d>
         </r>
     - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"

@@ -13,9 +13,9 @@
         <div class="media-body">
           <date>
             @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date, item, new
-             {
-               format = "MMMM dd, yyyy"
-             })
+                                                                            {
+                                                                              format = "MMMM dd, yyyy"
+                                                                            })
           </date>
           <h4 class="media-heading">
             <a href="@item.Url()">@Html.Sitecore().Field(Templates.NewsArticle.Fields.Title, item)</a>

@@ -27,7 +27,7 @@
   {
     [Theory]
     [AutoFakeUserData]
-    public void RestorePasswordShouldCallResetPassword(FakeMembershipUser user, MembershipProvider membershipProvider, AccountRepository repo)
+    public void RestorePassword_ValidUser_ShouldCallResetPassword(FakeMembershipUser user, MembershipProvider membershipProvider, AccountRepository repo)
     {
       user.ProviderName.Returns("fake");
       membershipProvider.ResetPassword(Arg.Any<string>(), Arg.Any<string>()).Returns("new password");
@@ -44,7 +44,7 @@
 
     [Theory]
     [AutoFakeUserData]
-    public void RestorePasswordShouldReturnsNewPassword(FakeMembershipUser user, MembershipProvider membershipProvider, AccountRepository repo)
+    public void RestorePassword_ValidUser_ShouldReturnsNewPassword(FakeMembershipUser user, MembershipProvider membershipProvider, AccountRepository repo)
     {
       user.ProviderName.Returns("fake");
       membershipProvider.ResetPassword(Arg.Any<string>(), Arg.Any<string>()).Returns("new password");
@@ -59,16 +59,14 @@
 
     [Theory]
     [AutoDbData]
-    public void ExistsShouldReturnTrueIfUserExists(FakeMembershipUser user, MembershipProvider membershipProvider, AccountRepository repo)
+    public void Exists_UserExists_ShouldReturnTrue(FakeMembershipUser user, MembershipProvider membershipProvider, AccountRepository repo)
     {
       membershipProvider.GetUser(@"somedomain\John", Arg.Any<bool>()).Returns(user);
 
       var context = new FakeSiteContext(new StringDictionary
-      {
-        {
-          "domain", "somedomain"
-        }
-      });
+                                        {
+                                          {"domain", "somedomain"}
+                                        });
       using (new Switcher<Domain, Domain>(new Domain("somedomain")))
       {
         using (new MembershipSwitcher(membershipProvider))
@@ -81,17 +79,15 @@
 
     [Theory]
     [AutoDbData]
-    public void ExistsShouldReturnFalseIfUserNotExists(FakeMembershipUser user, MembershipProvider membershipProvider, AccountRepository repo)
+    public void Exists_UserDoesNotExist_ShouldReturnFalse(FakeMembershipUser user, MembershipProvider membershipProvider, AccountRepository repo)
     {
       membershipProvider.GetUser(Arg.Any<string>(), Arg.Any<bool>()).Returns((MembershipUser)null);
       membershipProvider.GetUser(@"somedomain\John", Arg.Any<bool>()).Returns(user);
 
       var context = new FakeSiteContext(new StringDictionary
-      {
-        {
-          "domain", "somedomain"
-        }
-      });
+                                        {
+                                          {"domain", "somedomain"}
+                                        });
       using (new Switcher<Domain, Domain>(new Domain("somedomain")))
       {
         using (new MembershipSwitcher(membershipProvider))
@@ -104,16 +100,14 @@
 
     [Theory]
     [AutoDbData]
-    public void LoginShouldReturnTrueIfUserIsLoggedIn(FakeMembershipUser user, AuthenticationProvider authenticationProvider, AccountRepository repo)
+    public void Login_UserIsLoggedIn_ShouldReturnTrue(FakeMembershipUser user, AuthenticationProvider authenticationProvider, AccountRepository repo)
     {
       authenticationProvider.Login(@"somedomain\John", Arg.Any<string>(), Arg.Any<bool>()).Returns(true);
 
       var context = new FakeSiteContext(new StringDictionary
-      {
-        {
-          "domain", "somedomain"
-        }
-      });
+                                        {
+                                          {"domain", "somedomain"}
+                                        });
       using (new Switcher<Domain, Domain>(new Domain("somedomain")))
       {
         using (new AuthenticationSwitcher(authenticationProvider))
@@ -126,16 +120,14 @@
 
     [Theory]
     [AutoDbData]
-    public void Login_ValidUser_ShouldTriggerLoginEvents(FakeMembershipUser user, [Frozen]IAccountTrackerService accountTrackerService, AuthenticationProvider authenticationProvider, AccountRepository repo)
+    public void Login_ValidUser_ShouldTriggerLoginEvents(FakeMembershipUser user, [Frozen] IAccountTrackerService accountTrackerService, AuthenticationProvider authenticationProvider, AccountRepository repo)
     {
       authenticationProvider.Login(@"somedomain\John", Arg.Any<string>(), Arg.Any<bool>()).Returns(true);
 
       var context = new FakeSiteContext(new StringDictionary
-      {
-        {
-          "domain", "somedomain"
-        }
-      });
+                                        {
+                                          {"domain", "somedomain"}
+                                        });
       using (new Switcher<Domain, Domain>(new Domain("somedomain")))
       {
         using (new AuthenticationSwitcher(authenticationProvider))
@@ -148,16 +140,14 @@
 
     [Theory]
     [AutoDbData]
-    public void LoginShouldReturnFalseIfUserIsNotLoggedIn(FakeMembershipUser user, AuthenticationProvider authenticationProvider, AccountRepository repo)
+    public void Login_UserIsNotLoggedIn_ShouldReturnFalse(FakeMembershipUser user, AuthenticationProvider authenticationProvider, AccountRepository repo)
     {
       authenticationProvider.Login(@"somedomain\John", Arg.Any<string>(), Arg.Any<bool>()).Returns(false);
 
       var context = new FakeSiteContext(new StringDictionary
-      {
-        {
-          "domain", "somedomain"
-        }
-      });
+                                        {
+                                          {"domain", "somedomain"}
+                                        });
       using (new Switcher<Domain, Domain>(new Domain("somedomain")))
       {
         using (new AuthenticationSwitcher(authenticationProvider))
@@ -170,21 +160,19 @@
 
     [Theory]
     [AutoDbData]
-    public void Login_NotLoggedInUser_ShouldNotTrackLoginEvents(FakeMembershipUser user, [Frozen]IAccountTrackerService accountTrackerService, AuthenticationProvider authenticationProvider, AccountRepository repo)
+    public void Login_NotLoggedInUser_ShouldNotTrackLoginEvents(FakeMembershipUser user, [Frozen] IAccountTrackerService accountTrackerService, AuthenticationProvider authenticationProvider, AccountRepository repo)
     {
       authenticationProvider.Login(@"somedomain\John", Arg.Any<string>(), Arg.Any<bool>()).Returns(false);
 
       var context = new FakeSiteContext(new StringDictionary
-      {
-        {
-          "domain", "somedomain"
-        }
-      });
+                                        {
+                                          {"domain", "somedomain"}
+                                        });
       using (new Switcher<Domain, Domain>(new Domain("somedomain")))
       {
         using (new AuthenticationSwitcher(authenticationProvider))
         {
-          var loginResult = repo.Login("John", "somepassword");
+          repo.Login("John", "somepassword");
           accountTrackerService.DidNotReceive().TrackLogin(Arg.Any<string>());
         }
       }
@@ -196,30 +184,24 @@
       {
         var fixture = new Fixture();
         return new List<object[]>
-        {
-          new[]
-          {
-            null,fixture.Create<string>(),fixture.Create<string>()
-          },
-          new[]
-          {
-            fixture.Create<string>(),null,fixture.Create<string>()
-          }
-        };
+               {
+                 new object[] {null, fixture.Create<string>(), fixture.Create<string>()},
+                 new object[] {fixture.Create<string>(), null, fixture.Create<string>()}
+               };
       }
     }
 
     [Theory]
     [MemberData(nameof(RegistrationInfosArgumentNull))]
-    public void RegisterShouldThrowArgumentException(string email, string password, string profileId)
+    public void RegisterUser_NullEmailOrPassword_ShouldThrowArgumentException(string email, string password, string profileId)
     {
       var repository = new AccountRepository(Substitute.For<IAccountTrackerService>());
-      repository.Invoking(x => x.RegisterUser(email,password, profileId)).ShouldThrow<ArgumentNullException>();
+      repository.Invoking(x => x.RegisterUser(email, password, profileId)).ShouldThrow<ArgumentNullException>();
     }
 
     [Theory]
     [AutoFakeUserData]
-    public void RegisterShouldCreateUserWithEmailAndPassword(FakeMembershipUser user, MembershipProvider membershipProvider, RegistrationInfo registrationInfo, string userProfile, AccountRepository repository)
+    public void RegisterUser_ValidData_ShouldCreateUserWithEmailAndPassword(FakeMembershipUser user, MembershipProvider membershipProvider, RegistrationInfo registrationInfo, string userProfile, AccountRepository repository)
     {
       user.ProviderName.Returns("fake");
       user.UserName.Returns("name");
@@ -231,7 +213,7 @@
       {
         using (new MembershipSwitcher(membershipProvider))
         {
-          repository.RegisterUser(registrationInfo.Email,registrationInfo.Password, userProfile);
+          repository.RegisterUser(registrationInfo.Email, registrationInfo.Password, userProfile);
           membershipProvider.Received(1).CreateUser($@"somedomain\{registrationInfo.Email}", registrationInfo.Password, Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>(), Arg.Any<bool>(), Arg.Any<object>(), out status);
         }
       }
@@ -239,7 +221,7 @@
 
     [Theory]
     [AutoFakeUserData]
-    public void RegisterShouldCreateLoginUser(FakeMembershipUser user, [Substitute] MembershipProvider membershipProvider, [Substitute] AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository, string profileId)
+    public void RegisterUser_ValidData_ShouldCreateLoginUser(FakeMembershipUser user, [Substitute] MembershipProvider membershipProvider, [Substitute] AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, AccountRepository repository, string profileId)
     {
       user.ProviderName.Returns("fake");
       user.UserName.Returns("name");
@@ -254,7 +236,7 @@
           using (new AuthenticationSwitcher(authenticationProvider))
           {
             repository.RegisterUser(registrationInfo.Email, registrationInfo.Password, profileId);
-            authenticationProvider.Received(1).Login(Arg.Is<string>(u => u == $@"somedomain\{registrationInfo.Email}"), Arg.Is<string>(p=>p== registrationInfo.Password), Arg.Any<bool>());
+            authenticationProvider.Received(1).Login(Arg.Is<string>(u => u == $@"somedomain\{registrationInfo.Email}"), Arg.Is<string>(p => p == registrationInfo.Password), Arg.Any<bool>());
           }
         }
       }
@@ -262,7 +244,7 @@
 
     [Theory]
     [AutoFakeUserData]
-    public void Register_ValidUser_ShouldTrackRegistraionEvents(FakeMembershipUser user, [Substitute]MembershipProvider membershipProvider, [Substitute]AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, [Frozen]IAccountTrackerService accountTrackerService, AccountRepository repository, string profileId)
+    public void Register_ValidUser_ShouldTrackRegistraionEvents(FakeMembershipUser user, [Substitute] MembershipProvider membershipProvider, [Substitute] AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, [Frozen] IAccountTrackerService accountTrackerService, AccountRepository repository, string profileId)
     {
       user.UserName.Returns("name");
       MembershipCreateStatus status;
@@ -284,14 +266,14 @@
 
     [Theory]
     [AutoDbData]
-    public void LogoutShouldLogoutUser(User user, MembershipProvider membershipProvider, RegistrationInfo registrationInfo, AccountRepository repository)
+    public void Logout_ActiveUser_ShouldLogoutUser(User user, MembershipProvider membershipProvider, RegistrationInfo registrationInfo, AccountRepository repository)
     {
       var authenticationProvider = Substitute.For<AuthenticationProvider>();
       authenticationProvider.GetActiveUser().Returns(user);
       using (new AuthenticationSwitcher(authenticationProvider))
       {
-          repository.Logout();
-          authenticationProvider.Received(1).Logout();
+        repository.Logout();
+        authenticationProvider.Received(1).Logout();
       }
     }
   }

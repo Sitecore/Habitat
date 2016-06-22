@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sitecore.Feature.Metadata.Tests
+﻿namespace Sitecore.Feature.Metadata.Tests
 {
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
   using FluentAssertions;
   using Sitecore.Feature.Metadata.Models;
-  using Sitecore.Feature.Metadata.Tests.Extensions;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class MetaKeywordsModelTests
@@ -19,7 +16,7 @@ namespace Sitecore.Feature.Metadata.Tests
     {
       model.Keywords = keywords;
       var result = model.ToString();
-      var keywordCollection = result.Split(new [] {','}, StringSplitOptions.RemoveEmptyEntries).ToList();
+      var keywordCollection = result.Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries).ToList();
       var intersection = keywordCollection.Except(keywords);
       intersection.Count().Should().Be(0);
     }

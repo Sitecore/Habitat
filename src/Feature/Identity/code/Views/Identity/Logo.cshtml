@@ -12,7 +12,7 @@
     return;
   }
   //TODO: Resolve context site from item (implement in Foundation.Multisite)
-  var homeUrl = Sitecore.Context.Site?.GetStartItem()?.GetUrl() ?? "/";
+  var homeUrl = Sitecore.Context.Site?.GetStartItem()?.Url() ?? "/";
   var hasTagline = identity.FieldHasValue(Templates.Identity.Fields.LogoTagLine);
 }
 

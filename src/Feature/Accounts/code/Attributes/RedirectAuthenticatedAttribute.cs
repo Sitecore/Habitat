@@ -8,24 +8,22 @@
   {
     public override void OnActionExecuting(ActionExecutingContext filterContext)
     {
-      if (Context.PageMode.IsNormal)
+      if (!Context.PageMode.IsNormal)
+        return;
+      if (!Context.User.IsAuthenticated)
+        return;
+      var link = this.GetRedirectUrl(filterContext);
+      if (filterContext.HttpContext.Request.RawUrl.Equals(link, StringComparison.InvariantCultureIgnoreCase))
       {
-        if (Context.User.IsAuthenticated)
-        {
-          var link = GetRedirectUrl(filterContext);
-          if (filterContext.HttpContext.Request.RawUrl.Equals(link, StringComparison.InvariantCultureIgnoreCase))
-          {
-            link = RedirectUrl;
-          }
-
-          filterContext.Result = new RedirectResult(link);
-        }
+        link = this.RedirectUrl;
       }
+
+      filterContext.Result = new RedirectResult(link);
     }
 
     protected virtual string GetRedirectUrl(ActionExecutingContext filterContext)
     {
-      return RedirectUrl;
+      return this.RedirectUrl;
     }
 
     private string RedirectUrl => Context.Site.GetRootItem().Url();

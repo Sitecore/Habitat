@@ -17,7 +17,7 @@
       this.filePathResolver = filePathResolver;
     }
 
-    public MongoPathsProvider():this(new FilePathResolver())
+    public MongoPathsProvider() : this(new FilePathResolver())
     {
       this.baseLocation = this.filePathResolver.MapPath(DefaultDumpLocation);
     }

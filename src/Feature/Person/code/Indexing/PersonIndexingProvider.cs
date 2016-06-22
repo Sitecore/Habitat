@@ -3,13 +3,12 @@
   using System;
   using System.Collections.Generic;
   using System.Configuration.Provider;
-  using System.Diagnostics.CodeAnalysis;
   using System.Linq.Expressions;
+  using Sitecore.ContentSearch.SearchTypes;
+  using Sitecore.Data;
   using Sitecore.Foundation.Indexing.Infrastructure;
   using Sitecore.Foundation.Indexing.Models;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
-  using Sitecore.ContentSearch.SearchTypes;
-  using Sitecore.Data;
   using Sitecore.Web.UI.WebControls;
   using Foundation.Dictionary.Repositories;
   public class PersonIndexingProvider : ProviderBase, ISearchResultFormatter, IQueryPredicateProvider

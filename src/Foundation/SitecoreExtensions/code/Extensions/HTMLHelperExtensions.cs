@@ -1,52 +1,52 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Extensions
 {
   using System;
+  using System.Linq.Expressions;
   using System.Web;
   using System.Web.Mvc;
+  using System.Web.Mvc.Html;
   using DynamicPlaceholders.Mvc.Extensions;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
+  using Sitecore.Foundation.SitecoreExtensions.Attributes;
   using Sitecore.Foundation.SitecoreExtensions.Controls;
+  using Sitecore.Mvc;
   using Sitecore.Mvc.Helpers;
-  using Sitecore.Shell.Framework.Commands.ContentEditor;
 
-  /// <summary>
-  ///   HTML Helper extensions
-  /// </summary>
   public static class HtmlHelperExtensions
   {
     public static HtmlString ImageField(this SitecoreHelper helper, ID fieldID, int mh = 0, int mw = 0, string cssClass = null, bool disableWebEditing = false)
     {
       return helper.Field(fieldID.ToString(), new
-      {
-        mh,
-        mw,
-        DisableWebEdit = disableWebEditing,
-        @class = cssClass ?? ""
-      });
+                                              {
+                                                mh,
+                                                mw,
+                                                DisableWebEdit = disableWebEditing,
+                                                @class = cssClass ?? ""
+                                              });
     }
 
     public static HtmlString ImageField(this SitecoreHelper helper, ID fieldID, Item item, int mh = 0, int mw = 0, string cssClass = null, bool disableWebEditing = false)
     {
       return helper.Field(fieldID.ToString(), item, new
-      {
-        mh,
-        mw,
-        DisableWebEdit = disableWebEditing,
-        @class = cssClass ?? ""
-      });
+                                                    {
+                                                      mh,
+                                                      mw,
+                                                      DisableWebEdit = disableWebEditing,
+                                                      @class = cssClass ?? ""
+                                                    });
     }
 
     public static HtmlString ImageField(this SitecoreHelper helper, string fieldName, Item item, int mh = 0, int mw = 0, string cssClass = null, bool disableWebEditing = false)
     {
       return helper.Field(fieldName, item, new
-      {
-        mh,
-        mw,
-        DisableWebEdit = disableWebEditing,
-        @class = cssClass ?? ""
-      });
+                                           {
+                                             mh,
+                                             mw,
+                                             DisableWebEdit = disableWebEditing,
+                                             @class = cssClass ?? ""
+                                           });
     }
 
     public static EditFrameRendering BeginEditFrame<T>(this HtmlHelper<T> helper, string dataSource, string buttons)
@@ -69,7 +69,7 @@
     public static HtmlString Field(this SitecoreHelper helper, ID fieldID, object parameters)
     {
       Assert.ArgumentNotNullOrEmpty(fieldID, nameof(fieldID));
-	  Assert.IsNotNull(parameters, nameof(parameters));
+      Assert.IsNotNull(parameters, nameof(parameters));
       return helper.Field(fieldID.ToString(), parameters);
     }
 
@@ -77,7 +77,7 @@
     {
       Assert.ArgumentNotNullOrEmpty(fieldID, nameof(fieldID));
       Assert.IsNotNull(item, nameof(item));
-	  Assert.IsNotNull(parameters, nameof(parameters));
+      Assert.IsNotNull(parameters, nameof(parameters));
       return helper.Field(fieldID.ToString(), item, parameters);
     }
 
@@ -88,21 +88,40 @@
       return helper.Field(fieldID.ToString(), item);
     }
 
-    public static MvcHtmlString PageEditorError(this SitecoreHelper helper, string errorMessage)
+    /// <summary>
+    /// Generates a hidden form field for use with form validation
+    /// Required for the <see cref="ValidateRenderingIdAttribute">ValidateRenderingIdAttribute</see> to work
+    /// </summary>
+    /// <param name="htmlHelper">Html Helper class</param>
+    /// <returns>Hidden form field with unique ID</returns>
+    public static MvcHtmlString AddUniqueFormId(this HtmlHelper htmlHelper)
     {
-      Log.Error($@"Presentation error: {errorMessage}", typeof(HtmlHelperExtensions));
+      var uid = htmlHelper.Sitecore().CurrentRendering?.UniqueId;
+      return !uid.HasValue ? null : htmlHelper.Hidden(ValidateRenderingIdAttribute.FormUniqueid, uid.Value);
+    }
 
-      if (Context.PageMode.IsNormal)
+    public static MvcHtmlString ValidationErrorFor<TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TProperty>> expression, string error)
+    {
+      return htmlHelper.HasError(ModelMetadata.FromLambdaExpression(expression, htmlHelper.ViewData), ExpressionHelper.GetExpressionText(expression)) ? new MvcHtmlString(error) : null;
+    }
+
+    public static bool HasError(this HtmlHelper htmlHelper, ModelMetadata modelMetadata, string expression)
+    {
+      var modelName = htmlHelper.ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldName(expression);
+      var formContext = htmlHelper.ViewContext.FormContext;
+      if (formContext == null)
       {
-        return new MvcHtmlString(string.Empty);
+        return false;
       }
 
-      var builder = new TagBuilder("p");
-      builder.AddCssClass("alert");
-      builder.AddCssClass("alert-danger");
-      builder.InnerHtml = errorMessage;
+      if (!htmlHelper.ViewData.ModelState.ContainsKey(modelName))
+      {
+        return false;
+      }
 
-      return MvcHtmlString.Create(builder.ToString());
+      var modelState = htmlHelper.ViewData.ModelState[modelName];
+      var modelErrors = modelState?.Errors;
+      return modelErrors?.Count > 0;
     }
   }
 }

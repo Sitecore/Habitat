@@ -2,7 +2,8 @@
 {
   using System.Web;
   using Ploeh.AutoFixture.Kernel;
-  public class HttpContextBuilder: ISpecimenBuilder
+
+  public class HttpContextBuilder : ISpecimenBuilder
   {
     public object Create(object request, ISpecimenContext context)
     {

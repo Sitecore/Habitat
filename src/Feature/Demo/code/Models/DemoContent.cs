@@ -1,11 +1,10 @@
 namespace Sitecore.Feature.Demo.Models
 {
   using System.Linq;
-  using Sitecore.Configuration;
   using Sitecore.Data.Items;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
   using Sitecore.Text;
-  using static Sitecore.Configuration.Factory;
+  using static Configuration.Factory;
 
   public class DemoContent
   {
@@ -13,28 +12,28 @@ namespace Sitecore.Feature.Demo.Models
 
     public DemoContent(Item item)
     {
-      Item = item;
+      this.Item = item;
     }
 
     public string HtmlContent
     {
       get
       {
-        var content = Item[Templates.DemoContent.Fields.HTMLContent.ToString()];
-        return ReplaceTokens(content);
+        var content = this.Item[Templates.DemoContent.Fields.HTMLContent.ToString()];
+        return this.ReplaceTokens(content);
       }
     }
 
     private string ReplaceTokens(string content)
     {
       var replacer = GetMasterVariablesReplacer();
-      using (new ReplacerContextSwitcher(GetReplacementTokens()))
-        return replacer.Replace(content, Item);
+      using (new ReplacerContextSwitcher(this.GetReplacementTokens()))
+        return replacer.Replace(content, this.Item);
     }
 
     private string[] GetReplacementTokens()
     {
-      return Item.Children.Where(i => i.IsDerived(Templates.Token.ID)).SelectMany(i => new [] {$"${i.Name}", i[Templates.Token.Fields.TokenValue]}).ToArray();
+      return this.Item.Children.Where(i => i.IsDerived(Templates.Token.ID)).SelectMany(i => new[] {$"${i.Name}", i[Templates.Token.Fields.TokenValue]}).ToArray();
     }
   }
 }

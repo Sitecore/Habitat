@@ -106,9 +106,6 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Extensions\ItemExtensions.cs" />
     <Compile Include="Infrastructure\Events\UpdateLocalDatasourceReferences.cs" />
     <Compile Include="Infrastructure\Indexing\LocalDatasourceIndexContentProvider.cs" />
@@ -126,7 +123,15 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\Foundation\Foundation.LocalDatasource.Serialization.config" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Indexing\code\Sitecore.Foundation.Indexing.csproj">

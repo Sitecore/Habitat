@@ -32,7 +32,10 @@
           server.DetachDatabase(databaseName, true);
         }
 
-        server.AttachDatabase(databaseName,new StringCollection() {dbReplacementPath}, AttachOptions.RebuildLog);
+        server.AttachDatabase(databaseName, new StringCollection
+                                            {
+                                              dbReplacementPath
+                                            }, AttachOptions.RebuildLog);
       }
       catch (Exception ex)
       {

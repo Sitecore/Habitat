@@ -1,43 +1,40 @@
-﻿@using System.Web.Mvc.Html
+﻿@using Sitecore.Feature.FAQ
 @using Sitecore.Feature.FAQ.Repositories
-@using Sitecore.Feature.FAQ
-@using Sitecore.Data.Items
 @using Sitecore.Foundation.Alerts
-@using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Mvc
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @if (!Model?.Item?.IsDerived(Templates.FaqGroup.ID) ?? true)
 {
-@Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.FaqGroup.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID);
-    return;
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.FaqGroup.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  return;
 }
 
 @{
-  var elements = GroupMemberRepository.Get(Model.Item).ToArray();
+  var elements = FaqRepository.Get(Model.Item).ToArray();
 }
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    @foreach (Item item in elements)
-    {
-
-        var ID = Guid.NewGuid().ToString();
+  @foreach (var item in elements)
+  {
+    var id = Guid.NewGuid().ToString();
     <div class="panel panel-default">
-        <div class="panel-heading" role="tab" id="headingcollapse0">
-            <div class="panel-title">
-                <a role="button" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@ID">
-                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                    @Html.Sitecore().Field(Templates.Faq.Fields.Question, item)
-                </a>
-            </div>
+      <div class="panel-heading" role="tab" id="headingcollapse0">
+        <div class="panel-title">
+          <a role="button" class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#@id">
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            @Html.Sitecore().Field(Templates.Faq.Fields.Question, item)
+          </a>
         </div>
-        <div id=@ID class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingcollapse0">
-            <div class="panel-body">
-                @Html.Sitecore().Field(Templates.Faq.Fields.Answer, item)
-            </div>
+      </div>
+      <div id=@id class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingcollapse0">
+        <div class="panel-body">
+          @Html.Sitecore().Field(Templates.Faq.Fields.Answer, item)
         </div>
+      </div>
     </div>
 
     <!-- /.panel -->
-    }
+  }
 </div>

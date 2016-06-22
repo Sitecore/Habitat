@@ -5,30 +5,27 @@
 @using Sitecore.StringExtensions
 @model Sitecore.Feature.Demo.Models.ExperienceData
 
-@if (Sitecore.Context.Site.NoOverlay())
-{
-  <div class="off-canvas-sidebar off-canvas-sidebar-right">
-    <div class="btn-group-vertical hover" role="group">
+<div class="off-canvas-sidebar off-canvas-sidebar-right">
+  <div class="btn-group-vertical hover" role="group">
       <button type="button" class="btn btn-info sidebar-closed" data-toggle="sidebar" title="@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/Open Visit Details Panel", "Open visit details panel")" data-side="right">
-        <span class="glyphicon glyphicon-info-sign icon-md "></span>
-      </button>
+      <span class="glyphicon glyphicon-info-sign icon-md "></span>
+    </button>
       <button type="button" class="btn btn-info btn-lg sidebar-opened" style="display: none" data-toggle="sidebar" title="@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/Close Visit Details Panel", "Close visit details panel")" data-side="right">
-        <span class="glyphicon glyphicon-remove"></span>
+      <span class="glyphicon glyphicon-remove"></span>
         <span class="hover-only">@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/Close Label", "Close")</span>
-      </button>
+    </button>
       <button href="#" onclick="jQuery('head').trigger('visit-info:refresh')" style="display: none" class="btn btn-success sidebar-opened" title="@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/Refresh Visit Details", "Refresh visit details panel")">
-        <span class="glyphicon glyphicon-refresh"></span>
+      <span class="glyphicon glyphicon-refresh"></span>
         <span class="hover-only">@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/Refresh Label", "Refresh")</span>
-      </button>
+    </button>
       <button href="#" onclick="jQuery('head').trigger('visit-info:endVisit')" class="btn btn-danger sidebar-opened" style="display: none" title="@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/End Visit", "End the current visit and submit it to the Sitecore Experience Database")">
-        <span class="glyphicon glyphicon-eye-close"></span>
+      <span class="glyphicon glyphicon-eye-close"></span>
         <span class="hover-only">@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/End Visit Label", "End Visit")</span>
-      </button>
-    </div>
-
-    <div class="sidebar sidebar-fixed-right">
-      @Html.Partial("_ExperienceDataContent", Model)
-    </div>
+    </button>
   </div>
-}
+
+  <div class="sidebar sidebar-fixed-right">
+    @Html.Partial("_ExperienceDataContent", Model)
+  </div>
+</div>
 

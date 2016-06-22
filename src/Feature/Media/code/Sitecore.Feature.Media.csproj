@@ -116,11 +116,11 @@
     <Content Include="Views\MediaFeature\LightboxVideo.cshtml" />
     <Content Include="Views\MediaFeature\MediaCarousel.cshtml" />
     <Content Include="App_Config\Include\Feature\Feature.Media.Serialization.config" />
-    <Content Include="packages.config" />
     <Content Include="Views\MediaFeature\LightboxGallery.cshtml" />
     <Content Include="Views\MediaFeature\SectionMedia.cshtml" />
     <Content Include="Views\MediaFeature\PageHeaderMedia.cshtml" />
     <Content Include="Views\MediaFeature\PageHeaderCarousel.cshtml" />
+    <Content Include="packages.config" />
     <None Include="Web.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">

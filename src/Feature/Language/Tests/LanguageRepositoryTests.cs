@@ -1,30 +1,21 @@
 ﻿namespace Sitecore.Feature.Language.Tests
 {
-  using System.Collections.Generic;
   using System.Linq;
   using FluentAssertions;
+  using Sitecore.Collections;
   using Sitecore.Data;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.Feature.Language.Infrastructure.Repositories;
-  using Sitecore.Feature.Language.Models;
+  using Sitecore.FakeDb.Sites;
+  using Sitecore.Feature.Language.Repositories;
   using Sitecore.Feature.Language.Tests.Extensions;
   using Sitecore.Foundation.Multisite;
+  using Sitecore.Foundation.Testing.Attributes;
+  using Sitecore.Sites;
   using Xunit;
 
   public class LanguageRepositoryTests
   {
-    [Theory]
-    [AutoDbData]
-    public void GetAll_ShouldReturnAllLanguages(Db db, [Content] DbItem item)
-    {
-      var contextItem = db.GetItem(item.ID);
-      Context.Item = contextItem;
-      var languages = LanguageRepository.GetAll();
-      languages.Should().BeAssignableTo<IEnumerable<Language>>();
-      languages.Count().Should().Be(db.Database.GetLanguages().Count);
-    }
-
     [Theory]
     [AutoDbData]
     public void GetActive_ShouldReturnLanguageModelForContextLanguage(Db db, [Content] DbItem item)
@@ -46,6 +37,7 @@
 
       var languageItem = new DbItem("en");
       db.Add(languageItem);
+
 
       var siteRootItem = new DbItem(rootName, ID.NewID, template.ID)
       {
@@ -91,8 +83,20 @@
       db.Add(siteRootItem);
       var contextItem = db.GetItem(item.ID);
       Context.Item = contextItem;
-      var supportedLanguages = LanguageRepository.GetSupportedLanguages();
-      supportedLanguages.Count().Should().Be(0);
+
+      var fakeSite = new FakeSiteContext(new StringDictionary()
+      {
+        { "name", "fake" },
+        { "database", "master" },
+        {"rootPath", siteRootItem.FullPath },
+        { "hostName", "local" }
+      });
+
+      using (new FakeSiteContextSwitcher(fakeSite))
+      {
+        var supportedLanguages = LanguageRepository.GetSupportedLanguages();
+        supportedLanguages.Count().Should().Be(0);
+      }
     }
   }
 }

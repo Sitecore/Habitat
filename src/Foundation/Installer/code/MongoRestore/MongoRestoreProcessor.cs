@@ -11,7 +11,7 @@
       this.mongoRestoreService = mongoRestoreService;
     }
 
-    public MongoRestoreProcessor():this(new MongoRestoreService())
+    public MongoRestoreProcessor() : this(new MongoRestoreService())
     {
     }
 

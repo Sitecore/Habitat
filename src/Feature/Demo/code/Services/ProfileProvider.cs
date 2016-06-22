@@ -1,6 +1,5 @@
 ﻿namespace Sitecore.Feature.Demo.Services
 {
-  using System;
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.Analytics;
@@ -54,7 +53,7 @@
     {
       Assert.ArgumentNotNull(visibleProfile, nameof(visibleProfile));
 
-      var userPattern = type == ProfilingTypes.Historic ? GetHistoricMatchedPattern(visibleProfile) : GetActiveMatchedPattern(visibleProfile);
+      var userPattern = type == ProfilingTypes.Historic ? this.GetHistoricMatchedPattern(visibleProfile) : this.GetActiveMatchedPattern(visibleProfile);
 
       var patterns = PopulateProfilePatternMatchesWithXdbData.GetPatternsWithGravityShare(visibleProfile, userPattern);
       return patterns.Select(patternKeyValuePair => CreatePatternMatch(visibleProfile, patternKeyValuePair)).OrderByDescending(pm => pm.MatchPercentage);
@@ -81,7 +80,11 @@
 
     private static string GetPatternImageUrl(KeyValuePair<PatternCardItem, double> patternKeyValuePair)
     {
-      return patternKeyValuePair.Key.Image?.MediaItem == null ? string.Empty : patternKeyValuePair.Key.Image.ImageUrl(new MediaUrlOptions { Width = 50, MaxWidth = 50 });
+      return patternKeyValuePair.Key.Image?.MediaItem == null ? string.Empty : patternKeyValuePair.Key.Image.ImageUrl(new MediaUrlOptions
+                                                                                                                      {
+                                                                                                                        Width = 50,
+                                                                                                                        MaxWidth = 50
+                                                                                                                      });
     }
   }
 }
