@@ -28,6 +28,7 @@ gulp.task("CI-Prepare-Package-Files", function (callback) {
       config.websiteRoot + "\\compilerconfig.json.defaults",
       config.websiteRoot + "\\packages.config",
       config.websiteRoot + "\\App_Config\\Include\\{Feature,Foundation,Project}\\*Serialization.config",
+      config.websiteRoot + "\\App_Config\\Include\\{Feature,Foundation,Project}\\z.*DevSettings.config",
       "!" + config.websiteRoot + "\\bin\\Sitecore.Support*dll",
       "!" + config.websiteRoot + "\\bin\\Sitecore.{Feature,Foundation,Habitat,Demo,Common}*dll"
     ];
