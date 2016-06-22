@@ -1,0 +1,36 @@
+﻿---
+ID: "5e24bfbc-64df-484f-b894-8b2e33835555"
+Parent: "a150435d-da28-46b2-a576-542f4ee053dc"
+Template: "5c547d4e-7111-4995-95b0-6b561751bf2e"
+Path: "/sitecore/layout/Placeholder Settings/Project/Common/Teaser Placeholders/jumbotron-placeholder-8"
+DB: master
+SharedFields:
+- ID: "7256bdab-1fd2-49dd-b205-cb4873d2917c"
+  Hint: Placeholder Key
+  Value: "jumbotron-placeholder-8"
+- ID: "e391b526-d0c5-439d-803e-17512eae6222"
+  Hint: Allowed Controls
+  Type: TreelistEx
+  Value: |
+    {CA748838-E6D5-4BAD-9126-CAD10DD1B0DB}
+    {F49C9252-47F3-406B-B311-E26EE4D1149B}
+    {0534F12C-804E-4532-A832-5D61FE9EC6ED}
+    {F366FBA9-EF26-4007-988A-63CB64649C46}
+    {96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}
+    {07AB411C-F894-4144-B069-48EF67431D32}
+    {EBB6DC33-F281-49BE-B273-29ECCD6085A8}
+    {A25C9850-AAB7-46A6-84B7-0DFAB32FC357}
+    {EE5A9F3D-C2CB-4710-8053-04D1A7135EBE}
+    {E47303E0-90FD-4E81-B2B5-CA4E8C1C36B4}
+    {FDFCD088-3C9E-49C4-97FF-2DDE5D339BA0}
+    {781C6B36-4B02-46EA-8ADC-B92A11877F10}
+    {7DFD9396-CB94-4174-9721-9419A2AA68E3}
+    {A1AD34DD-535E-47AF-A911-34C57CCC26F6}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20151026T055534Z

@@ -1,0 +1,20 @@
+﻿---
+ID: "66347665-a565-462b-9f45-79884c2f42d2"
+Parent: "72ad5359-1c5f-4d37-9b3a-bb73d47c7936"
+Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
+Path: /sitecore/content/Habitat/Global/Dictionary/Alerts/Friendly/Invalid data source template
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160406T235534Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
+      Hint: Phrase
+      Value: There was a problem with the associated content item, please associate a correct content item with the component

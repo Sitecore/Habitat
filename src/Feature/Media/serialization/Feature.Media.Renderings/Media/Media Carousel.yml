@@ -7,7 +7,7 @@ DB: master
 SharedFields:
 - ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
   Hint: Path
-  Value: /Views/MediaFeature/Carousel.cshtml
+  Value: /Views/MediaFeature/MediaCarousel.cshtml
 - ID: "7d24e54f-5c16-4314-90c9-6051aa1a7da1"
   Hint: Parameters Template
   Value: "{5DF30DC0-E2FC-4921-B8F2-C54FAC1BD03E}"
@@ -26,6 +26,9 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+    - ID: 1c307764-806c-42f0-b7ce-fc173ac8372b
+      Hint: Supports Local Datasource
+      Value: 1
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20150902T070251Z

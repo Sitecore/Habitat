@@ -42,7 +42,8 @@
       provider.GetDatasourceTemplate(Arg.Any<Item>(), Arg.Any<string>()).Returns(sourceTemplate);
 
       var setting = settingName.Replace("-", string.Empty);
-      renderingItem.Add(new DbField("Datasource Location") { { "en", $"site:{setting}" } });
+      renderingItem.Add(new DbField(Templates.DatasourceConfiguration.Fields.DatasourceLocation) { { "en", $"site:{setting}" } });
+
       db.Add(renderingItem);
       var rendering = db.GetItem(renderingItem.ID);
 

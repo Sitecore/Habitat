@@ -1,6 +1,6 @@
 ﻿@using Sitecore.Feature.Accounts
 @using Sitecore.Feature.Accounts.Services
-@using Sitecore.Feature.Accounts.Texts
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Mvc
 @model Sitecore.Feature.Accounts.Models.LoginInfo
@@ -12,11 +12,11 @@
                                    @class = "control-label"
                                  })
     @Html.TextBoxFor(x => x.Email, new
-{
-  @class = "form-control",
-  id = "popupLoginEmail",
-  @placeholder = Captions.PlaceholderLoginEmail
-})
+                                   {
+                                     @class = "form-control",
+                                     id = "popupLoginEmail",
+                                     @placeholder = Html.Sitecore().Dictionary("/Accounts/Login/Login E-mail Placeholder", "Enter your e-mail")
+                                   })
     @Html.ValidationMessageFor(x => x.Email, "", new
                                                  {
                                                    @class = "help-block"
@@ -28,17 +28,17 @@
                                       @class = "control-label"
                                     })
     @Html.PasswordFor(x => x.Password, new
-{
-  @class = "form-control",
-  id = "popupLoginPassword",
-  @placeholder = Captions.PlaceholderLoginPassword
-})
+                                       {
+                                         @class = "form-control",
+                                         id = "popupLoginPassword",
+                                         @placeholder = Html.Sitecore().Dictionary("/Accounts/Login/Login Password Placeholder", "Enter your password")
+                                       })
     @Html.ValidationMessageFor(x => x.Password, "", new
                                                     {
                                                       @class = "help-block"
                                                     }, "p")
   </div>
-  <button type="button" class="btn btn-block btn-primary" onclick="login('loginModal')">@Captions.Login</button>
-  <a class="btn btn-block btn-default" href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)">@Captions.ForgotYourPassword</a>
-  <a class="btn btn-block btn-default" href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.RegisterPage)">@Captions.Register</a>
+  <button type="button" class="btn btn-block btn-primary" onclick="login('loginModal')">@Html.Sitecore().DictionaryField("/Accounts/Login/Login", "Login")</button>
+  <a class="btn btn-block btn-default" href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)">@Html.Sitecore().DictionaryField("/Accounts/Login/Forgot Your Password", "Forgot your password?")</a>
+  <a class="btn btn-block btn-default" href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.RegisterPage)">@Html.Sitecore().DictionaryField("/Accounts/Login/Register", "Register")</a>
 </div>

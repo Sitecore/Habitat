@@ -6,6 +6,7 @@
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Feature.Accounts.Attributes;
   using Sitecore.Feature.Accounts.Tests.Extensions;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class ValidateModelTests

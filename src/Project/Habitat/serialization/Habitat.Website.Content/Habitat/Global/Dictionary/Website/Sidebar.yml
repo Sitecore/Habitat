@@ -1,0 +1,14 @@
+﻿---
+ID: "b93751fc-450f-4080-abe0-92afc018b1d5"
+Parent: "8efb4a69-e12f-43a4-b4a8-00226ea70819"
+Template: "98e4bdc6-9b43-4eb2-baa3-d4303c35852e"
+Path: /sitecore/content/Habitat/Global/Dictionary/Website/Sidebar
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160406T232644Z

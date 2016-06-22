@@ -8,6 +8,7 @@
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
+  using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Security;
   using Xunit;
 

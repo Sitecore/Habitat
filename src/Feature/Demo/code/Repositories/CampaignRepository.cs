@@ -5,8 +5,8 @@
   using Sitecore.Analytics.Tracking;
   using Sitecore.Common;
   using Sitecore.Data;
+  using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Feature.Demo.Models;
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Marketing.Definitions;
   using Sitecore.Marketing.Definitions.Campaigns;
   using Sitecore.Marketing.Taxonomy;
@@ -25,7 +25,7 @@
 
       return new Campaign
              {
-               Title = campaign?.Name ?? DictionaryRepository.Get("/Demo/Campaigns/UnknownCampaign", "(Unknown)"),
+               Title = campaign?.Name ?? DictionaryPhraseRepository.Current.Get("/Demo/Campaigns/Unknown Campaign", "(Unknown)"),
                IsActive = true,
                Date = Tracker.Current.Interaction.StartDateTime,
                Channel = this.GetChannel(campaign)
@@ -35,7 +35,9 @@
     private string GetChannel(ICampaignActivityDefinition campaign)
     {
       if (campaign?.ChannelUri == null)
+      {
         return null;
+      }
       var channelTaxonomyManager = TaxonomyManager.Provider.GetChannelManager();
       var channel = channelTaxonomyManager.GetChannel(campaign.ChannelUri, Context.Language.CultureInfo);
       return channel == null ? null : channelTaxonomyManager.GetFullName(channel.Uri, "/");
@@ -50,6 +52,7 @@
 
     public IEnumerable<Campaign> GetHistoric()
     {
+      Tracker.Current.Contact.LoadKeyBehaviorCache();
       var keyBehaviourCache = Tracker.Current.Contact.GetKeyBehaviorCache();
       foreach (var cachedCampaign in keyBehaviourCache.Campaigns)
       {
@@ -57,7 +60,7 @@
 
         yield return new Campaign
                      {
-                       Title = campaign?.Name ?? DictionaryRepository.Get("/Demo/Campaigns/UnknownCampaign", "(Unknown)"),
+                       Title = campaign?.Name ?? DictionaryPhraseRepository.Current.Get("/Demo/Campaigns/Unknown Campaign", "(Unknown)"),
                        IsActive = false,
                        Date = cachedCampaign.DateTime,
                        Channel = this.GetChannel(campaign)

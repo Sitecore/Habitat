@@ -115,7 +115,8 @@
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Teasers\Headline.cshtml" />
     <Content Include="Views\Teasers\JumbotronHeader.cshtml" />
-    <Content Include="Views\Teasers\Carousel.cshtml" />
+    <Content Include="Views\Teasers\TeaserCarousel.cshtml" />
+    <Content Include="Views\Teasers\JumbotronCarousel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -127,6 +128,7 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\DynamicTeaserModelExtensions.cs" />
     <Compile Include="Models\DynamicTeaserItem.cs" />
     <Compile Include="Controller\TeasersController.cs" />
     <Compile Include="Models\DynamicTeaserModel.cs" />
@@ -137,6 +139,10 @@
     <ProjectReference Include="..\..\..\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj">
       <Project>{5CF5FA06-AB27-4DF5-A471-ED57EF3E4AE9}</Project>
       <Name>Sitecore.Foundation.Alerts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Dictionary\code\Sitecore.Foundation.Dictionary.csproj">
+      <Project>{0d6ba4d8-c469-4ae9-9ebb-93bdf7d7e78f}</Project>
+      <Name>Sitecore.Foundation.Dictionary</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\Indexing\code\Sitecore.Foundation.Indexing.csproj">
       <Project>{80213f24-577f-4f0b-a3b8-62485ea4d2f3}</Project>

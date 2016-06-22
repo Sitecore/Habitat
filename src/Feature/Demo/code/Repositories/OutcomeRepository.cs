@@ -9,7 +9,7 @@
   using Sitecore.Configuration;
   using Sitecore.Data;
   using Sitecore.Feature.Demo.Models;
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Marketing.Definitions;
   using Sitecore.Marketing.Definitions.Outcomes.Model;
   using Sitecore.Marketing.Taxonomy;
@@ -38,7 +38,7 @@
       var definition = GetOutcomeDefinition(outcome.DefinitionId);
       return new Outcome
              {
-               Title = definition?.Name ?? DictionaryRepository.Get("/Demo/Outcomes/UnknownOutcome", "(Unknown)"),
+               Title = definition?.Name ?? DictionaryPhraseRepository.Current.Get("/Demo/Outcomes/Unknown Outcome", "(Unknown)"),
                Date = outcome.DateTime,
                IsCurrentVisit = outcome.InteractionId.ToGuid() == Tracker.Current.Interaction.InteractionId,
                OutcomeGroup = this.GetOutcomeGroup(definition)
@@ -48,7 +48,9 @@
     private string GetOutcomeGroup(IOutcomeDefinition outcome)
     {
       if (outcome?.OutcomeGroupUri == null)
+      {
         return null;
+      }
       var outcomeGroupTaxonomyManager = TaxonomyManager.Provider.GetOutcomeGroupManager();
       var outcomeGroup = outcomeGroupTaxonomyManager.GetOutcomeGroup(outcome.OutcomeGroupUri, Context.Language.CultureInfo);
       return outcomeGroup == null ? null : outcomeGroupTaxonomyManager.GetFullName(outcomeGroup.Uri, "/");

@@ -22,6 +22,9 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+    - ID: 1c307764-806c-42f0-b7ce-fc173ac8372b
+      Hint: Supports Local Datasource
+      Value: 1
+    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20150907T042151Z

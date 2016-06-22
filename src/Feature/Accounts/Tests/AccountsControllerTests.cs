@@ -21,10 +21,11 @@
   using Sitecore.Feature.Accounts.Models;
   using Sitecore.Feature.Accounts.Repositories;
   using Sitecore.Feature.Accounts.Services;
-  using Sitecore.Feature.Accounts.Tests.Extensions;
-  using Sitecore.Feature.Accounts.Texts;
   using Sitecore.Foundation.Alerts;
   using Sitecore.Foundation.Alerts.Models;
+  using Sitecore.Foundation.Dictionary.Repositories;
+  using Sitecore.Foundation.Testing;
+  using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Globalization;
   using Sitecore.Security;
   using Sitecore.Security.Accounts;
@@ -33,6 +34,15 @@
 
   public class AccountsControllerTests
   {
+    public AccountsControllerTests()
+    {
+      HttpContext.Current = HttpContextMockFactory.Create();
+      var dictionaryPhraseRepository = Substitute.For<IDictionaryPhraseRepository>();
+      dictionaryPhraseRepository.Get(Arg.Any<string>(), Arg.Any<string>()).Returns(x => x[1] as string);
+      HttpContext.Current.Items["DictionaryPhraseRepository.Current"] = dictionaryPhraseRepository;
+
+    }
+
     [Theory]
     [AutoDbData]
     public void Logout_ShouldCallSitecoreLogout(Database db, [Content] DbItem item, IAccountRepository repo, INotificationService ns, IAccountsSettingsService acc)
@@ -305,7 +315,7 @@
         var controller = new AccountsController(repo, null, null, null, null);
         var result = controller.ForgotPassword(model);
         result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
-        result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(model.Email)).WhichValue.Errors.Should().Contain(x => x.ErrorMessage == Errors.UserDoesNotExist);
+        result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(model.Email)).WhichValue.Errors.Should().Contain(x => x.ErrorMessage == "User with specified e-mail address does not exist");
       }
     }
 
@@ -326,7 +336,7 @@
         {
           var result = controller.Register(registrationInfo);
           result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(registrationInfo);
-          result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(registrationInfo.Email)).WhichValue.Errors.Should().Contain(x => x.ErrorMessage == Errors.UserAlreadyExists);
+          result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(registrationInfo.Email)).WhichValue.Errors.Should().Contain(x => x.ErrorMessage == "A user with specified e-mail address already exists");
         }
     }
 

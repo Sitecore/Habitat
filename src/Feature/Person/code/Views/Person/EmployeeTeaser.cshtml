@@ -1,6 +1,7 @@
 ﻿@using Sitecore.Feature.Person
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Mvc.Presentation.RenderingModel
@@ -18,7 +19,7 @@
       @Model.Item.Field(Templates.Person.Fields.Name)
     </h4>
     <a href="@Model.Item.Url()" target="_blank" class="btn btn-primary text-uppercase btn-xs">
-      @DictionaryRepository.Get("/Person/EmployeeList/Read More", "Read more")
+      @Html.Sitecore().Dictionary("/Person/EmployeeList/Read More", "Read more")
     </a>
   </div>
   <div class="mosaic-backdrop">

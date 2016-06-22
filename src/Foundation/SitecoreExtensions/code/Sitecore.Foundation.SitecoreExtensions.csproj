@@ -149,7 +149,6 @@
     <Compile Include="Extensions\HTMLHelperExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\DictionaryRepository.cs" />
     <Compile Include="Repositories\IRenderingPropertiesRepository.cs" />
     <Compile Include="Repositories\RenderingPropertiesRepository.cs" />
     <Compile Include="Services\FieldRendererService.cs" />

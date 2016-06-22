@@ -8,7 +8,7 @@
   using Sitecore.Feature.Accounts.Models;
   using Sitecore.Feature.Accounts.Repositories;
   using Sitecore.Feature.Accounts.Services;
-  using Sitecore.Feature.Accounts.Texts;
+  using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Foundation.Alerts.Extensions;
   using Sitecore.Foundation.Alerts.Models;
   using Sitecore.Foundation.SitecoreExtensions.Attributes;
@@ -36,11 +36,14 @@
       this.contactProfileService = contactProfileService;
     }
 
+
     [AccountsRedirectAuthenticated]
     public ActionResult Register()
     {
       return this.View();
     }
+
+    public static string UserAlreadyExistsError => DictionaryPhraseRepository.Current.Get("/Accounts/Register/User Already Exists", "A user with specified e-mail address already exists");
 
     [HttpPost]
     [ValidateModel]
@@ -50,7 +53,7 @@
     {
       if (this.accountRepository.Exists(registrationInfo.Email))
       {
-        this.ModelState.AddModelError(nameof(registrationInfo.Email), Errors.UserAlreadyExists);
+        this.ModelState.AddModelError(nameof(registrationInfo.Email), UserAlreadyExistsError);
 
         return this.View(registrationInfo);
       }
@@ -129,6 +132,8 @@
       return this.View();
     }
 
+    public static string UserDoesNotExistError => DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Password/User Does Not Exist", "User with specified e-mail address does not exist");
+
     [HttpPost]
     [ValidateModel]
     [AccountsRedirectAuthenticated]
@@ -136,7 +141,7 @@
     {
       if (!this.accountRepository.Exists(model.Email))
       {
-        this.ModelState.AddModelError(nameof(model.Email), Errors.UserDoesNotExist);
+        this.ModelState.AddModelError(nameof(model.Email), UserDoesNotExistError);
 
         return this.View(model);
       }
@@ -145,7 +150,7 @@
       {
         var newPassword = this.accountRepository.RestorePassword(model.Email);
         this.notificationService.SendPassword(model.Email, newPassword);
-        return this.InfoMessage(InfoMessage.Success(Captions.ResetPasswordSuccess));
+        return this.InfoMessage(InfoMessage.Success(DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Password/Reset Password Success", "Your password has been reset.")));
       }
       catch (Exception ex)
       {
@@ -166,7 +171,7 @@
 
       if (this.userProfileService.GetUserDefaultProfileId() != Context.User.Profile.ProfileItemId)
       {
-        return this.InfoMessage(InfoMessage.Error(Errors.ProfileMismatch));
+        return this.ProfileMismatchMessage;
       }
 
       var profile = this.userProfileService.GetProfile(Context.User.Profile);
@@ -180,7 +185,7 @@
     {
       if (this.userProfileService.GetUserDefaultProfileId() != Context.User.Profile.ProfileItemId)
       {
-        return this.InfoMessage(InfoMessage.Error(Errors.ProfileMismatch));
+        return this.ProfileMismatchMessage;
       }
 
       if (!this.userProfileService.ValidateProfile(profile, this.ModelState))
@@ -192,8 +197,16 @@
       this.userProfileService.SetProfile(Context.User.Profile, profile);
       this.contactProfileService?.SetProfile(profile);
 
-      this.Session["EditProfileMessage"] = new InfoMessage(Captions.EditProfileSuccess);
+      this.Session["EditProfileMessage"] = new InfoMessage(DictionaryPhraseRepository.Current.Get("/Accounts/Edit Profile/Edit Profile Success", "Profile was successfully updated"));
       return this.Redirect(this.Request.RawUrl);
+    }
+
+    private ViewResult ProfileMismatchMessage
+    {
+      get
+      {
+        return this.InfoMessage(InfoMessage.Error(DictionaryPhraseRepository.Current.Get("/Accounts/Edit Profile/Profile Mismatch", "There was a internal error with your user profile. Please contact support.")));
+      }
     }
   }
 }

@@ -14,6 +14,7 @@
   using Sitecore.Feature.Accounts.Attributes;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
+  using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Sites;
   using Xunit;
 

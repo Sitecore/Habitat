@@ -1,5 +1,5 @@
 ﻿@using System.Globalization
-@using Sitecore.Feature.Demo.Texts
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.StringExtensions
@@ -7,20 +7,20 @@
 
 <div class="off-canvas-sidebar off-canvas-sidebar-right">
   <div class="btn-group-vertical hover" role="group">
-    <button type="button" class="btn btn-info sidebar-closed" data-toggle="sidebar" title="@DictionaryRepository.Get("/Demo/ExperiencePanel/Open Visit Details Panel", "Open visit details panel")" data-side="right">
+      <button type="button" class="btn btn-info sidebar-closed" data-toggle="sidebar" title="@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/Open Visit Details Panel", "Open visit details panel")" data-side="right">
       <span class="glyphicon glyphicon-info-sign icon-md "></span>
     </button>
-    <button type="button" class="btn btn-info btn-lg sidebar-opened" style="display: none" data-toggle="sidebar" title="@DictionaryRepository.Get("/Demo/ExperiencePanel/Close Visit Details Panel", "Close visit details panel")" data-side="right">
+      <button type="button" class="btn btn-info btn-lg sidebar-opened" style="display: none" data-toggle="sidebar" title="@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/Close Visit Details Panel", "Close visit details panel")" data-side="right">
       <span class="glyphicon glyphicon-remove"></span>
-      <span class="hover-only">@DictionaryRepository.Get("/Demo/ExperiencePanel/Close Label", "Close")</span>
+        <span class="hover-only">@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/Close Label", "Close")</span>
     </button>
-    <button href="#" onclick="jQuery('head').trigger('visit-info:refresh')" style="display: none" class="btn btn-success sidebar-opened" title="@DictionaryRepository.Get("/Demo/ExperiencePanel/Refresh Visit Details", "Refresh visit details panel")">
+      <button href="#" onclick="jQuery('head').trigger('visit-info:refresh')" style="display: none" class="btn btn-success sidebar-opened" title="@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/Refresh Visit Details", "Refresh visit details panel")">
       <span class="glyphicon glyphicon-refresh"></span>
-      <span class="hover-only">@DictionaryRepository.Get("/Demo/ExperiencePanel/Refresh Label", "Refresh")</span>
+        <span class="hover-only">@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/Refresh Label", "Refresh")</span>
     </button>
-    <button href="#" onclick="jQuery('head').trigger('visit-info:endVisit')" class="btn btn-danger sidebar-opened" style="display: none" title="@DictionaryRepository.Get("/Demo/ExperiencePanel/End Visit", "End the current visit and submit it to the Sitecore Experience Database")">
+      <button href="#" onclick="jQuery('head').trigger('visit-info:endVisit')" class="btn btn-danger sidebar-opened" style="display: none" title="@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/End Visit", "End the current visit and submit it to the Sitecore Experience Database")">
       <span class="glyphicon glyphicon-eye-close"></span>
-      <span class="hover-only">@DictionaryRepository.Get("/Demo/ExperiencePanel/End Visit Label", "End Visit")</span>
+        <span class="hover-only">@Html.Sitecore().Dictionary("/Demo/ExperiencePanel/End Visit Label", "End Visit")</span>
     </button>
   </div>
 

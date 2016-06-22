@@ -27,10 +27,9 @@
   {
     [Theory]
     [AutoDbData]
-    public void Get_ReturnsListOfNews([Frozen] ISearchServiceRepository searchServiceRepository, string itemName, [Substitute] SearchService searchService, ISearchSettings searchSettings)
+    public void Get_ReturnsListOfNews([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettings searchSettings, string itemName, [Substitute] SearchService searchService)
     {
       var id = ID.NewID;
-      searchService.Settings.Returns(searchSettings);
       searchServiceRepository.Get().Returns(searchService);
       var db = new Db
       {
@@ -60,10 +59,9 @@
 
     [Theory]
     [AutoDbData]
-    public void GetLatestNews_IntegerAs1Parameter_ReturnsNumberOfNewsEquelToParameterValue([Frozen] ISearchServiceRepository searchServiceRepository, string itemName, [Substitute] SearchService searchService, ISearchSettings searchSettings, ISearchResults searchResults, List<Item> collection)
+    public void GetLatestNews_IntegerAs1Parameter_ReturnsNumberOfNewsEquelToParameterValue([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettings searchSettings, string itemName, [Substitute] SearchService searchService, ISearchResults searchResults, List<Item> collection)
     {
       var id = ID.NewID;
-      searchService.Settings.Returns(searchSettings);
       searchResults.Results.Returns(collection.Select(x=>new Foundation.Indexing.Models.SearchResult(x)));
       searchService.FindAll().Returns(searchResults);
       searchServiceRepository.Get().Returns(searchService);

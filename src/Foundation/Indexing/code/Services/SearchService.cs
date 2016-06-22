@@ -13,6 +13,7 @@
   using Sitecore.Diagnostics;
   using Sitecore.Foundation.Indexing.Infrastructure;
   using Sitecore.Foundation.Indexing.Models;
+  using Sitecore.Foundation.Indexing.Repositories;
 
   public class SearchService
   {
@@ -53,7 +54,7 @@
           queryable = queryable.Take(query.NoOfResults);
         }
         var results = queryable.GetResults();
-        return SearchResultsRepository.Create(results, query);
+        return SearchResultsFactory.Create(results, query);
       }
     }
 
@@ -74,7 +75,7 @@
           queryable = queryable.Take(take);
 
         var results = queryable.GetResults();
-        return SearchResultsRepository.Create(results, null);
+        return SearchResultsFactory.Create(results, null);
       }
     }
 
@@ -90,9 +91,15 @@
       queryable = this.SetQueryRoot(queryable);
       queryable = this.FilterOnLanguage(queryable);
       queryable = this.FilterOnVersion(queryable);
+      queryable = this.FilterOnHasSearchResultFormatter(queryable);
       if (this.Settings.Templates != null && this.Settings.Templates.Any())
         queryable = queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Templates));
       return queryable;
+    }
+
+    private IQueryable<SearchResultItem> FilterOnHasSearchResultFormatter(IQueryable queryable)
+    {
+      return queryable.Cast<IndexedItem>().Where(i => i.HasSearchResultFormatter);
     }
 
     private IQueryable<SearchResultItem> FilterOnItemsMarkedAsIndexable(IQueryable<SearchResultItem> queryable)
@@ -105,7 +112,7 @@
     private Expression<Func<IndexedItem, bool>> GetPredicatesForContentTemplates()
     {
       var contentTemplatePredicates = PredicateBuilder.False<IndexedItem>();
-      foreach (var provider in IndexContentProviderRepository.All)
+      foreach (var provider in IndexingProviderRepository.QueryPredicateProviders)
       {
         contentTemplatePredicates = contentTemplatePredicates.Or(this.GetTemplatePredicates(provider.SupportedTemplates));
       }
@@ -129,7 +136,7 @@
       return expression;
     }
 
-    private IQueryable<SearchResultItem> FilterOnPresentationOnly(IQueryable<SearchResultItem> queryable)
+    private IQueryable<SearchResultItem> FilterOnPresentationOnly(IQueryable queryable)
     {
       return queryable.Cast<IndexedItem>().Where(i => i.HasPresentation && i.ShowInSearchResults);
     }
@@ -165,7 +172,7 @@
     private IQueryable<SearchResultItem> AddContentPredicates(IQueryable<SearchResultItem> queryable, IQuery query)
     {
       var contentPredicates = PredicateBuilder.False<SearchResultItem>();
-      foreach (var provider in IndexContentProviderRepository.All)
+      foreach (var provider in IndexingProviderRepository.QueryPredicateProviders)
       {
         contentPredicates = contentPredicates.Or(provider.GetQueryPredicate(query));
       }

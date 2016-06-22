@@ -34,7 +34,7 @@
       var supportedLanguagesField = new MultilistField(siteDefinition.Item.Fields[Feature.Language.Templates.LanguageSettings.Fields.SupportedLanguages]);
       if (supportedLanguagesField.Count == 0)
       {
-        return languages;
+        return Enumerable.Empty<Language>();
       }
 
       var supportedLanguages = supportedLanguagesField.GetItems();

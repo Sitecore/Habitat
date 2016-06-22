@@ -10,45 +10,24 @@
 
   public class TeasersController : Controller
   {
-    public ActionResult Accordion()
+    public ActionResult GetDynamicContent(string viewName)
     {
       var dataSourceItem = RenderingContext.Current.Rendering.Item;
-      if (dataSourceItem == null || !dataSourceItem.IsDerived(Templates.DynamicTeaser.ID))
+      if (!dataSourceItem?.IsDerived(Templates.DynamicTeaser.ID) ?? true)
       {
-        return this.GetInvalidDataSourceActionResult();
+        return Context.PageMode.IsExperienceEditor ? this.InfoMessage(new InfoMessage(AlertTexts.InvalidDataSourceTemplateFriendlyMessage, InfoMessage.MessageType.Error)) : null;
       }
 
       var model = new DynamicTeaserModel(dataSourceItem);
-      return this.View("Accordion", model);
+      return this.View(viewName, model);
     }
 
-    public ActionResult Tabs()
-    {
-      var dataSourceItem = RenderingContext.Current.Rendering.Item;
-      if (dataSourceItem == null || !dataSourceItem.IsDerived(Templates.DynamicTeaser.ID))
-      {
-        return this.GetInvalidDataSourceActionResult();
-      }
+    public ActionResult Accordion() => this.GetDynamicContent("Accordion");
 
-      var model = new DynamicTeaserModel(dataSourceItem);
-      return this.View("Tabs", model);
-    }
+    public ActionResult Tabs() => this.GetDynamicContent("Accordion");
 
-    public ActionResult Carousel()
-    {
-      var dataSourceItem = RenderingContext.Current.Rendering.Item;
-      if (dataSourceItem == null || !dataSourceItem.IsDerived(Templates.DynamicTeaser.ID))
-      {
-        return this.GetInvalidDataSourceActionResult();
-      }
+    public ActionResult TeaserCarousel() => this.GetDynamicContent("TeaserCarousel");
 
-      var model = new DynamicTeaserModel(dataSourceItem);
-      return this.View("Carousel", model);
-    }
-
-    private ViewResult GetInvalidDataSourceActionResult()
-    {
-      return Context.PageMode.IsExperienceEditor ? this.InfoMessage(new InfoMessage(AlertTexts.InvalidDataSourceTemplateFriendlyMessage, InfoMessage.MessageType.Error)) : null;
-    }
+    public ActionResult JumbotronCarousel() => this.GetDynamicContent("JumbotronCarousel");
   }
 }

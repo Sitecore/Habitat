@@ -20,27 +20,27 @@ Languages:
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r
               uid="{B0638AD4-91B4-473A-8285-A35538E5C287}"
-              p:before="r[@uid='{BE168088-8A34-42CC-AE71-AA53F3802D72}']"
+              p:before="*"
               s:id="{41EA568D-C3AF-45DF-B1D0-B7813CD06093}"
               s:ph="/page-layout/section-narrow/col-wide-1_927d47ad-a496-49b3-bd5b-c5f93d8bc701" />
             <r
               uid="{BE168088-8A34-42CC-AE71-AA53F3802D72}"
-              p:before="r[@uid='{F7A89D2B-5C2D-40FF-AE07-459FCBB1C231}']"
+              p:after="r[@uid='{B0638AD4-91B4-473A-8285-A35538E5C287}']"
               s:id="{B683EFB4-161D-4FDF-9A90-CC8637766C9C}"
               s:ph="/page-layout/section-narrow/col-wide-2_977cec4d-6e99-4fa9-ba2d-2377465a45ba" />
             <r
               uid="{F7A89D2B-5C2D-40FF-AE07-459FCBB1C231}"
-              p:before="r[@uid='{977CEC4D-6E99-4FA9-BA2D-2377465A45BA}']"
+              p:after="r[@uid='{BE168088-8A34-42CC-AE71-AA53F3802D72}']"
               s:id="{5899FE6B-2AD7-4243-B1F9-3BC664CF0A7C}"
               s:ph="/page-layout/section-narrow/col-wide-1_977cec4d-6e99-4fa9-ba2d-2377465a45ba" />
             <r
               uid="{977CEC4D-6E99-4FA9-BA2D-2377465A45BA}"
-              p:before="r[@uid='{927D47AD-A496-49B3-BD5B-C5F93D8BC701}']"
+              p:after="r[@uid='{F7A89D2B-5C2D-40FF-AE07-459FCBB1C231}']"
               s:id="{50F6052C-4FC2-4AA6-9399-FFC6055CF19F}"
               s:ph="/page-layout/section-narrow" />
             <r
               uid="{927D47AD-A496-49B3-BD5B-C5F93D8BC701}"
-              p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']"
+              p:after="r[@uid='{977CEC4D-6E99-4FA9-BA2D-2377465A45BA}']"
               s:id="{03112E88-1499-4132-9D5F-E213AFD2019C}"
               s:ph="/page-layout/section-narrow" />
           </d>
@@ -65,4 +65,7 @@ Languages:
       Value: Accounts
     - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
-      Value: "<span style=\"line-height: 24.2857px;\">The accounts module handles user accounts and user profiles including login, registration, forgot password and profile editing.</span>"
+      Value: |
+        <p><span style="line-height: 24.28px;">A number of components are available to handle login, registration and password reset.</span></p>
+        <p><span style="line-height: 24.28px;">Links to specific pages showing these components are as follows.</span></p>
+        <p><span style="line-height: 24.28px;"><a href="~/link.aspx?_id=BB711E1EF13F41768231BA55C8DA126D&_z=z">Login</a>, <a href="~/link.aspx?_id=87F08F10D97E4EE9828273351EE226AF&_z=z">Register</a>, <a href="~/link.aspx?_id=A2C07E489C6A466EB55DBAAC62E4DFC7&_z=z">Edit Profile (logged in users only)</a>, <a href="~/link.aspx?_id=87B9CA6A16AA40B496FCFB385D2267C2&_z=z">Forgotton Password</a></span></p>

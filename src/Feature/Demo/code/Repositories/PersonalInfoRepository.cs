@@ -6,9 +6,9 @@
   using Sitecore.Analytics.Model;
   using Sitecore.Analytics.Model.Entities;
   using Sitecore.Feature.Demo.Models;
+  using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Foundation.Accounts.Providers;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Services;
 
   public class PersonalInfoRepository
@@ -67,7 +67,7 @@
     {
       if (!string.IsNullOrEmpty(this.contactProfileProvider.Contact.Identifiers.Identifier))
       {
-        yield return new KeyValuePair<string, string>(DictionaryRepository.Get("/Demo/PersonalInfo/Identification", "Identification"), this.contactProfileProvider.Contact.Identifiers.Identifier);
+        yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Identification", "Identification"), this.contactProfileProvider.Contact.Identifiers.Identifier);
       }
     }
 
@@ -75,21 +75,21 @@
     {
       if (this.contactProfileProvider.CommunicationProfile.CommunicationRevoked)
       {
-        yield return new KeyValuePair<string, string>(DictionaryRepository.Get("/Demo/PersonalInfo/CommunicationRevoked", "Communication Revoked"), DictionaryRepository.Get("/Demo/PersonalInfo/CommunicationRevokedTrue", "Yes"));
+        yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Communication Revoked", "Communication Revoked"), DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Communication Revoked True", "Yes"));
       }
       if (this.contactProfileProvider.CommunicationProfile.ConsentRevoked)
       {
-        yield return new KeyValuePair<string, string>(DictionaryRepository.Get("/Demo/PersonalInfo/ConsentRevokes", "Consent Revoked"), DictionaryRepository.Get("/Demo/PersonalInfo/ConsentRevokedTrue", "Yes"));
+        yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Consent Revoked", "Consent Revoked"), DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Consent Revoked True", "Yes"));
       }
       if (!string.IsNullOrEmpty(this.contactProfileProvider.Preferences.Language))
       {
-        yield return new KeyValuePair<string, string>(DictionaryRepository.Get("/Demo/PersonalInfo/PreferredLanguage", "Preferred Language"), this.contactProfileProvider.Preferences.Language);
+        yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Preferred Language", "Preferred Language"), this.contactProfileProvider.Preferences.Language);
       }
     }
 
     private IEnumerable<KeyValuePair<string, string>> GetPhoneNumberProperties()
     {
-      var phoneTitle = DictionaryRepository.Get("/Demo/PersonalInfo/Phone", "Phone");
+      var phoneTitle = DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Phone", "Phone");
       foreach (var phoneKey in this.contactProfileProvider.PhoneNumbers.Entries.Keys)
       {
         yield return new KeyValuePair<string, string>($"{phoneTitle} ({phoneKey.Humanize()})", this.FormatPhone(this.contactProfileProvider.PhoneNumbers.Entries[phoneKey]));
@@ -114,7 +114,7 @@
 
     private IEnumerable<KeyValuePair<string, string>> GetEmailProperties()
     {
-      var emailTitle = DictionaryRepository.Get("/Demo/PersonalInfo/Email", "Email");
+      var emailTitle = DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Email", "Email");
       foreach (var emailKey in this.contactProfileProvider.Emails.Entries.Keys)
       {
         yield return new KeyValuePair<string, string>($"{emailTitle} ({emailKey.Humanize()})", this.contactProfileProvider.Emails.Entries[emailKey].SmtpAddress);
@@ -123,7 +123,7 @@
 
     private IEnumerable<KeyValuePair<string, string>> GetAddressProperties()
     {
-      var addressTitle = DictionaryRepository.Get("/Demo/PersonalInfo/Address", "Address");
+      var addressTitle = DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Address", "Address");
       foreach (var addressKey in this.contactProfileProvider.Addresses.Entries.Keys)
       {
         yield return new KeyValuePair<string, string>($"{addressTitle} ({addressKey.Humanize()})", this.FormatAddress(this.contactProfileProvider.Addresses.Entries[addressKey]));

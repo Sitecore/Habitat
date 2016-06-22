@@ -1,6 +1,7 @@
 ﻿@using Sitecore.Feature.News
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.Foundation.Theming.Extensions
@@ -33,7 +34,7 @@
       @Html.Sitecore().Field(Templates.NewsArticle.Fields.Summary, Model.Item)
     </p>
     <a href="@Html.Sitecore().CurrentRendering.Item.Url()" class="btn btn-default">
-      @DictionaryRepository.Get("/news/news teaser/read more", "Read more")
+      @Html.Sitecore().Dictionary("/news/news teaser/read more", "Read more")
     </a>
   </div>
 </div>

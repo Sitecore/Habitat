@@ -9,7 +9,6 @@
   public class GetDatasourceLocationAndTemplateFromSite
   {
     //Sitecore has no constant in FieldIDs for this standard field
-    private const string DatasourceLocationFieldName = "Datasource Location";
     private readonly IDatasourceProvider provider;
 
     public GetDatasourceLocationAndTemplateFromSite() : this(new DatasourceProvider())
@@ -25,7 +24,7 @@
     {
       Assert.ArgumentNotNull(args, nameof(args));
 
-      var datasource = args.RenderingItem[DatasourceLocationFieldName];
+      var datasource = args.RenderingItem[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
       if (!DatasourceConfigurationService.IsSiteDatasourceLocation(datasource))
       {
         return;
@@ -38,7 +37,7 @@
     protected virtual void ResolveDatasource(GetRenderingDatasourceArgs args)
     {
       var contextItem = args.ContentDatabase.GetItem(args.ContextItemPath);
-      var source = args.RenderingItem[DatasourceLocationFieldName];
+      var source = args.RenderingItem[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
       var name = DatasourceConfigurationService.GetSiteDatasourceConfigurationName(source);
       if (string.IsNullOrEmpty(name))
       {
@@ -52,7 +51,7 @@
     protected virtual void ResolveDatasourceTemplate(GetRenderingDatasourceArgs args)
     {
       var contextItem = args.ContentDatabase.GetItem(args.ContextItemPath);
-      var datasourceLocation = args.RenderingItem[DatasourceLocationFieldName];
+      var datasourceLocation = args.RenderingItem[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
       var name = DatasourceConfigurationService.GetSiteDatasourceConfigurationName(datasourceLocation);
       if (string.IsNullOrEmpty(name))
       {
