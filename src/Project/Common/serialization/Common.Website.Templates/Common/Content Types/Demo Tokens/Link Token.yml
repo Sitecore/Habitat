@@ -1,8 +1,8 @@
 ﻿---
-ID: "3f3cae5e-63d2-4f75-95d9-23eb01827aa9"
+ID: "7defaa26-ed9d-4495-b5f0-0a7620403842"
 Parent: "32f4012d-fc30-4efd-af6c-1d3144b257fc"
 Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
-Path: /sitecore/templates/Project/Demo/Content Types/Demo Tokens/Text Token
+Path: /sitecore/templates/Project/Common/Content Types/Demo Tokens/Link Token
 DB: master
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
@@ -13,7 +13,7 @@ SharedFields:
   Type: tree list
   Value: |
     {1930BBEB-7805-471A-A3BE-4858AC7CF696}
-    {327D6873-A384-435A-BE87-7E869782B243}
+    {359AD0B9-20B5-49E7-A430-891D6E67BC5C}
 Languages:
 - Language: en
   Versions:
