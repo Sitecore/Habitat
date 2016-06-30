@@ -4,12 +4,12 @@ namespace Sitecore.Feature.Accounts.Tests.FixtureContext
   using netDumbster.smtp;
   using Sitecore.Configuration;
 
-  public class SmptWrapper : IDisposable
+  public class SmtpWrapper : IDisposable
   {
     public static readonly Random rnd = new Random();
 
 
-    public SmptWrapper()
+    public SmtpWrapper()
     {
       var port = rnd.Next(50000, 60000);
       this.settingsSwitcher = new SettingsSwitcher("MailServerPort", port.ToString());
