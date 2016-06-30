@@ -5,6 +5,6 @@ module.exports = function () {
     solutionName: "Habitat",
     buildConfiguration: "Debug",
     runCleanBuilds: false
-  }
+  };
   return config;
 }
