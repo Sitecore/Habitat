@@ -4,6 +4,7 @@ var debug = require("gulp-debug");
 var foreach = require("gulp-foreach");
 var rename = require("gulp-rename");
 var watch = require("gulp-watch");
+var merge = require("merge-stream");
 var newer = require("gulp-newer");
 var util = require("gulp-util");
 var runSequence = require("run-sequence");
@@ -32,13 +33,16 @@ gulp.task("default", function (callback) {
   Initial setup
 *****************************/
 gulp.task("01-Copy-Sitecore-Lib", function () {
-  console.log("Copying Sitecore Libraries");
+  console.log("Copying Sitecore Libraries and License file");
 
   fs.statSync(config.sitecoreLibraries);
 
   var files = config.sitecoreLibraries + "/**/*";
 
-  return gulp.src(files).pipe(gulp.dest("./lib/Sitecore"));
+  var libs = gulp.src(files).pipe(gulp.dest("./lib/Sitecore"));
+  var license = gulp.src(config.licensePath).pipe(gulp.dest("./lib"));
+
+  return merge(libs, license);
 });
 
 gulp.task("02-Nuget-Restore", function (callback) {
