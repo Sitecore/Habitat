@@ -17,6 +17,7 @@ gulp.task("CI-Publish", function (callback) {
     config.buildConfiguration = "Release";
     fs.mkdirSync(config.websiteRoot);
     runSequence(
+      "Build-Solution",
       "Publish-Foundation-Projects",
       "Publish-Feature-Projects",
       "Publish-Project-Projects", callback);

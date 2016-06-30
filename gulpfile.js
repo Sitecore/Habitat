@@ -49,6 +49,7 @@ gulp.task("02-Nuget-Restore", function (callback) {
 
 gulp.task("03-Publish-All-Projects", function (callback) {
   return runSequence(
+    "Build-Solution",
     "Publish-Foundation-Projects",
     "Publish-Feature-Projects",
     "Publish-Project-Projects", callback);
@@ -65,7 +66,9 @@ gulp.task("04-Apply-Xml-Transform", function () {
           targets: ["ApplyTransform"],
           configuration: config.buildConfiguration,
           logCommand: false,
-          verbosity: "normal",
+          verbosity: "minimal",
+          stdout: true,
+          errorOnFail: true,
           maxcpucount: 0,
           toolsVersion: 14.0,
           properties: {
@@ -115,9 +118,7 @@ gulp.task("Copy-Local-Assemblies", function () {
 var publishProjects = function (location, dest) {
   dest = dest || config.websiteRoot;
   var targets = ["Build"];
-  if (config.runCleanBuilds) {
-    targets = ["Clean", "Build"]
-  }
+
   console.log("publish to " + dest + " folder");
   return gulp.src([location + "/**/code/*.csproj"])
     .pipe(foreach(function (stream, file) {
@@ -129,6 +130,7 @@ var publishProjects = function (location, dest) {
           logCommand: false,
           verbosity: "minimal",
           stdout: true,
+          errorOnFail: true,
           maxcpucount: 0,
           toolsVersion: 14.0,
           properties: {
@@ -142,6 +144,25 @@ var publishProjects = function (location, dest) {
         }));
     }));
 };
+
+gulp.task("Build-Solution", function () {
+  var targets = ["Build"];
+  if (config.runCleanBuilds) {
+    targets = ["Clean", "Build"];
+  }
+  var solution = "./" + config.solutionName + ".sln";
+  return gulp.src(solution)
+      .pipe(msbuild({
+          targets: targets,
+          configuration: config.buildConfiguration,
+          logCommand: false,
+          verbosity: "minimal",
+          stdout: true,
+          errorOnFail: true,
+          maxcpucount: 0,
+          toolsVersion: 14.0
+        }));
+});
 
 gulp.task("Publish-Foundation-Projects", function () {
   return publishProjects("./src/Foundation");
