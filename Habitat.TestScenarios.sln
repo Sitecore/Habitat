@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Common.Specflow", "specs\Foundation.Common\Sitecore.Foundation.Common.Specflow.csproj", "{E0C9AF4F-FC51-42E6-B7B9-1E173AC0589D}"
 EndProject
@@ -40,6 +40,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.LocalDatasource", "specs\Foundation.LocalDatasource\Sitecore.Foundation.LocalDatasource\Sitecore.Foundation.LocalDatasource.csproj", "{81A13371-FAB6-478D-B119-01CA4C9F26F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Indexing", "specs\Foundation.Indexing\Sitecore.Foundation.Indexing\Sitecore.Foundation.Indexing.csproj", "{DD436B0A-A184-4F16-99B8-C8D1396639BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{3B9FFC18-5B13-4BC5-AEFE-EB485E0F6D56}"
+	ProjectSection(SolutionItems) = preProject
+		appSettings.config = appSettings.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

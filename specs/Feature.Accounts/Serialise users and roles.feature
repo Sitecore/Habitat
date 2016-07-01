@@ -14,7 +14,7 @@ Scenario: Serialise users and roles_UC1_Habitat modules roles available in Role 
 	| modules\Feature FAQ Admin              |
 	| modules\Feature Identity Admin         |
 	| modules\Feature Language Admin         |
-	| modules\Feature Maps Admin             |
+#	| modules\Feature Maps Admin             |
 	| modules\Feature Media Admin            |
 	| modules\Feature Metadata Admin         |
 	| modules\Feature Multisite Admin        |
