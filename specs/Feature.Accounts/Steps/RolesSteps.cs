@@ -1,17 +1,18 @@
 using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using FluentAssertions;
+using Sitecore.Foundation.Common.Specflow.Infrastructure;
+using Sitecore.Foundation.Common.Specflow.Steps;
+using Sitecore.Foundation.Common.Specflow.UtfService;
+using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 
 namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Runtime.InteropServices;
-  using FluentAssertions;
-  using Sitecore.Foundation.Common.Specflow.Infrastructure;
-  using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
-  using Sitecore.Foundation.Common.Specflow.Steps;
-  using TechTalk.SpecFlow;
-  using TechTalk.SpecFlow.Assist;
+  
 
   [Binding]
   internal class RolesSteps

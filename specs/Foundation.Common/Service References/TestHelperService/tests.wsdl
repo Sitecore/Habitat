@@ -17,35 +17,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="GetTemplateId">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="itemIdOrPath" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetTemplateIdResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetTemplateIdResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="AddItemVersion">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="itemIdOrPath" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="AddItemVersionResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="AddItemVersionResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="SetRoleForUser">
         <s:complexType>
           <s:sequence>
@@ -277,6 +248,35 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetTemplateId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itemIdOrPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTemplateIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTemplateIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddItemVersion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itemIdOrPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddItemVersionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddItemVersionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="AttachToMediaItem">
         <s:complexType>
           <s:sequence>
@@ -326,18 +326,6 @@
   </wsdl:message>
   <wsdl:message name="CreateUserSoapOut">
     <wsdl:part name="parameters" element="tns:CreateUserResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetTemplateIdSoapIn">
-    <wsdl:part name="parameters" element="tns:GetTemplateId" />
-  </wsdl:message>
-  <wsdl:message name="GetTemplateIdSoapOut">
-    <wsdl:part name="parameters" element="tns:GetTemplateIdResponse" />
-  </wsdl:message>
-  <wsdl:message name="AddItemVersionSoapIn">
-    <wsdl:part name="parameters" element="tns:AddItemVersion" />
-  </wsdl:message>
-  <wsdl:message name="AddItemVersionSoapOut">
-    <wsdl:part name="parameters" element="tns:AddItemVersionResponse" />
   </wsdl:message>
   <wsdl:message name="SetRoleForUserSoapIn">
     <wsdl:part name="parameters" element="tns:SetRoleForUser" />
@@ -429,6 +417,18 @@
   <wsdl:message name="UploadMediaItemSoapOut">
     <wsdl:part name="parameters" element="tns:UploadMediaItemResponse" />
   </wsdl:message>
+  <wsdl:message name="GetTemplateIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTemplateId" />
+  </wsdl:message>
+  <wsdl:message name="GetTemplateIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTemplateIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddItemVersionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddItemVersion" />
+  </wsdl:message>
+  <wsdl:message name="AddItemVersionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddItemVersionResponse" />
+  </wsdl:message>
   <wsdl:message name="AttachToMediaItemSoapIn">
     <wsdl:part name="parameters" element="tns:AttachToMediaItem" />
   </wsdl:message>
@@ -451,14 +451,6 @@
     <wsdl:operation name="CreateUser">
       <wsdl:input message="tns:CreateUserSoapIn" />
       <wsdl:output message="tns:CreateUserSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetTemplateId">
-      <wsdl:input message="tns:GetTemplateIdSoapIn" />
-      <wsdl:output message="tns:GetTemplateIdSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="AddItemVersion">
-      <wsdl:input message="tns:AddItemVersionSoapIn" />
-      <wsdl:output message="tns:AddItemVersionSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="SetRoleForUser">
       <wsdl:input message="tns:SetRoleForUserSoapIn" />
@@ -523,6 +515,16 @@
       <wsdl:input message="tns:UploadMediaItemSoapIn" />
       <wsdl:output message="tns:UploadMediaItemSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetTemplateId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Template id of item</wsdl:documentation>
+      <wsdl:input message="tns:GetTemplateIdSoapIn" />
+      <wsdl:output message="tns:GetTemplateIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddItemVersion">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Add version of item</wsdl:documentation>
+      <wsdl:input message="tns:AddItemVersionSoapIn" />
+      <wsdl:output message="tns:AddItemVersionSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="AttachToMediaItem">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Attach file content to media item</wsdl:documentation>
       <wsdl:input message="tns:AttachToMediaItemSoapIn" />
@@ -543,24 +545,6 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="CreateUser">
       <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTemplateId">
-      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetTemplateId" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AddItemVersion">
-      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/AddItemVersion" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -703,6 +687,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetTemplateId">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetTemplateId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddItemVersion">
+      <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/AddItemVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AttachToMediaItem">
       <soap:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/AttachToMediaItem" style="document" />
       <wsdl:input>
@@ -735,24 +737,6 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="CreateUser">
       <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/CreateUser" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetTemplateId">
-      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetTemplateId" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AddItemVersion">
-      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/AddItemVersion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -888,6 +872,24 @@
     </wsdl:operation>
     <wsdl:operation name="UploadMediaItem">
       <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/UploadMediaItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplateId">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/GetTemplateId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddItemVersion">
+      <soap12:operation soapAction="http://sitecore.net/AutoTestsHelperService.asmx/AddItemVersion" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

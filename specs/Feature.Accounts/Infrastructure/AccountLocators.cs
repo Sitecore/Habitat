@@ -1,14 +1,15 @@
 ﻿using System;
 using OpenQA.Selenium.Support.UI;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Mime;
+using OpenQA.Selenium;
+using Sitecore.Foundation.Common.Specflow.Extensions;
+using TechTalk.SpecFlow;
 
 namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
 {
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Net.Mime;
-  using OpenQA.Selenium;
-  using Sitecore.Foundation.Common.Specflow.Extensions;
-  using TechTalk.SpecFlow;
+  
 
   public class AccountLocators
   {

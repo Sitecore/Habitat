@@ -23,8 +23,7 @@ Scenario: Create metakeywords content_UC1_Create new keyword in the Content Edit
 	Given The following Metadata keywords are defined in Sitecore
 	| Item Path                                                   | 
 	| /sitecore/content/Habitat/Global/Metadata Keywords/habitat  |
-	| /sitecore/content/Habitat/Global/Metadata Keywords/sitecore |
-	
+	| /sitecore/content/Habitat/Global/Metadata Keywords/sitecore |	
 	And Admin create a new Metakeyword
 	| Item Path                                          | FieldName  | FieldValue |
 	| /sitecore/content/Habitat/Global/Metadata Keywords | NewKeyWord |   		/sitecore/templates/Project/Common/Content Types/MetaKeyword          |
@@ -60,7 +59,7 @@ Scenario: Create metakeywords content_UC2_Assign metakeyword to page and check k
 	| Item name|
 	| sitecore |
 
-@Scenario below for manual testing
+#@Scenario below for manual testing
 #Scenario: Create metakeywords content_UC3_Assign several metakeywords to page and check keywords in the page HTML
 #	Given Admin user is logged into Content Editor application
 #	When Admin opens following item

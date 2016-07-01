@@ -1,12 +1,13 @@
 ﻿using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.TestHelperService;
+using System.Collections.Generic;
+using System.ServiceModel;
+using Sitecore.Foundation.Common.Specflow.UtfService;
+using TechTalk.SpecFlow;
 
 namespace Sitecore.Foundation.Common.Specflow.Infrastructure
 {
-  using System.Collections.Generic;
-  using System.ServiceModel;
-  using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
-  using TechTalk.SpecFlow;
+
 
   public static class ContextExtensions
   {

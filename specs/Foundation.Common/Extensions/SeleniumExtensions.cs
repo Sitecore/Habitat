@@ -1,11 +1,13 @@
-﻿namespace Sitecore.Foundation.Common.Specflow.Extensions
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
+
+namespace Sitecore.Foundation.Common.Specflow.Extensions
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using OpenQA.Selenium;
-  using OpenQA.Selenium.Interactions;
-  using OpenQA.Selenium.Support.UI;
+  
 
   public static class SeleniumExtensions
   {

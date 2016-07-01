@@ -46,7 +46,7 @@ Scenario: Account_Save user details in xDB_UC2_Update full user info
 	When User inputs data in to the fields
 	| LastName | FirstName | PhoneNumber     |
 	| Maximov  | Stas      | +38(067)8888888 |
-	And User selects <Skiing> from Interests drop-down list
+	And User selects Skiing from Interests drop-down list
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit 
 	Then Contact kovuc2@sitecore.net has FirstName equals Stas and Surname equals Maximov
@@ -114,7 +114,7 @@ Scenario: Account_Save user details in xDB_UC5_Save only Interests
 	| Email               | Password |
 	| kovuc5@sitecore.net | k        |
 	And Edit profile page is opened
-	When User selects <Skiing> from Interests drop-down list
+	When User selects Skiing from Interests drop-down list
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit 		
 	Then Contact kovuc5@sitecore.net has FirstName equals @empty and Surname equals @empty 
@@ -189,7 +189,7 @@ Scenario: Account_Save user details in xDB_UC8_Update only only Interests
 	| Teltov   | Konstantin | +38(067)3333333 | Swiming   |
 	And Actor Ends user visit
 	And Edit profile page is opened  
-	When User selects <Skiing> from Interests drop-down list
+	When User selects Skiing from Interests drop-down list
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit
 	Then Contact kovuc8@sitecore.net has FirstName equals Konstantin and Surname equals Teltov 
@@ -223,7 +223,7 @@ Scenario: Account_Save user details in xDB_UC10_Empty Interests value
 	| Email                | Password |
 	| kovuc10@sitecore.net | k        |  
 	And Edit profile page is opened
-	When User selects <Skiing> from Interests drop-down list
+	When User selects Skiing from Interests drop-down list
 	And User clicks Update button on Edit User Profile page
 	And Actor Ends user visit
 	And Edit profile page is opened

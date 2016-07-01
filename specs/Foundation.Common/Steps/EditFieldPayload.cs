@@ -1,6 +1,9 @@
+
+using Sitecore.Foundation.Common.Specflow.UtfService;
+
 namespace Sitecore.Foundation.Common.Specflow.Steps
 {
-  using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
+  
 
   public class EditFieldPayload
   {
