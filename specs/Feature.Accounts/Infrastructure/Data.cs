@@ -1,7 +1,9 @@
+using Newtonsoft.Json;
+using Sitecore.Feature.Accounts.Specflow.Steps;
+
 namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
 {
-  using Newtonsoft.Json;
-  using Sitecore.Feature.Accounts.Specflow.Steps;
+  
 
   public class Data
   {

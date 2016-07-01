@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
-using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
+using Sitecore.Foundation.Common.Specflow.UtfService;
 using TechTalk.SpecFlow;
 
 namespace Sitecore.Foundation.SitecoreExtensions.Specflow.Steps

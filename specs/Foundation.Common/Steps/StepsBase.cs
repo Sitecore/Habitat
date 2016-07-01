@@ -1,10 +1,11 @@
 ﻿using OpenQA.Selenium.Interactions;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
+using OpenQA.Selenium;
+using TechTalk.SpecFlow;
 
 namespace Sitecore.Foundation.Common.Specflow.Steps
 {
-  using OpenQA.Selenium;
-  using TechTalk.SpecFlow;
+  
 
   public class StepsBase
   {

@@ -118,7 +118,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Global/Metadata Keywords",
                         "NewKeyWord",
                         "/sitecore/templates/Project/Common/Content Types/MetaKeyword"});
-#line 28
+#line 27
  testRunner.And("Admin create a new Metakeyword", ((string)(null)), table2, "And ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
@@ -129,7 +129,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Global/Metadata Keywords/sitecore"});
             table3.AddRow(new string[] {
                         "/sitecore/content/Habitat/Global/Metadata Keywords/NewKeyWord"});
-#line 31
+#line 30
  testRunner.Then("new item with title NewKeyWord should be added under following item", ((string)(null)), table3, "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -162,7 +162,7 @@ this.ScenarioSetup(scenarioInfo);
                         "for",
                         "Automating",
                         "testing"});
-#line 50
+#line 49
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
@@ -177,7 +177,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/About Habitat/Getting Started",
                         "MetaKeywords",
                         "sitecore"});
-#line 51
+#line 50
  testRunner.Given("The following Metadata keywords are defined in Sitecore", ((string)(null)), table4, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
@@ -188,16 +188,16 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/About Habitat/Getting Started",
                         "MetaKeywords",
                         "{153640E2-FD0D-42D3-8480-F9615EE78A9A}"});
-#line 55
+#line 54
  testRunner.When("The sitecore keyword has been selected", ((string)(null)), table5, "When ");
-#line 58
+#line 57
  testRunner.Then("Habitat website is opened on Getting Started page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                         "Item name"});
             table6.AddRow(new string[] {
                         "sitecore"});
-#line 59
+#line 58
  testRunner.And("The following tag is present", ((string)(null)), table6, "And ");
 #line hidden
             this.ScenarioCleanup();
@@ -208,11 +208,6 @@ this.ScenarioSetup(scenarioInfo);
         [Xunit.TraitAttribute("FeatureTitle", "Create metakeywords content")]
         [Xunit.TraitAttribute("Description", "Create metakeywords content_UC3_Assign metakeyword to page and check keywords in " +
             "the page HTML")]
-        [Xunit.TraitAttribute("Category", "Scenario")]
-        [Xunit.TraitAttribute("Category", "below")]
-        [Xunit.TraitAttribute("Category", "for")]
-        [Xunit.TraitAttribute("Category", "manual")]
-        [Xunit.TraitAttribute("Category", "testing")]
         [Xunit.TraitAttribute("Category", "Ready")]
         [Xunit.TraitAttribute("Category", "for")]
         [Xunit.TraitAttribute("Category", "Automating")]
@@ -221,16 +216,11 @@ this.ScenarioSetup(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Create metakeywords content_UC3_Assign metakeyword to page and check keywords in " +
                     "the page HTML", new string[] {
-                        "Scenario",
-                        "below",
-                        "for",
-                        "manual",
-                        "testing",
                         "Ready",
                         "for",
                         "Automating",
                         "testing"});
-#line 77
+#line 76
 this.ScenarioSetup(scenarioInfo);
 #line hidden
             TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
@@ -245,7 +235,7 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/About Habitat/Getting Started",
                         "MetaKeywords",
                         "sitecore"});
-#line 78
+#line 77
  testRunner.Given("The following Metadata keywords are defined in Sitecore", ((string)(null)), table7, "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
@@ -256,9 +246,9 @@ this.ScenarioSetup(scenarioInfo);
                         "/sitecore/content/Habitat/Home/About Habitat/Getting Started",
                         "MetaKeywords",
                         "{425DF582-C8D5-4EBA-B23E-FA1A069435DD}|{153640E2-FD0D-42D3-8480-F9615EE78A9A}"});
-#line 82
+#line 81
  testRunner.When("The sitecore keyword has been selected", ((string)(null)), table8, "When ");
-#line 85
+#line 84
  testRunner.Then("Habitat website is opened on Getting Started page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             TechTalk.SpecFlow.Table table9 = new TechTalk.SpecFlow.Table(new string[] {
@@ -267,7 +257,7 @@ this.ScenarioSetup(scenarioInfo);
                         "habitat"});
             table9.AddRow(new string[] {
                         "sitecore"});
-#line 86
+#line 85
  testRunner.And("The following tag is present", ((string)(null)), table9, "And ");
 #line hidden
             this.ScenarioCleanup();

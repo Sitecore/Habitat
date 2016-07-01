@@ -67,6 +67,8 @@
       <DependentUpon>Create metakeywords content.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\MetadataNavigationSteps.cs" />
+    <Compile Include="Steps\MetadataSetpsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">

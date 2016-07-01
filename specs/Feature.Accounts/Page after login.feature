@@ -8,8 +8,8 @@ Scenario: Accounts_Page after login_UC1_Define custom page
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
 	And Value set to item field
-	| ItemPath                  | FieldName      | FieldValue                                          |
-	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Modules/Feature/Demo |
+	| ItemPath                  | FieldName        | FieldValue                                          |
+	| /Sitecore/Content/Habitat | After Login Page | /sitecore/content/Habitat/Home/Modules/Feature/Demo |
 	When Actor opens Habitat website on Login page
 	And Actor enteres following data into Login page fields
 	| Email            | Password |
@@ -26,8 +26,8 @@ Scenario: Accounts_Page after login_UC2_Define custom page_defined page does not
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
 	And Value set to item field
-	| ItemPath                  | FieldName      | FieldValue                         |
-	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/KOV | 
+	| ItemPath                  | FieldName        | FieldValue                         |
+	| /Sitecore/Content/Habitat | After Login Page | /sitecore/content/Habitat/Home/KOV | 
 	And Habitat website is opened on Login page
 	When Actor enteres following data into Login page fields
 	| Email            | Password |
@@ -42,8 +42,8 @@ Scenario: Accounts_Page after login_UC3_Define custom page_empty value
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
 	And Value set to item field
-	| ItemPath                  | FieldName      | FieldValue |
-	| /Sitecore/Content/Habitat | AfterLoginPage |            | 
+	| ItemPath                  | FieldName        | FieldValue |
+	| /Sitecore/Content/Habitat | After Login Page |            | 
 	And Habitat website is opened on Login page
 	When Actor enteres following data into Login page fields
 	| E-mail              |Password |
@@ -55,8 +55,8 @@ Scenario: Accounts_Page after login_UC3_Define custom page_empty value
 @Ready
 Scenario: Accounts_Page after login_UC4_After login page for new registered user 
 	Given Value set to item field
-	| ItemPath                  | FieldName      | FieldValue                                          |
-	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Modules/Feature/News |
+	| ItemPath                  | FieldName        | FieldValue                                          |
+	| /Sitecore/Content/Habitat | After Login Page | /sitecore/content/Habitat/Home/Modules/Feature/News |
 	And Habitat website is opened on Register page	
 	When Actor enters following data in to the register fields
 	| Email            | Password | ConfirmPassword |
@@ -69,8 +69,8 @@ Scenario: Accounts_Page after login_UC4_After login page for new registered user
 @Ready
 Scenario: Accounts_Page after login_UC5_Login pop up returns user to default page
 	Given Value set to item field
-	| ItemPath                  | FieldName      | FieldValue                              |
-	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Register |
+	| ItemPath                  | FieldName        | FieldValue                              |
+	| /Sitecore/Content/Habitat | After Login Page | /sitecore/content/Habitat/Home/Register |
 	And User is registered in Habitat and logged out
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               | 
@@ -87,8 +87,8 @@ Scenario: Accounts_Page after login_UC6_Double redirect logic for Register page
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
 	And Value set to item field
-	| ItemPath                  | FieldName      | FieldValue                              |
-	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Register |
+	| ItemPath                  | FieldName        | FieldValue                              |
+	| /Sitecore/Content/Habitat | After Login Page | /sitecore/content/Habitat/Home/Register |
 	And Habitat website is opened on Register page
 	When Actor enters following data in to the register fields
 	| Email            | Password | ConfirmPassword |
@@ -103,8 +103,8 @@ Scenario: Accounts_Page after login_UC7_Double redirect logic for Accounts page
 	| Email            | Password | ConfirmPassword |
 	| kov@sitecore.net | k        | k               |
 	And Value set to item field
-	| ItemPath                  | FieldName      | FieldValue                                              |
-	| /Sitecore/Content/Habitat | AfterLoginPage | /sitecore/content/Habitat/Home/Modules/Feature/Accounts |
+	| ItemPath                  | FieldName        | FieldValue                                              |
+	| /Sitecore/Content/Habitat | After Login Page | /sitecore/content/Habitat/Home/Modules/Feature/Accounts |
 	And Habitat website is opened on Register page
 	When Actor enters following data in to the register fields
 	| Email            | Password | ConfirmPassword |

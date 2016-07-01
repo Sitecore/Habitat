@@ -1,12 +1,13 @@
 ﻿using Sitecore.Feature.Accounts.Specflow.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
+using System;
+using System.Linq;
+using FluentAssertions;
+using TechTalk.SpecFlow;
 
 namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
-  using System;
-  using System.Linq;
-  using FluentAssertions;
-  using TechTalk.SpecFlow;
+  
 
   internal class ForgotPasswordSteps : AccountStepsBase
   {

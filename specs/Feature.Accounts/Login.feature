@@ -31,14 +31,14 @@ Scenario: Aссounts_Login form_UC2_Check required fields
     | Please enter a value for Password |
 
 @Ready
-Scenario: Accounts_Login form_UC3_Enter exists Username and Password
+Scenario: Accounts_Login form_UC3_User enters exists Username and Password
 	Given User is registered in Habitat and logged out
-	| Email              | Password | ConfirmPassword |
-	| kov10@sitecore.net | k        | k               |
+	| Email               | Password | ConfirmPassword |
+	| kovUC3@sitecore.net | k        | k               |
 	And Actor selects User icon on Navigation bar	
 	When Actor enteres following data into Login form fields
-	| Email              | Password |
-	| kov10@sitecore.net | k        |
+	| Email               | Password |
+	| kovUC3@sitecore.net | k        |
 	And Actor clicks Login button on User form
 	And Actor selects User icon on Navigation bar
 	Then Following buttons is no longer present under User icon

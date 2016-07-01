@@ -101,7 +101,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FieldValue"});
             table2.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
-                        "AfterLoginPage",
+                        "After Login Page",
                         "/sitecore/content/Habitat/Home/Modules/Feature/Demo"});
 #line 10
  testRunner.And("Value set to item field", ((string)(null)), table2, "And ");
@@ -154,7 +154,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FieldValue"});
             table5.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
-                        "AfterLoginPage",
+                        "After Login Page",
                         "/sitecore/content/Habitat/Home/KOV"});
 #line 28
  testRunner.And("Value set to item field", ((string)(null)), table5, "And ");
@@ -207,7 +207,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FieldValue"});
             table8.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
-                        "AfterLoginPage",
+                        "After Login Page",
                         ""});
 #line 44
  testRunner.And("Value set to item field", ((string)(null)), table8, "And ");
@@ -247,7 +247,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FieldValue"});
             table10.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
-                        "AfterLoginPage",
+                        "After Login Page",
                         "/sitecore/content/Habitat/Home/Modules/Feature/News"});
 #line 57
  testRunner.Given("Value set to item field", ((string)(null)), table10, "Given ");
@@ -291,7 +291,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FieldValue"});
             table12.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
-                        "AfterLoginPage",
+                        "After Login Page",
                         "/sitecore/content/Habitat/Home/Register"});
 #line 71
  testRunner.Given("Value set to item field", ((string)(null)), table12, "Given ");
@@ -353,7 +353,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FieldValue"});
             table16.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
-                        "AfterLoginPage",
+                        "After Login Page",
                         "/sitecore/content/Habitat/Home/Register"});
 #line 89
  testRunner.And("Value set to item field", ((string)(null)), table16, "And ");
@@ -406,7 +406,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FieldValue"});
             table19.AddRow(new string[] {
                         "/Sitecore/Content/Habitat",
-                        "AfterLoginPage",
+                        "After Login Page",
                         "/sitecore/content/Habitat/Home/Modules/Feature/Accounts"});
 #line 105
  testRunner.And("Value set to item field", ((string)(null)), table19, "And ");

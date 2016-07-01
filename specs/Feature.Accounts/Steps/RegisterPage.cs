@@ -1,19 +1,20 @@
 ﻿using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Steps;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Runtime.Serialization.Json;
+using System.Threading;
+using FluentAssertions;
+using Newtonsoft.Json;
+using Sitecore.Feature.Accounts.Specflow.Infrastructure;
+using Sitecore.Foundation.Common.Specflow.Infrastructure;
+using TechTalk.SpecFlow;
 
 namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Net;
-  using System.Runtime.Serialization.Json;
-  using System.Threading;
-  using FluentAssertions;
-  using Newtonsoft.Json;
-  using Sitecore.Feature.Accounts.Specflow.Infrastructure;
-  using Sitecore.Foundation.Common.Specflow.Infrastructure;
-  using TechTalk.SpecFlow;
+  
 
   [Binding]
   internal class RegisterPage : AccountStepsBase

@@ -1,6 +1,8 @@
+using System;
+
 namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
 {
-  using System;
+  
 
   public class OutcomeDetail
   {

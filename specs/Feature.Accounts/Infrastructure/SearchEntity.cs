@@ -1,6 +1,8 @@
-﻿namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
+﻿using Newtonsoft.Json;
+
+namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
 {
-  using Newtonsoft.Json;
+  
 
   public class SearchEntity
   {

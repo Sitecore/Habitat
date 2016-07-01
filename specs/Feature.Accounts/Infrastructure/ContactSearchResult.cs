@@ -1,7 +1,9 @@
+using System;
+using Newtonsoft.Json;
+
 namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
 {
-  using System;
-  using Newtonsoft.Json;
+  
 
   public class ContactSearchResult
   {

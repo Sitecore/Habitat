@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Habitat.Website.Specflow.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Infrastructure;
-using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
+using Sitecore.Foundation.Common.Specflow.UtfService;
 using TechTalk.SpecFlow;
 
 namespace Habitat.Website.Specflow.Steps

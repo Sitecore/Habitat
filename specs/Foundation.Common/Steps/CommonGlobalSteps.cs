@@ -1,19 +1,19 @@
 ﻿using System.Linq;
-using System.Xml;
 using System.Xml.Linq;
 using FluentAssertions;
 using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
+using Sitecore.Foundation.Common.Specflow.Infrastructure;
+using Sitecore.Foundation.Common.Specflow.UtfService;
+using TechTalk.SpecFlow;
 
 namespace Sitecore.Foundation.Common.Specflow.Steps
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Threading;
-  using OpenQA.Selenium;
-  using OpenQA.Selenium.Firefox;
-  using Sitecore.Foundation.Common.Specflow.Infrastructure;
-  using Sitecore.Foundation.Common.Specflow.Service_References.UtfService;
-  using TechTalk.SpecFlow;
+
 
   [Binding]
   public class CommonGlobalSteps

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-using OpenQA.Selenium;
 using TechTalk.SpecFlow;
+using OpenQA.Selenium;
+
 
 namespace Sitecore.Feature.Specflow.Infrastructure
 {

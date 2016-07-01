@@ -1,15 +1,16 @@
 ﻿using Sitecore.Feature.Accounts.Specflow.Infrastructure;
 using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
+using System;
+using System.Linq;
+using FluentAssertions;
+using OpenQA.Selenium;
+using Sitecore.Foundation.Common.Specflow.Extensions;
+using Sitecore.Foundation.Common.Specflow.Infrastructure;
+using TechTalk.SpecFlow;
 
 namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
-    using System;
-    using System.Linq;
-    using FluentAssertions;
-    using OpenQA.Selenium;
-    using Sitecore.Foundation.Common.Specflow.Extensions;
-    using Sitecore.Foundation.Common.Specflow.Infrastructure;
-    using TechTalk.SpecFlow;
+    
 
     [Binding]
     internal class CommonSteps : AccountStepsBase
@@ -29,7 +30,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
         [Then(@"(.*) title presents on page")]
         public void ThenRegisterTitlePresentsOnPage(string title)
         {
-            Site.PageTitle.Text.Should().BeEquivalentTo(title);
+          Site.PageTitle.Text.Contains(title).Should().BeTrue();
         }
 
         [Then(@"(.*) title is no longer present on page")]

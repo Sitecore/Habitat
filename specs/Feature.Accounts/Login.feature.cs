@@ -145,11 +145,11 @@ this.ScenarioSetup(scenarioInfo);
         
         [Xunit.FactAttribute(DisplayName="Accounts_Login form_UC3_Enter exists Username and Password")]
         [Xunit.TraitAttribute("FeatureTitle", "Login")]
-        [Xunit.TraitAttribute("Description", "Accounts_Login form_UC3_Enter exists Username and Password")]
+        [Xunit.TraitAttribute("Description", "Accounts_Login form_UC3_User enters exists Username and Password")]
         [Xunit.TraitAttribute("Category", "Ready")]
-        public virtual void Accounts_LoginForm_UC3_EnterExistsUsernameAndPassword()
+        public virtual void Accounts_LoginForm_UC3_UserEntersExistsUsernameAndPassword()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login form_UC3_Enter exists Username and Password", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accounts_Login form_UC3_User enters exists Username and Password", new string[] {
                         "Ready"});
 #line 34
 this.ScenarioSetup(scenarioInfo);
@@ -159,7 +159,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Password",
                         "ConfirmPassword"});
             table4.AddRow(new string[] {
-                        "kov10@sitecore.net",
+                        "kovUC3@sitecore.net",
                         "k",
                         "k"});
 #line 35
@@ -171,7 +171,7 @@ this.ScenarioSetup(scenarioInfo);
                         "Email",
                         "Password"});
             table5.AddRow(new string[] {
-                        "kov10@sitecore.net",
+                        "kovUC3@sitecore.net",
                         "k"});
 #line 39
  testRunner.When("Actor enteres following data into Login form fields", ((string)(null)), table5, "When ");
