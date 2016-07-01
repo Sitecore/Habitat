@@ -1,5 +1,5 @@
-﻿@using Sitecore.Feature.Accounts.Texts
-@using Sitecore.Foundation.SitecoreExtensions.HtmlHelpers
+﻿@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Mvc.Configuration
 @model Sitecore.Feature.Accounts.Models.RegistrationInfo
 
@@ -8,7 +8,7 @@
                                                                               @class = "form-signin"
                                                                             }))
 {
-  @Html.FormHandler()
+  @Html.AddUniqueFormId()
   <div class="form-group @Html.ValidationErrorFor(x => x.Email, "has-error")">
     @Html.LabelFor(x => x.Email, new
                                  {
@@ -19,7 +19,7 @@
                                    {
                                      @class = "form-control",
                                      id = "registerEmail",
-                                     @placeholder = Captions.PlaceholderRegisterEmail
+                                     @placeholder = Html.Sitecore().Dictionary("/Accounts/Register/Register Email Placeholder", "Please enter your e-mail address")
                                    })
     @Html.ValidationMessageFor(x => x.Email, "", new
                                                  {
@@ -38,7 +38,7 @@
                                        {
                                          @class = "form-control",
                                          id = "registerPassword",
-                                         @placeholder = Captions.PlaceholderRegisterPassword
+                                         @placeholder = Html.Sitecore().Dictionary("/Accounts/Register/Register Password Placeholder", "Please enter your new password")
                                        })
     @Html.ValidationMessageFor(x => x.Password, "", new
                                                     {
@@ -56,7 +56,7 @@
                                               {
                                                 @class = "form-control",
                                                 id = "registerConfirmPassword",
-                                                @placeholder = Captions.PlaceholderRegisterConfirmPassword
+                                                @placeholder = Html.Sitecore().Dictionary("/Accounts/Register/Register Confirm Password Placeholder", "Please confirm you new password")
                                               })
     @Html.ValidationMessageFor(x => x.ConfirmPassword, "", new
                                                            {
@@ -64,5 +64,5 @@
                                                            }, "p")
   </div>
 
-  <input type="submit" class="btn btn-primary btn-lg btn-block" value="@Captions.Register"/>
+  <input type="submit" class="btn btn-primary btn-lg btn-block" value="@Html.Sitecore().Dictionary("/Accounts/Register/Register", "Register")"/>
 }

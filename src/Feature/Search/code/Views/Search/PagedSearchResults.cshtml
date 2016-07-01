@@ -1,4 +1,4 @@
-﻿@model Sitecore.Foundation.Indexing.Models.IPageble
+﻿@model Sitecore.Foundation.Indexing.Models.IPageable
 @{
   var prevButtonAttributes = "";
   var nextButtonAttributes = "";
@@ -17,7 +17,7 @@
   }
 }
 @Html.Partial("../Search/SearchResults", Model.Results)
-@if (Model.TotalResults > 0)
+@if (Model.TotalResults > 0 && Model.LastPage > Model.FirstPage)
 {
   <nav class="text-center">
     <ul class="pagination">
@@ -26,17 +26,20 @@
           <span aria-hidden="true">&laquo;</span>
         </a>
       </li>
-      @for (int i = Model.FirstPage; i <= Model.LastPage; i++)
+      @for (var i = Model.FirstPage; i <= Model.LastPage; i++)
       {
         if (Model.Page == i)
         {
-          <li class="active"><a href="@Request.Url.AbsolutePath?query=@Model.Query&page=@i">@i</a></li>
+          <li class="active">
+            <a href="@Request.Url.AbsolutePath?query=@Model.Query&page=@i">@i</a>
+          </li>
         }
         else
         {
-          <li><a href="@Request.Url.AbsolutePath?query=@Model.Query&page=@i">@i</a></li>
+          <li>
+            <a href="@Request.Url.AbsolutePath?query=@Model.Query&page=@i">@i</a>
+          </li>
         }
-
       }
       <li @nextButtonAttributes>
         <a href="@nextPageUrl" aria-label="Next">

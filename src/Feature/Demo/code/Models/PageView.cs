@@ -4,6 +4,7 @@
 
   public class PageView
   {
+    public string FullPath { get; set; }
     public string Path { get; set; }
     public TimeSpan Duration { get; set; }
     public bool HasEngagementValue { get; set; }

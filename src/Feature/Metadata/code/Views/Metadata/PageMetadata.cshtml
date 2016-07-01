@@ -10,11 +10,9 @@
   @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.PageMetadata.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
 }
-
-
-@*TODO: Fall back to Title / DisplayName etc*@
 @{
-  //TODO Mode to Controller Rendering
+  //TODO: Fall back to Title / DisplayName etc
+  //TODO: Move to Controller Rendering
   var siteMetadata = MetadataRepository.Get(Model.Item);
   if (siteMetadata == null)
   {

@@ -5,10 +5,8 @@
 
   public interface IDatasourceProvider
   {
-    Item[] GetDatasources(string name, Item contextItem);
+    Item[] GetDatasourceLocations(Item contextItem, string name);
 
-    Item GetDatasourceTemplate(string name, Item contextItem);
-
-    Database Database { get; set; }
+    Item GetDatasourceTemplate(Item contextItem, string name);
   }
 }

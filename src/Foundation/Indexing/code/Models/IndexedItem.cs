@@ -15,6 +15,9 @@
     [IndexField(Constants.IndexFields.AllTemplates)]
     public List<string> AllTemplates { get; set; }
 
+    [IndexField(Constants.IndexFields.HasSearchResultFormatter)]
+    public bool HasSearchResultFormatter { get; set; }
+
     [IndexField(Constants.IndexFields.IsLatestVersion)]
     public bool IsLatestVersion { get; set; }
   }

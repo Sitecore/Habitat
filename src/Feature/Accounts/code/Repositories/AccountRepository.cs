@@ -1,7 +1,7 @@
 ﻿namespace Sitecore.Feature.Accounts.Repositories
 {
+  using System;
   using System.Web.Security;
-  using Sitecore;
   using Sitecore.Diagnostics;
   using Sitecore.Feature.Accounts.Services;
   using Sitecore.Security.Accounts;
@@ -32,11 +32,11 @@
         accountName = domain.GetFullName(userName);
       }
 
-      var result =  AuthenticationManager.Login(accountName, password);
+      var result = AuthenticationManager.Login(accountName, password);
 
       if (result)
       {
-        accountTrackerService.TrackLogin(accountName);
+        this.accountTrackerService.TrackLogin(accountName);
       }
 
       return result;
@@ -51,6 +51,8 @@
     {
       var domainName = Context.Domain.GetFullName(userName);
       var user = Membership.GetUser(domainName);
+      if (user == null)
+        throw new ArgumentException($"Could not reset password for user '{userName}'", nameof(userName));
       return user.ResetPassword();
     }
 
@@ -70,7 +72,7 @@
       }
 
       user.Profile.Save();
-      accountTrackerService.TrackRegistration();
+      this.accountTrackerService.TrackRegistration();
       this.Login(email, password);
     }
   }

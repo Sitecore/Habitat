@@ -1,19 +1,16 @@
-﻿@using System.Globalization
-@using Sitecore.Feature.Demo.Texts
-@using Sitecore.Foundation.SitecoreExtensions.Repositories
-@using Sitecore.StringExtensions
+﻿@using Sitecore.Foundation.Dictionary.Extensions
 @model Sitecore.Feature.Demo.Models.Referral
 <div class="panel panel-primary">
-  <div class="panel-heading">
+  <div class="panel-heading" role="tab">
     <h4 class="panel-title">
-      <a href="#referralPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
+      <a role="button" href="#referralPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
         <span class="fa fa-bullhorn"></span>
-        @DictionaryRepository.Get("/Demo/Referral/Title", "Referral")
+        @Html.Sitecore().DictionaryField("/Demo/Referral/Title", "Referral")
         <span class="glyphicon glyphicon-chevron-down pull-right"></span>
       </a>
     </h4>
   </div>
-  <div id="referralPanel" class="panel-collapse collapse">
+  <div id="referralPanel" class="panel-collapse collapse" role="tabpanel">
     <div class="panel-body">
       <div class="media">
         <div class="media-left">
@@ -21,12 +18,12 @@
         </div>
         <div class="media-body ">
           <h4 class="media-title">
-            @DictionaryRepository.Get("/Demo/Referral/Referrer", "Referrer")
+            @Html.Sitecore().DictionaryField("/Demo/Referral/Referrer", "Referrer")
           </h4>
           @if (string.IsNullOrEmpty(Model.ReferringSite))
           {
-            <div class="text-nowrap" title="@DictionaryRepository.Get("/Demo/Referral/ReferrerUnknown", "Direct traffic")">
-              @DictionaryRepository.Get("/Demo/Referral/ReferrerUnknown", "Direct traffic")
+            <div class="text-nowrap" title="@Html.Sitecore().Dictionary("/Demo/Referral/Referrer Unknown", "Direct traffic")">
+              @Html.Sitecore().DictionaryField("/Demo/Referral/Referrer Unknown", "Direct traffic")
             </div>
           }
           else
@@ -43,7 +40,7 @@
         </div>
         <div class="media-body ">
           <h4 class="media-title">
-            @DictionaryRepository.Get("/Demo/Referral/Campaigns", "Campaigns")
+            @Html.Sitecore().DictionaryField("/Demo/Referral/Campaigns", "Campaigns")
             @if (Model.Campaigns.Any())
             {
               <strong class="pull-right">@Model.TotalNoOfCampaigns</strong>
@@ -52,7 +49,7 @@
           @if (!Model.Campaigns.Any())
           {
             <div class="alert alert-info">
-              @DictionaryRepository.Get("/Demo/Referral/NoCampaigns", "You have not been associated with any campaigns")
+              @Html.Sitecore().DictionaryField("/Demo/Referral/No Campaigns", "You have not been associated with any campaigns")
             </div>
           }
           else
@@ -65,7 +62,7 @@
                     <small>
                       @if (campaign.IsActive)
                       {
-                        <strong>@DictionaryRepository.Get("/Demo/Referral/ActiveCampaign", "Active")</strong>
+                        <strong>@Html.Sitecore().DictionaryField("/Demo/Referral/Active Campaign", "Active")</strong>
                       }
                       else
                       {

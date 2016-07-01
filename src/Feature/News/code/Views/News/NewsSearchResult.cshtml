@@ -1,0 +1,30 @@
+﻿@using Sitecore.Feature.News
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Foundation.Indexing.Models.ISearchResult
+<div class="media">
+  <div class="media-body">
+    <div class="media-title">
+      <div>
+        <span class="label label-info">@Model.ContentType</span>
+        <span class="label label-default">
+          @Html.Sitecore().Field(Templates.NewsArticle.Fields.Date, Model.Item, new { format = "MMMM dd, yyyy" })
+        </span>
+      </div>
+      <h2>
+        <a href="@Model.Url">@Html.Raw(Model.Title)</a>
+      </h2>
+    </div>
+    @if (!string.IsNullOrWhiteSpace(Model.Description))
+    {
+      @Html.Raw(Model.Description)
+    }
+  </div>
+  @if (Model.Item.FieldHasValue(Templates.NewsArticle.Fields.Image))
+  {
+    <div class="media-left">
+      <a href="@Model.Url">
+        @Html.Sitecore().ImageField(Templates.NewsArticle.Fields.Image, Model.Item, mw: 150)
+      </a>
+    </div>
+  }
+</div>

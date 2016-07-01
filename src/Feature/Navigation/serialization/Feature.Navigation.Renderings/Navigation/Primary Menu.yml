@@ -1,17 +1,21 @@
 ﻿---
-ID: 53b085db-6824-4941-9f28-9011cb151832
-Parent: 9ce7afd3-6b9f-4955-9b00-164b9c91ecd2
-Template: 2a3e91a0-7987-44b5-ab34-35c2d9de83b9
+ID: "53b085db-6824-4941-9f28-9011cb151832"
+Parent: "9ce7afd3-6b9f-4955-9b00-164b9c91ecd2"
+Template: "2a3e91a0-7987-44b5-ab34-35c2d9de83b9"
 Path: /sitecore/layout/Renderings/Feature/Navigation/Primary Menu
 DB: master
 SharedFields:
-- ID: 94069f66-609c-48b0-8281-521c30fb269d
+- ID: "308e88f5-cd6e-4f8f-bafe-95a47dedefdc"
+  Hint: Editable
+  Type: Checkbox
+  Value: 1
+- ID: "94069f66-609c-48b0-8281-521c30fb269d"
   Hint: Open Properties after Add
-  Value: -
-- ID: ded9e431-3604-4921-a4b3-a6ec7636a5b6
+  Value: 
+- ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
   Hint: Controller Action
   Value: PrimaryMenu
-- ID: e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7
+- ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
   Hint: Controller
   Value: Sitecore.Feature.Navigation.Controllers.NavigationController, Sitecore.Feature.Navigation
 Languages:
@@ -19,6 +23,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150826T064623Z

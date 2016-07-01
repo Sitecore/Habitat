@@ -2,19 +2,17 @@
 {
   using Sitecore.Foundation.Indexing.Models;
 
-  public class PagedSearchResults : IPageble
+  public class PagedSearchResults : IPageable
   {
-    public const int DefaultResultsOnPage = 4;
+    public const int DefaultResultsOnPage = 10;
     public const int DefaultPagesToShow = 5;
 
-    
     private int resultsOnPage;
-    private int visiblePagesCount;
 
     public PagedSearchResults(int page, int totalResults, int pagesToShow, int resultsOnPage)
     {
       this.Page = page;
-      this.visiblePagesCount = pagesToShow <= 1 ? DefaultPagesToShow : pagesToShow;
+      this.VisiblePagesCount = pagesToShow <= 1 ? DefaultPagesToShow : pagesToShow;
       this.TotalResults = totalResults;
       this.ResultsOnPage = resultsOnPage <= 1 ? DefaultResultsOnPage : resultsOnPage;
     }
@@ -37,12 +35,12 @@
     {
       get
       {
-        var firstPage = this.Page - (visiblePagesCount / 2);
-        
+        var firstPage = this.Page - this.VisiblePagesCount / 2;
 
-        if (this.TotalPagesCount - this.Page < this.visiblePagesCount / 2)
+
+        if (this.TotalPagesCount - this.Page < this.VisiblePagesCount / 2)
         {
-          firstPage -= ((this.visiblePagesCount / 2) - this.TotalPagesCount + this.Page - 1 + (this.VisiblePagesCount % 2));
+          firstPage -= this.VisiblePagesCount / 2 - this.TotalPagesCount + this.Page - 1 + this.VisiblePagesCount % 2;
         }
 
         if (firstPage < 1)
@@ -54,24 +52,17 @@
       }
     }
 
-    public int VisiblePagesCount
-    {
-      get
-      {
-        return this.visiblePagesCount;
-      }
-    }
-
+    public int VisiblePagesCount { get; }
 
     public int LastPage
     {
       get
       {
-        var lastPage = this.Page + (visiblePagesCount / 2) - 1 + (this.VisiblePagesCount % 2);
+        var lastPage = this.Page + this.VisiblePagesCount / 2 - 1 + this.VisiblePagesCount % 2;
 
-        if ( this.Page - (this.VisiblePagesCount / 2) < 1)
+        if (this.Page - this.VisiblePagesCount / 2 < 1)
         {
-          lastPage += (1 + (this.VisiblePagesCount / 2) - this.Page);
+          lastPage += 1 + this.VisiblePagesCount / 2 - this.Page;
         }
 
         if (lastPage > this.TotalPagesCount)
@@ -95,12 +86,12 @@
     {
       get
       {
-        if (resultsOnPage == 0)
+        if (this.resultsOnPage == 0)
         {
-          resultsOnPage = DefaultResultsOnPage;
-        } 
+          this.resultsOnPage = DefaultResultsOnPage;
+        }
 
-        return resultsOnPage;
+        return this.resultsOnPage;
       }
       set
       {

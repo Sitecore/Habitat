@@ -14,9 +14,9 @@
       get
       {
         var url = new UrlString
-        {
-          HostName = this.HostName
-        };
+                  {
+                    HostName = this.HostName
+                  };
 
         return url.ToString();
       }

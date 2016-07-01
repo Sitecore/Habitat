@@ -1,21 +1,27 @@
 ﻿---
-ID: 8b28417b-a5b3-44f1-bfcc-fe1d907336e7
-Parent: c41e1360-7356-4397-9126-cf27db1f600e
-Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+ID: "8b28417b-a5b3-44f1-bfcc-fe1d907336e7"
+Parent: "c41e1360-7356-4397-9126-cf27db1f600e"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
 Path: /sitecore/layout/Renderings/Feature/Media/Page Header Media Carousel
 DB: master
 SharedFields:
-- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
   Hint: Path
-  Value: /Views/Media/PageHeaderCarousel.cshtml
-- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  Value: /Views/MediaFeature/PageHeaderCarousel.cshtml
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
-  Value: site:carousel
+  Value: "site:carousel"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: "<image mediaid=\"{71E17F51-7532-4539-AFE1-89DB633FDDAC}\" />"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
+    - ID: 1c307764-806c-42f0-b7ce-fc173ac8372b
+      Hint: Supports Local Datasource
+      Value: 1
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20160216T043251Z

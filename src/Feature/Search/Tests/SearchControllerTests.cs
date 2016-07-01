@@ -1,17 +1,20 @@
 ﻿namespace Sitecore.Feature.Search.Tests
 {
+  using System;
   using System.Web;
   using System.Web.Mvc;
   using FluentAssertions;
   using NSubstitute;
+  using NSubstitute.Core;
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Feature.Search.Controllers;
   using Sitecore.Feature.Search.Models;
   using Sitecore.Feature.Search.Repositories;
-  using Sitecore.Feature.Search.Tests.Extensions;
   using Sitecore.Foundation.Indexing;
   using Sitecore.Foundation.Indexing.Models;
+  using Sitecore.Foundation.Indexing.Repositories;
+  using Sitecore.Foundation.Indexing.Services;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
@@ -20,34 +23,37 @@
   {
     [Theory]
     [AutoDbData]
-    public void ShouldReturnPagedSearchResult([Substitute] SearchService service, ISearchServiceRepository serviceRepository, ISearchSettingsRepository settingsRepository, QueryRepository queryRepository, string query, ISearchResults searchResults, [Substitute] SearchController searchController, IRenderingPropertiesRepository renderingPropertiesRepository, [Substitute] PagingSettings pagingSettings)
+    public void PagedSearchResults_ShouldReturnModel([Substitute]SearchService service, PagingSettings pagingSettings, SearchContext searchContext, ISearchContextRepository contextRepository, QueryRepository queryRepository, ISearchServiceRepository serviceRepository, string query, ISearchResults searchResults, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       renderingPropertiesRepository.Get<PagingSettings>().Returns(pagingSettings);
       service.Search(Arg.Any<IQuery>()).Returns(searchResults);
       serviceRepository.Get().Returns(service);
-      var controller = new SearchController(serviceRepository, settingsRepository, queryRepository, renderingPropertiesRepository);
+      contextRepository.Get().Returns(searchContext);
+      var controller = new SearchController(serviceRepository, contextRepository, queryRepository, renderingPropertiesRepository);
       var result = controller.PagedSearchResults(query, null) as ViewResult;
       result.Model.Should().BeOfType<PagedSearchResults>();
     }
 
     [Theory]
     [AutoDbData]
-    public void ShouldReturnSearchSettings(ISearchResults searchResults,[Substitute] SearchService service, SearchSettings searchSettings, ISearchServiceRepository serviceRepository, ISearchSettingsRepository settingsRepository, QueryRepository queryRepository,   IRenderingPropertiesRepository renderingPropertiesRepository, string query)
+    public void SearchResultsHeader_ShouldReturnModel(ISearchResults searchResults, [Substitute]SearchService service, SearchContext searchContext, ISearchServiceRepository serviceRepository, ISearchContextRepository contextRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
     {
-      settingsRepository.Get(Arg.Any<string>()).Returns(searchSettings);
-      var controller = new SearchController(serviceRepository, settingsRepository, queryRepository, renderingPropertiesRepository);
+      contextRepository.Get().Returns(searchContext);
+      var controller = new SearchController(serviceRepository, contextRepository, queryRepository, renderingPropertiesRepository);
       var result = controller.SearchResultsHeader(query) as ViewResult;
-      result.Model.Should().BeOfType<SearchSettings>();
+      result.Model.Should().BeOfType<SearchContext>();
     }
 
     [Theory]
     [AutoDbData]
-    public void ShouldReturnSearchResults([Substitute]ControllerContext controllerContext,[Substitute] HttpContextBase context,ISearchResults searchResults, [Substitute] SearchService service, ISearchServiceRepository serviceRepository, ISearchSettingsRepository settingsRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
+    public void SearchResults_ShouldReturnModel([Substitute]ControllerContext controllerContext, [Substitute]HttpContextBase context, ISearchResults searchResults, [Substitute]SearchService service, ISearchServiceRepository serviceRepository, ISearchContextRepository contextRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
     {
       service.Search(Arg.Any<IQuery>()).Returns(searchResults);
       serviceRepository.Get().Returns(service);
-      var controller = new SearchController(serviceRepository, settingsRepository, queryRepository, renderingPropertiesRepository);
-      controller.ControllerContext = controllerContext;
+      var controller = new SearchController(serviceRepository, contextRepository, queryRepository, renderingPropertiesRepository)
+                       {
+                         ControllerContext = controllerContext
+                       };
       controller.ControllerContext.HttpContext = context;
       var result = controller.SearchResults(query) as ViewResult;
       result.Model.Should().As<ISearchResults>();
@@ -55,19 +61,19 @@
 
     [Theory]
     [AutoDbData]
-    public void ShouldReturnGlobalSearch(ISearchResults searchResults, [Substitute] SearchService service, [Substitute] SearchSettings settings, ISearchServiceRepository serviceRepository, ISearchSettingsRepository settingsRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
+    public void GlobalSearch_ShouldReturnModel(ISearchResults searchResults, [Substitute]SearchService service, SearchContext context, ISearchServiceRepository serviceRepository, ISearchContextRepository contextRepository, QueryRepository queryRepository, IRenderingPropertiesRepository renderingPropertiesRepository, string query)
     {
       service.Search(Arg.Any<IQuery>()).Returns(searchResults);
       serviceRepository.Get().Returns(service);
-      settingsRepository.Get().Returns(settings);
-      var controller = new SearchController(serviceRepository, settingsRepository, queryRepository, renderingPropertiesRepository);
+      contextRepository.Get().Returns(context);
+      var controller = new SearchController(serviceRepository, contextRepository, queryRepository, renderingPropertiesRepository);
       var result = controller.GlobalSearch() as ViewResult;
       result.Model.Should().As<ISearchResults>();
     }
 
     [Theory]
     [AutoDbData]
-    public void SearchResultModelCanBeInitialized(SearchSettings settings, [NoAutoProperties]SearchResults results)
+    public void SearchResults_CanBeInitialized(SearchContext context, [NoAutoProperties] SearchResults results)
     {
     }
   }

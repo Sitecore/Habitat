@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\..\..\..\applytransform.targets" />
   <Import Project="..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -76,6 +75,12 @@
     <Reference Include="Sitecore.Cintel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Cintel.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ExperienceEditor">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ExperienceEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceExplorer.Business">
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ExperienceExplorer.Business.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
@@ -135,8 +140,8 @@
     <Content Include="App_Config\Include\Feature\Feature.Demo.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="packages.config" />
     <Content Include="App_Config\Include\Feature\Feature.Demo.config" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <Content Include="Views\Demo\_KeyBehaviourCacheList.cshtml" />
     <Content Include="Scripts\Demo\VisitDetails.js" />
@@ -146,6 +151,7 @@
     <Content Include="Views\Demo\_Referral.cshtml" />
     <Content Include="Views\Demo\ExperienceData.cshtml" />
     <Content Include="Views\Demo\_OnsiteBehaviorProfiling.cshtml" />
+    <Content Include="Views\Demo\_ExperienceDataContent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -168,18 +174,18 @@
     <Compile Include="Models\Device.cs" />
     <Compile Include="Models\EngagementPlanState.cs" />
     <Compile Include="Models\ExperienceData.cs" />
-    <Compile Include="Models\Repository\CampaignRepository.cs" />
-    <Compile Include="Models\Repository\DeviceRepository.cs" />
-    <Compile Include="Models\Repository\EngagementPlanStateRepository.cs" />
-    <Compile Include="Models\Repository\GoalRepository.cs" />
-    <Compile Include="Models\Repository\ICampaignRepository.cs" />
-    <Compile Include="Models\Repository\LocationRepository.cs" />
-    <Compile Include="Models\Repository\OutcomeRepository.cs" />
-    <Compile Include="Models\Repository\PageViewRepository.cs" />
-    <Compile Include="Models\Repository\PersonalInfoRepository.cs" />
-    <Compile Include="Models\Repository\OnsiteBehaviorRepository.cs" />
-    <Compile Include="Models\Repository\ProfileRepository.cs" />
-    <Compile Include="Models\Repository\ReferralRepository.cs" />
+    <Compile Include="Repositories\CampaignRepository.cs" />
+    <Compile Include="Repositories\DeviceRepository.cs" />
+    <Compile Include="Repositories\EngagementPlanStateRepository.cs" />
+    <Compile Include="Repositories\GoalRepository.cs" />
+    <Compile Include="Repositories\ICampaignRepository.cs" />
+    <Compile Include="Repositories\LocationRepository.cs" />
+    <Compile Include="Repositories\OutcomeRepository.cs" />
+    <Compile Include="Repositories\PageViewRepository.cs" />
+    <Compile Include="Repositories\PersonalInfoRepository.cs" />
+    <Compile Include="Repositories\OnsiteBehaviorRepository.cs" />
+    <Compile Include="Repositories\ProfileRepository.cs" />
+    <Compile Include="Repositories\ReferralRepository.cs" />
     <Compile Include="Models\Goal.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\OnsiteBehaviour.cs" />
@@ -188,7 +194,7 @@
     <Compile Include="Models\PersonalInfo.cs" />
     <Compile Include="Models\Referral.cs" />
     <Compile Include="Models\Visits.cs" />
-    <Compile Include="Models\Repository\VisitsRepository.cs" />
+    <Compile Include="Repositories\VisitsRepository.cs" />
     <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
     <Compile Include="Services\BehaviorProfileDecorator.cs" />
     <Compile Include="Services\ProfileProvider.cs" />
@@ -196,22 +202,28 @@
     <Compile Include="Models\PatternMatch.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\ProfilingTypes.cs" />
     <Compile Include="Templates.cs" />
-    <Compile Include="Texts\Captions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Foundation\Accounts\code\Sitecore.Foundation.Accounts.csproj">
+      <Project>{CE34A3B7-B91A-41BA-8B16-C1E131E1C621}</Project>
+      <Name>Sitecore.Foundation.Accounts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj">
       <Project>{5cf5fa06-ab27-4df5-a471-ed57ef3e4ae9}</Project>
       <Name>Sitecore.Foundation.Alerts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Foundation\Dictionary\code\Sitecore.Foundation.Dictionary.csproj">
+      <Project>{0D6BA4D8-C469-4AE9-9EBB-93BDF7D7E78F}</Project>
+      <Name>Sitecore.Foundation.Dictionary</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -223,7 +235,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>58194</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

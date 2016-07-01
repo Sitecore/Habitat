@@ -1,0 +1,14 @@
+﻿---
+ID: "16375037-ab39-4a7d-af13-46873b541cf1"
+Parent: "42c89b44-74f9-4ebc-8def-844a305cbcfd"
+Template: "98e4bdc6-9b43-4eb2-baa3-d4303c35852e"
+Path: /sitecore/content/Habitat/Global/Dictionary/Maps/Map
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160406T235408Z

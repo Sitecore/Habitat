@@ -1,0 +1,13 @@
+
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/list-group";
+
+
+
+.list-group {
+  &-item {
+    .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+      color: $text-color;
+    }
+  }
+}

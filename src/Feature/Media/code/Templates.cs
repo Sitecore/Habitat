@@ -6,7 +6,7 @@
   {
     public struct BackgroundType
     {
-      public static ID ID = new ID("{55A5BDAD-EB69-40F5-8195-CDA182E48EE4}");
+      public static readonly ID ID = new ID("{55A5BDAD-EB69-40F5-8195-CDA182E48EE4}");
 
       public struct Fields
       {
@@ -16,7 +16,7 @@
 
     public struct HasMedia
     {
-      public static ID ID = new ID("{A44E450E-BA3F-4FAF-9C53-C63241CC34EB}");
+      public static readonly ID ID = new ID("{A44E450E-BA3F-4FAF-9C53-C63241CC34EB}");
 
       public struct Fields
       {
@@ -38,7 +38,7 @@
 
     public struct HasMediaImage
     {
-      public static ID ID = new ID("{FAE0C913-1600-4EBA-95A9-4D6FD7407E25}");
+      public static readonly ID ID = new ID("{FAE0C913-1600-4EBA-95A9-4D6FD7407E25}");
 
       public struct Fields
       {
@@ -48,25 +48,12 @@
 
     public struct HasMediaVideo
     {
-      public static ID ID = new ID("{5A1B724B-B396-4C48-A833-655CD19018E1}");
+      public static readonly ID ID = new ID("{5A1B724B-B396-4C48-A833-655CD19018E1}");
 
       public struct Fields
       {
         public static readonly ID VideoLink = new ID("{2628705D-9434-4448-978C-C3BF166FA1EB}");
       }
     }
-    public struct HasParallaxBackground
-    {
-      public static ID ID = new ID("{27B8BFA4-5943-40A3-837F-110432483752}");
-
-      public struct Fields
-      {
-        public static readonly ID BackgroundMedia = new ID("{407DD3E3-024A-4A40-96E1-6ED588851197}");
-        public static readonly ID IsParallaxEnabled = new ID("{A1340A3C-4AF5-4E88-8E4C-34C10E557315}");
-        public static readonly ID ParallaxSpeed = new ID("{6E58CF7E-AAE9-4DD6-8DA2-19C818AD2D8F}");
-      }
-    }
   }
-
-
 }

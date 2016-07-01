@@ -1,7 +1,7 @@
 ﻿---
-ID: 7e5bdd04-6032-42fb-a0b7-b1a3c83eaf70
-Parent: 4b86cb93-0ae5-4845-877b-6a045eac5707
-Template: f0369e1a-9030-4a05-a09c-ef09b664ed27
+ID: "7e5bdd04-6032-42fb-a0b7-b1a3c83eaf70"
+Parent: "4b86cb93-0ae5-4845-877b-6a045eac5707"
+Template: "f0369e1a-9030-4a05-a09c-ef09b664ed27"
 Path: /sitecore/content/Habitat/Global/Media/Dependencies/Dependencies 6
 DB: master
 Languages:
@@ -9,15 +9,15 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151209T045130Z
-    - ID: 302c9f8d-f703-4f76-a4ab-73d222648232
+    - ID: "302c9f8d-f703-4f76-a4ab-73d222648232"
       Hint: MediaDescription
       Value: Getting a modular architecture right and harvesting the wins of that relies on having a methodology where dependencies and coupling is controlled.
-    - ID: 63dda48b-b0cb-45a7-9a1b-b26ddb41009b
+    - ID: "63dda48b-b0cb-45a7-9a1b-b26ddb41009b"
       Hint: MediaTitle
       Value: Layering makes way for modularity
-    - ID: 9f51dead-ad6e-41c2-9759-7be17eb474a4
+    - ID: "9f51dead-ad6e-41c2-9759-7be17eb474a4"
       Hint: MediaImage
       Value: "<image mediapath=\"/Habitat/Images/Content/Dependencies/Habitat Dependencies 2\" alt=\"Dependencies in Habitat\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Habitat/Images/Content/Dependencies/Habitat Dependencies 2\" mediaid=\"{449FD373-4DC6-483C-9A34-1E7D1385CAFC}\" ></image>"

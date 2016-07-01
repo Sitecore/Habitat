@@ -1,14 +1,14 @@
 ﻿---
-ID: dc5c0fb3-f8bc-4311-916b-b5f885793aad
-Parent: 679d63a6-702c-4a1f-bfce-2ad8e3de7f26
-Template: 6e5b63d6-2401-4a52-8b4d-cfef5e4e9752
+ID: "dc5c0fb3-f8bc-4311-916b-b5f885793aad"
+Parent: "679d63a6-702c-4a1f-bfce-2ad8e3de7f26"
+Template: "6e5b63d6-2401-4a52-8b4d-cfef5e4e9752"
 Path: /sitecore/system/Marketing Control Panel/Engagement Plans/Habitat/Register Page Open
 DB: master
 SharedFields:
-- ID: a4f985d9-98b3-4b52-aaaf-4344f6e747c6
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
-  Value: {689E2994-4656-4C58-9112-7826CB46EE69}
-- ID: c36d22d2-94fc-46ac-91db-2cf322c66895
+  Value: "{689E2994-4656-4C58-9112-7826CB46EE69}"
+- ID: "c36d22d2-94fc-46ac-91db-2cf322c66895"
   Hint: Flow designer items
   Value: |
     <flowDesignerItems>
@@ -36,9 +36,9 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151118T141912Z
-    - ID: 3e431de1-525e-47a3-b6b0-1ccbec3a8c98
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
-      Value: {EDCBB550-BED3-490F-82B8-7B2F14CCD26E}
+      Value: "{EDCBB550-BED3-490F-82B8-7B2F14CCD26E}"

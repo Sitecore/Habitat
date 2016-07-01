@@ -10,9 +10,9 @@
   using Sitecore.FakeDb;
   using Sitecore.Feature.Multisite.Models;
   using Sitecore.Feature.Multisite.Repositories;
-  using Sitecore.Feature.Multisite.Tests.Extensions;
   using Sitecore.Foundation.Multisite;
   using Sitecore.Foundation.Multisite.Providers;
+  using Sitecore.Foundation.Testing.Attributes;
   using Xunit;
 
   public class SiteConfigurationRepositoryTests
@@ -48,15 +48,6 @@
       definitions.Should().BeOfType<SiteConfigurations>();
       var sites = definitions.Items.ToList();
       sites.Count.Should().BeGreaterThan(0);
-    }
-
-    public class SiteTemplate : DbTemplate
-    {
-      public SiteTemplate()
-      {
-        this.Add(Foundation.Multisite.Templates.Site.Fields.HostName);
-        this.Add(Multisite.Templates.SiteConfiguration.Fields.ShowInMenu);
-      }
     }
   }
 }

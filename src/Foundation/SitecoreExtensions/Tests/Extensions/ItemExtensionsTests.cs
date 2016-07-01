@@ -17,15 +17,6 @@
   {
     [Theory]
     [AutoDbData]
-    public void DisplayNameShouldReturnActualValue([Content] Item item)
-    {
-      item.ID.DisplayName().Should().BeEquivalentTo(item.DisplayName);
-      item.ID.Guid.DisplayName().Should().BeEquivalentTo(item.DisplayName);
-    }
-
-
-    [Theory]
-    [AutoDbData]
     public void MediaUrlShouldThrowExceptionWhenItemNull()
     {
       Action action = () => ItemExtensions.MediaUrl(null, ID.NewID);
@@ -95,6 +86,60 @@
       {
         Database.GetDatabase("master").GetItem(newID).MediaUrl(template.FieldId).Should().Be("");
       }
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void HasFieldValue_FieldHasValue_ShouldReturnTrue(Db db, DbItem item, DbField field, string value)
+    {
+      //Arrange
+      field.Value = value;
+      item.Add(field);
+      db.Add(item);
+      var testItem = db.GetItem(item.ID);
+      //Act
+      testItem.FieldHasValue(field.ID).Should().BeTrue();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void HasFieldValue_FieldIsNull_ShouldReturnFalse(Db db, DbItem item, DbField field)
+    {
+      //Arrange
+      field.Value = null;
+      item.Add(field);
+      db.Add(item);
+      var testItem = db.GetItem(item.ID);
+      //Act
+      testItem.FieldHasValue(field.ID).Should().BeFalse();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void HasFieldValue_FieldDoesNotExist_ShouldReturnFalse(Db db, DbItem item, DbField field)
+    {
+      //Arrange
+      db.Add(item);
+      var testItem = db.GetItem(item.ID);
+      //Act
+      testItem.FieldHasValue(field.ID).Should().BeFalse();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void HasFieldValue_FieldHasStandardValue_ShouldReturnTrue(Db db, string itemName, TemplateID templateId, ID fieldId, string value)
+    {
+      var template = new DbTemplate("Sample", templateId)
+                     {
+                       {fieldId, value}
+                     };
+      db.Add(template);
+      //Arrange
+      var contentRoot = db.GetItem(ItemIDs.ContentRoot);
+      var item = contentRoot.Add("Home", new TemplateID(template.ID));
+
+      //Act
+      item.FieldHasValue(fieldId).Should().BeTrue();
     }
   }
 }

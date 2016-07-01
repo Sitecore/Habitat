@@ -1,0 +1,52 @@
+$table-cell-padding: 12px 15px;
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/tables";
+
+table, .table {
+
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    color: #FFF;
+    .active, .success, .warning, .danger, .info {
+      color: $text-color;
+    }
+  }
+
+  &.table-striped {
+    tbody {
+      tr {
+        &:nth-of-type(odd) {
+          .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+
+  &.table-striped-vertical {
+    th, td {
+      &:nth-child(even) {
+        background-color: #f9f9f9;
+
+        .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+          color: $text-color;
+        }
+      }
+    }
+  }
+
+  &.table-borderless {
+    border: none;
+    > thead,
+    > tbody,
+    > tfoot {
+      > tr {
+        > th,
+        > td {
+          border: none;
+        }
+      }
+    }
+  }
+
+}

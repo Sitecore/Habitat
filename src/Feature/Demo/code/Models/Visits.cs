@@ -1,6 +1,5 @@
 ﻿namespace Sitecore.Feature.Demo.Models
 {
-  using System.Collections;
   using System.Collections.Generic;
 
   public class Visits

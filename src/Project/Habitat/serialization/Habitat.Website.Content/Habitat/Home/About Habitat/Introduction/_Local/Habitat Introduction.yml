@@ -1,0 +1,26 @@
+﻿---
+ID: "67e5f37f-adf9-4044-9a02-fbe3e99b5a7a"
+Parent: "b265c694-af8b-4894-96d7-66a3d6d703c5"
+Template: "f1c095e2-b3e0-46d0-b838-02a9e8b880d9"
+Path: /sitecore/content/Habitat/Home/About Habitat/Introduction/_Local/Habitat Introduction
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160407T233756Z
+    - ID: "2628705d-9434-4448-978c-c3bf166fa1eb"
+      Hint: MediaVideoLink
+      Value: "<link linktype=\"external\" url=\"https://youtu.be/2CELqflPhm0\" />"
+    - ID: "302c9f8d-f703-4f76-a4ab-73d222648232"
+      Hint: MediaDescription
+      Value: <p>Video introducing the concepts and thoughts behind the Sitecore Habitat methodology</p>
+    - ID: "4ff62b0a-d73b-4436-bea2-023154f2ffc4"
+      Hint: MediaThumbnail
+      Value: "<image mediaid=\"{AC09E83E-3473-4F94-B1DA-CB2BD5ADD401}\" ></image>"
+    - ID: "63dda48b-b0cb-45a7-9a1b-b26ddb41009b"
+      Hint: MediaTitle
+      Value: Habitat Introduction

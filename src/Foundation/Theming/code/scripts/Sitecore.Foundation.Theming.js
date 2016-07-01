@@ -1406,7 +1406,7 @@ window.Modernizr = (function( window, document, undefined ) {
 })(this, this.document);
 
 /*!
- * jQuery JavaScript Library v2.2.1
+ * jQuery JavaScript Library v2.2.2
  * http://jquery.com/
  *
  * Includes Sizzle.js
@@ -1416,7 +1416,7 @@ window.Modernizr = (function( window, document, undefined ) {
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2016-02-22T19:11Z
+ * Date: 2016-03-17T17:51Z
  */
 
 (function( global, factory ) {
@@ -1472,7 +1472,7 @@ var support = {};
 
 
 var
-	version = "2.2.1",
+	version = "2.2.2",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -1683,6 +1683,7 @@ jQuery.extend( {
 	},
 
 	isPlainObject: function( obj ) {
+		var key;
 
 		// Not plain objects:
 		// - Any object or value whose internal [[Class]] property is not "[object Object]"
@@ -1692,14 +1693,18 @@ jQuery.extend( {
 			return false;
 		}
 
+		// Not own constructor property must be Object
 		if ( obj.constructor &&
-				!hasOwn.call( obj.constructor.prototype, "isPrototypeOf" ) ) {
+				!hasOwn.call( obj, "constructor" ) &&
+				!hasOwn.call( obj.constructor.prototype || {}, "isPrototypeOf" ) ) {
 			return false;
 		}
 
-		// If the function hasn't returned already, we're confident that
-		// |obj| is a plain object, created by {} or constructed with new Object
-		return true;
+		// Own properties are enumerated firstly, so to speed up,
+		// if last one is own, then all properties are own
+		for ( key in obj ) {}
+
+		return key === undefined || hasOwn.call( obj, key );
 	},
 
 	isEmptyObject: function( obj ) {
@@ -8732,6 +8737,12 @@ jQuery.extend( {
 	}
 } );
 
+// Support: IE <=11 only
+// Accessing the selectedIndex property
+// forces the browser to respect setting selected
+// on the option
+// The getter ensures a default option is selected
+// when in an optgroup
 if ( !support.optSelected ) {
 	jQuery.propHooks.selected = {
 		get: function( elem ) {
@@ -8740,6 +8751,16 @@ if ( !support.optSelected ) {
 				parent.parentNode.selectedIndex;
 			}
 			return null;
+		},
+		set: function( elem ) {
+			var parent = elem.parentNode;
+			if ( parent ) {
+				parent.selectedIndex;
+
+				if ( parent.parentNode ) {
+					parent.parentNode.selectedIndex;
+				}
+			}
 		}
 	};
 }
@@ -8934,7 +8955,8 @@ jQuery.fn.extend( {
 
 
 
-var rreturn = /\r/g;
+var rreturn = /\r/g,
+	rspaces = /[\x20\t\r\n\f]+/g;
 
 jQuery.fn.extend( {
 	val: function( value ) {
@@ -9010,9 +9032,15 @@ jQuery.extend( {
 		option: {
 			get: function( elem ) {
 
-				// Support: IE<11
-				// option.value not trimmed (#14858)
-				return jQuery.trim( elem.value );
+				var val = jQuery.find.attr( elem, "value" );
+				return val != null ?
+					val :
+
+					// Support: IE10-11+
+					// option.text throws exceptions (#14686, #14858)
+					// Strip and collapse whitespace
+					// https://html.spec.whatwg.org/#strip-and-collapse-whitespace
+					jQuery.trim( jQuery.text( elem ) ).replace( rspaces, " " );
 			}
 		},
 		select: {
@@ -9065,7 +9093,7 @@ jQuery.extend( {
 				while ( i-- ) {
 					option = options[ i ];
 					if ( option.selected =
-							jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1
+						jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1
 					) {
 						optionSet = true;
 					}
@@ -10760,18 +10788,6 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 
 
 
-// Support: Safari 8+
-// In Safari 8 documents created via document.implementation.createHTMLDocument
-// collapse sibling forms: the second one becomes a child of the first one.
-// Because of that, this security measure has to be disabled in Safari 8.
-// https://bugs.webkit.org/show_bug.cgi?id=137337
-support.createHTMLDocument = ( function() {
-	var body = document.implementation.createHTMLDocument( "" ).body;
-	body.innerHTML = "<form></form><form></form>";
-	return body.childNodes.length === 2;
-} )();
-
-
 // Argument "data" should be string of html
 // context (optional): If specified, the fragment will be created in this context,
 // defaults to document
@@ -10784,12 +10800,7 @@ jQuery.parseHTML = function( data, context, keepScripts ) {
 		keepScripts = context;
 		context = false;
 	}
-
-	// Stop scripts or inline event handlers from being executed immediately
-	// by using document.implementation
-	context = context || ( support.createHTMLDocument ?
-		document.implementation.createHTMLDocument( "" ) :
-		document );
+	context = context || document;
 
 	var parsed = rsingleTag.exec( data ),
 		scripts = !keepScripts && [];
@@ -15799,447 +15810,6 @@ return Shuffle;
 
 }).call(this);
 
-
-/*
-Lightbox for Bootstrap 3 by @ashleydw
-https://github.com/ashleydw/lightbox
-
-License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
- */
-
-(function() {
-  "use strict";
-  var $, EkkoLightbox;
-
-  $ = jQuery;
-
-  EkkoLightbox = function(element, options) {
-    var content, footer, header;
-    this.options = $.extend({
-      title: null,
-      footer: null,
-      remote: null
-    }, $.fn.ekkoLightbox.defaults, options || {});
-    this.$element = $(element);
-    content = '';
-    this.modal_id = this.options.modal_id ? this.options.modal_id : 'ekkoLightbox-' + Math.floor((Math.random() * 1000) + 1);
-    header = '<div class="modal-header"' + (this.options.title || this.options.always_show_close ? '' : ' style="display:none"') + '><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title">' + (this.options.title || "&nbsp;") + '</h4></div>';
-    footer = '<div class="modal-footer"' + (this.options.footer ? '' : ' style="display:none"') + '>' + this.options.footer + '</div>';
-    $(document.body).append('<div id="' + this.modal_id + '" class="ekko-lightbox modal fade" tabindex="-1"><div class="modal-dialog"><div class="modal-content">' + header + '<div class="modal-body"><div class="ekko-lightbox-container"><div></div></div></div>' + footer + '</div></div></div>');
-    this.modal = $('#' + this.modal_id);
-    this.modal_dialog = this.modal.find('.modal-dialog').first();
-    this.modal_content = this.modal.find('.modal-content').first();
-    this.modal_body = this.modal.find('.modal-body').first();
-    this.modal_header = this.modal.find('.modal-header').first();
-    this.modal_footer = this.modal.find('.modal-footer').first();
-    this.lightbox_container = this.modal_body.find('.ekko-lightbox-container').first();
-    this.lightbox_body = this.lightbox_container.find('> div:first-child').first();
-    this.showLoading();
-    this.modal_arrows = null;
-    this.border = {
-      top: parseFloat(this.modal_dialog.css('border-top-width')) + parseFloat(this.modal_content.css('border-top-width')) + parseFloat(this.modal_body.css('border-top-width')),
-      right: parseFloat(this.modal_dialog.css('border-right-width')) + parseFloat(this.modal_content.css('border-right-width')) + parseFloat(this.modal_body.css('border-right-width')),
-      bottom: parseFloat(this.modal_dialog.css('border-bottom-width')) + parseFloat(this.modal_content.css('border-bottom-width')) + parseFloat(this.modal_body.css('border-bottom-width')),
-      left: parseFloat(this.modal_dialog.css('border-left-width')) + parseFloat(this.modal_content.css('border-left-width')) + parseFloat(this.modal_body.css('border-left-width'))
-    };
-    this.padding = {
-      top: parseFloat(this.modal_dialog.css('padding-top')) + parseFloat(this.modal_content.css('padding-top')) + parseFloat(this.modal_body.css('padding-top')),
-      right: parseFloat(this.modal_dialog.css('padding-right')) + parseFloat(this.modal_content.css('padding-right')) + parseFloat(this.modal_body.css('padding-right')),
-      bottom: parseFloat(this.modal_dialog.css('padding-bottom')) + parseFloat(this.modal_content.css('padding-bottom')) + parseFloat(this.modal_body.css('padding-bottom')),
-      left: parseFloat(this.modal_dialog.css('padding-left')) + parseFloat(this.modal_content.css('padding-left')) + parseFloat(this.modal_body.css('padding-left'))
-    };
-    this.modal.on('show.bs.modal', this.options.onShow.bind(this)).on('shown.bs.modal', (function(_this) {
-      return function() {
-        _this.modal_shown();
-        return _this.options.onShown.call(_this);
-      };
-    })(this)).on('hide.bs.modal', this.options.onHide.bind(this)).on('hidden.bs.modal', (function(_this) {
-      return function() {
-        if (_this.gallery) {
-          $(document).off('keydown.ekkoLightbox');
-        }
-        _this.modal.remove();
-        return _this.options.onHidden.call(_this);
-      };
-    })(this)).modal('show', options);
-    return this.modal;
-  };
-
-  EkkoLightbox.prototype = {
-    modal_shown: function() {
-      var video_id;
-      if (!this.options.remote) {
-        return this.error('No remote target given');
-      } else {
-        this.gallery = this.$element.data('gallery');
-        if (this.gallery) {
-          if (this.options.gallery_parent_selector === 'document.body' || this.options.gallery_parent_selector === '') {
-            this.gallery_items = $(document.body).find('*[data-gallery="' + this.gallery + '"]');
-          } else {
-            this.gallery_items = this.$element.parents(this.options.gallery_parent_selector).first().find('*[data-gallery="' + this.gallery + '"]');
-          }
-          this.gallery_index = this.gallery_items.index(this.$element);
-          $(document).on('keydown.ekkoLightbox', this.navigate.bind(this));
-          if (this.options.directional_arrows && this.gallery_items.length > 1) {
-            this.lightbox_container.append('<div class="ekko-lightbox-nav-overlay"><a href="#" class="' + this.strip_stops(this.options.left_arrow_class) + '"></a><a href="#" class="' + this.strip_stops(this.options.right_arrow_class) + '"></a></div>');
-            this.modal_arrows = this.lightbox_container.find('div.ekko-lightbox-nav-overlay').first();
-            this.lightbox_container.find('a' + this.strip_spaces(this.options.left_arrow_class)).on('click', (function(_this) {
-              return function(event) {
-                event.preventDefault();
-                return _this.navigate_left();
-              };
-            })(this));
-            this.lightbox_container.find('a' + this.strip_spaces(this.options.right_arrow_class)).on('click', (function(_this) {
-              return function(event) {
-                event.preventDefault();
-                return _this.navigate_right();
-              };
-            })(this));
-          }
-        }
-        if (this.options.type) {
-          if (this.options.type === 'image') {
-            return this.preloadImage(this.options.remote, true);
-          } else if (this.options.type === 'youtube' && (video_id = this.getYoutubeId(this.options.remote))) {
-            return this.showYoutubeVideo(video_id);
-          } else if (this.options.type === 'vimeo') {
-            return this.showVimeoVideo(this.options.remote);
-          } else if (this.options.type === 'instagram') {
-            return this.showInstagramVideo(this.options.remote);
-          } else if (this.options.type === 'url') {
-            return this.loadRemoteContent(this.options.remote);
-          } else if (this.options.type === 'video') {
-            return this.showVideoIframe(this.options.remote);
-          } else {
-            return this.error("Could not detect remote target type. Force the type using data-type=\"image|youtube|vimeo|instagram|url|video\"");
-          }
-        } else {
-          return this.detectRemoteType(this.options.remote);
-        }
-      }
-    },
-    strip_stops: function(str) {
-      return str.replace(/\./g, '');
-    },
-    strip_spaces: function(str) {
-      return str.replace(/\s/g, '');
-    },
-    isImage: function(str) {
-      return str.match(/(^data:image\/.*,)|(\.(jp(e|g|eg)|gif|png|bmp|webp|svg)((\?|#).*)?$)/i);
-    },
-    isSwf: function(str) {
-      return str.match(/\.(swf)((\?|#).*)?$/i);
-    },
-    getYoutubeId: function(str) {
-      var match;
-      match = str.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
-      if (match && match[2].length === 11) {
-        return match[2];
-      } else {
-        return false;
-      }
-    },
-    getVimeoId: function(str) {
-      if (str.indexOf('vimeo') > 0) {
-        return str;
-      } else {
-        return false;
-      }
-    },
-    getInstagramId: function(str) {
-      if (str.indexOf('instagram') > 0) {
-        return str;
-      } else {
-        return false;
-      }
-    },
-    navigate: function(event) {
-      event = event || window.event;
-      if (event.keyCode === 39 || event.keyCode === 37) {
-        if (event.keyCode === 39) {
-          return this.navigate_right();
-        } else if (event.keyCode === 37) {
-          return this.navigate_left();
-        }
-      }
-    },
-    navigateTo: function(index) {
-      var next, src;
-      if (index < 0 || index > this.gallery_items.length - 1) {
-        return this;
-      }
-      this.showLoading();
-      this.gallery_index = index;
-      this.$element = $(this.gallery_items.get(this.gallery_index));
-      this.updateTitleAndFooter();
-      src = this.$element.attr('data-remote') || this.$element.attr('href');
-      this.detectRemoteType(src, this.$element.attr('data-type') || false);
-      if (this.gallery_index + 1 < this.gallery_items.length) {
-        next = $(this.gallery_items.get(this.gallery_index + 1), false);
-        src = next.attr('data-remote') || next.attr('href');
-        if (next.attr('data-type') === 'image' || this.isImage(src)) {
-          return this.preloadImage(src, false);
-        }
-      }
-    },
-    navigate_left: function() {
-      if (this.gallery_items.length === 1) {
-        return;
-      }
-      if (this.gallery_index === 0) {
-        this.gallery_index = this.gallery_items.length - 1;
-      } else {
-        this.gallery_index--;
-      }
-      this.options.onNavigate.call(this, 'left', this.gallery_index);
-      return this.navigateTo(this.gallery_index);
-    },
-    navigate_right: function() {
-      if (this.gallery_items.length === 1) {
-        return;
-      }
-      if (this.gallery_index === this.gallery_items.length - 1) {
-        this.gallery_index = 0;
-      } else {
-        this.gallery_index++;
-      }
-      this.options.onNavigate.call(this, 'right', this.gallery_index);
-      return this.navigateTo(this.gallery_index);
-    },
-    detectRemoteType: function(src, type) {
-      var video_id;
-      type = type || false;
-      if (type === 'image' || this.isImage(src)) {
-        this.options.type = 'image';
-        return this.preloadImage(src, true);
-      } else if (type === 'youtube' || (video_id = this.getYoutubeId(src))) {
-        this.options.type = 'youtube';
-        return this.showYoutubeVideo(video_id);
-      } else if (type === 'vimeo' || (video_id = this.getVimeoId(src))) {
-        this.options.type = 'vimeo';
-        return this.showVimeoVideo(video_id);
-      } else if (type === 'instagram' || (video_id = this.getInstagramId(src))) {
-        this.options.type = 'instagram';
-        return this.showInstagramVideo(video_id);
-      } else if (type === 'video') {
-        this.options.type = 'video';
-        return this.showVideoIframe(video_id);
-      } else {
-        this.options.type = 'url';
-        return this.loadRemoteContent(src);
-      }
-    },
-    updateTitleAndFooter: function() {
-      var caption, footer, header, title;
-      header = this.modal_content.find('.modal-header');
-      footer = this.modal_content.find('.modal-footer');
-      title = this.$element.data('title') || "";
-      caption = this.$element.data('footer') || "";
-      if (title || this.options.always_show_close) {
-        header.css('display', '').find('.modal-title').html(title || "&nbsp;");
-      } else {
-        header.css('display', 'none');
-      }
-      if (caption) {
-        footer.css('display', '').html(caption);
-      } else {
-        footer.css('display', 'none');
-      }
-      return this;
-    },
-    showLoading: function() {
-      this.lightbox_body.html('<div class="modal-loading">' + this.options.loadingMessage + '</div>');
-      return this;
-    },
-    showYoutubeVideo: function(id) {
-      var height, rel, width;
-      if ((this.$element.attr('data-norelated') != null) || this.options.no_related) {
-        rel = "&rel=0";
-      } else {
-        rel = "";
-      }
-      width = this.checkDimensions(this.$element.data('width') || 560);
-      height = width / (560 / 315);
-      return this.showVideoIframe('//www.youtube.com/embed/' + id + '?badge=0&autoplay=1&html5=1' + rel, width, height);
-    },
-    showVimeoVideo: function(id) {
-      var height, width;
-      width = this.checkDimensions(this.$element.data('width') || 560);
-      height = width / (500 / 281);
-      return this.showVideoIframe(id + '?autoplay=1', width, height);
-    },
-    showInstagramVideo: function(id) {
-      var height, width;
-      width = this.checkDimensions(this.$element.data('width') || 612);
-      this.resize(width);
-      height = width + 80;
-      this.lightbox_body.html('<iframe width="' + width + '" height="' + height + '" src="' + this.addTrailingSlash(id) + 'embed/" frameborder="0" allowfullscreen></iframe>');
-      this.options.onContentLoaded.call(this);
-      if (this.modal_arrows) {
-        return this.modal_arrows.css('display', 'none');
-      }
-    },
-    showVideoIframe: function(url, width, height) {
-      height = height || width;
-      this.resize(width);
-      this.lightbox_body.html('<div class="embed-responsive embed-responsive-16by9"><iframe width="' + width + '" height="' + height + '" src="' + url + '" frameborder="0" allowfullscreen class="embed-responsive-item"></iframe></div>');
-      this.options.onContentLoaded.call(this);
-      if (this.modal_arrows) {
-        this.modal_arrows.css('display', 'none');
-      }
-      return this;
-    },
-    loadRemoteContent: function(url) {
-      var disableExternalCheck, width;
-      width = this.$element.data('width') || 560;
-      this.resize(width);
-      disableExternalCheck = this.$element.data('disableExternalCheck') || false;
-      if (!disableExternalCheck && !this.isExternal(url)) {
-        this.lightbox_body.load(url, $.proxy((function(_this) {
-          return function() {
-            return _this.$element.trigger('loaded.bs.modal');
-          };
-        })(this)));
-      } else {
-        this.lightbox_body.html('<iframe width="' + width + '" height="' + width + '" src="' + url + '" frameborder="0" allowfullscreen></iframe>');
-        this.options.onContentLoaded.call(this);
-      }
-      if (this.modal_arrows) {
-        this.modal_arrows.css('display', 'none');
-      }
-      return this;
-    },
-    isExternal: function(url) {
-      var match;
-      match = url.match(/^([^:\/?#]+:)?(?:\/\/([^\/?#]*))?([^?#]+)?(\?[^#]*)?(#.*)?/);
-      if (typeof match[1] === "string" && match[1].length > 0 && match[1].toLowerCase() !== location.protocol) {
-        return true;
-      }
-      if (typeof match[2] === "string" && match[2].length > 0 && match[2].replace(new RegExp(":(" + {
-        "http:": 80,
-        "https:": 443
-      }[location.protocol] + ")?$"), "") !== location.host) {
-        return true;
-      }
-      return false;
-    },
-    error: function(message) {
-      this.lightbox_body.html(message);
-      return this;
-    },
-    preloadImage: function(src, onLoadShowImage) {
-      var img;
-      img = new Image();
-      if ((onLoadShowImage == null) || onLoadShowImage === true) {
-        img.onload = (function(_this) {
-          return function() {
-            var image;
-            image = $('<img />');
-            image.attr('src', img.src);
-            image.addClass('img-responsive');
-            _this.lightbox_body.html(image);
-            if (_this.modal_arrows) {
-              _this.modal_arrows.css('display', 'block');
-            }
-            return image.load(function() {
-              if (_this.options.scale_height) {
-                _this.scaleHeight(img.height, img.width);
-              } else {
-                _this.resize(img.width);
-              }
-              return _this.options.onContentLoaded.call(_this);
-            });
-          };
-        })(this);
-        img.onerror = (function(_this) {
-          return function() {
-            return _this.error('Failed to load image: ' + src);
-          };
-        })(this);
-      }
-      img.src = src;
-      return img;
-    },
-    scaleHeight: function(height, width) {
-      var border_padding, factor, footer_height, header_height, margins, max_height;
-      header_height = this.modal_header.outerHeight(true) || 0;
-      footer_height = this.modal_footer.outerHeight(true) || 0;
-      if (!this.modal_footer.is(':visible')) {
-        footer_height = 0;
-      }
-      if (!this.modal_header.is(':visible')) {
-        header_height = 0;
-      }
-      border_padding = this.border.top + this.border.bottom + this.padding.top + this.padding.bottom;
-      margins = parseFloat(this.modal_dialog.css('margin-top')) + parseFloat(this.modal_dialog.css('margin-bottom'));
-      max_height = $(window).height() - border_padding - margins - header_height - footer_height;
-      factor = Math.min(max_height / height, 1);
-      this.modal_dialog.css('height', 'auto').css('max-height', max_height);
-      return this.resize(factor * width);
-    },
-    resize: function(width) {
-      var width_total;
-      width_total = width + this.border.left + this.padding.left + this.padding.right + this.border.right;
-      this.modal_dialog.css('width', 'auto').css('max-width', width_total);
-      this.lightbox_container.find('a').css('line-height', function() {
-        return $(this).parent().height() + 'px';
-      });
-      return this;
-    },
-    checkDimensions: function(width) {
-      var body_width, width_total;
-      width_total = width + this.border.left + this.padding.left + this.padding.right + this.border.right;
-      body_width = document.body.clientWidth;
-      if (width_total > body_width) {
-        width = this.modal_body.width();
-      }
-      return width;
-    },
-    close: function() {
-      return this.modal.modal('hide');
-    },
-    addTrailingSlash: function(url) {
-      if (url.substr(-1) !== '/') {
-        url += '/';
-      }
-      return url;
-    }
-  };
-
-  $.fn.ekkoLightbox = function(options) {
-    return this.each(function() {
-      var $this;
-      $this = $(this);
-      options = $.extend({
-        remote: $this.attr('data-remote') || $this.attr('href'),
-        gallery_parent_selector: $this.attr('data-parent'),
-        type: $this.attr('data-type')
-      }, options, $this.data());
-      new EkkoLightbox(this, options);
-      return this;
-    });
-  };
-
-  $.fn.ekkoLightbox.defaults = {
-    gallery_parent_selector: 'document.body',
-    left_arrow_class: '.glyphicon .glyphicon-chevron-left',
-    right_arrow_class: '.glyphicon .glyphicon-chevron-right',
-    directional_arrows: true,
-    type: null,
-    always_show_close: true,
-    no_related: false,
-    scale_height: true,
-    loadingMessage: 'Loading...',
-    onShow: function() {},
-    onShown: function() {},
-    onHide: function() {},
-    onHidden: function() {},
-    onNavigate: function() {},
-    onContentLoaded: function() {}
-  };
-
-}).call(this);
-
 /*
  *  jQuery OwlCarousel v1.3.2
  *
@@ -17752,6 +17322,928 @@ if (typeof Object.create !== "function") {
         afterLazyLoad: false
     };
 }(jQuery, window, document));
+
+/*
+Lightbox for Bootstrap 3 by @ashleydw
+https://github.com/ashleydw/lightbox
+
+License: https://github.com/ashleydw/lightbox/blob/master/LICENSE
+ */
+
+(function() {
+  "use strict";
+  var $, EkkoLightbox;
+
+  $ = jQuery;
+
+  EkkoLightbox = function(element, options) {
+    var content, footer, header;
+    this.options = $.extend({
+      title: null,
+      footer: null,
+      remote: null
+    }, $.fn.ekkoLightbox.defaults, options || {});
+    this.$element = $(element);
+    content = '';
+    this.modal_id = this.options.modal_id ? this.options.modal_id : 'ekkoLightbox-' + Math.floor((Math.random() * 1000) + 1);
+    header = '<div class="modal-header"' + (this.options.title || this.options.always_show_close ? '' : ' style="display:none"') + '><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title">' + (this.options.title || "&nbsp;") + '</h4></div>';
+    footer = '<div class="modal-footer"' + (this.options.footer ? '' : ' style="display:none"') + '>' + this.options.footer + '</div>';
+    $(document.body).append('<div id="' + this.modal_id + '" class="ekko-lightbox modal fade" tabindex="-1"><div class="modal-dialog"><div class="modal-content">' + header + '<div class="modal-body"><div class="ekko-lightbox-container"><div></div></div></div>' + footer + '</div></div></div>');
+    this.modal = $('#' + this.modal_id);
+    this.modal_dialog = this.modal.find('.modal-dialog').first();
+    this.modal_content = this.modal.find('.modal-content').first();
+    this.modal_body = this.modal.find('.modal-body').first();
+    this.modal_header = this.modal.find('.modal-header').first();
+    this.modal_footer = this.modal.find('.modal-footer').first();
+    this.lightbox_container = this.modal_body.find('.ekko-lightbox-container').first();
+    this.lightbox_body = this.lightbox_container.find('> div:first-child').first();
+    this.showLoading();
+    this.modal_arrows = null;
+    this.border = {
+      top: parseFloat(this.modal_dialog.css('border-top-width')) + parseFloat(this.modal_content.css('border-top-width')) + parseFloat(this.modal_body.css('border-top-width')),
+      right: parseFloat(this.modal_dialog.css('border-right-width')) + parseFloat(this.modal_content.css('border-right-width')) + parseFloat(this.modal_body.css('border-right-width')),
+      bottom: parseFloat(this.modal_dialog.css('border-bottom-width')) + parseFloat(this.modal_content.css('border-bottom-width')) + parseFloat(this.modal_body.css('border-bottom-width')),
+      left: parseFloat(this.modal_dialog.css('border-left-width')) + parseFloat(this.modal_content.css('border-left-width')) + parseFloat(this.modal_body.css('border-left-width'))
+    };
+    this.padding = {
+      top: parseFloat(this.modal_dialog.css('padding-top')) + parseFloat(this.modal_content.css('padding-top')) + parseFloat(this.modal_body.css('padding-top')),
+      right: parseFloat(this.modal_dialog.css('padding-right')) + parseFloat(this.modal_content.css('padding-right')) + parseFloat(this.modal_body.css('padding-right')),
+      bottom: parseFloat(this.modal_dialog.css('padding-bottom')) + parseFloat(this.modal_content.css('padding-bottom')) + parseFloat(this.modal_body.css('padding-bottom')),
+      left: parseFloat(this.modal_dialog.css('padding-left')) + parseFloat(this.modal_content.css('padding-left')) + parseFloat(this.modal_body.css('padding-left'))
+    };
+    this.modal.on('show.bs.modal', this.options.onShow.bind(this)).on('shown.bs.modal', (function(_this) {
+      return function() {
+        _this.modal_shown();
+        return _this.options.onShown.call(_this);
+      };
+    })(this)).on('hide.bs.modal', this.options.onHide.bind(this)).on('hidden.bs.modal', (function(_this) {
+      return function() {
+        if (_this.gallery) {
+          $(document).off('keydown.ekkoLightbox');
+        }
+        _this.modal.remove();
+        return _this.options.onHidden.call(_this);
+      };
+    })(this)).modal('show', options);
+    return this.modal;
+  };
+
+  EkkoLightbox.prototype = {
+    modal_shown: function() {
+      var video_id;
+      if (!this.options.remote) {
+        return this.error('No remote target given');
+      } else {
+        this.gallery = this.$element.data('gallery');
+        if (this.gallery) {
+          if (this.options.gallery_parent_selector === 'document.body' || this.options.gallery_parent_selector === '') {
+            this.gallery_items = $(document.body).find('*[data-gallery="' + this.gallery + '"]');
+          } else {
+            this.gallery_items = this.$element.parents(this.options.gallery_parent_selector).first().find('*[data-gallery="' + this.gallery + '"]');
+          }
+          this.gallery_index = this.gallery_items.index(this.$element);
+          $(document).on('keydown.ekkoLightbox', this.navigate.bind(this));
+          if (this.options.directional_arrows && this.gallery_items.length > 1) {
+            this.lightbox_container.append('<div class="ekko-lightbox-nav-overlay"><a href="#" class="' + this.strip_stops(this.options.left_arrow_class) + '"></a><a href="#" class="' + this.strip_stops(this.options.right_arrow_class) + '"></a></div>');
+            this.modal_arrows = this.lightbox_container.find('div.ekko-lightbox-nav-overlay').first();
+            this.lightbox_container.find('a' + this.strip_spaces(this.options.left_arrow_class)).on('click', (function(_this) {
+              return function(event) {
+                event.preventDefault();
+                return _this.navigate_left();
+              };
+            })(this));
+            this.lightbox_container.find('a' + this.strip_spaces(this.options.right_arrow_class)).on('click', (function(_this) {
+              return function(event) {
+                event.preventDefault();
+                return _this.navigate_right();
+              };
+            })(this));
+          }
+        }
+        if (this.options.type) {
+          if (this.options.type === 'image') {
+            return this.preloadImage(this.options.remote, true);
+          } else if (this.options.type === 'youtube' && (video_id = this.getYoutubeId(this.options.remote))) {
+            return this.showYoutubeVideo(video_id);
+          } else if (this.options.type === 'vimeo') {
+            return this.showVimeoVideo(this.options.remote);
+          } else if (this.options.type === 'instagram') {
+            return this.showInstagramVideo(this.options.remote);
+          } else if (this.options.type === 'url') {
+            return this.loadRemoteContent(this.options.remote);
+          } else if (this.options.type === 'video') {
+            return this.showVideoIframe(this.options.remote);
+          } else {
+            return this.error("Could not detect remote target type. Force the type using data-type=\"image|youtube|vimeo|instagram|url|video\"");
+          }
+        } else {
+          return this.detectRemoteType(this.options.remote);
+        }
+      }
+    },
+    strip_stops: function(str) {
+      return str.replace(/\./g, '');
+    },
+    strip_spaces: function(str) {
+      return str.replace(/\s/g, '');
+    },
+    isImage: function(str) {
+      return str.match(/(^data:image\/.*,)|(\.(jp(e|g|eg)|gif|png|bmp|webp|svg)((\?|#).*)?$)/i);
+    },
+    isSwf: function(str) {
+      return str.match(/\.(swf)((\?|#).*)?$/i);
+    },
+    getYoutubeId: function(str) {
+      var match;
+      match = str.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
+      if (match && match[2].length === 11) {
+        return match[2];
+      } else {
+        return false;
+      }
+    },
+    getVimeoId: function(str) {
+      if (str.indexOf('vimeo') > 0) {
+        return str;
+      } else {
+        return false;
+      }
+    },
+    getInstagramId: function(str) {
+      if (str.indexOf('instagram') > 0) {
+        return str;
+      } else {
+        return false;
+      }
+    },
+    navigate: function(event) {
+      event = event || window.event;
+      if (event.keyCode === 39 || event.keyCode === 37) {
+        if (event.keyCode === 39) {
+          return this.navigate_right();
+        } else if (event.keyCode === 37) {
+          return this.navigate_left();
+        }
+      }
+    },
+    navigateTo: function(index) {
+      var next, src;
+      if (index < 0 || index > this.gallery_items.length - 1) {
+        return this;
+      }
+      this.showLoading();
+      this.gallery_index = index;
+      this.$element = $(this.gallery_items.get(this.gallery_index));
+      this.updateTitleAndFooter();
+      src = this.$element.attr('data-remote') || this.$element.attr('href');
+      this.detectRemoteType(src, this.$element.attr('data-type') || false);
+      if (this.gallery_index + 1 < this.gallery_items.length) {
+        next = $(this.gallery_items.get(this.gallery_index + 1), false);
+        src = next.attr('data-remote') || next.attr('href');
+        if (next.attr('data-type') === 'image' || this.isImage(src)) {
+          return this.preloadImage(src, false);
+        }
+      }
+    },
+    navigate_left: function() {
+      if (this.gallery_items.length === 1) {
+        return;
+      }
+      if (this.gallery_index === 0) {
+        this.gallery_index = this.gallery_items.length - 1;
+      } else {
+        this.gallery_index--;
+      }
+      this.options.onNavigate.call(this, 'left', this.gallery_index);
+      return this.navigateTo(this.gallery_index);
+    },
+    navigate_right: function() {
+      if (this.gallery_items.length === 1) {
+        return;
+      }
+      if (this.gallery_index === this.gallery_items.length - 1) {
+        this.gallery_index = 0;
+      } else {
+        this.gallery_index++;
+      }
+      this.options.onNavigate.call(this, 'right', this.gallery_index);
+      return this.navigateTo(this.gallery_index);
+    },
+    detectRemoteType: function(src, type) {
+      var video_id;
+      type = type || false;
+      if (type === 'image' || this.isImage(src)) {
+        this.options.type = 'image';
+        return this.preloadImage(src, true);
+      } else if (type === 'youtube' || (video_id = this.getYoutubeId(src))) {
+        this.options.type = 'youtube';
+        return this.showYoutubeVideo(video_id);
+      } else if (type === 'vimeo' || (video_id = this.getVimeoId(src))) {
+        this.options.type = 'vimeo';
+        return this.showVimeoVideo(video_id);
+      } else if (type === 'instagram' || (video_id = this.getInstagramId(src))) {
+        this.options.type = 'instagram';
+        return this.showInstagramVideo(video_id);
+      } else if (type === 'video') {
+        this.options.type = 'video';
+        return this.showVideoIframe(video_id);
+      } else {
+        this.options.type = 'url';
+        return this.loadRemoteContent(src);
+      }
+    },
+    updateTitleAndFooter: function() {
+      var caption, footer, header, title;
+      header = this.modal_content.find('.modal-header');
+      footer = this.modal_content.find('.modal-footer');
+      title = this.$element.data('title') || "";
+      caption = this.$element.data('footer') || "";
+      if (title || this.options.always_show_close) {
+        header.css('display', '').find('.modal-title').html(title || "&nbsp;");
+      } else {
+        header.css('display', 'none');
+      }
+      if (caption) {
+        footer.css('display', '').html(caption);
+      } else {
+        footer.css('display', 'none');
+      }
+      return this;
+    },
+    showLoading: function() {
+      this.lightbox_body.html('<div class="modal-loading">' + this.options.loadingMessage + '</div>');
+      return this;
+    },
+    showYoutubeVideo: function(id) {
+      var height, rel, width;
+      if ((this.$element.attr('data-norelated') != null) || this.options.no_related) {
+        rel = "&rel=0";
+      } else {
+        rel = "";
+      }
+      width = this.checkDimensions(this.$element.data('width') || 560);
+      height = width / (560 / 315);
+      return this.showVideoIframe('//www.youtube.com/embed/' + id + '?badge=0&autoplay=1&html5=1' + rel, width, height);
+    },
+    showVimeoVideo: function(id) {
+      var height, width;
+      width = this.checkDimensions(this.$element.data('width') || 560);
+      height = width / (500 / 281);
+      return this.showVideoIframe(id + '?autoplay=1', width, height);
+    },
+    showInstagramVideo: function(id) {
+      var height, width;
+      width = this.checkDimensions(this.$element.data('width') || 612);
+      this.resize(width);
+      height = width + 80;
+      this.lightbox_body.html('<iframe width="' + width + '" height="' + height + '" src="' + this.addTrailingSlash(id) + 'embed/" frameborder="0" allowfullscreen></iframe>');
+      this.options.onContentLoaded.call(this);
+      if (this.modal_arrows) {
+        return this.modal_arrows.css('display', 'none');
+      }
+    },
+    showVideoIframe: function(url, width, height) {
+      height = height || width;
+      this.resize(width);
+      this.lightbox_body.html('<div class="embed-responsive embed-responsive-16by9"><iframe width="' + width + '" height="' + height + '" src="' + url + '" frameborder="0" allowfullscreen class="embed-responsive-item"></iframe></div>');
+      this.options.onContentLoaded.call(this);
+      if (this.modal_arrows) {
+        this.modal_arrows.css('display', 'none');
+      }
+      return this;
+    },
+    loadRemoteContent: function(url) {
+      var disableExternalCheck, width;
+      width = this.$element.data('width') || 560;
+      this.resize(width);
+      disableExternalCheck = this.$element.data('disableExternalCheck') || false;
+      if (!disableExternalCheck && !this.isExternal(url)) {
+        this.lightbox_body.load(url, $.proxy((function(_this) {
+          return function() {
+            return _this.$element.trigger('loaded.bs.modal');
+          };
+        })(this)));
+      } else {
+        this.lightbox_body.html('<iframe width="' + width + '" height="' + width + '" src="' + url + '" frameborder="0" allowfullscreen></iframe>');
+        this.options.onContentLoaded.call(this);
+      }
+      if (this.modal_arrows) {
+        this.modal_arrows.css('display', 'none');
+      }
+      return this;
+    },
+    isExternal: function(url) {
+      var match;
+      match = url.match(/^([^:\/?#]+:)?(?:\/\/([^\/?#]*))?([^?#]+)?(\?[^#]*)?(#.*)?/);
+      if (typeof match[1] === "string" && match[1].length > 0 && match[1].toLowerCase() !== location.protocol) {
+        return true;
+      }
+      if (typeof match[2] === "string" && match[2].length > 0 && match[2].replace(new RegExp(":(" + {
+        "http:": 80,
+        "https:": 443
+      }[location.protocol] + ")?$"), "") !== location.host) {
+        return true;
+      }
+      return false;
+    },
+    error: function(message) {
+      this.lightbox_body.html(message);
+      return this;
+    },
+    preloadImage: function(src, onLoadShowImage) {
+      var img;
+      img = new Image();
+      if ((onLoadShowImage == null) || onLoadShowImage === true) {
+        img.onload = (function(_this) {
+          return function() {
+            var image;
+            image = $('<img />');
+            image.attr('src', img.src);
+            image.addClass('img-responsive');
+            _this.lightbox_body.html(image);
+            if (_this.modal_arrows) {
+              _this.modal_arrows.css('display', 'block');
+            }
+            return image.load(function() {
+              if (_this.options.scale_height) {
+                _this.scaleHeight(img.height, img.width);
+              } else {
+                _this.resize(img.width);
+              }
+              return _this.options.onContentLoaded.call(_this);
+            });
+          };
+        })(this);
+        img.onerror = (function(_this) {
+          return function() {
+            return _this.error('Failed to load image: ' + src);
+          };
+        })(this);
+      }
+      img.src = src;
+      return img;
+    },
+    scaleHeight: function(height, width) {
+      var border_padding, factor, footer_height, header_height, margins, max_height;
+      header_height = this.modal_header.outerHeight(true) || 0;
+      footer_height = this.modal_footer.outerHeight(true) || 0;
+      if (!this.modal_footer.is(':visible')) {
+        footer_height = 0;
+      }
+      if (!this.modal_header.is(':visible')) {
+        header_height = 0;
+      }
+      border_padding = this.border.top + this.border.bottom + this.padding.top + this.padding.bottom;
+      margins = parseFloat(this.modal_dialog.css('margin-top')) + parseFloat(this.modal_dialog.css('margin-bottom'));
+      max_height = $(window).height() - border_padding - margins - header_height - footer_height;
+      factor = Math.min(max_height / height, 1);
+      this.modal_dialog.css('height', 'auto').css('max-height', max_height);
+      return this.resize(factor * width);
+    },
+    resize: function(width) {
+      var width_total;
+      width_total = width + this.border.left + this.padding.left + this.padding.right + this.border.right;
+      this.modal_dialog.css('width', 'auto').css('max-width', width_total);
+      this.lightbox_container.find('a').css('line-height', function() {
+        return $(this).parent().height() + 'px';
+      });
+      return this;
+    },
+    checkDimensions: function(width) {
+      var body_width, width_total;
+      width_total = width + this.border.left + this.padding.left + this.padding.right + this.border.right;
+      body_width = document.body.clientWidth;
+      if (width_total > body_width) {
+        width = this.modal_body.width();
+      }
+      return width;
+    },
+    close: function() {
+      return this.modal.modal('hide');
+    },
+    addTrailingSlash: function(url) {
+      if (url.substr(-1) !== '/') {
+        url += '/';
+      }
+      return url;
+    }
+  };
+
+  $.fn.ekkoLightbox = function(options) {
+    return this.each(function() {
+      var $this;
+      $this = $(this);
+      options = $.extend({
+        remote: $this.attr('data-remote') || $this.attr('href'),
+        gallery_parent_selector: $this.attr('data-parent'),
+        type: $this.attr('data-type')
+      }, options, $this.data());
+      new EkkoLightbox(this, options);
+      return this;
+    });
+  };
+
+  $.fn.ekkoLightbox.defaults = {
+    gallery_parent_selector: 'document.body',
+    left_arrow_class: '.glyphicon .glyphicon-chevron-left',
+    right_arrow_class: '.glyphicon .glyphicon-chevron-right',
+    directional_arrows: true,
+    type: null,
+    always_show_close: true,
+    no_related: false,
+    scale_height: true,
+    loadingMessage: 'Loading...',
+    onShow: function() {},
+    onShown: function() {},
+    onHide: function() {},
+    onHidden: function() {},
+    onNavigate: function() {},
+    onContentLoaded: function() {}
+  };
+
+}).call(this);
+
+/**
+ * EvEmitter v1.0.2
+ * Lil' event emitter
+ * MIT License
+ */
+
+/* jshint unused: true, undef: true, strict: true */
+
+( function( global, factory ) {
+  // universal module definition
+  /* jshint strict: false */ /* globals define, module */
+  if ( typeof define == 'function' && define.amd ) {
+    // AMD - RequireJS
+    define( factory );
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS - Browserify, Webpack
+    module.exports = factory();
+  } else {
+    // Browser globals
+    global.EvEmitter = factory();
+  }
+
+}( this, function() {
+
+"use strict";
+
+function EvEmitter() {}
+
+var proto = EvEmitter.prototype;
+
+proto.on = function( eventName, listener ) {
+  if ( !eventName || !listener ) {
+    return;
+  }
+  // set events hash
+  var events = this._events = this._events || {};
+  // set listeners array
+  var listeners = events[ eventName ] = events[ eventName ] || [];
+  // only add once
+  if ( listeners.indexOf( listener ) == -1 ) {
+    listeners.push( listener );
+  }
+
+  return this;
+};
+
+proto.once = function( eventName, listener ) {
+  if ( !eventName || !listener ) {
+    return;
+  }
+  // add event
+  this.on( eventName, listener );
+  // set once flag
+  // set onceEvents hash
+  var onceEvents = this._onceEvents = this._onceEvents || {};
+  // set onceListeners object
+  var onceListeners = onceEvents[ eventName ] = onceEvents[ eventName ] || {};
+  // set flag
+  onceListeners[ listener ] = true;
+
+  return this;
+};
+
+proto.off = function( eventName, listener ) {
+  var listeners = this._events && this._events[ eventName ];
+  if ( !listeners || !listeners.length ) {
+    return;
+  }
+  var index = listeners.indexOf( listener );
+  if ( index != -1 ) {
+    listeners.splice( index, 1 );
+  }
+
+  return this;
+};
+
+proto.emitEvent = function( eventName, args ) {
+  var listeners = this._events && this._events[ eventName ];
+  if ( !listeners || !listeners.length ) {
+    return;
+  }
+  var i = 0;
+  var listener = listeners[i];
+  args = args || [];
+  // once stuff
+  var onceListeners = this._onceEvents && this._onceEvents[ eventName ];
+
+  while ( listener ) {
+    var isOnce = onceListeners && onceListeners[ listener ];
+    if ( isOnce ) {
+      // remove listener
+      // remove before trigger to prevent recursion
+      this.off( eventName, listener );
+      // unset once flag
+      delete onceListeners[ listener ];
+    }
+    // trigger listener
+    listener.apply( this, args );
+    // get next listener
+    i += isOnce ? 0 : 1;
+    listener = listeners[i];
+  }
+
+  return this;
+};
+
+return EvEmitter;
+
+}));
+
+/*!
+ * imagesLoaded v4.1.0
+ * JavaScript is all like "You images are done yet or what?"
+ * MIT License
+ */
+
+( function( window, factory ) { 'use strict';
+  // universal module definition
+
+  /*global define: false, module: false, require: false */
+
+  if ( typeof define == 'function' && define.amd ) {
+    // AMD
+    define( [
+      'ev-emitter/ev-emitter'
+    ], function( EvEmitter ) {
+      return factory( window, EvEmitter );
+    });
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory(
+      window,
+      require('ev-emitter')
+    );
+  } else {
+    // browser global
+    window.imagesLoaded = factory(
+      window,
+      window.EvEmitter
+    );
+  }
+
+})( window,
+
+// --------------------------  factory -------------------------- //
+
+function factory( window, EvEmitter ) {
+
+'use strict';
+
+var $ = window.jQuery;
+var console = window.console;
+
+// -------------------------- helpers -------------------------- //
+
+// extend objects
+function extend( a, b ) {
+  for ( var prop in b ) {
+    a[ prop ] = b[ prop ];
+  }
+  return a;
+}
+
+// turn element or nodeList into an array
+function makeArray( obj ) {
+  var ary = [];
+  if ( Array.isArray( obj ) ) {
+    // use object if already an array
+    ary = obj;
+  } else if ( typeof obj.length == 'number' ) {
+    // convert nodeList to array
+    for ( var i=0; i < obj.length; i++ ) {
+      ary.push( obj[i] );
+    }
+  } else {
+    // array of single index
+    ary.push( obj );
+  }
+  return ary;
+}
+
+// -------------------------- imagesLoaded -------------------------- //
+
+/**
+ * @param {Array, Element, NodeList, String} elem
+ * @param {Object or Function} options - if function, use as callback
+ * @param {Function} onAlways - callback function
+ */
+function ImagesLoaded( elem, options, onAlways ) {
+  // coerce ImagesLoaded() without new, to be new ImagesLoaded()
+  if ( !( this instanceof ImagesLoaded ) ) {
+    return new ImagesLoaded( elem, options, onAlways );
+  }
+  // use elem as selector string
+  if ( typeof elem == 'string' ) {
+    elem = document.querySelectorAll( elem );
+  }
+
+  this.elements = makeArray( elem );
+  this.options = extend( {}, this.options );
+
+  if ( typeof options == 'function' ) {
+    onAlways = options;
+  } else {
+    extend( this.options, options );
+  }
+
+  if ( onAlways ) {
+    this.on( 'always', onAlways );
+  }
+
+  this.getImages();
+
+  if ( $ ) {
+    // add jQuery Deferred object
+    this.jqDeferred = new $.Deferred();
+  }
+
+  // HACK check async to allow time to bind listeners
+  setTimeout( function() {
+    this.check();
+  }.bind( this ));
+}
+
+ImagesLoaded.prototype = Object.create( EvEmitter.prototype );
+
+ImagesLoaded.prototype.options = {};
+
+ImagesLoaded.prototype.getImages = function() {
+  this.images = [];
+
+  // filter & find items if we have an item selector
+  this.elements.forEach( this.addElementImages, this );
+};
+
+/**
+ * @param {Node} element
+ */
+ImagesLoaded.prototype.addElementImages = function( elem ) {
+  // filter siblings
+  if ( elem.nodeName == 'IMG' ) {
+    this.addImage( elem );
+  }
+  // get background image on element
+  if ( this.options.background === true ) {
+    this.addElementBackgroundImages( elem );
+  }
+
+  // find children
+  // no non-element nodes, #143
+  var nodeType = elem.nodeType;
+  if ( !nodeType || !elementNodeTypes[ nodeType ] ) {
+    return;
+  }
+  var childImgs = elem.querySelectorAll('img');
+  // concat childElems to filterFound array
+  for ( var i=0; i < childImgs.length; i++ ) {
+    var img = childImgs[i];
+    this.addImage( img );
+  }
+
+  // get child background images
+  if ( typeof this.options.background == 'string' ) {
+    var children = elem.querySelectorAll( this.options.background );
+    for ( i=0; i < children.length; i++ ) {
+      var child = children[i];
+      this.addElementBackgroundImages( child );
+    }
+  }
+};
+
+var elementNodeTypes = {
+  1: true,
+  9: true,
+  11: true
+};
+
+ImagesLoaded.prototype.addElementBackgroundImages = function( elem ) {
+  var style = getComputedStyle( elem );
+  if ( !style ) {
+    // Firefox returns null if in a hidden iframe https://bugzil.la/548397
+    return;
+  }
+  // get url inside url("...")
+  var reURL = /url\((['"])?(.*?)\1\)/gi;
+  var matches = reURL.exec( style.backgroundImage );
+  while ( matches !== null ) {
+    var url = matches && matches[2];
+    if ( url ) {
+      this.addBackground( url, elem );
+    }
+    matches = reURL.exec( style.backgroundImage );
+  }
+};
+
+/**
+ * @param {Image} img
+ */
+ImagesLoaded.prototype.addImage = function( img ) {
+  var loadingImage = new LoadingImage( img );
+  this.images.push( loadingImage );
+};
+
+ImagesLoaded.prototype.addBackground = function( url, elem ) {
+  var background = new Background( url, elem );
+  this.images.push( background );
+};
+
+ImagesLoaded.prototype.check = function() {
+  var _this = this;
+  this.progressedCount = 0;
+  this.hasAnyBroken = false;
+  // complete if no images
+  if ( !this.images.length ) {
+    this.complete();
+    return;
+  }
+
+  function onProgress( image, elem, message ) {
+    // HACK - Chrome triggers event before object properties have changed. #83
+    setTimeout( function() {
+      _this.progress( image, elem, message );
+    });
+  }
+
+  this.images.forEach( function( loadingImage ) {
+    loadingImage.once( 'progress', onProgress );
+    loadingImage.check();
+  });
+};
+
+ImagesLoaded.prototype.progress = function( image, elem, message ) {
+  this.progressedCount++;
+  this.hasAnyBroken = this.hasAnyBroken || !image.isLoaded;
+  // progress event
+  this.emitEvent( 'progress', [ this, image, elem ] );
+  if ( this.jqDeferred && this.jqDeferred.notify ) {
+    this.jqDeferred.notify( this, image );
+  }
+  // check if completed
+  if ( this.progressedCount == this.images.length ) {
+    this.complete();
+  }
+
+  if ( this.options.debug && console ) {
+    console.log( 'progress: ' + message, image, elem );
+  }
+};
+
+ImagesLoaded.prototype.complete = function() {
+  var eventName = this.hasAnyBroken ? 'fail' : 'done';
+  this.isComplete = true;
+  this.emitEvent( eventName, [ this ] );
+  this.emitEvent( 'always', [ this ] );
+  if ( this.jqDeferred ) {
+    var jqMethod = this.hasAnyBroken ? 'reject' : 'resolve';
+    this.jqDeferred[ jqMethod ]( this );
+  }
+};
+
+// --------------------------  -------------------------- //
+
+function LoadingImage( img ) {
+  this.img = img;
+}
+
+LoadingImage.prototype = Object.create( EvEmitter.prototype );
+
+LoadingImage.prototype.check = function() {
+  // If complete is true and browser supports natural sizes,
+  // try to check for image status manually.
+  var isComplete = this.getIsImageComplete();
+  if ( isComplete ) {
+    // report based on naturalWidth
+    this.confirm( this.img.naturalWidth !== 0, 'naturalWidth' );
+    return;
+  }
+
+  // If none of the checks above matched, simulate loading on detached element.
+  this.proxyImage = new Image();
+  this.proxyImage.addEventListener( 'load', this );
+  this.proxyImage.addEventListener( 'error', this );
+  // bind to image as well for Firefox. #191
+  this.img.addEventListener( 'load', this );
+  this.img.addEventListener( 'error', this );
+  this.proxyImage.src = this.img.src;
+};
+
+LoadingImage.prototype.getIsImageComplete = function() {
+  return this.img.complete && this.img.naturalWidth !== undefined;
+};
+
+LoadingImage.prototype.confirm = function( isLoaded, message ) {
+  this.isLoaded = isLoaded;
+  this.emitEvent( 'progress', [ this, this.img, message ] );
+};
+
+// ----- events ----- //
+
+// trigger specified handler for event type
+LoadingImage.prototype.handleEvent = function( event ) {
+  var method = 'on' + event.type;
+  if ( this[ method ] ) {
+    this[ method ]( event );
+  }
+};
+
+LoadingImage.prototype.onload = function() {
+  this.confirm( true, 'onload' );
+  this.unbindEvents();
+};
+
+LoadingImage.prototype.onerror = function() {
+  this.confirm( false, 'onerror' );
+  this.unbindEvents();
+};
+
+LoadingImage.prototype.unbindEvents = function() {
+  this.proxyImage.removeEventListener( 'load', this );
+  this.proxyImage.removeEventListener( 'error', this );
+  this.img.removeEventListener( 'load', this );
+  this.img.removeEventListener( 'error', this );
+};
+
+// -------------------------- Background -------------------------- //
+
+function Background( url, element ) {
+  this.url = url;
+  this.element = element;
+  this.img = new Image();
+}
+
+// inherit LoadingImage prototype
+Background.prototype = Object.create( LoadingImage.prototype );
+
+Background.prototype.check = function() {
+  this.img.addEventListener( 'load', this );
+  this.img.addEventListener( 'error', this );
+  this.img.src = this.url;
+  // check if image is already complete
+  var isComplete = this.getIsImageComplete();
+  if ( isComplete ) {
+    this.confirm( this.img.naturalWidth !== 0, 'naturalWidth' );
+    this.unbindEvents();
+  }
+};
+
+Background.prototype.unbindEvents = function() {
+  this.img.removeEventListener( 'load', this );
+  this.img.removeEventListener( 'error', this );
+};
+
+Background.prototype.confirm = function( isLoaded, message ) {
+  this.isLoaded = isLoaded;
+  this.emitEvent( 'progress', [ this, this.element, message ] );
+};
+
+// -------------------------- jQuery -------------------------- //
+
+ImagesLoaded.makeJQueryPlugin = function( jQuery ) {
+  jQuery = jQuery || window.jQuery;
+  if ( !jQuery ) {
+    return;
+  }
+  // set local variable
+  $ = jQuery;
+  // $().imagesLoaded()
+  $.fn.imagesLoaded = function( options, callback ) {
+    var instance = new ImagesLoaded( this, options, callback );
+    return instance.jqDeferred.promise( $(this) );
+  };
+};
+// try making plugin
+ImagesLoaded.makeJQueryPlugin();
+
+// --------------------------  -------------------------- //
+
+return ImagesLoaded;
+
+});
+
 jQuery.noConflict();
 
 (function($) {
@@ -17811,6 +18303,28 @@ jQuery.noConflict();
       $grid.shuffle({
         itemSelector: '[data-groups]'
       });
+      $grid.get(0).addEventListener(Shuffle.EventType.LAYOUT, function() {
+        $(this).find('img').imagesLoaded().always(function(instance) {
+          console.log('loading image!');
+          $grid.shuffle('update');
+        }).done(function() {
+          $grid.shuffle('update');
+          console.log('done loading');
+          setTimeout(function() {
+            $grid.shuffle('update');
+          }, 1000);
+        });
+      });
+      $(this).find('img').imagesLoaded().always(function(instance) {
+        console.log('loading image!');
+        $grid.shuffle('update');
+      }).done(function() {
+        $grid.shuffle('update');
+        console.log('done loading');
+        setTimeout(function() {
+          $grid.shuffle('update');
+        }, 1000);
+      });
       $filters.on('click', function(e) {
         $filters.removeClass('active');
         $(this).addClass('active');
@@ -17860,7 +18374,7 @@ jQuery.noConflict();
 
 (function($) {
   $(function() {
-    $('[data-toggle-class]').on('click', function(e) {
+    $('[data-toggle-class]').on('click keypress', function(e) {
       e.preventDefault();
       switch ($(this).data('toggle-class')) {
         case "is-searching":
@@ -17868,6 +18382,7 @@ jQuery.noConflict();
           break;
       }
       $($(this).attr('data-target')).toggleClass($(this).attr('data-toggle-class'));
+      $(this).parent().find('input').focus();
     });
   });
 })(jQuery);
@@ -17913,5 +18428,24 @@ jQuery.noConflict();
 (function($) {
   $(function() {
     $('[data-toggle="popover"]').popover();
+  });
+})(jQuery);
+
+jQuery.noConflict();
+
+(function($) {
+  $(function() {
+    var mq;
+
+    var $mqElement = $($.parseHTML('<span id="mq-detector"><span class="visible-xs"></span><span class="visible-sm"></span><span class="visible-md"></span><span class="visible-lg"></span></span>'));
+    $mqElement.css('visibility', 'hidden');
+
+    $('body').append($mqElement);
+    $mqElement.children().each(function() {
+      if($(this).is(':visible')) {
+        mq = $(this).attr('class').substring($(this).attr('class').length-2);
+      };
+    });
+
   });
 })(jQuery);

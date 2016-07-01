@@ -1,0 +1,20 @@
+﻿---
+ID: "ffd10a50-b8f9-4b00-bf0b-bcb79cd5fb7f"
+Parent: "acd1a97c-fd92-46f2-9bbb-d07efe6f9c64"
+Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
+Path: /sitecore/content/Habitat/Global/Dictionary/Demo/Personal Info/Anonymous User
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160406T232705Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
+      Hint: Phrase
+      Value: You are anonymous

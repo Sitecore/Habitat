@@ -2,7 +2,6 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
-  <Import Project="..\..\..\..\applytransform.targets" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -46,10 +45,128 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Extensions\CarouselOptions.cs" />
+    <Compile Include="Extensions\Controls\BackgroundRendering.cs" />
+    <Compile Include="Extensions\RenderingExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bower.json" />
+    <Content Include="App_Config\Include\Foundation\Foundation.Theming.Serialization.config" />
+    <Content Include="scripts\media-query.js" />
+    <Content Include="styles\bootstrap.css">
+      <DependentUpon>bootstrap.scss</DependentUpon>
+    </Content>
+    <Content Include="styles\bootstrap.min.css">
+      <DependentUpon>bootstrap.css</DependentUpon>
+    </Content>
+    <Content Include="styles\bootstrap.scss" />
+    <Content Include="styles\components\atoms\_breadcrumb.scss" />
+    <Content Include="styles\dayfrost.css">
+      <DependentUpon>dayfrost.scss</DependentUpon>
+    </Content>
+    <Content Include="styles\dayfrost.min.css">
+      <DependentUpon>dayfrost.css</DependentUpon>
+    </Content>
+    <Content Include="styles\dayfrost.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_well.scss" />
+    <Content Include="styles\dayfrost\_variables.scss" />
+    <Content Include="styles\default\components\atoms\_address.scss" />
+    <Content Include="styles\default\components\atoms\_alert.scss" />
+    <Content Include="styles\default\components\atoms\_badges.scss" />
+    <Content Include="styles\default\components\atoms\_blockquote.scss" />
+    <Content Include="styles\default\components\atoms\_breadcrumbs.scss" />
+    <Content Include="styles\default\components\atoms\_buttons.scss" />
+    <Content Include="styles\default\components\atoms\_counter.scss" />
+    <Content Include="styles\default\components\atoms\_dropdowns.scss" />
+    <Content Include="styles\default\components\atoms\_forms.scss" />
+    <Content Include="styles\default\components\atoms\_headline.scss" />
+    <Content Include="styles\default\components\atoms\_icon.scss" />
+    <Content Include="styles\default\components\atoms\_images.scss" />
+    <Content Include="styles\default\components\atoms\_labels.scss" />
+    <Content Include="styles\default\components\atoms\_list-group.scss" />
+    <Content Include="styles\default\components\atoms\_list.scss" />
+    <Content Include="styles\default\components\atoms\_logo.scss" />
+    <Content Include="styles\default\components\atoms\_modal.scss" />
+    <Content Include="styles\default\components\atoms\_navs.scss" />
+    <Content Include="styles\default\components\atoms\_pagination.scss" />
+    <Content Include="styles\default\components\atoms\_panels.scss" />
+    <Content Include="styles\default\components\atoms\_popover.scss" />
+    <Content Include="styles\default\components\atoms\_progress-bars.scss" />
+    <Content Include="styles\default\components\atoms\_tables.scss" />
+    <Content Include="styles\default\components\atoms\_tabs-nav.scss" />
+    <Content Include="styles\default\components\atoms\_thumbnails.scss" />
+    <Content Include="styles\default\components\atoms\_tooltip.scss" />
+    <Content Include="styles\default\components\atoms\_typography.scss" />
+    <Content Include="styles\default\components\atoms\_wells.scss" />
+    <Content Include="styles\default\components\molecules\_button-groups.scss" />
+    <Content Include="styles\default\components\molecules\_jumbotron.scss" />
+    <Content Include="styles\default\components\molecules\_media.scss" />
+    <Content Include="styles\default\components\molecules\_modal.scss" />
+    <Content Include="styles\default\components\molecules\_mosaic.scss" />
+    <Content Include="styles\default\components\molecules\_navbar.scss" />
+    <Content Include="styles\default\components\molecules\_sidebar.scss" />
+    <Content Include="styles\default\components\molecules\_testimony.scss" />
+    <Content Include="styles\default\components\organisms\_lightbox.scss" />
+    <Content Include="styles\default\components\organisms\_media-list.scss" />
+    <Content Include="styles\default\components\organisms\_mega-dropdown.scss" />
+    <Content Include="styles\default\components\organisms\_page-header.scss" />
+    <Content Include="styles\default\components\organisms\_panel-group.scss" />
+    <Content Include="styles\default\components\organisms\_tabs.scss" />
+    <Content Include="styles\default\components\_atoms.scss" />
+    <Content Include="styles\default\components\_molecules.scss" />
+    <Content Include="styles\default\components\_organisms.scss" />
+    <Content Include="styles\default\templates\_article.scss" />
+    <Content Include="styles\default\templates\_aside.scss" />
+    <Content Include="styles\default\templates\_footer.scss" />
+    <Content Include="styles\default\templates\_header.scss" />
+    <Content Include="styles\default\templates\_section.scss" />
+    <Content Include="styles\default\templates\_sidebar.scss" />
+    <Content Include="styles\default\templates\_template.scss" />
+    <Content Include="styles\default\vendor\_owl-carousel.scss" />
+    <Content Include="styles\default\_fonts.scss" />
+    <Content Include="styles\default\_global.scss" />
+    <Content Include="styles\default\_grid.scss" />
+    <Content Include="styles\default\_helpers.scss" />
+    <Content Include="styles\default\_mixins.scss" />
+    <Content Include="styles\default\_pages.scss" />
+    <Content Include="styles\default\_scaffolding.scss" />
+    <Content Include="styles\default\_templates.scss" />
+    <Content Include="styles\default\_utilities.scss" />
+    <Content Include="styles\default\_variables.scss" />
+    <Content Include="styles\default\_vendor.scss" />
+    <Content Include="styles\editor.css">
+      <DependentUpon>editor.scss</DependentUpon>
+    </Content>
+    <Content Include="styles\editor.min.css">
+      <DependentUpon>editor.css</DependentUpon>
+    </Content>
+    <Content Include="styles\editor.scss" />
+    <Content Include="styles\niteflight.css">
+      <DependentUpon>niteflight.scss</DependentUpon>
+    </Content>
+    <Content Include="styles\niteflight.min.css">
+      <DependentUpon>niteflight.css</DependentUpon>
+    </Content>
+    <Content Include="styles\niteflight.scss" />
+    <Content Include="styles\niteflight\_variables.scss" />
+    <Content Include="styles\vendor.css" />
+    <Content Include="styles\vendor.min.css">
+      <DependentUpon>vendor.css</DependentUpon>
+    </Content>
+    <Content Include="styles\white-wonder.css">
+      <DependentUpon>white-wonder.scss</DependentUpon>
+    </Content>
+    <Content Include="styles\white-wonder.min.css">
+      <DependentUpon>white-wonder.css</DependentUpon>
+    </Content>
+    <Content Include="styles\white-wonder.scss" />
+    <Content Include="styles\white-wonder\_overrides.scss" />
+    <Content Include="styles\white-wonder\_variables.scss" />
+    <Content Include="styles\_fonts.scss" />
+    <Content Include="styles\_variables.scss" />
     <None Include="bundleconfig.json" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="scripts\carousel.js" />
@@ -67,12 +184,6 @@
     </Content>
     <Content Include="scripts\theming.js" />
     <Content Include="scripts\tooltip.js" />
-    <Content Include="styles\editor.css">
-      <DependentUpon>editor.scss</DependentUpon>
-    </Content>
-    <Content Include="styles\editor.min.css">
-      <DependentUpon>editor.css</DependentUpon>
-    </Content>
     <Content Include="fonts\bitter-v7-latin-700.svg" />
     <Content Include="fonts\bitter-v7-latin-italic.svg" />
     <Content Include="fonts\bitter-v7-latin-regular.svg" />
@@ -87,7 +198,6 @@
     <Content Include="fonts\open-sans-v13-latin-800.svg" />
     <Content Include="fonts\open-sans-v13-latin-italic.svg" />
     <Content Include="fonts\open-sans-v13-latin-regular.svg" />
-    <Content Include="packages.config" />
     <Content Include="fonts\bitter-v7-latin-700.eot" />
     <Content Include="fonts\bitter-v7-latin-700.ttf" />
     <Content Include="fonts\bitter-v7-latin-700.woff" />
@@ -145,232 +255,18 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="styles\bootstrap.css">
-      <DependentUpon>bootstrap.scss</DependentUpon>
-    </Content>
-    <Content Include="styles\bootstrap.min.css">
-      <DependentUpon>bootstrap.css</DependentUpon>
-    </Content>
-    <Content Include="styles\dayfrost.css">
-      <DependentUpon>dayfrost.scss</DependentUpon>
-    </Content>
-    <Content Include="styles\dayfrost.min.css">
-      <DependentUpon>dayfrost.css</DependentUpon>
-    </Content>
-    <Content Include="styles\niteflight.css">
-      <DependentUpon>niteflight.scss</DependentUpon>
-    </Content>
-    <Content Include="styles\niteflight.min.css">
-      <DependentUpon>niteflight.css</DependentUpon>
-    </Content>
-    <Content Include="styles\vendor.css" />
-    <Content Include="styles\vendor.min.css">
-      <DependentUpon>vendor.css</DependentUpon>
-    </Content>
-    <Content Include="styles\white-wonder.css">
-      <DependentUpon>white-wonder.scss</DependentUpon>
-    </Content>
-    <Content Include="styles\white-wonder.min.css">
-      <DependentUpon>white-wonder.css</DependentUpon>
-    </Content>
     <Content Include="scripts\Sitecore.Foundation.Theming.min.js.map">
       <DependentUpon>Sitecore.Foundation.Theming.min.js</DependentUpon>
     </Content>
-    <Content Include="styles\bootstrap.scss" />
-    <Content Include="styles\dayfrost.scss" />
-    <Content Include="styles\niteflight.scss" />
-    <Content Include="styles\white-wonder.scss" />
-    <Content Include="styles\_variables.scss" />
-    <Content Include="styles\_fonts.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_address.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_alert.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_badges.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_blockquote.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_breadcrumbs.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_buttons.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_counter.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_dropdowns.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_forms.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_headline.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_icon.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_images.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_labels.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_list-group.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_list.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_logo.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_modal.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_navs.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_pagination.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_panels.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_popover.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_progress-bars.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_tables.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_tabs-nav.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_thumbnails.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_tooltip.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_typography.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_wells.scss" />
-    <Content Include="styles\dayfrost\components\molecules\_button-groups.scss" />
-    <Content Include="styles\dayfrost\components\molecules\_jumbotron.scss" />
-    <Content Include="styles\dayfrost\components\molecules\_media.scss" />
-    <Content Include="styles\dayfrost\components\molecules\_navbar.scss" />
-    <Content Include="styles\dayfrost\components\molecules\_sidebar.scss" />
-    <Content Include="styles\dayfrost\components\molecules\_testimony.scss" />
-    <Content Include="styles\dayfrost\components\organisms\_media-list.scss" />
-    <Content Include="styles\dayfrost\components\organisms\_mega-dropdown.scss" />
-    <Content Include="styles\dayfrost\components\organisms\_page-header.scss" />
-    <Content Include="styles\dayfrost\components\organisms\_panel-group.scss" />
-    <Content Include="styles\dayfrost\components\organisms\_tabs.scss" />
-    <Content Include="styles\dayfrost\templates\_article.scss" />
-    <Content Include="styles\dayfrost\templates\_aside.scss" />
-    <Content Include="styles\dayfrost\templates\_footer.scss" />
-    <Content Include="styles\dayfrost\templates\_header.scss" />
-    <Content Include="styles\dayfrost\templates\_section.scss" />
-    <Content Include="styles\dayfrost\templates\_sidebar.scss" />
-    <Content Include="styles\dayfrost\templates\_template.scss" />
-    <Content Include="styles\dayfrost\vendor\_owl-carousel.scss" />
-    <Content Include="styles\dayfrost\_fonts.scss" />
-    <Content Include="styles\dayfrost\_global.scss" />
-    <Content Include="styles\dayfrost\_grid.scss" />
-    <Content Include="styles\dayfrost\_helpers.scss" />
-    <Content Include="styles\dayfrost\_mixins.scss" />
     <Content Include="styles\dayfrost\_overrides.scss" />
-    <Content Include="styles\dayfrost\_scaffolding.scss" />
-    <Content Include="styles\dayfrost\_utilities.scss" />
-    <Content Include="styles\dayfrost\_variables.scss" />
-    <Content Include="styles\niteflight\components\atoms\_address.scss" />
-    <Content Include="styles\niteflight\components\atoms\_alert.scss" />
-    <Content Include="styles\niteflight\components\atoms\_badges.scss" />
-    <Content Include="styles\niteflight\components\atoms\_blockquote.scss" />
-    <Content Include="styles\niteflight\components\atoms\_breadcrumbs.scss" />
-    <Content Include="styles\niteflight\components\atoms\_buttons.scss" />
-    <Content Include="styles\niteflight\components\atoms\_counter.scss" />
-    <Content Include="styles\niteflight\components\atoms\_dropdowns.scss" />
-    <Content Include="styles\niteflight\components\atoms\_forms.scss" />
-    <Content Include="styles\niteflight\components\atoms\_headline.scss" />
-    <Content Include="styles\niteflight\components\atoms\_icon.scss" />
-    <Content Include="styles\niteflight\components\atoms\_images.scss" />
-    <Content Include="styles\niteflight\components\atoms\_labels.scss" />
-    <Content Include="styles\niteflight\components\atoms\_list-group.scss" />
-    <Content Include="styles\niteflight\components\atoms\_list.scss" />
-    <Content Include="styles\niteflight\components\atoms\_logo.scss" />
-    <Content Include="styles\niteflight\components\atoms\_modal.scss" />
-    <Content Include="styles\niteflight\components\atoms\_navs.scss" />
-    <Content Include="styles\niteflight\components\atoms\_pagination.scss" />
-    <Content Include="styles\niteflight\components\atoms\_panels.scss" />
-    <Content Include="styles\niteflight\components\atoms\_popover.scss" />
-    <Content Include="styles\niteflight\components\atoms\_progress-bars.scss" />
-    <Content Include="styles\niteflight\components\atoms\_tables.scss" />
-    <Content Include="styles\niteflight\components\atoms\_tabs-nav.scss" />
-    <Content Include="styles\niteflight\components\atoms\_thumbnails.scss" />
-    <Content Include="styles\niteflight\components\atoms\_tooltip.scss" />
-    <Content Include="styles\niteflight\components\atoms\_typography.scss" />
-    <Content Include="styles\niteflight\components\atoms\_wells.scss" />
-    <Content Include="styles\niteflight\components\molecules\_button-groups.scss" />
-    <Content Include="styles\niteflight\components\molecules\_jumbotron.scss" />
-    <Content Include="styles\niteflight\components\molecules\_media.scss" />
-    <Content Include="styles\niteflight\components\molecules\_navbar.scss" />
-    <Content Include="styles\niteflight\components\molecules\_sidebar.scss" />
-    <Content Include="styles\niteflight\components\molecules\_testimony.scss" />
-    <Content Include="styles\niteflight\components\organisms\_media-list.scss" />
-    <Content Include="styles\niteflight\components\organisms\_mega-dropdown.scss" />
-    <Content Include="styles\niteflight\components\organisms\_page-header.scss" />
-    <Content Include="styles\niteflight\components\organisms\_panel-group.scss" />
-    <Content Include="styles\niteflight\components\organisms\_tabs.scss" />
-    <Content Include="styles\niteflight\templates\_article.scss" />
-    <Content Include="styles\niteflight\templates\_aside.scss" />
-    <Content Include="styles\niteflight\templates\_footer.scss" />
-    <Content Include="styles\niteflight\templates\_header.scss" />
-    <Content Include="styles\niteflight\templates\_section.scss" />
-    <Content Include="styles\niteflight\templates\_sidebar.scss" />
-    <Content Include="styles\niteflight\templates\_template.scss" />
-    <Content Include="styles\niteflight\vendor\_owl-carousel.scss" />
-    <Content Include="styles\niteflight\_fonts.scss" />
-    <Content Include="styles\niteflight\_global.scss" />
-    <Content Include="styles\niteflight\_grid.scss" />
-    <Content Include="styles\niteflight\_helpers.scss" />
-    <Content Include="styles\niteflight\_mixins.scss" />
+    <Content Include="styles\default\components\atoms\_blockgrid.scss" />
     <Content Include="styles\niteflight\_overrides.scss" />
-    <Content Include="styles\niteflight\_scaffolding.scss" />
-    <Content Include="styles\niteflight\_utilities.scss" />
-    <Content Include="styles\niteflight\_variables.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_address.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_alert.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_badges.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_blockquote.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_breadcrumbs.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_buttons.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_counter.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_dropdowns.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_forms.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_icon.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_images.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_labels.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_list-group.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_list.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_logo.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_navs.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_pagination.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_panels.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_progress-bars.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_table.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_thumbnails.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_tooltip.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_typography.scss" />
-    <Content Include="styles\white-wonder\components\atoms\_wells.scss" />
-    <Content Include="styles\white-wonder\components\molecules\_button-groups.scss" />
-    <Content Include="styles\white-wonder\components\molecules\_jumbotron.scss" />
-    <Content Include="styles\white-wonder\components\molecules\_media.scss" />
-    <Content Include="styles\white-wonder\components\molecules\_navbar.scss" />
-    <Content Include="styles\white-wonder\components\molecules\_sidebar.scss" />
-    <Content Include="styles\white-wonder\components\molecules\_testimony.scss" />
-    <Content Include="styles\white-wonder\components\organisms\_illustration.scss" />
-    <Content Include="styles\white-wonder\components\organisms\_media-list.scss" />
-    <Content Include="styles\white-wonder\components\organisms\_mega-dropdown.scss" />
-    <Content Include="styles\white-wonder\components\organisms\_page-header.scss" />
-    <Content Include="styles\white-wonder\pages\_whitewonder.scss" />
-    <Content Include="styles\white-wonder\templates\_article.scss" />
-    <Content Include="styles\white-wonder\templates\_aside.scss" />
-    <Content Include="styles\white-wonder\templates\_footer.scss" />
-    <Content Include="styles\white-wonder\templates\_header.scss" />
-    <Content Include="styles\white-wonder\templates\_section.scss" />
-    <Content Include="styles\white-wonder\templates\_sidebar.scss" />
-    <Content Include="styles\white-wonder\templates\_template.scss" />
-    <Content Include="styles\white-wonder\vendor\_owl-carousel.scss" />
-    <Content Include="styles\white-wonder\_fonts.scss" />
-    <Content Include="styles\white-wonder\_global.scss" />
-    <Content Include="styles\white-wonder\_grid.scss" />
-    <Content Include="styles\white-wonder\_helpers.scss" />
-    <Content Include="styles\white-wonder\_mixins.scss" />
-    <Content Include="styles\white-wonder\_overrides.scss" />
-    <Content Include="styles\white-wonder\_scaffolding.scss" />
-    <Content Include="styles\white-wonder\_utilities.scss" />
-    <Content Include="styles\white-wonder\_variables.scss" />
-    <Content Include="styles\niteflight\components\_atoms.scss" />
-    <Content Include="styles\niteflight\components\_molecules.scss" />
-    <Content Include="styles\niteflight\components\_organisms.scss" />
-    <Content Include="styles\niteflight\_templates.scss" />
-    <Content Include="styles\niteflight\_vendor.scss" />
-    <Content Include="styles\dayfrost\components\_atoms.scss" />
-    <Content Include="styles\dayfrost\components\_molecules.scss" />
-    <Content Include="styles\dayfrost\components\_organisms.scss" />
-    <Content Include="styles\dayfrost\_templates.scss" />
-    <Content Include="styles\dayfrost\_vendor.scss" />
-    <Content Include="styles\white-wonder\components\_atoms.scss" />
-    <Content Include="styles\white-wonder\components\_molecules.scss" />
-    <Content Include="styles\white-wonder\components\_organisms.scss" />
-    <Content Include="styles\white-wonder\_pages.scss" />
-    <Content Include="styles\white-wonder\_templates.scss" />
-    <Content Include="styles\white-wonder\_vendor.scss" />
-    <Content Include="styles\editor.scss" />
-    <Content Include="styles\components\atoms\_breadcrumb.scss" />
-    <Content Include="styles\components\_hover.scss" />
-    <Content Include="styles\components\atoms\_badges.scss" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -388,7 +284,17 @@
       <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -421,6 +327,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />
+    <Folder Include="styles\dayfrost\components\molecules\" />
+    <Folder Include="styles\dayfrost\components\organisms\" />
+    <Folder Include="styles\dayfrost\templates\" />
+    <Folder Include="styles\dayfrost\vendor\" />
+    <Folder Include="styles\niteflight\components\atoms\" />
+    <Folder Include="styles\niteflight\components\molecules\" />
+    <Folder Include="styles\niteflight\components\organisms\" />
+    <Folder Include="styles\niteflight\templates\" />
+    <Folder Include="styles\niteflight\vendor\" />
+    <Folder Include="styles\white-wonder\components\" />
+    <Folder Include="styles\white-wonder\pages\" />
+    <Folder Include="styles\white-wonder\templates\" />
+    <Folder Include="styles\white-wonder\vendor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
+      <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
+      <Name>Sitecore.Foundation.SitecoreExtensions</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

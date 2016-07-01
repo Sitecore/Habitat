@@ -12,24 +12,24 @@
   {
     private readonly ISiteDefinitionsProvider siteDefinitionsProvider;
 
-    public SiteConfigurationRepository() : this(new ItemSiteDefinitionsProvider())
+    public SiteConfigurationRepository() : this(new SiteDefinitionsProvider())
     {
     }
 
     public SiteConfigurationRepository(ISiteDefinitionsProvider itemSiteDefinitionsProvider)
     {
-      siteDefinitionsProvider = itemSiteDefinitionsProvider;
+      this.siteDefinitionsProvider = itemSiteDefinitionsProvider;
     }
 
     public SiteConfigurations Get()
     {
-      var siteDefinitions = siteDefinitionsProvider.SiteDefinitions;
-      return Create(siteDefinitions);
+      var siteDefinitions = this.siteDefinitionsProvider.SiteDefinitions;
+      return this.Create(siteDefinitions);
     }
 
     private bool IsValidSiteConfiguration(SiteDefinition siteDefinition)
     {
-      return siteDefinition.Item != null && IsSiteConfigurationItem(siteDefinition.Item);
+      return siteDefinition.Item != null && this.IsSiteConfigurationItem(siteDefinition.Item);
     }
 
     private bool IsSiteConfigurationItem(Item item)
@@ -41,14 +41,14 @@
     {
       var siteDefinitions = new SiteConfigurations
                             {
-                              Items = definitions.Where(IsValidSiteConfiguration).Select(CreateSiteConfiguration).Where(sc => sc.ShowInMenu)
+                              Items = definitions.Where(this.IsValidSiteConfiguration).Select(CreateSiteConfiguration).Where(sc => sc.ShowInMenu)
                             };
       return siteDefinitions;
     }
 
     private static SiteConfiguration CreateSiteConfiguration(SiteDefinition siteConfiguration)
     {
-      var title = siteConfiguration.Item.GetString(Multisite.Templates.SiteConfiguration.Fields.Title);
+      var title = siteConfiguration.Item[Multisite.Templates.SiteConfiguration.Fields.Title];
       if (string.IsNullOrEmpty(title))
       {
         title = siteConfiguration.Name;
@@ -58,7 +58,7 @@
                HostName = siteConfiguration.HostName,
                Name = siteConfiguration.Name,
                Title = title,
-               ShowInMenu = siteConfiguration.Item.GetCheckBoxValue(Multisite.Templates.SiteConfiguration.Fields.ShowInMenu),
+               ShowInMenu = siteConfiguration.Item.Fields[Multisite.Templates.SiteConfiguration.Fields.ShowInMenu].IsChecked(),
                IsCurrent = siteConfiguration.IsCurrent
              };
     }

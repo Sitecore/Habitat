@@ -1,0 +1,21 @@
+
+
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/badges";
+
+
+
+.badge {
+
+  color: #FFF;
+
+  .glyphicon + & {
+    position: absolute;
+    top: 50%;
+    left: 4px;
+  }
+
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-primary &, .bg-secondary &.bg-primary {
+    background-color: rgba(0,0,0,.4) !important;
+  }
+}

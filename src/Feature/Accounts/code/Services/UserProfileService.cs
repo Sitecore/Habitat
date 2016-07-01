@@ -5,7 +5,7 @@
   using System.Web.Mvc;
   using Sitecore.Data.Items;
   using Sitecore.Feature.Accounts.Models;
-  using Sitecore.Feature.Accounts.Texts;
+  using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Security;
 
   public class UserProfileService : IUserProfileService
@@ -15,13 +15,12 @@
 
     protected Item profile;
     protected virtual Item Profile => this.profile ?? (this.profile = this.profileSettingsService.GetUserDefaultProfile());
-
     protected virtual string FirstName => this.Profile.Fields[Templates.UserProfile.Fields.FirstName].Name;
     protected virtual string LastName => this.Profile.Fields[Templates.UserProfile.Fields.LastName].Name;
     protected virtual string PhoneNumber => this.Profile.Fields[Templates.UserProfile.Fields.PhoneNumber].Name;
     protected virtual string Interest => this.Profile.Fields[Templates.UserProfile.Fields.Interest].Name;
 
-    public UserProfileService(): this(new ProfileSettingsService(), new UserProfileProvider())
+    public UserProfileService() : this(new ProfileSettingsService(), new UserProfileProvider())
     {
     }
 
@@ -38,10 +37,10 @@
 
     public virtual EditProfile GetEmptyProfile()
     {
-      return new EditProfile()
-      {
-        InterestTypes = this.profileSettingsService.GetInterests()
-      };
+      return new EditProfile
+             {
+               InterestTypes = this.profileSettingsService.GetInterests()
+             };
     }
 
     public virtual EditProfile GetProfile(UserProfile userProfile)
@@ -73,15 +72,15 @@
 
     public virtual void SetProfile(UserProfile userProfile, EditProfile model)
     {
-      var properties = new Dictionary<string, string>()
-      {
-        [this.FirstName] = model.FirstName,
-        [this.LastName] = model.LastName,
-        [this.PhoneNumber] = model.PhoneNumber,
-        [this.Interest] = model.Interest,
-        ["Name"] = model.FirstName,
-        ["FullName"] = $"{model.FirstName} {model.LastName}",
-      };
+      var properties = new Dictionary<string, string>
+                       {
+                         [this.FirstName] = model.FirstName,
+                         [this.LastName] = model.LastName,
+                         [this.PhoneNumber] = model.PhoneNumber,
+                         [this.Interest] = model.Interest,
+                         [nameof(userProfile.Name)] = model.FirstName,
+                         [nameof(userProfile.FullName)] = $"{model.FirstName} {model.LastName}".Trim()
+                       };
 
       this.userProfileProvider.SetCustomProfile(userProfile, properties);
     }
@@ -90,7 +89,7 @@
     {
       if (!this.profileSettingsService.GetInterests().Contains(model.Interest) && !string.IsNullOrEmpty(model.Interest))
       {
-        modelState.AddModelError("Interest", Errors.WrongInterest);
+        modelState.AddModelError(nameof(model.Interest), DictionaryPhraseRepository.Current.Get("/Accounts/Edit Profile/Interest Not Found", "Please select an interest from the list."));
       }
 
       return modelState.IsValid;

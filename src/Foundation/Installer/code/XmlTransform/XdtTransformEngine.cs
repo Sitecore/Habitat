@@ -2,14 +2,14 @@
 {
   using Microsoft.Web.XmlTransform;
 
-  public class XdtTransformEngine: IXdtTransformEngine
+  public class XdtTransformEngine : IXdtTransformEngine
   {
     public void ApplyConfigTransformation(string xmlFile, string transformFile, string targetFile)
     {
       var source = new XmlTransformableDocument
-      {
-        PreserveWhitespace = true
-      };
+                   {
+                     PreserveWhitespace = true
+                   };
       source.Load(xmlFile);
 
 

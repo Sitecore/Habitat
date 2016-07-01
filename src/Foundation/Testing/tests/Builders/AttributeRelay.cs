@@ -14,10 +14,7 @@
         return new NoSpecimen();
       }
 
-      var attribute =
-        customAttributeProvider.GetCustomAttributes(typeof(T), true)
-          .OfType<T>()
-          .FirstOrDefault();
+      var attribute = customAttributeProvider.GetCustomAttributes(typeof(T), true).OfType<T>().FirstOrDefault();
       if (attribute == null)
       {
         return new NoSpecimen();
@@ -28,7 +25,7 @@
       {
         return new NoSpecimen();
       }
-      return Resolve(context, attribute, parameterInfo);
+      return this.Resolve(context, attribute, parameterInfo);
     }
 
     protected virtual object Resolve(ISpecimenContext context, T attribute, ParameterInfo parameterInfo)

@@ -1,27 +1,33 @@
 ﻿---
-ID: 0cf58f14-d0f8-4c41-9896-3d69048a0b19
-Parent: d44c5a79-5c36-4a93-9de4-7e59345df572
-Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+ID: "0cf58f14-d0f8-4c41-9896-3d69048a0b19"
+Parent: "d44c5a79-5c36-4a93-9de4-7e59345df572"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
 Path: /sitecore/layout/Renderings/Feature/Social/Twitter Feed
 DB: master
 SharedFields:
-- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
   Hint: Path
   Value: /Views/Social/TwitterFeed.cshtml
-- ID: 7d24e54f-5c16-4314-90c9-6051aa1a7da1
+- ID: "7d24e54f-5c16-4314-90c9-6051aa1a7da1"
   Hint: Parameters Template
-  Value: {9EEE8077-990F-4FDE-95FB-C7B9819DF913}
-- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+  Value: "{9EEE8077-990F-4FDE-95FB-C7B9819DF913}"
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
-  Value: site:twitterfeed
-- ID: e514a1eb-ddba-44f7-8528-82ca2280f778
+  Value: "site:twitterfeed"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: "<image mediaid=\"{6EA80E0B-565B-4E89-A3C8-260BF26BF538}\" />"
+- ID: "e514a1eb-ddba-44f7-8528-82ca2280f778"
   Hint: JavaScript assets
-  Value: http://platform.twitter.com/widgets.js
+  Value: "http://platform.twitter.com/widgets.js"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
+    - ID: 1c307764-806c-42f0-b7ce-fc173ac8372b
+      Hint: Supports Local Datasource
+      Value: 1
     - ID: 25bed78c-4957-4165-998a-ca1b52f67497
       Hint: __Created
       Value: 20150910T030357Z

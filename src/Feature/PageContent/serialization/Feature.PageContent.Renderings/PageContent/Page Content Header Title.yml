@@ -1,31 +1,34 @@
 ﻿---
-ID: 45b8e1d9-d522-49e0-b9b7-04c965cc7089
-Parent: d5d2ab0a-3909-4e22-af15-3bef1e97a0c0
-Template: 99f8905d-4a87-4eb8-9f8b-a9bebfb3add6
+ID: "45b8e1d9-d522-49e0-b9b7-04c965cc7089"
+Parent: "d5d2ab0a-3909-4e22-af15-3bef1e97a0c0"
+Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
 Path: /sitecore/layout/Renderings/Feature/PageContent/Page Content Header Title
 DB: master
 SharedFields:
-- ID: 51b435bc-f7b9-478a-9c51-52916af96ff5
+- ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
   Hint: Path
   Value: /Views/PageContent/PageHeaderTitle.cshtml
-- ID: b5b27af1-25ef-405c-87ce-369b3a004016
+- ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
-  Value: site:pagecontent
-- ID: e441abe7-2ca3-4640-ae26-3789967925d7
+  Value: "site:pagecontent"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: "<image mediaid=\"{15135CB4-B14D-4B80-86BE-14D275F356C7}\" />"
+- ID: "e441abe7-2ca3-4640-ae26-3789967925d7"
   Hint: Compatible Renderings
   Type: Treelist
   Value: |
     {914673DC-FC44-4660-B6EB-FF421FAAC2F9}
     {359A65BB-0A2C-44E5-8C34-DF3ACDBB42A7}
     {07AB411C-F894-4144-B069-48EF67431D32}
-- ID: ef7c5528-7307-4e19-863b-da19eed6a9ed
+- ID: "ef7c5528-7307-4e19-863b-da19eed6a9ed"
   Hint: Open Properties after Add
-  Value: -
+  Value: 
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150825T123755Z

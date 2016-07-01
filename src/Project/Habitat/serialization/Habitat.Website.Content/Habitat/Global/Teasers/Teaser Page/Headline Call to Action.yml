@@ -1,0 +1,17 @@
+﻿---
+ID: "6138f4d2-a677-4461-9693-c5341d8a0dc1"
+Parent: "e151cdef-1a9f-449d-a87c-5cf5741fa857"
+Template: "061574e1-59dd-4b62-9680-1c84efbe6773"
+Path: /sitecore/content/Habitat/Global/Teasers/Teaser Page/Headline Call to Action
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160323T005343Z
+    - ID: "4a59d072-5b41-4a79-a157-2b2ccac10f2b"
+      Hint: TeaserTitle
+      Value: Call to Action

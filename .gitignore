@@ -11,6 +11,7 @@ artifacts/
 *.userprefs
 *DS_Store
 *.sln.ide
+lib/license.xml
 lib/Sitecore/*
 !lib/Sitecore/readme.MD
 lib/System/*
@@ -24,3 +25,4 @@ temp/
 *.ncrunchproject
 *.ncrunchsolution
 .vscode
+nCrunchTemp*.*

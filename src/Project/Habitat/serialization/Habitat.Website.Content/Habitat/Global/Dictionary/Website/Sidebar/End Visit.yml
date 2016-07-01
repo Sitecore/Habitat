@@ -1,0 +1,20 @@
+﻿---
+ID: "e04c6860-137f-4606-84a7-93a65a4bb2a6"
+Parent: "b93751fc-450f-4080-abe0-92afc018b1d5"
+Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
+Path: /sitecore/content/Habitat/Global/Dictionary/Website/Sidebar/End Visit
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160406T232644Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: sitecore\admin
+    - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
+      Hint: Phrase
+      Value: End the current visit and submit it to the Sitecore Experience Database

@@ -1,7 +1,6 @@
 ﻿namespace Sitecore.Feature.Metadata.Repositories
 {
   using System.Linq;
-  using Sitecore;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Feature.Metadata.Models;
@@ -11,8 +10,7 @@
   {
     public static Item Get(Item contextItem)
     {
-      return contextItem.GetAncestorOrSelfOfTemplate(Templates.SiteMetadata.ID)
-             ?? Context.Site.GetContextItem(Templates.SiteMetadata.ID);
+      return contextItem.GetAncestorOrSelfOfTemplate(Templates.SiteMetadata.ID) ?? Context.Site.GetContextItem(Templates.SiteMetadata.ID);
     }
 
     public static MetaKeywordsModel GetKeywords(Item item)
@@ -27,7 +25,10 @@
 
         var keywordMultilist = new MultilistField(keywordsField);
         var keywords = keywordMultilist.GetItems().Select(keywrdItem => keywrdItem[Templates.Keyword.Fields.Keyword]);
-        var metaKeywordModel = new MetaKeywordsModel {Keywords = keywords.ToList()};
+        var metaKeywordModel = new MetaKeywordsModel
+                               {
+                                 Keywords = keywords.ToList()
+                               };
 
         return metaKeywordModel;
       }

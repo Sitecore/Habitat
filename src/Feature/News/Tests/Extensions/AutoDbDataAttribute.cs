@@ -13,4 +13,12 @@ namespace Sitecore.Feature.News.Tests.Extensions
       this.Fixture.Customize(new AutoDbCustomization());
     }
   }
+
+  public class InlineAutoDbDataAttribute : InlineAutoDataAttribute
+  {
+    public InlineAutoDbDataAttribute(params object[] @params)
+      : base(new AutoDbDataAttribute(), @params)
+    {
+    }
+  }
 }

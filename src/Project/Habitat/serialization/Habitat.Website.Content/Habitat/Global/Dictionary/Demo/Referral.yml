@@ -1,0 +1,14 @@
+﻿---
+ID: "514eb72c-3f43-4265-8ef3-8ab65a1ff96f"
+Parent: "4b4c7560-6143-4cf4-bb18-3e67d23cd226"
+Template: "98e4bdc6-9b43-4eb2-baa3-d4303c35852e"
+Path: /sitecore/content/Habitat/Global/Dictionary/Demo/Referral
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160406T232706Z

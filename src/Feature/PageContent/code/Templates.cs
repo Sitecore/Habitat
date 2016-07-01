@@ -6,7 +6,7 @@
   {
     public struct HasPageContent
     {
-      public static ID ID = new ID("{AF74A00B-8CA7-4C9A-A5C1-156A68590EE2}");
+      public static readonly ID ID = new ID("{AF74A00B-8CA7-4C9A-A5C1-156A68590EE2}");
 
       public struct Fields
       {

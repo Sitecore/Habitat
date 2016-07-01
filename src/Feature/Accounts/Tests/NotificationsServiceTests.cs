@@ -10,9 +10,9 @@
   using Sitecore.Feature.Accounts.Tests.FixtureContext;
   using Xunit;
 
-  public class NotificationServiceTests : IClassFixture<SmptWrapper>
+  public class NotificationServiceTests : IClassFixture<SmtpWrapper>
   {
-    public NotificationServiceTests(SmptWrapper fixture)
+    public NotificationServiceTests(SmtpWrapper fixture)
     {
       this.SmtpServer = fixture.SmtpServerInstance;
       this.SmtpServer.ClearReceivedEmail();

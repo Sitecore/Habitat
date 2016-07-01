@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Foundation.Testing
 {
+  using System.Collections.Generic;
   using System.IO;
   using System.Reflection;
   using System.Web;
@@ -10,7 +11,12 @@
     public static HttpContext Create()
     {
       var httpRequest = new HttpRequest("", "http://google.com/", "");
-
+      httpRequest.Browser = new HttpBrowserCapabilities();
+      httpRequest.Browser.Capabilities = new Dictionary<string, string>()
+      {
+        ["browser"]="IE"
+      };
+      
       return Create(httpRequest);
     }
 
@@ -26,17 +32,9 @@
     {
       var httpContext = new HttpContext(httpRequest, httpResponse);
 
-      var sessionContainer = new HttpSessionStateContainer("id", new SessionStateItemCollection(),
-                                              new HttpStaticObjectsCollection(), 10, true,
-                                              HttpCookieMode.AutoDetect,
-                                              SessionStateMode.InProc, false);
+      var sessionContainer = new HttpSessionStateContainer("id", new SessionStateItemCollection(), new HttpStaticObjectsCollection(), 10, true, HttpCookieMode.AutoDetect, SessionStateMode.InProc, false);
 
-      httpContext.Items["AspSession"] = typeof(HttpSessionState).GetConstructor(
-                                  BindingFlags.NonPublic | BindingFlags.Instance,
-                                  null, CallingConventions.Standard,
-                                  new[] { typeof(HttpSessionStateContainer) },
-                                  null)
-                          .Invoke(new object[] { sessionContainer });
+      httpContext.Items["AspSession"] = typeof(HttpSessionState).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, CallingConventions.Standard, new[] {typeof(HttpSessionStateContainer)}, null).Invoke(new object[] {sessionContainer});
 
       return httpContext;
     }

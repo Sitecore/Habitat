@@ -2,7 +2,6 @@
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
-  <Import Project="..\..\..\..\applytransform.targets" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -117,8 +116,8 @@
     <Content Include="App_Config\Include\Foundation\Foundation.Indexing.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="packages.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Indexing.config" />
+    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
@@ -130,27 +129,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="Infrastructure\IndexContentProviderBase.cs" />
-    <Compile Include="Infrastructure\IndexContentProviderRepository.cs" />
-    <Compile Include="Infrastructure\AllTemplatesComputedField.cs" />
-    <Compile Include="Infrastructure\FallbackIndexContentProvider.cs" />
-    <Compile Include="Infrastructure\HasPresentationComputedField.cs" />
+    <Compile Include="Services\GetFreeTextPredicateService.cs" />
+    <Compile Include="Infrastructure\Fields\HasSearchResultFormatterComputedField.cs" />
+    <Compile Include="Repositories\IndexingProviderRepository.cs" />
+    <Compile Include="Infrastructure\Fields\AllTemplatesComputedField.cs" />
+    <Compile Include="Infrastructure\Providers\FallbackIndexingProvider.cs" />
+    <Compile Include="Infrastructure\Fields\HasPresentationComputedField.cs" />
+    <Compile Include="Models\IQueryPredicateProvider.cs" />
+    <Compile Include="Models\ISearchResultFormatter.cs" />
     <Compile Include="Models\IndexedItem.cs" />
-    <Compile Include="Models\IPageble.cs" />
+    <Compile Include="Models\IPageable.cs" />
     <Compile Include="Models\IQuery.cs" />
     <Compile Include="Models\ISearchResult.cs" />
     <Compile Include="Models\ISearchResults.cs" />
     <Compile Include="Models\ISearchSettings.cs" />
     <Compile Include="Models\SearchResult.cs" />
-    <Compile Include="Models\SearchResultRepository.cs" />
+    <Compile Include="Models\SearchResultFactory.cs" />
     <Compile Include="Models\SearchResults.cs" />
-    <Compile Include="Models\SearchResultsRepository.cs" />
+    <Compile Include="Repositories\SearchResultsRepository.cs" />
     <Compile Include="Models\SearchSettingsBase.cs" />
+    <Compile Include="Rendering\QueryableDatasourceRenderingModel.cs" />
+    <Compile Include="Rendering\QueryableDatasourceRenderingSettings.cs" />
     <Compile Include="Repositories\ISearchServiceRepository.cs" />
-    <Compile Include="Repositories\ISearchSettingsRepository.cs" />
     <Compile Include="Repositories\SearchServiceRepository.cs" />
-    <Compile Include="Repositories\SearchSettingsRepositoryBase.cs" />
-    <Compile Include="SearchService.cs" />
+    <Compile Include="Services\SearchService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>

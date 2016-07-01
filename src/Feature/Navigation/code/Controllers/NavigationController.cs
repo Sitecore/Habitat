@@ -4,7 +4,7 @@
   using Sitecore.Feature.Navigation.Repositories;
   using Sitecore.Foundation.Alerts.Extensions;
   using Sitecore.Foundation.Alerts.Models;
-  using Sitecore.Foundation.SitecoreExtensions.Repositories;
+  using Sitecore.Foundation.Dictionary.Repositories;
   using Sitecore.Mvc.Presentation;
 
   public class NavigationController : Controller
@@ -17,25 +17,25 @@
 
     public NavigationController(INavigationRepository navigationRepository)
     {
-      _navigationRepository = navigationRepository;
+      this._navigationRepository = navigationRepository;
     }
 
     public ActionResult Breadcrumb()
     {
-      var items = _navigationRepository.GetBreadcrumb();
-      return View("Breadcrumb", items);
+      var items = this._navigationRepository.GetBreadcrumb();
+      return this.View("Breadcrumb", items);
     }
 
     public ActionResult PrimaryMenu()
     {
-      var items = _navigationRepository.GetPrimaryMenu();
-      return View("PrimaryMenu", items);
+      var items = this._navigationRepository.GetPrimaryMenu();
+      return this.View("PrimaryMenu", items);
     }
 
     public ActionResult SecondaryMenu()
     {
-      var item = _navigationRepository.GetSecondaryMenuItem();
-      return View("SecondaryMenu", item);
+      var item = this._navigationRepository.GetSecondaryMenuItem();
+      return this.View("SecondaryMenu", item);
     }
 
     public ActionResult NavigationLinks()
@@ -53,11 +53,11 @@
     {
       if (string.IsNullOrEmpty(RenderingContext.Current.Rendering.DataSource))
       {
-        return Context.PageMode.IsExperienceEditor ? this.InfoMessage(new InfoMessage(DictionaryRepository.Get("/navigation/linkmenu/noitems", "This menu has no items."), InfoMessage.MessageType.Warning)) : null;
+        return Context.PageMode.IsExperienceEditor ? this.InfoMessage(new InfoMessage(DictionaryPhraseRepository.Current.Get("/Navigation/Link Menu/No Items", "This menu has no items."), InfoMessage.MessageType.Warning)) : null;
       }
       var item = RenderingContext.Current.Rendering.Item;
-      var items = _navigationRepository.GetLinkMenuItems(item);
-      return View("LinkMenu", items);
+      var items = this._navigationRepository.GetLinkMenuItems(item);
+      return this.View("LinkMenu", items);
     }
   }
 }

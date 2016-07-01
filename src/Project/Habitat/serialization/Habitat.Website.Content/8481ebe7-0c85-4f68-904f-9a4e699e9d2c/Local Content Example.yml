@@ -1,0 +1,17 @@
+﻿---
+ID: "e9e0ac91-854d-4e27-aa3c-134235209ce2"
+Parent: "8481ebe7-0c85-4f68-904f-9a4e699e9d2c"
+Template: "f0369e1a-9030-4a05-a09c-ef09b664ed27"
+Path: /sitecore/content/Habitat/Home/Modules/Feature/News/News/2015/08/24/17/57/Best In Class/_Local/Local Content Example
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160410T113539Z
+    - ID: "9f51dead-ad6e-41c2-9759-7be17eb474a4"
+      Hint: MediaImage
+      Value: "<image mediaid=\"{F16A8317-ED9B-4CF9-BD28-8606DAC0E232}\" />"

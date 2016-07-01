@@ -1,7 +1,7 @@
 ﻿---
-ID: ef593c2a-f3f8-421a-9368-0e189a689dbd
-Parent: 6aa25831-0944-4a79-9aff-7bac39e03557
-Template: c7d9d293-4ef8-4380-8e10-c4632e729f39
+ID: "ef593c2a-f3f8-421a-9368-0e189a689dbd"
+Parent: "6aa25831-0944-4a79-9aff-7bac39e03557"
+Template: "c7d9d293-4ef8-4380-8e10-c4632e729f39"
 Path: /sitecore/content/Habitat/Global/Teasers/Simplicity
 DB: master
 Languages:
@@ -9,15 +9,15 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 0f6b5546-e0ab-4487-81de-640c1aa1b65b
+    - ID: "0f6b5546-e0ab-4487-81de-640c1aa1b65b"
       Hint: TeaserImage
-      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{7C3BBB56-BE70-4F1B-86A3-3D7C505D74AD}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"178\" vspace=\"\" ></image>"
-    - ID: 13d97a52-7c4e-407c-960d-fadde8a3c1b1
+      Value: "<image querystring=\"\" target=\"\" linktype=\"internal\" id=\"{DAC24EDD-44FB-42EF-9ECD-1E8DAF706386}\" mediaid=\"{B00F14C3-62DA-4568-AFC8-91AA8F75229A}\" />"
+    - ID: "13d97a52-7c4e-407c-960d-fadde8a3c1b1"
       Hint: TeaserSummary
       Value: By defining and following stringent conventions development is much simpler.
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150827T063224Z
-    - ID: 4a59d072-5b41-4a79-a157-2b2ccac10f2b
+    - ID: "4a59d072-5b41-4a79-a157-2b2ccac10f2b"
       Hint: TeaserTitle
       Value: Simplicity

@@ -1,7 +1,7 @@
 ﻿---
-ID: bde0574b-0491-47c0-8bff-8d06de3a8410
-Parent: 0cadfe65-0e55-424a-b396-45a7445694e2
-Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+ID: "bde0574b-0491-47c0-8bff-8d06de3a8410"
+Parent: "0cadfe65-0e55-424a-b396-45a7445694e2"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
 Path: /sitecore/layout/Models/Project/Habitat
 DB: master
 Languages:
@@ -9,9 +9,9 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151030T173151Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: sitecore\admin

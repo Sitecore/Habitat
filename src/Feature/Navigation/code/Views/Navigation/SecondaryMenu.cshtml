@@ -1,21 +1,22 @@
 ﻿@using Sitecore.Feature.Navigation
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
-@using Sitecore.Foundation.SitecoreExtensions.Repositories
 @model Sitecore.Feature.Navigation.Models.NavigationItem
 @{
   if (Model?.Children == null || !Model.Children.Items.Any())
   {
-    @Html.Sitecore().PageEditorError(DictionaryRepository.Get("/Navigation/SecondaryMenu/No menu items", "No menu items found"))
+    @Html.PageEditorError(Html.Sitecore().Dictionary("/Navigation/SecondaryMenu/No menu items", "No menu items found"))
     return;
   }
 }
 
 <h4>
-    <a href="@Model.Url" target="@Model.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, Model.Item)</a>
+  <a href="@Model.Url" target="@Model.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, Model.Item)</a>
 </h4>
 <div class="sidebar sidebar-static">
-    @if (Model.Children != null)
-    {
-      @Html.Partial("_SecondaryMenuItems", Model.Children)
-    }
+  @if (Model.Children != null)
+  {
+    @Html.Partial("_SecondaryMenuItems", Model.Children)
+  }
 </div>

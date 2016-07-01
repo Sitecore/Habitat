@@ -1,0 +1,17 @@
+﻿---
+ID: "2299a134-b64f-4a34-83ea-54b3e4b3a6f0"
+Parent: "6aa25831-0944-4a79-9aff-7bac39e03557"
+Template: "061574e1-59dd-4b62-9680-1c84efbe6773"
+Path: /sitecore/content/Habitat/Global/Teasers/Examples
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160525T045952Z
+    - ID: "4a59d072-5b41-4a79-a157-2b2ccac10f2b"
+      Hint: TeaserTitle
+      Value: Other Examples

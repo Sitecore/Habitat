@@ -1,0 +1,70 @@
+﻿@using Sitecore.Feature.Teasers.Extensions
+@using Sitecore.Foundation.Dictionary.Extensions
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Foundation.Theming.Extensions
+@model Sitecore.Feature.Teasers.Models.DynamicTeaserModel
+
+@{
+  var carouselId = "carousel" + Guid.NewGuid().ToString("N");
+  var elements = Model.Items.ToList();
+  var parameters = GetJambatronParams();
+}
+@functions
+{
+  public string GetJambatronParams()
+  {
+    var fixedHeight = Html.Sitecore().CurrentRendering.IsFixedHeight();
+    var parameters = $"{Sitecore.Foundation.Theming.Constants.IsFixedHeightLayoutParameters.FixedHeight}={fixedHeight}";
+    if (fixedHeight)
+    {
+      var maxheight = Model.GetMaxImageHeight();
+      if (maxheight > 0)
+      {
+        parameters += $"&{Sitecore.Foundation.Theming.Constants.IsFixedHeightLayoutParameters.Height}={maxheight}";
+      }
+    }
+
+    return parameters;
+  }
+}
+
+
+@using (Html.BeginEditFrame(Model.Item.ID.ToString(), ""))
+{
+  <div id="@carouselId" class="carousel slide" data-ride="carousel" @(Sitecore.Context.PageMode.IsExperienceEditor ? "data-interval" : "")>
+    <ol class="carousel-indicators">
+      @for (var i = 0; i < elements.Count; i++)
+      {
+        var active = elements[i].IsActive ? "active" : "";
+        <li data-target="#@carouselId" data-slide-to="@i" class="@active"></li>
+      }
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+      @for (var i = 0; i < elements.Count; i++)
+      {
+        var active = elements[i].IsActive ? "active" : "";
+        <div class="item @active">
+          @if (elements[i].Item != null)
+          {
+            @Html.Sitecore().ViewRendering("Jumbotron.cshtml", new { DataSource = elements[i].Item.Paths.FullPath, Parameters = parameters})
+          }
+          else
+          {
+            @Html.Sitecore().DynamicPlaceholder($"jumbotron-placeholder-{i + 1}")
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#@carouselId" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">@Html.Sitecore().Dictionary("/teaser/carousel/previous", "Previous")</span>
+    </a>
+    <a class="right carousel-control" href="#@carouselId" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">@Html.Sitecore().Dictionary("/teaser/carousel/next", "Next")</span>
+    </a>
+  </div>
+}

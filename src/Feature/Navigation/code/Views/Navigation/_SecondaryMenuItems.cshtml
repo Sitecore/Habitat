@@ -5,25 +5,23 @@
 @{
   if (Model == null || Model.Items == null)
   {
-      return;
+    return;
   }
 }
 
 <ul class="nav nav-pills nav-stacked">
-    @foreach (var item in Model.Items)
-    {
-
-        var hasChildren = item.IsActive && item.Children != null && item.Children.Items.Any();
-        var openClass = ((item.IsActive && hasChildren) ? "open" : string.Empty);
+  @foreach (var item in Model.Items)
+  {
+    var hasChildren = item.IsActive && item.Children != null && item.Children.Items.Any();
+    var openClass = item.IsActive && hasChildren ? "open" : string.Empty;
     <li class="@openClass">
-        <a href="@item.Url" target="@item.Target">
-            @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, item.Item)
-        </a>
-        @if (hasChildren)
-        {
+      <a href="@item.Url" target="@item.Target">
+        @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, item.Item)
+      </a>
+      @if (hasChildren)
+      {
         @Html.Partial("_SecondaryMenuItems", item.Children)
-        }
+      }
     </li>
-
-    }
+  }
 </ul>

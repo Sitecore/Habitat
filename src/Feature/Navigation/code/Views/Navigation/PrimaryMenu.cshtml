@@ -18,12 +18,12 @@
         <li class="@cssClass">
           @if (hasChildren)
           {
-            <a class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <a href="@item.Url" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, item.Item)<span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
               @foreach (var subitem in item.Children.Items)
-            {
+              {
                 <li>
                   <a href="@subitem.Url" target="@subitem.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, subitem.Item)</a>
                 </li>

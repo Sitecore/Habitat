@@ -1,4 +1,5 @@
 var gulp = require("gulp");
+var gutil = require("gulp-util");
 var foreach = require("gulp-foreach");
 var rimrafDir = require("rimraf");
 var rimraf = require("gulp-rimraf");
@@ -7,15 +8,16 @@ var fs = require("fs");
 var path = require("path");
 var xmlpoke = require("xmlpoke");
 var config = require("./gulpfile.js").config;
+var unicorn = require("./scripts/unicorn.js");
 var websiteRootBackup = config.websiteRoot;
 
-var packageFiles = [];
+
 gulp.task("CI-Publish", function (callback) {
-    packageFiles = [];
     config.websiteRoot = path.resolve("./temp");
     config.buildConfiguration = "Release";
     fs.mkdirSync(config.websiteRoot);
     runSequence(
+      "Build-Solution",
       "Publish-Foundation-Projects",
       "Publish-Feature-Projects",
       "Publish-Project-Projects", callback);
@@ -27,6 +29,7 @@ gulp.task("CI-Prepare-Package-Files", function (callback) {
       config.websiteRoot + "\\compilerconfig.json.defaults",
       config.websiteRoot + "\\packages.config",
       config.websiteRoot + "\\App_Config\\Include\\{Feature,Foundation,Project}\\*Serialization.config",
+      config.websiteRoot + "\\App_Config\\Include\\{Feature,Foundation,Project}\\z.*DevSettings.config",
       "!" + config.websiteRoot + "\\bin\\Sitecore.Support*dll",
       "!" + config.websiteRoot + "\\bin\\Sitecore.{Feature,Foundation,Habitat,Demo,Common}*dll"
     ];
@@ -36,6 +39,7 @@ gulp.task("CI-Prepare-Package-Files", function (callback) {
 });
 
 gulp.task("CI-Enumerate-Files", function () {
+    var packageFiles = [];
     config.websiteRoot = websiteRootBackup;
 
     return gulp.src(path.resolve("./temp") + "/**/*.*", { base: "temp", read: false })
@@ -44,17 +48,66 @@ gulp.task("CI-Enumerate-Files", function () {
           console.log("Added to the package:" + item);
           packageFiles.push(item);
           return stream;
+      })).pipe(gutil.buffer(function () {
+          xmlpoke("./package.xml", function (xml) {
+              for (var idx in packageFiles) {
+                  xml.add("project/Sources/xfiles/Entries/x-item", packageFiles[idx]);
+              }
+          });
       }));
 });
 
+gulp.task("CI-Enumerate-Items", function () {
+    var itemPaths = [];
 
-gulp.task("CI-Update-Xml", function (cb) {
-    xmlpoke("./package.xml", function (xml) {
-        for (var idx in packageFiles) {
-            xml.add("project/Sources/xfiles/Entries/x-item", packageFiles[idx]);
-        }
-    });
-    cb();
+    return gulp.src("./src/**/serialization/**/*.yml")
+        .pipe(foreach(function (stream, file) {
+            var itemPath = unicorn.getFullItemPath(file);
+            itemPaths.push(itemPath);
+            return stream;
+        })).pipe(gutil.buffer(function () {
+            xmlpoke("./package.xml", function (xml) {
+                for (var idx in itemPaths) {
+                    xml.add("project/Sources/xitems/Entries/x-item", itemPaths[idx]);
+                }
+            });
+        }));
+});
+
+gulp.task("CI-Enumerate-Users", function () {
+    var users = [];
+
+    return gulp.src("./src/**/users/**/*.user")
+        .pipe(foreach(function (stream, file) {
+            var fileContent = file.contents.toString();
+            var userName = unicorn.getUserPath(file);
+            users.push(userName);
+            return stream;
+        })).pipe(gutil.buffer(function () {
+            xmlpoke("./package.xml", function (xml) {
+                for (var idx in users) {
+                    xml.add("project/Sources/accounts/Entries/x-item", users[idx]);
+                }
+            });
+        }));
+});
+
+gulp.task("CI-Enumerate-Roles", function () {
+    var roles = [];
+
+    return gulp.src("./src/**/roles/**/*.role")
+        .pipe(foreach(function (stream, file) {
+            var fileContent = file.contents.toString();
+            var roleName = unicorn.getRolePath(file);            
+            roles.push(roleName);
+            return stream;
+        })).pipe(gutil.buffer(function () {
+            xmlpoke("./package.xml", function (xml) {
+                for (var idx in roles) {
+                    xml.add("project/Sources/accounts/Entries/x-item", roles[idx]);
+                }
+            });
+        }));
 });
 
 gulp.task("CI-Clean", function (callback) {
@@ -63,5 +116,14 @@ gulp.task("CI-Clean", function (callback) {
 });
 
 gulp.task("CI-Do-magic", function (callback) {
-    runSequence("CI-Clean", "CI-Publish", "CI-Prepare-Package-Files", "CI-Enumerate-Files", "CI-Clean", "CI-Update-Xml", callback);
+    runSequence(
+        "CI-Clean",
+        "CI-Publish",
+        "CI-Prepare-Package-Files",
+        "CI-Enumerate-Files",
+        "CI-Enumerate-Items",
+        "CI-Enumerate-Users",
+        "CI-Enumerate-Roles",
+        "CI-Clean",
+        callback);
 });

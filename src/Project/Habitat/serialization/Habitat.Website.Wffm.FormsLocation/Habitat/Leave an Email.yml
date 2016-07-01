@@ -7,9 +7,11 @@ DB: master
 SharedFields:
 - ID: "46fb324a-9741-43bd-a0c9-5081a39d40aa"
   Hint: Show Introduction
+  Type: Checkbox
   Value: 0
 - ID: "a42052f7-6c18-424a-a2a1-7a72054cb1a6"
   Hint: Show Title
+  Type: Checkbox
   Value: 1
 - ID: "a7f779b9-5fcf-45cc-866b-7c973f5c4fac"
   Hint: Save Actions
@@ -68,6 +70,7 @@ SharedFields:
     </tracking>
 - ID: "faeacd39-b059-4f46-bec4-74ba468a97b8"
   Hint: Show Footer
+  Type: Checkbox
   Value: 0
 Languages:
 - Language: en

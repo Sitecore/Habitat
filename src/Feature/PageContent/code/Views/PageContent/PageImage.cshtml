@@ -1,5 +1,4 @@
-﻿
-@using Sitecore.Feature.PageContent
+﻿@using Sitecore.Feature.PageContent
 @using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
@@ -13,9 +12,9 @@
 
 @if (!Sitecore.Context.PageMode.IsExperienceEditor && !Html.Sitecore().HasValue(Templates.HasPageContent.Fields.Image.ToString()))
 {
-    return;
+  return;
 }
 
 <div class="article image">
-    @Html.Sitecore().ImageField(Templates.HasPageContent.Fields.Image, @Model.Item, mw: 1000, cssClass: "img-responsive")
+  @Html.Sitecore().ImageField(Templates.HasPageContent.Fields.Image, Model.Item, mw: 1000, cssClass: "img-responsive")
 </div>

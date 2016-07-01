@@ -1,4 +1,4 @@
-﻿@using Sitecore.Feature.Language.Infrastructure.Repositories
+﻿@using Sitecore.Feature.Language.Repositories
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @{
@@ -16,7 +16,7 @@
   <ul class="dropdown-menu">
     @foreach (var language in languages)
     {
-      var cssClass = (language.TwoLetterCode == activeLanguage?.TwoLetterCode ? "active" : "");
+      var cssClass = language.TwoLetterCode == activeLanguage?.TwoLetterCode ? "active" : "";
       <li class="@cssClass">
         <a href="@language.Url">@language.NativeName</a>
       </li>

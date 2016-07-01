@@ -4,9 +4,10 @@
   using System.Collections.Specialized;
   using System.Web;
   using Sitecore.Form.Core.Utility;
-  using Sitecore.Foundation.SitecoreExtensions.Services;
+  using Sitecore.Foundation.Forms.Services;
   using Sitecore.Web.UI.Pages;
-  public abstract class BaseActionEditor: DialogForm
+
+  public abstract class BaseActionEditor : DialogForm
   {
     protected readonly ISheerService SheerService;
 
@@ -17,7 +18,7 @@
 
     private NameValueCollection parametersCollection;
 
-    private string ParametersXml => (HttpContext.Current.Session[Sitecore.Web.WebUtil.GetQueryString("params")] as string);
+    private string ParametersXml => HttpContext.Current.Session[Web.WebUtil.GetQueryString("params")] as string;
 
     protected NameValueCollection Parameters => this.parametersCollection ?? (this.parametersCollection = ParametersUtil.XmlToNameValueCollection(this.ParametersXml));
 
