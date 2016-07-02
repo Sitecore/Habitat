@@ -23,19 +23,17 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void RolesSetup()
     {
 
-      var database = Database.Master;
-      var templateId = ContextExtensions.UtfService.CreateItem("tempTemplate"+DateTime.Now.Millisecond, "/sitecore/templates", "/sitecore/templates/System/Templates/Template", "sitecore\\admin", "b", database);
+      var templateId = ContextExtensions.UtfService.CreateItem("tempTemplate"+DateTime.Now.Millisecond, "/sitecore/templates", "/sitecore/templates/System/Templates/Template");
       //set base templates with applied habitat security
-      ContextExtensions.UtfService.EditItem(templateId, "__base template", Settings.RolesTemplates, BaseSettings.UserName, BaseSettings.Password, database);
+      ContextExtensions.UtfService.EditItem(templateId, "__base template", Settings.RolesTemplates);
 
-      var itemId = ContextExtensions.UtfService.CreateItem("tmpItem" + DateTime.Now.Millisecond, "/sitecore/content/Habitat", templateId, BaseSettings.UserName, BaseSettings.Password, database);
+      var itemId = ContextExtensions.UtfService.CreateItem("tmpItem" + DateTime.Now.Millisecond, "/sitecore/content/Habitat", templateId);
 
       //get all available field from base templates
       var fields = Settings.RolesTemplates.Split('|')
         .SelectMany(x => ContextExtensions.UtfService
-          .GetChildren(x, database, false)
-          .SelectMany(child => ContextExtensions.UtfService.GetChildren(child, database, false)));
-
+          .GetChildren(x, false)
+          .SelectMany(child => ContextExtensions.UtfService.GetChildren(child, false)));
 
       ScenarioContext.Current.Set(fields, "fields");
       ScenarioContext.Current.Set(itemId, "item");
@@ -44,12 +42,12 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       ContextExtensions.CleanupPool.Add(new TestCleanupAction()
       {
         ActionType = ActionType.DeleteItem,
-        Payload = new EditFieldPayload() { Database = database, ItemIdOrPath = itemId }
+        Payload = new EditFieldPayload() { ItemIdOrPath = itemId }
       });
       ContextExtensions.CleanupPool.Add(new TestCleanupAction()
       {
         ActionType = ActionType.DeleteItem,
-        Payload = new EditFieldPayload() { Database = database, ItemIdOrPath = templateId }
+        Payload = new EditFieldPayload() { ItemIdOrPath = templateId }
       });
     }
 

@@ -21,7 +21,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
       foreach (var item in items)
       {
         var renderingPath = ItemService.GetModuleRenderingPath(module, item);
-        var itemFieldValue = ContextExtensions.UtfService.GetItemFieldValue(renderingPath, "Compatible Renderings", Database.Master);
+        var itemFieldValue = ContextExtensions.UtfService.GetItemFieldValue(renderingPath, "Compatible Renderings");
         itemFieldValue.Should().BeEmpty();
       }
 
@@ -35,12 +35,12 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
       var renderings = items.Select(x => ItemService.GetModuleRenderingPath(module, x)).Select(x => new
       {
         Path = x,
-        Id = ContextExtensions.UtfService.ItemExistsByPath(x, Database.Master)
+        Id = ContextExtensions.UtfService.ItemExistsByPath(x)
       }).ToList();
       foreach (var rendering in renderings)
       {
         var otherRenderings = renderings.Where(x => x.Id != rendering.Id);
-        var compatibleRenderings = ContextExtensions.UtfService.GetItemFieldValue(rendering.Path, "Compatible Renderings", Database.Master);
+        var compatibleRenderings = ContextExtensions.UtfService.GetItemFieldValue(rendering.Path, "Compatible Renderings");
         var compatibleRenderingIds = compatibleRenderings.Split(new[] {'|'}, StringSplitOptions.RemoveEmptyEntries).Select(x => x.Trim());
 
         var compatibleRenderingsExpectedValue = string.Join("|", otherRenderings.Select(x=>x.Id));

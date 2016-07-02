@@ -2,6 +2,9 @@
 
 namespace Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure
 {
+  using System;
+  using Sitecore.Foundation.Common.Specflow.UtfService;
+
   public class BaseSettings
   {
     public static string BaseUrl => ConfigurationManager.AppSettings["baseUrl"];
@@ -38,6 +41,6 @@ namespace Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure
     public static string SocialPageExperienceEditorUrl => BaseUrl + ConfigurationManager.AppSettings["SocialPageExperienceEditorUrl"];
 
     public static string MainPageExperienceEditorUrl => BaseUrl + ConfigurationManager.AppSettings["MainPageExperienceEditorUrl"];
-
+    public static Database ContextDatabase => (Database)Enum.Parse(typeof(Database), ConfigurationManager.AppSettings["database"]);
   }
 }

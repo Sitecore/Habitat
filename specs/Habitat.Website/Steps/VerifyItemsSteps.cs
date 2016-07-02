@@ -21,8 +21,8 @@ namespace Habitat.Website.Specflow.Steps
       {
         var itemPath = field.ItemPath;
         var formPath = $"{ItemService.WebFormsRootPath}/{field.AllowedControls}";
-        var itemId = ContextExtensions.UtfService.ItemExistsByPath(formPath, Database.Master);
-        var fieldValue = ContextExtensions.UtfService.GetItemFieldValue(itemPath, "Allowed Controls", Database.Master);
+        var itemId = ContextExtensions.UtfService.ItemExistsByPath(formPath);
+        var fieldValue = ContextExtensions.UtfService.GetItemFieldValue(itemPath, "Allowed Controls");
         fieldValue.Contains(itemId).Should().BeTrue();
       }
     }

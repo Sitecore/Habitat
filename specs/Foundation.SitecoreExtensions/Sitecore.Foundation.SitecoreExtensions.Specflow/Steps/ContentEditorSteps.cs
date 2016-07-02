@@ -18,7 +18,7 @@ namespace Sitecore.Foundation.SitecoreExtensions.Specflow.Steps
       var children = table.Rows.SelectMany(x => x.Values);
       Database database;
       Enum.TryParse(db, true, out database);
-      var actualChildren = ContextExtensions.UtfService.GetChildren(parentPath, database, true)
+      var actualChildren = ContextExtensions.UtfService.GetChildren(parentPath, true)
         //get last part of path separated by '\'
         .Select(x => x.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries).Last());
 
@@ -32,7 +32,7 @@ namespace Sitecore.Foundation.SitecoreExtensions.Specflow.Steps
     {
       foreach (var item in fields)
       {
-        ContextExtensions.UtfService.GetItemFieldValue(item.ItemPath, item.FieldName, Database.Master)
+        ContextExtensions.UtfService.GetItemFieldValue(item.ItemPath, item.FieldName)
           .Should()
           .Be(item.FieldValue);
 

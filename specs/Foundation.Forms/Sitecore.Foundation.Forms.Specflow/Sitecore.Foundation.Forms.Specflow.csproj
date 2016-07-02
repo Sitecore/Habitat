@@ -95,7 +95,7 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Allow outcomes to be triggered on WFFM.feature.cs</LastGenOutput>
     </None>
-    <Content Include="..\..\appSettings.config">
+    <Content Include="..\..\..\appSettings.config">
       <Link>appSettings.config</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>

@@ -90,7 +90,7 @@
     <Compile Include="Steps\SitecoreExtensionsStepsBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\appSettings.config">
+    <Content Include="..\..\..\appSettings.config">
       <Link>appSettings.config</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>

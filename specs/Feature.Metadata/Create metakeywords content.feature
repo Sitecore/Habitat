@@ -18,21 +18,6 @@ Feature: Create metakeywords content
 #	| Item Path                                           |
 #	| /sitecore/content/Habitat/Global/Metadata Keywords  |
 
-@Ready for Automating testing
-Scenario: Create metakeywords content_UC1_Create new keyword in the Content Editor
-	Given The following Metadata keywords are defined in Sitecore
-	| Item Path                                                   | 
-	| /sitecore/content/Habitat/Global/Metadata Keywords/habitat  |
-	| /sitecore/content/Habitat/Global/Metadata Keywords/sitecore |	
-	And Admin create a new Metakeyword
-	| Item Path                                          | FieldName  | FieldValue |
-	| /sitecore/content/Habitat/Global/Metadata Keywords | NewKeyWord |   		/sitecore/templates/Project/Common/Content Types/MetaKeyword          |
-	Then new item with title NewKeyWord should be added under following item
-	| Item Path                                                     |  
-	| /sitecore/content/Habitat/Global/Metadata Keywords/habitat    | 
-	| /sitecore/content/Habitat/Global/Metadata Keywords/sitecore   | 
-	| /sitecore/content/Habitat/Global/Metadata Keywords/NewKeyWord |
-
 @Scenario below for manual testing
 #Scenario: Create metakeywords content_UC2_Assign metakeyword to page and check keywords in the page HTML
 #	Given Admin user is logged into Content Editor application
@@ -48,9 +33,9 @@ Scenario: Create metakeywords content_UC1_Create new keyword in the Content Edit
 @Ready for Automating testing
 Scenario: Create metakeywords content_UC2_Assign metakeyword to page and check keywords in the page HTML
 	Given The following Metadata keywords are defined in Sitecore
-	| Item Path                                                    | FieldName    | FieldValue |
-	| /sitecore/content/Habitat/Home/About Habitat/Getting Started | MetaKeywords |  habitat   |
-	| /sitecore/content/Habitat/Home/About Habitat/Getting Started | MetaKeywords |  sitecore  |
+	| Item Path                                                   | 
+	| /sitecore/content/Habitat/Global/Metadata Keywords/habitat  |
+	| /sitecore/content/Habitat/Global/Metadata Keywords/sitecore |	
 	When The sitecore keyword has been selected
 	| ItemPath                                                     | FieldName     | FieldValue                             |
 	| /sitecore/content/Habitat/Home/About Habitat/Getting Started | MetaKeywords | {153640E2-FD0D-42D3-8480-F9615EE78A9A} |

@@ -111,7 +111,10 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     public void ThenTheFollowingTagIsPresent(Table table)
     {
       var contentText = table.Rows.Select(x => x.Values.First());
-      contentText.All(z => CommonLocators.MetakeywordTag.Any(x => x.GetAttribute("content").Contains(z))).Should().BeTrue();
+      var actualTags =  CommonLocators.MetakeywordTag.Select(x=>x.GetAttribute("content"));
+      contentText.All(z => actualTags.Any(x => x.Contains(z)))
+        .Should()
+        .BeTrue($"page should contain following tags: {string.Join("|",contentText)} but contains only {string.Join("|",actualTags)}");
 
     }
 

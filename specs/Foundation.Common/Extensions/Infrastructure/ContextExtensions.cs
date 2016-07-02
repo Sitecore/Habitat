@@ -2,7 +2,6 @@
 using Sitecore.Foundation.Common.Specflow.TestHelperService;
 using System.Collections.Generic;
 using System.ServiceModel;
-using Sitecore.Foundation.Common.Specflow.UtfService;
 using TechTalk.SpecFlow;
 
 namespace Sitecore.Foundation.Common.Specflow.Infrastructure
@@ -25,6 +24,6 @@ namespace Sitecore.Foundation.Common.Specflow.Infrastructure
     }
 
     public static AutoTestsHelperServiceSoapClient HelperService => new AutoTestsHelperServiceSoapClient(new BasicHttpBinding(), new EndpointAddress(BaseSettings.TestHelperService));
-    public static HelperWebServiceSoapClient UtfService => new HelperWebServiceSoapClient(new BasicHttpBinding(), new EndpointAddress(BaseSettings.UtfHelperService));
+    public static HelperWebServiceWrapper UtfService => new HelperWebServiceWrapper();
   }
 }
