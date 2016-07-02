@@ -29,6 +29,11 @@
       return this.client.GetChildren(parentIdOrPath, BaseSettings.ContextDatabase, returnPath);
     }
 
+    public IEnumerable<string> GetChildren(string parentIdOrPath,Database database, bool returnPath)
+    {
+      return this.client.GetChildren(parentIdOrPath, database, returnPath);
+    }
+
     public void DeleteItem(string itemIdOrPath, bool withException)
     {
       this.client.DeleteItem(itemIdOrPath, BaseSettings.ContextDatabase, withException);

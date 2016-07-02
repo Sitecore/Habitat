@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentAssertions;
-using Habitat.Website.Specflow.Infrastructure;
-using Sitecore.Foundation.Common.Specflow.Infrastructure;
-using Sitecore.Foundation.Common.Specflow.UtfService;
-using TechTalk.SpecFlow;
-
-namespace Habitat.Website.Specflow.Steps
+﻿namespace Habitat.Website.Specflow.Steps
 {
+  using System.Collections.Generic;
+  using FluentAssertions;
+  using Habitat.Website.Specflow.Infrastructure;
+  using Sitecore.Foundation.Common.Specflow.Infrastructure;
+  using TechTalk.SpecFlow;
+
   [Binding]
-  public class VerifyItemsSteps: WebsiteStepsBase
+  public class VerifyItemsSteps
   {
     [Then(@"Items contain MVC controls")]
-    public void ThenItemsContainMvcControls(IEnumerable<WffmModel> fields )
+    public void ThenItemsContainMvcControls(IEnumerable<WffmModel> fields)
     {
       foreach (var field in fields)
       {

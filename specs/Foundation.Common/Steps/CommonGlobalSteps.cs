@@ -31,13 +31,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
       FeatureContext.Current.Set((IWebDriver)new FirefoxDriver()); ;
     }
 
-    [AfterScenario]
-    public void Cleanup()
-    {
-      ContextExtensions.CleanupPool.ForEach(CleanupExecute);
-    }
-
-
+   
     public void CreateItem(string parentIdOrPath, string fieldName, string fieldValue)
     {
       ContextExtensions.UtfService.CreateItem(fieldName, parentIdOrPath, fieldValue);
@@ -55,29 +49,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
           .Should().NotBeEmpty($"Expected item {idOrPath} exists");
     }
 
-    private static void CleanupExecute(TestCleanupAction payload)
-    {
-      if (payload.ActionType == ActionType.RemoveUser)
-      {
-        ContextExtensions.HelperService.DeleteUser(payload.GetPayload<string>());
-        return;
-      }
-      if (payload.ActionType == ActionType.CleanFieldValue)
-      {
-        var fieldPayload = payload.GetPayload<EditFieldPayload>();
-        ContextExtensions.UtfService.EditItem(fieldPayload.ItemIdOrPath, fieldPayload.FieldName, fieldPayload.FieldValue);
-        return;
-      }
-
-      if (payload.ActionType == ActionType.DeleteItem)
-      {
-        var fieldPayload = payload.GetPayload<EditFieldPayload>();
-        ContextExtensions.UtfService.DeleteItem(fieldPayload.ItemIdOrPath, false);
-        return;
-      }
-
-      throw new NotSupportedException($"Action type '{payload.ActionType}' is not supported");
-    }
+   
 
 
     [Given(@"Value set to item field")]

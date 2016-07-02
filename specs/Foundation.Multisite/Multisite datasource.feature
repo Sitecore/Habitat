@@ -4,8 +4,8 @@ Feature: Multisite datasource
 @Ready
 Scenario: Multisite datasource_UC1_Standard path
 	Given Value set to item field
-	| ItemPath                                               | fieldName               | fieldValue                                   |
-	| /sitecore/layout/Renderings/Feature/Social/Twitter Feed| Datasource Location	   | /sitecore/content/Habitat/Global/Social	  |
+	| ItemPath                                                | fieldName           | fieldValue                              |
+	| /sitecore/layout/Renderings/Feature/Social/Twitter Feed | Datasource Location | /sitecore/content/Habitat/Global/Social |
 	And Experience Editor is opened on Social Page 
 	When User selects Twitter placeholder
 	And User clicks Associate a content item with this component. button on scChromeToolbar undefined

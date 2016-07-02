@@ -30,11 +30,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
 
     public static CommonLocators CommonLocators => new CommonLocators();
 
-    public void Cleanup()
-    {
-      new CommonGlobalSteps().Cleanup();
-    }
-
+   
     
 
     public static void DeleteAllBrowserCookies()

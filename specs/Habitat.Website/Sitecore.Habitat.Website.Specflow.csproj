@@ -92,7 +92,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\VerifyItemsSteps.cs" />
-    <Compile Include="Steps\WebsiteStepsBase.cs" />
     <Compile Include="WFFM forms integration.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

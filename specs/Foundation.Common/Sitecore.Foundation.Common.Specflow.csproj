@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\Infrastructure\CleanupPool.cs" />
     <Compile Include="Extensions\Infrastructure\HelperWebServiceWrapper.cs" />
     <Compile Include="Extensions\SeleniumExtensions.cs" />
     <Compile Include="Extensions\Infrastructure\ActionType.cs" />
