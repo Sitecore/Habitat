@@ -100,6 +100,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\appSettings.config">
+      <Link>appSettings.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App.config" />
     <None Include="Compatible Renderings.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

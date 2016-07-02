@@ -105,6 +105,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\appSettings.config">
+      <Link>appSettings.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="app.config" />
     <None Include="Mockup of External page.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

@@ -97,6 +97,11 @@
     <Compile Include="Steps\PersonStepsBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\appSettings.config">
+      <Link>appSettings.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Person_Employee List.feature">

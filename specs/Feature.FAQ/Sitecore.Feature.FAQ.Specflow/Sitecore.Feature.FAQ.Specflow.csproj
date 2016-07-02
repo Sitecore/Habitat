@@ -75,6 +75,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\appSettings.config">
+      <Link>appSettings.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App.config" />
     <None Include="FAQ.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>

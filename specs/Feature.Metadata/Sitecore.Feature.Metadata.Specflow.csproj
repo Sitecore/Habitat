@@ -71,6 +71,11 @@
     <Compile Include="Steps\MetadataSetpsBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\appSettings.config">
+      <Link>appSettings.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>

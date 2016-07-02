@@ -87,6 +87,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\appSettings.config">
+      <Link>appSettings.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="App.config" />
     <None Include="Capability for renderings to use data sources under a page relative location.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
