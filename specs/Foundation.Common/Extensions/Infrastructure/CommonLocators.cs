@@ -1,127 +1,128 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using Sitecore.Foundation.Common.Specflow.Extensions;
-using TechTalk.SpecFlow;
-
-namespace Sitecore.Foundation.Common.Specflow.Infrastructure
+﻿namespace Sitecore.Foundation.Common.Specflow.Infrastructure
 {
+  using System.Collections.Generic;
+  using System.Linq;
+  using OpenQA.Selenium;
+  using Sitecore.Foundation.Common.Specflow.Extensions;
+  using Sitecore.Foundation.Common.Specflow.Steps;
+  using TechTalk.SpecFlow;
+
   public class CommonLocators
   {
-    public static IWebDriver Driver => FeatureContext.Current.Get<IWebDriver>();
+    private readonly FeatureContext featureContext;
+
+    public CommonLocators(FeatureContext featureContext)
+    {
+      this.featureContext = featureContext;
+    }
+
+    public IWebDriver Driver => this.featureContext.Driver();
 
     public IWebElement SiteSwitcherIcon
-      => Driver.FindElement(By.CssSelector(".fa.fa-home"));
+      => this.Driver.FindElement(By.CssSelector(".fa.fa-home"));
 
-    public static IEnumerable<IWebElement> SiteSwitcherIconDropDownChildElements
-      => Driver.WaitUntilElementsPresent(By.CssSelector(".dropdown-menu li a, .active a"));
+    public IEnumerable<IWebElement> SiteSwitcherIconDropDownChildElements
+      => this.Driver.WaitUntilElementsPresent(By.CssSelector(".dropdown-menu li a, .active a"));
 
-    public static IEnumerable<IWebElement> DropDownActiveValues
-      => Driver.FindElements(By.CssSelector(".dropdown-menu li.active"));
+    public IEnumerable<IWebElement> DropDownActiveValues
+      => this.Driver.FindElements(By.CssSelector(".dropdown-menu li.active"));
 
 
     public IEnumerable<IWebElement> SiteSwitcherelements
-      => Driver.FindElements(By.CssSelector(".dropdown-menu>li>a"));
-
+      => this.Driver.FindElements(By.CssSelector(".dropdown-menu>li>a"));
 
     public IWebElement DemoSiteLogo
-      => Driver.FindElement(By.CssSelector("#hplogo"));
+      => this.Driver.FindElement(By.CssSelector("#hplogo"));
 
-    public IEnumerable<IWebElement> OnsideBehaviorData
-      = Driver.FindElements(By.CssSelector(".list-unstyled li div"));
+    public IEnumerable<IWebElement> OnsideBehaviorData 
+      => this.Driver.FindElements(By.CssSelector(".list-unstyled li div"));
 
     public void NavigateToPage(string url)
     {
-      Driver.Navigate().GoToUrl(url);
+      this.Driver.Navigate().GoToUrl(url);
     }
 
     public void ExperianceEditor(string url)
     {
-      Driver.Navigate().GoToUrl(url);
+      this.Driver.Navigate().GoToUrl(url);
     }
 
-    public IWebElement SubmitButton => Driver.FindElement(By.CssSelector("input[type=submit]"));
+    public IWebElement SubmitButton => this.Driver.FindElement(By.CssSelector("input[type=submit]"));
 
-    public static IEnumerable<IWebElement> RegisterPageFields
-      =>
-        Driver.FindElements(By.CssSelector("#registerEmail, #registerPassword, #registerConfirmPassword"));
+    public IEnumerable<IWebElement> RegisterPageFields
+      => this.Driver.FindElements(By.CssSelector("#registerEmail, #registerPassword, #registerConfirmPassword"));
 
-    public IWebElement UserIcon => Driver.FindElement(By.CssSelector(".fa-user"));
+    public IWebElement UserIcon => this.Driver.FindElement(By.CssSelector(".fa-user"));
 
-    public static IEnumerable<IWebElement> UserIconButtons
-      =>
-        Driver.FindElements(By.CssSelector(".btn.btn-block.btn-primary, .btn.btn-block.btn-default"));
-    public static IEnumerable<IWebElement> UserIconDropDownButtonLinks
-  => Driver.FindElements(By.CssSelector(".btn.btn-block.btn-primary"));
+    public IEnumerable<IWebElement> UserIconButtons
+      => this.Driver.FindElements(By.CssSelector(".btn.btn-block.btn-primary, .btn.btn-block.btn-default"));
 
-    public static IEnumerable<IWebElement> LoginPageLinks
-      => Driver.WaitUntilElementsPresent(By.CssSelector(".btn.btn-link, .btn.btn-default.btn-lg.btn-block")).Where(el => el.Displayed).ToList();
+    public IEnumerable<IWebElement> UserIconDropDownButtonLinks
+      => this.Driver.FindElements(By.CssSelector(".btn.btn-block.btn-primary"));
 
-    public static IEnumerable<IWebElement> LoginPageButtons
-      => Driver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.btn-block")).Where(el => el.Displayed).ToList();
+    public IEnumerable<IWebElement> LoginPageLinks
+      => this.Driver.WaitUntilElementsPresent(By.CssSelector(".btn.btn-link, .btn.btn-default.btn-lg.btn-block")).Where(el => el.Displayed).ToList();
 
-    public static IEnumerable<IWebElement> OpenXdbSlidebar
-      => Driver.WaitUntilElementsPresent(By.CssSelector(".btn.btn-info.sidebar-closed"));
+    public IEnumerable<IWebElement> LoginPageButtons
+      => this.Driver.FindElements(By.CssSelector(".btn.btn-primary.btn-lg.btn-block")).Where(el => el.Displayed).ToList();
 
-    public static IEnumerable<IWebElement> XdBpanelHeader
-      => Driver.WaitUntilElementsPresent(By.CssSelector(".panel-title.collapsed"));
+    public IEnumerable<IWebElement> OpenXdbSlidebar
+      => this.Driver.WaitUntilElementsPresent(By.CssSelector(".btn.btn-info.sidebar-closed"));
 
-    public static IEnumerable<IWebElement> UserIconOnPersonalInformation
-      => Driver.FindElements(By.CssSelector(".panel-body div div .fa.fa-user"));
+    public IEnumerable<IWebElement> XdBpanelHeader
+      => this.Driver.WaitUntilElementsPresent(By.CssSelector(".panel-title.collapsed"));
 
-    public static IEnumerable<IWebElement> MediaTitleOnPersonalInformation
-      => Driver.FindElements(By.CssSelector(".panel-body div div .media-title"));
+    public IEnumerable<IWebElement> UserIconOnPersonalInformation
+      => this.Driver.FindElements(By.CssSelector(".panel-body div div .fa.fa-user"));
 
-    public static IEnumerable<IWebElement> IdentificationUknownStatusIcon
-      => Driver.FindElements(By.CssSelector(".panel-body div div .fa.fa-user-secret.icon-lg"));
+    public IEnumerable<IWebElement> MediaTitleOnPersonalInformation
+      => this.Driver.FindElements(By.CssSelector(".panel-body div div .media-title"));
 
-    public static IEnumerable<IWebElement> IdentificationKnownStatusIcon
-      => Driver.FindElements(By.CssSelector(".fa.fa-user-plus.icon-lg"));
+    public IEnumerable<IWebElement> IdentificationUknownStatusIcon
+      => this.Driver.FindElements(By.CssSelector(".panel-body div div .fa.fa-user-secret.icon-lg"));
 
-    public static IEnumerable<IWebElement> XdBpanelMediaBody
-      => Driver.FindElements(By.CssSelector(".media-body"));
+    public IEnumerable<IWebElement> IdentificationKnownStatusIcon
+      => this.Driver.FindElements(By.CssSelector(".fa.fa-user-plus.icon-lg"));
 
-    public static IEnumerable<IWebElement> ManageXdBpanelButtons
-      => Driver.FindElements(By.CssSelector(".hover-only"));
+    public IEnumerable<IWebElement> XdBpanelMediaBody
+      => this.Driver.FindElements(By.CssSelector(".media-body"));
 
-    public static IWebElement GlobeIcon => Driver.FindElement(By.CssSelector(".navbar-right .fa.fa-globe"));
+    public IEnumerable<IWebElement> ManageXdBpanelButtons
+      => this.Driver.FindElements(By.CssSelector(".hover-only"));
 
-    public static bool GlobeIconExists() => Driver.FindElements(By.CssSelector(".navbar-right .fa.fa-globe")).Any();
+    public IWebElement GlobeIcon => this.Driver.FindElement(By.CssSelector(".navbar-right .fa.fa-globe"));
 
-    public static IEnumerable<IWebElement> GlobeIconList
-          => Driver.WaitUntilElementsPresent(By.CssSelector(".navbar-right .dropdown.open .dropdown-menu a"));
-    public static IEnumerable<IWebElement> MetakeywordTag => Driver.FindElements(By.CssSelector("meta[name=keywords]"));
+    public bool GlobeIconExists() => this.Driver.FindElements(By.CssSelector(".navbar-right .fa.fa-globe")).Any();
 
-    public static IEnumerable<IWebElement> DatasourceCommand => Driver.WaitUntilElementsPresent(By.CssSelector(".scChromeToolbar.undefined a.scChromeCommand[title='Associate a content item with this component.']"));
+    public IEnumerable<IWebElement> GlobeIconList
+      => this.Driver.WaitUntilElementsPresent(By.CssSelector(".navbar-right .dropdown.open .dropdown-menu a"));
 
-    public static IEnumerable<IWebElement> SitecoreLoginFields => Driver.WaitUntilElementsPresent(By.CssSelector("#UserName, #Password"));
+    public IEnumerable<IWebElement> MetakeywordTag => this.Driver.FindElements(By.CssSelector("meta[name=keywords]"));
 
-    public static IEnumerable<IWebElement> TwitterPlaceholder => Driver.FindElements(By.CssSelector(".well.bg-dark.scEnabledChrome"));
+    public IEnumerable<IWebElement> DatasourceCommand => this.Driver.WaitUntilElementsPresent(By.CssSelector(".scChromeToolbar.undefined a.scChromeCommand[title='Associate a content item with this component.']"));
 
-    public static IEnumerable<IWebElement> TwitterTreeContent
-      => Driver.FindElements(By.CssSelector(".scContentTreeNodeTitle"));
+    public IEnumerable<IWebElement> SitecoreLoginFields => this.Driver.WaitUntilElementsPresent(By.CssSelector("#UserName, #Password"));
+
+    public IEnumerable<IWebElement> TwitterPlaceholder => this.Driver.FindElements(By.CssSelector(".well.bg-dark.scEnabledChrome"));
+
+    public IEnumerable<IWebElement> TwitterTreeContent
+      => this.Driver.FindElements(By.CssSelector(".scContentTreeNodeTitle"));
 
 
-
-    public static void WaitRibbonPreLoadingIndicatorInvisible()
+    public void WaitRibbonPreLoadingIndicatorInvisible()
     {
-      Driver.WaitUntilElementsInvisible(By.CssSelector("#ribbonPreLoadingIndicator"));
+      this.Driver.WaitUntilElementsInvisible(By.CssSelector("#ribbonPreLoadingIndicator"));
     }
 
-    public static void NavigateToExperienceEditorDialogWindow()
+    public void NavigateToExperienceEditorDialogWindow()
     {
-      Driver.SwitchTo().Frame(Driver.FindElement(By.Id("jqueryModalDialogsFrame")));
-      Driver.SwitchTo().Frame(Driver.FindElement(By.Id("scContentIframeId0")));
+      this.Driver.SwitchTo().Frame(this.Driver.FindElement(By.Id("jqueryModalDialogsFrame")));
+      this.Driver.SwitchTo().Frame(this.Driver.FindElement(By.Id("scContentIframeId0")));
     }
 
-    public static void NavigateFromExperienceEditorDialogWindow()
+    public void NavigateFromExperienceEditorDialogWindow()
     {
-      Driver.SwitchTo().DefaultContent();
+      this.Driver.SwitchTo().DefaultContent();
     }
-    
   }
 }

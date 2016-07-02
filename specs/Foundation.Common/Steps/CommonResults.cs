@@ -1,76 +1,84 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentAssertions;
-using OpenQA.Selenium;
-using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
-using Sitecore.Foundation.Common.Specflow.Infrastructure;
-using TechTalk.SpecFlow;
-
-namespace Sitecore.Foundation.Common.Specflow.Steps
+﻿namespace Sitecore.Foundation.Common.Specflow.Steps
 {
+  using System;
+  using System.Linq;
+  using FluentAssertions;
+  using OpenQA.Selenium;
+  using Sitecore.Foundation.Common.Specflow.Extensions;
+  using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
+  using Sitecore.Foundation.Common.Specflow.Infrastructure;
+  using TechTalk.SpecFlow;
+
   [Binding]
-  public class CommonResults : StepsBase
+  public class CommonResults
   {
+    private readonly FeatureContext featureContext;
+    private readonly CommonLocators commonLocators;
+
+    public CommonResults(FeatureContext featureContext)
+    {
+      this.featureContext = featureContext;
+      this.commonLocators = new CommonLocators(featureContext);
+    }
+
     [Then(@"Habitat website is opened on Main Page (.*)")]
     [Then(@"Page URL ends on (.*)")]
     public void ThenPageUrlEndsOnExpected(string urlEnding)
     {
       if (urlEnding == "BaseUrl")
       {
-        Driver.Url.EndsWith(BaseSettings.BaseUrl + "/en").Should().BeTrue();
+        this.Driver.Url.EndsWith(BaseSettings.BaseUrl + "/en").Should().BeTrue();
       }
       else
       {
-        Driver.Url.EndsWith(urlEnding).Should().BeTrue();
+        this.Driver.Url.EndsWith(urlEnding).Should().BeTrue();
       }
     }
+
+    public IWebDriver Driver => this.featureContext.Driver();
 
     [Then(@"Page URL not ends on (.*)")]
     public void ThenPageUrlNotEndsOn(string urlEnding)
     {
-      Driver.Url.EndsWith(urlEnding).Should().BeFalse();
+      this.Driver.Url.EndsWith(urlEnding).Should().BeFalse();
     }
 
     [Then(@"Demo site title equals to (.*)")]
     public void ThenDemoSiteTitleEqualsTo(string title)
     {
-      CommonLocators.DemoSiteLogo.GetAttribute("title").Equals(title);
+      this.commonLocators.DemoSiteLogo.GetAttribute("title").Equals(title);
     }
 
 
     [Then(@"URl contains (.*) site url")]
     public void ThenURlContainsDemoSite(string site)
     {
-      Driver.Url.Equals(BaseSettings.DemoSiteUrl);
+      this.Driver.Url.Equals(BaseSettings.DemoSiteUrl);
     }
 
     [Then(@"User icon presents on Personal Information header section")]
     public void ThenUserIconPresentsOnPersonalInformationHeaderSection()
     {
-      CommonLocators.UserIconOnPersonalInformation.Should().NotBeNull();
+      this.commonLocators.UserIconOnPersonalInformation.Should().NotBeNull();
     }
 
 
     [Then(@"Personal Information header contains (.*) label")]
     public void ThenPersonalInformationHeaderContainsLable(string label)
     {
-      CommonLocators.MediaTitleOnPersonalInformation.First(el => el.GetAttribute("innerText").Contains(label)).Should().NotBeNull();
+      this.commonLocators.MediaTitleOnPersonalInformation.First(el => el.GetAttribute("innerText").Contains(label)).Should().NotBeNull();
     }
 
     [Then(@"Identification secret icon presents")]
     public void ThenIdentificationSecterIconPresents()
     {
-      CommonLocators.IdentificationUknownStatusIcon.Should().NotBeNull();
+      this.commonLocators.IdentificationUknownStatusIcon.Should().NotBeNull();
     }
 
     [Then(@"Identification known icon presents")]
     public void ThenIdentificationKnownIconPresents()
     {
-      CommonLocators.IdentificationKnownStatusIcon.Should().NotBeNull();
+      this.commonLocators.IdentificationKnownStatusIcon.Should().NotBeNull();
     }
 
 
@@ -78,55 +86,51 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     public void ThenXdbPanelBodyTextContains(Table table)
     {
       var bodyText = table.Rows.Select(x => x.Values.First());
-      bodyText.All(t => CommonLocators.XdBpanelMediaBody.Any(x => x.GetAttribute("innerText").Contains(t))).Should().BeTrue();
+      bodyText.All(t => this.commonLocators.XdBpanelMediaBody.Any(x => x.GetAttribute("innerText").Contains(t))).Should().BeTrue();
     }
 
 
     [When(@"Actor clicks (.*) button on xDB panel")]
     public void WhenActorClicksButtonOnXdbPanel(string button)
     {
-      CommonLocators.ManageXdBpanelButtons.First(el => el.Text.Contains(button)).Click();
+      this.commonLocators.ManageXdBpanelButtons.First(el => el.Text.Contains(button)).Click();
     }
 
     [Then(@"Globe icon was hided")]
     [Then(@"there is no Globe icon in the Main menu on the top of the page")]
     public void ThenGlobeIconWasHided()
     {
-      CommonLocators.GlobeIconExists().Should().BeFalse();
+      this.commonLocators.GlobeIconExists().Should().BeFalse();
     }
 
     [Then(@"Following items available in the list")]
     public void ThenFollowingItemsAvailableInTheList(Table table)
     {
       var globeList = table.Rows.Select(x => x.Values.First());
-      globeList.All(z => CommonLocators.GlobeIconList.Any(x => x.Text == z)).Should().BeTrue();
+      globeList.All(z => this.commonLocators.GlobeIconList.Any(x => x.Text == z)).Should().BeTrue();
     }
 
     [Then(@"The following tag is present")]
     public void ThenTheFollowingTagIsPresent(Table table)
     {
       var contentText = table.Rows.Select(x => x.Values.First());
-      var actualTags =  CommonLocators.MetakeywordTag.Select(x=>x.GetAttribute("content"));
+      var actualTags = this.commonLocators.MetakeywordTag.Select(x => x.GetAttribute("content"));
       contentText.All(z => actualTags.Any(x => x.Contains(z)))
         .Should()
-        .BeTrue($"page should contain following tags: {string.Join("|",contentText)} but contains only {string.Join("|",actualTags)}");
-
+        .BeTrue($"page should contain following tags: {string.Join("|", contentText)} but contains only {string.Join("|", actualTags)}");
     }
 
 
     [Then(@"Following items present in datasource tree")]
     public void ThenFollowingItemsPresentInTree(Table table)
     {
-      CommonLocators.NavigateToExperienceEditorDialogWindow();
+      this.commonLocators.NavigateToExperienceEditorDialogWindow();
       var values = table.Rows.Select(x => x.Values.First());
       values.All(
-        v =>
-          CommonLocators.TwitterTreeContent.Any(x => x.Text.Equals(v, StringComparison.InvariantCultureIgnoreCase)))
+        v => this.commonLocators.TwitterTreeContent.Any(x => x.Text.Equals(v, StringComparison.InvariantCultureIgnoreCase)))
         .Should()
         .BeTrue();
-      CommonLocators.NavigateFromExperienceEditorDialogWindow();
+      this.commonLocators.NavigateFromExperienceEditorDialogWindow();
     }
-
-
   }
 }

@@ -12,17 +12,13 @@ using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
 
 namespace Sitecore.Feature.Demo.Specflow.Steps
 {
-  public class MockupOfExternalPage:DemoStepsBase
+  public class MockupOfExternalPage : DemoStepsBase
   {
-
-
-
-
     [Then(@"Following buttons are present on the Demo site page")]
     public void ThenFollowingButtonsArePresentOnTheDemoSitePage(Table table)
     {
       var buttons = table.Rows.Select(x => x.Values.First());
-      var elements = DemoLocators.DemoSiteButton.Select(el =>el.GetAttribute("value"));
+      var elements = DemoLocators.DemoSiteButton.Select(el => el.GetAttribute("value"));
       elements.Should().Contain(buttons);
     }
 
@@ -39,12 +35,12 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
     }
 
     //TODO: Re-work 
-/*    [When(@"Actor clicks (.*) button")]
-    public void WhenActorClicksGoogleSearchButton(string button)
-    {
-      var element = DemoLocators.DemoSiteButton.Single(el =>el.GetAttribute("value") == button);
-      element.Click();
-    }*/
+    /*    [When(@"Actor clicks (.*) button")]
+        public void WhenActorClicksGoogleSearchButton(string button)
+        {
+          var element = DemoLocators.DemoSiteButton.Single(el =>el.GetAttribute("value") == button);
+          element.Click();
+        }*/
 
     [When(@"Actor clicks (.*)‎ link")]
     public void WhenActorClicksSitecoreHabitat_FlexibilitySimplicityExtensibilityLink(string link)
@@ -59,13 +55,13 @@ namespace Sitecore.Feature.Demo.Specflow.Steps
     {
       var links = table.Rows.Select(x => x.Values.First());
       var elements = DemoLocators.HabitatOnGoogleResults.Select(el => el.Text);
-      elements.Should().Contain(el=>links.Any(l=>l.Equals(el, StringComparison.InvariantCulture)));
+      elements.Should().Contain(el => links.Any(l => l.Equals(el, StringComparison.InvariantCulture)));
     }
 
     [Then(@"Page url contains Campaign ID")]
     public void ThenPageUrlContainsCampaignId()
     {
-      Driver.Url.Equals(BaseSettings.DemoSiteCampaignUrl);
+      CommonLocators.Driver.Url.Equals(BaseSettings.DemoSiteCampaignUrl);
     }
 
 

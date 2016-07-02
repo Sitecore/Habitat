@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
-using TechTalk.SpecFlow;
-
-namespace Sitecore.Feature.Metadata.Specflow.Steps
+﻿namespace Sitecore.Feature.Metadata.Specflow.Steps
 {
-  class MetadataNavigationSteps:MetadataSetpsBase
+  using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
+  using Sitecore.Foundation.Common.Specflow.Infrastructure;
+  using TechTalk.SpecFlow;
+
+  [Binding]
+  internal class MetadataNavigationSteps : Steps
   {
     [Then(@"Habitat website is opened on Getting Started page")]
     public void ThenHabitatWebsiteIsOpenedOnGettingStartedPage()
     {
-      CommonLocators.NavigateToPage(BaseSettings.GettingStartedPageUrl);
+      this.CommonLocators.NavigateToPage(BaseSettings.GettingStartedPageUrl);
     }
 
+    public CommonLocators CommonLocators => new CommonLocators(this.FeatureContext);
   }
 }

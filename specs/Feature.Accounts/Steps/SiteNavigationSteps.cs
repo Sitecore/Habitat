@@ -6,7 +6,7 @@ using TechTalk.SpecFlow;
 
 namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
-  
+
 
   public class SiteNavigationSteps : AccountStepsBase
   {
@@ -25,20 +25,20 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       SiteBase.NavigateToPage(BaseSettings.ForgotPasswordPageUrl);
     }
 
-        [Then(@"Habitat website is opened on Getting Started page")]
-        public void ThenHabitatWebsiteIsOpenedOnGettingStartedPage()
-        {
-            CommonLocators.NavigateToPage(BaseSettings.GettingStartedPageUrl);
-        }
+    [Then(@"Habitat website is opened on Getting Started page")]
+    public void ThenHabitatWebsiteIsOpenedOnGettingStartedPage()
+    {
+      SiteBase.NavigateToPage(BaseSettings.GettingStartedPageUrl);
+    }
 
-        [When(@"Actor moves on siteswitcher combo-box")]
+    [When(@"Actor moves on siteswitcher combo-box")]
     public void WhenActorMovesOnSiteswitcherCombo_Box()
     {
       SiteBase.SiteSwitcherIcon.MoveToElement();
 
 #warning hack for selenium hover behavoiur
       var dropdown = SiteBase.SiteSwitcherIcon.FindElement(By.XPath("../../ul"));
-      var js = Driver as IJavaScriptExecutor;
+      var js = SiteBase.Driver as IJavaScriptExecutor;
       js?.ExecuteScript("arguments[0].style.display='block'", dropdown);
     }
 

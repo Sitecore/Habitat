@@ -13,17 +13,17 @@
   [Binding]
   internal class CommonSteps : AccountStepsBase
   {
-    private readonly ScenarioContext scenarioContext;
+    private readonly CleanupPool cleanupPool;
 
-    public CommonSteps(ScenarioContext scenarioContext)
+    public CommonSteps(CleanupPool cleanupPool)
     {
-      this.scenarioContext = scenarioContext;
+      this.cleanupPool = cleanupPool;
     }
 
     [When(@"User selects (.*) from drop-down menu")]
     public void WhenUserSelectsRegisterFromDropDownMenu(string linkText)
     {
-      Driver.FindElement(By.LinkText(linkText.ToUpperInvariant())).Click();
+      SiteBase.Driver.FindElement(By.LinkText(linkText.ToUpperInvariant())).Click();
     }
 
     [Then(@"User info is shown on User popup")]
@@ -56,7 +56,7 @@
     public void ThenRegisterFieldsPresentOnPage(Table table)
     {
       var fields = table.Rows.Select(x => x.Values.First());
-      var elements = CommonLocators.RegisterPageFields.Select(el => el.GetAttribute("name"));
+      var elements = SiteBase.RegisterPageFields.Select(el => el.GetAttribute("name"));
       elements.Should().Contain(fields);
     }
 
@@ -64,14 +64,14 @@
     public void ThenFollowingButtonsPresentUnderUserDropDropDownMenu(Table table)
     {
       var buttons = table.Rows.Select(x => x.Values.First());
-      buttons.All(b => CommonLocators.UserIconButtons.Any(x => x.Text == b)).Should().BeTrue();
+      buttons.All(b => SiteBase.UserIconButtons.Any(x => x.Text == b)).Should().BeTrue();
     }
 
     [Then(@"Following buttons is no longer present under User icon")]
     public void ThenFollowingButtonsIsNoLongerPresentUnderUserDropDropDownMenu(Table table)
     {
       var buttons = table.Rows.Select(x => x.Values.First());
-      buttons.All(b => CommonLocators.UserIconButtons.Any(x => x.Text == b)).Should().BeFalse();
+      buttons.All(b => SiteBase.UserIconButtons.Any(x => x.Text == b)).Should().BeFalse();
     }
 
     [Then(@"User info is not shown on User popup")]
@@ -88,10 +88,10 @@
       var row = table.Rows.First();
       foreach (var key in row.Keys)
       {
-        CommonLocators.RegisterPageFields.GetField(key).SendKeys(row[key]);
+        SiteBase.RegisterPageFields.GetField(key).SendKeys(row[key]);
       }
       //Following code will remove create user from DB after use case ends
-      this.scenarioContext.GetOrAdd<CleanupPool>().Add(new TestCleanupAction
+      cleanupPool.Add(new TestCleanupAction
       {
         ActionType = ActionType.RemoveUser,
         Payload = "extranet\\" + row["Email"]
@@ -104,14 +104,14 @@
       var row = table.Rows.First();
       foreach (var key in row.Keys)
       {
-        CommonLocators.RegisterPageFields.GetField(key).SendKeys(row[key]);
+        SiteBase.RegisterPageFields.GetField(key).SendKeys(row[key]);
       }
     }
 
     [Given(@"User with following data is registered")]
     public void GivenUserWithFollowingDataIsRegistered(Table table)
     {
-      Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
+      SiteBase.Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
       this.WhenActorEntersFollowingDataInToTheRegisterFields(table);
       this.SiteBase.SubmitButton.Click();
       //TODO: change with click user item
@@ -122,7 +122,7 @@
     [Given(@"User with following data is registered in Habitat")]
     public void GivenUserWithFollowingDataIsRegisteredInHabitat(Table table)
     {
-      Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
+      SiteBase.Driver.Navigate().GoToUrl(BaseSettings.RegisterPageUrl);
       this.WhenActorEntersFollowingDataInToTheRegisterFields(table);
       this.SiteBase.SubmitButton.Click();
 
@@ -130,7 +130,7 @@
         .Select(row => row["Email"]).ToList()
         .ForEach(email =>
         {
-          this.scenarioContext.GetOrAdd<CleanupPool>().Add(new TestCleanupAction
+          this.cleanupPool.Add(new TestCleanupAction
           {
             ActionType = ActionType.RemoveUser,
             Payload = email
@@ -141,9 +141,9 @@
     [Given(@"Session was expired")]
     public void GivenSessionWasExpired()
     {
-      Driver.FindElement(By.CssSelector("body")).SendKeys(Keys.Control + 't');
-      Driver.Navigate().GoToUrl(BaseSettings.EndSessionUrl);
-      Driver.FindElement(By.CssSelector("body")).SendKeys(Keys.Control + 'w');
+      SiteBase.Driver.FindElement(By.CssSelector("body")).SendKeys(Keys.Control + 't');
+      SiteBase.Driver.Navigate().GoToUrl(BaseSettings.EndSessionUrl);
+      SiteBase.Driver.FindElement(By.CssSelector("body")).SendKeys(Keys.Control + 'w');
     }
 
 
@@ -169,13 +169,13 @@
     public void ThenFollowingLinksPresentUnderUserDropDropDownMenu(Table table)
     {
       var buttonsLinks = table.Rows.Select(x => x.Values.First());
-      buttonsLinks.All(l => CommonLocators.UserIconDropDownButtonLinks.Any(x => x.Text == l)).Should().BeTrue();
+      buttonsLinks.All(l => SiteBase.UserIconDropDownButtonLinks.Any(x => x.Text == l)).Should().BeTrue();
     }
 
     [Then(@"Habitat Main page presents")]
     public void ThenHabitatMainPagePresents()
     {
-      var absoluteUri = new Uri(Driver.Url).AbsolutePath;
+      var absoluteUri = new Uri(SiteBase.Driver.Url).AbsolutePath;
       (absoluteUri.Equals("/") || absoluteUri.Equals("/en")).Should().BeTrue();
     }
 
@@ -183,7 +183,7 @@
     public void ThenFollowingLinksIsNoLongerPresentUnderUserPopup(Table table)
     {
       var buttonsLinks = table.Rows.Select(x => x.Values.First());
-      buttonsLinks.All(l => CommonLocators.UserIconDropDownButtonLinks.Any(x => x.Text == l)).Should().BeFalse();
+      buttonsLinks.All(l => SiteBase.UserIconDropDownButtonLinks.Any(x => x.Text == l)).Should().BeFalse();
     }
   }
 }

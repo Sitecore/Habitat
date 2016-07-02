@@ -24,13 +24,6 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
 #warning shitcode
       Thread.Sleep(3000);
     }
-
-    [BeforeFeature("UI")]
-    public static void Setup()
-    {
-      FeatureContext.Current.Set((IWebDriver)new FirefoxDriver()); ;
-    }
-
    
     public void CreateItem(string parentIdOrPath, string fieldName, string fieldValue)
     {

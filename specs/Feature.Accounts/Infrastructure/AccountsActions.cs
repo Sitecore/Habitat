@@ -18,7 +18,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Infrastructure
 
     public static void OpenUserDialog()
     {
-      new CommonLocators().UserIcon.Click(); 
+      
     }
   }
 }

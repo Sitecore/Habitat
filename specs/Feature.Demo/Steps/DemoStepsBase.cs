@@ -13,15 +13,9 @@ using TechTalk.SpecFlow;
 namespace Sitecore.Feature.Demo.Specflow.Steps
 {
   [Binding]
-  public class DemoStepsBase:StepsBase
+  public class DemoStepsBase:TechTalk.SpecFlow.Steps
   {
-
-    public DemoLocators DemoLocators = new DemoLocators();
-
-    public CommonLocators BaseLocators => new CommonLocators();
-
-    public BaseSettings BaseSettings => new BaseSettings();
-
-    public CommonResults CommonResults => new CommonResults();   
+    public DemoLocators DemoLocators => new DemoLocators();
+    public CommonLocators CommonLocators => new CommonLocators(FeatureContext);
   }
 }

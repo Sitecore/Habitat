@@ -10,55 +10,42 @@ using TechTalk.SpecFlow;
 
 namespace Sitecore.Foundation.Common.Specflow.Steps
 {
-  public static class SpecflowExtensions
-{
-    public static T GetOrAdd<T>(this ScenarioContext scenarioContext) where T : new()
-    {
-      if (!scenarioContext.ContainsKey(typeof(T).FullName))
-      {
-        scenarioContext.Set(new T());
-      }
-
-      return scenarioContext.Get<T>();
-    }
-  
-}
-
   [Binding]
-  class TestDataSetup: StepsBase
+  class TestDataSetup:TechTalk.SpecFlow.Steps
   {
-    private readonly ScenarioContext scenarioContext;
+    private readonly CleanupPool cleanupPool;
 
-    public TestDataSetup(ScenarioContext scenarioContext)
+    public TestDataSetup(CleanupPool cleanupPool)
     {
-      this.scenarioContext = scenarioContext;
+      this.cleanupPool = cleanupPool;
     }
+    private  CommonLocators commonLocators => new CommonLocators(FeatureContext);
 
     [Given(@"User is registered in Habitat and logged out")]
     public void GivenUserIsRegisteredInHabitatAndLoggedOut(Table table)
     {
       //Go to Register page
-      CommonLocators.NavigateToPage(BaseSettings.RegisterPageUrl);
+      this.commonLocators.NavigateToPage(BaseSettings.RegisterPageUrl);
       //Enter data to the fields
       var row = table.Rows.First();
       foreach (var key in row.Keys)
       {
-        CommonLocators.RegisterPageFields.GetField(key).SendKeys(row[key]);
+        this.commonLocators.RegisterPageFields.GetField(key).SendKeys(row[key]);
       }
       //Following code will remove create user from DB after use case ends
 
-      scenarioContext.GetOrAdd<CleanupPool>().Add(new TestCleanupAction
+      cleanupPool.Add(new TestCleanupAction
       {
         ActionType = ActionType.RemoveUser,
         Payload = "extranet\\" + row["Email"]
       });
       //Click Register button
-      CommonLocators.SubmitButton.Click(); 
+      this.commonLocators.SubmitButton.Click();
       //Actor selects user dialog
-      CommonActions.OpenUserDialog();
+      this.commonLocators.UserIcon.Click();
       //Actor clicks Logout button
       var btn = "Logout";
-      var elements = CommonLocators.UserIconButtons.First(el => el.Text.Equals(btn, StringComparison.InvariantCultureIgnoreCase));
+      var elements = this.commonLocators.UserIconButtons.First(el => el.Text.Equals(btn, StringComparison.InvariantCultureIgnoreCase));
       elements.Click();
     }
 

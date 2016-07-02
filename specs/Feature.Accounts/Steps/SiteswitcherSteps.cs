@@ -18,19 +18,19 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
     public void ThenSystemShowsFollowingAvalilableSites(Table table)
     {
       var values = table.Rows.Select(x => x.Values.First());
-      values.All(v => CommonLocators.SiteSwitcherIconDropDownChildElements.Any(x => x.Text == v)).Should().BeTrue();
+      values.All(v => SiteBase.SiteSwitcherIconDropDownChildElements.Any(x => x.Text == v)).Should().BeTrue();
     }
 
     [Then(@"(.*) value is selected by default")]
     public void ThenValueIsSelectedByDefault(string value)
     {
-      CommonLocators.DropDownActiveValues.Any(v =>v.Text.Equals(value, StringComparison.InvariantCultureIgnoreCase)).Should().BeTrue();
+      SiteBase.DropDownActiveValues.Any(v =>v.Text.Equals(value, StringComparison.InvariantCultureIgnoreCase)).Should().BeTrue();
     }
 
     [When(@"Actor selects (.*) from siteswitcher combo-box")]
     public void WhenActorSelectsFromSiteswitcherComboBox(string link)
     {
-      var element = CommonLocators.SiteSwitcherIconDropDownChildElements.First(el => el.Text.Equals(link, StringComparison.InvariantCultureIgnoreCase));
+      var element = SiteBase.SiteSwitcherIconDropDownChildElements.First(el => el.Text.Equals(link, StringComparison.InvariantCultureIgnoreCase));
       element.Click();
     }
 

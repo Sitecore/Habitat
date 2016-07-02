@@ -10,7 +10,8 @@ using TechTalk.SpecFlow;
 
 namespace Sitecore.Foundation.SitecoreExtensions.Specflow.Steps
 {
-  class ContentEditorSteps : SitecoreExtensionsStepsBase
+  [Binding]
+  class ContentEditorSteps : TechTalk.SpecFlow.Steps
   {
     [Then(@"Following items are present under (.*) item in (.*) db")]
     public void ThenFollowingCustomHtmlProfilesArePresentUnderItemInCoreDb(string parentPath, string db, Table table)

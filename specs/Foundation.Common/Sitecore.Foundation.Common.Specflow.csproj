@@ -94,7 +94,7 @@
     <Compile Include="Steps\EditFieldPayload.cs" />
     <Compile Include="Extensions\Infrastructure\ItemFieldDefinition.cs" />
     <Compile Include="Steps\NavigationStepsBase.cs" />
-    <Compile Include="Steps\StepsBase.cs" />
+    <Compile Include="Extensions\SpecflowExtensions.cs" />
     <Compile Include="Steps\TestDataSetup.cs" />
     <Compile Include="Steps\Transforms.cs" />
     <Compile Include="Steps\xDBPanelResults.cs" />

@@ -4,6 +4,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
   using System.Collections.Generic;
   using System.Linq;
   using FluentAssertions;
+  using Sitecore.Foundation.Common.Specflow.Extensions;
   using Sitecore.Foundation.Common.Specflow.Infrastructure;
   using Sitecore.Foundation.Common.Specflow.Steps;
   using Sitecore.Foundation.Common.Specflow.UtfService;
@@ -14,10 +15,12 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
   internal class RolesSteps
   {
     private readonly ScenarioContext scenarioContext;
+    private readonly CleanupPool cleanupPool;
 
-    public RolesSteps(ScenarioContext scenarioContext)
+    public RolesSteps(ScenarioContext scenarioContext, CleanupPool cleanupPool)
     {
       this.scenarioContext = scenarioContext;
+      this.cleanupPool = cleanupPool;
     }
 
     public AccountSettings Settings => new AccountSettings();
@@ -41,7 +44,6 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       this.scenarioContext.Set(itemId, "item");
 
 
-      var cleanupPool = this.scenarioContext.GetOrAdd<CleanupPool>();
       cleanupPool.Add(new TestCleanupAction
       {
         ActionType = ActionType.DeleteItem,
@@ -90,7 +92,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
       roles.AddRange(table.Rows.Select(x => x.Values.First()));
 
       ContextExtensions.UtfService.CreateUser(username, password, roles, "fake@domain.com");
-      this.scenarioContext.GetOrAdd<CleanupPool>().Add(new TestCleanupAction
+      cleanupPool.Add(new TestCleanupAction
       {
         ActionType = ActionType.RemoveUser,
         Payload = username

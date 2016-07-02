@@ -13,19 +13,12 @@ using TechTalk.SpecFlow;
 namespace Sitecore.Foundation.Forms.Specflow.Steps
 {
   [Binding]
-  public class FormStepsBase : StepsBase
+  public class FormStepsBase : TechTalk.SpecFlow.Steps
   {
-    public NavigationStepsBase NavigationStepsBase => new NavigationStepsBase();
 
-    public CommonLocators BaseLocators => new CommonLocators();
+    public FormLocators FormLocators => new FormLocators();
 
-    public BaseSettings BaseSettings => new BaseSettings();
-
-    public CommonResults CommonResults => new CommonResults();
-
-    public FormLocators FormLocators = new FormLocators();
-
-    public XDbPanelResults XDbPanelResults = new XDbPanelResults();
+    public XDbPanelResults XDbPanelResults => new XDbPanelResults(FeatureContext);
 
 
   }

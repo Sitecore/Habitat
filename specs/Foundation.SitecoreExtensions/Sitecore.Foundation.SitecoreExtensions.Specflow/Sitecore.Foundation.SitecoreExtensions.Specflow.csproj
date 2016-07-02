@@ -87,7 +87,6 @@
       <DependentUpon>Rich text editor configuration.feature</DependentUpon>
     </Compile>
     <Compile Include="Steps\ContentEditorSteps.cs" />
-    <Compile Include="Steps\SitecoreExtensionsStepsBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\..\..\appSettings.config">

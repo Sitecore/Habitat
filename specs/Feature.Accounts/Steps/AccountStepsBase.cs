@@ -11,19 +11,13 @@ using TechTalk.SpecFlow;
 namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
   [Binding, Scope(Tag = "UI")]
-  public class AccountStepsBase : StepsBase
+  public class AccountStepsBase : TechTalk.SpecFlow.Steps
   {
     public AccountLocators Site => new AccountLocators();
 
-    public CommonLocators SiteBase = new CommonLocators();
+    public CommonLocators SiteBase => new CommonLocators(this.FeatureContext);
 
     public AccountSettings Settings => new AccountSettings();
-
-    public CommonActions CommonActions => new CommonActions();
-
-    public CommonResults CommonResults => new CommonResults();
-
-    public NavigationStepsBase NavigationStepsBase => new NavigationStepsBase();
 
 
     public MockupOfExternalPageFeature MockupOfExternalPageFeature = new MockupOfExternalPageFeature();

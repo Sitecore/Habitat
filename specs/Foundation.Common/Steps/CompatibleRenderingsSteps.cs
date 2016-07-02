@@ -11,7 +11,7 @@ using TechTalk.SpecFlow;
 namespace Sitecore.Foundation.Common.Specflow.Steps
 {
   [Binding]
-  public class CompatibleRenderingsSteps : StepsBase
+  public class CompatibleRenderingsSteps 
   {
     [Then(@"(.*) module contains incompatible renderings")]
     public void ThenModuleContainsIncompatibleRenderings(string module, Table table)
