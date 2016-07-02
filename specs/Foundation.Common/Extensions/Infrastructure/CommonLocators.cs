@@ -88,9 +88,9 @@ namespace Sitecore.Foundation.Common.Specflow.Infrastructure
     public static IEnumerable<IWebElement> ManageXdBpanelButtons
       => Driver.FindElements(By.CssSelector(".hover-only"));
 
-    public static IWebElement GlobeIcon => Driver.FindElement(By.CssSelector(".navbar-right"));
+    public static IWebElement GlobeIcon => Driver.FindElement(By.CssSelector(".navbar-right .fa.fa-globe"));
 
-    public static bool GlobeIconExists() => Driver.FindElements(By.CssSelector(".navbar-right")).Any();
+    public static bool GlobeIconExists() => Driver.FindElements(By.CssSelector(".navbar-right .fa.fa-globe")).Any();
 
     public static IEnumerable<IWebElement> GlobeIconList
           => Driver.WaitUntilElementsPresent(By.CssSelector(".navbar-right .dropdown.open .dropdown-menu a"));

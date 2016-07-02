@@ -29,7 +29,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     [When(@"User clicks Globe icon")]
     public void WhenUserClicksGlobeIcon()
     {
-      CommonLocators.GlobeIcon.FindElement(By.CssSelector(".fa.fa-globe")).Click();
+      CommonLocators.GlobeIcon.Click();
     }
 
 

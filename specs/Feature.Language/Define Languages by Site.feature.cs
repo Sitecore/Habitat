@@ -91,7 +91,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FieldValue"});
             table1.AddRow(new string[] {
                         "/sitecore/content/Habitat",
-                        "Supported Languages",
+                        "SupportedLanguages",
                         "en"});
 #line 11
     testRunner.Given("The following languages have been selected", ((string)(null)), table1, "Given ");
@@ -120,7 +120,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FieldValue"});
             table2.AddRow(new string[] {
                         "/sitecore/content/Habitat",
-                        "Supported Languages",
+                        "SupportedLanguages",
                         ""});
 #line 24
  testRunner.Given("Value set to item field", ((string)(null)), table2, "Given ");
@@ -183,7 +183,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FieldValue"});
             table4.AddRow(new string[] {
                         "/sitecore/content/Habitat",
-                        "Supported Languages",
+                        "SupportedLanguages",
                         "en;da;ar-BH;ja-JP;uk-UA"});
 #line 43
  testRunner.When("The following languages have been selected", ((string)(null)), table4, "When ");
@@ -227,7 +227,7 @@ this.ScenarioSetup(scenarioInfo);
                         "FieldValue"});
             table6.AddRow(new string[] {
                         "/sitecore/content/Habitat",
-                        "Supported Languages",
+                        "SupportedLanguages",
                         "en;da"});
 #line 64
  testRunner.Given("The following languages have been selected", ((string)(null)), table6, "Given ");

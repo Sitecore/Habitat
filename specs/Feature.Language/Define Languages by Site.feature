@@ -9,8 +9,8 @@ Feature: Define Languages by Site
 Scenario: Define Languages by Site_UC1_Set one language on the site
     #Step for manual testing only: Admin user is logged into Content Editor application
     Given The following languages have been selected
-	| ItemPath                  | FieldName           | FieldValue |
-	| /sitecore/content/Habitat | Supported Languages | en         |
+	| ItemPath                  | FieldName          | FieldValue |
+	| /sitecore/content/Habitat | SupportedLanguages | en         |
 	When Habitat website is opened on Main Page
 	Then there is no Globe icon in the Main menu on the top of the page
 
@@ -22,8 +22,8 @@ Scenario: Define Languages by Site_UC2_No specific languages are defined on the 
 	#| ItemPath                  | FieldName            | 
 	#| /sitecore/content/Habitat | Supported Languages  |
 	Given Value set to item field
-	| ItemPath                  | FieldName           | FieldValue |
-	| /sitecore/content/Habitat | Supported Languages |            |
+	| ItemPath                  | FieldName          | FieldValue |
+	| /sitecore/content/Habitat | SupportedLanguages |            |
 	#Step for manual testing only: And Admin clicks Deselect all link
 	#Step for manual testing only: And Admin saves changes on item
 	When Habitat website is opened on Main Page
@@ -41,8 +41,8 @@ Scenario: Define Languages by Site_UC3_Check that language with country code app
 	#| ItemPath                  | Field                | 
 	#| /sitecore/content/Habitat | Supported Languages  |
 	When The following languages have been selected
-	| ItemPath                  | FieldName           | FieldValue              |
-	| /sitecore/content/Habitat | Supported Languages | en;da;ar-BH;ja-JP;uk-UA |
+	| ItemPath                  | FieldName          | FieldValue              |
+	| /sitecore/content/Habitat | SupportedLanguages | en;da;ar-BH;ja-JP;uk-UA |
 	#Step for manual testing only:And Admin clicks following items in the <All> list
 	#| Language |
 	#| de-AT    |
@@ -62,8 +62,8 @@ Scenario: Define Languages by Site_UC3_Check that language with country code app
 @Ready
 Scenario: Define Languages by Site_UC4_Switch between languages on the site
 	Given The following languages have been selected
-	| ItemPath                  | FieldName           | FieldValue |
-	| /sitecore/content/Habitat | Supported Languages | en;da      |
+	| ItemPath                  | FieldName          | FieldValue |
+	| /sitecore/content/Habitat | SupportedLanguages | en;da      |
 	And Habitat website is opened on Main Page
 	When User clicks Globe icon
 	And User selects DANSK from the list 

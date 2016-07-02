@@ -88,13 +88,8 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
       CommonLocators.ManageXdBpanelButtons.First(el => el.Text.Contains(button)).Click();
     }
 
-    [Then(@"there is no Globe icon in the Main menu on the top of the page")]
-    public void ThenThereIsNoGlobeIconInTheMainMenuOnTheTopOfThePage()
-    {
-      CommonLocators.GlobeIcon.FindElements(By.CssSelector(".fa.fa-globe")).Should().BeEmpty();
-    }
-
     [Then(@"Globe icon was hided")]
+    [Then(@"there is no Globe icon in the Main menu on the top of the page")]
     public void ThenGlobeIconWasHided()
     {
       CommonLocators.GlobeIconExists().Should().BeFalse();
