@@ -4,7 +4,9 @@ Feature: Person_Employee List
 
 @Ready
 Scenario: Person_Employee List_UC1_Default search query	
-	Given Habitat website is opened on Main Page
+  And Control properties were defined for item
+	| Item path                                                            | Control ID                             | Type       | Value |
+	| /sitecore/content/Habitat/Home/Modules/Feature/Person/Employees List | {DC19892A-B345-4EFE-AAA2-6E27A801A733} | DataSource |       |
 	When Actor navigates to Employees-List page	
 	Then Only following persons are shown 
 	| Person      |

@@ -16,9 +16,11 @@ namespace Sitecore.Feature.Specflow.Steps
     public void ThenFollowingPersonsAreShown(Table table)
     {
       var persons = PersonLocators.EmployeesPerson.Select(x => x.FindElement(By.TagName("h4")));
-      var names = table.Rows.Select(x => x.Values.First());
-      names.All(n => persons.Any(x => x.GetAttribute("innerText").Equals(n,StringComparison.InvariantCultureIgnoreCase))).Should().BeTrue();
-      names.Count().Should().Be(persons.Count());
+      var expectedNames = table.Rows.SelectMany(x => x.Values);
+      var actualNames = persons.Select(x => x.GetAttribute("innerText"));
+      var expectedResultMessage = $"because persons {string.Join("|", expectedNames)} expected and {string.Join("|", actualNames)} present on page";
+      expectedNames.All(n => actualNames.Any(x => x.Equals(n,StringComparison.InvariantCultureIgnoreCase))).Should().BeTrue(expectedResultMessage);
+      expectedNames.Count().Should().Be(persons.Count(), expectedResultMessage);
     }
 
   }
