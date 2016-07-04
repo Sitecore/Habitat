@@ -12,7 +12,7 @@
     "gulp-exec": "^2.1.2",
     "gulp-foreach": "^0.1.0",
     "gulp-load-plugins": "^1.0.0",
-    "gulp-msbuild": "^0.3.2",
+    "gulp-msbuild": "0.2.13",
     "gulp-newer": "^1.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-rimraf": "^0.2.0",
