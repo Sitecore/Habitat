@@ -1,6 +1,6 @@
 ﻿<Project>
   <PropertyGroup>
-    <Site Server="habitat.dev.localocal" UserName="sitecore\admin" IsRemoteSitecore="False" />
+    <Site Server="habitat.dev.local" UserName="sitecore\admin" IsRemoteSitecore="False" />
   </PropertyGroup>
   <File Include="Views\Person\EmployeeHeader.cshtml" FileTimestamp="0" FileSize="0" ServerTimestamp="0" ServerFileSize="0">
     <Item DatabaseName="master">{B6F11192-7C7B-4DE2-9F85-140692B2470B}</Item>
