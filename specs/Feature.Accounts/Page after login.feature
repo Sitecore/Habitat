@@ -46,8 +46,8 @@ Scenario: Accounts_Page after login_UC3_Define custom page_empty value
 	| /Sitecore/Content/Habitat | After Login Page |            | 
 	And Habitat website is opened on Login page
 	When Actor enteres following data into Login page fields
-	| E-mail              |Password |
-	| kov@sitecore.net    |k        |
+	| Email            | Password |
+	| kov@sitecore.net | k        |
 	And Actor clicks Login button
 	Then Habitat Main page presents
 
@@ -83,10 +83,7 @@ Scenario: Accounts_Page after login_UC5_Login pop up returns user to default pag
 
 @Ready
 Scenario: Accounts_Page after login_UC6_Double redirect logic for Register page
-	Given User is registered in Habitat and logged out
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And Value set to item field
+	Given Value set to item field
 	| ItemPath                  | FieldName        | FieldValue                              |
 	| /Sitecore/Content/Habitat | After Login Page | /sitecore/content/Habitat/Home/Register |
 	And Habitat website is opened on Register page
@@ -99,10 +96,7 @@ Scenario: Accounts_Page after login_UC6_Double redirect logic for Register page
 
 @Ready
 Scenario: Accounts_Page after login_UC7_Double redirect logic for Accounts page
-	Given User is registered in Habitat and logged out
-	| Email            | Password | ConfirmPassword |
-	| kov@sitecore.net | k        | k               |
-	And Value set to item field
+	Given Value set to item field
 	| ItemPath                  | FieldName        | FieldValue                                              |
 	| /Sitecore/Content/Habitat | After Login Page | /sitecore/content/Habitat/Home/Modules/Feature/Accounts |
 	And Habitat website is opened on Register page
