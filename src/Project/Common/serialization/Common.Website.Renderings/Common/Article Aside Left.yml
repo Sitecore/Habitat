@@ -5,6 +5,10 @@ Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
 Path: /sitecore/layout/Renderings/Project/Common/Article Aside Left
 DB: master
 SharedFields:
+- ID: "308e88f5-cd6e-4f8f-bafe-95a47dedefdc"
+  Hint: Editable
+  Type: Checkbox
+  Value: 0
 - ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
   Hint: Path
   Value: /Views/Common/Sublayouts/ArticleAsideLeft.cshtml
@@ -23,6 +27,10 @@ SharedFields:
   Value: |
     {CF750731-1275-4CC7-A9E6-809515CB4DD1}
     {A85A0B65-D3B7-48B8-B362-F17AA3CA7DF1}
+- ID: "f172b787-7b88-4bd5-ae4d-6308e102ef11"
+  Hint: Enable Datasource Query
+  Type: Checkbox
+  Value: 0
 Languages:
 - Language: en
   Versions:
