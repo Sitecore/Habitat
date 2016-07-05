@@ -42,7 +42,12 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
           .Should().NotBeEmpty($"Expected item {idOrPath} exists");
     }
 
-   
+    [When(@"Actor waits (.*) seconds")]
+    public void WhenActorWaitsSeconds(int seconds)
+    {
+      Thread.Sleep(seconds);
+    }
+
 
 
     [Given(@"Value set to item field")]
