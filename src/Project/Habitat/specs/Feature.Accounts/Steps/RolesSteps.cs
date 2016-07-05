@@ -1,3 +1,5 @@
+using Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure;
+
 namespace Sitecore.Feature.Accounts.Specflow.Steps
 {
   using System;
@@ -114,7 +116,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
 
       foreach (var field in fields)
       {
-        ContextExtensions.HelperService.GetFieldSecurityRight("master", item, field, username, access).Should().Be(allow, "'{0}' should have {1} allow '{2}' right", field, permission, access);
+        ContextExtensions.HelperService.GetFieldSecurityRight(BaseSettings.ContextDatabase.ToString().ToLower(), item, field, username, access).Should().Be(allow, "'{0}' should have {1} allow '{2}' right", field, permission, access);
       }
     }
 
@@ -130,7 +132,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
 
       foreach (var field in table.Rows.Select(x => x.Values.First()))
       {
-        ContextExtensions.HelperService.GetFieldSecurityRight("master", item, field, username, access).Should().Be(allow);
+        ContextExtensions.HelperService.GetFieldSecurityRight(BaseSettings.ContextDatabase.ToString().ToLower(), item, field, username, access).Should().Be(allow);
       }
     }
   }
