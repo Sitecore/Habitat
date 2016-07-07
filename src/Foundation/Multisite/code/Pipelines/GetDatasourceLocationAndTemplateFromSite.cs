@@ -24,7 +24,7 @@
     {
       Assert.ArgumentNotNull(args, nameof(args));
 
-      var datasource = args.RenderingItem[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
+      var datasource = args.RenderingItem[Templates.RenderingOptions.Fields.DatasourceLocation];
       if (!DatasourceConfigurationService.IsSiteDatasourceLocation(datasource))
       {
         return;
@@ -37,7 +37,7 @@
     protected virtual void ResolveDatasource(GetRenderingDatasourceArgs args)
     {
       var contextItem = args.ContentDatabase.GetItem(args.ContextItemPath);
-      var source = args.RenderingItem[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
+      var source = args.RenderingItem[Templates.RenderingOptions.Fields.DatasourceLocation];
       var name = DatasourceConfigurationService.GetSiteDatasourceConfigurationName(source);
       if (string.IsNullOrEmpty(name))
       {
@@ -51,7 +51,7 @@
     protected virtual void ResolveDatasourceTemplate(GetRenderingDatasourceArgs args)
     {
       var contextItem = args.ContentDatabase.GetItem(args.ContextItemPath);
-      var datasourceLocation = args.RenderingItem[Templates.DatasourceConfiguration.Fields.DatasourceLocation];
+      var datasourceLocation = args.RenderingItem[Templates.RenderingOptions.Fields.DatasourceLocation];
       var name = DatasourceConfigurationService.GetSiteDatasourceConfigurationName(datasourceLocation);
       if (string.IsNullOrEmpty(name))
       {
