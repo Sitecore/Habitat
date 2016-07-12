@@ -89,11 +89,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\DemoSettings.cs" />
-    <Compile Include="Show Tracking Information.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Show Tracking Information.feature</DependentUpon>
-    </Compile>
     <Compile Include="Steps\DemoNavigationSteps.cs" />
     <Compile Include="Steps\DemoStepsBase.cs" />
     <Compile Include="Steps\MockupOfExternalPage.cs" />
@@ -116,10 +111,6 @@
       <LastGenOutput>Mockup of External page.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <None Include="Show Tracking Information.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>Show Tracking Information.feature.cs</LastGenOutput>
-    </None>
     <None Include="xDB Panel.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>xDB Panel.feature.cs</LastGenOutput>

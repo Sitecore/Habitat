@@ -21,5 +21,15 @@ namespace Sitecore.Foundation.Common.Specflow.Infrastructure
     {
       return $"{RenderingsRootPath}/{module}/{renderingName}";
     }
+
+    public static void AddItem(ItemFieldDefinition item)
+    {
+      ContextExtensions.UtfService.CreateItem(item.ItemPath, item.ParentItemPath, item.TemplateItemPath);
+    }
+
+    public static bool ItemExists(ItemFieldDefinition item)
+    {
+      return !string.IsNullOrEmpty(ContextExtensions.UtfService.ItemExistsByPath(item.ItemPath));
+    }
   }
 }

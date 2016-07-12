@@ -89,6 +89,15 @@
       this.commonLocators.SitecoreLoginFields.First(x => x.GetAttribute("name").Equals("Password", StringComparison.CurrentCultureIgnoreCase)).SendKeys(BaseSettings.Password);
       this.commonLocators.SubmitButton.Click();
     }
+    
+    [Given(@"Social Page is opened")]
+    [When(@"Social Page is opened")]
+    public void GivenSocialPageIsOpened()
+    {
+      this.commonLocators.NavigateToPage(BaseSettings.SocialPageUrl);
+    }
+
+
 
     [Given(@"Experience Editor is opened on Main Page")]
     public void GivenExperienceEditorIsOpenedOnMainPage()

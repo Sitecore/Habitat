@@ -18,7 +18,7 @@ namespace Sitecore.Feature.Accounts.Specflow.Steps
 
       var tags = table.Rows.First().Values;
 
-      if (tags.Single() == "@empty")
+      if (tags.FirstOrDefault() == null)
       {
         tagsXdb.Should().BeNullOrEmpty();
       }

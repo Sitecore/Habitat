@@ -183,8 +183,6 @@ this.ScenarioSetup(scenarioInfo);
                         "Swiming"});
 #line 41
  testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table7, "And ");
-#line 44
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 45
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -202,8 +200,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And("User selects Skiing from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 50
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 51
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
  testRunner.And("Actor waits 10 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 53
@@ -267,8 +263,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("User inputs data in to the fields", ((string)(null)), table12, "When ");
 #line 76
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 77
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 78
  testRunner.And("Actor waits 10 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 79
@@ -331,8 +325,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("User inputs data in to the fields", ((string)(null)), table16, "When ");
 #line 99
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 100
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 101
  testRunner.And("Actor waits 10 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 102
@@ -390,8 +382,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("User selects Skiing from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 121
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 122
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 123
  testRunner.And("Actor waits 10 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 124
@@ -405,7 +395,7 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.Table table20 = new TechTalk.SpecFlow.Table(new string[] {
                         "\"0\""});
             table20.AddRow(new string[] {
-                        ""});
+                        "Skiing"});
 #line 127
  testRunner.And("Contact collection Tags.Interests.Values section for kovuc5@sitecore.net consist " +
                     "of", ((string)(null)), table20, "And ");
@@ -456,8 +446,6 @@ this.ScenarioSetup(scenarioInfo);
                         "Swiming"});
 #line 140
  testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table23, "And ");
-#line 143
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 144
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
@@ -469,8 +457,6 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("User inputs data in to the fields", ((string)(null)), table24, "When ");
 #line 148
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 149
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 150
  testRunner.And("Actor waits 10 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 151
@@ -535,26 +521,22 @@ this.ScenarioSetup(scenarioInfo);
                         "Swiming"});
 #line 167
  testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table28, "And ");
-#line 170
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 171
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             TechTalk.SpecFlow.Table table29 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Phone number"});
+                        "PhoneNumber"});
             table29.AddRow(new string[] {
                         "+38(067)8888888"});
 #line 172
  testRunner.When("User inputs data in to the fields", ((string)(null)), table29, "When ");
 #line 175
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 176
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 177
  testRunner.And("Actor waits 10 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 178
- testRunner.Then("Contact kovuc7@sitecore.net has FirstName equals Konstantin and Surname equals Ma" +
-                    "ximov", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("Contact kovuc7@sitecore.net has FirstName equals Konstantin and Surname equals Te" +
+                    "ltov", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 179
  testRunner.And("Contact kovuc7@sitecore.net has PhoneNumber equals +38(067)8888888", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 180
@@ -614,16 +596,12 @@ this.ScenarioSetup(scenarioInfo);
                         "Swiming"});
 #line 193
  testRunner.And("User inputs data on User Profile page and clicks Update button", ((string)(null)), table33, "And ");
-#line 196
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 197
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 198
  testRunner.When("User selects Skiing from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 199
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 200
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 201
  testRunner.And("Actor waits 10 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 202
@@ -723,16 +701,12 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("User selects Skiing from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 235
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 236
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 237
  testRunner.And("Edit profile page is opened", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 238
  testRunner.And("User selects empty from Interests drop-down list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 239
  testRunner.And("User clicks Update button on Edit User Profile page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 240
- testRunner.And("Actor Ends user visit", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 241
  testRunner.And("Actor waits 10 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
