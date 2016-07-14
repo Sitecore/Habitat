@@ -101,7 +101,7 @@
 
     public Job StartRebuildAnalyticsIndexJob()
     {
-      var options = new Sitecore.Jobs.JobOptions("Rebuild analytics index", "Indexing job", Context.Site.Name, this, "RebuildAnalyticsIndex");
+      var options = new Sitecore.Jobs.JobOptions("Rebuild analytics index", "Indexing job", "shell", this, "RebuildAnalyticsIndex");
       return Sitecore.Jobs.JobManager.Start(options);
     }
 
