@@ -5,5 +5,7 @@
     public string ItemPath { get; set; }
     public string FieldValue { get; set; }
     public string FieldName { get; set; }
+    public string ParentItemPath { get; set; }
+    public string TemplateItemPath { get; set; }
   }
 }

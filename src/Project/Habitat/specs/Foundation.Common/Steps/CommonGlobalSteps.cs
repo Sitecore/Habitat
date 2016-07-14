@@ -28,8 +28,7 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
     public void CreateItem(string parentIdOrPath, string fieldName, string fieldValue)
     {
       ContextExtensions.UtfService.CreateItem(fieldName, parentIdOrPath, fieldValue);
-    }
-
+    }    
 
     public void EditItem(string idOrPath, string fieldName, string fieldValue)
     {
@@ -42,7 +41,12 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
           .Should().NotBeEmpty($"Expected item {idOrPath} exists");
     }
 
-   
+    [When(@"Actor waits (.*) seconds")]
+    public void WhenActorWaitsSeconds(int seconds)
+    {
+      Thread.Sleep(seconds);
+    }
+
 
 
     [Given(@"Value set to item field")]
@@ -107,6 +111,19 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
       }
     }
 
+    [Given(@"Following items should be added")]
+    public void GivenFollowingItemsShouldBeAdded(IEnumerable<ItemFieldDefinition> items)
+    {
+      foreach (var item in items)
+      {
+        if (!ItemService.ItemExists(item))
+        {
+          ItemService.AddItem(item);
+        }        
+      }
+    }
+
+
 
 
     [Given(@"Admin create a new Metakeyword")]
@@ -158,6 +175,11 @@ namespace Sitecore.Foundation.Common.Specflow.Steps
         {
           case "SearchResultLimit":
             value = "SearchResultLimit=" + property.Value;
+            localName = "par";
+            break;
+
+          case "TweetsToShow":
+            value = "TweetsToShow" + property.Value;
             localName = "par";
             break;
         }

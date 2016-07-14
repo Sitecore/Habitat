@@ -108,6 +108,9 @@
     public IEnumerable<IWebElement> TwitterTreeContent
       => this.Driver.FindElements(By.CssSelector(".scContentTreeNodeTitle"));
 
+    public IEnumerable<IWebElement> EditItemDropDown
+      => this.Driver.FindElements(By.CssSelector(".scChromeCommandText")); 
+
 
     public void WaitRibbonPreLoadingIndicatorInvisible()
     {
@@ -124,5 +127,20 @@
     {
       this.Driver.SwitchTo().DefaultContent();
     }
+
+    public void NavigateToTwitterFeedFrame()
+    {
+      this.Driver.SwitchTo().Frame(this.Driver.FindElement(By.Id("twitter-widget-0")));
+    }
+
+    public IEnumerable<IWebElement> TwitterFeedLine
+      => Driver.FindElements(By.CssSelector(".timeline-Tweet.u-cf.js-tweetIdInfo"));
+
+
+    public void NavigateFromTwitterFeedFrame()
+    {
+      this.Driver.SwitchTo().DefaultContent();
+    }
+
   }
 }

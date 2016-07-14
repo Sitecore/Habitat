@@ -132,5 +132,17 @@
         .BeTrue();
       this.commonLocators.NavigateFromExperienceEditorDialogWindow();
     }
+
+    [Then(@"TwitterFeed component contains (.*) tweets")]
+    public void ThenTwitterFeedComponentContainsTweets(int tweetsNumber)
+    {
+      this.commonLocators.NavigateToTwitterFeedFrame();
+      var twitterFeedMassive = commonLocators.TwitterFeedLine;
+      twitterFeedMassive.Count().Equals(tweetsNumber).Should().BeTrue();
+      this.commonLocators.NavigateFromTwitterFeedFrame();
+    }
+
+
+
   }
 }

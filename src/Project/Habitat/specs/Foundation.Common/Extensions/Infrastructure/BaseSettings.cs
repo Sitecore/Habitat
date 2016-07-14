@@ -40,6 +40,8 @@ namespace Sitecore.Foundation.Common.Specflow.Extensions.Infrastructure
 
     public static string SocialPageExperienceEditorUrl => BaseUrl + ConfigurationManager.AppSettings["SocialPageExperienceEditorUrl"];
 
+    public static string SocialPageUrl => BaseUrl + ConfigurationManager.AppSettings["SocialPageUrl"];
+
     public static string MainPageExperienceEditorUrl => BaseUrl + ConfigurationManager.AppSettings["MainPageExperienceEditorUrl"];
     public static Database ContextDatabase => (Database)Enum.Parse(typeof(Database), ConfigurationManager.AppSettings["database"]);
   }

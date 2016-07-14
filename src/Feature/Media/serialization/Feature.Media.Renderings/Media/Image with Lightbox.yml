@@ -13,15 +13,15 @@ SharedFields:
   Value: "site:lightboximage"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{36E30543-EB94-40FB-937B-0F778C8987BE}\" />"
+  Value: "<image mediaid=\"{FBFC1094-E1E3-4DFA-A189-A19AB923A660}\" />"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 1c307764-806c-42f0-b7ce-fc173ac8372b
+    - ID: "1c307764-806c-42f0-b7ce-fc173ac8372b"
       Hint: Supports Local Datasource
       Value: 1
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150903T044430Z
