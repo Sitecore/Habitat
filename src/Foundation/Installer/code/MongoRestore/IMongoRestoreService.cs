@@ -5,5 +5,6 @@
     void RestoreDatabase(string dumpName);
     void RestoreDatabases();
     bool IsRestored(string connectionName);
+    void RebuildAnalyticsIndex();
   }
 }

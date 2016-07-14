@@ -20,9 +20,22 @@
       mongoRestoreService.DidNotReceive().RestoreDatabases();
     }
 
+
     [Theory]
     [AutoDbData]
-    public void Process_IsNotRestored_DontRestore([Frozen] IMongoRestoreService mongoRestoreService, [Greedy] MongoRestoreProcessor sut)
+    public void Process_IsRestored_DontRebuildIndex([Frozen] IMongoRestoreService mongoRestoreService, [Greedy] MongoRestoreProcessor sut)
+    {
+      //Arrange
+      mongoRestoreService.IsRestored(Arg.Is("analytics")).Returns(true);
+      //Act
+      sut.Process(null);
+      //Assert      
+      mongoRestoreService.DidNotReceive().RebuildAnalyticsIndex();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void Process_IsNotRestored_Restore([Frozen] IMongoRestoreService mongoRestoreService, [Greedy] MongoRestoreProcessor sut)
     {
       //Arrange
       mongoRestoreService.IsRestored(Arg.Is("analytics")).Returns(false);
@@ -30,6 +43,18 @@
       sut.Process(null);
       //Assert      
       mongoRestoreService.Received().RestoreDatabases();
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void Process_IsNotRestored_RebuildIndex([Frozen] IMongoRestoreService mongoRestoreService, [Greedy] MongoRestoreProcessor sut)
+    {
+      //Arrange
+      mongoRestoreService.IsRestored(Arg.Is("analytics")).Returns(false);
+      //Act
+      sut.Process(null);
+      //Assert      
+      mongoRestoreService.Received().RebuildAnalyticsIndex();
     }
   }
 }
