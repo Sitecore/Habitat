@@ -27,7 +27,7 @@
       if (MongoRestoreSettings.RestoreMongoDatabases && !this.mongoRestoreService.IsRestored("analytics"))
       {
         this.mongoRestoreService.RestoreDatabases();
-        this.mongoRestoreService.RebuildAnalyticsIndex();
+        this.mongoRestoreService.StartRebuildAnalyticsIndexJob();
       }
     }
   }

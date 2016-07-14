@@ -11,6 +11,7 @@
   using Sitecore.Configuration;
   using Sitecore.ContentSearch;
   using Sitecore.Diagnostics;
+  using Sitecore.Jobs;
   using Sitecore.SecurityModel;
 
   public class MongoRestoreService : IMongoRestoreService
@@ -98,6 +99,12 @@
       }
     }
 
+    public Job StartRebuildAnalyticsIndexJob()
+    {
+      var options = new Sitecore.Jobs.JobOptions("Rebuild analytics index", "Indexing job", null, this, "RebuildAnalyticsIndex");
+      return Sitecore.Jobs.JobManager.Start(options);
+    }
+
     public void RebuildAnalyticsIndex()
     {
       using (new SecurityDisabler())
@@ -114,13 +121,9 @@
           var poolItem = new ProcessingPoolItem(key.ToByteArray());
           pool.Add(poolItem);
         }
-
-        while (pool.GetCurrentStatus().ItemsPending > beforeRebuild)
-        {
-          Thread.Sleep(1000);
-        }
       }
     }
+
 
     private void MarkAsRestored(MongoUrl mongoUrl)
     {

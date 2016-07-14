@@ -30,7 +30,7 @@
       //Act
       sut.Process(null);
       //Assert      
-      mongoRestoreService.DidNotReceive().RebuildAnalyticsIndex();
+      mongoRestoreService.DidNotReceive().StartRebuildAnalyticsIndexJob();
     }
 
     [Theory]
@@ -54,7 +54,7 @@
       //Act
       sut.Process(null);
       //Assert      
-      mongoRestoreService.Received().RebuildAnalyticsIndex();
+      mongoRestoreService.Received().StartRebuildAnalyticsIndexJob();
     }
   }
 }
