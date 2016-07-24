@@ -372,6 +372,21 @@
       renderingModel.DatasourceString.Should().Be("+location:" + dataSource);
     }
 
+    [Fact]
+    public void SutInstantiatesDefaultCorePipelineWrapper()
+    {
+      var sut = new QueryableDatasourceRenderingModel();
+      sut.CorePipeline.Should().BeOfType<CorePipelineWrapper>();
+    }
+
+    [Theory, AutoDbData]
+    public void SutInstantiatesCustomCorePipelineWrapper(
+      IRenderingPropertiesRepository renderingRepository,
+      ICorePipeline corePipeline)
+    {
+      var sut = new QueryableDatasourceRenderingModel(renderingRepository, corePipeline);
+      sut.CorePipeline.Should().BeSameAs(corePipeline);
+    }
 
     private static IQueryable<IndexedItem> GetResults(IEnumerable<DbItem> contentItems)
     {

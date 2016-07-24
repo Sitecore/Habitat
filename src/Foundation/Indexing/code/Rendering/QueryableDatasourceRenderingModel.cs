@@ -3,6 +3,7 @@
   using System;
   using System.Collections.Generic;
   using System.Linq;
+  using Sitecore.Abstractions;
   using Sitecore.ContentSearch;
   using Sitecore.ContentSearch.SearchTypes;
   using Sitecore.ContentSearch.Utilities;
@@ -21,16 +22,27 @@
 
     public QueryableDatasourceRenderingSettings Settings => this.renderingPropertiesRepository.Get<QueryableDatasourceRenderingSettings>();
 
-    public QueryableDatasourceRenderingModel() : this(new RenderingPropertiesRepository())
+    public QueryableDatasourceRenderingModel()
+      : this(new RenderingPropertiesRepository())
     {
     }
 
     public QueryableDatasourceRenderingModel(IRenderingPropertiesRepository renderingPropertiesRepository)
+      : this(renderingPropertiesRepository, new CorePipelineWrapper())
+    {
+    }
+
+    public QueryableDatasourceRenderingModel(
+      IRenderingPropertiesRepository renderingPropertiesRepository,
+      ICorePipeline corePipeline)
     {
       this.renderingPropertiesRepository = renderingPropertiesRepository;
+      this.CorePipeline = corePipeline;
     }
 
     public Item DatasourceTemplate { get; set; }
+
+    public ICorePipeline CorePipeline { get; }
 
     public override void Initialize(Rendering rendering)
     {
