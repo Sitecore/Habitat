@@ -30,7 +30,7 @@
   {
     [Theory]
     [AutoDbData]
-    public void Items_DifferentItemLanguageExists_ReturnsOnlyContextLanguage([Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void Items_DifferentItemLanguageExists_ReturnsOnlyContextLanguage([Content] DbItem[] contentItems, ISearchIndex index, SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       var results = GetResults(contentItems).ToArray();
@@ -58,7 +58,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_NotLatestItemVersionExists_ReturnsOnlyLatestItems([Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void Items_NotLatestItemVersionExists_ReturnsOnlyLatestItems([Content] DbItem[] contentItems, ISearchIndex index, SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       var results = GetResults(contentItems).ToArray();
@@ -86,7 +86,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_IndexMatchDb_ReturnsAllItems([Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void Items_IndexMatchDb_ReturnsAllItems([Content] DbItem[] contentItems, ISearchIndex index, SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       var results = GetResults(contentItems);
@@ -113,7 +113,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_StandardValuesExistsInContentTree_IgnoresStandartValueByName(Db db, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void Items_StandardValuesExistsInContentTree_IgnoresStandartValueByName(Db db, ISearchIndex index, SearchProvider searchProvider, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       var id = ID.NewID;
@@ -175,7 +175,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_ItemTemplateSet_FiltersByTemplateId(Db db, [Content] DbTemplate templateItem, [Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, string indexName, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void Items_ItemTemplateSet_FiltersByTemplateId(Db db, [Content] DbTemplate templateItem, [Content] DbItem[] contentItems, ISearchIndex index, SearchProvider searchProvider, string indexName, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       var dbItem = new DbItem("templated", ID.NewID, templateItem.ID);
@@ -212,7 +212,7 @@
     [AutoDbData]
     public void Items_IndexHaveNonexistentItems_ReturnsExistentItems([Content] DbItem[] contentItems, DbItem brokenItem,
       List<DbItem> indexedItems, ISearchIndex index, string indexName,
-      [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+      SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       indexedItems.AddRange(contentItems);
@@ -243,7 +243,7 @@
     [Theory]
     [AutoDbData]
     public void Items_StandardValuesExists_IgnoresItemsUnderTemplates(Db db, ISearchIndex index,
-      [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+      SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       var templateID = ID.NewID;
