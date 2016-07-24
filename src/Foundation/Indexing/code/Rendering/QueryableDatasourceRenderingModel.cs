@@ -103,7 +103,7 @@
         ContentLanguage = rendering.Item?.Language,
         ContextItemPath = rendering.Item?.Paths.FullPath ?? this.PageItem.Paths.FullPath
       };
-      CorePipeline.Run("getRenderingDatasource", getRenderingDatasourceArgs);
+      this.CorePipeline.Run("getRenderingDatasource", getRenderingDatasourceArgs);
 
       this.DatasourceTemplate = getRenderingDatasourceArgs.Prototype;
     }

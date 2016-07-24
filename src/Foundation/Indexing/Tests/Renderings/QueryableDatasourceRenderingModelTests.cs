@@ -16,7 +16,6 @@
   using Sitecore.Data.Items;
   using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.FakeDb.Pipelines;
   using Sitecore.Foundation.Indexing.Models;
   using Sitecore.Foundation.Indexing.Rendering;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
@@ -29,21 +28,6 @@
 
   public class QueryableDatasourceRenderingModelTests
   {
-    public class FakeDatasourceResolverPipeline : IPipelineProcessor
-    {
-      public Item Item { get; set; }
-
-      public void Process(PipelineArgs args)
-      {
-        var castedArgs = args as GetRenderingDatasourceArgs;
-        if (castedArgs != null)
-        {
-          castedArgs.Prototype = this.Item;
-        }
-      }
-    }
-
-
     [Theory]
     [AutoDbData]
     public void Items_DifferentItemLanguageExists_ReturnsOnlyContextLanguage([Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
@@ -163,10 +147,15 @@
 
     [Theory]
     [AutoDbData]
-    public void Initialize_TemplateResolved_DatasourceTemplateShouldBeSet([Content] DbTemplate templateItem, FakeDatasourceResolverPipeline processor, [Content] Item renderingItem)
+    public void Initialize_TemplateResolved_DatasourceTemplateShouldBeSet([Content] DbTemplate templateItem, [Content] Item renderingItem,
+      [Greedy] QueryableDatasourceRenderingModel renderingModel)
     {
       //arrange
-      processor.Item = renderingItem.Database.GetItem(templateItem.ID);
+      renderingItem = renderingItem.Database.GetItem(templateItem.ID);
+      renderingModel.CorePipeline
+        .When(cp => cp.Run("getRenderingDatasource", Arg.Is<GetRenderingDatasourceArgs>(a => a.RenderingItem == renderingItem)))
+        .Do(ci => ci.Arg<GetRenderingDatasourceArgs>().Prototype = renderingItem);
+
       var rendering = new Rendering
       {
         DataSource = "ds",
@@ -174,10 +163,9 @@
       };
       ContextService.Get().Push(new PageContext());
       PageContext.Current.Item = renderingItem;
-      var renderingModel = new QueryableDatasourceRenderingModel();
+
       //act
       renderingModel.Initialize(rendering);
-
 
       //assert
       renderingModel.DatasourceTemplate.Should().NotBeNull();
