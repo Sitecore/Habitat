@@ -6,6 +6,7 @@
   using FluentAssertions;
   using NSubstitute;
   using NSubstitute.Extensions;
+  using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Abstractions;
   using Sitecore.ContentSearch;
   using Sitecore.ContentSearch.Linq.Common;
@@ -332,12 +333,12 @@
 
     [Theory]
     [AutoDbData]
-    public void DatasourceString_EmptyDatasource_ContextItemAsLocationRoot([Content] Item renderingItem)
+    public void DatasourceString_EmptyDatasource_ContextItemAsLocationRoot([Content] Item renderingItem,
+      [Greedy] QueryableDatasourceRenderingModel renderingModel)
     {
       //arrange
       ContextService.Get().Push(new PageContext());
       PageContext.Current.Item = renderingItem;
-      var renderingModel = new QueryableDatasourceRenderingModel();
 
       //act
       renderingModel.Initialize(new Rendering
@@ -352,12 +353,12 @@
 
     [Theory]
     [AutoDbData]
-    public void DatasourceString_IdAsDatasource_IDSetAsLocationRoot([Content] Item renderingItem)
+    public void DatasourceString_IdAsDatasource_IDSetAsLocationRoot([Content] Item renderingItem,
+      [Greedy] QueryableDatasourceRenderingModel renderingModel)
     {
       //arrange
       ContextService.Get().Push(new PageContext());
       PageContext.Current.Item = renderingItem;
-      var renderingModel = new QueryableDatasourceRenderingModel();
       var dataSource = ID.NewID.ToString();
 
       //act
