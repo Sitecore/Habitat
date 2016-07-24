@@ -20,7 +20,6 @@
   using Sitecore.Foundation.Indexing.Rendering;
   using Sitecore.Foundation.SitecoreExtensions.Repositories;
   using Sitecore.Foundation.Testing.Attributes;
-  using Sitecore.Foundation.Testing.Pipelines;
   using Sitecore.Mvc.Common;
   using Sitecore.Mvc.Presentation;
   using Sitecore.Pipelines;
@@ -163,7 +162,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Initialize_TemplateResolved_DatasourceTemplateShouldBeSet([Content] DbTemplate templateItem, [ResolvePipeline("getRenderingDatasource")] FakeDatasourceResolverPipeline processor, [Content] Item renderingItem)
+    public void Initialize_TemplateResolved_DatasourceTemplateShouldBeSet([Content] DbTemplate templateItem, FakeDatasourceResolverPipeline processor, [Content] Item renderingItem)
     {
       //arrange
       processor.Item = renderingItem.Database.GetItem(templateItem.ID);
@@ -290,7 +289,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_IndexEmpty_ReturnsEmptyCollection([ResolvePipeline("getRenderingDatasource")] EmptyPipeline processor, List<DbItem> indexedItems, ISearchIndex index, string indexName, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void Items_IndexEmpty_ReturnsEmptyCollection(List<DbItem> indexedItems, ISearchIndex index, string indexName, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       InitIndexes(index, searchProvider, new List<SearchResultItem>().AsQueryable());
@@ -315,7 +314,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_EmptyDatasource_ReturnsEmptyCollection([ResolvePipeline("getRenderingDatasource")] EmptyPipeline processor, List<DbItem> indexedItems, SearchProvider searchProvider, ISearchIndex index, string indexName, [Content] Item renderingItem)
+    public void Items_EmptyDatasource_ReturnsEmptyCollection(List<DbItem> indexedItems, SearchProvider searchProvider, ISearchIndex index, string indexName, [Content] Item renderingItem)
     {
       //arrange
 
@@ -333,7 +332,7 @@
 
     [Theory]
     [AutoDbData]
-    public void DatasourceString_EmptyDatasource_ContextItemAsLocationRoot([ResolvePipeline("getRenderingDatasource")] EmptyPipeline processor, [Content] Item renderingItem)
+    public void DatasourceString_EmptyDatasource_ContextItemAsLocationRoot([Content] Item renderingItem)
     {
       //arrange
       ContextService.Get().Push(new PageContext());
@@ -353,7 +352,7 @@
 
     [Theory]
     [AutoDbData]
-    public void DatasourceString_IdAsDatasource_IDSetAsLocationRoot([ResolvePipeline("getRenderingDatasource")] EmptyPipeline processor, [Content] Item renderingItem)
+    public void DatasourceString_IdAsDatasource_IDSetAsLocationRoot([Content] Item renderingItem)
     {
       //arrange
       ContextService.Get().Push(new PageContext());
