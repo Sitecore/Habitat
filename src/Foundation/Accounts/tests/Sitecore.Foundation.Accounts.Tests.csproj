@@ -201,8 +201,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Testing\tests\Sitecore.Foundation.Testing.csproj">
-      <Project>{7CC3D72B-4518-4B78-BE48-630A263C0F5B}</Project>
+    <ProjectReference Include="..\..\Testing\code\Sitecore.Foundation.Testing.csproj">
+      <Project>{7cc3d72b-4518-4b78-be48-630a263c0f5b}</Project>
       <Name>Sitecore.Foundation.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\code\Sitecore.Foundation.Accounts.csproj">

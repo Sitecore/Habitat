@@ -4,6 +4,10 @@ Parent: "3d6658d8-a0bf-4e75-b3e2-d050fabcf4e1"
 Template: "fe5dd826-48c6-436d-b87a-7c4210c7413b"
 Path: /sitecore/media library/Feature
 DB: master
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: applications/32x32/folder_cubes.png
 Languages:
 - Language: en
   Versions:
