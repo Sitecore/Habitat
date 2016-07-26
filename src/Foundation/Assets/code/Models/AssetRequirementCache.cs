@@ -11,12 +11,12 @@ namespace Sitecore.Foundation.Assets.Models
 
     public AssetRequirementList Get(ID cacheKey)
     {
-      return (AssetRequirementList)this.GetObject(cacheKey.ToString());
+      return (AssetRequirementList)this.GetObject(cacheKey);
     }
 
     public void Set(ID cacheKey, AssetRequirementList requirementList)
     {
-      this.SetObject(cacheKey.ToString(), requirementList);
+      this.SetObject(cacheKey, requirementList);
     }
   }
 }
