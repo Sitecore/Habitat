@@ -82,10 +82,6 @@
       <HintPath>..\..\..\..\packages\Sitecore.FakeDb.AutoFixture.1.1.1\lib\net45\Sitecore.FakeDb.AutoFixture.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.FakeDb.NSubstitute, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.FakeDb.NSubstitute.1.0.0\lib\net45\Sitecore.FakeDb.NSubstitute.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
@@ -175,7 +171,7 @@
       <Project>{0D6BA4D8-C469-4AE9-9EBB-93BDF7D7E78F}</Project>
       <Name>Sitecore.Foundation.Dictionary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Testing\tests\Sitecore.Foundation.Testing.csproj">
+    <ProjectReference Include="..\..\Testing\code\Sitecore.Foundation.Testing.csproj">
       <Project>{7cc3d72b-4518-4b78-be48-630a263c0f5b}</Project>
       <Name>Sitecore.Foundation.Testing</Name>
     </ProjectReference>
