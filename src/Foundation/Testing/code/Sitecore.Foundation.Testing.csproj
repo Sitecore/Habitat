@@ -191,11 +191,8 @@
     <Compile Include="Commands\GenericCommand.cs" />
     <Compile Include="Commands\ReplaceSearchAttributeCommand.cs" />
     <Compile Include="Attributes\ReplaceSearchProviderAttribute.cs" />
-    <Compile Include="Attributes\ResolvePipelineAttribute.cs" />
-    <Compile Include="Builders\ResolvePipelineSpecimenBuilder.cs" />
     <Compile Include="Builders\RegisterViewToEngineBuilder.cs" />
     <Compile Include="HttpContextMockFactory.cs" />
-    <Compile Include="Pipelines\EmptyPipeline.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
