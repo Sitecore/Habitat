@@ -8,6 +8,7 @@
   using NSubstitute.Extensions;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Abstractions;
+  using Sitecore.Common;
   using Sitecore.ContentSearch;
   using Sitecore.ContentSearch.Linq.Common;
   using Sitecore.ContentSearch.SearchTypes;
@@ -30,7 +31,7 @@
   {
     [Theory]
     [AutoDbData]
-    public void Items_DifferentItemLanguageExists_ReturnsOnlyContextLanguage([Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void Items_DifferentItemLanguageExists_ReturnsOnlyContextLanguage([Content] DbItem[] contentItems, ISearchIndex index, [Frozen] SearchProvider searchProvider, Switcher<SearchProvider> searchProviderSwitcher, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       var results = GetResults(contentItems).ToArray();
@@ -58,7 +59,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_NotLatestItemVersionExists_ReturnsOnlyLatestItems([Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void Items_NotLatestItemVersionExists_ReturnsOnlyLatestItems([Content] DbItem[] contentItems, ISearchIndex index, [Frozen] SearchProvider searchProvider, Switcher<SearchProvider> searchProviderSwitcher, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       var results = GetResults(contentItems).ToArray();
@@ -86,7 +87,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_IndexMatchDb_ReturnsAllItems([Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void Items_IndexMatchDb_ReturnsAllItems([Content] DbItem[] contentItems, ISearchIndex index, [Frozen] SearchProvider searchProvider, Switcher<SearchProvider> searchProviderSwitcher, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       var results = GetResults(contentItems);
@@ -113,7 +114,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_StandardValuesExistsInContentTree_IgnoresStandartValueByName(Db db, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void Items_StandardValuesExistsInContentTree_IgnoresStandartValueByName(Db db, ISearchIndex index, [Frozen] SearchProvider searchProvider, Switcher<SearchProvider> searchProviderSwitcher, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       var id = ID.NewID;
@@ -175,7 +176,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_ItemTemplateSet_FiltersByTemplateId(Db db, [Content] DbTemplate templateItem, [Content] DbItem[] contentItems, ISearchIndex index, [ReplaceSearchProvider] SearchProvider searchProvider, string indexName, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void Items_ItemTemplateSet_FiltersByTemplateId(Db db, [Content] DbTemplate templateItem, [Content] DbItem[] contentItems, ISearchIndex index, [Frozen] SearchProvider searchProvider, Switcher<SearchProvider> searchProviderSwitcher, string indexName, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       var dbItem = new DbItem("templated", ID.NewID, templateItem.ID);
@@ -212,7 +213,8 @@
     [AutoDbData]
     public void Items_IndexHaveNonexistentItems_ReturnsExistentItems([Content] DbItem[] contentItems, DbItem brokenItem,
       List<DbItem> indexedItems, ISearchIndex index, string indexName,
-      [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+      [Frozen] SearchProvider searchProvider, Switcher<SearchProvider> searchProviderSwitcher,
+      [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       indexedItems.AddRange(contentItems);
@@ -243,7 +245,8 @@
     [Theory]
     [AutoDbData]
     public void Items_StandardValuesExists_IgnoresItemsUnderTemplates(Db db, ISearchIndex index,
-      [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+      [Frozen] SearchProvider searchProvider, Switcher<SearchProvider> searchProviderSwitcher,
+      [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       var templateID = ID.NewID;
@@ -278,7 +281,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Items_IndexEmpty_ReturnsEmptyCollection(List<DbItem> indexedItems, ISearchIndex index, string indexName, [ReplaceSearchProvider] SearchProvider searchProvider, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
+    public void Items_IndexEmpty_ReturnsEmptyCollection(List<DbItem> indexedItems, ISearchIndex index, string indexName, [Frozen] SearchProvider searchProvider, Switcher<SearchProvider> searchProviderSwitcher, [Content] Item renderingItem, IRenderingPropertiesRepository renderingPropertiesRepository)
     {
       //arrange
       InitIndexes(index, searchProvider, new List<SearchResultItem>().AsQueryable());

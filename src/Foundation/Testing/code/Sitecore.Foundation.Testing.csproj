@@ -189,8 +189,6 @@
     <Compile Include="Builders\AttributeRelay.cs" />
     <Compile Include="Attributes\AutoDbDataAttribute.cs" />
     <Compile Include="Commands\GenericCommand.cs" />
-    <Compile Include="Commands\ReplaceSearchAttributeCommand.cs" />
-    <Compile Include="Attributes\ReplaceSearchProviderAttribute.cs" />
     <Compile Include="Builders\RegisterViewToEngineBuilder.cs" />
     <Compile Include="HttpContextMockFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
