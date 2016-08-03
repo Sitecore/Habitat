@@ -1,6 +1,7 @@
 ﻿namespace Sitecore.Feature.Accounts.Tests
 {
   using System;
+  using System.Collections.Generic;
   using FluentAssertions;
   using NSubstitute;
   using Ploeh.AutoFixture.Xunit2;
@@ -55,6 +56,24 @@
     {
       contactProfileService.SetTag(tagName, null);
       contactProfileProvider.Contact.Tags.DidNotReceive().Set(tagName, null);
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void SetTag_TagValueParameterExists_ShouldNotCallSetOnTagsPropertyOfContact([Frozen] IContactProfileProvider contactProfileProvider, [Greedy] ContactProfileService contactProfileService, string tagName, string tagValue)
+    {
+      contactProfileProvider.Contact.Tags.GetAll(tagName).Returns(new List<string>() { tagValue });
+      contactProfileService.SetTag(tagName, tagValue);
+      contactProfileProvider.Contact.Tags.DidNotReceive().Set(tagName, tagValue);
+    }
+
+    [Theory]
+    [AutoDbData]
+    public void SetTag_TagValueParameterDoesNotExist_ShouldNotCallSetOnTagsPropertyOfContact([Frozen] IContactProfileProvider contactProfileProvider, [Greedy] ContactProfileService contactProfileService, string tagName, string tagValue, string anotherTagValue)
+    {
+      contactProfileProvider.Contact.Tags.GetAll(tagName).Returns(new List<string>() { anotherTagValue });
+      contactProfileService.SetTag(tagName, tagValue);
+      contactProfileProvider.Contact.Tags.Received().Set(tagName, tagValue);
     }
   }
 }
