@@ -1,24 +1,37 @@
-
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/wells";
 
-
 .well {
-  border-radius: $well-border-radius;
-  border-color: transparent;
+  background-color: transparent;
   box-shadow: none;
 
+  border-radius: $well-border-radius;
+  border-width: 2px;
+  border-color: $color-secondary;
+  .bg-secondary & {
+    border-color: $color-secondary-light;
+  }
+
   color: $text-color;
-
-
-   & > h5 {
-    font-weight: lighter;
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    color: $brand-text-color;
+  }
+  .bg-white {
+    color: $bg-white-color;
   }
 
-  date {
-    opacity: 0.6;
+  &.bg-primary, &.bg-secondary, &.bg-dark, &.bg-media {
+    border-width: 0;
+    border-color: transparent;
+    color: $brand-text-color;
+  }
+  &.bg-white {
+    border-width: 0;
+    border-color: transparent;
+    color: $bg-white-color;
   }
 
-  .btn {
-    //margin-bottom: 10px;
+
+  & > h1:first-child, & > h2:first-child, & > h3:first-child, & > h4:first-child & > h5:first-child {
+    margin-top: 10px;
   }
 }

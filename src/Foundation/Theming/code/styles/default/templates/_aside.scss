@@ -1,9 +1,9 @@
 aside {
   .bg-dark &, .bg-primary &, .bg-media & {
     header {
-      color: #FFF;
+      color: $brand-text-color;
       p {
-        color: #FFF;
+        color: $brand-text-color;
       }
     }
     p {

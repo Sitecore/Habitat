@@ -9,7 +9,6 @@ body {
   position: relative;
   left: 0;
   right: 0;
-  background-color: $color-secondary-dark;
 
   * {
     transition: all 0.2s ease;
@@ -54,7 +53,7 @@ hr {
 
 a {
   .bg-primary &, .bg-dark &, .bg-media & {
-    color: #FFF;
+    color: $brand-text-color;
   }
   &[role="button"] {
     &:hover {

@@ -20,7 +20,7 @@
     }
 
     .bg-primary &, .bg-secondary &, .bg-transparent & {
-      color: #FFF;
+      color: $logo-tagline-color;
     }
   }
 
@@ -48,7 +48,7 @@
 
 
     * {
-      fill: #FFF !important;
+      fill: $logo-fill !important;
       float: left;
 
       .bg-white & {

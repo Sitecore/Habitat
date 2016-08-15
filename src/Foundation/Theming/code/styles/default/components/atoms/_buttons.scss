@@ -1,22 +1,8 @@
-
-
-
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
 
-
-.btn {
-
+.btn, a.btn {
   font-weight: bold;
 
-  .badge {
-    .bg-dark &, .bg-primary {
-      background-color: rgba(0,0,0,.4);
-    }
-  }
-
-  &:hover, &:focus {
-    color: #FFF;
-  }
   &[disabled] {
     &:hover, &:focus {
       color: currentColor !important;
@@ -24,61 +10,49 @@
   }
 
   &-hollow {
-    background-color: transparent;
-    border: 2px solid #FFF;
-    color: #FFF;
-    position:relative;
-    &:hover {
-      background-color: #FFF;
-      color: $text-color !important;
-    }
-
+    border: 2px solid $text-color;
   }
 
-  &-default {
+  &-default, &-hollow {
     border-width: 2px;
     background-color: transparent;
     border-radius: $btn-border-radius-base;
 
-    .badge {
-      .bg-dark &, .bg-primary {
-        background-color: rgba(0,0,0,.4);
-      }
-    }
-
-    .bg-white & {
-      color: #000;
-      border-color: #000;
-      &:hover {
-        background-color: #000;
-        color: #FFF;
-      }
-    }
-
     .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-      border-color: #FFF !important;
-      color: #FFF !important;
+      border-color: $brand-text-color !important;
+      color: $brand-text-color !important;
       &:hover {
-        background-color: #FFF;
+        background-color: $brand-text-color;
         color: $text-color !important;
+      }
+    }
+    .bg-white & {
+      border-color: $bg-white-color !important;
+      color: $bg-white-color !important;
+      &:hover {
+        background-color: $bg-white-color;
+        color: $bg-white-bg !important;
       }
     }
 
     &:hover {
       background-color: $color-secondary-dark;
-      color: #FFF;
+      color: $brand-text-color;
     }
   }
 
   &-lg {
     @media all and (max-width: $screen-xs-max) {
-      font-size: 14px;
+      font-size: floor($font-size-large*.8);
     }
   }
 
   &-xl {
-    font-size: 20px;
+    font-size: floor($font-size-large*1.1);
     padding: 15px 35px;
+    @media all and (max-width: $screen-xs-max) {
+      font-size: $font-size-large;
+    }
   }
 
   &-social-icon {
@@ -86,38 +60,57 @@
 
     span {
       float:right;
-      color: #FFF;
       padding-left:0.9em;
     }
     &.btn {
       &-facebook {
         @include backgroundHoverLighten(#3b5998, 25%, true);
+        span, i {
+          color: #FFF;
+        }
       }
       &-twitter {
         @include backgroundHoverLighten(#00aced, 25%, true);
+        span, i {
+          color: #FFF;
+        }
       }
       &-youtube {
         @include backgroundHoverLighten(#bb0000, 25%, true);
+        span, i {
+          color: #FFF;
+        }
       }
       &-instagram {
         @include backgroundHoverLighten(#125688, 25%, true);
+        span, i {
+          color: #FFF;
+        }
       }
       &-google-plus {
         @include backgroundHoverLighten(#dd4b39, 25%, true);
+        span, i {
+          color: #FFF;
+        }
       }
       &-linkedin {
         @include backgroundHoverLighten(#007bb6, 25%, true);
+        span, i {
+          color: #FFF;
+        }
       }
     }
-    .navbar & {
-      background-color: transparent !important;
-      color: #FFF;
-    }
-    i {
-      color: #FFF;
 
-      .bg-white & {
-        color: #000;
+    .nav & {
+      background-color: transparent !important;
+      color: $navbar-social-icon-color;
+
+      i {
+        color: $navbar-social-icon-color;
+
+        .bg-white & {
+          color: #000;
+        }
       }
     }
   }

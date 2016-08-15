@@ -1,10 +1,7 @@
-
-
 .list {
-
   & > .disabled {
     & > a {
-      color: #777;
+      color: $list-group-disabled-text-color;
       &:hover {
         cursor: not-allowed;
         background-color: transparent;

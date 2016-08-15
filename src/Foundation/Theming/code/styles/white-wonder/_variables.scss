@@ -1,8 +1,3 @@
-$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family-serif: "Bitter", Georgia, serif;
-
-$font-family-base: $font-family-serif;
-
 $color-primary: #000;
 
 $color-secondary: #FFF;
@@ -11,133 +6,21 @@ $color-secondary-light: #FFF;
 $color-secondary-lighter: #FFF;
 $color-secondary-lightest: #FFF;
 
-$brand-primary: $color-primary;
-$brand-success: #24C890;
-$brand-info: #24ABC8;
-$brand-warning: #ABC824;
-$brand-danger: #E65757;
-$gray-base: rgb(2, 3, 4);
-$gray: #999;
-$gray-light: #F2F3F4;
-$gray-darker: $color-secondary-dark;
-
 $text-color: $color-primary;
 
-$main-bg: #FFF;
-$navbar-bg: $main-bg;
+$font-family-sans-serif: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-serif: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-base: $font-family-serif;
 
-$border-radius-base: 0px;
-$border-radius-large: 0px;
-$border-radius-small: 0px;
+$navbar-default-color: $color-primary;
+$navbar-default-link-color: $color-primary;
+$navbar-default-link-hover-color: $color-primary;
+$navbar-default-brand-color: $color-primary;
+$navbar-default-brand-hover-color: $color-primary;
 
-$link-color: $brand-primary;
+$logo-fill: $color-primary;
+$navbar-toggle-icon-bar-color: $color-primary;
+$navbar-social-icon-color: $color-primary;
 
-$alert-success-bg: lighten($brand-success, 35%);
-$alert-success-text: $brand-success;
-$alert-info-bg: lighten($brand-info, 35%);
-$alert-info-text: $brand-info;
-$alert-warning-bg: lighten($brand-warning, 35%);
-$alert-warning-text: $brand-warning;
-$alert-danger-bg: lighten($brand-danger, 35%);
-$alert-danger-text: $brand-danger;
-
-$badge-bg: $color-primary;
-
-$breadcrumb-bg: transparent;
-$breadcrumb-separator: "\\";
-$breadcrumb-color: $color-secondary-lighter;
-$breadcrumb-active-color: $color-secondary-dark;
-$breadcrumb-padding-horizontal: 0;
-
-$btn-border-radius-base: $border-radius-base;
-$btn-border-radius-large: $border-radius-large;
-$btn-border-radius-small: $border-radius-small;
-$btn-primary-bg: $brand-primary;
-$btn-primary-border: $brand-primary;
-$btn-default-border: $color-secondary-dark;
-$btn-default-color: $color-secondary-dark;
-$btn-success-bg: $brand-success;
-$btn-success-border: $brand-success;
-$btn-info-bg: $brand-info;
-$btn-info-border: $brand-info;
-$btn-warning-bg: $brand-warning;
-$btn-warning-border: $brand-warning;
-$btn-danger-bg: $brand-danger;
-$btn-danger-border: $brand-danger;
-
-$counter-default-bg: $color-secondary-dark;
-
-$dropdown-menu-border-radius: $border-radius-base;
-$dropdown-header-color: $brand-primary;
-
-$footer-text-color: $text-color;
-
-$jumbotron-border-radius: $border-radius-large;
-
-$label-default-bg: $color-secondary;
-$label-success-bg: $brand-success;
-$label-info-bg: $brand-info;
-$label-primary-bg: $brand-primary;
-$label-warning-bg: $brand-warning;
-$label-danger-bg: $brand-danger;
-
-$list-divided-border-color: #eee;
-
-$nav-link-hover-bg: #FFF;
-
-$pagination-border: transparent;
-$pagination-bg: transparent;
-$pagination-active-border: $brand-primary;
-$pagination-active-color: $brand-primary;
-$pagination-active-bg: transparent;
-
-$panel-primary-heading-bg: $brand-primary;
-$panel-primary-border: $brand-primary;
-$panel-success-heading-bg: $brand-success;
-$panel-success-border: $brand-success;
-$panel-info-heading-bg: $brand-info;
-$panel-info-border: $brand-info;
-$panel-warning-heading-bg: $brand-warning;
-$panel-warning-border: $brand-warning;
-$panel-danger-heading-bg: $brand-danger;
-$panel-danger-border: $brand-danger;
-$panel-border-radius: 0;
-$panel-default-heading-bg: #FFF;
-$panel-footer-bg: #FFF;
-$panel-heading-padding: 20px 15px;
-
-$progress-bar-bg: #F2F3F4;
-$progress-bar-padding: 5px;
-$progress-bar-font-size: 14px;
-$progress-bar-font-weight: 800;
-$progress-bar-height: auto;
-$progress-bar-min-height: 20px;
-
-$thumbnail-border: transparent;
-
-$tooltip-bg: $color-secondary-dark;
-$tooltip-arrow-color: $tooltip-bg;
-
-$navbar-default-bg: transparent;
-$navbar-default-toggle-border-color: transparent;
-$navbar-default-link-hover-color: #FFF;
-$navbar-default-link-hover-bg: transparent;
-$navbar-default-link-color: #FFF;
-$navbar-default-brand-hover-color: #FFF;
-
-$sidebar-bg: #FFF;
-$sidebar-border-color: #ddd;
-$sidebar-nav-item-bg: transparent;
-$sidebar-nav-item-color: $text-color;
-$sidebar-nav-item-bg-active: transparent;
-$sidebar-nav-item-color-active: $brand-primary;
-$sidebar-nav-item-border-color-active: $color-secondary-lightest;
-$sidebar-toggle-border-radius: 0px;
-
-$media-list-divided-border-color: $list-divided-border-color;
-
-$mega-dropdown-menu-padding: 30px 10px;
-
-$well-border-radius: 0px;
-
-$bg-media-overlay-color: #000011;
+$nav-service-link-color: $color-primary;
+$nav-service-link-hover-color: $color-primary;

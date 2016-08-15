@@ -6,13 +6,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   small {
     .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-      color: #FFF;
+      color: $brand-text-color;
     }
   }
 }
 
 p {
-  font-family: 'Bitter';
+  font-family: $font-family-serif;
   line-height: 1.8;
   margin-bottom: 15px;
 }

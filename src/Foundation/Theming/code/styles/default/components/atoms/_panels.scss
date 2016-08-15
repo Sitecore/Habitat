@@ -33,7 +33,7 @@
       }
       &:hover, &:focus, &:active {
         background-color: $color-secondary-dark;
-        color: #FFF;
+        color: $brand-text-color;
         .bg-dark & {
           background-color: inherit;
           color: inherit;
@@ -54,12 +54,12 @@
   }
 
   &-footer {
-    color: #d5d7dc;
+    color: $color-secondary-light;
   }
 
   &-primary {
     .panel-heading {
-      color: #FFF;
+      color: $brand-text-color;
     }
     &-alt {
       .panel-heading, .panel-body, .panel-footer {
@@ -83,74 +83,6 @@
     }
   }
 
-  &-hollow {
-    background-color: transparent;
-    box-shadow: none;
-    border: none;
-    .panel-heading, .panel-body, .panel-footer {
-      //padding: 20px 0;
-      padding-left: 0;
-      background-color: transparent;
-      color: $text-color;
-      border-top: none !important;
-      border-bottom: 1px solid currentColor;
-
-      .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-        color: #FFF;
-      }
-
-      .bg-white & {
-        color: #000;
-      }
-    }
-    .panel-heading {
-      //padding: 0;
-
-      .panel-title {
-        position: relative;
-        &-icon {
-          position: absolute;
-          top: 0;
-          right: 0;
-          display: block;
-          height: 100%;
-          width: 50px;
-          &-bar {
-            height: 2px;
-            width: 10px;
-            display: block;
-            position: absolute;
-            top: 29px;
-            right: 20px;
-            background-color: #FFF;
-            &:first-child {
-              height: 10px;
-              width: 2px;
-              top: 25px;
-              right: 24px;
-              opacity: 0;
-            }
-          }
-        }
-
-        a[data-toggle="collapse"] {
-          padding: 20px 0;
-          display: block;
-          position: relative;
-
-          &.collapsed {
-            .panel-title-icon-bar:first-child {
-              opacity: 1;
-            }
-          }
-        }
-      }
-    }
-    .panel-body {
-      color: lighten($text-color, 20%);
-    }
-  }
-
   &-thin {
     border: 1px solid #eee;
     .panel-heading, .panel-body, .panel-footer {
@@ -163,13 +95,13 @@
 
   &.bg-dark, &.bg-primary, &.bg-media {
     .panel-body, .panel-heading {
-      color: #FFF;
+      color: $brand-text-color;
     }
   }
 
   &.bg-white {
     .panel-body, .panel-heading {
-      color: #000;
+      color: $bg-white-color;
     }
   }
 }

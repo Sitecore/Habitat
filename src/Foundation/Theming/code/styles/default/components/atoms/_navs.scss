@@ -1,7 +1,3 @@
-
-
-
-
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/navs";
 
 .nav {
@@ -13,7 +9,7 @@
     }
   }
   li {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $font-family-sans-serif;
     &.divider {
       height: 1px;
       width: 100%;
@@ -28,9 +24,7 @@
       border-left: 1px solid rgba(255,255,255,0.2);
     }
 
-    a {
-      //font-weight: bold;
-
+    > a {
       &:hover {
         color: $text-color;
       }
@@ -42,10 +36,7 @@
       }
 
       .bg-white & {
-        color: #000;
-        &:hover {
-          text-decoration: underline;
-        }
+        color: $bg-white-color;
       }
     }
   }
@@ -99,33 +90,6 @@
 
   &-responsive-scroll {
     overflow-x: auto;
-    /*&:before {
-      content: ' ';
-      display: block;
-      width: 20px;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 1;
-      background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.0001) 100%);
-      background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.0001) 100%);
-      background-repeat: repeat-x;
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#00000000', GradientType=1)
-    }
-    &:after {
-      content: ' ';
-      display: block;
-      width: 20px;
-      height: 100%;
-      position: absolute;
-      right: 0;
-      top: 0;
-      background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.0001) 0%, rgba(255, 255, 255, 1) 100%);
-      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.0001) 0%, rgba(255, 255, 255, 1) 100%);
-      background-repeat: repeat-x;
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#FFFFFFFF', GradientType=1);
-    }*/
     &.nav-justified {
       & > li {
         display: table-cell;
@@ -148,7 +112,7 @@
             background-color: transparent;
           }
           .bg-white & {
-            color: #000;
+            color: $bg-white-color;
           }
         }
       }
@@ -168,20 +132,20 @@
     & > li {
       & > a {
         font-weight: lighter;
-        color: #FFF;
+        color: $nav-service-link-color;
         padding-top: 10px !important;
         padding-bottom: 10px !important;
 
         .bg-white & {
-          color: #000;
+          color: $bg-white-color;
           &:hover, &:active, &:focus {
-            color: #000;
+            color: $bg-white-color;
           }
         }
 
         &:hover, &:active, &:focus {
           background-color: transparent;
-          color: #FFF;
+          color: $nav-service-link-hover-color;
         }
       }
       &.dropdown {

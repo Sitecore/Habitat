@@ -35,7 +35,7 @@
           list-style:none;
           &.dropdown-header {
             padding-left:0;
-            font-size: 16px;
+            font-size: $mega-dropdown-font-size;
 
             @media all and (max-width: $screen-sm-max) {
               padding-left: 0 !important;

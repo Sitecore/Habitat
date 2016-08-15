@@ -26,8 +26,6 @@
 
 .sidebar {
   background-color: $sidebar-bg;
-  //padding: 20px;
-  //border: 1px solid $sidebar-border-color;
   transition: all 0.4s ease;
   margin-bottom: 30px;
 
@@ -53,7 +51,7 @@
     }
 
     .text {
-      color: #FFF;
+      color: $brand-text-color;
       position: absolute;
       left: 40px;
       top: 11px;
@@ -64,7 +62,7 @@
       width: 22px;
       height: 2px;
       border-radius: 1px;
-      background-color: #FFF;
+      background-color: $brand-text-color;
       & + .icon-bar {
         margin-top: 4px;
       }
@@ -81,7 +79,7 @@
 
   .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
     background-color: transparent;
-    color: #FFF;
+    color: $brand-text-color;
   }
 
   &.sidebar-fixed {
@@ -127,7 +125,7 @@
         background-color: $sidebar-nav-item-bg;
         font-weight: normal;
         .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-          color: #FFF;
+          color: $brand-text-color;
         }
         &:hover {
           padding-left: 10px;
@@ -138,7 +136,7 @@
           color: $sidebar-nav-item-color-active;
           font-weight: 800;
           .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-            color: #FFF;
+            color: $brand-text-color;
           }
           &:hover {
             background-color: $sidebar-nav-item-bg;

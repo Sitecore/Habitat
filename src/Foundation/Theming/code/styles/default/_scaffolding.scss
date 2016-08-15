@@ -1,12 +1,9 @@
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
 
 body {
-  background-color: #FFF;
-
   &.sc-editor-enabled {
     margin-top: 185px;
   }
-
 
   header {
     &.header-fixed {
@@ -84,10 +81,6 @@ body {
     }
   }
 
-  &.header-top {
-
-  }
-
   &.header-static {
     #main-container {
       padding-top: 0;
@@ -100,11 +93,6 @@ body {
     main {
       background-color: $main-bg;
     }
-    .container-fluid, .container {
-      //padding:0; - This breaks the responsive grid.
-    }
-
-
   }
   &.pagelayout-fixed {
     #main-container {

@@ -1,10 +1,4 @@
-
-
-
-
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
-
-
 
 .thumbnail {
   border: none;
@@ -13,18 +7,18 @@
   background-color: transparent;
   &.bg-primary, &.bg-dark, &.bg-media {
     .caption {
-      color: #FFF;
+      color: $brand-text-color;
     }
     .thumbnail-header {
       .label {
-        color: #FFF;
+        color: $brand-text-color;
       }
     }
   }
 
   .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
     .caption {
-      color: #FFF;
+      color: $brand-text-color;
     }
   }
 
@@ -32,8 +26,11 @@
     padding: 0;
     color: $text-color;
     date {
-      color: #bbb;
-      font-size: 14px;
+      color: $text-color;
+      font-size: $font-size-small;
+      font-weight: normal;
+      text-transform: uppercase;
+      padding: 0;
     }
     h1, h2, h3, h4, h5, h6 {
       margin-bottom: 15px;
@@ -42,27 +39,12 @@
 
   &-header {
     .label {
-      font-size: 14px;
+      font-size: $font-size-base;
       color: $text-color;
       font-weight: normal;
       text-transform: uppercase;
       padding: 0;
     }
-  }
-
-  &-lg {
-    h3 {
-      font-size: 36px;
-    }
-  }
-  &-sm {
-
-  }
-  &-xl {
-
-  }
-  &-xs {
-
   }
 
   &-focus {
@@ -73,7 +55,7 @@
   .btn {
     &.btn-primary {
       .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-        color: #FFF;
+        color: $brand-text-color;
         border: none;
       }
     }
@@ -81,25 +63,8 @@
       color: $text-color;
       border-color: $text-color;
       &:hover {
-        background-color: $text-color;
-        color: #FFF !important;
-      }
-    }
-  }
-
-  &.testimony {
-    border: none;
-    .caption {
-      border-top: 1px solid $page-header-border-color;
-      h5 {
-        color: #666;
-        font-style: italic;
-        font-weight: normal;
-      }
-      p {
-        color: $color-secondary-dark;
-        font-weight: bold;
-        font-size: 16px;
+        background-color: $color-secondary-dark;
+        color: $brand-text-color !important;
       }
     }
   }

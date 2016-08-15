@@ -5,11 +5,11 @@
 
 .dropdown, .dropup {
   &-header {
-      font-size: 16px;
+      font-size: $dropdown-header-font-size;
       color: $dropdown-header-color;
 
       .bg-white & {
-        color: #000;
+        color: $bg-white-color;
         font-weight: bold;
       }
 
@@ -17,7 +17,7 @@
         color: $dropdown-header-color;
         //font-weight: bold;
         .bg-primary &, .bg-secondary &, .bg-media & {
-          color: #FFF;
+          color: $brand-text-color;
           font-weight: bold;
         }
       }
