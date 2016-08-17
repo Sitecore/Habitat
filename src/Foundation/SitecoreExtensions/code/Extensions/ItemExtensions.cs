@@ -119,8 +119,29 @@
 
     public static string LinkFieldTarget(this Item item, ID fieldID)
     {
+      return item.LinkFieldOptions(fieldID, LinkFieldOption.Target);
+    }
+
+    public static string LinkFieldOptions(this Item item, ID fieldID, LinkFieldOption option)
+    {
       XmlField field = item.Fields[fieldID];
-      return field?.GetAttribute("target");
+      switch (option)
+      {
+        case LinkFieldOption.Text:
+          return field?.GetAttribute("text");
+        case LinkFieldOption.LinkType:
+          return field?.GetAttribute("linktype");
+        case LinkFieldOption.Class:
+          return field?.GetAttribute("class");
+        case LinkFieldOption.Alt:
+          return field?.GetAttribute("title");
+        case LinkFieldOption.Target:
+          return field?.GetAttribute("target");
+        case LinkFieldOption.QueryString:
+          return field?.GetAttribute("querystring");
+        default:
+          throw new ArgumentOutOfRangeException(nameof(option), option, null);
+      }
     }
 
     public static bool IsDerived(this Item item, ID templateId)
@@ -177,5 +198,15 @@
       Assert.IsNotNull(fieldId, "FieldId cannot be null");
       return new HtmlString(FieldRendererService.RenderField(item, fieldId));
     }
+  }
+
+  public enum LinkFieldOption
+  {
+    Text,
+    LinkType,
+    Class,
+    Alt,
+    Target,
+    QueryString
   }
 }
