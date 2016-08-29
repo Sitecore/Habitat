@@ -5,53 +5,41 @@ body {
     margin-top: 185px;
   }
 
+  @mixin headerPadding($default, $sm, $xs) {
+    min-height: $default;
+    @media all and (max-width: $screen-sm-max) {
+      min-height: $sm;
+    }
+
+    @media all and (max-width: $screen-xs-max) {
+      min-height: $xs;
+    }
+
+    & + main {
+      padding-top: $default;
+
+      @media all and (max-width: $screen-sm-max) {
+        padding-top: $sm;
+      }
+
+      @media all and (max-width: $screen-xs-max) {
+        padding-top: $xs;
+      }
+    }
+  }
+
   header {
     &.header-fixed {
-      & + main {
-        padding-top: 82px;
-
-        @media all and (max-width: $screen-sm-max) {
-          padding-top: 78px;
-        }
-
-        @media all and (max-width: $screen-xs-max) {
-          padding-top: 70px;
-        }
+      @include headerPadding(82px, 78px, 70px);
+      &.header-logo-center {
+        @include headerPadding(125px, 115px, 111px);
       }
       &.header-has-top {
-        & + main {
-          padding-top: 118px;
-
-          @media all and (max-width: $screen-sm-max) {
-            padding-top: 78px;
-          }
-
-          @media all and (max-width: $screen-xs-max) {
-            padding-top: 70px;
-          }
-        }
+        @include headerPadding(118px, 78px, 70px);
         &.header-logo-center {
-          & + main {
-            @media (min-width: $screen-md-min) {
-              padding-top: 165px;
-            }
-          }
+          @include headerPadding(165px, 115px, 111px);
         }
 
-      }
-      &.header-logo-center {
-        & + main {
-          padding-top: 125px;
-
-          @media all and (max-width: $screen-sm-max) {
-            padding-top: 115px;
-          }
-
-          @media all and (max-width: $screen-xs-max) {
-            padding-top: 111px;
-          }
-
-        }
       }
       &.bg-transparent {
         &.header-has-top {

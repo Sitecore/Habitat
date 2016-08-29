@@ -219,19 +219,12 @@
           icon: "http://maps.google.com/mapfiles/kml/pal4/icon56.png"
         });
 
-        var contentString = "<h2>" +
-          mapPoint.Name +
-          "</h2>" +
-          "<p>" +
-          mapPoint.Address +
-          "</p>" +
-          "<a href='javascript:void(0)' onclick='MapModule.zoomToMapPoint(" +
-          map.Id +
-          "," +
-          latlng.lat() +
-          "," +
-          latlng.lng() +
-          ")'><span class='glyphicon glyphicon-zoom-in'/></a>";
+        var contentString =
+          "<div class='text-primary'>" +
+          "<h2>" + mapPoint.Name + "</h2>" +
+          "<p>" + mapPoint.Address + "</p>" +
+          "<a href='javascript:void(0)' onclick='MapModule.zoomToMapPoint(" + map.Id + "," + latlng.lat() + "," + latlng.lng() + ")'><span class='glyphicon glyphicon-zoom-in'/></a>"
+          + "</div>";
 
         google.maps.event.addListener(marker,
           "click",

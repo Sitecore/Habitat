@@ -3154,44 +3154,76 @@ hr {
 body.sc-editor-enabled {
   margin-top: 185px; }
 
-body header.header-fixed + main {
-  padding-top: 82px; }
+body header.header-fixed {
+  min-height: 82px; }
   @media all and (max-width: 991px) {
-    body header.header-fixed + main {
-      padding-top: 78px; } }
+    body header.header-fixed {
+      min-height: 78px; } }
   @media all and (max-width: 767px) {
-    body header.header-fixed + main {
-      padding-top: 70px; } }
-
-body header.header-fixed.header-has-top + main {
-  padding-top: 118px; }
-  @media all and (max-width: 991px) {
-    body header.header-fixed.header-has-top + main {
-      padding-top: 78px; } }
-  @media all and (max-width: 767px) {
-    body header.header-fixed.header-has-top + main {
-      padding-top: 70px; } }
-
-@media (min-width: 992px) {
-  body header.header-fixed.header-has-top.header-logo-center + main {
-    padding-top: 165px; } }
-
-body header.header-fixed.header-logo-center + main {
-  padding-top: 125px; }
-  @media all and (max-width: 991px) {
-    body header.header-fixed.header-logo-center + main {
-      padding-top: 115px; } }
-  @media all and (max-width: 767px) {
-    body header.header-fixed.header-logo-center + main {
-      padding-top: 111px; } }
-
-body header.header-fixed.bg-transparent.header-has-top + main .jumbotron > *:nth-child(1) {
-  padding-top: 124px; }
-
-body header.header-fixed.bg-transparent + main {
-  padding-top: 0; }
-  body header.header-fixed.bg-transparent + main .jumbotron > *:nth-child(1) {
+    body header.header-fixed {
+      min-height: 70px; } }
+  body header.header-fixed + main {
     padding-top: 82px; }
+    @media all and (max-width: 991px) {
+      body header.header-fixed + main {
+        padding-top: 78px; } }
+    @media all and (max-width: 767px) {
+      body header.header-fixed + main {
+        padding-top: 70px; } }
+  body header.header-fixed.header-logo-center {
+    min-height: 125px; }
+    @media all and (max-width: 991px) {
+      body header.header-fixed.header-logo-center {
+        min-height: 115px; } }
+    @media all and (max-width: 767px) {
+      body header.header-fixed.header-logo-center {
+        min-height: 111px; } }
+    body header.header-fixed.header-logo-center + main {
+      padding-top: 125px; }
+      @media all and (max-width: 991px) {
+        body header.header-fixed.header-logo-center + main {
+          padding-top: 115px; } }
+      @media all and (max-width: 767px) {
+        body header.header-fixed.header-logo-center + main {
+          padding-top: 111px; } }
+  body header.header-fixed.header-has-top {
+    min-height: 118px; }
+    @media all and (max-width: 991px) {
+      body header.header-fixed.header-has-top {
+        min-height: 78px; } }
+    @media all and (max-width: 767px) {
+      body header.header-fixed.header-has-top {
+        min-height: 70px; } }
+    body header.header-fixed.header-has-top + main {
+      padding-top: 118px; }
+      @media all and (max-width: 991px) {
+        body header.header-fixed.header-has-top + main {
+          padding-top: 78px; } }
+      @media all and (max-width: 767px) {
+        body header.header-fixed.header-has-top + main {
+          padding-top: 70px; } }
+    body header.header-fixed.header-has-top.header-logo-center {
+      min-height: 165px; }
+      @media all and (max-width: 991px) {
+        body header.header-fixed.header-has-top.header-logo-center {
+          min-height: 115px; } }
+      @media all and (max-width: 767px) {
+        body header.header-fixed.header-has-top.header-logo-center {
+          min-height: 111px; } }
+      body header.header-fixed.header-has-top.header-logo-center + main {
+        padding-top: 165px; }
+        @media all and (max-width: 991px) {
+          body header.header-fixed.header-has-top.header-logo-center + main {
+            padding-top: 115px; } }
+        @media all and (max-width: 767px) {
+          body header.header-fixed.header-has-top.header-logo-center + main {
+            padding-top: 111px; } }
+  body header.header-fixed.bg-transparent.header-has-top + main .jumbotron > *:nth-child(1) {
+    padding-top: 124px; }
+  body header.header-fixed.bg-transparent + main {
+    padding-top: 0; }
+    body header.header-fixed.bg-transparent + main .jumbotron > *:nth-child(1) {
+      padding-top: 82px; }
 
 body header.bg-transparent {
   background-color: rgba(0, 0, 0, 0.15) !important;
@@ -8020,18 +8052,23 @@ button.list-group-item-danger {
     color: #FFF; }
 
 .logo img, .logo svg {
-  height: 35px;
-  width: 150px;
+  height: 50px;
+  max-width: 215px;
   margin-top: 0px; }
   .has-tagline .logo img, .has-tagline .logo svg {
+    height: 35px;
+    max-width: 150px;
     margin-top: 0px; }
     @media (max-width: 767px) {
       .has-tagline .logo img, .has-tagline .logo svg {
         margin-top: 5px; } }
   @media all and (max-width: 991px) {
     .logo img, .logo svg {
-      height: 25px;
-      width: 110px; } }
+      height: 35px;
+      max-width: 150px; }
+      .has-tagline .logo img, .has-tagline .logo svg {
+        height: 25px;
+        max-width: 110px; } }
   .logo img *, .logo svg * {
     fill: #FFF !important;
     float: left; }

@@ -33,7 +33,7 @@
   </div>
   <div class="caption">
     <p>
-      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item)
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item, new { linebreaks = "<br/>" })
     </p>
     @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link, Model.Item, new
 {

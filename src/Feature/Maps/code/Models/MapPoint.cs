@@ -1,17 +1,15 @@
 ﻿namespace Sitecore.Feature.Maps.Models
 {
-  using Data.Items;
-
   public class MapPoint
   {
     public MapPoint()
     {
     }
 
-    public MapPoint(Item item)
+    public MapPoint(Data.Items.Item item)
     {
-      this.Name = item[Templates.MapPoint.Fields.Name];
-      this.Address = item[Templates.MapPoint.Fields.Address];
+      this.Name = Web.UI.WebControls.FieldRenderer.Render(item, Templates.MapPoint.Fields.Name.ToString());
+      this.Address = Web.UI.WebControls.FieldRenderer.Render(item, Templates.MapPoint.Fields.Address.ToString());
       this.Location = item[Templates.MapPoint.Fields.Location];
     }
 
