@@ -133,6 +133,9 @@
           color: $bg-white-color;
           background-color: rgba(0,0,0,.1);
         }
+        &:focus {
+          outline-width: 0;
+        }
       }
     }
   }

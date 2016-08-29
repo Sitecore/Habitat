@@ -10379,6 +10379,8 @@ li.active {
         .bg-white #mainNavbar .navbar-form input {
           color: #000;
           background-color: rgba(0, 0, 0, 0.1); }
+        #mainNavbar .navbar-form input:focus {
+          outline-width: 0; }
   @media (min-width: 767px) {
     .navbar-collapse.collapse {
       display: inline-block !important; } }

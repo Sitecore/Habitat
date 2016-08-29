@@ -8,8 +8,8 @@
 
     public MapPoint(Data.Items.Item item)
     {
-      this.Name = Web.UI.WebControls.FieldRenderer.Render(item, Templates.MapPoint.Fields.Name.ToString());
-      this.Address = Web.UI.WebControls.FieldRenderer.Render(item, Templates.MapPoint.Fields.Address.ToString());
+      this.Name = item[Templates.MapPoint.Fields.Name];
+      this.Address = item[Templates.MapPoint.Fields.Address];
       this.Location = item[Templates.MapPoint.Fields.Location];
     }
 

@@ -7,7 +7,7 @@ header {
 .header {
 
   &-static {
-    background-color: $color-secondary-dark;
+    background-color: $header-background-color;
   }
 
   &-fixed {
@@ -17,7 +17,7 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: $color-secondary-dark;
+    background-color: $header-background-color;
     box-sizing: border-box;
 
     @media (max-width: $screen-sm-max) {
