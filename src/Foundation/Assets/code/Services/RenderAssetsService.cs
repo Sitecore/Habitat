@@ -1,10 +1,13 @@
 ﻿namespace Sitecore.Foundation.Assets.Services
 {
+  using System;
+  using System.Collections.Generic;
   using System.Linq;
   using System.Text;
   using System.Web;
   using Sitecore.Foundation.Assets.Models;
   using Sitecore.Foundation.Assets.Repositories;
+  using Sitecore.Text;
 
   /// <summary>
   ///   A service which helps add the required JavaScript at the end of a page, and CSS at the top of a page.
@@ -15,14 +18,10 @@
     private static RenderAssetsService _current;
     public static RenderAssetsService Current => _current ?? (_current = new RenderAssetsService());
 
-    /// <summary>
-    ///   Renders the JavaScript requirements to the page
-    /// </summary>
-    /// <returns>The rendered JavaScript code</returns>
     public HtmlString RenderScript(ScriptLocation location)
     {
       var sb = new StringBuilder();
-      var assets = AssetRepository.Current.Items.Where(x => (x.Type == AssetType.JavaScript || x.Type == AssetType.Raw) && x.Location == location);
+      var assets = AssetRepository.Current.Items.Where(asset => (asset.Type == AssetType.JavaScript || asset.Type == AssetType.Raw) && asset.Location == location && this.IsForContextSite(asset));
       foreach (var item in assets)
       {
         if (!string.IsNullOrEmpty(item.File))
@@ -46,14 +45,10 @@
       return new HtmlString(sb.ToString());
     }
 
-    /// <summary>
-    ///   Renders the stylesheet requirements to the page
-    /// </summary>
-    /// <returns>The rendered style code</returns>
     public HtmlString RenderStyles()
     {
       var sb = new StringBuilder();
-      foreach (var item in AssetRepository.Current.Items.Where(x => x.Type == AssetType.Css))
+      foreach (var item in AssetRepository.Current.Items.Where(asset => asset.Type == AssetType.Css && this.IsForContextSite(asset)))
       {
         if (!string.IsNullOrEmpty(item.File))
         {
@@ -69,5 +64,20 @@
 
       return new HtmlString(sb.ToString());
     }
+
+    private bool IsForContextSite(Asset asset)
+    {
+      if (asset.Site == null)
+        return true;
+
+      foreach (var part in asset.Site.Split(new[] {'|'}, StringSplitOptions.RemoveEmptyEntries))
+      {
+        var siteWildcard = part.Trim().ToLowerInvariant();
+        if (siteWildcard == "*" || Context.Site.Name.Equals(siteWildcard, StringComparison.InvariantCultureIgnoreCase))
+          return true;
+      }
+      return false;
+    }
+
   }
 }
