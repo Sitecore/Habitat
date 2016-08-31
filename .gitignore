@@ -26,3 +26,5 @@ temp/
 *.ncrunchsolution
 .vscode
 nCrunchTemp*.*
+project.lock.json
+*.nuget.props
