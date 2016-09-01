@@ -26,9 +26,12 @@
     public void FormatResult(SearchResultItem item, ISearchResult formattedResult)
     {
       var contentItem = item.GetItem();
-      formattedResult.Title = FieldRenderer.Render(contentItem, Templates.NewsArticle.Fields.Title.ToString());
-      formattedResult.Description = FieldRenderer.Render(contentItem, Templates.NewsArticle.Fields.Summary.ToString());
-      formattedResult.ViewName = "~/Views/News/NewsSearchResult.cshtml";
+      if (contentItem != null)
+      {
+        formattedResult.Title = FieldRenderer.Render(contentItem, Templates.NewsArticle.Fields.Title.ToString());
+        formattedResult.Description = FieldRenderer.Render(contentItem, Templates.NewsArticle.Fields.Summary.ToString());
+        formattedResult.ViewName = "~/Views/News/NewsSearchResult.cshtml";
+      }      
     }
   }
 }
