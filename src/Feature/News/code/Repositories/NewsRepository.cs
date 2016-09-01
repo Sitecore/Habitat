@@ -39,6 +39,7 @@
       //TODO: Refactor for scalability
       var results = searchService.FindAll();
       return results.Results.Select(x => x.Item).OrderByDescending(i => i[Templates.NewsArticle.Fields.Date]);
+      // TODO: make sure items are valid
     }
 
     public IEnumerable<Item> GetLatestNews(int count)
