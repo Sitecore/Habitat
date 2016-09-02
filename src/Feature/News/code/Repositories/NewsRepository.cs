@@ -7,7 +7,7 @@
   using Sitecore.Foundation.Indexing.Models;
   using Sitecore.Foundation.Indexing.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
-
+   
   public class NewsRepository : INewsRepository
   {
     public Item ContextItem { get; set; }
@@ -38,7 +38,7 @@
       searchService.Settings.Root = this.ContextItem;
       //TODO: Refactor for scalability
       var results = searchService.FindAll();
-      return results.Results.Select(x => x.Item).OrderByDescending(i => i[Templates.NewsArticle.Fields.Date]);
+      return results.Results.Select(x => x.Item).Where(x => x != null).OrderByDescending(i => i[Templates.NewsArticle.Fields.Date]);
     }
 
     public IEnumerable<Item> GetLatestNews(int count)
