@@ -2,7 +2,7 @@
 ID: "4b86cb93-0ae5-4845-877b-6a045eac5707"
 Parent: "ea13174a-b43e-4f68-b474-b41188771a9e"
 Template: "920a1781-559f-4e1c-bb2e-6b9a2113fe6b"
-Path: /sitecore/content/Habitat/Global/Media/Dependencies
+Path: /sitecore/content/Habitat/Global/Media/DependenciesFolder
 DB: master
 Languages:
 - Language: en
