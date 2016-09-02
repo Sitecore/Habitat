@@ -2,7 +2,7 @@
 ID: "1369c85e-3513-4f00-9a4c-505a97a5e55a"
 Parent: "b4d87e66-d2c5-4c06-8f9a-08aeaf38055a"
 Template: "390333c8-751b-4332-84a3-6360b969a19f"
-Path: /sitecore/content/Habitat/Global/Links/Footer Menu/Right/Best Practise Blogs
+Path: /sitecore/content/Habitat/Global/Links/Footer Menu/Right/Best Practice Blogs
 DB: master
 Languages:
 - Language: da
@@ -27,7 +27,7 @@ Languages:
     Fields:
     - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
       Hint: NavigationTitle
-      Value: Best Practise Blogs
+      Value: Best Practice Blogs
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150910T110403Z
