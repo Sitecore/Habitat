@@ -65,7 +65,7 @@
 
     private IEnumerable<KeyValuePair<string, string>> GetIdentificationProperties()
     {
-      if (!string.IsNullOrEmpty(this.contactProfileProvider.Contact.Identifiers.Identifier))
+      if (!string.IsNullOrEmpty(this.contactProfileProvider?.Contact?.Identifiers.Identifier))
       {
         yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Identification", "Identification"), this.contactProfileProvider.Contact.Identifiers.Identifier);
       }
@@ -73,6 +73,9 @@
 
     private IEnumerable<KeyValuePair<string, string>> GetCommunicationPreferencesProperties()
     {
+      if (this.contactProfileProvider?.CommunicationProfile == null)
+        yield break;
+
       if (this.contactProfileProvider.CommunicationProfile.CommunicationRevoked)
       {
         yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Communication Revoked", "Communication Revoked"), DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Communication Revoked True", "Yes"));
@@ -89,6 +92,9 @@
 
     private IEnumerable<KeyValuePair<string, string>> GetPhoneNumberProperties()
     {
+      if (this.contactProfileProvider.PhoneNumbers == null)
+        yield break;
+
       var phoneTitle = DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Phone", "Phone");
       foreach (var phoneKey in this.contactProfileProvider.PhoneNumbers.Entries.Keys)
       {
@@ -114,6 +120,9 @@
 
     private IEnumerable<KeyValuePair<string, string>> GetEmailProperties()
     {
+      if (this.contactProfileProvider?.Emails == null)
+        yield break;
+
       var emailTitle = DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Email", "Email");
       foreach (var emailKey in this.contactProfileProvider.Emails.Entries.Keys)
       {
@@ -123,6 +132,9 @@
 
     private IEnumerable<KeyValuePair<string, string>> GetAddressProperties()
     {
+      if (this.contactProfileProvider?.Addresses == null)
+        yield break;
+
       var addressTitle = DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Address", "Address");
       foreach (var addressKey in this.contactProfileProvider.Addresses.Entries.Keys)
       {
@@ -150,6 +162,9 @@
 
     private IEnumerable<KeyValuePair<string, string>> GetPersonalInfoProperties()
     {
+      if (this.contactProfileProvider?.PersonalInfo == null)
+        yield break;
+
       var fullNameProperties = new[] {nameof(this.contactProfileProvider.PersonalInfo.FirstName), nameof(this.contactProfileProvider.PersonalInfo.MiddleName), nameof(this.contactProfileProvider.PersonalInfo.Suffix), nameof(this.contactProfileProvider.PersonalInfo.Surname), nameof(this.contactProfileProvider.PersonalInfo.Title)};
       foreach (var property in this.contactProfileProvider.PersonalInfo.GetType().GetProperties())
       {
@@ -169,7 +184,7 @@
 
     private string GetPhotoUrl()
     {
-      if (this.contactProfileProvider.Picture?.Picture == null)
+      if (this.contactProfileProvider?.Picture?.Picture == null)
       {
         return null;
       }
@@ -179,11 +194,16 @@
 
     private bool GetIsIdentified()
     {
-      return this.contactProfileProvider.Contact.Identifiers.IdentificationLevel == ContactIdentificationLevel.Known;
+      return this.contactProfileProvider?.Contact?.Identifiers.IdentificationLevel == ContactIdentificationLevel.Known;
     }
 
     private string GetFullName()
     {
+      if (this.contactProfileProvider?.PersonalInfo == null)
+      {
+        return null;
+      }
+
       var fullName = string.Join(" ", this.contactProfileProvider.PersonalInfo.Title, this.contactProfileProvider.PersonalInfo.FirstName, this.contactProfileProvider.PersonalInfo.MiddleName, this.contactProfileProvider.PersonalInfo.Surname).Trim();
       if (!string.IsNullOrEmpty(this.contactProfileProvider.PersonalInfo.Suffix))
       {

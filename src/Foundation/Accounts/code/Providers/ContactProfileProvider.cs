@@ -2,6 +2,7 @@
 {
   using System;
   using System.Collections.Generic;
+  using System.Linq;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Model.Entities;
   using Sitecore.Analytics.Model.Framework;
@@ -63,10 +64,12 @@
     public IContactEmailAddresses Emails => this.GetFacet<IContactEmailAddresses>("Emails");
     public IContactCommunicationProfile CommunicationProfile => this.GetFacet<IContactCommunicationProfile>("Communication Profile");
     public IContactPhoneNumbers PhoneNumbers => this.GetFacet<IContactPhoneNumbers>("Phone Numbers");
-    public IEnumerable<IBehaviorProfileContext> BehaviorProfiles => this.Contact.BehaviorProfiles.Profiles;
+    public IEnumerable<IBehaviorProfileContext> BehaviorProfiles => this.Contact?.BehaviorProfiles.Profiles ?? Enumerable.Empty<IBehaviorProfileContext>();
 
     public Contact Flush()
     {
+      if (this.Contact == null)
+        return null;
       return this.contactManager?.FlushContactToXdb2(this.Contact);
     }
 
