@@ -22,21 +22,21 @@
 
     internal IEnumerable<Asset> Items => this._items;
 
-    internal void Add(Asset requirement, bool preventAddToCache = false)
+    internal void Add(Asset asset, bool preventAddToCache = false)
     {
       lock (this._items)
       {
-        if (requirement.AddOnceToken != null)
+        if (asset.AddOnceToken != null)
         {
-          if (this._items.Any(x => x.AddOnceToken != null && x.AddOnceToken == requirement.AddOnceToken))
+          if (this._items.Any(x => x.AddOnceToken != null && x.AddOnceToken == asset.AddOnceToken))
           {
             return;
           }
         }
 
-        if (requirement.File != null)
+        if (asset.File != null)
         {
-          if (this._items.Any(x => x.File != null && x.File == requirement.File))
+          if (this._items.Any(x => x.File != null && x.File == asset.File))
           {
             return;
           }
@@ -63,14 +63,14 @@
                 cachedRequirements = _cache.Get(renderingId) ?? new AssetRequirementList();
               }
 
-              cachedRequirements.Add(requirement);
+              cachedRequirements.Add(asset);
               _cache.Set(renderingId, cachedRequirements);
             }
           }
         }
 
         // Passed the checks, add the requirement.
-        this._items.Add(requirement);
+        this._items.Add(asset);
       }
     }
 
@@ -96,22 +96,22 @@
 
     public void AddScript(string file, bool preventAddToCache = false)
     {
-      this.Add(new Asset(AssetType.JavaScript, file), preventAddToCache);
+      this.Add(new Asset(AssetType.JavaScript, ScriptLocation.Body, file:file), preventAddToCache);
     }
 
     public void AddScript(string script, string addOnceToken, ScriptLocation location, bool preventAddToCache = false)
     {
-      this.Add(new Asset(AssetType.JavaScript, null, location, script, script.GetHashCode().ToString()), preventAddToCache);
+      this.Add(new Asset(AssetType.JavaScript, location, inline:script), preventAddToCache);
     }
 
     public void AddStyling(string file, bool preventAddToCache = false)
     {
-      this.Add(new Asset(AssetType.Css, file), preventAddToCache);
+      this.Add(new Asset(AssetType.Css, ScriptLocation.Head, file:file), preventAddToCache);
     }
 
     public void AddStyling(string styling, string addOnceToken, bool preventAddToCache = false)
     {
-      this.Add(new Asset(AssetType.Css, null, ScriptLocation.Head, styling, styling.GetHashCode().ToString()), preventAddToCache);
+      this.Add(new Asset(AssetType.Css, ScriptLocation.Head, styling, styling.GetHashCode().ToString()), preventAddToCache);
     }
 
     internal Asset CreateFromConfiguration(XmlNode node)
@@ -119,7 +119,8 @@
       var assetTypeString = XmlUtil.GetAttribute("type", node, null);
       var assetFile = XmlUtil.GetAttribute("file", node, null);
       var scriptLocationString = XmlUtil.GetAttribute("location", node, null);
-      var innerValue = node.InnerXml;
+      var site = XmlUtil.GetAttribute("site", node, null);
+      var inlineValue = node.InnerXml;
 
       if (string.IsNullOrWhiteSpace(assetTypeString))
       {
@@ -133,7 +134,7 @@
         return null;
       }
 
-      ScriptLocation? scriptLocation = null;
+      var scriptLocation = ScriptLocation.Body;
       if (scriptLocationString != null)
       {
         ScriptLocation location;
@@ -148,25 +149,11 @@
       Asset asset = null;
       if (!string.IsNullOrEmpty(assetFile))
       {
-        if (scriptLocation.HasValue)
-        {
-          asset = new Asset(assetType, assetFile, scriptLocation.Value);
-        }
-        else
-        {
-          asset = new Asset(assetType, assetFile);
-        }
+          asset = new Asset(assetType, scriptLocation, assetFile, site:site);
       }
-      else if (!string.IsNullOrEmpty(innerValue))
+      else if (!string.IsNullOrEmpty(inlineValue))
       {
-        if (scriptLocation.HasValue)
-        {
-          asset = new Asset(assetType, null, inline: innerValue, addOnceToken: innerValue.GetHashCode().ToString(), location: scriptLocation.Value);
-        }
-        else
-        {
-          asset = new Asset(assetType, null, inline: innerValue, addOnceToken: innerValue.GetHashCode().ToString());
-        }
+          asset = new Asset(assetType, scriptLocation, inline:inlineValue, site:site);
       }
 
       return asset;

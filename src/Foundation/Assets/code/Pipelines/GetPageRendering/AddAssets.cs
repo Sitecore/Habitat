@@ -17,22 +17,22 @@
   /// </summary>
   public class AddAssets : GetPageRenderingProcessor
   {
-    private IList<Asset> _defaultAssets;
+    private IList<Asset> _siteAssets;
 
-    private IList<Asset> DefaultAssets => this._defaultAssets ?? (this._defaultAssets = new List<Asset>());
+    private IList<Asset> SiteAssets => this._siteAssets ?? (this._siteAssets = new List<Asset>());
 
     public void AddAsset(XmlNode node)
     {
       var asset = AssetRepository.Current.CreateFromConfiguration(node);
       if (asset != null)
       {
-        this.DefaultAssets.Add(asset);
+        this.SiteAssets.Add(asset);
       }
     }
 
     public override void Process(GetPageRenderingArgs args)
     {
-      this.AddDefaultAssetsFromConfiguration();
+      this.AddSiteAssetsFromConfiguration();
 
       this.AddPageAssets(PageContext.Current.Item);
 
@@ -146,9 +146,9 @@
       return inheritedAssetItem?[assetField];
     }
 
-    private void AddDefaultAssetsFromConfiguration()
+    private void AddSiteAssetsFromConfiguration()
     {
-      foreach (var asset in this.DefaultAssets)
+      foreach (var asset in this.SiteAssets)
       {
         AssetRepository.Current.Add(asset, true);
       }
