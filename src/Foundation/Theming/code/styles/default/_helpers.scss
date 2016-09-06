@@ -1,13 +1,13 @@
 .bg {
   &-primary {
     background-color: $brand-primary !important;
-    color: #FFF !important;
+    color: $brand-text-color !important;
   }
   &-secondary {
     background-color: $color-secondary !important;
-    color: #FFF;
+    color: $brand-text-color;
     &-dark {
-      color: #FFF !important;
+      color: $brand-text-color !important;
       background-color: $color-secondary-dark !important;
       p {
         opacity: 0.4;
@@ -17,32 +17,32 @@
       }
     }
     &-light {
-      color: #FFF;
+      color: $brand-text-color;
       background-color: $color-secondary-light !important;
     }
     &-lighter {
-      color: #FFF;
+      color: $brand-text-color;
       background-color: $color-secondary-lighter !important;
     }
   }
   &-white {
-    background-color: #FFF;
-    color: #000;
+    background-color: $bg-white-bg;
+    color: $bg-white-color;
   }
   &-black {
-    background-color: #000;
-    color: #FFF;
+    background-color: $bg-black-bg;
+    color: $bg-black-color;
   }
   &-dark {
     background-color: $color-secondary-dark;
-    color: #FFF;
+    color: $brand-text-color;
   }
   &-transparent {
     background-color: transparent !important;
-    color: #FFF;
+    color: $brand-text-color;
 
     a, p, h1, h2, h3, h4, h5, h6, i {
-      color: #FFF !important;
+      color: $brand-text-color !important;
     }
 
     .dropdown-menu, .mega-dropdown-menu {
@@ -56,7 +56,7 @@
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
-    color: #FFF;
+    color: $brand-text-color;
     position: relative;
     overflow: hidden;
     &:after {
@@ -110,7 +110,7 @@
 
 
   &-primary, &-secondary, &-dark, &-media {
-    color: #FFF;
+    color: $brand-text-color;
      & .dropdown-menu:not(.bg-primary):not(.bg-secondary):not(.bg-dark):not(.bg-media), {
       color: $text-color !important;
       .btn {
@@ -158,11 +158,5 @@
     [class^="col-"], [class*="col-"] {
       padding: 0 !important;
     }
-  }
-}
-
-.text {
-  &-white {
-    color: #FFF !important;
   }
 }

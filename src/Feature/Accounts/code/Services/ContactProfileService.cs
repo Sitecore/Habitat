@@ -1,5 +1,7 @@
 ﻿namespace Sitecore.Feature.Accounts.Services
 {
+  using System;
+  using System.Linq;
   using Sitecore.Feature.Accounts.Models;
   using Sitecore.Foundation.Accounts.Providers;
   using Sitecore.Foundation.SitecoreExtensions.Services;
@@ -58,9 +60,15 @@
 
     public void SetTag(string tagName, string tagValue)
     {
-      if (!string.IsNullOrEmpty(tagName) && tagValue != null)
+      var contact = this.contactProfileProvider.Contact;
+      if (contact == null)
+        return;
+
+      var tagValueExists = contact.Tags.GetAll(tagName)?.FirstOrDefault(x => x == tagValue) != null;
+
+      if (!tagValueExists && !string.IsNullOrEmpty(tagName) && tagValue != null)
       {
-        this.contactProfileProvider.Contact.Tags.Set(tagName, tagValue);
+        contact.Tags.Set(tagName, tagValue);
       }
     }
 

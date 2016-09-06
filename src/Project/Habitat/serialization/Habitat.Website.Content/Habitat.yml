@@ -93,9 +93,7 @@ Languages:
       Hint: OrganisationAddress
       Value: |
         2320 Marinship Way
-        
         Sausalito, CA 94965
-        
         USA
     - ID: "e748d808-64c1-4dec-9718-f35cf9689e4b"
       Hint: Logo

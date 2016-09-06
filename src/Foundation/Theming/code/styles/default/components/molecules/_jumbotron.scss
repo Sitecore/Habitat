@@ -15,35 +15,35 @@
 
   &.bg-primary, &.bg-dark, &.bg-media {
     h1, h2, h3, h4, h5, h6, p {
-      color: #FFF;
+      color: $brand-text-color;
     }
     .label {
-      color: #FFF;
+      color: $brand-text-color;
     }
   }
 
   p {
-    font-size: 16px;
+    font-size: $jumbotron-font-size;
     @media (max-width: $screen-sm-max) {
-      font-size: 12px;
+      font-size: floor($jumbotron-font-size*.75);
     }
     &.lead {
-      font-size: 18px;
+      font-size: $jumbotron-lead-font-size;  
       @media (max-width: $screen-sm-max) {
-        font-size: 14px;
+        font-size: floor($jumbotron-font-size*.75);
       }
     }
   }
   .label {
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: $jumbotron-font-size;
     margin-bottom: 0;
     color: $text-color;
     .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-      color: #FFF;
+      color: $brand-text-color;
     }
     .bg-white & {
-      color: #000;
+      color: $bg-white-color;
     }
   }
 
@@ -81,35 +81,35 @@
 
 
     h1 {
-      font-size: 120px;
+      font-size: $jumbotron-xl-h1-font-size;
       @media all and (max-width: $screen-sm-max) {
-        font-size: 40px;
+        font-size: floor($jumbotron-xl-h1-font-size*.33);
       }
     }
 
     h2 {
-      font-size: 80px;
+      font-size: $jumbotron-xl-h2-font-size;
       @media all and (max-width: $screen-sm-max) {
-        font-size: 32px;
+        font-size: floor($jumbotron-xl-h2-font-size*.4);
       }
     }
 
     h3 {
-      font-size: 60px;
+      font-size: $jumbotron-xl-h3-font-size;
       @media all and (max-width: $screen-sm-max) {
-        font-size: 26px;
+        font-size: floor($jumbotron-xl-h3-font-size*.4);
       }
     }
 
     p {
-      font-size: 23px;
+      font-size: $jumbotron-xl-font-size;
       @media (max-width: $screen-sm-max) {
-        font-size: 16px;
+        font-size: floor($jumbotron-xl-font-size*.75);
       }
       &.lead {
-        font-size: 26px;
+        font-size: $jumbotron-xl-lead-font-size;
         @media (max-width: $screen-sm-max) {
-          font-size: 18px;
+        font-size: floor($jumbotron-xl-lead-font-size*.75);
         }
       }
     }

@@ -1,6 +1,6 @@
 footer {
   #main-container > & {
-    background-color: $color-secondary-dark;
+    background-color: $footer-background-color;
     padding-top: 20px;
     color: $footer-text-color;
   }
@@ -29,10 +29,10 @@ footer {
     li {
       display: inline-block;
       float: left;
-      font-size: 12px;
+      font-size: $font-size-small;
     }
   }
   small {
-    font-size: 12px;
+    font-size: $font-size-small;
   }
 }

@@ -28,21 +28,20 @@ article {
     h1, h2, h3, h4, h5, h6 {
       color: $brand-primary;
       margin-top: 0;
-      small {
+      small, .small {
         font-size: 45%;
         color: $text-color;
       }
     }
     h1 {
-      font-size: 45px;
       margin-bottom: 25px;
       @media all and (max-width: $screen-xs-max) {
-        font-size: 30px;
+        font-size: ceil($font-size-h1*.66);
         margin-bottom: 10px;
       }
     }
     .lead {
-      font-size: 20px;
+      font-size: $article-font-size-lead;
       margin-bottom: 0;
     }
   }

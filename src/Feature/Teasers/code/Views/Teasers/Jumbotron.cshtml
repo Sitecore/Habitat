@@ -47,7 +47,7 @@
     @Html.Sitecore().Field(Templates.TeaserHeadline.Fields.Title, Model.Item)
   </h2>
   <p class="">
-    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item)
+    @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item, new { linebreaks = "<br/>" })
   </p>
   @Html.Sitecore().Field(Templates.TeaserContent.Fields.Link, Model.Item, new
 {

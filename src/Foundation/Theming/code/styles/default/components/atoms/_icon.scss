@@ -1,27 +1,26 @@
 .icon {
   &-md {
-    font-size: 24px;
+    font-size: $icon-font-size-md;
     @media all and (max-width: $screen-xs-max) {
-      font-size: 18px;
+      font-size: ceil($icon-font-size-md*.75);
     }
   }
   &-lg {
-    font-size: 48px;
+    font-size: $icon-font-size-lg;
     @media all and (max-width: $screen-xs-max) {
-      font-size: 32px;
+      font-size: ceil($icon-font-size-lg*.65);
     }
   }
   &-xl {
-    font-size: 64px;
-
+    font-size: $icon-font-size-xl;
     @media all and (max-width: $screen-xs-max) {
-      font-size: 40px;
+      font-size: ceil($icon-font-size-xl*.65);
     }
   }
   &-xxl {
-    font-size: 92px;
+    font-size: $icon-font-size-xxl;
     @media all and (max-width: $screen-xs-max) {
-      font-size: 60px;
+      font-size: ceil($icon-font-size-xxl*.65);
     }
   }
   &-centered {

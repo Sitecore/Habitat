@@ -3,34 +3,52 @@ $table-cell-padding: 12px 15px;
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/tables";
 
 table, .table {
-
   .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-    color: #FFF;
+    color: $brand-text-color;
     .active, .success, .warning, .danger, .info {
       color: $text-color;
     }
   }
 
-  &.table-striped {
-    tbody {
-      tr {
-        &:nth-of-type(odd) {
-          .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-            color: $text-color;
-          }
+  &.table-striped-vertical 
+  {
+    th, td 
+    {
+      &:nth-child(even) 
+      {
+        background-color: $table-bg-accent;
+
+        .bg-primary & {
+          background-color: darken($brand-primary, 3);
+        }
+        .bg-secondary & {
+          background-color: darken($color-secondary, 3);
+        }
+        .bg-dark & {
+          background-color: darken($color-secondary-dark, 3);
+        }       
+        .bg-media & {
+          background-color: rgba(255, 255, 255, .1);
         }
       }
     }
   }
 
-  &.table-striped-vertical {
-    th, td {
-      &:nth-child(even) {
-        background-color: #f9f9f9;
-
-        .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-          color: $text-color;
-        }
+  &.table-striped 
+  {
+    > tbody > tr:nth-of-type(odd) 
+    {
+      .bg-primary & {
+        background-color: darken($brand-primary, 3);
+      }
+      .bg-secondary & {
+        background-color: darken($color-secondary, 3);
+      }
+      .bg-dark & {
+        background-color: darken($color-secondary-dark, 3);
+      }       
+      .bg-media & {
+        background-color: rgba(255, 255, 255, .1);
       }
     }
   }

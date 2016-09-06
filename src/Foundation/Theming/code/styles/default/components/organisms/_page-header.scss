@@ -20,7 +20,7 @@
 
   &.bg-primary, &.bg-dark, &.bg-media {
     h1 {
-      color: #FFF;
+      color: $brand-text-color;
     }
   }
 
@@ -70,17 +70,17 @@
       & > li {
         opacity: 0.6;
         &.active {
-          color: #FFF;
+          color: $brand-text-color;
           opacity: 1;
           &:before {
             opacity: 0.6;
           }
         }
         & > a {
-          color: #FFF;
+          color: $brand-text-color;
         }
         & + li:before {
-          color: #FFF;
+          color: $brand-text-color;
         }
       }
     }

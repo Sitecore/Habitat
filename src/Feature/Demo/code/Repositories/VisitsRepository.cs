@@ -1,5 +1,6 @@
 ﻿namespace Sitecore.Feature.Demo.Repositories
 {
+  using System;
   using System.Collections.Generic;
   using System.Linq;
   using Sitecore.Analytics;
@@ -33,7 +34,7 @@
 
     private int GetEngagementValue()
     {
-      return this.contactProfileProvider.Contact.System.Value;
+      return this.contactProfileProvider.Contact?.System.Value ?? 0;
     }
 
     private IEnumerable<PageView> GetAllPageViews()
@@ -44,7 +45,7 @@
 
     private int GetTotalVisits()
     {
-      return this.contactProfileProvider.Contact.System?.VisitCount ?? 1;
+      return this.contactProfileProvider.Contact?.System?.VisitCount ?? 1;
     }
   }
 }

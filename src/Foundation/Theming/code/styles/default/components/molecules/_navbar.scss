@@ -23,14 +23,12 @@
     margin-bottom: 25px;
 
     &:hover {
-      background-color: transparent;
+      background-color: $navbar-default-bg;
     }
 
     .icon-bar {
-      background-color: #FFF;
+      background-color: $brand-text-color;
     }
-
-
 
     &-search {
       .is-searching & {
@@ -123,17 +121,20 @@
       input {
         padding: 16px;
         margin: 0px 0;
-        color: #FFF;
+        color: $navbar-default-link-color;
         background-color: $color-secondary-light;
         border: none;
 
         .bg-primary &, .bg-secondary & {
           color: $color-primary;
-          background-color: #FFF;
+          background-color: $navbar-default-link-color;
         }
         .bg-white & {
-          color: #000;
+          color: $bg-white-color;
           background-color: rgba(0,0,0,.1);
+        }
+        &:focus {
+          outline-width: 0;
         }
       }
     }
@@ -171,7 +172,7 @@
           top: 100%;
           left: auto;
           right: 0;
-          background-color: #FFF;
+          background-color: $navbar-dropdown-bg;
           li {
             float: none;
           }
@@ -316,7 +317,7 @@
 
     &:hover {
       .bg-white & {
-        color: #000;
+        color: $bg-white-color;
       }
     }
 
@@ -395,7 +396,7 @@
       & > a {
         border: none;
         .bg-white & {
-          color: #000 !important;
+          color: $bg-white-color !important;
         }
       }
     }
@@ -408,10 +409,10 @@
             background-color: rgba(0,0,0,.2);
             filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#20000000,endColorstr=#20000000);
             .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-              color: #FFF;
+              color: $navbar-default-link-color;
             }
             .bg-white & {
-              color: #000;
+              color: $bg-white-color;
             }
           }
           & > .active {
@@ -434,7 +435,7 @@
         li {
           & > a {
             @media all and (max-width: $screen-xs-max) {
-              color: #FFF;
+              color: $navbar-default-link-color;
             }
           }
         }
@@ -450,9 +451,9 @@
             & > li {
               & > a {
                 @media (max-width: $screen-xs-max) {
-                  color: #FFF;
+                  color: $navbar-default-link-color;
                   &:hover {
-                    color: #FFF;
+                    color: $navbar-default-link-hover-color;
                   }
                 }
               }
@@ -466,23 +467,23 @@
         & > a, & > a:focus, & > a:hover {
           background-color: rgba(0,0,0,0.4);
           filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#40000000', endColorstr='#40000000');
-          color: #FFF;
+          color: $navbar-default-link-hover-color;
         }
 
         .dropdown-menu {
           & > li {
             &.disabled {
               a {
-                color: #777777;
+                color: $navbar-default-disabled-color;
                 &:hover {
-                  color: #777777;
+                  color: $navbar-default-disabled-color;
                 }
               }
             }
             &.active {
               a {
                 color: $brand-primary;
-                background-color: transparent;
+                background-color: $navbar-default-bg;
               }
             }
             & > a {
@@ -497,7 +498,7 @@
               }
 
               &.active {
-                color: #FFF;
+                color: $navbar-default-link-color;
               }
             }
             &.divider {
@@ -509,21 +510,19 @@
     }
     .navbar-toggle {
       &:hover, &:focus {
-        background-color: transparent;
+        background-color: $navbar-default-bg;
       }
       .icon-bar {
-        background-color: #FFF;
+        background-color: $navbar-toggle-icon-bar-color;
         .bg-white & {
-          background-color: #000;
+          background-color: $bg-white-color;
         }
-      }
-      .bg-white & {
-
       }
     }
   }
 
   &.navbar-default {
-    border-color: transparent;
+    border-color: $navbar-default-bg;
   }
+  
 }

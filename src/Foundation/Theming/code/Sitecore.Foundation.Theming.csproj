@@ -56,14 +56,6 @@
     <Content Include="bower.json" />
     <Content Include="App_Config\Include\Foundation\Foundation.Theming.Serialization.config" />
     <Content Include="scripts\media-query.js" />
-    <Content Include="styles\bootstrap.css">
-      <DependentUpon>bootstrap.scss</DependentUpon>
-    </Content>
-    <Content Include="styles\bootstrap.min.css">
-      <DependentUpon>bootstrap.css</DependentUpon>
-    </Content>
-    <Content Include="styles\bootstrap.scss" />
-    <Content Include="styles\components\atoms\_breadcrumb.scss" />
     <Content Include="styles\dayfrost.css">
       <DependentUpon>dayfrost.scss</DependentUpon>
     </Content>
@@ -72,10 +64,18 @@
     </Content>
     <Content Include="styles\dayfrost.scss" />
     <Content Include="styles\dayfrost\components\atoms\_well.scss" />
+    <Content Include="styles\dayfrost\_overrides.scss" />
     <Content Include="styles\dayfrost\_variables.scss" />
+    <Content Include="styles\default.css">
+      <DependentUpon>default.scss</DependentUpon>
+    </Content>
+    <Content Include="styles\default.min.css">
+      <DependentUpon>default.css</DependentUpon>
+    </Content>
     <Content Include="styles\default\components\atoms\_address.scss" />
     <Content Include="styles\default\components\atoms\_alert.scss" />
     <Content Include="styles\default\components\atoms\_badges.scss" />
+    <Content Include="styles\default\components\atoms\_blockgrid.scss" />
     <Content Include="styles\default\components\atoms\_blockquote.scss" />
     <Content Include="styles\default\components\atoms\_breadcrumbs.scss" />
     <Content Include="styles\default\components\atoms\_buttons.scss" />
@@ -151,6 +151,7 @@
       <DependentUpon>niteflight.css</DependentUpon>
     </Content>
     <Content Include="styles\niteflight.scss" />
+    <Content Include="styles\niteflight\_overrides.scss" />
     <Content Include="styles\niteflight\_variables.scss" />
     <Content Include="styles\vendor.css" />
     <Content Include="styles\vendor.min.css">
@@ -165,8 +166,6 @@
     <Content Include="styles\white-wonder.scss" />
     <Content Include="styles\white-wonder\_overrides.scss" />
     <Content Include="styles\white-wonder\_variables.scss" />
-    <Content Include="styles\_fonts.scss" />
-    <Content Include="styles\_variables.scss" />
     <None Include="bundleconfig.json" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="scripts\carousel.js" />
@@ -187,7 +186,9 @@
     <Content Include="fonts\bitter-v7-latin-700.svg" />
     <Content Include="fonts\bitter-v7-latin-italic.svg" />
     <Content Include="fonts\bitter-v7-latin-regular.svg" />
-    <Content Include="App_Config\Include\Foundation\Foundation.Theming.config" />
+    <Content Include="App_Config\Include\Foundation\Foundation.Theming.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\open-sans-v13-latin-300.svg" />
     <Content Include="fonts\open-sans-v13-latin-300italic.svg" />
@@ -264,9 +265,14 @@
     <Content Include="scripts\Sitecore.Foundation.Theming.min.js.map">
       <DependentUpon>Sitecore.Foundation.Theming.min.js</DependentUpon>
     </Content>
-    <Content Include="styles\dayfrost\_overrides.scss" />
-    <Content Include="styles\default\components\atoms\_blockgrid.scss" />
-    <Content Include="styles\niteflight\_overrides.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_button.scss" />
+    <Content Include="styles\dayfrost\components\_atoms.scss" />
+    <Content Include="styles\dayfrost\_fonts.scss" />
+    <Content Include="styles\default.scss" />
+    <Content Include="styles\default\templates\_organisms.scss" />
+    <Content Include="styles\niteflight\_fonts.scss" />
+    <Content Include="styles\white-wonder\_fonts.scss" />
+    <Content Include="styles\_defaults.scss" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

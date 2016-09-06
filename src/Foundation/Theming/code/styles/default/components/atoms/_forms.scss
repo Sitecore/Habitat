@@ -1,55 +1,22 @@
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/forms";
 
-form {
-
-  .form-control {
-    background-color: transparent;
-    //border: none;
-    //padding: 0;
-  }
-
-  &.form-signin, &.form-register {
-    max-width: 600px;
-    margin: 0 auto;
-
-    hr {
-      margin: 20px 0;
-    }
-  }
-}
-
-
-
-.checkbox {
-  label {
-    vertical-align: middle;
-    //padding-left: 0;
-  }
-}
-
 input {
   line-height: normal;
   &[type="text"], &[type="password"] {
-    &.form-control {
-      padding: 0 0px;
-      &[readonly] {
-        padding: 0 10px;
-      }
-      &:focus {
-        padding: 0 10px;
-      }
-    }
-  }
-  &.form-control {
-
+    padding: 0 0px;
     &:focus {
-      box-shadow: none;
-      background-color: #FFF;
+      padding: 0 10px;
+    }
+    &[readonly] {
+      padding: 0;
     }
   }
-
-
+  
+  &:focus {
+    box-shadow: none;
+    background-color: $input-bg-focus;
+  }
 
   .input-group &[type="text"] {
     padding-left: 10px;
@@ -67,7 +34,7 @@ input {
     &:checked {
       &:before {
         border-width: 5px;
-        background-color: #FFF;
+        background-color: $brand-text-color;
         box-sizing: border-box;
       }
     }
@@ -84,7 +51,7 @@ input {
       visibility: visible;
 
       .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-        border-color: #000;
+        border-color: $text-color;
       }
     }
   }
@@ -97,25 +64,15 @@ input {
     cursor: pointer;
 
     & + label {
+      @extend .btn-default;
       text-align: center;
       font-weight: bold;
-      padding: 8px 16px;
+      padding: 10px 16px;
       border: 2px solid $color-secondary-dark;
       transition: all 0.2s ease;
       cursor: pointer;
       position: relative;
       display: inline-block;
-      color: $color-secondary-dark;
-
-      .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-        border-color: #FFF;
-        color: #FFF;
-      }
-
-      .bg-white & {
-        border-color: #000;
-        color: #000;
-      }
 
       &:after {
         content: "\e022";
@@ -124,61 +81,36 @@ input {
         font-weight: 400;
         line-height: 1.3;
         -webkit-font-smoothing: antialiased;
-        margin-left: 8px;
+        margin-left: 10px;
         vertical-align: middle;
       }
-
-      &.active {
-        background-color: $color-secondary-dark;
-        color: #FFF;
-
-        .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-          background-color: #FFF;
-          color: #000;
-        }
-
-        .bg-white & {
-          background-color: #000;
-        }
-
-        &:after {
-          content: "\e027";
-        }
-      }
-
-      &:hover {
-        background-color: $color-secondary-dark;
-        color: #FFF;
-
-        .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-          background-color: #FFF;
-          color: #000;
-        }
-
-        .bg-white & {
-          background-color: #000;
-        }
-      }
     }
+  }
+
+  &::-webkit-input-placeholder {color: lighten($text-color, 30);}
+  &:-moz-placeholder           {color: lighten($text-color, 30);}
+  &::-moz-placeholder          {color: lighten($text-color, 30);}
+  &:-ms-input-placeholder      {color: lighten($text-color, 30);}  
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    &::-webkit-input-placeholder {color: darken($brand-text-color, 30);}
+    &:-moz-placeholder           {color: darken($brand-text-color, 30);}
+    &::-moz-placeholder          {color: darken($brand-text-color, 30);}
+    &:-ms-input-placeholder      {color: darken($brand-text-color, 30);}  
   }
 }
 
 label {
   font-weight: normal;
-  font-size: 12px;
+  font-size: $input-label-font-size;
   margin-bottom: 0;
 }
 
-textarea {
-  border-width: 1px;
-  &.form-control {
-    border-width: 1px;
-  }
-  &:focus {
-    padding: 8px;
+.checkbox {
+  label {
+    vertical-align: middle;
+    font-size: $font-size-base
   }
 }
-
 
 .form-control {
   border-width: 0;
@@ -197,23 +129,19 @@ textarea {
   }
 
   .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-    color: #FFF;
+    color: $brand-text-color;
     &:focus {
-      color: #000;
+      color: $text-color;
     }
   }
 
   .bg-white & {
-    color: #000;
-  }
-
-  &[readonly] {
-    background-color: #eee;
+    color: $bg-white-color;
   }
 
   &:focus, &:active {
     box-shadow: none !important;
-    padding-left: 8px;
+    padding-left: 10px;
   }
 
   .has-success & {
@@ -227,10 +155,20 @@ textarea {
   .has-error & {
     border-color: $brand-danger;
   }
+
+  &::-webkit-input-placeholder {color: lighten($text-color, 30);}
+  &:-moz-placeholder           {color: lighten($text-color, 30);}
+  &::-moz-placeholder          {color: lighten($text-color, 30);}
+  &:-ms-input-placeholder      {color: lighten($text-color, 30);}  
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    &::-webkit-input-placeholder {color: darken($brand-text-color, 30);}
+    &:-moz-placeholder           {color: darken($brand-text-color, 30);}
+    &::-moz-placeholder          {color: darken($brand-text-color, 30);}
+    &:-ms-input-placeholder      {color: darken($brand-text-color, 30);}  
+  }
 }
 
 .input-group-addon {
-
   border-width: 0;
 
   .has-success & {
@@ -255,16 +193,15 @@ textarea {
 .help-block {
   margin-top: 0px;
   .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-    color: #FFF;
+    color: $brand-text-color;
   }
 
   .bg-white & {
-    color: #000;
+    color: $bg-white-color;
   }
 }
 
 .form-control-feedback, .help-block {
-
   .has-success & {
     color: $brand-success;
   }
@@ -284,19 +221,30 @@ select {
   }
   .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
     &:focus {
-      background-color: #FFF;
+      background-color: $input-bg-focus;
     }
   }
 }
 
 textarea {
-  padding: 10px;
-  &:focus {
-    background-color: #FFF;
-  }
-  &.form-control {
+  &.form-control {   
+    border-width: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
     &:focus {
-      background-color: #FFF;
+      background-color: $input-bg-focus;
+    }
+  }
+}
+
+form {
+  &.form-signin, &.form-register {
+    max-width: 600px;
+    margin: 0 auto;
+
+    hr {
+      margin: 20px 0;
     }
   }
 }

@@ -26,7 +26,7 @@
   @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Summary) || Sitecore.Context.PageMode.IsExperienceEditor)
   {
     <p>
-      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item)
+      @Html.Sitecore().Field(Templates.TeaserContent.Fields.Summary, Model.Item, new {linebreaks="<br/>"})
     </p>
   }
   @if (Model.Item.FieldHasValue(Templates.TeaserContent.Fields.Link) || Sitecore.Context.PageMode.IsExperienceEditor)

@@ -1,5 +1,3 @@
-
-
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
 
 .progress {
@@ -13,12 +11,7 @@
     min-height: $progress-bar-min-height;
     height: $progress-bar-height;
     text-align: left;
-    color: #000;
     box-shadow: none;
     white-space: nowrap;
-
-    &-success, &-info, &-warning, &-danger {
-      color: #000;
-    }
   }
 }

@@ -1,15 +1,24 @@
 namespace Sitecore.Foundation.Assets.Models
 {
+  using System;
+
   internal class Asset
   {
-    public Asset(AssetType type, string file, ScriptLocation location = ScriptLocation.Body, string inline = null, string addOnceToken = null)
+    public Asset(AssetType type, ScriptLocation location, string file = null, string inline = null, string site = null)
     {
       this.Type = type;
       this.File = file;
       this.Location = location;
       this.Inline = inline;
-      this.AddOnceToken = addOnceToken;
+      if (!string.IsNullOrEmpty(inline))
+      {
+        this.AddOnceToken = inline.GetHashCode().ToString();
+      }
+      this.Site = site;
     }
+
+
+    public string Site { get; set; }
 
     public ScriptLocation Location { get; set; }
 

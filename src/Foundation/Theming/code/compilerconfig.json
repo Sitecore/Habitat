@@ -16,7 +16,7 @@
     "inputFile": "styles/white-wonder.scss"
   },
   {
-    "outputFile": "styles/bootstrap.css",
-    "inputFile": "styles/bootstrap.scss"
+    "outputFile": "styles/default.css",
+    "inputFile": "styles/default.scss"
   }
 ]

@@ -1,51 +1,5 @@
 .lightbox {
   &-video, &-image {
     position: relative;
-    /*&:before {
-      width: 100%;
-      height: 100%;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: " ";
-      color: #FFF;
-      text-align: center;
-      vertical-align: middle;
-      background-color: #000;
-      opacity: 0.2;
-      pointer-events: none;
-    }
-    &:after {
-      width: 56px;
-      height: 56px;
-      content: "\e009";
-      font-size: 56px;
-      margin: -28px 0 0 -28px;
-      color: #FFF;
-      font-family: 'Glyphicons Halflings';
-      font-style: normal;
-      font-weight: normal;
-      line-height: 1;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      pointer-events: none;
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      pointer-events: none;
-      @media (max-width: $screen-sm-max) {
-        width: 28px;
-        height: 28px;
-        font-size: 28px;
-        margin: -14px 0 0 -14px;
-      }
-    }*/
   }
-  /*&-image {
-    &:after {
-      content: "\e060";
-    }
-  }*/
 }
