@@ -22,7 +22,8 @@ SharedFields:
   Value: /sitecore/content/Habitat/Home
 - ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
   Hint: __Security
-  Value: "ar|habitat\Project Habitat Content Author|pe|+item:write|+item:read|!*|pd|+item:write|+item:read|!*|"
+  Value: |
+    ar|habitat\Project Habitat Content Author|pe|+item:write|+item:read|!*|pd|+item:write|+item:read|!*|
 - ID: "ed71d374-8c33-4561-991d-77482ae01330"
   Hint: Accounts Details Page
   Value: /sitecore/content/Habitat/Home/Edit Profile
@@ -36,7 +37,8 @@ Languages:
     Fields:
     - ID: "02115632-fe1e-4b3d-9ad4-a4ddf1f782f0"
       Hint: Copyright
-      Value: "Copyright &copy; 2015 <a href=\"http://sitecore.net\" target=\"_blank\" title=\"Opens in a new window\">Sitecore Corporation A/S</a>"
+      Value: |
+        Copyright &copy; 2015 <a href="http://sitecore.net" target="_blank" title="Opens in a new window">Sitecore Corporation A/S</a>
     - ID: "235ae392-97ac-4822-be38-837da3e7724e"
       Hint: SiteBrowserTitle
       Value: " - Habitat Sitecore Framework Rammer"
@@ -45,10 +47,12 @@ Languages:
       Value: 20160105T102340Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
     - ID: "e748d808-64c1-4dec-9718-f35cf9689e4b"
       Hint: Logo
-      Value: "<image mediapath=\"/Default Website/sc_logo\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Default Website/sc_logo\" mediaid=\"{461A93BF-5471-4AF2-BF36-D638F5660CB5}\" />"
+      Value: |
+        <image mediapath="/Default Website/sc_logo" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/sc_logo" mediaid="{461A93BF-5471-4AF2-BF36-D638F5660CB5}" />
 - Language: en
   Fields:
   - ID: "2a84eca4-68bb-4451-b4ac-98ea71a5a3dc"
@@ -63,7 +67,8 @@ Languages:
       Value: +1 415 380 0600
     - ID: "02115632-fe1e-4b3d-9ad4-a4ddf1f782f0"
       Hint: Copyright
-      Value: "Copyright © 2015 <a href=\"http://sitecore.net\" target=\"_blank\" title=\"Opens in a new window\">Sitecore Corporation A/S</a>"
+      Value: |
+        Copyright &copy; 2016&nbsp;<a href="http://sitecore.net" target="_blank" title="Opens in a new window">Sitecore Corporation A/S</a>
     - ID: "021aa3f7-206f-4acc-9538-f6d7fe86b168"
       Hint: Interests Folder
       Value: "{A74EE096-F225-4568-8D81-2F71ABBC8118}"
@@ -79,7 +84,7 @@ Languages:
       Value: 20150824T171748Z
     - ID: "31d027bb-fab5-4e1a-a66d-9f5b0fd4f005"
       Hint: Logo Tagline
-      Value: Sitecore Solution Example
+      Value: 
     - ID: "378b7d87-5775-4eb6-86b7-282d5359b1c6"
       Hint: User Profile
       Value: "{14523428-879D-491C-9DF0-1417E82A4311}"
@@ -97,10 +102,11 @@ Languages:
         USA
     - ID: "e748d808-64c1-4dec-9718-f35cf9689e4b"
       Hint: Logo
-      Value: "<image mediapath=\"/Default Website/sc_logo\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Default Website/sc_logo\" mediaid=\"{60CB73C9-D101-4248-95FF-AF8AF939B7ED}\" />"
+      Value: |
+        <image mediapath="/Default Website/sc_logo" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/sc_logo" mediaid="{60CB73C9-D101-4248-95FF-AF8AF939B7ED}" />
     - ID: "efd4980a-030c-497c-8880-40b6030ac28b"
       Hint: OrganisationName
       Value: Sitecore Corporation
     - ID: "f07811d3-41e9-440a-9d81-310c1d78bed6"
       Hint: Title
-      Value: "Habitat - Example Site"
+      Value: About Habitat
