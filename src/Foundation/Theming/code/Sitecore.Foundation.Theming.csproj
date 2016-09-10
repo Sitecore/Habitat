@@ -170,7 +170,6 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="scripts\carousel.js" />
     <Content Include="scripts\counter.js" />
-    <Content Include="scripts\disable-wffm-bootstrap.js" />
     <Content Include="scripts\form.js" />
     <Content Include="scripts\grid.js" />
     <Content Include="scripts\lightbox.js" />
