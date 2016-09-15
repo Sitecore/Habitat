@@ -18,7 +18,7 @@
 
       var template = this.GetProfileTemplate(userProfile.ProfileItemId);
 
-      return template?.GetFields(false).ToDictionary(k => k.Name, v => userProfile[v.Name]) ?? new Dictionary<string, string>();
+      return template?.GetFields(true).ToDictionary(k => k.Name, v => userProfile[v.Name]) ?? new Dictionary<string, string>();
     }
 
     public void SetCustomProfile(UserProfile userProfile, IDictionary<string, string> properties)
