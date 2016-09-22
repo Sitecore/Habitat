@@ -31,7 +31,7 @@ module.exports = function (callback, options) {
   var url = options.siteHostName + "/unicorn.aspx";
 
   var syncScript =__dirname + "/Unicorn/./Sync.ps1 -secret " + secret + " -url " + url;
-  var options = { cwd: __dirname + "/Unicorn/" };
+  var options = { cwd: __dirname + "/Unicorn/", maxBuffer: 1024 * 500 };
   return exec("powershell -executionpolicy unrestricted \"" + syncScript + "\"", options, function (err, stdout, stderr) {
     if (err !== null) throw err;
     console.log(stdout);
