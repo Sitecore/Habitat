@@ -75,7 +75,7 @@
     </Reference>
     <Reference Include="Sitecore.Analytics, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.NoReferences.8.1.160519\lib\net45\Sitecore.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.FakeDb, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.FakeDb.1.1.2\lib\net45\Sitecore.FakeDb.dll</HintPath>
@@ -87,10 +87,10 @@
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.1.160519\lib\net45\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="sitecore.nexus">
-      <HintPath>..\..\..\..\lib\Sitecore\sitecore.nexus.dll</HintPath>
+      <HintPath>..\..\..\..\packages\sitecore.nexus.NoReferences.8.1.160519\lib\net45\sitecore.nexus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

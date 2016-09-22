@@ -71,20 +71,20 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Analytics">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.NoReferences.8.1.160519\lib\net45\Sitecore.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Core">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Core.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Core.NoReferences.8.1.160519\lib\net45\Sitecore.Analytics.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.DataAccess">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.DataAccess.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.DataAccess.NoReferences.8.1.160519\lib\net45\Sitecore.Analytics.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Model">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Model.NoReferences.8.1.160519\lib\net45\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Outcome, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Outcome.NoReferences.8.1.160519\lib\net45\Sitecore.Analytics.Outcome.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.FakeDb, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.FakeDb.1.1.2\lib\net45\Sitecore.FakeDb.dll</HintPath>
@@ -99,18 +99,18 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.1.160519\lib\net45\Sitecore.Kernel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.8.1.160519\lib\net45\Sitecore.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="sitecore.nexus">
-      <HintPath>..\..\..\..\lib\Sitecore\sitecore.nexus.dll</HintPath>
+      <HintPath>..\..\..\..\packages\sitecore.nexus.NoReferences.8.1.160519\lib\net45\sitecore.nexus.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Xdb.Configuration">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Xdb.Configuration.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Xdb.Configuration.NoReferences.8.1.160519\lib\net45\Sitecore.Xdb.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />

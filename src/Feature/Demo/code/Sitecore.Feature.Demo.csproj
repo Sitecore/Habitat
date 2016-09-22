@@ -54,47 +54,47 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Analytics">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.NoReferences.8.1.160519\lib\net45\Sitecore.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Automation">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Automation.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Automation.NoReferences.8.1.160519\lib\net45\Sitecore.Analytics.Automation.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Core">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Core.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Core.NoReferences.8.1.160519\lib\net45\Sitecore.Analytics.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Model">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Model.NoReferences.8.1.160519\lib\net45\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Outcome, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Outcome.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Outcome.NoReferences.8.1.160519\lib\net45\Sitecore.Analytics.Outcome.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.CES.DeviceDetection">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.CES.DeviceDetection.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.CES.DeviceDetection.NoReferences.8.1.160519\lib\net45\Sitecore.CES.DeviceDetection.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Cintel">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Cintel.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Cintel.NoReferences.8.1.160519\lib\net45\Sitecore.Cintel.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ExperienceEditor">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ExperienceEditor.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.ExperienceEditor.NoReferences.8.1.160519\lib\net45\Sitecore.ExperienceEditor.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ExperienceExplorer.Business">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ExperienceExplorer.Business.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.ExperienceExplorer.Business.NoReferences.8.1.160519\lib\net45\Sitecore.ExperienceExplorer.Business.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.1.160519\lib\net45\Sitecore.Kernel.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Marketing, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Marketing.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Marketing.NoReferences.8.1.160519\lib\net45\Sitecore.Marketing.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Marketing.Taxonomy, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Marketing.Taxonomy.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Marketing.Taxonomy.NoReferences.8.1.160519\lib\net45\Sitecore.Marketing.Taxonomy.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Mvc">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.8.1.160519\lib\net45\Sitecore.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
