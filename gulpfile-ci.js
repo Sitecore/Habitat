@@ -77,7 +77,7 @@ gulp.task("CI-Enumerate-Items", function () {
 gulp.task("CI-Enumerate-Users", function () {
     var users = [];
 
-    return gulp.src("./src/**/users/**/*.user")
+    return gulp.src("./src/**/serialization/**/*.user")
         .pipe(foreach(function (stream, file) {
             var fileContent = file.contents.toString();
             var userName = unicorn.getUserPath(file);
@@ -95,7 +95,7 @@ gulp.task("CI-Enumerate-Users", function () {
 gulp.task("CI-Enumerate-Roles", function () {
     var roles = [];
 
-    return gulp.src("./src/**/roles/**/*.role")
+    return gulp.src("./src/**/serialization/**/*.role")
         .pipe(foreach(function (stream, file) {
             var fileContent = file.contents.toString();
             var roleName = unicorn.getRolePath(file);            
