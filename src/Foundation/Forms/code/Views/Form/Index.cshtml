@@ -1,0 +1,31 @@
+﻿@using Sitecore.Form.Core.Configuration
+@using Sitecore.Forms.Mvc
+@using Sitecore.Forms.Mvc.Html
+@model Sitecore.Forms.Mvc.ViewModels.FormViewModel
+@{
+  ViewContext.ViewData.TemplateInfo.HtmlFieldPrefix = Model.ClientId;
+
+  var styles = new List<string> { "content/themes/base/all.css", "content/Fields.css" };
+
+  var scripts = new List<string>
+  {
+    "libs/jquery/jquery-2.1.3.min.js",
+    "libs/jquery/jquery-ui-1.11.3.min.js",
+    "libs/jquery/jquery.validate.min.js",
+    "libs/jquery/jquery.validate.unobtrusive.min.js",
+    "wffm.min.js",
+    "main.min.js"
+  };
+
+  if (Sitecore.Forms.Mvc.Settings.EnableBootstrapCssRendering)
+  {
+      styles.Add("content/bootstrap.min.css");
+      scripts.Add("libs/bootstrap/bootstrap.min.js");
+  }
+}
+
+
+@Html.RenderStyles(styles.Select(s => Constants.ScriptsBaseUrl + s).ToArray())
+@Html.RenderStyles(string.Format(StaticSettings.CustomCssPath, string.Empty))
+@Html.EditorFor(x => Model)
+@Html.RenderScripts(scripts.Select(s => Constants.ScriptsBaseUrl + s).ToArray())
