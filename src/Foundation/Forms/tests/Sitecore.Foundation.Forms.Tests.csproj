@@ -130,6 +130,10 @@
       <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.1.160519\lib\NET45\Sitecore.Kernel.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.Logging, Version=1.2.0.30715, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Logging.NoReferences.8.1.160519\lib\NET45\Sitecore.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.8.1.160519\lib\NET45\Sitecore.Mvc.dll</HintPath>
       <Private>True</Private>
@@ -137,11 +141,13 @@
     <Reference Include="sitecore.nexus">
       <HintPath>..\..\..\..\packages\sitecore.nexus.NoReferences.8.1.160519\lib\net45\sitecore.nexus.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.WFFM.Abstractions">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.WFFM.Abstractions.dll</HintPath>
+    <Reference Include="Sitecore.WFFM.Abstractions, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Abstractions.NoReferences.8.1.160523\lib\NET45\Sitecore.WFFM.Abstractions.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.WFFM.Actions">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.WFFM.Actions.dll</HintPath>
+    <Reference Include="Sitecore.WFFM.Actions, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Actions.NoReferences.8.1.160523\lib\NET45\Sitecore.WFFM.Actions.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
