@@ -57,26 +57,29 @@
       <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Abstractions, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\packages\Sitecore.Abstractions.NoReferences.8.1.160519\lib\net45\Sitecore.Abstractions.dll</HintPath>
+    <Reference Include="Sitecore.Abstractions, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Abstractions.NoReferences.8.2.160729\lib\NET452\Sitecore.Abstractions.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.ContentSearch">
-      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.NoReferences.8.1.160519\lib\net45\Sitecore.ContentSearch.dll</HintPath>
+    <Reference Include="Sitecore.ContentSearch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.NoReferences.8.2.160729\lib\NET452\Sitecore.ContentSearch.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.ContentSearch.Analytics">
-      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.Analytics.NoReferences.8.1.160519\lib\net45\Sitecore.ContentSearch.Analytics.dll</HintPath>
+    <Reference Include="Sitecore.ContentSearch.Analytics, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.Analytics.NoReferences.8.2.160729\lib\NET452\Sitecore.ContentSearch.Analytics.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.ContentSearch.Linq">
-      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.Linq.NoReferences.8.1.160519\lib\net45\Sitecore.ContentSearch.Linq.dll</HintPath>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.Linq.NoReferences.8.2.160729\lib\NET452\Sitecore.ContentSearch.Linq.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.1.160519\lib\net45\Sitecore.Kernel.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.2.160729\lib\NET452\Sitecore.Kernel.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Mvc">
-      <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.8.1.160519\lib\net45\Sitecore.Mvc.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Sitecore.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.8.2.160729\lib\NET452\Sitecore.Mvc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

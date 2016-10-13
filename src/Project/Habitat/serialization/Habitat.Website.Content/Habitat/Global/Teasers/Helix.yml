@@ -1,0 +1,32 @@
+﻿---
+ID: "dcf8b605-5837-484d-91bb-f04eceb090fe"
+Parent: "6aa25831-0944-4a79-9aff-7bac39e03557"
+Template: "c7d9d293-4ef8-4380-8e10-c4632e729f39"
+Path: /sitecore/content/Habitat/Global/Teasers/Helix
+DB: master
+SharedFields:
+- ID: "e8ab122c-6f54-4d4e-aec6-f81addc558fc"
+  Hint: TeaserLink
+  Value: |
+    <link linktype="external" text="Read the Documentation Now" url="http://helix.sitecore.net" anchor="" target="_blank" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0f6b5546-e0ab-4487-81de-640c1aa1b65b"
+      Hint: TeaserImage
+      Value: |
+        <image mediaid="{FF7A25AE-725F-4AF3-970E-B17BFA4242AC}" />
+    - ID: "13d97a52-7c4e-407c-960d-fadde8a3c1b1"
+      Hint: TeaserSummary
+      Value: Sitecore Helix is the official guidelines and recommended practices on Sitecore development.
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160216T051414Z
+    - ID: "3f7e7e3a-4e8e-4639-b079-fc5aeff172f5"
+      Hint: Teaser Label
+      Value: Documentation
+    - ID: "4a59d072-5b41-4a79-a157-2b2ccac10f2b"
+      Hint: TeaserTitle
+      Value: Discover Sitecore Helix

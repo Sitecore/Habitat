@@ -1,13 +1,13 @@
 ﻿---
-ID: "8cd9787a-22eb-4832-8e77-284f9a3f36e5"
+ID: "dd6ddd41-2477-4d8e-9e41-9c7564a382e4"
 Parent: "575bb28a-b341-40e0-84f4-940deefb1b98"
 Template: "390333c8-751b-4332-84a3-6360b969a19f"
-Path: /sitecore/content/Habitat/Global/Links/Topbar Menu/GitHub
+Path: /sitecore/content/Habitat/Global/Links/Topbar Menu/Helix
 DB: master
 SharedFields:
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 100
+  Value: 200
 Languages:
 - Language: da
   Versions:
@@ -15,26 +15,29 @@ Languages:
     Fields:
     - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
       Hint: NavigationTitle
-      Value: GitHub
+      Value: Wiki
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20160112T162935Z
+      Value: 20160112T162947Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
-      Value: "<link linktype=\"external\" url=\"https://github.com/Sitecore/Habitat/\" />"
+      Value: |
+        <link linktype="external" url="https://github.com/Sitecore/Habitat/wiki" />
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
       Hint: NavigationTitle
-      Value: GitHub
+      Value: Helix
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20150910T101321Z
+      Value: 20150910T101311Z
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
-      Value: "<link linktype=\"external\" url=\"https://github.com/Sitecore/Habitat/\" anchor=\"\" target=\"\" />"
+      Value: |
+        <link linktype="external" url="http://helix.sitecore.net" anchor="" target="" />

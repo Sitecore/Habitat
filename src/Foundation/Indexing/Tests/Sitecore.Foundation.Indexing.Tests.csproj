@@ -50,6 +50,14 @@
       <HintPath>..\..\..\..\packages\Lucene.Net.3.0.3\lib\NET40\Lucene.Net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Extensions.DependencyInjection.1.0.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
@@ -82,17 +90,17 @@
       <HintPath>..\..\..\..\packages\AutoFixture.Xunit2.3.49.0\lib\net45\Ploeh.AutoFixture.Xunit2.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Abstractions, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\packages\Sitecore.Abstractions.NoReferences.8.1.160519\lib\net45\Sitecore.Abstractions.dll</HintPath>
+    <Reference Include="Sitecore.Abstractions, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Abstractions.NoReferences.8.2.160729\lib\NET452\Sitecore.Abstractions.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.ContentSearch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.NoReferences.8.1.160519\lib\net45\Sitecore.ContentSearch.dll</HintPath>
+    <Reference Include="Sitecore.ContentSearch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.NoReferences.8.2.160729\lib\NET452\Sitecore.ContentSearch.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.Linq.NoReferences.8.1.160519\lib\net45\Sitecore.ContentSearch.Linq.dll</HintPath>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.Linq.NoReferences.8.2.160729\lib\NET452\Sitecore.ContentSearch.Linq.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.FakeDb, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.FakeDb.1.1.2\lib\net45\Sitecore.FakeDb.dll</HintPath>
@@ -102,19 +110,25 @@
       <HintPath>..\..\..\..\packages\Sitecore.FakeDb.AutoFixture.1.1.2\lib\net45\Sitecore.FakeDb.AutoFixture.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.1.160519\lib\net45\Sitecore.Kernel.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Logging, Version=1.2.0.30715, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Logging.NoReferences.8.1.160519\lib\NET45\Sitecore.Logging.dll</HintPath>
+    <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.2.160729\lib\NET452\Sitecore.Kernel.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.8.1.160519\lib\net45\Sitecore.Mvc.dll</HintPath>
+    <Reference Include="Sitecore.Logging">
+      <HintPath>..\..\..\..\packages\Sitecore.Logging.NoReferences.8.2.160729\lib\NET452\Sitecore.Logging.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="sitecore.nexus">
-      <HintPath>..\..\..\..\packages\sitecore.nexus.NoReferences.8.1.160519\lib\net45\sitecore.nexus.dll</HintPath>
+    <Reference Include="Sitecore.Logging, Version=1.2.0.30715, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Sitecore.Logging.NoReferences.8.2.160729\lib\NET452\Sitecore.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.8.2.160729\lib\NET452\Sitecore.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Nexus, Version=1.0.4415.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Nexus.NoReferences.8.2.160729\lib\NET452\Sitecore.Nexus.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

@@ -24,26 +24,33 @@ Languages:
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r
               uid="{D678FE6D-9A7F-40B3-B3DB-69A6608F31AE}"
-              p:before="r[@uid='{F9295B78-5A5D-4FEB-81F6-298657A9C863}']"
+              p:before="*"
               s:ds="{E732AB5A-24AE-40D8-8F93-05DAD455E259}"
               s:id="{FDFCD088-3C9E-49C4-97FF-2DDE5D339BA0}"
               s:ph="/page-layout/section-narrow/col-wide-1_c4318289-c278-4384-96be-2c13d80cef0b" />
             <r
               uid="{F9295B78-5A5D-4FEB-81F6-298657A9C863}"
-              p:before="r[@uid='{C4318289-C278-4384-96BE-2C13D80CEF0B}']"
+              p:after="r[@uid='{D678FE6D-9A7F-40B3-B3DB-69A6608F31AE}']"
               s:ds="{D656E3EF-7298-4AF3-B4A7-E5F43B5BCF4A}"
               s:id="{F366FBA9-EF26-4007-988A-63CB64649C46}"
               s:ph="/page-layout/section-narrow/col-narrow-1_c4318289-c278-4384-96be-2c13d80cef0b" />
             <r
               uid="{C4318289-C278-4384-96BE-2C13D80CEF0B}"
-              p:before="r[@uid='{EDDB6350-A262-4054-AE20-0F69D10F93A9}']"
+              p:after="r[@uid='{F9295B78-5A5D-4FEB-81F6-298657A9C863}']"
               s:id="{831876B6-F9F1-463E-9DD5-7F93F1640590}"
               s:ph="/page-layout/section-narrow" />
             <r
               uid="{EDDB6350-A262-4054-AE20-0F69D10F93A9}"
-              p:before="r[@uid='{E6CA18D8-321D-4105-9C38-0622E94BE400}']"
+              p:after="r[@uid='{C4318289-C278-4384-96BE-2C13D80CEF0B}']"
               s:ds="{EE7C0E8A-37F1-41D7-A1DC-9990A97B93CE}"
               s:id="{A25C9850-AAB7-46A6-84B7-0DFAB32FC357}"
+              s:ph="/page-layout/col-narrow-1" />
+            <r
+              uid="{173D3C36-B946-4978-8E4D-2F726E6D32AF}"
+              p:after="r[@uid='{EDDB6350-A262-4054-AE20-0F69D10F93A9}']"
+              s:ds="{DCF8B605-5837-484D-91BB-F04ECEB090FE}"
+              s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}"
+              s:par="Background={EFA6AD59-AE21-4524-90F8-A92440B869AF}"
               s:ph="/page-layout/col-narrow-1" />
             <r
               uid="{66422117-69C1-4B62-9323-482F16C4F244}"
@@ -62,10 +69,11 @@ Languages:
       Value: 20150827T013810Z
     - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
-      Value: "<image mediapath=\"/Default Website/cover\" src=\"~/media/Default Website/cover\" height=\"\" mediaid=\"{8CBBCDFB-C9A8-4D3F-BFF0-D01C504E10BB}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"\" vspace=\"\" ></image>"
+      Value: |
+        <image mediapath="/Default Website/cover" src="~/media/Default Website/cover" height="" mediaid="{8CBBCDFB-C9A8-4D3F-BFF0-D01C504E10BB}" hspace="" usethumbnail="" showineditor="" width="" alt="" vspace="" ></image>
     - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
-      Value: "Want to know more about Habitat? Here are some interesting links, videos and material for you."
+      Value: "Want to know more about Helix and Habitat? Here are some interesting links, videos and material for you."
     - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
       Hint: Title
       Value: Find out more
@@ -74,4 +82,7 @@ Languages:
       Value: Contact Us
     - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
-      Value: "<p>The Habitat project - this website - is completely available for you on GitHub, source code and all.</p><p>There are a number of videos concerning the methodology and it's underlying patterns.</p>"
+      Value: |
+        <p>The Habitat project - this website - is completely available for you on GitHub, source code and all.</p>
+        <p>The full description of the Helix Guidelines are available on http://helix.sitecore.net.</p>
+        <p>There are also a number of videos concerning the methodology and it's underlying patterns.</p>
