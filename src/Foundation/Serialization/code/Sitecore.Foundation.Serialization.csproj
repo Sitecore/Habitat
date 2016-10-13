@@ -49,8 +49,8 @@
       <HintPath>..\..\..\..\packages\Kamsar.WebConsole.1.2.2.0\lib\net40\Kamsar.WebConsole.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MicroCHAP, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\MicroCHAP.1.2.1.0\lib\net45\MicroCHAP.dll</HintPath>
+    <Reference Include="MicroCHAP, Version=1.2.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\MicroCHAP.1.2.2.2\lib\net45\MicroCHAP.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -63,16 +63,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Rainbow, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\lib\Rainbow\Rainbow.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Rainbow.Core.1.4.0-RC09\lib\net452\Rainbow.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Rainbow.Storage.Sc, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\lib\Rainbow\Rainbow.Storage.Sc.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Rainbow.Storage.Sc.1.4.0-RC09\lib\net452\Rainbow.Storage.Sc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Rainbow.Storage.Yaml, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\lib\Rainbow\Rainbow.Storage.Yaml.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Rainbow.Storage.Yaml.1.4.0-RC09\lib\net452\Rainbow.Storage.Yaml.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
@@ -113,20 +113,27 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Unicorn, Version=3.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\lib\Unicorn\Unicorn.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Unicorn, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Unicorn.Core.3.3.0-RC9\lib\net452\Unicorn.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\Foundation.Serialization.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Settings.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
     <Content Include="App_Config\Include\Rainbow.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Deployed.config.disabled" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.CustomSerializationFolder.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.NewItemsOnly.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Dependency.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
