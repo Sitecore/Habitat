@@ -86,7 +86,8 @@ Languages:
       Value: 20160321T132837Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
     - ID: "6739fa82-a9b4-40f1-aefe-3d67ae3e8dfc"
       Hint: Title Tag
       Value: H1
@@ -95,4 +96,5 @@ Languages:
       Value: Leave an Email
     - ID: "9c4c1994-5140-49d3-bad7-db997816f816"
       Hint: Success Page
-      Value: "<link id=\"{00000000-0000-0000-0000-000000000000}\" />"
+      Value: |
+        <link id="{00000000-0000-0000-0000-000000000000}" />

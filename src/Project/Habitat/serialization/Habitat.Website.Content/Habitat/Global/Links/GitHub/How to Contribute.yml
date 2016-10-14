@@ -21,4 +21,5 @@ Languages:
       Value: 20151210T040908Z
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
-      Value: "<link linktype=\"external\" url=\"https://github.com/Sitecore/Habitat/wiki/03-How-can-I-contribute%3F\" anchor=\"\" target=\"_blank\" />"
+      Value: |
+        <link linktype="external" url="https://github.com/Sitecore/Habitat/wiki/03-How-can-I-contribute%3F" anchor="" target="_blank" />

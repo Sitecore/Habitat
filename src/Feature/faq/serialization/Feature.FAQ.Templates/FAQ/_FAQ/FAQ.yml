@@ -1,7 +1,7 @@
 ﻿---
-ID: e7e8c78a-5638-46b1-b06d-bca08d37b474
-Parent: 9544f0b3-fd5e-4301-9dde-9e73d2c3f7ba
-Template: e269fbb5-3750-427a-9149-7aa950b49301
+ID: "e7e8c78a-5638-46b1-b06d-bca08d37b474"
+Parent: "9544f0b3-fd5e-4301-9dde-9e73d2c3f7ba"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
 Path: /sitecore/templates/Feature/FAQ/_FAQ/FAQ
 DB: master
 Languages:
@@ -9,9 +9,10 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20160128T140707Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

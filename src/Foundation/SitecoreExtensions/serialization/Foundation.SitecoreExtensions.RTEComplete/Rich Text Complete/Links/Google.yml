@@ -1,79 +1,87 @@
 ﻿---
-ID: a01e34f1-ce9e-4fdc-94bb-89a10d38b6b9
-Parent: 601b35d5-b5d5-443b-8338-fd160a36c9f5
-Template: d73319bc-e3df-45b9-b545-a255aa7e3c88
+ID: "a01e34f1-ce9e-4fdc-94bb-89a10d38b6b9"
+Parent: "601b35d5-b5d5-443b-8338-fd160a36c9f5"
+Template: "d73319bc-e3df-45b9-b545-a255aa7e3c88"
 Path: /sitecore/system/Settings/Html Editor Profiles/Rich Text Complete/Links/Google
 DB: core
-BranchID: 86584d00-3712-4928-b9a0-c2058e098537
+BranchID: "86584d00-3712-4928-b9a0-c2058e098537"
 SharedFields:
-- ID: ca0adfc1-b5d8-4338-aaec-f0dadd0f5c55
+- ID: "ca0adfc1-b5d8-4338-aaec-f0dadd0f5c55"
   Hint: Value
-  Value: http://www.google.com
+  Value: "http://www.google.com"
 Languages:
 - Language: da
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Google
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T031046Z
-    - ID: 4bfaa1d9-c66a-45ac-be10-99dfe91739d8
+    - ID: "4bfaa1d9-c66a-45ac-be10-99dfe91739d8"
       Hint: Header
-      Value: "<img src=\"http://cutesoft.net/data/Google.gif\" align=\"absMiddle\" border=\"0\" /> Google"
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Value: |
+        <img src="http://cutesoft.net/data/Google.gif" align="absMiddle" border="0" /> Google
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
-- Language: de-DE
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Google
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030800Z
-    - ID: 4bfaa1d9-c66a-45ac-be10-99dfe91739d8
+    - ID: "4bfaa1d9-c66a-45ac-be10-99dfe91739d8"
       Hint: Header
-      Value: "<img src=\"http://cutesoft.net/data/Google.gif\" align=\"absMiddle\" border=\"0\" /> Google"
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Value: |
+        <img src="http://cutesoft.net/data/Google.gif" align="absMiddle" border="0" /> Google
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20060130T125525
-    - ID: 4bfaa1d9-c66a-45ac-be10-99dfe91739d8
+    - ID: "4bfaa1d9-c66a-45ac-be10-99dfe91739d8"
       Hint: Header
-      Value: "<img src=\"http://cutesoft.net/data/Google.gif\" align=\"absMiddle\" border=\"0\" /> Google"
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Value: |
+        <img src="http://cutesoft.net/data/Google.gif" align="absMiddle" border="0" /> Google
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\Admin
-    - ID: c8f93afe-bfd4-4e8f-9c61-152559854661
+      Value: |
+        sitecore\Admin
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
       Hint: __Valid from
       Value: 20060130T125525
-- Language: ja-JP
+- Language: "ja-JP"
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Google
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030926Z
-    - ID: 4bfaa1d9-c66a-45ac-be10-99dfe91739d8
+    - ID: "4bfaa1d9-c66a-45ac-be10-99dfe91739d8"
       Hint: Header
-      Value: "<img src=\"http://cutesoft.net/data/Google.gif\" align=\"absMiddle\" border=\"0\" /> Google"
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Value: |
+        <img src="http://cutesoft.net/data/Google.gif" align="absMiddle" border="0" /> Google
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

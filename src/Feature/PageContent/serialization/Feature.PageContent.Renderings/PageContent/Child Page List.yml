@@ -10,7 +10,8 @@ SharedFields:
   Value: /Views/PageContent/ChildPageList.cshtml
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{CBA9AFCB-5E6B-459C-9E1E-066E0E9D1C85}\" />"
+  Value: |
+    <image mediaid="{CBA9AFCB-5E6B-459C-9E1E-066E0E9D1C85}" />
 Languages:
 - Language: en
   Versions:

@@ -1,69 +1,73 @@
 ﻿---
-ID: 443a22f1-1752-4dc7-a67d-6b96d843664f
-Parent: c9e10e83-07c7-40ad-be70-0769945ea8ad
-Template: 10863561-7398-4c5d-8a99-b075b90c4e41
+ID: "443a22f1-1752-4dc7-a67d-6b96d843664f"
+Parent: "c9e10e83-07c7-40ad-be70-0769945ea8ad"
+Template: "10863561-7398-4c5d-8a99-b075b90c4e41"
 Path: /sitecore/system/Settings/Html Editor Profiles/Rich Text Complete/Class Translation/Head2
 DB: core
 SharedFields:
-- ID: 2b6bd0bd-7b87-4e8d-99c8-16bbe70e7de0
+- ID: "2b6bd0bd-7b87-4e8d-99c8-16bbe70e7de0"
   Hint: Key
   Value: Head2
-- ID: caf92d8d-e76c-41a0-9567-6c5f86b63abf
+- ID: "caf92d8d-e76c-41a0-9567-6c5f86b63abf"
   Hint: Value
   Value: Heading2
 Languages:
 - Language: da
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Head2
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T031050Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
-- Language: de-DE
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Head2
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030803Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20060130T125509
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\Admin
-    - ID: c8f93afe-bfd4-4e8f-9c61-152559854661
+      Value: |
+        sitecore\Admin
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
       Hint: __Valid from
       Value: 20060130T125509
-- Language: ja-JP
+- Language: "ja-JP"
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: 見出し 2
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030929Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

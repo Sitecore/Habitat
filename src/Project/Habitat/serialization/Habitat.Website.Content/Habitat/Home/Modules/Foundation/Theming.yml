@@ -26,4 +26,5 @@ Languages:
       Value: Theming
     - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
-      Value: "<span style=\"line-height: 24.2857px;\"><br></span>"
+      Value: |
+        <span style="line-height: 24.2857px;"><br></span>

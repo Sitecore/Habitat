@@ -1,64 +1,67 @@
 ﻿---
-ID: 4aa5408b-9dfb-4324-b28d-cc5ebb367505
-Parent: dcbf6869-ae48-487f-9b15-dd285c87c12d
-Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+ID: "4aa5408b-9dfb-4324-b28d-cc5ebb367505"
+Parent: "dcbf6869-ae48-487f-9b15-dd285c87c12d"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
 Path: /sitecore/system/Settings/Html Editor Profiles/Rich Text Limited/Paragraphs
 DB: core
-BranchID: 30235f43-6242-4107-87ab-5267e34edf0c
+BranchID: "30235f43-6242-4107-87ab-5267e34edf0c"
 SharedFields:
-- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 100
 Languages:
 - Language: da
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Afsnit
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T031052Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
-- Language: de-DE
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Paragraphen
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030805Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20071122T183805
-    - ID: c8f93afe-bfd4-4e8f-9c61-152559854661
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
       Hint: __Valid from
       Value: 20060131T143700
-- Language: ja-JP
+- Language: "ja-JP"
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: パラグラフ
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030932Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

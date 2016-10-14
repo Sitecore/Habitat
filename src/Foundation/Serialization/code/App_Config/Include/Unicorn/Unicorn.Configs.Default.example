@@ -1,0 +1,93 @@
+<!--
+	Unicorn.Configs.Default.config
+
+	This is an example of how to configure a basic Unicorn configuration using your own config patch file.
+	Copy this file to use as a basis for your own configuration definitions.
+
+	Enabled configuration definition patches should be present on all environments Unicorn is present on.
+
+	See Unicorn.config for commentary on how configurations operate, or https://github.com/kamsar/Unicorn/blob/master/README.md
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+	<sitecore>
+		<unicorn>
+			<configurations>
+				<!--
+					The default configuration is an example to start making other configurations from.
+
+					WHAT SHOULD I INCLUDE?
+					In general, include the fewest items possible. This both makes things faster and reduces the amount of things kept in source control.
+					The most common candidates for serialization are layout items and template items, but Unicorn can serialize any type of item or field including media.
+					
+					BEHAVIORS
+					Configurations can override the default dependencies defined in Unicorn.config's <defaults> to apply
+					custom behaviors to specific configurations. They behave like an inherited IoC container.
+					
+					DEPENDENCIES
+					Configurations may also depend on each other. Add a comma-delimited list of configuration names to depend on to the 'dependencies' attribute on the configuration.
+					Dependent configurations do not force dependencies to sync if not selected, but syncs will always occur in dependency order if multiple dependent configurations sync at once.
+					Transitive dependency and multiple dependency (comma delimited) are supported.
+					
+					TIPS
+					Favor using several configurations over a single monolithic one.
+					Favor using more includes and fewer excludes in your predicates.
+					Start with minimal configurations and add includes as you need to serialize new things.
+				-->
+				<configuration name="My Site" description="Write something here about why this configuration exists and what it's for. Or remove the attribute; it's optional.">
+					<predicate type="Unicorn.Predicates.SerializationPresetPredicate, Unicorn" singleInstance="true">
+						<!--
+							PREDICATE
+							
+							The predicate controls what items are included in the configuration.
+							
+							Each include can also exclude specific subitems in various ways. For a reference of the most current predicate grammar, consult the tests here:
+							https://github.com/kamsar/Unicorn/blob/master/src/Unicorn.Tests/Predicates/TestConfiguration.xml
+
+							NOTE: after changing what is included or excluded, you should reserialize all items, or at least the added items for additions.
+							NOTE: the "name" attribute controls the folder name the items will go into. If unspecified, the last path segment is used. Names must be unique across the configuration.
+							NOTE: You cannot use excludes with Transparent Sync. See https://github.com/kamsar/Unicorn/wiki/The-Transparent-Sync-Guide
+						-->
+						<include name="Layouts" database="master" path="/sitecore/layout/Layouts/YourSite" />
+						<include name="Templates" database="master" path="/sitecore/templates/YourSite" />
+						<include database="master" path="/sitecore/system/Languages" />
+						<include database="master" path="/sitecore/system/Tasks">
+							<exclude path="Schedules" />
+						</include>
+						<include database="master" path="/sitecore/system/Workflows" />
+						<include database="master" path="/sitecore/system/Settings" />
+					</predicate>
+					
+					<!--
+						SYNC TYPE
+						
+						Traditional Sync (the default) updates the state of the database only when a sync operation is run. It supports additional operations but can be more of a chore to remember to sync.
+						Transparent Sync (preferred) updates the state of Sitecore instantly as soon as changes to files occur. It is optimal for development purposes, but has a few limitations.
+						See the guide to help decide: https://github.com/kamsar/Unicorn/wiki/The-Transparent-Sync-Guide
+					-->
+					<dataProviderConfiguration enableTransparentSync="false" type="Unicorn.Data.DataProvider.DefaultUnicornDataProviderConfiguration, Unicorn" singleInstance="true" />
+
+					<!-- 
+						SYNC CONFIGURATION
+					
+						UpdateLinkDatabase: If true, the links will be updated for synced items after the sync has completed. If false (default) links are not updated for performance.
+							Updating links is important if you are syncing user-facing content where link tracking is important. It is not very important for system items (templates/renderings).
+						
+						UpdateSearchIndex: If true, the search index(es) containing the item will be updated with item changes after the sync has completed. If false, indexing will not be updated for performance.
+							Updating the index is important for content that relies on indexing, which may include most user-facing content items. Most of the time templates and renderings don't need indexing.
+						
+						MaxConcurrency: Controls how many threads Unicorn can use when syncing this configuration. Concurrency can usually increase sync speed 30-50% over single threading.
+							IF YOUR CONFIGURATION INCLUDES TEMPLATES YOU MUST SET THIS TO 1 OR YOUR SYNC WILL HANG INDEFINITELY DUE TO A SITECORE ISSUE
+							IF YOU ARE ON SITECORE 8.0 U2 OR EARLIER, YOU MUST SET THIS TO 1 DUE TO A SITECORE ISSUE
+						
+							This value can be set to significantly higher than the number of CPU cores, as these are largely I/O bound.
+							Use fewer threads for HDDs or slow SQL servers, and more threads for SSDs.
+							For a SSD workload on a quad-core CPU 16 seems to be a decent number.
+						
+						NOTE: UpdateLinkDatabase and UpdateSearchIndex also apply to items that are reloaded from disk when using Transparent Sync, as well as normal Sync.
+					-->
+					<syncConfiguration updateLinkDatabase="false" updateSearchIndex="false" maxConcurrency="1" type="Unicorn.Loader.DefaultSyncConfiguration, Unicorn" singleInstance="true" />
+				</configuration>
+			</configurations>
+		</unicorn>
+	</sitecore>
+</configuration>

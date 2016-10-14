@@ -13,7 +13,8 @@ SharedFields:
   Value: "site:person"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{934317A0-C32D-4CC6-8786-64E7436F4861}\" />"
+  Value: |
+    <image mediaid="{934317A0-C32D-4CC6-8786-64E7436F4861}" />
 Languages:
 - Language: en
   Versions:

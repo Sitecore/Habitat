@@ -20,7 +20,8 @@ SharedFields:
   Value: 300
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{C4EE127E-ED5A-4838-B717-112CFD6EA5F9}\" />"
+  Value: |
+    <image mediaid="{C4EE127E-ED5A-4838-B717-112CFD6EA5F9}" />
 - ID: "f172b787-7b88-4bd5-ae4d-6308e102ef11"
   Hint: Enable Datasource Query
   Type: Checkbox

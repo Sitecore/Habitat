@@ -24,7 +24,8 @@ Languages:
         <p style="color: #333333;">For more information, please check out the&nbsp;<a href="https://github.com/Sitecore/Habitat/wiki" style="color: #4078c0; text-decoration: none;">Habitat Wiki</a></p>
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
     - ID: "9588b6d5-3e6a-4c16-bd37-98da6f1dde52"
       Hint: Question
       Value: "What is Habitat?"
