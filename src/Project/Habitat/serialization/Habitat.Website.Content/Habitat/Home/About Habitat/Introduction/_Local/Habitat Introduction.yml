@@ -14,13 +14,15 @@ Languages:
       Value: 20160407T233756Z
     - ID: "2628705d-9434-4448-978c-c3bf166fa1eb"
       Hint: MediaVideoLink
-      Value: "<link linktype=\"external\" url=\"https://youtu.be/2CELqflPhm0\" />"
+      Value: |
+        <link linktype="external" url="https://youtu.be/2CELqflPhm0" />
     - ID: "302c9f8d-f703-4f76-a4ab-73d222648232"
       Hint: MediaDescription
       Value: <p>Video introducing the concepts and thoughts behind the Sitecore Habitat methodology</p>
     - ID: "4ff62b0a-d73b-4436-bea2-023154f2ffc4"
       Hint: MediaThumbnail
-      Value: "<image mediaid=\"{AC09E83E-3473-4F94-B1DA-CB2BD5ADD401}\" ></image>"
+      Value: |
+        <image mediaid="{AC09E83E-3473-4F94-B1DA-CB2BD5ADD401}" ></image>
     - ID: "63dda48b-b0cb-45a7-9a1b-b26ddb41009b"
       Hint: MediaTitle
       Value: Habitat Introduction

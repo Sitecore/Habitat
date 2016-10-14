@@ -20,10 +20,12 @@ Languages:
       Value: youtube
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
-      Value: "<link linktype=\"external\" url=\"https://www.youtube.com/user/sitecorechannel\" />"
+      Value: |
+        <link linktype="external" url="https://www.youtube.com/user/sitecorechannel" />
 - Language: en
   Versions:
   - Version: 1
@@ -39,4 +41,5 @@ Languages:
       Value: youtube
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
-      Value: "<link text=\"\" linktype=\"external\" url=\"https://www.youtube.com/user/sitecorechannel\" anchor=\"\" title=\"\" class=\"\" querystring=\"\" target=\"_blank\" id=\"\" />"
+      Value: |
+        <link text="" linktype="external" url="https://www.youtube.com/user/sitecorechannel" anchor="" title="" class="" querystring="" target="_blank" id="" />

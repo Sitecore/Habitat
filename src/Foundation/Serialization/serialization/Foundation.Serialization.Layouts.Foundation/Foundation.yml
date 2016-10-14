@@ -1,11 +1,11 @@
 ﻿---
-ID: 10335194-8652-470a-9445-fd7c4fb21b4e
-Parent: 75cc5ce4-8979-4008-9d3c-806477d57619
-Template: 93227c5d-4fef-474d-94c0-f252ec8e8219
+ID: "10335194-8652-470a-9445-fd7c4fb21b4e"
+Parent: "75cc5ce4-8979-4008-9d3c-806477d57619"
+Template: "93227c5d-4fef-474d-94c0-f252ec8e8219"
 Path: /sitecore/layout/Layouts/Foundation
 DB: master
 SharedFields:
-- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: applications/32x32/folder_gear.png
 Languages:
@@ -13,6 +13,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150825T151544Z

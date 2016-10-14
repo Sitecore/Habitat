@@ -1,73 +1,77 @@
 ﻿---
-ID: ed749831-6d24-4f6c-9c4e-bbc81a874122
-Parent: 924057e1-f3e0-4d9f-b661-e1a1ffee6891
-Template: 3c8bd8a1-280b-4278-bb8b-21fa3b87af0f
+ID: "ed749831-6d24-4f6c-9c4e-bbc81a874122"
+Parent: "924057e1-f3e0-4d9f-b661-e1a1ffee6891"
+Template: "3c8bd8a1-280b-4278-bb8b-21fa3b87af0f"
 Path: /sitecore/system/Settings/Html Editor Profiles/Rich Text Complete/Toolbar 2/AjaxSpellcheck
 DB: core
-BranchID: b9ed3ccb-9ec5-4c8c-825b-3dbc2eb0e676
+BranchID: "b9ed3ccb-9ec5-4c8c-825b-3dbc2eb0e676"
 SharedFields:
-- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: /sitecore/shell/RadControls/Editor/Skins/Monochrome/Buttons/SpellCheck.gif
-- ID: 56776edf-261c-4abc-9fe7-70c618795239
+- ID: "56776edf-261c-4abc-9fe7-70c618795239"
   Hint: __Help link
   Value: <link/>
-- ID: 7cf6da87-047d-447d-99e9-d1e355330db3
+- ID: "7cf6da87-047d-447d-99e9-d1e355330db3"
   Hint: Click
   Value: AjaxSpellCheck
-- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 318
 Languages:
 - Language: da
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: AjaxSpellcheck
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T031110Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
-- Language: de-DE
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: AjaxRechtschreibprüfung
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030821Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20090807T113506:633852417060978195
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+      Value: "20090807T113506:633852417060978195"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
-- Language: ja-JP
+      Value: |
+        sitecore\admin
+- Language: "ja-JP"
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Ajax スペル チェック
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030951Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

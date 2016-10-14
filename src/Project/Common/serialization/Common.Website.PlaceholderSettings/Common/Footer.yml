@@ -1,25 +1,26 @@
 ﻿---
-ID: bc5c2e0c-355b-45fd-9112-34d3cbe7b038
-Parent: 6ca1a082-5054-4aa0-88da-39489a7d1cce
-Template: 5c547d4e-7111-4995-95b0-6b561751bf2e
+ID: "bc5c2e0c-355b-45fd-9112-34d3cbe7b038"
+Parent: "6ca1a082-5054-4aa0-88da-39489a7d1cce"
+Template: "5c547d4e-7111-4995-95b0-6b561751bf2e"
 Path: /sitecore/layout/Placeholder Settings/Project/Common/Footer
 DB: master
 SharedFields:
-- ID: 14d0728a-82f9-4b01-ab16-1fe1577cede2
+- ID: "14d0728a-82f9-4b01-ab16-1fe1577cede2"
   Hint: Editable
-  Value: 
-- ID: 7256bdab-1fd2-49dd-b205-cb4873d2917c
+  Type: Checkbox
+  Value: 0
+- ID: "7256bdab-1fd2-49dd-b205-cb4873d2917c"
   Hint: Placeholder Key
   Value: Footer
-- ID: e391b526-d0c5-439d-803e-17512eae6222
+- ID: "e391b526-d0c5-439d-803e-17512eae6222"
   Hint: Allowed Controls
   Type: TreelistEx
-  Value: {299FD8EA-2CFD-4A69-9CA4-7EA24CD34A46}
+  Value: "{299FD8EA-2CFD-4A69-9CA4-7EA24CD34A46}"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20160216T021002Z

@@ -1,20 +1,21 @@
 ﻿---
-ID: 341711c5-f25e-4f90-95b4-40182bc5540a
-Parent: d4ce5263-0aad-4540-bc85-9477f8529745
-Template: 55a5bdad-eb69-40f5-8195-cda182e48ee4
-Path: /sitecore/system/Settings/Feature/Media/Background Types/bg-dark
+ID: "341711c5-f25e-4f90-95b4-40182bc5540a"
+Parent: "d4ce5263-0aad-4540-bc85-9477f8529745"
+Template: "55a5bdad-eb69-40f5-8195-cda182e48ee4"
+Path: "/sitecore/system/Settings/Feature/Media/Background Types/bg-dark"
 DB: master
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20160204T104508Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
-    - ID: af6b8e5c-10a2-46be-8310-407434ec1055
+      Value: |
+        sitecore\admin
+    - ID: "af6b8e5c-10a2-46be-8310-407434ec1055"
       Hint: Class
-      Value: bg-dark
+      Value: "bg-dark"

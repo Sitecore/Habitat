@@ -17,7 +17,8 @@ Languages:
       Value: 20151116T023636Z
     - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
-      Value: "<image mediaid=\"{2F449159-2E4A-4642-A50E-6D15A1510C1F}\" />"
+      Value: |
+        <image mediaid="{2F449159-2E4A-4642-A50E-6D15A1510C1F}" />
     - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
       Value: Page Content contains the functionality and content for basic article style pages, including page title, body text etc.

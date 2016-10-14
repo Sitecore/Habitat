@@ -17,10 +17,12 @@ Languages:
       Value: 20160112T162651Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
-      Value: "<link linktype=\"external\" url=\"https://github.com/Sitecore/Habitat\" />"
+      Value: |
+        <link linktype="external" url="https://github.com/Sitecore/Habitat" />
 - Language: en
   Versions:
   - Version: 1
@@ -33,4 +35,5 @@ Languages:
       Value: 20151210T040902Z
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
-      Value: "<link linktype=\"external\" url=\"https://github.com/Sitecore/Habitat\" anchor=\"\" target=\"_blank\" />"
+      Value: |
+        <link linktype="external" url="https://github.com/Sitecore/Habitat" anchor="" target="_blank" />

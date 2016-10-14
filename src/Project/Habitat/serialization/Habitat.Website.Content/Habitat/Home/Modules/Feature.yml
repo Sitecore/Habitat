@@ -17,7 +17,8 @@ Languages:
       Value: 20150920T232107Z
     - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
-      Value: "<image mediaid=\"{7F9A6C4D-D288-46A8-9D27-C084AE76A9DB}\" ></image>"
+      Value: |
+        <image mediaid="{7F9A6C4D-D288-46A8-9D27-C084AE76A9DB}" ></image>
     - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
       Value: Feature modules are the functionality of the website such as navigation, search, content, accounts, etc. The bulk of the business logic and presentation elements sits in these modules.
@@ -29,4 +30,5 @@ Languages:
       Value: Feature
     - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
-      Value: "<span style=\"line-height: 24.2857px;\">Feature modules are the functionality of the website such as navigation, search, content, accounts, etc. The bulk of the business logic and presentation elements sits in these modules.</span>"
+      Value: |
+        <span style="line-height: 24.2857px;">Feature modules are the functionality of the website such as navigation, search, content, accounts, etc. The bulk of the business logic and presentation elements sits in these modules.</span>

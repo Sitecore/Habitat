@@ -1,22 +1,23 @@
 ﻿---
-ID: 1a2df681-c91b-4292-8dc9-231aaff3645e
-Parent: a8f1b162-041f-46bf-81eb-5213ae8bc579
-Template: a8f1b162-041f-46bf-81eb-5213ae8bc579
+ID: "1a2df681-c91b-4292-8dc9-231aaff3645e"
+Parent: "a8f1b162-041f-46bf-81eb-5213ae8bc579"
+Template: "a8f1b162-041f-46bf-81eb-5213ae8bc579"
 Path: /sitecore/templates/Project/Common/Content Types/Teasers/Quote Folder/__Standard Values
 DB: master
 SharedFields:
-- ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
   Hint: __Masters
   Type: TreelistEx
-  Value: {40AD8A9B-C75C-428D-9E1A-51372B21F63E}
+  Value: "{40AD8A9B-C75C-428D-9E1A-51372B21F63E}"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151124T101633Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

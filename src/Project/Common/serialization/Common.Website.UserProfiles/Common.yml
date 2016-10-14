@@ -1,7 +1,7 @@
 ﻿---
-ID: f2913f12-6c68-49f2-a675-c9bb8892d987
-Parent: 65701ce7-6ffc-4a76-88f0-05834afd7e9d
-Template: a87a00b1-e6db-45ab-8b54-636fec3b5523
+ID: "f2913f12-6c68-49f2-a675-c9bb8892d987"
+Parent: "65701ce7-6ffc-4a76-88f0-05834afd7e9d"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
 Path: /sitecore/system/Settings/Security/Profiles/Common
 DB: core
 Languages:
@@ -9,6 +9,6 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151112T094014Z

@@ -1,0 +1,6 @@
+﻿---
+Role: |
+  modules\Feature Multisite Admin
+MemberOf:
+  Role: |
+    modules\Foundation Multisite Admin

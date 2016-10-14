@@ -16,7 +16,8 @@ SharedFields:
   Value: 600
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{F302A074-ED05-43B6-923B-FDBD783ED20A}\" />"
+  Value: |
+    <image mediaid="{F302A074-ED05-43B6-923B-FDBD783ED20A}" />
 - ID: "e441abe7-2ca3-4640-ae26-3789967925d7"
   Hint: Compatible Renderings
   Type: Treelist

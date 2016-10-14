@@ -14,4 +14,5 @@ Languages:
       Value: 20160406T234249Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: extranet\Anonymous
+      Value: |
+        extranet\Anonymous

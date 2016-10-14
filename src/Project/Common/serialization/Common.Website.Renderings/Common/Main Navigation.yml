@@ -7,7 +7,8 @@ DB: master
 SharedFields:
 - ID: "308e88f5-cd6e-4f8f-bafe-95a47dedefdc"
   Hint: Editable
-  Value: 
+  Type: Checkbox
+  Value: 0
 - ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
   Hint: Path
   Value: /Views/Common/Sublayouts/Navbar.cshtml
@@ -16,7 +17,8 @@ SharedFields:
   Value: 1400
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{D6266495-E8BB-4396-9004-2970FC1B7D3D}\" />"
+  Value: |
+    <image mediaid="{D6266495-E8BB-4396-9004-2970FC1B7D3D}" />
 Languages:
 - Language: en
   Versions:

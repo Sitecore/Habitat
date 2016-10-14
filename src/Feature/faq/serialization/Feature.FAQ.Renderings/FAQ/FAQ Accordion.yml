@@ -13,7 +13,8 @@ SharedFields:
   Value: "site:faq"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{85C963E8-6944-4B79-A532-195E57F87423}\" />"
+  Value: |
+    <image mediaid="{85C963E8-6944-4B79-A532-195E57F87423}" />
 Languages:
 - Language: en
   Versions:

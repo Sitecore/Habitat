@@ -38,7 +38,8 @@ Languages:
       Value: 20151116T023602Z
     - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
-      Value: "<image mediaid=\"{0E882593-65D1-44BD-83C4-B2CC48C9C9E7}\" />"
+      Value: |
+        <image mediaid="{0E882593-65D1-44BD-83C4-B2CC48C9C9E7}" />
     - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
       Value: The corporate or organisational identity of the website is managed by the Identity module. This includes Logos and legal footer information.
@@ -50,4 +51,5 @@ Languages:
       Value: Identity
     - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
-      Value: "<span style=\"line-height: 24.2857px;\">The corporate or organisational identity of the website is managed by the Identity module. This includes Logos and legal footer information.</span>"
+      Value: |
+        <span style="line-height: 24.2857px;">The corporate or organisational identity of the website is managed by the Identity module. This includes Logos and legal footer information.</span>

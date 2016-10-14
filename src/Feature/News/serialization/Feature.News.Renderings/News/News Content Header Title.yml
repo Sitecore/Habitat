@@ -10,7 +10,8 @@ SharedFields:
   Value: /Views/News/NewsPageHeader.cshtml
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{68B8E4B2-E5BA-404F-8107-66FD36361DD6}\" />"
+  Value: |
+    <image mediaid="{68B8E4B2-E5BA-404F-8107-66FD36361DD6}" />
 Languages:
 - Language: en
   Versions:

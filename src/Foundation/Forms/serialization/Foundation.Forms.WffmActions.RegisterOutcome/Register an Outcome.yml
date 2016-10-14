@@ -8,6 +8,7 @@ BranchID: "9d2b5542-f674-44a3-b607-947bfabda5b2"
 SharedFields:
 - ID: "055928e5-9fd4-45de-97cd-0b595025b175"
   Hint: Client Action
+  Type: Checkbox
   Value: 1
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon

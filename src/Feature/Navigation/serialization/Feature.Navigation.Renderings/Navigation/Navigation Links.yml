@@ -10,7 +10,8 @@ SharedFields:
   Value: "site:linkmenu"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{722CDB97-DE97-433B-BA3D-7A7275E31A48}\" />"
+  Value: |
+    <image mediaid="{722CDB97-DE97-433B-BA3D-7A7275E31A48}" />
 - ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
   Hint: Controller Action
   Value: NavigationLinks
@@ -22,9 +23,10 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 1c307764-806c-42f0-b7ce-fc173ac8372b
+    - ID: "1c307764-806c-42f0-b7ce-fc173ac8372b"
       Hint: Supports Local Datasource
+      Type: Checkbox
       Value: 1
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150907T042151Z

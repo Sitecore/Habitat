@@ -10,7 +10,8 @@ SharedFields:
   Value: "{B962A806-D708-4001-B0A3-3FA31F2263C5}"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{A2AA26F9-520E-4DD8-84C6-22219E99EDE3}\" />"
+  Value: |
+    <image mediaid="{A2AA26F9-520E-4DD8-84C6-22219E99EDE3}" />
 - ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
   Hint: Controller Action
   Value: SectionMedia
@@ -22,9 +23,10 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 1c307764-806c-42f0-b7ce-fc173ac8372b
+    - ID: "1c307764-806c-42f0-b7ce-fc173ac8372b"
       Hint: Supports Local Datasource
-      Value: 
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+      Type: Checkbox
+      Value: 0
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20160205T101855Z
