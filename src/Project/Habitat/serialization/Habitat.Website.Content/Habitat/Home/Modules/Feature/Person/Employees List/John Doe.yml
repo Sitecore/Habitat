@@ -36,16 +36,19 @@ Languages:
       Value: John Doe
     - ID: "2b13dfab-3450-45ef-93f4-beaa6f544fa6"
       Hint: LinkedInLink
-      Value: "<link linktype=\"external\" url=\"http://linkedin.com\" anchor=\"\" target=\"\" />"
+      Value: |
+        <link linktype="external" url="http://linkedin.com" anchor="" target="" />
     - ID: "5978b330-1d46-4065-8751-f74bf17d815e"
       Hint: Email
       Value: john.doe@sitecorehabitat.com
     - ID: "69a846d9-4c7f-435c-a8dc-87e2d7359cfa"
       Hint: BlogLink
-      Value: "<link linktype=\"external\" url=\"http://MyBlog.com\" anchor=\"\" target=\"\" />"
+      Value: |
+        <link linktype="external" url="http://MyBlog.com" anchor="" target="" />
     - ID: "6de98ef7-1209-40a3-a63e-16dbef015211"
       Hint: TwitterLink
-      Value: "<link linktype=\"external\" url=\"http://twitter.com\" anchor=\"\" target=\"\" />"
+      Value: |
+        <link linktype="external" url="http://twitter.com" anchor="" target="" />
     - ID: "76972fcd-4bb0-4255-864e-077745efdf50"
       Hint: Title
       Value: CEO
@@ -57,10 +60,12 @@ Languages:
       Value: John is a highly accomplished executive with extensive financial, operational and global business management experience.
     - ID: "c9baf3eb-8cfa-4bf6-9b19-51d38db5fc38"
       Hint: Picture
-      Value: "<image mediapath=\"/Habitat/Images/Square/Habitat-075-square\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Habitat/Images/Square/Habitat-075-square\" mediaid=\"{7C3BBB56-BE70-4F1B-86A3-3D7C505D74AD}\" ></image>"
+      Value: |
+        <image mediapath="/Habitat/Images/Square/Habitat-075-square" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Habitat/Images/Square/Habitat-075-square" mediaid="{7C3BBB56-BE70-4F1B-86A3-3D7C505D74AD}" ></image>
     - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
       Hint: BrowserTitle
       Value: John Doe
     - ID: "d31889c0-e34c-4904-a6f3-f3d92d314aa9"
       Hint: FacebookLink
-      Value: "<link text=\"\" linktype=\"external\" url=\"www.facebook.com\" anchor=\"\" title=\"\" class=\"\" querystring=\"\" target=\"\" id=\"\" />"
+      Value: |
+        <link text="" linktype="external" url="www.facebook.com" anchor="" title="" class="" querystring="" target="" id="" />

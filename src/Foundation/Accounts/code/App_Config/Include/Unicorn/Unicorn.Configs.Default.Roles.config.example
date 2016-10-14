@@ -1,0 +1,56 @@
+<!--
+	Unicorn.Configs.Default.Roles.config
+
+	This is an example of how to configure a basic Unicorn configuration to include a set of security roles to sync.
+
+	http://github.com/kamsar/Unicorn
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+	<sitecore>
+		<unicorn>
+			<configurations>
+				<!--
+					Regular Unicorn configurations can be extended to include roles via the RolePredicate
+					
+					NOTE: Configurations which include roles should not be using transparent sync. Roles do not sync transparently.
+					
+					How do roles sync?
+					Roles sync by default quite similarly to regular Unicorn items: roles on disk are the master.
+					Using the RoleSyncConfiguration you can set up to have roles not be deleted if they are not serialized.
+					
+					Note that because roles are just strings and have no internal ID (such as NTFS' SIDs), if a role is ever accidentally removed,
+					simply creating a new role of the same name will restore all permissions previously held by that role.
+				-->
+				<configuration name="Default Configuration">
+					<!-- 
+						Note: the configuration must also define a predicate (e.g. to include items),
+						or use the empty predicate, which includes nothing, for a roles-only configuration:
+					-->
+					<!--<predicate type="Unicorn.Roles.Predicates.EmptyPredicate, Unicorn.Roles" singleInstance="true" />-->
+					
+					<!-- 
+						Add the role predicate. Adding a role predicate tells Unicorn you want to sync roles with this configuration.
+					-->
+					<rolePredicate type="Unicorn.Roles.RolePredicates.ConfigurationRolePredicate, Unicorn.Roles" singleInstance="true">
+						<!--
+							Each include must either include a domain, which includes all roles under that domain,
+							or a domain with a role regex pattern to determine specific roles to include under the domain.
+							
+							For regex pattern rules, note that the regex applies to the role not including the domain,
+							e.g. for "sitecore\foo" the regex pattern is checked against "foo" if the domain is set to "sitecore"
+						-->
+						<include domain="sitecore" />
+						<include domain="extranet" pattern="^MySite.*$" />
+						<!-- Note: you may include the same domain in multiple include elements, with different patterns -->
+					</rolePredicate>
+
+					<!-- 
+						If you set RemoveOrphans to true, role syncing will delete matching roles that are not serialized, like item syncing does.
+						If set to false, roles are only ever added or updated (similar to New Items Only item syncing but updates are also synced)
+					-->
+					<roleSyncConfiguration removeOrphans="true" type="Unicorn.Roles.Loader.DefaultRoleSyncConfiguration, Unicorn.Roles" singleInstance="true" />
+				</configuration>
+			</configurations>
+		</unicorn>
+	</sitecore>
+</configuration>

@@ -13,7 +13,8 @@ SharedFields:
   Value: "site:pagecontent"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{3562E417-E541-4F54-848E-ECB0B855699A}\" />"
+  Value: |
+    <image mediaid="{3562E417-E541-4F54-848E-ECB0B855699A}" />
 - ID: "e441abe7-2ca3-4640-ae26-3789967925d7"
   Hint: Compatible Renderings
   Type: Treelist

@@ -13,10 +13,12 @@ SharedFields:
   Value: 300
 - ID: "dca13350-3ec5-408a-a190-d8fc9f63dcd1"
   Hint: Is Displayed in Search Results
+  Type: Checkbox
   Value: 1
 - ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
   Hint: __Security
-  Value: "ar|modules\Feature PageContent Admin|pe|+field:write|pd|+field:write|ar|Everyone|pe|!*|+field:read|pd|!*|+field:read|"
+  Value: |
+    ar|modules\Feature PageContent Admin|pe|+field:write|pd|+field:write|ar|Everyone|pe|!*|+field:read|pd|!*|+field:read|
 Languages:
 - Language: en
   Fields:

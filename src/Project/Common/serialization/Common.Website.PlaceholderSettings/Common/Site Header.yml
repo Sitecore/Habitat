@@ -7,7 +7,8 @@ DB: master
 SharedFields:
 - ID: "14d0728a-82f9-4b01-ab16-1fe1577cede2"
   Hint: Editable
-  Value: 
+  Type: Checkbox
+  Value: 0
 - ID: "7256bdab-1fd2-49dd-b205-cb4873d2917c"
   Hint: Placeholder Key
   Value: "header-top"

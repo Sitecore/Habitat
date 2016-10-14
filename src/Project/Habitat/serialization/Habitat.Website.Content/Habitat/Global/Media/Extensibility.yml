@@ -14,13 +14,16 @@ Languages:
       Value: 20160112T161036Z
     - ID: "4ff62b0a-d73b-4436-bea2-023154f2ffc4"
       Hint: MediaThumbnail
-      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{9038ED94-C574-418F-A817-B6A52F8CD3B0}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"Blonde Woman\" vspace=\"\" ></image>"
+      Value: |
+        <image mediapath="" src="" height="" mediaid="{9038ED94-C574-418F-A817-B6A52F8CD3B0}" hspace="" usethumbnail="" showineditor="" width="" alt="Blonde Woman" vspace="" ></image>
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
     - ID: "9f51dead-ad6e-41c2-9759-7be17eb474a4"
       Hint: MediaImage
-      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{9038ED94-C574-418F-A817-B6A52F8CD3B0}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"Blonde Woman\" vspace=\"\" />"
+      Value: |
+        <image mediapath="" src="" height="" mediaid="{9038ED94-C574-418F-A817-B6A52F8CD3B0}" hspace="" usethumbnail="" showineditor="" width="" alt="Blonde Woman" vspace="" />
 - Language: en
   Versions:
   - Version: 1
@@ -33,10 +36,12 @@ Languages:
       Value: Add new features, simply and without a steep learning curve
     - ID: "4ff62b0a-d73b-4436-bea2-023154f2ffc4"
       Hint: MediaThumbnail
-      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{9038ED94-C574-418F-A817-B6A52F8CD3B0}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"Blonde Woman\" vspace=\"\" ></image>"
+      Value: |
+        <image mediapath="" src="" height="" mediaid="{9038ED94-C574-418F-A817-B6A52F8CD3B0}" hspace="" usethumbnail="" showineditor="" width="" alt="Blonde Woman" vspace="" ></image>
     - ID: "63dda48b-b0cb-45a7-9a1b-b26ddb41009b"
       Hint: MediaTitle
       Value: Extensibility
     - ID: "9f51dead-ad6e-41c2-9759-7be17eb474a4"
       Hint: MediaImage
-      Value: "<image mediapath=\"\" src=\"\" height=\"\" mediaid=\"{9038ED94-C574-418F-A817-B6A52F8CD3B0}\" hspace=\"\" usethumbnail=\"\" showineditor=\"\" width=\"\" alt=\"Blonde Woman\" vspace=\"\" />"
+      Value: |
+        <image mediapath="" src="" height="" mediaid="{9038ED94-C574-418F-A817-B6A52F8CD3B0}" hspace="" usethumbnail="" showineditor="" width="" alt="Blonde Woman" vspace="" />

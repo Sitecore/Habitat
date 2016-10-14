@@ -16,7 +16,8 @@ SharedFields:
   Value: "site:quote"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{CE008AF7-6CCA-4579-9EF8-83740FC7CF85}\" />"
+  Value: |
+    <image mediaid="{CE008AF7-6CCA-4579-9EF8-83740FC7CF85}" />
 Languages:
 - Language: en
   Versions:

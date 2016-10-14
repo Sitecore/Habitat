@@ -1,22 +1,23 @@
 ﻿---
-ID: a7ebf38a-5f66-4579-92d1-568a8ba50293
-Parent: cc5890af-54a1-4f8f-9298-a064d631e132
-Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+ID: "a7ebf38a-5f66-4579-92d1-568a8ba50293"
+Parent: "cc5890af-54a1-4f8f-9298-a064d631e132"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
 Path: /sitecore/templates/Feature/Demo/_Token
 DB: master
 SharedFields:
-- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
   Hint: __Base template
   Type: tree list
-  Value: {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+  Value: "{1930BBEB-7805-471A-A3BE-4858AC7CF696}"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151110T095644Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

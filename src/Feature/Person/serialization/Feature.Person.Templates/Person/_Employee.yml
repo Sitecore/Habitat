@@ -1,14 +1,14 @@
 ﻿---
-ID: 745652ae-3298-48b1-9be1-99012d91f3ac
-Parent: e6197898-5ed7-47f5-a15c-b221b9e6866c
-Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+ID: "745652ae-3298-48b1-9be1-99012d91f3ac"
+Parent: "e6197898-5ed7-47f5-a15c-b221b9e6866c"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
 Path: /sitecore/templates/Feature/Person/_Employee
 DB: master
 SharedFields:
-- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: Applications/32x32/form_blue.png
-- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
   Hint: __Base template
   Type: tree list
   Value: |
@@ -19,9 +19,10 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151124T095536Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

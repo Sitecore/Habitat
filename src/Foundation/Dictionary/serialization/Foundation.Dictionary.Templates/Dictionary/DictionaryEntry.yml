@@ -14,9 +14,11 @@ SharedFields:
   Value: "{1930BBEB-7805-471A-A3BE-4858AC7CF696}"
 - ID: "61cf7151-0cbd-4db4-9738-d753a55a6e65"
   Hint: __Enforce version presence
+  Type: Checkbox
   Value: 1
 - ID: "fd4e2050-186c-4375-8b99-e8a85dd7436e"
   Hint: __Enable item fallback
+  Type: Checkbox
   Value: 1
 Languages:
 - Language: en
@@ -28,4 +30,5 @@ Languages:
       Value: 20160405T225051Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

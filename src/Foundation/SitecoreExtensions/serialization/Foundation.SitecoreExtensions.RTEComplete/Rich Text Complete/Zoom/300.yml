@@ -1,15 +1,15 @@
 ﻿---
-ID: e8b6ae25-af2f-4ed5-8343-454fd10f5bf1
-Parent: a06929e4-0b6c-405a-903c-6eadb5ca2cb5
-Template: 2b421e6f-e820-4a04-9a4a-e421a0262b61
+ID: "e8b6ae25-af2f-4ed5-8343-454fd10f5bf1"
+Parent: "a06929e4-0b6c-405a-903c-6eadb5ca2cb5"
+Template: "2b421e6f-e820-4a04-9a4a-e421a0262b61"
 Path: /sitecore/system/Settings/Html Editor Profiles/Rich Text Complete/Zoom/300
 DB: core
-BranchID: 14d0d756-dd94-4cfa-aed6-6d2585535700
+BranchID: "14d0d756-dd94-4cfa-aed6-6d2585535700"
 SharedFields:
-- ID: 433e22b5-06aa-4a97-a4ac-7cb059ebbac6
+- ID: "433e22b5-06aa-4a97-a4ac-7cb059ebbac6"
   Hint: Value
   Value: 300
-- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 20
 Languages:
@@ -17,15 +17,16 @@ Languages:
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20060130T125632
-    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+    - ID: "519cd02a-a857-4894-9c9b-ac9bdc472937"
       Hint: Header
       Value: 300%
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\Admin
-    - ID: c8f93afe-bfd4-4e8f-9c61-152559854661
+      Value: |
+        sitecore\Admin
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
       Hint: __Valid from
       Value: 20060130T125632

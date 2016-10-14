@@ -17,7 +17,8 @@ Languages:
       Value: "{14E452CA-064D-48A8-9FF2-2744D10437A1}"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
     - ID: "5fe1cc43-f86c-459c-a379-cd75950d85af"
       Hint: DatasourceLocation
       Value: "{0DE95AE4-41AB-4D01-9EB0-67441B7C2450}"

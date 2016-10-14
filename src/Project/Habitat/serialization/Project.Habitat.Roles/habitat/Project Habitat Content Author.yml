@@ -1,0 +1,8 @@
+﻿---
+Role: |
+  habitat\Project Habitat Content Author
+MemberOf:
+  Role: |
+    sitecore\Author
+  Role: |
+    sitecore\Designer

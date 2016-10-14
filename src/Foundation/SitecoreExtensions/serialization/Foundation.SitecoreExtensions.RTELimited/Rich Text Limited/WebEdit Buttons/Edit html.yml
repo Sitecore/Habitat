@@ -1,97 +1,102 @@
 ﻿---
-ID: 0b1a5b70-0916-4c55-a381-5cb8e203649e
-Parent: 5f577809-a644-479d-a517-c0e2889fc670
-Template: 02404208-46d4-49bf-988b-eb363a52a1c9
+ID: "0b1a5b70-0916-4c55-a381-5cb8e203649e"
+Parent: "5f577809-a644-479d-a517-c0e2889fc670"
+Template: "02404208-46d4-49bf-988b-eb363a52a1c9"
 Path: /sitecore/system/Settings/Html Editor Profiles/Rich Text Limited/WebEdit Buttons/Edit html
 DB: core
 SharedFields:
-- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: Office/16x16/Pencil.png
-- ID: 1bb289d6-44d7-4fcc-af15-db32b841f957
+- ID: "1bb289d6-44d7-4fcc-af15-db32b841f957"
   Hint: Click
-  Value: "chrome:field:editcontrol({command:\"webedit:edithtml\"})"
-- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+  Value: |
+    chrome:field:editcontrol({command:"webedit:edithtml"})
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: -1
-- ID: e8cc41c7-c304-4282-b782-e21ca32d324c
+  Value: "-1"
+- ID: "e8cc41c7-c304-4282-b782-e21ca32d324c"
   Hint: Icon
   Value: Office/16x16/Pencil.png
 Languages:
 - Language: da
   Fields:
-  - ID: 371e0d96-4f00-4b80-ad14-6284e00493ba
+  - ID: "371e0d96-4f00-4b80-ad14-6284e00493ba"
     Hint: Tooltip
     Value: Rediger teksten
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Rediger HTML
-  - ID: c523aba8-d1a1-4dcb-aeee-52635a4ab2ae
+  - ID: "c523aba8-d1a1-4dcb-aeee-52635a4ab2ae"
     Hint: Header
     Value: Rediger tekst
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T031104Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
-- Language: de-DE
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
   Fields:
-  - ID: 371e0d96-4f00-4b80-ad14-6284e00493ba
+  - ID: "371e0d96-4f00-4b80-ad14-6284e00493ba"
     Hint: Tooltip
     Value: Den Text bearbeiten
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Html bearbeiten
-  - ID: c523aba8-d1a1-4dcb-aeee-52635a4ab2ae
+  - ID: "c523aba8-d1a1-4dcb-aeee-52635a4ab2ae"
     Hint: Header
     Value: Text bearbeiten
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030816Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
 - Language: en
   Fields:
-  - ID: 371e0d96-4f00-4b80-ad14-6284e00493ba
+  - ID: "371e0d96-4f00-4b80-ad14-6284e00493ba"
     Hint: Tooltip
     Value: Edit the text
-  - ID: c523aba8-d1a1-4dcb-aeee-52635a4ab2ae
+  - ID: "c523aba8-d1a1-4dcb-aeee-52635a4ab2ae"
     Hint: Header
     Value: Edit Text
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20071226T124551Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\Admin
-- Language: ja-JP
+      Value: |
+        sitecore\Admin
+- Language: "ja-JP"
   Fields:
-  - ID: 371e0d96-4f00-4b80-ad14-6284e00493ba
+  - ID: "371e0d96-4f00-4b80-ad14-6284e00493ba"
     Hint: Tooltip
     Value: テキストを編集します
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: HTML を編集する
-  - ID: c523aba8-d1a1-4dcb-aeee-52635a4ab2ae
+  - ID: "c523aba8-d1a1-4dcb-aeee-52635a4ab2ae"
     Hint: Header
     Value: テキスト編集
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030945Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

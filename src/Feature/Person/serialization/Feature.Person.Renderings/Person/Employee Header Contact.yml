@@ -13,7 +13,8 @@ SharedFields:
   Value: "site:employee"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{5C70EB6B-7CB4-4295-A31C-4B2638415F7B}\" />"
+  Value: |
+    <image mediaid="{5C70EB6B-7CB4-4295-A31C-4B2638415F7B}" />
 - ID: "e441abe7-2ca3-4640-ae26-3789967925d7"
   Hint: Compatible Renderings
   Type: Treelist

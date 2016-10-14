@@ -41,7 +41,8 @@ Languages:
       Value: 20160105T101156Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
     - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
       Hint: BrowserTitle
       Value: Fleksibilitet, Enkelhed,  Udvidelsesmuligheder
@@ -140,7 +141,8 @@ Languages:
         {153640E2-FD0D-42D3-8480-F9615EE78A9A}
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
     - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
       Hint: BrowserTitle
       Value: Flexibility, Simplicity, Extensibility

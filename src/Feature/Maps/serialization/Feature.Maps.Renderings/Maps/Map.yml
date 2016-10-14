@@ -19,7 +19,8 @@ SharedFields:
   Value: "site:mappoints"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{8E5FCC7D-069D-48D8-9A57-AC4AEC221E10}\" />"
+  Value: |
+    <image mediaid="{8E5FCC7D-069D-48D8-9A57-AC4AEC221E10}" />
 - ID: "e514a1eb-ddba-44f7-8528-82ca2280f778"
   Hint: JavaScript assets
   Value: |

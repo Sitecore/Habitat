@@ -17,10 +17,12 @@ Languages:
       Value: 20151116T023619Z
     - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
-      Value: "<image mediaid=\"{91C40066-B282-4030-95DA-4919E51CAADB}\" />"
+      Value: |
+        <image mediaid="{91C40066-B282-4030-95DA-4919E51CAADB}" />
     - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
-      Value: "<span style=\"line-height: 24.2857px;\">The metadata module covers functionality related to HTML</span><span style=\"line-height: 24.2857px;\"> and SEO</span><span style=\"line-height: 24.2857px;\"> metadata.</span>"
+      Value: |
+        <span style="line-height: 24.2857px;">The metadata module covers functionality related to HTML</span><span style="line-height: 24.2857px;"> and SEO</span><span style="line-height: 24.2857px;"> metadata.</span>
     - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
       Hint: Title
       Value: Metadata
@@ -29,4 +31,5 @@ Languages:
       Value: Metadata
     - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
-      Value: "The metadata module covers functionality related to HTML<span style=\"line-height: 24.2857px;\">&nbsp;and SEO</span>&nbsp;metadata, including for example the browser page title and global site title."
+      Value: |
+        The metadata module covers functionality related to HTML<span style="line-height: 24.2857px;">&nbsp;and SEO</span>&nbsp;metadata, including for example the browser page title and global site title.

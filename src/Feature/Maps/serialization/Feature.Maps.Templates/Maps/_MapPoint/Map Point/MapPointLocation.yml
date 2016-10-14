@@ -13,7 +13,8 @@ SharedFields:
   Value: 500
 - ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
   Hint: __Security
-  Value: "ar|Everyone|pe|+field:read|!*|pd|+field:read|!*|ar|modules\Feature Maps Admin|pe|+field:write|pd|+field:write|"
+  Value: |
+    ar|Everyone|pe|+field:read|!*|pd|+field:read|!*|ar|modules\Feature Maps Admin|pe|+field:write|pd|+field:write|
 Languages:
 - Language: en
   Fields:
