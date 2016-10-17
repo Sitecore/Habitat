@@ -3,12 +3,13 @@
 # execute this script with powershell
 Param
 (
-    $sitecoreVersion = '8.1.160519', # NuGet package version to convert to. Format is major.minor.releasedate.
-    $frameworkVersion = 'net45' # for 8.2: net452. For 7.0-8.1: net45
+    $sitecoreVersion = '8.2.160729', # NuGet package version to convert to. Format is major.minor.releasedate.
+    $frameworkVersion = 'net452' # for 8.2: net452. For 7.0-8.1: net45
 )
 
 $ScriptPath = $MyInvocation.MyCommand.Path
-$ScriptDir  = Split-Path -Parent $ScriptPath
+$ParentPath = Split-Path -Parent $ScriptPath
+$SolutionDir  = Join-Path -path $ParentPath -childpath ".."
 $MsbNSString = 'http://schemas.microsoft.com/developer/msbuild/2003'
 $MsbNS = @{msb = $MsbNSString}
 $PackagesConfigFileName = 'packages.config'
@@ -38,9 +39,7 @@ Get-ChildItem -path '..' -Recurse -Include $PackagesConfigFileName |
               # Filter non-NuGet references to transform into NuGet packages
             if($referenceName.StartsWith("Sitecore") `
                 -or $referenceName.StartsWith('sitecore.nexus') `
-                -and -not $referenceName.StartsWith('Sitecore.Modules') `
-                -and -not $referenceName.Contains('WFFM') `
-                -and -not $referenceName.StartsWith('Sitecore.Forms') `
+                -and -not $referenceName.StartsWith('Sitecore.PrintStudio') `
                 -and -not $referenceName.StartsWith('Sitecore.Foundation') `
                 -and -not $referenceName.StartsWith('Sitecore.Feature') `
                 -and -not ($referenceName.StartsWith('Sitecore') -and $referenceName.EndsWith('Website'))) {
@@ -51,7 +50,7 @@ Get-ChildItem -path '..' -Recurse -Include $PackagesConfigFileName |
 
                 # set hintPath to package path
                 Push-Location -Path $PackageFileDir
-                $hintPathRoot = Resolve-Path "$ScriptDir\packages" -Relative
+                $hintPathRoot = Resolve-Path "$SolutionDir\packages" -Relative
                 Pop-Location
 
                 $hintPath = "$hintPathRoot\$referenceName.NoReferences.$sitecoreVersion\lib\$frameworkVersion\$referenceName.dll"

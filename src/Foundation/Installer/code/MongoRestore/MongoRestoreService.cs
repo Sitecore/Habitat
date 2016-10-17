@@ -52,6 +52,7 @@
       if (string.IsNullOrEmpty(mongoConnectionString))
       {
         Log.Error($"{LogToken} Connection string with name {dumpName} wasn't found", this);
+        return;
       }
 
       Log.Info($"{LogToken} Starting restore for {dumpName} database", this);

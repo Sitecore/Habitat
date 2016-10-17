@@ -4,6 +4,7 @@
   using FluentAssertions;
   using Sitecore.Data;
   using Sitecore.Data.Items;
+  using Sitecore.FakeDb;
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.Feature.Media.Repositories;
   using Sitecore.Feature.Media.Tests.Infrastructure;
@@ -35,52 +36,48 @@
     }
 
 
-    [Theory]
-    [AutoDbData]
-    public void Get_ValidVideoLinksItems_ShouldReturnItems([Content] Item item, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
+    [Theory, AutoDbData]
+    public void Get_ValidVideoLinksItems_ShouldReturnItems(Db db, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
     {
-      var child = item.Add("childVideo", new TemplateID(Templates.HasMedia.ID));
+      var mediaItem = new DbItem("childVideo", ID.NewID, new TemplateID(Templates.HasMedia.ID))
+                    {
+                      {Templates.HasMediaVideo.Fields.VideoLink, "videoLink"}
+                    };
+      db.Add(mediaItem);
 
-      using (new EditContext(child))
-      {
-        child[Templates.HasMediaVideo.Fields.VideoLink] = "videoLink";
-      }
-
-
-      var selector = item.Add("selector", new TemplateID(Templates.HasMediaSelector.ID));
-      using (new EditContext(selector))
-      {
-        selector[Templates.HasMediaSelector.Fields.MediaSelector] = child.ID.ToString();
-      }
+      var selectorItem = new DbItem("selector", ID.NewID, new TemplateID(Templates.HasMediaSelector.ID))
+                    {
+                      {Templates.HasMediaSelector.Fields.MediaSelector, mediaItem.ID.ToString()}
+                    };
+      db.Add(selectorItem);
       // substitute the original provider with the mocked one
-      var carouselElements = MediaSelectorElementsRepository.Get(selector);
+      var carouselElements = MediaSelectorElementsRepository.Get(db.GetItem(selectorItem.ID));
       carouselElements.Count().Should().Be(1);
-      carouselElements.First().Item.ID.Should().Be(child.ID);
+      carouselElements.First().Item.ID.Should().Be(mediaItem.ID);
       carouselElements.First().Item[Templates.HasMediaVideo.Fields.VideoLink].Should().Be("videoLink");
     }
 
     [Theory]
     [AutoDbData]
-    public void Get_VideoLinkWithThumbnail_ShouldReturnCollection([Content] Item item, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
+    public void Get_VideoLinkWithThumbnail_ShouldReturnCollection(Db db, [Content] MediaTemplate mediaTemplate, [Content] MediaSelectorTemplate selectorTemplate, [Content] VideoTemplate vt)
     {
-      var child = item.Add("childVideo", new TemplateID(Templates.HasMedia.ID));
+      var mediaItem = new DbItem("childVideo", ID.NewID, new TemplateID(Templates.HasMedia.ID))
+                    {
+                      {Templates.HasMedia.Fields.Thumbnail, "thumbnail"}
+                    };
+      db.Add(mediaItem);
 
-      using (new EditContext(child))
-      {
-        child[Templates.HasMedia.Fields.Thumbnail] = "videoLink";
-      }
+      var selectorItem = new DbItem("selector", ID.NewID, new TemplateID(Templates.HasMediaSelector.ID))
+                    {
+                      {Templates.HasMediaSelector.Fields.MediaSelector, mediaItem.ID.ToString()}
+                    };
+      db.Add(selectorItem);
 
-
-      var selector = item.Add("selector", new TemplateID(Templates.HasMediaSelector.ID));
-      using (new EditContext(selector))
-      {
-        selector[Templates.HasMediaSelector.Fields.MediaSelector] = child.ID.ToString();
-      }
       // substitute the original provider with the mocked one
-      var carouselElements = MediaSelectorElementsRepository.Get(selector);
+      var carouselElements = MediaSelectorElementsRepository.Get(db.GetItem(selectorItem.ID));
       carouselElements.Count().Should().Be(1);
-      carouselElements.First().Item.ID.Should().Be(child.ID);
-      carouselElements.First().Item[Templates.HasMedia.Fields.Thumbnail].Should().Be("videoLink");
+      carouselElements.First().Item.ID.Should().Be(mediaItem.ID);
+      carouselElements.First().Item[Templates.HasMedia.Fields.Thumbnail].Should().Be("thumbnail");
     }
 
 

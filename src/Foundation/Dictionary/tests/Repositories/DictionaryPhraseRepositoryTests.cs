@@ -2,6 +2,7 @@
 {
   using System;
   using System.Collections.Generic;
+  using System.Linq;
   using FluentAssertions;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Data.Items;
@@ -58,7 +59,7 @@
     public void Get_AutocreateIsTrueEntryDoesntExists_ShouldCreateItem(Db db, [Content]CreateDictionaryEntryServiceTests.DictionaryEntryTemplate entryTemplate, [Content]Item rootItem, IEnumerable<string> pathParts, string defaultValue)
     {
       //Arrange
-      var relativePath = string.Join("/", pathParts);
+      var relativePath = string.Join("/", pathParts.Select(ItemUtil.ProposeValidItemName));
       var repository = new DictionaryPhraseRepository(new Dictionary() { Root = rootItem, AutoCreate = true });
 
       //Act
@@ -96,7 +97,7 @@
     public void Get_AutocreateIsTrueEntryDoesntExists_ShouldreturnItem(Db db, [Content]CreateDictionaryEntryServiceTests.DictionaryEntryTemplate entryTemplate, [Content]Item rootItem, IEnumerable<string> pathParts, string defaultValue)
     {
       //Arrange
-      var relativePath = string.Join("/", pathParts);
+      var relativePath = string.Join("/", pathParts.Select(ItemUtil.ProposeValidItemName));
       var repository = new DictionaryPhraseRepository(new Dictionary() { Root = rootItem, AutoCreate = true });
 
       //Act
