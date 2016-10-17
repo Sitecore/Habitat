@@ -14,4 +14,5 @@ Languages:
       Value: 20160410T113539Z
     - ID: "9f51dead-ad6e-41c2-9759-7be17eb474a4"
       Hint: MediaImage
-      Value: "<image mediaid=\"{F16A8317-ED9B-4CF9-BD28-8606DAC0E232}\" />"
+      Value: |
+        <image mediaid="{F16A8317-ED9B-4CF9-BD28-8606DAC0E232}" />

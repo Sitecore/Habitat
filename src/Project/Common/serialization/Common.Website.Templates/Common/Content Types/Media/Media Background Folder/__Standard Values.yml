@@ -1,22 +1,23 @@
 ﻿---
-ID: c7bb336c-c6cf-4f02-96d5-e9575dfa1025
-Parent: 82a6f39c-53e1-4eca-8c27-69937cff3b47
-Template: 82a6f39c-53e1-4eca-8c27-69937cff3b47
+ID: "c7bb336c-c6cf-4f02-96d5-e9575dfa1025"
+Parent: "82a6f39c-53e1-4eca-8c27-69937cff3b47"
+Template: "82a6f39c-53e1-4eca-8c27-69937cff3b47"
 Path: /sitecore/templates/Project/Common/Content Types/Media/Media Background Folder/__Standard Values
 DB: master
 SharedFields:
-- ID: 1172f251-dad4-4efb-a329-0c63500e4f1e
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
   Hint: __Masters
   Type: TreelistEx
-  Value: {42A10C41-5186-4A1E-AA7E-54EA00199C3F}
+  Value: "{42A10C41-5186-4A1E-AA7E-54EA00199C3F}"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150901T053932Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

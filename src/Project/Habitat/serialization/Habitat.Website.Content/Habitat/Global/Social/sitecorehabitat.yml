@@ -17,10 +17,12 @@ Languages:
       Value: 20160112T164042Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
     - ID: "92ef8986-45e2-42de-913f-b91fd960297a"
       Hint: TwitterUrl
-      Value: "<link linktype=\"external\" url=\"https://twitter.com/sitecorehabitat\" />"
+      Value: |
+        <link linktype="external" url="https://twitter.com/sitecorehabitat" />
     - ID: "d1cf33b1-8b8a-4aab-aa7e-2460566beded"
       Hint: WidgetId
       Value: 641815052882804737
@@ -36,7 +38,8 @@ Languages:
       Value: 20151123T164134Z
     - ID: "92ef8986-45e2-42de-913f-b91fd960297a"
       Hint: TwitterUrl
-      Value: "<link linktype=\"external\" url=\"https://twitter.com/sitecorehabitat\" />"
+      Value: |
+        <link linktype="external" url="https://twitter.com/sitecorehabitat" />
     - ID: "d1cf33b1-8b8a-4aab-aa7e-2460566beded"
       Hint: WidgetId
       Value: 641815052882804737

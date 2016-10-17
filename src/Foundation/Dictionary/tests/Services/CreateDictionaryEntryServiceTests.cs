@@ -24,7 +24,7 @@
         Root = db.GetItem(rootItem.ID)
       };
 
-      var path = string.Join("/", pathParts);
+      var path = string.Join("/", pathParts.Select(ItemUtil.ProposeValidItemName));
 
       //Act
       var phraseItem = CreateDictionaryEntryService.CreateDictionaryEntry(dictionary, path, defaultValue);

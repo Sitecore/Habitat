@@ -58,7 +58,7 @@ gulp.task("04-Apply-Xml-Transform", function () {
     .pipe(foreach(function (stream, file) {
       var fileToTransform = file.path.replace(/.+code\\(.+)\.transform/, "$1");
       util.log("Applying configuration transform: " + file.path);
-      return gulp.src("./applytransform.targets")
+      return gulp.src("./scripts/applytransform.targets")
         .pipe(msbuild({
           targets: ["ApplyTransform"],
           configuration: config.buildConfiguration,

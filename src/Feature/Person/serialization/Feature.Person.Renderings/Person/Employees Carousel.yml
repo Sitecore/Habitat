@@ -19,7 +19,8 @@ SharedFields:
   Value: 
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{08BE2D91-6E1A-48F3-B316-64B8635ADB52}\" />"
+  Value: |
+    <image mediaid="{08BE2D91-6E1A-48F3-B316-64B8635ADB52}" />
 - ID: "ddab263e-b42e-419a-aa6f-081b7393ca38"
   Hint: Model
   Value: /sitecore/layout/Models/Foundation/Indexing/QueryableDatasourceRenderingModel

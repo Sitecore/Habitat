@@ -7,7 +7,8 @@ DB: master
 SharedFields:
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{462AB0E3-8253-4CEF-943C-3DE59F0E98D0}\" />"
+  Value: |
+    <image mediaid="{462AB0E3-8253-4CEF-943C-3DE59F0E98D0}" />
 - ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
   Hint: Controller Action
   Value: SecondaryMenu

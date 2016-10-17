@@ -251,7 +251,8 @@ Languages:
       Value: 20151026T051241Z
     - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
-      Value: "<image mediaid=\"{08E01453-5709-43F0-9F2F-9B7A65BA5666}\" />"
+      Value: |
+        <image mediaid="{08E01453-5709-43F0-9F2F-9B7A65BA5666}" />
     - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
       Value: The Teasers module contains page elements which promote content on or off the site using text and images.
@@ -263,4 +264,5 @@ Languages:
       Value: Teasers
     - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
-      Value: "<span style=\"line-height: 24.2857px;\">The Teasers module contains page elements which promote content on or off the site using text and images.</span>"
+      Value: |
+        <span style="line-height: 24.2857px;">The Teasers module contains page elements which promote content on or off the site using text and images.</span>

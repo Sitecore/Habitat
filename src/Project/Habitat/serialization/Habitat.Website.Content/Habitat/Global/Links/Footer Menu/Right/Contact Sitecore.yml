@@ -21,10 +21,12 @@ Languages:
       Value: 20160112T164900Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
-      Value: "<link text=\"\" linktype=\"external\" url=\"http://www.sitecore.net/about/contact.aspx\" anchor=\"\" title=\"\" class=\"\" querystring=\"\" target=\"_blank\" id=\"\" />"
+      Value: |
+        <link text="" linktype="external" url="http://www.sitecore.net/about/contact.aspx" anchor="" title="" class="" querystring="" target="_blank" id="" />
 - Language: en
   Versions:
   - Version: 1
@@ -41,4 +43,5 @@ Languages:
       Value: 1
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
-      Value: "<link text=\"\" linktype=\"external\" url=\"http://www.sitecore.net/about/contact.aspx\" anchor=\"\" title=\"\" class=\"\" querystring=\"\" target=\"_blank\" id=\"\" />"
+      Value: |
+        <link text="" linktype="external" url="http://www.sitecore.net/about/contact.aspx" anchor="" title="" class="" querystring="" target="_blank" id="" />

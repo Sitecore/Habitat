@@ -75,7 +75,8 @@ Languages:
       Value: 20151130T234428Z
     - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
-      Value: "<image mediapath=\"/Habitat/Images/Square/Habitat-042-square\" alt=\"\" width=\"\" height=\"\" hspace=\"\" vspace=\"\" showineditor=\"\" usethumbnail=\"\" src=\"~/media/Habitat/Images/Square/Habitat-042-square\" mediaid=\"{B00F14C3-62DA-4568-AFC8-91AA8F75229A}\" />"
+      Value: |
+        <image mediapath="/Habitat/Images/Square/Habitat-042-square" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Habitat/Images/Square/Habitat-042-square" mediaid="{B00F14C3-62DA-4568-AFC8-91AA8F75229A}" />
     - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
       Value: "The Person module contains person-related functionality and content, e.g. employee pages, personal contact info and quotes."
@@ -87,4 +88,5 @@ Languages:
       Value: Person
     - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
-      Value: "<span style=\"line-height: 24.2857px;\">The Person module contains person-related functionality and content, e.g. employee pages, personal contact info and quotes.</span>"
+      Value: |
+        <span style="line-height: 24.2857px;">The Person module contains person-related functionality and content, e.g. employee pages, personal contact info and quotes.</span>

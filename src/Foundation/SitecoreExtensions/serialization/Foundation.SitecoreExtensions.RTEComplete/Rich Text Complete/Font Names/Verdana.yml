@@ -1,79 +1,83 @@
 ﻿---
-ID: e9e63c71-7182-424b-bda6-fe04b94d4710
-Parent: 450be035-234d-431c-b4b6-a7a91bdebf76
-Template: 2b421e6f-e820-4a04-9a4a-e421a0262b61
+ID: "e9e63c71-7182-424b-bda6-fe04b94d4710"
+Parent: "450be035-234d-431c-b4b6-a7a91bdebf76"
+Template: "2b421e6f-e820-4a04-9a4a-e421a0262b61"
 Path: /sitecore/system/Settings/Html Editor Profiles/Rich Text Complete/Font Names/Verdana
 DB: core
-BranchID: 14d0d756-dd94-4cfa-aed6-6d2585535700
+BranchID: "14d0d756-dd94-4cfa-aed6-6d2585535700"
 SharedFields:
-- ID: 433e22b5-06aa-4a97-a4ac-7cb059ebbac6
+- ID: "433e22b5-06aa-4a97-a4ac-7cb059ebbac6"
   Hint: Value
   Value: verdana
 Languages:
 - Language: da
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Verdana
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T031125Z
-    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+    - ID: "519cd02a-a857-4894-9c9b-ac9bdc472937"
       Hint: Header
       Value: Verdana
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
-- Language: de-DE
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Verdana
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030835Z
-    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+    - ID: "519cd02a-a857-4894-9c9b-ac9bdc472937"
       Hint: Header
       Value: Verdana
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20060130T125515
-    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+    - ID: "519cd02a-a857-4894-9c9b-ac9bdc472937"
       Hint: Header
       Value: Verdana
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\Admin
-    - ID: c8f93afe-bfd4-4e8f-9c61-152559854661
+      Value: |
+        sitecore\Admin
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
       Hint: __Valid from
       Value: 20060130T125515
-- Language: ja-JP
+- Language: "ja-JP"
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Verdana
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T031005Z
-    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+    - ID: "519cd02a-a857-4894-9c9b-ac9bdc472937"
       Hint: Header
       Value: Verdana
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

@@ -46,7 +46,8 @@ Languages:
       Value: 20151116T023652Z
     - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
-      Value: "<image mediaid=\"{45D3C3F1-FBF9-498E-B3D1-DE9C923D477C}\" />"
+      Value: |
+        <image mediaid="{45D3C3F1-FBF9-498E-B3D1-DE9C923D477C}" />
     - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
       Value: The social modules contains components and functionality related to social media

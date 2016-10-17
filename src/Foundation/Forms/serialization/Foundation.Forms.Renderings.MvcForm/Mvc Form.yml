@@ -17,7 +17,8 @@ SharedFields:
   Value: "{F53C5936-D9A8-4704-8859-6AD97D409541}"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{B95CCDA8-03C4-4EED-BF12-D8D054CF76D3}\" />"
+  Value: |
+    <image mediaid="{B95CCDA8-03C4-4EED-BF12-D8D054CF76D3}" />
 - ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
   Hint: Controller
   Value: Sitecore.Forms.Mvc.Controllers.FormController, Sitecore.Forms.Mvc
@@ -35,7 +36,8 @@ Languages:
       Value: 20160523T235328Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\Anonymous
+      Value: |
+        sitecore\Anonymous
 - Language: "de-DE"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
@@ -49,7 +51,8 @@ Languages:
       Value: 20160523T235635Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\Anonymous
+      Value: |
+        sitecore\Anonymous
 - Language: en
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
@@ -77,4 +80,5 @@ Languages:
       Value: 20160523T235905Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\Anonymous
+      Value: |
+        sitecore\Anonymous

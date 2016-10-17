@@ -16,7 +16,8 @@ SharedFields:
   Value: "site:headlines"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: "<image mediaid=\"{0F6974EA-59AC-4AEE-8140-B8AF87995A7A}\" />"
+  Value: |
+    <image mediaid="{0F6974EA-59AC-4AEE-8140-B8AF87995A7A}" />
 Languages:
 - Language: en
   Versions:

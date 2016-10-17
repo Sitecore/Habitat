@@ -1,25 +1,26 @@
 ﻿---
-ID: ba1eb1bd-e705-4be6-a432-06b7f1b2f2cc
-Parent: 8664a57f-f2c9-4b18-b4e5-d3fed495d212
-Template: ab86861a-6030-46c5-b394-e8f99e8b87db
+ID: "ba1eb1bd-e705-4be6-a432-06b7f1b2f2cc"
+Parent: "8664a57f-f2c9-4b18-b4e5-d3fed495d212"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
 Path: /sitecore/templates/Project/Common/Content Types/FAQ Group
 DB: master
 SharedFields:
-- ID: 06d5295c-ed2f-4a54-9bf2-26228d113318
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: Business/32x32/up_down_question.png
-- ID: 12c33f3f-86c5-43a5-aeb4-5598cec45116
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
   Hint: __Base template
   Type: tree list
-  Value: {3AF7DB6C-A602-4ABC-8D63-19E2D2C6726B}
+  Value: "{3AF7DB6C-A602-4ABC-8D63-19E2D2C6726B}"
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20160129T125004Z
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

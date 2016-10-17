@@ -1,82 +1,86 @@
 ﻿---
-ID: e74aec49-f591-4c23-80c8-88e66bb6e384
-Parent: 018ea12b-93e9-4868-8e0e-e802176be1be
-Template: 2b421e6f-e820-4a04-9a4a-e421a0262b61
+ID: "e74aec49-f591-4c23-80c8-88e66bb6e384"
+Parent: "018ea12b-93e9-4868-8e0e-e802176be1be"
+Template: "2b421e6f-e820-4a04-9a4a-e421a0262b61"
 Path: /sitecore/system/Settings/Html Editor Profiles/Rich Text Complete/Paragraphs/Heading 6
 DB: core
-BranchID: 14d0d756-dd94-4cfa-aed6-6d2585535700
+BranchID: "14d0d756-dd94-4cfa-aed6-6d2585535700"
 SharedFields:
-- ID: 433e22b5-06aa-4a97-a4ac-7cb059ebbac6
+- ID: "433e22b5-06aa-4a97-a4ac-7cb059ebbac6"
   Hint: Value
   Value: <h6>
-- ID: ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 70
 Languages:
 - Language: da
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Overskrift 6
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T031045Z
-    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+    - ID: "519cd02a-a857-4894-9c9b-ac9bdc472937"
       Hint: Header
       Value: Overskrift 6
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
-- Language: de-DE
+      Value: |
+        sitecore\admin
+- Language: "de-DE"
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: Überschrift 6
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030759Z
-    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+    - ID: "519cd02a-a857-4894-9c9b-ac9bdc472937"
       Hint: Header
       Value: Überschrift 6
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin
 - Language: en
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20060130T125530
-    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+    - ID: "519cd02a-a857-4894-9c9b-ac9bdc472937"
       Hint: Header
       Value: Heading 6
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\Admin
-    - ID: c8f93afe-bfd4-4e8f-9c61-152559854661
+      Value: |
+        sitecore\Admin
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
       Hint: __Valid from
       Value: 20060130T125530
-- Language: ja-JP
+- Language: "ja-JP"
   Fields:
-  - ID: b5e02ad9-d56f-4c41-a065-a133db87bdeb
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
     Value: 見出し 6
   Versions:
   - Version: 1
     Fields:
-    - ID: 25bed78c-4957-4165-998a-ca1b52f67497
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151003T030926Z
-    - ID: 519cd02a-a857-4894-9c9b-ac9bdc472937
+    - ID: "519cd02a-a857-4894-9c9b-ac9bdc472937"
       Hint: Header
       Value: 見出し 6
-    - ID: 5dd74568-4d4b-44c1-b513-0af5f4cda34f
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
-      Value: sitecore\admin
+      Value: |
+        sitecore\admin

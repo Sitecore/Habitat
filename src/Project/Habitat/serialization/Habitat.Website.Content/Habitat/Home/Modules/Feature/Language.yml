@@ -17,7 +17,8 @@ Languages:
       Value: 20151116T023610Z
     - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
-      Value: "<image mediaid=\"{9DF6B8F9-46D3-4EBF-B29F-1018443D85AD}\" />"
+      Value: |
+        <image mediaid="{9DF6B8F9-46D3-4EBF-B29F-1018443D85AD}" />
     - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
       Value: "The language module contains functionality related to the multi-language support of Habitat."
@@ -29,4 +30,5 @@ Languages:
       Value: Language
     - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
-      Value: "<span style=\"line-height: 24.2857px;\">The language module contains functionality related to the multi-language support of Habitat, specifically the language switcher which appears when the site contains multiple languages.</span>"
+      Value: |
+        <span style="line-height: 24.2857px;">The language module contains functionality related to the multi-language support of Habitat, specifically the language switcher which appears when the site contains multiple languages.</span>

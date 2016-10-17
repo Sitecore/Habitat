@@ -23,28 +23,27 @@ namespace Sitecore.Feature.Demo.Tests.Services
   {
     [Theory]
     [AutoProfileDbData]
-    public void LoadProfiles_SettingWithProfiles_ShouldReturnExistentProfilesEnumerable([Content] Item item, CurrentInteraction currentInteraction, ITracker tracker, Analytics.Tracking.Profile profile)
+    public void LoadProfiles_SettingWithProfiles_ShouldReturnExistentProfilesEnumerable(Db db, CurrentInteraction currentInteraction, ITracker tracker, Analytics.Tracking.Profile profile)
     {
-      var profileSettingItem = item.Add("profileSetting", new TemplateID(Templates.ProfilingSettings.ID));
-      var profileItem = item.Add("profile", new TemplateID(ProfileItem.TemplateID));
-      using (new EditContext(profileSettingItem))
-      {
-        profileSettingItem.Fields[Templates.ProfilingSettings.Fields.SiteProfiles].Value = profileItem.ID.ToString();
-      }
+      var profileItem = new DbItem("profile", ID.NewID, new TemplateID(ProfileItem.TemplateID));
+      db.Add(profileItem);
+      var profileSettingItem = new DbItem("profileSetting", ID.NewID, new TemplateID(Templates.ProfilingSettings.ID))
+                               {
+                                 {Templates.ProfilingSettings.Fields.SiteProfiles, profileItem.ID.ToString()}
+                               };
+      db.Add(profileSettingItem);
 
       var provider = new ProfileProvider();
 
       var fakeSiteContext = new FakeSiteContext(new StringDictionary
-      {
-        {
-          "rootPath", "/sitecore"
-        },
-        {
-          "startItem", profileSettingItem.Paths.FullPath.Remove(0, "/sitecore".Length)
-        }
-      });
+                                                {
+                                                  {"rootPath", "/sitecore"},
+                                                  {"startItem", profileSettingItem.FullPath.Remove(0, "/sitecore".Length)}
+                                                })
+                            {
+                              Database = db.Database
+                            };
 
-      fakeSiteContext.Database = item.Database;
 
       using (new SiteContextSwitcher(fakeSiteContext))
       {
