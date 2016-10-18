@@ -60,6 +60,6 @@ module.exports.getUserPath = function (userFile) {
 
 module.exports.getRolePath = function (roleFile) {
    var fileContent = roleFile.contents.toString();
-   var roleName = fileContent.match(/name:\s*(.*)$/m)[1];
+   var roleName = fileContent.match(/Role:\s*(.*)$/m)[1];
    return "roles:"+roleName;
 }
