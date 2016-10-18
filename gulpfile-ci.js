@@ -66,6 +66,7 @@ gulp.task("CI-Enumerate-Items", function () {
     ];
     return gulp.src(allowedPatterns)
         .pipe(foreach(function (stream, file) {
+        console.log(file);
             var itemPath = unicorn.getFullItemPath(file);
             itemPaths.push(itemPath);
             return stream;
