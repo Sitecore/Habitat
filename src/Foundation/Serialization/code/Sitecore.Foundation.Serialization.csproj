@@ -113,8 +113,8 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Unicorn, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Unicorn.Core.3.3.0-RC9\lib\net452\Unicorn.dll</HintPath>
+    <Reference Include="Unicorn, Version=3.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Unicorn.Core.3.3.1-RC01\lib\net452\Unicorn.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -123,8 +123,8 @@
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Settings.config" />
     <Content Include="App_Config\Include\Rainbow.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Deployed.config.disabled" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.DataProvider.config" />

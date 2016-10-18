@@ -1,0 +1,26 @@
+﻿<!--
+	Unicorn.Remote.config.disabled
+
+	This file enables the Unicorn control panel remote API. This is used by the Unicorn Control Panel extension for Visual Studio by Andrii Snigyr (@BerserkerDotNet):
+	https://visualstudiogallery.msdn.microsoft.com/64439022-f470-422a-b663-fbb89aaf6e86
+
+	If you are not using the VS integration, you can safely remove or disable this patch file. To enable this patch file simply remove the .disabled.
+
+	This file should be present only on development environments that are using the VS plugin.
+
+	http://github.com/kamsar/Unicorn
+	https://github.com/BerserkerDotNet/Unicorn.VisualStudio
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+	<sitecore>
+		<pipelines>
+				<unicornControlPanelRequest>
+					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.VSSyncVerb, Unicorn" patch:after="processor[1]" />
+					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.VSReserializeVerb, Unicorn" patch:after="processor[1]" />
+					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.VersionVerb, Unicorn" patch:after="processor[1]" />
+					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.ConfigurationsVerb, Unicorn" patch:after="processor[1]" />
+					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.ConfigurationHealthVerb, Unicorn" patch:after="processor[1]" />
+				</unicornControlPanelRequest>
+		</pipelines>
+	</sitecore>
+</configuration>
