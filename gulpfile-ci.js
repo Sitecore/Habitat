@@ -61,8 +61,8 @@ gulp.task("CI-Enumerate-Items", function () {
     var itemPaths = [];
     var allowedPatterns = [
       "./src/**/serialization/**/*.yml",
-      ".!/src/**/serialization/*.Roles/**/*.yml",
-      ".!/src/**/serialization/*.Users/**/*.yml"
+      "!./src/**/serialization/*.Roles/**/*.yml",
+      "!./src/**/serialization/*.Users/**/*.yml"
     ];
     return gulp.src(allowedPatterns)
         .pipe(foreach(function (stream, file) {
