@@ -84,6 +84,7 @@ gulp.task("CI-Enumerate-Users", function () {
 
     return gulp.src("./src/**/serialization/*.Users/**/*.yml")
         .pipe(foreach(function (stream, file) {
+          console.log(file);
             var fileContent = file.contents.toString();
             var userName = unicorn.getUserPath(file);
             users.push(userName);
@@ -102,6 +103,7 @@ gulp.task("CI-Enumerate-Roles", function () {
 
     return gulp.src("./src/**/serialization/*.Roles/**/*.yml")
         .pipe(foreach(function (stream, file) {
+          console.log(file);
             var fileContent = file.contents.toString();
             var roleName = unicorn.getRolePath(file);            
             roles.push(roleName);
