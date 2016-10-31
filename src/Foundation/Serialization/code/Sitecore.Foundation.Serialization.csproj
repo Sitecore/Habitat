@@ -63,15 +63,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Rainbow, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Rainbow.Core.1.4.0-RC09\lib\net452\Rainbow.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Rainbow.Core.1.4.0\lib\net452\Rainbow.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Rainbow.Storage.Sc, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Rainbow.Storage.Sc.1.4.0-RC09\lib\net452\Rainbow.Storage.Sc.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Rainbow.Storage.Sc.1.4.0\lib\net452\Rainbow.Storage.Sc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Rainbow.Storage.Yaml, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Rainbow.Storage.Yaml.1.4.0-RC09\lib\net452\Rainbow.Storage.Yaml.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Rainbow.Storage.Yaml.1.4.0\lib\net452\Rainbow.Storage.Yaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
@@ -114,7 +114,7 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Unicorn, Version=3.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Unicorn.Core.3.3.1-RC01\lib\net452\Unicorn.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Unicorn.Core.3.3.1\lib\net452\Unicorn.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -122,8 +122,8 @@
     <Content Include="App_Config\Include\Foundation\Foundation.Serialization.config" />
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Settings.config" />
-    <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
+    <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Deployed.config.disabled" />
