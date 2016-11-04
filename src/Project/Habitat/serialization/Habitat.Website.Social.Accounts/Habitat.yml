@@ -4,6 +4,10 @@ Parent: "bd726323-e745-47d0-99f7-d25a870fe211"
 Template: "f77fc8c9-8888-414d-8fc7-d20609b52c59"
 Path: /sitecore/system/Social/Accounts/Habitat
 DB: master
+SharedFields:
+- ID: "233d3295-bf88-45c8-88da-ba51107fd155"
+  Hint: Default Application Folder
+  Value: "{1A856FCC-159F-4D56-9B25-636FDBA13DC8}"
 Languages:
 - Language: en
   Versions:
