@@ -21,11 +21,14 @@ namespace Sitecore.Foundation.Indexing.Repositories
 
     private static void Initialize()
     {
-      ProviderBase defaultProvider;
-      All = Factory.GetProviders<ProviderBase, ProviderCollectionBase<ProviderBase>>("solutionFramework/indexing", out defaultProvider);
-      DefaultSearchResultFormatter = defaultProvider as ISearchResultFormatter;
-      if (DefaultSearchResultFormatter == null)
-        throw new ConfigurationErrorsException("The default solutionFramework/indexing provider must derive from ISearchResultFormatter");
+        ProviderBase defaultProvider;
+        var providers = Factory.GetProviders<ProviderBase, ProviderCollectionBase<ProviderBase>>("solutionFramework/indexing", out defaultProvider);
+        var defaultSearchResultFormatter = defaultProvider as ISearchResultFormatter;
+        if (defaultSearchResultFormatter == null)
+            throw new ConfigurationErrorsException("The default solutionFramework/indexing provider must derive from ISearchResultFormatter");
+
+        _all = providers;
+        _defaultSearchResultFormatter = defaultSearchResultFormatter;
     }
 
     public static IEnumerable<ProviderBase> All
