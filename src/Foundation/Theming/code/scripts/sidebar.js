@@ -1,5 +1,3 @@
-jQuery.noConflict();
-
 (function($) {
   $(function() {
     $('.sidebar.sidebar-dynamic ul li a').on('click', function(e) {

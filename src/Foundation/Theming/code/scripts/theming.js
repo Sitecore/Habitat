@@ -1,5 +1,3 @@
-jQuery.noConflict();
-
 (function($) {
   $(function() {
     $('[href="styles/white-wonder.css"]').attr('data-themetype', 'main');

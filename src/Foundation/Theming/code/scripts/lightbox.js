@@ -1,5 +1,3 @@
-jQuery.noConflict();
-
 (function($) {
   $(function() {
     $(document).delegate('*[data-toggle="lightbox"]', 'click', function (event) {

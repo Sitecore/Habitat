@@ -1,5 +1,3 @@
-jQuery.noConflict();
-
 (function($) {
   $(function() {
     $('.counter').each(function() {

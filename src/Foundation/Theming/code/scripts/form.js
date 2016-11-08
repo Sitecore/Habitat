@@ -1,5 +1,3 @@
-jQuery.noConflict();
-
 (function($) {
   $(function() {
     $('input[type="file"]').on('change', function(e) {

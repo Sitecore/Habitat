@@ -1,10 +1,16 @@
 [
   {
-    "outputFileName": "scripts/Sitecore.Foundation.Theming.js",
+    "outputFileName": "scripts/Sitecore.Foundation.Frameworks.js",
     "inputFiles": [
       "bower_components/modernizr/modernizr.js",
       "bower_components/jquery/dist/jquery.js",
-      "bower_components/bootstrap-sass/assets/javascripts/bootstrap.js",
+      "bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"
+    ],
+    "sourceMap": true
+  },
+  {
+    "outputFileName": "scripts/Sitecore.Foundation.Theming.js",
+    "inputFiles": [
       "bower_components/shufflejs/dist/jquery.shuffle.js",
       "bower_components/wow/dist/wow.js",
       "bower_components/OwlCarousel/owl-carousel/owl.carousel.js",

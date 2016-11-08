@@ -1,5 +1,3 @@
-jQuery.noConflict();
-
 (function($) {
   $(function() {
     $('[data-toggle-class]').on('click keypress', function(e) {
