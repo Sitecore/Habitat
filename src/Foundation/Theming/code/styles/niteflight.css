@@ -8163,10 +8163,12 @@ button.list-group-item-danger {
 
 .logo img, .logo svg {
   height: 50px;
+  width: auto !important;
   max-width: 215px;
   margin-top: 0px; }
   .has-tagline .logo img, .has-tagline .logo svg {
     height: 35px;
+    width: auto !important;
     max-width: 150px;
     margin-top: 0px; }
     @media (max-width: 767px) {
@@ -8175,9 +8177,11 @@ button.list-group-item-danger {
   @media all and (max-width: 991px) {
     .logo img, .logo svg {
       height: 35px;
+      width: auto !important;
       max-width: 150px; }
       .has-tagline .logo img, .has-tagline .logo svg {
         height: 25px;
+        width: auto !important;
         max-width: 110px; } }
   .logo img *, .logo svg * {
     fill: #FFF !important;
@@ -10368,7 +10372,7 @@ li.active {
       .lte-ie8 #mainNavbar .navbar-form {
         display: none; }
       #mainNavbar .navbar-form input {
-        padding: 16px;
+        padding: 15px;
         margin: 0px 0;
         color: #FFF;
         background-color: #4D5668;
