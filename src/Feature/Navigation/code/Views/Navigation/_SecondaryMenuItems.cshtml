@@ -13,8 +13,9 @@
   @foreach (var item in Model.Items)
   {
     var hasChildren = item.IsActive && item.Children != null && item.Children.Items.Any();
-    var openClass = item.IsActive && hasChildren ? "open" : string.Empty;
-    <li class="@openClass">
+    var itemClass = item.IsActive ? "active" : string.Empty;
+    itemClass += item.IsActive && hasChildren ? " open" : string.Empty;
+    <li class="@itemClass">
       <a href="@item.Url" target="@item.Target">
         @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, item.Item)
       </a>

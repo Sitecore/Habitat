@@ -24,7 +24,7 @@
             <ul class="dropdown-menu">
               @foreach (var subitem in item.Children.Items)
               {
-                <li>
+                <li class="@(subitem.IsActive ? "active" : "")">
                   <a href="@subitem.Url" target="@subitem.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, subitem.Item)</a>
                 </li>
               }

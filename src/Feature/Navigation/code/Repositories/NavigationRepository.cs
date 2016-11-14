@@ -113,12 +113,13 @@
 
     private NavigationItem CreateNavigationItem(Item item, int level, int maxLevel = -1)
     {
+      Item targetItem = item.IsDerived(Templates.Link.ID) ? item.TargetItem(Templates.Link.Fields.Link) : item;
       return new NavigationItem
              {
                Item = item,
                Url = item.IsDerived(Templates.Link.ID) ? item.LinkFieldUrl(Templates.Link.Fields.Link) : item.Url(),
                Target = item.IsDerived(Templates.Link.ID) ? item.LinkFieldTarget(Templates.Link.Fields.Link) : "",
-               IsActive = this.IsItemActive(item),
+               IsActive = this.IsItemActive(targetItem ?? item),
                Children = this.GetChildNavigationItems(item, level + 1, maxLevel)
              };
     }
