@@ -8,7 +8,7 @@
     {
       foreach (var item in Model.Items)
       {
-        var hasChildren = item.Children != null && item.Children.Items.Any();
+        var hasChildren = item.Children != null && item.Children.Items.Any() && item.ShowChildren;
         var cssClass = "";
         if (hasChildren)
         {

@@ -17,6 +17,7 @@
       {
         public static readonly ID ShowInNavigation = new ID("{5585A30D-B115-4753-93CE-422C3455DEB2}");
         public static readonly ID NavigationTitle = new ID("{1B483E91-D8C4-4D19-BA03-462074B55936}");
+        public static readonly ID ShowChildren = new ID("{68016087-AA00-45D6-922A-678475C50D4A}");
       }
     }
 
