@@ -1,0 +1,17 @@
+﻿---
+ID: "425df582-c8d5-4eba-b23e-fa1a069435dd"
+Parent: "e0a0e113-cc4e-49a6-89aa-8c88f62eb8b0"
+Template: "18cdd4ce-cdbe-4bdc-9d5a-6249f7f0ec17"
+Path: /sitecore/system/Settings/Feature/Metadata/Habitat/habitat
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160114T100345Z
+    - ID: "7bdbba5f-c7e6-45c2-82f5-010ded013588"
+      Hint: Keyword
+      Value: habitat
