@@ -32,7 +32,7 @@
     "tag": "2.0.2",
     "commit": "3d9e7d9d6722807de737810c5ecbe18207c80aa6"
   },
-  "_source": "git://github.com/IanLunn/Hover.git",
+  "_source": "https://github.com/IanLunn/Hover.git",
   "_target": "~2.0.2",
   "_originalSource": "Hover"
 }

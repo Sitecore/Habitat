@@ -11,6 +11,9 @@ SharedFields:
 - ID: "60669e54-7b9c-4b55-a0c4-8f25059d8b94"
   Hint: Dictionary
   Value: "en-US.tdf"
+- ID: "892975ac-496f-4ac9-8826-087095c68e1d"
+  Hint: Fallback Language
+  Value: en
 - ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
   Hint: __Read Only
   Type: Checkbox

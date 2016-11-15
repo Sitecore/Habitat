@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-block-grid",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "block grid for bootstrap",
   "main": "Gruntfile.js",
   "scripts": {

@@ -55,7 +55,10 @@
   <ItemGroup>
     <Content Include="bower.json" />
     <Content Include="App_Config\Include\Foundation\Foundation.Theming.Serialization.config" />
-    <Content Include="scripts\media-query.js" />
+    <Content Include="scripts\Sitecore.Foundation.Theming.js" />
+    <Content Include="scripts\Sitecore.Foundation.Theming.min.js">
+      <DependentUpon>Sitecore.Foundation.Theming.js</DependentUpon>
+    </Content>
     <Content Include="styles\dayfrost.css">
       <DependentUpon>dayfrost.scss</DependentUpon>
     </Content>
@@ -66,84 +69,14 @@
     <Content Include="styles\dayfrost\components\atoms\_well.scss" />
     <Content Include="styles\dayfrost\_overrides.scss" />
     <Content Include="styles\dayfrost\_variables.scss" />
-    <Content Include="styles\default.css">
-      <DependentUpon>default.scss</DependentUpon>
-    </Content>
+    <Content Include="styles\default.css" />
     <Content Include="styles\default.min.css">
       <DependentUpon>default.css</DependentUpon>
     </Content>
-    <Content Include="styles\default\components\atoms\_address.scss" />
-    <Content Include="styles\default\components\atoms\_alert.scss" />
-    <Content Include="styles\default\components\atoms\_badges.scss" />
-    <Content Include="styles\default\components\atoms\_blockgrid.scss" />
-    <Content Include="styles\default\components\atoms\_blockquote.scss" />
-    <Content Include="styles\default\components\atoms\_breadcrumbs.scss" />
-    <Content Include="styles\default\components\atoms\_buttons.scss" />
-    <Content Include="styles\default\components\atoms\_counter.scss" />
-    <Content Include="styles\default\components\atoms\_dropdowns.scss" />
-    <Content Include="styles\default\components\atoms\_forms.scss" />
-    <Content Include="styles\default\components\atoms\_headline.scss" />
-    <Content Include="styles\default\components\atoms\_icon.scss" />
-    <Content Include="styles\default\components\atoms\_images.scss" />
-    <Content Include="styles\default\components\atoms\_labels.scss" />
-    <Content Include="styles\default\components\atoms\_list-group.scss" />
-    <Content Include="styles\default\components\atoms\_list.scss" />
-    <Content Include="styles\default\components\atoms\_logo.scss" />
-    <Content Include="styles\default\components\atoms\_modal.scss" />
-    <Content Include="styles\default\components\atoms\_navs.scss" />
-    <Content Include="styles\default\components\atoms\_pagination.scss" />
-    <Content Include="styles\default\components\atoms\_panels.scss" />
-    <Content Include="styles\default\components\atoms\_popover.scss" />
-    <Content Include="styles\default\components\atoms\_progress-bars.scss" />
-    <Content Include="styles\default\components\atoms\_tables.scss" />
-    <Content Include="styles\default\components\atoms\_tabs-nav.scss" />
-    <Content Include="styles\default\components\atoms\_thumbnails.scss" />
-    <Content Include="styles\default\components\atoms\_tooltip.scss" />
-    <Content Include="styles\default\components\atoms\_typography.scss" />
-    <Content Include="styles\default\components\atoms\_wells.scss" />
-    <Content Include="styles\default\components\molecules\_button-groups.scss" />
-    <Content Include="styles\default\components\molecules\_jumbotron.scss" />
-    <Content Include="styles\default\components\molecules\_media.scss" />
-    <Content Include="styles\default\components\molecules\_modal.scss" />
-    <Content Include="styles\default\components\molecules\_mosaic.scss" />
-    <Content Include="styles\default\components\molecules\_navbar.scss" />
-    <Content Include="styles\default\components\molecules\_sidebar.scss" />
-    <Content Include="styles\default\components\molecules\_testimony.scss" />
-    <Content Include="styles\default\components\organisms\_lightbox.scss" />
-    <Content Include="styles\default\components\organisms\_media-list.scss" />
-    <Content Include="styles\default\components\organisms\_mega-dropdown.scss" />
-    <Content Include="styles\default\components\organisms\_page-header.scss" />
-    <Content Include="styles\default\components\organisms\_panel-group.scss" />
-    <Content Include="styles\default\components\organisms\_tabs.scss" />
-    <Content Include="styles\default\components\_atoms.scss" />
-    <Content Include="styles\default\components\_molecules.scss" />
-    <Content Include="styles\default\components\_organisms.scss" />
-    <Content Include="styles\default\templates\_article.scss" />
-    <Content Include="styles\default\templates\_aside.scss" />
-    <Content Include="styles\default\templates\_footer.scss" />
-    <Content Include="styles\default\templates\_header.scss" />
-    <Content Include="styles\default\templates\_section.scss" />
-    <Content Include="styles\default\templates\_sidebar.scss" />
-    <Content Include="styles\default\templates\_template.scss" />
-    <Content Include="styles\default\vendor\_owl-carousel.scss" />
-    <Content Include="styles\default\_fonts.scss" />
-    <Content Include="styles\default\_global.scss" />
-    <Content Include="styles\default\_grid.scss" />
-    <Content Include="styles\default\_helpers.scss" />
-    <Content Include="styles\default\_mixins.scss" />
-    <Content Include="styles\default\_pages.scss" />
-    <Content Include="styles\default\_scaffolding.scss" />
-    <Content Include="styles\default\_templates.scss" />
-    <Content Include="styles\default\_utilities.scss" />
-    <Content Include="styles\default\_variables.scss" />
-    <Content Include="styles\default\_vendor.scss" />
-    <Content Include="styles\editor.css">
-      <DependentUpon>editor.scss</DependentUpon>
-    </Content>
+    <Content Include="styles\editor.css" />
     <Content Include="styles\editor.min.css">
       <DependentUpon>editor.css</DependentUpon>
     </Content>
-    <Content Include="styles\editor.scss" />
     <Content Include="styles\niteflight.css">
       <DependentUpon>niteflight.scss</DependentUpon>
     </Content>
@@ -168,20 +101,6 @@
     <Content Include="styles\white-wonder\_variables.scss" />
     <None Include="bundleconfig.json" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="scripts\carousel.js" />
-    <Content Include="scripts\counter.js" />
-    <Content Include="scripts\form.js" />
-    <Content Include="scripts\grid.js" />
-    <Content Include="scripts\lightbox.js" />
-    <Content Include="scripts\popover.js" />
-    <Content Include="scripts\search.js" />
-    <Content Include="scripts\sidebar.js" />
-    <Content Include="scripts\Sitecore.Foundation.Theming.js" />
-    <Content Include="scripts\Sitecore.Foundation.Theming.min.js">
-      <DependentUpon>Sitecore.Foundation.Theming.js</DependentUpon>
-    </Content>
-    <Content Include="scripts\theming.js" />
-    <Content Include="scripts\tooltip.js" />
     <Content Include="fonts\bitter-v7-latin-700.svg" />
     <Content Include="fonts\bitter-v7-latin-italic.svg" />
     <Content Include="fonts\bitter-v7-latin-regular.svg" />
@@ -261,17 +180,14 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="scripts\Sitecore.Foundation.Theming.min.js.map">
-      <DependentUpon>Sitecore.Foundation.Theming.min.js</DependentUpon>
-    </Content>
     <Content Include="styles\dayfrost\components\atoms\_button.scss" />
     <Content Include="styles\dayfrost\components\_atoms.scss" />
     <Content Include="styles\dayfrost\_fonts.scss" />
-    <Content Include="styles\default.scss" />
-    <Content Include="styles\default\templates\_organisms.scss" />
     <Content Include="styles\niteflight\_fonts.scss" />
     <Content Include="styles\white-wonder\_fonts.scss" />
-    <Content Include="styles\_defaults.scss" />
+    <Content Include="scripts\Sitecore.Foundation.Theming.min.js.map">
+      <DependentUpon>Sitecore.Foundation.Theming.min.js</DependentUpon>
+    </Content>
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

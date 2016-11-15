@@ -1,22 +1,22 @@
 ﻿[
-  {
-    "outputFile": "styles/editor.css",
-    "inputFile": "styles/editor.scss"
-  },
-  {
-    "outputFile": "styles/niteflight.css",
-    "inputFile": "styles/niteflight.scss"
-  },
-  {
-    "outputFile": "styles/dayfrost.css",
-    "inputFile": "styles/dayfrost.scss"
-  },
-  {
-    "outputFile": "styles/white-wonder.css",
-    "inputFile": "styles/white-wonder.scss"
-  },
-  {
-    "outputFile": "styles/default.css",
-    "inputFile": "styles/default.scss"
-  }
+    {
+        "outputFile": "styles/editor.css",
+        "inputFile": "bower_components/sitecore.demo.theme/sass/editor.scss"
+    },
+    {
+        "outputFile": "styles/niteflight.css",
+        "inputFile": "styles/niteflight.scss"
+    },
+    {
+        "outputFile": "styles/dayfrost.css",
+        "inputFile": "styles/dayfrost.scss"
+    },
+    {
+        "outputFile": "styles/white-wonder.css",
+        "inputFile": "styles/white-wonder.scss"
+    },
+    {
+        "outputFile": "styles/default.css",
+        "inputFile": "bower_components/sitecore.demo.theme/sass/default.scss"
+    }
 ]

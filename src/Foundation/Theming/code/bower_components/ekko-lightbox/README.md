@@ -5,6 +5,16 @@ A lightbox module for Bootstrap that supports images, YouTube videos, and galler
 
 See the github page for docs: http://ashleydw.github.io/lightbox
 
+## Install
+
+CDN-JS: https://cdnjs.com/libraries/ekko-lightbox
+
+Install with Bower:
+
+```
+$ bower install ekko-lightbox --save
+```
+
 Contributing
 ----
 Instead of modifying the JavaScript files directly, you should instead modify the coffeescript file and run the grunt task.
