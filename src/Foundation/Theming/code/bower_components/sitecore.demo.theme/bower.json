@@ -5,8 +5,7 @@
     ],
     "description": "Bootstrap theme for the Sitecore Demo sites",
     "main": [
-        "./sass/default.scss",
-        "./scripts/*"
+        "./sass/default.scss"
     ],
     "keywords": [
         "Bootstrap",

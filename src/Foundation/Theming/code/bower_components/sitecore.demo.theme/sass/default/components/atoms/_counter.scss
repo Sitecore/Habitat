@@ -3,7 +3,7 @@
   padding: .2em .6em .3em;
   background-color: $counter-default-bg;
   color: $counter-default-color;
-  font-weight: bold;
+  font-weight: $counter-font-weight;
 
   &-success {
     background-color: $brand-success;

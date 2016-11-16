@@ -1,7 +1,7 @@
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
 
 .btn, a.btn {
-  font-weight: bold;
+  font-weight: $btn-font-weight;
 
   &[disabled] {
     &:hover, &:focus {

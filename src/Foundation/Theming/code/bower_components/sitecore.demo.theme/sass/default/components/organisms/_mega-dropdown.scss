@@ -22,7 +22,7 @@
       & > li.active {
         a {
           color: $brand-primary;
-          font-weight: bold;
+          font-weight: $active-list-font-weight;
         }
       }
     }

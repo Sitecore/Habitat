@@ -22,6 +22,9 @@
     .bg-primary &, .bg-secondary &, .bg-transparent & {
       color: $logo-tagline-color;
     }
+    .bg-white & {
+        color: $bg-white-color;
+    }
   }
 
   img, svg {

@@ -30,11 +30,11 @@ $link-color: $brand-primary !default;
 
 $brand-text-color: #FFF !default;
 
-$bg-white-bg: #fff;
-$bg-white-color: #000;
+$bg-white-bg: #fff !default;
+$bg-white-color: #000 !default;
 
-$bg-black-bg: #000;
-$bg-black-color: #fff;
+$bg-black-bg: #000 !default;
+$bg-black-color: #fff !default;
 
 $footer-background-color: $color-secondary-dark !default;
 $footer-text-color: $color-secondary-lightest !default;
@@ -51,15 +51,20 @@ $font-size-h3: 24px !default;
 $font-size-h4: 18px !default;
 $font-size-h5: 16px !default;
 
-$text-muted: $color-secondary-lighter;
-$headings-small-color: $color-secondary-lighter;
+$text-muted: $color-secondary-lighter !default;
+$headings-small-color: $color-secondary-lighter !default;
+$headings-font-weight: 800 !default;
+
+$list-font-weight: normal !default;
+$active-list-text-color: $brand-primary !default;
+$active-list-font-weight: 700 !default;
 
 $article-font-size-lead: 20px !default;
 
 //font path for Font-Awesome
-$fa-font-path: "/fonts";
+$fa-font-path: "/fonts" !default;
 //font path for bootstrap glyphicons
-$icon-font-path: '/fonts/';
+$icon-font-path: '/fonts/' !default;
 
 //Components
 $border-radius-base: 0px !default;
@@ -86,7 +91,9 @@ $breadcrumb-color: $color-secondary-lighter !default;
 $breadcrumb-active-color: $color-secondary-dark !default;
 $breadcrumb-padding-horizontal: 0 !default;
 $breadcrumb-font-size: 16px !default;
+$breadcrumb-font-weight: normal !default;
 $breadcrumb-active-font-size: 24px !default;
+$breadcrumb-active-font-weight: 700 !default;
 
 //Blockquote
 $blockquote-lead-font-size: 32px !default;
@@ -96,6 +103,7 @@ $blockquote-footer-color: lighten($text-color, 30%) !default;
 $blockquote-footer-font-style: italic !default;
 
 //Buttons
+$btn-font-weight: bold !default;
 $btn-border-radius-base: $border-radius-base !default;
 $btn-border-radius-large: $border-radius-large !default;
 $btn-border-radius-small: $border-radius-small !default;
@@ -120,14 +128,17 @@ $carousel-navigation-icon-font-size: 30px !default;
 //Counters
 $counter-default-bg: $color-secondary-dark !default;
 $counter-default-color: #FFF !default;
+$counter-font-weight: bold !default;
 
 //Dropdown
 $dropdown-menu-border-radius: $border-radius-base !default;
 $dropdown-header-color: $brand-primary !default;
 $dropdown-header-font-size: 16px !default;
+$dropdown-header-font-weight: 700 !default;
 
 //Jumbotron
 $jumbotron-font-size: 16px !default;
+$jumbotron-font-weight: 700 !default;
 $jumbotron-lead-font-size: 18px !default;
 $jumbotron-xl-h1-font-size: 120px !default;
 $jumbotron-xl-h2-font-size: 80px !default;
@@ -148,19 +159,20 @@ $label-inner-font-size: 14px !default;
 $label-inner-font-style: normal !default;
 $label-inner-text-transform: uppercase !default;
 $label-inner-font-weight: bold !default;
-$label-inner-color: $color-secondary;
+$label-inner-color: $color-secondary !default;
 
 //Forms
-$input-bg-focus: #fff;
-$input-bg-disabled: transparent;
-$input-bg: transparent;
-$input-label-font-size: 12px;
+$input-bg-focus: #fff !default;
+$input-bg-disabled: transparent !default;
+$input-bg: transparent !default;
+$input-label-font-size: 12px !default;
+$input-label-font-weight: normal !default;
 
 //Icons
-$icon-font-size-md: 24px;
-$icon-font-size-lg: 48px;
-$icon-font-size-xl: 64px;
-$icon-font-size-xxl: 92px;
+$icon-font-size-md: 24px !default;
+$icon-font-size-lg: 48px !default;
+$icon-font-size-xl: 64px !default;
+$icon-font-size-xxl: 92px !default;
 
 //Lists
 $list-divided-border-color: #eee !default;
@@ -226,8 +238,10 @@ $logo-tagline-color: $navbar-default-link-color !default;
 
 //Navs
 $nav-link-hover-bg: #FFF !default;
+$nav-link-font-weight: 700 !default;
 $nav-service-link-color: #FFF !default;
 $nav-service-link-hover-color: #FFF !default;
+$nav-service-link-font-weight: lighter !default;
 
 $nav-tabs-active-link-hover-color: $brand-text-color !default;
 $nav-tabs-active-link-hover-bg: $color-secondary !default;
@@ -240,9 +254,11 @@ $sidebar-bg: #FFF !default;
 $sidebar-border-color: #ddd !default;
 $sidebar-nav-item-bg: transparent !default;
 $sidebar-nav-item-color: $text-color !default;
+$sidebar-nav-item-font-weight: normal !default;
 $sidebar-nav-item-bg-active: transparent !default;
 $sidebar-nav-item-color-active: $brand-primary !default;
 $sidebar-nav-item-border-color-active: $color-secondary-lightest !default;
+$sidebar-nav-item-font-weight-active: 800 !default;
 $sidebar-toggle-border-radius: 0px !default;
 
 //Medialist

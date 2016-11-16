@@ -10,15 +10,15 @@
 
       .bg-white & {
         color: $bg-white-color;
-        font-weight: bold;
+        font-weight: $dropdown-header-font-weight;
       }
 
       @media (max-width: $screen-sm-max) {
         color: $dropdown-header-color;
         //font-weight: bold;
         .bg-primary &, .bg-secondary &, .bg-media & {
-          color: $brand-text-color;
-          font-weight: bold;
+           color: $brand-text-color;
+           font-weight: $dropdown-header-font-weight;
         }
       }
   }
@@ -51,15 +51,14 @@
     }
     & > .active {
       & > a, & > a:hover, & > a:active, & > a:focus {
-        color: $brand-primary;
+        color: $active-list-text-color;
         background-color: transparent;
-        font-weight: bold;
+        font-weight: $active-list-font-weight;
       }
     }
     li {
       a {
         padding: 3px 20px;
-        font-weight: normal;
         color: $text-color;
 
         &:hover {

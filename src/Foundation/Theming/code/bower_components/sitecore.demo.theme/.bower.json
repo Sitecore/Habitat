@@ -5,8 +5,7 @@
   ],
   "description": "Bootstrap theme for the Sitecore Demo sites",
   "main": [
-    "./sass/default.scss",
-    "./scripts/*"
+    "./sass/default.scss"
   ],
   "keywords": [
     "Bootstrap",
@@ -67,13 +66,13 @@
     "chai": "~3.4.2",
     "mocha": "~2.3.4"
   },
-  "_release": "c76360dcc3",
+  "_release": "31b5906b6a",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "c76360dcc36e2e804880c31d4787af4d43a4628d"
+    "commit": "31b5906b6ab35a8db7c2e8399a435ce803d031b5"
   },
-  "_source": "file://C:\\\\Projects\\\\Sitecore.Demo.Theme\\\\.git",
+  "_source": "https://github.com/Sitecore/Sitecore.Demo.Theme.git",
   "_target": "*",
-  "_originalSource": "file://C:\\\\Projects\\\\Sitecore.Demo.Theme\\\\.git"
+  "_originalSource": "https://github.com/Sitecore/Sitecore.Demo.Theme.git"
 }

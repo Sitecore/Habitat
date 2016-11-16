@@ -63,16 +63,10 @@
     <Content Include="scripts\Sitecore.Foundation.Frameworks.min.js">
       <DependentUpon>Sitecore.Foundation.Frameworks.js</DependentUpon>
     </Content>
-    <Content Include="styles\dayfrost.css">
-      <DependentUpon>dayfrost.scss</DependentUpon>
-    </Content>
+    <Content Include="styles\dayfrost.css" />
     <Content Include="styles\dayfrost.min.css">
       <DependentUpon>dayfrost.css</DependentUpon>
     </Content>
-    <Content Include="styles\dayfrost.scss" />
-    <Content Include="styles\dayfrost\components\atoms\_well.scss" />
-    <Content Include="styles\dayfrost\_overrides.scss" />
-    <Content Include="styles\dayfrost\_variables.scss" />
     <Content Include="styles\default.css" />
     <Content Include="styles\default.min.css">
       <DependentUpon>default.css</DependentUpon>
@@ -81,28 +75,18 @@
     <Content Include="styles\editor.min.css">
       <DependentUpon>editor.css</DependentUpon>
     </Content>
-    <Content Include="styles\niteflight.css">
-      <DependentUpon>niteflight.scss</DependentUpon>
-    </Content>
+    <Content Include="styles\niteflight.css" />
     <Content Include="styles\niteflight.min.css">
       <DependentUpon>niteflight.css</DependentUpon>
     </Content>
-    <Content Include="styles\niteflight.scss" />
-    <Content Include="styles\niteflight\_overrides.scss" />
-    <Content Include="styles\niteflight\_variables.scss" />
     <Content Include="styles\vendor.css" />
     <Content Include="styles\vendor.min.css">
       <DependentUpon>vendor.css</DependentUpon>
     </Content>
-    <Content Include="styles\white-wonder.css">
-      <DependentUpon>white-wonder.scss</DependentUpon>
-    </Content>
+    <Content Include="styles\white-wonder.css" />
     <Content Include="styles\white-wonder.min.css">
       <DependentUpon>white-wonder.css</DependentUpon>
     </Content>
-    <Content Include="styles\white-wonder.scss" />
-    <Content Include="styles\white-wonder\_overrides.scss" />
-    <Content Include="styles\white-wonder\_variables.scss" />
     <None Include="bundleconfig.json" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\bitter-v7-latin-700.svg" />
@@ -184,11 +168,6 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
-    <Content Include="styles\dayfrost\components\atoms\_button.scss" />
-    <Content Include="styles\dayfrost\components\_atoms.scss" />
-    <Content Include="styles\dayfrost\_fonts.scss" />
-    <Content Include="styles\niteflight\_fonts.scss" />
-    <Content Include="styles\white-wonder\_fonts.scss" />
     <Content Include="scripts\Sitecore.Foundation.Theming.min.js.map">
       <DependentUpon>Sitecore.Foundation.Theming.min.js</DependentUpon>
     </Content>
@@ -254,19 +233,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />
-    <Folder Include="styles\dayfrost\components\molecules\" />
-    <Folder Include="styles\dayfrost\components\organisms\" />
-    <Folder Include="styles\dayfrost\templates\" />
-    <Folder Include="styles\dayfrost\vendor\" />
-    <Folder Include="styles\niteflight\components\atoms\" />
-    <Folder Include="styles\niteflight\components\molecules\" />
-    <Folder Include="styles\niteflight\components\organisms\" />
-    <Folder Include="styles\niteflight\templates\" />
-    <Folder Include="styles\niteflight\vendor\" />
-    <Folder Include="styles\white-wonder\components\" />
-    <Folder Include="styles\white-wonder\pages\" />
-    <Folder Include="styles\white-wonder\templates\" />
-    <Folder Include="styles\white-wonder\vendor\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">

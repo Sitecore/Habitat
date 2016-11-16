@@ -12,7 +12,7 @@ input {
       padding: 0;
     }
   }
-  
+
   &:focus {
     box-shadow: none;
     background-color: $input-bg-focus;
@@ -66,7 +66,7 @@ input {
     & + label {
       @extend .btn-default;
       text-align: center;
-      font-weight: bold;
+      font-weight: $btn-font-weight;
       padding: 10px 16px;
       border: 2px solid $color-secondary-dark;
       transition: all 0.2s ease;
@@ -90,17 +90,17 @@ input {
   &::-webkit-input-placeholder {color: lighten($text-color, 30);}
   &:-moz-placeholder           {color: lighten($text-color, 30);}
   &::-moz-placeholder          {color: lighten($text-color, 30);}
-  &:-ms-input-placeholder      {color: lighten($text-color, 30);}  
+  &:-ms-input-placeholder      {color: lighten($text-color, 30);}
   .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
     &::-webkit-input-placeholder {color: darken($brand-text-color, 30);}
     &:-moz-placeholder           {color: darken($brand-text-color, 30);}
     &::-moz-placeholder          {color: darken($brand-text-color, 30);}
-    &:-ms-input-placeholder      {color: darken($brand-text-color, 30);}  
+    &:-ms-input-placeholder      {color: darken($brand-text-color, 30);}
   }
 }
 
 label {
-  font-weight: normal;
+  font-weight: $input-label-font-weight;
   font-size: $input-label-font-size;
   margin-bottom: 0;
 }
@@ -159,12 +159,12 @@ label {
   &::-webkit-input-placeholder {color: lighten($text-color, 30);}
   &:-moz-placeholder           {color: lighten($text-color, 30);}
   &::-moz-placeholder          {color: lighten($text-color, 30);}
-  &:-ms-input-placeholder      {color: lighten($text-color, 30);}  
+  &:-ms-input-placeholder      {color: lighten($text-color, 30);}
   .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
     &::-webkit-input-placeholder {color: darken($brand-text-color, 30);}
     &:-moz-placeholder           {color: darken($brand-text-color, 30);}
     &::-moz-placeholder          {color: darken($brand-text-color, 30);}
-    &:-ms-input-placeholder      {color: darken($brand-text-color, 30);}  
+    &:-ms-input-placeholder      {color: darken($brand-text-color, 30);}
   }
 }
 
@@ -227,7 +227,7 @@ select {
 }
 
 textarea {
-  &.form-control {   
+  &.form-control {
     border-width: 1px;
     padding-top: 10px;
     padding-bottom: 10px;

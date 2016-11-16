@@ -5,15 +5,15 @@
     },
     {
         "outputFile": "styles/niteflight.css",
-        "inputFile": "styles/niteflight.scss"
+        "inputFile": "bower_components/sitecore.demo.theme/sass/niteflight.scss"
     },
     {
         "outputFile": "styles/dayfrost.css",
-        "inputFile": "styles/dayfrost.scss"
+        "inputFile": "bower_components/sitecore.demo.theme/sass/dayfrost.scss"
     },
     {
         "outputFile": "styles/white-wonder.css",
-        "inputFile": "styles/white-wonder.scss"
+        "inputFile": "bower_components/sitecore.demo.theme/sass/white-wonder.scss"
     },
     {
         "outputFile": "styles/default.css",

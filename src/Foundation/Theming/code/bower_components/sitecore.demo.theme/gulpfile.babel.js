@@ -166,7 +166,7 @@ gulp.task('serve', ['views', 'styles', 'fonts'], () => {
     notify: false,
     port: 9000,
     server: {
-      baseDir: ['.tmp', 'demo.src', '.'],
+      baseDir: ['.tmp', 'demo.src'],
       routes: {
         '/bower_components': 'bower_components'
       }
@@ -184,7 +184,7 @@ gulp.task('serve', ['views', 'styles', 'fonts'], () => {
   gulp.watch('demo.src/templates.json', ['views', reload]);
   gulp.watch('demo.src/**/*.html', ['views', reload]);
   gulp.watch('demo.src/**/*.nj', ['views', reload]);
-  gulp.watch('sass/**/*.scss', ['styles']);
+  gulp.watch('sass/**/*.scss', ['styles', reload]);
   gulp.watch('fonts/**/*', ['fonts']);
   gulp.watch('bower.json', ['wiredep', 'fonts']);
 });

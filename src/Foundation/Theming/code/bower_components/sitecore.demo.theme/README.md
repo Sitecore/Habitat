@@ -18,12 +18,16 @@ Inside each theme folder should be a folder called components, with subfolders n
 
 Sometimes things doesn't fit into this component structure, and/or you want to define variables, global styling (styling of elements on a purely tag based level, e.g. body, section, and should be kept very abstract and reusable), custom fonts, mixins and so on. For each of these scenarios, a file named appropriately should be created in the root of the theme folder, e.g. default/_global.scss, default/_variables.scss, default/_fonts.scss and default/_mixins.scss. These files should then be imported in the master scss file at an appropriate time (i.e. in a proper specificity and inheritance structure). The fonts file should be loaded before you start using it, the same with variables and mixins and global should at least be loaded before you start importing the custom styles for the individual modules. For an example, see default.scss.
 
+##### Defaults
+For ease of use, a defaults.scss file has been set up which encapsulates all custom variables defined on top of the standard bootstrap variables. It is advised that a new theme imports these defaults and defines new variables or overrides accordingly.
+
 #### Sub-variations and sub-themes
 ##### Amendments and extra files
 As a general rule, all styling should be attempted to be contained in its relevant component file, and if amendments are to be made, they should be changed directly in the components code, as any theming changes constitutes a direct change to the theme, and as such, it is per definition a new theme (Note: updating a theme to include new styling doesn't make it a new theme, but only if the changes are made as a contribution to the original theme, not as an alteration). Any new sub-variations of an element should either override existing bootstrap styling, or should be appended to the existing component file as a new class, or sub-variation of an existing class. Creating new files such as _buttons_alt.scss is not recommended unless the original _buttons.scss file has enough additions that it becomes unmanageable.
 
 ##### Sub-theming
 Instead of creating new files inside of the predefined structure, a sub-theme, with the same structure, should be created. A sub-theme should only be created if it adds a globally different theming to aspects of the theme it is attempting to enhance. It should NOT be created to facilitate individual component styling that has no common design guideline.
+
 ###### Naming of sub-theme
 The name of the sub-theme should accurately describe which parent theme it is adding style to. A sub-theme follows the same structural guidelines as an ordinary theme, with the excerption that both the folder, and the master scss file should be prefixed with the parent themes name, e.g. if you were to make a sub-theme for a theme called ocean, you could call it ocean-deepsea and thus have a ocean-deepsea scss file and folder, e.g.:
 ```
@@ -58,19 +62,3 @@ Each individual component should define its own variables, import its own relate
 - Define any custom styling
 
 This code structure ensures that components are as isolated and modularized as possible, and prevents the usual clutter that having a global _variables.scss file usually introduces. This is not to say that a global _variables.scss file, located inside the theme folder, should not be utilized, but it should NOT contain any variables related to components defined inside the existing structure. Instead, it should define global variables, such as grid padding, base colors, and font styling (Note: font styling may also be moved to a separate _fonts.scss file, if needs arise in relation to custom fonts, however be aware that _fonts.scss should in that case be imported directly after the variables file to ensure stability).
-
-
-
-
-#### Deployment
-
-This project deploys to an Microsoft Azure site, located at [http://sitecorehabitattheme.azurewebsites.net/](http://sitecorehabitattheme.azurewebsites.net/). To deploy to this site, the project uses the deploy branch. The recommended way of deploying is by running the following commands inside the project directory:
-```
-gulp build
-git add -A
-git commit -m "Your message here"
-git push
-git subtree push --prefix dist origin deploy
-```
-
-This ensures all files are build, pushed to the master repository, and thereafter the dist folder is pushed to the deploy branch, which is then fetched by the Azure site within 2 minutes max.

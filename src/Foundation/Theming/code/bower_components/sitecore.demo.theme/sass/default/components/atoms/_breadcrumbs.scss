@@ -3,6 +3,7 @@
 .breadcrumb {
   & > li {
     font-size: $breadcrumb-font-size;
+    font-weight: $breadcrumb-font-weight;
 
     .ie9 &, .lte-ie8 {
       margin-right: 1px;
@@ -40,7 +41,7 @@
 
     &.active {
       font-size: $breadcrumb-active-font-size;
-      font-weight: 800;
+      font-weight: $breadcrumb-active-font-weight;
 
       @media all and (max-width: $screen-xs-max) {
         font-size: floor($breadcrumb-active-font-size*.8);
@@ -55,7 +56,7 @@
       }
 
       &:before {
-        font-weight: normal;
+        font-weight: $breadcrumb-font-weight;
         font-size: $breadcrumb-font-size;
       }
     }

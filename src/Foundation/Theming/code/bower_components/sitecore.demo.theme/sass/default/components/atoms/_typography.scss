@@ -3,7 +3,7 @@ mark {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 800;
+  font-weight: $headings-font-weight;
   small {
     .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
       color: $brand-text-color;
@@ -23,11 +23,11 @@ p {
 
 li {
   &.active {
-    color: $brand-primary;
-    font-weight: bold;
+    color: $active-list-text-color;
+    font-weight: $active-list-font-weight;
     a {
-      color: $brand-primary;
-      font-weight: bold;
+      color: $active-list-text-color;
+      font-weight: $active-list-font-weight;
     }
   }
 }
