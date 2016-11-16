@@ -59,6 +59,10 @@
     <Content Include="scripts\Sitecore.Foundation.Theming.min.js">
       <DependentUpon>Sitecore.Foundation.Theming.js</DependentUpon>
     </Content>
+    <Content Include="scripts\Sitecore.Foundation.Frameworks.js" />
+    <Content Include="scripts\Sitecore.Foundation.Frameworks.min.js">
+      <DependentUpon>Sitecore.Foundation.Frameworks.js</DependentUpon>
+    </Content>
     <Content Include="styles\dayfrost.css">
       <DependentUpon>dayfrost.scss</DependentUpon>
     </Content>
@@ -187,6 +191,9 @@
     <Content Include="styles\white-wonder\_fonts.scss" />
     <Content Include="scripts\Sitecore.Foundation.Theming.min.js.map">
       <DependentUpon>Sitecore.Foundation.Theming.min.js</DependentUpon>
+    </Content>
+    <Content Include="scripts\Sitecore.Foundation.Frameworks.min.js.map">
+      <DependentUpon>Sitecore.Foundation.Frameworks.min.js</DependentUpon>
     </Content>
     <None Include="Web.config" />
     <None Include="Web.Debug.config">

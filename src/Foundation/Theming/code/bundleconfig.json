@@ -1,39 +1,44 @@
 [
-  {
-    "outputFileName": "scripts/Sitecore.Foundation.Theming.js",
-    "inputFiles": [
-        "bower_components/modernizr/modernizr.js",
-        "bower_components/jquery/dist/jquery.js",
-        "bower_components/bootstrap-sass/assets/javascripts/bootstrap.js",
-        "bower_components/shufflejs/dist/jquery.shuffle.js",
-        "bower_components/wow/dist/wow.js",
-        "bower_components/OwlCarousel/owl-carousel/owl.carousel.js",
-        "bower_components/ekko-lightbox/dist/ekko-lightbox.js",
-        "bower_components/ev-emitter/ev-emitter.js",
-        "bower_components/imagesloaded/imagesloaded.js",
-        "bower_components/sitecore.demo.theme/scripts/carousel.js",
-        "bower_components/sitecore.demo.theme/scripts/counter.js",
-        "bower_components/sitecore.demo.theme/scripts/form.js",
-        "bower_components/sitecore.demo.theme/scripts/grid.js",
-        "bower_components/sitecore.demo.theme/scripts/lightbox.js",
-        "bower_components/sitecore.demo.theme/scripts/popover.js",
-        "bower_components/sitecore.demo.theme/scripts/search.js",
-        "bower_components/sitecore.demo.theme/scripts/sidebar.js",
-        "bower_components/sitecore.demo.theme/scripts/theming.js",
-        "bower_components/sitecore.demo.theme/scripts/tooltip.js",
-        "bower_components/sitecore.demo.theme/scripts/media-query.js"
-    ],
-    "sourceMap": true
-  },
-  {
-    "outputFileName": "styles/vendor.css",
-    "inputFiles": [
-      "bower_components/bootstrap-block-grid/dist/bootstrap3-block-grid.css",
-      "bower_components/hover/css/hover.css",
-      "bower_components/animate.css/animate.css",
-      "bower_components/ekko-lightbox/dist/ekko-lightbox.css",
-      "bower_components/OwlCarousel/owl-carousel/owl.carousel.css"
-    ]
-  }
-
+    {
+        "outputFileName": "scripts/Sitecore.Foundation.Frameworks.js",
+        "inputFiles": [
+            "bower_components/modernizr/modernizr.js",
+            "bower_components/jquery/dist/jquery.js",
+            "bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"
+        ],
+        "sourceMap": true
+    },
+    {
+        "outputFileName": "scripts/Sitecore.Foundation.Theming.js",
+        "inputFiles": [
+            "bower_components/shufflejs/dist/jquery.shuffle.js",
+            "bower_components/wow/dist/wow.js",
+            "bower_components/OwlCarousel/owl-carousel/owl.carousel.js",
+            "bower_components/ekko-lightbox/dist/ekko-lightbox.js",
+            "bower_components/ev-emitter/ev-emitter.js",
+            "bower_components/imagesloaded/imagesloaded.js",
+            "bower_components/sitecore.demo.theme/scripts/carousel.js",
+            "bower_components/sitecore.demo.theme/scripts/counter.js",
+            "bower_components/sitecore.demo.theme/scripts/form.js",
+            "bower_components/sitecore.demo.theme/scripts/grid.js",
+            "bower_components/sitecore.demo.theme/scripts/lightbox.js",
+            "bower_components/sitecore.demo.theme/scripts/popover.js",
+            "bower_components/sitecore.demo.theme/scripts/search.js",
+            "bower_components/sitecore.demo.theme/scripts/sidebar.js",
+            "bower_components/sitecore.demo.theme/scripts/theming.js",
+            "bower_components/sitecore.demo.theme/scripts/tooltip.js",
+            "bower_components/sitecore.demo.theme/scripts/media-query.js"
+        ],
+        "sourceMap": true
+    },
+    {
+        "outputFileName": "styles/vendor.css",
+        "inputFiles": [
+            "bower_components/bootstrap-block-grid/dist/bootstrap3-block-grid.css",
+            "bower_components/hover/css/hover.css",
+            "bower_components/animate.css/animate.css",
+            "bower_components/ekko-lightbox/dist/ekko-lightbox.css",
+            "bower_components/OwlCarousel/owl-carousel/owl.carousel.css"
+        ]
+    }
 ]
