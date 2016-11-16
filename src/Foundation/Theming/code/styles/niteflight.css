@@ -12689,3 +12689,6 @@ footer .nav-service li a {
   .hidden-print {
     display: none !important; } }
 
+input[type="checkbox"]:before {
+  visibility: hidden; }
+
