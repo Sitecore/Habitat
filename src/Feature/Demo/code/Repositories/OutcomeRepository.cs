@@ -40,7 +40,7 @@
              {
                Title = definition?.Name ?? DictionaryPhraseRepository.Current.Get("/Demo/Outcomes/Unknown Outcome", "(Unknown)"),
                Date = outcome.DateTime,
-               IsCurrentVisit = outcome.InteractionId.ToGuid() == Tracker.Current.Interaction.InteractionId,
+               IsCurrentVisit = outcome.InteractionId?.ToGuid() == Tracker.Current.Interaction.InteractionId,
                OutcomeGroup = this.GetOutcomeGroup(definition)
              };
     }
