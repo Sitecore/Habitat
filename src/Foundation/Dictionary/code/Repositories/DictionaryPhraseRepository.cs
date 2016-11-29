@@ -70,7 +70,7 @@
       var item = this.GetOrAutoCreateItem(relativePath, defaultValue);
       if (item == null)
       {
-        Log.Warn($"Could not find the dictionary item for the site '{this.Dictionary.Site.Name}' with the path '{relativePath}'", this);
+        Log.Debug($"Could not find the dictionary item for the site '{this.Dictionary.Site.Name}' with the path '{relativePath}'", this);
       }
       return item;
     }

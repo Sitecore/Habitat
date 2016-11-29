@@ -7,8 +7,8 @@
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../bower_components/sitecore.demo.theme/fonts/fontawesome-webfont.eot?v=4.4.0");
-  src: url("../bower_components/sitecore.demo.theme/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0") format("embedded-opentype"), url("../bower_components/sitecore.demo.theme/fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"), url("../bower_components/sitecore.demo.theme/fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"), url("../bower_components/sitecore.demo.theme/fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype"), url("../bower_components/sitecore.demo.theme/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular") format("svg");
+  src: url("/fonts/fontawesome-webfont.eot?v=4.4.0");
+  src: url("/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0") format("embedded-opentype"), url("/fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"), url("/fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"), url("/fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype"), url("/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -5033,7 +5033,10 @@ input {
     background-color: #fff; }
   .input-group input[type="text"] {
     padding-left: 10px; }
-  input[type="checkbox"] {
+  input .checkbox label {
+    vertical-align: middle;
+    font-size: 14px; }
+  label > input[type="checkbox"] {
     border: none;
     margin-top: 0px;
     vertical-align: middle;
@@ -5041,11 +5044,11 @@ input {
     margin: 0 0px;
     height: 15px;
     width: 15px; }
-    input[type="checkbox"]:checked:before {
+    label > input[type="checkbox"]:checked:before {
       border-width: 5px;
       background-color: #FFF;
       box-sizing: border-box; }
-    input[type="checkbox"]:before {
+    label > input[type="checkbox"]:before {
       width: 15px;
       height: 15px;
       display: block;
@@ -5056,7 +5059,10 @@ input {
       top: 0px;
       left: 0;
       visibility: visible; }
-      .bg-primary input[type="checkbox"]:before, .bg-secondary input[type="checkbox"]:before, .bg-dark input[type="checkbox"]:before, .bg-media input[type="checkbox"]:before {
+      .bg-primary label > input[type="checkbox"]:before,
+      .bg-secondary label > input[type="checkbox"]:before,
+      .bg-dark label > input[type="checkbox"]:before,
+      .bg-media label > input[type="checkbox"]:before {
         border-color: #424C5F; }
   input[type="file"] {
     display: none;
@@ -5090,23 +5096,31 @@ input {
     color: #8b98af; }
   input:-ms-input-placeholder {
     color: #8b98af; }
-  .bg-primary input::-webkit-input-placeholder, .bg-secondary input::-webkit-input-placeholder, .bg-dark input::-webkit-input-placeholder, .bg-media input::-webkit-input-placeholder {
+  .bg-primary input::-webkit-input-placeholder,
+  .bg-secondary input::-webkit-input-placeholder,
+  .bg-dark input::-webkit-input-placeholder,
+  .bg-media input::-webkit-input-placeholder {
     color: #b3b3b3; }
-  .bg-primary input:-moz-placeholder, .bg-secondary input:-moz-placeholder, .bg-dark input:-moz-placeholder, .bg-media input:-moz-placeholder {
+  .bg-primary input:-moz-placeholder,
+  .bg-secondary input:-moz-placeholder,
+  .bg-dark input:-moz-placeholder,
+  .bg-media input:-moz-placeholder {
     color: #b3b3b3; }
-  .bg-primary input::-moz-placeholder, .bg-secondary input::-moz-placeholder, .bg-dark input::-moz-placeholder, .bg-media input::-moz-placeholder {
+  .bg-primary input::-moz-placeholder,
+  .bg-secondary input::-moz-placeholder,
+  .bg-dark input::-moz-placeholder,
+  .bg-media input::-moz-placeholder {
     color: #b3b3b3; }
-  .bg-primary input:-ms-input-placeholder, .bg-secondary input:-ms-input-placeholder, .bg-dark input:-ms-input-placeholder, .bg-media input:-ms-input-placeholder {
+  .bg-primary input:-ms-input-placeholder,
+  .bg-secondary input:-ms-input-placeholder,
+  .bg-dark input:-ms-input-placeholder,
+  .bg-media input:-ms-input-placeholder {
     color: #b3b3b3; }
 
 label {
   font-weight: normal;
   font-size: 12px;
   margin-bottom: 0; }
-
-.checkbox label {
-  vertical-align: middle;
-  font-size: 14px; }
 
 .form-control {
   border-width: 0;
@@ -5121,9 +5135,15 @@ label {
   border-radius: 0; }
   .form-inline .form-control {
     padding: 10px; }
-  .bg-primary .form-control, .bg-secondary .form-control, .bg-dark .form-control, .bg-media .form-control {
+  .bg-primary .form-control,
+  .bg-secondary .form-control,
+  .bg-dark .form-control,
+  .bg-media .form-control {
     color: #FFF; }
-    .bg-primary .form-control:focus, .bg-secondary .form-control:focus, .bg-dark .form-control:focus, .bg-media .form-control:focus {
+    .bg-primary .form-control:focus,
+    .bg-secondary .form-control:focus,
+    .bg-dark .form-control:focus,
+    .bg-media .form-control:focus {
       color: #424C5F; }
   .bg-white .form-control {
     color: #000; }
@@ -5144,13 +5164,25 @@ label {
     color: #8b98af; }
   .form-control:-ms-input-placeholder {
     color: #8b98af; }
-  .bg-primary .form-control::-webkit-input-placeholder, .bg-secondary .form-control::-webkit-input-placeholder, .bg-dark .form-control::-webkit-input-placeholder, .bg-media .form-control::-webkit-input-placeholder {
+  .bg-primary .form-control::-webkit-input-placeholder,
+  .bg-secondary .form-control::-webkit-input-placeholder,
+  .bg-dark .form-control::-webkit-input-placeholder,
+  .bg-media .form-control::-webkit-input-placeholder {
     color: #b3b3b3; }
-  .bg-primary .form-control:-moz-placeholder, .bg-secondary .form-control:-moz-placeholder, .bg-dark .form-control:-moz-placeholder, .bg-media .form-control:-moz-placeholder {
+  .bg-primary .form-control:-moz-placeholder,
+  .bg-secondary .form-control:-moz-placeholder,
+  .bg-dark .form-control:-moz-placeholder,
+  .bg-media .form-control:-moz-placeholder {
     color: #b3b3b3; }
-  .bg-primary .form-control::-moz-placeholder, .bg-secondary .form-control::-moz-placeholder, .bg-dark .form-control::-moz-placeholder, .bg-media .form-control::-moz-placeholder {
+  .bg-primary .form-control::-moz-placeholder,
+  .bg-secondary .form-control::-moz-placeholder,
+  .bg-dark .form-control::-moz-placeholder,
+  .bg-media .form-control::-moz-placeholder {
     color: #b3b3b3; }
-  .bg-primary .form-control:-ms-input-placeholder, .bg-secondary .form-control:-ms-input-placeholder, .bg-dark .form-control:-ms-input-placeholder, .bg-media .form-control:-ms-input-placeholder {
+  .bg-primary .form-control:-ms-input-placeholder,
+  .bg-secondary .form-control:-ms-input-placeholder,
+  .bg-dark .form-control:-ms-input-placeholder,
+  .bg-media .form-control:-ms-input-placeholder {
     color: #b3b3b3; }
 
 .input-group-addon {
@@ -5170,25 +5202,34 @@ label {
 
 .help-block {
   margin-top: 0px; }
-  .bg-primary .help-block, .bg-secondary .help-block, .bg-dark .help-block, .bg-media .help-block {
+  .bg-primary .help-block,
+  .bg-secondary .help-block,
+  .bg-dark .help-block,
+  .bg-media .help-block {
     color: #FFF; }
   .bg-white .help-block {
     color: #000; }
 
-.has-success .form-control-feedback, .has-success .help-block {
+.has-success .form-control-feedback, .has-success
+.help-block {
   color: #24C890; }
 
-.has-warning .form-control-feedback, .has-warning .help-block {
+.has-warning .form-control-feedback, .has-warning
+.help-block {
   color: #ABC824; }
 
-.has-error .form-control-feedback, .has-error .help-block {
+.has-error .form-control-feedback, .has-error
+.help-block {
   color: #E65757; }
 
 select {
   padding: 10px 0; }
   select.form-control {
     padding: 10px 0; }
-  .bg-primary select:focus, .bg-secondary select:focus, .bg-dark select:focus, .bg-media select:focus {
+  .bg-primary select:focus,
+  .bg-secondary select:focus,
+  .bg-dark select:focus,
+  .bg-media select:focus {
     background-color: #fff; }
 
 textarea.form-control {
@@ -7556,7 +7597,10 @@ input {
     background-color: #fff; }
   .input-group input[type="text"] {
     padding-left: 10px; }
-  input[type="checkbox"] {
+  input .checkbox label {
+    vertical-align: middle;
+    font-size: 14px; }
+  label > input[type="checkbox"] {
     border: none;
     margin-top: 0px;
     vertical-align: middle;
@@ -7564,11 +7608,11 @@ input {
     margin: 0 0px;
     height: 15px;
     width: 15px; }
-    input[type="checkbox"]:checked:before {
+    label > input[type="checkbox"]:checked:before {
       border-width: 5px;
       background-color: #FFF;
       box-sizing: border-box; }
-    input[type="checkbox"]:before {
+    label > input[type="checkbox"]:before {
       width: 15px;
       height: 15px;
       display: block;
@@ -7579,7 +7623,10 @@ input {
       top: 0px;
       left: 0;
       visibility: visible; }
-      .bg-primary input[type="checkbox"]:before, .bg-secondary input[type="checkbox"]:before, .bg-dark input[type="checkbox"]:before, .bg-media input[type="checkbox"]:before {
+      .bg-primary label > input[type="checkbox"]:before,
+      .bg-secondary label > input[type="checkbox"]:before,
+      .bg-dark label > input[type="checkbox"]:before,
+      .bg-media label > input[type="checkbox"]:before {
         border-color: #424C5F; }
   input[type="file"] {
     display: none;
@@ -7613,23 +7660,31 @@ input {
     color: #8b98af; }
   input:-ms-input-placeholder {
     color: #8b98af; }
-  .bg-primary input::-webkit-input-placeholder, .bg-secondary input::-webkit-input-placeholder, .bg-dark input::-webkit-input-placeholder, .bg-media input::-webkit-input-placeholder {
+  .bg-primary input::-webkit-input-placeholder,
+  .bg-secondary input::-webkit-input-placeholder,
+  .bg-dark input::-webkit-input-placeholder,
+  .bg-media input::-webkit-input-placeholder {
     color: #b3b3b3; }
-  .bg-primary input:-moz-placeholder, .bg-secondary input:-moz-placeholder, .bg-dark input:-moz-placeholder, .bg-media input:-moz-placeholder {
+  .bg-primary input:-moz-placeholder,
+  .bg-secondary input:-moz-placeholder,
+  .bg-dark input:-moz-placeholder,
+  .bg-media input:-moz-placeholder {
     color: #b3b3b3; }
-  .bg-primary input::-moz-placeholder, .bg-secondary input::-moz-placeholder, .bg-dark input::-moz-placeholder, .bg-media input::-moz-placeholder {
+  .bg-primary input::-moz-placeholder,
+  .bg-secondary input::-moz-placeholder,
+  .bg-dark input::-moz-placeholder,
+  .bg-media input::-moz-placeholder {
     color: #b3b3b3; }
-  .bg-primary input:-ms-input-placeholder, .bg-secondary input:-ms-input-placeholder, .bg-dark input:-ms-input-placeholder, .bg-media input:-ms-input-placeholder {
+  .bg-primary input:-ms-input-placeholder,
+  .bg-secondary input:-ms-input-placeholder,
+  .bg-dark input:-ms-input-placeholder,
+  .bg-media input:-ms-input-placeholder {
     color: #b3b3b3; }
 
 label {
   font-weight: normal;
   font-size: 12px;
   margin-bottom: 0; }
-
-.checkbox label {
-  vertical-align: middle;
-  font-size: 14px; }
 
 .form-control {
   border-width: 0;
@@ -7644,9 +7699,15 @@ label {
   border-radius: 0; }
   .form-inline .form-control {
     padding: 10px; }
-  .bg-primary .form-control, .bg-secondary .form-control, .bg-dark .form-control, .bg-media .form-control {
+  .bg-primary .form-control,
+  .bg-secondary .form-control,
+  .bg-dark .form-control,
+  .bg-media .form-control {
     color: #FFF; }
-    .bg-primary .form-control:focus, .bg-secondary .form-control:focus, .bg-dark .form-control:focus, .bg-media .form-control:focus {
+    .bg-primary .form-control:focus,
+    .bg-secondary .form-control:focus,
+    .bg-dark .form-control:focus,
+    .bg-media .form-control:focus {
       color: #424C5F; }
   .bg-white .form-control {
     color: #000; }
@@ -7667,13 +7728,25 @@ label {
     color: #8b98af; }
   .form-control:-ms-input-placeholder {
     color: #8b98af; }
-  .bg-primary .form-control::-webkit-input-placeholder, .bg-secondary .form-control::-webkit-input-placeholder, .bg-dark .form-control::-webkit-input-placeholder, .bg-media .form-control::-webkit-input-placeholder {
+  .bg-primary .form-control::-webkit-input-placeholder,
+  .bg-secondary .form-control::-webkit-input-placeholder,
+  .bg-dark .form-control::-webkit-input-placeholder,
+  .bg-media .form-control::-webkit-input-placeholder {
     color: #b3b3b3; }
-  .bg-primary .form-control:-moz-placeholder, .bg-secondary .form-control:-moz-placeholder, .bg-dark .form-control:-moz-placeholder, .bg-media .form-control:-moz-placeholder {
+  .bg-primary .form-control:-moz-placeholder,
+  .bg-secondary .form-control:-moz-placeholder,
+  .bg-dark .form-control:-moz-placeholder,
+  .bg-media .form-control:-moz-placeholder {
     color: #b3b3b3; }
-  .bg-primary .form-control::-moz-placeholder, .bg-secondary .form-control::-moz-placeholder, .bg-dark .form-control::-moz-placeholder, .bg-media .form-control::-moz-placeholder {
+  .bg-primary .form-control::-moz-placeholder,
+  .bg-secondary .form-control::-moz-placeholder,
+  .bg-dark .form-control::-moz-placeholder,
+  .bg-media .form-control::-moz-placeholder {
     color: #b3b3b3; }
-  .bg-primary .form-control:-ms-input-placeholder, .bg-secondary .form-control:-ms-input-placeholder, .bg-dark .form-control:-ms-input-placeholder, .bg-media .form-control:-ms-input-placeholder {
+  .bg-primary .form-control:-ms-input-placeholder,
+  .bg-secondary .form-control:-ms-input-placeholder,
+  .bg-dark .form-control:-ms-input-placeholder,
+  .bg-media .form-control:-ms-input-placeholder {
     color: #b3b3b3; }
 
 .input-group-addon {
@@ -7693,25 +7766,34 @@ label {
 
 .help-block {
   margin-top: 0px; }
-  .bg-primary .help-block, .bg-secondary .help-block, .bg-dark .help-block, .bg-media .help-block {
+  .bg-primary .help-block,
+  .bg-secondary .help-block,
+  .bg-dark .help-block,
+  .bg-media .help-block {
     color: #FFF; }
   .bg-white .help-block {
     color: #000; }
 
-.has-success .form-control-feedback, .has-success .help-block {
+.has-success .form-control-feedback, .has-success
+.help-block {
   color: #24C890; }
 
-.has-warning .form-control-feedback, .has-warning .help-block {
+.has-warning .form-control-feedback, .has-warning
+.help-block {
   color: #ABC824; }
 
-.has-error .form-control-feedback, .has-error .help-block {
+.has-error .form-control-feedback, .has-error
+.help-block {
   color: #E65757; }
 
 select {
   padding: 10px 0; }
   select.form-control {
     padding: 10px 0; }
-  .bg-primary select:focus, .bg-secondary select:focus, .bg-dark select:focus, .bg-media select:focus {
+  .bg-primary select:focus,
+  .bg-secondary select:focus,
+  .bg-dark select:focus,
+  .bg-media select:focus {
     background-color: #fff; }
 
 textarea.form-control {

@@ -161,7 +161,7 @@ gulp.task('scripts', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'demo']));
 
-gulp.task('serve', ['views', 'styles', 'fonts'], () => {
+gulp.task('serve', ['views', 'scripts', 'styles', 'fonts'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -175,11 +175,11 @@ gulp.task('serve', ['views', 'styles', 'fonts'], () => {
 
   gulp.watch([
     '.tmp/*.html',
-    'scripts/**/*.js',
     'demo.src/images/**/*',
     '.tmp/fonts/**/*'
   ]).on('change', reload);
 
+  gulp.watch('scripts/**/*.js', ['scripts', reload]);
   gulp.watch('demo.src/components.json', ['views', reload]);
   gulp.watch('demo.src/templates.json', ['views', reload]);
   gulp.watch('demo.src/**/*.html', ['views', reload]);
