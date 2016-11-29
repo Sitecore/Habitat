@@ -1,5 +1,4 @@
-﻿jQuery.noConflict();
-(function ($) {
+﻿(function ($) {
   $(function () {
     $(".refresh-sidebar")
       .click(function () {
@@ -16,18 +15,18 @@
       });
     $(".end-visit")
       .click(function () {
-       $.ajax(
-          {
-            url: "/api/Demo/EndVisit",
-            method: "get",
-            cache: false,
-            success: function () {
-              setTimeout(function () {
-                window.location.href = "/";
-              },
-                1000);
-            }
-          });
+        $.ajax(
+            {
+              url: "/api/Demo/EndVisit",
+              method: "get",
+              cache: false,
+              success: function () {
+                setTimeout(function () {
+                  window.location.href = "/";
+                },
+                  1000);
+              }
+            });
       });
   });
 })(jQuery);

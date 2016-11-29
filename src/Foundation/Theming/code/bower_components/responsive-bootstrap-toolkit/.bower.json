@@ -25,7 +25,7 @@
     "tag": "2.5.1",
     "commit": "47328963bc0786aec265567932825a1adb01cd7f"
   },
-  "_source": "git://github.com/maciej-gurban/responsive-bootstrap-toolkit.git",
+  "_source": "https://github.com/maciej-gurban/responsive-bootstrap-toolkit.git",
   "_target": "~2.5.1",
   "_originalSource": "responsive-toolkit"
 }

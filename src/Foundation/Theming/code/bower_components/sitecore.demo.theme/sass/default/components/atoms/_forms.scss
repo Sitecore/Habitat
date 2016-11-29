@@ -1,0 +1,250 @@
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/forms";
+
+input {
+  line-height: normal;
+  &[type="text"], &[type="password"] {
+    padding: 0 0px;
+    &:focus {
+      padding: 0 10px;
+    }
+    &[readonly] {
+      padding: 0;
+    }
+  }
+
+  &:focus {
+    box-shadow: none;
+    background-color: $input-bg-focus;
+  }
+
+  .input-group &[type="text"] {
+    padding-left: 10px;
+  }
+
+  &[type="checkbox"] {
+    border: none;
+    margin-top: 0px;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 0px;
+    height: 15px;
+    width: 15px;
+
+    &:checked {
+      &:before {
+        border-width: 5px;
+        background-color: $brand-text-color;
+        box-sizing: border-box;
+      }
+    }
+    &:before {
+      width: 15px;
+      height: 15px;
+      display: block;
+      position: absolute;
+      content: ' ';
+      background-color: $gray-light;
+      border: 1px solid $text-color;
+      top: 0px;
+      left: 0;
+      visibility: visible;
+
+      .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+        border-color: $text-color;
+      }
+    }
+  }
+
+  &[type="file"] {
+    display: none;
+    position: relative;
+    width: 120px;
+    height: 40px;
+    cursor: pointer;
+
+    & + label {
+      @extend .btn-default;
+      text-align: center;
+      font-weight: $btn-font-weight;
+      padding: 10px 16px;
+      border: 2px solid $color-secondary-dark;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+
+      &:after {
+        content: "\e022";
+        font-family: 'Glyphicons Halflings';
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.3;
+        -webkit-font-smoothing: antialiased;
+        margin-left: 10px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &::-webkit-input-placeholder {color: lighten($text-color, 30);}
+  &:-moz-placeholder           {color: lighten($text-color, 30);}
+  &::-moz-placeholder          {color: lighten($text-color, 30);}
+  &:-ms-input-placeholder      {color: lighten($text-color, 30);}
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    &::-webkit-input-placeholder {color: darken($brand-text-color, 30);}
+    &:-moz-placeholder           {color: darken($brand-text-color, 30);}
+    &::-moz-placeholder          {color: darken($brand-text-color, 30);}
+    &:-ms-input-placeholder      {color: darken($brand-text-color, 30);}
+  }
+}
+
+label {
+  font-weight: $input-label-font-weight;
+  font-size: $input-label-font-size;
+  margin-bottom: 0;
+}
+
+.checkbox {
+  label {
+    vertical-align: middle;
+    font-size: $font-size-base
+  }
+}
+
+.form-control {
+  border-width: 0;
+  border-bottom-width: 1px;
+  background-color: transparent;
+  padding: 0;
+  height: 42px;
+  margin: 0px 0;
+  line-height: normal;
+  box-shadow: none !important;
+  color: $color-secondary-light;
+  border-radius: 0;
+
+  .form-inline & {
+    padding: 10px;
+  }
+
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    color: $brand-text-color;
+    &:focus {
+      color: $text-color;
+    }
+  }
+
+  .bg-white & {
+    color: $bg-white-color;
+  }
+
+  &:focus, &:active {
+    box-shadow: none !important;
+    padding-left: 10px;
+  }
+
+  .has-success & {
+    border-color: $brand-success;
+  }
+
+  .has-warning & {
+    border-color: $brand-warning;
+  }
+
+  .has-error & {
+    border-color: $brand-danger;
+  }
+
+  &::-webkit-input-placeholder {color: lighten($text-color, 30);}
+  &:-moz-placeholder           {color: lighten($text-color, 30);}
+  &::-moz-placeholder          {color: lighten($text-color, 30);}
+  &:-ms-input-placeholder      {color: lighten($text-color, 30);}
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    &::-webkit-input-placeholder {color: darken($brand-text-color, 30);}
+    &:-moz-placeholder           {color: darken($brand-text-color, 30);}
+    &::-moz-placeholder          {color: darken($brand-text-color, 30);}
+    &:-ms-input-placeholder      {color: darken($brand-text-color, 30);}
+  }
+}
+
+.input-group-addon {
+  border-width: 0;
+
+  .has-success & {
+    color: $brand-success;
+    background-color: lighten($brand-success, 45%);
+    border-color: $brand-success;
+  }
+
+  .has-warning & {
+    color: $brand-warning;
+    background-color: lighten($brand-warning, 45%);
+    border-color: $brand-warning;
+  }
+
+  .has-error & {
+    color: $brand-danger;
+    background-color: lighten($brand-danger, 45%);
+    border-color: $brand-danger;
+  }
+}
+
+.help-block {
+  margin-top: 0px;
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    color: $brand-text-color;
+  }
+
+  .bg-white & {
+    color: $bg-white-color;
+  }
+}
+
+.form-control-feedback, .help-block {
+  .has-success & {
+    color: $brand-success;
+  }
+  .has-warning & {
+    color: $brand-warning;
+  }
+  .has-error & {
+    color: $brand-danger;
+  }
+}
+
+
+select {
+  padding: 10px 0;
+  &.form-control {
+    padding: 10px 0;
+  }
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    &:focus {
+      background-color: $input-bg-focus;
+    }
+  }
+}
+
+textarea {
+  &.form-control {
+    border-width: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    &:focus {
+      background-color: $input-bg-focus;
+    }
+  }
+}
+
+form {
+  &.form-signin, &.form-register {
+    max-width: 600px;
+    margin: 0 auto;
+
+    hr {
+      margin: 20px 0;
+    }
+  }
+}

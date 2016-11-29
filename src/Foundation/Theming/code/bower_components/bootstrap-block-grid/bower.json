@@ -4,7 +4,7 @@
   "authors": [
     "Jonathan Hornung <jonathan.hornung@gmail.com>"
   ],
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "block grid for bootstrap",
   "main": "dist/bootstrap3-block-grid.min.css",
   "moduleType": [

@@ -10,15 +10,15 @@ Detect when images have been loaded.
 
 ### Download
 
-+ [imagesloaded.pkgd.min.js](http://imagesloaded.desandro.com/imagesloaded.pkgd.min.js) minified
-+ [imagesloaded.pkgd.js](http://imagesloaded.desandro.com/imagesloaded.pkgd.js) un-minified
++ [imagesloaded.pkgd.min.js](https://npmcdn.com/imagesloaded@4/imagesloaded.pkgd.min.js) minified
++ [imagesloaded.pkgd.js](https://npmcdn.com/imagesloaded@4/imagesloaded.pkgd.js) un-minified
 
 ### CDN
 
 ``` html
-<script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 <!-- or -->
-<script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.js"></script>
+<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.js"></script>
 ```
 
 ### Package managers
@@ -266,34 +266,17 @@ $('#container').imagesLoaded( function() {...});
 
 ## Webpack
 
-Install imagesLoaded and [imports-loader](https://github.com/webpack/imports-loader) with npm.
+Install imagesLoaded with npm.
 
 ``` bash
-npm install imagesloaded imports-loader
+npm install imagesloaded
 ```
-
-In your config file, `webpack.config.js`, use the imports loader to disable `define` and set window for `imagesloaded`.
-
-``` js
-module.exports = {
-  module: {
-    loaders: [
-      {
-        test: /imagesloaded|ev\-emitter/,
-        loader: 'imports?define=>false&this=>window'
-      }
-    ]
-  }
-};
-```
-
-(This hack is required because of an issue with how Webpack loads dependencies. [+1 this issue on GitHub](https://github.com/webpack/webpack/issues/883) to help get this issue addressed.)
 
 You can then `require('imagesloaded')`.
 
 ``` js
 // main.js
-var imagesLoaded = require('imagesLoaded');
+var imagesLoaded = require('imagesloaded');
 
 imagesLoaded( '#container', function() {
   // images have loaded
@@ -304,8 +287,8 @@ Use `.makeJQueryPlugin` to make `.imagesLoaded()` jQuery plugin.
 
 ``` js
 // main.js
-var imagesLoaded = require('imagesLoaded');
-var jQuery = require('jquery');
+var imagesLoaded = require('imagesloaded');
+var $ = require('jquery');
 
 // provide jQuery argument
 imagesLoaded.makeJQueryPlugin( $ );

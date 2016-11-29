@@ -1,0 +1,24 @@
+.counter {
+  font-size: $font-size-large;
+  padding: .2em .6em .3em;
+  background-color: $counter-default-bg;
+  color: $counter-default-color;
+  font-weight: $counter-font-weight;
+
+  &-success {
+    background-color: $brand-success;
+    color: $brand-text-color;
+  }
+  &-info {
+    background-color: $brand-info;
+    color: $brand-text-color;
+  }
+  &-warning {
+    background-color: $brand-warning;
+    color: $brand-text-color;
+  }
+  &-danger {
+    background-color: $brand-danger;
+    color: $brand-text-color;
+  }
+}

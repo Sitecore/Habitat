@@ -13,6 +13,7 @@
     "**/.*",
     "test",
     "package.json",
+    "composer.json",
     "node_modules",
     "bower_components",
     "tests",
@@ -32,14 +33,14 @@
     "images"
   ],
   "license": "MIT",
-  "version": "4.1.0",
-  "_release": "4.1.0",
+  "version": "4.1.1",
+  "_release": "4.1.1",
   "_resolution": {
     "type": "version",
-    "tag": "v4.1.0",
-    "commit": "0938c71e226f81d33c2205e39694f4b988596f7f"
+    "tag": "v4.1.1",
+    "commit": "2646b88563dbc19ef44da453be92d9be3bdd78d6"
   },
-  "_source": "git://github.com/desandro/imagesloaded.git",
+  "_source": "https://github.com/desandro/imagesloaded.git",
   "_target": "~4.1.0",
   "_originalSource": "imagesloaded"
 }

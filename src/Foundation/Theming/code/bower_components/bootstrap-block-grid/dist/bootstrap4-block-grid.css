@@ -17,7 +17,6 @@
 
 [class*="block-grid-"] > * {
   display: inline;
-  margin: 0;
   padding: 15px;
   height: auto;
   float: left;

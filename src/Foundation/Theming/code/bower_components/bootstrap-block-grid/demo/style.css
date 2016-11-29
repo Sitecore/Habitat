@@ -1,0 +1,5 @@
+.pixel-border {
+    border:1px solid grey;
+    background-color:#555;
+    color:white;
+}

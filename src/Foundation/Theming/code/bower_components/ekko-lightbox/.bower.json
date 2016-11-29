@@ -1,6 +1,6 @@
 {
   "name": "ekko-lightbox",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "main": "./dist/ekko-lightbox.min.js",
   "ignore": [
     "**/.*",
@@ -33,14 +33,14 @@
     "jquery",
     "modal"
   ],
-  "license": "GNU GENERAL PUBLIC LICENSE",
-  "_release": "4.0.1",
+  "license": "MIT",
+  "_release": "4.0.2",
   "_resolution": {
     "type": "version",
-    "tag": "v4.0.1",
-    "commit": "0f6c04a4205e36782ca98044b50c47b78edbe073"
+    "tag": "v4.0.2",
+    "commit": "e810882997264b63f1e055241f23ab22f74b3e80"
   },
-  "_source": "git://github.com/ashleydw/lightbox.git",
+  "_source": "https://github.com/ashleydw/lightbox.git",
   "_target": "~4.0.1",
   "_originalSource": "ekko-lightbox"
 }

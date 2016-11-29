@@ -8,8 +8,8 @@
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot?v=4.4.0");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.4.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular") format("svg");
+  src: url("../bower_components/sitecore.demo.theme/fonts/fontawesome-webfont.eot?v=4.4.0");
+  src: url("../bower_components/sitecore.demo.theme/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0") format("embedded-opentype"), url("../bower_components/sitecore.demo.theme/fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"), url("../bower_components/sitecore.demo.theme/fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"), url("../bower_components/sitecore.demo.theme/fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype"), url("../bower_components/sitecore.demo.theme/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -3091,7 +3091,6 @@ a {
     color: black;
     text-decoration: underline; }
   a:focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
 
@@ -3255,7 +3254,7 @@ body.pagelayout-fixed #main-container {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 800;
   line-height: 1.1;
   color: inherit; }
   h1 small,
@@ -4529,7 +4528,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px; }
 
@@ -5211,7 +5209,7 @@ form.form-signin, form.form-register {
 .btn {
   display: inline-block;
   margin-bottom: 0;
-  font-weight: normal;
+  font-weight: bold;
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
@@ -5228,7 +5226,6 @@ form.form-signin, form.form-register {
   -ms-user-select: none;
   user-select: none; }
   .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
   .btn:hover, .btn:focus, .btn.focus {
@@ -5902,7 +5899,7 @@ blockquote, .blockquote {
     text-align: center; }
     .jumbotron > blockquote p, .jumbotron > .blockquote p {
       font-size: 16px;
-      font-weight: bold;
+      font-weight: 700;
       font-style: normal; }
       .bg-primary .jumbotron > blockquote p, .bg-secondary .jumbotron > blockquote p, .bg-dark .jumbotron > blockquote p, .bg-media .jumbotron > blockquote p, .bg-primary .jumbotron > .blockquote p, .bg-secondary .jumbotron > .blockquote p, .bg-dark .jumbotron > .blockquote p, .bg-media .jumbotron > .blockquote p {
         color: #FFF; }
@@ -6255,7 +6252,8 @@ blockquote, .blockquote {
     color: #000; }
 
 .breadcrumb > li {
-  font-size: 16px; }
+  font-size: 16px;
+  font-weight: normal; }
   .ie9 .breadcrumb > li, .breadcrumb > li .lte-ie8 {
     margin-right: 1px; }
   @media all and (max-width: 767px) {
@@ -6278,7 +6276,7 @@ blockquote, .blockquote {
       color: #000; }
   .breadcrumb > li.active {
     font-size: 24px;
-    font-weight: 800; }
+    font-weight: 700; }
     @media all and (max-width: 767px) {
       .breadcrumb > li.active {
         font-size: 19px; } }
@@ -6293,7 +6291,7 @@ blockquote, .blockquote {
 .btn {
   display: inline-block;
   margin-bottom: 0;
-  font-weight: normal;
+  font-weight: bold;
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
@@ -6310,7 +6308,6 @@ blockquote, .blockquote {
   -ms-user-select: none;
   user-select: none; }
   .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
-    outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
   .btn:hover, .btn:focus, .btn.focus {
@@ -6864,13 +6861,13 @@ button.close {
   color: #000; }
   .bg-white .dropdown-header, .bg-white .dropup-header {
     color: #000;
-    font-weight: bold; }
+    font-weight: 700; }
   @media (max-width: 991px) {
     .dropdown-header, .dropup-header {
       color: #000; }
       .bg-primary .dropdown-header, .bg-secondary .dropdown-header, .bg-media .dropdown-header, .bg-primary .dropup-header, .bg-secondary .dropup-header, .bg-media .dropup-header {
         color: #FFF;
-        font-weight: bold; } }
+        font-weight: 700; } }
 
 .dropdown-toggle, .dropup-toggle {
   margin-bottom: 0 !important; }
@@ -6893,10 +6890,9 @@ button.close {
   .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:active, .dropdown-menu > .active > a:focus, .dropup-menu > .active > a, .dropup-menu > .active > a:hover, .dropup-menu > .active > a:active, .dropup-menu > .active > a:focus {
     color: #000;
     background-color: transparent;
-    font-weight: bold; }
+    font-weight: 700; }
   .dropdown-menu li a, .dropup-menu li a {
     padding: 3px 20px;
-    font-weight: normal;
     color: #000; }
     .dropdown-menu li a:hover, .dropup-menu li a:hover {
       text-decoration: underline;
@@ -7055,7 +7051,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px; }
 
@@ -8051,13 +8046,17 @@ button.list-group-item-danger {
     text-align: center; }
   .bg-primary .logo .tagline, .bg-secondary .logo .tagline, .bg-transparent .logo .tagline {
     color: #000; }
+  .bg-white .logo .tagline {
+    color: #000; }
 
 .logo img, .logo svg {
   height: 50px;
+  width: auto !important;
   max-width: 215px;
   margin-top: 0px; }
   .has-tagline .logo img, .has-tagline .logo svg {
     height: 35px;
+    width: auto !important;
     max-width: 150px;
     margin-top: 0px; }
     @media (max-width: 767px) {
@@ -8066,9 +8065,11 @@ button.list-group-item-danger {
   @media all and (max-width: 991px) {
     .logo img, .logo svg {
       height: 35px;
+      width: auto !important;
       max-width: 150px; }
       .has-tagline .logo img, .has-tagline .logo svg {
         height: 25px;
+        width: auto !important;
         max-width: 110px; } }
   .logo img *, .logo svg * {
     fill: #000 !important;
@@ -8200,7 +8201,7 @@ button.list-group-item-danger {
 .nav {
   margin-top: 0; }
   .nav > li > a {
-    font-weight: bold; }
+    font-weight: 700; }
   .nav li {
     font-family: "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif; }
     .nav li.divider {
@@ -8232,7 +8233,7 @@ button.list-group-item-danger {
     color: #000; }
     .nav .dropdown-menu > .active > a {
       color: #000;
-      font-weight: bold; }
+      font-weight: 700; }
     .nav .dropdown-menu > li > a {
       font-weight: normal;
       color: #000; }
@@ -8432,7 +8433,7 @@ button.list-group-item-danger {
       .bg-white .pagination > li > a, .bg-white .pagination > li > span {
         color: #000; }
     .pagination > li.active > a, .pagination > li.active > span {
-      font-weight: bold; }
+      font-weight: 700; }
       .bg-primary .pagination > li.active > a, .bg-secondary .pagination > li.active > a, .bg-dark .pagination > li.active > a, .bg-media .pagination > li.active > a, .bg-primary .pagination > li.active > span, .bg-secondary .pagination > li.active > span, .bg-dark .pagination > li.active > span, .bg-media .pagination > li.active > span {
         border-color: #FFF; }
         .bg-primary .pagination > li.active > a:hover, .bg-secondary .pagination > li.active > a:hover, .bg-dark .pagination > li.active > a:hover, .bg-media .pagination > li.active > a:hover, .bg-primary .pagination > li.active > span:hover, .bg-secondary .pagination > li.active > span:hover, .bg-dark .pagination > li.active > span:hover, .bg-media .pagination > li.active > span:hover {
@@ -9390,10 +9391,10 @@ p {
 
 li.active {
   color: #000;
-  font-weight: bold; }
+  font-weight: 700; }
   li.active a {
     color: #000;
-    font-weight: bold; }
+    font-weight: 700; }
 
 .well {
   min-height: 20px;
@@ -10259,7 +10260,7 @@ li.active {
       .lte-ie8 #mainNavbar .navbar-form {
         display: none; }
       #mainNavbar .navbar-form input {
-        padding: 16px;
+        padding: 15px;
         margin: 0px 0;
         color: #000;
         background-color: #FFF;
@@ -10683,7 +10684,7 @@ li.active {
         -ms-transform: translate(-50%); } }
     .mega-dropdown-menu .list > li.active a {
       color: #000;
-      font-weight: bold; }
+      font-weight: 700; }
     .mega-dropdown-menu > li > ul {
       padding: 0;
       margin: 0; }
