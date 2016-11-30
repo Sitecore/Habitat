@@ -1,6 +1,8 @@
 ﻿namespace Sitecore.Feature.Accounts.Repositories
 {
-  public interface IAccountRepository
+    using Sitecore.Security.Accounts;
+
+    public interface IAccountRepository
   {
     /// <summary>
     ///   Method method changes thepassword for the user to a random string,
@@ -12,6 +14,6 @@
     void RegisterUser(string email, string password, string profileId);
     bool Exists(string userName);
     void Logout();
-    bool Login(string userName, string password);
+    User Login(string userName, string password);
   }
 }

@@ -122,8 +122,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Unicorn.Users, Version=3.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Unicorn.Users.Core.3.3.1\lib\net452\Unicorn.Users.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Unicorn patch\Unicorn.Users.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
