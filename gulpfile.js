@@ -14,6 +14,7 @@ var nugetRestore = require('gulp-nuget-restore');
 var fs = require('fs');
 var unicorn = require("./scripts/unicorn.js");
 var habitat = require("./scripts/habitat.js");
+var yargs = require("yargs").argv;
 
 module.exports.config = config;
 
@@ -112,33 +113,48 @@ gulp.task("Copy-Local-Assemblies", function () {
 /*****************************
   Publish
 *****************************/
+var publishStream = function (stream, dest) {
+  var targets = ["Build"];
+
+  return stream
+    .pipe(debug({ title: "Building project:" }))
+    .pipe(msbuild({
+      targets: targets,
+      configuration: config.buildConfiguration,
+      logCommand: false,
+      verbosity: "minimal",
+      stdout: true,
+      errorOnFail: true,
+      maxcpucount: 0,
+      toolsVersion: 14.0,
+      properties: {
+        DeployOnBuild: "true",
+        DeployDefaultTarget: "WebPublish",
+        WebPublishMethod: "FileSystem",
+        DeleteExistingFiles: "false",
+        publishUrl: dest,
+        _FindDependencies: "false"
+      }
+    }));
+}
+
+var publishProject = function (location, dest) {
+  dest = dest || config.websiteRoot;
+
+  console.log("publish to " + dest + " folder");
+  return gulp.src(["./src/" + location + "/code/*.csproj"])
+    .pipe(foreach(function (stream, file) {
+      return publishStream(stream, dest);
+    }));
+}
+
 var publishProjects = function (location, dest) {
   dest = dest || config.websiteRoot;
-  var targets = ["Build"];
 
   console.log("publish to " + dest + " folder");
   return gulp.src([location + "/**/code/*.csproj"])
     .pipe(foreach(function (stream, file) {
-      return stream
-        .pipe(debug({ title: "Building project:" }))
-        .pipe(msbuild({
-          targets: targets,
-          configuration: config.buildConfiguration,
-          logCommand: false,
-          verbosity: "minimal",
-          stdout: true,
-          errorOnFail: true,
-          maxcpucount: 0,
-          toolsVersion: 14.0,
-          properties: {
-            DeployOnBuild: "true",
-            DeployDefaultTarget: "WebPublish",
-            WebPublishMethod: "FileSystem",
-            DeleteExistingFiles: "false",
-            publishUrl: dest,
-            _FindDependencies: "false"
-          }
-        }));
+      return publishStream(stream, dest);
     }));
 };
 
@@ -171,6 +187,17 @@ gulp.task("Publish-Feature-Projects", function () {
 
 gulp.task("Publish-Project-Projects", function () {
   return publishProjects("./src/Project");
+});
+
+gulp.task("Publish-Project", function () {
+  if(yargs && yargs.m && typeof(yargs.m) == 'string') {
+    return publishProject(yargs.m);
+  } else {
+    throw `\n\n------\n
+      USAGE:
+      -m Layer/Module
+    \n------\n\n`;
+  }
 });
 
 gulp.task("Publish-Assemblies", function () {
