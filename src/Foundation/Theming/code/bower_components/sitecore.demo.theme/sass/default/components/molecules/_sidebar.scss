@@ -119,20 +119,20 @@
 
   .nav {
     li {
-      a {
+      >a {
         padding-left: 0;
         color: $sidebar-nav-item-color;
         background-color: $sidebar-nav-item-bg;
         font-weight: $sidebar-nav-item-font-weight;
         .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
-          color: $brand-text-color;
+            color: $brand-text-color;
         }
         &:hover {
           padding-left: 10px;
         }
       }
       &.active {
-        a {
+        >a  {
           color: $sidebar-nav-item-color-active;
           font-weight: $sidebar-nav-item-font-weight-active;
           .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
@@ -140,6 +140,9 @@
           }
           &:hover {
             background-color: $sidebar-nav-item-bg;
+          }
+          &:focus {
+            color: $brand-text-color;
           }
         }
       }
