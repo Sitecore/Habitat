@@ -193,10 +193,7 @@ gulp.task("Publish-Project", function () {
   if(yargs && yargs.m && typeof(yargs.m) == 'string') {
     return publishProject(yargs.m);
   } else {
-    throw `\n\n------\n
-      USAGE:
-      -m Layer/Module
-    \n------\n\n`;
+    throw "\n\n------\n USAGE: -m Layer/Module \n------\n\n";
   }
 });
 
