@@ -19,8 +19,14 @@ Languages:
           <d
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r
-              uid="{927D47AD-A496-49B3-BD5B-C5F93D8BC701}"
+              uid="{8AEF98DC-DFD6-4711-874F-04774D755D71}"
               p:before="*"
+              s:ds="{43186E7B-CADD-4D79-8F65-D49806BCE96D}"
+              s:id="{97459D5B-3C92-46C2-A329-138C1E277465}"
+              s:ph="/page-layout/section-narrow/col-wide-1_927d47ad-a496-49b3-bd5b-c5f93d8bc701" />
+            <r
+              uid="{927D47AD-A496-49B3-BD5B-C5F93D8BC701}"
+              p:after="r[@uid='{8AEF98DC-DFD6-4711-874F-04774D755D71}']"
               s:id="{03112E88-1499-4132-9D5F-E213AFD2019C}"
               s:ph="/page-layout/section-narrow" />
           </d>
