@@ -48,7 +48,7 @@
           </h4>
           @if (!Model.Campaigns.Any())
           {
-            <div class="alert alert-info">
+            <div class="alert alert-info small">
               @Html.Sitecore().DictionaryField("/Demo/Referral/No Campaigns", "You have not been associated with any campaigns")
             </div>
           }
