@@ -1,12 +1,13 @@
 ﻿namespace Sitecore.Feature.Demo.Models
 {
-  using System;
+    using System;
 
-  public class Goal
-  {
-    public string Title { get; set; }
-    public int EngagementValue { get; set; }
-    public DateTime Date { get; set; }
-    public bool IsCurrentVisit { get; set; }
-  }
+    public class PageEvent
+    {
+        public int EngagementValue { get; set; }
+        public string Title { get; set; }
+        public DateTime Date { get; set; }
+        public bool IsCurrentVisit { get; set; }
+        public string Data { get; set; }
+    }
 }

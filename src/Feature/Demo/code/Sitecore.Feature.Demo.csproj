@@ -186,7 +186,7 @@
     <Compile Include="Repositories\CampaignRepository.cs" />
     <Compile Include="Repositories\DeviceRepository.cs" />
     <Compile Include="Repositories\EngagementPlanStateRepository.cs" />
-    <Compile Include="Repositories\GoalRepository.cs" />
+    <Compile Include="Repositories\PageEventRepository.cs" />
     <Compile Include="Repositories\ICampaignRepository.cs" />
     <Compile Include="Repositories\LocationRepository.cs" />
     <Compile Include="Repositories\OutcomeRepository.cs" />

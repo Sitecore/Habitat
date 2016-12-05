@@ -1,129 +1,182 @@
 ﻿@using Sitecore.Foundation.Dictionary.Extensions
 @model Sitecore.Feature.Demo.Models.OnsiteBehavior
 <div class="panel panel-primary">
-  <div class="panel-heading" role="tab">
-    <h4 class="panel-title">
-      <a role="button" href="#onsiteBehaviorPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
-        <span class="fa fa-bullseye"></span>
-        @Html.Sitecore().DictionaryField("/Demo/Onsite Behavior/Title", "Onsite Behavior")
-        <span class="glyphicon glyphicon-chevron-down pull-right"></span>
-      </a>
-    </h4>
-  </div>
-  <div id="onsiteBehaviorPanel" class="panel-collapse collapse" role="tabpanel">
-    <div class="panel-body">
-      <div class="media">
-        <div class="media-left">
-          <span class="fa fa-users"></span>
-        </div>
-        <div class="media-body ">
-          <h4 class="media-title">
-            @Html.Sitecore().DictionaryField("/Demo/Onsite Behavior/Profiling", "Profiling")
-          </h4>
-          <div class="media-body">
-            @if (!Model.HistoricProfiles.Any() && !Model.ActiveProfiles.Any())
-            {
-              <div class="alert alert-info">
-                @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/No Profiling", "You have not been profiled yet")
-              </div>
-            }
-            else
-            {
-              if (Model.HistoricProfiles.Any())
-              {
-                <ul class="nav nav-tabs nav-justified">
-                  <li class="active">
-                    <a href="#onSiteBehaviorProfileCurrent" data-toggle="tab">@Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Current Visit", "Current Visit")</a>
-                  </li>
-                  <li>
-                    <a href="#onSiteBehaviorProfileHistoric" data-toggle="tab">@Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Historic", "Historic")</a>
-                  </li>
-                </ul>
-              }
-              <div class="tab-content">
-                @Html.Partial("_OnsiteBehaviorProfiling", Model.ActiveProfiles, new ViewDataDictionary { { "id", "onSiteBehaviorProfileCurrent" }, { "active", true } })
-                @if (Model.HistoricProfiles.Any())
-                {
-                  @Html.Partial("_OnsiteBehaviorProfiling", Model.HistoricProfiles, new ViewDataDictionary { { "id", "onSiteBehaviorProfileHistoric" }, { "active", !Model.ActiveProfiles.Any() } })
-                }
-              </div>
-            }
-          </div>
-        </div>
-      </div>
-      <div class="media">
-        <div class="media-left">
-          <span class="fa fa-trophy"></span>
-        </div>
-        <div class="media-body ">
-          <h4 class="media-title">
-            @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Goals Triggered", "Triggered goals")
-            @if (Model.Goals.Any())
-            {
-              <strong class="pull-right">@Model.Goals.Count()</strong>
-            }
-          </h4>
-          @if (!Model.Goals.Any())
-          {
-            <div class="alert alert-info">
-              @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/No Goals", "You have triggered no goals so far")
-            </div>
-          }
-          else
-          {
-            <ol class="list-unstyled">
-              @foreach (var goal in Model.Goals)
-              {
-                <li>
-                  <div>
-                    <small>@(goal.IsCurrentVisit ? @Html.Sitecore().Dictionary("//Demo/Onsite Behavior/Current Visit", "Now") : goal.Date.ToString("dd-MM HH:MM"))</small>
-                  </div>
-                    <div class="text-nowrap">
-                      @goal.Title
-                      @if (goal.EngagementValue > 0)
-                      {
-                        <small class="badge pull-right"><span class="fa fa-heart"></span> @goal.EngagementValue</small>
-                      }
-                  </div>
-                </li>
-              }
-            </ol>
-          }
-        </div>
-      </div>
-      <div class="media">
-        <div class="media-left">
-          <span class="fa fa-money"></span>
-        </div>
-        <div class="media-body ">
-          <h4 class="media-title">
-            @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Outcomes", "Outcomes")
-            @if (Model.Outcomes.Any())
-            {
-              <strong class="pull-right">@Model.Outcomes.Count()</strong>
-            }
-          </h4>
-          @if (!Model.Outcomes.Any())
-          {
-            <div class="alert alert-info">
-              @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/No Outcomes", "You have reached no outcomes")
-            </div>
-          }
-          else
-          {
-            <ol class="list-unstyled">
-              @foreach (var outcome in Model.Outcomes)
-              {
-                <li>
-                  <div><small>@(!outcome.IsCurrentVisit ? outcome.Date.ToString("dd-MM HH:MM") : @Html.Sitecore().Dictionary("//Demo/Onsite Behavior/Current Visit", "Now"))</small></div>
-                  <div><small>@outcome.OutcomeGroup</small></div>
-                  <div>@outcome.Title</div>
-                </li>
-              }
-            </ol>
-          }
-        </div>
-      </div>
+    <div class="panel-heading" role="tab">
+        <h4 class="panel-title">
+            <a role="button" href="#onsiteBehaviorPanel" data-toggle="collapse" class="panel-title collapsed" data-parent="#experiencedata">
+                <span class="fa fa-bullseye"></span>
+                @Html.Sitecore().DictionaryField("/Demo/Onsite Behavior/Title", "Onsite Behavior")
+                <span class="glyphicon glyphicon-chevron-down pull-right"></span>
+            </a>
+        </h4>
     </div>
-  </div>
+    <div id="onsiteBehaviorPanel" class="panel-collapse collapse" role="tabpanel">
+        <div class="panel-body">
+            <div class="media">
+                <div class="media-left">
+                    <span class="fa fa-users"></span>
+                </div>
+                <div class="media-body ">
+                    <h4 class="media-title">
+                        @Html.Sitecore().DictionaryField("/Demo/Onsite Behavior/Profiling", "Profiling")
+                    </h4>
+                    <div class="media-body">
+                        @if (!Model.HistoricProfiles.Any() && !Model.ActiveProfiles.Any())
+                        {
+                            <div class="alert alert-info small">
+                                @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/No Profiling", "You have not been profiled yet")
+                            </div>
+                        }
+                        else
+                        {
+                            if (Model.HistoricProfiles.Any())
+                            {
+                                <ul class="nav nav-tabs nav-justified small">
+                                    <li class="active">
+                                        <a href="#onSiteBehaviorProfileCurrent" data-toggle="tab">@Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Current Visit", "Current Visit")</a>
+                                    </li>
+                                    <li>
+                                        <a href="#onSiteBehaviorProfileHistoric" data-toggle="tab">@Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Historic", "Historic")</a>
+                                    </li>
+                                </ul>
+                            }
+                            <div class="tab-content">
+                                @Html.Partial("_OnsiteBehaviorProfiling", Model.ActiveProfiles, new ViewDataDictionary { { "id", "onSiteBehaviorProfileCurrent" }, { "active", true } })
+                                @if (Model.HistoricProfiles.Any())
+                {
+                                    @Html.Partial("_OnsiteBehaviorProfiling", Model.HistoricProfiles, new ViewDataDictionary { { "id", "onSiteBehaviorProfileHistoric" }, { "active", !Model.ActiveProfiles.Any() } })
+                                }
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <span class="fa fa-trophy"></span>
+                </div>
+                <div class="media-body ">
+                    <h4 class="media-title">
+                        @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Goals Triggered", "Triggered goals")
+                        @if (Model.Goals.Any())
+                        {
+                            <strong class="pull-right">@Model.Goals.Count()</strong>
+                        }
+                    </h4>
+                    <div class="media-body">
+                        <ul class="nav nav-tabs nav-justified small">
+                            <li class="active">
+                                <a href="#onSiteBehaviorGoals" data-toggle="tab">@Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Goals Tab", "Goals")</a>
+                            </li>
+                            <li>
+                                <a href="#onSiteBehaviorPageEvents" data-toggle="tab">@Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Page Events Tab", "Page Events")</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="onSiteBehaviorGoals">
+                                @if (!Model.Goals.Any())
+                                {
+                                    <div class="alert alert-info small">
+                                        @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/No Goals", "You have triggered no goals so far")
+                                    </div>
+                                }
+                                else
+                                {
+                                    <ol class="list-unstyled">
+                                        @foreach (var goal in Model.Goals)
+                                        {
+                                            <li>
+                                                <div>
+                                                    <small>@(goal.IsCurrentVisit ? Html.Sitecore().Dictionary("//Demo/Onsite Behavior/Current Visit", "Now") : goal.Date.ToString("dd-MM HH:MM"))</small>
+                                                </div>
+                                                <div class="text-nowrap">
+                                                    @goal.Title
+                                                    @if (goal.EngagementValue > 0)
+                                                    {
+                                                        <small class="badge pull-right"><span class="fa fa-heart"></span> @goal.EngagementValue</small>
+                                                    }
+                                                </div>
+                                            </li>
+                                        }
+                                    </ol>
+                                }
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="onSiteBehaviorPageEvents">
+                                @if (!Model.PageEvents.Any())
+                                {
+                                    <div class="alert alert-info small">
+                                        @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/No Page Events", "You have triggered no page events so far")
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="table-responsive">
+                                        <table class="table table-condensed table-striped">
+                                            <tr>
+                                                <th>
+                                                    <small>
+                                                        @Html.Sitecore().Dictionary("//Demo/Onsite Behavior/Page Event Elapsed", "Elapsed")
+                                                    </small>
+                                                </th>
+                                                <th class="text-nowrap">
+                                                    <small>
+                                                        @Html.Sitecore().Dictionary("//Demo/Onsite Behavior/Page Event Name", "Name")
+                                                    </small>
+                                                </th>
+                                            </tr>
+                                            @foreach (var pageEvent in Model.PageEvents)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <small>@((DateTime.Now - pageEvent.Date).ToString(@"m\m\ s\s"))</small>
+                                                    </td>
+                                                    <td class="text-nowrap">
+                                                        @pageEvent.Title
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </table>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <div class="media-left">
+                    <span class="fa fa-money"></span>
+                </div>
+                <div class="media-body ">
+                    <h4 class="media-title">
+                        @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/Outcomes", "Outcomes")
+                        @if (Model.Outcomes.Any())
+            {
+                            <strong class="pull-right">@Model.Outcomes.Count()</strong>
+                        }
+                    </h4>
+                    @if (!Model.Outcomes.Any())
+                    {
+                        <div class="alert alert-info small">
+                            @Html.Sitecore().DictionaryField("//Demo/Onsite Behavior/No Outcomes", "You have reached no outcomes")
+                        </div>
+                    }
+                    else
+                    {
+                        <ol class="list-unstyled">
+                            @foreach (var outcome in Model.Outcomes)
+                            {
+                                <li>
+                                    <div><small>@(!outcome.IsCurrentVisit ? outcome.Date.ToString("dd-MM HH:MM") : @Html.Sitecore().Dictionary("//Demo/Onsite Behavior/Current Visit", "Now"))</small></div>
+                                    <div><small>@outcome.OutcomeGroup</small></div>
+                                    <div>@outcome.Title</div>
+                                </li>
+                            }
+                        </ol>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
