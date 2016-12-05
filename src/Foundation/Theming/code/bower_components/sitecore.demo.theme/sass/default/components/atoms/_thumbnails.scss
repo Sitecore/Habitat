@@ -68,4 +68,9 @@
       }
     }
   }
+
+  /* Support equal height columns */
+  .row-col-eq >[class^="col-"] >& {
+      height: 100%;
+  }
 }

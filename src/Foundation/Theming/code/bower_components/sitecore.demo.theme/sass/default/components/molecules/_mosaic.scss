@@ -2,6 +2,8 @@
   position: relative;
   display: block;
   overflow: hidden;
+  margin-bottom: $line-height-computed;
+
   &:hover, &-overlay-show {
     .mosaic-overlay {
       opacity: 1 !important;

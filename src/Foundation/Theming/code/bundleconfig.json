@@ -17,6 +17,7 @@
             "bower_components/ekko-lightbox/dist/ekko-lightbox.js",
             "bower_components/ev-emitter/ev-emitter.js",
             "bower_components/imagesloaded/imagesloaded.js",
+            "bower_components/bootstrap-colequalizer/bootstrap-colequalizer.js",
             "bower_components/sitecore.demo.theme/scripts/carousel.js",
             "bower_components/sitecore.demo.theme/scripts/counter.js",
             "bower_components/sitecore.demo.theme/scripts/form.js",

@@ -1,6 +1,3 @@
-
-
-
 @import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/panels";
 
 .panel {
@@ -57,7 +54,15 @@
     color: $color-secondary-light;
   }
 
-  &-primary {
+  &-secondary {
+    @include panel-variant($color-secondary, $brand-text-color, $color-secondary, $color-secondary);
+  }
+
+  &-dark {
+    @include panel-variant($color-secondary-dark, $brand-text-color, $color-secondary-dark, $color-secondary-dark);
+  }
+
+  &-primary, &-secondary, &-dark {
     .panel-heading {
       color: $brand-text-color;
     }
@@ -103,5 +108,10 @@
     .panel-body, .panel-heading {
       color: $bg-white-color;
     }
+  }
+
+  /* Support equal height columns */
+  .row-col-eq >[class^="col-"] >& {
+      height: 100%;
   }
 }

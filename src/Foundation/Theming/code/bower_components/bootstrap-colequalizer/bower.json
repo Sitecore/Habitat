@@ -1,0 +1,26 @@
+{
+    "name": "bootstrap-colequalizer",
+    "main": "bootstrap-colequalizer.js",
+    "version": "1.1.0",
+    "description": "A jQuery plugin that dynamically equalizes the height of uneven column elements in Bootstrap 3 grids.",
+    "homepage": "https://github.com/megasmack/bootstrap-colequalizer",
+    "authors": [
+        "Steve Schrab (https://github.com/megasmack)"
+    ],
+    "keywords": [
+        "bootstrap",
+        "jquery",
+        "row",
+        "column"
+    ],
+    "license": "MIT",
+    "ignore": [
+       "**/.*",
+       ".editorconfig",
+       ".jshintrc"
+   ],
+    "dependencies": {
+        "jquery": ">=1.11.*",
+        "bootstrap": ">=3.*"
+    }
+}

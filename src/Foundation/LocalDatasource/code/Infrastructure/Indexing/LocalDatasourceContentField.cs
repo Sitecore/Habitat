@@ -7,8 +7,9 @@
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
   using Sitecore.Foundation.LocalDatasource.Extensions;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
-  public class LocalDatasourceContentField : IComputedIndexField
+    public class LocalDatasourceContentField : IComputedIndexField
   {
     public virtual string FieldName { get; set; }
     public virtual string ReturnType { get; set; }
@@ -43,12 +44,7 @@
 
     private bool ShouldIndexItem(Item item)
     {
-      return HasLayout(item) && !item.Paths.LongID.Contains(ItemIDs.TemplateRoot.ToString());
-    }
-
-    private static bool HasLayout(Item item)
-    {
-      return item.Visualization?.Layout != null;
+      return item.HasLayout() && !item.Paths.LongID.Contains(ItemIDs.TemplateRoot.ToString());
     }
 
     private bool ShouldIndexField(Field field)

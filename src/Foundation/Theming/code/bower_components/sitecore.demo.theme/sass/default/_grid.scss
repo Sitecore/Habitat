@@ -30,4 +30,9 @@ $grid-gutter-width: 30;
       padding-left: 0;
     }
   }
+
+  /* Support equal height columns */
+  &.row-col-eq {
+      margin-bottom: $line-height-computed;
+  }
 }
