@@ -62,16 +62,16 @@
       <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Rainbow, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Rainbow.Core.1.4.0\lib\net452\Rainbow.dll</HintPath>
+    <Reference Include="Rainbow, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Rainbow.Core.1.4.1\lib\net452\Rainbow.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Rainbow.Storage.Sc, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Rainbow.Storage.Sc.1.4.0\lib\net452\Rainbow.Storage.Sc.dll</HintPath>
+    <Reference Include="Rainbow.Storage.Sc, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Rainbow.Storage.Sc.1.4.1\lib\net452\Rainbow.Storage.Sc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Rainbow.Storage.Yaml, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Rainbow.Storage.Yaml.1.4.0\lib\net452\Rainbow.Storage.Yaml.dll</HintPath>
+    <Reference Include="Rainbow.Storage.Yaml, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Rainbow.Storage.Yaml.1.4.1\lib\net452\Rainbow.Storage.Yaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -117,11 +117,15 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Unicorn, Version=3.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Unicorn.Core.3.3.1\lib\net452\Unicorn.dll</HintPath>
+    <Reference Include="Unicorn, Version=3.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Unicorn.Core.3.3.2\lib\net452\Unicorn.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Unicorn.Users, Version=3.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Unicorn.Roles, Version=3.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Unicorn.Roles.Core.3.3.2\lib\net452\Unicorn.Roles.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Unicorn.Users, Version=3.3.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Unicorn patch\Unicorn.Users.dll</HintPath>
     </Reference>
@@ -142,6 +146,12 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Users.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Users.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.Users.config.example" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Roles.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Roles.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.Roles.config.example" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

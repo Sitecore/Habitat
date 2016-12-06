@@ -6,10 +6,10 @@
 	http://github.com/kamsar/Unicorn
 -->
 <configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
-    <sitecore>
-        <unicorn>
-            <configurations>
-                <!--
+	<sitecore>
+		<unicorn>
+			<configurations>
+				<!--
 					Regular Unicorn configurations can be extended to include roles via the UserPredicate
 					
 					NOTE: Configurations which include users should not be using transparent sync. Users do not sync transparently.
@@ -18,30 +18,30 @@
 					Users sync by default quite similarly to regular Unicorn items: users on disk are the master.
 					Using the UserSyncConfiguration you can set up to have users not be deleted if they are not serialized.
 				-->
-                <configuration name="Default Configuration">
-                    <!-- 
+				<configuration name="Default Configuration">
+					<!-- 
 						Note: the configuration must also define a predicate (e.g. to include items),
 						or use the empty predicate, which includes nothing, for a users-only configuration:
 					-->
-                    <!--<predicate type="Unicorn.Roles.Predicates.EmptyPredicate, Unicorn.Roles" singleInstance="true" />-->
-
-                    <!-- 
+					<!--<predicate type="Unicorn.Roles.Predicates.EmptyPredicate, Unicorn.Roles" singleInstance="true" />-->
+					
+					<!-- 
 						Add the user predicate. Adding a user predicate tells Unicorn you want to sync users with this configuration.
 					-->
-                    <userPredicate type="Unicorn.Users.UserPredicates.ConfigurationUserPredicate, Unicorn.Users" singleInstance="true">
-                        <!--
+					<userPredicate type="Unicorn.Users.UserPredicates.ConfigurationUserPredicate, Unicorn.Users" singleInstance="true">
+						<!--
 							Each include must either include a domain, which includes all users under that domain,
 							or a domain with a user regex pattern to determine specific users to include under the domain.
 							
 							For regex pattern rules, note that the regex applies to the user not including the domain,
 							e.g. for "sitecore\foo" the regex pattern is checked against "foo" if the domain is set to "sitecore"
 						-->
-                        <include domain="sitecore" />
-                        <include domain="extranet" pattern="^MySite.*$" />
-                        <!-- Note: you may include the same domain in multiple include elements, with different patterns -->
-                    </userPredicate>
+						<include domain="sitecore" />
+						<include domain="extranet" pattern="^MySite.*$" />
+						<!-- Note: you may include the same domain in multiple include elements, with different patterns -->
+					</userPredicate>
 
-                    <!-- 
+					<!-- 
 						SYNC CONFIGURATION
 						
 						NOTE: if you do not alter the default values you can remove this entirely and use the defaults set in Unicorn.Users.config
@@ -63,7 +63,7 @@
 					-->
                     <userSyncConfiguration removeOrphans="true" defaultPassword="random" minPasswordLength="8" type="Unicorn.Users.Loader.DefaultUserSyncConfiguration, Unicorn.Users" singleInstance="true" />
                 </configuration>
-            </configurations>
-        </unicorn>
-    </sitecore>
+			</configurations>
+		</unicorn>
+	</sitecore>
 </configuration>
