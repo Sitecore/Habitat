@@ -14,6 +14,8 @@
   public class AssetRepository
   {
     private static readonly AssetRequirementCache _cache = new AssetRequirementCache(StringUtil.ParseSizeString("10MB"));
+
+    [ThreadStatic]
     private static AssetRepository _current;
     private readonly List<Asset> _items = new List<Asset>();
     private readonly List<ID> _seenRenderings = new List<ID>();
@@ -22,56 +24,58 @@
 
     internal IEnumerable<Asset> Items => this._items;
 
+    internal void Clear()
+    {
+      this._items.Clear();
+    }
+
     internal void Add(Asset asset, bool preventAddToCache = false)
     {
-      lock (this._items)
+      if (asset.AddOnceToken != null)
       {
-        if (asset.AddOnceToken != null)
+        if (this._items.Any(x => x.AddOnceToken != null && x.AddOnceToken == asset.AddOnceToken))
         {
-          if (this._items.Any(x => x.AddOnceToken != null && x.AddOnceToken == asset.AddOnceToken))
-          {
-            return;
-          }
+          return;
         }
-
-        if (asset.File != null)
-        {
-          if (this._items.Any(x => x.File != null && x.File == asset.File))
-          {
-            return;
-          }
-        }
-
-        if (!preventAddToCache)
-        {
-          if (RenderingContext.Current != null)
-          {
-            var rendering = RenderingContext.Current.Rendering;
-            if (rendering != null && rendering.Caching.Cacheable)
-            {
-              AssetRequirementList cachedRequirements;
-
-              var renderingId = rendering.RenderingItem.ID;
-
-              if (!this._seenRenderings.Contains(renderingId))
-              {
-                this._seenRenderings.Add(renderingId);
-                cachedRequirements = new AssetRequirementList();
-              }
-              else
-              {
-                cachedRequirements = _cache.Get(renderingId) ?? new AssetRequirementList();
-              }
-
-              cachedRequirements.Add(asset);
-              _cache.Set(renderingId, cachedRequirements);
-            }
-          }
-        }
-
-        // Passed the checks, add the requirement.
-        this._items.Add(asset);
       }
+
+      if (asset.File != null)
+      {
+        if (this._items.Any(x => x.File != null && x.File == asset.File))
+        {
+          return;
+        }
+      }
+
+      if (!preventAddToCache)
+      {
+        if (RenderingContext.Current != null)
+        {
+          var rendering = RenderingContext.Current.Rendering;
+          if (rendering != null && rendering.Caching.Cacheable)
+          {
+            AssetRequirementList cachedRequirements;
+
+            var renderingId = rendering.RenderingItem.ID;
+
+            if (!this._seenRenderings.Contains(renderingId))
+            {
+              this._seenRenderings.Add(renderingId);
+              cachedRequirements = new AssetRequirementList();
+            }
+            else
+            {
+              cachedRequirements = _cache.Get(renderingId) ?? new AssetRequirementList();
+            }
+
+            cachedRequirements.Add(asset);
+            _cache.Set(renderingId, cachedRequirements);
+          }
+        }
+      }
+
+      // Passed the checks, add the requirement.
+      this._items.Add(asset);
     }
 
     public void Add(ID renderingID)

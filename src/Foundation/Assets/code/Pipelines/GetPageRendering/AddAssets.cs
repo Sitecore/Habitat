@@ -32,6 +32,8 @@
 
     public override void Process(GetPageRenderingArgs args)
     {
+      AssetRepository.Current.Clear();
+
       this.AddSiteAssetsFromConfiguration();
 
       this.AddPageAssets(PageContext.Current.Item);
