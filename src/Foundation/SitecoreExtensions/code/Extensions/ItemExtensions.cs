@@ -45,9 +45,9 @@
             {
                 throw new ArgumentNullException(nameof(item));
             }
-
-            var linkField = (LinkField)item.Fields[linkFieldId];
-            return linkField.TargetItem;
+            if (item.Fields[linkFieldId] == null || !item.Fields[linkFieldId].HasValue)
+                return null;
+            return ((LinkField)item.Fields[linkFieldId]).TargetItem ?? ((ReferenceField)item.Fields[linkFieldId]).TargetItem;
         }
 
         public static string MediaUrl(this Item item, ID mediaFieldId, MediaUrlOptions options = null)
@@ -74,7 +74,7 @@
                 throw new ArgumentNullException(nameof(item));
             }
 
-            return item.IsDerived(templateID) ? item : item.Axes.GetAncestors().Reverse().FirstOrDefault(i => i.IsDerived(templateID));
+            return item.IsDerived(templateID) ? item : item.Axes.GetAncestors().LastOrDefault(i => i.IsDerived(templateID));
         }
 
         public static IList<Item> GetAncestorsAndSelfOfTemplate(this Item item, ID templateID)

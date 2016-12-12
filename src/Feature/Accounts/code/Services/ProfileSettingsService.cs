@@ -29,9 +29,8 @@
     public virtual IEnumerable<string> GetInterests()
     {
       var item = GetSettingsItem(null);
-      ReferenceField interestsFolder = item.Fields[Templates.ProfileSettigs.Fields.InterestsFolder];
 
-      return interestsFolder?.TargetItem?.Children.Where(i => i.IsDerived(Templates.Interest.ID))?.Select(i => i.Fields[Templates.Interest.Fields.Title].Value) ?? Enumerable.Empty<string>();
+      return item?.TargetItem(Templates.ProfileSettigs.Fields.InterestsFolder)?.Children.Where(i => i.IsDerived(Templates.Interest.ID))?.Select(i => i.Fields[Templates.Interest.Fields.Title].Value) ?? Enumerable.Empty<string>();
     }
 
     private static Item GetSettingsItem(Item contextItem)

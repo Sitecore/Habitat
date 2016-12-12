@@ -16,7 +16,7 @@
             this.AddAssets(PageContext.Current.Item);
         }
 
-        private void AddAssets(Item item)
+        protected void AddAssets(Item item)
         {
             var styling = this.GetPageAssetValue(item, Templates.PageAssets.Fields.CssCode);
             if (!string.IsNullOrWhiteSpace(styling))
