@@ -166,6 +166,7 @@
     <Content Include="Views\Common\Sublayouts\4 Column 2-2-4-4.cshtml" />
     <Content Include="Views\Common\Sublayouts\ArticleAsideBoth.cshtml" />
     <Content Include="Views\Common\Sublayouts\NavbarActivity.cshtml" />
+    <Content Include="Views\Common\Sublayouts\NavbarCenter.cshtml" />
     <None Include="Views\Web.config" />
     <None Include="web.config" />
     <None Include="web.config.transform" />
