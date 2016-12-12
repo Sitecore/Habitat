@@ -1,0 +1,18 @@
+﻿---
+ID: "92e5ab55-4e9b-401b-a735-1cecba4c009d"
+Parent: "7415df42-e954-4010-a62d-0bb80b4d5de4"
+Template: "1c87ea50-cc18-48cc-86de-592e274d0c4f"
+Path: /sitecore/system/Settings/Project/Themes/Common/White Wonder
+DB: master
+SharedFields:
+- ID: "4867d192-326a-4aa4-81ef-ea430e224aff"
+  Hint: Css assets
+  Value: "/styles/white-wonder.min.css"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161212T031750Z
