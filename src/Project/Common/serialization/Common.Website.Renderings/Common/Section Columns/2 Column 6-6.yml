@@ -8,7 +8,7 @@ SharedFields:
 - ID: "308e88f5-cd6e-4f8f-bafe-95a47dedefdc"
   Hint: Editable
   Type: Checkbox
-  Value: 0
+  Value: 1
 - ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
   Hint: Path
   Value: "/Views/Common/Sublayouts/2 Column 6-6.cshtml"
