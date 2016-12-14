@@ -121,6 +121,7 @@
     <Content Include="Views\MediaFeature\PageHeaderMedia.cshtml" />
     <Content Include="Views\MediaFeature\PageHeaderCarousel.cshtml" />
     <Content Include="packages.config" />
+    <Content Include="Views\MediaFeature\Video.cshtml" />
     <None Include="Web.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">

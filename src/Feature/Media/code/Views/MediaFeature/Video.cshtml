@@ -1,0 +1,56 @@
+﻿@using Sitecore.Data.Items
+@using Sitecore.Feature.Media
+@using Sitecore.Foundation.Alerts
+@using Sitecore.Foundation.Alerts.Extensions
+@using Sitecore.Foundation.Dictionary.Repositories
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@using Sitecore.Mvc.Extensions
+@using Sitecore.Resources.Media
+@model Sitecore.Mvc.Presentation.RenderingModel
+
+@if (Model == null || (!Model.Item?.IsDerived(Templates.HasMediaVideo.ID) ?? true))
+{
+    @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaVideo.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    return;
+}
+@{
+    const int DefaultWidth = 750;
+    var thumbnail = Html.Sitecore().ImageField(Templates.HasMedia.Fields.Thumbnail.ToString(), Model.Item, mw: DefaultWidth, cssClass: "img-responsive");
+}
+
+@if ((!Model.Item.FieldHasValue(Templates.HasMediaVideo.Fields.VideoLink) || string.IsNullOrWhiteSpace(thumbnail?.ToString())) && !Sitecore.Context.PageMode.IsExperienceEditorEditing)
+{
+    return;
+}
+
+<div>
+    <div class="embed-responsive embed-responsive-16by9">
+        @if (Model.Item.LinkFieldOptions(Templates.HasMediaVideo.Fields.VideoLink, LinkFieldOption.LinkType) == "external")
+        {
+            if (Sitecore.Context.PageMode.IsExperienceEditorEditing)
+            {
+                <small>@DictionaryPhraseRepository.Current.Get("/Media/Video/Page Editor Label", "External videos are not shown in edit mode. Please make sure that the video can be used as an iframe embed.")</small>
+                @thumbnail
+            }
+            else
+            {
+                <iframe width="@DefaultWidth" height="@(DefaultWidth / 16 * 9)" src="@Model.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink)"></iframe>
+            }
+        }
+        else
+        {
+            MediaItem mediaItem = Model.Item.TargetItem(Templates.HasMediaVideo.Fields.VideoLink);
+            if (mediaItem == null)
+            {
+                @thumbnail
+            }
+            else
+            {
+                <video width="@DefaultWidth" height="@(DefaultWidth / 16 * 9)" autoplay loop poster="@Model.Item.MediaUrl(Templates.HasMedia.Fields.Thumbnail)">
+                    <source src="@MediaManager.GetMediaUrl(mediaItem)" type="@mediaItem.MimeType">
+                    @thumbnail
+                </video>
+            }
+        }
+    </div>
+</div>
