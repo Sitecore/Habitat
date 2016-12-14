@@ -62,7 +62,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Forms.Core, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Forms.Core.NoReferences.8.2.160801\lib\NET452\Sitecore.Forms.Core.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Forms.Core.NoReferences.8.2.161129\lib\NET452\Sitecore.Forms.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -70,11 +70,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.WFFM.Abstractions, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Abstractions.NoReferences.8.2.160801\lib\NET452\Sitecore.WFFM.Abstractions.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Abstractions.NoReferences.8.2.161129\lib\NET452\Sitecore.WFFM.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.WFFM.Actions, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Actions.NoReferences.8.2.160801\lib\NET452\Sitecore.WFFM.Actions.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Actions.NoReferences.8.2.161129\lib\NET452\Sitecore.WFFM.Actions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
