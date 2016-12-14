@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Reflection;
     using System.Web;
     using Sitecore.Data;
     using Sitecore.Data.Items;
@@ -15,24 +14,21 @@
 
     public class FieldRendererService
     {
+        [ThreadStatic]
         private static Stack<string> _endFieldStack;
-        private static Stack<string> EndFieldStack
-        {
-            get { return _endFieldStack ?? (_endFieldStack = new Stack<string>()); }
-        }
+
+        private static Stack<string> EndFieldStack => _endFieldStack ?? (_endFieldStack = new Stack<string>());
 
         private static Item CurrentItem
         {
             get
             {
                 var currentRendering = CurrentRendering;
-                return currentRendering == null 
-                    ? PageContext.Current.Item 
-                    : currentRendering.Item;
+                return currentRendering == null ? PageContext.Current.Item : currentRendering.Item;
             }
         }
 
-        private static Sitecore.Mvc.Presentation.Rendering CurrentRendering
+        private static Mvc.Presentation.Rendering CurrentRendering
         {
             get
             {
@@ -54,12 +50,12 @@
 
         public static HtmlString BeginField(ID fieldId, Item item, object parameters)
         {
-            Assert.ArgumentNotNull(fieldId, "fieldName");
+            Assert.ArgumentNotNull(fieldId, nameof(fieldId));
             var renderFieldArgs = new RenderFieldArgs
-            {
-                Item = item,
-                FieldName = item.Fields[fieldId].Name
-            };
+                                  {
+                                      Item = item,
+                                      FieldName = item.Fields[fieldId].Name
+                                  };
             if (parameters != null)
             {
                 CopyProperties(parameters, renderFieldArgs);
@@ -81,10 +77,10 @@
 
         private static void CopyProperties(object source, object target)
         {
-            Type type = target.GetType();
-            foreach (PropertyInfo info in source.GetType().GetProperties())
+            var type = target.GetType();
+            foreach (var info in source.GetType().GetProperties())
             {
-                PropertyInfo property = type.GetProperty(info.Name);
+                var property = type.GetProperty(info.Name);
                 if ((property != null) && info.PropertyType.IsAssignableTo(property.PropertyType))
                 {
                     property.SetValue(target, info.GetValue(source, null), null);
