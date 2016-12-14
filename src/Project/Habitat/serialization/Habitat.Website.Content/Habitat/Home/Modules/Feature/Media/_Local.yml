@@ -1,0 +1,24 @@
+﻿---
+ID: "6df8c934-4eec-487e-91b9-08b28bee8e72"
+Parent: "f7718fed-de86-4bfd-a952-023c41b385fd"
+Template: "fff5f245-ffc0-4022-a998-9b07aa5e761f"
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Media/_Local
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {F1C095E2-B3E0-46D0-B838-02A9E8B880D9}
+    {061574E1-59DD-4B62-9680-1C84EFBE6773}
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: "-1000"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161213T224527Z
