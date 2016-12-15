@@ -15,12 +15,10 @@ Languages:
     - ID: "2628705d-9434-4448-978c-c3bf166fa1eb"
       Hint: MediaVideoLink
       Value: |
-        <link linktype="external" url="https://www.youtube.com/watch?v=oQjnUEryPUA" />
+        <link linktype="external" url="https://www.youtube.com/embed/oQjnUEryPUA" />
     - ID: "302c9f8d-f703-4f76-a4ab-73d222648232"
       Hint: MediaDescription
-      Value: |
-        <p>A video lightboxwill show a video in a pop up window (lightbox) when a thumbnail image is clicked. </p>
-        <p>The editor can point to a local video from the media library or an external youtube video. The editor can also describe the video and pick a thumbnail for the video.</p>
+      Value: <p>A video lightboxwill show a video in a pop up window (lightbox) when a thumbnail image is clicked. </p><p>The editor can point to a local video from the media library or an external youtube video. The editor can also describe the video and pick a thumbnail for the video.</p>
     - ID: "4ff62b0a-d73b-4436-bea2-023154f2ffc4"
       Hint: MediaThumbnail
       Value: |

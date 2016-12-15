@@ -12,7 +12,7 @@
   var info = Session.GetAndRemove("EditProfileMessage") as InfoMessage;
   if (info != null)
   {
-    Html.RenderPartial(Constants.InfoMessageView, info);
+    Html.RenderPartial(Sitecore.Foundation.Alerts.Constants.InfoMessageView, info);
   }
   <div class="form-group @Html.ValidationErrorFor(x => x.FirstName, "has-error")">
     @Html.LabelFor(x => x.FirstName, new { @class = "control-label" })
