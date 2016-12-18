@@ -19,6 +19,9 @@ SharedFields:
   Hint: __Thumbnail
   Value: |
     <image mediaid="{B95CCDA8-03C4-4EED-BF12-D8D054CF76D3}" />
+- ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
+  Hint: Controller Action
+  Value: 
 - ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
   Hint: Controller
   Value: Sitecore.Forms.Mvc.Controllers.FormController, Sitecore.Forms.Mvc
@@ -63,7 +66,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20140130T022135Z
+      Value: 20140130T132135
     - ID: "3008735d-b41c-4b56-986c-f4513218eb65"
       Hint: Description
       Value: <p>Dynamic form allowing you to dynamically capture the necessary fields and trigger goals.</p>

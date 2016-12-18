@@ -188,7 +188,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Renderings\QueryableDatasourceRenderingModelTests.cs" />
     <Compile Include="Repositories\SearchServiceRepositoryTests.cs" />
     <Compile Include="Services\SearchServiceTests.cs" />
   </ItemGroup>
