@@ -1,13 +1,16 @@
 ﻿---
 ID: "d0b4fd9f-3aee-4ad7-bbc4-f37f0a1a3309"
 Parent: "918adf7b-f0e9-422c-8dee-757215ce3407"
-Template: "99f8905d-4a87-4eb8-9f8b-a9bebfb3add6"
+Template: "2a3e91a0-7987-44b5-ab34-35c2d9de83b9"
 Path: /sitecore/layout/Renderings/Feature/Person/Employees Carousel
 DB: master
 SharedFields:
+- ID: "13f89250-ad6b-4548-882e-118a12c18094"
+  Hint: Parameters Template
+  Value: 
 - ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
   Hint: Datasource Template
-  Value: /sitecore/templates/Feature/Person/_Employee
+  Value: 
 - ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
   Hint: Path
   Value: /Views/Person/EmployeesCarousel.cshtml
@@ -16,7 +19,7 @@ SharedFields:
   Value: "{4738312C-22B8-4E77-9B9C-86BCDCEE6635}"
 - ID: "b5b27af1-25ef-405c-87ce-369b3a004016"
   Hint: Datasource Location
-  Value: 
+  Value: "site:Employees"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
   Value: |
@@ -24,6 +27,12 @@ SharedFields:
 - ID: "ddab263e-b42e-419a-aa6f-081b7393ca38"
   Hint: Model
   Value: /sitecore/layout/Models/Foundation/Indexing/QueryableDatasourceRenderingModel
+- ID: "ded9e431-3604-4921-a4b3-a6ec7636a5b6"
+  Hint: Controller Action
+  Value: EmployeesCarousel
+- ID: "e64ad073-dfcc-4d20-8c0b-fe5aa6226cd7"
+  Hint: Controller
+  Value: Sitecore.Feature.Person.Controllers.PersonController, Sitecore.Feature.Person
 - ID: "ef7c5528-7307-4e19-863b-da19eed6a9ed"
   Hint: Open Properties after Add
   Value: 1

@@ -4,16 +4,16 @@
 @using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
-@model Sitecore.Foundation.Indexing.Rendering.QueryableDatasourceRenderingModel
+@model IEnumerable<Sitecore.Data.Items.Item>
 
-@if (Model?.Items == null || !Model.Items.All(i => i.IsDerived(Templates.Person.ID)))
+@if (Model == null || !Model.All(i => i.IsDerived(Templates.Person.ID)))
 {
-  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+  @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Html.Sitecore().CurrentItem?.ID, Html.Sitecore().CurrentRendering.Item?.ID)
   return;
 }
 
 <div class="block-grid-lg-4 block-grid-md-3 block-grid-sm-2 block-grid-xs-1">
-  @foreach (var item in Model.Items)
+  @foreach (var item in Model)
   {
     <div class="block-grid-item">
       <div style="max-width: 100%">

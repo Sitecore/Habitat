@@ -5,19 +5,19 @@
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.Foundation.Theming.Extensions
-@model Sitecore.Foundation.Indexing.Rendering.QueryableDatasourceRenderingModel
+@model IEnumerable<Sitecore.Data.Items.Item>
 
 @{
-  if (Model?.Items == null || !Model.Items.All(i => i.IsDerived(Templates.Person.ID)) || !Model.Items.Any())
+  if (Model == null || !Model.All(i => i.IsDerived(Templates.Person.ID)) || !Model.Any())
   {
-    @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
+    @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Html.Sitecore().CurrentItem?.ID, Html.Sitecore().CurrentRendering.Item?.ID)
     return;
   }
-  var options = Model.Rendering.GetCarouselOptions();
+  var options = Html.Sitecore().CurrentRendering.GetCarouselOptions();
 }
 
 <div class="owl-carousel" data-options='{"items": @options.ItemsShown, "navigation": @(options.ShowNavigation ? "true" : "false"), "navigationText": ["<", ">"], "autoPlay": @(options.AutoPlay ? "true" : "false") }'>
-  @foreach (var item in Model.Items)
+  @foreach (var item in Model)
   {
     <div class="mosaic mosaic-bar-bottom mosaic-overlay-show">
       <div class="mosaic-overlay">
