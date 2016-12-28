@@ -20,24 +20,26 @@
         private readonly IAccountRepository accountRepository;
         private readonly INotificationService notificationService;
         private readonly IAccountsSettingsService accountsSettingsService;
+        private readonly IGetRedirectUrlService getRedirectUrlService;
         private readonly IUserProfileService userProfileService;
         private readonly IContactProfileService contactProfileService;
 
-        public AccountsController() : this(new AccountRepository(new AccountTrackerService(new AccountsSettingsService(), new TrackerService())), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new UserProfileService(), new ContactProfileService())
+        public AccountsController() : this(new AccountRepository(new AccountTrackerService(new AccountsSettingsService(), new TrackerService())), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new GetRedirectUrlService(), new UserProfileService(), new ContactProfileService())
         {
         }
 
-        public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService, IUserProfileService userProfileService, IContactProfileService contactProfileService)
+        public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService, IGetRedirectUrlService getRedirectUrlService, IUserProfileService userProfileService, IContactProfileService contactProfileService)
         {
             this.accountRepository = accountRepository;
             this.notificationService = notificationService;
             this.accountsSettingsService = accountsSettingsService;
+            this.getRedirectUrlService = getRedirectUrlService;
             this.userProfileService = userProfileService;
             this.contactProfileService = contactProfileService;
         }
 
 
-        [AccountsRedirectAuthenticated]
+        [RedirectAuthenticated]
         public ActionResult Register()
         {
             return this.View();
@@ -47,7 +49,7 @@
 
         [HttpPost]
         [ValidateModel]
-        [AccountsRedirectAuthenticated]
+        [RedirectAuthenticated]
         [ValidateRenderingId]
         public ActionResult Register(RegistrationInfo registrationInfo)
         {
@@ -63,7 +65,7 @@
                 this.accountRepository.RegisterUser(registrationInfo.Email, registrationInfo.Password, this.userProfileService.GetUserDefaultProfileId());
                 this.contactProfileService?.SetPreferredEmail(registrationInfo.Email);
 
-                var link = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
+                var link = this.getRedirectUrlService.GetRedirectUrl(AuthenticationStatus.Authenticated);
                 return this.Redirect(link);
             }
             catch (MembershipCreateUserException ex)
@@ -75,10 +77,14 @@
             }
         }
 
-        [AccountsRedirectAuthenticated]
-        public ActionResult Login()
+        [RedirectAuthenticated]
+        public ActionResult Login(string returnUrl = null)
         {
-            return this.View();
+            var loginInfo = new LoginInfo
+                            {
+                                ReturnUrl = returnUrl
+                            };
+            return this.View(loginInfo);
         }
 
         public ActionResult LoginTeaser()
@@ -112,7 +118,7 @@
             var redirectUrl = loginInfo.ReturnUrl;
             if (string.IsNullOrEmpty(redirectUrl))
             {
-                redirectUrl = this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
+                redirectUrl = this.getRedirectUrlService.GetRedirectUrl(AuthenticationStatus.Authenticated);
             }
 
             return redirectAction(redirectUrl);
@@ -145,7 +151,7 @@
 
         private static string ForgotPasswordEmailNotConfigured => DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Password/Email Not Configured", "The Forgot Password E-mail has not been configured");
 
-        [AccountsRedirectAuthenticated]
+        [RedirectAuthenticated]
         public ActionResult ForgotPassword()
         {
             try
@@ -164,7 +170,7 @@
 
         [HttpPost]
         [ValidateModel]
-        [AccountsRedirectAuthenticated]
+        [RedirectAuthenticated]
         public ActionResult ForgotPassword(PasswordResetInfo model)
         {
             if (!this.accountRepository.Exists(model.Email))
@@ -227,6 +233,14 @@
 
             this.Session["EditProfileMessage"] = new InfoMessage(DictionaryPhraseRepository.Current.Get("/Accounts/Edit Profile/Edit Profile Success", "Profile was successfully updated"));
             return this.Redirect(this.Request.RawUrl);
+        }
+
+
+        [HttpGet]
+        [RedirectUnauthenticated]
+        public ActionResult Unauthorized()
+        {
+            return this.RedirectPermanent("/hello");
         }
 
         private ViewResult ProfileMismatchMessage
