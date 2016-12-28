@@ -55,7 +55,7 @@
             fakeSite.Database = db;
             using (new SiteContextSwitcher(fakeSite))
             {
-                var ctrl = new AccountsController(repo, ns, acc, null, null);
+                var ctrl = new AccountsController(repo, ns, acc, null, null, null);
                 ctrl.Logout();
                 repo.Received(1).Logout();
             }
@@ -75,7 +75,7 @@
 
             using (new SiteContextSwitcher(fakeSite))
             {
-                var ctrl = new AccountsController(repo, ns, acc, null, null);
+                var ctrl = new AccountsController(repo, ns, acc, null, null, null);
                 var result = ctrl.Logout();
                 result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
             }
@@ -94,7 +94,7 @@
         public void _Login_LoggedIn_ShouldRedirect(Database db, [Content] DbItem item, User user, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting, IUserProfileService userProfileService)
         {
             userProfileService.ValidateUser(Arg.Any<User>()).ReturnsForAnyArgs(true);
-            var controller = new AccountsController(repo, service, accountSetting, userProfileService, null);
+            var controller = new AccountsController(repo, service, accountSetting, null, userProfileService, null);
             repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => user);
             var result = controller._Login(info);
             result.Should().BeOfType<JsonResult>();
@@ -118,86 +118,20 @@
 
         [Theory]
         [AutoDbData]
-        public void Login_ShouldReturnViewWithoutModel([Frozen] IAccountRepository repo, [NoAutoProperties] AccountsController controller)
-        {
-            var fakeSite = new FakeSiteContext(new StringDictionary
-                                               {
-                                                   {"displayMode", "normal"}
-                                               }) as SiteContext;
-            using (new SiteContextSwitcher(fakeSite))
-            {
-                var result = controller.Login();
-                result.Should().BeOfType<ViewResult>().Which.Model.Should().BeNull();
-            }
-        }
-
-        [Theory]
-        [AutoDbData]
         public void Login_ValidaData_ShouldRedirectToReturnUrl([Frozen] IAccountRepository repo, LoginInfo info, User user, INotificationService service, IAccountsSettingsService accountSetting, IUserProfileService userProfileService)
         {
             userProfileService.ValidateUser(Arg.Any<User>()).ReturnsForAnyArgs(true);
-            var controller = new AccountsController(repo, service, accountSetting, userProfileService, null);
+            var controller = new AccountsController(repo, service, accountSetting, null, userProfileService, null);
             repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => user);
             var result = controller.Login(info);
             result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be(info.ReturnUrl);
-        }
-
-
-        [Theory]
-        [AutoDbData]
-        public void Login_ReturnUrlNotSet_ShouldRedirectToRoot(Database db, [Content] DbItem item, User user, [Frozen] IAccountRepository repo, IUserProfileService userProfileService, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
-        {
-            accountSetting.GetPageLinkOrDefault(Arg.Any<Item>(), Arg.Any<ID>(), Arg.Any<Item>()).Returns("/");
-            userProfileService.ValidateUser(Arg.Any<User>()).ReturnsForAnyArgs(true);
-            var fakeSite = new FakeSiteContext(new StringDictionary
-                                               {
-                                                   {"rootPath", "/sitecore/content"},
-                                                   {"startItem", item.Name}
-                                               }) as SiteContext;
-            fakeSite.Database = db;
-            Language.Current = Language.Invariant;
-
-            using (new SiteContextSwitcher(fakeSite))
-            {
-                info.ReturnUrl = null;
-                var controller = new AccountsController(repo, service, accountSetting, userProfileService, null);
-                repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => user);
-                var result = controller.Login(info);
-                result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
-            }
-        }
-
-        [Theory]
-        [AutoDbData]
-        public void Login_ValidData_ShouldRedirect(Database db, [Content] DbItem item, User user, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, [Frozen] IAccountsSettingsService accountSetting, IUserProfileService userProfileService)
-        {
-            accountSetting.GetPageLinkOrDefault(Arg.Any<Item>(), Arg.Any<ID>(), Arg.Any<Item>()).Returns("/");
-            userProfileService.ValidateUser(Arg.Any<User>()).ReturnsForAnyArgs(true);
-            var fakeSite = new FakeSiteContext(new StringDictionary
-                                               {
-                                                   {"rootPath", "/sitecore/content"},
-                                                   {"startItem", item.Name}
-                                               }) as SiteContext;
-            fakeSite.Database = db;
-            Language.Current = Language.Invariant;
-
-            using (new SiteContextSwitcher(fakeSite))
-            {
-                info.ReturnUrl = null;
-                info.Email = null;
-                info.Password = null;
-                var controller = new AccountsController(repo, service, accountSetting, userProfileService, null);
-                repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => user);
-                var result = controller.Login(info);
-                result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
-            }
         }
 
         [Theory]
         [AutoDbData]
         public void Login_InvalidData_ShouldReturnViewModel([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
         {
-            var controller = new AccountsController(repo, service, accountSetting, null, null);
+            var controller = new AccountsController(repo, service, accountSetting, null, null, null);
             controller.ModelState.AddModelError("Error", "Error");
             var result = controller.Login(info);
             result.Should().BeOfType<ViewResult>();
@@ -209,7 +143,7 @@
         public void Login_InvalidData_ShouldAddErrorToModelState([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
         {
             repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => null);
-            var controller = new AccountsController(repo, service, accountSetting, null, null);
+            var controller = new AccountsController(repo, service, accountSetting, null, null, null);
             var result = controller.Login(info);
             controller.ModelState.IsValid.Should().BeFalse();
             controller.ModelState.Keys.Should().Contain("invalidCredentials");
@@ -220,7 +154,7 @@
         public void ForgotPassword_ValidData_ShouldReturnViewWithoutModel([Frozen] IAccountRepository repo, INotificationService service, IAccountsSettingsService accountsSettings, MailMessage mailMessage)
         {
             accountsSettings.GetForgotPasswordMailTemplate().ReturnsForAnyArgs(x => mailMessage);
-            var controller = new AccountsController(repo, service, accountsSettings, null, null);
+            var controller = new AccountsController(repo, service, accountsSettings, null, null, null);
 
             var fakeSite = new FakeSiteContext(new StringDictionary
                                                {
@@ -280,7 +214,7 @@
                                                }) as SiteContext;
             using (new SiteContextSwitcher(fakeSite))
             {
-                var controller = new AccountsController(repo, ns, accountSetting, null, null);
+                var controller = new AccountsController(repo, ns, accountSetting, null, null, null);
                 repo.RestorePassword(Arg.Any<string>()).Returns("new password");
                 repo.Exists(Arg.Any<string>()).Returns(true);
                 var result = controller.ForgotPassword(model);
@@ -300,7 +234,7 @@
             {
                 repo.RestorePassword(Arg.Any<string>()).ThrowsForAnyArgs(new Exception("Error"));
                 repo.Exists(Arg.Any<string>()).Returns(true);
-                var controller = new AccountsController(repo, notificationService, settingService, null, null);
+                var controller = new AccountsController(repo, notificationService, settingService, null, null, null);
                 var result = controller.ForgotPassword(model);
                 result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
                 result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(model.Email)).WhichValue.Errors.Should().Contain(x => x.ErrorMessage == "Error");
@@ -319,7 +253,7 @@
             {
                 repo.RestorePassword(Arg.Any<string>()).Returns("new password");
                 repo.Exists(Arg.Any<string>()).Returns(false);
-                var controller = new AccountsController(repo, null, null, null, null);
+                var controller = new AccountsController(repo, null, null, null, null, null);
                 var result = controller.ForgotPassword(model);
                 result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
                 result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(model.Email)).WhichValue.Errors.Should().Contain(x => x.ErrorMessage == "User with specified e-mail address does not exist");
@@ -354,7 +288,7 @@
             repo.When(x => x.RegisterUser(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>())).Do(x => { throw new MembershipCreateUserException(); });
             userProfileService.GetUserDefaultProfileId().Returns(profileItem.ID.ToString());
 
-            var controller = new AccountsController(repo, notifyService, accountsSettingsService, userProfileService, null);
+            var controller = new AccountsController(repo, notifyService, accountsSettingsService, null, userProfileService, null);
 
             var fakeSite = new FakeSiteContext(new StringDictionary
                                                {
@@ -369,32 +303,6 @@
                 var result = controller.Register(registrationInfo);
                 result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(registrationInfo);
                 result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(registrationInfo.Email)).WhichValue.Errors.Should().Contain(x => x.ErrorMessage == exception.Message);
-            }
-        }
-
-        [Theory]
-        [AutoDbData]
-        public void Register_ValidData_ShouldCallRegisterUserAndRedirectToHomePage(Database db, [Content] DbItem item, Item profileItem, RegistrationInfo registrationInfo, [Frozen] IAccountRepository repo, [Frozen] INotificationService notifyService, [Frozen] IAccountsSettingsService accountsSettingsService, [Frozen] IUserProfileService userProfileService)
-        {
-            accountsSettingsService.GetPageLinkOrDefault(Arg.Any<Item>(), Arg.Any<ID>(), Arg.Any<Item>()).Returns("/redirect");
-            repo.Exists(Arg.Any<string>()).Returns(false);
-            userProfileService.GetUserDefaultProfileId().Returns(profileItem.ID.ToString());
-
-            var controller = new AccountsController(repo, notifyService, accountsSettingsService, userProfileService, null);
-            var fakeSite = new FakeSiteContext(new StringDictionary
-                                               {
-                                                   {"rootPath", "/sitecore/content"},
-                                                   {"startItem", item.Name}
-                                               }) as SiteContext;
-            fakeSite.Database = db;
-            Language.Current = Language.Invariant;
-
-            using (new SiteContextSwitcher(fakeSite))
-            {
-                var result = controller.Register(registrationInfo);
-                result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/redirect");
-
-                repo.Received(1).RegisterUser(registrationInfo.Email, registrationInfo.Password, Arg.Any<string>());
             }
         }
 
@@ -415,7 +323,7 @@
 
             using (new SiteContextSwitcher(fakeSite))
             {
-                var accounController = new AccountsController(null, null, null, userProfileService, null);
+                var accounController = new AccountsController(null, null, null, null, userProfileService, null);
                 var result = accounController.EditProfile();
                 result.Should().BeOfType<ViewResult>().Which.Model.ShouldBeEquivalentTo(new EditProfile());
             }
@@ -441,7 +349,7 @@
             using (new SiteContextSwitcher(fakeSite))
                 using (new UserSwitcher(user))
                 {
-                    var accounController = new AccountsController(null, null, null, userProfileService, null);
+                    var accounController = new AccountsController(null, null, null, null, userProfileService, null);
                     var result = accounController.EditProfile();
                     result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(editProfile);
                 }
@@ -464,7 +372,7 @@
             using (new SiteContextSwitcher(fakeSite))
                 using (new UserSwitcher(user))
                 {
-                    var accounController = new AccountsController(null, null, null, userProfileService, null);
+                    var accounController = new AccountsController(null, null, null, null, userProfileService, null);
                     var result = accounController.EditProfile();
                     result.Should().BeOfType<ViewResult>().Which.Model.Should().BeOfType<InfoMessage>().Which.Type.Should().Be(InfoMessage.MessageType.Error);
                 }
@@ -487,7 +395,7 @@
             using (new SiteContextSwitcher(fakeSite))
                 using (new UserSwitcher(user))
                 {
-                    var accounController = new AccountsController(null, null, null, userProfileService, null);
+                    var accounController = new AccountsController(null, null, null, null, userProfileService, null);
                     var result = accounController.EditProfile(editProfile);
                     result.Should().BeOfType<ViewResult>().Which.Model.Should().BeOfType<InfoMessage>().Which.Type.Should().Be(InfoMessage.MessageType.Error);
                 }
@@ -507,7 +415,7 @@
             using (new SiteContextSwitcher(siteContext))
                 using (new UserSwitcher(user))
                 {
-                    var accounController = new AccountsController(null, null, null, userProfileService, null);
+                    var accounController = new AccountsController(null, null, null, null, userProfileService, null);
                     var result = accounController.EditProfile(editProfile);
                     result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey("key").WhichValue.Errors.Should().Contain(e => e.ErrorMessage == "error");
                 }
@@ -526,7 +434,7 @@
             using (new SiteContextSwitcher(siteContext))
                 using (new UserSwitcher(user))
                 {
-                    var accountsController = new AccountsController(null, null, null, userProfileService, null);
+                    var accountsController = new AccountsController(null, null, null, null, userProfileService, null);
                     accountsController.ControllerContext = Substitute.For<ControllerContext>();
                     accountsController.ControllerContext.HttpContext.Returns(Substitute.For<HttpContextBase>());
                     accountsController.ControllerContext.HttpContext.Session.Returns(Substitute.For<HttpSessionStateBase>());

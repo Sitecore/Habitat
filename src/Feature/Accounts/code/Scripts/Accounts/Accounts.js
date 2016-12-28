@@ -12,7 +12,7 @@
     },
     success: function (data) {
         if (data.RedirectUrl != null && data.RedirectUrl != undefined) {
-            window.location.href = window.location.href;
+            window.location.assign(data.RedirectUrl);
         } else {
             var body = logincontrol.find(".login-body");
             var parent = body.parent();

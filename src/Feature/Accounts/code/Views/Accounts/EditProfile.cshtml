@@ -1,50 +1,111 @@
-﻿@using System.Web.Mvc.Html
-@using Sitecore.Foundation.Alerts
+﻿@using Sitecore.Foundation.Alerts
 @using Sitecore.Foundation.Alerts.Models
 @using Sitecore.Foundation.Dictionary.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Mvc.Configuration
 @model Sitecore.Feature.Accounts.Models.EditProfile
 
-@using (Html.BeginRouteForm(MvcSettings.SitecoreRouteName, FormMethod.Post, new { @class = "form-signin" }))
+@using (Html.BeginRouteForm(MvcSettings.SitecoreRouteName, FormMethod.Post, new
+                                                                            {
+                                                                                @class = "form-signin"
+                                                                            }))
 {
-  @Html.AddUniqueFormId()
-  var info = Session.GetAndRemove("EditProfileMessage") as InfoMessage;
-  if (info != null)
-  {
-    Html.RenderPartial(Sitecore.Foundation.Alerts.Constants.InfoMessageView, info);
-  }
-  <div class="form-group @Html.ValidationErrorFor(x => x.FirstName, "has-error")">
-    @Html.LabelFor(x => x.FirstName, new { @class = "control-label" })
+    @Html.AddUniqueFormId()
+    var info = Session.GetAndRemove("EditProfileMessage") as InfoMessage;
+    if (info != null)
+    {
+        Html.RenderPartial(Constants.InfoMessageView, info);
+    }
 
-    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", id = "firstName", @placeholder = Html.Sitecore().Dictionary("/Accounts/Edit Profile/Edit Profile First Name Placeholder", "Please enter your first name") })
+    <div class="form-group has-feedback">
+        @Html.LabelFor(x => x.Email, new
+                                     {
+                                         @class = "control-label"
+                                     })
 
-    @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "help-block" }, "p")
-  </div>
+        @Html.TextBoxFor(x => x.Email, new
+                                       {
+                                           @class = "form-control",
+                                           id = "email",
+                                           @readonly = true
+                                       })
+        <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+    </div>
 
-  <div class="form-group @Html.ValidationErrorFor(x => x.LastName, "has-error")">
-    @Html.LabelFor(x => x.LastName, new { @class = "control-label" })
+    <div class="form-group @Html.ValidationErrorFor(x => x.FirstName, "has-error")">
+        @Html.LabelFor(x => x.FirstName, new
+                                         {
+                                             @class = "control-label"
+                                         })
 
-    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", id = "lastName", @placeholder = Html.Sitecore().Dictionary("/Accounts/Edit Profile/Edit Profile Last Name Placeholder", "Please enter your last name") })
+        @Html.TextBoxFor(x => x.FirstName, new
+                                           {
+                                               @class = "form-control",
+                                               id = "firstName",
+                                               placeholder = Html.Sitecore().Dictionary("/Accounts/Edit Profile/Edit Profile First Name Placeholder", "Please enter your first name")
+                                           })
 
-    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "help-block" }, "p")
-  </div>
+        @Html.ValidationMessageFor(x => x.FirstName, "", new
+                                                         {
+                                                             @class = "help-block"
+                                                         }, "p")
+    </div>
 
-  <div class="form-group @Html.ValidationErrorFor(x => x.PhoneNumber, "has-error")">
-    @Html.LabelFor(x => x.PhoneNumber, new { @class = "control-label" })
+    <div class="form-group @Html.ValidationErrorFor(x => x.LastName, "has-error")">
+        @Html.LabelFor(x => x.LastName, new
+                                        {
+                                            @class = "control-label"
+                                        })
 
-    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", id = "phoneNumber", @placeholder = Html.Sitecore().Dictionary("/Accounts/Edit Profile/Edit Profile Phone Placeholder", "Please enter your contact phone number") })
+        @Html.TextBoxFor(x => x.LastName, new
+                                          {
+                                              @class = "form-control",
+                                              id = "lastName",
+                                              placeholder = Html.Sitecore().Dictionary("/Accounts/Edit Profile/Edit Profile Last Name Placeholder", "Please enter your last name")
+                                          })
 
-    @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "help-block" }, "p")
-  </div>
+        @Html.ValidationMessageFor(x => x.LastName, "", new
+                                                        {
+                                                            @class = "help-block"
+                                                        }, "p")
+    </div>
 
-  <div class="form-group @Html.ValidationErrorFor(x => x.Interest, "has-error")">
-    @Html.LabelFor(x => x.Interest, new { @class = "control-label" })
+    <div class="form-group @Html.ValidationErrorFor(x => x.PhoneNumber, "has-error")">
+        @Html.LabelFor(x => x.PhoneNumber, new
+                                           {
+                                               @class = "control-label"
+                                           })
 
-    @Html.DropDownListFor(x => x.Interest, new SelectList(Model.InterestTypes), "", new { @class = "form-control", id = "interests" })
+        @Html.TextBoxFor(x => x.PhoneNumber, new
+                                             {
+                                                 @class = "form-control",
+                                                 id = "phoneNumber",
+                                                 placeholder = Html.Sitecore().Dictionary("/Accounts/Edit Profile/Edit Profile Phone Placeholder", "Please enter your contact phone number")
+                                             })
 
-    @Html.ValidationMessageFor(x => x.Interest, "", new { @class = "help-block" }, "p")
-</div>
+        @Html.ValidationMessageFor(x => x.PhoneNumber, "", new
+                                                           {
+                                                               @class = "help-block"
+                                                           }, "p")
+    </div>
 
-    <input type="submit" class="btn btn-primary btn-lg btn-block" value="@Html.Sitecore().DictionaryField("/Accounts/Edit Profile/Update", "Update")" />
+    <div class="form-group @Html.ValidationErrorFor(x => x.Interest, "has-error")">
+        @Html.LabelFor(x => x.Interest, new
+                                        {
+                                            @class = "control-label"
+                                        })
+
+        @Html.DropDownListFor(x => x.Interest, new SelectList(Model.InterestTypes), "", new
+                                                                                        {
+                                                                                            @class = "form-control",
+                                                                                            id = "interests"
+                                                                                        })
+
+        @Html.ValidationMessageFor(x => x.Interest, "", new
+                                                        {
+                                                            @class = "help-block"
+                                                        }, "p")
+    </div>
+
+    <input type="submit" class="btn btn-primary btn-lg btn-block" value="@Html.Sitecore().DictionaryField("/Accounts/Edit Profile/Update", "Update")"/>
 }

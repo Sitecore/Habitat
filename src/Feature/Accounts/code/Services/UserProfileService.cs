@@ -4,11 +4,13 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
+    using Sitecore.Data;
     using Sitecore.Data.Items;
     using Sitecore.Feature.Accounts.Models;
     using Sitecore.Foundation.Dictionary.Repositories;
     using Sitecore.Security;
     using Sitecore.Security.Accounts;
+    using Sitecore.SecurityModel;
 
     public class UserProfileService : IUserProfileService
     {
@@ -17,10 +19,10 @@
 
         protected Item profile;
         protected virtual Item Profile => this.profile ?? (this.profile = this.profileSettingsService.GetUserDefaultProfile());
-        protected virtual string FirstName => this.Profile.Database.GetItem(Templates.UserProfile.Fields.FirstName).Name;
-        protected virtual string LastName => this.Profile.Database.GetItem(Templates.UserProfile.Fields.LastName).Name;
-        protected virtual string PhoneNumber => this.Profile.Database.GetItem(Templates.UserProfile.Fields.PhoneNumber).Name;
-        protected virtual string Interest => this.Profile.Database.GetItem(Templates.UserProfile.Fields.Interest).Name;
+        protected virtual string FirstName => this.GetUserProfileFieldName(Templates.UserProfile.Fields.FirstName);
+        protected virtual string LastName => this.GetUserProfileFieldName(Templates.UserProfile.Fields.LastName);
+        protected virtual string PhoneNumber => this.GetUserProfileFieldName(Templates.UserProfile.Fields.PhoneNumber);
+        protected virtual string Interest => this.GetUserProfileFieldName(Templates.UserProfile.Fields.Interest);
 
         public UserProfileService() : this(new ProfileSettingsService(), new UserProfileProvider())
         {
@@ -37,6 +39,14 @@
             return this.profileSettingsService.GetUserDefaultProfile()?.ID?.ToString();
         }
 
+        private string GetUserProfileFieldName(ID fieldId)
+        {
+            using (new SecurityDisabler())
+            {
+                return this.Profile.Database.GetItem(fieldId).Name;
+            }
+        }
+
         public virtual EditProfile GetEmptyProfile()
         {
             return new EditProfile
@@ -49,25 +59,15 @@
         {
             var properties = this.userProfileProvider.GetCustomProperties(userProfile);
 
-            var model = new EditProfile();
-            if (properties.ContainsKey(this.FirstName))
-            {
-                model.FirstName = properties[this.FirstName];
-            }
-            if (properties.ContainsKey(this.LastName))
-            {
-                model.LastName = properties[this.LastName];
-            }
-            if (properties.ContainsKey(this.PhoneNumber))
-            {
-                model.PhoneNumber = properties[this.PhoneNumber];
-            }
-            if (properties.ContainsKey(this.Interest))
-            {
-                model.Interest = properties[this.Interest];
-            }
-
-            model.InterestTypes = this.profileSettingsService.GetInterests();
+            var model = new EditProfile
+                        {
+                            Email = userProfile.Email,
+                            FirstName = properties.ContainsKey(this.FirstName) ? properties[this.FirstName] : "",
+                            LastName = properties.ContainsKey(this.LastName) ? properties[this.LastName] : "",
+                            PhoneNumber = properties.ContainsKey(this.PhoneNumber) ? properties[this.PhoneNumber] : "",
+                            Interest = properties.ContainsKey(this.Interest) ? properties[this.Interest] : "",
+                            InterestTypes = this.profileSettingsService.GetInterests()
+                        };
 
             return model;
         }
