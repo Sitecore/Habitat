@@ -91,67 +91,67 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Abstractions, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Abstractions.NoReferences.8.2.160729\lib\NET452\Sitecore.Abstractions.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Abstractions.NoReferences.8.2.161115\lib\NET452\Sitecore.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Analytics, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Analytics.NoReferences.8.2.160729\lib\NET452\Sitecore.Analytics.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.NoReferences.8.2.161115\lib\NET452\Sitecore.Analytics.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Analytics.Core, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Core.NoReferences.8.2.160729\lib\NET452\Sitecore.Analytics.Core.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Core.NoReferences.8.2.161115\lib\NET452\Sitecore.Analytics.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Analytics.DataAccess, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Analytics.DataAccess.NoReferences.8.2.160729\lib\NET452\Sitecore.Analytics.DataAccess.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.DataAccess.NoReferences.8.2.161115\lib\NET452\Sitecore.Analytics.DataAccess.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Analytics.Model, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Model.NoReferences.8.2.160729\lib\NET452\Sitecore.Analytics.Model.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Model.NoReferences.8.2.161115\lib\NET452\Sitecore.Analytics.Model.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Analytics.Outcome, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Outcome.NoReferences.8.2.160729\lib\NET452\Sitecore.Analytics.Outcome.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Outcome.NoReferences.8.2.161115\lib\NET452\Sitecore.Analytics.Outcome.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.ContentSearch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.NoReferences.8.2.160729\lib\NET452\Sitecore.ContentSearch.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.NoReferences.8.2.161115\lib\NET452\Sitecore.ContentSearch.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.Linq.NoReferences.8.2.160729\lib\NET452\Sitecore.ContentSearch.Linq.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.Linq.NoReferences.8.2.161115\lib\NET452\Sitecore.ContentSearch.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.FakeDb, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.FakeDb.1.3.1\lib\net45\Sitecore.FakeDb.dll</HintPath>
+    <Reference Include="Sitecore.FakeDb, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.FakeDb.1.3.3\lib\net45\Sitecore.FakeDb.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.FakeDb.AutoFixture, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.FakeDb.AutoFixture.1.3.1\lib\net45\Sitecore.FakeDb.AutoFixture.dll</HintPath>
+    <Reference Include="Sitecore.FakeDb.AutoFixture, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.FakeDb.AutoFixture.1.3.3\lib\net45\Sitecore.FakeDb.AutoFixture.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.2.160729\lib\NET452\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.2.161115\lib\NET452\Sitecore.Kernel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Logging, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Logging.NoReferences.8.2.160729\lib\NET452\Sitecore.Logging.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Logging.NoReferences.8.2.161115\lib\NET452\Sitecore.Logging.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.8.2.160729\lib\NET452\Sitecore.Mvc.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.8.2.161115\lib\NET452\Sitecore.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sitecore.Nexus, Version=1.0.4415.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Nexus.NoReferences.8.2.160729\lib\NET452\Sitecore.Nexus.dll</HintPath>
+    <Reference Include="Sitecore.Nexus, Version=1.0.4425.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Nexus.NoReferences.8.2.161115\lib\NET452\Sitecore.Nexus.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.WFFM.Abstractions, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Abstractions.NoReferences.8.2.160801\lib\NET452\Sitecore.WFFM.Abstractions.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Abstractions.NoReferences.8.2.161129\lib\NET452\Sitecore.WFFM.Abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.WFFM.Actions, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Actions.NoReferences.8.2.160801\lib\NET452\Sitecore.WFFM.Actions.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Actions.NoReferences.8.2.161129\lib\NET452\Sitecore.WFFM.Actions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

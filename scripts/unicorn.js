@@ -40,11 +40,21 @@ module.exports = function (callback, options) {
 
   var syncScript =__dirname + "/Unicorn/./Sync.ps1 -secret " + secret + " -url " + url;
   var options = { cwd: __dirname + "/Unicorn/", maxBuffer: 1024 * 500 };
-  return exec("powershell -executionpolicy unrestricted \"" + syncScript + "\"", options, function (err, stdout, stderr) {
+  var process = exec("powershell -executionpolicy unrestricted \"" + syncScript + "\"", options, function (err, stdout, stderr) {
     if (err !== null) throw err;
     console.log(stdout);
     callback();
   });
+  
+  process.stdout.on('data', function (data) {
+    console.log(data.toString());
+  });
+  
+  process.stderr.on('data', function (data) {
+    console.log("Error: " + data.toString());
+  });
+  
+  return process;
 };
 
 module.exports.getFullItemPath = function (itemFile) {
