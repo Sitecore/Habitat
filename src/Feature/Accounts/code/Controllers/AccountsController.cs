@@ -235,14 +235,6 @@
             return this.Redirect(this.Request.RawUrl);
         }
 
-
-        [HttpGet]
-        [RedirectUnauthenticated]
-        public ActionResult Unauthorized()
-        {
-            return this.RedirectPermanent("/hello");
-        }
-
         private ViewResult ProfileMismatchMessage
         {
             get

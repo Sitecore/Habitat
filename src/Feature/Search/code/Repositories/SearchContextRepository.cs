@@ -34,7 +34,7 @@
       Item rootItem = null;
       if (configurationItem.FieldHasValue(Templates.SearchResults.Fields.Root))
       {
-        rootItem = ((ReferenceField)configurationItem.Fields[Templates.SearchResults.Fields.Root]).TargetItem;
+        rootItem = configurationItem.TargetItem(Templates.SearchResults.Fields.Root);
       }
       return rootItem ?? Context.Site.GetRootItem();
     }

@@ -1,0 +1,14 @@
+﻿---
+ID: "7415df42-e954-4010-a62d-0bb80b4d5de4"
+Parent: "196a1c4e-e7b8-4cbc-ad2c-10f822614a94"
+Template: "10059264-cd0b-47b9-8350-a31a90815921"
+Path: /sitecore/system/Settings/Project/Themes/Common
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161212T031725Z

@@ -3,8 +3,9 @@
   using System;
   using Sitecore.Data.Fields;
   using Sitecore.Data.Items;
+  using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
-  public class DynamicTeaserItem
+    public class DynamicTeaserItem
   {
     public DynamicTeaserItem(Item headline) : this()
     {
@@ -15,8 +16,7 @@
 
     private string GetIcon(Item headline)
     {
-      ReferenceField iconField = headline.Fields[Templates.TeaserHeadline.Fields.Icon];
-      return iconField.TargetItem?[Templates.Icon.Fields.CssClass];
+      return headline?.TargetItem(Templates.TeaserHeadline.Fields.Icon)?[Templates.Icon.Fields.CssClass];
     }
 
     public DynamicTeaserItem()
