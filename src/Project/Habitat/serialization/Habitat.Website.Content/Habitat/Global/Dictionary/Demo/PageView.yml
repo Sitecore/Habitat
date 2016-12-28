@@ -1,0 +1,14 @@
+﻿---
+ID: "87f6a894-5d65-4ba2-95c0-9ad9337e3bc0"
+Parent: "4b4c7560-6143-4cf4-bb18-3e67d23cd226"
+Template: "98e4bdc6-9b43-4eb2-baa3-d4303c35852e"
+Path: /sitecore/content/Habitat/Global/Dictionary/Demo/PageView
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161227T104251Z

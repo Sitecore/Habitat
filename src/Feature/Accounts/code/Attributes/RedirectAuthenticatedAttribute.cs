@@ -1,31 +1,30 @@
 ﻿namespace Sitecore.Feature.Accounts.Attributes
 {
-  using System;
-  using System.Web.Mvc;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
+    using System.Web.Mvc;
+    using Sitecore.Feature.Accounts.Services;
 
-  public class RedirectAuthenticatedAttribute : ActionFilterAttribute
-  {
-    public override void OnActionExecuting(ActionExecutingContext filterContext)
+    public class RedirectAuthenticatedAttribute : ActionFilterAttribute
     {
-      if (!Context.PageMode.IsNormal)
-        return;
-      if (!Context.User.IsAuthenticated)
-        return;
-      var link = this.GetRedirectUrl(filterContext);
-      if (filterContext.HttpContext.Request.RawUrl.Equals(link, StringComparison.InvariantCultureIgnoreCase))
-      {
-        link = this.RedirectUrl;
-      }
+        private readonly IGetRedirectUrlService getRedirectUrlService;
 
-      filterContext.Result = new RedirectResult(link);
+        public RedirectAuthenticatedAttribute() : this(new GetRedirectUrlService())
+        {
+        }
+
+        public RedirectAuthenticatedAttribute(IGetRedirectUrlService getRedirectUrlService)
+        {
+            this.getRedirectUrlService = getRedirectUrlService;
+        }
+
+
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            if (!Context.PageMode.IsNormal)
+                return;
+            if (!Context.User.IsAuthenticated)
+                return;
+            var link = this.getRedirectUrlService.GetRedirectUrl(AuthenticationStatus.Authenticated);
+            filterContext.Result = new RedirectResult(link);
+        }
     }
-
-    protected virtual string GetRedirectUrl(ActionExecutingContext filterContext)
-    {
-      return this.RedirectUrl;
-    }
-
-    private string RedirectUrl => Context.Site.GetRootItem().Url();
-  }
 }

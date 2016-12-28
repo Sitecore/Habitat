@@ -1,0 +1,21 @@
+﻿---
+ID: "77ca3208-a297-4f5d-b635-d59f7f6661ec"
+Parent: "22000bfb-cd14-404d-bf94-12f309ed5599"
+Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
+Path: /sitecore/content/Habitat/Global/Dictionary/Demo/Visits/First Visit
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161227T104743Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        habitat\thomas@eldblom.dk
+    - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
+      Hint: Phrase
+      Value: This is your first visit to the site.
