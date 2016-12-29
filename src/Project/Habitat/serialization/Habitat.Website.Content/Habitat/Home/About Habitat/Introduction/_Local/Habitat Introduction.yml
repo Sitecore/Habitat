@@ -15,10 +15,10 @@ Languages:
     - ID: "2628705d-9434-4448-978c-c3bf166fa1eb"
       Hint: MediaVideoLink
       Value: |
-        <link linktype="external" url="https://youtu.be/2CELqflPhm0" />
+        <link linktype="external" url="https://youtu.be/RchuR18xLa0" anchor="" target="" />
     - ID: "302c9f8d-f703-4f76-a4ab-73d222648232"
       Hint: MediaDescription
-      Value: <p>Video introducing the concepts and thoughts behind the Sitecore Habitat methodology</p>
+      Value: <p>Video introducing the concepts and thoughts behind the Sitecore Helix methodology.</p>
     - ID: "4ff62b0a-d73b-4436-bea2-023154f2ffc4"
       Hint: MediaThumbnail
       Value: |

@@ -77,7 +77,8 @@ Languages:
     - ID: "02115632-fe1e-4b3d-9ad4-a4ddf1f782f0"
       Hint: Copyright
       Value: |
-        Copyright © 2015 <a href="http://sitecore.net" target="_blank" title="Opens in a new window">Sitecore Corporation A/S</a>
+        <p>© Copyright 2017, <a href="http://sitecore.net" target="_blank" title="Opens in a new window">Sitecore</a>. All Rights Reserved<br />
+        <small>&ldquo;Habitat&rdquo; as used here is for demonstration purposes only and to represent the software and services provided by Sitecore further described at www.sitecore.net.</small></p>
     - ID: "021aa3f7-206f-4acc-9538-f6d7fe86b168"
       Hint: Interests Folder
       Value: "{A74EE096-F225-4568-8D81-2F71ABBC8118}"

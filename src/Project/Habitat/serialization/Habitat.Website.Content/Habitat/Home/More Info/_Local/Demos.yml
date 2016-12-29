@@ -1,0 +1,38 @@
+﻿---
+ID: "edfa5f1b-ac69-453e-a664-22f76fde7bf4"
+Parent: "35f3497f-27e1-406c-ab07-92e6d24f6a47"
+Template: "c7d9d293-4ef8-4380-8e10-c4632e729f39"
+Path: /sitecore/content/Habitat/Home/More Info/_Local/Demos
+DB: master
+SharedFields:
+- ID: "e8ab122c-6f54-4d4e-aec6-f81addc558fc"
+  Hint: TeaserLink
+  Value: |
+    <link linktype="external" text="Sitecore Demos on GitHub" url="https://github.com/sitecore/sitecore.demo" anchor="" target="_blank" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0f6b5546-e0ab-4487-81de-640c1aa1b65b"
+      Hint: TeaserImage
+      Value: |
+        <image mediaid="{0A82759B-DDF8-41A0-BF8E-75FAF58F7BA0}" />
+    - ID: "13d97a52-7c4e-407c-960d-fadde8a3c1b1"
+      Hint: TeaserSummary
+      Value: |
+        Just as this Habitat site, there are additional Sitecore demo sites available on github.
+        Check out for example the Legal Services, Financial Services or Utilities sites.
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161229T035534Z
+    - ID: "3f7e7e3a-4e8e-4639-b079-fc5aeff172f5"
+      Hint: Teaser Label
+      Value: "Want More?"
+    - ID: "4a59d072-5b41-4a79-a157-2b2ccac10f2b"
+      Hint: TeaserTitle
+      Value: Check out the Sitecore Habitat Demos
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

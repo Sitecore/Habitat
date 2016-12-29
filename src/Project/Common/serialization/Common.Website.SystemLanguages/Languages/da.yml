@@ -23,6 +23,9 @@ SharedFields:
 - ID: "990596ce-0024-43f3-bf4c-a991bfa69b45"
   Hint: Code page
   Value: 65001
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 200
 - ID: "c437e416-8948-427d-a982-8ed37ae3f553"
   Hint: Iso
   Value: da

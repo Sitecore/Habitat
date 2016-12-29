@@ -1,0 +1,31 @@
+﻿---
+ID: "ea524586-0bb5-4db9-9d07-6f8fdf8ced4a"
+Parent: "b265c694-af8b-4894-96d7-66a3d6d703c5"
+Template: "c7d9d293-4ef8-4380-8e10-c4632e729f39"
+Path: /sitecore/content/Habitat/Home/About Habitat/Introduction/_Local/Helix Intro Blogpost
+DB: master
+SharedFields:
+- ID: "e8ab122c-6f54-4d4e-aec6-f81addc558fc"
+  Hint: TeaserLink
+  Value: |
+    <link linktype="external" text="Read more about Helix here..." url="https://www.sitecore.net/en-gb/company/blog/511/introducing-sitecore-helix-4380" anchor="" target="_blank" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "13d97a52-7c4e-407c-960d-fadde8a3c1b1"
+      Hint: TeaserSummary
+      Value: |
+        The video above describes the overall architectural principles of Helix.
+        There is also a blog post which describes more on the sitecore.net website.
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161229T034415Z
+    - ID: "4a59d072-5b41-4a79-a157-2b2ccac10f2b"
+      Hint: TeaserTitle
+      Value: Helix Introduction
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
