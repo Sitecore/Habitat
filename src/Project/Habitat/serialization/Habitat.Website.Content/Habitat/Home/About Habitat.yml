@@ -85,4 +85,5 @@ Languages:
       Value: About Habitat
     - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
-      Value: Sitecore Habitat is a set of principles and conventions focused on increasing productivity and quality in Sitecore projects.
+      Value: |
+        The Sitecore Habitat demos are built on the <a href="http://helix.sitecore.net" target="_blank">Helix principles</a>, which is a set of principles and conventions focused on increasing productivity and quality in Sitecore projects.

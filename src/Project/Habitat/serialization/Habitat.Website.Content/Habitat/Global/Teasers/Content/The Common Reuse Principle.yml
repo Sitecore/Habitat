@@ -8,7 +8,7 @@ SharedFields:
 - ID: "e8ab122c-6f54-4d4e-aec6-f81addc558fc"
   Hint: TeaserLink
   Value: |
-    <link linktype="external" text="THE COMMON REUSE PRINCIPLE" url="http://c2.com/cgi/wiki?CommonReusePrinciple" anchor="" target="_blank" />
+    <link linktype="external" text="Read more" url="http://c2.com/cgi/wiki?CommonReusePrinciple" anchor="" target="_blank" />
 Languages:
 - Language: en
   Versions:
@@ -18,8 +18,6 @@ Languages:
       Hint: TeaserSummary
       Value: |
         Classes that are used together are packaged together.
-        
-        If you reuse one of the classes in a module, you reuse them all.
         
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created

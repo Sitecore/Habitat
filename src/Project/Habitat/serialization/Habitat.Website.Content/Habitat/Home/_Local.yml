@@ -1,17 +1,14 @@
 ﻿---
-ID: "b265c694-af8b-4894-96d7-66a3d6d703c5"
-Parent: "b16765ba-7b3e-4c5b-9937-bfc985f2550c"
+ID: "49c3ae19-a2e2-47af-a679-4988de59b7d5"
+Parent: "dac24edd-44fb-42ef-9ecd-1e8daf706386"
 Template: "fff5f245-ffc0-4022-a998-9b07aa5e761f"
-Path: /sitecore/content/Habitat/Home/About Habitat/Introduction/_Local
+Path: /sitecore/content/Habitat/Home/_Local
 DB: master
 SharedFields:
 - ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
   Hint: __Masters
   Type: TreelistEx
-  Value: |
-    {F1C095E2-B3E0-46D0-B838-02A9E8B880D9}
-    {C7D9D293-4EF8-4380-8E10-C4632E729F39}
-    {061574E1-59DD-4B62-9680-1C84EFBE6773}
+  Value: "{C7D9D293-4EF8-4380-8E10-C4632E729F39}"
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: "-1000"
@@ -22,4 +19,8 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20160407T233739Z
+      Value: 20161229T040157Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
