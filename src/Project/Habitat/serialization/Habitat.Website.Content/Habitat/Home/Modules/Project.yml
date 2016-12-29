@@ -22,7 +22,7 @@ Languages:
     - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
       Value: |
-        <image mediaid="{D295ABFF-4BE5-4C08-A8E6-ED8DC49E927B}" ></image>
+        <image mediaid="{FF8E14C4-79AA-4D80-A2E5-D07BFD835411}" />
     - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
       Hint: Summary
       Value: "The project layer bind the solution together by tying the feature modules together on pages and channels.<br>A solution can have multiple project modules - or sites - sharing features but having their own page types, layouts and visual designs.<br>"
