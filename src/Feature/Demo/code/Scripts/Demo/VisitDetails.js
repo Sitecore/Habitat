@@ -1,32 +1,36 @@
-﻿(function ($) {
-  $(function () {
-    $(".refresh-sidebar")
-      .click(function () {
+﻿(function($) {
+    var refreshExperincePanel = function() {
         var panel = $("#experiencedata");
         $.ajax(
-          {
+        {
             url: "/api/Demo/ExperienceDataContent",
             method: "get",
             cache: false,
             success: function (data) {
-              panel.replaceWith(data);
+                panel.replaceWith(data);
             }
-          });
-      });
-    $(".end-visit")
-      .click(function () {
-        $.ajax(
-            {
-              url: "/api/Demo/EndVisit",
-              method: "get",
-              cache: false,
-              success: function () {
-                setTimeout(function () {
-                  window.location.href = "/";
-                },
-                  1000);
-              }
+        });
+    };
+    $(function() {
+        $(".refresh-sidebar")
+            .click(function () {
+                $(this).fadeOut();
+                refreshExperincePanel();
+                $(this).fadeIn();
             });
-      });
-  });
+        $(".end-visit")
+            .click(function() {
+                $(this).fadeOut();
+                $.ajax(
+                {
+                    url: "/api/Demo/EndVisit",
+                    method: "get",
+                    cache: false,
+                    success: function() {
+                        refreshExperincePanel();
+                    }
+                });
+                $(this).fadeIn();
+            });
+    });
 })(jQuery);
