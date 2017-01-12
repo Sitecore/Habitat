@@ -38,7 +38,7 @@
 
     [Theory]
     [AutoDbData]
-    public void PageEditorError_NormalMode_ReturnEmptyString(string errorMessage, FakeSiteContext siteContext)
+    public void PageEditorError_NormalMode_ReturnEmptyString(string errorMessage, FakeSiteContext siteContext, HtmlHelper helper)
     {
       //Arrange
       typeof(SiteContext).GetField("displayMode", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(siteContext, DisplayMode.Normal);
@@ -47,7 +47,7 @@
       MvcHtmlString result;
       using (new SiteContextSwitcher(siteContext))
       {
-        result = AlertHtmlHelpers.PageEditorError(null, errorMessage);
+        result = AlertHtmlHelpers.PageEditorError(helper, errorMessage);
       }
 
       //Assert
