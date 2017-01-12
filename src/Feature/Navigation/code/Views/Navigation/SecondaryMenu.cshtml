@@ -6,7 +6,7 @@
 @{
   if (Model?.Children == null || !Model.Children.Items.Any())
   {
-    @Html.PageEditorError(Html.Sitecore().Dictionary("/Navigation/SecondaryMenu/No menu items", "No menu items found"))
+    @Html.PageEditorInfo(Html.Sitecore().Dictionary("/Navigation/SecondaryMenu/No menu items", "No menu items found"))
     return;
   }
 }

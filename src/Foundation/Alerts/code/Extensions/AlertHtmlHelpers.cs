@@ -5,12 +5,13 @@
   using Sitecore.Data;
   using Sitecore.Diagnostics;
   using Sitecore.Foundation.Alerts.Models;
+  using Sitecore.Mvc;
 
-  public static class AlertHtmlHelpers
+    public static class AlertHtmlHelpers
   {
     public static MvcHtmlString PageEditorError(this HtmlHelper helper, string errorMessage)
     {
-      Log.Error($@"Presentation error: {errorMessage}", typeof(AlertHtmlHelpers));
+      Log.Error($@"Presentation error on '{helper.Sitecore()?.CurrentRendering?.RenderingItemPath}': {errorMessage}", typeof(AlertHtmlHelpers));
 
       return Context.PageMode.IsNormal ? new MvcHtmlString(string.Empty) : helper.Partial(Constants.InfoMessageView, InfoMessage.Error(errorMessage));
     }

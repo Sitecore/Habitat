@@ -1,5 +1,6 @@
 namespace Sitecore.Feature.Demo.Controllers
 {
+    using System;
     using System.Net;
     using System.Web.Mvc;
     using Sitecore.Analytics;
@@ -33,7 +34,7 @@ namespace Sitecore.Feature.Demo.Controllers
 
         public ActionResult ExperienceData()
         {
-            if (Tracker.Current == null || Tracker.Current.Interaction == null)
+            if (Tracker.Current == null || Tracker.Current.Interaction == null || this.IsDemoDisabled)
             {
                 return null;
             }
@@ -42,6 +43,8 @@ namespace Sitecore.Feature.Demo.Controllers
 
             return this.View(new ExperienceData(this.contactProfileProvider, this.profileProvider));
         }
+
+        public bool IsDemoDisabled => this.HttpContext?.Request?.Headers["X-DisableDemo"]?.Equals(bool.TrueString, StringComparison.InvariantCultureIgnoreCase) ?? false;
 
         public ActionResult ExperienceDataContent()
         {
