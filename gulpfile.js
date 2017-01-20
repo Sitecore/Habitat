@@ -129,7 +129,7 @@ var publishStream = function (stream, dest) {
       maxcpucount: 0,
       toolsVersion: 14.0,
       properties: {
-        Platform: config.buildPlatform,
+        Platform: config.publishPlatform,
         DeployOnBuild: "true",
         DeployDefaultTarget: "WebPublish",
         WebPublishMethod: "FileSystem",
