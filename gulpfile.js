@@ -41,7 +41,9 @@ gulp.task("01-Copy-Sitecore-License", function () {
 
 gulp.task("02-Nuget-Restore", function (callback) {
   var solution = "./" + config.solutionName + ".sln";
-  return gulp.src(solution).pipe(nugetRestore());
+  return gulp.src(solution).pipe(nugetRestore({
+    additionalArgs: ["-Msbuildversion", "4"]
+  }));
 });
 
 
