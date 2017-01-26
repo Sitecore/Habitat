@@ -5,21 +5,6 @@
     "sourceMap": false
   },
   {
-    "outputFile": "styles/niteflight.css",
-    "inputFile": "bower_components/sitecore.demo.theme/sass/niteflight.scss",
-    "sourceMap": false
-  },
-  {
-    "outputFile": "styles/dayfrost.css",
-    "inputFile": "bower_components/sitecore.demo.theme/sass/dayfrost.scss",
-    "sourceMap": false
-  },
-  {
-    "outputFile": "styles/white-wonder.css",
-    "inputFile": "bower_components/sitecore.demo.theme/sass/white-wonder.scss",
-    "sourceMap": false
-  },
-  {
     "outputFile": "styles/default.css",
     "inputFile": "bower_components/sitecore.demo.theme/sass/default.scss",
     "sourceMap": false

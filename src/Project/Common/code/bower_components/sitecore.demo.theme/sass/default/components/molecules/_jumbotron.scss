@@ -1,0 +1,126 @@
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/jumbotron";
+
+.jumbotron {
+
+  background-color: transparent;
+
+  & > .container {
+    max-width: 1170px;
+  }
+
+  .container & {
+    border-radius: $jumbotron-border-radius;
+  }
+
+  &.bg-primary, &.bg-dark, &.bg-media {
+    h1, h2, h3, h4, h5, h6, p {
+      color: $brand-text-color;
+    }
+    .label {
+      color: $brand-text-color;
+    }
+  }
+
+  p {
+    font-size: $jumbotron-font-size;
+    @media (max-width: $screen-sm-max) {
+      font-size: floor($jumbotron-font-size*.75);
+    }
+    &.lead {
+      font-size: $jumbotron-lead-font-size;  
+      @media (max-width: $screen-sm-max) {
+        font-size: floor($jumbotron-font-size*.75);
+      }
+    }
+  }
+  .label {
+    text-transform: uppercase;
+    font-size: $jumbotron-font-size;
+    margin-bottom: 0;
+    color: $text-color;
+    .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+      color: $brand-text-color;
+    }
+    .bg-white & {
+      color: $bg-white-color;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 20px;
+  }
+
+  &-heading-center {
+
+    /* Beware - this class only displays correctly in IE9+. IE8 users will NOT get a proper display */
+    position: relative;
+    h1, h2, h3, h4, h5, h6 {
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      .csstransforms & {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &-md {
+    padding-top: 70px;
+    padding-top: 70px;
+  }
+  &-lg {
+    padding-top: 105px;
+    padding-bottom: 105px;
+  }
+  &-xl {
+    padding-top: 140px;
+    padding-bottom: 140px;
+
+
+    h1 {
+      font-size: $jumbotron-xl-h1-font-size;
+      @media all and (max-width: $screen-sm-max) {
+        font-size: floor($jumbotron-xl-h1-font-size*.33);
+      }
+    }
+
+    h2 {
+      font-size: $jumbotron-xl-h2-font-size;
+      @media all and (max-width: $screen-sm-max) {
+        font-size: floor($jumbotron-xl-h2-font-size*.4);
+      }
+    }
+
+    h3 {
+      font-size: $jumbotron-xl-h3-font-size;
+      @media all and (max-width: $screen-sm-max) {
+        font-size: floor($jumbotron-xl-h3-font-size*.4);
+      }
+    }
+
+    p {
+      font-size: $jumbotron-xl-font-size;
+      @media (max-width: $screen-sm-max) {
+        font-size: floor($jumbotron-xl-font-size*.75);
+      }
+      &.lead {
+        font-size: $jumbotron-xl-lead-font-size;
+        @media (max-width: $screen-sm-max) {
+        font-size: floor($jumbotron-xl-lead-font-size*.75);
+        }
+      }
+    }
+
+    @media all and (max-width: $screen-sm-max) {
+      padding: 50px 10px;
+    }
+  }
+
+
+  .carousel & {
+    margin-bottom: 0;
+  }
+}

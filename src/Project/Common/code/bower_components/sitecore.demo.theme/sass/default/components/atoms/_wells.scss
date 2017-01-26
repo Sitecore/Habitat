@@ -1,0 +1,42 @@
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/wells";
+
+.well {
+  background-color: transparent;
+  box-shadow: none;
+
+  border-radius: $well-border-radius;
+  border-width: 2px;
+  border-color: $color-secondary;
+  .bg-secondary & {
+    border-color: $color-secondary-light;
+  }
+
+  color: $text-color;
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    color: $brand-text-color;
+  }
+  .bg-white {
+    color: $bg-white-color;
+  }
+
+  &.bg-primary, &.bg-secondary, &.bg-dark, &.bg-media {
+    border-width: 0;
+    border-color: transparent;
+    color: $brand-text-color;
+  }
+  &.bg-white {
+    border-width: 0;
+    border-color: transparent;
+    color: $bg-white-color;
+  }
+
+
+  & > h1:first-child, & > h2:first-child, & > h3:first-child, & > h4:first-child & > h5:first-child {
+    margin-top: 10px;
+  }
+
+  /* Support equal height columns */
+  .row-col-eq >[class^="col-"] >& {
+      height: 100%;
+  }
+}

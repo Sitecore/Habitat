@@ -1,0 +1,60 @@
+{
+  "name": "shufflejs",
+  "version": "3.1.1",
+  "homepage": "https://github.com/Vestride/Shuffle",
+  "authors": [
+    "Glen Cheney <cheney.glen@gmail.com>"
+  ],
+  "description": "Categorize, sort, and filter a responsive grid of items",
+  "main": "dist/jquery.shuffle.js",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "gallery",
+    "shuffle",
+    "layout",
+    "masonry",
+    "filter",
+    "sort",
+    "responsive",
+    "grid",
+    "mobile",
+    "tiles"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "**/_*",
+    "css",
+    "img",
+    "js",
+    "node_modules",
+    "bower_components",
+    "Gruntfile.js",
+    "favicon.png",
+    "index.html",
+    "package.json",
+    "robots.txt",
+    "todo.md",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=1.9.0",
+    "modernizr": "^2.6.2"
+  },
+  "devDependencies": {
+    "jasmine-jquery": "~2.0.5"
+  },
+  "_release": "3.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.1.1",
+    "commit": "a2ceef945480133659e160ad573137b8a66e345a"
+  },
+  "_source": "https://github.com/Vestride/Shuffle.git",
+  "_target": "~3.1.1",
+  "_originalSource": "shufflejs"
+}

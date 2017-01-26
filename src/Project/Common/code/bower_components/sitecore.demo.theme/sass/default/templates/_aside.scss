@@ -1,0 +1,13 @@
+aside {
+  .bg-dark &, .bg-primary &, .bg-media & {
+    header {
+      color: $brand-text-color;
+      p {
+        color: $brand-text-color;
+      }
+    }
+    p {
+      color: $gray;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+
+
+.modal {
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    color: $text-color;
+  }
+}

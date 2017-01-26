@@ -1,0 +1,12 @@
+[
+  {
+    "outputFile": "styles/niteflight.css",
+    "inputFile": "styles/niteflight.scss",
+    "sourceMap": false
+  },
+  {
+    "outputFile": "styles/dayfrost.css",
+    "inputFile": "styles/dayfrost.scss",
+    "sourceMap": false
+  }
+]

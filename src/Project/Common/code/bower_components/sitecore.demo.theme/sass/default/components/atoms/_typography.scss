@@ -1,0 +1,33 @@
+mark {
+  background-color: $gray-light;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $headings-font-weight;
+  small {
+    .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+      color: $brand-text-color;
+    }
+  }
+}
+
+p {
+  font-family: $font-family-serif;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.lead {
+  line-height: 1.8;
+}
+
+li {
+  &.active {
+    color: $active-list-text-color;
+    font-weight: $active-list-font-weight;
+    a {
+      color: $active-list-text-color;
+      font-weight: $active-list-font-weight;
+    }
+  }
+}

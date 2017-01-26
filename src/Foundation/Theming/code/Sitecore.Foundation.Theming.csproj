@@ -63,10 +63,6 @@
     <Content Include="scripts\Sitecore.Foundation.Frameworks.min.js">
       <DependentUpon>Sitecore.Foundation.Frameworks.js</DependentUpon>
     </Content>
-    <Content Include="styles\dayfrost.css" />
-    <Content Include="styles\dayfrost.min.css">
-      <DependentUpon>dayfrost.css</DependentUpon>
-    </Content>
     <Content Include="styles\default.css" />
     <Content Include="styles\default.min.css">
       <DependentUpon>default.css</DependentUpon>
@@ -75,17 +71,9 @@
     <Content Include="styles\editor.min.css">
       <DependentUpon>editor.css</DependentUpon>
     </Content>
-    <Content Include="styles\niteflight.css" />
-    <Content Include="styles\niteflight.min.css">
-      <DependentUpon>niteflight.css</DependentUpon>
-    </Content>
     <Content Include="styles\vendor.css" />
     <Content Include="styles\vendor.min.css">
       <DependentUpon>vendor.css</DependentUpon>
-    </Content>
-    <Content Include="styles\white-wonder.css" />
-    <Content Include="styles\white-wonder.min.css">
-      <DependentUpon>white-wonder.css</DependentUpon>
     </Content>
     <None Include="bundleconfig.json" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -274,4 +262,3 @@
   </Target>
   -->
 </Project>
-

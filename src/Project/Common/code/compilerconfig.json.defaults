@@ -1,0 +1,23 @@
+{
+  "compilers": {
+    "less": {
+      "strictMath": false,
+      "strictUnits": false,
+      "relativeUrls": true,
+      "rootPath": ""
+    },
+    "sass": {
+      "indentType": "space",
+      "indentWidth": 4,
+      "outputStyle": "nested",
+      "Precision": 5,
+      "includePath": "styles/",
+      "includePath": "bower_components/sitecore.demo.theme/sass/",
+      "relativeUrls": false
+    },
+    "coffeescript": {
+      "bare": false,
+      "runtimeMode": "node"
+    }
+  }
+}

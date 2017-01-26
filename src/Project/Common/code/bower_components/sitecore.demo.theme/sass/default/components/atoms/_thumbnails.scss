@@ -1,0 +1,76 @@
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
+
+.thumbnail {
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  &.bg-primary, &.bg-dark, &.bg-media {
+    .caption {
+      color: $brand-text-color;
+    }
+    .thumbnail-header {
+      .label {
+        color: $brand-text-color;
+      }
+    }
+  }
+
+  .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+    .caption {
+      color: $brand-text-color;
+    }
+  }
+
+  .caption {
+    padding: 0;
+    color: $text-color;
+    date {
+      color: $text-color;
+      font-size: $font-size-small;
+      font-weight: normal;
+      text-transform: uppercase;
+      padding: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 15px;
+    }
+  }
+
+  &-header {
+    .label {
+      font-size: $font-size-base;
+      color: $text-color;
+      font-weight: normal;
+      text-transform: uppercase;
+      padding: 0;
+    }
+  }
+
+  &-focus {
+    padding: 20px;
+    margin-top: -20px;
+  }
+
+  .btn {
+    &.btn-primary {
+      .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+        color: $brand-text-color;
+        border: none;
+      }
+    }
+    .bg-primary &, .bg-secondary &, .bg-dark &, .bg-media & {
+      color: $text-color;
+      border-color: $text-color;
+      &:hover {
+        background-color: $color-secondary-dark;
+        color: $brand-text-color !important;
+      }
+    }
+  }
+
+  /* Support equal height columns */
+  .row-col-eq >[class^="col-"] >& {
+      height: 100%;
+  }
+}

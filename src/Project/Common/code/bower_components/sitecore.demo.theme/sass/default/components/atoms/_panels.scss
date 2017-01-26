@@ -1,0 +1,117 @@
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/panels";
+
+.panel {
+
+  &-group {
+    margin-bottom: 0;
+  }
+
+  &-default {
+    .panel-footer {
+      color: $color-secondary-lightest;
+    }
+  }
+
+  &-body, &-heading {
+    color: $text-color;
+  }
+
+  &-heading {
+    &[role="tab"] {
+      .panel-title {
+        transition: all 0s ease;
+        a, a:active, a:focus {
+          transition: all 0s ease;
+          text-decoration: none;
+          span {
+            transition: all 0s ease;
+          }
+        }
+      }
+      &:hover, &:focus, &:active {
+        background-color: $color-secondary-dark;
+        color: $brand-text-color;
+        .bg-dark & {
+          background-color: inherit;
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  & > &-body:first-child {
+    padding: 40px;
+  }
+
+
+  &-body {
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+    }
+  }
+
+  &-footer {
+    color: $color-secondary-light;
+  }
+
+  &-secondary {
+    @include panel-variant($color-secondary, $brand-text-color, $color-secondary, $color-secondary);
+  }
+
+  &-dark {
+    @include panel-variant($color-secondary-dark, $brand-text-color, $color-secondary-dark, $color-secondary-dark);
+  }
+
+  &-primary, &-secondary, &-dark {
+    .panel-heading {
+      color: $brand-text-color;
+    }
+    &-alt {
+      .panel-heading, .panel-body, .panel-footer {
+        padding: 20px 0;
+      }
+      .panel-heading {
+        background-color: transparent;
+        border-bottom: 2px solid $brand-primary;
+        margin-bottom: 10px;
+        h1, h2, h3, h4, h5, h6 {
+          position: relative;
+          padding-bottom: 5px;
+        }
+      }
+      .panel-footer {
+        padding: 0;
+        background-color: transparent;
+        border-top: 2px solid $brand-primary;
+      }
+
+    }
+  }
+
+  &-thin {
+    border: 1px solid #eee;
+    .panel-heading, .panel-body, .panel-footer {
+      padding: 0;
+    }
+    .panel-footer {
+      padding: 5px 0;
+    }
+  }
+
+  &.bg-dark, &.bg-primary, &.bg-media {
+    .panel-body, .panel-heading {
+      color: $brand-text-color;
+    }
+  }
+
+  &.bg-white {
+    .panel-body, .panel-heading {
+      color: $bg-white-color;
+    }
+  }
+
+  /* Support equal height columns */
+  .row-col-eq >[class^="col-"] >& {
+      height: 100%;
+  }
+}

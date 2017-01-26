@@ -1,0 +1,17 @@
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
+
+.progress {
+  min-height: $progress-bar-min-height;
+  height: $progress-bar-height;
+  border-radius: 0;
+  .progress-bar {
+    padding: $progress-bar-padding;
+    font-size: $progress-bar-font-size;
+    font-weight: $progress-bar-font-weight;
+    min-height: $progress-bar-min-height;
+    height: $progress-bar-height;
+    text-align: left;
+    box-shadow: none;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,42 @@
+
+
+@import "bower_components/bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
+
+.tooltip {
+  &-inner {
+    padding: 6px 12px;
+    .bg-dark & {
+      background-color: $brand-primary;
+      color: $brand-text-color;
+    }
+  }
+
+  &.top {
+    .tooltip-arrow {
+      .bg-dark & {
+        border-top-color: $brand-primary;
+      }
+    }
+  }
+  &.bottom {
+    .tooltip-arrow {
+      .bg-dark & {
+        border-bottom-color: $brand-primary;
+      }
+    }
+  }
+  &.left {
+    .tooltip-arrow {
+      .bg-dark & {
+        border-left-color: $brand-primary;
+      }
+    }
+  }
+  &.right {
+    .tooltip-arrow {
+      .bg-dark & {
+        border-right-color: $brand-primary;
+      }
+    }
+  }
+}

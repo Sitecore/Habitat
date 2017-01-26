@@ -1,0 +1,28 @@
+{
+  "name": "bootstrap-block-grid",
+  "homepage": "https://github.com/JohnnyTheTank/bootstrap-block-grid",
+  "authors": [
+    "Jonathan Hornung <jonathan.hornung@gmail.com>"
+  ],
+  "version": "1.1.7",
+  "description": "block grid for bootstrap",
+  "main": "dist/bootstrap3-block-grid.min.css",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "bootstrap",
+    "blockgrid",
+    "gridblock",
+    "css",
+    "scss"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

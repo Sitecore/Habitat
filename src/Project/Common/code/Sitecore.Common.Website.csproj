@@ -138,8 +138,85 @@
     <Content Include="App_Config\Include\Project\Common.Website.Serialization.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="fonts\bitter-v7-latin-700.svg" />
+    <Content Include="fonts\bitter-v7-latin-italic.svg" />
+    <Content Include="fonts\bitter-v7-latin-regular.svg" />
+    <Content Include="fonts\open-sans-v13-latin-300.svg" />
+    <Content Include="fonts\open-sans-v13-latin-300italic.svg" />
+    <Content Include="fonts\open-sans-v13-latin-600.svg" />
+    <Content Include="fonts\open-sans-v13-latin-600italic.svg" />
+    <Content Include="fonts\open-sans-v13-latin-700.svg" />
+    <Content Include="fonts\open-sans-v13-latin-700italic.svg" />
+    <Content Include="fonts\open-sans-v13-latin-800.svg" />
+    <Content Include="fonts\open-sans-v13-latin-italic.svg" />
+    <Content Include="fonts\open-sans-v13-latin-regular.svg" />
     <Content Include="packages.config" />
+    <Content Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
+    <Content Include="bower.json" />
+    <Content Include="fonts\bitter-v7-latin-700.eot" />
+    <Content Include="fonts\bitter-v7-latin-700.ttf" />
+    <Content Include="fonts\bitter-v7-latin-700.woff" />
+    <Content Include="fonts\bitter-v7-latin-700.woff2" />
+    <Content Include="fonts\bitter-v7-latin-italic.eot" />
+    <Content Include="fonts\bitter-v7-latin-italic.ttf" />
+    <Content Include="fonts\bitter-v7-latin-italic.woff" />
+    <Content Include="fonts\bitter-v7-latin-italic.woff2" />
+    <Content Include="fonts\bitter-v7-latin-regular.eot" />
+    <Content Include="fonts\bitter-v7-latin-regular.ttf" />
+    <Content Include="fonts\bitter-v7-latin-regular.woff" />
+    <Content Include="fonts\bitter-v7-latin-regular.woff2" />
+    <Content Include="fonts\open-sans-v13-latin-300.eot" />
+    <Content Include="fonts\open-sans-v13-latin-300.ttf" />
+    <Content Include="fonts\open-sans-v13-latin-300.woff" />
+    <Content Include="fonts\open-sans-v13-latin-300.woff2" />
+    <Content Include="fonts\open-sans-v13-latin-300italic.eot" />
+    <Content Include="fonts\open-sans-v13-latin-300italic.ttf" />
+    <Content Include="fonts\open-sans-v13-latin-300italic.woff" />
+    <Content Include="fonts\open-sans-v13-latin-300italic.woff2" />
+    <Content Include="fonts\open-sans-v13-latin-600.eot" />
+    <Content Include="fonts\open-sans-v13-latin-600.ttf" />
+    <Content Include="fonts\open-sans-v13-latin-600.woff" />
+    <Content Include="fonts\open-sans-v13-latin-600.woff2" />
+    <Content Include="fonts\open-sans-v13-latin-600italic.eot" />
+    <Content Include="fonts\open-sans-v13-latin-600italic.ttf" />
+    <Content Include="fonts\open-sans-v13-latin-600italic.woff" />
+    <Content Include="fonts\open-sans-v13-latin-600italic.woff2" />
+    <Content Include="fonts\open-sans-v13-latin-700.eot" />
+    <Content Include="fonts\open-sans-v13-latin-700.ttf" />
+    <Content Include="fonts\open-sans-v13-latin-700.woff" />
+    <Content Include="fonts\open-sans-v13-latin-700.woff2" />
+    <Content Include="fonts\open-sans-v13-latin-700italic.eot" />
+    <Content Include="fonts\open-sans-v13-latin-700italic.ttf" />
+    <Content Include="fonts\open-sans-v13-latin-700italic.woff" />
+    <Content Include="fonts\open-sans-v13-latin-700italic.woff2" />
+    <Content Include="fonts\open-sans-v13-latin-800.eot" />
+    <Content Include="fonts\open-sans-v13-latin-800.ttf" />
+    <Content Include="fonts\open-sans-v13-latin-800.woff" />
+    <Content Include="fonts\open-sans-v13-latin-800.woff2" />
+    <Content Include="fonts\open-sans-v13-latin-italic.eot" />
+    <Content Include="fonts\open-sans-v13-latin-italic.ttf" />
+    <Content Include="fonts\open-sans-v13-latin-italic.woff" />
+    <Content Include="fonts\open-sans-v13-latin-italic.woff2" />
+    <Content Include="fonts\open-sans-v13-latin-regular.eot" />
+    <Content Include="fonts\open-sans-v13-latin-regular.ttf" />
+    <Content Include="fonts\open-sans-v13-latin-regular.woff" />
+    <Content Include="fonts\open-sans-v13-latin-regular.woff2" />
     <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <Content Include="styles\dayfrost.css">
+      <DependentUpon>dayfrost.scss</DependentUpon>
+    </Content>
+    <Content Include="styles\dayfrost.min.css">
+      <DependentUpon>dayfrost.css</DependentUpon>
+    </Content>
+    <Content Include="styles\niteflight.css">
+      <DependentUpon>niteflight.scss</DependentUpon>
+    </Content>
+    <Content Include="styles\niteflight.min.css">
+      <DependentUpon>niteflight.css</DependentUpon>
+    </Content>
     <Content Include="Views\Common\Sublayouts\1 Column.cshtml" />
     <Content Include="Views\Common\Sublayouts\2 Column 3-9.cshtml" />
     <Content Include="Views\Common\Sublayouts\2 Column 4-8.cshtml" />
@@ -166,6 +243,17 @@
     <Content Include="Views\Common\Sublayouts\ArticleAsideBoth.cshtml" />
     <Content Include="Views\Common\Sublayouts\NavbarActivity.cshtml" />
     <Content Include="Views\Common\Sublayouts\NavbarCenter.cshtml" />
+    <Content Include="styles\dayfrost\_fonts.scss" />
+    <Content Include="styles\dayfrost\_overrides.scss" />
+    <Content Include="styles\dayfrost\_variables.scss" />
+    <Content Include="styles\niteflight\_fonts.scss" />
+    <Content Include="styles\niteflight\_overrides.scss" />
+    <Content Include="styles\niteflight\_variables.scss" />
+    <Content Include="styles\dayfrost.scss" />
+    <Content Include="styles\niteflight.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_button.scss" />
+    <Content Include="styles\dayfrost\components\atoms\_well.scss" />
+    <Content Include="styles\dayfrost\components\_atoms.scss" />
     <None Include="Views\Web.config" />
     <None Include="web.config" />
     <None Include="web.config.transform" />
@@ -186,6 +274,7 @@
       <Name>Sitecore.Foundation.Theming</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -214,6 +303,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\..\..\..\packages\BuildWebCompiler.1.11.326\build\BuildWebCompiler.targets" Condition="Exists('..\..\..\..\packages\BuildWebCompiler.1.11.326\build\BuildWebCompiler.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\..\..\packages\BuildWebCompiler.1.11.326\build\BuildWebCompiler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\BuildWebCompiler.1.11.326\build\BuildWebCompiler.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -221,4 +317,3 @@
   <Target Name="AfterBuild">
   </Target> -->
 </Project>
-
