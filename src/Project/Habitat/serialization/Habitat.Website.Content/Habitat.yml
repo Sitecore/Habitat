@@ -5,6 +5,10 @@ Template: "0643d9d4-f30b-4b07-91d0-289cc324c9cf"
 Path: /sitecore/content/Habitat
 DB: master
 SharedFields:
+- ID: "12537182-f35c-403f-afb5-747d55c450b8"
+  Hint: ShowInMenu
+  Type: Checkbox
+  Value: 1
 - ID: "365254c4-1c1c-493a-9710-671574717898"
   Hint: Forgot Password Mail Template
   Value: /sitecore/content/Habitat/Global/Registration/Forgot Password Mail
@@ -82,10 +86,6 @@ Languages:
     - ID: "021aa3f7-206f-4acc-9538-f6d7fe86b168"
       Hint: Interests Folder
       Value: "{A74EE096-F225-4568-8D81-2F71ABBC8118}"
-    - ID: "12537182-f35c-403f-afb5-747d55c450b8"
-      Hint: ShowInMenu
-      Type: Checkbox
-      Value: 1
     - ID: "235ae392-97ac-4822-be38-837da3e7724e"
       Hint: SiteBrowserTitle
       Value: " - Habitat Sitecore Framework"
