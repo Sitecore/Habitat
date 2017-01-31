@@ -90,7 +90,7 @@
                 returnValue.Add(item);
             }
 
-            returnValue.AddRange(item.Axes.GetAncestors().Where(i => i.IsDerived(templateID)));
+            returnValue.AddRange(item.Axes.GetAncestors().Reverse().Where(i => i.IsDerived(templateID)));
             return returnValue;
         }
 
