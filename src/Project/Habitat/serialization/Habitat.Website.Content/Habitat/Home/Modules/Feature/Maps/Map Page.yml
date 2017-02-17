@@ -20,8 +20,7 @@ Languages:
       Type: Layout
       Value: |
         <r xmlns:p="p" xmlns:s="s"
-          p:p="1"
-          s:xsd="http://www.w3.org/2001/XMLSchema">
+          p:p="1">
           <d
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r

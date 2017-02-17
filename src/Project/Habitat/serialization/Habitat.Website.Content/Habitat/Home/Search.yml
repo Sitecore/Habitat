@@ -21,6 +21,10 @@ SharedFields:
       <d
         id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
         <r
+          uid="{0E0C6DCA-1A29-4975-84D7-E99498A64A72}"
+          s:ds="{B4D87E66-D2C5-4C06-8F9A-08AEAF38055A}"
+          s:ph="/footer/section/col-narrow-2" />
+        <r
           uid="{0E0C6DCA-1A29-4975-84D7-E99498A64A72}">
           <p:d />
         </r>

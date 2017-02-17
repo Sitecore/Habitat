@@ -9,6 +9,9 @@ SharedFields:
   Hint: ShowInMenu
   Type: Checkbox
   Value: 1
+- ID: "1c843e6a-02b9-4aa0-9fed-fdfddc419ae3"
+  Hint: Search Results Page
+  Value: /sitecore/content/Habitat/Home/Search
 - ID: "365254c4-1c1c-493a-9710-671574717898"
   Hint: Forgot Password Mail Template
   Value: /sitecore/content/Habitat/Global/Registration/Forgot Password Mail
