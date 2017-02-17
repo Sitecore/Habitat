@@ -15,6 +15,8 @@
             var query = HttpContext.Current == null ? "" : HttpContext.Current.Request["query"];
 
             var searchResultsPageItem = GetSearchResultsPageItem();
+            if (searchResultsPageItem == null)
+                return null;
             return new SearchContext
             {
                 ConfigurationItem = searchResultsPageItem,
@@ -34,13 +36,13 @@
 
         private static Item GetDefaultSearchResultsPage()
         {
-            var item = Context.Site.GetStartItem().Children[DefaultSearchResultsName];
+            var item = Context.Site?.GetStartItem().Children[DefaultSearchResultsName];
             return item != null && item.IsDerived(Templates.SearchResults.ID) ? item : null;
         }
 
         private static Item GetSearchResultsPageItemFromContext()
         {
-            var item = Context.Item.GetAncestorOrSelfOfTemplate(Templates.SearchContext.ID) ?? Context.Site.GetContextItem(Templates.SearchContext.ID);
+            var item = Context.Item?.GetAncestorOrSelfOfTemplate(Templates.SearchContext.ID) ?? Context.Site?.GetContextItem(Templates.SearchContext.ID);
             if (item == null)
                 return null;
             var searchResultsItem = item.TargetItem(Templates.SearchContext.Fields.SearchResultsPage);
