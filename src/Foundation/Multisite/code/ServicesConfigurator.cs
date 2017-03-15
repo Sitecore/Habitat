@@ -1,6 +1,8 @@
 ﻿namespace Sitecore.Foundation.Multisite
 {
+    using System.Linq;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.DependencyInjection.Extensions;
     using Sitecore.Abstractions;
     using Sitecore.DependencyInjection;
     using Sitecore.Foundation.Multisite.Placeholders;
@@ -9,7 +11,7 @@
     {
         public void Configure(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddSingleton<BasePlaceholderCacheManager, SiteSpecificPlaceholderCacheManager>();
+            serviceCollection.Replace(ServiceDescriptor.Singleton<BasePlaceholderCacheManager, SiteSpecificPlaceholderCacheManager>());
         }
     }
 }
