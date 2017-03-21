@@ -49,6 +49,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Extensions.DependencyInjection.1.0.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
@@ -115,6 +123,8 @@
     <Compile Include="Commands\OpenExperienceEditor.cs" />
     <Compile Include="Dialogs\DatasourceSettingsPage.cs" />
     <Compile Include="Pipelines\ResolveContentLanguage.cs" />
+    <Compile Include="Placeholders\SiteSpecificPlaceholderCache.cs" />
+    <Compile Include="Placeholders\SiteSpecificPlaceholderCacheManager.cs" />
     <Compile Include="Providers\DatasourceConfigurationService.cs" />
     <Compile Include="Providers\ISiteSettingsProvider.cs" />
     <Compile Include="Pipelines\GetDatasourceLocationAndTemplateFromSite.cs" />
@@ -124,6 +134,7 @@
     <Compile Include="Providers\DatasourceProvider.cs" />
     <Compile Include="Providers\SiteDefinitionsProvider.cs" />
     <Compile Include="Providers\SiteSettingsProvider.cs" />
+    <Compile Include="ServicesConfigurator.cs" />
     <Compile Include="SiteContext.cs" />
     <Compile Include="SiteDefinition.cs" />
     <Compile Include="Templates.cs" />
@@ -180,4 +191,3 @@
   </Target>
   -->
 </Project>
-

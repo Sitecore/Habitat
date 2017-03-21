@@ -43,10 +43,12 @@
         private static void AddInlineStylingFromAssets(Item renderingItem)
         {
             var cssInline = renderingItem[Templates.RenderingAssets.Fields.InlineStyling];
-            if (!string.IsNullOrEmpty(cssInline))
+            if (string.IsNullOrEmpty(cssInline))
             {
-                AssetRepository.Current.AddStyling(cssInline, renderingItem.ID.ToString(), true);
+                return;
             }
+            var asset = AssetRepository.Current.AddInlineStyling(cssInline, true);
+            asset.AddOnceToken = renderingItem.ID.ToString();
         }
 
         private static void AddStylingAssetsFromRendering(Item renderingItem)
@@ -54,7 +56,7 @@
             var cssAssets = renderingItem[Templates.RenderingAssets.Fields.StylingFiles];
             foreach (var cssAsset in cssAssets.Split(';', ',', '\n'))
             {
-                AssetRepository.Current.AddStyling(cssAsset, true);
+                AssetRepository.Current.AddStylingFile(cssAsset, true);
             }
         }
 
@@ -63,7 +65,8 @@
             var javaScriptInline = renderingItem[Templates.RenderingAssets.Fields.InlineScript];
             if (!string.IsNullOrEmpty(javaScriptInline))
             {
-                AssetRepository.Current.AddScript(javaScriptInline, renderingItem.ID.ToString(), ScriptLocation.Body, true);
+                var asset = AssetRepository.Current.AddInlineScript(javaScriptInline, ScriptLocation.Body, true);
+                asset.AddOnceToken = renderingItem.ID.ToString();
             }
         }
 
@@ -72,7 +75,7 @@
             var javaScriptAssets = renderingItem[Templates.RenderingAssets.Fields.ScriptFiles];
             foreach (var javaScriptAsset in javaScriptAssets.Split(';', ',', '\n'))
             {
-                AssetRepository.Current.AddScript(javaScriptAsset, true);
+                AssetRepository.Current.AddScriptFile(javaScriptAsset, true);
             }
         }
 

@@ -103,6 +103,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AssetContentType.cs" />
     <Compile Include="Pipelines\GetPageRendering\AddRenderingAssets.cs" />
     <Compile Include="Pipelines\GetPageRendering\AddPageAssets.cs" />
     <Compile Include="Pipelines\GetPageRendering\ClearAssets.cs" />
@@ -167,4 +168,3 @@
   </Target>
   -->
 </Project>
-

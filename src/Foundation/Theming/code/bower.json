@@ -1,27 +1,29 @@
 {
-    "name": "sitecore.foundation.theming",
-    "homepage": "https://github.com/Sitecore/Habitat",
-    "authors": [
-        "Thomas Eldblom <the@sitecore.net>"
-    ],
-    "description": "Sitecore Habitat Demo",
-    "main": "",
-    "keywords": [
-        "Sitecore",
-        "Demo",
-        "Habitat",
-        "Helix"
-    ],
-    "license": "MIT",
-    "private": true,
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-        "sitecore.demo.theme": "https://github.com/Sitecore/Sitecore.Demo.Theme.git"
-    }
+  "name": "sitecore.foundation.theming",
+  "homepage": "https://github.com/Sitecore/Habitat",
+  "authors": [
+    "Thomas Eldblom <the@sitecore.net>"
+  ],
+  "description": "Sitecore Habitat Demo",
+  "main": "",
+  "keywords": [
+    "Sitecore",
+    "Demo",
+    "Habitat",
+    "Helix"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sitecore.demo.theme": "https://github.com/Sitecore/Sitecore.Demo.Theme.git",
+    "jquery-ui": "1.11.4",
+    "jquery-validation": "1.15.0"
+  }
 }
