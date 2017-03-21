@@ -30,21 +30,21 @@
             this._items.Clear();
         }
 
-        internal void Add(Asset asset, bool preventAddToCache = false)
+        public Asset Add(Asset asset, bool preventAddToCache = false)
         {
             if (asset.AddOnceToken != null)
             {
                 if (this._items.Any(x => x.AddOnceToken != null && x.AddOnceToken == asset.AddOnceToken))
                 {
-                    return;
+                    return null;
                 }
             }
 
-            if (asset.File != null)
+            if (asset.Content != null)
             {
-                if (this._items.Any(x => x.File != null && x.File == asset.File))
+                if (this._items.Any(x => x.Content != null && x.Content == asset.Content))
                 {
-                    return;
+                    return null;
                 }
             }
 
@@ -77,6 +77,7 @@
 
             // Passed the checks, add the requirement.
             this._items.Add(asset);
+            return asset;
         }
 
         public void Add(ID renderingID)
@@ -98,24 +99,29 @@
             }
         }
 
-        public void AddScript(string file, bool preventAddToCache = false)
+        public Asset AddScriptFile(string file, bool preventAddToCache = false)
         {
-            this.Add(new Asset(AssetType.JavaScript, ScriptLocation.Body, file), preventAddToCache);
+            return this.AddScriptFile(file, ScriptLocation.Body, preventAddToCache);
         }
 
-        public void AddScript(string script, string addOnceToken, ScriptLocation location, bool preventAddToCache = false)
+        public Asset AddScriptFile(string file, ScriptLocation location, bool preventAddToCache = false)
         {
-            this.Add(new Asset(AssetType.JavaScript, location, inline: script), preventAddToCache);
+            return this.Add(new Asset(AssetType.JavaScript, location, file), preventAddToCache);
         }
 
-        public void AddStyling(string file, bool preventAddToCache = false)
+        public Asset AddInlineScript(string script, ScriptLocation location, bool preventAddToCache)
         {
-            this.Add(new Asset(AssetType.Css, ScriptLocation.Head, file), preventAddToCache);
+            return this.Add(new Asset(AssetType.JavaScript, location, script, AssetContentType.Inline), preventAddToCache);
         }
 
-        public void AddStyling(string styling, string addOnceToken, bool preventAddToCache = false)
+        public Asset AddStylingFile(string file, bool preventAddToCache = false)
         {
-            this.Add(new Asset(AssetType.Css, ScriptLocation.Head, styling, styling.GetHashCode().ToString()), preventAddToCache);
+            return this.Add(new Asset(AssetType.Css, ScriptLocation.Head, file), preventAddToCache);
+        }
+
+        public Asset AddInlineStyling(string styling, bool preventAddToCache)
+        {
+            return this.Add(new Asset(AssetType.Css, ScriptLocation.Head, styling, AssetContentType.Inline), preventAddToCache);
         }
 
         internal Asset CreateFromConfiguration(XmlNode node)
@@ -153,14 +159,15 @@
             Asset asset = null;
             if (!string.IsNullOrEmpty(assetFile))
             {
-                asset = new Asset(assetType, scriptLocation, assetFile, site: site);
+                asset = new Asset(assetType, scriptLocation, assetFile, AssetContentType.File, site);
             }
             else if (!string.IsNullOrEmpty(inlineValue))
             {
-                asset = new Asset(assetType, scriptLocation, inline: inlineValue, site: site);
+                asset = new Asset(assetType, scriptLocation, inlineValue, AssetContentType.Inline, site);
             }
 
             return asset;
         }
+
     }
 }

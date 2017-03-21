@@ -1,6 +1,6 @@
 namespace Sitecore.Foundation.Assets.Models
 {
-  internal enum AssetType
+    public enum AssetType
   {
     JavaScript,
     Css,

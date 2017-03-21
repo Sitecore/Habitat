@@ -21,17 +21,17 @@
             var styling = this.GetPageAssetValue(item, Templates.PageAssets.Fields.CssCode);
             if (!string.IsNullOrWhiteSpace(styling))
             {
-                AssetRepository.Current.AddStyling(styling, styling.GetHashCode().ToString(), true);
+                AssetRepository.Current.AddInlineStyling(styling, true);
             }
             var scriptBottom = this.GetPageAssetValue(item, Templates.PageAssets.Fields.JavascriptCodeBottom);
             if (!string.IsNullOrWhiteSpace(scriptBottom))
             {
-                AssetRepository.Current.AddScript(scriptBottom, scriptBottom.GetHashCode().ToString(), ScriptLocation.Body, true);
+                AssetRepository.Current.AddInlineScript(scriptBottom, ScriptLocation.Body, true);
             }
             var scriptHead = this.GetPageAssetValue(item, Templates.PageAssets.Fields.JavascriptCodeTop);
             if (!string.IsNullOrWhiteSpace(scriptHead))
             {
-                AssetRepository.Current.AddScript(scriptHead, scriptHead.GetHashCode().ToString(), ScriptLocation.Head, true);
+                AssetRepository.Current.AddInlineScript(scriptHead, ScriptLocation.Head, true);
             }
         }
 

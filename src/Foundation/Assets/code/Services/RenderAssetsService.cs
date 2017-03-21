@@ -24,9 +24,9 @@
       var assets = AssetRepository.Current.Items.Where(asset => (asset.Type == AssetType.JavaScript || asset.Type == AssetType.Raw) && asset.Location == location && this.IsForContextSite(asset));
       foreach (var item in assets)
       {
-        if (!string.IsNullOrEmpty(item.File))
+        if (!string.IsNullOrEmpty(item.Content))
         {
-          sb.AppendFormat("<script src=\"{0}\"></script>", item.File).AppendLine();
+          sb.AppendFormat("<script src=\"{0}\"></script>", item.Content).AppendLine();
         }
         else if (!string.IsNullOrEmpty(item.Inline))
         {
@@ -50,9 +50,9 @@
       var sb = new StringBuilder();
       foreach (var item in AssetRepository.Current.Items.Where(asset => asset.Type == AssetType.Css && this.IsForContextSite(asset)))
       {
-        if (!string.IsNullOrEmpty(item.File))
+        if (!string.IsNullOrEmpty(item.Content))
         {
-          sb.AppendFormat("<link href=\"{0}\" rel=\"stylesheet\" />", item.File).AppendLine();
+          sb.AppendFormat("<link href=\"{0}\" rel=\"stylesheet\" />", item.Content).AppendLine();
         }
         else if (!string.IsNullOrEmpty(item.Inline))
         {
