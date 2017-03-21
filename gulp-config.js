@@ -6,6 +6,8 @@ module.exports = function () {
     licensePath: instanceRoot + "\\Data\\license.xml",
     solutionName: "Habitat",
     buildConfiguration: "Debug",
+    buildPlatform: "Any CPU",
+    publishPlatform: "AnyCpu",
     runCleanBuilds: false
   };
   return config;
