@@ -15,6 +15,10 @@ namespace Sitecore.Foundation.FieldEditor.Services
     public static string GetFieldsToEdit(Item item)
     {
       var customFields = item.Template.Fields.Where(x => !x.Name.StartsWith("__"));
+      if (!customFields.Any())
+      {
+          return String.Empty;
+      }
       var pipedFieldNames = String.Join("|", customFields.Select(f => f.Name));
       return pipedFieldNames;
     }

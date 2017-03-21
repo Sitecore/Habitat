@@ -54,9 +54,15 @@
       return options;
     }
 
-    public override CommandState QueryState(CommandContext context)
-    {
-      return Context.PageMode.IsExperienceEditor ? CommandState.Enabled : CommandState.Hidden;
+            return options;
+        }
+
+        public override CommandState QueryState(CommandContext context)
+        {
+            return Context.PageMode.IsExperienceEditor
+                      && context.Items.Length >= 1 &&
+                      !string.IsNullOrEmpty(GetFieldsToEditService.GetFieldsToEdit(context.Items[0]))
+                      ? CommandState.Enabled : CommandState.Hidden;
+        }
     }
-  }
 }
