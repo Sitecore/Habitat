@@ -64,7 +64,7 @@ gulp.task("04-Apply-Xml-Transform", function () {
           targets: ["ApplyTransform"],
           configuration: config.buildConfiguration,
           logCommand: false,
-          verbosity: "minimal",
+          verbosity: "detailed",
           stdout: true,
           errorOnFail: true,		  
           maxcpucount: 1,
