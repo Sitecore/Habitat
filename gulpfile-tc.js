@@ -129,7 +129,6 @@ var publishStream = function (stream, dest) {
       errorOnFail: true,
       maxcpucount: 1,
 	  nodeReuse: false,
-	  maxBuffer: 500 * 2048,
       toolsVersion: 14.0,
       properties: {
         Platform: config.publishPlatform,
