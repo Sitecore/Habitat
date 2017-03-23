@@ -65,7 +65,7 @@ gulp.task("04-Apply-Xml-Transform", function () {
           configuration: config.buildConfiguration,
           logCommand: false,
           verbosity: "minimal",
-		  maxBuffer: 1024 * 1024,
+		  maxBuffer: 500 * 2048,
           stdout: true,
           errorOnFail: true,		  
           maxcpucount: 0,
@@ -130,7 +130,7 @@ var publishStream = function (stream, dest) {
       errorOnFail: true,
       maxcpucount: 0,
 	  nodeReuse: false,
-	  maxBuffer: 1024 * 1024,
+	  maxBuffer: 500 * 2048,
       toolsVersion: 14.0,
       properties: {
         Platform: config.publishPlatform,
@@ -179,7 +179,7 @@ gulp.task("Build-Solution", function () {
           stdout: true,
           errorOnFail: true,
           maxcpucount: 0,
-		  maxBuffer: 1024 * 1024,
+		  maxBuffer: 500 * 2048,
 		  nodeReuse: false,
           toolsVersion: 14.0,
           properties: {
