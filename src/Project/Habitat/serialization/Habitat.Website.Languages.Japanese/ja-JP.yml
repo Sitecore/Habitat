@@ -1,0 +1,40 @@
+﻿---
+ID: "dcaca62f-1fd9-4b2d-ac1f-4eaa58d317b2"
+Parent: "64c4f646-a3fa-4205-b98e-4de2c609b60f"
+Template: "f68f13a6-3395-426a-b9a1-fa2dc60d94eb"
+Path: "/sitecore/system/Languages/ja-JP"
+DB: master
+SharedFields:
+- ID: "0620f810-9294-4f14-af9f-f5772efca0b2"
+  Hint: Regional Iso Code
+  Value: "ja-JP"
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: flags/16x16/flag_Japan.PNG
+- ID: "49e5e8f3-ed4a-4a06-abe1-b9408951dee9"
+  Hint: Charset
+  Value: "iso-2022-jp"
+- ID: "8728d8ff-66d9-40c2-8b34-c4fc1466942e"
+  Hint: Encoding
+  Value: "utf-8"
+- ID: "892975ac-496f-4ac9-8826-087095c68e1d"
+  Hint: Fallback Language
+  Value: en
+- ID: "990596ce-0024-43f3-bf4c-a991bfa69b45"
+  Hint: Code page
+  Value: 65001
+- ID: "c437e416-8948-427d-a982-8ed37ae3f553"
+  Hint: Iso
+  Value: ja
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170320T021420Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

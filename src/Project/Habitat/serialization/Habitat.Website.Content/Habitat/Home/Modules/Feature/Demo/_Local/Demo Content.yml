@@ -18,3 +18,24 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20161201T030745Z
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: デモコンテンツ
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0bc0aedf-a6d0-4f74-933c-bd1779cd40b2"
+      Hint: HTML Content
+      Value: |
+        <div class="well">
+           ここにはどの HTML も埋め込むことができます。<br/>Use the "アイテムの編集" ボタンを利用することで、ページ編集の際に HTML コンテンツをそのまま作成できます。
+        </div>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054536Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

@@ -36,3 +36,33 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\Admin
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: デモ
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0f6b5546-e0ab-4487-81de-640c1aa1b65b"
+      Hint: TeaserImage
+      Value: |
+        <image mediaid="{0A82759B-DDF8-41A0-BF8E-75FAF58F7BA0}" />
+    - ID: "13d97a52-7c4e-407c-960d-fadde8a3c1b1"
+      Hint: TeaserSummary
+      Value: |
+        このHabitatサイトと同様に、githubで利用可能なSitecoreのデモサイトも追加されています。
+        たとえば、法務サービス、金融サービスまたは公益事業のサイトをチェックしてください。
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054601Z
+    - ID: "3f7e7e3a-4e8e-4639-b079-fc5aeff172f5"
+      Hint: Teaser Label
+      Value: もっと知りたい
+    - ID: "4a59d072-5b41-4a79-a157-2b2ccac10f2b"
+      Hint: TeaserTitle
+      Value: Sitecore Habitatのデモをご覧ください
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

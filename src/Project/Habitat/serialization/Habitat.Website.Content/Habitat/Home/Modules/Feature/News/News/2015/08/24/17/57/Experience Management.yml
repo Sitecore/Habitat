@@ -70,3 +70,34 @@ Languages:
     - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
       Hint: BrowserTitle
       Value: News article
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054548Z
+    - ID: "3437eaac-6ee8-460b-a33d-da1f714b5a93"
+      Hint: NewsImage
+      Value: |
+        <image mediapath="" src="" height="" mediaid="{40EA01F7-1897-4ED0-8721-76511278B6A5}" hspace="" usethumbnail="" showineditor="" width="" alt="087" vspace="" ></image>
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "801612c7-5e98-4e3c-80d2-a34d0eebcbda"
+      Hint: NewsBody
+      Value: |
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas. Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus. Sed consectetur, est ac venenatis consequat, nisi tellus euismod tortor, nec volutpat tortor lectus in nisi. Nulla facilisi. Phasellus ultricies rutrum odio, sed ultricies tortor ornare vel. Nunc a leo justo. Pellentesque elementum quam eget mauris gravida convallis at at sem. Integer vitae lectus dui. Quisque facilisis enim purus, et fringilla velit mollis eget. Nullam vitae nisi ullamcorper, congue quam ac, porttitor urna. Maecenas sed nisi rhoncus lacus consectetur commodo.</p>
+        <p>Nam finibus ornare augue, eget ullamcorper erat. Vivamus a tortor blandit, fermentum mauris quis, ullamcorper ex. Donec et lacus in augue aliquet elementum. Mauris nec molestie neque. Suspendisse eu quam commodo, iaculis turpis vel, laoreet lacus. Nullam tempus ornare volutpat. Praesent imperdiet eleifend mi, sit amet eleifend urna dapibus eu. Duis euismod lectus eget metus convallis tristique. Quisque eget neque non nibh consectetur lobortis. Nam condimentum eros sed dui molestie, vel gravida sem accumsan. Mauris in purus dolor.</p>
+    - ID: "9d08271a-1672-44dd-b7ef-0a6ec34fcba7"
+      Hint: NewsSummary
+      Value: |
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ultricies lectus non consectetur suscipit. Nam sed hendrerit sapien, et imperdiet arcu. Proin ac bibendum massa. Nam facilisis iaculis egestas.</p>
+        <p>Vestibulum dui nulla, pretium sed sapien vel, pharetra varius odio. Ut vel lacus velit. Nulla suscipit eu quam nec faucibus.</p>
+    - ID: "bd9ecd4a-c0b0-4233-a3cd-d995519ac87b"
+      Hint: NewsTitle
+      Value: New praise for world class experience management platform
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: News article

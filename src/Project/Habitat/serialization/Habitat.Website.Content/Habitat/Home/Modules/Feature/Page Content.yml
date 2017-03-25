@@ -39,3 +39,41 @@ Languages:
             <li><span style="line-height: 24.2857px;">Page Image</span></li>
         </ul>
         This page you are currently looking at draws its primary content from the Page Content module.
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: Page Content
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054549Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
+      Hint: Image
+      Value: |
+        <image mediaid="{2F449159-2E4A-4642-A50E-6D15A1510C1F}" />
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
+      Hint: Summary
+      Value: Page Content contains the functionality and content for basic article style pages, including page title, body text etc.
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: Page Content
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: Page Content
+    - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
+      Hint: Body
+      Value: |
+        <p><span style="line-height: 24.2857px;">Page Content contains the functionality and content for basic article style pages. This include:</span></p>
+        <ul>
+            <li><span style="line-height: 24.2857px;">Page title</span></li>
+            <li><span style="line-height: 24.2857px;">body text</span></li>
+            <li><span style="line-height: 24.2857px;">Summary</span></li>
+            <li><span style="line-height: 24.2857px;">Page Image</span></li>
+        </ul>
+        This page you are currently looking at draws its primary content from the Page Content module.

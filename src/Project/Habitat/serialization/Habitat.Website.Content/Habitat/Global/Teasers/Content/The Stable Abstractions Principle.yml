@@ -23,3 +23,20 @@ Languages:
     - ID: "4a59d072-5b41-4a79-a157-2b2ccac10f2b"
       Hint: TeaserTitle
       Value: The Stable Abstractions Principle
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "13d97a52-7c4e-407c-960d-fadde8a3c1b1"
+      Hint: TeaserSummary
+      Value: Packages that are maximally stable should be maximally abstract. Unstable packages should be concrete. The abstractness of a package should be in proportion to its stability.
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054702Z
+    - ID: "4a59d072-5b41-4a79-a157-2b2ccac10f2b"
+      Hint: TeaserTitle
+      Value: The Stable Abstractions Principle
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
