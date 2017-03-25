@@ -36,3 +36,38 @@ Languages:
       Hint: Body
       Value: |
         <span style="line-height: 24.2857px;">The project layer bind the solution together by tying the feature modules together on pages and channels.</span><br style="line-height: 24.2857px;"><span style="line-height: 24.2857px;">A solution can have multiple project modules - or sites - sharing features but having their own page types, layouts and visual designs.</span>
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Project （プロジェクト）
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: プロジェクト
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054532Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
+      Hint: Image
+      Value: |
+        <image mediaid="{FF8E14C4-79AA-4D80-A2E5-D07BFD835411}" />
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
+      Hint: Summary
+      Value: プロジェクト・レイヤーは、ページとチャネルでフィーチャー・モジュールを結合することによって、ソリューションを結合します。<br />ソリューションには複数のプロジェクトモジュールまたはサイトがあり、機能は共有していますが、独自のページタイプ、レイアウト、ビジュアルデザインを持つことができます。<br />
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: プロジェクト レイヤー
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: プロジェクト
+    - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
+      Hint: Body
+      Value: |
+        <span style="line-height: 24.2857px;">プロジェクト・レイヤーは、ページとチャネルでフィーチャー・モジュールを結合することによって、ソリューションを結合します。</span><br style="line-height: 24.2857px;" /><span style="line-height: 24.2857px;">ソリューションには複数のプロジェクトモジュールまたはサイトがあり、機能は共有していますが、独自のページタイプ、レイアウト、ビジュアルデザインを持つことができます。</span>

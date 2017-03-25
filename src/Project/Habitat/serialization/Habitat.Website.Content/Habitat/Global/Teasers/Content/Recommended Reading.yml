@@ -28,3 +28,25 @@ Languages:
     - ID: "4a59d072-5b41-4a79-a157-2b2ccac10f2b"
       Hint: TeaserTitle
       Value: Recommended Reading
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0f6b5546-e0ab-4487-81de-640c1aa1b65b"
+      Hint: TeaserImage
+      Value: |
+        <image mediaid="{F78869C0-5A66-454E-9F52-447D4467F6CB}" ></image>
+    - ID: "13d97a52-7c4e-407c-960d-fadde8a3c1b1"
+      Hint: TeaserSummary
+      Value: |
+        Many of the principles and thoughts behind the Habitat methodology are described in the Books by Robert C. Martin. Recommended reading includes: "Clean Code: A Handbook of Agile Software Craftsmanship" and "Agile Principles, Patterns, and Practices in C#"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054701Z
+    - ID: "4a59d072-5b41-4a79-a157-2b2ccac10f2b"
+      Hint: TeaserTitle
+      Value: Recommended Reading
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

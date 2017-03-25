@@ -26,3 +26,28 @@ Languages:
     - ID: "63dda48b-b0cb-45a7-9a1b-b26ddb41009b"
       Hint: MediaTitle
       Value: Getting started with Habitat
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054658Z
+    - ID: "2628705d-9434-4448-978c-c3bf166fa1eb"
+      Hint: MediaVideoLink
+      Value: |
+        <link text="Getting Started with Habitat Video" linktype="external" url="https://youtu.be/svN4pzbhEA0" anchor="" target="_blank" />
+    - ID: "302c9f8d-f703-4f76-a4ab-73d222648232"
+      Hint: MediaDescription
+      Value: "This video explains how to get started with the Habitat example site - this site - which is available on Github."
+    - ID: "4ff62b0a-d73b-4436-bea2-023154f2ffc4"
+      Hint: MediaThumbnail
+      Value: |
+        <image mediaid="{792CB39C-6AE3-4815-BA99-0368B3A4E2CA}" ></image>
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "63dda48b-b0cb-45a7-9a1b-b26ddb41009b"
+      Hint: MediaTitle
+      Value: Getting started with Habitat

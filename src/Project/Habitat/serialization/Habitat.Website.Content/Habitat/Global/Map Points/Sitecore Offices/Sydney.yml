@@ -23,3 +23,25 @@ Languages:
     - ID: "f686ac8e-1d33-45db-8e1a-1b40cd491e7a"
       Hint: MapPointLocation
       Value: "-33.86347491441307,151.2091726748688"
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0295c01d-214c-4c23-afc2-3f0b4e88b643"
+      Hint: MapPointAddress
+      Value: |
+        Level 4, 50 Pitt St
+        Sydney, NSW, 2000
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054651Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "f12c22bb-e57d-4fab-96e1-1229e4e7ff0e"
+      Hint: MapPointName
+      Value: Sitecore Australia
+    - ID: "f686ac8e-1d33-45db-8e1a-1b40cd491e7a"
+      Hint: MapPointLocation
+      Value: "-33.86347491441307,151.2091726748688"
