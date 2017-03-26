@@ -9,9 +9,38 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Sitecore.Foundation.DependencyInjection
 {
+    using System.IO;
+    using Sitecore.Diagnostics;
+
     public static class ServiceCollectionExtensions
     {
         private const string DefaultControllerFilter = "*Controller";
+
+        public static void AddClassesWithServiceAttribute(this IServiceCollection serviceCollection)
+        {
+            serviceCollection.AddClassesWithServiceAttribute(Assembly.GetCallingAssembly());
+        }
+
+        public static void AddClassesWithServiceAttribute(this IServiceCollection serviceCollection, params string[] assemblyFilters)
+        {
+            var assemblies = GetAssemblies(assemblyFilters);
+            serviceCollection.AddClassesWithServiceAttribute(assemblies);
+        }
+
+        public static void AddClassesWithServiceAttribute(this IServiceCollection serviceCollection, params Assembly[] assemblies)
+        {
+            var typesWithAttributes = assemblies
+                .Where(assembly => !assembly.IsDynamic)
+                .SelectMany(GetExportedTypes)
+                .Where(type => !type.IsAbstract && !type.IsGenericTypeDefinition)
+                .Select(type => new { type.GetCustomAttribute<ServiceAttribute>()?.Lifetime, Type = type })
+                .Where(t => t.Lifetime != null);
+
+            foreach (var type in typesWithAttributes)
+            {
+                Add(serviceCollection, type.Lifetime.Value, type.Type);
+            }
+        }
 
         public static void AddByWildcard(this IServiceCollection serviceCollection, Lifetime lifetime, string classFilter, params Assembly[] assemblies)
         {
@@ -145,6 +174,11 @@ namespace Sitecore.Foundation.DependencyInjection
             {
                 // A type load exception would typically happen on an Anonymously Hosted DynamicMethods
                 // Assembly and it would be safe to skip this exception.
+                return Type.EmptyTypes;
+            }
+            catch (FileLoadException ex)
+            {
+                // The assembly points to a not found assembly - ignore and continue
                 return Type.EmptyTypes;
             }
             catch (ReflectionTypeLoadException ex)
