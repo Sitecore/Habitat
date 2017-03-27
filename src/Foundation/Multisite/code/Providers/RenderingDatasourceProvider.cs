@@ -3,17 +3,17 @@
   using System;
   using Sitecore.Data.Items;
 
-  public class DatasourceProvider : IDatasourceProvider
-  {
+  public class RenderingDatasourceProvider : IRenderingDatasourceProvider
+    {
     private readonly ISiteSettingsProvider siteSettingsProvider;
     public const string DatasourceSettingsName = "datasources";
     private const string QueryPrefix = "query:";
 
-    public DatasourceProvider() : this(new SiteSettingsProvider())
+    public RenderingDatasourceProvider() : this(new SiteSettingsProvider())
     {
     }
 
-    public DatasourceProvider(ISiteSettingsProvider siteSettingsProvider)
+    public RenderingDatasourceProvider(ISiteSettingsProvider siteSettingsProvider)
     {
       this.siteSettingsProvider = siteSettingsProvider;
     }

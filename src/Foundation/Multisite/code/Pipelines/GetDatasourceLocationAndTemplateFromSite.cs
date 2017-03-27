@@ -9,13 +9,13 @@
   public class GetDatasourceLocationAndTemplateFromSite
   {
     //Sitecore has no constant in FieldIDs for this standard field
-    private readonly IDatasourceProvider provider;
+    private readonly IRenderingDatasourceProvider provider;
 
-    public GetDatasourceLocationAndTemplateFromSite() : this(new DatasourceProvider())
+    public GetDatasourceLocationAndTemplateFromSite() : this(new RenderingDatasourceProvider())
     {
     }
 
-    public GetDatasourceLocationAndTemplateFromSite(IDatasourceProvider provider)
+    public GetDatasourceLocationAndTemplateFromSite(IRenderingDatasourceProvider provider)
     {
       this.provider = provider;
     }

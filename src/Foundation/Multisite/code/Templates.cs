@@ -21,6 +21,13 @@
       }
     }
 
+    public struct FieldDatasourceConfiguration
+    {
+      public struct Fields
+      {
+        public static readonly ID FieldDatasourceLocation = new ID("{8878A406-BF50-42C7-82E7-CC7AFE1D92F0}");
+      }
+    }
     public struct SiteSettings
     {
       public static ID ID = new ID("{BCCFEBEA-DCCB-48FE-9570-6503829EC03F}");

@@ -3,7 +3,7 @@
   using Sitecore.Data;
   using Sitecore.Data.Items;
 
-  public interface IDatasourceProvider
+  public interface IRenderingDatasourceProvider
   {
     Item[] GetDatasourceLocations(Item contextItem, string name);
 
