@@ -24,6 +24,7 @@
   "dependencies": {
     "sitecore.demo.theme": "https://github.com/Sitecore/Sitecore.Demo.Theme.git",
     "jquery-ui": "1.11.4",
-    "jquery-validation": "1.15.0"
+    "jquery-validation": "1.15.0",
+    "jquery-ajax-unobtrusive": "^3.2.4"
   }
 }

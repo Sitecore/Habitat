@@ -23,14 +23,12 @@ namespace Sitecore.Foundation.Assets.Models
         }
 
 
-        public string Site { get; set; }
+        public string Site { get; }
 
-        public ScriptLocation Location { get; set; }
+        public ScriptLocation Location { get; }
 
-        public string Content { get; set; }
+        public string Content { get; }
         public AssetContentType ContentType { get; }
-
-        public string Inline { get; set; }
 
         public string AddOnceToken { get; set; }
 
@@ -43,11 +41,6 @@ namespace Sitecore.Foundation.Assets.Models
             if (this.Content != null)
             {
                 total += this.Content.Length;
-            }
-
-            if (this.Inline != null)
-            {
-                total += this.Inline.Length;
             }
 
             if (this.AddOnceToken != null)
