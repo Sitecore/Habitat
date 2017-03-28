@@ -41,7 +41,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Get_NoHttpContextQuery_ShouldReturnNull()
+    public void Get_NoRenderingContextNoItemSiteContextNoDefaultSearchQuery_ShouldReturnNull()
     {
       var context = new RenderingContext
                     {

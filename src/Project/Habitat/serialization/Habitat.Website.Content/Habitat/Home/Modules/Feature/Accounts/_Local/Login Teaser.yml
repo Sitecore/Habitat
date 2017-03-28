@@ -28,3 +28,34 @@ Languages:
       Value: |
         This is a login teaser - which is not logged in.
         The component will show the user details when logged in.
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ログインティザー
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054535Z
+    - ID: "39aabcf6-426c-4ad1-8b3d-a5135f219455"
+      Hint: Logged In Title
+      Value: ログインティザー
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "76183bc1-755c-428b-a35a-1425309990be"
+      Hint: Logged In Summary
+      Value: |
+        これはログインティーザー- ログインをしている場合.
+        今コンポーネントはログインしていないときにログインボックスを表示します。
+    - ID: "d9843186-ed10-47d8-8cc7-511ac670b6b4"
+      Hint: Title
+      Value: ログインティーザー
+    - ID: "ffab401b-8d7c-4172-a82a-ae32b7d2c6c1"
+      Hint: Summary
+      Value: |
+        これはログインのティーザー- ログインをしていない場合.
+        ログインをした時にはこのコンポーネントを参照することができます。

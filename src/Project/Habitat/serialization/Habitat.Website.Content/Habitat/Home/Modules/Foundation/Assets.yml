@@ -24,3 +24,34 @@ Languages:
     - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
       Hint: BrowserTitle
       Value: Assets
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: アセット
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: アセット
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054554Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
+      Hint: Image
+      Value: |
+        <image mediaid="{88032F9C-B464-44CB-B76D-513D60B9C127}" />
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
+      Hint: Summary
+      Value: アセットを使用すると、モジュール式アーキテクチャでjavascriptとcssを一元管理できます。
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: アセット
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: アセット

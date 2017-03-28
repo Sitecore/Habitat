@@ -32,3 +32,38 @@ Languages:
       Hint: Body
       Value: |
         <span style="line-height: 24.2857px;">Feature modules are the functionality of the website such as navigation, search, content, accounts, etc. The bulk of the business logic and presentation elements sits in these modules.</span>
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Feature （特徴）レイヤー
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: Feature（機能）
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054534Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
+      Hint: Image
+      Value: |
+        <image mediaid="{7F9A6C4D-D288-46A8-9D27-C084AE76A9DB}" ></image>
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
+      Hint: Summary
+      Value: Feature（機能）モジュールは、ナビゲーション、検索、コンテンツ、アカウントなどのウェブサイトの機能です。ビジネスロジックとプレゼンテーション要素の大半は、これらのモジュールにあります。
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: Feature（機能）レイヤー
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: Feature（機能）
+    - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
+      Hint: Body
+      Value: |
+        <span style="line-height: 24.2857px;">機能モジュールは、ナビゲーション、検索、コンテンツ、アカウントなどのウェブサイトの機能です。ビジネスロジックとプレゼンテーション要素の大半は、これらのモジュールにあります。</span>

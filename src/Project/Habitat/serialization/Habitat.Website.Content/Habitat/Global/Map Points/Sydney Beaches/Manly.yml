@@ -21,3 +21,27 @@ Languages:
     - ID: "f686ac8e-1d33-45db-8e1a-1b40cd491e7a"
       Hint: MapPointLocation
       Value: "-33.792736778666715,151.28808975219727"
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: マンリー
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0295c01d-214c-4c23-afc2-3f0b4e88b643"
+      Hint: MapPointAddress
+      Value: 無限のビーチと非常にサーフィンのフレンドリー。
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054652Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "f12c22bb-e57d-4fab-96e1-1229e4e7ff0e"
+      Hint: MapPointName
+      Value: マンリー
+    - ID: "f686ac8e-1d33-45db-8e1a-1b40cd491e7a"
+      Hint: MapPointLocation
+      Value: "-33.792736778666715,151.28808975219727"

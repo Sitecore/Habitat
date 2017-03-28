@@ -45,3 +45,28 @@ Languages:
     - ID: "63dda48b-b0cb-45a7-9a1b-b26ddb41009b"
       Hint: MediaTitle
       Value: "Sitecore Powered!"
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054657Z
+    - ID: "2628705d-9434-4448-978c-c3bf166fa1eb"
+      Hint: MediaVideoLink
+      Value: |
+        <link linktype="media" target="" id="{B0CF0C13-99F5-4FE0-85C0-1FE6495BF04A}" />
+    - ID: "302c9f8d-f703-4f76-a4ab-73d222648232"
+      Hint: MediaDescription
+      Value: Fully Leveraging the power of Sitecore
+    - ID: "4ff62b0a-d73b-4436-bea2-023154f2ffc4"
+      Hint: MediaThumbnail
+      Value: |
+        <image mediapath="" src="" height="" mediaid="{9F63F58A-E57A-49A2-BC8F-DCDFACE44B68}" hspace="" usethumbnail="" showineditor="" width="" alt="Experience Marketing" vspace="" ></image>
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "63dda48b-b0cb-45a7-9a1b-b26ddb41009b"
+      Hint: MediaTitle
+      Value: "Sitecore Powered!"

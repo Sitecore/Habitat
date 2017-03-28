@@ -20,8 +20,7 @@ Languages:
       Type: Layout
       Value: |
         <r xmlns:p="p" xmlns:s="s"
-          p:p="1"
-          s:xsd="http://www.w3.org/2001/XMLSchema">
+          p:p="1">
           <d
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r
@@ -69,3 +68,78 @@ Languages:
     - ID: "f686ac8e-1d33-45db-8e1a-1b40cd491e7a"
       Hint: MapPointLocation
       Value: 55.6750834,12.559534600000006
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: 地図情報
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0295c01d-214c-4c23-afc2-3f0b4e88b643"
+      Hint: MapPointAddress
+      Value: |
+        東京都港区南青山２－１１－１６
+        METLIFE青山ビル3階
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Type: Layout
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1"
+          s:xsd="http://www.w3.org/2001/XMLSchema">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{D510F11D-594A-462B-9648-ABCFF19F2FD2}"
+              p:before="*"
+              s:ds="{37FCED17-913A-4ABB-9EEC-3BF745334326}"
+              s:id="{7DFD9396-CB94-4174-9721-9419A2AA68E3}"
+              s:par="MapType=hybrid&amp;CenterLocation=13.0593125%2C-98.6677164&amp;ZoomLevel=2&amp;EnableCenterMapControl&amp;EnableZoomControl=1&amp;EnableMapTypeControl=1&amp;EnableScaleControl&amp;EnableStreetViewControl&amp;EnableRotateControl"
+              s:ph="/page-layout/section-narrow/col-wide-1_b38d639b-cca8-4397-846a-75efd37874a3" />
+            <r
+              uid="{B38D639B-CCA8-4397-846A-75EFD37874A3}"
+              p:after="r[@uid='{D510F11D-594A-462B-9648-ABCFF19F2FD2}']"
+              s:id="{03112E88-1499-4132-9D5F-E213AFD2019C}"
+              s:ph="/page-layout/section-narrow" />
+            <r
+              uid="{24941F8B-726E-4DC1-BC2C-82C8BE0C6414}"
+              s:par="MapType=roadmap&amp;CenterLocation=-5.055576%2C3.803790&amp;ZoomLevel=4&amp;EnableCenterMapControl&amp;EnableZoomControl&amp;EnableMapTypeControl&amp;EnableScaleControl&amp;EnableStreetViewControl&amp;EnableRotateControl" />
+          </d>
+        </r>
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: 地図情報
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054544Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
+      Hint: Image
+      Value: |
+        <image mediaid="{88032F9C-B464-44CB-B76D-513D60B9C127}" />
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
+      Hint: Summary
+      Value: <p>これは、記事と非常によく似たページタイプですが、マップが組み込まれています。</p>
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: 地図情報
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: 地図情報
+    - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
+      Hint: Body
+      Value: |
+        <p>このページタイプは、レンダリング（マップコントロール）がデータソースからだけでなくページ自体からコンテンツを描画する方法を示しています。</p>
+        <p>上記はページタイプ自体に組み込まれたマップで、そこからコンテンツを描画します。</p>
+        <p>以下は、共有データソースからコンテンツを描画するマップレンダリングです。</p>
+        <p> </p>
+    - ID: "f12c22bb-e57d-4fab-96e1-1229e4e7ff0e"
+      Hint: MapPointName
+      Value: サイトコア株式会社
+    - ID: "f686ac8e-1d33-45db-8e1a-1b40cd491e7a"
+      Hint: MapPointLocation
+      Value: 35.6714795,139.7191239

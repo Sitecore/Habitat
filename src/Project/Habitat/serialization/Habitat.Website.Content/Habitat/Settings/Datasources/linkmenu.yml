@@ -22,3 +22,24 @@ Languages:
     - ID: "5fe1cc43-f86c-459c-a379-cd75950d85af"
       Hint: DatasourceLocation
       Value: "{3AA0815E-CBD7-4A56-A922-1CCA81D844D1}"
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: リンクメニュー
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054606Z
+    - ID: "498dd5b6-7dae-44a7-9213-1d32596ad14f"
+      Hint: DatasourceTemplate
+      Value: /sitecore/templates/Feature/Navigation/_NavigationRoot
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "5fe1cc43-f86c-459c-a379-cd75950d85af"
+      Hint: DatasourceLocation
+      Value: "{3AA0815E-CBD7-4A56-A922-1CCA81D844D1}"

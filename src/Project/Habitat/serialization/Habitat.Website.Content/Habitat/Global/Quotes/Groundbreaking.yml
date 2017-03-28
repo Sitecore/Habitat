@@ -28,3 +28,30 @@ Languages:
       Hint: Picture
       Value: |
         <image mediaid="{A127A6BF-3087-4495-BD07-7B7C5C77A621}" ></image>
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0de53078-0da4-40cc-bbca-63aa96a0a1ef"
+      Hint: Quote
+      Value: "[Habitat...] は画期的なものではありませんが、Sitecoreが開発者に自社の製品で作業する方法を教えてくれるのは本当の革命です。"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054700Z
+    - ID: "26cd59ab-3639-488f-bafd-58d2b217755a"
+      Hint: Name
+      Value: Anders Laub Christoffersen
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "76972fcd-4bb0-4255-864e-077745efdf50"
+      Hint: Title
+      Value: Sitecore MVP
+    - ID: "bf83983a-473f-4a49-be8e-7d563aa5687e"
+      Hint: Cite Origin
+      Value: Pentia A/S
+    - ID: "c9baf3eb-8cfa-4bf6-9b19-51d38db5fc38"
+      Hint: Picture
+      Value: |
+        <image mediaid="{A127A6BF-3087-4495-BD07-7B7C5C77A621}" ></image>

@@ -25,3 +25,27 @@ Languages:
       Hint: Picture
       Value: |
         <image mediaid="{FF8E14C4-79AA-4D80-A2E5-D07BFD835411}" height="93" hspace="" width="100" alt="" vspace="" ></image>
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054700Z
+    - ID: "26cd59ab-3639-488f-bafd-58d2b217755a"
+      Hint: Name
+      Value: Jane Douane
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "76972fcd-4bb0-4255-864e-077745efdf50"
+      Hint: Title
+      Value: CTO
+    - ID: "bf83983a-473f-4a49-be8e-7d563aa5687e"
+      Hint: Cite Origin
+      Value: Sitecore
+    - ID: "c9baf3eb-8cfa-4bf6-9b19-51d38db5fc38"
+      Hint: Picture
+      Value: |
+        <image mediaid="{FF8E14C4-79AA-4D80-A2E5-D07BFD835411}" height="93" hspace="" width="100" alt="" vspace="" ></image>
