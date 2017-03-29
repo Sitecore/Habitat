@@ -20,7 +20,7 @@ namespace Sitecore.Foundation.Multisite.Tests
   {
     [Theory]
     [AutoDbData]
-    public void GetDatasources_ShouldReturnSourcesFromSettingItem([Frozen]ISiteSettingsProvider siteSettingsProvider, [Greedy]DatasourceProvider provider, string name, Item contextItem, Db db, string settingItemName, Item item, DbItem sourceRoot)
+    public void GetDatasources_ShouldReturnSourcesFromSettingItem([Frozen]ISiteSettingsProvider siteSettingsProvider, [Greedy]RenderingDatasourceProvider provider, string name, Item contextItem, Db db, string settingItemName, Item item, DbItem sourceRoot)
     {
       var settingId = ID.NewID;
       db.Add(new DbItem(settingItemName, settingId, Templates.DatasourceConfiguration.ID) {new DbField(Templates.DatasourceConfiguration.Fields.DatasourceLocation) { {"en", sourceRoot.ID.ToString()} } });
@@ -35,7 +35,7 @@ namespace Sitecore.Foundation.Multisite.Tests
 
     [Theory]
     [AutoDbData]
-    public void GetDatasources_LocationSetByQuery_ShouldReturnSourcesFromSettingItem([Frozen]ISiteSettingsProvider siteSettingsProvider, [Greedy]DatasourceProvider provider, string name, Item contextItem, Db db, string settingItemName, Item item, string sourceRootName)
+    public void GetDatasources_LocationSetByQuery_ShouldReturnSourcesFromSettingItem([Frozen]ISiteSettingsProvider siteSettingsProvider, [Greedy]RenderingDatasourceProvider provider, string name, Item contextItem, Db db, string settingItemName, Item item, string sourceRootName)
     {
       var sourceRoot = new DbItem(sourceRootName.Replace("-", string.Empty));
       var settingId = ID.NewID;
@@ -51,7 +51,7 @@ namespace Sitecore.Foundation.Multisite.Tests
 
     [Theory]
     [AutoDbData]
-    public void GetDatasources_LocationSetByRelativePath_ShouldReturnSourcesFromSettingItem([Frozen]ISiteSettingsProvider siteSettingsProvider, [Greedy]DatasourceProvider provider, string name, string contextItemName, Db db, string settingItemName, Item item, string sourceRootName)
+    public void GetDatasources_LocationSetByRelativePath_ShouldReturnSourcesFromSettingItem([Frozen]ISiteSettingsProvider siteSettingsProvider, [Greedy]RenderingDatasourceProvider provider, string name, string contextItemName, Db db, string settingItemName, Item item, string sourceRootName)
     {
       var contextItemId = ID.NewID;
       var contextDbItem = new DbItem(contextItemName.Replace("-", String.Empty), contextItemId);
@@ -82,7 +82,7 @@ namespace Sitecore.Foundation.Multisite.Tests
 
     [Theory]
     [AutoDbData]
-    public void GetDatasources_LocationSetByRelativeQuery_ShouldReturnSourcesFromSettingItem([Frozen]ISiteSettingsProvider siteSettingsProvider, [Greedy]DatasourceProvider provider, string name, string contextItemName, Db db, string settingItemName, Item item, string sourceRootName)
+    public void GetDatasources_LocationSetByRelativeQuery_ShouldReturnSourcesFromSettingItem([Frozen]ISiteSettingsProvider siteSettingsProvider, [Greedy]RenderingDatasourceProvider provider, string name, string contextItemName, Db db, string settingItemName, Item item, string sourceRootName)
     {
       var contextItemId = ID.NewID;
       var contextDbItem = new DbItem(contextItemName.Replace("-", String.Empty), contextItemId);
@@ -113,7 +113,7 @@ namespace Sitecore.Foundation.Multisite.Tests
 
     [Theory]
     [AutoDbData]
-    public void GetDatasourceTemplate_ShouldReturnTemplateFromSettingItem([Frozen]ISiteSettingsProvider siteSettingsProvider, [Greedy]DatasourceProvider provider, string name, Item contextItem, Db db, string settingItemName, Item item, DbItem sourceTemplate)
+    public void GetDatasourceTemplate_ShouldReturnTemplateFromSettingItem([Frozen]ISiteSettingsProvider siteSettingsProvider, [Greedy]RenderingDatasourceProvider provider, string name, Item contextItem, Db db, string settingItemName, Item item, DbItem sourceTemplate)
     {
       var settingId = ID.NewID;
       db.Add(new DbItem(settingItemName, settingId) { new DbField(Templates.DatasourceConfiguration.Fields.DatasourceTemplate) { { "en", sourceTemplate.ID.ToString() } } });
@@ -128,7 +128,7 @@ namespace Sitecore.Foundation.Multisite.Tests
 
     [Theory]
     [AutoDbData]
-    public void GetDatasourceTemplate_ShouldReturnNull(ISiteSettingsProvider siteSettingsProvider, DatasourceProvider provider, string settingName, Item contextItem)
+    public void GetDatasourceTemplate_ShouldReturnNull(ISiteSettingsProvider siteSettingsProvider, RenderingDatasourceProvider provider, string settingName, Item contextItem)
     {
 //      var provider = new ItemDatasourceProvider(settingsProvider);
       //var template = provider.GetDatasourceTemplate(settingName, contextItem);

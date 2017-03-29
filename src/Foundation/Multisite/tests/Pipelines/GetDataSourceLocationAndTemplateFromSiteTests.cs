@@ -22,7 +22,7 @@
   {
     [Theory]
     [AutoDbData]
-    public void Process_DatasourceProvidersAreNull_SourcesAndTemplateAreNotSet([Frozen]DatasourceProvider provider, GetDatasourceLocationAndTemplateFromSite processor, DbItem renderingItem, Db db, string settingName)
+    public void Process_DatasourceProvidersAreNull_SourcesAndTemplateAreNotSet([Frozen]RenderingDatasourceProvider provider, GetDatasourceLocationAndTemplateFromSite processor, DbItem renderingItem, Db db, string settingName)
     {
       var setting = settingName.Replace("-", string.Empty);
       renderingItem.Add(new DbField("Datasource Location") { {"en", $"site:{setting}"} });
@@ -36,7 +36,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Process_DatasourceProviderIsNotNull_SourcesAndTemplateAreSet(IDatasourceProvider provider, DbItem renderingItem, Db db, string settingName, Item[] sources, Item sourceTemplate)
+    public void Process_DatasourceProviderIsNotNull_SourcesAndTemplateAreSet(IRenderingDatasourceProvider provider, DbItem renderingItem, Db db, string settingName, Item[] sources, Item sourceTemplate)
     {
       provider.GetDatasourceLocations(Arg.Any<Item>(), Arg.Any<string>()).Returns(sources);
       provider.GetDatasourceTemplate(Arg.Any<Item>(), Arg.Any<string>()).Returns(sourceTemplate);
