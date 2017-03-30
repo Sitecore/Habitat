@@ -121,7 +121,7 @@
 
         [Theory]
         [AutoDbData]
-        public void Login_NotLoggedInUser_ShouldNotTrackLoginEvents(FakeMembershipUser user, [Frozen] IAccountTrackerService accountTrackerService, AuthenticationProvider authenticationProvider, AccountRepository repo)
+        public void Login_NotLoggedInUser_ShouldNotTrackLoginEvents(FakeMembershipUser user, [Frozen] AccountTrackerService accountTrackerService, AuthenticationProvider authenticationProvider, AccountRepository repo)
         {
             authenticationProvider.Login(@"somedomain\John", Arg.Any<string>(), Arg.Any<bool>()).Returns(false);
 
@@ -134,7 +134,7 @@
                 using (new AuthenticationSwitcher(authenticationProvider))
                 {
                     repo.Login("John", "somepassword");
-                    accountTrackerService.DidNotReceive().TrackLogin(Arg.Any<string>());
+                    accountTrackerService.DidNotReceive().TrackLoginAndIdentifyContact(Arg.Any<string>());
                 }
             }
         }
@@ -156,7 +156,7 @@
         [MemberData(nameof(RegistrationInfosArgumentNull))]
         public void RegisterUser_NullEmailOrPassword_ShouldThrowArgumentException(string email, string password, string profileId)
         {
-            var repository = new AccountRepository(Substitute.For<IAccountTrackerService>());
+            var repository = new AccountRepository(Substitute.For<AccountTrackerService>(), TODO);
             repository.Invoking(x => x.RegisterUser(email, password, profileId)).ShouldThrow<ArgumentNullException>();
         }
 
@@ -205,7 +205,7 @@
 
         [Theory]
         [AutoFakeUserData]
-        public void Register_ValidUser_ShouldTrackRegistraionEvents(FakeMembershipUser user, [Substitute] MembershipProvider membershipProvider, [Substitute] AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, [Frozen] IAccountTrackerService accountTrackerService, AccountRepository repository, string profileId)
+        public void Register_ValidUser_ShouldTrackRegistraionEvents(FakeMembershipUser user, [Substitute] MembershipProvider membershipProvider, [Substitute] AuthenticationProvider authenticationProvider, RegistrationInfo registrationInfo, [Frozen] AccountTrackerService accountTrackerService, AccountRepository repository, string profileId)
         {
             user.UserName.Returns("name");
             MembershipCreateStatus status;

@@ -2,9 +2,9 @@
 {
   public class NotificationService : INotificationService
   {
-    private readonly IAccountsSettingsService siteSettings;
+    private readonly AccountsSettingsService siteSettings;
 
-    public NotificationService(IAccountsSettingsService siteSettings)
+    public NotificationService(AccountsSettingsService siteSettings)
     {
       this.siteSettings = siteSettings;
     }

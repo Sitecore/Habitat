@@ -29,14 +29,14 @@
       db.Add(new DbItem("Item", AccountTrackerService.LoginGoalId));
 
       //Act
-      accountTrackerService.TrackLogin(identifier);
+      accountTrackerService.TrackLoginAndIdentifyContact(identifier);
 
       //Assert
       trackerService.Received().TrackPageEvent(Arg.Is<ID>(AccountTrackerService.LoginGoalId));
     }
 
     [Theory, AutoDbData]
-    public void TrackRegister_Call_ShouldTrackRegistrationGoal(Db db, ID outcomeID, ITracker tracker, [Frozen]IAccountsSettingsService accountsSettingsService, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
+    public void TrackRegister_Call_ShouldTrackRegistrationGoal(Db db, ID outcomeID, ITracker tracker, [Frozen]AccountsSettingsService accountsSettingsService, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
     {
       // Arrange
       accountsSettingsService.GetRegistrationOutcome(Arg.Any<Item>()).Returns(outcomeID);

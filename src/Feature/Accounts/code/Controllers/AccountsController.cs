@@ -8,6 +8,7 @@
     using Sitecore.Feature.Accounts.Models;
     using Sitecore.Feature.Accounts.Repositories;
     using Sitecore.Feature.Accounts.Services;
+    using Sitecore.Foundation.Accounts.Pipelines;
     using Sitecore.Foundation.Alerts.Extensions;
     using Sitecore.Foundation.Alerts.Models;
     using Sitecore.Foundation.Dictionary.Repositories;
@@ -19,16 +20,16 @@
     {
         private readonly IAccountRepository accountRepository;
         private readonly INotificationService notificationService;
-        private readonly IAccountsSettingsService accountsSettingsService;
+        private readonly AccountsSettingsService accountsSettingsService;
         private readonly IGetRedirectUrlService getRedirectUrlService;
         private readonly IUserProfileService userProfileService;
-        private readonly IContactProfileService contactProfileService;
+        private readonly ContactProfileService contactProfileService;
 
-        public AccountsController() : this(new AccountRepository(new AccountTrackerService(new AccountsSettingsService(), new TrackerService())), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new GetRedirectUrlService(), new UserProfileService(), new ContactProfileService())
+        public AccountsController() : this(new AccountRepository(new PipelineService()), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new GetRedirectUrlService(), new UserProfileService(), new ContactProfileService())
         {
         }
 
-        public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService, IGetRedirectUrlService getRedirectUrlService, IUserProfileService userProfileService, IContactProfileService contactProfileService)
+        public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, AccountsSettingsService accountsSettingsService, IGetRedirectUrlService getRedirectUrlService, IUserProfileService userProfileService, ContactProfileService contactProfileService)
         {
             this.accountRepository = accountRepository;
             this.notificationService = notificationService;

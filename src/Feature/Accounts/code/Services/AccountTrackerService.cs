@@ -4,18 +4,18 @@
   using Sitecore.Data;
   using Sitecore.Foundation.SitecoreExtensions.Services;
 
-  public class AccountTrackerService : IAccountTrackerService
+  public class AccountTrackerService
   {
-    private readonly IAccountsSettingsService accountsSettingsService;
+    private readonly AccountsSettingsService accountsSettingsService;
     private readonly ITrackerService trackerService;
 
-    public AccountTrackerService(IAccountsSettingsService accountsSettingsService, ITrackerService trackerService)
+    public AccountTrackerService(AccountsSettingsService accountsSettingsService, ITrackerService trackerService)
     {
       this.accountsSettingsService = accountsSettingsService;
       this.trackerService = trackerService;
     }
 
-    public virtual void TrackLogin(string identifier)
+    public virtual void TrackLoginAndIdentifyContact(string identifier)
     {
       this.trackerService.TrackPageEvent(LoginGoalId);
       this.trackerService.IdentifyContact(identifier);

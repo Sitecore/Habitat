@@ -2,24 +2,24 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 
 @{
-  var activeLanguage = LanguageRepository.GetActive();
-  var languages = LanguageRepository.GetSupportedLanguages().ToArray();
-  if (languages.Length <= 1)
-  {
-    return;
-  }
+    var activeLanguage = LanguageRepository.GetActive();
+    var languages = LanguageRepository.GetSupportedLanguages().ToArray();
+    if (languages.Length <= 1)
+    {
+        return;
+    }
 }
 <li class="dropdown">
-  <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
-    <i class="fa fa-globe"></i>
-  </a>
-  <ul class="dropdown-menu">
-    @foreach (var language in languages)
-    {
-      var cssClass = language.TwoLetterCode == activeLanguage?.TwoLetterCode ? "active" : "";
-      <li class="@cssClass">
-        <a href="@language.Url">@language.NativeName</a>
-      </li>
-    }
-  </ul>
+    <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
+        <i class="fa fa-globe"></i>
+    </a>
+    <ul class="dropdown-menu">
+        @foreach (var language in languages)
+        {
+            var cssClass = language.TwoLetterCode == activeLanguage?.TwoLetterCode ? "active" : "";
+            <li class="@cssClass">
+                <a href="@language.Url" onclick="return SwitchToLanguage('@language.Name', '@(activeLanguage?.Name)', '@language.Url')">@language.NativeName</a>
+            </li>
+        }
+    </ul>
 </li>

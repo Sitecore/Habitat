@@ -8,6 +8,9 @@ SharedFields:
 - ID: "51b435bc-f7b9-478a-9c51-52916af96ff5"
   Hint: Path
   Value: /Views/Language/LanguageSelector.cshtml
+- ID: "e514a1eb-ddba-44f7-8528-82ca2280f778"
+  Hint: JavaScript assets
+  Value: /scripts/language/language.js
 Languages:
 - Language: en
   Versions:

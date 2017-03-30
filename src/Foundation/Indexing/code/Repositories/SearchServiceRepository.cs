@@ -1,25 +1,24 @@
 ﻿namespace Sitecore.Foundation.Indexing.Repositories
 {
-  using Sitecore.Foundation.Indexing;
-  using Sitecore.Foundation.Indexing.Models;
-  using Sitecore.Foundation.Indexing.Services;
+    using Sitecore.Foundation.Indexing.Models;
+    using Sitecore.Foundation.Indexing.Services;
 
-  public class SearchServiceRepository : ISearchServiceRepository
-  {
-    private readonly ISearchSettings settings;
-
-    public SearchServiceRepository() : this(new SearchSettingsBase())
+    public class SearchServiceRepository : ISearchServiceRepository
     {
-    }
+        private readonly ISearchSettings settings;
 
-    public SearchServiceRepository(ISearchSettings searchSettings)
-    {
-      this.settings = searchSettings;
-    }
+        public SearchServiceRepository() : this(new SearchSettingsBase())
+        {
+        }
 
-    public virtual SearchService Get()
-    {
-      return new SearchService(this.settings);
+        public SearchServiceRepository(ISearchSettings searchSettings)
+        {
+            this.settings = searchSettings;
+        }
+
+        public virtual SearchService Get()
+        {
+            return new SearchService(this.settings);
+        }
     }
-  }
 }
