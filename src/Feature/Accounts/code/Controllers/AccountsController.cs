@@ -20,16 +20,16 @@
     {
         private readonly IAccountRepository accountRepository;
         private readonly INotificationService notificationService;
-        private readonly AccountsSettingsService accountsSettingsService;
+        private readonly IAccountsSettingsService accountsSettingsService;
         private readonly IGetRedirectUrlService getRedirectUrlService;
         private readonly IUserProfileService userProfileService;
-        private readonly ContactProfileService contactProfileService;
+        private readonly IContactProfileService contactProfileService;
 
         public AccountsController() : this(new AccountRepository(new PipelineService()), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new GetRedirectUrlService(), new UserProfileService(), new ContactProfileService())
         {
         }
 
-        public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, AccountsSettingsService accountsSettingsService, IGetRedirectUrlService getRedirectUrlService, IUserProfileService userProfileService, ContactProfileService contactProfileService)
+        public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService, IGetRedirectUrlService getRedirectUrlService, IUserProfileService userProfileService, IContactProfileService contactProfileService)
         {
             this.accountRepository = accountRepository;
             this.notificationService = notificationService;

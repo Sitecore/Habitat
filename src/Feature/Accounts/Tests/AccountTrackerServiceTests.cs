@@ -36,7 +36,7 @@
     }
 
     [Theory, AutoDbData]
-    public void TrackRegister_Call_ShouldTrackRegistrationGoal(Db db, ID outcomeID, ITracker tracker, [Frozen]AccountsSettingsService accountsSettingsService, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
+    public void TrackRegister_Call_ShouldTrackRegistrationGoal(Db db, ID outcomeID, ITracker tracker, [Frozen]IAccountsSettingsService accountsSettingsService, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
     {
       // Arrange
       accountsSettingsService.GetRegistrationOutcome(Arg.Any<Item>()).Returns(outcomeID);

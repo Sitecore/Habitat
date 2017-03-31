@@ -10,10 +10,10 @@
     using Sitecore.Exceptions;
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
-    public class AccountsSettingsService
+    public class AccountsSettingsService : IAccountsSettingsService
     {
         public static readonly string PageNotFoundUrl = Settings.GetSetting("Sitecore.Feature.Accounts.PageNotFoundUrl", "/404");
-        public static AccountsSettingsService Instance => new AccountsSettingsService();
+        public static IAccountsSettingsService Instance => new AccountsSettingsService();
 
         public virtual string GetPageLink(Item contextItem, ID fieldID)
         {
@@ -96,7 +96,7 @@
             {
                 item = contextItem.GetAncestorOrSelfOfTemplate(Templates.AccountsSettings.ID);
             }
-            item = item ?? Context.Site?.GetContextItem(Templates.AccountsSettings.ID);
+            item = item ?? Context.Site.GetContextItem(Templates.AccountsSettings.ID);
 
             return item;
         }

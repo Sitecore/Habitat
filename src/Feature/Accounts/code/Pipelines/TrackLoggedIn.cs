@@ -12,11 +12,15 @@ namespace Sitecore.Feature.Accounts.Pipelines
 
     public class TrackLoggedIn
     {
-        private readonly AccountTrackerService accountTrackerService;
+        private readonly IAccountTrackerService accountTrackerService;
 
-        public TrackLoggedIn()
+        public TrackLoggedIn() : this(new AccountTrackerService(new AccountsSettingsService(), new TrackerService()))
         {
-            this.accountTrackerService = new AccountTrackerService(new AccountsSettingsService(), new TrackerService());
+        }
+
+        public TrackLoggedIn(AccountTrackerService accountTrackerService)
+        {
+            this.accountTrackerService = accountTrackerService;
         }
 
         public void Process(LoggedInPipelineArgs args)

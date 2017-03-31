@@ -22,7 +22,7 @@
 
     [Theory]
     [AutoEmailData]
-    public void SendPasswordShouldSendOnlyOneEmail(AccountsSettingsService settings, MailMessage msg)
+    public void SendPasswordShouldSendOnlyOneEmail(IAccountsSettingsService settings, MailMessage msg)
     {
       this.SentMail(settings, msg);
       this.SmtpServer.ReceivedEmailCount.Should().Be(1);
@@ -30,14 +30,14 @@
     
     [Theory]
     [AutoEmailData]
-    public void SendPasswordShouldUseSubjectFromSettings(AccountsSettingsService settings, MailMessage msg)
+    public void SendPasswordShouldUseSubjectFromSettings(IAccountsSettingsService settings, MailMessage msg)
     {
       var sentMail = this.SentMail(settings, msg);
       sentMail.Headers["Subject"].Should().NotBeNullOrWhiteSpace();
       sentMail.Headers["Subject"].Should().BeEquivalentTo(settings.GetForgotPasswordMailTemplate().Subject);
     }
 
-    private SmtpMessage SentMail(AccountsSettingsService settings, MailMessage msg, string to = "fake@sc.net")
+    private SmtpMessage SentMail(IAccountsSettingsService settings, MailMessage msg, string to = "fake@sc.net")
     {
       settings.GetForgotPasswordMailTemplate().Returns(msg);
       var ns = new NotificationService(settings);
@@ -48,7 +48,7 @@
 
     [Theory]
     [AutoEmailData]
-    public void SendPasswordShouldReplacePasswordKeyWithNewPassword(AccountsSettingsService settings, MailMessage msg)
+    public void SendPasswordShouldReplacePasswordKeyWithNewPassword(IAccountsSettingsService settings, MailMessage msg)
     {
       msg.Body = "fake body $password$";
       var sentMail = this.SentMail(settings, msg);
@@ -57,7 +57,7 @@
 
     [Theory]
     [AutoEmailData]
-    public void SendPasswordShouldIgnoreOtherKeysToInsertPassword(AccountsSettingsService settings, MailMessage msg)
+    public void SendPasswordShouldIgnoreOtherKeysToInsertPassword(IAccountsSettingsService settings, MailMessage msg)
     {
       msg.Body = "fake body $password2$";
       var sentMail = this.SentMail(settings, msg);
@@ -66,7 +66,7 @@
 
     [Theory]
     [AutoEmailData]
-    public void SendPasswordShouldUseSourceAddressFromSettings(AccountsSettingsService settings, MailMessage msg)
+    public void SendPasswordShouldUseSourceAddressFromSettings(IAccountsSettingsService settings, MailMessage msg)
     {
       var sentMail = this.SentMail(settings, msg);
       sentMail.FromAddress.Address.Should().BeEquivalentTo(msg.From.Address);
@@ -74,7 +74,7 @@
 
     [Theory]
     [AutoEmailData]
-    public void SendPasswordShouldSetAddressTo(AccountsSettingsService settings, MailMessage msg)
+    public void SendPasswordShouldSetAddressTo(IAccountsSettingsService settings, MailMessage msg)
     {
       msg.To.Clear();
       var sentMail = this.SentMail(settings, msg, "fake@sitecore.net");

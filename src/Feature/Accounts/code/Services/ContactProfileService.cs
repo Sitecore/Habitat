@@ -4,7 +4,7 @@
     using Sitecore.Feature.Accounts.Models;
     using Sitecore.Foundation.Accounts.Providers;
 
-    public class ContactProfileService
+    public class ContactProfileService : IContactProfileService
     {
         private const string InterestsTagName = "Interests";
         private const string PrimaryEmailKey = "Primary";

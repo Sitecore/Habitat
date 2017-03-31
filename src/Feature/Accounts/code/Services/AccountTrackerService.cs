@@ -4,12 +4,12 @@
   using Sitecore.Data;
   using Sitecore.Foundation.SitecoreExtensions.Services;
 
-  public class AccountTrackerService
+  public class AccountTrackerService : IAccountTrackerService
   {
-    private readonly AccountsSettingsService accountsSettingsService;
+    private readonly IAccountsSettingsService accountsSettingsService;
     private readonly ITrackerService trackerService;
 
-    public AccountTrackerService(AccountsSettingsService accountsSettingsService, ITrackerService trackerService)
+    public AccountTrackerService(IAccountsSettingsService accountsSettingsService, ITrackerService trackerService)
     {
       this.accountsSettingsService = accountsSettingsService;
       this.trackerService = trackerService;

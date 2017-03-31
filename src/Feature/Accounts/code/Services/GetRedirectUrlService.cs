@@ -6,14 +6,14 @@
 
     public class GetRedirectUrlService : IGetRedirectUrlService
     {
-        private readonly AccountsSettingsService accountsSettingsService;
+        private readonly IAccountsSettingsService accountsSettingsService;
         private const string ReturnUrlQuerystring = "ReturnUrl";
 
         public GetRedirectUrlService() : this(new AccountsSettingsService())
         {
         }
 
-        public GetRedirectUrlService(AccountsSettingsService accountsSettingsService)
+        public GetRedirectUrlService(IAccountsSettingsService accountsSettingsService)
         {
             this.accountsSettingsService = accountsSettingsService;
         }

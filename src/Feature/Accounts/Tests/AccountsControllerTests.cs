@@ -118,7 +118,7 @@
 
         [Theory]
         [AutoDbData]
-        public void Login_ValidaData_ShouldRedirectToReturnUrl([Frozen] IAccountRepository repo, LoginInfo info, User user, INotificationService service, AccountsSettingsService accountSetting, IUserProfileService userProfileService)
+        public void Login_ValidaData_ShouldRedirectToReturnUrl([Frozen] IAccountRepository repo, LoginInfo info, User user, INotificationService service, IAccountsSettingsService accountSetting, IUserProfileService userProfileService)
         {
             userProfileService.ValidateUser(Arg.Any<User>()).ReturnsForAnyArgs(true);
             var controller = new AccountsController(repo, service, accountSetting, null, userProfileService, null);
@@ -129,7 +129,7 @@
 
         [Theory]
         [AutoDbData]
-        public void Login_InvalidData_ShouldReturnViewModel([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, AccountsSettingsService accountSetting)
+        public void Login_InvalidData_ShouldReturnViewModel([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
         {
             var controller = new AccountsController(repo, service, accountSetting, null, null, null);
             controller.ModelState.AddModelError("Error", "Error");
@@ -140,7 +140,7 @@
 
         [Theory]
         [AutoDbData]
-        public void Login_InvalidData_ShouldAddErrorToModelState([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, AccountsSettingsService accountSetting)
+        public void Login_InvalidData_ShouldAddErrorToModelState([Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting)
         {
             repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => null);
             var controller = new AccountsController(repo, service, accountSetting, null, null, null);
@@ -151,7 +151,7 @@
 
         [Theory]
         [AutoDbData]
-        public void ForgotPassword_ValidData_ShouldReturnViewWithoutModel([Frozen] IAccountRepository repo, INotificationService service, AccountsSettingsService accountsSettings, MailMessage mailMessage)
+        public void ForgotPassword_ValidData_ShouldReturnViewWithoutModel([Frozen] IAccountRepository repo, INotificationService service, IAccountsSettingsService accountsSettings, MailMessage mailMessage)
         {
             accountsSettings.GetForgotPasswordMailTemplate().ReturnsForAnyArgs(x => mailMessage);
             var controller = new AccountsController(repo, service, accountsSettings, null, null, null);
