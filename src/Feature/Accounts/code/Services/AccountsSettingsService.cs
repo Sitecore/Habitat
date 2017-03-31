@@ -96,7 +96,7 @@
             {
                 item = contextItem.GetAncestorOrSelfOfTemplate(Templates.AccountsSettings.ID);
             }
-            item = item ?? Context.Site.GetContextItem(Templates.AccountsSettings.ID);
+            item = item ?? Context.Site?.GetContextItem(Templates.AccountsSettings.ID);
 
             return item;
         }
