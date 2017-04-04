@@ -13,7 +13,7 @@
     public class AccountsSettingsService : IAccountsSettingsService
     {
         public static readonly string PageNotFoundUrl = Settings.GetSetting("Sitecore.Feature.Accounts.PageNotFoundUrl", "/404");
-        public static IAccountsSettingsService Instance => new AccountsSettingsService();
+        public static AccountsSettingsService Instance => new AccountsSettingsService();
 
         public virtual string GetPageLink(Item contextItem, ID fieldID)
         {
