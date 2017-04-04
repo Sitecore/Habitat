@@ -29,7 +29,7 @@
       db.Add(new DbItem("Item", AccountTrackerService.LoginGoalId));
 
       //Act
-      accountTrackerService.TrackLogin(identifier);
+      accountTrackerService.TrackLoginAndIdentifyContact(identifier);
 
       //Assert
       trackerService.Received().TrackPageEvent(Arg.Is<ID>(AccountTrackerService.LoginGoalId));

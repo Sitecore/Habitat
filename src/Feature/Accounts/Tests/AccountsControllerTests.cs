@@ -45,7 +45,7 @@
 
         [Theory]
         [AutoDbData]
-        public void Logout_ShouldCallSitecoreLogout(Database db, [Content] DbItem item, IAccountRepository repo, INotificationService ns, IAccountsSettingsService acc)
+        public void Logout_ShouldCallSitecoreLogout(Database db, [Content] DbItem item, IAccountRepository repo, INotificationService ns, AccountsSettingsService acc)
         {
             var fakeSite = new FakeSiteContext(new StringDictionary
                                                {
@@ -63,7 +63,7 @@
 
         [Theory]
         [AutoDbData]
-        public void Logout_ShouldRedirectUserToHomePage(Database db, [Content] DbItem item, IAccountRepository repo, INotificationService ns, IAccountsSettingsService acc)
+        public void Logout_ShouldRedirectUserToHomePage(Database db, [Content] DbItem item, IAccountRepository repo, INotificationService ns, AccountsSettingsService acc)
         {
             var fakeSite = new FakeSiteContext(new StringDictionary
                                                {
@@ -91,7 +91,7 @@
 
         [Theory]
         [AutoDbData]
-        public void _Login_LoggedIn_ShouldRedirect(Database db, [Content] DbItem item, User user, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, IAccountsSettingsService accountSetting, IUserProfileService userProfileService)
+        public void _Login_LoggedIn_ShouldRedirect(Database db, [Content] DbItem item, User user, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, AccountsSettingsService accountSetting, IUserProfileService userProfileService)
         {
             userProfileService.ValidateUser(Arg.Any<User>()).ReturnsForAnyArgs(true);
             var controller = new AccountsController(repo, service, accountSetting, null, userProfileService, null);
@@ -206,7 +206,7 @@
 
         [Theory]
         [AutoDbData]
-        public void ForgotPassword_ValidPassword_ShouldReturnSuccessView([Frozen] IAccountRepository repo, INotificationService ns, PasswordResetInfo model, IAccountsSettingsService accountSetting, InfoMessage info)
+        public void ForgotPassword_ValidPassword_ShouldReturnSuccessView([Frozen] IAccountRepository repo, INotificationService ns, PasswordResetInfo model, AccountsSettingsService accountSetting, InfoMessage info)
         {
             var fakeSite = new FakeSiteContext(new StringDictionary
                                                {
@@ -224,7 +224,7 @@
 
         [Theory]
         [AutoDbData]
-        public void ForgotPassword_ShouldCatchAndReturnViewWithError(PasswordResetInfo model, [Frozen] IAccountRepository repo, INotificationService notificationService, IAccountsSettingsService settingService)
+        public void ForgotPassword_ShouldCatchAndReturnViewWithError(PasswordResetInfo model, [Frozen] IAccountRepository repo, INotificationService notificationService, AccountsSettingsService settingService)
         {
             var fakeSite = new FakeSiteContext(new StringDictionary
                                                {
@@ -283,7 +283,7 @@
 
         [Theory]
         [AutoDbData]
-        public void Register_RegistrationThrowsMembershipException_ShouldReturnError(Database db, [Content] DbItem item, Item profileItem, RegistrationInfo registrationInfo, MembershipCreateUserException exception, [Frozen] IAccountRepository repo, [Frozen] INotificationService notifyService, [Frozen] IAccountsSettingsService accountsSettingsService, [Frozen] IUserProfileService userProfileService)
+        public void Register_RegistrationThrowsMembershipException_ShouldReturnError(Database db, [Content] DbItem item, Item profileItem, RegistrationInfo registrationInfo, MembershipCreateUserException exception, [Frozen] IAccountRepository repo, [Frozen] INotificationService notifyService, [Frozen] AccountsSettingsService accountsSettingsService, [Frozen] IUserProfileService userProfileService)
         {
             repo.When(x => x.RegisterUser(Arg.Any<string>(), Arg.Any<string>(), Arg.Any<string>())).Do(x => { throw new MembershipCreateUserException(); });
             userProfileService.GetUserDefaultProfileId().Returns(profileItem.ID.ToString());

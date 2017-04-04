@@ -4,6 +4,6 @@
   {
     void TrackRegistration();
     void TrackRegistrationOutcome();
-    void TrackLogin(string identifier);
+    void TrackLoginAndIdentifyContact(string identifier);
   }
 }

@@ -174,13 +174,15 @@
     <Compile Include="Attributes\ValidateModelAttribute.cs" />
     <Compile Include="Models\LoginInfo.cs" />
     <Compile Include="Models\EditProfile.cs" />
+    <Compile Include="Pipelines\TrackRegistered.cs" />
+    <Compile Include="Pipelines\TrackLoggedIn.cs" />
     <Compile Include="Services\AuthenticationStatus.cs" />
     <Compile Include="Services\GetRedirectUrlService.cs" />
     <Compile Include="Services\ContactProfileService.cs" />
-    <Compile Include="Services\IContactProfileService.cs" />
     <Compile Include="Services\AccountTrackerService.cs" />
     <Compile Include="Services\IAccountsSettingsService.cs" />
     <Compile Include="Services\IAccountTrackerService.cs" />
+    <Compile Include="Services\IContactProfileService.cs" />
     <Compile Include="Services\IGetRedirectUrlService.cs" />
     <Compile Include="Services\IProfileSettingsService.cs" />
     <Compile Include="Services\IUserProfileProvider.cs" />
@@ -257,4 +259,3 @@
   </Target>
   -->
 </Project>
-

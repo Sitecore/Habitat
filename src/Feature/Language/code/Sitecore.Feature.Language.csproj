@@ -103,6 +103,10 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Infrastructure\Pipelines\ChangeLanguagePipelineArgs.cs" />
+    <Compile Include="Infrastructure\Pipelines\InitializeRoutes.cs" />
     <Compile Include="Models\LanguageFactory.cs" />
     <Compile Include="Repositories\LanguageRepository.cs" />
     <Compile Include="Models\Language.cs" />
@@ -114,6 +118,7 @@
     <Content Include="App_Config\Include\Feature\Feature.Language.config" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <Content Include="Scripts\Language\language.js" />
     <Content Include="Views\Language\LanguageSelector.cshtml" />
     <None Include="Views\web.config" />
     <None Include="Web.config" />
@@ -167,4 +172,3 @@
   </Target>
   -->
 </Project>
-

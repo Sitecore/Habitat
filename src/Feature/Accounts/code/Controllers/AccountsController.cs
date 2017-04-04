@@ -8,6 +8,7 @@
     using Sitecore.Feature.Accounts.Models;
     using Sitecore.Feature.Accounts.Repositories;
     using Sitecore.Feature.Accounts.Services;
+    using Sitecore.Foundation.Accounts.Pipelines;
     using Sitecore.Foundation.Alerts.Extensions;
     using Sitecore.Foundation.Alerts.Models;
     using Sitecore.Foundation.Dictionary.Repositories;
@@ -24,7 +25,7 @@
         private readonly IUserProfileService userProfileService;
         private readonly IContactProfileService contactProfileService;
 
-        public AccountsController() : this(new AccountRepository(new AccountTrackerService(new AccountsSettingsService(), new TrackerService())), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new GetRedirectUrlService(), new UserProfileService(), new ContactProfileService())
+        public AccountsController() : this(new AccountRepository(new PipelineService()), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new GetRedirectUrlService(), new UserProfileService(), new ContactProfileService())
         {
         }
 

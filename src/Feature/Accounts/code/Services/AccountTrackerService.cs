@@ -15,7 +15,7 @@
       this.trackerService = trackerService;
     }
 
-    public virtual void TrackLogin(string identifier)
+    public virtual void TrackLoginAndIdentifyContact(string identifier)
     {
       this.trackerService.TrackPageEvent(LoginGoalId);
       this.trackerService.IdentifyContact(identifier);

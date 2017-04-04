@@ -4,16 +4,18 @@
     using System.Web.Security;
     using Sitecore.Diagnostics;
     using Sitecore.Feature.Accounts.Services;
+    using Sitecore.Foundation.Accounts.Pipelines;
+    using Sitecore.Pipelines;
     using Sitecore.Security.Accounts;
     using Sitecore.Security.Authentication;
 
     public class AccountRepository : IAccountRepository
     {
-        private readonly IAccountTrackerService accountTrackerService;
+        private readonly PipelineService pipelineService;
 
-        public AccountRepository(IAccountTrackerService accountTrackerService)
+        public AccountRepository(PipelineService pipelineService)
         {
-            this.accountTrackerService = accountTrackerService;
+            this.pipelineService = pipelineService;
         }
 
         public bool Exists(string userName)
@@ -33,18 +35,22 @@
             }
 
             var result = AuthenticationManager.Login(accountName, password);
-            if (result)
+            if (!result)
             {
-                this.accountTrackerService.TrackLogin(accountName);
-                return AuthenticationManager.GetActiveUser();
+                return null;
             }
 
-            return null;
+            var user = AuthenticationManager.GetActiveUser();
+            this.pipelineService.RunLoggedIn(user);
+            return user;
         }
 
         public void Logout()
         {
+            var user = AuthenticationManager.GetActiveUser();
             AuthenticationManager.Logout();
+            if (user != null)
+                this.pipelineService.RunLoggedOut(user);
         }
 
         public string RestorePassword(string userName)
@@ -72,7 +78,8 @@
             }
 
             user.Profile.Save();
-            this.accountTrackerService.TrackRegistration();
+            this.pipelineService.RunRegistered(user);
+
             this.Login(email, password);
         }
     }
