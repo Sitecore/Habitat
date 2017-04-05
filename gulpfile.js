@@ -284,7 +284,7 @@ gulp.task("Auto-Publish-Views", function () {
   var roots = [root + "/**/Views", "!" + root + "/**/obj/**/Views"];
   var files = "/**/*.cshtml";
   var destination = config.websiteRoot + "\\Views";
-  gulp.src(roots, { base: root }).pipe(
+  return gulp.src(roots, { base: root }).pipe(
     foreach(function (stream, rootFolder) {
       gulp.watch(rootFolder.path + files, function (event) {
         if (event.type === "changed") {
