@@ -125,9 +125,9 @@
     <Compile Include="ItemExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Testing\tests\Sitecore.Foundation.Testing.Tests.csproj">
+    <ProjectReference Include="..\..\Testing\tests\Sitecore.Foundation.Testing.csproj">
       <Project>{7cc3d72b-4518-4b78-be48-630a263c0f5b}</Project>
-      <Name>Sitecore.Foundation.Testing.Tests</Name>
+      <Name>Sitecore.Foundation.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\code\Sitecore.Foundation.LocalDatasource.csproj">
       <Project>{323CA7A6-6ABB-4652-ABE2-75DAB139CBC0}</Project>

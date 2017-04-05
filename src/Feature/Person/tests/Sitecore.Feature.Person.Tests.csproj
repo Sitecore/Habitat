@@ -187,9 +187,9 @@
       <Project>{80213f24-577f-4f0b-a3b8-62485ea4d2f3}</Project>
       <Name>Sitecore.Foundation.Indexing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Foundation\Testing\tests\Sitecore.Foundation.Testing.Tests.csproj">
+    <ProjectReference Include="..\..\..\Foundation\Testing\tests\Sitecore.Foundation.Testing.csproj">
       <Project>{7cc3d72b-4518-4b78-be48-630a263c0f5b}</Project>
-      <Name>Sitecore.Foundation.Testing.Tests</Name>
+      <Name>Sitecore.Foundation.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\code\Sitecore.Feature.Person.csproj">
       <Project>{452c63b5-6019-4ec2-9a9b-9b5dd3241485}</Project>

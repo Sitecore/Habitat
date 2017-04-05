@@ -192,9 +192,9 @@
       <Project>{0D6BA4D8-C469-4AE9-9EBB-93BDF7D7E78F}</Project>
       <Name>Sitecore.Foundation.Dictionary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Testing\tests\Sitecore.Foundation.Testing.Tests.csproj">
+    <ProjectReference Include="..\..\Testing\tests\Sitecore.Foundation.Testing.csproj">
       <Project>{7cc3d72b-4518-4b78-be48-630a263c0f5b}</Project>
-      <Name>Sitecore.Foundation.Testing.Tests</Name>
+      <Name>Sitecore.Foundation.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\code\Sitecore.Foundation.Alerts.csproj">
       <Project>{5cf5fa06-ab27-4df5-a471-ed57ef3e4ae9}</Project>

@@ -246,9 +246,9 @@
       <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Foundation\Testing\tests\Sitecore.Foundation.Testing.Tests.csproj">
+    <ProjectReference Include="..\..\..\Foundation\Testing\tests\Sitecore.Foundation.Testing.csproj">
       <Project>{7cc3d72b-4518-4b78-be48-630a263c0f5b}</Project>
-      <Name>Sitecore.Foundation.Testing.Tests</Name>
+      <Name>Sitecore.Foundation.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\code\Sitecore.Feature.Demo.csproj">
       <Project>{4DD516F2-D9E5-4775-B840-E00A71DD7E87}</Project>

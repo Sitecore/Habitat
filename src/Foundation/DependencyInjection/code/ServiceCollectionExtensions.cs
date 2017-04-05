@@ -176,7 +176,7 @@ namespace Sitecore.Foundation.DependencyInjection
                 // Assembly and it would be safe to skip this exception.
                 return Type.EmptyTypes;
             }
-            catch (FileLoadException ex)
+            catch (FileLoadException)
             {
                 // The assembly points to a not found assembly - ignore and continue
                 return Type.EmptyTypes;

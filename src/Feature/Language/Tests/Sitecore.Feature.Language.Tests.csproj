@@ -190,9 +190,9 @@
       <Project>{cfa2ae87-7f8d-4ca6-bb72-b16380190db7}</Project>
       <Name>Sitecore.Foundation.Multisite</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Foundation\Testing\tests\Sitecore.Foundation.Testing.Tests.csproj">
+    <ProjectReference Include="..\..\..\Foundation\Testing\tests\Sitecore.Foundation.Testing.csproj">
       <Project>{7cc3d72b-4518-4b78-be48-630a263c0f5b}</Project>
-      <Name>Sitecore.Foundation.Testing.Tests</Name>
+      <Name>Sitecore.Foundation.Testing</Name>
     </ProjectReference>
     <ProjectReference Include="..\code\Sitecore.Feature.Language.csproj">
       <Project>{aca65632-ee93-422b-b25e-8e31969694f5}</Project>

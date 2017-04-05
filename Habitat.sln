@@ -196,7 +196,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.LocalDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Dictionary.Tests", "src\Foundation\Dictionary\tests\Sitecore.Foundation.Dictionary.Tests.csproj", "{C6AED40E-22F8-49EC-AA3E-D9323E207A9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Testing.Tests", "src\Foundation\Testing\tests\Sitecore.Foundation.Testing.Tests.csproj", "{7CC3D72B-4518-4B78-BE48-630A263C0F5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Testing", "src\Foundation\Testing\tests\Sitecore.Foundation.Testing.csproj", "{7CC3D72B-4518-4B78-BE48-630A263C0F5B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.DependencyInjection", "src\Foundation\DependencyInjection\code\Sitecore.Foundation.DependencyInjection.csproj", "{366148B7-2392-4F42-80D6-786B7A3682AE}"
 EndProject
