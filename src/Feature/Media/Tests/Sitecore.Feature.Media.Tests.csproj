@@ -198,9 +198,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Foundation\Testing\tests\Sitecore.Foundation.Testing.csproj">
+    <ProjectReference Include="..\..\..\Foundation\Testing\tests\Sitecore.Foundation.Testing.Tests.csproj">
       <Project>{7cc3d72b-4518-4b78-be48-630a263c0f5b}</Project>
-      <Name>Sitecore.Foundation.Testing</Name>
+      <Name>Sitecore.Foundation.Testing.Tests</Name>
     </ProjectReference>
     <ProjectReference Include="..\code\Sitecore.Feature.Media.csproj">
       <Project>{1417b162-f987-4cbd-8642-ca4c4119e705}</Project>
@@ -219,4 +219,3 @@
   </Target>
   -->
 </Project>
-
