@@ -1,9 +1,12 @@
 namespace Sitecore.Foundation.Indexing.Models
 {
-  public interface IQuery
-  {
-    string QueryText { get; set; }
-    int IndexOfFirstResult { get; set; }
-    int NoOfResults { get; set; }
-  }
+    using System.Collections.Generic;
+
+    public interface IQuery
+    {
+        string QueryText { get; set; }
+        int IndexOfFirstResult { get; set; }
+        int NoOfResults { get; set; }
+        Dictionary<string, string[]> Facets { get; set; }
+    }
 }

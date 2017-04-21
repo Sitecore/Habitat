@@ -4,10 +4,8 @@ namespace Sitecore.Foundation.Indexing.Models
   using Sitecore.Data;
   using Sitecore.Data.Items;
 
-  public interface ISearchSettings
+  public interface ISearchSettings : IQueryRoot
   {
-    Item Root { get; set; }
-
     IEnumerable<ID> Templates { get; set; }
   }
 }

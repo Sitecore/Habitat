@@ -14,6 +14,7 @@
     using Sitecore.Diagnostics;
     using Sitecore.Foundation.Indexing.Models;
     using Sitecore.Foundation.Indexing.Repositories;
+    using Sitecore.Mvc.Common;
 
     public class SearchService
     {
@@ -38,6 +39,10 @@
 
         private SearchIndexResolver SearchIndexResolver { get; }
 
+        private SearchResultsFactory SearchResultsFactory { get; }
+
+        public IEnumerable<IQueryRoot> QueryRoots => IndexingProviderRepository.QueryRootProviders.Union(new[] {this.Settings});
+
 
         public virtual ISearchResults Search(IQuery query)
         {
@@ -45,23 +50,25 @@
             {
                 var queryable = this.CreateAndInitializeQuery(context);
 
-                if (this.Settings.Templates == null || !this.Settings.Templates.Any())
-                {
-                    queryable = this.FilterOnItemsMarkedAsIndexable(queryable);
-                }
                 queryable = this.AddContentPredicates(queryable, query);
-                queryable = this.AddFacets(queryable);
-                if (query.IndexOfFirstResult > 0)
-                {
-                    queryable = queryable.Skip(query.IndexOfFirstResult);
-                }
-                if (query.NoOfResults > 0)
-                {
-                    queryable = queryable.Take(query.NoOfResults);
-                }
+                queryable = this.AddFacets(queryable, query);
+                queryable = this.AddPaging(queryable, query);
                 var results = queryable.GetResults();
                 return this.SearchResultsFactory.Create(results, query);
             }
+        }
+
+        private IQueryable<SearchResultItem> AddPaging(IQueryable<SearchResultItem> queryable, IQuery query)
+        {
+            if (query.IndexOfFirstResult > 0)
+            {
+                queryable = queryable.Skip(query.IndexOfFirstResult);
+            }
+            if (query.NoOfResults > 0)
+            {
+                queryable = queryable.Take(query.NoOfResults);
+            }
+            return queryable;
         }
 
         public virtual ISearchResults FindAll()
@@ -89,8 +96,6 @@
             }
         }
 
-        private SearchResultsFactory SearchResultsFactory { get; }
-
         private IQueryable<SearchResultItem> CreateAndInitializeQuery(IProviderSearchContext context)
         {
             var queryable = context.GetQueryable<SearchResultItem>();
@@ -100,13 +105,17 @@
 
         private IQueryable<SearchResultItem> InitializeQuery(IQueryable<SearchResultItem> queryable)
         {
-            queryable = this.SetQueryRoot(queryable);
+            queryable = this.SetQueryRoots(queryable);
             queryable = this.FilterOnLanguage(queryable);
             queryable = this.FilterOnVersion(queryable);
             queryable = this.FilterOnHasSearchResultFormatter(queryable);
             if (this.Settings.Templates != null && this.Settings.Templates.Any())
             {
                 queryable = queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Templates));
+            }
+            else
+            {
+                queryable = this.FilterOnItemsMarkedAsIndexable(queryable);
             }
             return queryable;
         }
@@ -136,7 +145,7 @@
         private Expression<Func<IndexedItem, bool>> GetPredicateForItemDerivesFromIndexedItem()
         {
             var templatePredicate = PredicateBuilder.True<IndexedItem>();
-            templatePredicate = templatePredicate.And(i => i.AllTemplates.Contains(IdHelper.NormalizeGuid(Templates.IndexedItem.ID)));
+            templatePredicate = templatePredicate.And(i => !i.AllTemplates.Contains(IdHelper.NormalizeGuid(Templates.IndexedItem.ID))).Or(i => i.ShowInSearchResults);
             return templatePredicate;
         }
 
@@ -150,15 +159,36 @@
             return expression;
         }
 
-        private IQueryable<SearchResultItem> FilterOnPresentationOnly(IQueryable queryable)
+        private IQueryable<SearchResultItem> AddFacets(IQueryable<SearchResultItem> queryable, IQuery query)
         {
-            return queryable.Cast<IndexedItem>().Where(i => i.HasPresentation && i.ShowInSearchResults);
+            var facets = GetFacetsFromProviders();
+
+            var facetPredicate = PredicateBuilder.True<SearchResultItem>();
+            foreach (var facet in facets)
+            {
+                if (query.Facets.ContainsKey(facet.FieldName))
+                {
+                    var facetValues = query.Facets[facet.FieldName];
+
+                    var facetValuePredicate = PredicateBuilder.False<SearchResultItem>();
+                    foreach (var facetValue in facetValues)
+                    {
+                        if (facetValue == null)
+                            continue;
+                        facetValuePredicate = facetValuePredicate.Or(item => item[facet.FieldName] == facetValue);
+                    }
+                    facetPredicate = facetPredicate.And(facetValuePredicate);
+                }
+                queryable = queryable.FacetOn(item => item[facet.FieldName]);
+            }
+            queryable = queryable.Where(facetPredicate);
+
+            return queryable;
         }
 
-        private IQueryable<SearchResultItem> AddFacets(IQueryable<SearchResultItem> queryable)
+        private static IEnumerable<IQueryFacet> GetFacetsFromProviders()
         {
-            queryable = queryable.FacetOn(item => item.TemplateName);
-            return queryable;
+            return IndexingProviderRepository.QueryFacetProviders.SelectMany(provider => provider.GetFacets()).Distinct(new GenericEqualityComparer<IQueryFacet>((facet, queryFacet) => facet.FieldName == queryFacet.FieldName, facet => facet.FieldName.GetHashCode()));
         }
 
         private IQueryable<SearchResultItem> FilterOnLanguage(IQueryable<SearchResultItem> queryable)
@@ -173,16 +203,20 @@
             return queryable;
         }
 
-        private IQueryable<SearchResultItem> SetQueryRoot(IQueryable<SearchResultItem> queryable)
+        private IQueryable<SearchResultItem> SetQueryRoots(IQueryable<SearchResultItem> queryable)
         {
-            var root = this.Settings.Root;
-            if (root == null)
+            var rootPredicates = PredicateBuilder.False<SearchResultItem>();
+
+            foreach (var provider in this.QueryRoots)
             {
-                throw new InvalidOperationException("Search root must be set");
+                if (provider.Root == null)
+                {
+                    continue;
+                }
+                rootPredicates = rootPredicates.Or(item => item.Path.StartsWith(provider.Root.Paths.FullPath));
             }
 
-            queryable = queryable.Where(item => item.Path.StartsWith(root.Paths.FullPath));
-            return queryable;
+            return queryable.Where(rootPredicates);
         }
 
         private IQueryable<SearchResultItem> AddContentPredicates(IQueryable<SearchResultItem> queryable, IQuery query)

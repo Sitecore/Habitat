@@ -1,0 +1,46 @@
+﻿@using Sitecore.Foundation.Dictionary.Repositories
+@model Sitecore.Foundation.Indexing.Models.ISearchResults
+
+<aside>
+    <div class="sidebar sidebar-static">
+        <button type="button" class="sidebar-toggle visible-xs collapsed" data-toggle="collapse" data-target="#facets-sidebar" aria-expanded="false">
+            <span class="text">@DictionaryPhraseRepository.Current.Get("/Search/Search Facets/Filter", "Filter")</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="sidebar-collapse collapse" id="facets-sidebar">
+            <h4 class="hidden-xs">
+                <span class="text">@DictionaryPhraseRepository.Current.Get("/Search/Search Facets/Filter", "Filter")</span>
+            </h4>
+            @foreach (var facet in Model.Facets)
+            {
+                if (facet.Definition.ViewName != null)
+                {
+                    @Html.Partial(facet.Definition.ViewName, facet)
+                }
+                else
+                {
+                    <div class="facets-container">
+                        <h5>@facet.Definition.Title</h5>
+                        <input type="checkbox" id="color-toggle" class="toggle-facets hidden">
+                        <div class="facet-list">
+                            <ul class="facet nav nav-pills nav-stacked">
+                                @foreach (var facetValue in facet.Values)
+                                {
+                                    <li class="@(facetValue.Selected ? "selected" : "")">
+                                        <a href="#" onclick="@facetValue.Value">
+                                            <span pid="facetName">@facetValue.Value</span>
+                                            <small pid="facetCount">@facetValue.Count</small>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+</aside>
