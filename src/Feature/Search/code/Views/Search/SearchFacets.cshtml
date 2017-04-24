@@ -41,8 +41,12 @@
                             <ul class="facet nav nav-pills nav-stacked">
                                 @foreach (var facetValue in facet.Values)
                                 {
-                                    <li class="@(facetValue.Selected ? "selected" : "")">
+                                    <li class="@(facetValue.Selected ? "active" : "")">
                                         <a href="#" onclick="ToggleFacet('@Model.Query', '@Model.Facets', '@facet.Definition.FieldName', '@facetValue.Value')">
+                                            @if (facetValue.Selected)
+                                            {
+                                                <small class="glyphicon glyphicon-ok text-info"></small>
+                                            }
                                             <span pid="facetName">@facetValue.Value</span>
                                             <small pid="facetCount">@facetValue.Count</small>
                                         </a>
