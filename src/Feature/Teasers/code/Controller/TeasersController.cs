@@ -24,7 +24,7 @@
 
     public ActionResult Accordion() => this.GetDynamicContent("Accordion");
 
-    public ActionResult Tabs() => this.GetDynamicContent("Accordion");
+    public ActionResult Tabs() => this.GetDynamicContent("Tabs");
 
     public ActionResult TeaserCarousel() => this.GetDynamicContent("TeaserCarousel");
 
