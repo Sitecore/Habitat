@@ -30,7 +30,7 @@
             if (results.Facets == null)
                 yield break;
 
-            var facets = GetFacetsFromProviders();
+            var facets = CreateFacetsFromProviders();
 
             foreach (var resultCategory in results.Facets?.Categories)
             {
@@ -38,16 +38,19 @@
                 if (!facets.TryGetValue(resultCategory.Name.ToLowerInvariant(), out definition))
                     continue;
 
+                var facetValues = this.CreateFacetValues(resultCategory, query).ToArray();
+                if (!facetValues.Any())
+                    continue;
                 var facet = new SearchResultFacet
                 {
                     Definition = definition,
-                    Values = this.CreateFacetValues(resultCategory, query)
+                    Values = facetValues
                 };
                 yield return facet;
             }
         }
 
-        private static Dictionary<string, IQueryFacet> GetFacetsFromProviders()
+        private static Dictionary<string, IQueryFacet> CreateFacetsFromProviders()
         {
             return IndexingProviderRepository.QueryFacetProviders.SelectMany(provider => provider.GetFacets()).Distinct(new GenericEqualityComparer<IQueryFacet>((facet, queryFacet) => facet.FieldName == queryFacet.FieldName, facet => facet.FieldName.GetHashCode())).ToDictionary(facet => facet.FieldName, facet => facet);
         }

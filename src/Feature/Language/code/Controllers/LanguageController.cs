@@ -8,11 +8,13 @@ namespace Sitecore.Feature.Language.Controllers
     using System.Net;
     using System.Web.Mvc;
     using Sitecore.Feature.Language.Infrastructure.Pipelines;
+    using Sitecore.Foundation.SitecoreExtensions.Attributes;
     using Sitecore.Pipelines;
 
     public class LanguageController : Controller
     {
         [HttpPost]
+        [SkipAnalyticsTracking]
         public JsonResult ChangeLanguage(string newLanguage, string currentLanguage)
         {
             var args = new ChangeLanguagePipelineArgs(currentLanguage, newLanguage);

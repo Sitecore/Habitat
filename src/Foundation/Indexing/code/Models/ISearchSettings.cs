@@ -1,11 +1,10 @@
 namespace Sitecore.Foundation.Indexing.Models
 {
-  using System.Collections.Generic;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
+    using System.Collections.Generic;
+    using Sitecore.Data;
 
-  public interface ISearchSettings : IQueryRoot
-  {
-    IEnumerable<ID> Templates { get; set; }
-  }
+    public interface ISearchSettings : IQueryRoot
+    {
+        IEnumerable<ID> Templates { get; set; }
+    }
 }

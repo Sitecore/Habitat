@@ -3,23 +3,20 @@
     using System;
     using Sitecore.Foundation.Indexing.Models;
 
-    public class PagedSearchResults : IPageable
+    public class SearchResultsViewModel
     {
-        public const int DefaultResultsOnPage = 10;
-        public const int DefaultPagesToShow = 5;
+        public ISearchResults Results { get; set; }
 
-        private int resultsOnPage;
+        public string Query { get; set; }
 
-        public PagedSearchResults(SearchQuery query, int totalResults, int pagesToShow, int resultsOnPage)
-        {
-            var pageIndex = (double)query.IndexOfFirstResult / query.NoOfResults;
-            this.Page = Convert.ToInt32(Math.Truncate(pageIndex)) + 1;
-            this.VisiblePagesCount = pagesToShow <= 1 ? DefaultPagesToShow : pagesToShow;
-            this.TotalResults = totalResults;
-            this.ResultsOnPage = resultsOnPage <= 1 ? DefaultResultsOnPage : resultsOnPage;
-        }
+        public string Facets { get; set; }
+        public int Page { get; set; }
 
-        public int VisiblePagesCount { get; }
+        public int TotalResults { get; set; }
+
+        public int ResultsOnPage { get; set; }
+
+        public int VisiblePagesCount { get; set; }
 
         public virtual int TotalPagesCount
         {
@@ -72,31 +69,6 @@
                 }
 
                 return lastPage;
-            }
-        }
-
-        public ISearchResults Results { get; set; }
-
-        public string Query { get; set; }
-
-        public int Page { get; set; }
-
-        public int TotalResults { get; set; }
-
-        public int ResultsOnPage
-        {
-            get
-            {
-                if (this.resultsOnPage == 0)
-                {
-                    this.resultsOnPage = DefaultResultsOnPage;
-                }
-
-                return this.resultsOnPage;
-            }
-            set
-            {
-                this.resultsOnPage = value;
             }
         }
     }

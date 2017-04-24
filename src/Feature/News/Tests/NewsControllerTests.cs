@@ -20,11 +20,10 @@
   {
     [Theory]
     [AutoDbData]
-    public void NewsList_ShouldReturnViewResult(Db db, string itemName, ID itemId, INewsRepositoryFactory factory)
+    public void NewsList_ShouldReturnViewResult(Db db, string itemName, ID itemId, INewsRepository repository)
     {
       //Arrange
-      var newsController = new NewsController();
-      var controller = new NewsController(factory);
+      var controller = new NewsController(repository);
       db.Add(new DbItem(itemName, itemId, Templates.NewsFolder.ID));
       var contextItem = db.GetItem(itemId);
       var context = new RenderingContext();
@@ -39,10 +38,10 @@
 
     [Theory]
     [AutoDbData]
-    public void LatestNews_ShouldReturnViewResult(Db db, string itemName, ID itemId, INewsRepositoryFactory factory)
+    public void LatestNews_ShouldReturnViewResult(Db db, string itemName, ID itemId, INewsRepository repository)
     {
       //Arrange
-      var controller = new NewsController(factory);
+      var controller = new NewsController(repository);
       db.Add(new DbItem(itemName, itemId, Templates.NewsFolder.ID));
       var contextItem = db.GetItem(itemId);
       var context = new RenderingContext();

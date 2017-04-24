@@ -3,15 +3,16 @@
     using System;
     using System.Linq;
     using Sitecore.Diagnostics;
+    using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Mvc.Presentation;
     using Sitecore.Reflection;
 
     public class RenderingPropertiesRepository : IRenderingPropertiesRepository
     {
-        public T Get<T>()
+        public T Get<T>(Rendering rendering)
         {
             var obj = ReflectionUtil.CreateObject(typeof(T));
-            var currentContext = RenderingContext.Current.Rendering;
+            var currentContext = rendering;
             var parameters = currentContext?.Properties["Parameters"];
             if (parameters == null)
                 return (T)obj;

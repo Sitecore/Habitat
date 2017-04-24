@@ -60,15 +60,7 @@
 
         private IQueryable<SearchResultItem> AddPaging(IQueryable<SearchResultItem> queryable, IQuery query)
         {
-            if (query.IndexOfFirstResult > 0)
-            {
-                queryable = queryable.Skip(query.IndexOfFirstResult);
-            }
-            if (query.NoOfResults > 0)
-            {
-                queryable = queryable.Take(query.NoOfResults);
-            }
-            return queryable;
+            return queryable.Page(query.Page < 0 ? 0 : query.Page, query.NoOfResults <= 0 ? 10 : query.NoOfResults);
         }
 
         public virtual ISearchResults FindAll()

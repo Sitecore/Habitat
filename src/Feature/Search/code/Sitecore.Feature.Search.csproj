@@ -131,10 +131,13 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Factories\SearchResultsViewModelFactory.cs" />
+    <Compile Include="Infrastructure\Pipelines\InitializeRoutes.cs" />
     <Compile Include="Infrastructure\Providers\DefaultFacetProvider.cs" />
     <Compile Include="Infrastructure\ServicesConfigurator.cs" />
     <Compile Include="Models\SearchResultsHeader.cs" />
-    <Compile Include="Models\PagedSearchResults.cs" />
+    <Compile Include="Models\SearchResultsViewModel.cs" />
     <Compile Include="Models\PagingSettings.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Models\SearchQuery.cs" />
@@ -143,11 +146,10 @@
     <Compile Include="Models\SearchContext.cs" />
     <Compile Include="Services\FacetQueryStringService.cs" />
     <Compile Include="Templates.cs" />
-    <Compile Include="Models\SearchResult.cs" />
-    <Compile Include="Models\SearchResults.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Scripts\Search\search.js" />
     <Content Include="Views\web.config" />
   </ItemGroup>
   <ItemGroup>

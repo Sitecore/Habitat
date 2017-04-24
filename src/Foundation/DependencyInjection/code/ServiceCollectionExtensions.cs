@@ -33,12 +33,15 @@ namespace Sitecore.Foundation.DependencyInjection
                 .Where(assembly => !assembly.IsDynamic)
                 .SelectMany(GetExportedTypes)
                 .Where(type => !type.IsAbstract && !type.IsGenericTypeDefinition)
-                .Select(type => new { type.GetCustomAttribute<ServiceAttribute>()?.Lifetime, Type = type })
+                .Select(type => new { type.GetCustomAttribute<ServiceAttribute>()?.Lifetime, ServiceType = type, ImplementationType = type.GetCustomAttribute<ServiceAttribute>()?.ServiceType })
                 .Where(t => t.Lifetime != null);
 
             foreach (var type in typesWithAttributes)
             {
-                Add(serviceCollection, type.Lifetime.Value, type.Type);
+                if (type.ImplementationType == null)
+                    serviceCollection.Add(type.ServiceType, type.Lifetime.Value);
+                else
+                    serviceCollection.Add(type.ImplementationType, type.ServiceType, type.Lifetime.Value);
             }
         }
 
@@ -49,7 +52,7 @@ namespace Sitecore.Foundation.DependencyInjection
 
             var types = GetTypesImplementing(typeof(object), assemblies, classFilter);
 
-            Add(serviceCollection, lifetime, types.ToArray());
+            serviceCollection.Add(lifetime, types.ToArray());
         }
 
 
@@ -75,6 +78,21 @@ namespace Sitecore.Foundation.DependencyInjection
                     break;
                 case Lifetime.Transient:
                     serviceCollection.AddTransient(type);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(lifetime), lifetime, null);
+            }
+        }
+
+        public static void Add(this IServiceCollection serviceCollection, Type serviceType, Type implementationType, Lifetime lifetime)
+        {
+            switch (lifetime)
+            {
+                case Lifetime.Singleton:
+                    serviceCollection.AddSingleton(serviceType, implementationType);
+                    break;
+                case Lifetime.Transient:
+                    serviceCollection.AddTransient(serviceType, implementationType);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(lifetime), lifetime, null);

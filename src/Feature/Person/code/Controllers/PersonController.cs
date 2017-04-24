@@ -9,10 +9,6 @@
     {
         private readonly PersonRepository personRepository;
 
-        public PersonController() : this(new PersonRepository())
-        {
-        }
-
         public PersonController(PersonRepository personRepository)
         {
             this.personRepository = personRepository;

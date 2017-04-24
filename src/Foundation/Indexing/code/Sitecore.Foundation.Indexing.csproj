@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Infrastructure\ServicesConfigurator.cs" />
     <Compile Include="Models\IQueryFacet.cs" />
     <Compile Include="Models\ISearchResultFacet.cs" />
     <Compile Include="Models\ISearchResultFacetValue.cs" />
@@ -160,7 +161,6 @@
     <Compile Include="Models\IQueryPredicateProvider.cs" />
     <Compile Include="Models\ISearchResultFormatter.cs" />
     <Compile Include="Models\IndexedItem.cs" />
-    <Compile Include="Models\IPageable.cs" />
     <Compile Include="Models\IQuery.cs" />
     <Compile Include="Models\ISearchResult.cs" />
     <Compile Include="Models\ISearchResults.cs" />

@@ -1,10 +1,10 @@
 ﻿namespace Sitecore.Foundation.Indexing.Repositories
 {
-  using Sitecore.Foundation.Indexing;
-  using Sitecore.Foundation.Indexing.Services;
+    using Sitecore.Foundation.Indexing.Models;
+    using Sitecore.Foundation.Indexing.Services;
 
-  public interface ISearchServiceRepository
-  {
-    SearchService Get();
-  }
+    public interface ISearchServiceRepository
+    {
+        SearchService Get(ISearchSettings searchSettings);
+    }
 }
