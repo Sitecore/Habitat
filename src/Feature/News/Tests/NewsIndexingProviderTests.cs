@@ -59,18 +59,6 @@
     [InlineAutoDbData(Templates.NewsArticle.Fields.Title_FieldName)]
     [InlineAutoDbData(Templates.NewsArticle.Fields.Body_FieldName)]
     [InlineAutoDbData(Templates.NewsArticle.Fields.Title_FieldName)]
-    public void GetQueryPredicate_NewsItemWithSearchContent_ShouldReturnTrue(string fieldName, NewsIndexingProvider provider, IQuery query, string queryText)
-    {
-      var item = Substitute.For<SearchResultItem>();
-      query.QueryText.Returns(queryText);
-      item[fieldName].Returns(queryText);
-      provider.GetQueryPredicate(query).Compile().Invoke(item).Should().BeTrue();
-    }
-
-    [Theory]
-    [InlineAutoDbData(Templates.NewsArticle.Fields.Title_FieldName)]
-    [InlineAutoDbData(Templates.NewsArticle.Fields.Body_FieldName)]
-    [InlineAutoDbData(Templates.NewsArticle.Fields.Title_FieldName)]
     public void GetQueryPredicate_NewsItemWithWrongContent_ShouldReturnFalse(string fieldName, NewsIndexingProvider provider, IQuery query, string queryText, string contentText)
     {
       var item = Substitute.For<SearchResultItem>();

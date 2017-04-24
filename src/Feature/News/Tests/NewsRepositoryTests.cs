@@ -52,23 +52,5 @@
             Action act = () => repo.Get(contextItem);
             act.ShouldThrow<ArgumentException>();
         }
-
-        [Theory]
-        [AutoDbData]
-        public void GetLatestNews_IntegerAs1Parameter_ReturnsNumberOfNewsEquelToParameterValue([Frozen] ISearchServiceRepository searchServiceRepository, [Frozen] ISearchSettings searchSettings, string itemName, [Substitute] SearchService searchService, ISearchResults searchResults, List<Item> collection)
-        {
-            var id = ID.NewID;
-            searchResults.Results.Returns(collection.Select(x => new SearchResult(x)));
-            searchService.FindAll().Returns(searchResults);
-            searchServiceRepository.Get(searchSettings).Returns(searchService);
-            var db = new Db
-            {
-                new DbItem(itemName, id, Templates.NewsFolder.ID)
-            };
-            var contextItem = db.GetItem(id);
-            var repository = new NewsRepository(searchServiceRepository);
-            var news = repository.GetLatest(contextItem, 1);
-            news.Count().ShouldBeEquivalentTo(1);
-        }
     }
 }

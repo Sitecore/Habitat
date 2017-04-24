@@ -14,7 +14,7 @@
         public void ShouldInitObjectProperties()
         {
             var rendering = new Rendering();
-            new RenderingProperties(rendering) {["Parameters"] = "property1=5&property2=10"};
+            rendering.Properties = new RenderingProperties(rendering) {["Parameters"] = "property1=5&property2=10"};
 
             var repository = new RenderingPropertiesRepository();
             var resultObject = repository.Get<Model>(rendering);
