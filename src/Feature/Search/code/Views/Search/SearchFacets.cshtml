@@ -42,13 +42,13 @@
                                 @foreach (var facetValue in facet.Values)
                                 {
                                     <li class="@(facetValue.Selected ? "active" : "")">
-                                        <a href="#" onclick="ToggleFacet('@Model.Query', '@Model.Facets', '@facet.Definition.FieldName', '@facetValue.Value')">
+                                        <a href="javascript:ToggleFacet('@Model.Query', '@Model.Facets', '@facet.Definition.FieldName', '@facetValue.Value')">
                                             @if (facetValue.Selected)
                                             {
                                                 <small class="glyphicon glyphicon-ok text-info"></small>
                                             }
-                                            <span pid="facetName">@facetValue.Value</span>
-                                            <small pid="facetCount">@facetValue.Count</small>
+                                            <span pid="facetName">@(string.IsNullOrWhiteSpace(facetValue.Title) ? DictionaryPhraseRepository.Current.Get("/Search/Search Facets/Blank Facet Value", "(none)") : facetValue.Title)</span>
+                                            <small class="badge badge-default" pid="facetCount">@facetValue.Count</small>
                                         </a>
                                     </li>
                                 }

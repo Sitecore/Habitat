@@ -30,7 +30,7 @@ namespace Sitecore.Feature.Search.Services
                     continue;
 
                 var name = facetValues[0].ToLowerInvariant();
-                var values = facetValues[1].Split(new [] {FacetValueSeparator}, StringSplitOptions.RemoveEmptyEntries).Distinct().ToArray();
+                var values = facetValues[1].Split(FacetValueSeparator).Distinct().ToArray();
                 if (returnValue.ContainsKey(name))
                     returnValue[name] = returnValue[name].Union(values).Distinct().ToArray();
                 else

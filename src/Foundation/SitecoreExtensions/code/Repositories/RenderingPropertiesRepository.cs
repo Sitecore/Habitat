@@ -7,6 +7,7 @@
     using Sitecore.Mvc.Presentation;
     using Sitecore.Reflection;
 
+    [Service(typeof(IRenderingPropertiesRepository))]
     public class RenderingPropertiesRepository : IRenderingPropertiesRepository
     {
         public T Get<T>(Rendering rendering)

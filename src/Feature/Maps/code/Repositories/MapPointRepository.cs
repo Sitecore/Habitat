@@ -4,8 +4,9 @@
     using System.Collections.Generic;
     using System.Linq;
     using Models;
+    using Foundation.DependencyInjection;
 
-    [Foundation.DependencyInjection.Service]
+    [Service(typeof(IMapPointRepository))]
     public class MapPointRepository : IMapPointRepository
     {
         private readonly Foundation.Indexing.Repositories.ISearchServiceRepository searchServiceRepository;

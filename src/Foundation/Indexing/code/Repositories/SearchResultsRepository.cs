@@ -7,11 +7,17 @@
     using Sitecore.ContentSearch.SearchTypes;
     using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.Indexing.Models;
+    using Sitecore.Foundation.Indexing.Services;
     using Sitecore.Mvc.Common;
 
     [Service]
     public class SearchResultsFactory
     {
+        public SearchResultsFactory(FormatBooleanFacetService formatBooleanFacetService)
+        {
+            this.FormatBooleanFacetService = formatBooleanFacetService;
+        }
+
         public ISearchResults Create(SearchResults<SearchResultItem> results, IQuery query)
         {
             var searchResults = this.CreateSearchResults(results);
@@ -38,17 +44,37 @@
                 if (!facets.TryGetValue(resultCategory.Name.ToLowerInvariant(), out definition))
                     continue;
 
-                var facetValues = this.CreateFacetValues(resultCategory, query).ToArray();
-                if (!facetValues.Any())
+                var facet = this.CreateFacet(query, resultCategory, definition);
+                if (facet == null)
                     continue;
-                var facet = new SearchResultFacet
-                {
-                    Definition = definition,
-                    Values = facetValues
-                };
+
                 yield return facet;
             }
         }
+
+        private SearchResultFacet CreateFacet(IQuery query, FacetCategory resultCategory, IQueryFacet definition)
+        {
+            var facetValues = this.CreateFacetValues(resultCategory, query).ToArray();
+            if (!facetValues.Any())
+                return null;
+            var facet = new SearchResultFacet
+            {
+                Definition = definition,
+                Values = facetValues
+            };
+
+            this.FormatFacet(facet);
+
+            return facet;
+        }
+
+        private void FormatFacet(SearchResultFacet facet)
+        {
+            this.FormatBooleanFacetService.Format(facet);
+
+        }
+
+        public FormatBooleanFacetService FormatBooleanFacetService { get; }
 
         private static Dictionary<string, IQueryFacet> CreateFacetsFromProviders()
         {
@@ -63,7 +89,8 @@
                 {
                     Value = resultValue.Name,
                     Count = resultValue.AggregateCount,
-                    Selected = this.IsFacetValueSelected(resultCategory, query, resultValue)
+                    Selected = this.IsFacetValueSelected(resultCategory, query, resultValue),
+                    Title = resultValue.Name
                 };
                 yield return facetValue;
             }

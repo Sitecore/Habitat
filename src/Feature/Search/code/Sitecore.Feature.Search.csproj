@@ -135,7 +135,6 @@
     <Compile Include="Factories\SearchResultsViewModelFactory.cs" />
     <Compile Include="Infrastructure\Pipelines\InitializeRoutes.cs" />
     <Compile Include="Infrastructure\Providers\DefaultFacetProvider.cs" />
-    <Compile Include="Infrastructure\ServicesConfigurator.cs" />
     <Compile Include="Models\SearchResultsHeader.cs" />
     <Compile Include="Models\SearchResultsViewModel.cs" />
     <Compile Include="Models\PagingSettings.cs" />

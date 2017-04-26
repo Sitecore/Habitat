@@ -19,7 +19,7 @@ namespace Sitecore.Foundation.Indexing.Infrastructure
             }
             foreach (var name in fieldNames)
             {
-                predicate = predicate.Or(i => i[name].Like(query.QueryText));
+                predicate = predicate.Or(i => i[name].Contains(query.QueryText));
             }
             return predicate;
         }

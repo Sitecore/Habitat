@@ -9,6 +9,7 @@ namespace Sitecore.Foundation.Indexing.Infrastructure.Fields
   using System.Linq;
   using Sitecore.ContentSearch;
   using Sitecore.ContentSearch.ComputedFields;
+  using Sitecore.Foundation.Indexing.Infrastructure.Providers;
   using Sitecore.Foundation.Indexing.Repositories;
   using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
@@ -26,7 +27,7 @@ namespace Sitecore.Foundation.Indexing.Infrastructure.Fields
       }
       var item = indexItem.Item;
 
-      return IndexingProviderRepository.SearchResultFormatters.Any(p => p.SupportedTemplates.Any(id => item.IsDerived(id)));
+      return IndexingProviderRepository.SearchResultFormatters.Any(p => !(p is FallbackSearchResultFormatter) && p.SupportedTemplates.Any(id => item.IsDerived(id)));
     }
   }
 }

@@ -13,7 +13,7 @@
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
     using Sitecore.Mvc.Presentation;
 
-    [Service]
+    [Service(typeof(ISearchContextRepository))]
     public class SearchContextRepository : ISearchContextRepository
     {
         private const string DefaultSearchResultsName = "search";
@@ -54,6 +54,7 @@
                     Title = item[Constants.FacetDisplayName],
                     FieldName = item[Constants.FacetParameters].ToLowerInvariant()
                 };
+
                 facets.Add(facet);
             }
             return facets.Distinct();

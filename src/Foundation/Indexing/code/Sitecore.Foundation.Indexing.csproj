@@ -144,7 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="Infrastructure\ServicesConfigurator.cs" />
+    <Compile Include="Infrastructure\Fields\SearchResultFormatterComputedField.cs" />
     <Compile Include="Models\IQueryFacet.cs" />
     <Compile Include="Models\ISearchResultFacet.cs" />
     <Compile Include="Models\ISearchResultFacetValue.cs" />
@@ -152,6 +152,7 @@
     <Compile Include="Models\SearchResultFacet.cs" />
     <Compile Include="Models\SearchResultFacetValue.cs" />
     <Compile Include="Models\IQueryFacetProvider.cs" />
+    <Compile Include="Services\FormatBooleanFacetService.cs" />
     <Compile Include="Services\GetFreeTextPredicateService.cs" />
     <Compile Include="Infrastructure\Fields\HasSearchResultFormatterComputedField.cs" />
     <Compile Include="Repositories\IndexingProviderRepository.cs" />
@@ -181,6 +182,10 @@
     <ProjectReference Include="..\..\DependencyInjection\code\Sitecore.Foundation.DependencyInjection.csproj">
       <Project>{366148B7-2392-4F42-80D6-786B7A3682AE}</Project>
       <Name>Sitecore.Foundation.DependencyInjection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dictionary\code\Sitecore.Foundation.Dictionary.csproj">
+      <Project>{0D6BA4D8-C469-4AE9-9EBB-93BDF7D7E78F}</Project>
+      <Name>Sitecore.Foundation.Dictionary</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
