@@ -13,20 +13,16 @@
 
     public class SearchController : Controller
     {
-        public SearchController(ISearchServiceRepository serviceRepository, ISearchContextRepository contextRepository, IRenderingPropertiesRepository renderingPropertiesRepository, FacetQueryStringService facetQueryStringService, SearchResultsViewModelFactory searchResultsViewModelFactory)
+        public SearchController(ISearchContextRepository contextRepository, FacetQueryStringService facetQueryStringService, SearchService searchService)
         {
-            this.SearchServiceRepository = serviceRepository;
             this.SearchContextRepository = contextRepository;
-            this.RenderingPropertiesRepository = renderingPropertiesRepository;
             this.FacetQueryStringService = facetQueryStringService;
-            this.SearchResultsViewModelFactory = searchResultsViewModelFactory;
+            this.SearchService = searchService;
         }
 
-        private ISearchServiceRepository SearchServiceRepository { get; }
         private ISearchContextRepository SearchContextRepository { get; }
-        private IRenderingPropertiesRepository RenderingPropertiesRepository { get; }
         private FacetQueryStringService FacetQueryStringService { get; }
-        private SearchResultsViewModelFactory SearchResultsViewModelFactory { get; }
+        private SearchService SearchService { get; }
 
         public ActionResult SearchResults(string query)
         {
@@ -84,7 +80,6 @@
             return new JsonResult { Data = new {query, facets = newFacetQueryString, url} };
         }
 
-
         private SearchResultsViewModel GetSearchResults(string query, int? page, string facets)
         {
             if (this.HttpContext.Items.Contains("SearchResults"))
@@ -92,20 +87,7 @@
                 return this.HttpContext.Items["SearchResults"] as SearchResultsViewModel;
             }
 
-            var pagingSettings = this.RenderingPropertiesRepository.Get<PagingSettings>(RenderingContext.Current.Rendering);
-            var pageNumber = page == null ? 0 : page < 0 ? 0 : page.Value;
-
-            var searchQuery = new SearchQuery
-            {
-                QueryText = query,
-                Page = pageNumber,
-                NoOfResults = pagingSettings.ResultsOnPage,
-                Facets = this.FacetQueryStringService.ParseFacets(facets)
-            };
-
-            var results = this.SearchServiceRepository.Get(this.SearchContextRepository.Get()).Search(searchQuery);
-
-            var viewModel = this.SearchResultsViewModelFactory.Create(searchQuery, results, pagingSettings.PagesToShow, pagingSettings.ResultsOnPage);
+            var viewModel = this.SearchService.Search(query, page, facets);
 
             this.HttpContext?.Items.Add("SearchResults", viewModel);
             return viewModel;

@@ -70,6 +70,10 @@
       <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sitecore.Analytics, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.NoReferences.8.2.161115\lib\NET452\Sitecore.Analytics.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Buckets, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Buckets.NoReferences.8.2.161115\lib\NET452\Sitecore.Buckets.dll</HintPath>
       <Private>True</Private>
@@ -144,6 +148,7 @@
     <Compile Include="Repositories\SearchContextRepository.cs" />
     <Compile Include="Models\SearchContext.cs" />
     <Compile Include="Services\FacetQueryStringService.cs" />
+    <Compile Include="Services\SearchService.cs" />
     <Compile Include="Templates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

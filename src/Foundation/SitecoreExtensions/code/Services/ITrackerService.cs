@@ -1,12 +1,12 @@
-﻿using Sitecore.Data;
-
-namespace Sitecore.Foundation.SitecoreExtensions.Services
+﻿namespace Sitecore.Foundation.SitecoreExtensions.Services
 {
-  public interface ITrackerService
-  {
-    void IdentifyContact(string identifier);
-    void TrackOutcome(ID definitionId);
-    void TrackPageEvent(ID pageEventItemId);
-    bool IsActive { get; }
-  }
+    using Sitecore.Data;
+
+    public interface ITrackerService
+    {
+        bool IsActive { get; }
+        void IdentifyContact(string identifier);
+        void TrackOutcome(ID definitionId);
+        void TrackPageEvent(ID pageEventItemId, string text = null, string data = null, string dataKey = null, int? value = null);
+    }
 }
