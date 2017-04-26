@@ -144,6 +144,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Infrastructure\Fields\SearchResultFormatterComputedField.cs" />
+    <Compile Include="Models\IQueryFacet.cs" />
+    <Compile Include="Models\ISearchResultFacet.cs" />
+    <Compile Include="Models\ISearchResultFacetValue.cs" />
+    <Compile Include="Models\IQueryRoot.cs" />
+    <Compile Include="Models\SearchResultFacet.cs" />
+    <Compile Include="Models\SearchResultFacetValue.cs" />
+    <Compile Include="Models\IQueryFacetProvider.cs" />
+    <Compile Include="Services\FormatBooleanFacetService.cs" />
     <Compile Include="Services\GetFreeTextPredicateService.cs" />
     <Compile Include="Infrastructure\Fields\HasSearchResultFormatterComputedField.cs" />
     <Compile Include="Repositories\IndexingProviderRepository.cs" />
@@ -153,7 +162,6 @@
     <Compile Include="Models\IQueryPredicateProvider.cs" />
     <Compile Include="Models\ISearchResultFormatter.cs" />
     <Compile Include="Models\IndexedItem.cs" />
-    <Compile Include="Models\IPageable.cs" />
     <Compile Include="Models\IQuery.cs" />
     <Compile Include="Models\ISearchResult.cs" />
     <Compile Include="Models\ISearchResults.cs" />
@@ -175,18 +183,22 @@
       <Project>{366148B7-2392-4F42-80D6-786B7A3682AE}</Project>
       <Name>Sitecore.Foundation.DependencyInjection</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Dictionary\code\Sitecore.Foundation.Dictionary.csproj">
+      <Project>{0D6BA4D8-C469-4AE9-9EBB-93BDF7D7E78F}</Project>
+      <Name>Sitecore.Foundation.Dictionary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
       <Project>{B535703F-8D07-4F23-A533-2974BB4CC7B1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
     </ProjectReference>
   </ItemGroup>
-    <PropertyGroup>
-        <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
-        <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    </PropertyGroup>
-    <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-    <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
-    <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">

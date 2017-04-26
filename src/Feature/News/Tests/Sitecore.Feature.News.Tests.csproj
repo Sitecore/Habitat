@@ -193,7 +193,6 @@
     <Compile Include="Extensions\AutoDbDataAttribute.cs" />
     <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="NewsControllerTests.cs" />
-    <Compile Include="NewsRepositoryFactoryTests.cs" />
     <Compile Include="NewsIndexingProviderTests.cs" />
     <Compile Include="NewsRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

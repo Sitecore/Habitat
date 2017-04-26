@@ -75,18 +75,6 @@
     [InlineAutoDbData("Summary")]
     [InlineAutoDbData("Name")]
     [InlineAutoDbData("Title")]
-    public void GetQueryPredicate_PersonItemWithSearchContent_ShouldReturnTrue(string fieldName, PersonIndexingProvider provider, IQuery query, string queryText)
-    {
-      var item = Substitute.For<SearchResultItem>();
-      query.QueryText.Returns(queryText);
-      item[fieldName].Returns(queryText);
-      provider.GetQueryPredicate(query).Compile().Invoke(item).Should().BeTrue();
-    }
-
-    [Theory]
-    [InlineAutoDbData("Summary")]
-    [InlineAutoDbData("Name")]
-    [InlineAutoDbData("Title")]
     public void GetQueryPredicate_PersonItemWithWrongContent_ShouldReturnFalse(string fieldName, PersonIndexingProvider provider, IQuery query, string queryText, string contentText)
     {
       var item = Substitute.For<SearchResultItem>();

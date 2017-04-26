@@ -9,6 +9,10 @@ SharedFields:
   Hint: ShowInNavigation
   Type: Checkbox
   Value: 0
+- ID: "8c4dad9d-1ea2-4eb7-ae19-d4c28604757a"
+  Hint: Facets
+  Type: Treelist
+  Value: "{A906B878-2517-4E8A-B403-40B530F6386D}"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Type: layout
@@ -82,19 +86,28 @@ SharedFields:
           ph="/page-layout/page-header"
           uid="{6BAFDBAC-C731-4874-AEC9-20DBAACCF95B}" />
         <r
+          ds=""
           id="{D201A487-5099-48A1-8189-55944F70C6CB}"
-          par="UseStaticPlaceholderNames=1"
+          par="Background&amp;ContainerIsFluid&amp;UseStaticPlaceholderNames=1"
           ph="page-layout"
           uid="{A3CA17FF-693C-46F1-87AA-B8C1833F1890}" />
         <r
-          id="{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}"
-          par="UseStaticPlaceholderNames=1"
+          ds=""
+          id="{AB7054DD-B8E3-41D6-A75F-B54F2F37D08B}"
+          par="Background&amp;ContainerIsFluid&amp;UseStaticPlaceholderNames=1"
           ph="/page-layout/section"
           uid="{66422117-69C1-4B62-9323-482F16C4F244}" />
         <r
+          ds=""
+          id="{73A3C967-2F70-4847-8B7C-0C214A91FF79}"
+          par=""
+          ph="/page-layout/section/col-narrow-1"
+          uid="{9C9F8ACA-E16D-4E96-98F0-B85C20491FCC}" />
+        <r
+          ds=""
           id="{E52D0AE8-2989-44E5-BEA1-EA30C17B2080}"
-          par="PagesToShow=5&amp;ResultsOnPage=4"
-          ph="/page-layout/section/col-huge"
+          par="ResultsOnPage=10&amp;PagesToShow=5"
+          ph="/page-layout/section/col-wide-1"
           uid="{CA705768-C9DF-484D-BD9E-3BFDD112E926}" />
         <r
           id="{299FD8EA-2CFD-4A69-9CA4-7EA24CD34A46}"

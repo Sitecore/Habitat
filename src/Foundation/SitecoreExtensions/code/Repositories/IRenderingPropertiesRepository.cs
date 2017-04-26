@@ -1,7 +1,9 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Repositories
 {
-  public interface IRenderingPropertiesRepository
+    using Sitecore.Mvc.Presentation;
+
+    public interface IRenderingPropertiesRepository
   {
-    T Get<T>();
+    T Get<T>(Rendering rendering);
   }
 }

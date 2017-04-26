@@ -9,10 +9,6 @@
   {
     private readonly IMapPointRepository mapPointRepository;
 
-    public MapsController() : this(new MapPointRepository())
-    {
-    }
-
     public MapsController(IMapPointRepository mapPointRepository)
     {
       this.mapPointRepository = mapPointRepository;

@@ -1,0 +1,62 @@
+﻿@using Sitecore.Foundation.Dictionary.Repositories
+@using Sitecore.Mvc.Extensions
+@model Sitecore.Feature.Search.Models.SearchResultsViewModel
+
+@if (Model.TotalResults == 0)
+{
+    return;
+}
+
+@if (!Model.Results.Facets.Any())
+{
+    <div class="alert alert-info">
+        <small>
+            @DictionaryPhraseRepository.Current.Get("/Search/Search Facets/No Filters", "No filters were found")
+        </small>
+    </div>
+    return;
+}
+
+<aside>
+    <div class="sidebar sidebar-static">
+        <button type="button" class="sidebar-toggle visible-xs collapsed" data-toggle="collapse" data-target="#facets-sidebar" aria-expanded="false">
+            <span class="text">@DictionaryPhraseRepository.Current.Get("/Search/Search Facets/Filter", "Filter your results")</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="sidebar-collapse collapse" id="facets-sidebar">
+            @foreach (var facet in Model.Results.Facets)
+            {
+                if (facet.Definition.ViewName != null)
+                {
+                    @Html.Partial(facet.Definition.ViewName, facet)
+                }
+                else
+                {
+                    <div class="facets-container">
+                        <h5>@facet.Definition.Title</h5>
+                        <input type="checkbox" id="color-toggle" class="toggle-facets hidden">
+                        <div class="facet-list">
+                            <ul class="facet nav nav-pills nav-stacked">
+                                @foreach (var facetValue in facet.Values)
+                                {
+                                    <li class="@(facetValue.Selected ? "active" : "")">
+                                        <a href="javascript:ToggleFacet('@Model.Query', '@Model.Facets', '@facet.Definition.FieldName', '@facetValue.Value')">
+                                            @if (facetValue.Selected)
+                                            {
+                                                <small class="glyphicon glyphicon-ok text-info"></small>
+                                            }
+                                            <span pid="facetName">@(string.IsNullOrWhiteSpace(facetValue.Title) ? DictionaryPhraseRepository.Current.Get("/Search/Search Facets/Blank Facet Value", "(none)") : facetValue.Title)</span>
+                                            <small class="badge badge-default" pid="facetCount">@facetValue.Count</small>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</aside>

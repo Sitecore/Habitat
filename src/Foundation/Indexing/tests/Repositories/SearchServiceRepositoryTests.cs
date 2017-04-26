@@ -14,7 +14,7 @@
     [AutoDbData]
     public void Get_ReturnsSearchService([Frozen] ISearchSettings settings, SearchServiceRepository serviceRepository)
     {
-      var result = serviceRepository.Get();
+      var result = serviceRepository.Get(settings);
       result.Should().BeOfType<SearchService>();
     }
   }

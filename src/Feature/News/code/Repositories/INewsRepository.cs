@@ -5,7 +5,7 @@
 
   public interface INewsRepository
   {
-    IEnumerable<Item> Get();
-    IEnumerable<Item> GetLatestNews(int count);
+    IEnumerable<Item> Get(Item contextItem);
+    IEnumerable<Item> GetLatest(Item contextItem, int count);
   }
 }

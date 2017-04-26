@@ -6,10 +6,11 @@
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.SitecoreExtensions.Repositories
 @using Sitecore.Foundation.Theming.Extensions
+@using Sitecore.Mvc.Presentation
 @model Sitecore.Mvc.Presentation.RenderingModel
 @{
   var repository = new RenderingPropertiesRepository();
-  var twitterFeedProperties = repository.Get<TwitterFeedRenderingProperties>();
+  var twitterFeedProperties = repository.Get<TwitterFeedRenderingProperties>(RenderingContext.Current.Rendering, RenderingContext.Current.Rendering);
   var background = Model.Rendering.GetBackgroundClass();
 }
 @if (!Model?.Item?.IsDerived(Templates.TwitterFeed.ID) ?? true)

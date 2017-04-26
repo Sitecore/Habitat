@@ -1,9 +1,13 @@
 ﻿namespace Sitecore.Feature.Search.Models
 {
-  public class SearchQuery
-  {
-    public string Query { get; set; }
-    public int Page { get; set; }
-    public int ResultsOnPage { get; set; }
-  }
+    using System.Collections.Generic;
+    using Sitecore.Foundation.Indexing.Models;
+
+    public class SearchQuery : IQuery
+    {
+        public string QueryText { get; set; }
+        public int Page { get; set; }
+        public int NoOfResults { get; set; }
+        public Dictionary<string, string[]> Facets { get; set; }
+    }
 }
