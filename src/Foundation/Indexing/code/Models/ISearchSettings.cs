@@ -5,6 +5,7 @@ namespace Sitecore.Foundation.Indexing.Models
 
     public interface ISearchSettings : IQueryRoot
     {
-        IEnumerable<ID> Templates { get; set; }
+        IEnumerable<ID> Templates { get; }
+        bool MustHaveFormatter { get; }
     }
 }

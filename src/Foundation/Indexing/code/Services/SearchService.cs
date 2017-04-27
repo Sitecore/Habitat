@@ -100,7 +100,10 @@
             queryable = this.SetQueryRoots(queryable);
             queryable = this.FilterOnLanguage(queryable);
             queryable = this.FilterOnVersion(queryable);
-            queryable = this.FilterOnHasSearchResultFormatter(queryable);
+            if (this.Settings.MustHaveFormatter)
+            {
+                queryable = this.FilterOnHasSearchResultFormatter(queryable);
+            }
             if (this.Settings.Templates != null && this.Settings.Templates.Any())
             {
                 queryable = queryable.Cast<IndexedItem>().Where(this.GetTemplatePredicates(this.Settings.Templates));
