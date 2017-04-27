@@ -3,14 +3,14 @@
   var prevButtonAttributes = "";
   var nextButtonAttributes = "";
   var nextPageUrl = $"{Request.Url.AbsolutePath}?query={Model.Query}&page={Model.Page + 1}";
-  if (Model.Page >= Model.TotalPagesCount)
+  if (Model.Page >= Model.TotalPagesCount-1)
   {
     nextPageUrl = "#";
     nextButtonAttributes = "class=disabled";
   }
 
   var prevPageUrl = $"{Request.Url.AbsolutePath}?query={Model.Query}&page={Model.Page - 1}";
-  if (Model.Page <= 1)
+  if (Model.Page <= 0)
   {
     prevPageUrl = "#";
     prevButtonAttributes = "class=disabled";
@@ -31,13 +31,13 @@
         if (Model.Page == i)
         {
           <li class="active">
-            <a href="@Request.Url.AbsolutePath?query=@Model.Query&page=@i">@i</a>
+            <a href="@Request.Url.AbsolutePath?query=@Model.Query&page=@i">@(i+1)</a>
           </li>
         }
         else
         {
           <li>
-            <a href="@Request.Url.AbsolutePath?query=@Model.Query&page=@i">@i</a>
+            <a href="@Request.Url.AbsolutePath?query=@Model.Query&page=@i">@(i+1)</a>
           </li>
         }
       }

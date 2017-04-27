@@ -10,10 +10,7 @@
     {
         public string ContentType => "[Unknown]";
 
-        public IEnumerable<ID> SupportedTemplates => new[]
-        {
-            TemplateIDs.StandardTemplate
-        };
+        public IEnumerable<ID> SupportedTemplates => new ID[0];
 
         public void FormatResult(SearchResultItem item, ISearchResult formattedResult)
         {

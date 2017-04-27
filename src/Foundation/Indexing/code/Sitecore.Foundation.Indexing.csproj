@@ -145,6 +145,7 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Infrastructure\Fields\SearchResultFormatterComputedField.cs" />
+    <Compile Include="Infrastructure\Providers\FallbackIndexingProvider.cs" />
     <Compile Include="Models\IQueryFacet.cs" />
     <Compile Include="Models\ISearchResultFacet.cs" />
     <Compile Include="Models\ISearchResultFacetValue.cs" />
@@ -157,7 +158,6 @@
     <Compile Include="Infrastructure\Fields\HasSearchResultFormatterComputedField.cs" />
     <Compile Include="Repositories\IndexingProviderRepository.cs" />
     <Compile Include="Infrastructure\Fields\AllTemplatesComputedField.cs" />
-    <Compile Include="Infrastructure\Providers\FallbackIndexingProvider.cs" />
     <Compile Include="Infrastructure\Fields\HasPresentationComputedField.cs" />
     <Compile Include="Models\IQueryPredicateProvider.cs" />
     <Compile Include="Models\ISearchResultFormatter.cs" />

@@ -18,7 +18,7 @@ Languages:
         extranet\Anonymous
     - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
       Hint: Phrase
-      Value: "Your search for {0} yielded the following results:"
+      Value: "Your search for '{0}' yielded {1} results:"
 - Language: "ja-JP"
   Versions:
   - Version: 1

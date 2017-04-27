@@ -41,6 +41,7 @@ namespace Sitecore.Feature.Search.Services
         {
             var pagingSettings = this.RenderingPropertiesRepository.Get<PagingSettings>(RenderingContext.Current.Rendering);
             var pageNumber = page == null ? 0 : page < 0 ? 0 : page.Value;
+            query = query ?? string.Empty;
 
             var searchQuery = new SearchQuery
             {
@@ -57,9 +58,9 @@ namespace Sitecore.Feature.Search.Services
 
         private void RegisterSearchPageEvent(string searchQuery, ISearchResults results)
         {
-            this.TrackerService.TrackPageEvent(AnalyticsIds.SearchEvent, searchQuery, searchQuery, searchQuery.ToLowerInvariant(), results.TotalNumberOfResults);
+            this.TrackerService.TrackPageEvent(AnalyticsIds.SearchEvent, searchQuery, searchQuery, searchQuery?.ToLowerInvariant(), results.TotalNumberOfResults);
             if (results.TotalNumberOfResults == 0)
-                this.TrackerService.TrackPageEvent(AnalyticsIds.NoSearchHitsFound, searchQuery, searchQuery, searchQuery.ToLowerInvariant());
+                this.TrackerService.TrackPageEvent(AnalyticsIds.NoSearchHitsFound, searchQuery, searchQuery, searchQuery?.ToLowerInvariant());
         }
 
     }
