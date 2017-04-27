@@ -37,15 +37,14 @@
             get
             {
                 var firstPage = this.Page - this.VisiblePagesCount / 2;
-
-                if (this.TotalPagesCount - this.Page < this.VisiblePagesCount / 2)
+                while (firstPage + this.VisiblePagesCount > this.TotalPagesCount - 1)
                 {
-                    firstPage -= this.VisiblePagesCount / 2 - this.TotalPagesCount + this.Page - 1 + this.VisiblePagesCount % 2;
+                    firstPage--;
                 }
 
-                if (firstPage < 1)
+                if (firstPage < 0)
                 {
-                    firstPage = 1;
+                    firstPage = 0;
                 }
 
                 return firstPage;
@@ -56,16 +55,11 @@
         {
             get
             {
-                var lastPage = this.Page + this.VisiblePagesCount / 2 - 1 + this.VisiblePagesCount % 2;
+                var lastPage = this.FirstPage + this.VisiblePagesCount;
 
-                if (this.Page - this.VisiblePagesCount / 2 < 1)
+                if (lastPage > this.TotalPagesCount - 1)
                 {
-                    lastPage += 1 + this.VisiblePagesCount / 2 - this.Page;
-                }
-
-                if (lastPage > this.TotalPagesCount)
-                {
-                    lastPage = this.TotalPagesCount;
+                    lastPage = this.TotalPagesCount - 1;
                 }
 
                 return lastPage;

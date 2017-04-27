@@ -27,7 +27,8 @@ namespace Sitecore.Feature.Search.Factories
                 ResultsOnPage = resultsOnPage,
                 Query = searchQuery.QueryText,
                 Facets = this.FacetQueryStringService.GetFacetQueryString(searchQuery.Facets),
-                Results = results
+                Results = results,
+                Page = searchQuery.Page
             };
         }
 

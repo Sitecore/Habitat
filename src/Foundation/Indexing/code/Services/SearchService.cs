@@ -136,9 +136,10 @@
 
         private Expression<Func<IndexedItem, bool>> GetPredicateForItemDerivesFromIndexedItem()
         {
-            var templatePredicate = PredicateBuilder.True<IndexedItem>();
-            templatePredicate = templatePredicate.And(i => !i.AllTemplates.Contains(IdHelper.NormalizeGuid(Templates.IndexedItem.ID))).Or(i => i.ShowInSearchResults);
-            return templatePredicate;
+            var notIndexedItem = PredicateBuilder.Create<IndexedItem>(i => !i.AllTemplates.Contains(IdHelper.NormalizeGuid(Templates.IndexedItem.ID)));
+            var indexedItemWithShowInResults = PredicateBuilder.And<IndexedItem>(i => i.AllTemplates.Contains(IdHelper.NormalizeGuid(Templates.IndexedItem.ID)), i => i.ShowInSearchResults);
+
+            return notIndexedItem.Or(indexedItemWithShowInResults);
         }
 
         private Expression<Func<IndexedItem, bool>> GetTemplatePredicates(IEnumerable<ID> templates)
@@ -158,6 +159,9 @@
             var facetPredicate = PredicateBuilder.True<SearchResultItem>();
             foreach (var facet in facets)
             {
+                if (string.IsNullOrEmpty(facet.FieldName))
+                    continue;
+
                 if (query.Facets.ContainsKey(facet.FieldName))
                 {
                     var facetValues = query.Facets[facet.FieldName];

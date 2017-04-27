@@ -61,7 +61,10 @@ namespace Sitecore.Foundation.Indexing.Infrastructure.Fields
 
         public IDictionary<string, object> TranslateFieldResult(IDictionary<string, object> fields, FieldNameTranslator fieldNameTranslator)
         {
-            var formatterId = fields[fieldNameTranslator.GetIndexFieldName(this.FieldName)];
+            var indexFieldName = fieldNameTranslator.GetIndexFieldName(this.FieldName);
+            if (string.IsNullOrEmpty(indexFieldName) || !fields.ContainsKey(indexFieldName))
+                return fields;
+            var formatterId = fields[indexFieldName];
             if (formatterId == null)
                 return fields;
             var value = this.TranslateToContentType(formatterId.ToString());
