@@ -14,5 +14,6 @@ namespace Sitecore.Feature.Search.Models
         public IEnumerable<IQueryFacet> Facets { get; set; }
         public Item Root { get; set; }
         public IEnumerable<ID> Templates { get; set; }
+        public bool MustHaveFormatter => true;
     }
 }
