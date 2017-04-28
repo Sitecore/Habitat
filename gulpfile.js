@@ -175,7 +175,7 @@ gulp.task("Build-Solution", function () {
   if (config.runCleanBuilds) {
     targets = ["Clean", "Build"];
   }
-    console.log("build tools version: " + config.buildToolsVersion);
+
   var solution = "./" + config.solutionName + ".sln";
   return gulp.src(solution)
       .pipe(msbuild({
