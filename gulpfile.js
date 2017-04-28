@@ -78,7 +78,7 @@ gulp.task("04-Apply-Xml-Transform", function () {
           stdout: true,
           errorOnFail: true,
           maxcpucount: 0,
-          toolsVersion: 14.0,
+          toolsVersion: config.buildToolsVersion,
           properties: {
             Platform: config.buildPlatform,
             WebConfigToTransform: config.websiteRoot,
@@ -137,7 +137,7 @@ var publishStream = function (stream, dest) {
       stdout: true,
       errorOnFail: true,
       maxcpucount: 0,
-      toolsVersion: 14.0,
+      toolsVersion: config.buildToolsVersion,
       properties: {
         Platform: config.publishPlatform,
         DeployOnBuild: "true",
@@ -175,6 +175,7 @@ gulp.task("Build-Solution", function () {
   if (config.runCleanBuilds) {
     targets = ["Clean", "Build"];
   }
+    console.log("build tools version: " + config.buildToolsVersion);
   var solution = "./" + config.solutionName + ".sln";
   return gulp.src(solution)
       .pipe(msbuild({
@@ -185,7 +186,7 @@ gulp.task("Build-Solution", function () {
           stdout: true,
           errorOnFail: true,
           maxcpucount: 0,
-          toolsVersion: 14.0,
+          toolsVersion: config.buildToolsVersion,
           properties: {
             Platform: config.buildPlatform
           }
