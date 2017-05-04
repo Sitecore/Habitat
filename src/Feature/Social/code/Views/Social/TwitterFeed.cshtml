@@ -10,7 +10,7 @@
 @model Sitecore.Mvc.Presentation.RenderingModel
 @{
   var repository = new RenderingPropertiesRepository();
-  var twitterFeedProperties = repository.Get<TwitterFeedRenderingProperties>(RenderingContext.Current.Rendering, RenderingContext.Current.Rendering);
+  var twitterFeedProperties = repository.Get<TwitterFeedRenderingProperties>(RenderingContext.Current.Rendering);
   var background = Model.Rendering.GetBackgroundClass();
 }
 @if (!Model?.Item?.IsDerived(Templates.TwitterFeed.ID) ?? true)
