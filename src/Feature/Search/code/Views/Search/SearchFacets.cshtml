@@ -42,7 +42,7 @@
                                 @foreach (var facetValue in facet.Values)
                                 {
                                     <li class="@(facetValue.Selected ? "active" : "")">
-                                        <a href="javascript:ToggleFacet('@Model.Query', '@Model.Facets', '@facet.Definition.FieldName', '@facetValue.Value')">
+                                        <a href="#" onclick="ToggleFacet('@Model.Query', '@Model.Facets', '@facet.Definition.FieldName', '@facetValue.Value')">
                                             @if (facetValue.Selected)
                                             {
                                                 <small class="glyphicon glyphicon-ok text-info"></small>
