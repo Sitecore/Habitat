@@ -11,7 +11,7 @@
         {
             get
             {
-                return this.pagesToShow < 1 ? DefaultPagesToShow : this.PagesToShow;
+                return this.pagesToShow < 1 ? DefaultPagesToShow : this.pagesToShow;
             }
             set
             {
