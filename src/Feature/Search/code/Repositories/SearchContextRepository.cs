@@ -92,8 +92,8 @@
         }
 
         private static Item GetSearchResultsPageItemFromRenderingContext()
-        {
-            var item = RenderingContext.Current?.Rendering.Item;
+        {           
+            var item = RenderingContext.CurrentOrNull?.Rendering.Item;
             return item != null && item.IsDerived(Templates.SearchResults.ID) ? item : null;
         }
 

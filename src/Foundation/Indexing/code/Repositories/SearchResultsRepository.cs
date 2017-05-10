@@ -98,6 +98,8 @@
 
         private bool IsFacetValueSelected(FacetCategory resultCategory, IQuery query, FacetValue resultValue)
         {
+            if (query.Facets == null)
+                return false;
             return query.Facets.Any(f => f.Key.Equals(resultCategory.Name, StringComparison.InvariantCultureIgnoreCase) && f.Value.Any(v => v.Equals(resultValue.Name, StringComparison.InvariantCultureIgnoreCase)));
         }
 

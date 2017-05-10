@@ -13,17 +13,15 @@ namespace Sitecore.Feature.Search.Services
     using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.Indexing.Models;
     using Sitecore.Foundation.Indexing.Repositories;
-    using Sitecore.Foundation.SitecoreExtensions.Repositories;
     using Sitecore.Foundation.SitecoreExtensions.Services;
     using Sitecore.Mvc.Presentation;
 
     [Service]
     public class SearchService
     {
-        public SearchService(SearchResultsViewModelFactory searchResultsViewModelFactory, IRenderingPropertiesRepository renderingPropertiesRepository, ISearchServiceRepository searchServiceRepository, ISearchContextRepository searchContextRepository, FacetQueryStringService facetQueryStringService, ITrackerService trackerService)
+        public SearchService(SearchResultsViewModelFactory searchResultsViewModelFactory, ISearchServiceRepository searchServiceRepository, ISearchContextRepository searchContextRepository, FacetQueryStringService facetQueryStringService, ITrackerService trackerService)
         {
             this.SearchResultsViewModelFactory = searchResultsViewModelFactory;
-            this.RenderingPropertiesRepository = renderingPropertiesRepository;
             this.SearchServiceRepository = searchServiceRepository;
             this.SearchContextRepository = searchContextRepository;
             this.FacetQueryStringService = facetQueryStringService;
@@ -31,15 +29,13 @@ namespace Sitecore.Feature.Search.Services
         }
 
         private ISearchServiceRepository SearchServiceRepository { get; }
-        private IRenderingPropertiesRepository RenderingPropertiesRepository { get; }
         private SearchResultsViewModelFactory SearchResultsViewModelFactory { get; }
         private ISearchContextRepository SearchContextRepository { get; }
         private FacetQueryStringService FacetQueryStringService { get; }
         private ITrackerService TrackerService { get; set; }
 
-        public SearchResultsViewModel Search(string query, int? page, string facets)
+        public SearchResultsViewModel Search(string query, int? page, string facets, PagingSettings pagingSettings)
         {
-            var pagingSettings = this.RenderingPropertiesRepository.Get<PagingSettings>(RenderingContext.Current.Rendering);
             var pageNumber = page == null ? 0 : page < 0 ? 0 : page.Value;
             query = query ?? string.Empty;
 
@@ -63,5 +59,17 @@ namespace Sitecore.Feature.Search.Services
                 this.TrackerService.TrackPageEvent(AnalyticsIds.NoSearchHitsFound, searchQuery, searchQuery, searchQuery?.ToLowerInvariant());
         }
 
+        public SearchResultsViewModel SearchFromTopResults(string query, int count)
+        {
+            var searchQuery = new SearchQuery
+            {
+                QueryText = query,
+                Page = 0,
+                NoOfResults = count
+            };
+
+            var results = this.SearchServiceRepository.Get(this.SearchContextRepository.Get()).Search(searchQuery);
+            return this.SearchResultsViewModelFactory.Create(searchQuery, results, 1, count);
+        }
     }
 }

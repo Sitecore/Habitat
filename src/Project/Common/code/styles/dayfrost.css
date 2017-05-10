@@ -7058,10 +7058,10 @@ button.close {
         color: #5C646B;
         background-color: transparent;
         font-weight: 700; }
-    .dropdown-menu li a, .dropup-menu li a {
+    .dropdown-menu > li > a, .dropup-menu > li > a {
         padding: 3px 20px;
         color: #79A0B9; }
-        .dropdown-menu li a:hover, .dropup-menu li a:hover {
+        .dropdown-menu > li > a:hover, .dropup-menu > li > a:hover {
             text-decoration: underline;
             background-color: transparent; }
 
@@ -8439,13 +8439,15 @@ button.list-group-item-danger {
         min-width: 300px;
         padding: 15px;
         color: #79A0B9; }
+        .nav .dropdown-menu-wide {
+            min-width: 600px; }
         .nav .dropdown-menu > .active > a {
             color: #5C646B;
             font-weight: 700; }
-        .nav .dropdown-menu > li > a {
+        .nav .dropdown-menu li > a {
             font-weight: normal;
             color: #79A0B9; }
-            .nav .dropdown-menu > li > a.btn {
+            .nav .dropdown-menu li > a.btn {
                 font-weight: bold; }
         .nav .dropdown-menu .media-list .media {
             margin-top: 0; }
@@ -10529,27 +10531,27 @@ li.active {
             left: auto;
             right: 0;
             background-color: #fff; }
-            .navbar-activity .navbar-nav .open .dropdown-menu li {
+            .navbar-activity .navbar-nav .open .dropdown-menu > li {
                 float: none; }
-        .navbar-activity .navbar-nav li {
+        .navbar-activity .navbar-nav > li {
             max-width: 400px; }
             @media all and (max-width: 767px) {
-                .navbar-activity .navbar-nav li {
+                .navbar-activity .navbar-nav > li {
                     float: left; } }
             @media all and (max-width: 767px) {
-                .navbar-activity .navbar-nav li.navbar-activity-search {
+                .navbar-activity .navbar-nav > li.navbar-activity-search {
                     position: inherit; } }
             @media all and (max-width: 767px) {
-                .navbar-activity .navbar-nav li .navbar-form {
+                .navbar-activity .navbar-nav > li .navbar-form {
                     position: absolute;
                     right: 0; } }
-            .navbar-activity .navbar-nav li .navbar-form input {
+            .navbar-activity .navbar-nav > li .navbar-form input {
                 margin: 2px 0; }
-        .is-searching .navbar-activity .navbar-nav li {
+        .is-searching .navbar-activity .navbar-nav > li {
             max-width: 0;
             transform: translateY(100%);
             opacity: 0; }
-            .is-searching .navbar-activity .navbar-nav li.navbar-activity-search {
+            .is-searching .navbar-activity .navbar-nav > li.navbar-activity-search {
                 max-width: 400px;
                 transform: none;
                 opacity: 1; }
@@ -10559,8 +10561,8 @@ li.active {
             right: 0;
             float: none;
             background-color: #6A96B1; }
-        .navbar-activity-search form,
-        .navbar-activity-search a {
+        .navbar-activity-search > form,
+        .navbar-activity-search > a {
             display: inline-block;
             float: left; }
     .navbar-right {
@@ -10656,27 +10658,27 @@ li.active {
             .bg-white .navbar-nav > li > a {
                 color: #000 !important; }
         @media all and (max-width: 767px) {
-            .navbar-nav li.open .dropdown-menu {
+            .navbar-nav > li.open .dropdown-menu {
                 color: #bcd0dc;
                 background-color: rgba(0, 0, 0, 0.2);
                 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#20000000, endColorstr=#20000000); }
-                .bg-primary .navbar-nav li.open .dropdown-menu,
-                .bg-secondary .navbar-nav li.open .dropdown-menu,
-                .bg-dark .navbar-nav li.open .dropdown-menu,
-                .bg-media .navbar-nav li.open .dropdown-menu {
+                .bg-primary .navbar-nav > li.open .dropdown-menu,
+                .bg-secondary .navbar-nav > li.open .dropdown-menu,
+                .bg-dark .navbar-nav > li.open .dropdown-menu,
+                .bg-media .navbar-nav > li.open .dropdown-menu {
                     color: #FFF; }
-                .bg-white .navbar-nav li.open .dropdown-menu {
+                .bg-white .navbar-nav > li.open .dropdown-menu {
                     color: #000; } }
-        .navbar-nav li.open .dropdown-menu .dropdown-header,
-        .navbar-nav li.open .dropdown-menu a {
+        .navbar-nav > li.open .dropdown-menu .dropdown-header,
+        .navbar-nav > li.open .dropdown-menu a {
             padding-left: 0px; }
-            .navbar-nav li.open .dropdown-menu .dropdown-header.btn,
-            .navbar-nav li.open .dropdown-menu a.btn {
+            .navbar-nav > li.open .dropdown-menu .dropdown-header.btn,
+            .navbar-nav > li.open .dropdown-menu a.btn {
                 padding-left: 12px; }
-        .navbar-nav li.open .mega-dropdown-menu {
+        .navbar-nav > li.open .mega-dropdown-menu {
             top: 50px; }
         @media all and (max-width: 767px) {
-            .navbar-nav li .dropdown-menu li > a {
+            .navbar-nav > li .dropdown-menu > li > a {
                 color: #FFF; } }
     @media (max-width: 767px) {
         .navbar-default .navbar-collapse .navbar-nav .open .dropdown-menu > li > a {
@@ -10689,11 +10691,11 @@ li.active {
         background-color: rgba(0, 0, 0, 0.4);
         filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#40000000', endColorstr='#40000000');
         color: #FFF; }
-    .navbar-default .navbar-nav > .open .dropdown-menu > li.disabled a {
+    .navbar-default .navbar-nav > .open .dropdown-menu > li.disabled > a {
         color: #777777; }
-        .navbar-default .navbar-nav > .open .dropdown-menu > li.disabled a:hover {
+        .navbar-default .navbar-nav > .open .dropdown-menu > li.disabled > a:hover {
             color: #777777; }
-    .navbar-default .navbar-nav > .open .dropdown-menu > li.active a {
+    .navbar-default .navbar-nav > .open .dropdown-menu > li.active > a {
         color: #5C646B;
         background-color: transparent; }
     .navbar-default .navbar-nav > .open .dropdown-menu > li > a {

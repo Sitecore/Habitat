@@ -1,5 +1,5 @@
-## SitecoreHabitatTheme
-Design and frontend for [Sitecore Habitat](https://github.com/Sitecore/Habitat) Theme
+## Sitecore Habitat Theme
+Design and frontend for [Sitecore Habitat](https://github.com/Sitecore/Habitat) and the [Sitecore Habitat demo](https://github.com/Sitecore/Sitecore.Demo) sites. See [this website](http://sitecore-demo-theme.azurewebsites.net) for a running example of the theme. 
 
 ### Development precursor
 The project utilizes the following list of technologies to output sane stylesheets, markup and scripts. The list also entails tools used in the build process.

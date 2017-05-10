@@ -68,11 +68,11 @@
     "chai": "~3.4.2",
     "mocha": "~2.3.4"
   },
-  "_release": "81b4924a2a",
+  "_release": "58beee9d27",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "81b4924a2ada7ecd3c4a6322ae934ffbcae753ca"
+    "commit": "58beee9d27b3044852de6cf03739d82095276454"
   },
   "_source": "https://github.com/Sitecore/Sitecore.Demo.Theme.git",
   "_target": "*",

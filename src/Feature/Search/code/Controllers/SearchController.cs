@@ -1,6 +1,9 @@
 ﻿namespace Sitecore.Feature.Search.Controllers
 {
+    using System;
+    using System.Linq;
     using System.Web.Mvc;
+    using Sitecore.Data.Items;
     using Sitecore.Diagnostics;
     using Sitecore.Feature.Search.Factories;
     using Sitecore.Feature.Search.Models;
@@ -8,21 +11,26 @@
     using Sitecore.Feature.Search.Services;
     using Sitecore.Foundation.Indexing.Repositories;
     using Sitecore.Foundation.SitecoreExtensions.Attributes;
+    using Sitecore.Foundation.SitecoreExtensions.Extensions;
     using Sitecore.Foundation.SitecoreExtensions.Repositories;
     using Sitecore.Mvc.Presentation;
+    using Sitecore.Resources.Media;
+    using Sitecore.Web;
 
     public class SearchController : Controller
     {
-        public SearchController(ISearchContextRepository contextRepository, FacetQueryStringService facetQueryStringService, SearchService searchService)
+        public SearchController(ISearchContextRepository contextRepository, FacetQueryStringService facetQueryStringService, SearchService searchService, IRenderingPropertiesRepository renderingPropertiesRepository)
         {
             this.SearchContextRepository = contextRepository;
             this.FacetQueryStringService = facetQueryStringService;
             this.SearchService = searchService;
+            this.RenderingPropertiesRepository = renderingPropertiesRepository;
         }
 
         private ISearchContextRepository SearchContextRepository { get; }
         private FacetQueryStringService FacetQueryStringService { get; }
         private SearchService SearchService { get; }
+        private IRenderingPropertiesRepository RenderingPropertiesRepository { get; }
 
         public ActionResult SearchResults(string query)
         {
@@ -75,9 +83,35 @@
         [SkipAnalyticsTracking]
         public ActionResult ToggleFacet(string query, string facets, string facetName, string facetValue)
         {
+            var resultsUrl = this.SearchContextRepository.Get().SearchResultsUrl;
             var newFacetQueryString = this.FacetQueryStringService.ToggleFacet(facets, facetName, facetValue);
-            var url = $"?query={query}&facets={newFacetQueryString}";
+            var url = resultsUrl + $"?query={query}&facets={newFacetQueryString}";
             return new JsonResult { Data = new {query, facets = newFacetQueryString, url} };
+        }
+
+        [HttpPost]
+        [SkipAnalyticsTracking]
+        public ActionResult AjaxSearchResults(string query)
+        {
+            var searchResults = this.SearchService.SearchFromTopResults(query, 5);
+            return CreateAjaxResults(searchResults);
+        }
+
+        private JsonResult CreateAjaxResults(SearchResultsViewModel searchResults)
+        {
+            var facet = searchResults.Results.Facets.FirstOrDefault(f => f.Definition.FieldName == Sitecore.Foundation.Indexing.Constants.IndexFields.ContentType);
+            var results = new
+            {
+                Results = searchResults.Results.Results.Select(r => new {r.Title, Description = this.TruncateDescription(r.Description), r.ContentType, r.Url, Image = r.Media?.ImageUrl(64, 64)}),
+                Facet = new { facet?.Definition.FieldName, facet?.Definition.Title },
+                FacetValues = facet?.Values.Select(v => new {v.Title, v.Count, Value = v.Value.ToString()})
+            };
+            return new JsonResult {Data = new {Results = results, Count = searchResults.Results.TotalNumberOfResults} };
+        }
+
+        private string TruncateDescription(string longDescription)
+        {
+            return longDescription == null ? string.Empty : StringUtil.Clip(StringUtil.RemoveTags(longDescription), 150, true);
         }
 
         private SearchResultsViewModel GetSearchResults(string query, int? page, string facets)
@@ -87,10 +121,12 @@
                 return this.HttpContext.Items["SearchResults"] as SearchResultsViewModel;
             }
 
-            var viewModel = this.SearchService.Search(query, page, facets);
+            var pagingSettings = this.RenderingPropertiesRepository.Get<PagingSettings>(RenderingContext.Current.Rendering);
+            var viewModel = this.SearchService.Search(query, page, facets, pagingSettings);
 
             this.HttpContext?.Items.Add("SearchResults", viewModel);
             return viewModel;
         }
+
     }
 }

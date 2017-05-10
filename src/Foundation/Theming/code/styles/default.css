@@ -5713,8 +5713,21 @@ body {
       outline-width: 1px;
       outline-style: solid;
     }*/ }
-  body.bg-media {
+  body.body-media {
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: auto; }
+  body.body-secondary {
+    background-color: #424C5F; }
+  body.body-primary {
+    background-color: #C8244F; }
+  body.body-dark {
+    background-color: #2E384E; }
+  body.body-white {
+    background-color: #FFFFFF; }
   body:before {
     content: ' ';
     display: none;
@@ -10314,6 +10327,8 @@ li.active {
       background-color: #FFF; }
     .is-searching .navbar-toggle-search {
       margin-right: -15px; }
+      .pagelayout-fixed .header-static .is-searching .navbar-toggle-search {
+        margin-right: inherit; }
       .is-searching .navbar-toggle-search span.glyphicon:before {
         content: '\e014'; }
     @media all and (max-width: 767px) {
@@ -10378,7 +10393,7 @@ li.active {
           background-color: #FFF; }
         .bg-white #mainNavbar .navbar-form input {
           color: #000;
-          background-color: rgba(0, 0, 0, 0.1); }
+          background-color: #d5d7dc; }
         #mainNavbar .navbar-form input:focus {
           outline-width: 0; }
   @media (min-width: 767px) {
@@ -10420,11 +10435,11 @@ li.active {
           right: 0; } }
       .navbar-activity .navbar-nav li .navbar-form input {
         margin: 2px 0; }
-    .is-searching .navbar-activity .navbar-nav li {
+    .is-searching .navbar-activity .navbar-nav > li {
       max-width: 0;
       transform: translateY(100%);
       opacity: 0; }
-      .is-searching .navbar-activity .navbar-nav li.navbar-activity-search {
+      .is-searching .navbar-activity .navbar-nav > li.navbar-activity-search {
         max-width: 400px;
         transform: none;
         opacity: 1; }
@@ -10460,9 +10475,6 @@ li.active {
       .navbar-left + .navbar-center {
         display: block;
         position: relative; } }
-  .is-searching .navbar-left + .navbar-right .navbar-toggle-search {
-    margin-top: 10px;
-    padding-bottom: 0px; }
   .navbar-left + .navbar-right .navbar-form {
     margin-top: 0px !important; }
     @media (max-width: 767px) {

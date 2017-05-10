@@ -55,9 +55,9 @@
 
             if (!preventAddToCache)
             {
-                if (RenderingContext.Current != null)
+                if (RenderingContext.CurrentOrNull != null)
                 {
-                    var rendering = RenderingContext.Current.Rendering;
+                    var rendering = RenderingContext.CurrentOrNull.Rendering;
                     if (rendering != null && rendering.Caching.Cacheable)
                     {
                         AssetRequirementList cachedRequirements;

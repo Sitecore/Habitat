@@ -159,13 +159,14 @@
         {
             var facets = GetFacetsFromProviders();
 
+            var addedFacetPredicate = false;
             var facetPredicate = PredicateBuilder.True<SearchResultItem>();
             foreach (var facet in facets)
             {
                 if (string.IsNullOrEmpty(facet.FieldName))
                     continue;
 
-                if (query.Facets.ContainsKey(facet.FieldName))
+                if (query.Facets != null && query.Facets.ContainsKey(facet.FieldName))
                 {
                     var facetValues = query.Facets[facet.FieldName];
 
@@ -177,10 +178,12 @@
                         facetValuePredicate = facetValuePredicate.Or(item => item[facet.FieldName] == facetValue);
                     }
                     facetPredicate = facetPredicate.And(facetValuePredicate);
+                    addedFacetPredicate = true;
                 }
                 queryable = queryable.FacetOn(item => item[facet.FieldName]);
             }
-            queryable = queryable.Where(facetPredicate);
+            if (addedFacetPredicate)
+                queryable = queryable.Where(facetPredicate);
 
             return queryable;
         }
