@@ -1,13 +1,50 @@
-﻿@model Sitecore.Feature.Search.Models.SearchContext
+﻿@using Sitecore.Foundation.Dictionary.Repositories
+@model Sitecore.Feature.Search.Models.SearchContext
 
-<li class="navbar-activity-search">
-  <form action="@Model.SearchResultsUrl" class="navbar-form" role="search">
-    <div class="form-group">
-      <input type="text" name="query" placeholder="@Model.SearchBoxTitle" autocomplete="off"/>
+<li class="navbar-activity-search dropdown">
+    <form action="@Model.SearchResultsUrl" class="navbar-form" role="search">
+        <div class="form-group">
+            <input type="text" name="query" id="searchInputBox" placeholder="@Model.SearchBoxTitle" autocomplete="off"/>
+        </div>
+    </form>
+
+    <a href="#" class="btn navbar-toggle-search" data-toggle-class="is-searching" data-target="#mainNavbar">
+        <span class="glyphicon glyphicon-search"></span>
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-wide" id="navbar-activity-search-results">
+        <div class="row panel-loading">
+            <div class="col-md-12">
+                <div class="text-center p-b-1">
+                    @DictionaryPhraseRepository.Current.Get("/Search/Global Search/Loading", "Searching...")
+                </div>
+                <div class="text-center">
+                    <span class="fa fa-spinner fa-2x fa-spin"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row panel-results">
+            <div class="col-md-12">
+                <ul class="media-list results"></ul>
+            </div>
+        </div>
+        <div class="row panel-result-count">
+            <div class="col-md-12">
+                <small>
+                    <em class="result-count"></em>
+                    @DictionaryPhraseRepository.Current.Get("/Search/Global Search/Number Of Results", "search results found.")
+                </small>
+            </div>
+        </div>
+        <div class="row panel-facet-values">
+            <div class="col-md-12">
+                <ul class="facet-values"></ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button class="btn btn-primary btn-sm pull-right" onclick="$('.navbar-activity-search form').submit()">@DictionaryPhraseRepository.Current.Get("/Search/Global Search/Search", "Search")</button>
+            </div>
+        </div>
     </div>
-  </form>
-
-  <a href="#" class="btn navbar-toggle-search" data-toggle-class="is-searching" data-target="#mainNavbar">
-    <span class="glyphicon glyphicon-search"></span>
-  </a>
 </li>

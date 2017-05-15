@@ -19,8 +19,29 @@ body {
     }*/
   }
 
-  &.bg-media {
+  &.body-media {
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: auto;
+  }
+
+  &.body-secondary {
+    background-color: $color-secondary;
+  }
+
+  &.body-primary {
+    background-color: $color-primary;
+  }
+
+  &.body-dark {
+    background-color: $color-secondary-dark;
+  }
+
+  &.body-white {
+    background-color: #FFFFFF;
   }
 
   &:before {

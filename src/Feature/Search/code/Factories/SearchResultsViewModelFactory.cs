@@ -20,13 +20,14 @@ namespace Sitecore.Feature.Search.Factories
 
         public SearchResultsViewModel Create(IQuery searchQuery, ISearchResults results, int pagesToShow, int resultsOnPage)
         {
+            var facets = searchQuery.Facets == null ? null : this.FacetQueryStringService.GetFacetQueryString(searchQuery.Facets);
             return new SearchResultsViewModel
             {
                 VisiblePagesCount = pagesToShow,
                 TotalResults = results.TotalNumberOfResults,
                 ResultsOnPage = resultsOnPage,
                 Query = searchQuery.QueryText,
-                Facets = this.FacetQueryStringService.GetFacetQueryString(searchQuery.Facets),
+                Facets = facets,
                 Results = results,
                 Page = searchQuery.Page
             };
