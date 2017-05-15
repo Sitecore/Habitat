@@ -92,7 +92,7 @@ Languages:
       Value: "{A74EE096-F225-4568-8D81-2F71ABBC8118}"
     - ID: "235ae392-97ac-4822-be38-837da3e7724e"
       Hint: SiteBrowserTitle
-      Value: " - Habitat Sitecore Framework"
+      Value: " - Habitat Sitecore Example Site"
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20150824T171748Z

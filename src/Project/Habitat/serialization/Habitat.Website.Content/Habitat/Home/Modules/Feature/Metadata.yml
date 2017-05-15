@@ -4,17 +4,35 @@ Parent: "f7434df7-e32e-4f8c-a50e-27c476f4dc32"
 Template: "94a8c8e9-690b-4e65-98e7-f95800222767"
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Metadata
 DB: master
+SharedFields:
+- ID: "0dca829c-9fce-41f5-9990-c6182fefe905"
+  Hint: SeoFollowLinks
+  Type: Checkbox
+  Value: 0
+- ID: "683d7237-206a-488f-9dee-4a4e41fb161d"
+  Hint: CanIndex
+  Type: Checkbox
+  Value: 0
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
+    - ID: "167aba77-5172-42af-9f9e-00299113839e"
+      Hint: CustomMetaData
+      Value: author=Some%20Dude%20from%20Sitecore
     - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
       Hint: NavigationTitle
       Value: Metadata
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20151116T023619Z
+    - ID: "4b16f930-73c9-4643-bb1b-00f06e60a073"
+      Hint: MetaKeywords
+      Type: Treelist
+      Value: |
+        {425DF582-C8D5-4EBA-B23E-FA1A069435DD}
+        {153640E2-FD0D-42D3-8480-F9615EE78A9A}
     - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
       Hint: Image
       Value: |
@@ -23,16 +41,20 @@ Languages:
       Hint: Summary
       Value: |
         <span style="line-height: 24.2857px;">The metadata module covers functionality related to HTML</span><span style="line-height: 24.2857px;"> and SEO</span><span style="line-height: 24.2857px;"> metadata.</span>
+    - ID: "bb7a38c0-323c-4f81-8eb9-288abf7c4638"
+      Hint: MetaDescription
+      Value: This is the description for the Metadata page. This can be edited in the content editor.
     - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
       Hint: Title
       Value: Metadata
     - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
       Hint: BrowserTitle
-      Value: Metadata
+      Value: This is the browser title for the Metadata page
     - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
       Value: |
-        The metadata module covers functionality related to HTML<span style="line-height: 24.2857px;">&nbsp;and SEO</span>&nbsp;metadata, including for example the browser page title and global site title.
+        <p>The metadata module covers functionality related to HTML<span style="line-height: 24.2857px;">&nbsp;and SEO</span>&nbsp;metadata, including for example the browser page title and global site title.</p>
+        <p>Open the page source to see the metadata in the &lt;HEAD&gt; for this page</p>
 - Language: "ja-JP"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
