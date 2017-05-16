@@ -30,6 +30,17 @@ gulp.task("default", function (callback) {
 	callback);
 });
 
+gulp.task("deploy", function (callback) {
+  config.runCleanBuilds = true;
+  return runSequence(
+    "01-Copy-Sitecore-License",
+    "02-Nuget-Restore",
+    "03-Publish-All-Projects",
+    "04-Apply-Xml-Transform",
+	"06-Deploy-Transforms",
+	callback);
+});
+
 /*****************************
   Initial setup
 *****************************/
