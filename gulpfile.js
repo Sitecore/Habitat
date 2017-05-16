@@ -37,6 +37,7 @@ gulp.task("deploy", function (callback) {
     "02-Nuget-Restore",
     "03-Publish-All-Projects",
     "04-Apply-Xml-Transform",
+	"06-Deploy-Transforms",
 	callback);
 });
 
