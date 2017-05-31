@@ -1,0 +1,33 @@
+﻿---
+ID: "a00ddf6f-3abe-454e-aa5f-218ee5a9da27"
+Parent: "8eac162b-96bc-43f1-95d6-99b83745b2f4"
+Template: "49c651ba-4004-40a9-9b0f-e95d0573f3ae"
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Demo/Fake Referrer
+DB: master
+SharedFields:
+- ID: "d28efe17-c491-47c0-b62d-934dc9da38a4"
+  Hint: Referrer
+  Value: "http://www.bing.com/search?q=Sitecore+Habitat&qs=n&form=QBLH&sp=-1&pq=sitecore+habitat&sc=3-17&sk=&cvid=46997EBAFE7C4B18B9C0C5140789A0EB"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0bc0aedf-a6d0-4f74-933c-bd1779cd40b2"
+      Hint: HTML Content
+      Value: |
+        <html>
+        <body>
+        <h1>Demo Page</h1>
+        <p>This page fakes the referrer.</p>
+        <p>The page is not tracked in xDB.<br/>After returning to a standard web page, use the panel in the right hand side to view the faked information.</p>
+        <p><a href="/">Return to the home page</a></p>
+        </body>
+        </html>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170530T230230Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
