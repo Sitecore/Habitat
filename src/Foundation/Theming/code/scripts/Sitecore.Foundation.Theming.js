@@ -4260,7 +4260,7 @@ return EvEmitter;
 }));
 
 /*!
- * imagesLoaded v4.1.2
+ * imagesLoaded v4.1.1
  * JavaScript is all like "You images are done yet or what?"
  * MIT License
  */
@@ -4291,7 +4291,7 @@ return EvEmitter;
     );
   }
 
-})( typeof window !== 'undefined' ? window : this,
+})( window,
 
 // --------------------------  factory -------------------------- //
 

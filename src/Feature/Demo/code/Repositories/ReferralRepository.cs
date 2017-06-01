@@ -23,18 +23,33 @@
         public Referral Get()
         {
             var campaigns = this.CreateCampaigns().ToArray();
-            var referringSite = Tracker.Current.Interaction.ReferringSite;
-            if (referringSite.Equals(HttpContext.Current.Request.Url.Host, StringComparison.InvariantCultureIgnoreCase))
+
+            return new Referral {
+                    Campaigns = campaigns,
+                    TotalNoOfCampaigns = campaigns.Length,
+                    ReferringSite = this.GetReferringSite(),
+                    Keywords = GetKeywords()
+                };
+        }
+
+        private static string GetKeywords()
+        {
+            string keywords = null;
+            if (Tracker.Current != null)
             {
-                referringSite = null;
+                keywords = Tracker.Current.Interaction.Keywords;
             }
-            return new Referral
+            return keywords;
+        }
+
+        private string GetReferringSite()
+        {
+            if (Tracker.Current == null || HttpContext.Current == null)
             {
-                Campaigns = campaigns,
-                TotalNoOfCampaigns = campaigns.Length,
-                ReferringSite = referringSite,
-                Keywords = Tracker.Current.Interaction.Keywords
-            };
+                return null;
+            }
+            var referringSite = Tracker.Current.Interaction.ReferringSite;
+            return referringSite != null && referringSite.Equals(HttpContext.Current.Request.Url.Host, StringComparison.InvariantCultureIgnoreCase) ? null : referringSite;
         }
 
         private IEnumerable<Campaign> CreateCampaigns()
