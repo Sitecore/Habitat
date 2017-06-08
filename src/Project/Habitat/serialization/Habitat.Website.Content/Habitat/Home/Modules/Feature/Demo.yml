@@ -59,9 +59,18 @@ Languages:
     - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
       Hint: Body
       Value: |
-        <p><span style="line-height: 24.2857px;">The Demo module contains a number of features used for demonstrating aspects of the Sitecore platform, such as triggering a campaign from external sites or &nbsp;information about what the Sitecore Experience Database contains.<br>
+        <p><span style="line-height: 24.2857px;">The Demo module contains a number of features used for demonstrating aspects of the Sitecore platform, such as triggering a campaign from external sites or &nbsp;information about what the Sitecore Experience Database contains.<br />
         </span></p>
         <p>For example, the little information icon shown in the lower right hand side of the screen will open a panel showing information from the Sitecore Experience Database.</p>
+        <p>The module also allows fake demo pages, for example for initiating scenarios from search engines or social media pages. These pages can also fake referrers, IP adresses and geo location. The pages can be edited in Sitecore but will not affect xDB tracking and analytics.</p>
+        <p>There are the following examples:</p>
+        <ul>
+            <li><a href="~/link.aspx?_id=71D28ECDEB8B4485BE481722FBA544FF&amp;_z=z">Fake Google Page</a></li>
+            <li><a href="~/link.aspx?_id=A00DDF6F3ABE454EAA5F218EE5A9DA27&amp;_z=z">Faking the referrer</a></li>
+            <li><a href="~/link.aspx?_id=C28FF1340F924B478B5BD4B474D77DF4&amp;_z=z">Faking the IP address</a></li>
+            <li><a href="~/link.aspx?_id=CB4D7B3013594C1D9B0E16B019C92C97&amp;_z=z">Faking Geo location</a></li>
+        </ul>
+        <p>To test these pages properly, please copy the links, open a private browsing window and initiate the visit by visiting these pages first.</p>
 - Language: "ja-JP"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

@@ -1,13 +1,16 @@
 ﻿namespace Sitecore.Feature.Demo.Repositories
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
+    using MongoDB.Driver;
     using Sitecore.Analytics;
     using Sitecore.Analytics.Outcome;
     using Sitecore.Analytics.Outcome.Extensions;
     using Sitecore.Analytics.Outcome.Model;
     using Sitecore.Configuration;
     using Sitecore.Data;
+    using Sitecore.Diagnostics;
     using Sitecore.Feature.Demo.Models;
     using Sitecore.Foundation.Dictionary.Repositories;
     using Sitecore.Marketing.Definitions;
@@ -63,7 +66,16 @@
 
         private IEnumerable<IOutcome> GetHistoricalOutcomes()
         {
-            return Tracker.Current != null ? this.outcomeManager.GetForEntity<IOutcome>(new ID(Tracker.Current.Contact.ContactId)) : Enumerable.Empty<IOutcome>();
+            try
+            {
+                return Tracker.Current != null ? this.outcomeManager.GetForEntity<IOutcome>(new ID(Tracker.Current.Contact.ContactId)).ToList() : Enumerable.Empty<IOutcome>();
+            }
+            //The OutcomeManager is not very error safe and will throw misc exceptions if the MongoDb database is offline
+            catch (Exception exception)
+            {
+                Log.Debug($"GetHistoricalOutcomes failed. Mongo database is offline or reports an error: {exception.Message}", this);
+                return Enumerable.Empty<IOutcome>();
+            }
         }
 
         private static IOutcomeDefinition GetOutcomeDefinition(ID outcomeId)

@@ -4,6 +4,7 @@ namespace Sitecore.Feature.Demo.Controllers
     using System.Net;
     using System.Web.Mvc;
     using Sitecore.Analytics;
+    using Sitecore.Data.Items;
     using Sitecore.ExperienceEditor.Utils;
     using Sitecore.ExperienceExplorer.Business.Managers;
     using Sitecore.Feature.Demo.Models;
@@ -59,7 +60,8 @@ namespace Sitecore.Feature.Demo.Controllers
                 throw new InvalidDataSourceItemException($"Item should be not null and derived from {nameof(Templates.DemoContent)} {Templates.DemoContent.ID} template");
             }
 
-            return this.View("DemoContent", new DemoContent(item));
+            var demoContent = new DemoContent(item);
+            return this.View("DemoContent", demoContent);
         }
 
         public ActionResult EndVisit()
