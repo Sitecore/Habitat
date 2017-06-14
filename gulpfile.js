@@ -16,7 +16,7 @@ var unicorn = require("./scripts/unicorn.js");
 var habitat = require("./scripts/habitat.js");
 
 var config;
-if (fs.existsSync('./gulp-config.js.user') {
+if (fs.existsSync('./gulp-config.js.user')) {
     config = require("./gulp-config.js.user")();
 }
 else {
