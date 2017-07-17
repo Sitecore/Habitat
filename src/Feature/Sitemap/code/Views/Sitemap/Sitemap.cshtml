@@ -1,0 +1,75 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Feature.Sitemap
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Feature.Sitemap.Models.Sitemap
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Feature.Sitemap.Models.Sitemap.SitemapItems
+
+@{
+    int NoOfColumns = 1;
+    int TotalNoOfColumns = 12;
+    if (RenderingContext.Current.Rendering.Parameters["Columns"] != null)
+    {
+        NoOfColumns = Int32.Parse(RenderingContext.Current.Rendering.Parameters["Columns"]);
+    }
+
+    if (RenderingContext.Current.Rendering.Parameters["TotalNoOfColumns"] != null)
+    {
+        TotalNoOfColumns = Int32.Parse(RenderingContext.Current.Rendering.Parameters["TotalNoOfColumns"]);
+    }
+
+
+
+    var perColumnSize = TotalNoOfColumns / NoOfColumns;
+}
+<section class="layer layer-grid sitemap-page">
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-sm-@TotalNoOfColumns">
+                @foreach (var item in Model.Items)
+                {
+                    <div class="col-sm-@perColumnSize">
+                        @if(@item.Item.FieldHasValue(Templates.Navigable.Fields.NavigationTitle)) {
+                        <a href="@item.Url" target="_self">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)</a>
+                        }
+                        else {
+                        <a href="@item.Url" target="_self">@item.Item.Name</a>
+                        }
+                        @if (item.ChildItems != null && item.ChildItems.Items.Count > 0)
+                {
+                            @ShowTree(item)
+                        }
+                    </div>
+                }
+            </div>
+
+            @helper ShowTree(SitemapItem item)
+            {
+            <ul>
+                @{
+                    if (item.ChildItems != null && item.ChildItems.Items.Count > 0)
+                    {
+                        foreach (var sItem in item.ChildItems.Items)
+                        {
+                            <li>
+                                @if(@item.Item.FieldHasValue(Templates.Navigable.Fields.NavigationTitle)) {
+                                <a href="@sItem.Url" target="_self">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), sItem.Item)</a>
+                                }
+                                else {
+                                <a href="@sItem.Url" target="_self">@sItem.Item.Name</a>
+                                }
+                                @if (item.ChildItems != null && item.ChildItems.Items.Count > 0)
+                                {
+                                @ShowTree(sItem)
+                                }
+                            </li>
+                           
+                        }
+                    }
+                }
+            </ul>
+}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,14 @@
+﻿---
+ID: "dd3d8f45-4579-46d6-a599-4dbc7eff539e"
+Parent: "08477468-d438-43d4-9d6a-6d84a611971c"
+Template: "1fcccb76-bd22-4d1c-ac66-6cd3d02df281"
+Path: /sitecore/system/Modules/Sitemap
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160223T123502Z

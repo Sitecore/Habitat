@@ -1,0 +1,18 @@
+﻿---
+ID: "181ed12e-2949-4d52-9c8d-a43f6327d8be"
+Parent: "5d2e2b91-00e7-4a36-9e46-01ef8cf64141"
+Template: "0437fee2-44c9-46a6-abe9-28858d9fee8c"
+Path: /sitecore/templates/Feature/Sitemap/Pre Built Examples
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160223T123130Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

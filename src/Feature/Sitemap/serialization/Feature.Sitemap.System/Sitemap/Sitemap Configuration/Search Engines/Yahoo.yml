@@ -1,0 +1,25 @@
+﻿---
+ID: "878c7478-0606-4081-abde-4d65976ccf82"
+Parent: "b2fd704e-23bc-46ce-a2f9-c48f8c351a35"
+Template: "3c99a5f7-4e7c-40e7-932c-611627d981e1"
+Path: /sitecore/system/Modules/Sitemap/Sitemap Configuration/Search Engines/Yahoo
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 50
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160223T123516Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "d6edc5aa-5615-4a99-b90a-6aaadbc83ca1"
+      Hint: HttpRequestString
+      Value: "http://search.yahooapis.com/SiteExplorerService/V1/ping?sitemap="

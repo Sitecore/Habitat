@@ -1,0 +1,14 @@
+﻿---
+ID: "541231d1-9115-439c-aaca-ac32d9f9cfd5"
+Parent: "eca3fe81-e2f4-4c8b-9c02-8c512125a620"
+Template: "eca3fe81-e2f4-4c8b-9c02-8c512125a620"
+Path: /sitecore/templates/Feature/Sitemap/_SitemapParameters/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170713T162237Z

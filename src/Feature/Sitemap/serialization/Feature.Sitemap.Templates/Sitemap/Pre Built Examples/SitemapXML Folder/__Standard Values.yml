@@ -1,0 +1,23 @@
+﻿---
+ID: "979c2767-dca0-49e5-b5a7-fe6adbe1bd41"
+Parent: "1fcccb76-bd22-4d1c-ac66-6cd3d02df281"
+Template: "1fcccb76-bd22-4d1c-ac66-6cd3d02df281"
+Path: /sitecore/templates/Feature/Sitemap/Pre Built Examples/SitemapXML Folder/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{EDBC9B84-815D-423B-A79F-6C5105F9EDC2}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160223T123202Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
