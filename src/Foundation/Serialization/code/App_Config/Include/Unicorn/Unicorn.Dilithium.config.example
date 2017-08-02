@@ -1,0 +1,68 @@
+<!--
+	Unicorn.Dilithium.config
+
+	This file activates the Dilithium high-speed Sitecore data access provider.
+	Dilithium is up to 20x faster than standard Sitecore data access APIs.
+	
+	This file should be enabled on any environment where you wish to sync items
+	using Dilithium (usually dev + CE). Should you wish to say disable Dilithium on CE,
+	but leave it alone locally then you can simply delete this file during deploy.
+	(configurations will have no issue if they keep using the DilithiumDataStore, as it falls back to Sitecore APIs)
+	
+	THINGS TO BE AWARE OF WITH DILITHIUM:
+	* Dilithium will precache almost all serialized data in RAM; if precaching both serialized and SQL data you need twice as much.
+		Thus, avoid activating Dilithium on configurations that have massive data sizes (e.g. lots of media items) unless you have the memory to spare.
+		Because SQL caching does not download blob data, it is less RAM intensive than serialized item caching for media.
+	
+	* Dilithium requires a MS SQL database.
+
+	* Dilithium does not guarantee identical child ordering to Sitecore. This means that when reserializing a configuration
+			that previously did not use Dilithium after activating Dilithium you may find items that are in loopback folders change,
+			as different children may be selected to place in loopback. This is normal and no actual data has changed; the items
+			are also sync-compatible both with and without Dilithium so you can turn it off without fear if you wish.
+			
+	* If you see uneven timings when running several synchronizations in succession, that's probably the time taken to reload the template field cache, as opposed to spiky SQL times :)
+
+	http://github.com/kamsar/Unicorn
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+	<sitecore>
+		<unicorn>
+			<defaults>
+				<!-- 
+					Set Dilithium SQL as the default source data store. Configurations may of course override this.
+					Patch this out if you do not wish to default to use Dilithium to read from Sitecore.
+				-->
+				<sourceDataStore>
+					<patch:attribute name="type">Unicorn.Data.Dilithium.DilithiumSitecoreDataStore, Unicorn</patch:attribute>
+				</sourceDataStore>
+
+				<!-- 
+					Set Dilithium Serialized as the default source data store. Configurations may of course override this.
+					Patch this out if you do not wish to default to use Dilithium to read from Disk.
+					This can use additional memory compared to DiSQL when syncing media items.
+				-->
+				<targetDataStore>
+					<patch:attribute name="type">Unicorn.Data.Dilithium.DilithiumSerializationFileSystemDataStore, Unicorn</patch:attribute>
+				</targetDataStore>
+			</defaults>
+		</unicorn>
+
+		<pipelines>
+			<unicornSyncStart>
+				<!-- 
+					Initializes Dilithium cache when sync starts up for all configs. 
+					Without this, even if configs use the Dilithium data store no optimizations will be done during syncs.
+				-->
+				<processor type="Unicorn.Data.Dilithium.Pipelines.InitializeDilithium, Unicorn" />
+			</unicornSyncStart>
+			<unicornReserializeStart>
+				<!-- 
+					Initializes Dilithium cache when reserialize starts up for all configs. 
+					Without this, even if configs use the Dilithium data store no optimizations will be done during reserialize.
+				-->
+				<processor type="Unicorn.Data.Dilithium.Pipelines.InitializeDilithium, Unicorn" />
+			</unicornReserializeStart>
+		</pipelines>
+	</sitecore>
+</configuration>
