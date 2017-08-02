@@ -54,16 +54,16 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Sitecore.Analytics, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Analytics.NoReferences.8.2.170407\lib\NET452\Sitecore.Analytics.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.NoReferences.8.2.170614\lib\NET452\Sitecore.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Outcome, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Outcome.NoReferences.8.2.170407\lib\NET452\Sitecore.Analytics.Outcome.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Outcome.NoReferences.8.2.170614\lib\NET452\Sitecore.Analytics.Outcome.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Forms.Core, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Forms.Core.NoReferences.8.2.170413\lib\NET452\Sitecore.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.2.170407\lib\NET452\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.2.170614\lib\NET452\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.WFFM.Abstractions, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.WFFM.Abstractions.NoReferences.8.2.170413\lib\NET452\Sitecore.WFFM.Abstractions.dll</HintPath>
