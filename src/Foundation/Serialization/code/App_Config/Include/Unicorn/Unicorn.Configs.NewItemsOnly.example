@@ -29,9 +29,9 @@
 						In other words transparent sync always acts like SerializedAsMasterEvaluator because disk is LITERALLY the master.
 						See https://github.com/kamsar/Unicorn/wiki/The-Transparent-Sync-Guide
 					-->
-					<dataProviderConfiguration enableTransparentSync="false" type="Unicorn.Data.DataProvider.DefaultUnicornDataProviderConfiguration, Unicorn" />
+					<dataProviderConfiguration enableTransparentSync="false" />
 
-					<predicate type="Unicorn.Predicates.SerializationPresetPredicate, Unicorn" singleInstance="true">
+					<predicate>
 						<include database="master" path="/sitecore/content/global-settings" />
 					</predicate>
 				</configuration>

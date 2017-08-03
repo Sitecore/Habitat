@@ -9,12 +9,19 @@ var newer = require("gulp-newer");
 var util = require("gulp-util");
 var runSequence = require("run-sequence");
 var path = require("path");
-var config = require("./gulp-config.js")();
 var nugetRestore = require('gulp-nuget-restore');
 var fs = require('fs');
+var yargs = require("yargs").argv;
 var unicorn = require("./scripts/unicorn.js");
 var habitat = require("./scripts/habitat.js");
-var yargs = require("yargs").argv;
+
+var config;
+if (fs.existsSync('./gulp-config.js.user')) {
+    config = require("./gulp-config.js.user")();
+}
+else {
+    config = require("./gulp-config.js")()
+}
 
 module.exports.config = config;
 
@@ -75,10 +82,11 @@ gulp.task("04-Apply-Xml-Transform", function () {
           targets: ["ApplyTransform"],
           configuration: config.buildConfiguration,
           logCommand: false,
-          verbosity: "minimal",
+          verbosity: config.buildVerbosity,
           stdout: true,
           errorOnFail: true,
-          maxcpucount: 0,
+          maxcpucount: config.buildMaxCpuCount,
+          nodeReuse: false,
           toolsVersion: config.buildToolsVersion,
           properties: {
             Platform: config.buildPlatform,
@@ -93,7 +101,7 @@ gulp.task("04-Apply-Xml-Transform", function () {
 gulp.task("05-Sync-Unicorn", function (callback) {
   var options = {};
   options.siteHostName = habitat.getSiteUrl();
-  options.authenticationConfigFile = config.websiteRoot + "/App_config/Include/Unicorn/Unicorn.UI.config";
+  options.authenticationConfigFile = config.websiteRoot + "/App_config/Include/Unicorn.SharedSecret.config";
 
   unicorn(function() { return callback() }, options);
 });
@@ -134,10 +142,11 @@ var publishStream = function (stream, dest) {
       targets: targets,
       configuration: config.buildConfiguration,
       logCommand: false,
-      verbosity: "minimal",
+      verbosity: config.buildVerbosity,
       stdout: true,
       errorOnFail: true,
-      maxcpucount: 0,
+      maxcpucount: config.buildMaxCpuCount,
+      nodeReuse: false,
       toolsVersion: config.buildToolsVersion,
       properties: {
         Platform: config.publishPlatform,
@@ -183,10 +192,11 @@ gulp.task("Build-Solution", function () {
           targets: targets,
           configuration: config.buildConfiguration,
           logCommand: false,
-          verbosity: "minimal",
+          verbosity: config.buildVerbosity,
           stdout: true,
           errorOnFail: true,
-          maxcpucount: 0,
+          maxcpucount: config.buildMaxCpuCount,
+          nodeReuse: false,
           toolsVersion: config.buildToolsVersion,
           properties: {
             Platform: config.buildPlatform

@@ -3,4 +3,5 @@
         <publishUrl>http://habitat.dev.local</publishUrl>
         <ExcludeFilesFromDeployment>packages.config</ExcludeFilesFromDeployment>
     </PropertyGroup>
+    <Import Project="./publishsettings.targets.user" Condition="exists('./publishsettings.targets.user')" /> 
 </Project>

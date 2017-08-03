@@ -33,12 +33,12 @@
 					e.g. in this example, 'Sample Implicit Child Configuration' will depend on 'Sample Implicit Parent Configuration'
 				-->
 				<configuration name="Sample Implicit Parent Configuration">
-					<predicate type="Unicorn.Predicates.SerializationPresetPredicate, Unicorn" singleInstance="true">
+					<predicate>
 						<include database="master" path="/sitecore/content" />
 					</predicate>
 				</configuration>
 				<configuration name="Sample Implicit Child Configuration">
-					<predicate type="Unicorn.Predicates.SerializationPresetPredicate, Unicorn" singleInstance="true">
+					<predicate>
 						<include database="master" path="/sitecore/content/Home" />
 					</predicate>
 				</configuration>
