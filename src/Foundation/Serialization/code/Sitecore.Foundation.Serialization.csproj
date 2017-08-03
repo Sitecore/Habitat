@@ -118,13 +118,11 @@
     <Reference Include="Unicorn, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Unicorn.Core.4.0.0\lib\net452\Unicorn.dll</HintPath>
     </Reference>
-    <Reference Include="Unicorn.Roles, Version=3.3.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Unicorn.Roles.Core.3.3.2\lib\net452\Unicorn.Roles.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Unicorn.Roles, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Unicorn.Roles.Core.4.0.0\lib\net452\Unicorn.Roles.dll</HintPath>
     </Reference>
-    <Reference Include="Unicorn.Users, Version=3.3.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Unicorn patch\Unicorn.Users.dll</HintPath>
+    <Reference Include="Unicorn.Users, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Unicorn.Users.Core.4.0.0\lib\net452\Unicorn.Users.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -132,12 +130,8 @@
     <Content Include="packages.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Serialization.Settings.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.UI.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Users.DataProvider.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Users.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.Users.config.example" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Roles.DataProvider.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Roles.config" />
-    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.Roles.config.example" />
     <Content Include="App_Config\Include\Rainbow.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.zSharedSecret.config.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.Remote.config.disabled" />
@@ -151,6 +145,11 @@
     <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.example" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.config" />
     <Content Include="App_Config\Include\Unicorn\Unicorn.AutoPublish.config" />
+    <Content Include="App_Config\Include\Unicorn.SharedSecret.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Users.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Roles.DataProvider.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Roles.config" />
+    <Content Include="App_Config\Include\Unicorn\Unicorn.Configs.Default.Roles.config.example" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
