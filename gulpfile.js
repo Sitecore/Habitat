@@ -3,17 +3,15 @@ var msbuild = require("gulp-msbuild");
 var debug = require("gulp-debug");
 var foreach = require("gulp-foreach");
 var rename = require("gulp-rename");
-var watch = require("gulp-watch");
-var merge = require("merge-stream");
 var newer = require("gulp-newer");
 var util = require("gulp-util");
 var runSequence = require("run-sequence");
-var path = require("path");
 var nugetRestore = require('gulp-nuget-restore');
 var fs = require('fs');
 var yargs = require("yargs").argv;
 var unicorn = require("./scripts/unicorn.js");
 var habitat = require("./scripts/habitat.js");
+var helix = require("./scripts/helix.js");
 
 var config;
 if (fs.existsSync('./gulp-config.js.user')) {
@@ -24,6 +22,8 @@ else {
 }
 
 module.exports.config = config;
+
+helix.header();
 
 gulp.task("default", function (callback) {
   config.runCleanBuilds = true;
