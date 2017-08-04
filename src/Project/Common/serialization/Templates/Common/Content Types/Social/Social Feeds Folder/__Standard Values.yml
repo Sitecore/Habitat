@@ -1,0 +1,23 @@
+﻿---
+ID: "dda1de43-921d-42dc-872d-a53de27f088c"
+Parent: "4de2d9d9-0781-47ad-8f5d-52f2ad920d83"
+Template: "4de2d9d9-0781-47ad-8f5d-52f2ad920d83"
+Path: /sitecore/templates/Project/Common/Content Types/Social/Social Feeds Folder/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{773A96F7-2752-4DA2-A2F5-6119A21A24F3}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20151123T164022Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

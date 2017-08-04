@@ -1,0 +1,21 @@
+﻿---
+ID: "c29896fb-878c-4d74-9c7b-0dccbb831970"
+Parent: "0643d9d4-f30b-4b07-91d0-289cc324c9cf"
+Template: "0643d9d4-f30b-4b07-91d0-289cc324c9cf"
+Path: /sitecore/templates/Project/Habitat/Content Types/Site Root/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {4A8822CC-B418-4452-AB0F-8BB6DF2F2114}
+    {4C82B6DD-FE7C-4144-BCB3-F21B4080568F}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20140305T094105

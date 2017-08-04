@@ -23,7 +23,7 @@ else {
 
 module.exports.config = config;
 
-helix.header();
+helix.header("The Habitat source code, tools and processes are examples of Sitecore Helix.", "Habitat is not supported by Sitecore and should be used at your own risk.");
 
 gulp.task("default", function (callback) {
   config.runCleanBuilds = true;

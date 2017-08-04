@@ -1,0 +1,24 @@
+﻿---
+ID: "f3842b64-f6dc-4624-bb59-cca73a3927d2"
+Parent: "6e686b1c-1675-4263-af03-dce07827afdd"
+Template: "6e686b1c-1675-4263-af03-dce07827afdd"
+Path: /sitecore/templates/Project/Common/Content Types/Login Teaser/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161129T214748Z
+    - ID: "39aabcf6-426c-4ad1-8b3d-a5135f219455"
+      Hint: Logged In Title
+      Value: $name
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "d9843186-ed10-47d8-8cc7-511ac670b6b4"
+      Hint: Title
+      Value: $name

@@ -1,0 +1,25 @@
+﻿---
+ID: "1dac8b57-eaa9-49ce-9bf6-803f44f654be"
+Parent: "f94f28f6-5b19-42f2-9164-1e21023e03ee"
+Template: "f94f28f6-5b19-42f2-9164-1e21023e03ee"
+Path: /sitecore/templates/Project/Common/Content Types/Employee Folder/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: |
+    {9671E92A-4AD3-46DF-AFF1-1542FD3D5BD9}
+    {F94F28F6-5B19-42F2-9164-1E21023E03EE}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161202T033354Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
