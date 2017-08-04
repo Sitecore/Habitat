@@ -6,7 +6,7 @@ Path: /sitecore/content/Habitat/Home/Modules/Feature/Demo/Fake Page
 DB: master
 SharedFields:
 - ID: "1618e249-e670-46a7-a198-6e85b7745726"
-  Hint: IpAddress
+  Hint: IP Address
   Value: 
 - ID: "d28efe17-c491-47c0-b62d-934dc9da38a4"
   Hint: Referrer
