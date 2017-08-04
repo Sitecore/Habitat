@@ -164,6 +164,7 @@
   <ItemGroup>
     <Compile Include="Extensions\AutoDbDataAttribute.cs" />
     <Compile Include="DatasourceProviderTests.cs" />
+    <Compile Include="Pipelines\ProcessSiteSourceTests.cs" />
     <Compile Include="SiteDefinitionProviderTests.cs" />
     <Compile Include="Pipelines\GetDatasourceLocationAndTemplateFromSiteTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

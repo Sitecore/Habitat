@@ -1,0 +1,18 @@
+﻿---
+ID: "2a8fb35e-0326-4129-9d05-1a5f8f504e81"
+Parent: "c7c95984-e060-42d9-bbc6-b45c18768905"
+Template: "4ce0ddde-3211-4255-a51a-159007cd9973"
+Path: /sitecore/content/Habitat/Settings/Field Datasources
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170313T044538Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
