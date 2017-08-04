@@ -107,7 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Person\EmployeeContactHeader.cshtml" />
-    <Content Include="App_Config\Include\Feature\Habitat.Person.config">
+    <Content Include="App_Config\Include\Feature\Feature.Person.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Person\EmployeesList.cshtml" />
@@ -132,7 +132,7 @@
     <Content Include="Views\Person\EmployeeHeader.cshtml" />
     <Content Include="Views\Person\EmployeeDetails.cshtml" />
     <Content Include="Views\Person\EmployeeContactTeaser.cshtml" />
-    <Content Include="App_Config\Include\Feature\Habitat.Person.Serialization.config" />
+    <Content Include="App_Config\Include\Feature\Feature.Person.Serialization.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

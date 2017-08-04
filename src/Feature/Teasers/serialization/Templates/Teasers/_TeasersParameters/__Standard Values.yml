@@ -1,0 +1,14 @@
+﻿---
+ID: "1f6e1284-bfd0-491d-bd7c-76dd86668100"
+Parent: "20748d57-4ef6-49a8-b7e6-13818795e3b5"
+Template: "20748d57-4ef6-49a8-b7e6-13818795e3b5"
+Path: /sitecore/templates/Feature/Teasers/_TeasersParameters/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160412T155035Z
