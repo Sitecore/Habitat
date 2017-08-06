@@ -1,0 +1,29 @@
+﻿---
+ID: "55ba196f-fa85-4bc2-8545-b17c20ca5388"
+Parent: "f976a8ec-6cfb-4d27-bfae-fc521eb54901"
+Template: "0fc09ea4-8d87-4b0e-a5c9-8076ae863d9c"
+Path: /sitecore/system/Marketing Control Panel/Profiles/Habitat/Helix/Profile Cards/Project
+DB: master
+SharedFields:
+- ID: "85970ab7-22ea-4206-be86-c0167178860b"
+  Hint: Profile Card Value
+  Value: |
+    <tracking>
+      <profile id="{A4496ED2-D4EE-4FB3-8138-882B0585FE12}" name="Helix">
+        <key name="Feature" value="4" />
+        <key name="Foundation" value="4" />
+        <key name="Project" value="8" />
+      </profile>
+    </tracking>
+Languages:
+- Language: en
+  Fields:
+  - ID: "a26fc256-1db0-44aa-ba3d-1c830bf882a2"
+    Hint: Name
+    Value: Project
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170806T221651Z

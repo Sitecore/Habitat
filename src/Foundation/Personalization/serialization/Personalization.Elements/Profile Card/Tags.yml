@@ -1,0 +1,18 @@
+﻿---
+ID: "69b66088-c221-49b0-ba47-15a8498290b1"
+Parent: "8528843a-b84e-474c-8bf6-d231e784b4d8"
+Template: "96c8e5dd-63c3-496b-a97c-a3e37e1dacba"
+Path: /sitecore/system/Settings/Rules/Definitions/Elements/Profile Card/Tags
+DB: master
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{FD4268C6-E588-4C19-B141-B1AAD488887D}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170806T163208Z

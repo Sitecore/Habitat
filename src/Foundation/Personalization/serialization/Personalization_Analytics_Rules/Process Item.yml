@@ -1,0 +1,33 @@
+﻿---
+ID: "768a0aec-ec06-4181-8a9f-f33ce3910f0a"
+Parent: "58b56416-b592-40bf-b782-98d905231dcf"
+Template: "dda66314-03f3-4c89-84a9-39dffb235b06"
+Path: /sitecore/system/Settings/Analytics/Rules/Process Item
+DB: master
+Languages:
+- Language: "de-DE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Sitzungsbeginn
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170614T104313Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20100318T132654
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

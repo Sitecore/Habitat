@@ -1,0 +1,39 @@
+﻿---
+ID: "dbce881e-3cf7-429c-8bf1-cd395c5e50df"
+Parent: "648c8c9a-06ff-45cf-996a-5846ea68d591"
+Template: "d9bdf22f-6e17-47f3-ab64-49c717ba92da"
+Path: /sitecore/system/Settings/Analytics/Rules/Process Item/Rules/Project Pages
+DB: master
+SharedFields:
+- ID: "908ef45d-4940-4b6a-857d-3739ba4acf8f"
+  Hint: Rule
+  Type: Rules
+  Value: |
+    <ruleset>
+      <rule
+        uid="{FE283019-8E28-44FF-BF1E-0C11E7D54E0E}">
+        <actions>
+          <action
+            id="{7EA54031-BD6B-467B-BBBC-0674D086E275}"
+            uid="C328E9A31C8B450DAB83A7E9ED1ADEB0"
+            profilecardkey="{55BA196F-FA85-4BC2-8545-B17C20CA5388}" />
+        </actions>
+        <conditions>
+          <condition
+            id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+            uid="32090B39D5354C569556275533A5AEC9"
+            itemid="{8D8EDB18-B641-4277-BAD3-9C6CF89F9FE3}" />
+        </conditions>
+      </rule>
+    </ruleset>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170806T222342Z
+    - ID: "45cf9130-802a-41be-b3eb-c02f657dcc2e"
+      Hint: Name
+      Value: Project Pages
