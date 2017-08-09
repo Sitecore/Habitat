@@ -1,7 +1,7 @@
 # Package name filter
 $Filter = "Sitecore.FakeDb"
 # Specify version to upgrade from
-$FromVersion = "1.6.0"
+$FromVersion = "1.6.1"
 # Specify version to upgrade to
 $ToVersion = "1.7.0"
 # Define Sitecore nuget package source
