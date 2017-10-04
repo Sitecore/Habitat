@@ -114,6 +114,7 @@
     <Compile Include="Services\ItemReferenceReplacer.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Templates.Generated.cs" />
+    <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\Foundation.LocalDatasource.config">
