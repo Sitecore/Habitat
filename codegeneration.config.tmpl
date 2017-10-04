@@ -1,0 +1,23 @@
+namespace Sitecore.{{this.options.CommonNamespace}}
+{
+    using global::Sitecore.Data;
+    
+    public partial struct Templates
+    {
+        {{#each templates}}
+
+        public partial struct {{this.AsClass}}
+        {
+            public static readonly ID ID = new ID("{{guid-b this.ID}}");
+
+            public partial struct Fields
+            {
+                {{#each this.Fields}}
+                public static readonly ID {{this.AsProperty}} = new ID("{{guid-b this.ID}}");
+                public const string {{this.AsProperty}}_FieldName = "{{this.Name}}";
+                {{/each}}
+            }
+        }
+        {{/each}}
+    }
+}

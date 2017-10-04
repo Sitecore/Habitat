@@ -20,6 +20,7 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^4.3.5",
     "merge-stream": "^1.0.0",
+    "rainbow-js-codegeneration": "^0.1.15",
     "rimraf": "^2.4.3",
     "run-sequence": "^1.1.4",
     "vinyl": "^1.1.0",
