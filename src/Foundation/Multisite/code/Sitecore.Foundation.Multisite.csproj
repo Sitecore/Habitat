@@ -135,7 +135,7 @@
     <Compile Include="ServicesConfigurator.cs" />
     <Compile Include="SiteContext.cs" />
     <Compile Include="SiteDefinition.cs" />
-    <Compile Include="Templates.cs" />
+    <Compile Include="Templates.Generated.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\Foundation.Multisite.Serialization.config" />

@@ -152,7 +152,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IMapPointRepository.cs" />
     <Compile Include="Repositories\MapPointRepository.cs" />
-    <Compile Include="Templates.cs" />
+    <Compile Include="Templates.Generated.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Foundation\DependencyInjection\code\Sitecore.Foundation.DependencyInjection.csproj">

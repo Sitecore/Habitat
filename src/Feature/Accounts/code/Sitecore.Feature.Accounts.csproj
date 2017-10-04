@@ -196,7 +196,7 @@
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Services\AccountsSettingsService.cs" />
-    <Compile Include="Templates.cs" />
+    <Compile Include="Templates.Generated.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Foundation\Accounts\code\Sitecore.Foundation.Accounts.csproj">

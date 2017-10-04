@@ -115,7 +115,7 @@
   <ItemGroup>
     <Compile Include="Models\TwitterFeedRenderingProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Templates.cs" />
+    <Compile Include="Templates.Generated.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Feature\Feature.Social.Serialization.config" />

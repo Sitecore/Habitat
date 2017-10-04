@@ -121,7 +121,7 @@
     <Compile Include="Repositories\PersonRepository.cs" />
     <Compile Include="Indexing\PersonIndexingProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Templates.cs" />
+    <Compile Include="Templates.Generated.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Views\web.config">
