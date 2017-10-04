@@ -70,7 +70,7 @@
           {
             new DbField("FirstName", Templates.UserProfile.Fields.FirstName),
             new DbField("LastName", Templates.UserProfile.Fields.LastName),
-            new DbField("Phone", Templates.UserProfile.Fields.PhoneNumber),
+            new DbField("Phone", Templates.UserProfile.Fields.Phone),
             new DbField("Interest", Templates.UserProfile.Fields.Interest)
           }
       });
@@ -94,7 +94,7 @@
           {
             new DbField("FirstName", Templates.UserProfile.Fields.FirstName),
             new DbField("LastName", Templates.UserProfile.Fields.LastName),
-            new DbField("Phone", Templates.UserProfile.Fields.PhoneNumber),
+            new DbField("Phone", Templates.UserProfile.Fields.Phone),
             new DbField("Interest", Templates.UserProfile.Fields.Interest)
           }
       });

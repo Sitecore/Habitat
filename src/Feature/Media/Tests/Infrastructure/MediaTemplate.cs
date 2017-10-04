@@ -6,7 +6,7 @@ namespace Sitecore.Feature.Media.Tests.Infrastructure
   {
     public MediaTemplate() : base(Templates.HasMedia.ID)
     {
-      base.Add(Templates.HasMedia.Fields.Thumbnail);
+      base.Add(Templates.HasMedia.Fields.MediaThumbnail);
       base.BaseIDs = new[]
       {
         Templates.HasMediaVideo.ID

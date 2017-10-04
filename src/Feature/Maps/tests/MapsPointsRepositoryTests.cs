@@ -27,7 +27,7 @@
             var itemid = ID.NewID;
             db.Add(new DbItem("point", itemid, Templates.MapPoint.ID)
             {
-                {Templates.MapPoint.Fields.Name, "nameField"}
+                {Templates.MapPoint.Fields.MapPointName, "nameField"}
             });
             var repository = new MapPointRepository(searchServiceRepository);
             var actual = repository.GetAll(db.GetItem(itemid));

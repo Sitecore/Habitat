@@ -22,7 +22,7 @@
       var active = "active";
       foreach (var child in items)
       {
-        if (child.IsDerived(Templates.HasMediaVideo.ID) && child[Templates.HasMediaVideo.Fields.VideoLink].IsEmptyOrNull() && child[Templates.HasMedia.Fields.Thumbnail].IsEmptyOrNull())
+        if (child.IsDerived(Templates.HasMediaVideo.ID) && child[Templates.HasMediaVideo.Fields.MediaVideoLink].IsEmptyOrNull() && child[Templates.HasMedia.Fields.MediaThumbnail].IsEmptyOrNull())
         {
           continue;
         }

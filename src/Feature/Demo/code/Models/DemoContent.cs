@@ -23,13 +23,13 @@ namespace Sitecore.Feature.Demo.Models
         {
             get
             {
-                var content = this.Item[Templates.DemoContent.Fields.HtmlContent];
+                var content = this.Item[Templates.DemoContent.Fields.HTMLContent];
                 return this.ReplaceTokens(content);
             }
         }
 
         public string Referrer => this.Item[Templates.DemoContent.Fields.Referrer];
-        public string IpAddress => this.Item[Templates.DemoContent.Fields.IpAddress];
+        public string IpAddress => this.Item[Templates.DemoContent.Fields.IPAddress];
 
         public WhoIsInformation GeoData => this._geoData ?? (this._geoData = this.GetGeoData());
 

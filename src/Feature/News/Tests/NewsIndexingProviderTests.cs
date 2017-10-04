@@ -45,7 +45,7 @@
     [AutoDbData]
     public void SupportedTemplates_ContainsNewsArticleTemplate(NewsIndexingProvider provider)
     {
-      provider.SupportedTemplates.Should().Contain(Templates.NewsArticle.ID);
+      provider.SupportedTemplates.Should().Contain(News.Templates.NewsArticle.ID);
     }
 
     [Theory]
@@ -56,9 +56,9 @@
     }
 
     [Theory]
-    [InlineAutoDbData(Templates.NewsArticle.Fields.Title_FieldName)]
-    [InlineAutoDbData(Templates.NewsArticle.Fields.Body_FieldName)]
-    [InlineAutoDbData(Templates.NewsArticle.Fields.Title_FieldName)]
+    [InlineAutoDbData(News.Templates.NewsArticle.Fields.NewsTitle_FieldName)]
+    [InlineAutoDbData(News.Templates.NewsArticle.Fields.NewsBody_FieldName)]
+    [InlineAutoDbData(News.Templates.NewsArticle.Fields.NewsTitle_FieldName)]
     public void GetQueryPredicate_NewsItemWithWrongContent_ShouldReturnFalse(string fieldName, NewsIndexingProvider provider, IQuery query, string queryText, string contentText)
     {
       var item = Substitute.For<SearchResultItem>();

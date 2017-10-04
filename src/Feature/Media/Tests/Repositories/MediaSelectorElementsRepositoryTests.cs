@@ -43,7 +43,7 @@
         {
             var mediaItem = new DbItem("childVideo", ID.NewID, new TemplateID(Templates.HasMedia.ID))
             {
-                {Templates.HasMediaVideo.Fields.VideoLink, "videoLink"}
+                {Templates.HasMediaVideo.Fields.MediaVideoLink, "videoLink"}
             };
             db.Add(mediaItem);
 
@@ -56,7 +56,7 @@
             var carouselElements = MediaSelectorElementsRepository.Get(db.GetItem(selectorItem.ID));
             carouselElements.Count().Should().Be(1);
             carouselElements.First().Item.ID.Should().Be(mediaItem.ID);
-            carouselElements.First().Item[Templates.HasMediaVideo.Fields.VideoLink].Should().Be("videoLink");
+            carouselElements.First().Item[Templates.HasMediaVideo.Fields.MediaVideoLink].Should().Be("videoLink");
         }
 
         [Theory]
@@ -65,7 +65,7 @@
         {
             var mediaItem = new DbItem("childVideo", ID.NewID, new TemplateID(Templates.HasMedia.ID))
             {
-                {Templates.HasMedia.Fields.Thumbnail, "thumbnail"}
+                {Templates.HasMedia.Fields.MediaThumbnail, "thumbnail"}
             };
             db.Add(mediaItem);
 
@@ -79,7 +79,7 @@
             var carouselElements = MediaSelectorElementsRepository.Get(db.GetItem(selectorItem.ID));
             carouselElements.Count().Should().Be(1);
             carouselElements.First().Item.ID.Should().Be(mediaItem.ID);
-            carouselElements.First().Item[Templates.HasMedia.Fields.Thumbnail].Should().Be("thumbnail");
+            carouselElements.First().Item[Templates.HasMedia.Fields.MediaThumbnail].Should().Be("thumbnail");
         }
 
 
