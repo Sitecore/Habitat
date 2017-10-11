@@ -101,8 +101,18 @@
             var assets = AssetRepository.Current.Items.Where(
                 asset => (asset.Type == typeOfAsset || asset.Type == AssetType.Raw)
                          && asset.Location == location && asset.ContentType == AssetContentType.File && this.IsForContextSite(asset));
-            List<string> paths = new List<string>();
+            return this.GetFilePaths(assets);
+        }
 
+        protected virtual List<string> GetFilePaths(AssetType typeOfAsset)
+        {
+            var assets = AssetRepository.Current.Items.Where(asset => (asset.Type == typeOfAsset || asset.Type == AssetType.Raw) && asset.ContentType == AssetContentType.File && this.IsForContextSite(asset));
+            return this.GetFilePaths(assets);
+        }
+
+        private List<string> GetFilePaths(IEnumerable<Asset> assets)
+        {
+            List<string> paths = new List<string>();
             foreach (var item in assets)
             {
                 if (!string.IsNullOrEmpty(item.Content))

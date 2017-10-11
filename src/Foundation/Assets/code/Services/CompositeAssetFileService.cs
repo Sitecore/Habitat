@@ -23,6 +23,9 @@
     ///     - "App_Config/ClientDependency.config.disabled".
     ///     - "\src\Foundation\Assets\code\Web.config.transform.ClientDependency.minification.example"  to      Web.config.transform
     /// 
+    ///     Usage in Layouts  -  @CompositeAssetFileService.Current.RenderStyles()
+    ///                       -  @CompositeAssetFileService.Current.RenderScript(ScriptLocation.Body)
+    /// 
     ///     Documentation For ClientDependency:   https://github.com/Shazwazza/ClientDependency/wiki
     /// </summary>
     public class CompositeAssetFileService : RenderAssetsService
@@ -32,23 +35,23 @@
 
         public override HtmlString RenderScript(ScriptLocation location)
         {
-            return this.RenderAssetType(location, AssetType.JavaScript, ClientDependencyType.Javascript);
+            return this.RenderAssetType(location, AssetType.JavaScript);
         }
 
         public override HtmlString RenderStyles()
         {
-            return this.RenderAssetType(AssetType.Css, ClientDependencyType.Css);
+            List<String> locations = this.GetFilePaths(AssetType.Css);
+            return this.RenderAssetType(locations, AssetType.Css);
         }
 
-        protected HtmlString RenderAssetType(AssetType location, ClientDependencyType type)
+        protected HtmlString RenderAssetType(ScriptLocation location, AssetType assetType)
         {
-            return this.RenderAssetType(ScriptLocation.Body, AssetType.JavaScript, ClientDependencyType.Javascript);
+            List<String> locations = this.GetFilePaths(location, assetType);
+            return this.RenderAssetType(locations, assetType);
         }
 
-        protected HtmlString RenderAssetType(ScriptLocation location, AssetType type, ClientDependencyType clientType, int group = 0, int baseIndex = 0)
+        protected HtmlString RenderAssetType(List<String> locations, AssetType type, int group = 0, int baseIndex = 0)
         {
-            List<String> locations = this.GetFilePaths(location, type);
-
             List<IClientDependencyFile> dependencies = new List<IClientDependencyFile>();
             int index = baseIndex;
             foreach (var locationJs in locations)
@@ -60,6 +63,8 @@
                     path = path.Replace("https://", "//");
                     path = path.Replace("http://", "//");
                 }
+
+                ClientDependencyType clientType = type == AssetType.JavaScript ? ClientDependencyType.Javascript : ClientDependencyType.Css;
 
                 BasicFile basicFile = new BasicFile(clientType)
                 {

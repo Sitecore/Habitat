@@ -140,7 +140,7 @@
     <Compile Include="Models\ScriptLocation.cs" />
     <Compile Include="Models\AssetType.cs" />
     <Compile Include="Pipelines\GetPageRendering\AddAssets.cs" />
-    <Compile Include="Services\CreateBundleService.cs" />
+    <Compile Include="Services\CompositeAssetFileService.cs" />
     <Compile Include="Templates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\RenderAssetsService.cs" />
