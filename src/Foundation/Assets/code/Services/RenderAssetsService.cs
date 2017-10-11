@@ -1,6 +1,7 @@
 ﻿namespace Sitecore.Foundation.Assets.Services
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Web;
@@ -16,7 +17,7 @@
         private static RenderAssetsService _current;
         public static RenderAssetsService Current => _current ?? (_current = new RenderAssetsService());
 
-        public HtmlString RenderScript(ScriptLocation location)
+        public virtual HtmlString RenderScript(ScriptLocation location)
         {
             var assets = AssetRepository.Current.Items.Where(asset => (asset.Type == AssetType.JavaScript || asset.Type == AssetType.Raw) && asset.Location == location && this.IsForContextSite(asset));
 
@@ -54,7 +55,7 @@
             return new HtmlString(sb.ToString());
         }
 
-        public HtmlString RenderStyles()
+        public virtual HtmlString RenderStyles()
         {
             var sb = new StringBuilder();
             foreach (var item in AssetRepository.Current.Items.Where(asset => asset.Type == AssetType.Css && this.IsForContextSite(asset)))
@@ -77,7 +78,7 @@
             return new HtmlString(sb.ToString());
         }
 
-        private bool IsForContextSite(Asset asset)
+        protected bool IsForContextSite(Asset asset)
         {
             if (asset.Site == null)
             {
@@ -93,6 +94,23 @@
                 }
             }
             return false;
+        }
+
+        public virtual List<string> GetFilePaths(ScriptLocation location, AssetType typeOfAsset)
+        {
+            var assets = AssetRepository.Current.Items.Where(
+                asset => (asset.Type == typeOfAsset || asset.Type == AssetType.Raw)
+                         && asset.Location == location && asset.ContentType == AssetContentType.File && this.IsForContextSite(asset));
+            List<string> paths = new List<string>();
+
+            foreach (var item in assets)
+            {
+                if (!string.IsNullOrEmpty(item.Content))
+                {
+                    paths.Add(item.Content);
+                }
+            }
+            return paths;
         }
     }
 }

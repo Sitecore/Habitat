@@ -30,6 +30,7 @@
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,6 +50,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClientDependency.Core, Version=1.9.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\ClientDependency.1.9.2\lib\net45\ClientDependency.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\ClientDependency-Mvc5.1.8.0.0\lib\net45\ClientDependency.Core.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -64,6 +71,7 @@
       <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.8.2.170614\lib\NET452\Sitecore.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -113,6 +121,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compression\DependencyLoadAccess.cs" />
+    <Compile Include="Compression\PlaceholderReplacementEventArgs.cs" />
+    <Compile Include="Compression\PlaceholdersReplacedEventArgs.cs" />
+    <Compile Include="Compression\RendererOutput.cs" />
+    <Compile Include="Compression\SitecoreDependencyLoader.cs" />
+    <Compile Include="Compression\SitecorePlaceholderParser.cs" />
+    <Compile Include="Compression\SitecoreProviderDependencyList.cs" />
     <Compile Include="Models\AssetContentType.cs" />
     <Compile Include="Pipelines\GetPageRendering\AddRenderingAssets.cs" />
     <Compile Include="Pipelines\GetPageRendering\AddPageAssets.cs" />
@@ -125,6 +140,7 @@
     <Compile Include="Models\ScriptLocation.cs" />
     <Compile Include="Models\AssetType.cs" />
     <Compile Include="Pipelines\GetPageRendering\AddAssets.cs" />
+    <Compile Include="Services\CreateBundleService.cs" />
     <Compile Include="Templates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\RenderAssetsService.cs" />
@@ -143,6 +159,7 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="web.config" />
+    <Content Include="Web.config.transform.ClientDependency.minification.example" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

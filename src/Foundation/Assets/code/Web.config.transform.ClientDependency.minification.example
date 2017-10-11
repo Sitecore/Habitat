@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1">
+
+    <configSections xdt:Transform="InsertIfMissing">
+        <section name="clientDependency" type="ClientDependency.Core.Config.ClientDependencySection, ClientDependency.Core" requirePermission="false" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+    </configSections>
+    <clientDependency configSource="App_Config\ClientDependency.config" xdt:Transform="InsertIfMissing" />
+
+    <system.webServer>
+        <modules>
+            <remove name="ClientDependencyModule" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+            <add name="ClientDependencyModule" type="ClientDependency.Core.Module.ClientDependencyModule, ClientDependency.Core" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+        </modules>
+        <handlers>
+            <remove name="DependencyHandler" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+            <add name="DependencyHandler" preCondition="integratedMode" verb="*" path="DependencyHandler.axd"  type="ClientDependency.Core.CompositeFiles.CompositeDependencyHandler, ClientDependency.Core" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"/>
+        </handlers>
+    </system.webServer>
+
+</configuration>
