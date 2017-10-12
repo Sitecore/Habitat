@@ -7,6 +7,10 @@
     using System.Web;
     using ClientDependency.Core;
 
+    /// <summary>
+    /// Based on the original ClientDependency.Core.PlaceholderParser
+    /// Modified for the purposes of replacing our JS and CSS placeholder.
+    /// </summary>
     public class SitecorePlaceholderParser
     {
         public static string ParseJsPlaceholders(HttpContextBase currentContext, string html, string jsMarkupRegex, RendererOutput[] output)

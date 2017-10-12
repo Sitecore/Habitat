@@ -8,6 +8,12 @@
     using ClientDependency.Core.FileRegistration.Providers;
     using ClientDependency.Core.Mvc;
 
+    /// <inheritdoc />
+    /// <summary>
+    /// Based on the original ClientDependency.Core.Mvc.SitecoreDependencyLoader
+    /// Modified for the purposes of Rendering a single JS and CSS placholder and replacing with the asset file paths provided.
+    /// this.GenerateOutput(type); in ClientDependencies was a private method and access was needed for rendering purposes.
+    /// </summary>
     public class SitecoreDependencyLoader : BaseLoader
     {
         private static readonly object Locker = new object();

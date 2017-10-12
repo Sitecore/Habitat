@@ -4,6 +4,11 @@
     using System.Web;
     using ClientDependency.Core;
 
+    /// <inheritdoc />
+    /// <summary>
+    /// Based on the original ClientDependency.Core.PlaceholderParser
+    /// Copied into this location as it was internal in the ClientDependency library but we need access to it.
+    /// </summary>
     internal class PlaceholderReplacementEventArgs : PlaceholdersReplacedEventArgs
     {
         public ClientDependencyType Type { get; private set; }

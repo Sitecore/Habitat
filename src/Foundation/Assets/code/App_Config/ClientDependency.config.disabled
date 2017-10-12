@@ -1,4 +1,6 @@
-﻿<clientDependency version="2" fileDependencyExtensions=".js,.css">
+﻿<clientDependency version="12" fileDependencyExtensions=".js,.css,.min.css" loggerType="Sitecore.Foundation.Assets.Compression.ClientDependencyLogger, Sitecore.Foundation.Assets">
+
+
     <!-- This section is used for MVC only -->
     <mvc defaultRenderer="StandardRenderer">
         <renderers>
@@ -6,7 +8,7 @@
             <add name="LazyLoadRenderer" type="ClientDependency.Core.FileRegistration.Providers.LazyLoadRenderer, ClientDependency.Core" enableCompositeFiles="true" disableCompositeBundling="false" enableDebugVersionQueryString="true"/>
         </renderers>
     </mvc>
-        <!-- 
+    <!-- 
     The composite file section configures the compression/combination/minification of files.
     You can enable/disable minification and/or bundling of either JS/CSS files and you can enable/disable the 
     persistence of composite files. By default, minification and persistence is enabled. Persisting files
@@ -25,8 +27,8 @@
         <fileProcessingProviders>
             <add name="CompositeFileProcessor"
                   type="ClientDependency.Core.CompositeFiles.Providers.CompositeFileProcessingProvider, ClientDependency.Core"
-                  enableCssMinify="false"
-                  enableJsMinify="false"
+                  enableCssMinify="true"
+                  enableJsMinify="true"
                   persistFiles="true"
                   compositeFilePath="~/App_Data/ClientDependency"
                   bundleDomains="maxcdn.bootstrapcdn.com,fast.fonts.net,cdn.optimizely.com,cdnjs.cloudflare.com,cdnjs.cloudflare.com,ajax.googleapis.com,code.jquery.com"
@@ -58,9 +60,9 @@
           -->
         <rogueFileCompression>
             <add path="*" compressJs="true" compressCss="true" jsExt=".js,asmx/js" cssExt=".css">
-            <exclusions>
-              <add path="^*sitecore*"/>
-            </exclusions>
+                <exclusions>
+                    <add path="^*sitecore*"/>
+                </exclusions>
             </add>
         </rogueFileCompression>
     </compositeFiles>

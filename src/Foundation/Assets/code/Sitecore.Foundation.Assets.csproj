@@ -128,7 +128,6 @@
     <Compile Include="Compression\RendererOutput.cs" />
     <Compile Include="Compression\SitecoreDependencyLoader.cs" />
     <Compile Include="Compression\SitecorePlaceholderParser.cs" />
-    <Compile Include="Compression\SitecoreProviderDependencyList.cs" />
     <Compile Include="Models\AssetContentType.cs" />
     <Compile Include="Pipelines\GetPageRendering\AddRenderingAssets.cs" />
     <Compile Include="Pipelines\GetPageRendering\AddPageAssets.cs" />
