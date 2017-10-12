@@ -121,13 +121,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compression\ClientDependencyLogger.cs" />
-    <Compile Include="Compression\DependencyLoadAccess.cs" />
-    <Compile Include="Compression\PlaceholderReplacementEventArgs.cs" />
-    <Compile Include="Compression\PlaceholdersReplacedEventArgs.cs" />
-    <Compile Include="Compression\RendererOutput.cs" />
-    <Compile Include="Compression\SitecoreDependencyLoader.cs" />
-    <Compile Include="Compression\SitecorePlaceholderParser.cs" />
+    <Compile Include="Composition\ClientDependencyLogger.cs" />
+    <Compile Include="Composition\DependencyLoadAccess.cs" />
+    <Compile Include="Composition\PlaceholderReplacementEventArgs.cs" />
+    <Compile Include="Composition\PlaceholdersReplacedEventArgs.cs" />
+    <Compile Include="Composition\RendererOutput.cs" />
+    <Compile Include="Composition\SitecoreDependencyLoader.cs" />
+    <Compile Include="Composition\SitecorePlaceholderParser.cs" />
     <Compile Include="Models\AssetContentType.cs" />
     <Compile Include="Pipelines\GetPageRendering\AddRenderingAssets.cs" />
     <Compile Include="Pipelines\GetPageRendering\AddPageAssets.cs" />
