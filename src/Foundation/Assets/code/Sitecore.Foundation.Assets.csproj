@@ -121,6 +121,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compression\ClientDependencyLogger.cs" />
     <Compile Include="Compression\DependencyLoadAccess.cs" />
     <Compile Include="Compression\PlaceholderReplacementEventArgs.cs" />
     <Compile Include="Compression\PlaceholdersReplacedEventArgs.cs" />
