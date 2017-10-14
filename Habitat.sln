@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
@@ -196,6 +196,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.DependencyInjection", "src\Foundation\DependencyInjection\code\Sitecore.Foundation.DependencyInjection.csproj", "{366148B7-2392-4F42-80D6-786B7A3682AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DependencyInjection", "DependencyInjection", "{86FB273F-3637-45AF-825D-CFEFE1F7A8EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "reCAPTCHA", "reCAPTCHA", "{036F59E3-E604-4B0B-B0F0-F9459D6E9657}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.reCAPTCHA", "src\Foundation\reCAPTCHA\code\Sitecore.Foundation.reCAPTCHA.csproj", "{0AEFCB0A-F941-4F2C-ABCB-626F94BE02DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -606,6 +610,14 @@ Global
 		{366148B7-2392-4F42-80D6-786B7A3682AE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{366148B7-2392-4F42-80D6-786B7A3682AE}.Release|x64.ActiveCfg = Release|Any CPU
 		{366148B7-2392-4F42-80D6-786B7A3682AE}.Release|x64.Build.0 = Release|Any CPU
+		{0AEFCB0A-F941-4F2C-ABCB-626F94BE02DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AEFCB0A-F941-4F2C-ABCB-626F94BE02DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AEFCB0A-F941-4F2C-ABCB-626F94BE02DE}.Debug|x64.ActiveCfg = Debug|x64
+		{0AEFCB0A-F941-4F2C-ABCB-626F94BE02DE}.Debug|x64.Build.0 = Debug|x64
+		{0AEFCB0A-F941-4F2C-ABCB-626F94BE02DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AEFCB0A-F941-4F2C-ABCB-626F94BE02DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AEFCB0A-F941-4F2C-ABCB-626F94BE02DE}.Release|x64.ActiveCfg = Release|x64
+		{0AEFCB0A-F941-4F2C-ABCB-626F94BE02DE}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -697,5 +709,10 @@ Global
 		{7CC3D72B-4518-4B78-BE48-630A263C0F5B} = {1B850A0C-6B4F-4189-89F3-7A16E9592291}
 		{366148B7-2392-4F42-80D6-786B7A3682AE} = {86FB273F-3637-45AF-825D-CFEFE1F7A8EA}
 		{86FB273F-3637-45AF-825D-CFEFE1F7A8EA} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
+		{036F59E3-E604-4B0B-B0F0-F9459D6E9657} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
+		{0AEFCB0A-F941-4F2C-ABCB-626F94BE02DE} = {036F59E3-E604-4B0B-B0F0-F9459D6E9657}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7721C390-EEE0-4614-BC72-675216E5E9CE}
 	EndGlobalSection
 EndGlobal
