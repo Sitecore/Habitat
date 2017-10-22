@@ -2,7 +2,7 @@
 {
     using Newtonsoft.Json;
 
-    public class ReCaptchaResponse
+    public class ReCaptchaResponseModel
     {
         [JsonProperty("success")]
         public bool Success { get; set; }

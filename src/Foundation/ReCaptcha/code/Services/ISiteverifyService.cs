@@ -5,6 +5,6 @@
 
     public interface ISiteverifyService
     {
-        Task<ReCaptchaResponse> SiteVerifyAsync(string response, bool invisible = false);
+        Task<ReCaptchaResponseModel> SiteVerifyAsync(string response, bool invisible = false);
     }
 }

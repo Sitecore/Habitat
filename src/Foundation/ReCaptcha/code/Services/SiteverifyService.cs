@@ -34,7 +34,7 @@
             }
         }
 
-        public async Task<ReCaptchaResponse> SiteVerifyAsync(string response, bool invisible = false)
+        public async Task<ReCaptchaResponseModel> SiteVerifyAsync(string response, bool invisible = false)
         {
             var content = new FormUrlEncodedContent(new[]
             {
@@ -49,7 +49,7 @@
 
             string responseAsString = await responseMessage.Content.ReadAsStringAsync();
 
-            return JsonConvert.DeserializeObject<ReCaptchaResponse>(responseAsString);
+            return JsonConvert.DeserializeObject<ReCaptchaResponseModel>(responseAsString);
         }
 
     }
