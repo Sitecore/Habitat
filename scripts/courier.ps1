@@ -1,1 +1,1 @@
-.\Courier\Sitecore.Courier.Runner.exe -r true -s .\Courier\Empty -t ..\src -o .\package.update 
+.\Courier\Sitecore.Courier.Runner.exe -t ..\src -o .\package.update -r
