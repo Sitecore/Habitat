@@ -1,0 +1,1 @@
+.\Courier\Sitecore.Courier.Runner.exe -t ..\src -o .\package.update -r
