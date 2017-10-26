@@ -7,10 +7,6 @@
   {
     private readonly ISiteConfigurationRepository multisiteRepository;
 
-    public MultisiteController() : this(new SiteConfigurationRepository())
-    {
-    }
-
     public MultisiteController(ISiteConfigurationRepository multisiteRepository)
     {
       this.multisiteRepository = multisiteRepository;

@@ -5,16 +5,19 @@
     using System.Linq;
     using Sitecore.Data.Items;
     using Sitecore.Feature.Navigation.Models;
+    using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
+    using Sitecore.Mvc.Presentation;
 
+    [Service(typeof(INavigationRepository))]
     public class NavigationRepository : INavigationRepository
     {
-        public Item ContextItem { get; }
+        public Item ContextItem => RenderingContext.Current?.ContextItem ?? Sitecore.Context.Item;
+
         public Item NavigationRoot { get; }
 
-        public NavigationRepository(Item contextItem)
+        public NavigationRepository()
         {
-            this.ContextItem = contextItem;
             this.NavigationRoot = this.GetNavigationRoot(this.ContextItem);
             if (this.NavigationRoot == null)
             {

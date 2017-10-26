@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<domains xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <domain xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"  name="facebook">
+        <ensureAnonymousUser>false</ensureAnonymousUser>
+        <defaultProfileItemId>{C12BDA90-E646-4FE0-8BB3-0AB021811B03}</defaultProfileItemId>
+    </domain>
+</domains>

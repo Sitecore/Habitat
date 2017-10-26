@@ -5,8 +5,10 @@ namespace Sitecore.Feature.Demo.Repositories
     using Sitecore.Analytics;
     using Sitecore.Analytics.Tracking;
     using Sitecore.Feature.Demo.Models;
+    using Sitecore.Foundation.DependencyInjection;
 
-    internal class LocationRepository
+    [Service]
+    public class LocationRepository
     {
         public Location GetCurrent()
         {

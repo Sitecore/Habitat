@@ -29,7 +29,7 @@ Languages:
               s:ds="{37FCED17-913A-4ABB-9EEC-3BF745334326}"
               s:id="{7DFD9396-CB94-4174-9721-9419A2AA68E3}"
               s:par="MapType=hybrid&amp;CenterLocation=13.0593125%2C-98.6677164&amp;ZoomLevel=2&amp;EnableCenterMapControl&amp;EnableZoomControl=1&amp;EnableMapTypeControl=1&amp;EnableScaleControl&amp;EnableStreetViewControl&amp;EnableRotateControl"
-              s:ph="/page-layout/section-narrow/col-wide-1_b38d639b-cca8-4397-846a-75efd37874a3" />
+              s:ph="/page-layout/section-narrow/col-wide-1-{B38D639B-CCA8-4397-846A-75EFD37874A3}-0" />
             <r
               uid="{B38D639B-CCA8-4397-846A-75EFD37874A3}"
               p:after="r[@uid='{D510F11D-594A-462B-9648-ABCFF19F2FD2}']"

@@ -1,0 +1,33 @@
+﻿---
+ID: "254ad19f-3f09-4ae4-bc58-4fd8319f6137"
+Parent: "4ba1802a-fb9b-400b-8dd0-77992ed9f580"
+Template: "4a6a7e36-2481-438f-a9ba-0453ecc638fa"
+Path: /sitecore/system/Marketing Control Panel/Profiles/Habitat/Layers/Pattern Cards/Freddy the Feature Layer
+DB: master
+SharedFields:
+- ID: "6da71ad3-5849-4482-9317-d21390e5a348"
+  Hint: Pattern
+  Value: |
+    <tracking>
+      <profile id="c4cc3ef6-a779-44ad-9021-01f1dae26270" name="Layers">
+        <key name="Feature" value="10" />
+        <key name="Foundation" value="2" />
+        <key name="Project" value="2" />
+      </profile>
+    </tracking>
+Languages:
+- Language: en
+  Fields:
+  - ID: "98535f26-6c9d-4fd7-a7e2-392c7cb82d65"
+    Hint: Image
+    Value: |
+      <image mediaid="{7F9A6C4D-D288-46A8-9D27-C084AE76A9DB}" />
+  - ID: "fe732790-2ddb-4657-a882-c2fce1fbf0c9"
+    Hint: Name
+    Value: Freddy the Feature Layer
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171005T142241Z

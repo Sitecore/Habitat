@@ -171,6 +171,9 @@
     <Compile Include="Infrastructure\MediaTemplate.cs" />
     <Compile Include="Infrastructure\VideoTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\..\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
     <Compile Include="Repositories\MediaSelectorElementsRepositoryTests.cs" />
     <Compile Include="Infrastructure\MediaSelectorTemplate.cs" />
   </ItemGroup>

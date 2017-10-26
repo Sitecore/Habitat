@@ -12,7 +12,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sitecore.Foundation.Indexing</RootNamespace>
     <AssemblyName>Sitecore.Foundation.Indexing</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -65,23 +65,28 @@
       <HintPath>..\..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Abstractions, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Abstractions.NoReferences.8.2.170614\lib\NET452\Sitecore.Abstractions.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ContentSearch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.NoReferences.8.2.170614\lib\NET452\Sitecore.ContentSearch.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.Analytics, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.Analytics.NoReferences.8.2.170614\lib\NET452\Sitecore.ContentSearch.Analytics.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ContentSearch.Linq, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.Linq.NoReferences.8.2.170614\lib\NET452\Sitecore.ContentSearch.Linq.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.2.170614\lib\NET452\Sitecore.Kernel.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.8.2.170614\lib\NET452\Sitecore.Mvc.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -120,18 +125,6 @@
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.assert, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\xunit.assert.2.2.0\lib\netstandard1.1\xunit.assert.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.core, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\xunit.extensibility.core.2.2.0\lib\netstandard1.1\xunit.core.dll</HintPath>
-    </Reference>
-    <Reference Include="xunit.execution.desktop, Version=2.2.0.3545, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\xunit.extensibility.execution.2.2.0\lib\net452\xunit.execution.desktop.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\Foundation.Indexing.Serialization.config">
@@ -139,7 +132,7 @@
     </Content>
     <Content Include="App_Config\Include\Foundation\Foundation.Indexing.config" />
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\PublishProfiles\Standalone.pubxml" />
     <None Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -182,6 +175,9 @@
     <Compile Include="Services\SearchIndexResolver.cs" />
     <Compile Include="Services\SearchService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\..\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -213,7 +209,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55599/</IISUrl>
+          <IISUrl>http://localhost:50972/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

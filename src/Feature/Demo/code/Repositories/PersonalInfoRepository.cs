@@ -3,23 +3,29 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Reflection;
     using Sitecore.Analytics.Model;
     using Sitecore.Analytics.Model.Entities;
     using Sitecore.Analytics.Tracking;
     using Sitecore.Feature.Demo.Models;
     using Sitecore.Foundation.Accounts.Providers;
+    using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.Dictionary.Repositories;
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
+    using Sitecore.XConnect.Collection.Model;
 
+    [Service]
     public class PersonalInfoRepository
     {
-        private readonly LocationRepository locationRepository = new LocationRepository();
-        private readonly DeviceRepository deviceRepository = new DeviceRepository();
-        private readonly IContactProfileProvider contactProfileProvider;
+        private readonly LocationRepository locationRepository;
+        private readonly DeviceRepository deviceRepository;
+        private readonly IContactFacetsProvider contactFacetsProvider;
 
-        public PersonalInfoRepository(IContactProfileProvider contactProfileProvider)
+        public PersonalInfoRepository(IContactFacetsProvider contactFacetsProvider, LocationRepository locationRepository, DeviceRepository deviceRepository)
         {
-            this.contactProfileProvider = contactProfileProvider;
+            this.contactFacetsProvider = contactFacetsProvider;
+            this.locationRepository = locationRepository;
+            this.deviceRepository = deviceRepository;
         }
 
         public PersonalInfo Get()
@@ -69,44 +75,57 @@
 
         private IEnumerable<KeyValuePair<string, string>> GetIdentificationProperties()
         {
-            if (!string.IsNullOrEmpty(this.contactProfileProvider?.Contact?.Identifiers.Identifier))
+            var identifiers = this.contactFacetsProvider?.Contact?.Identifiers;
+            if (identifiers == null)
+                yield break;
+
+            foreach (var identifier in identifiers)
             {
-                yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Identification", "Identification"), this.contactProfileProvider.Contact.Identifiers.Identifier);
+                switch (identifier.Type)
+                {
+                    case ContactIdentificationLevel.Anonymous:
+                        yield return new KeyValuePair<string, string>(string.Format(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Anonymous ID", "Anonymous ID ({0})"), identifier.Source), identifier.Identifier);
+                        break;
+                    case ContactIdentificationLevel.Known:
+                        yield return new KeyValuePair<string, string>(string.Format(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Identification", "Known ID ({0})"), identifier.Source), identifier.Identifier);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
         }
 
         private IEnumerable<KeyValuePair<string, string>> GetCommunicationPreferencesProperties()
         {
-            if (this.contactProfileProvider?.CommunicationProfile == null)
+            if (this.contactFacetsProvider?.CommunicationProfile == null)
                 yield break;
 
-            if (this.contactProfileProvider.CommunicationProfile.CommunicationRevoked)
+            if (!this.contactFacetsProvider.IsKnown)
+                yield break;
+
+            yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Do Not Market", "Do not market"), this.contactFacetsProvider.CommunicationProfile.DoNotMarket ? DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Yes", "Yes") : DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/No", "No"));
+            yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Consent Revoked", "Consent revoked"), this.contactFacetsProvider.CommunicationProfile.ConsentRevoked ? DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Yes", "Yes") : DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/No", "No"));
+            yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Executed Right To Be Forgotten", "Executed right to be forgotten"), this.contactFacetsProvider.CommunicationProfile.ExecutedRightToBeForgotten ? DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Yes", "Yes") : DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/No", "No"));
+            if (!string.IsNullOrEmpty(this.contactFacetsProvider.PersonalInfo.PreferredLanguage))
             {
-                yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Communication Revoked", "Communication Revoked"), DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Communication Revoked True", "Yes"));
-            }
-            if (this.contactProfileProvider.CommunicationProfile.ConsentRevoked)
-            {
-                yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Consent Revoked", "Consent Revoked"), DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Consent Revoked True", "Yes"));
-            }
-            if (!string.IsNullOrEmpty(this.contactProfileProvider.Preferences.Language))
-            {
-                yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Preferred Language", "Preferred Language"), this.contactProfileProvider.Preferences.Language);
+                yield return new KeyValuePair<string, string>(DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Preferred Language", "Preferred Language"), this.contactFacetsProvider.PersonalInfo.PreferredLanguage);
             }
         }
 
         private IEnumerable<KeyValuePair<string, string>> GetPhoneNumberProperties()
         {
-            if (this.contactProfileProvider.PhoneNumbers == null)
+            if (this.contactFacetsProvider.PhoneNumbers == null)
                 yield break;
 
             var phoneTitle = DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Phone", "Phone");
-            foreach (var phoneKey in this.contactProfileProvider.PhoneNumbers.Entries.Keys)
+            yield return new KeyValuePair<string, string>($"{phoneTitle}", this.FormatPhone(this.contactFacetsProvider.PhoneNumbers.PreferredPhoneNumber));
+            foreach (var phoneKey in this.contactFacetsProvider.PhoneNumbers.Others.Keys)
             {
-                yield return new KeyValuePair<string, string>($"{phoneTitle} ({phoneKey.Humanize()})", this.FormatPhone(this.contactProfileProvider.PhoneNumbers.Entries[phoneKey]));
+                yield return new KeyValuePair<string, string>($"{phoneTitle} ({phoneKey.Humanize()})", this.FormatPhone(this.contactFacetsProvider.PhoneNumbers.Others[phoneKey]));
             }
         }
 
-        private string FormatPhone(IPhoneNumber phoneNumber)
+        private string FormatPhone(PhoneNumber phoneNumber)
         {
             var formattedPhone = "";
             if (!string.IsNullOrEmpty(phoneNumber.CountryCode))
@@ -124,60 +143,62 @@
 
         private IEnumerable<KeyValuePair<string, string>> GetEmailProperties()
         {
-            if (this.contactProfileProvider?.Emails == null)
+            if (this.contactFacetsProvider?.Emails == null)
                 yield break;
 
             var emailTitle = DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Email", "Email");
-            foreach (var emailKey in this.contactProfileProvider.Emails.Entries.Keys)
+            yield return new KeyValuePair<string, string>($"{emailTitle}", this.contactFacetsProvider.Emails.PreferredEmail.SmtpAddress);
+            foreach (var emailKey in this.contactFacetsProvider.Emails.Others.Keys)
             {
-                yield return new KeyValuePair<string, string>($"{emailTitle} ({emailKey.Humanize()})", this.contactProfileProvider.Emails.Entries[emailKey].SmtpAddress);
+                yield return new KeyValuePair<string, string>($"{emailTitle} ({emailKey.Humanize()})", this.contactFacetsProvider.Emails.Others[emailKey].SmtpAddress);
             }
         }
 
         private IEnumerable<KeyValuePair<string, string>> GetAddressProperties()
         {
-            if (this.contactProfileProvider?.Addresses == null)
+            if (this.contactFacetsProvider?.Addresses == null)
                 yield break;
 
             var addressTitle = DictionaryPhraseRepository.Current.Get("/Demo/Personal Info/Address", "Address");
-            foreach (var addressKey in this.contactProfileProvider.Addresses.Entries.Keys)
+            yield return new KeyValuePair<string, string>($"{addressTitle})", this.FormatAddress(this.contactFacetsProvider.Addresses.PreferredAddress));
+            foreach (var addressKey in this.contactFacetsProvider.Addresses.Others.Keys)
             {
-                yield return new KeyValuePair<string, string>($"{addressTitle} ({addressKey.Humanize()})", this.FormatAddress(this.contactProfileProvider.Addresses.Entries[addressKey]));
+                yield return new KeyValuePair<string, string>($"{addressTitle} ({addressKey.Humanize()})", this.FormatAddress(this.contactFacetsProvider.Addresses.Others[addressKey]));
             }
         }
 
-        private string FormatAddress(IAddress address)
+        private string FormatAddress(Address address)
         {
             var streetAddress = string.Join(Environment.NewLine, new List<string>
                                                                  {
-                                                                     address.StreetLine1,
-                                                                     address.StreetLine2,
-                                                                     address.StreetLine3,
-                                                                     address.StreetLine4
+                                                                     address.AddressLine1,
+                                                                     address.AddressLine2,
+                                                                     address.AddressLine3,
+                                                                     address.AddressLine4
                                                                  }.Where(line => !string.IsNullOrEmpty(line))).Trim();
             var cityAddress = string.Join(", ", new List<string>
                                                 {
                                                     address.City,
-                                                    address.StateProvince,
+                                                    address.StateOrProvince,
                                                     address.PostalCode
                                                 }.Where(line => !string.IsNullOrEmpty(line))).Trim();
-            return string.Join(Environment.NewLine, streetAddress, cityAddress, address.Country).Trim();
+            return string.Join(Environment.NewLine, streetAddress, cityAddress, address.CountryCode).Trim();
         }
 
         private IEnumerable<KeyValuePair<string, string>> GetPersonalInfoProperties()
         {
-            if (this.contactProfileProvider?.PersonalInfo == null)
+            if (this.contactFacetsProvider?.PersonalInfo == null)
                 yield break;
 
-            var fullNameProperties = new[] {nameof(this.contactProfileProvider.PersonalInfo.FirstName), nameof(this.contactProfileProvider.PersonalInfo.MiddleName), nameof(this.contactProfileProvider.PersonalInfo.Suffix), nameof(this.contactProfileProvider.PersonalInfo.Surname), nameof(this.contactProfileProvider.PersonalInfo.Title)};
-            foreach (var property in this.contactProfileProvider.PersonalInfo.GetType().GetProperties())
+            var fullNameProperties = new[] {nameof(this.contactFacetsProvider.PersonalInfo.FirstName), nameof(this.contactFacetsProvider.PersonalInfo.MiddleName), nameof(this.contactFacetsProvider.PersonalInfo.Suffix), nameof(this.contactFacetsProvider.PersonalInfo.LastName), nameof(this.contactFacetsProvider.PersonalInfo.Title)};
+            foreach (var property in this.contactFacetsProvider.PersonalInfo.GetType().GetProperties(BindingFlags.DeclaredOnly))
             {
                 if (fullNameProperties.Contains(property.Name))
                 {
                     continue;
                 }
 
-                var value = property.GetValue(this.contactProfileProvider.PersonalInfo);
+                var value = property.GetValue(this.contactFacetsProvider.PersonalInfo);
                 if (string.IsNullOrEmpty(value?.ToString()) || property.Name.Equals("IsEmpty"))
                 {
                     continue;
@@ -189,7 +210,7 @@
         [NotNull]
         private IEnumerable<KeyValuePair<string, string>> GetTagsProperties()
         {
-            return this.contactProfileProvider?.Contact?.Tags?.GetAll().Select(this.GetTagValue) ?? Enumerable.Empty<KeyValuePair<string, string>>();
+            return this.contactFacetsProvider?.Contact?.Tags?.GetAll().Select(this.GetTagValue) ?? Enumerable.Empty<KeyValuePair<string, string>>();
         }
 
         private KeyValuePair<string, string> GetTagValue(KeyValuePair<string, ITag> tag)
@@ -206,30 +227,30 @@
 
         private string GetPhotoUrl()
         {
-            if (this.contactProfileProvider?.Picture?.Picture == null)
+            if (this.contactFacetsProvider?.Picture?.Picture == null)
             {
                 return null;
             }
-            var base64Data = Convert.ToBase64String(this.contactProfileProvider.Picture.Picture);
+            var base64Data = Convert.ToBase64String(this.contactFacetsProvider.Picture.Picture);
             return "data: image; base64," + base64Data;
         }
 
         private bool GetIsIdentified()
         {
-            return this.contactProfileProvider?.Contact?.Identifiers.IdentificationLevel == ContactIdentificationLevel.Known;
+            return this.contactFacetsProvider?.Contact?.Identifiers.Any(id => id.Type == ContactIdentificationLevel.Known) ?? false;
         }
 
         private string GetFullName()
         {
-            if (this.contactProfileProvider?.PersonalInfo == null)
+            if (this.contactFacetsProvider?.PersonalInfo == null)
             {
                 return null;
             }
 
-            var fullName = string.Join(" ", this.contactProfileProvider.PersonalInfo.Title, this.contactProfileProvider.PersonalInfo.FirstName, this.contactProfileProvider.PersonalInfo.MiddleName, this.contactProfileProvider.PersonalInfo.Surname).Trim();
-            if (!string.IsNullOrEmpty(this.contactProfileProvider.PersonalInfo.Suffix))
+            var fullName = string.Join(" ", this.contactFacetsProvider.PersonalInfo.Title, this.contactFacetsProvider.PersonalInfo.FirstName, this.contactFacetsProvider.PersonalInfo.MiddleName, this.contactFacetsProvider.PersonalInfo.LastName).Trim();
+            if (!string.IsNullOrEmpty(this.contactFacetsProvider.PersonalInfo.Suffix))
             {
-                fullName = string.Join(", ", fullName, this.contactProfileProvider.PersonalInfo.Suffix).Trim();
+                fullName = string.Join(", ", fullName, this.contactFacetsProvider.PersonalInfo.Suffix).Trim();
             }
             return !string.IsNullOrEmpty(fullName) ? fullName : null;
         }

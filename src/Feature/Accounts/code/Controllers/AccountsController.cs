@@ -1,6 +1,7 @@
 ﻿namespace Sitecore.Feature.Accounts.Controllers
 {
     using System;
+    using System.Linq;
     using System.Web.Mvc;
     using System.Web.Security;
     using Sitecore.Diagnostics;
@@ -8,36 +9,36 @@
     using Sitecore.Feature.Accounts.Models;
     using Sitecore.Feature.Accounts.Repositories;
     using Sitecore.Feature.Accounts.Services;
-    using Sitecore.Foundation.Accounts.Pipelines;
     using Sitecore.Foundation.Alerts.Extensions;
     using Sitecore.Foundation.Alerts.Models;
     using Sitecore.Foundation.Dictionary.Repositories;
     using Sitecore.Foundation.SitecoreExtensions.Attributes;
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
-    using Sitecore.Foundation.SitecoreExtensions.Services;
 
     public class AccountsController : Controller
     {
-        private readonly IAccountRepository accountRepository;
-        private readonly INotificationService notificationService;
-        private readonly IAccountsSettingsService accountsSettingsService;
-        private readonly IGetRedirectUrlService getRedirectUrlService;
-        private readonly IUserProfileService userProfileService;
-        private readonly IContactProfileService contactProfileService;
-
-        public AccountsController() : this(new AccountRepository(new PipelineService()), new NotificationService(new AccountsSettingsService()), new AccountsSettingsService(), new GetRedirectUrlService(), new UserProfileService(), new ContactProfileService())
+        public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService, IGetRedirectUrlService getRedirectUrlService, IUserProfileService userProfileService, IFedAuthLoginButtonRepository fedAuthLoginRepository)
         {
+            this.FedAuthLoginRepository = fedAuthLoginRepository;
+            this.AccountRepository = accountRepository;
+            this.NotificationService = notificationService;
+            this.AccountsSettingsService = accountsSettingsService;
+            this.GetRedirectUrlService = getRedirectUrlService;
+            this.UserProfileService = userProfileService;
         }
 
-        public AccountsController(IAccountRepository accountRepository, INotificationService notificationService, IAccountsSettingsService accountsSettingsService, IGetRedirectUrlService getRedirectUrlService, IUserProfileService userProfileService, IContactProfileService contactProfileService)
-        {
-            this.accountRepository = accountRepository;
-            this.notificationService = notificationService;
-            this.accountsSettingsService = accountsSettingsService;
-            this.getRedirectUrlService = getRedirectUrlService;
-            this.userProfileService = userProfileService;
-            this.contactProfileService = contactProfileService;
-        }
+        private IFedAuthLoginButtonRepository FedAuthLoginRepository { get; }
+        private IAccountRepository AccountRepository { get; }
+        private INotificationService NotificationService { get; }
+        private IAccountsSettingsService AccountsSettingsService { get; }
+        private IGetRedirectUrlService GetRedirectUrlService { get; }
+        private IUserProfileService UserProfileService { get; }
+
+        public static string UserAlreadyExistsError => DictionaryPhraseRepository.Current.Get("/Accounts/Register/User Already Exists", "A user with specified e-mail address already exists");
+
+        private static string ForgotPasswordEmailNotConfigured => DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Password/Email Not Configured", "The Forgot Password E-mail has not been configured");
+
+        private static string UserDoesNotExistError => DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Password/User Does Not Exist", "User with specified e-mail address does not exist");
 
 
         [RedirectAuthenticated]
@@ -46,7 +47,29 @@
             return this.View();
         }
 
-        public static string UserAlreadyExistsError => DictionaryPhraseRepository.Current.Get("/Accounts/Register/User Already Exists", "A user with specified e-mail address already exists");
+
+        public ActionResult AccountsMenu()
+        {
+            var isLoggedIn = Context.IsLoggedIn && Context.PageMode.IsNormal;
+            var accountsMenuInfo = new AccountsMenuInfo
+            {
+                IsLoggedIn = isLoggedIn,
+                LoginInfo = !isLoggedIn ? this.CreateLoginInfo() : null,
+                UserFullName = isLoggedIn ? Context.User.Profile.FullName : null,
+                UserEmail = isLoggedIn ? Context.User.Profile.Email : null,
+                AccountsDetailsPageUrl = this.AccountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AccountsDetailsPage)
+            };
+            return this.View(accountsMenuInfo);
+        }
+
+        private LoginInfo CreateLoginInfo(string returnUrl = null)
+        {
+            return new LoginInfo
+            {
+                ReturnUrl = returnUrl,
+                LoginButtons = this.FedAuthLoginRepository.GetAll()
+            };
+        }
 
         [HttpPost]
         [ValidateModel]
@@ -54,7 +77,7 @@
         [ValidateRenderingId]
         public ActionResult Register(RegistrationInfo registrationInfo)
         {
-            if (this.accountRepository.Exists(registrationInfo.Email))
+            if (this.AccountRepository.Exists(registrationInfo.Email))
             {
                 this.ModelState.AddModelError(nameof(registrationInfo.Email), UserAlreadyExistsError);
 
@@ -63,10 +86,9 @@
 
             try
             {
-                this.accountRepository.RegisterUser(registrationInfo.Email, registrationInfo.Password, this.userProfileService.GetUserDefaultProfileId());
-                this.contactProfileService?.SetPreferredEmail(registrationInfo.Email);
+                this.AccountRepository.RegisterUser(registrationInfo.Email, registrationInfo.Password, this.UserProfileService.GetUserDefaultProfileId());
 
-                var link = this.getRedirectUrlService.GetRedirectUrl(AuthenticationStatus.Authenticated);
+                var link = this.GetRedirectUrlService.GetRedirectUrl(AuthenticationStatus.Authenticated);
                 return this.Redirect(link);
             }
             catch (MembershipCreateUserException ex)
@@ -81,11 +103,7 @@
         [RedirectAuthenticated]
         public ActionResult Login(string returnUrl = null)
         {
-            var loginInfo = new LoginInfo
-                            {
-                                ReturnUrl = returnUrl
-                            };
-            return this.View(loginInfo);
+            return this.View(this.CreateLoginInfo(returnUrl));
         }
 
         public ActionResult LoginTeaser()
@@ -103,23 +121,17 @@
 
         protected virtual ActionResult Login(LoginInfo loginInfo, Func<string, ActionResult> redirectAction)
         {
-            var user = this.accountRepository.Login(loginInfo.Email, loginInfo.Password);
+            var user = this.AccountRepository.Login(loginInfo.Email, loginInfo.Password);
             if (user == null)
             {
                 this.ModelState.AddModelError("invalidCredentials", DictionaryPhraseRepository.Current.Get("/Accounts/Login/User Not Found", "Username or password is not valid."));
                 return this.View(loginInfo);
             }
 
-            if (!this.userProfileService.ValidateUser(user))
-            {
-                this.accountRepository.Logout();
-                this.ModelState.AddModelError("invalidCredentials", DictionaryPhraseRepository.Current.Get("/Accounts/Login/Invalid User", "Sorry, your user details cannot be used on this website."));
-                return this.View(loginInfo);
-            }
             var redirectUrl = loginInfo.ReturnUrl;
             if (string.IsNullOrEmpty(redirectUrl))
             {
-                redirectUrl = this.getRedirectUrlService.GetRedirectUrl(AuthenticationStatus.Authenticated);
+                redirectUrl = this.GetRedirectUrlService.GetRedirectUrl(AuthenticationStatus.Authenticated);
             }
 
             return redirectAction(redirectUrl);
@@ -130,9 +142,9 @@
         public ActionResult _Login(LoginInfo loginInfo)
         {
             return this.Login(loginInfo, redirectUrl => this.Json(new LoginResult
-                                                                  {
-                                                                      RedirectUrl = redirectUrl
-                                                                  }));
+            {
+                RedirectUrl = redirectUrl
+            }));
         }
 
         [HttpPost]
@@ -145,19 +157,17 @@
         [HttpPost]
         public ActionResult Logout()
         {
-            this.accountRepository.Logout();
+            this.AccountRepository.Logout();
 
             return this.Redirect(Context.Site.GetRootItem().Url());
         }
-
-        private static string ForgotPasswordEmailNotConfigured => DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Password/Email Not Configured", "The Forgot Password E-mail has not been configured");
 
         [RedirectAuthenticated]
         public ActionResult ForgotPassword()
         {
             try
             {
-                this.accountsSettingsService.GetForgotPasswordMailTemplate();
+                this.AccountsSettingsService.GetForgotPasswordMailTemplate();
             }
             catch (Exception)
             {
@@ -167,14 +177,12 @@
             return this.View();
         }
 
-        private static string UserDoesNotExistError => DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Password/User Does Not Exist", "User with specified e-mail address does not exist");
-
         [HttpPost]
         [ValidateModel]
         [RedirectAuthenticated]
         public ActionResult ForgotPassword(PasswordResetInfo model)
         {
-            if (!this.accountRepository.Exists(model.Email))
+            if (!this.AccountRepository.Exists(model.Email))
             {
                 this.ModelState.AddModelError(nameof(model.Email), UserDoesNotExistError);
 
@@ -183,8 +191,8 @@
 
             try
             {
-                var newPassword = this.accountRepository.RestorePassword(model.Email);
-                this.notificationService.SendPassword(model.Email, newPassword);
+                var newPassword = this.AccountRepository.RestorePassword(model.Email);
+                this.NotificationService.SendPassword(model.Email, newPassword);
                 return this.InfoMessage(InfoMessage.Success(DictionaryPhraseRepository.Current.Get("/Accounts/Forgot Password/Reset Password Success", "Your password has been reset.")));
             }
             catch (Exception ex)
@@ -201,15 +209,10 @@
         {
             if (!Context.PageMode.IsNormal)
             {
-                return this.View(this.userProfileService.GetEmptyProfile());
+                return this.View(this.UserProfileService.GetEmptyProfile());
             }
 
-            if (!this.userProfileService.ValidateUser(Context.User))
-            {
-                return this.ProfileMismatchMessage;
-            }
-
-            var profile = this.userProfileService.GetProfile(Context.User.Profile);
+            var profile = this.UserProfileService.GetProfile(Context.User);
 
             return this.View(profile);
         }
@@ -218,30 +221,20 @@
         [RedirectUnauthenticated]
         public virtual ActionResult EditProfile(EditProfile profile)
         {
-            if (this.userProfileService.GetUserDefaultProfileId() != Context.User.Profile.ProfileItemId)
+            if (!string.IsNullOrEmpty(profile.Interest) && !this.UserProfileService.GetInterests().Contains(profile.Interest))
             {
-                return this.ProfileMismatchMessage;
+                this.ModelState.AddModelError(nameof(profile.Interest), DictionaryPhraseRepository.Current.Get("/Accounts/Edit Profile/Interest Not Found", "Please select an interest from the list."));
+                profile.InterestTypes = this.UserProfileService.GetInterests();
             }
-
-            if (!this.userProfileService.ValidateProfile(profile, this.ModelState))
+            if (!this.ModelState.IsValid)
             {
-                profile.InterestTypes = this.userProfileService.GetInterests();
                 return this.View(profile);
             }
 
-            this.userProfileService.SetProfile(Context.User.Profile, profile);
-            this.contactProfileService?.SetProfile(profile);
+            this.UserProfileService.SaveProfile(Context.User.Profile, profile);
 
             this.Session["EditProfileMessage"] = new InfoMessage(DictionaryPhraseRepository.Current.Get("/Accounts/Edit Profile/Edit Profile Success", "Profile was successfully updated"));
             return this.Redirect(this.Request.RawUrl);
-        }
-
-        private ViewResult ProfileMismatchMessage
-        {
-            get
-            {
-                return this.InfoMessage(InfoMessage.Error(DictionaryPhraseRepository.Current.Get("/Accounts/Edit Profile/Profile Mismatch", "There was a internal error with your user profile. Please contact support.")));
-            }
         }
     }
 }

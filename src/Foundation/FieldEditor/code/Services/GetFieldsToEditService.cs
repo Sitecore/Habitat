@@ -27,11 +27,7 @@
         public static PageEditFieldEditorOptions GetFieldEditorOptions(NameValueCollection form, string pipedFields, Item item)
         {
             var fields = pipedFields.Split('|').Where(fieldName => item.Fields[fieldName] != null).Select(fieldName => new FieldDescriptor(item, fieldName)).ToList();
-            var options = new PageEditFieldEditorOptions(form, fields)
-            {
-                PreserveSections = true,
-                ShowSections = true
-            };
+            var options = new PageEditFieldEditorOptions(form, fields);
             return options;
         }
     }

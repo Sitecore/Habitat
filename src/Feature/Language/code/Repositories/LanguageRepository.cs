@@ -2,7 +2,9 @@
 {
     using System.Collections.Generic;
     using System.Linq;
+    using Microsoft.Extensions.DependencyInjection;
     using Sitecore.Data.Fields;
+    using Sitecore.DependencyInjection;
     using Sitecore.Feature.Language.Models;
     using Sitecore.Foundation.Multisite;
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
@@ -23,7 +25,7 @@
         public static IEnumerable<Language> GetSupportedLanguages()
         {
             var languages = GetAll();
-            var siteContext = new SiteContext();
+            var siteContext = ServiceLocator.ServiceProvider.GetService<SiteContext>();
             var siteDefinition = siteContext.GetSiteDefinition(Context.Item);
 
             if (siteDefinition?.Item == null || !siteDefinition.Item.IsDerived(Feature.Language.Templates.LanguageSettings.ID))

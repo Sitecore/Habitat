@@ -4,6 +4,27 @@ Parent: "1a3560fc-9e54-4e65-bead-e349f3b80dd7"
 Template: "94a8c8e9-690b-4e65-98e7-f95800222767"
 Path: /sitecore/content/Habitat/Home/Modules/Foundation/Indexing
 DB: master
+SharedFields:
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="c4cc3ef6-a779-44ad-9021-01f1dae26270"
+        name="Layers"
+        presets="finn the foundation layer|100||">
+        <key
+          name="Feature"
+          value="2" />
+        <key
+          name="Foundation"
+          value="10" />
+        <key
+          name="Project"
+          value="0" />
+      </profile>
+    </tracking>
 Languages:
 - Language: en
   Versions:

@@ -172,6 +172,9 @@
     <Compile Include="Helpers\AlertHtmlHelpersTests.cs" />
     <Compile Include="Pipelines\InvalidDatasourceItemExceptionProcessorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\..\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Dictionary\code\Sitecore.Foundation.Dictionary.csproj">

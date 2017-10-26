@@ -196,7 +196,10 @@
     <Compile Include="Services\BehaviorProfileDecoratorTests.cs" />
     <Compile Include="Services\ProfileProviderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
+      <Compile Include="..\..\..\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
+</ItemGroup>
   <ItemGroup>
     <None Include="app.config">
       <SubType>Designer</SubType>

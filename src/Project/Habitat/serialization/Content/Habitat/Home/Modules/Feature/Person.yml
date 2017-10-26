@@ -4,6 +4,27 @@ Parent: "f7434df7-e32e-4f8c-a50e-27c476f4dc32"
 Template: "94a8c8e9-690b-4e65-98e7-f95800222767"
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Person
 DB: master
+SharedFields:
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="c4cc3ef6-a779-44ad-9021-01f1dae26270"
+        name="Layers"
+        presets="freddy the feature layer|100||">
+        <key
+          name="Feature"
+          value="10" />
+        <key
+          name="Foundation"
+          value="2" />
+        <key
+          name="Project"
+          value="0" />
+      </profile>
+    </tracking>
 Languages:
 - Language: en
   Versions:
@@ -23,19 +44,19 @@ Languages:
               p:before="*"
               s:ds="{50A4942D-C644-4AD9-8452-78BD786C48A2}"
               s:id="{7B7DD1F9-A0DB-45D9-9A3F-B704BB28903E}"
-              s:ph="/page-layout/section-narrow/col-wide-1_cb65dff5-6265-4d54-9166-8971aa1c72da" />
+              s:ph="/page-layout/section-narrow/col-wide-1-{CB65DFF5-6265-4D54-9166-8971AA1C72DA}-0" />
             <r
               uid="{336339FD-F457-42D4-BCF6-0724BFB3EBA4}"
               p:after="r[@uid='{C537F478-CE17-4868-86C9-C2CF901B9094}']"
               s:ds="{F0519E91-3B1E-47B0-91C0-710C6DF5AD34}"
               s:id="{EBB6DC33-F281-49BE-B273-29ECCD6085A8}"
-              s:ph="/page-layout/section-narrow/col-wide-1_161b8d27-ea7c-4dc2-a3d0-793116476ebf" />
+              s:ph="/page-layout/section-narrow/col-wide-1-{161B8D27-EA7C-4DC2-A3D0-793116476EBF}-0" />
             <r
               uid="{5F98D356-A982-4811-9BBB-377260257043}"
               p:after="r[@uid='{336339FD-F457-42D4-BCF6-0724BFB3EBA4}']"
               s:ds="{779041C8-F089-4E63-A054-D718F42EE16D}"
               s:id="{A1AD34DD-535E-47AF-A911-34C57CCC26F6}"
-              s:ph="/page-layout/section-narrow/col-narrow-1_161b8d27-ea7c-4dc2-a3d0-793116476ebf" />
+              s:ph="/page-layout/section-narrow/col-narrow-1-{161B8D27-EA7C-4DC2-A3D0-793116476EBF}-0" />
             <r
               uid="{161B8D27-EA7C-4DC2-A3D0-793116476EBF}"
               p:after="r[@uid='{5F98D356-A982-4811-9BBB-377260257043}']"

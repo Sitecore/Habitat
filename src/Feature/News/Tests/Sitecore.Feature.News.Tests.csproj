@@ -180,6 +180,9 @@
     <Compile Include="NewsIndexingProviderTests.cs" />
     <Compile Include="NewsRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\..\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
     <Compile Include="SearchSettingsTests.cs" />
   </ItemGroup>
   <ItemGroup>

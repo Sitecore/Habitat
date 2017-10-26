@@ -1,6 +1,8 @@
 ﻿namespace Sitecore.Feature.Demo.Repositories
 {
+    using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using Sitecore.Analytics;
     using Sitecore.Analytics.Model;
@@ -8,12 +10,23 @@
     using Sitecore.Common;
     using Sitecore.Data;
     using Sitecore.Feature.Demo.Models;
+    using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.Dictionary.Repositories;
     using Sitecore.Marketing.Definitions;
     using Sitecore.Marketing.Definitions.Goals;
+    using Sitecore.Marketing.Definitions.PageEvents;
+    using Sitecore.Marketing.Definitions.PageEvents.Data;
 
-    internal class PageEventRepository
+    [Service]
+    public class PageEventRepository
     {
+        private readonly IDefinitionManager<IPageEventDefinition> pageEventDefinitionManager;
+
+        public PageEventRepository(IDefinitionManager<IPageEventDefinition> pageEventDefinitionManager)
+        {
+            this.pageEventDefinitionManager = pageEventDefinitionManager;
+        }
+
         public IEnumerable<PageEvent> GetGoals()
         {
             var current = this.GetCurrentGoals();
@@ -29,11 +42,10 @@
 
         private IEnumerable<PageEvent> GetHistoricGoals()
         {
-            Tracker.Current.Contact.LoadKeyBehaviorCache();
-            var keyBehaviourCache = Tracker.Current.Contact.GetKeyBehaviorCache();
+            var keyBehaviourCache = Tracker.Current.Contact.KeyBehaviorCache;
             foreach (var cachedGoal in keyBehaviourCache.Goals)
             {
-                var goal = GetGoalDefinition(cachedGoal.Id.ToID());
+                var goal = GetGoalDefinition(cachedGoal.Id);
 
                 yield return new PageEvent
                              {
@@ -46,11 +58,9 @@
             }
         }
 
-        private static IGoalDefinition GetGoalDefinition(ID goalId)
+        private IPageEventDefinition GetGoalDefinition(Guid goalId)
         {
-            var goals = DefinitionManagerFactory.Default.GetDefinitionManager<IGoalDefinition>();
-            var goal = goals.Get(goalId, Context.Language.CultureInfo);
-            return goal;
+            return pageEventDefinitionManager.Get(goalId, Context.Language.CultureInfo) ?? pageEventDefinitionManager.Get(goalId, CultureInfo.InvariantCulture);
         }
 
         private IEnumerable<PageEvent> GetCurrentGoals()

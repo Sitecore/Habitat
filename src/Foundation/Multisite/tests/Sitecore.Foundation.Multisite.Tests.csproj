@@ -167,6 +167,9 @@
     <Compile Include="SiteDefinitionProviderTests.cs" />
     <Compile Include="Pipelines\GetDatasourceLocationAndTemplateFromSiteTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\..\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
     <Compile Include="SiteSettingsProviderTests.cs" />
     <Compile Include="SiteContextTests.cs" />
     <Compile Include="DatasourceConfigurationServiceTests.cs" />

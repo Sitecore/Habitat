@@ -1,6 +1,6 @@
 ﻿---
 Role: |
-  habitat\Project Habitat Content Author
+  extranet\Project Habitat Content Author
 MemberOf:
   Role: |
     sitecore\Author

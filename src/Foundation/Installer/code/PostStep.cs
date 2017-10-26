@@ -1,37 +1,37 @@
 ﻿namespace Sitecore.Foundation.Installer
 {
-  using System;
-  using System.Collections.Specialized;
-  using System.Linq;
-  using Sitecore.Diagnostics;
-  using Sitecore.Install.Framework;
+    using System;
+    using System.Collections.Specialized;
+    using System.Linq;
+    using Sitecore.Diagnostics;
+    using Sitecore.Install.Framework;
 
-  public class PostStep : IPostStep
-  {
-    public void Run(ITaskOutput output, NameValueCollection metaData)
+    public class PostStep : IPostStep
     {
-      var getPostStepActionList = metaData["Attributes"].Split(new[] {'|'}, StringSplitOptions.RemoveEmptyEntries).OrderBy(x => x).Select(x => x.Substring(x.IndexOf('=') + 1));
-
-      foreach (var postStepAction in getPostStepActionList)
-      {
-        try
+        public void Run(ITaskOutput output, NameValueCollection metaData)
         {
-          var postStepActionType = Type.GetType(postStepAction);
-          if (postStepActionType == null)
-          {
-            throw new Exception($"Can't find specified type with name {postStepAction}");
-          }
+            var getPostStepActionList = metaData["Attributes"].Split(new[] {'|'}, StringSplitOptions.RemoveEmptyEntries).OrderBy(x => x).Select(x => x.Substring(x.IndexOf('=') + 1));
 
-          Log.Info(postStepAction + " post step action was started", this);
+            foreach (var postStepAction in getPostStepActionList)
+            {
+                try
+                {
+                    var postStepActionType = Type.GetType(postStepAction);
+                    if (postStepActionType == null)
+                    {
+                        throw new Exception($"Can't find specified type with name {postStepAction}");
+                    }
 
-          var activator = (IPostStepAction)Activator.CreateInstance(postStepActionType);
-          activator.Run(metaData);
+                    Log.Info(postStepAction + " post step action was started", this);
+
+                    var activator = (IPostStepAction)Activator.CreateInstance(postStepActionType);
+                    activator.Run(metaData);
+                }
+                catch (Exception ex)
+                {
+                    Log.Error(postStepAction + " post step action has failed", ex, this);
+                }
+            }
         }
-        catch (Exception ex)
-        {
-          Log.Error(postStepAction + " post step action has failed", ex, this);
-        }
-      }
     }
-  }
 }

@@ -34,18 +34,18 @@ namespace Sitecore.Foundation.Indexing.Infrastructure.Fields
             var formatter = IndexingProviderRepository.SearchResultFormatters.FirstOrDefault(provider => provider.SupportedTemplates.Any(item.IsDerived));
             if (formatter == null || formatter is FallbackSearchResultFormatter)
                 return null;
-            return formatter.GetType().AssemblyQualifiedName;
+            return formatter.GetType().FullName;
 
         }
 
         private string TranslateToFormatter(string fieldValue)
         {
-            return IndexingProviderRepository.SearchResultFormatters.FirstOrDefault(provider => provider.ContentType == fieldValue)?.GetType().AssemblyQualifiedName;
+            return IndexingProviderRepository.SearchResultFormatters.FirstOrDefault(provider => provider.ContentType == fieldValue)?.GetType().FullName;
         }
 
         private string TranslateToContentType(string fieldValue)
         {
-            return IndexingProviderRepository.SearchResultFormatters.FirstOrDefault(provider => provider.GetType().AssemblyQualifiedName == fieldValue)?.ContentType;
+            return IndexingProviderRepository.SearchResultFormatters.FirstOrDefault(provider => provider.GetType().FullName == fieldValue)?.ContentType;
         }
 
         public TranslatedFieldQuery TranslateFieldQuery(string fieldName, object fieldValue, ComparisonType comparison, FieldNameTranslator fieldNameTranslator)
@@ -55,7 +55,8 @@ namespace Sitecore.Foundation.Indexing.Infrastructure.Fields
                 return null;
 
             var query = new TranslatedFieldQuery();
-            query.FieldComparisons.Add(new Tuple<string, object, ComparisonType>(this.FieldName, queryValue, comparison));
+            var indexFieldName = fieldNameTranslator.GetIndexFieldName(this.FieldName);
+            query.FieldComparisons.Add(new Tuple<string, object, ComparisonType>(indexFieldName, queryValue, comparison));
             return query;
         }
 
@@ -84,7 +85,7 @@ namespace Sitecore.Foundation.Indexing.Infrastructure.Fields
             if (list.Count > 0)
             {
                 var resultCount = list[0].MinimumResultCount;
-                var fieldNames = new[] {this.FieldName };
+                var fieldNames = new[] { args.FieldNameTranslator.GetIndexFieldName(this.FieldName) };
                 facetQueries.Add(new FacetQuery(null, fieldNames, resultCount, null));
                 list.ForEach(delegate (FacetQuery f) {facetQueries.Remove(f);});
             }

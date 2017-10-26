@@ -5,6 +5,26 @@ Template: "94a8c8e9-690b-4e65-98e7-f95800222767"
 Path: /sitecore/content/Habitat/Home/Modules/Project/Common
 DB: master
 SharedFields:
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="c4cc3ef6-a779-44ad-9021-01f1dae26270"
+        name="Layers"
+        presets="pam the project layer|100||">
+        <key
+          name="Feature"
+          value="3" />
+        <key
+          name="Foundation"
+          value="0" />
+        <key
+          name="Project"
+          value="10" />
+      </profile>
+    </tracking>
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 400

@@ -1,71 +1,145 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Services
 {
+    using System;
+    using System.Globalization;
     using Sitecore.Analytics;
-    using Sitecore.Analytics.Data.Items;
-    using Sitecore.Analytics.Outcome.Extensions;
-    using Sitecore.Analytics.Outcome.Model;
-    using Sitecore.Data;
+    using Sitecore.Analytics.Tracking;
+    using Sitecore.Configuration;
     using Sitecore.Diagnostics;
-    using Sitecore.Exceptions;
     using Sitecore.Foundation.DependencyInjection;
+    using Sitecore.Marketing.Definitions;
+    using Sitecore.Marketing.Definitions.Goals;
+    using Sitecore.Marketing.Definitions.Outcomes.Model;
+    using Sitecore.Marketing.Definitions.PageEvents;
 
-    [Service(typeof(ITrackerService))]
+    [Service(typeof(ITrackerService), Lifetime = Lifetime.Transient)]
     public class TrackerService : ITrackerService
     {
-        public bool IsActive => Tracker.Current != null && Tracker.Current.IsActive;
-
-        public virtual void TrackPageEvent(ID pageEventItemId, string text = null, string data = null, string dataKey = null, int? value = null)
+        public TrackerService(IDefinitionManager<IPageEventDefinition> pageEventDefinitionManager, IDefinitionManager<IOutcomeDefinition> outcomeDefinitionManager, IDefinitionManager<IGoalDefinition> goalDefinitionManager)
         {
-            Assert.ArgumentNotNull(pageEventItemId, nameof(pageEventItemId));
+            this.PageEventDefinitionManager = pageEventDefinitionManager;
+            this.OutcomeDefinitionManager = outcomeDefinitionManager;
+            this.GoalDefinitionManager = goalDefinitionManager;
+            this.ContactManager = Factory.CreateObject("tracking/contactManager", true) as ContactManager;
+        }
+
+        public IDefinitionManager<IGoalDefinition> GoalDefinitionManager { get; }
+        public ContactManager ContactManager { get; }
+        public IDefinitionManager<IPageEventDefinition> PageEventDefinitionManager { get; }
+        public IDefinitionManager<IOutcomeDefinition> OutcomeDefinitionManager { get; }
+
+
+        public bool IsActive
+        {
+            get
+            {
+                if (Tracker.Enabled == false || Tracker.Current == null)
+                {
+                    return false;
+                }
+                if (!Tracker.Current.IsActive)
+                {
+                    Tracker.StartTracking();
+                }
+                return true;
+            }
+        }
+
+        public virtual void TrackPageEvent(Guid pageEventId, string text = null, string data = null, string dataKey = null, int? value = null)
+        {
+            Assert.ArgumentNotNull(pageEventId, nameof(pageEventId));
             if (!this.IsActive)
             {
                 return;
             }
 
-            var item = Context.Database.GetItem(pageEventItemId);
-            Assert.IsNotNull(item, $"Cannot find page event: {pageEventItemId}");
-            var pageEventItem = new PageEventItem(item);
-            var eventData = Tracker.Current.CurrentPage.Register(pageEventItem);
+            var pageEventDefinition = this.PageEventDefinitionManager.Get(pageEventId, CultureInfo.InvariantCulture);
+            if (pageEventDefinition == null)
+            {
+                Log.Warn($"Cannot find page event: {pageEventId}", this);
+                return;
+            }
+
+            var eventData = Tracker.Current.CurrentPage.RegisterPageEvent(pageEventDefinition);
             if (data != null)
+            {
                 eventData.Data = data;
+            }
             if (dataKey != null)
+            {
                 eventData.DataKey = dataKey;
+            }
             if (text != null)
+            {
                 eventData.Text = text;
+            }
             if (value != null)
+            {
                 eventData.Value = value.Value;
+            }
         }
 
-        public void TrackOutcome(ID definitionId)
+        public void TrackGoal(Guid goalId, string text = null, string data = null, string dataKey = null, int? value = null)
         {
-            Assert.ArgumentNotNull(definitionId, nameof(definitionId));
+            Assert.ArgumentNotNull(goalId, nameof(goalId));
+            if (!this.IsActive)
+            {
+                return;
+            }
+
+            var goalDefinition = this.GoalDefinitionManager.Get(goalId, CultureInfo.InvariantCulture);
+            if (goalDefinition == null)
+            {
+                Log.Warn($"Cannot find goal: {goalId}", this);
+                return;
+            }
+
+            var eventData = Tracker.Current.CurrentPage.RegisterGoal(goalDefinition);
+            if (data != null)
+            {
+                eventData.Data = data;
+            }
+            if (dataKey != null)
+            {
+                eventData.DataKey = dataKey;
+            }
+            if (text != null)
+            {
+                eventData.Text = text;
+            }
+            if (value != null)
+            {
+                eventData.Value = value.Value;
+            }
+        }
+
+        public void TrackOutcome(Guid outComeDefinitionId)
+        {
+            Assert.ArgumentNotNull(outComeDefinitionId, nameof(outComeDefinitionId));
 
             if (!this.IsActive || Tracker.Current.Contact == null)
             {
                 return;
             }
 
-            var outcomeId = new ID();
-            var contactId = new ID(Tracker.Current.Contact.ContactId);
-
-            var outcome = new ContactOutcome(outcomeId, definitionId, contactId);
-            Tracker.Current.RegisterContactOutcome(outcome);
+            var outcomeDefinition = this.OutcomeDefinitionManager.Get(outComeDefinitionId, CultureInfo.InvariantCulture);
+            if (outcomeDefinition == null)
+            {
+                Log.Warn($"Cannot find outcome: {outComeDefinitionId}", this);
+                return;
+            }
+            Tracker.Current.CurrentPage.RegisterOutcome(outcomeDefinition, "USD", 0);
         }
 
-        public void IdentifyContact(string identifier)
+
+        public void IdentifyContact(string source, string identifier)
         {
-            try
+            if (!this.IsActive)
             {
-                if (this.IsActive)
-                {
-                    Tracker.Current.Session.Identify(identifier);
-                }
+                return;
             }
-            catch (ItemNotFoundException ex)
-            {
-                //Error can happen if previous user profile has been deleted
-                Log.Error($"Could not identify the user '{identifier}'", ex, this);
-            }
+
+            Tracker.Current.Session.IdentifyAs(source, identifier);
         }
     }
 }

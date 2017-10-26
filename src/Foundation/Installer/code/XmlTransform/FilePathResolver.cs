@@ -1,12 +1,12 @@
 ﻿namespace Sitecore.Foundation.Installer.XmlTransform
 {
-  using System.Web.Hosting;
+    using System.Web.Hosting;
 
-  public class FilePathResolver : IFilePathResolver
-  {
-    public string MapPath(string relativePath)
+    public class FilePathResolver : IFilePathResolver
     {
-      return HostingEnvironment.MapPath(relativePath);
+        public string MapPath(string relativePath)
+        {
+            return HostingEnvironment.MapPath(relativePath);
+        }
     }
-  }
 }

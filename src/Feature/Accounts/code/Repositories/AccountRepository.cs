@@ -5,16 +5,20 @@
     using Sitecore.Diagnostics;
     using Sitecore.Feature.Accounts.Services;
     using Sitecore.Foundation.Accounts.Pipelines;
+    using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Pipelines;
     using Sitecore.Security.Accounts;
     using Sitecore.Security.Authentication;
 
+    [Service(typeof(IAccountRepository))]
     public class AccountRepository : IAccountRepository
     {
+        public IAccountTrackerService AccountTrackerService { get; }
         private readonly PipelineService pipelineService;
 
-        public AccountRepository(PipelineService pipelineService)
+        public AccountRepository(PipelineService pipelineService, IAccountTrackerService accountTrackerService)
         {
+            this.AccountTrackerService = accountTrackerService;
             this.pipelineService = pipelineService;
         }
 
@@ -37,6 +41,7 @@
             var result = AuthenticationManager.Login(accountName, password);
             if (!result)
             {
+                AccountTrackerService.TrackLoginFailed(accountName);
                 return null;
             }
 
@@ -68,17 +73,26 @@
             Assert.ArgumentNotNullOrEmpty(password, nameof(password));
 
             var fullName = Context.Domain.GetFullName(email);
-            Assert.IsNotNullOrEmpty(fullName, "Can't retrieve full userName");
-
-            var user = User.Create(fullName, password);
-            user.Profile.Email = email;
-            if (!string.IsNullOrEmpty(profileId))
+            try
             {
-                user.Profile.ProfileItemId = profileId;
-            }
 
-            user.Profile.Save();
-            this.pipelineService.RunRegistered(user);
+                Assert.IsNotNullOrEmpty(fullName, "Can't retrieve full userName");
+
+                var user = User.Create(fullName, password);
+                user.Profile.Email = email;
+                if (!string.IsNullOrEmpty(profileId))
+                {
+                    user.Profile.ProfileItemId = profileId;
+                }
+
+                user.Profile.Save();
+                this.pipelineService.RunRegistered(user);
+            }
+            catch
+            {
+                AccountTrackerService.TrackRegistrationFailed(email);
+                throw;
+            }
 
             this.Login(email, password);
         }

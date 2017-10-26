@@ -37,7 +37,7 @@ SharedFields:
 - ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
   Hint: __Security
   Value: |
-    ar|habitat\Project Habitat Content Author|pe|+item:write|+item:read|!*|pd|+item:write|+item:read|!*|
+    ar|extranet\Project Habitat Content Author|pe|+item:write|+item:read|!*|pd|+item:write|+item:read|!*|
 - ID: "ed71d374-8c33-4561-991d-77482ae01330"
   Hint: Accounts Details Page
   Value: /sitecore/content/Habitat/Home/Edit Profile
@@ -72,7 +72,7 @@ Languages:
   - ID: "2a84eca4-68bb-4451-b4ac-98ea71a5a3dc"
     Hint: SiteProfiles
     Type: Multilist
-    Value: "{24DFF2CF-B30A-4B75-8967-2FE3DED82271}"
+    Value: "{C4CC3EF6-A779-44AD-9021-01F1DAE26270}"
   - ID: "53b5af0a-265f-4e60-b2b2-4576ce0beccf"
     Hint: Theme
     Value: "{9025588B-C765-458B-829C-1886A98AD3A7}"

@@ -200,6 +200,9 @@
     <Compile Include="Extensions\MediaTemplate.cs" />
     <Compile Include="Extensions\HTMLHelperExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\..\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
     <Compile Include="Repositories\RenderingPropertiesRepositoryTests.cs" />
     <Compile Include="Services\TrackerServiceTests.cs" />
   </ItemGroup>

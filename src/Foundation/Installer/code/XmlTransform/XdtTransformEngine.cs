@@ -1,23 +1,23 @@
 ﻿namespace Sitecore.Foundation.Installer.XmlTransform
 {
-  using Microsoft.Web.XmlTransform;
+    using Microsoft.Web.XmlTransform;
 
-  public class XdtTransformEngine : IXdtTransformEngine
-  {
-    public void ApplyConfigTransformation(string xmlFile, string transformFile, string targetFile)
+    public class XdtTransformEngine : IXdtTransformEngine
     {
-      var source = new XmlTransformableDocument
-                   {
-                     PreserveWhitespace = true
-                   };
-      source.Load(xmlFile);
+        public void ApplyConfigTransformation(string xmlFile, string transformFile, string targetFile)
+        {
+            var source = new XmlTransformableDocument
+            {
+                PreserveWhitespace = true
+            };
+            source.Load(xmlFile);
 
 
-      var transform = new XmlTransformation(transformFile);
-      if (transform.Apply(source))
-      {
-        source.Save(xmlFile);
-      }
+            var transform = new XmlTransformation(transformFile);
+            if (transform.Apply(source))
+            {
+                source.Save(xmlFile);
+            }
+        }
     }
-  }
 }

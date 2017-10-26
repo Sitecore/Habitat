@@ -4,6 +4,27 @@ Parent: "f7434df7-e32e-4f8c-a50e-27c476f4dc32"
 Template: "94a8c8e9-690b-4e65-98e7-f95800222767"
 Path: /sitecore/content/Habitat/Home/Modules/Feature/Identity
 DB: master
+SharedFields:
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="c4cc3ef6-a779-44ad-9021-01f1dae26270"
+        name="Layers"
+        presets="freddy the feature layer|100||">
+        <key
+          name="Feature"
+          value="10" />
+        <key
+          name="Foundation"
+          value="2" />
+        <key
+          name="Project"
+          value="0" />
+      </profile>
+    </tracking>
 Languages:
 - Language: en
   Versions:
@@ -22,7 +43,7 @@ Languages:
               uid="{4BAA8F11-90C7-4BF3-B5D8-C59381B81189}"
               p:before="*"
               s:id="{CA748838-E6D5-4BAD-9126-CAD10DD1B0DB}"
-              s:ph="/page-layout/section-narrow/col-narrow-1_d4399158-183a-41e7-aa4c-86f7d7e68d76" />
+              s:ph="/page-layout/section-narrow/col-narrow-1-{D4399158-183A-41E7-AA4C-86F7D7E68D76}-0" />
             <r
               uid="{D4399158-183A-41E7-AA4C-86F7D7E68D76}"
               p:after="r[@uid='{4BAA8F11-90C7-4BF3-B5D8-C59381B81189}']"

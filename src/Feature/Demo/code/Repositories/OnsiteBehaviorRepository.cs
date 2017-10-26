@@ -3,16 +3,20 @@
     using System.Linq;
     using Sitecore.Feature.Demo.Models;
     using Sitecore.Feature.Demo.Services;
+    using Sitecore.Foundation.DependencyInjection;
 
+    [Service]
     public class OnsiteBehaviorRepository
     {
-        private readonly PageEventRepository pageEventRepository = new PageEventRepository();
-        private readonly OutcomeRepository outcomesRepository = new OutcomeRepository();
+        private readonly PageEventRepository pageEventRepository;
+        private readonly OutcomeRepository outcomesRepository;
         private readonly ProfileRepository profileRepository;
 
-        public OnsiteBehaviorRepository(IProfileProvider profileProvider)
+        public OnsiteBehaviorRepository(ProfileRepository profileRepository, PageEventRepository pageEventRepository, OutcomeRepository outcomesRepository)
         {
-            this.profileRepository = new ProfileRepository(profileProvider);
+            this.pageEventRepository = pageEventRepository;
+            this.outcomesRepository = outcomesRepository;
+            this.profileRepository = profileRepository;
         }
 
         public OnsiteBehavior Get()

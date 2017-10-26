@@ -47,24 +47,24 @@ Languages:
               p:before="*"
               s:ds="{DE020AD2-FB43-436C-B82B-2672B7DD5BC9}"
               s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}"
-              s:ph="/page-layout/section_698b697c-673c-4d24-9028-230f6fc15754/col-narrow-3_2f95b672-ba05-4f73-8c52-c74462e33e95" />
+              s:ph="/page-layout/section-{698B697C-673C-4D24-9028-230F6FC15754}-0/col-narrow-3-{2F95B672-BA05-4F73-8C52-C74462E33E95}-0" />
             <r
               uid="{5C980CE4-7BCC-4D81-A644-3BEF81172A9D}"
               p:after="r[@uid='{068EB119-DC57-4EAF-B637-48A0C71B4173}']"
               s:ds="{844A6AC4-4696-4EA3-B0F9-E1E502D3CDDF}"
               s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}"
-              s:ph="/page-layout/section_698b697c-673c-4d24-9028-230f6fc15754/col-narrow-2_2f95b672-ba05-4f73-8c52-c74462e33e95" />
+              s:ph="/page-layout/section-{698B697C-673C-4D24-9028-230F6FC15754}-0/col-narrow-2-{2F95B672-BA05-4F73-8C52-C74462E33E95}-0" />
             <r
               uid="{FAF4C5CC-F5ED-4E90-94D5-5858BE0B04FF}"
               p:after="r[@uid='{5C980CE4-7BCC-4D81-A644-3BEF81172A9D}']"
               s:ds="{389E6AE3-14AF-4ED1-A0FA-C3A4CC5CAE65}"
               s:id="{781C6B36-4B02-46EA-8ADC-B92A11877F10}"
-              s:ph="/page-layout/section_698b697c-673c-4d24-9028-230f6fc15754/col-narrow-1_2f95b672-ba05-4f73-8c52-c74462e33e95" />
+              s:ph="/page-layout/section-{698B697C-673C-4D24-9028-230F6FC15754}-0/col-narrow-1-{2F95B672-BA05-4F73-8C52-C74462E33E95}-0" />
             <r
               uid="{2F95B672-BA05-4F73-8C52-C74462E33E95}"
               p:after="r[@uid='{FAF4C5CC-F5ED-4E90-94D5-5858BE0B04FF}']"
               s:id="{7074CA39-734D-4953-A3D5-B7D09C37CE3B}"
-              s:ph="/page-layout/section_698b697c-673c-4d24-9028-230f6fc15754" />
+              s:ph="/page-layout/section-{698B697C-673C-4D24-9028-230F6FC15754}-0" />
             <r
               uid="{5091CCFE-9A8F-4005-AE29-0075066EF2CA}"
               p:after="r[@uid='{2F95B672-BA05-4F73-8C52-C74462E33E95}']"

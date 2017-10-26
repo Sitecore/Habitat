@@ -116,6 +116,9 @@
   <ItemGroup>
     <Compile Include="DynamicTeaserModelExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\..\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

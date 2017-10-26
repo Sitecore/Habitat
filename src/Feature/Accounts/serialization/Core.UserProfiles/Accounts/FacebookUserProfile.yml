@@ -1,0 +1,22 @@
+﻿---
+ID: "c12bda90-e646-4fe0-8bb3-0ab021811b03"
+Parent: "e90d79a4-d827-4bb1-b4f8-0a8b1f4b9d68"
+Template: "eb1e858c-f8d0-4bcf-b2d5-990df1485495"
+Path: /sitecore/system/Settings/Security/Profiles/Accounts/FacebookUserProfile
+DB: core
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Network/32x32/id_card2.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170929T080805Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

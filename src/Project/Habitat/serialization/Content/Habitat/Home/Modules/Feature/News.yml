@@ -13,6 +13,26 @@ SharedFields:
     {8FF3D369-A508-4D2F-84A5-9B6C6BF5E537}
     {467C2144-4454-4518-B1DE-E31B4CBBFF33}
     {A99866E5-08E7-44D8-8A52-F8E26BCD3714}
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="c4cc3ef6-a779-44ad-9021-01f1dae26270"
+        name="Layers"
+        presets="freddy the feature layer|100||">
+        <key
+          name="Feature"
+          value="10" />
+        <key
+          name="Foundation"
+          value="2" />
+        <key
+          name="Project"
+          value="0" />
+      </profile>
+    </tracking>
 Languages:
 - Language: en
   Versions:
@@ -32,13 +52,13 @@ Languages:
               p:before="*"
               s:ds="{88D7F189-43AF-4704-94EA-DAA482F9DBA5}"
               s:id="{96EFEFFC-4D53-4F29-913E-84EDBFBE4DAB}"
-              s:ph="/page-layout/section-narrow/col-wide-1_72ea8864-7129-4d5f-a953-1af281f5691f" />
+              s:ph="/page-layout/section-narrow/col-wide-1-{72EA8864-7129-4D5F-A953-1AF281F5691F}-0" />
             <r
               uid="{C76A2513-B2CA-48B4-A4A0-989176D2F799}"
               p:after="r[@uid='{BB5C8FF9-B813-479E-A3C8-11152B88FDA5}']"
               s:ds="{439EC71A-4231-45C8-B075-975BD41099A7}"
               s:id="{BDD730EB-F808-4C65-B94A-D2F03672EAFB}"
-              s:ph="/page-layout/section-narrow/col-wide-2_72ea8864-7129-4d5f-a953-1af281f5691f" />
+              s:ph="/page-layout/section-narrow/col-wide-2-{72EA8864-7129-4D5F-A953-1AF281F5691F}-0" />
             <r
               uid="{72EA8864-7129-4D5F-A953-1AF281F5691F}"
               p:after="r[@uid='{C76A2513-B2CA-48B4-A4A0-989176D2F799}']"

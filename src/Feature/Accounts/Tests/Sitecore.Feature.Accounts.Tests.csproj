@@ -201,6 +201,9 @@
     <Compile Include="AccountsControllerTests.cs" />
     <Compile Include="ProfileSettingsServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\..\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
     <Compile Include="FixtureContext\SmtpWrapper.cs" />
     <Compile Include="UserProfileProviderTests.cs" />
     <Compile Include="UserProfileServiceTests.cs" />

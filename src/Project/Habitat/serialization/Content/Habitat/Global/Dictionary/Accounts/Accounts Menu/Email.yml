@@ -18,7 +18,7 @@ Languages:
         sitecore\admin
     - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
       Hint: Phrase
-      Value: Name
+      Value: "E-mail"
 - Language: "ja-JP"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

@@ -1,21 +1,24 @@
 ﻿namespace Sitecore.Feature.Accounts.Services
 {
-  public class NotificationService : INotificationService
-  {
-    private readonly IAccountsSettingsService siteSettings;
+    using Sitecore.Foundation.DependencyInjection;
 
-    public NotificationService(IAccountsSettingsService siteSettings)
+    [Service(typeof(INotificationService))]
+    public class NotificationService : INotificationService
     {
-      this.siteSettings = siteSettings;
-    }
+        private readonly IAccountsSettingsService siteSettings;
 
-    public void SendPassword(string email, string newPassword)
-    {
-      var mail = this.siteSettings.GetForgotPasswordMailTemplate();
-      mail.To.Add(email);
-      mail.Body = mail.Body.Replace("$password$", newPassword);
+        public NotificationService(IAccountsSettingsService siteSettings)
+        {
+            this.siteSettings = siteSettings;
+        }
 
-      MainUtil.SendMail(mail);
+        public void SendPassword(string email, string newPassword)
+        {
+            var mail = this.siteSettings.GetForgotPasswordMailTemplate();
+            mail.To.Add(email);
+            mail.Body = mail.Body.Replace("$password$", newPassword);
+
+            MainUtil.SendMail(mail);
+        }
     }
-  }
 }

@@ -167,6 +167,9 @@
     <Compile Include="XmlTransformActionTests.cs" />
     <Compile Include="ProcessRunnerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\..\..\ProductInfo.cs">
+      <Link>Properties\ProductInfo.cs</Link>
+    </Compile>
     <Compile Include="TransformsProviderTests.cs" />
     <Compile Include="XdtTransformEngineTests.cs" />
   </ItemGroup>
