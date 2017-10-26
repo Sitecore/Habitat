@@ -231,7 +231,6 @@ $RECYCLE.BIN/
 .DS_Store
 
 lib-cov
-docs
 node_modules
 *.nupkg
 

@@ -85,7 +85,7 @@ function Install-Prerequisites {
         Invoke-Sqlcmd -ServerInstance $SqlServer `
                       -Username $SqlAdminUser `
                       -Password $SqlAdminPassword `
-                      -InputFile "$PSScriptRoot\build\containedauthentication.sql"
+                      -InputFile "$PSScriptRoot\build\database\containedauthentication.sql"
     }
     catch
     {
@@ -117,7 +117,6 @@ function Install-Prerequisites {
 	}
 }
 
-
 function Install-Assets {
     #Register Assets PowerShell Repository
     if ((Get-PSRepository | Where-Object {$_.Name -eq $AssetsPSRepositoryName}).count -eq 0) {
@@ -140,15 +139,6 @@ function Install-Assets {
         throw "$AssetsRoot not found"
     }
 
-    #Pull configurations
-    write-host "Getting the Sitecore WDP configuration files, version $ConfigurationsVersion from $AssetsNugetFeed" -ForegroundColor Green
-    nuget install Sitecore.WDP.Resources -Source $AssetsNugetFeed -Version $ConfigurationsVersion -OutputDirectory $AssetsRoot
-
-    #Verify configuration root
-    if (!(Test-Path $ConfigurationRoot)) {
-        throw "Could not find configuration root at $ConfigurationRoot"
-    }
-
     #Verify license file
     if (!(Test-Path $LicenseFile)) {
         throw "License file $LicenseFile not found"
@@ -169,7 +159,7 @@ function Install-XConnect {
     #Install xConnect Solr
     try
     {
-        Install-SitecoreConfiguration $ConfigurationRoot\xConnect\Solr\xconnect-solr.json `
+        Install-SitecoreConfiguration $XConnectSolrConfiguration `
                                       -SolrUrl $SolrUrl `
                                       -SolrRoot $SolrRoot `
                                       -SolrService $SolrService `
@@ -184,7 +174,7 @@ function Install-XConnect {
     #Generate xConnect client certificate
     try
     {
-        Install-SitecoreConfiguration $ConfigurationRoot\xConnect\xconnect-createcert.json `
+        Install-SitecoreConfiguration $XConnectCertificateConfiguration `
                                       -CertificateName $XConnectCert `
                                       -CertPath $CertPath
     }
@@ -197,7 +187,7 @@ function Install-XConnect {
     #Install xConnect
     try
     {
-        Install-SitecoreConfiguration $ConfigurationRoot\xConnect\XP0\xconnect-xp0.json `
+        Install-SitecoreConfiguration $XConnectConfiguration `
                                       -Package $XConnectPackage `
                                       -LicenseFile $LicenseFile `
                                       -SiteName $XConnectSiteName `
@@ -226,7 +216,7 @@ function Install-XConnect {
         Invoke-Sqlcmd -ServerInstance $SqlServer `
                       -Username $SqlAdminUser `
                       -Password $SqlAdminPassword `
-                      -InputFile "$PSScriptRoot\build\collectionusergrant.sql" `
+                      -InputFile "$PSScriptRoot\build\database\collectionusergrant.sql" `
                       -Variable $sqlVariables
     }
     catch
@@ -241,7 +231,7 @@ function Install-Sitecore {
     try
     {
         #Install Sitecore Solr
-        Install-SitecoreConfiguration $ConfigurationRoot\Platform\Solr\sitecore-solr.json `
+        Install-SitecoreConfiguration $SitecoreSolrConfiguration `
                                       -SolrUrl $SolrUrl `
                                       -SolrRoot $SolrRoot `
                                       -SolrService $SolrService `
@@ -256,7 +246,7 @@ function Install-Sitecore {
     try
     {
         #Install Sitecore
-        Install-SitecoreConfiguration $ConfigurationRoot\Platform\XP0\sitecore-xp0.json `
+        Install-SitecoreConfiguration $SitecoreConfiguration `
                                       -Package $SitecorePackage `
                                       -LicenseFile $LicenseFile `
                                       -SiteName $SitecoreSiteName `
@@ -281,7 +271,7 @@ function Install-Sitecore {
     try
     {
         #Set web certificate on Sitecore site
-        Install-SitecoreConfiguration $PSScriptRoot\build\certificates\sitecore-ssl.json `
+        Install-SitecoreConfiguration $SitecoreSSLConfiguration `
                                       -SiteName $SitecoreSiteName
     }
     catch

@@ -3,16 +3,13 @@ $SolutionPrefix = "habitat"
 $SitePostFix = "dev.local"
 $webroot = "C:\inetpub\wwwroot"
 
+$SitecoreVersion = "9.0.0 rev. 171002"
+$InstallerVersion = "1.0.2"
+
 # Assets and prerequisites
 $AssetsRoot = "$PSScriptRoot\build\assets"
-$AssetsNugetFeed = "http://nuget1dk1:8181/nuget/9.0.0_master/"
-$AssetsPSRepository = "http://nuget1dk1:8181/nuget/Sitecore_Gallery/"
+$AssetsPSRepository = "https://sitecore.myget.org/F/sc-powershell/api/v2/"
 $AssetsPSRepositoryName = "SitecoreGallery"
-
-$SitecoreVersion = "9.0.0 rev. 171002"
-$ConfigurationsVersion = "1.1.0-r00119"
-$InstallerVersion = "1.0.2"
-$ConfigurationRoot = "$AssetsRoot\Sitecore.WDP.Resources.$ConfigurationsVersion\content\Deployment\OnPrem\"
 
 $LicenseFile = "$AssetsRoot\license.xml"
 
@@ -25,6 +22,9 @@ $SqlAdminUser = "sa"
 $SqlAdminPassword = "12345"
 
 # XConnect Parameters
+$XConnectConfiguration = "$AssetsRoot\xconnect-xp0.json"
+$XConnectCertificateConfiguration = "$AssetsRoot\xconnect-createcert.json"
+$XConnectSolrConfiguration = "$AssetsRoot\xconnect-solr.json"
 $XConnectPackage = "$AssetsRoot\Sitecore $SitecoreVersion (OnPrem)_xp0xconnect.scwdp.zip"
 $XConnectSiteName = "${SolutionPrefix}_xconnect.$SitePostFix"
 $XConnectCert = "$SolutionPrefix.$SitePostFix.xConnect.Client"
@@ -33,6 +33,9 @@ $XConnectSqlCollectionUser = "collectionuser"
 $XConnectSqlCollectionPassword = "Test12345"
 
 # Sitecore Parameters
+$SitecoreSolrConfiguration = "$AssetsRoot\sitecore-solr.json"
+$SitecoreConfiguration = "$AssetsRoot\sitecore-xp0.json"
+$SitecoreSSLConfiguration = "$PSScriptRoot\build\certificates\sitecore-ssl.json"
 $SitecorePackage = "$AssetsRoot\Sitecore $SitecoreVersion (OnPrem)_single.scwdp.zip"
 $SitecoreSiteName = "$SolutionPrefix.$SitePostFix"
 $SitecoreSiteRoot = Join-Path $webroot -ChildPath $SitecoreSiteName
