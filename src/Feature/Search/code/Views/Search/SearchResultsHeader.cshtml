@@ -20,7 +20,7 @@
         else
         {
             <h1 class="text-center">
-                @string.Format(Html.Sitecore().Dictionary("/search/header/Title With Results", "Your search for '{0}' yielded '{1}' results:"), Model.Context.Query, totalResults)
+                @string.Format(Html.Sitecore().DictionaryPlural("/search/header/Title With Results", totalResults, "Your search for '{0}' yielded '{1}' results:"), Model.Context.Query, totalResults)
             </h1>
         }
     }

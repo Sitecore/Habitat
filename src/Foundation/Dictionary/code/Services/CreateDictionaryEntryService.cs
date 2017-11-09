@@ -10,7 +10,7 @@
 
     internal static class CreateDictionaryEntryService
     {
-        public static Item CreateDictionaryEntry(Dictionary dictionary, string relativePath, string defaultValue)
+        public static Item CreateDictionaryEntry(Dictionary dictionary, string relativePath, bool plural, string defaultValue)
         {
             lock (dictionary)
             {
@@ -20,18 +20,18 @@
                 {
                     root = CreateDictionaryFolder(parts[i], root);
                 }
-                return CreateDictionaryEntry(parts.Last(), root, defaultValue);
+                return CreateDictionaryEntry(parts.Last(), root, plural, defaultValue);
             }
         }
 
-        private static Item CreateDictionaryEntry(string name, Item root, string defaultValue)
+        private static Item CreateDictionaryEntry(string name, Item root, bool plural, string defaultValue)
         {
             using (new SecurityDisabler())
             {
-                var item = GetOrCreateDictionaryItem(name, root, Templates.DictionaryEntry.ID);
+                var item = GetOrCreateDictionaryItem(name, root, plural ? Templates.DictionaryPluralEntry.ID : Templates.DictionaryEntry.ID);
                 using (new EditContext(item))
                 {
-                    item[Templates.DictionaryEntry.Fields.Phrase] = defaultValue;
+                    item[plural ? Templates.DictionaryPluralEntry.Fields.PhraseOther : Templates.DictionaryEntry.Fields.Phrase] = defaultValue;
                 }
                 return item;
             }
