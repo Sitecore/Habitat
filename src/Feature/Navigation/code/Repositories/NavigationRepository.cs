@@ -9,7 +9,7 @@
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
     using Sitecore.Mvc.Presentation;
 
-    [Service(typeof(INavigationRepository))]
+    [Service(typeof(INavigationRepository), Lifetime = Lifetime.Transient)]
     public class NavigationRepository : INavigationRepository
     {
         public Item ContextItem => RenderingContext.Current?.ContextItem ?? Sitecore.Context.Item;

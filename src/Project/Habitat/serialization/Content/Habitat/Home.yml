@@ -5,6 +5,10 @@ Template: "4a8822cc-b418-4452-ab0f-8bb6df2f2114"
 Path: /sitecore/content/Habitat/Home
 DB: master
 SharedFields:
+- ID: "5585a30d-b115-4753-93ce-422c3455deb2"
+  Hint: ShowInNavigation
+  Type: Checkbox
+  Value: 0
 - ID: "8d5c486e-a0e3-4dbe-9a4a-cdff93594bda"
   Hint: IncludeInSearchResults
   Type: Checkbox

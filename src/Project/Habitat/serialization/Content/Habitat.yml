@@ -117,7 +117,7 @@ Languages:
     - ID: "e748d808-64c1-4dec-9718-f35cf9689e4b"
       Hint: Logo
       Value: |
-        <image mediaid="{93AB35C2-44A0-4D5D-9EC0-B857D37F8B08}" alt="" height="" width="" hspace="" vspace="" />
+        <image mediaid="{6C33AFC0-606E-4A18-A8DB-679620D5B409}" alt="" height="" width="" hspace="" vspace="" />
     - ID: "efd4980a-030c-497c-8880-40b6030ac28b"
       Hint: OrganisationName
       Value: Sitecore Corporation

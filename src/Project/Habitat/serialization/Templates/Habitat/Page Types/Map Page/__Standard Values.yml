@@ -50,8 +50,10 @@ SharedFields:
           ph="navbar-left"
           uid="{7BD25BD6-C6C4-4FBE-9828-D29A39A2FEC9}" />
         <r
+          ds=""
           id="{53B085DB-6824-4941-9F28-9011CB151832}"
-          ph="navbar-center"
+          par=""
+          ph="navbar-right"
           uid="{FBDB4313-35B5-4C26-A586-17F48FD2DC41}" />
         <r
           id="{8832BA30-99C3-4D20-9B1C-237D910A153F}"
