@@ -9,7 +9,7 @@ using Sitecore.FakeDb;
 
 namespace Sitecore.Foundation.ReCaptcha.Tests.Services
 {
-    public class SiteverifyServiceTests
+    public class SiteVerifyServiceTests
     {
         [Fact]
         public async void Error_Codes_Should_Be_Null()
