@@ -18,12 +18,13 @@ namespace Sitecore.Foundation.ReCaptcha.Tests.Services
         [AutoDbData]
         public void Error_Success_Should_Be_True_Hostname_testkey(Db db)
         {
-            ReCaptchaController controller = new ReCaptchaController();
+            ISiteVerifyService service = new SiteVerifyService();
+            ReCaptchaController controller = new ReCaptchaController(service);
 
             db.Configuration.Settings["Foundation.ReCaptcha.V2.SiteKey"] = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
             db.Configuration.Settings["Foundation.ReCaptcha.V2.Secret"] = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
 
-            var result = controller.Siteverify("").ConfigureAwait(false).GetAwaiter().GetResult();
+            var result = controller.SiteVerify("").ConfigureAwait(false).GetAwaiter().GetResult();
 
             result.ErrorCodes.Should().BeNull();
             result.ChallengeTs.Should().NotBeNullOrEmpty();

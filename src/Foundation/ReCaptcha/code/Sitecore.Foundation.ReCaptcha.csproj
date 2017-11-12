@@ -131,11 +131,11 @@
     <Compile Include="Extensions\ReCaptchaHtmlHelpers.cs" />
     <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
     <Compile Include="WebApi\ReCaptchaController.cs" />
-    <Compile Include="Services\ISiteverifyService.cs" />
+    <Compile Include="Services\ISiteVerifyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\ReCaptchaResponseModel.cs" />
     <Compile Include="Configuration\ServicesConfigurator.cs" />
-    <Compile Include="Services\SiteverifyService.cs" />
+    <Compile Include="Services\SiteVerifyService.cs" />
     <Content Include="App_Config\Include\Foundation\Foundation.ReCaptcha.config">
       <SubType>Designer</SubType>
     </Content>

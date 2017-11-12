@@ -7,17 +7,20 @@
 
     public class ReCaptchaController : ApiController
     {
-        private readonly ISiteverifyService siteverifyService;
+        private readonly ISiteVerifyService siteVerifyService;
 
-        public ReCaptchaController()
+        public ReCaptchaController() : this(new SiteVerifyService())
+        { }
+
+        public ReCaptchaController(ISiteVerifyService siteverifyService)
         {
-            this.siteverifyService = new SiteverifyService();
+            this.siteVerifyService = siteverifyService;
         }
 
         [HttpGet]
-        public async Task<ReCaptchaResponseModel> Siteverify(string response, bool invisible = false)
+        public async Task<ReCaptchaResponseModel> SiteVerify(string response, bool invisible = false)
         {
-            return await this.siteverifyService.SiteVerifyAsync(response, invisible);
+            return await this.siteVerifyService.SiteVerifyAsync(response, invisible);
         }
 
     }

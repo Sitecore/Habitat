@@ -14,7 +14,7 @@ namespace Sitecore.Foundation.ReCaptcha.Tests.Services
         [Fact]
         public async void Error_Codes_Should_Be_Null()
         {
-            var siteverifyService = Substitute.For<ISiteverifyService>();
+            var siteVerifyService = Substitute.For<ISiteVerifyService>();
 
             var response = new ReCaptchaResponseModel
             {
@@ -22,9 +22,9 @@ namespace Sitecore.Foundation.ReCaptcha.Tests.Services
                 Success = true
             };
 
-            siteverifyService.SiteVerifyAsync("").Returns(Task.FromResult(response));
+            siteVerifyService.SiteVerifyAsync("").Returns(Task.FromResult(response));
 
-            var result = await siteverifyService.SiteVerifyAsync("");
+            var result = await siteVerifyService.SiteVerifyAsync("");
 
             result.ErrorCodes.Should().BeNull();
             result.Success.Should().BeTrue();
@@ -33,7 +33,7 @@ namespace Sitecore.Foundation.ReCaptcha.Tests.Services
         [Fact]
         public async void Error_Codes_Should_Not_Be_Empty()
         {
-            var siteverifyService = Substitute.For<ISiteverifyService>();
+            var siteVerifyService = Substitute.For<ISiteVerifyService>();
 
             var response = new ReCaptchaResponseModel
             {
@@ -41,9 +41,9 @@ namespace Sitecore.Foundation.ReCaptcha.Tests.Services
                 Success = false
             };
 
-            siteverifyService.SiteVerifyAsync("").Returns(Task.FromResult(response));
+            siteVerifyService.SiteVerifyAsync("").Returns(Task.FromResult(response));
 
-            var result = await siteverifyService.SiteVerifyAsync("");
+            var result = await siteVerifyService.SiteVerifyAsync("");
 
             result.ErrorCodes.Should().NotBeEmpty();
             result.Success.Should().BeFalse();
@@ -53,12 +53,12 @@ namespace Sitecore.Foundation.ReCaptcha.Tests.Services
         [AutoDbData]
         public void Error_Success_Should_Be_True_Hostname_testkey(Db db)
         {
-            ISiteverifyService siteverifyService = new SiteverifyService();
+            ISiteVerifyService siteVerifyService = new SiteVerifyService();
 
             db.Configuration.Settings["Foundation.ReCaptcha.V2.SiteKey"] = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
             db.Configuration.Settings["Foundation.ReCaptcha.V2.Secret"] = "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
 
-            var result = siteverifyService.SiteVerifyAsync("").ConfigureAwait(false).GetAwaiter().GetResult();
+            var result = siteVerifyService.SiteVerifyAsync("").ConfigureAwait(false).GetAwaiter().GetResult();
 
             result.ErrorCodes.Should().BeNull();
             result.ChallengeTs.Should().NotBeNullOrEmpty();

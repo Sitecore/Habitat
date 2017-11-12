@@ -8,7 +8,7 @@
     {
         public void Configure(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddSingleton<ISiteverifyService>(provider => new SiteverifyService());
+            serviceCollection.AddSingleton<ISiteVerifyService>(provider => new SiteVerifyService());
         }
     }
 }

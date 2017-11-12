@@ -9,7 +9,7 @@
     using Sitecore.Foundation.ReCaptcha.Configuration;
     using Sitecore.Foundation.ReCaptcha.Models;
 
-    public class SiteverifyService : ISiteverifyService
+    public class SiteVerifyService : ISiteVerifyService
     {
         private static HttpClient _httpClient;
 
