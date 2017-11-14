@@ -3,6 +3,8 @@
 #  Install Sitecore
 # 
 #####################################################
+$ErrorActionPreference = 'Stop'
+
 . $PSScriptRoot\settings.ps1
 
 Write-Host "*******************************************************" -ForegroundColor Green
@@ -30,7 +32,7 @@ function Install-Prerequisites {
 	if (Test-Path $jrePath) {
 		$path = $jrePath
 	}
-	if (Test-Path $jdkPath) {
+	elseif (Test-Path $jdkPath) {
 		$path = $jdkPath
 	}
 	else {
@@ -94,6 +96,7 @@ function Install-Prerequisites {
     }
 
     # Verify Solr
+    Write-Host "Verifying Solr connection" -ForegroundColor Green
     if (-not $SolrUrl.ToLower().StartsWith("https")) {
         throw "Solr URL ($SolrUrl) must be secured with https"
     }
@@ -106,8 +109,20 @@ function Install-Prerequisites {
 	}
 	finally {
 		$SolrResponse.Close()
-	}
-	
+    }
+    
+    Write-Host "Verifying Solr directory" -ForegroundColor Green
+    if(-not (Test-Path "$SolrRoot\server")) {
+        throw "The Solr root path '$SolrRoot' appears invalid. A 'server' folder should be present in this path to be a valid Solr distributive."
+    }
+
+    Write-Host "Verifying Solr service" -ForegroundColor Green
+    try {
+        $null = Get-Service $SolrService
+    } catch {
+        throw "The Solr service '$SolrService' does not exist. Perhaps it's incorrect in settings.ps1?"
+    }
+
 	#Verify .NET framework
 	$requiredDotNetFrameworkVersionValue = 394802
 	$requiredDotNetFrameworkVersion = "4.6.2"
