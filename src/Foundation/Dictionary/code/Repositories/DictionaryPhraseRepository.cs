@@ -42,6 +42,16 @@
 
     public string Get([NotNull] string relativePath, string defaultValue)
     {
+      return this.Get(relativePath, Templates.DictionaryEntry.Fields.Phrase, false, defaultValue);
+    }
+
+    public string GetPlural([NotNull] string relativePath, ID fieldId, string defaultValue = "")
+    {
+      return this.Get(relativePath, fieldId, true, defaultValue);
+    }
+
+    private string Get([NotNull] string relativePath, ID fieldId, bool plural, string defaultValue)
+    {
       if (relativePath == null)
       {
         throw new ArgumentNullException(nameof(relativePath));
@@ -51,23 +61,33 @@
         return defaultValue;
       }
 
-      var dictionaryItem = this.GetOrAutoCreateItem(relativePath, defaultValue);
+      var dictionaryItem = this.GetOrAutoCreateItem(relativePath, plural, defaultValue);
       if (dictionaryItem == null)
       {
         return defaultValue;
       }
 
-      return dictionaryItem.Fields[Templates.DictionaryEntry.Fields.Phrase].Value ?? defaultValue;
+      return dictionaryItem.Fields[fieldId].Value ?? defaultValue;
     }
 
     public Item GetItem([NotNull] string relativePath, string defaultValue = "")
+    {
+        return this.GetItem(relativePath, false, defaultValue);
+    }
+
+    public Item GetPluralItem([NotNull] string relativePath, string defaultValue = "")
+    {
+        return this.GetItem(relativePath, true, defaultValue);
+    }
+
+    private Item GetItem([NotNull] string relativePath, bool plural, string defaultValue = "")
     {
       if (relativePath == null)
       {
         throw new ArgumentNullException(nameof(relativePath));
       }
 
-      var item = this.GetOrAutoCreateItem(relativePath, defaultValue);
+      var item = this.GetOrAutoCreateItem(relativePath, plural, defaultValue);
       if (item == null)
       {
         Log.Debug($"Could not find the dictionary item for the site '{this.Dictionary.Site.Name}' with the path '{relativePath}'", this);
@@ -75,7 +95,7 @@
       return item;
     }
 
-    private Item GetOrAutoCreateItem([NotNull]string relativePath, [CanBeNull]string defaultValue)
+    private Item GetOrAutoCreateItem([NotNull]string relativePath, bool plural, [CanBeNull]string defaultValue)
     {
       relativePath = AssertRelativePath(relativePath);
 
@@ -87,7 +107,7 @@
         return null;
       try
       {
-        return CreateDictionaryEntryService.CreateDictionaryEntry(this.Dictionary, relativePath, defaultValue);
+        return CreateDictionaryEntryService.CreateDictionaryEntry(this.Dictionary, relativePath, plural, defaultValue);
       }
       catch (Exception ex)
       {

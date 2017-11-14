@@ -1,7 +1,7 @@
 ﻿---
 ID: "2d021632-5542-41de-8689-1574c0e9fc39"
 Parent: "39eaf748-83bc-43bd-a839-877d2f85d095"
-Template: "ec4dd3f2-590d-404b-9189-2a12679749cc"
+Template: "ea8709b5-addd-4179-9f54-40d709421eff"
 Path: /sitecore/content/Habitat/Global/Dictionary/Search/Header/Title With Results
 DB: master
 Languages:
@@ -12,10 +12,16 @@ Languages:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20160406T234440Z
+    - ID: "3faa1728-51c9-44ee-8af3-73f1e856a1e9"
+      Hint: Phrase Other
+      Value: "Your search for '{0}' yielded {1} results:"
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         extranet\Anonymous
+    - ID: "bc70debf-7886-4835-9a65-d3276a098f03"
+      Hint: Phrase One
+      Value: "Your search for '{0}' yielded {1} result:"
     - ID: "ddacdd55-5b08-405f-9e58-04f09aed640a"
       Hint: Phrase
       Value: "Your search for '{0}' yielded {1} results:"

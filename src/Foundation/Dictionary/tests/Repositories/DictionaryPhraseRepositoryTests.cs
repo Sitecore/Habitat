@@ -26,6 +26,14 @@
 
         [Theory]
         [AutoDbData]
+        public void GetPlural_NullRElativePath_ThrowArgumentNullException(string defaultValue)
+        {
+            var repository = new DictionaryPhraseRepository(new Dictionary());
+            repository.Invoking(x => x.GetPlural(null, Templates.DictionaryPluralEntry.Fields.PhraseOther, defaultValue)).ShouldThrow<ArgumentNullException>();
+        }
+
+        [Theory]
+        [AutoDbData]
         public void Get_DatabaseIsNull_ReturnDefaultValue(string relativePath, string defaultValue)
         {
             //Arrange
@@ -41,6 +49,21 @@
 
         [Theory]
         [AutoDbData]
+        public void GetPlural_DatabaseIsNull_ReturnDefaultValue(string relativePath, string defaultValue)
+        {
+            //Arrange
+            Context.Database = null;
+            var repository = new DictionaryPhraseRepository(new Dictionary());
+
+            //Act
+            var result = repository.GetPlural(relativePath, Templates.DictionaryPluralEntry.Fields.PhraseOther, defaultValue);
+
+            //Assert
+            result.Should().Be(defaultValue);
+        }
+
+        [Theory]
+        [AutoDbData]
         public void Get_AutocreateIsFalseEntryDoesntExists_ReturnDefaultValue(Db db, [Content] Item rootItem, string relativePath, string defaultValue)
         {
             //Arrange
@@ -48,6 +71,20 @@
 
             //Act
             var result = repository.Get(relativePath, defaultValue);
+
+            //Assert
+            result.Should().Be(defaultValue);
+        }
+
+        [Theory]
+        [AutoDbData]
+        public void GetPlural_AutocreateIsFalseEntryDoesntExists_ReturnDefaultValue(Db db, [Content] Item rootItem, string relativePath, string defaultValue)
+        {
+            //Arrange
+            var repository = new DictionaryPhraseRepository(new Dictionary { Root = rootItem, AutoCreate = false });
+
+            //Act
+            var result = repository.GetPlural(relativePath, Templates.DictionaryPluralEntry.Fields.PhraseOther, defaultValue);
 
             //Assert
             result.Should().Be(defaultValue);
@@ -72,10 +109,35 @@
 
         [Theory]
         [AutoDbData]
+        public void GetPlural_AutocreateIsTrueEntryDoesntExists_ShouldCreateItem(Db db, [Content] CreateDictionaryEntryServiceTests.DictionaryPluralEntryTemplate entryTemplate, [Content] Item rootItem, IEnumerable<string> pathParts, string defaultValue)
+        {
+            //Arrange
+            var relativePath = string.Join("/", pathParts.Select(ItemUtil.ProposeValidItemName));
+            var repository = new DictionaryPhraseRepository(new Dictionary { Root = rootItem, AutoCreate = true });
+            db.Add(new DbTemplate(Templates.DictionaryFolder.ID));
+
+            //Act
+            var result = repository.GetPlural(relativePath, Templates.DictionaryPluralEntry.Fields.PhraseOther, defaultValue);
+
+            //Assert
+            result.Should().Be(defaultValue);
+            rootItem.Axes.GetItem(relativePath).Should().NotBeNull();
+        }
+
+        [Theory]
+        [AutoDbData]
         public void GetItem_NullRElativePath_ThrowArgumentNullException(string defaultValue)
         {
             var repository = new DictionaryPhraseRepository(new Dictionary());
             repository.Invoking(x => x.GetItem(null, defaultValue)).ShouldThrow<ArgumentNullException>();
+        }
+
+        [Theory]
+        [AutoDbData]
+        public void GetPluralItem_NullRElativePath_ThrowArgumentNullException(string defaultValue)
+        {
+            var repository = new DictionaryPhraseRepository(new Dictionary());
+            repository.Invoking(x => x.GetPluralItem(null, defaultValue)).ShouldThrow<ArgumentNullException>();
         }
 
         [Theory]
@@ -87,6 +149,20 @@
 
             //Act
             var result = repository.GetItem(relativePath, defaultValue);
+
+            //Assert
+            result.Should().BeNull();
+        }
+
+        [Theory]
+        [AutoDbData]
+        public void GetPluralItem_AutocreateIsFalseEntryDoesntExists_ReturnNull(Db db, [Content] Item rootItem, string relativePath, string defaultValue)
+        {
+            //Arrange
+            var repository = new DictionaryPhraseRepository(new Dictionary { Root = rootItem, AutoCreate = false, Site = new FakeSiteContext("test") });
+
+            //Act
+            var result = repository.GetPluralItem(relativePath, defaultValue);
 
             //Assert
             result.Should().BeNull();
@@ -110,6 +186,22 @@
 
         [Theory]
         [AutoDbData]
+        public void GetPlural_AutocreateIsTrueEntryDoesntExists_ShouldreturnItem(Db db, [Content] CreateDictionaryEntryServiceTests.DictionaryPluralEntryTemplate entryTemplate, [Content] Item rootItem, IEnumerable<string> pathParts, string defaultValue)
+        {
+            //Arrange
+            var relativePath = string.Join("/", pathParts.Select(ItemUtil.ProposeValidItemName));
+            var repository = new DictionaryPhraseRepository(new Dictionary { Root = rootItem, AutoCreate = true });
+            db.Add(new DbTemplate(Templates.DictionaryFolder.ID));
+
+            //Act
+            var result = repository.GetPluralItem(relativePath, defaultValue);
+
+            //Assert
+            result[Templates.DictionaryPluralEntry.Fields.PhraseOther].Should().Be(defaultValue);
+        }
+
+        [Theory]
+        [AutoDbData]
         public void Get_IncorrectRelativePath_ThrowArgumentException(Db db, [Content] Item rootItem, string defaultValue)
         {
             //Arrange
@@ -118,6 +210,18 @@
 
             //Assert
             repository.Invoking(x => x.Get(relativePath, defaultValue)).ShouldThrow<ArgumentException>();
+        }
+
+        [Theory]
+        [AutoDbData]
+        public void GetPlural_IncorrectRelativePath_ThrowArgumentException(Db db, [Content] Item rootItem, string defaultValue)
+        {
+            //Arrange
+            var relativePath = "/";
+            var repository = new DictionaryPhraseRepository(new Dictionary { Root = rootItem, AutoCreate = true });
+
+            //Assert
+            repository.Invoking(x => x.GetPlural(relativePath, Templates.DictionaryPluralEntry.Fields.PhraseOther, defaultValue)).ShouldThrow<ArgumentException>();
         }
     }
 }
