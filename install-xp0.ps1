@@ -30,7 +30,7 @@ function Install-Prerequisites {
 	if (Test-Path $jrePath) {
 		$path = $jrePath
 	}
-	if (Test-Path $jdkPath) {
+	elseif (Test-Path $jdkPath) {
 		$path = $jdkPath
 	}
 	else {
