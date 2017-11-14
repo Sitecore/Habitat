@@ -3,6 +3,8 @@
 #  Install Sitecore
 # 
 #####################################################
+$ErrorActionPreference = 'Stop'
+
 . $PSScriptRoot\settings.ps1
 
 Write-Host "*******************************************************" -ForegroundColor Green
