@@ -6,7 +6,7 @@ module.exports = function () {
     licensePath: instanceRoot + "\\Data\\license.xml",
     solutionName: "Habitat",
     buildConfiguration: "Debug",
-    buildToolsVersion: 14,
+    buildToolsVersion: 15.0,
     buildMaxCpuCount: 0,
     buildVerbosity: "minimal",
     buildPlatform: "Any CPU",
