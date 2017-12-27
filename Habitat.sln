@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\Foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{F347A85D-6FF5-4927-B5CF-54D81954E6A2}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,43 +23,43 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "{755F9E42-1707-4E1A-AE6D-3FD8A25118C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Assets", "src\foundation\Assets\code\Sitecore.Foundation.Assets.csproj", "{7E46FF93-EE05-412C-AC47-2A59A13DA73C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Assets", "src\Foundation\Assets\code\Sitecore.Foundation.Assets.csproj", "{7E46FF93-EE05-412C-AC47-2A59A13DA73C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{D2CBE02E-6AA7-4343-9A01-891F971A17F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.News", "src\feature\News\code\Sitecore.Feature.News.csproj", "{1AAD6F22-9B6D-4688-8EA5-1AE7044031F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.News", "src\Feature\News\code\Sitecore.Feature.News.csproj", "{1AAD6F22-9B6D-4688-8EA5-1AE7044031F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Metadata", "src\feature\Metadata\code\Sitecore.Feature.Metadata.csproj", "{2BBD157C-AD28-4055-A208-48A2DA93BD04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Metadata", "src\Feature\Metadata\code\Sitecore.Feature.Metadata.csproj", "{2BBD157C-AD28-4055-A208-48A2DA93BD04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Navigation", "src\feature\Navigation\code\Sitecore.Feature.Navigation.csproj", "{16003E7F-0FAF-4DEE-B13D-DD327E965A98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Navigation", "src\Feature\Navigation\code\Sitecore.Feature.Navigation.csproj", "{16003E7F-0FAF-4DEE-B13D-DD327E965A98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Social", "src\feature\Social\code\Sitecore.Feature.Social.csproj", "{B018C183-6976-4766-B2C0-0CBA4C064AED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Social", "src\Feature\Social\code\Sitecore.Feature.Social.csproj", "{B018C183-6976-4766-B2C0-0CBA4C064AED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Identity", "src\feature\Identity\code\Sitecore.Feature.Identity.csproj", "{0D0B809C-03AB-4EE1-898F-CFE28CF5B245}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Identity", "src\Feature\Identity\code\Sitecore.Feature.Identity.csproj", "{0D0B809C-03AB-4EE1-898F-CFE28CF5B245}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Search", "src\feature\Search\code\Sitecore.Feature.Search.csproj", "{55B9C026-E106-4185-8213-9CDD53B44E1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Search", "src\Feature\Search\code\Sitecore.Feature.Search.csproj", "{55B9C026-E106-4185-8213-9CDD53B44E1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Language", "src\feature\Language\code\Sitecore.Feature.Language.csproj", "{ACA65632-EE93-422B-B25E-8E31969694F5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Language", "src\Feature\Language\code\Sitecore.Feature.Language.csproj", "{ACA65632-EE93-422B-B25E-8E31969694F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Media", "src\feature\Media\code\Sitecore.Feature.Media.csproj", "{1417B162-F987-4CBD-8642-CA4C4119E705}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Media", "src\Feature\Media\code\Sitecore.Feature.Media.csproj", "{1417B162-F987-4CBD-8642-CA4C4119E705}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{9A8FD752-FF60-4789-8251-E1D8FF290F3F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Habitat.Website", "src\Project\Habitat\code\Sitecore.Habitat.Website.csproj", "{86CADB26-5817-46B6-88C7-76D5753722C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Serialization", "src\foundation\Serialization\code\Sitecore.Foundation.Serialization.csproj", "{007CD5DC-0030-460D-91A3-3DDEA9AB472F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Serialization", "src\Foundation\Serialization\code\Sitecore.Foundation.Serialization.csproj", "{007CD5DC-0030-460D-91A3-3DDEA9AB472F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Accounts", "src\feature\Accounts\code\Sitecore.Feature.Accounts.csproj", "{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Accounts", "src\Feature\Accounts\code\Sitecore.Feature.Accounts.csproj", "{3F61C57D-50D9-4194-8196-EF5F7AA4CCE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Indexing", "src\foundation\Indexing\code\Sitecore.Foundation.Indexing.csproj", "{80213F24-577F-4F0B-A3B8-62485EA4D2F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Indexing", "src\Foundation\Indexing\code\Sitecore.Foundation.Indexing.csproj", "{80213F24-577F-4F0B-A3B8-62485EA4D2F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Teasers", "src\feature\Teasers\code\Sitecore.Feature.Teasers.csproj", "{64C1C1EF-71CB-47BD-92F9-4E50CE35BD9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Teasers", "src\Feature\Teasers\code\Sitecore.Feature.Teasers.csproj", "{64C1C1EF-71CB-47BD-92F9-4E50CE35BD9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.PageContent", "src\feature\PageContent\code\Sitecore.Feature.PageContent.csproj", "{DA079E95-DB53-4A66-AB35-2DAB71D19276}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.PageContent", "src\Feature\PageContent\code\Sitecore.Feature.PageContent.csproj", "{DA079E95-DB53-4A66-AB35-2DAB71D19276}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accounts", "Accounts", "{C7886F90-3A67-4889-8ACC-F07D42CFDBF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Accounts.Tests", "src\feature\Accounts\tests\Sitecore.Feature.Accounts.Tests.csproj", "{0049EB56-74D3-4F39-B0CE-2295E0747F09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Accounts.Tests", "src\Feature\Accounts\tests\Sitecore.Feature.Accounts.Tests.csproj", "{0049EB56-74D3-4F39-B0CE-2295E0747F09}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{6F4B31B8-5677-448B-8A72-957E8AA47F52}"
 EndProject
@@ -81,7 +81,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Social", "Social", "{F5F33F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Teasers", "Teasers", "{8AE5D37C-D340-4D66-8BAE-48A7ED60BCE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.News.Tests", "src\feature\News\tests\Sitecore.Feature.News.Tests.csproj", "{ADF3A6FF-9E94-400D-8A03-DE9C3A778186}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.News.Tests", "src\Feature\News\tests\Sitecore.Feature.News.Tests.csproj", "{ADF3A6FF-9E94-400D-8A03-DE9C3A778186}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{4CEA4907-CB04-49A7-869D-FE39C479DF58}"
 EndProject
@@ -91,11 +91,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serialization", "Serializat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SitecoreExtensions", "SitecoreExtensions", "{BE813EFD-133F-4BDE-AD25-A67D16A218CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Indexing.Tests", "src\foundation\Indexing\tests\Sitecore.Foundation.Indexing.Tests.csproj", "{3ECFDA25-B8AE-43F5-9CA9-4AFDF1F96901}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Indexing.Tests", "src\Foundation\Indexing\tests\Sitecore.Foundation.Indexing.Tests.csproj", "{3ECFDA25-B8AE-43F5-9CA9-4AFDF1F96901}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions.Tests", "src\foundation\SitecoreExtensions\tests\Sitecore.Foundation.SitecoreExtensions.Tests.csproj", "{85F735B7-9BEE-43C3-94DF-539CE267F0B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions.Tests", "src\Foundation\SitecoreExtensions\tests\Sitecore.Foundation.SitecoreExtensions.Tests.csproj", "{85F735B7-9BEE-43C3-94DF-539CE267F0B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Demo", "src\feature\Demo\code\Sitecore.Feature.Demo.csproj", "{4DD516F2-D9E5-4775-B840-E00A71DD7E87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Demo", "src\Feature\Demo\code\Sitecore.Feature.Demo.csproj", "{4DD516F2-D9E5-4775-B840-E00A71DD7E87}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{CA21CE04-607F-4AF6-8A70-3F1E82C42B11}"
 EndProject
@@ -105,9 +105,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Person", "Person", "{18A4B0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Installer", "Installer", "{F82B7F7C-BDA9-4204-97E1-456E406A251A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Installer", "src\foundation\Installer\code\Sitecore.Foundation.Installer.csproj", "{622EBD86-43A5-4857-965C-1724F714012A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Installer", "src\Foundation\Installer\code\Sitecore.Foundation.Installer.csproj", "{622EBD86-43A5-4857-965C-1724F714012A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Installer.Tests", "src\foundation\Installer\tests\Sitecore.Foundation.Installer.Tests.csproj", "{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Installer.Tests", "src\Foundation\Installer\tests\Sitecore.Foundation.Installer.Tests.csproj", "{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Person", "src\Feature\Person\code\Sitecore.Feature.Person.csproj", "{452C63B5-6019-4EC2-9A9B-9B5DD3241485}"
 EndProject
@@ -380,6 +380,7 @@ Global
 		{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}.Debug|x64.ActiveCfg = Debug|Any CPU
 		{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}.Debug|x64.Build.0 = Debug|Any CPU
 		{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}.Release|x64.ActiveCfg = Release|Any CPU
 		{EDD5B894-28C3-4FB5-8A85-AFD9C2FD823D}.Release|x64.Build.0 = Release|Any CPU
 		{452C63B5-6019-4EC2-9A9B-9B5DD3241485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -697,5 +698,8 @@ Global
 		{7CC3D72B-4518-4B78-BE48-630A263C0F5B} = {1B850A0C-6B4F-4189-89F3-7A16E9592291}
 		{366148B7-2392-4F42-80D6-786B7A3682AE} = {86FB273F-3637-45AF-825D-CFEFE1F7A8EA}
 		{86FB273F-3637-45AF-825D-CFEFE1F7A8EA} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75B18050-9359-4460-84E4-4E901B4419AE}
 	EndGlobalSection
 EndGlobal

@@ -7,6 +7,7 @@
   using log4net.Appender;
   using log4net.Config;
   using log4net.spi;
+  using MongoDB.Driver;
   using NSubstitute;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Foundation.Installer.MongoRestore;
@@ -127,7 +128,7 @@
       [Frozen]IProcessRunner processRunner,
       [Greedy]MongoRestoreService sut)
     {
-      sut.Invoking(x => x.IsRestored("sql")).ShouldThrow<FormatException>();
+      sut.Invoking(x => x.IsRestored("sql")).ShouldThrow<MongoConfigurationException>();
     }
   }
 }
