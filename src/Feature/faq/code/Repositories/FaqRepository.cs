@@ -13,7 +13,7 @@
       if (item == null)
         throw new ArgumentNullException(nameof(item));
 
-      return item.GetMultiListValueItems(Templates.FaqGroup.Fields.GroupMember).Where(i => i.IsDerived(Templates.Faq.ID));
+      return item.GetMultiListValueItems(Faq.Templates.FAQGroup.Fields.GroupMember).Where(i => i.IsDerived(Faq.Templates.FAQ.ID));
     }
   }
 }

@@ -21,7 +21,7 @@
         protected virtual Item Profile => this.profile ?? (this.profile = this.profileSettingsService.GetUserDefaultProfile());
         protected virtual string FirstName => this.GetUserProfileFieldName(Templates.UserProfile.Fields.FirstName);
         protected virtual string LastName => this.GetUserProfileFieldName(Templates.UserProfile.Fields.LastName);
-        protected virtual string PhoneNumber => this.GetUserProfileFieldName(Templates.UserProfile.Fields.PhoneNumber);
+        protected virtual string PhoneNumber => this.GetUserProfileFieldName(Templates.UserProfile.Fields.Phone);
         protected virtual string Interest => this.GetUserProfileFieldName(Templates.UserProfile.Fields.Interest);
 
         public UserProfileService() : this(new ProfileSettingsService(), new UserProfileProvider())

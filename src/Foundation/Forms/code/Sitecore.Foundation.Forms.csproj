@@ -114,6 +114,7 @@
     <Compile Include="SaveActions\RegisterOutcome.cs" />
     <Compile Include="Services\ISheerService.cs" />
     <Compile Include="Services\SheerService.cs" />
+    <Compile Include="Templates.Generated.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>

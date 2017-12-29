@@ -13,7 +13,7 @@
   }
   //TODO: Resolve context site from item (implement in Foundation.Multisite)
   var homeUrl = Sitecore.Context.Site?.GetStartItem()?.Url() ?? "/";
-  var hasTagline = identity.FieldHasValue(Templates.Identity.Fields.LogoTagLine);
+  var hasTagline = identity.FieldHasValue(Templates.Identity.Fields.LogoTagline);
 }
 
 <a class="navbar-brand @(hasTagline ? "has-tagline" : "")" href="@homeUrl">
@@ -21,7 +21,7 @@
     @Html.Sitecore().ImageField(Templates.Identity.Fields.Logo, identity, mh: 50)
     @if (hasTagline)
     {
-      <small class="tagline">@Html.Sitecore().Field(Templates.Identity.Fields.LogoTagLine, identity)</small>
+      <small class="tagline">@Html.Sitecore().Field(Templates.Identity.Fields.LogoTagline, identity)</small>
     }
   </span>
 </a>

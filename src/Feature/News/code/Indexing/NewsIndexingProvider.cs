@@ -16,7 +16,7 @@
     {
         public Expression<Func<SearchResultItem, bool>> GetQueryPredicate(IQuery query)
         {
-            var fieldNames = new[] {Templates.NewsArticle.Fields.Title_FieldName, Templates.NewsArticle.Fields.Summary_FieldName, Templates.NewsArticle.Fields.Body_FieldName};
+            var fieldNames = new[] {Templates.NewsArticle.Fields.NewsTitle_FieldName, Templates.NewsArticle.Fields.NewsSummary_FieldName, Templates.NewsArticle.Fields.NewsBody_FieldName};
             return GetFreeTextPredicateService.GetFreeTextPredicate(fieldNames, query);
         }
 
@@ -32,9 +32,9 @@
                 return;
             }
 
-            formattedResult.Title = FieldRenderer.Render(contentItem, Templates.NewsArticle.Fields.Title.ToString());
-            formattedResult.Description = FieldRenderer.Render(contentItem, Templates.NewsArticle.Fields.Summary.ToString());
-            formattedResult.Media = ((ImageField)contentItem.Fields[Templates.NewsArticle.Fields.Image])?.MediaItem;
+            formattedResult.Title = FieldRenderer.Render(contentItem, Templates.NewsArticle.Fields.NewsTitle.ToString());
+            formattedResult.Description = FieldRenderer.Render(contentItem, Templates.NewsArticle.Fields.NewsSummary.ToString());
+            formattedResult.Media = ((ImageField)contentItem.Fields[Templates.NewsArticle.Fields.NewsImage])?.MediaItem;
             formattedResult.ViewName = "~/Views/News/NewsSearchResult.cshtml";
         }
     }

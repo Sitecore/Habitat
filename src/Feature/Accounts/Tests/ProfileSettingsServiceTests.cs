@@ -53,14 +53,14 @@
 
       db.Add(new DbItem("siteroot")
       {
-        TemplateID = Templates.ProfileSettigs.ID,
+        TemplateID = Templates.ProfileSettings.ID,
         Fields =
         {
-          new DbField("UserProfile", Templates.ProfileSettigs.Fields.UserProfile)
+          new DbField("UserProfile", Templates.ProfileSettings.Fields.UserProfile)
           {
             Value = profileId.ToString()
           },
-          new DbField("InterestsFolder", Templates.ProfileSettigs.Fields.InterestsFolder)
+          new DbField("InterestsFolder", Templates.ProfileSettings.Fields.InterestsFolder)
           {
             Value = interestFolder.ToString()
           }

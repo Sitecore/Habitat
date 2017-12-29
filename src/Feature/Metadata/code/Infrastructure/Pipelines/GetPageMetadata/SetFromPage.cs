@@ -26,9 +26,9 @@
 
         private void SetCustomMetadata(Item item, ICollection<KeyValuePair<string, string>> customMetadata)
         {
-            if (!item.FieldHasValue(Templates.PageMetadata.Fields.CustomMetadata))
+            if (!item.FieldHasValue(Templates.PageMetadata.Fields.CustomMetaData))
                 return;
-            var values = ((NameValueListField)item.Fields[Templates.PageMetadata.Fields.CustomMetadata])?.NameValues;
+            var values = ((NameValueListField)item.Fields[Templates.PageMetadata.Fields.CustomMetaData])?.NameValues;
             if (values == null)
                 return;
             foreach (var key in values.AllKeys)
@@ -40,7 +40,7 @@
 
         private void SetDescription(Item item, IMetadata metadata)
         {
-            var description = item[Templates.PageMetadata.Fields.Description];
+            var description = item[Templates.PageMetadata.Fields.MetaDescription];
             if (string.IsNullOrWhiteSpace(description))
                 return;
             metadata.Description = description;
@@ -60,7 +60,7 @@
             {
                 robotsMetadata.Add("NOINDEX");
             }
-            if (!(item.Fields[Templates.PageMetadata.Fields.CanFollow]?.IsChecked() ?? true))
+            if (!(item.Fields[Templates.PageMetadata.Fields.SeoFollowLinks]?.IsChecked() ?? true))
             {
                 robotsMetadata.Add("NOFOLLOW");
             }
@@ -68,7 +68,7 @@
 
         private void SetKeywords(Item item, ICollection<string> keywordsList)
         {
-            var keywordsField = item.Fields[Templates.PageMetadata.Fields.Keywords];
+            var keywordsField = item.Fields[Templates.PageMetadata.Fields.MetaKeywords];
             if (keywordsField == null)
                 return;
             

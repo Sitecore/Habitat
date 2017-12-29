@@ -34,7 +34,7 @@
             searchService.Settings.Root = contextItem;
             //TODO: Refactor for scalability
             var results = searchService.FindAll();
-            return results.Results.Select(x => x.Item).Where(x => x != null).OrderByDescending(i => i[Templates.NewsArticle.Fields.Date]);
+            return results.Results.Select(x => x.Item).Where(x => x != null).OrderByDescending(i => i[Templates.NewsArticle.Fields.NewsDate]);
         }
 
         public IEnumerable<Item> GetLatest(Item contextItem, int count)

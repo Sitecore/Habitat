@@ -118,7 +118,7 @@
     <Compile Include="Repositories\IDictionaryPhraseRepository.cs" />
     <Compile Include="Repositories\IDictionaryRepository.cs" />
     <Compile Include="Services\CreateDictionaryEntryService.cs" />
-    <Compile Include="Templates.cs" />
+    <Compile Include="Templates.Generated.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">

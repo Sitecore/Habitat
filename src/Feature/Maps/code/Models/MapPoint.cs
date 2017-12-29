@@ -8,9 +8,9 @@
 
     public MapPoint(Data.Items.Item item)
     {
-      this.Name = item[Templates.MapPoint.Fields.Name];
-      this.Address = item[Templates.MapPoint.Fields.Address];
-      this.Location = item[Templates.MapPoint.Fields.Location];
+      this.Name = item[Templates.MapPoint.Fields.MapPointName];
+      this.Address = item[Templates.MapPoint.Fields.MapPointAddress];
+      this.Location = item[Templates.MapPoint.Fields.MapPointLocation];
     }
 
     public string Name { get; set; }

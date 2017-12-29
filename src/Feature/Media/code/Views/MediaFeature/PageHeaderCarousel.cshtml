@@ -30,7 +30,7 @@
       <div class="item @element.Active">
         @{
           var style = "background-image: ";
-          var field = element.Item.IsDerived(Templates.HasMediaVideo.ID) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
+          var field = element.Item.IsDerived(Templates.HasMediaVideo.ID) ? Templates.HasMedia.Fields.MediaThumbnail : Templates.HasMediaImage.Fields.MediaImage;
           style += element.Item.ImageUrl(field, new MediaUrlOptions()).ToCssUrlValue();
         }
 
@@ -38,16 +38,16 @@
           @if (element.Item.IsDerived(Templates.HasMediaVideo.ID))
           {
             <video autoplay="" loop="" muted="" class="video-bg">
-              <source src="@element.Item.MediaUrl(Templates.HasMediaVideo.Fields.VideoLink)" type="video/mp4">
+              <source src="@element.Item.MediaUrl(Templates.HasMediaVideo.Fields.MediaVideoLink)" type="video/mp4">
             </video>
           }
 
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <h1>@Html.Sitecore().Field(Templates.HasMedia.Fields.Title, element.Item)</h1>
+                <h1>@Html.Sitecore().Field(Templates.HasMedia.Fields.MediaTitle, element.Item)</h1>
                 <p class="lead">
-                  @Html.Sitecore().Field(Templates.HasMedia.Fields.Description, element.Item)
+                  @Html.Sitecore().Field(Templates.HasMedia.Fields.MediaDescription, element.Item)
                 </p>
               </div>
             </div>
