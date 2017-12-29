@@ -1,0 +1,25 @@
+﻿---
+ID: "7ea54031-bd6b-467b-bbbc-0674d086e275"
+Parent: "8528843a-b84e-474c-8bf6-d231e784b4d8"
+Template: "f90052a5-b4e6-4e6d-9812-1e1b88a6fcea"
+Path: /sitecore/system/Settings/Rules/Definitions/Elements/Profile Card/Apply Profile Value
+DB: master
+SharedFields:
+- ID: "ff55d5a7-6d4b-4cd1-83e0-bac268073f66"
+  Hint: Type
+  Value: Sitecore.Foundation.Personalization.Rules.Actions.ApplyProfileValue, Sitecore.Foundation.Personalization
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170806T163244Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "eeb36a3b-40d9-4af5-862a-de257b84dca3"
+      Hint: Text
+      Value: "Apply [profilecardkey, ProfileCard,,specific] Profile Card against item"

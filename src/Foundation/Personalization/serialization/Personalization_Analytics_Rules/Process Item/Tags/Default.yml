@@ -1,0 +1,54 @@
+﻿---
+ID: "7da6c7d5-8342-46f4-b98d-c6c88204daa7"
+Parent: "f939e351-bbff-4516-a629-01b819411e45"
+Template: "854ba861-63ea-4a0c-8c7b-541e9a7ec4c1"
+Path: /sitecore/system/Settings/Analytics/Rules/Process Item/Tags/Default
+DB: master
+SharedFields:
+- ID: "42f77151-098f-496a-94cf-590b7edeeabe"
+  Hint: Tags
+  Type: Multilist
+  Value: |
+    {7ADA27C2-E37C-4467-AC79-B91E22655C1B}
+    {83E58187-D1E5-4FB8-953E-EE89816EC0B5}
+    {2B6BE5E9-5A0B-425E-8CFF-959D7CC46581}
+    {D8933FCB-48F3-468E-8FB6-8F2B5CFAF404}
+    {09340671-13CF-4181-A706-BE150B00D735}
+    {2FC32D92-C4DC-4C63-8A5D-736F20466656}
+    {CCDEDBA3-3677-433E-BA09-64A3094808C9}
+    {B396D486-63DB-4F62-8DF1-DB0989191848}
+    {D0A59485-216D-47F5-8DFA-21C2E92D62D9}
+    {95611296-3E75-45C0-B7A4-69E69C8499AB}
+    {6C2368CA-67BE-4233-B9D7-0A0F87F09A38}
+    {ADA1A7B1-F84D-419F-96E2-77F95006DC37}
+    {5A355A23-0148-48CB-9017-90A696EAF155}
+    {9DE9BA55-DEBF-4F15-8EC1-F28FE3A5B9FD}
+    {18C2D156-9B7B-494F-ADB2-2D0D9113000E}
+    {6084975A-488E-43ED-BE36-3765A5971DD7}
+Languages:
+- Language: "de-DE"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Default
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170614T104251Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20130607T180500
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

@@ -1,8 +1,11 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Personalization", "Personalization", "{91FB8404-0503-480C-BCBB-B2018478FD8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.Personalization", "src\Foundation\Personalization\code\Sitecore.Foundation.Personalization.csproj", "{8C7CFB17-C55A-40E8-BDBB-BB5A25EE299C}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Foundation.SitecoreExtensions", "src\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj", "{B535703F-8D07-4F23-A533-2974BB4CC7B1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{F347A85D-6FF5-4927-B5CF-54D81954E6A2}"
@@ -205,6 +208,14 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C7CFB17-C55A-40E8-BDBB-BB5A25EE299C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7CFB17-C55A-40E8-BDBB-BB5A25EE299C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7CFB17-C55A-40E8-BDBB-BB5A25EE299C}.Debug|x64.ActiveCfg = Debug|x64
+		{8C7CFB17-C55A-40E8-BDBB-BB5A25EE299C}.Debug|x64.Build.0 = Debug|x64
+		{8C7CFB17-C55A-40E8-BDBB-BB5A25EE299C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7CFB17-C55A-40E8-BDBB-BB5A25EE299C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C7CFB17-C55A-40E8-BDBB-BB5A25EE299C}.Release|x64.ActiveCfg = Release|x64
+		{8C7CFB17-C55A-40E8-BDBB-BB5A25EE299C}.Release|x64.Build.0 = Release|x64
 		{B535703F-8D07-4F23-A533-2974BB4CC7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B535703F-8D07-4F23-A533-2974BB4CC7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B535703F-8D07-4F23-A533-2974BB4CC7B1}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -611,6 +622,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{91FB8404-0503-480C-BCBB-B2018478FD8B} = {D2CBE02E-6AA7-4343-9A01-891F971A17F5}
+		{8C7CFB17-C55A-40E8-BDBB-BB5A25EE299C} = {91FB8404-0503-480C-BCBB-B2018478FD8B}
 		{B535703F-8D07-4F23-A533-2974BB4CC7B1} = {BE813EFD-133F-4BDE-AD25-A67D16A218CA}
 		{7E46FF93-EE05-412C-AC47-2A59A13DA73C} = {4CEA4907-CB04-49A7-869D-FE39C479DF58}
 		{1AAD6F22-9B6D-4688-8EA5-1AE7044031F7} = {049C2109-CF4F-4DD1-977D-92150C924E71}

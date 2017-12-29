@@ -1,0 +1,18 @@
+﻿---
+ID: "116fe6f9-ef54-45a6-829b-f4b151374b55"
+Parent: "6084975a-488e-43ed-be36-3765a5971dd7"
+Template: "aa91a868-02f2-41d3-8b78-1cad91b4dcae"
+Path: /sitecore/system/Settings/Rules/Definitions/Tags/Profile Card/Visibility
+DB: master
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{B1ECD86C-5B13-4698-A27A-CBE89DC12393}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170806T163528Z

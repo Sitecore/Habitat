@@ -1,0 +1,28 @@
+﻿---
+ID: "d888398e-ddc2-424f-a9ad-67ef590ce24d"
+Parent: "f54057cd-eac1-4e83-90bd-6e8169a93822"
+Template: "4a6a7e36-2481-438f-a9ba-0453ecc638fa"
+Path: /sitecore/system/Marketing Control Panel/Profiles/Habitat/Helix/Pattern Cards/Foundation User
+DB: master
+SharedFields:
+- ID: "6da71ad3-5849-4482-9317-d21390e5a348"
+  Hint: Pattern
+  Value: |
+    <tracking>
+      <profile id="{A4496ED2-D4EE-4FB3-8138-882B0585FE12}" name="Helix">
+        <key name="Feature" value="2" />
+        <key name="Foundation" value="10" />
+        <key name="Project" value="2" />
+      </profile>
+    </tracking>
+- ID: "fe732790-2ddb-4657-a882-c2fce1fbf0c9"
+  Hint: Name
+  Value: Foundation User
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170806T222015Z
