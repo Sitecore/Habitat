@@ -1,0 +1,60 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Feature.Sitemap
+@using Sitecore.Feature.Sitemap.Models.Sitemap
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Feature.Sitemap.Models.Sitemap.SitemapItems
+<section class="layer layer-grid sitemap-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                @foreach (var item in Model.Items)
+                {
+                    <div class="col-sm" style="padding:5px 0;">
+
+                        @if (item.ChildItems != null && item.ChildItems.Items.Count > 0)
+                        {
+                            <a href="#" class="expand-btn" data-id="@item.Item.ID.ToString()"><i class="fa fa-plus-square" aria-hidden="true"></i></a> <a href="@item.Url" target="_self">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)</a>
+                        }
+                        else
+                        {
+                            <a href="@item.Url" target="_self">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), item.Item)</a>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    $("div, ul").on("click", ".expand-btn", function () {
+        var itemID = $(this).attr('data-id');
+        $.ajax({
+            url: window.location.href + "?DS=" + itemID,
+            type: "POST",
+            context: this,
+            data: { scController: "Sitemap", scAction: "SitemapWithExpend", itemID: itemID },
+            success: function (data) {
+                $(this).parent().append(data);
+                $(this).removeClass('expand-btn');
+                $(this).addClass("collapse-btn");
+                $(this).find('i').removeClass('fa-plus-square');
+                $(this).find('i').addClass('fa-minus-square');
+            },
+            error: function (data) {
+                console.log("error", data);
+            }
+        });
+        return false;
+    });
+    $("div, ul, li").on("click", ".collapse-btn", function () {
+        $(this).parent().find('>ul').remove();
+        $(this).addClass('expand-btn');
+        $(this).removeClass("collapse-btn");
+        $(this).find('i').addClass('fa-plus-square');
+        $(this).find('i').removeClass('fa-minus-square');
+        return false;
+    });
+
+</script>
+
+

@@ -1,0 +1,18 @@
+﻿---
+ID: "b2fd704e-23bc-46ce-a2f9-c48f8c351a35"
+Parent: "076374b1-550c-4872-a1db-d41161105019"
+Template: "6dd5b041-59d3-4431-a906-24b7149b0ba3"
+Path: /sitecore/system/Modules/Sitemap/Sitemap Configuration/Search Engines
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160321T072339Z

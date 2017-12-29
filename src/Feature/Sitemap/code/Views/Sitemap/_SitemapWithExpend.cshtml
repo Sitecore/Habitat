@@ -1,0 +1,26 @@
+﻿@using Sitecore.Mvc
+@using Sitecore.Feature.Sitemap
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Feature.Sitemap.Models.Sitemap
+@using Sitecore.Foundation.SitecoreExtensions.Extensions
+@model Sitecore.Feature.Sitemap.Models.Sitemap.SitemapItems
+<ul>
+    @foreach (var sItem in Model.Items)
+    {
+        <li>
+            @if (sItem.ChildItems != null && sItem.ChildItems.Items.Count > 0)
+            {
+                <a href="#" class="expand-btn" data-id="@sItem.Item.ID.ToString()"><i class="fa fa-plus-square" aria-hidden="true"></i></a> <a href="@sItem.Url" target="_self">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), sItem.Item)</a>
+
+            }
+
+            else
+            {
+
+                <a href="@sItem.Url" target="_self">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle.ToString(), sItem.Item)</a>
+            }
+        </li>
+    }
+</ul>
+
+

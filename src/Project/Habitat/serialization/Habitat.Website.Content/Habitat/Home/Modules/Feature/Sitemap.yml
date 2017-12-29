@@ -1,0 +1,64 @@
+﻿---
+ID: "2ca4aa53-5b14-4f4a-969e-5653ad3a4726"
+Parent: "f7434df7-e32e-4f8c-a50e-27c476f4dc32"
+Template: "94a8c8e9-690b-4e65-98e7-f95800222767"
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Sitemap
+DB: master
+SharedFields:
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Type: layout
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{B590073C-C71E-46F3-8237-C5CD3DEA6A3E}"
+          p:after="r[@uid='{20E3883C-C16D-41D7-B5D3-C4AC60D8386D}']"
+          s:ds=""
+          s:id="{D201A487-5099-48A1-8189-55944F70C6CB}"
+          s:par="Background&amp;ContainerIsFluid=1&amp;UseStaticPlaceholderNames=1"
+          s:ph="/page-layout" />
+        <r
+          uid="{66422117-69C1-4B62-9323-482F16C4F244}"
+          s:ds=""
+          s:id="{0AD8EC59-33EC-4103-AAD4-F3A49BFDB92C}"
+          s:par="Background&amp;ContainerIsFluid&amp;UseStaticPlaceholderNames=1"
+          s:ph="/page-layout/section" />
+        <r
+          uid="{3CDF4DD8-28A4-4185-8C09-A73CAA4633F7}"
+          s:ds=""
+          s:par=""
+          s:ph="/page-layout/section/col-huge" />
+        <r
+          uid="{565F9960-4E47-4DA4-9406-0A29DD09911F}"
+          s:ds=""
+          s:par=""
+          s:ph="/page-layout/section/col-huge" />
+        <r
+          uid="{A85893F9-5DF5-4C28-AC0F-67AD85D29661}"
+          p:after="r[@uid='{565F9960-4E47-4DA4-9406-0A29DD09911F}']"
+          s:ds=""
+          s:id="{75F45B5D-2852-429B-8356-8024DEFC1640}"
+          s:par="TotalNoOfColumns=12&amp;Columns=4"
+          s:ph="/page-layout/section/col-huge" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: Sitemap
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170717T071857Z
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: Sitemap
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: Sitemap

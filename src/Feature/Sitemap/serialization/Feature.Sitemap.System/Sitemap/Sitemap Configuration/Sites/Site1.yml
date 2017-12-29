@@ -1,0 +1,27 @@
+﻿---
+ID: "dc9f6734-5d41-448f-961f-937378d6bf6c"
+Parent: "7876fbee-0692-4020-9aee-73a279bdd12e"
+Template: "66aace6f-59c6-471a-87aa-9c21b5df5d66"
+Path: /sitecore/system/Modules/Sitemap/Sitemap Configuration/Sites/Site1
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "13cdd377-9b9e-4bc6-88fe-4c37af98b9c0"
+      Hint: FileName
+      Value: sitemap1.xml
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160321T072404Z
+    - ID: "54a8e7a2-bbb9-4d99-a665-ff075447249e"
+      Hint: SiteName
+      Value: habitat
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "5f7f5d28-9183-4ac6-8fb6-31242d94d67b"
+      Hint: ServerURL
+      Value: "http://sitecoredemo.local"

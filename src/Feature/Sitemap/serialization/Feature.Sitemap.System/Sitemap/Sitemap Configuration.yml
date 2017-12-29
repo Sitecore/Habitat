@@ -1,0 +1,26 @@
+﻿---
+ID: "076374b1-550c-4872-a1db-d41161105019"
+Parent: "dd3d8f45-4579-46d6-a599-4dbc7eff539e"
+Template: "edbc9b84-815d-423b-a79f-6c5105f9edc2"
+Path: /sitecore/system/Modules/Sitemap/Sitemap Configuration
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160223T123506Z
+    - ID: "3634ead8-a127-4535-a196-db1440e9e213"
+      Hint: Sites
+      Type: Multilist
+      Value: "{DC9F6734-5D41-448F-961F-937378D6BF6C}"
+    - ID: "a816bdc8-d5af-4845-911b-ae876bbdf10a"
+      Hint: GenerateSitemapXML
+      Type: Checkbox
+      Value: 1
+    - ID: "e260d3ea-5dd2-4d6e-af48-d01a2091dcac"
+      Hint: GenerateSitemapXMLByScheduler
+      Type: Checkbox
+      Value: 1
