@@ -26,7 +26,9 @@ function Install-Prerequisites {
     #Verify Java version
     $JRERequiredVersion = "1.8"
     $minVersion = New-Object System.Version($JRERequiredVersion)
-    $foundVersion = $FALSE
+    $foundVersion = $FALS
+    $jrePath = "HKLM:\SOFTWARE\JavaSoft\Java Runtime Environment"
+	$jdkPath = "HKLM:\SOFTWARE\JavaSoft\Java Development Kit"
 	$jrePath9 = "HKLM:\SOFTWARE\JavaSoft\JRE"
     $jdkPath9 = "HKLM:\SOFTWARE\JavaSoft\JDK"
 	if (Test-Path $jrePath) {
