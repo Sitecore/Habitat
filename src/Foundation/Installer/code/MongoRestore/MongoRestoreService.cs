@@ -85,7 +85,7 @@
       {
         var mongoUrl = new MongoUrl(connectionString);
         var mongoClient = new MongoClient(mongoUrl);
-        server = mongoClient.GetServer();
+                server = new MongoServer(MongoServerSettings.FromClientSettings(mongoClient.Settings));//mongoClient.GetServer();
 
         return server.GetDatabase(mongoUrl.DatabaseName).CollectionExists(MongoRestoreSettings.RestoredDbTokenCollection);
       }
@@ -132,7 +132,7 @@
       try
       {
         var mongoClient = new MongoClient(mongoUrl);
-        server = mongoClient.GetServer();
+        server = new MongoServer(MongoServerSettings.FromClientSettings(mongoClient.Settings));//mongoClient.GetServer();
 
         server.GetDatabase(mongoUrl.DatabaseName).CreateCollection(MongoRestoreSettings.RestoredDbTokenCollection);
       }
