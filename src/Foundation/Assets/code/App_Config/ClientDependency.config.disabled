@@ -1,0 +1,69 @@
+﻿<clientDependency version="12" fileDependencyExtensions=".js,.css,.min.css" loggerType="Sitecore.Foundation.Assets.Compression.ClientDependencyLogger, Sitecore.Foundation.Assets">
+
+
+    <!-- This section is used for MVC only -->
+    <mvc defaultRenderer="StandardRenderer">
+        <renderers>
+            <add name="StandardRenderer" type="ClientDependency.Core.FileRegistration.Providers.StandardRenderer, ClientDependency.Core" enableCompositeFiles="true" disableCompositeBundling="false" enableDebugVersionQueryString="true"/>
+            <add name="LazyLoadRenderer" type="ClientDependency.Core.FileRegistration.Providers.LazyLoadRenderer, ClientDependency.Core" enableCompositeFiles="true" disableCompositeBundling="false" enableDebugVersionQueryString="true"/>
+        </renderers>
+    </mvc>
+    <!-- 
+    The composite file section configures the compression/combination/minification of files.
+    You can enable/disable minification and/or bundling of either JS/CSS files and you can enable/disable the 
+    persistence of composite files. By default, minification and persistence is enabled. Persisting files
+    means that the system is going to save the output of the compressed/combined/minified files
+    to disk so that on any subsequent request (when output cache expires) that these files don't have
+    to be recreated again and will be based on the persisted file on disk. This saves on processing time.
+    -->
+    <compositeFiles defaultFileProcessingProvider="CompositeFileProcessor" defaultFileMapProvider="XmlFileMap" compositeFileHandlerPath="~/DependencyHandler.axd">
+        <!--
+    File processing providers perform the file combination, compression and storage.
+    Generally there would be no reason to replace.
+    NOTE: The pathUrlFormat is much nicer as {dependencyId}.{version}.{type} which is the default,
+    however, it is specified below with '/' as the delimiter to demonstrate using it with Cassini
+    since Cassini does not support '.' chars in the path.
+    -->
+        <fileProcessingProviders>
+            <add name="CompositeFileProcessor"
+                  type="ClientDependency.Core.CompositeFiles.Providers.CompositeFileProcessingProvider, ClientDependency.Core"
+                  enableCssMinify="true"
+                  enableJsMinify="true"
+                  persistFiles="true"
+                  compositeFilePath="~/App_Data/ClientDependency"
+                  bundleDomains="maxcdn.bootstrapcdn.com,fast.fonts.net,cdn.optimizely.com,cdnjs.cloudflare.com,cdnjs.cloudflare.com,ajax.googleapis.com,code.jquery.com"
+                  urlType="MappedId"
+                  pathUrlFormat="{dependencyId}/{version}/{type}"/>
+        </fileProcessingProviders>
+        <!-- 
+    A file map provider stores references to dependency files by an id to be used in the handler URL when using the MappedId Url type
+    -->
+        <fileMapProviders>
+            <add name="XmlFileMap"
+                  type="ClientDependency.Core.CompositeFiles.Providers.XmlFileMapper, ClientDependency.Core"
+                  mapPath="~/App_Data/ClientDependency"/>
+        </fileMapProviders>
+        <!-- 
+  Defines the mime types to compress when requested by the client.
+  Path is a regex selector, or a * can be used as in place of 'any'.
+  Generally mime types are only set by client browsers in the request for things
+  such as JSON or XML ajax requests.
+  -->
+        <mimeTypeCompression>
+            <add type="application/json" path="^.*?/Services/.*"/>
+        </mimeTypeCompression>
+        <!-- 
+          Defines the paths to match on to enable rogue file compression.
+          Path is a regex selector, or a * can be used as in place of 'any'.
+          jsExt and cssExt are comma seperated list of extensions to match to have the dependencies
+          replaced with the composite file handler. You can even include ASP.Net web service JS proxies.
+          -->
+        <rogueFileCompression>
+            <add path="*" compressJs="true" compressCss="true" jsExt=".js,asmx/js" cssExt=".css">
+                <exclusions>
+                    <add path="^*sitecore*"/>
+                </exclusions>
+            </add>
+        </rogueFileCompression>
+    </compositeFiles>
+</clientDependency>
