@@ -12,18 +12,17 @@ Write-Host " Sitecore: $SitecoreSiteName" -ForegroundColor Green
 Write-Host " xConnect: $XConnectSiteName" -ForegroundColor Green
 Write-Host "*******************************************************" -ForegroundColor Green
 
-if (Get-Module("uninstall")) {
-    Remove-Module "uninstall"
-}
+Import-Module "$PSScriptRoot\build\uninstall\uninstall.psm1" -Force
 
 $carbon = Get-Module Carbon
 if (-not $carbon) {
-    write-host "Installing Carbon..." -ForegroundColor Green
-    Install-Module -Name 'Carbon' -AllowClobber -Scope CurrentUser
+    $carbon = Get-InstalledModule Carbon
+    if (-not $carbon) {
+        write-host "Installing Carbon..." -ForegroundColor Green
+        Install-Module -Name 'Carbon' -AllowClobber -Scope CurrentUser -Repository PSGallery
+    }
     Import-Module Carbon
 }
-
-Import-Module "$PSScriptRoot\build\uninstall\uninstall.psm1"
 
 $database = Get-SitecoreDatabase -SqlServer $SqlServer -SqlAdminUser $SqlAdminUser -SqlAdminPassword $SqlAdminPassword
 
