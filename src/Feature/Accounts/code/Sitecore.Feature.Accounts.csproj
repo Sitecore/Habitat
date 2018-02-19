@@ -79,42 +79,35 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Analytics, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.dll</HintPath>
+    <Reference Include="Sitecore.Analytics, Version=11.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.NoReferences.9.0.171219\lib\NET462\Sitecore.Analytics.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Analytics.Core, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Core.dll</HintPath>
+    <Reference Include="Sitecore.Analytics.Core, Version=11.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Core.NoReferences.9.0.171219\lib\NET462\Sitecore.Analytics.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Analytics.Model, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.Model.dll</HintPath>
+    <Reference Include="Sitecore.Analytics.Model, Version=11.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Model.NoReferences.9.0.171219\lib\NET462\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Kernel.dll</HintPath>
+    <Reference Include="Sitecore.Kernel, Version=11.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.9.0.171219\lib\NET462\Sitecore.Kernel.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Owin">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Owin.dll</HintPath>
+    <Reference Include="Sitecore.Owin, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Owin.NoReferences.9.0.171219\lib\NET462\Sitecore.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Owin.Authentication">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Owin.Authentication.dll</HintPath>
+    <Reference Include="Sitecore.Owin.Authentication, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Owin.Authentication.NoReferences.9.0.171219\lib\NET462\Sitecore.Owin.Authentication.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.XConnect.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.XConnect.Client.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Client.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Client.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Client.Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.XConnect.Client.Configuration.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Client.Configuration.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Client.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.XConnect.Collection.Model">
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.XConnect.Collection.Model.dll</HintPath>
+    <Reference Include="Sitecore.XConnect.Collection.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Collection.Model.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Collection.Model.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
