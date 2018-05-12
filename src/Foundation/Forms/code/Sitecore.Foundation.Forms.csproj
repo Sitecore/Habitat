@@ -62,7 +62,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Forms.Core, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Forms.Core.NoReferences.8.2.170413\lib\NET452\Sitecore.Forms.Core.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Forms.Core.NoReferences.8.2.170807\lib\NET452\Sitecore.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.2.170728\lib\NET452\Sitecore.Kernel.dll</HintPath>
