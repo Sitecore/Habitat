@@ -132,12 +132,10 @@
       <HintPath>..\..\..\..\packages\Sitecore.Nexus.NoReferences.8.2.180406\lib\NET452\Sitecore.Nexus.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.WFFM.Abstractions, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Abstractions.NoReferences.8.2.170807\lib\NET452\Sitecore.WFFM.Abstractions.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Abstractions.NoReferences.8.2.180329\lib\NET452\Sitecore.WFFM.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.WFFM.Actions, Version=8.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Actions.NoReferences.8.2.170807\lib\NET452\Sitecore.WFFM.Actions.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\..\..\..\packages\Sitecore.WFFM.Actions.NoReferences.8.2.180329\lib\NET452\Sitecore.WFFM.Actions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
