@@ -18,6 +18,9 @@ function Install-Prerequisites {
     $SqlRequiredVersion = "13.0.4001"
     [reflection.assembly]::LoadWithPartialName("Microsoft.SqlServer.Smo") | out-null
     $srv = New-Object "Microsoft.SqlServer.Management.Smo.Server" $SqlServer
+    if (-not $srv -or -not $srv.Version) {
+        throw "Could not find SQL Server '$SqlServer', check settings.ps1"
+    }
     $minVersion = New-Object System.Version($RequiredSqlVersion)
     if ($srv.Version.CompareTo($minVersion) -lt 0) {
         throw "Invalid SQL version. Expected SQL 2016 SP1 (13.0.4001.0) or over."
@@ -81,11 +84,11 @@ function Install-Prerequisites {
     }
     
     #Add ApplicationPoolIdentity to performance log users to avoid Sitecore log errors (https://kb.sitecore.net/articles/404548)
-    if (!(Get-LocalGroupMember "Performance Log Users" "IIS APPPOOL\DefaultAppPool")) {
-        Add-LocalGroupMember "Performance Log Users" "IIS APPPOOL\DefaultAppPool"    
+    if (!(Get-LocalGroupMember "Performance Log Users" "IIS AppPool\DefaultAppPool")) {
+        Add-LocalGroupMember "Performance Log Users" "IIS AppPool\DefaultAppPool"    
     }
-    if (!(Get-LocalGroupMember "Performance Monitor Users" "IIS APPPOOL\DefaultAppPool")) {
-        Add-LocalGroupMember "Performance Monitor Users" "IIS APPPOOL\DefaultAppPool"
+    if (!(Get-LocalGroupMember "Performance Monitor Users" "IIS AppPool\DefaultAppPool")) {
+        Add-LocalGroupMember "Performance Monitor Users" "IIS AppPool\DefaultAppPool"
     }
     
     #Enable Contained Databases

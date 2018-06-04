@@ -16,7 +16,7 @@ Import-Module "$PSScriptRoot\build\uninstall\uninstall.psm1" -Force
 
 $carbon = Get-Module Carbon
 if (-not $carbon) {
-    $carbon = Get-InstalledModule Carbon
+    $carbon = Get-InstalledModule Carbon -ErrorAction SilentlyContinue
     if (-not $carbon) {
         write-host "Installing Carbon..." -ForegroundColor Green
         Install-Module -Name 'Carbon' -AllowClobber -Scope CurrentUser -Repository PSGallery
@@ -63,8 +63,10 @@ Remove-SitecoreIisSite $SitecoreSiteName
 # Drop sitecore databases
 Remove-SitecoreDatabase -Name "${SolutionPrefix}_Core" -Server $database
 Remove-SitecoreDatabase -Name "${SolutionPrefix}_ExperienceForms" -Server $database
+Remove-SitecoreDatabase -Name "${SolutionPrefix}_EXM.Master" -Server $database
 Remove-SitecoreDatabase -Name "${SolutionPrefix}_Master" -Server $database
 Remove-SitecoreDatabase -Name "${SolutionPrefix}_Web" -Server $database
+Remove-SitecoreDatabase -Name "${SolutionPrefix}_Messaging" -Server $database
 
 # Delete sitecore files
 Remove-SitecoreFiles $SitecoreSiteRoot

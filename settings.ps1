@@ -2,9 +2,12 @@
 $SolutionPrefix = "habitat"
 $SitePostFix = "dev.local"
 $webroot = "C:\inetpub\wwwroot"
+$webroot = "C:\Inetpub\wwwroot"
 
 $SitecoreVersion = "9.0.0 rev. 171002"
 $InstallerVersion = "1.0.2"
+$SitecoreVersion = "9.0.1 rev. 171219"
+$InstallerVersion = "1.2.1"
 
 # Assets and prerequisites
 $AssetsRoot = "$PSScriptRoot\build\assets"
