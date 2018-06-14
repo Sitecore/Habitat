@@ -20,9 +20,10 @@ A huge thanks to people who have contributed to the project in different ways:
 * [Dan Zhang](https://community.sitecore.net/members/danzhang_5f00_293572842)
 * [Berend Haan](https://community.sitecore.net/members/berendhaan_5f00_2052239761)
 * [Jean-Francois Larente](https://community.sitecore.net/members/jflsitecorenet_5f00_5702343)
-* Sergey Kravchenko
 * [Derek Correia](https://community.sitecore.net/members/derekcorreia_5f00_471126827)
 * [James Skemp](https://community.sitecore.net/members/jamesskemp_5f00_913063860)
+* Sergey Kravchenko
+* James Hirka
 * ...and of course the internal Habitat team @ Sitecore
 
 *Any omissions are completely unintentional.*
