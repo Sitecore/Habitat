@@ -12,7 +12,7 @@ You must install these to get Habitat running on your computer:
   * On Windows 10, this is enabled by going to:
     * **Turn Windows Features On or Off**
     * Select **ASP.NET 4.7** from **Internet Information Services** > **World Wide Web Services** > **Application Development Features**
-* [Node.JS 4+](https://nodejs.org/) NOTE: as of August 7, 2017, Node.JS 8.2.1 does not work. Use 6.11.2 instead.
+* [Node.JS 4+](https://nodejs.org/). Please use the latest LTS version of Node (as of publishing, this is 8.11.3)
 
 These are additional tools used in Habitat's creation. You do not need to install these just to run Habitat:
 
