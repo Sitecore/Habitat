@@ -28,11 +28,11 @@ These are additional tools used in Habitat's creation. You do not need to instal
 * Specification Testing: SpecFlow
 * Environment: [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784) (required only for Foundation.Installer module)
 
-Sitecore does not endorse any particular third-party tool. The tools in the current release were chosen because of a number of reasons including popularity and ease of licensing. This does not preclude using other tools in Habitat or changing any third-party tool for another depending on feedback from the Sitecore community.
+Sitecore does not endorse any particular third-party tool. The tools in the current release were chosen because of a number of reasons, including popularity and ease of licensing. Habitat is an example to show you how you can use these tools to accomplish a feature complete and functional solution. This does not preclude using other tools in your Helix solutions, or changing any third-party tool for another depending on feedback from the Sitecore community.
 
 The project uses the Bootstrap theme implemented in [Sitecore.Demo.Theme](https://github.com/Sitecore/Sitecore.Demo.Theme)
 
-## Alternates
+## Habitat forks using other tools
 
 ### Team Development for Sitecore
 
