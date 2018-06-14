@@ -49,8 +49,8 @@ The Sitecore install script will check some prerequisites.
 
 The installation requires the Apache Solr search engine.
 Solr must be running as a windows service. This can be accomplished through running [NSSM](https://sitecore.stackexchange.com/questions/1211/how-to-get-solr-to-run-as-a-service). 
-Furthermore, Sitecore is secure by default and therefore Solr must be running as https.
-To create an SSL certificate for Solr follow the following steps (make sure your Solr settings are correctly configured in `settings.ps1`):
+Furthermore, Sitecore is secure by default and therefore Solr must be running as https. 
+If your Solr environment is not currently running with HTTPS, you can create an SSL certificate for Solr by following these steps (make sure your Solr settings are correctly configured in `settings.ps1`):
 
 1. Open an elevated PowerShell command line.
 1. Run `.\build\GenerateSolrCertificate.ps1` to generate the certificate file in the correct location.
