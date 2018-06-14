@@ -41,5 +41,5 @@ A separate fork of the Habitat project with support for [Team Development for Si
 ### ORM
 
 If you are interested in using an ORM tool like Glass or Synthesis with Habitat, please refer to these examples:
-https://github.com/kamsar/Habitat/tree/HabitatSynthesis
-https://github.com/muso31/Habitat-Glass.Mapper
+* https://github.com/kamsar/Habitat/tree/HabitatSynthesis
+* https://github.com/muso31/Habitat-Glass.Mapper
