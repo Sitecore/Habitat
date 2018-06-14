@@ -29,7 +29,7 @@ This project assumes the following settings:
 
 **Important!: Check the prerequisites before starting the installation.**
 
-* **Do check** the prerequisites of Sitecore Experience Platform in the release notes available on [dev.sitecore.net](dev.sitecore.net)
+* **Do check** the prerequisites of Sitecore Experience Platform in the release notes available on [dev.sitecore.net](https://dev.sitecore.net)
 * **Do check** the [Resources](./02-Resources.md) page for the tools needed
 * **Always** run your Visual Studio or PowerShell Command Line with elevated privileges or *As Administrator*
 
