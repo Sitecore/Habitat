@@ -1,5 +1,15 @@
 # Getting Started
 
+## Software Versions
+
+This version of Habitat uses the following versions of this software:
+
+| Software      | Version |
+| ---           | --- |
+| Sitecore      | 9.0 Update 1, rev 171219 |
+| Solr          | 6.6.2 |
+| Sitecore Installation Framework | 1.2.1 |
+
 ## Locations and settings
 
 This project assumes the following settings:
