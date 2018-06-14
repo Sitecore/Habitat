@@ -2,6 +2,7 @@
 
 A huge thanks to people who have contributed to the project in different ways:
 
+* [Thomas Eldblom](https://community.sitecore.net/members/thomaseldblom_5f00_1660698798)
 * [Anders Laub Christoffersen](https://community.sitecore.net/members/anderschristoffersen_5f00_688677062)
 * [Kam Figy](https://community.sitecore.net/members/kamfigy_5f00_1576112879)
 * [Göran Halvarsson](https://community.sitecore.net/members/goranhalvarsson_5f00_1482267179)
@@ -17,6 +18,11 @@ A huge thanks to people who have contributed to the project in different ways:
 * [Martina Welander](https://community.sitecore.net/members/martinawelander_5f00_196869926)
 * [Nick Wesselman](https://community.sitecore.net/members/nickwesselman_5f00_1267813303)
 * [Dan Zhang](https://community.sitecore.net/members/danzhang_5f00_293572842)
+* [Berend Haan](https://community.sitecore.net/members/berendhaan_5f00_2052239761)
+* [Jean-Francois Larente](https://community.sitecore.net/members/jflsitecorenet_5f00_5702343)
+* Sergey Kravchenko
+* [Derek Correia](https://community.sitecore.net/members/derekcorreia_5f00_471126827)
+* [James Skemp](https://community.sitecore.net/members/jamesskemp_5f00_913063860)
 * ...and of course the internal Habitat team @ Sitecore
 
 *Any omissions are completely unintentional.*
