@@ -18,10 +18,10 @@ This project assumes the following settings:
 
 <sup>1</sup> Files referred are:
 
-* `./src/Project/Habitat/code/App_Config/Environment/Project/Habitat.Dev.config`
-* `./gulp-config.js`
-* `./publishsettings.targets`
-* `./settings.ps1`
+* `.\src\Project\Habitat\code\App_Config\Environment\Project\Habitat.Dev.config`
+* `.\gulp-config.js`
+* `.\publishsettings.targets`
+* `.\settings.ps1`
 * `.\build\assets\sitecore-XP0.json`
 * `.\build\assets\xconnect-XP0.json`
 
@@ -38,7 +38,7 @@ The Sitecore install script will check some prerequisites.
 ### Solr
 
 The installation requires the Apache Solr search engine.
-Solr must be running as a windows service, e.g. through running [NSSM](https://sitecore.stackexchange.com/questions/1211/how-to-get-solr-to-run-as-a-service)
+Solr must be running as a windows service. This can be accomplished through running [NSSM](https://sitecore.stackexchange.com/questions/1211/how-to-get-solr-to-run-as-a-service)
 Furthermore, Sitecore is secure by default and therefore Solr must be running as https.
 To create an SSL certificate for Solr follow the following steps (make sure your Solr settings are correctly configured in `settings.ps1`):
 
