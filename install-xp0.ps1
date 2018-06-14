@@ -83,14 +83,6 @@ function Install-Prerequisites {
         throw "Could load the Microsoft.SqlServer.TransactSql.ScriptDom assembly. Please make sure it is installed and registered in the GAC"
     }
     
-    #Add ApplicationPoolIdentity to performance log users to avoid Sitecore log errors (https://kb.sitecore.net/articles/404548)
-    if (!(Get-LocalGroupMember "Performance Log Users" "IIS AppPool\DefaultAppPool")) {
-        Add-LocalGroupMember "Performance Log Users" "IIS AppPool\DefaultAppPool"    
-    }
-    if (!(Get-LocalGroupMember "Performance Monitor Users" "IIS AppPool\DefaultAppPool")) {
-        Add-LocalGroupMember "Performance Monitor Users" "IIS AppPool\DefaultAppPool"
-    }
-    
     #Enable Contained Databases
     Write-Host "Enable contained databases" -ForegroundColor Green
     try
@@ -307,10 +299,36 @@ function Install-Sitecore {
     }
 }
 
+function Add-AppPool-Membership {
+
+    #Add ApplicationPoolIdentity to performance log users to avoid Sitecore log errors (https://kb.sitecore.net/articles/404548)
+    
+    try 
+    {
+        Add-LocalGroupMember "Performance Log Users" "IIS AppPool\$SitecoreSiteName"
+        Write-Host "Added IIS AppPool\$SitecoreSiteName to Performance Log Users" -ForegroundColor Green
+    }
+    catch 
+    {
+        Write-Host "Warning: Couldn't add IIS AppPool\$SitecoreSiteName to Performance Log Users -- user may already exist" -ForegroundColor Yellow
+    }
+    try 
+    {
+        Add-LocalGroupMember "Performance Monitor Users" "IIS AppPool\$SitecoreSiteName"
+        Write-Host "Added IIS AppPool\$SitecoreSiteName to Performance Monitor Users" -ForegroundColor Green
+    }
+    catch 
+    {
+        Write-Host "Warning: Couldn't add IIS AppPool\$SitecoreSiteName to Performance Monitor Users -- user may already exist" -ForegroundColor Yellow
+    }
+}
+
 Install-Prerequisites
 Install-Assets
 Install-XConnect
 Install-Sitecore
+Add-AppPool-Membership
+
 
 # TODO: 
 # Run optimization scripts
