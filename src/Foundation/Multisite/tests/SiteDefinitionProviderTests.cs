@@ -15,8 +15,11 @@
   using Sitecore.Sites;
   using Sitecore.Web;
   using Xunit;
+  using Moq;
+  using NSubstitute;
+  using Sitecore.Abstractions;
 
-  public class SiteDefinitionProviderTests
+    public class SiteDefinitionProviderTests
   {
     [Theory]
     [AutoDbData]
@@ -32,7 +35,9 @@
                            {"database", db.Database.Name},
                          };
       var site = new SiteInfo(siteSettings);
-      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new SiteInfo[] { site });
+      var siteFactory = new Mock<BaseSiteContextFactory>();
+      siteFactory.Setup(x => x.GetSites()).Returns(new List<SiteInfo>() {site});
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(siteFactory.Object);
 
       provider.SiteDefinitions.Should().BeEmpty();
     }
@@ -55,7 +60,9 @@
                          };
 
       var site = new SiteInfo(siteSettings);
-      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new SiteInfo[] { site });
+      var siteFactory = new Mock<BaseSiteContextFactory>();
+      siteFactory.Setup(x => x.GetSites()).Returns(new List<SiteInfo>() { site });
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(siteFactory.Object);
 
       var currentContext = new SiteContext(site);
       using (new SiteContextSwitcher(currentContext))
@@ -70,7 +77,9 @@
     public void SiteDefinitions_HostnameSetToInvalidHost_ShouldThrowConfigurationError(Db db, string siteName, DbItem rootItem)
     {
       var currentSite = SetupSite(db, siteName, rootItem, null, "*.test.com");
-      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new[] { currentSite });
+      var siteFactory = new Mock<BaseSiteContextFactory>();
+      siteFactory.Setup(x => x.GetSites()).Returns(new List<SiteInfo>() { currentSite });
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(siteFactory.Object);
 
       var context = new SiteContext(currentSite);
       using (new SiteContextSwitcher(context))
@@ -86,7 +95,9 @@
     {
       const string siteHostName = "www.test.com";
       var currentSite = SetupSite(db, siteName, rootItem, null, siteHostName);
-      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new[] { currentSite });
+      var siteFactory = new Mock<BaseSiteContextFactory>();
+      siteFactory.Setup(x => x.GetSites()).Returns(new List<SiteInfo>() { currentSite });
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(siteFactory.Object);
 
       var context = new SiteContext(currentSite);
       using (new SiteContextSwitcher(context))
@@ -101,7 +112,9 @@
     public void SiteDefinitions_TargetHostnameSet_ShouldReturnTargetHostName(Db db, string siteName, DbItem rootItem, string targetHostName)
     {
       var currentSite = SetupSite(db, siteName, rootItem, targetHostName);
-      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new[] { currentSite });
+      var siteFactory = new Mock<BaseSiteContextFactory>();
+      siteFactory.Setup(x => x.GetSites()).Returns(new List<SiteInfo>() { currentSite });
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(siteFactory.Object);
 
       var context = new SiteContext(currentSite);
       using (new SiteContextSwitcher(context))
@@ -136,7 +149,9 @@
     public void SiteDefinitions_NoHostnameSet_ShouldThrow(Db db, string siteName, string hostName, DbItem rootItem)
     {
       var currentSite = SetupSite(db, siteName, rootItem, null, null);
-      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new[] { currentSite });
+      var siteFactory = new Mock<BaseSiteContextFactory>();
+      siteFactory.Setup(x => x.GetSites()).Returns(new List<SiteInfo>() { currentSite });
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(siteFactory.Object);
 
       var context = new SiteContext(currentSite);
       using (new SiteContextSwitcher(context))
@@ -172,7 +187,9 @@
                            {"database", db.Database.Name}
                          };
       var currentSite = new SiteInfo(currentSiteSettings);
-      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new[] { hierarchicalSite, currentSite });
+      var siteFactory = new Mock<BaseSiteContextFactory>();
+      siteFactory.Setup(x => x.GetSites()).Returns(new List<SiteInfo>() { hierarchicalSite, currentSite });
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(siteFactory.Object);
 
       var context = new SiteContext(currentSite);
       using (new SiteContextSwitcher(context))
@@ -198,7 +215,9 @@
                            {"database", db.Database.Name}
                          };
       var site = new SiteInfo(siteSettings);
-      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new SiteInfo[] { site });
+      var siteFactory = new Mock<BaseSiteContextFactory>();
+      siteFactory.Setup(x => x.GetSites()).Returns(new List<SiteInfo>() { site });
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(siteFactory.Object);
 
       provider.SiteDefinitions.Should().Contain(d => d.Name == siteName);
     }
@@ -207,7 +226,9 @@
     [AutoDbData]
     public void SiteDefinitions_NoSites_ShouldReturnEmpty()
     {
-      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(new SiteInfo[] {});
+      var siteFactory = new Mock<BaseSiteContextFactory>();
+      siteFactory.Setup(x => x.GetSites()).Returns(new List<SiteInfo>());
+      ISiteDefinitionsProvider provider = new SiteDefinitionsProvider(siteFactory.Object);
 
       provider.SiteDefinitions.Should().BeEmpty();
     }
