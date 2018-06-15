@@ -103,9 +103,6 @@
     <Reference Include="Sitecore.Analytics.Model, Version=11.40.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Analytics.Model.NoReferences.9.0.171219\lib\NET462\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Analytics.Outcome, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Outcome.NoReferences.8.2.170614\lib\NET452\Sitecore.Analytics.Outcome.dll</HintPath>
-    </Reference>
     <Reference Include="Sitecore.ContentSearch, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.ContentSearch.NoReferences.9.0.171219\lib\NET462\Sitecore.ContentSearch.dll</HintPath>
     </Reference>
@@ -121,8 +118,8 @@
     <Reference Include="Sitecore.Kernel, Version=11.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.9.0.171219\lib\NET462\Sitecore.Kernel.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Logging, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Logging.NoReferences.8.2.170614\lib\NET452\Sitecore.Logging.dll</HintPath>
+    <Reference Include="Sitecore.Logging, Version=11.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Logging.NoReferences.9.0.171219\lib\NET462\Sitecore.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Marketing.Core, Version=12.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Marketing.Core.NoReferences.9.0.171219\lib\NET462\Sitecore.Marketing.Core.dll</HintPath>
@@ -133,8 +130,8 @@
     <Reference Include="Sitecore.Mvc, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Mvc.NoReferences.9.0.171219\lib\NET462\Sitecore.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Nexus, Version=1.0.4425.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Nexus.NoReferences.8.2.170614\lib\NET452\Sitecore.Nexus.dll</HintPath>
+    <Reference Include="Sitecore.Nexus, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Sitecore.Nexus.NoReferences.9.0.171219\lib\NET462\Sitecore.Nexus.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

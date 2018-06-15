@@ -9,7 +9,6 @@
   using Sitecore.Analytics;
   using Sitecore.Analytics.Data;
   using Sitecore.Analytics.Tracking;
-  using Sitecore.Analytics.Outcome.Extensions;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.FakeDb.AutoFixture;
