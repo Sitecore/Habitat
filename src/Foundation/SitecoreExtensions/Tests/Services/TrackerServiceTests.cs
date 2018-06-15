@@ -7,7 +7,7 @@
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Analytics;
-  using Sitecore.Analytics.Data.Items;
+  using Sitecore.Analytics.Data;
   using Sitecore.Analytics.Tracking;
   using Sitecore.Analytics.Outcome.Extensions;
   using Sitecore.Data;
@@ -15,6 +15,7 @@
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.Foundation.SitecoreExtensions.Services;
   using Sitecore.Foundation.Testing.Attributes;
+  using Sitecore.Marketing.Definitions;
   using Xunit;
 
   public class TrackerServiceTests
@@ -25,22 +26,16 @@
       tracker.IsActive.Returns(true);
       using (new TrackerSwitcher(tracker))
       {
-        trackerService.TrackPageEvent(item.ID);
-        tracker.CurrentPage.Received(1).Register(Arg.Is<PageEventItem>(x => x.ID == item.ID));
+        trackerService.TrackPageEvent(item.ID.ToGuid());
+        tracker.CurrentPage.Received(1).Register(Arg.Is<PageEventData>(x => x.ItemId == item.ID.ToGuid()));
       }
-    }
-
-    [Theory, AutoDbData]
-    public void TrackPageEvent_NullEvent_ShouldThrowArgumentException(TrackerService trackerService)
-    {
-      trackerService.Invoking(x => x.TrackPageEvent(null)).ShouldThrow<ArgumentNullException>();
     }
 
     [Theory, AutoDbData]
     public void TrackPageEvent_NullTracker_ShouldNotTrackEvent(Database db, [Content] Item item, ITracker tracker, TrackerService trackerService)
     {
-      trackerService.TrackPageEvent(item.ID);
-      tracker.CurrentPage.DidNotReceive().Register(Arg.Is<PageEventItem>(x => x.ID == item.ID));
+      trackerService.TrackPageEvent(item.ID.ToGuid());
+      tracker.CurrentPage.DidNotReceive().Register(Arg.Is<PageEventData>(x => x.ItemId == item.ID.ToGuid()));
     }
 
     [Theory, AutoDbData]
@@ -48,32 +43,21 @@
     {
       using (new TrackerSwitcher(tracker))
       {
-        trackerService.TrackPageEvent(item.ID);
-        tracker.CurrentPage.DidNotReceive().Register(Arg.Is<PageEventItem>(x => x.ID == item.ID));
+        trackerService.TrackPageEvent(item.ID.ToGuid());
+        tracker.CurrentPage.DidNotReceive().Register(Arg.Is<PageEventData>(x => x.ItemId == item.ID.ToGuid()));
       }
     }
 
     [Theory]
     [AutoDbData]
-    public void IdentifyContact_ValidIdentifier_ShouldIdentifyContact([NoAutoProperties] TrackerService trackerService, string contactIdentifier, ITracker tracker, [Substitute] Session session)
+    public void IdentifyContact_ValidIdentifier_ShouldIdentifyContact([NoAutoProperties] TrackerService trackerService, string contactSource, string contactIdentifier, ITracker tracker, [Substitute] Session session)
     {
       tracker.IsActive.Returns(true);
       tracker.Session.Returns(session);
       using (new TrackerSwitcher(tracker))
       {
-        trackerService.IdentifyContact(contactIdentifier);
-        tracker.Session.Received().Identify(contactIdentifier);
-      }
-    }
-
-    [Theory]
-    [AutoDbData]
-    public void TrackOutcome_NullOutcomeId_ThrowException([NoAutoProperties] TrackerService trackerService, ITracker tracker)
-    {
-      tracker.IsActive.Returns(true);
-      using (new TrackerSwitcher(tracker))
-      {
-        trackerService.Invoking(x => x.TrackOutcome(null)).ShouldThrow<ArgumentNullException>();
+        trackerService.IdentifyContact(contactSource, contactIdentifier);
+        tracker.Session.Received().IdentifyAs(contactSource, contactIdentifier);
       }
     }
 
@@ -89,7 +73,7 @@
 
       using (new TrackerSwitcher(tracker))
       {
-        trackerService.TrackOutcome(outcomeDefinitionId);
+        trackerService.TrackOutcome(outcomeDefinitionId.ToGuid());
 
         tracker.GetContactOutcomes().Should().Contain(o => o.DefinitionId == outcomeDefinitionId);
       }
@@ -107,7 +91,7 @@
       using (new TrackerSwitcher(tracker))
       {
         // Act
-        trackerService.TrackOutcome(outcomeDefinitionId);
+        trackerService.TrackOutcome(outcomeDefinitionId.ToGuid());
 
         // Assert
         tracker.GetContactOutcomes().Should().BeEmpty();
