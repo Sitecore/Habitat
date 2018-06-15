@@ -1,4 +1,4 @@
-Copyright 2017 Sitecore Corporation A/S
+Copyright 2017-2018 Sitecore Corporation A/S
 
 Licensed under the Apache License, Version 2.0 (the "License"); You may not use this solution except in compliance with the License.
 

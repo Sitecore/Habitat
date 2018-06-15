@@ -12,7 +12,7 @@ You must install these to get Habitat running on your computer:
   * On Windows 10, this is enabled by going to:
     * **Turn Windows Features On or Off**
     * Select **ASP.NET 4.7** from **Internet Information Services** > **World Wide Web Services** > **Application Development Features**
-* [Node.JS 4+](https://nodejs.org/) NOTE: as of August 7, 2017, Node.JS 8.2.1 does not work. Use 6.11.2 instead.
+* [Node.JS 4+](https://nodejs.org/). Please use the latest LTS version of Node (as of publishing, this is 8.11.3)
 
 These are additional tools used in Habitat's creation. You do not need to install these just to run Habitat:
 
@@ -28,11 +28,11 @@ These are additional tools used in Habitat's creation. You do not need to instal
 * Specification Testing: SpecFlow
 * Environment: [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/en-us/download/details.aspx?id=40784) (required only for Foundation.Installer module)
 
-Sitecore does not endorse any particular third-party tool. The tools in the current release were chosen because of a number of reasons including popularity and ease of licensing. This does not preclude using other tools in Habitat or changing any third-party tool for another depending on feedback from the Sitecore community.
+Sitecore does not endorse any particular third-party tool. The tools in the current release were chosen because of a number of reasons, including popularity and ease of licensing. Habitat is an example to show you how you can use these tools to accomplish a feature complete and functional solution. This does not preclude using other tools in your Helix solutions, or changing any third-party tool for another depending on feedback from the Sitecore community.
 
 The project uses the Bootstrap theme implemented in [Sitecore.Demo.Theme](https://github.com/Sitecore/Sitecore.Demo.Theme)
 
-## Alternates
+## Habitat forks using other tools
 
 ### Team Development for Sitecore
 
@@ -41,5 +41,5 @@ A separate fork of the Habitat project with support for [Team Development for Si
 ### ORM
 
 If you are interested in using an ORM tool like Glass or Synthesis with Habitat, please refer to these examples:
-https://github.com/kamsar/Habitat/tree/HabitatSynthesis
-https://github.com/muso31/Habitat-Glass.Mapper
+* https://github.com/kamsar/Habitat/tree/HabitatSynthesis
+* https://github.com/muso31/Habitat-Glass.Mapper

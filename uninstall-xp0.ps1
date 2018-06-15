@@ -88,3 +88,23 @@ Start-Service $SolrService
 
 # Delete sitecore certificate
 Remove-SitecoreCertificate $SitecoreSiteName
+
+# Remove App Pool membership 
+try 
+{
+    Remove-LocalGroupMember "Performance Log Users" "IIS AppPool\$SitecoreSiteName"
+    Write-Host "Removed IIS AppPool\$SitecoreSiteName from Performance Log Users" -ForegroundColor Green
+}
+catch 
+{
+    Write-Host "Could not find IIS AppPool\$SitecoreSiteName in Performance Log Users" -ForegroundColor Yellow
+}
+try 
+{
+    Remove-LocalGroupMember "Performance Monitor Users" "IIS AppPool\$SitecoreSiteName"
+    Write-Host "Removed IIS AppPool\$SitecoreSiteName from Performance Monitor Users" -ForegroundColor Green
+}
+catch 
+{
+    Write-Host "Could not find IIS AppPool\$SitecoreSiteName to Performance Monitor Users" -ForegroundColor Yellow
+}
