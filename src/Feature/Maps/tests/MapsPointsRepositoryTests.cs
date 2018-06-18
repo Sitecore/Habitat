@@ -17,7 +17,7 @@
         {
             var repository = new MapPointRepository(searchServiceRepository);
             Action a = () => repository.GetAll(null);
-            a.ShouldThrow<ArgumentNullException>();
+            a.Should().Throw<ArgumentNullException>();
         }
 
         [Theory]
@@ -41,7 +41,7 @@
         {
             var repository = new MapPointRepository(searchServiceRepository);
             Action a = () => repository.GetAll(item);
-            a.ShouldThrow<ArgumentException>();
+            a.Should().Throw<ArgumentException>();
         }
     }
 }

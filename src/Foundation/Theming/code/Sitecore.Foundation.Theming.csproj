@@ -26,6 +26,7 @@
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -262,15 +263,15 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Import Project="..\..\..\..\packages\BuildBundlerMinifier.2.4.337\build\BuildBundlerMinifier.targets" Condition="Exists('..\..\..\..\packages\BuildBundlerMinifier.2.4.337\build\BuildBundlerMinifier.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\..\packages\BuildBundlerMinifier.2.4.337\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\BuildBundlerMinifier.2.4.337\build\BuildBundlerMinifier.targets'))" />
-    <Error Condition="!Exists('..\..\..\..\packages\BuildWebCompiler.1.11.359\build\BuildWebCompiler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\BuildWebCompiler.1.11.359\build\BuildWebCompiler.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\packages\BuildWebCompiler.1.11.375\build\BuildWebCompiler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\BuildWebCompiler.1.11.375\build\BuildWebCompiler.targets'))" />
+    <Error Condition="!Exists('..\..\..\..\packages\BuildBundlerMinifier.2.8.391\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\..\packages\BuildBundlerMinifier.2.8.391\build\BuildBundlerMinifier.targets'))" />
   </Target>
-  <Import Project="..\..\..\..\packages\BuildWebCompiler.1.11.359\build\BuildWebCompiler.targets" Condition="Exists('..\..\..\..\packages\BuildWebCompiler.1.11.359\build\BuildWebCompiler.targets')" />
+  <Import Project="..\..\..\..\packages\BuildWebCompiler.1.11.375\build\BuildWebCompiler.targets" Condition="Exists('..\..\..\..\packages\BuildWebCompiler.1.11.375\build\BuildWebCompiler.targets')" />
+  <Import Project="..\..\..\..\packages\BuildBundlerMinifier.2.8.391\build\BuildBundlerMinifier.targets" Condition="Exists('..\..\..\..\packages\BuildBundlerMinifier.2.8.391\build\BuildBundlerMinifier.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

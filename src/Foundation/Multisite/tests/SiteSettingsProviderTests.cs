@@ -39,7 +39,7 @@
       var setting = db.GetItem(settingItemId);
       context.GetSiteDefinition(Arg.Any<Item>()).Returns(new SiteDefinition {Item = definitionItem });
       var settingItem = provider.GetSetting(contextItem, DatasourceProvider.DatasourceSettingsName, settingName);
-      settingItem.ID.ShouldBeEquivalentTo(setting.ID);
+      settingItem.ID.Should().BeEquivalentTo(setting.ID);
     }
 
     [Theory]

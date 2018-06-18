@@ -21,7 +21,7 @@
     public void Constructor_ShouldNotThrow(IMapPointRepository mapPointRepository)
     {
       Action act = () => new MapsController(mapPointRepository);
-      act.ShouldNotThrow();
+      act.Should().NotThrow();
     }
 
     [Theory]
@@ -41,7 +41,7 @@
 
       var controller = new MapsController(mapPointRepository);
       var actualPoints = controller.GetMapPoints(item.ID.Guid).Data as IEnumerable<MapPoint>;
-      actualPoints.ShouldBeEquivalentTo(points);
+      actualPoints.Should().BeEquivalentTo(points);
     }
   }
 }

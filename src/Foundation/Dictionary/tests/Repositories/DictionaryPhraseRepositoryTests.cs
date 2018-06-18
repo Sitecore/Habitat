@@ -21,7 +21,7 @@
         public void Get_NullRElativePath_ThrowArgumentNullException(string defaultValue)
         {
             var repository = new DictionaryPhraseRepository(new Dictionary());
-            repository.Invoking(x => x.Get(null, defaultValue)).ShouldThrow<ArgumentNullException>();
+            repository.Invoking(x => x.Get(null, defaultValue)).Should().Throw<ArgumentNullException>();
         }
 
         [Theory]
@@ -75,7 +75,7 @@
         public void GetItem_NullRElativePath_ThrowArgumentNullException(string defaultValue)
         {
             var repository = new DictionaryPhraseRepository(new Dictionary());
-            repository.Invoking(x => x.GetItem(null, defaultValue)).ShouldThrow<ArgumentNullException>();
+            repository.Invoking(x => x.GetItem(null, defaultValue)).Should().Throw<ArgumentNullException>();
         }
 
         [Theory]
@@ -117,7 +117,7 @@
             var repository = new DictionaryPhraseRepository(new Dictionary {Root = rootItem, AutoCreate = true});
 
             //Assert
-            repository.Invoking(x => x.Get(relativePath, defaultValue)).ShouldThrow<ArgumentException>();
+            repository.Invoking(x => x.Get(relativePath, defaultValue)).Should().Throw<ArgumentException>();
         }
     }
 }

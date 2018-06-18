@@ -67,8 +67,8 @@
       var currentContext = new SiteContext(site);
       using (new SiteContextSwitcher(currentContext))
       {
-        provider.GetContextSiteDefinition(db.GetItem(contextItem.ID)).IsCurrent.ShouldBeEquivalentTo(true);
-        provider.GetContextSiteDefinition(db.GetItem(contextItem.ID)).Name.ShouldBeEquivalentTo(site.Name);
+        provider.GetContextSiteDefinition(db.GetItem(contextItem.ID)).IsCurrent.Should().BeTrue();
+        provider.GetContextSiteDefinition(db.GetItem(contextItem.ID)).Name.Should().BeEquivalentTo(site.Name);
       }
     }
 
@@ -85,7 +85,7 @@
       using (new SiteContextSwitcher(context))
       {
         Action a = () => { var siteDefinitions = provider.SiteDefinitions; };
-        a.ShouldThrow<ConfigurationErrorsException>();
+        a.Should().Throw<ConfigurationErrorsException>();
       }
     }
 
@@ -157,7 +157,7 @@
       using (new SiteContextSwitcher(context))
       {
         Action a = () => { var siteDefinitions = provider.SiteDefinitions; };
-        a.ShouldThrow<ConfigurationErrorsException>();
+        a.Should().Throw<ConfigurationErrorsException>();
       }
     }
 
@@ -195,8 +195,8 @@
       using (new SiteContextSwitcher(context))
       {
         var contextSiteDefinition = provider.GetContextSiteDefinition(db.GetItem(contextItem.ID));
-        contextSiteDefinition.IsCurrent.ShouldBeEquivalentTo(false);
-        contextSiteDefinition.Name.ShouldBeEquivalentTo(hierarchicalSite.Name);
+        contextSiteDefinition.IsCurrent.Should().BeFalse();
+        contextSiteDefinition.Name.Should().BeEquivalentTo(hierarchicalSite.Name);
       }
     }
 

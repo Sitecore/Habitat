@@ -136,7 +136,7 @@
       var parameters = new RenderingParameters($"{Constants.HasContainerLayoutParameters.IsFluid}=1");
       rendering.Parameters.Returns(parameters);
       var containerClass = rendering.GetContainerClass();
-      containerClass.ShouldBeEquivalentTo("container-fluid");
+      containerClass.Should().BeEquivalentTo("container-fluid");
     }
 
     [Theory]
@@ -146,7 +146,7 @@
       var parameters = new RenderingParameters($"{Constants.HasContainerLayoutParameters.IsFluid}=0");
       rendering.Parameters.Returns(parameters);
       var containerClass = rendering.GetContainerClass();
-      containerClass.ShouldBeEquivalentTo("container");
+      containerClass.Should().BeEquivalentTo("container");
     }
 
 

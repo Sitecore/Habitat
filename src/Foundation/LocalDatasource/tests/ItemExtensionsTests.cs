@@ -37,7 +37,7 @@
     [AutoDbData]
     public void HasLocalDatasourceFolder_NullPassed_ShouldThrowException()
     {
-      ((Item)null).Invoking(x => x.HasLocalDatasourceFolder()).ShouldThrow<ArgumentNullException>();
+      ((Item)null).Invoking(x => x.HasLocalDatasourceFolder()).Should().Throw<ArgumentNullException>();
     }
 
     [Theory]
@@ -61,7 +61,7 @@
     [AutoDbData]
     public void GetLocalDatasourceFolder_NullPassed_ShouldThrowException()
     {
-      ((Item)null).Invoking(x => x.GetLocalDatasourceFolder()).ShouldThrow<ArgumentNullException>();
+      ((Item)null).Invoking(x => x.GetLocalDatasourceFolder()).Should().Throw<ArgumentNullException>();
     }
 
 
@@ -94,7 +94,7 @@
     [AutoDbData]
     public void IsLocalDatasourceItem_NullPassed_ShouldThrowException(Item notNullItem)
     {
-      ((Item)null).Invoking(x => x.IsLocalDatasourceItem(notNullItem)).ShouldThrow<ArgumentNullException>();
+      ((Item)null).Invoking(x => x.IsLocalDatasourceItem(notNullItem)).Should().Throw<ArgumentNullException>();
     }
 
 
@@ -102,7 +102,7 @@
     [AutoDbData]
     public void IsLocalDatasourceItem2_NullItem_ShouldThrowException()
     {
-      ((Item)null).Invoking(x => x.IsLocalDatasourceItem()).ShouldThrow<ArgumentNullException>();
+      ((Item)null).Invoking(x => x.IsLocalDatasourceItem()).Should().Throw<ArgumentNullException>();
     }
 
     [Theory]
@@ -158,7 +158,7 @@
     [AutoDbData]
     public void GetParentLocalDatasourceFolder_NullPassed_ShouldThrowException()
     {
-      ((Item)null).Invoking(x => x.GetParentLocalDatasourceFolder()).ShouldThrow<ArgumentNullException>();
+      ((Item)null).Invoking(x => x.GetParentLocalDatasourceFolder()).Should().Throw<ArgumentNullException>();
     }
 
     [Theory]

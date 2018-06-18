@@ -25,7 +25,7 @@
     public void DefaultConstructor_ShouldNotThrow(ISiteConfigurationRepository repository)
     {
       Action action = () => new MultisiteController(repository);
-      action.ShouldNotThrow();
+      action.Should().NotThrow();
     }
   }
 }
