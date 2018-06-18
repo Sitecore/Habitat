@@ -49,8 +49,8 @@
     <Reference Include="Configy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Configy.1.0.0\lib\net45\Configy.dll</HintPath>
     </Reference>
-    <Reference Include="Kamsar.WebConsole, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Kamsar.WebConsole.2.0.0\lib\net40\Kamsar.WebConsole.dll</HintPath>
+    <Reference Include="Kamsar.WebConsole, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\packages\Kamsar.WebConsole.2.0.1\lib\net40\Kamsar.WebConsole.dll</HintPath>
     </Reference>
     <Reference Include="MicroCHAP, Version=1.2.2.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\MicroCHAP.1.2.2.2\lib\net45\MicroCHAP.dll</HintPath>
