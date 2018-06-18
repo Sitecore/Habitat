@@ -16,7 +16,7 @@
     public void Run_InvalidArguments_ThrowException(ProcessRunner sut)
     {
       //Assert      
-      sut.Invoking(x=>x.Run("xcopy", "/d/d/d/d/d/")).ShouldThrow<ProcessException>();
+      sut.Invoking(x=>x.Run("xcopy", "/d/d/d/d/d/")).Should().Throw<ProcessException>();
     }
 
     [Theory]
@@ -24,7 +24,7 @@
     public void Run_InvalidCommand_ThrowException(ProcessRunner sut)
     {
       //Assert      
-      sut.Invoking(x => x.Run("aaaaa", "/d/d/d/d/d/")).ShouldThrow<ProcessException>();
+      sut.Invoking(x => x.Run("aaaaa", "/d/d/d/d/d/")).Should().Throw<ProcessException>();
     }
 
     [Theory]

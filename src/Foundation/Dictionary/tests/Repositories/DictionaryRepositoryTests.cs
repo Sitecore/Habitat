@@ -17,7 +17,7 @@
     [AutoDbData]
     public void Get_NotConfiguredPath_ThrowConfigurationErrorException(FakeSiteContext siteContext, DictionaryRepository repository)
     {
-      repository.Invoking(x => x.Get(siteContext)).ShouldThrow<ConfigurationErrorsException>();
+      repository.Invoking(x => x.Get(siteContext)).Should().Throw<ConfigurationErrorsException>();
     }
 
     [Theory]
@@ -34,7 +34,7 @@
       //Assert
       using (new SiteContextSwitcher(siteContext))
       {
-        repository.Invoking(x => x.Get(siteContext)).ShouldThrow<ConfigurationErrorsException>();
+        repository.Invoking(x => x.Get(siteContext)).Should().Throw<ConfigurationErrorsException>();
       }
     }
 
