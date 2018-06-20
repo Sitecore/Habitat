@@ -1,10 +1,8 @@
 ﻿@using Sitecore.Feature.Language.Repositories
-@model Sitecore.Mvc.Presentation.RenderingModel
+@model Sitecore.Feature.Language.Models.LanguageSelector
 
 @{
-    var activeLanguage = LanguageRepository.GetActive();
-    var languages = LanguageRepository.GetSupportedLanguages().ToArray();
-    if (languages.Length <= 1)
+    if (Model.SupportedLanguages.Count <= 1)
     {
         return;
     }
@@ -14,11 +12,11 @@
         <i class="fa fa-globe"></i>
     </a>
     <ul class="dropdown-menu">
-        @foreach (var language in languages)
+        @foreach (var language in Model.SupportedLanguages)
         {
-            var cssClass = language.TwoLetterCode == activeLanguage?.TwoLetterCode ? "active" : "";
+            var cssClass = language.TwoLetterCode == Model.ActiveLanguage?.TwoLetterCode ? "active" : "";
             <li class="@cssClass">
-                <a href="@language.Url" onclick="return SwitchToLanguage('@language.Name', '@(activeLanguage?.Name)', '@language.Url')">@language.NativeName</a>
+                <a href="@language.Url" onclick="return SwitchToLanguage('@language.Name', '@(Model.ActiveLanguage?.Name)', '@language.Url')">@language.NativeName</a>
             </li>
         }
     </ul>
