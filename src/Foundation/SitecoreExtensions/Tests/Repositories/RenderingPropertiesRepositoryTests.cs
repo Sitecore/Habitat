@@ -18,8 +18,8 @@
 
             var repository = new RenderingPropertiesRepository();
             var resultObject = repository.Get<Model>(rendering);
-            resultObject.Property1.ShouldBeEquivalentTo(5);
-            resultObject.Property2.ShouldBeEquivalentTo(10);
+            resultObject.Property1.Should().BeEquivalentTo("5");
+            resultObject.Property2.Should().BeEquivalentTo("10");
         }
 
         public class Model

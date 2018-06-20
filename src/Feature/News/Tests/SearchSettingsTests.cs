@@ -19,7 +19,7 @@ namespace Sitecore.Feature.News.Tests
     public void Root_SetRootSomeItem_RootShouldReturnsSameItem(SearchSettingsBase settings, Item item)
     {
       settings.Root = item;
-      settings.Root.ShouldBeEquivalentTo(item);
+      settings.Root.Should().BeEquivalentTo(item);
     }
   }
 }

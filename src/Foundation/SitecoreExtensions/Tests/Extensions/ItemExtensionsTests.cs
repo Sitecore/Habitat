@@ -20,7 +20,7 @@
     public void MediaUrlShouldThrowExceptionWhenItemNull()
     {
       Action action = () => ItemExtensions.MediaUrl(null, ID.NewID);
-      action.ShouldThrow<ArgumentNullException>();
+      action.Should().Throw<ArgumentNullException>();
     }
 
 
@@ -33,7 +33,7 @@
       mediaItem.MediaUrl(template.FieldId).Should().BeEmpty();
     }
 
-    [Theory]
+    [Theory(Skip = "Extension method and entire call stack require service refactoring (#398)")]
     [AutoDbData]
     public void MediaUrlShoulReturnLink([Content] Db db, [Content] Item target, [Content] MediaTemplate template, string expectedUri)
     {
@@ -61,7 +61,7 @@
       }
     }
 
-    [Theory]
+    [Theory(Skip = "Extension method and entire call stack require service refactoring (#398)")]
     [AutoDbData]
     public void MediaUrlShouldReturnEmptyStringWhenLinkIsBroken([Content] Db db, [Content] Item target, [Content] MediaTemplate template, string expectedUri)
     {

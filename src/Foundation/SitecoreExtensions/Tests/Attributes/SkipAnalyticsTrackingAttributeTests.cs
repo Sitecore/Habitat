@@ -65,7 +65,7 @@
         //act
         Action action = () => trackingAttribute.OnActionExecuting(ctx);
         //assert
-        action.ShouldNotThrow();
+        action.Should().NotThrow();
       }
     }
 
