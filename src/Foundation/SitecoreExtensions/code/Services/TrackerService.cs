@@ -20,30 +20,14 @@
             this.PageEventDefinitionManager = pageEventDefinitionManager;
             this.OutcomeDefinitionManager = outcomeDefinitionManager;
             this.GoalDefinitionManager = goalDefinitionManager;
-            this.ContactManager = Factory.CreateObject("tracking/contactManager", true) as ContactManager;
         }
 
         public IDefinitionManager<IGoalDefinition> GoalDefinitionManager { get; }
-        public ContactManager ContactManager { get; }
         public IDefinitionManager<IPageEventDefinition> PageEventDefinitionManager { get; }
         public IDefinitionManager<IOutcomeDefinition> OutcomeDefinitionManager { get; }
 
 
-        public bool IsActive
-        {
-            get
-            {
-                if (Tracker.Enabled == false || Tracker.Current == null)
-                {
-                    return false;
-                }
-                if (!Tracker.Current.IsActive)
-                {
-                    Tracker.StartTracking();
-                }
-                return true;
-            }
-        }
+        public bool IsActive => Tracker.Enabled && Tracker.Current != null && Tracker.Current.IsActive;
 
         public virtual void TrackPageEvent(Guid pageEventId, string text = null, string data = null, string dataKey = null, int? value = null)
         {
