@@ -26,7 +26,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Get_SeveralVisits_ReturnsTotalVisitsCount(int visitCount, ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
+    public void Get_SeveralVisits_ReturnsTotalVisitsCount(int visitCount, ITracker tracker, [Frozen] IContactFacetsProvider contactProfileProvider, VisitsRepository visitsRepository)
     {
       //Arrange
       this.InitTracker(tracker);
@@ -44,7 +44,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Get_Value_ReturnsEngagementValue(int value, ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
+    public void Get_Value_ReturnsEngagementValue(int value, ITracker tracker, [Frozen] IContactFacetsProvider contactProfileProvider, VisitsRepository visitsRepository)
     {
       //Arrange
       this.InitTracker(tracker);
@@ -62,7 +62,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Get_PageViews_DoNotReturnCancelledPages(ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
+    public void Get_PageViews_DoNotReturnCancelledPages(ITracker tracker, [Frozen] IContactFacetsProvider contactProfileProvider, VisitsRepository visitsRepository)
     {
       //Arrange
       this.InitTracker(tracker);
@@ -88,7 +88,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Get_PageViews_ReturnReversedPages(ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
+    public void Get_PageViews_ReturnReversedPages(ITracker tracker, [Frozen] IContactFacetsProvider contactProfileProvider, VisitsRepository visitsRepository)
     {
       //Arrange
       this.InitTracker(tracker);
@@ -112,7 +112,7 @@
 
     [Theory]
     [AutoDbData]
-    public void Get_PageViews_ReturnOnly10Pages(ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, VisitsRepository visitsRepository)
+    public void Get_PageViews_ReturnOnly10Pages(ITracker tracker, [Frozen] IContactFacetsProvider contactProfileProvider, VisitsRepository visitsRepository)
     {
       //Arrange
       this.InitTracker(tracker);

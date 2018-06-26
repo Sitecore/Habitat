@@ -53,7 +53,7 @@
         {
             using (RenderingContext.EnterContext(new Rendering()))
             {
-                sut.Invoking(x => x.DemoContent()).ShouldThrow<InvalidDataSourceItemException>();
+                sut.Invoking(x => x.DemoContent()).Should().Throw<InvalidDataSourceItemException>();
             }
         }
 
@@ -63,7 +63,7 @@
         {
             using (RenderingContext.EnterContext(new Rendering(), ctxItem))
             {
-                sut.Invoking(x => x.DemoContent()).ShouldThrow<InvalidDataSourceItemException>();
+                sut.Invoking(x => x.DemoContent()).Should().Throw<InvalidDataSourceItemException>();
             }
         }
 
@@ -100,7 +100,7 @@
 
         [Theory]
         [AutoDbData]
-        public void ExperienceData_InitializedTrackerAndNormalMode_ReturnExperienceData(IKeyBehaviorCache keyBehaviorCache, Session session, CurrentInteraction currentInteraction, ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, [Frozen] IProfileProvider profileProvider, [Greedy] DemoController sut)
+        public void ExperienceData_InitializedTrackerAndNormalMode_ReturnExperienceData(IKeyBehaviorCache keyBehaviorCache, Session session, CurrentInteraction currentInteraction, ITracker tracker, [Frozen] IProfileProvider profileProvider, [Greedy] DemoController sut)
         {
             tracker.Interaction.Returns(currentInteraction);
             tracker.Session.Returns(session);
@@ -126,29 +126,28 @@
 
         [Theory]
         [AutoDbData]
-        public void ExperienceData_InitializedTrackerAndPreviewMode_ReturnEmptyResult(IKeyBehaviorCache keyBehaviorCache, Session session, CurrentInteraction currentInteraction, ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, [Frozen] IProfileProvider profileProvider, [Greedy] DemoController sut)
+        public void ExperienceData_InitializedTrackerAndPreviewMode_ReturnEmptyResult(IKeyBehaviorCache keyBehaviorCache, Session session, CurrentInteraction currentInteraction, ITracker tracker, [Frozen] IProfileProvider profileProvider, [Greedy] DemoController sut)
         {
-            //TODO: Fix;
-            //tracker.Interaction.Returns(currentInteraction);
-            //tracker.Session.Returns(session);
-            //var attachments = new Dictionary<string, object>
-            //{
-            //  ["KeyBehaviorCache"] = new Analytics.Tracking.KeyBehaviorCache(keyBehaviorCache)
-            //};
-            //tracker.Contact.Attachments.Returns(attachments);
+            tracker.Interaction.Returns(currentInteraction);
+            tracker.Session.Returns(session);
+            var attachments = new Dictionary<string, object>
+            {
+                ["KeyBehaviorCache"] = new Analytics.Tracking.KeyBehaviorCache(keyBehaviorCache)
+            };
+            tracker.Contact.Attachments.Returns(attachments);
 
-            //var fakeSite = new FakeSiteContext(new StringDictionary
-            //                                   {
-            //                                     {"mode", "edit"}
-            //                                   }) as SiteContext;
+            var fakeSite = new FakeSiteContext(new StringDictionary
+                                               {
+                                                 {"mode", "edit"}
+                                               }) as SiteContext;
 
-            //using (new SiteContextSwitcher(fakeSite))
-            //{
-            //  using (new TrackerSwitcher(tracker))
-            //  {
-            //    sut.ExperienceData().Should().BeOfType<ViewResult>().Which.Model.Should().BeOfType<EmptyResult>();
-            //  }
-            //}
+            using (new SiteContextSwitcher(fakeSite))
+            {
+                using (new TrackerSwitcher(tracker))
+                {
+                    sut.ExperienceData().Should().BeOfType<ViewResult>().Which.Model.Should().BeOfType<EmptyResult>();
+                }
+            }
         }
     }
 }
