@@ -93,8 +93,7 @@
         [AutoDbData]
         public void _Login_LoggedIn_ShouldRedirect(Database db, [Content] DbItem item, User user, [Frozen] IAccountRepository repo, LoginInfo info, INotificationService service, AccountsSettingsService accountSetting, IUserProfileService userProfileService)
         {
-            userProfileService.ValidateUser(Arg.Any<User>()).ReturnsForAnyArgs(true);
-            var controller = new AccountsController(repo, service, accountSetting, null, userProfileService, null);
+           var controller = new AccountsController(repo, service, accountSetting, null, userProfileService, null);
             repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => user);
             var result = controller._Login(info);
             result.Should().BeOfType<JsonResult>();
@@ -120,7 +119,6 @@
         [AutoDbData]
         public void Login_ValidaData_ShouldRedirectToReturnUrl([Frozen] IAccountRepository repo, LoginInfo info, User user, INotificationService service, IAccountsSettingsService accountSetting, IUserProfileService userProfileService)
         {
-            userProfileService.ValidateUser(Arg.Any<User>()).ReturnsForAnyArgs(true);
             var controller = new AccountsController(repo, service, accountSetting, null, userProfileService, null);
             repo.Login(string.Empty, string.Empty).ReturnsForAnyArgs(x => user);
             var result = controller.Login(info);
@@ -166,43 +164,6 @@
                 result.Should().BeOfType<ViewResult>().Which.Model.Should().BeNull();
             }
         }
-
-        [Theory]
-        [AutoDbData]
-        public void Register_InvalidData_ShouldReturnModel(Database db, [Content] DbItem item, RegistrationInfo registrationInfo, [Frozen] IAccountRepository repo, [NoAutoProperties] AccountsController controller)
-        {
-            var fakeSite = new FakeSiteContext(new StringDictionary
-                                               {
-                                                   {"displayMode", "normal"}
-                                               }) as SiteContext;
-            using (new SiteContextSwitcher(fakeSite))
-            {
-                controller.ModelState.AddModelError("Error", "Error");
-
-                var result = controller.Register(registrationInfo);
-                result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(registrationInfo);
-            }
-        }
-
-
-        [Theory]
-        [AutoDbData]
-        public void ForgotPassword_NotValidPassword_ShouldReturnModel(PasswordResetInfo model, [Frozen] IAccountRepository repo, [NoAutoProperties] AccountsController controller)
-        {
-            var fakeSite = new FakeSiteContext(new StringDictionary
-                                               {
-                                                   {"displayMode", "normal"}
-                                               }) as SiteContext;
-            using (new SiteContextSwitcher(fakeSite))
-            {
-                repo.RestorePassword(Arg.Any<string>()).Returns("new password");
-                repo.Exists(Arg.Any<string>()).Returns(true);
-                controller.ModelState.AddModelError("Error", "Error");
-                var result = controller.ForgotPassword(model);
-                result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(model);
-            }
-        }
-
 
         [Theory]
         [AutoDbData]
@@ -262,7 +223,7 @@
 
         [Theory]
         [AutoDbData]
-        public void Register_SameUserExists_ShouldReturnModelWithError(Database db, [Content] DbItem item, RegistrationInfo registrationInfo, [Frozen] IAccountRepository repo, [NoAutoProperties] AccountsController controller)
+        public void Register_SameUserExists_ShouldReturnModelWithError(Database db, [Content] DbItem item, RegistrationInfo registrationInfo)
         {
             var fakeSite = new FakeSiteContext(new StringDictionary
                                                {
@@ -275,6 +236,9 @@
             using (new SiteContextSwitcher(fakeSite))
                 using (new UserSwitcher($@"extranet\{registrationInfo.Email}", false))
                 {
+                    var accountRepo = Substitute.For<IAccountRepository>();
+                    accountRepo.Exists(registrationInfo.Email).Returns(true);
+                    var controller = new AccountsController(accountRepo, null, null, null, null, null);
                     var result = controller.Register(registrationInfo);
                     result.Should().BeOfType<ViewResult>().Which.Model.Should().Be(registrationInfo);
                     result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey(nameof(registrationInfo.Email)).WhichValue.Errors.Should().Contain(x => x.ErrorMessage == "A user with specified e-mail address already exists");
@@ -325,7 +289,7 @@
             {
                 var accounController = new AccountsController(null, null, null, null, userProfileService, null);
                 var result = accounController.EditProfile();
-                result.Should().BeOfType<ViewResult>().Which.Model.ShouldBeEquivalentTo(new EditProfile());
+                result.Should().BeOfType<ViewResult>().Which.Model.Should().BeEquivalentTo(new EditProfile());
             }
         }
 
@@ -337,8 +301,7 @@
             user.Profile.Returns(Substitute.For<UserProfile>());
             user.Profile.ProfileItemId = profileItemId;
             userProfileService.GetUserDefaultProfileId().Returns(profileItemId);
-            userProfileService.GetProfile(Arg.Any<UserProfile>()).Returns(editProfile);
-            userProfileService.ValidateUser(Arg.Any<User>()).ReturnsForAnyArgs(true);
+            userProfileService.GetProfile(Arg.Any<User>()).Returns(editProfile);
 
             var fakeSite = new FakeSiteContext(new StringDictionary
                                                {
@@ -357,67 +320,20 @@
 
         [Theory]
         [AutoDbData]
-        public void EditProfile_ProfileDoesntMatch_ShouldReturnInfoMessage(string siteProfileId, string profileItemId, IUserProfileService userProfileService)
+        public void EditProfilePost_InvalidData_ShouldReturnModelErrors(FakeSiteContext siteContext, ModelStateDictionary modelState, string invalidInterest, IEnumerable<string> interests, [Substitute] EditProfile editProfile, IUserProfileService userProfileService)
         {
             var user = Substitute.For<User>("extranet/John", true);
             user.Profile.Returns(Substitute.For<UserProfile>());
-            user.Profile.ProfileItemId = profileItemId;
-            userProfileService.GetUserDefaultProfileId().Returns(siteProfileId);
-
-            var fakeSite = new FakeSiteContext(new StringDictionary
-                                               {
-                                                   {"displayMode", "normal"}
-                                               }) as SiteContext;
-
-            using (new SiteContextSwitcher(fakeSite))
-                using (new UserSwitcher(user))
-                {
-                    var accounController = new AccountsController(null, null, null, null, userProfileService, null);
-                    var result = accounController.EditProfile();
-                    result.Should().BeOfType<ViewResult>().Which.Model.Should().BeOfType<InfoMessage>().Which.Type.Should().Be(InfoMessage.MessageType.Error);
-                }
-        }
-
-        [Theory]
-        [AutoDbData]
-        public void EditProfilePost_ProfileDoesntMatch_ShouldReturnInfoMessage(string siteProfileId, string profileItemId, [Substitute] EditProfile editProfile, IUserProfileService userProfileService)
-        {
-            var user = Substitute.For<User>("extranet/John", true);
-            user.Profile.Returns(Substitute.For<UserProfile>());
-            user.Profile.ProfileItemId = profileItemId;
-            userProfileService.GetUserDefaultProfileId().Returns(siteProfileId);
-
-            var fakeSite = new FakeSiteContext(new StringDictionary
-                                               {
-                                                   {"displayMode", "normal"}
-                                               }) as SiteContext;
-
-            using (new SiteContextSwitcher(fakeSite))
-                using (new UserSwitcher(user))
-                {
-                    var accounController = new AccountsController(null, null, null, null, userProfileService, null);
-                    var result = accounController.EditProfile(editProfile);
-                    result.Should().BeOfType<ViewResult>().Which.Model.Should().BeOfType<InfoMessage>().Which.Type.Should().Be(InfoMessage.MessageType.Error);
-                }
-        }
-
-        [Theory]
-        [AutoDbData]
-        public void EditProfilePost_InvalidData_ShouldReturnModelErrors(FakeSiteContext siteContext, ModelStateDictionary modelState, string profileItemId, IEnumerable<string> interests, [Substitute] EditProfile editProfile, IUserProfileService userProfileService)
-        {
-            var user = Substitute.For<User>("extranet/John", true);
-            user.Profile.Returns(Substitute.For<UserProfile>());
-            user.Profile.ProfileItemId = profileItemId;
-            userProfileService.GetUserDefaultProfileId().Returns(profileItemId);
+            editProfile.Interest = invalidInterest;
             userProfileService.GetInterests().Returns(interests);
-            userProfileService.ValidateProfile(Arg.Any<EditProfile>(), Arg.Do<ModelStateDictionary>(x => x.AddModelError("key", "error"))).Returns(false);
 
             using (new SiteContextSwitcher(siteContext))
                 using (new UserSwitcher(user))
                 {
-                    var accounController = new AccountsController(null, null, null, null, userProfileService, null);
-                    var result = accounController.EditProfile(editProfile);
-                    result.Should().BeOfType<ViewResult>().Which.ViewData.ModelState.Should().ContainKey("key").WhichValue.Errors.Should().Contain(e => e.ErrorMessage == "error");
+                    var accountController = new AccountsController(null, null, null, null, userProfileService, null);
+                    accountController.ModelState.AddModelError("test", "test");
+                    var result = accountController.EditProfile(editProfile);
+                    result.Should().BeOfType<ViewResult>();
                 }
         }
 
@@ -429,7 +345,6 @@
             user.Profile.Returns(Substitute.For<UserProfile>());
             user.Profile.ProfileItemId = profileItemId;
             userProfileService.GetUserDefaultProfileId().Returns(profileItemId);
-            userProfileService.ValidateProfile(Arg.Any<EditProfile>(), Arg.Any<ModelStateDictionary>()).Returns(true);
 
             using (new SiteContextSwitcher(siteContext))
                 using (new UserSwitcher(user))
@@ -442,7 +357,7 @@
                     accountsController.ControllerContext.HttpContext.Request.RawUrl.Returns("/");
 
                     var result = accountsController.EditProfile(editProfile);
-                    userProfileService.Received(1).SetProfile(user.Profile, editProfile);
+                    userProfileService.Received(1).SaveProfile(user.Profile, editProfile);
                     accountsController.Session["EditProfileMessage"].Should().BeOfType<InfoMessage>().Which.Type.Should().Be(InfoMessage.MessageType.Info);
                     result.Should().BeOfType<RedirectResult>();
                 }
