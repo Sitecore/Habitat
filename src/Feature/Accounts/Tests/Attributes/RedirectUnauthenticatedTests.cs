@@ -2,6 +2,7 @@
 {
   using System.Web.Mvc;
   using FluentAssertions;
+  using NSubstitute;
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Sitecore.Collections;
   using Sitecore.Data;
@@ -9,6 +10,7 @@
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.FakeDb.Sites;
   using Sitecore.Feature.Accounts.Attributes;
+  using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
   using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Globalization;
@@ -19,8 +21,10 @@
   {
     [Theory]
     [AutoDbData]
-    public void ShouldNotRedirectAuthenticatedUser([Substitute]AuthorizationContext filterContext, RedirectUnauthenticatedAttribute redirectUnauthenticated)
+    public void ShouldNotRedirectAuthenticatedUser([Substitute]AuthorizationContext filterContext)
     {
+      var urlService = Substitute.For<IGetRedirectUrlService>();
+      var redirectUnauthenticated = new RedirectUnauthenticatedAttribute(urlService);
       using (new Sitecore.Security.Accounts.UserSwitcher(@"extranet\John", true))
       {
         redirectUnauthenticated.OnAuthorization(filterContext);
@@ -30,25 +34,15 @@
 
     [Theory]
     [AutoDbData]
-    public void ShouldRedirectUnauthenticatedUser(Database db, [Content] DbItem item,[Substitute]AuthorizationContext filterContext, RedirectUnauthenticatedAttribute redirectUnauthenticated)
+    public void ShouldRedirectUnauthenticatedUser([Substitute]AuthorizationContext filterContext, string url)
     {
-      var fakeSite = new FakeSiteContext(new StringDictionary
-      {
-        {
-          "rootPath", "/sitecore/content"
-        },
-        {
-          "startItem", item.Name
-        }
-      }) as SiteContext;
-      fakeSite.Database = db;
-      Language.Current = Language.Invariant;
-
-      using (new SiteContextSwitcher(fakeSite))
+      var urlService = Substitute.For<IGetRedirectUrlService>();
+      urlService.GetRedirectUrl(AuthenticationStatus.Unauthenticated, Arg.Any<string>()).Returns(url);
+      var redirectUnauthenticated = new RedirectUnauthenticatedAttribute(urlService);
       using (new Sitecore.Security.Accounts.UserSwitcher(@"extranet\John", false))
       {
         redirectUnauthenticated.OnAuthorization(filterContext);
-        filterContext.Result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be("/");
+        filterContext.Result.Should().BeOfType<RedirectResult>().Which.Url.Should().Be(url);
       }
     }
   }
