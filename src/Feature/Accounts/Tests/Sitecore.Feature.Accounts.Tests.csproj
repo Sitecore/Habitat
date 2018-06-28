@@ -238,7 +238,7 @@
     <Compile Include="Services\FacetUpdaters\PhoneFacetUpdaterTests.cs" />
     <Compile Include="UpdateContactFacetsServiceTests.cs" />
     <Compile Include="UserProfileProviderTests.cs" />
-    <None Include="UserProfileServiceTests.cs" />
+    <Compile Include="UserProfileServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
