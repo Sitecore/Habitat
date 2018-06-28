@@ -219,7 +219,7 @@
     <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="Extensions\AutoFakeUserDataAttribute.cs" />
     <Compile Include="Extensions\AutoEmailDataAttribute.cs" />
-    <None Include="AccountSettingsServiceTests.cs" />
+    <Compile Include="AccountSettingsServiceTests.cs" />
     <Compile Include="Extensions\RightKeysAttribute.cs" />
     <Compile Include="Extensions\RightKeysCustomization.cs" />
     <Compile Include="NotificationsServiceTests.cs" />
