@@ -223,7 +223,7 @@
     <Compile Include="Extensions\RightKeysAttribute.cs" />
     <Compile Include="Extensions\RightKeysCustomization.cs" />
     <Compile Include="NotificationsServiceTests.cs" />
-    <None Include="AccountsRepositoryTests.cs" />
+    <Compile Include="AccountsRepositoryTests.cs" />
     <None Include="AccountsControllerTests.cs" />
     <Compile Include="ProfileSettingsServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
