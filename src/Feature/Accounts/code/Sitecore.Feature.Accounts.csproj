@@ -213,8 +213,18 @@
     <Compile Include="Infrastructure\Pipelines\TrackLoggedIn.cs" />
     <Compile Include="Repositories\FedAuthLoginButtonRepository.cs" />
     <Compile Include="Repositories\IFedAuthLoginButtonRepository.cs" />
+    <Compile Include="ServiceRegistration.cs" />
     <Compile Include="Services\AuthenticationStatus.cs" />
+    <Compile Include="Services\ContactManagerService.cs" />
+    <Compile Include="Services\FacetUpdaters\AvatarFacetUpdater.cs" />
+    <Compile Include="Services\FacetUpdaters\EmailFacetUpdater.cs" />
+    <Compile Include="Services\FacetUpdaters\IContactFacetUpdater.cs" />
+    <Compile Include="Services\FacetUpdaters\PersonalInformationFacetUpdater.cs" />
+    <Compile Include="Services\FacetUpdaters\PhoneFacetUpdater.cs" />
     <Compile Include="Services\GetRedirectUrlService.cs" />
+    <Compile Include="Services\IContactManagerService.cs" />
+    <Compile Include="Services\IWebClient.cs" />
+    <Compile Include="Services\IXdbContextFactory.cs" />
     <Compile Include="Services\UpdateContactFacetsService.cs" />
     <Compile Include="Services\AccountTrackerService.cs" />
     <Compile Include="Services\IAccountsSettingsService.cs" />
@@ -243,6 +253,8 @@
     <Compile Include="Repositories\IAccountRepository.cs" />
     <Compile Include="Services\AccountsSettingsService.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Services\WebClient.cs" />
+    <Compile Include="Services\XdbContextFactory.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
