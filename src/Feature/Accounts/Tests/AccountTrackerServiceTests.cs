@@ -23,33 +23,33 @@
   public class AccountTrackerServiceTests
   {
     [Theory, AutoDbData]
-    public void TrackLogin_Call_ShouldTrackLoginGoal(string identifier, Db db, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
+    public void TrackLogin_Call_ShouldTrackLoginGoal(string source, string identifier, Db db, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
     {
       //Arrange
-      db.Add(new DbItem("Item", AccountTrackerService.LoginGoalId));
+      db.Add(new DbItem("Item", new ID(AccountTrackerService.LoginGoalId)));
 
       //Act
-      accountTrackerService.TrackLoginAndIdentifyContact(identifier);
+      accountTrackerService.TrackLoginAndIdentifyContact(source, identifier);
 
       //Assert
-      trackerService.Received().TrackPageEvent(Arg.Is<ID>(AccountTrackerService.LoginGoalId));
+      trackerService.Received().TrackPageEvent(AccountTrackerService.LoginGoalId);
     }
 
     [Theory, AutoDbData]
     public void TrackRegister_Call_ShouldTrackRegistrationGoal(Db db, ID outcomeID, ITracker tracker, [Frozen]IAccountsSettingsService accountsSettingsService, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
     {
       // Arrange
-      accountsSettingsService.GetRegistrationOutcome(Arg.Any<Item>()).Returns(outcomeID);
+      accountsSettingsService.GetRegistrationOutcome(Arg.Any<Item>()).Returns(outcomeID.Guid);
 
-      db.Add(new DbItem("Item", AccountTrackerService.RegistrationGoalId));
-      db.Add(new DbItem("Item", AccountTrackerService.LoginGoalId));
+      db.Add(new DbItem("Item", new ID(AccountTrackerService.RegistrationGoalId)));
+      db.Add(new DbItem("Item", new ID(AccountTrackerService.LoginGoalId)));
 
       //Act
       accountTrackerService.TrackRegistration();
 
       //Assert
       trackerService.Received().TrackPageEvent(AccountTrackerService.RegistrationGoalId);
-      trackerService.Received().TrackOutcome(outcomeID);
+      trackerService.Received().TrackOutcome(outcomeID.Guid);
     }
   }
 }

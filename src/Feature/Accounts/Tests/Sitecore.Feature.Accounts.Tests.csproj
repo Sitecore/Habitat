@@ -212,7 +212,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="AccountTrackerServiceTests.cs" />
+    <Compile Include="AccountTrackerServiceTests.cs" />
     <Compile Include="Attributes\RedirectAuthenticatedAttributeTests.cs" />
     <Compile Include="Attributes\RedirectUnauthenticatedTests.cs" />
     <Compile Include="Attributes\ValidateModelTests.cs" />
