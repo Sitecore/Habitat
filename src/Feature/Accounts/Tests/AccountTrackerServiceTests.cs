@@ -23,33 +23,28 @@
   public class AccountTrackerServiceTests
   {
     [Theory, AutoDbData]
-    public void TrackLogin_Call_ShouldTrackLoginGoal(string source, string identifier, Db db, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
+    public void TrackLogin_Call_ShouldTrackLoginGoal(string source, string identifier, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
     {
-      //Arrange
-      db.Add(new DbItem("Item", new ID(AccountTrackerService.LoginGoalId)));
-
       //Act
       accountTrackerService.TrackLoginAndIdentifyContact(source, identifier);
 
       //Assert
-      trackerService.Received().TrackPageEvent(AccountTrackerService.LoginGoalId);
+      trackerService.Received(1).TrackGoal(AccountTrackerService.LoginGoalId, source);
+      trackerService.Received(1).IdentifyContact(source, identifier);
     }
 
     [Theory, AutoDbData]
-    public void TrackRegister_Call_ShouldTrackRegistrationGoal(Db db, ID outcomeID, ITracker tracker, [Frozen]IAccountsSettingsService accountsSettingsService, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
+    public void TrackRegister_Call_ShouldTrackRegistrationGoal(ID outcomeID, ITracker tracker, [Frozen]IAccountsSettingsService accountsSettingsService, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
     {
       // Arrange
       accountsSettingsService.GetRegistrationOutcome(Arg.Any<Item>()).Returns(outcomeID.Guid);
-
-      db.Add(new DbItem("Item", new ID(AccountTrackerService.RegistrationGoalId)));
-      db.Add(new DbItem("Item", new ID(AccountTrackerService.LoginGoalId)));
 
       //Act
       accountTrackerService.TrackRegistration();
 
       //Assert
-      trackerService.Received().TrackPageEvent(AccountTrackerService.RegistrationGoalId);
-      trackerService.Received().TrackOutcome(outcomeID.Guid);
+      trackerService.Received(1).TrackGoal(AccountTrackerService.RegistrationGoalId);
+      trackerService.Received(1).TrackOutcome(outcomeID.Guid);
     }
   }
 }
