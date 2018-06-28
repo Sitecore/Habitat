@@ -216,7 +216,6 @@
     <Compile Include="Attributes\RedirectAuthenticatedAttributeTests.cs" />
     <Compile Include="Attributes\RedirectUnauthenticatedTests.cs" />
     <Compile Include="Attributes\ValidateModelTests.cs" />
-    <None Include="ContactProfileServiceTests.cs" />
     <Compile Include="Extensions\AutoDbDataWithExtension.cs" />
     <Compile Include="Extensions\AutoFakeUserDataAttribute.cs" />
     <Compile Include="Extensions\AutoEmailDataAttribute.cs" />
