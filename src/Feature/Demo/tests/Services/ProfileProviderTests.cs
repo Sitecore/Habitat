@@ -183,7 +183,7 @@ namespace Sitecore.Feature.Demo.Tests.Services
     public void GetPatternsWithGravityShare_NullProfile_ThrowArgumentNullException(ProfilingTypes profilingTypes, ProfileProvider profileProvider)
     {
       //Act
-      profileProvider.Invoking(x => x.GetPatternsWithGravityShare(null, profilingTypes)).ShouldThrow<ArgumentNullException>();
+      profileProvider.Invoking(x => x.GetPatternsWithGravityShare(null, profilingTypes)).Should().Throw<ArgumentNullException>();
     }
   }
 }

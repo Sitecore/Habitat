@@ -18,13 +18,6 @@
     [Service(typeof(IContactFacetsProvider), Lifetime = Lifetime.Transient)]
     public class ContactFacetsProvider : IContactFacetsProvider
     {
-        private readonly ContactManager contactManager;
-
-        public ContactFacetsProvider()
-        {
-            this.contactManager = Factory.CreateObject("tracking/contactManager", true) as ContactManager;
-        }
-
         public IEnumerable<IBehaviorProfileContext> BehaviorProfiles => this.Contact?.BehaviorProfiles.Profiles ?? Enumerable.Empty<IBehaviorProfileContext>();
         public PersonalInformation PersonalInfo => this.GetFacet<PersonalInformation>(PersonalInformation.DefaultFacetKey);
         public AddressList Addresses => this.GetFacet<AddressList>(AddressList.DefaultFacetKey);
@@ -32,19 +25,7 @@
         public ConsentInformation CommunicationProfile => this.GetFacet<ConsentInformation>(ConsentInformation.DefaultFacetKey);
         public PhoneNumberList PhoneNumbers => this.GetFacet<PhoneNumberList>(PhoneNumberList.DefaultFacetKey);
 
-        public Analytics.Tracking.Contact Contact
-        {
-            get
-            {
-                if (!Tracker.IsActive)
-                {
-                    return null;
-                }
-
-                var contact = Tracker.Current.Contact;
-                return contact ?? this.contactManager?.CreateContact(ID.NewID);
-            }
-        }
+        public Analytics.Tracking.Contact Contact => !Tracker.IsActive ? null : Tracker.Current.Contact;
 
         public Avatar Picture => this.GetFacet<Avatar>(Avatar.DefaultFacetKey);
 

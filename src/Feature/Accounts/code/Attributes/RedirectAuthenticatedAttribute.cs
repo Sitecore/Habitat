@@ -9,11 +9,14 @@
     {
         private readonly IGetRedirectUrlService getRedirectUrlService;
 
-        public RedirectAuthenticatedAttribute()
+        public RedirectAuthenticatedAttribute() : this(ServiceLocator.ServiceProvider.GetService<IGetRedirectUrlService>())
         {
-            this.getRedirectUrlService = ServiceLocator.ServiceProvider.GetService<IGetRedirectUrlService>();
         }
 
+        public RedirectAuthenticatedAttribute(IGetRedirectUrlService getRedirectUrlService)
+        {
+            this.getRedirectUrlService = getRedirectUrlService;
+        }
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {

@@ -68,7 +68,7 @@
       {
         var settings = new AccountsSettingsService();
         Action act = () => settings.GetForgotPasswordMailTemplate();
-        act.ShouldThrow<InvalidValueException>().WithMessage("'From' field in mail template should be set");
+        act.Should().Throw<InvalidValueException>().WithMessage("'From' field in mail template should be set");
       }
     }
 
@@ -95,7 +95,7 @@
       {
         var settings = new AccountsSettingsService();
         Action act = () => settings.GetForgotPasswordMailTemplate();
-        act.ShouldThrow<ItemNotFoundException>();
+        act.Should().Throw<ItemNotFoundException>();
       }
     }
 
@@ -207,7 +207,7 @@
       {
         //Act
         //Assert
-        accountsSettingsService.Invoking(x=>x.GetRegistrationOutcome(null)).ShouldThrow<ItemNotFoundException>();
+        accountsSettingsService.Invoking(x=>x.GetRegistrationOutcome(null)).Should().Throw<ItemNotFoundException>();
       }
     }
 
@@ -222,7 +222,7 @@
         //Act
         var resultOutcomeId = accountsSettingsService.GetRegistrationOutcome(null);
         //Assert
-        resultOutcomeId.Should().Be(outcomeId);
+        resultOutcomeId.Should().Be(outcomeId.Guid);
       }
     }
   }

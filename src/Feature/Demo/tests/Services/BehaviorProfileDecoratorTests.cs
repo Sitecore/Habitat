@@ -40,7 +40,7 @@
         var item = db.GetItem(profileItem.FullPath);
         var profile = new ProfileItem(item);
 
-        var behaviorScores = new List<KeyValuePair<ID, float>>() { new KeyValuePair<ID, float>(keyId1, 10), new KeyValuePair<ID, float>(keyId2, 20) };
+        var behaviorScores = new List<KeyValuePair<ID, double>>() { new KeyValuePair<ID, double>(keyId1, 10), new KeyValuePair<ID, double>(keyId2, 20) };
         behaviorProfile.Scores.Returns(behaviorScores);
         var behaviorProfileDecorator = new BehaviorProfileDecorator(profile, behaviorProfile);
 

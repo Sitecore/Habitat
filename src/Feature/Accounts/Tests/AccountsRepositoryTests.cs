@@ -137,8 +137,8 @@
         [MemberData(nameof(RegistrationInfosArgumentNull))]
         public void RegisterUser_NullEmailOrPassword_ShouldThrowArgumentException(string email, string password, string profileId)
         {
-            var repository = new AccountRepository(Substitute.For<PipelineService>());
-            repository.Invoking(x => x.RegisterUser(email, password, profileId)).ShouldThrow<ArgumentNullException>();
+            var repository = new AccountRepository(Substitute.For<PipelineService>(), Substitute.For<IAccountTrackerService>());
+            repository.Invoking(x => x.RegisterUser(email, password, profileId)).Should().Throw<ArgumentNullException>();
         }
     }
 }

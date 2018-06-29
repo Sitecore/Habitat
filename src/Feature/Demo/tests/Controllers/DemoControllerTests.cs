@@ -39,8 +39,9 @@
 
         [Theory]
         [AutoDbData]
-        public void DemoContent_RenderingContextItemInitialized_ShouldReturnDemoContentView(Db db, [Greedy] DemoController sut, [Content] DemoContentItem item)
+        public void DemoContent_RenderingContextItemInitialized_ShouldReturnDemoContentView(Db db, [Frozen] IDemoStateService demoState, [Greedy] DemoController sut, [Content] DemoContentItem item)
         {
+            demoState.IsDemoEnabled.Returns(true);
             using (RenderingContext.EnterContext(new Rendering(), db.GetItem(item.ID)))
             {
                 sut.DemoContent().As<ViewResult>().Model.Should().BeOfType<DemoContent>();
@@ -49,36 +50,40 @@
 
         [Theory]
         [AutoDbData]
-        public void DemoContent_RenderingContextItemNotInitialized_ShouldThrowException([Greedy] DemoController sut)
+        public void DemoContent_RenderingContextItemNotInitialized_ShouldThrowException([Frozen] IDemoStateService demoState, [Greedy] DemoController sut)
         {
+            demoState.IsDemoEnabled.Returns(true);
             using (RenderingContext.EnterContext(new Rendering()))
             {
-                sut.Invoking(x => x.DemoContent()).ShouldThrow<InvalidDataSourceItemException>();
+                sut.Invoking(x => x.DemoContent()).Should().Throw<InvalidDataSourceItemException>();
             }
         }
 
         [Theory]
         [AutoDbData]
-        public void DemoContent_RenderingContextNotDerivedFromSpecificTemplate_ShouldThrowException([Greedy] DemoController sut, Item ctxItem)
+        public void DemoContent_RenderingContextNotDerivedFromSpecificTemplate_ShouldThrowException([Frozen] IDemoStateService demoState, [Greedy] DemoController sut, Item ctxItem)
         {
+            demoState.IsDemoEnabled.Returns(true);
             using (RenderingContext.EnterContext(new Rendering(), ctxItem))
             {
-                sut.Invoking(x => x.DemoContent()).ShouldThrow<InvalidDataSourceItemException>();
+                sut.Invoking(x => x.DemoContent()).Should().Throw<InvalidDataSourceItemException>();
             }
         }
 
         [Theory]
         [AutoDbData]
-        public void EndVisit_ShouldReturnRedirectToRoot([Substitute] ControllerContext ctx, [Greedy] DemoController sut)
+        public void EndVisit_ShouldReturnRedirectToRoot([Substitute] ControllerContext ctx, [Frozen] IDemoStateService demoState, [Greedy] DemoController sut)
         {
+            demoState.IsDemoEnabled.Returns(true);
             sut.ControllerContext = ctx;
             sut.EndVisit().As<HttpStatusCodeResult>().StatusCode.Should().Be((int)HttpStatusCode.OK);
         }
 
         [Theory]
         [AutoDbData]
-        public void EndVisit_ShouldEndSession([Substitute] ControllerContext ctx, [Greedy] DemoController sut)
+        public void EndVisit_ShouldEndSession([Substitute] ControllerContext ctx, [Frozen] IDemoStateService demoState, [Greedy] DemoController sut)
         {
+            demoState.IsDemoEnabled.Returns(true);
             sut.ControllerContext = ctx;
             sut.EndVisit();
             ctx.HttpContext.Session.Received(1).Abandon();
@@ -86,29 +91,34 @@
 
         [Theory]
         [AutoDbData]
-        public void ExperienceData_NullTracker_ReturnNull([Greedy] DemoController sut)
+        public void ExperienceData_NullTracker_ReturnNull([Frozen] IDemoStateService demoState, [Greedy] DemoController sut)
         {
+            demoState.IsDemoEnabled.Returns(true);
             sut.ExperienceData().Should().BeNull();
         }
 
         [Theory]
         [AutoDbData]
-        public void ExperienceData_NullInteraction_ReturnNull([Greedy] DemoController sut, TrackerSwitcher trackerSwitcher)
+        public void ExperienceData_NullInteraction_ReturnNull([Frozen] IDemoStateService demoState, [Greedy] DemoController sut, TrackerSwitcher trackerSwitcher)
         {
+            demoState.IsDemoEnabled.Returns(true);
             sut.ExperienceData().Should().BeNull();
         }
 
         [Theory]
         [AutoDbData]
-        public void ExperienceData_InitializedTrackerAndNormalMode_ReturnExperienceData(IKeyBehaviorCache keyBehaviorCache, Session session, CurrentInteraction currentInteraction, ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, [Frozen] IProfileProvider profileProvider, [Greedy] DemoController sut)
+        public void ExperienceData_InitializedTrackerAndNormalMode_ReturnExperienceData(IKeyBehaviorCache keyBehaviorCache, Session session, CurrentInteraction currentInteraction, ITracker tracker, Contact contact, [Frozen] IProfileProvider profileProvider, [Frozen] IDemoStateService demoState, [Frozen] IExperienceDataFactory dataFactory, [Greedy] DemoController sut)
         {
+            demoState.IsDemoEnabled.Returns(true);
+            dataFactory.Get().Returns(new ExperienceData());
             tracker.Interaction.Returns(currentInteraction);
             tracker.Session.Returns(session);
             var attachments = new Dictionary<string, object>
                               {
                                   ["KeyBehaviorCache"] = new Analytics.Tracking.KeyBehaviorCache(keyBehaviorCache)
                               };
-            tracker.Contact.Attachments.Returns(attachments);
+            contact.Attachments.Returns(attachments);
+            tracker.Contact.Returns(contact);
 
             var fakeSite = new FakeSiteContext(new StringDictionary
                                                {
@@ -119,36 +129,40 @@
             {
                 using (new TrackerSwitcher(tracker))
                 {
-                    sut.ExperienceData().Should().BeOfType<ViewResult>().Which.Model.Should().BeOfType<ExperienceData>();
+                    var result = sut.ExperienceData();
+                    result.Should().BeOfType<ViewResult>().Which.Model.Should().BeOfType<ExperienceData>();
                 }
             }
         }
 
         [Theory]
         [AutoDbData]
-        public void ExperienceData_InitializedTrackerAndPreviewMode_ReturnEmptyResult(IKeyBehaviorCache keyBehaviorCache, Session session, CurrentInteraction currentInteraction, ITracker tracker, [Frozen] IContactProfileProvider contactProfileProvider, [Frozen] IProfileProvider profileProvider, [Greedy] DemoController sut)
+        public void ExperienceData_InitializedTrackerAndPreviewMode_ReturnEmptyResult(IKeyBehaviorCache keyBehaviorCache, Session session, CurrentInteraction currentInteraction, ITracker tracker, Contact contact, [Frozen] IProfileProvider profileProvider, [Frozen] IDemoStateService demoState, [Greedy] DemoController sut)
         {
-            //TODO: Fix;
-            //tracker.Interaction.Returns(currentInteraction);
-            //tracker.Session.Returns(session);
-            //var attachments = new Dictionary<string, object>
-            //{
-            //  ["KeyBehaviorCache"] = new Analytics.Tracking.KeyBehaviorCache(keyBehaviorCache)
-            //};
-            //tracker.Contact.Attachments.Returns(attachments);
+            demoState.IsDemoEnabled.Returns(true);
+            tracker.Interaction.Returns(currentInteraction);
+            tracker.Session.Returns(session);
+            var attachments = new Dictionary<string, object>
+            {
+                ["KeyBehaviorCache"] = new Analytics.Tracking.KeyBehaviorCache(keyBehaviorCache)
+            };
+            contact.Attachments.Returns(attachments);
+            tracker.Contact.Returns(contact);
 
-            //var fakeSite = new FakeSiteContext(new StringDictionary
-            //                                   {
-            //                                     {"mode", "edit"}
-            //                                   }) as SiteContext;
+            var fakeSite = new FakeSiteContext(new StringDictionary
+                                               {
+                                                 {"enablePreview", "true"},
+                                                 {"masterDatabase", "master"}
+                                               }) as SiteContext;
 
-            //using (new SiteContextSwitcher(fakeSite))
-            //{
-            //  using (new TrackerSwitcher(tracker))
-            //  {
-            //    sut.ExperienceData().Should().BeOfType<ViewResult>().Which.Model.Should().BeOfType<EmptyResult>();
-            //  }
-            //}
+            using (new SiteContextSwitcher(fakeSite))
+            {
+                Sitecore.Context.Site.SetDisplayMode(DisplayMode.Preview, DisplayModeDuration.Remember);
+                using (new TrackerSwitcher(tracker))
+                {
+                    sut.ExperienceData().Should().BeOfType<EmptyResult>();
+                }
+            }
         }
     }
 }

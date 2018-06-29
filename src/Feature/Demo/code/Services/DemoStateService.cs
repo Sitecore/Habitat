@@ -5,8 +5,8 @@
     using Sitecore.Configuration;
     using Sitecore.Foundation.DependencyInjection;
 
-    [Service]
-    public class DemoStateService
+    [Service(typeof(IDemoStateService))]
+    public class DemoStateService : IDemoStateService
     {
         public DemoStateService(HttpContextBase httpContext)
         {
