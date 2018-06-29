@@ -8,8 +8,8 @@
     using Sitecore.Feature.Demo.Models;
     using Sitecore.Foundation.DependencyInjection;
 
-    [Service]
-    public class ReferralRepository
+    [Service(typeof(IReferralRepository))]
+    public class ReferralRepository : IReferralRepository
     {
         private readonly ICampaignRepository campaignRepository;
 

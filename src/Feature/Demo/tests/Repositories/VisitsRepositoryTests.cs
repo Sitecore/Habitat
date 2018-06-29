@@ -9,6 +9,7 @@
   using Sitecore.Analytics;
   using Sitecore.Analytics.Model;
   using Sitecore.Analytics.Tracking;
+  using Sitecore.Feature.Demo.Models;
   using Sitecore.Feature.Demo.Repositories;
   using Sitecore.Foundation.Accounts.Providers;
   using Sitecore.Foundation.SitecoreExtensions.Services;
@@ -88,18 +89,19 @@
 
     [Theory]
     [AutoDbData]
-    public void Get_PageViews_ReturnReversedPages(ITracker tracker, [Frozen] IContactFacetsProvider contactProfileProvider, VisitsRepository visitsRepository)
+    public void Get_PageViews_ReturnReversedPages(ITracker tracker, [Frozen] IContactFacetsProvider contactProfileProvider, [Frozen] IPageViewRepository viewRepository, VisitsRepository visitsRepository)
     {
       //Arrange
       this.InitTracker(tracker);
       var pages = new List<ICurrentPageContext>
                   {
-                    this.GeneratePage(path: "/0"),
-                    this.GeneratePage(path: "/1"),
-                    this.GeneratePage(path: "/2")
+                    this.GeneratePage(path: "0"),
+                    this.GeneratePage(path: "1"),
+                    this.GeneratePage(path: "2")
                   };
       tracker.Interaction.GetPages().Returns(pages);
       contactProfileProvider.Contact.Returns(x => tracker.Contact);
+        viewRepository.Get(Arg.Any<ICurrentPageContext>()).Returns(x => new PageView() {Path = x.Arg<ICurrentPageContext>().Url.Path});
 
       using (new TrackerSwitcher(tracker))
       {

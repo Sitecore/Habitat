@@ -5,8 +5,8 @@
     using Sitecore.Feature.Demo.Services;
     using Sitecore.Foundation.DependencyInjection;
 
-    [Service]
-    public class OnsiteBehaviorRepository
+    [Service(typeof(IOnsiteBehaviorRepository))]
+    public class OnsiteBehaviorRepository : IOnsiteBehaviorRepository
     {
         private readonly PageEventRepository pageEventRepository;
         private readonly OutcomeRepository outcomesRepository;

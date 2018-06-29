@@ -5,26 +5,22 @@ namespace Sitecore.Feature.Demo.Repositories
     using System.Globalization;
     using System.Linq;
     using Sitecore.Analytics;
-    using Sitecore.DependencyInjection;
-    using Sitecore.Diagnostics;
     using Sitecore.Feature.Demo.Models;
     using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Marketing.Automation.Data;
-    using Sitecore.Marketing.Automation.Extensions;
     using Sitecore.Marketing.Definitions;
     using Sitecore.Marketing.Definitions.AutomationPlans.Model;
     using Sitecore.XConnect.Collection.Model;
     using Sitecore.Xdb.MarketingAutomation.Tracking.Extensions;
 
-    [Service]
-    public class EngagementPlanStateRepository
+    [Service(typeof(IEngagementPlanStateRepository))]
+    public class EngagementPlanStateRepository : IEngagementPlanStateRepository
     {
-        public IActivityDescriptorRepository ActivityDescriptorRepository { get; }
-        public IDefinitionManager<IAutomationPlanDefinition> AutomationPlanDefinitionManager { get; }
+        private IDefinitionManager<IAutomationPlanDefinition> AutomationPlanDefinitionManager { get; }
 
-        public EngagementPlanStateRepository(IServiceProvider serviceProvider)
+        public EngagementPlanStateRepository(DefinitionManagerFactory definitionManagerFactory)
         {
-            this.AutomationPlanDefinitionManager = serviceProvider.GetDefinitionManagerFactory().GetDefinitionManager<IAutomationPlanDefinition>();
+            this.AutomationPlanDefinitionManager = definitionManagerFactory.GetDefinitionManager<IAutomationPlanDefinition>();
         }
 
         public IEnumerable<EngagementPlanState> GetCurrent()

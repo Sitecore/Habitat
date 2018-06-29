@@ -8,8 +8,8 @@
     using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.Dictionary.Repositories;
 
-    [Service]
-    public class PageViewRepository
+    [Service(typeof(IPageViewRepository))]
+    public class PageViewRepository : IPageViewRepository
     {
         public PageView Get(ICurrentPageContext pageContext)
         {

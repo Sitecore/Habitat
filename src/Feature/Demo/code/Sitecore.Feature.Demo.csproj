@@ -25,6 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -265,6 +266,12 @@
     <Compile Include="Repositories\CampaignRepository.cs" />
     <Compile Include="Repositories\DeviceRepository.cs" />
     <Compile Include="Repositories\EngagementPlanStateRepository.cs" />
+    <Compile Include="Repositories\IEngagementPlanStateRepository.cs" />
+    <Compile Include="Repositories\IOnsiteBehaviorRepository.cs" />
+    <Compile Include="Repositories\IPageViewRepository.cs" />
+    <Compile Include="Repositories\IPersonalInfoRepository.cs" />
+    <Compile Include="Repositories\IReferralRepository.cs" />
+    <Compile Include="Repositories\IVisitsRepository.cs" />
     <Compile Include="Repositories\PageEventRepository.cs" />
     <Compile Include="Repositories\ICampaignRepository.cs" />
     <Compile Include="Repositories\LocationRepository.cs" />
@@ -286,6 +293,9 @@
     <Compile Include="Pipelines\RegisterWebApiRoutes.cs" />
     <Compile Include="Services\BehaviorProfileDecorator.cs" />
     <Compile Include="Services\DemoStateService.cs" />
+    <Compile Include="Services\ExperienceDataFactory.cs" />
+    <Compile Include="Services\IDemoStateService.cs" />
+    <Compile Include="Services\IExperienceDataFactory.cs" />
     <Compile Include="Services\ProfileProvider.cs" />
     <Compile Include="Services\IProfileProvider.cs" />
     <Compile Include="Models\PatternMatch.cs" />
