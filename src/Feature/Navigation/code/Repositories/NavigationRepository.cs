@@ -34,13 +34,13 @@
         {
             var items = new NavigationItems
                         {
-                            Items = this.GetNavigationHierarchy(true).Reverse().ToList()
+                            NavItems = this.GetNavigationHierarchy(true).Reverse().ToList()
                         };
 
-            for (var i = 0; i < items.Items.Count - 1; i++)
+            for (var i = 0; i < items.NavItems.Count - 1; i++)
             {
-                items.Items[i].Level = i;
-                items.Items[i].IsActive = i == items.Items.Count - 1;
+                items.NavItems[i].Level = i;
+                items.NavItems[i].IsActive = i == items.NavItems.Count - 1;
             }
 
             return items;
@@ -64,7 +64,7 @@
             var navigationItem = this.CreateNavigationItem(this.NavigationRoot, 0, 0);
             //Root navigation item is only active when we are actually on the root item
             navigationItem.IsActive = this.ContextItem.ID == this.NavigationRoot.ID;
-            navItems?.Items?.Insert(0, navigationItem);
+            navItems?.NavItems?.Insert(0, navigationItem);
         }
 
         private bool IncludeInNavigation(Item item, bool forceShowInMenu = false)
@@ -96,7 +96,7 @@
         {
             var primaryMenuItems = this.GetPrimaryMenu();
             //Find the active primary menu item
-            var activePrimaryMenuItem = primaryMenuItems.Items.FirstOrDefault(i => i.Item.ID != this.NavigationRoot.ID && i.IsActive);
+            var activePrimaryMenuItem = primaryMenuItems.NavItems.FirstOrDefault(i => i.Item.ID != this.NavigationRoot.ID && i.IsActive);
             return activePrimaryMenuItem?.Item;
         }
 
@@ -137,7 +137,7 @@
             var childItems = parentItem.Children.Where(item => this.IncludeInNavigation(item)).Select(i => this.CreateNavigationItem(i, level, maxLevel));
             return new NavigationItems
                    {
-                       Items = childItems.ToList()
+                       NavItems = childItems.ToList()
                    };
         }
 

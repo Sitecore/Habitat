@@ -3,16 +3,16 @@
 @model Sitecore.Feature.Navigation.Models.NavigationItems
 
 @{
-  if (Model == null || Model.Items == null)
+  if (Model == null || Model.NavItems == null)
   {
     return;
   }
 }
 
 <ul class="nav nav-pills nav-stacked">
-  @foreach (var item in Model.Items)
+  @foreach (var item in Model.NavItems)
   {
-    var hasChildren = item.IsActive && item.Children != null && item.Children.Items.Any();
+    var hasChildren = item.IsActive && item.Children != null && item.Children.NavItems.Any();
     var itemClass = item.IsActive ? "active" : string.Empty;
     itemClass += item.IsActive && hasChildren ? " open" : string.Empty;
     <li class="@itemClass">
