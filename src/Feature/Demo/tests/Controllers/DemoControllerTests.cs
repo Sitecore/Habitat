@@ -12,6 +12,7 @@
     using Sitecore.Analytics.Model.Entities;
     using Sitecore.Analytics.Tracking;
     using Sitecore.Collections;
+    using Sitecore.Data;
     using Sitecore.Data.Items;
     using Sitecore.FakeDb;
     using Sitecore.FakeDb.AutoFixture;
@@ -39,8 +40,10 @@
 
         [Theory]
         [AutoDbData]
-        public void DemoContent_RenderingContextItemInitialized_ShouldReturnDemoContentView(Db db, [Frozen] IDemoStateService demoState, [Greedy] DemoController sut, [Content] DemoContentItem item)
+        public void DemoContent_RenderingContextItemInitialized_ShouldReturnDemoContentView(Db db, [Substitute] Sitecore.Mvc.Presentation.PageContext pageContext, [Frozen] IDemoStateService demoState, [Greedy] DemoController sut, [Content] DemoContentItem item)
         {
+            pageContext.Database.Returns(db.Database);
+            Sitecore.Mvc.Common.ContextService.Get().Push(pageContext);
             demoState.IsDemoEnabled.Returns(true);
             using (RenderingContext.EnterContext(new Rendering(), db.GetItem(item.ID)))
             {
@@ -50,8 +53,10 @@
 
         [Theory]
         [AutoDbData]
-        public void DemoContent_RenderingContextItemNotInitialized_ShouldThrowException([Frozen] IDemoStateService demoState, [Greedy] DemoController sut)
+        public void DemoContent_RenderingContextItemNotInitialized_ShouldThrowException(Db db, [Substitute] Sitecore.Mvc.Presentation.PageContext pageContext, [Frozen] IDemoStateService demoState, [Greedy] DemoController sut)
         {
+            pageContext.Database.Returns(db.Database);
+            Sitecore.Mvc.Common.ContextService.Get().Push(pageContext);
             demoState.IsDemoEnabled.Returns(true);
             using (RenderingContext.EnterContext(new Rendering()))
             {
@@ -61,8 +66,10 @@
 
         [Theory]
         [AutoDbData]
-        public void DemoContent_RenderingContextNotDerivedFromSpecificTemplate_ShouldThrowException([Frozen] IDemoStateService demoState, [Greedy] DemoController sut, Item ctxItem)
+        public void DemoContent_RenderingContextNotDerivedFromSpecificTemplate_ShouldThrowException(Db db, [Substitute] Sitecore.Mvc.Presentation.PageContext pageContext, [Frozen] IDemoStateService demoState, [Greedy] DemoController sut, Item ctxItem)
         {
+            pageContext.Database.Returns(db.Database);
+            Sitecore.Mvc.Common.ContextService.Get().Push(pageContext);
             demoState.IsDemoEnabled.Returns(true);
             using (RenderingContext.EnterContext(new Rendering(), ctxItem))
             {
