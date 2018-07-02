@@ -3,7 +3,7 @@ $SolutionPrefix = "habitat"
 $SitePostFix = "dev.local"
 $webroot = "C:\inetpub\wwwroot"
 
-$SitecoreVersion = "9.0.1 rev. 171219"
+$SitecoreVersion = "9.0.2 rev. 180604"
 $InstallerVersion = "1.2.1"
 
 # Assets and prerequisites

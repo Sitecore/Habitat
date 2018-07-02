@@ -4,11 +4,21 @@
     using System.Linq;
     using Sitecore.Data;
     using Sitecore.Data.Items;
+    using Sitecore.ExperienceEditor.Abstractions;
+    using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Shell.Applications.WebEdit;
 
-    public class GetFieldsToEditService
+    [Service(typeof(IGetFieldsToEditService))]
+    public class GetFieldsToEditService : IGetFieldsToEditService
     {
-        public static string GetFieldsToEdit(Item item)
+        private readonly BaseItemContentService itemContentService;
+
+        public GetFieldsToEditService(BaseItemContentService itemContentService)
+        {
+            this.itemContentService = itemContentService;
+        }
+
+        public string GetFieldsToEdit(Item item)
         {
             var editableFields = item.Template.Fields.Where(IsEditableField).ToArray();
             if (!editableFields.Any())
@@ -24,10 +34,10 @@
             return !x.Name.StartsWith("__");
         }
 
-        public static PageEditFieldEditorOptions GetFieldEditorOptions(NameValueCollection form, string pipedFields, Item item)
+        public PageEditFieldEditorOptions GetFieldEditorOptions(NameValueCollection form, string pipedFields, Item item)
         {
             var fields = pipedFields.Split('|').Where(fieldName => item.Fields[fieldName] != null).Select(fieldName => new FieldDescriptor(item, fieldName)).ToList();
-            var options = new PageEditFieldEditorOptions(form, fields);
+            var options = new PageEditFieldEditorOptions(form, fields, this.itemContentService);
             return options;
         }
     }

@@ -3,17 +3,17 @@
 @model Sitecore.Feature.Navigation.Models.NavigationItems
 
 @{
-  if (Model?.Items == null)
+  if (Model?.NavItems == null)
   {
     return;
   }
 
-  var isSocialMenu = Model.Items.All(i => !string.IsNullOrWhiteSpace(i.Item[Templates.LinkMenuItem.Fields.Icon]));
+  var isSocialMenu = Model.NavItems.All(i => !string.IsNullOrWhiteSpace(i.Item[Templates.LinkMenuItem.Fields.Icon]));
 }
 
 <nav>
   <ul class="nav nav-service navbar-nav @(isSocialMenu ? "nav-social" : "nav-pills")">
-    @foreach (var item in Model.Items)
+    @foreach (var item in Model.NavItems)
     {
       var liclass = item.IsActive ? "active " : "";
       if (item.Item.Fields[Templates.LinkMenuItem.Fields.DividerBefore].IsChecked())

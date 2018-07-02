@@ -67,103 +67,103 @@
       <HintPath>..\..\..\..\packages\Remotion.Linq.2.1.1\lib\net45\Remotion.Linq.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics, Version=11.18.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Analytics.NoReferences.9.0.171219\lib\NET462\Sitecore.Analytics.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.NoReferences.9.0.180604\lib\NET452\Sitecore.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Core, Version=11.40.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Core.NoReferences.9.0.171219\lib\NET462\Sitecore.Analytics.Core.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Core.NoReferences.9.0.180604\lib\NET452\Sitecore.Analytics.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.Model, Version=11.40.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Model.NoReferences.9.0.171219\lib\NET462\Sitecore.Analytics.Model.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Analytics.Model.NoReferences.9.0.180604\lib\NET452\Sitecore.Analytics.Model.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Analytics.XConnect, Version=11.15.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Analytics.XConnect.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.CES.DeviceDetection, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.CES.DeviceDetection.NoReferences.9.0.171219\lib\NET462\Sitecore.CES.DeviceDetection.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.CES.DeviceDetection.NoReferences.9.0.180604\lib\NET452\Sitecore.CES.DeviceDetection.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Cintel, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Cintel.NoReferences.9.0.171219\lib\NET462\Sitecore.Cintel.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Cintel.NoReferences.9.0.180604\lib\NET452\Sitecore.Cintel.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ExperienceAnalytics, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.ExperienceAnalytics.NoReferences.9.0.171219\lib\NET462\Sitecore.ExperienceAnalytics.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.ExperienceAnalytics.NoReferences.9.0.180604\lib\NET452\Sitecore.ExperienceAnalytics.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ExperienceAnalytics.Api, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.ExperienceAnalytics.Api.NoReferences.9.0.171219\lib\NET462\Sitecore.ExperienceAnalytics.Api.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.ExperienceAnalytics.Api.NoReferences.9.0.180604\lib\NET452\Sitecore.ExperienceAnalytics.Api.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ExperienceAnalytics.Core, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.ExperienceAnalytics.Core.NoReferences.9.0.171219\lib\NET462\Sitecore.ExperienceAnalytics.Core.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.ExperienceAnalytics.Core.NoReferences.9.0.180604\lib\NET452\Sitecore.ExperienceAnalytics.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ExperienceEditor, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ExperienceEditor.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.ExperienceExplorer.Core, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.ExperienceExplorer.Core.NoReferences.9.0.171219\lib\NET462\Sitecore.ExperienceExplorer.Core.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.ExperienceExplorer.Core.NoReferences.9.0.180604\lib\NET452\Sitecore.ExperienceExplorer.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Framework.Conditions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\..\packages\Sitecore.Framework.Conditions.1.1.12\lib\net462\Sitecore.Framework.Conditions.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=11.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.9.0.171219\lib\NET462\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Kernel.NoReferences.9.0.180604\lib\NET452\Sitecore.Kernel.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Marketing, Version=12.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Marketing.9.0.171219\lib\NET462\Sitecore.Marketing.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Marketing.9.0.180604\lib\NET452\Sitecore.Marketing.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Marketing.Automation, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Marketing.Automation.NoReferences.9.0.171219\lib\NET462\Sitecore.Marketing.Automation.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Marketing.Automation.NoReferences.9.0.180604\lib\NET452\Sitecore.Marketing.Automation.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Marketing.Core, Version=12.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Marketing.Core.9.0.171219\lib\NET462\Sitecore.Marketing.Core.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Marketing.Core.9.0.180604\lib\NET452\Sitecore.Marketing.Core.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Marketing.Taxonomy, Version=12.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Marketing.Taxonomy.9.0.171219\lib\NET462\Sitecore.Marketing.Taxonomy.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Marketing.Taxonomy.9.0.180604\lib\NET452\Sitecore.Marketing.Taxonomy.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Mvc.Analytics, Version=11.6.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Mvc.Analytics.NoReferences.9.0.171219\lib\NET462\Sitecore.Mvc.Analytics.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Mvc.Analytics.NoReferences.9.0.180604\lib\NET452\Sitecore.Mvc.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.XConnect.9.0.171219\lib\NET462\Sitecore.XConnect.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.9.0.180604\lib\NET452\Sitecore.XConnect.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Client.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Client.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Client.NoReferences.9.0.180604\lib\NET452\Sitecore.XConnect.Client.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Client.Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Client.Configuration.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Client.Configuration.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Client.Configuration.NoReferences.9.0.180604\lib\NET452\Sitecore.XConnect.Client.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Collection.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Collection.Model.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Collection.Model.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Collection.Model.NoReferences.9.0.180604\lib\NET452\Sitecore.XConnect.Collection.Model.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Diagnostics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Diagnostics.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Diagnostics.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Diagnostics.NoReferences.9.0.180604\lib\NET452\Sitecore.XConnect.Diagnostics.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Search, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Search.9.0.171219\lib\NET462\Sitecore.XConnect.Search.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Search.NoReferences.9.0.180604\lib\NET452\Sitecore.XConnect.Search.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Segmentation.Conditions, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Segmentation.Conditions.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Segmentation.Conditions.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Segmentation.Conditions.NoReferences.9.0.180604\lib\NET452\Sitecore.XConnect.Segmentation.Conditions.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Segmentation.Engine, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Segmentation.Engine.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Segmentation.Engine.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Segmentation.Engine.NoReferences.9.0.180604\lib\NET452\Sitecore.XConnect.Segmentation.Engine.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Segmentation.ExpressionBuilder.Model, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Segmentation.ExpressionBuilder.Model.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Segmentation.ExpressionBuilder.Model.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Segmentation.ExpressionBuilder.Model.NoReferences.9.0.180604\lib\NET452\Sitecore.XConnect.Segmentation.ExpressionBuilder.Model.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Segmentation.Predicates, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Segmentation.Predicates.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Segmentation.Predicates.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Segmentation.Predicates.NoReferences.9.0.180604\lib\NET452\Sitecore.XConnect.Segmentation.Predicates.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.XConnect.Segmentation.Predicates.Model, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Segmentation.Predicates.Model.NoReferences.9.0.171219\lib\NET462\Sitecore.XConnect.Segmentation.Predicates.Model.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.XConnect.Segmentation.Predicates.Model.NoReferences.9.0.180604\lib\NET452\Sitecore.XConnect.Segmentation.Predicates.Model.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Xdb.MarketingAutomation.Tracking, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Xdb.MarketingAutomation.Tracking.NoReferences.9.0.171219\lib\NET462\Sitecore.Xdb.MarketingAutomation.Tracking.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Xdb.MarketingAutomation.Tracking.NoReferences.9.0.180604\lib\NET452\Sitecore.Xdb.MarketingAutomation.Tracking.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Xdb.ReferenceData.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Xdb.ReferenceData.Core.9.0.171219\lib\NET462\Sitecore.Xdb.ReferenceData.Core.dll</HintPath>
+      <HintPath>..\..\..\..\packages\Sitecore.Xdb.ReferenceData.Core.9.0.180604\lib\NET452\Sitecore.Xdb.ReferenceData.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data.DataSetExtensions" />

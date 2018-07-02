@@ -4,11 +4,11 @@
 
 <div class="collapse navbar-collapse" id="siteNavbar">
   <ul class="nav navbar-nav">
-    @if (Model?.Items != null)
+    @if (Model?.NavItems != null)
     {
-      foreach (var item in Model.Items)
+      foreach (var item in Model.NavItems)
       {
-        var hasChildren = item.Children != null && item.Children.Items.Any() && item.ShowChildren;
+        var hasChildren = item.Children != null && item.Children.NavItems.Any() && item.ShowChildren;
         var cssClass = "";
         if (hasChildren)
         {
@@ -22,7 +22,7 @@
               @Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, item.Item)<span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-              @foreach (var subitem in item.Children.Items)
+              @foreach (var subitem in item.Children.NavItems)
               {
                 <li class="@(subitem.IsActive ? "active" : "")">
                   <a href="@subitem.Url" target="@subitem.Target">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, subitem.Item)</a>

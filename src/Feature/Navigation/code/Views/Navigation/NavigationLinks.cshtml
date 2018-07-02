@@ -3,14 +3,14 @@
 @model Sitecore.Feature.Navigation.Models.NavigationItems
 
 @{
-  if (Model?.Items == null)
+  if (Model?.NavItems == null)
   {
     return;
   }
 }
 
 <ul class="nav nav-stacked">
-  @foreach (var item in Model.Items)
+  @foreach (var item in Model.NavItems)
   {
     if (item.Item.Fields[Templates.LinkMenuItem.Fields.DividerBefore].IsChecked())
     {
