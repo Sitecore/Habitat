@@ -147,6 +147,7 @@
     <Compile Include="..\..\..\ProductInfo.cs">
       <Link>Properties\ProductInfo.cs</Link>
     </Compile>
+    <Compile Include="Renderings.cs" />
     <Compile Include="Templates.cs" />
   </ItemGroup>
   <ItemGroup>
