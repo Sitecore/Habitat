@@ -46,6 +46,10 @@ SharedFields:
   Value: /sitecore/content/Habitat/Home/Login/Forgot Password
 Languages:
 - Language: da
+  Fields:
+  - ID: "53b5af0a-265f-4e60-b2b2-4576ce0beccf"
+    Hint: Theme
+    Value: "{9025588B-C765-458B-829C-1886A98AD3A7}"
   Versions:
   - Version: 1
     Fields:
@@ -66,7 +70,7 @@ Languages:
     - ID: "e748d808-64c1-4dec-9718-f35cf9689e4b"
       Hint: Logo
       Value: |
-        <image mediapath="/Default Website/sc_logo" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/sc_logo" mediaid="{461A93BF-5471-4AF2-BF36-D638F5660CB5}" />
+        <image mediapath="/Default Website/sc_logo" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/sc_logo" mediaid="{6C33AFC0-606E-4A18-A8DB-679620D5B409}" />
 - Language: en
   Fields:
   - ID: "2a84eca4-68bb-4451-b4ac-98ea71a5a3dc"
