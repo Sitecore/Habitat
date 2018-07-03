@@ -148,7 +148,7 @@ function Install-Assets {
     $module = Get-Module -FullyQualifiedName @{ModuleName="SitecoreInstallFramework";ModuleVersion=$InstallerVersion}
     if (-not $module) {
         write-host "Installing the Sitecore Install Framework, version $InstallerVersion" -ForegroundColor Green
-        Install-Module SitecoreInstallFramework -RequiredVersion $InstallerVersion -Scope CurrentUser
+        Install-Module SitecoreInstallFramework -RequiredVersion $InstallerVersion -Scope CurrentUser -Repository $AssetsPSRepositoryName
         Import-Module SitecoreInstallFramework -RequiredVersion $InstallerVersion
     }
 
