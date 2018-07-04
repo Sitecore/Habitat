@@ -4,7 +4,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion></ProductVersion>
+    <ProductVersion>
+    </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{0D6BA4D8-C469-4AE9-9EBB-93BDF7D7E78F}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -19,7 +20,8 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <UseGlobalApplicationHostFile />
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <TargetFrameworkProfile />
@@ -81,7 +83,6 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\Foundation.Dictionary.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.Dictionary.Serialization.config" />
-    <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Standalone.pubxml" />
     <None Include="Web.config" />
   </ItemGroup>
