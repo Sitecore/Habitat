@@ -59,6 +59,9 @@ TestResult.xml
 *.ncrunchsolution
 nCrunchTemp*.*
 
+# Backup files
+*.bak
+
 # Build Results of an ATL Project
 [Dd]ebugPS/
 [Rr]eleasePS/
