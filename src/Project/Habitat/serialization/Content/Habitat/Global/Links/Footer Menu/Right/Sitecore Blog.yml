@@ -1,8 +1,8 @@
 ﻿---
-ID: "7da1ff7c-fabb-4219-952b-06f253fca7d3"
-Parent: "fb1e4810-6d89-4f1e-a47b-70478fe32da7"
+ID: "1139990d-143d-4f24-a4a6-e56df1bb7461"
+Parent: "b4d87e66-d2c5-4c06-8f9a-08aeaf38055a"
 Template: "390333c8-751b-4332-84a3-6360b969a19f"
-Path: /sitecore/content/Habitat/Global/Links/Footer Menu/Left/Documentation
+Path: /sitecore/content/Habitat/Global/Links/Footer Menu/Right/Sitecore Blog
 DB: master
 Languages:
 - Language: da
@@ -11,10 +11,10 @@ Languages:
     Fields:
     - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
       Hint: NavigationTitle
-      Value: Dokumentation
+      Value: Forretning Blogs
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20160112T164850Z
+      Value: 20160112T164857Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
@@ -22,35 +22,35 @@ Languages:
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
       Value: |
-        <link text="" linktype="external" url="https//doc.sitecore.net" anchor="" title="" class="" querystring="" target="_blank" id="" />
+        <link text="" linktype="external" url="http://www.sitecore.net/learn/blogs/business-blogs.aspx" anchor="" title="" class="" querystring="" target="_blank" id="" />
 - Language: en
   Versions:
   - Version: 1
     Fields:
     - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
       Hint: NavigationTitle
-      Value: Documentation
+      Value: Sitecore Blog
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20150910T105950Z
+      Value: 20150910T110307Z
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
       Value: |
-        <link linktype="external" url="https://doc.sitecore.net" anchor="" target="_blank" />
+        <link linktype="external" url="https://www.sitecore.com/company/blog" anchor="" target="_blank" />
 - Language: "ja-JP"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: 開発者向け情報
+    Value: ビジネスブログ
   Versions:
   - Version: 1
     Fields:
     - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
       Hint: NavigationTitle
-      Value: 開発者向け情報
+      Value: ビジネスブログ
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20170323T054645Z
+      Value: 20170323T054647Z
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
@@ -58,4 +58,4 @@ Languages:
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
       Value: |
-        <link text="" linktype="external" url="https//doc.sitecore.net" anchor="" title="" class="" querystring="" target="_blank" id="" />
+        <link text="" linktype="external" url="http://www.sitecore.net/learn/blogs/business-blogs.aspx" anchor="" title="" class="" querystring="" target="_blank" id="" />

@@ -89,8 +89,10 @@ Languages:
     - ID: "02115632-fe1e-4b3d-9ad4-a4ddf1f782f0"
       Hint: Copyright
       Value: |
-        <p>© Copyright 2017, <a href="http://sitecore.net" target="_blank" title="Opens in a new window">Sitecore</a>. All Rights Reserved<br />
+        <p>© Copyright 2018, <a href="http://sitecore.net" target="_blank" title="Opens in a new window">Sitecore</a>. All Rights Reserved<br />
         <small>&ldquo;Habitat&rdquo; as used here is for demonstration purposes only and to represent the software and services provided by Sitecore further described at www.sitecore.net.</small></p>
+        
+        <p><small>The Habitat demonstration site is provided for example/reference purposes only. It is not supported by Sitecore and should not be used as a starter kit.</small></p>
     - ID: "021aa3f7-206f-4acc-9538-f6d7fe86b168"
       Hint: Interests Folder
       Value: "{A74EE096-F225-4568-8D81-2F71ABBC8118}"
@@ -115,8 +117,9 @@ Languages:
     - ID: "a24df48f-c8a3-4163-966c-8c24bd8760b2"
       Hint: OrganisationAddress
       Value: |
-        2320 Marinship Way
-        Sausalito, CA 94965
+        101 California Street 
+        Suite 1600 
+        San Francisco, CA 94111
         USA
     - ID: "e748d808-64c1-4dec-9718-f35cf9689e4b"
       Hint: Logo
