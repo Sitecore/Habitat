@@ -6,7 +6,6 @@ var rename = require("gulp-rename");
 var newer = require("gulp-newer");
 var util = require("gulp-util");
 var runSequence = require("run-sequence");
-var nugetRestore = require("gulp-nuget-restore");
 var fs = require("fs");
 var yargs = require("yargs").argv;
 var unicorn = require("./scripts/unicorn.js");
@@ -35,11 +34,10 @@ gulp.task("default",
         return runSequence(
             "Copy-Sitecore-License",
             "Copy-Sitecore-Lib",
-            "Nuget-Restore",
             "Publish-All-Projects",
             "Apply-Xml-Transform",
-            "Sync-Unicorn",
             "Publish-Transforms",
+            "Sync-Unicorn",
             callback);
     });
 
@@ -49,7 +47,6 @@ gulp.task("deploy",
         return runSequence(
             "Copy-Sitecore-License",
             "Copy-Sitecore-Lib",
-            "Nuget-Restore",
             "Publish-All-Projects",
             "Apply-Xml-Transform",
             "Publish-Transforms",
@@ -75,13 +72,6 @@ gulp.task("Copy-Sitecore-Lib",
 
         return gulp.src(files).pipe(gulp.dest("./lib/Sitecore"));
     });
-
-gulp.task("Nuget-Restore",
-    function(callback) {
-        var solution = "./" + config.solutionName + ".sln";
-        return gulp.src(solution).pipe(nugetRestore());
-    });
-
 
 gulp.task("Publish-All-Projects",
     function(callback) {
@@ -228,7 +218,8 @@ gulp.task("Build-Solution",
                 toolsVersion: config.buildToolsVersion,
                 properties: {
                     Platform: config.buildPlatform
-                }
+                },
+                customArgs: [ "/restore" ]
             }));
     });
 
