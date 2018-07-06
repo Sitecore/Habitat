@@ -72,21 +72,6 @@
     <PackageReference Include="System.Threading.Tasks" Version="4.0.11" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Sitecore.Abstractions, Version=11.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\packages\Sitecore.Abstractions.NoReferences.9.0.171219\lib\NET462\Sitecore.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.ContentSearch.Linq, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="Sitecore.Mvc, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data.DataSetExtensions" />

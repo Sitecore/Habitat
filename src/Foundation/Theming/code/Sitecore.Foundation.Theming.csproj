@@ -192,10 +192,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Sitecore.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\lib\Sitecore\Sitecore.Mvc.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
