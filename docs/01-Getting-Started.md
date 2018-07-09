@@ -98,6 +98,11 @@ If your Solr environment is not currently running with HTTPS, you can create an 
       * Switch to "Solution 'Habitat'"
         * Run the "default" task
 
+### 3. Rebuild search indexes
+
+1. [Rebuild](https://doc.sitecore.net/sitecore_experience_platform/setting_up_and_maintaining/search_and_indexing/indexing/rebuild_search_indexes) the *sitecore_master_index* and *sitecore_web_index* to deploy the updated schema to Solr and index the deployed content.
+    * This is required for Habitat search-based features to work properly.
+
 ## Additional Information
 
 ### Gulp
@@ -136,3 +141,11 @@ For this to work, you need to set the SMTP settings in Sitecore.config.
  </mailSettings>
 </system.net>
 ```
+
+### Facebook Login
+
+Habitat demonstrates utilizing the Federated Authentication features of Sitecore to allow login via Facebook account. To enable this functionality:
+
+1. [Register a Facebook App](https://developers.facebook.com/docs/apps/register/) using a Facebook Developer Account. 
+2. Add the domain under which you are running Habitat to the *App Domains* setting of your Facebook App. By default this is `habitat.dev.local`.
+3. Use the *App ID* and *App Secret* from your app settings to populate the `Sitecore.Feature.Accounts.Facebook.AppId` and `Sitecore.Feature.Accounts.Facebook.AppSecret` settings, by default found in `Feature\Accounts\code\App_Config\Include\Feature\Feature.Accounts.config`.
