@@ -32,8 +32,6 @@ gulp.task("default",
     function(callback) {
         config.runCleanBuilds = true;
         return runSequence(
-            "Copy-Sitecore-License",
-            "Copy-Sitecore-Lib",
             "Publish-All-Projects",
             "Apply-Xml-Transform",
             "Publish-Transforms",
@@ -45,8 +43,6 @@ gulp.task("deploy",
     function(callback) {
         config.runCleanBuilds = true;
         return runSequence(
-            "Copy-Sitecore-License",
-            "Copy-Sitecore-Lib",
             "Publish-All-Projects",
             "Apply-Xml-Transform",
             "Publish-Transforms",
@@ -56,23 +52,6 @@ gulp.task("deploy",
 /*****************************
   Initial setup
 *****************************/
-gulp.task("Copy-Sitecore-License",
-    function() {
-        console.log("Copying Sitecore License file");
-        return gulp.src(config.licensePath).pipe(gulp.dest("./lib"));
-    });
-
-gulp.task("Copy-Sitecore-Lib",
-    function() {
-        console.log("Copying Sitecore Libraries");
-
-        fs.statSync(config.sitecoreLibraries);
-
-        var files = config.sitecoreLibraries + "/**/*";
-
-        return gulp.src(files).pipe(gulp.dest("./lib/Sitecore"));
-    });
-
 gulp.task("Publish-All-Projects",
     function(callback) {
         return runSequence(
@@ -114,6 +93,12 @@ gulp.task("Apply-Xml-Transform",
             }));
     });
 
+gulp.task("Publish-Transforms",
+    function() {
+        return gulp.src("./src/**/code/**/*.xdt")
+            .pipe(gulp.dest(config.websiteRoot + "/temp/transforms"));
+    });
+
 gulp.task("Sync-Unicorn",
     function(callback) {
         var options = {};
@@ -121,13 +106,6 @@ gulp.task("Sync-Unicorn",
         options.authenticationConfigFile = config.websiteRoot + "/App_config/Include/Unicorn.SharedSecret.config";
 
         unicorn(function() { return callback() }, options);
-    });
-
-
-gulp.task("Publish-Transforms",
-    function() {
-        return gulp.src("./src/**/code/**/*.xdt")
-            .pipe(gulp.dest(config.websiteRoot + "/temp/transforms"));
     });
 
 /*****************************
