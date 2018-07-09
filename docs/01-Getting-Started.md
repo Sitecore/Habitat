@@ -6,7 +6,7 @@ This version of Habitat uses the following versions of this software:
 
 | Software      | Version |
 | ---           | --- |
-| Sitecore      | 9.0 Update 1, rev 171219 |
+| Sitecore      | 9.0.2 rev. 180604 (9.0 Update-2) |
 | Solr          | 6.6.2 |
 | Sitecore Installation Framework | 1.2.1 |
 
@@ -17,7 +17,7 @@ This project assumes the following settings:
 | Setting             |  Value                                                                     | Change in <sup>1 *see below*</sup> |
 | ---                 | ---                                                                        | --- |
 | Source location     | C:\projects\Habitat\                                                       | `Habitat.Dev.config` |
-| Website location    | C:\inetpub\wwwroot\Habitat.dev.local\                                      | `gulp-config.js`, `settings.ps1`, `xconnect-XP0.json`, `sitecore-XP0.json` |
+| Website location    | C:\inetpub\wwwroot\habitat.dev.local\                                      | `gulp-config.js`, `settings.ps1`, `xconnect-XP0.json`, `sitecore-XP0.json` |
 | Website URL         | [https://habitat.dev.local/](https://habitat.dev.local/)                   | `publishsettings.targets`, `settings.ps1` |
 | SQL Server          | .                                                                          | `settings.ps1` |
 | SQL Server Admin    | sa                                                                         | `settings.ps1` |
@@ -48,7 +48,7 @@ The Sitecore install script will check some prerequisites.
 ### Solr
 
 The installation requires the Apache Solr search engine.
-Solr must be running as a windows service. This can be accomplished through running [NSSM](https://sitecore.stackexchange.com/questions/1211/how-to-get-solr-to-run-as-a-service). 
+Solr must be running as a Windows Service. This can be accomplished through running [NSSM](https://sitecore.stackexchange.com/questions/1211/how-to-get-solr-to-run-as-a-service). 
 Furthermore, Sitecore is secure by default and therefore Solr must be running as https. 
 If your Solr environment is not currently running with HTTPS, you can create an SSL certificate for Solr by following these steps (make sure your Solr settings are correctly configured in `settings.ps1`):
 
@@ -111,11 +111,9 @@ The project is configured to run Gulp through the command line or using the Task
 
 In the initial installation running the **default** task will execute all the configuration and building tasks for the solution. If for some reason setup fails, it is possible to run the install tasks one by one:
 
-* **01-Copy-Sitecore-Lib** will copy the assemblies from the Sitecore website to the solution
-* **02-Nuget-Restore** restores the nuGet packages used by all projects in the solution
-* **03-Publish-All-Projects** builds and publishes all the Visual Studio projects to the Sitecore website in the right order
-* **04-Apply-Xml-Transform** makes the needed changes to the web.config in the Sitecore website
-* **05-Sync-Unicorn** runs a complete synchronization of Unicorn for all projects in the right order
+* **Publish-All-Projects** builds and publishes all the Visual Studio projects to the Sitecore website in the right order
+* **Apply-Xml-Transform** makes the needed changes to the web.config and other existing configs in the Sitecore website
+* **Sync-Unicorn** runs a complete synchronization of Unicorn for all projects in the right order
 
 #### Helper tasks
 
