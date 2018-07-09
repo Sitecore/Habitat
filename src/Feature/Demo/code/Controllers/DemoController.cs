@@ -49,7 +49,7 @@ namespace Sitecore.Feature.Demo.Controllers
 
         public ActionResult ExperienceDataContent()
         {
-            var experienceData = ServiceLocator.ServiceProvider.GetService<ExperienceData>();
+            var experienceData = this.ExperienceDataFactory.Get();
             return this.View("_ExperienceDataContent", experienceData);
         }
 
