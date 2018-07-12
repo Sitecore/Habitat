@@ -1,4 +1,4 @@
-###Contributors		
+### Contributors		
 A huge thanks to people who have contributed to the project in different ways:		
 * [Anders Laub Christoffersen](https://community.sitecore.net/members/anderschristoffersen_5f00_688677062)		
 * [Kam Figy](https://community.sitecore.net/members/kamfigy_5f00_1576112879)		
@@ -19,7 +19,7 @@ A huge thanks to people who have contributed to the project in different ways:
 		
 *Any omissions are completely unintentional*		
 		
-###How do I contribute?		
+### How do I contribute?		
 When developing a contribution to the project, we suggest using Githubs fork feature. When you have completed your work, please use the Pull Request feature to submit your work back to the project. We will review and comment is necessary and when your contribution is approved, we will add a merge task into our backlog for the next release, this will assure that the new feature goes through the internal test and QA processes.  		
 You can read more about the tools here: https://help.github.com/categories/collaborating/		
 		
@@ -32,7 +32,7 @@ In summary:
 5. If the feature is accepted, the team will submit a task to the internal project backlog to merge in the feature.		
 6. Your feature will be distributed a part of the Habitat project - and you will be in the Hall of Fame forever.		
 		
-###What can I contribute?		
+### What can I contribute?		
 We are looking for all types of features and functionality which makes sense in a Sitecore solution. This means: If you have created a cool feature or functionality on your latest website project, then tell us about it! If you have a module on marketplace which would fit neatly into the project framework, lets have it!  		
 		
 Your contribution should typically be in the form of a new Feature module in the Domain layer. This means it should extend the functionality of the website. Please make sure that the feature is running in the Habitat website without additional design or layout changes. If you have suggestions for the Framework layer then please let us know too. We are always looking for good stuff.		
