@@ -17,7 +17,7 @@
                                  {
                                    configuration
                                  };
-      siteConfigurations.Current.ShouldBeEquivalentTo(configuration);
+      siteConfigurations.Current.Should().BeEquivalentTo(configuration);
     }
   }
 }

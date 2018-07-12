@@ -1,25 +1,25 @@
 ﻿namespace Sitecore.Feature.Demo
 {
-    using Sitecore.Data;
+  using Sitecore.Data;
 
-    public struct Templates
+  public struct Templates
+  {
+    public struct ProfilingSettings
     {
-        public struct ProfilingSettings
-        {
-            public static readonly ID ID = new ID("{C6D4DDD5-B912-4C1A-A3A3-E1D90E4D0939}");
+      public static readonly ID ID = new ID("{C6D4DDD5-B912-4C1A-A3A3-E1D90E4D0939}");
 
-            public struct Fields
-            {
-                public static readonly ID SiteProfiles = new ID("{2A84ECA4-68BB-4451-B4AC-98EA71A5A3DC}");
-            }
-        }
+      public struct Fields
+      {
+        public static readonly ID SiteProfiles = new ID("{2A84ECA4-68BB-4451-B4AC-98EA71A5A3DC}");
+      }
+    }
 
-        public struct DemoContent
-        {
-            public static readonly ID ID = new ID("{1224B40E-7B6C-42B3-A6D0-C40A6C61345C}");
+    public struct DemoContent
+    {
+      public static readonly ID ID = new ID("{1224B40E-7B6C-42B3-A6D0-C40A6C61345C}");
 
-            public struct Fields
-            {
+      public struct Fields
+      {
                 public static readonly ID HtmlContent = new ID("{0BC0AEDF-A6D0-4F74-933C-BD1779CD40B2}");
                 public static readonly ID Referrer = new ID("{D28EFE17-C491-47C0-B62D-934DC9DA38A4}");
                 public static readonly ID IpAddress = new ID("{1618E249-E670-46A7-A198-6E85B7745726}");
@@ -36,17 +36,17 @@
                 public static readonly ID PostalCode = new ID("{0B1FA959-43BE-478E-8013-3DB7D2921554}");
                 public static readonly ID Region = new ID("{26FF4697-C334-49EE-8AAE-9480DFEB40C3}");
                 public static readonly ID Url = new ID("{F0FFE350-6033-4E41-A99F-91ECCA49BC7C}");
-            }
-        }
-
-        public struct Token
-        {
-            public static readonly ID ID = new ID("{A7EBF38A-5F66-4579-92D1-568A8BA50293}");
-
-            public struct Fields
-            {
-                public static readonly string TokenValue = "Token Value";
-            }
-        }
+      }
     }
+
+    public struct Token
+    {
+      public static readonly ID ID = new ID("{A7EBF38A-5F66-4579-92D1-568A8BA50293}");
+
+      public struct Fields
+      {
+        public static readonly string TokenValue = "Token Value";
+      }
+    }
+  }
 }

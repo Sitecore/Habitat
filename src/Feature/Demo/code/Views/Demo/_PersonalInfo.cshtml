@@ -31,27 +31,19 @@
                             @Html.Sitecore().DictionaryField("/Demo/Personal Info/Anonymous User", "You are anonymous")
                         }
                     </h4>
-                    <dl>
+                    @if (Model.PhotoUrl != null)
+                    {
+                        <div>
+                            <img src="@Model.PhotoUrl" width="50" />
+                        </div>
+                    }
+                    <dl class="small">
                         @foreach (var property in Model.Properties)
                         {
                             <dt>@property.Key</dt>
                             <dd>@property.Value</dd>
                         }
                     </dl>
-                </div>
-                <div class="media-right">
-                    @if (Model.PhotoUrl != null)
-                    {
-                        <img src="@Model.PhotoUrl" width="50"/>
-                    }
-                    else if (Model.IsIdentified)
-                    {
-                        <span class="fa fa-user-plus icon-lg"></span>
-                    }
-                    else
-                    {
-                        <span class="fa fa-user-secret icon-lg"></span>
-                    }
                 </div>
             </div>
             @if (Model.Location != null)

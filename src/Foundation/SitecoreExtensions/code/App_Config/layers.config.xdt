@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<layers xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <layer name="Custom" xdt:Locator="Match(name)">
+        <loadOrder xdt:Transform="InsertIfMissing">
+            <add path="Foundation" type="Folder" xdt:Transform="InsertIfMissing" xdt:Locator="Match(path)" />
+            <add path="Feature" type="Folder" xdt:Transform="InsertIfMissing" xdt:Locator="Match(path)" />
+            <add path="Project" type="Folder" xdt:Transform="InsertIfMissing" xdt:Locator="Match(path)" />
+        </loadOrder>
+    </layer>
+</layers>

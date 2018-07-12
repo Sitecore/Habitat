@@ -24,7 +24,7 @@
         public void Constructor_InstanceOfISiteDefinitionInterface_InstanceShouldBeCreated(ISiteDefinitionsProvider provider, SiteConfigurationRepository multisiteRepository)
         {
             Action action = () => new SiteConfigurationRepository(provider);
-            action.ShouldNotThrow();
+            action.Should().NotThrow();
         }
 
         [Theory]

@@ -33,7 +33,7 @@
       var contextItem = db.GetItem(item.ID);
       var siteDefinition = siteContext.GetSiteDefinition(contextItem);
 
-      siteDefinition.Item.ID.ShouldBeEquivalentTo(definitionItem.ID);
+      siteDefinition.Item.ID.Should().BeEquivalentTo(definitionItem.ID);
     }
 
     [Theory]
@@ -46,7 +46,7 @@
       provider.GetContextSiteDefinition(Arg.Any<Item>()).Returns((SiteDefinition)null);
 
       var siteContext = new SiteContext(provider);
-      siteContext.GetSiteDefinition(contextItem).ShouldBeEquivalentTo(null);
+      siteContext.GetSiteDefinition(contextItem).Should().BeNull();
     }
   }
 }

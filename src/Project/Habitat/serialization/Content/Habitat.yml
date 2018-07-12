@@ -37,7 +37,7 @@ SharedFields:
 - ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
   Hint: __Security
   Value: |
-    ar|habitat\Project Habitat Content Author|pe|+item:write|+item:read|!*|pd|+item:write|+item:read|!*|
+    ar|extranet\Project Habitat Content Author|pe|+item:write|+item:read|!*|pd|+item:write|+item:read|!*|
 - ID: "ed71d374-8c33-4561-991d-77482ae01330"
   Hint: Accounts Details Page
   Value: /sitecore/content/Habitat/Home/Edit Profile
@@ -46,6 +46,10 @@ SharedFields:
   Value: /sitecore/content/Habitat/Home/Login/Forgot Password
 Languages:
 - Language: da
+  Fields:
+  - ID: "53b5af0a-265f-4e60-b2b2-4576ce0beccf"
+    Hint: Theme
+    Value: "{9025588B-C765-458B-829C-1886A98AD3A7}"
   Versions:
   - Version: 1
     Fields:
@@ -66,13 +70,13 @@ Languages:
     - ID: "e748d808-64c1-4dec-9718-f35cf9689e4b"
       Hint: Logo
       Value: |
-        <image mediapath="/Default Website/sc_logo" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/sc_logo" mediaid="{461A93BF-5471-4AF2-BF36-D638F5660CB5}" />
+        <image mediapath="/Default Website/sc_logo" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/sc_logo" mediaid="{6C33AFC0-606E-4A18-A8DB-679620D5B409}" />
 - Language: en
   Fields:
   - ID: "2a84eca4-68bb-4451-b4ac-98ea71a5a3dc"
     Hint: SiteProfiles
     Type: Multilist
-    Value: "{24DFF2CF-B30A-4B75-8967-2FE3DED82271}"
+    Value: "{C4CC3EF6-A779-44AD-9021-01F1DAE26270}"
   - ID: "53b5af0a-265f-4e60-b2b2-4576ce0beccf"
     Hint: Theme
     Value: "{9025588B-C765-458B-829C-1886A98AD3A7}"
@@ -85,8 +89,10 @@ Languages:
     - ID: "02115632-fe1e-4b3d-9ad4-a4ddf1f782f0"
       Hint: Copyright
       Value: |
-        <p>© Copyright 2017, <a href="http://sitecore.net" target="_blank" title="Opens in a new window">Sitecore</a>. All Rights Reserved<br />
+        <p>© Copyright 2018, <a href="http://sitecore.net" target="_blank" title="Opens in a new window">Sitecore</a>. All Rights Reserved<br />
         <small>&ldquo;Habitat&rdquo; as used here is for demonstration purposes only and to represent the software and services provided by Sitecore further described at www.sitecore.net.</small></p>
+        
+        <p><small>The Habitat demonstration site is provided for example/reference purposes only. It is not supported by Sitecore and should not be used as a starter kit.</small></p>
     - ID: "021aa3f7-206f-4acc-9538-f6d7fe86b168"
       Hint: Interests Folder
       Value: "{A74EE096-F225-4568-8D81-2F71ABBC8118}"
@@ -111,13 +117,14 @@ Languages:
     - ID: "a24df48f-c8a3-4163-966c-8c24bd8760b2"
       Hint: OrganisationAddress
       Value: |
-        2320 Marinship Way
-        Sausalito, CA 94965
+        101 California Street 
+        Suite 1600 
+        San Francisco, CA 94111
         USA
     - ID: "e748d808-64c1-4dec-9718-f35cf9689e4b"
       Hint: Logo
       Value: |
-        <image mediaid="{93AB35C2-44A0-4D5D-9EC0-B857D37F8B08}" alt="" height="" width="" hspace="" vspace="" />
+        <image mediaid="{6C33AFC0-606E-4A18-A8DB-679620D5B409}" alt="" height="" width="" hspace="" vspace="" />
     - ID: "efd4980a-030c-497c-8880-40b6030ac28b"
       Hint: OrganisationName
       Value: Sitecore Corporation

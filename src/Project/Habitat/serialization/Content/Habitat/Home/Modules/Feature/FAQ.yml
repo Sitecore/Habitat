@@ -12,6 +12,26 @@ SharedFields:
     {94A8C8E9-690B-4E65-98E7-F95800222767}
     {8FF3D369-A508-4D2F-84A5-9B6C6BF5E537}
     {BA1EB1BD-E705-4BE6-A432-06B7F1B2F2CC}
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="c4cc3ef6-a779-44ad-9021-01f1dae26270"
+        name="Layers"
+        presets="freddy the feature layer|100||">
+        <key
+          name="Feature"
+          value="10" />
+        <key
+          name="Foundation"
+          value="2" />
+        <key
+          name="Project"
+          value="0" />
+      </profile>
+    </tracking>
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Type: layout
@@ -26,17 +46,17 @@ SharedFields:
           p:before="*"
           s:ds="{7A015A8A-E7F5-4DC2-8BEF-1A3E1708B39C}"
           s:id="{52A898D9-6D20-43FD-9798-1578B14A117C}"
-          s:ph="/page-layout/section_ae5aa048-6552-4479-85d5-2cfc1c1e4304/col-wide-1_8bbcd4a3-ff5a-459e-81ae-d24c6c5435a2" />
+          s:ph="/page-layout/section-{AE5AA048-6552-4479-85D5-2CFC1C1E4304}-0/col-wide-1-{8BBCD4A3-FF5A-459E-81AE-D24C6C5435A2}-0" />
         <r
           uid="{EA1DC45B-54BB-4B3A-B49A-45C69DCBE88A}"
           p:after="r[@uid='{8C9F3988-6CA4-4992-BFDA-E97ADD057A75}']"
           s:id="{3F7AD288-FA57-441F-AD79-CA60DC0C0A8D}"
-          s:ph="/page-layout/section_ae5aa048-6552-4479-85d5-2cfc1c1e4304/col-narrow-1_8bbcd4a3-ff5a-459e-81ae-d24c6c5435a2" />
+          s:ph="/page-layout/section-{AE5AA048-6552-4479-85D5-2CFC1C1E4304}-0/col-narrow-1-{8BBCD4A3-FF5A-459E-81AE-D24C6C5435A2}-0" />
         <r
           uid="{8BBCD4A3-FF5A-459E-81AE-D24C6C5435A2}"
           p:after="r[@uid='{EA1DC45B-54BB-4B3A-B49A-45C69DCBE88A}']"
           s:id="{AB7054DD-B8E3-41D6-A75F-B54F2F37D08B}"
-          s:ph="/page-layout/section_ae5aa048-6552-4479-85d5-2cfc1c1e4304" />
+          s:ph="/page-layout/section-{AE5AA048-6552-4479-85D5-2CFC1C1E4304}-0" />
         <r
           uid="{AE5AA048-6552-4479-85D5-2CFC1C1E4304}"
           p:after="r[@uid='{1DF746C3-2D29-43E6-9DE2-05622DED6F97}']"

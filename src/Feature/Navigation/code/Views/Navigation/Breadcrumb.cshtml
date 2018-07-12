@@ -3,7 +3,7 @@
 @model Sitecore.Feature.Navigation.Models.NavigationItems
 <div class="container">
   <ol class="breadcrumb">
-    @foreach (var item in Model.Items)
+    @foreach (var item in Model.NavItems)
     {
       <li class="@(item.IsActive ? "active" : string.Empty)">
         <a href="@item.Item.Url()">@Html.Sitecore().Field(Templates.Navigable.Fields.NavigationTitle, item.Item)</a>

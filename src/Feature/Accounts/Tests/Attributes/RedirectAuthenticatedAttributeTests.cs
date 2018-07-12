@@ -3,6 +3,7 @@
   using System.Reflection;
   using System.Web.Mvc;
   using FluentAssertions;
+  using NSubstitute;
   using Ploeh.AutoFixture.AutoNSubstitute;
   using Sitecore.Collections;
   using Sitecore.Data;
@@ -10,6 +11,7 @@
   using Sitecore.FakeDb.AutoFixture;
   using Sitecore.FakeDb.Sites;
   using Sitecore.Feature.Accounts.Attributes;
+  using Sitecore.Feature.Accounts.Services;
   using Sitecore.Feature.Accounts.Tests.Extensions;
   using Sitecore.Foundation.Testing.Attributes;
   using Sitecore.Sites;
@@ -19,10 +21,12 @@
   {
     [Theory]
     [AutoDbData]
-    public void OnActionExecuting_NotNormalMode_ShouldNotRedirect(FakeSiteContext siteContext, [Substitute]ActionExecutingContext filterContext, RedirectAuthenticatedAttribute redirectAuthenticatedAttribute)
+    public void OnActionExecuting_NotNormalMode_ShouldNotRedirect(FakeSiteContext siteContext, [Substitute]ActionExecutingContext filterContext)
     {
       //Arrange
       typeof(SiteContext).GetField("displayMode", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(siteContext, DisplayMode.Edit);
+      var urlService = Substitute.For<IGetRedirectUrlService>();
+      var redirectAuthenticatedAttribute = new RedirectAuthenticatedAttribute(urlService);
 
       //Act
       using (new SiteContextSwitcher(siteContext))
@@ -36,11 +40,13 @@
 
     [Theory]
     [AutoDbData]
-    public void OnActionExecuting_NotAuthenticatedUser_ShouldNotRedirect(FakeSiteContext siteContext, [Substitute]ActionExecutingContext filterContext, RedirectAuthenticatedAttribute redirectAuthenticatedAttribute)
+    public void OnActionExecuting_NotAuthenticatedUser_ShouldNotRedirect(FakeSiteContext siteContext, [Substitute]ActionExecutingContext filterContext)
     {
       //Arrange
       typeof(SiteContext).GetField("displayMode", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(siteContext, DisplayMode.Normal);
-
+      var urlService = Substitute.For<IGetRedirectUrlService>();
+      var redirectAuthenticatedAttribute = new RedirectAuthenticatedAttribute(urlService);
+      
       //Act
       using (new SiteContextSwitcher(siteContext))
       using (new Sitecore.Security.Accounts.UserSwitcher(@"extranet\John", false))
@@ -54,7 +60,7 @@
 
     [Theory]
     [AutoDbData]
-    public void OnActionExecuting_AuthenticatedUser_ShouldRedirect(Database db, [Content] DbItem item, [Substitute]ActionExecutingContext filterContext, RedirectAuthenticatedAttribute redirectAuthenticatedAttribute)
+    public void OnActionExecuting_AuthenticatedUser_ShouldRedirect(Database db, [Content] DbItem item, [Substitute]ActionExecutingContext filterContext, string url)
     {
       //Arrange
       var siteContext = new FakeSiteContext(new StringDictionary
@@ -67,6 +73,9 @@
         }
       }) as SiteContext;
       siteContext.Database = db;
+      var urlService = Substitute.For<IGetRedirectUrlService>();
+      urlService.GetRedirectUrl(AuthenticationStatus.Authenticated).Returns(url);
+      var redirectAuthenticatedAttribute = new RedirectAuthenticatedAttribute(urlService);
 
       //Act
       using (new SiteContextSwitcher(siteContext))
@@ -77,6 +86,7 @@
 
       //Assert
       filterContext.Result.Should().BeOfType<RedirectResult>();
+      ((RedirectResult)filterContext.Result).Url.Should().Be(url);
     }
   }
 }

@@ -13,10 +13,7 @@
     {
         <div class="block-grid-item">
             <div>
-                @using (Html.Sitecore().SwitchContextItem(item))
-                {
-                    @Html.Sitecore().ViewRendering("/Views/PageContent/PageTeaser")
-                }
+                @Html.Sitecore().Rendering(Renderings.PageTeaser.ToString(), new { Datasource = item.ID })
             </div>
         </div>
     }

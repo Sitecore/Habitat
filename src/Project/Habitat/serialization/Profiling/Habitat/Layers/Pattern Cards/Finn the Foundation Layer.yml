@@ -1,0 +1,36 @@
+﻿---
+ID: "f2cb126f-83d7-426a-99e3-b49400b52675"
+Parent: "4ba1802a-fb9b-400b-8dd0-77992ed9f580"
+Template: "4a6a7e36-2481-438f-a9ba-0453ecc638fa"
+Path: /sitecore/system/Marketing Control Panel/Profiles/Habitat/Layers/Pattern Cards/Finn the Foundation Layer
+DB: master
+SharedFields:
+- ID: "6da71ad3-5849-4482-9317-d21390e5a348"
+  Hint: Pattern
+  Value: |
+    <tracking>
+      <profile id="c4cc3ef6-a779-44ad-9021-01f1dae26270" name="Layers">
+        <key name="Feature" value="2" />
+        <key name="Foundation" value="10" />
+        <key name="Project" value="0" />
+      </profile>
+    </tracking>
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 200
+Languages:
+- Language: en
+  Fields:
+  - ID: "98535f26-6c9d-4fd7-a7e2-392c7cb82d65"
+    Hint: Image
+    Value: |
+      <image mediaid="{74F43420-14E8-47DD-BC03-C31A7B5471F2}" />
+  - ID: "fe732790-2ddb-4657-a882-c2fce1fbf0c9"
+    Hint: Name
+    Value: Finn the Foundation Layer
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171005T142328Z

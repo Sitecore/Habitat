@@ -60,7 +60,7 @@
     }
 
     [Theory, AutoDbDataWithExtension]
-    public void GetProfileShouldReturnFullEditProfileModel(Db db, [Substitute] UserProfile userProfile, [RightKeys("FirstName", "LastName", "Phone", "Interest")] IDictionary<string, string> properties,
+    public void GetProfileShouldReturnFullEditProfileModel(Db db, [Substitute] UserProfile userProfile, string username, [RightKeys("FirstName", "LastName", "Phone", "Interest")] IDictionary<string, string> properties,
       [Frozen] IProfileSettingsService profileSettingsService, [Frozen] IUserProfileProvider userProfileProvider, [Greedy] UserProfileService userProfileService)
     {
       var id = new ID();
@@ -77,7 +77,9 @@
       profileSettingsService.GetUserDefaultProfile().Returns(db.GetItem(id));
       userProfileProvider.GetCustomProperties(Arg.Any<UserProfile>()).Returns(properties);
 
-      var result = userProfileService.GetProfile(userProfile);
+      var user = Substitute.For<Sitecore.Security.Accounts.User>($@"extranet\{username}", true);
+      user.Profile.Returns(userProfile);
+      var result = userProfileService.GetProfile(user);
       result.FirstName.Should().Be(properties["FirstName"]);
       result.LastName.Should().Be(properties["LastName"]);
       result.PhoneNumber.Should().Be(properties["Phone"]);
@@ -99,34 +101,13 @@
           }
       });
       profileSettingsService.GetUserDefaultProfile().Returns(db.GetItem(id));
-      userProfileService.SetProfile(userProfile, editProfile);
+      userProfileService.SaveProfile(userProfile, editProfile);
 
       userProfileProvider.Received(1).SetCustomProfile(userProfile, Arg.Is<IDictionary<string, string>>(
         x => x["FirstName"] == editProfile.FirstName &&
              x["LastName"] == editProfile.LastName &&
              x["Interest"] == editProfile.Interest &&
              x["Phone"] == editProfile.PhoneNumber));
-    }
-
-    [Theory, AutoDbDataWithExtension(typeof(AutoConfiguredNSubstituteCustomization))]
-    public void ValidateProfileShouldAddModelError(ModelStateDictionary modelState, [Frozen] IEnumerable<string> interests, IProfileSettingsService profileSettingsService, IUserProfileProvider userProfileProvider, [Greedy] UserProfileService userProfileService)
-    {
-      var editProfile = new EditProfile() { Interest = "invalid interest" };
-
-      var result = userProfileService.ValidateProfile(editProfile, modelState);
-
-      result.Should().BeFalse();
-      modelState.Keys.Should().Contain("Interest");
-    }
-
-    [Theory, AutoDbDataWithExtension(typeof(AutoConfiguredNSubstituteCustomization))]
-    public void ValidateProfileShouldreturnValid(ModelStateDictionary modelState, [Frozen] IEnumerable<string> interests, IProfileSettingsService profileSettingsService, IUserProfileProvider userProfileProvider, [Greedy] UserProfileService userProfileService)
-    {
-      var editProfile = new EditProfile() { Interest = interests.First() };
-
-      var result = userProfileService.ValidateProfile(editProfile, modelState);
-
-      result.Should().BeTrue();
     }
   }
 }

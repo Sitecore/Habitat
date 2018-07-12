@@ -2,7 +2,9 @@
 {
     using System.Collections.Specialized;
     using System.Diagnostics.CodeAnalysis;
+    using Microsoft.Extensions.DependencyInjection;
     using Sitecore.Data;
+    using Sitecore.DependencyInjection;
     using Sitecore.Diagnostics;
     using Sitecore.Foundation.FieldEditor.Services;
     using Sitecore.Shell.Applications.WebEdit;
@@ -14,6 +16,8 @@
     {
         private const string Parameter_Uri = "uri";
         private const string Parameter_Fields = "fields";
+
+        private IGetFieldsToEditService GetFieldsToEditService => ServiceLocator.ServiceProvider.GetRequiredService<IGetFieldsToEditService>();
 
         [ExcludeFromCodeCoverage]
         public override void Execute(CommandContext context)
@@ -27,7 +31,7 @@
             var item = context.Items[0];
             args.Parameters.Add(Parameter_Uri, item.Uri.ToString());
 
-            var pipedFieldNames = GetFieldsToEditService.GetFieldsToEdit(item);
+            var pipedFieldNames = this.GetFieldsToEditService.GetFieldsToEdit(item);
 
             args.Parameters[Parameter_Fields] = pipedFieldNames;
             Context.ClientPage.Start(this, "StartFieldEditor", args);
@@ -49,7 +53,7 @@
             var item = Database.GetItem(uri);
             Assert.IsNotNull(item, "item");
 
-            var options = GetFieldsToEditService.GetFieldEditorOptions(form, pipedFields, item);
+            var options = this.GetFieldsToEditService.GetFieldEditorOptions(form, pipedFields, item);
 
             return options;
         }
@@ -58,7 +62,7 @@
         {
             if (!Context.PageMode.IsExperienceEditor)
                 return CommandState.Hidden;
-            return context.Items.Length >= 1 && !string.IsNullOrEmpty(GetFieldsToEditService.GetFieldsToEdit(context.Items[0])) ? CommandState.Enabled : CommandState.Hidden;
+            return context.Items.Length >= 1 && !string.IsNullOrEmpty(this.GetFieldsToEditService.GetFieldsToEdit(context.Items[0])) ? CommandState.Enabled : CommandState.Hidden;
         }
     }
 }

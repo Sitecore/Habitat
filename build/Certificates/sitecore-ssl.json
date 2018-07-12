@@ -1,0 +1,51 @@
+﻿// -------------------------------------------------------------------------- //
+//         Sitecore Install Framework - Sitecore SSL binding                  //
+//                                                                            //
+//  Run this configuration to install an SSL certificate on a website         //
+//                                                                            //
+// -------------------------------------------------------------------------- //
+
+{
+    "Parameters": {
+        "SiteName": {
+            "Type": "string",
+            "Description": "The name of the site to be deployed."
+        }
+    },
+    "Variables": {
+        // The sites full path on disk
+        "Site.PhysicalPath": "[joinpath(environment('SystemDrive'), 'inetpub', 'wwwroot', parameter('SiteName'))]",
+        "Site.DataFolder": "[joinpath(variable('Site.PhysicalPath'), 'App_Data')]"
+    },
+    "Tasks": {
+        // Tasks are separate units of work in a configuration.
+        // Each task is an action that will be completed when Install-SitecoreConfiguration is called.
+        // By default, tasks are applied in the order they are declared.
+        // Tasks may reference Parameters, Variables, and config functions.
+
+        "StopWebsite": {
+            // Stops the website if it is running.
+            "Type": "ManageWebsite",
+            "Params": {
+                "Name": "[parameter('SiteName')]",
+                "Action": "Stop"
+            }
+        },
+        "CreateBindingsWithDevelopmentThumprint": {
+            // Creates a new thumprint with a custom CA
+            "Type": "AddWebFeatureSSL",
+            "Params": {
+                "HostName": "[parameter('SiteName')]",
+                "OutputDirectory": "[variable('Site.DataFolder')]"
+            }
+        },
+        "StartWebsite": {
+            // Starts the website if it is stopped.
+            "Type": "ManageWebsite",
+            "Params": {
+                "Name": "[parameter('SiteName')]",
+                "Action": "Start"
+            }
+        }
+    }
+}

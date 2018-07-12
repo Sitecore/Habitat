@@ -4,6 +4,8 @@ namespace Sitecore.Foundation.Accounts.Pipelines
 
     public class LoggedInPipelineArgs : AccountsPipelineArgs
     {
+        public string Source { get; set; }
+
         public Guid? PreviousContactId
         {
             get

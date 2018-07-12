@@ -6,18 +6,16 @@
     using System.Web;
     using Sitecore.Analytics;
     using Sitecore.Feature.Demo.Models;
+    using Sitecore.Foundation.DependencyInjection;
 
-    public class ReferralRepository
+    [Service(typeof(IReferralRepository))]
+    public class ReferralRepository : IReferralRepository
     {
         private readonly ICampaignRepository campaignRepository;
 
         public ReferralRepository(ICampaignRepository campaignRepository)
         {
             this.campaignRepository = campaignRepository;
-        }
-
-        public ReferralRepository() : this(new CampaignRepository())
-        {
         }
 
         public Referral Get()

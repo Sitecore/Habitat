@@ -22,10 +22,10 @@
 
     [Theory]
     [AutoDbData]
-    public void DefaultConstructor_ShouldNotThrow()
+    public void DefaultConstructor_ShouldNotThrow(ISiteConfigurationRepository repository)
     {
-      Action action = () => new MultisiteController();
-      action.ShouldNotThrow();
+      Action action = () => new MultisiteController(repository);
+      action.Should().NotThrow();
     }
   }
 }

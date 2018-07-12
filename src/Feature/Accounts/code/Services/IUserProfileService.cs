@@ -10,10 +10,8 @@
     {
         string GetUserDefaultProfileId();
         EditProfile GetEmptyProfile();
-        EditProfile GetProfile(UserProfile userProfile);
-        void SetProfile(UserProfile userProfile, EditProfile model);
-        bool ValidateProfile(EditProfile model, ModelStateDictionary modelState);
+        EditProfile GetProfile(User user);
+        void SaveProfile(UserProfile userProfile, EditProfile model);
         IEnumerable<string> GetInterests();
-        bool ValidateUser(User user);
     }
 }

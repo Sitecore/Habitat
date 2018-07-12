@@ -1,28 +1,25 @@
 ﻿namespace Sitecore.Foundation.Multisite
 {
-  using Sitecore.Data.Items;
-  using Sitecore.Diagnostics;
-  using Sitecore.Foundation.Multisite.Providers;
-  using Sitecore.Foundation.Multisite;
+    using Sitecore.Data.Items;
+    using Sitecore.Diagnostics;
+    using Sitecore.Foundation.DependencyInjection;
+    using Sitecore.Foundation.Multisite.Providers;
 
-  public class SiteContext
-  {
-    private readonly ISiteDefinitionsProvider siteDefinitionsProvider;
-
-    public SiteContext() : this(new SiteDefinitionsProvider())
-    {    
-    }
-
-    public SiteContext(ISiteDefinitionsProvider siteDefinitionsProvider)
+    [Service]
+    public class SiteContext
     {
-      this.siteDefinitionsProvider = siteDefinitionsProvider;
-    }
+        private readonly ISiteDefinitionsProvider siteDefinitionsProvider;
 
-    public virtual SiteDefinition GetSiteDefinition([NotNull]Item item)
-    {
-      Assert.ArgumentNotNull(item, nameof(item));
+        public SiteContext(ISiteDefinitionsProvider siteDefinitionsProvider)
+        {
+            this.siteDefinitionsProvider = siteDefinitionsProvider;
+        }
 
-      return this.siteDefinitionsProvider.GetContextSiteDefinition(item);
+        public virtual SiteDefinition GetSiteDefinition([NotNull] Item item)
+        {
+            Assert.ArgumentNotNull(item, nameof(item));
+
+            return this.siteDefinitionsProvider.GetContextSiteDefinition(item);
+        }
     }
-  }
 }

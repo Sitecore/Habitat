@@ -5,6 +5,10 @@ Template: "4a8822cc-b418-4452-ab0f-8bb6df2f2114"
 Path: /sitecore/content/Habitat/Home
 DB: master
 SharedFields:
+- ID: "5585a30d-b115-4753-93ce-422c3455deb2"
+  Hint: ShowInNavigation
+  Type: Checkbox
+  Value: 0
 - ID: "8d5c486e-a0e3-4dbe-9a4a-cdff93594bda"
   Hint: IncludeInSearchResults
   Type: Checkbox
@@ -68,48 +72,114 @@ Languages:
               p:before="*"
               s:ds="{439EC71A-4231-45C8-B075-975BD41099A7}"
               s:id="{BDD730EB-F808-4C65-B94A-D2F03672EAFB}"
-              s:ph="/page-layout/section_f4fe27af-b867-4e72-8808-843d5781a355/col-narrow-2_0f43a3b5-7236-40e6-b86e-5a52b75bbd8b" />
+              s:ph="/page-layout/section-{F4FE27AF-B867-4E72-8808-843D5781A355}-0/col-narrow-2-{0F43A3B5-7236-40E6-B86E-5A52B75BBD8B}-0" />
             <r
               uid="{AFAF655F-81E2-4086-98E7-9AA6FD6720D9}"
               p:after="r[@uid='{6A48C9D4-62D2-4007-A253-8D3D9E6E29E3}']"
               s:ds="{BAA538A3-9DE8-4D89-B2EA-7F30B7D6410D}"
               s:id="{A1AD34DD-535E-47AF-A911-34C57CCC26F6}"
-              s:ph="/page-layout/section_f4fe27af-b867-4e72-8808-843d5781a355/col-narrow-1_0f43a3b5-7236-40e6-b86e-5a52b75bbd8b" />
+              s:ph="/page-layout/section-{F4FE27AF-B867-4E72-8808-843D5781A355}-0/col-narrow-1-{0F43A3B5-7236-40E6-B86E-5A52B75BBD8B}-0" />
             <r
               uid="{762DFB70-5D70-4205-BE54-C9F364C88E7C}"
               p:after="r[@uid='{AFAF655F-81E2-4086-98E7-9AA6FD6720D9}']"
               s:ds="{EE7C0E8A-37F1-41D7-A1DC-9990A97B93CE}"
               s:id="{A25C9850-AAB7-46A6-84B7-0DFAB32FC357}"
               s:par=""
-              s:ph="/page-layout/section_f4fe27af-b867-4e72-8808-843d5781a355/col-wide-1_0f43a3b5-7236-40e6-b86e-5a52b75bbd8b" />
+              s:ph="/page-layout/section-{F4FE27AF-B867-4E72-8808-843D5781A355}-0/col-wide-1-{0F43A3B5-7236-40E6-B86E-5A52B75BBD8B}-0" />
             <r
               uid="{0F43A3B5-7236-40E6-B86E-5A52B75BBD8B}"
               p:after="r[@uid='{762DFB70-5D70-4205-BE54-C9F364C88E7C}']"
               s:id="{B21C8A38-51BC-4866-9589-6062D6390247}"
-              s:ph="/page-layout/section_f4fe27af-b867-4e72-8808-843d5781a355" />
+              s:ph="/page-layout/section-{F4FE27AF-B867-4E72-8808-843D5781A355}-0" />
             <r
               uid="{7A8FCD26-592F-4119-88F1-4401728131D3}"
               p:after="r[@uid='{0F43A3B5-7236-40E6-B86E-5A52B75BBD8B}']"
               s:ds="{C9AA3B8F-5638-4360-AFAD-416D1A6D82B1}"
               s:id="{07AB411C-F894-4144-B069-48EF67431D32}"
-              s:ph="/page-layout/section_a3ca17ff-693c-46f1-87aa-b8c1833f1890/col-narrow-3_d180d469-533f-463c-b817-8d256484d2c4" />
+              s:ph="/page-layout/section-{A3CA17FF-693C-46F1-87AA-B8C1833F1890}-0/col-narrow-3-{D180D469-533F-463C-B817-8D256484D2C4}-0" />
             <r
               uid="{AA93F815-74D9-4BCE-80C3-AB23CAFDDC29}"
               p:after="r[@uid='{7A8FCD26-592F-4119-88F1-4401728131D3}']"
               s:ds="{8A80477E-7CB4-4CEE-A035-B48AC118ABE8}"
               s:id="{07AB411C-F894-4144-B069-48EF67431D32}"
-              s:ph="/page-layout/section_a3ca17ff-693c-46f1-87aa-b8c1833f1890/col-narrow-2_d180d469-533f-463c-b817-8d256484d2c4" />
+              s:ph="/page-layout/section-{A3CA17FF-693C-46F1-87AA-B8C1833F1890}-0/col-narrow-2-{D180D469-533F-463C-B817-8D256484D2C4}-0">
+              <rls>
+                <ruleset>
+                  <rule
+                    uid="{F031E0DB-1869-4BDC-83EF-43A23A9AAB3B}"
+                    s:name="Foundation">
+                    <actions>
+                      <action
+                        uid="1AC46B01A2F249FDA091546E757E6527"
+                        s:id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}"
+                        s:DataSource="{1A3560FC-9E54-4E65-BEAD-E349F3B80DD7}" />
+                    </actions>
+                    <conditions>
+                      <condition
+                        uid="531A7672A22843858EF38D9E84C25A0D"
+                        s:id="{E00DB4F0-B206-4544-AD90-25D201CFB62C}"
+                        s:ProfileName="Layers"
+                        s:PatternName="Finn the Foundation Layer" />
+                    </conditions>
+                  </rule>
+                  <rule
+                    uid="{8AACA1DA-D6CF-4043-93E6-DEBE15EFCD17}"
+                    s:name="Feature">
+                    <actions>
+                      <action
+                        uid="036EF3AA323D4852A1819EF46149E089"
+                        s:id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}"
+                        s:DataSource="{F7434DF7-E32E-4F8C-A50E-27C476F4DC32}" />
+                    </actions>
+                    <conditions>
+                      <condition
+                        uid="EA4889F100774FBDBB98730D97A3959E"
+                        s:id="{E00DB4F0-B206-4544-AD90-25D201CFB62C}"
+                        s:ProfileName="Layers"
+                        s:PatternName="Freddy the Feature Layer" />
+                    </conditions>
+                  </rule>
+                  <rule
+                    uid="{8E441277-4559-486C-8BB6-2079515C9311}"
+                    s:name="Project">
+                    <actions>
+                      <action
+                        uid="96CE45F4400B480C96BFD284CDDD8196"
+                        s:id="{0F3C6BEC-E56B-4875-93D7-2846A75881D2}"
+                        s:DataSource="{8D8EDB18-B641-4277-BAD3-9C6CF89F9FE3}" />
+                    </actions>
+                    <conditions>
+                      <condition
+                        uid="AF1FFBC8B0A14C23A5597D8DF9A5E342"
+                        s:id="{E00DB4F0-B206-4544-AD90-25D201CFB62C}"
+                        s:ProfileName="Layers"
+                        s:PatternName="Pam the Project Layer" />
+                    </conditions>
+                  </rule>
+                  <rule
+                    uid="{00000000-0000-0000-0000-000000000000}"
+                    s:name="Default">
+                    <conditions>
+                      <condition
+                        uid="A1398D1ED1054935810C4221761B0E67"
+                        s:id="{4888ABBB-F17D-4485-B14B-842413F88732}" />
+                    </conditions>
+                    <actions />
+                  </rule>
+                </ruleset>
+              </rls>
+            </r>
             <r
               uid="{B9A6955B-BED8-4168-9971-2B63DAB22860}"
               p:after="r[@uid='{AA93F815-74D9-4BCE-80C3-AB23CAFDDC29}']"
               s:ds="{B16765BA-7B3E-4C5B-9937-BFC985F2550C}"
               s:id="{07AB411C-F894-4144-B069-48EF67431D32}"
-              s:ph="/page-layout/section_a3ca17ff-693c-46f1-87aa-b8c1833f1890/col-narrow-1_d180d469-533f-463c-b817-8d256484d2c4" />
+              s:ph="/page-layout/section-{A3CA17FF-693C-46F1-87AA-B8C1833F1890}-0/col-narrow-1-{D180D469-533F-463C-B817-8D256484D2C4}-0" />
             <r
               uid="{D180D469-533F-463C-B817-8D256484D2C4}"
               p:after="r[@uid='{B9A6955B-BED8-4168-9971-2B63DAB22860}']"
               s:id="{7074CA39-734D-4953-A3D5-B7D09C37CE3B}"
-              s:ph="/page-layout/section_a3ca17ff-693c-46f1-87aa-b8c1833f1890" />
+              s:ph="/page-layout/section-{A3CA17FF-693C-46F1-87AA-B8C1833F1890}-0" />
             <r
               uid="{66FC1C19-FC71-40CE-9C78-2158011733E1}"
               p:after="r[@uid='{D180D469-533F-463C-B817-8D256484D2C4}']"

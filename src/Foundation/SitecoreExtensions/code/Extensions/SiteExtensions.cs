@@ -4,8 +4,7 @@
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Items;
-  using Sitecore.ExperienceEditor.Utils;
-  using Sitecore.ExperienceExplorer.Business.Managers;
+
   using Sitecore.Sites;
 
   public static class SiteExtensions

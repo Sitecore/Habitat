@@ -11,7 +11,7 @@ SharedFields:
   Value: |
     <tracking>
       <profile
-        id="{24DFF2CF-B30A-4B75-8967-2FE3DED82271}"
+        id="24dff2cf-b30a-4b75-8967-2fe3ded82271"
         name="Focus"
         presets="development|100||">
         <key
@@ -26,6 +26,20 @@ SharedFields:
         <key
           name="Scope"
           value="5" />
+      </profile>
+      <profile
+        id="c4cc3ef6-a779-44ad-9021-01f1dae26270"
+        name="Layers"
+        presets="pam the project layer|100||">
+        <key
+          name="Feature"
+          value="3" />
+        <key
+          name="Foundation"
+          value="0" />
+        <key
+          name="Project"
+          value="10" />
       </profile>
     </tracking>
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"

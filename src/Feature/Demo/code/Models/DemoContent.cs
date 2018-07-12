@@ -3,7 +3,6 @@ namespace Sitecore.Feature.Demo.Models
     using System.Linq;
     using Sitecore.Analytics.Model;
     using Sitecore.Data.Items;
-    using Sitecore.ExperienceExplorer.Business.Utilities.Extensions;
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
     using Sitecore.Text;
     using static Configuration.Factory;
@@ -35,16 +34,18 @@ namespace Sitecore.Feature.Demo.Models
 
         private WhoIsInformation GetGeoData()
         {
-            var lat = this.Item.GetFieldAsDouble(Templates.DemoContent.Fields.Latitude, 0);
-            var lon = this.Item.GetFieldAsDouble(Templates.DemoContent.Fields.Longitude, 0);
+            var lat = this.Item.GetDouble(Templates.DemoContent.Fields.Latitude) ?? 0;
+            var lon = this.Item.GetDouble(Templates.DemoContent.Fields.Longitude) ?? 0;
 
             if (lat == 0 || lon == 0)
+            {
                 return null;
+            }
 
             var geoData = new WhoIsInformation
             {
-                Latitude = this.Item.GetFieldAsDouble(Templates.DemoContent.Fields.Latitude, 0),
-                Longitude = this.Item.GetFieldAsDouble(Templates.DemoContent.Fields.Longitude, 0),
+                Latitude = this.Item.GetDouble(Templates.DemoContent.Fields.Latitude) ?? 0,
+                Longitude = this.Item.GetDouble(Templates.DemoContent.Fields.Longitude) ?? 0,
                 AreaCode = this.Item[Templates.DemoContent.Fields.AreaCode],
                 BusinessName = this.Item[Templates.DemoContent.Fields.BusinessName],
                 City = this.Item[Templates.DemoContent.Fields.City],
@@ -60,7 +61,7 @@ namespace Sitecore.Feature.Demo.Models
             return geoData;
         }
 
-    private string ReplaceTokens(string content)
+        private string ReplaceTokens(string content)
         {
             var replacer = GetMasterVariablesReplacer();
             using (new ReplacerContextSwitcher(this.GetReplacementTokens()))

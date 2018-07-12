@@ -25,7 +25,7 @@
         {
             var repo = new NewsRepository(searchServiceRepository);
             Action act = () => repo.Get(null);
-            act.ShouldThrow<ArgumentException>();
+            act.Should().Throw<ArgumentException>();
         }
 
         [Theory]
@@ -34,7 +34,7 @@
         {
             var repo = new NewsRepository(searchServiceRepository);
             Action act = () => repo.Get(contextItem);
-            act.ShouldThrow<ArgumentException>();
+            act.Should().Throw<ArgumentException>();
         }
     }
 }

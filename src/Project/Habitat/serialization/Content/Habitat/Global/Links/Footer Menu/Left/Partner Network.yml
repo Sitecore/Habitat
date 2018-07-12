@@ -36,7 +36,7 @@ Languages:
     - ID: "fe71c30e-f07d-4052-8594-c3028cd76e1f"
       Hint: Link
       Value: |
-        <link text="" linktype="external" url="spn.sitecore.net" anchor="" title="" class="" querystring="" target="_blank" id="" />
+        <link linktype="external" url="http://spn.sitecore.net" anchor="" target="_blank" />
 - Language: "ja-JP"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

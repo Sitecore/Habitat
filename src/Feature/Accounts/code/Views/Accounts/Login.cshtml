@@ -48,11 +48,12 @@
                                                   }, "div")
     <div class="row">
         <div class="col-lg-6">
-            <input type="submit" class="btn btn-primary btn-lg btn-block" value="@Html.Sitecore().Dictionary("/Accounts/Login/Login", "Login")"/>
+            <input type="submit" class="btn btn-primary btn-block" value="@Html.Sitecore().Dictionary("/Accounts/Login/Login", "Login")"/>
         </div>
         <div class="col-lg-6">
-            <a href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.RegisterPage)" class="btn btn-default btn-lg btn-block">@Html.Sitecore().DictionaryField("/Accounts/Login/Register", "Register")</a>
+            <a href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.RegisterPage)" class="btn btn-default btn-block">@Html.Sitecore().DictionaryField("/Accounts/Login/Register", "Register")</a>
         </div>
     </div>
     <a href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Sitecore.Context.Item, Templates.AccountsSettings.Fields.ForgotPasswordPage)" class="btn btn-link">@Html.Sitecore().DictionaryField("/Accounts/Login/Forgot Your Password", "Forgot your password?")</a>
 }
+@Html.Partial("~/Views/Accounts/_FedAuth.cshtml", Model)

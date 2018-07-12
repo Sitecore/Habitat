@@ -54,9 +54,9 @@ namespace Sitecore.Feature.Search.Services
 
         private void RegisterSearchPageEvent(string searchQuery, ISearchResults results)
         {
-            this.TrackerService.TrackPageEvent(AnalyticsIds.SearchEvent, searchQuery, searchQuery, searchQuery?.ToLowerInvariant(), results.TotalNumberOfResults);
+            this.TrackerService.TrackPageEvent(AnalyticsIds.SearchEvent.ToGuid(), searchQuery, searchQuery, searchQuery?.ToLowerInvariant(), results.TotalNumberOfResults);
             if (results.TotalNumberOfResults == 0)
-                this.TrackerService.TrackPageEvent(AnalyticsIds.NoSearchHitsFound, searchQuery, searchQuery, searchQuery?.ToLowerInvariant());
+                this.TrackerService.TrackPageEvent(AnalyticsIds.NoSearchHitsFound.ToGuid(), searchQuery, searchQuery, searchQuery?.ToLowerInvariant());
         }
 
         public SearchResultsViewModel SearchFromTopResults(string query, int count)

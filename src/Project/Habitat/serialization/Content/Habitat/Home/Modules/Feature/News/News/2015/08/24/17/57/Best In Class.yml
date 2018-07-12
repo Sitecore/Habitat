@@ -30,7 +30,7 @@ Languages:
               p:before="*"
               s:ds="{E9E0AC91-854D-4E27-AA3C-134235209CE2}"
               s:id="{F49C9252-47F3-406B-B311-E26EE4D1149B}"
-              s:ph="/page-layout/section-narrow/col-wide-1_32989d01-241f-476f-a09e-165676d21833" />
+              s:ph="/page-layout/section-narrow/col-wide-1-{32989D01-241F-476F-A09E-165676D21833}-0" />
             <r
               uid="{32989D01-241F-476F-A09E-165676D21833}"
               p:after="r[@uid='{DAE436A6-7FCD-496C-8FFE-FD4390407EB5}']"
