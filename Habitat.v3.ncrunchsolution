@@ -4,6 +4,7 @@
       <Value>build\assets\license.xml</Value>
     </AdditionalFilesToIncludeForSolution>
     <AllowParallelTestExecution>True</AllowParallelTestExecution>
+    <CopyReferencedAssembliesToWorkspace>True</CopyReferencedAssembliesToWorkspace>
     <SolutionConfigured>True</SolutionConfigured>
   </Settings>
 </SolutionConfiguration>
