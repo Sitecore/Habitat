@@ -1,0 +1,9 @@
+﻿<SolutionConfiguration>
+  <Settings>
+    <AdditionalFilesToIncludeForSolution>
+      <Value>build\assets\license.xml</Value>
+    </AdditionalFilesToIncludeForSolution>
+    <AllowParallelTestExecution>True</AllowParallelTestExecution>
+    <SolutionConfigured>True</SolutionConfigured>
+  </Settings>
+</SolutionConfiguration>
