@@ -20,7 +20,7 @@ $CertPath = Join-Path "$AssetsRoot" "Certificates"
 $SqlServer = "."
 $SqlAdminUser = "sa"
 $SqlAdminPassword = "12345"
-$SQLStrongPassword = "Str0NgPA33w0rd!!" # Used for all other services
+$SqlStrongPassword = "Str0NgPA33w0rd!!" # Used for all other services
 
 # XConnect Parameters
 $XConnectConfiguration = "$AssetsRoot\xconnect-xp0.json"
