@@ -20,6 +20,7 @@ $CertPath = Join-Path "$AssetsRoot" "Certificates"
 $SqlServer = "."
 $SqlAdminUser = "sa"
 $SqlAdminPassword = "12345"
+$SQLStrongPassword = "Str0NgPA33w0rd!!" # Used for all other services
 
 # XConnect Parameters
 $XConnectConfiguration = "$AssetsRoot\xconnect-xp0.json"
@@ -31,7 +32,7 @@ $XConnectCert = "$SolutionPrefix.$SitePostFix.xConnect.Client"
 $XConnectSiteRoot = Join-Path $webroot -ChildPath $XConnectSiteName
 $XConnectSqlCollectionUser = "collectionuser"
 $XConnectSqlCollectionPassword = "Test12345"
-
+$SQLStrongPassword = "Str0NgPA33w0rd!!"
 # Sitecore Parameters
 $SitecoreSolrConfiguration = "$AssetsRoot\sitecore-solr.json"
 $SitecoreConfiguration = "$AssetsRoot\sitecore-xp0.json"
