@@ -218,10 +218,10 @@ function Install-XConnect {
                                       -SqlCollectionUser $XConnectSqlCollectionUser `
                                       -SqlCollectionPassword $XConnectSqlCollectionPassword `
                                       -SolrUrl $SolrUrl `
-                                      -SqlProcessingPoolsPassword $SQLStrongPassword `
-                                      -SqlReferenceDataPassword $SQLStrongPassword `
-                                      -SqlMarketingAutomationPassword $SQLStrongPassword `
-                                      -SqlMessagingPassword $SQLStrongPassword `
+                                      -SqlProcessingPoolsPassword $SqlStrongPassword `
+                                      -SqlReferenceDataPassword $SqlStrongPassword `
+                                      -SqlMarketingAutomationPassword $SqlStrongPassword `
+                                      -SqlMessagingPassword $SqlStrongPassword `
 
     }
     catch
@@ -284,17 +284,17 @@ function Install-Sitecore {
                                       -XConnectReferenceDataService "https://$XConnectSiteName" `
                                       -MarketingAutomationOperationsService "https://$XConnectSiteName" `
                                       -MarketingAutomationReportingService "https://$XConnectSiteName" `
-                                      -SqlCorePassword $SQLStrongPassword `
-                                      -SqlMasterPassword $SQLStrongPassword `
-                                      -SqlWebPassword $SQLStrongPassword `
-                                      -SqlReportingPassword $SQLStrongPassword `
-                                      -SqlProcessingPoolsPassword $SQLStrongPassword `
-                                      -SqlProcessingTasksPassword $SQLStrongPassword `
-                                      -SqlReferenceDataPassword $SQLStrongPassword `
-                                      -SqlMarketingAutomationPassword $SQLStrongPassword `
-                                      -SqlFormsPassword $SQLStrongPassword `
-                                      -SqlExmMasterPassword $SQLStrongPassword `
-                                      -SqlMessagingPassword $SQLStrongPassword `
+                                      -SqlCorePassword $SqlStrongPassword `
+                                      -SqlMasterPassword $SqlStrongPassword `
+                                      -SqlWebPassword $SqlStrongPassword `
+                                      -SqlReportingPassword $SqlStrongPassword `
+                                      -SqlProcessingPoolsPassword $SqlStrongPassword `
+                                      -SqlProcessingTasksPassword $SqlStrongPassword `
+                                      -SqlReferenceDataPassword $SqlStrongPassword `
+                                      -SqlMarketingAutomationPassword $SqlStrongPassword `
+                                      -SqlFormsPassword $SqlStrongPassword `
+                                      -SqlExmMasterPassword $SqlStrongPassword `
+                                      -SqlMessagingPassword $SqlStrongPassword `
 
     }
     catch
