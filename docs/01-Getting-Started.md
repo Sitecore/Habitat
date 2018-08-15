@@ -17,7 +17,7 @@ This project assumes the following settings:
 | Setting             |  Value                                                                     | Change in <sup>1 *see below*</sup> |
 | ---                 | ---                                                                        | --- |
 | Source location     | C:\projects\Habitat\                                                       | `Habitat.Dev.config` |
-| Website location    | C:\inetpub\wwwroot\habitat.dev.local\                                      | `gulp-config.js`, `settings.ps1`, `xconnect-XP0.json`, `sitecore-XP0.json` |
+| Website location    | C:\inetpub\wwwroot\habitat.dev.local\                                      | `gulp-config.js`, `settings.ps1`, `xconnect-XP0.json`, `sitecore-XP0.json`, `sitecore-ssl.json` |
 | Website URL         | [https://habitat.dev.local/](https://habitat.dev.local/)                   | `publishsettings.targets`, `settings.ps1` |
 | SQL Server          | .                                                                          | `settings.ps1` |
 | SQL Server Admin    | sa                                                                         | `settings.ps1` |
