@@ -3,8 +3,9 @@ $SolutionPrefix = "habitat"
 $SitePostFix = "dev.local"
 $webroot = "C:\inetpub\wwwroot"
 
-$SitecoreVersion = "9.0.2 rev. 180604"
-$InstallerVersion = "1.2.1"
+$SitecoreVersion = "9.1.0 rev. 001564"
+$IdentityServerVersion = "2.0.0 rev. 00157"
+$InstallerVersion = "2.0.0"
 
 # Assets and prerequisites
 $AssetsRoot = "$PSScriptRoot\build\assets"
@@ -20,25 +21,32 @@ $CertPath = Join-Path "$AssetsRoot" "Certificates"
 $SqlServer = "."
 $SqlAdminUser = "sa"
 $SqlAdminPassword = "12345"
+# Prerequisities Check
+$PrerequisitiesConfiguration = "$AssetsRoot\Prerequisites.json"
 
-# XConnect Parameters
-$XConnectConfiguration = "$AssetsRoot\xconnect-xp0.json"
-$XConnectCertificateConfiguration = "$AssetsRoot\xconnect-createcert.json"
-$XConnectSolrConfiguration = "$AssetsRoot\xconnect-solr.json"
-$XConnectPackage = "$AssetsRoot\Sitecore $SitecoreVersion (OnPrem)_xp0xconnect.scwdp.zip"
-$XConnectSiteName = "${SolutionPrefix}_xconnect.$SitePostFix"
-$XConnectCert = "$SolutionPrefix.$SitePostFix.xConnect.Client"
-$XConnectSiteRoot = Join-Path $webroot -ChildPath $XConnectSiteName
-$XConnectSqlCollectionUser = "collectionuser"
-$XConnectSqlCollectionPassword = "Test12345"
+# XP0 Single Developer Parameters
+$SingleDeveloperConfiguration = "$AssetsRoot\XP0-SingleDeveloper.json"
 
 # Sitecore Parameters
-$SitecoreSolrConfiguration = "$AssetsRoot\sitecore-solr.json"
-$SitecoreConfiguration = "$AssetsRoot\sitecore-xp0.json"
-$SitecoreSSLConfiguration = "$PSScriptRoot\build\certificates\sitecore-ssl.json"
 $SitecorePackage = "$AssetsRoot\Sitecore $SitecoreVersion (OnPrem)_single.scwdp.zip"
 $SitecoreSiteName = "$SolutionPrefix.$SitePostFix"
+$SitecoreSiteUrl = "http://$SitecoreSiteName"
 $SitecoreSiteRoot = Join-Path $webroot -ChildPath $SitecoreSiteName
+$SitecoreAdminPassword = "b"
+
+# XConnect Parameters
+$XConnectPackage = "$AssetsRoot\Sitecore $SitecoreVersion (OnPrem)_xp0xconnect.scwdp.zip"
+$XConnectSiteName = "${SolutionPrefix}_xconnect.$SitePostFix"
+$XConnectSiteUrl = "https://$XConnectSiteName"
+$XConnectSiteRoot = Join-Path $webroot -ChildPath $XConnectSiteName
+
+# Identity Server Parameters
+$IdentityServerSiteName = "${SolutionPrefix}_IdentityServer.$SitePostFix"
+$IdentityServerUrl = "https://$IdentityServerName"
+$IdentityServerPackage = "$AssetsRoot\Sitecore.IdentityServer $IdentityServerVersion (OnPrem)_identityserver.scwdp.zip"
+$IdentityClientSecret = "SPDHZpF6g8EXq5F7C5EhPQdsC1UbvTU3"
+$IdentityAllowedCorsOrigins = $SitecoreSiteUrl
+$IdentityServerSiteRoot = Join-Path $webroot -ChildPath $IdentityServerSiteName
 
 # Solr Parameters
 $SolrUrl = "https://localhost:8983/solr"

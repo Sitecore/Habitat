@@ -1,3 +1,5 @@
+param([switch]$SkipPrerequisites)
+
 #####################################################
 # 
 #  Install Sitecore
@@ -11,7 +13,27 @@ Write-Host "*******************************************************" -Foreground
 Write-Host " Installing Sitecore $SitecoreVersion" -ForegroundColor Green
 Write-Host " Sitecore: $SitecoreSiteName" -ForegroundColor Green
 Write-Host " xConnect: $XConnectSiteName" -ForegroundColor Green
+Write-Host " Identity: $IdentityServerSiteName" -ForegroundColor Green
 Write-Host "*******************************************************" -ForegroundColor Green
+
+function Import-SitecoreInstallFramework {
+    #Register Assets PowerShell Repository
+    if ((Get-PSRepository | Where-Object {$_.Name -eq $AssetsPSRepositoryName}).count -eq 0) {
+        Write-Host "Registering PS Repository $AssetsPSRepositoryName as $AssetsPSRepository" -ForegroundColor Green
+        Register-PSRepository -Name $AssetsPSRepositoryName -SourceLocation $AssetsPSRepository -InstallationPolicy Trusted
+    }
+
+    #Install and Import SIF
+    Write-Host "Removing SIF if already loaded" -ForegroundColor Green
+    try { Remove-Module SitecoreInstallFramework } catch {}
+    $module = Get-InstalledModule -Name SitecoreInstallFramework -RequiredVersion $InstallerVersion -ErrorAction SilentlyContinue
+    if (-not $module) {
+        Write-Host "Installing the Sitecore Install Framework, version $InstallerVersion" -ForegroundColor Green
+        Install-Module SitecoreInstallFramework -RequiredVersion $InstallerVersion -Scope CurrentUser -Repository $AssetsPSRepositoryName
+    }
+    Write-Host "Loading the Sitecore Install Framework, version $InstallerVersion" -ForegroundColor Green
+    Import-Module SitecoreInstallFramework -RequiredVersion $InstallerVersion
+}
 
 function Install-Prerequisites {
     #Verify SQL version
@@ -24,63 +46,6 @@ function Install-Prerequisites {
     $minVersion = New-Object System.Version($RequiredSqlVersion)
     if ($srv.Version.CompareTo($minVersion) -lt 0) {
         throw "Invalid SQL version. Expected SQL 2016 SP1 (13.0.4001.0) or over."
-    }
-
-    #Verify Java version
-    $JRERequiredVersion = "1.8"
-    $minVersion = New-Object System.Version($JRERequiredVersion)
-    $foundVersion = $FALSE
-    $jrePath = "HKLM:\SOFTWARE\JavaSoft\Java Runtime Environment"
-	$jdkPath = "HKLM:\SOFTWARE\JavaSoft\Java Development Kit"
-	$jrePath9 = "HKLM:\SOFTWARE\JavaSoft\JRE"
-    $jdkPath9 = "HKLM:\SOFTWARE\JavaSoft\JDK"
-	if (Test-Path $jrePath) {
-		$path = $jrePath
-	}
-	elseif (Test-Path $jdkPath) {
-		$path = $jdkPath
-	}
-    elseif (Test-Path $jrePath9) {
-		$path = $jrePath9
-	}
-    elseif (Test-Path $jdkPath9) {
-		$path = $jdkPath9
-	}
-	else {
-        throw "Cannot find Java Runtime Environment or Java Development Kit on this machine."
-	}
-	
-	$javaVersionStrings = Get-ChildItem $path | ForEach-Object { $parts = $_.Name.Split("\"); $parts[$parts.Count-1] } 
-    foreach ($versionString in $javaVersionStrings) {
-        try {
-            $version = New-Object System.Version($versionString)
-        } catch {
-            continue
-        }
-
-        if ($version.CompareTo($minVersion) -ge 0) {
-            $foundVersion = $TRUE
-        }
-    }
-    if (-not $foundVersion) {
-        throw "Invalid Java version. Expected $minVersion or over."
-    }
-
-    # Verify Web Deploy
-    $webDeployPath = ([IO.Path]::Combine($env:ProgramFiles, 'iis', 'Microsoft Web Deploy V3', 'msdeploy.exe'))
-    if (!(Test-Path $webDeployPath)) {
-        throw "Could not find WebDeploy in $webDeployPath"
-    }   
-
-    # Verify DAC Fx
-    # Verify Microsoft.SqlServer.TransactSql.ScriptDom.dll
-    try {
-        $assembly = [reflection.assembly]::LoadWithPartialName("Microsoft.SqlServer.TransactSql.ScriptDom")
-        if (-not $assembly) {
-            throw "error"
-        }
-    } catch {
-        throw "Could load the Microsoft.SqlServer.TransactSql.ScriptDom assembly. Please make sure it is installed and registered in the GAC"
     }
     
     #Enable Contained Databases
@@ -98,7 +63,7 @@ function Install-Prerequisites {
         throw
     }
 
-    # Verify Solr
+    #Verify Solr
     Write-Host "Verifying Solr connection" -ForegroundColor Green
     if (-not $SolrUrl.ToLower().StartsWith("https")) {
         throw "Solr URL ($SolrUrl) must be secured with https"
@@ -126,32 +91,11 @@ function Install-Prerequisites {
         throw "The Solr service '$SolrService' does not exist. Perhaps it's incorrect in settings.ps1?"
     }
 
-	#Verify .NET framework
-	$requiredDotNetFrameworkVersionValue = 394802
-	$requiredDotNetFrameworkVersion = "4.6.2"
-	$versionExists = Get-ChildItem "hklm:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\" | Get-ItemPropertyValue -Name Release | % { $_ -ge $requiredDotNetFrameworkVersionValue }
-	if (-not $versionExists) {
-		throw "Please install .NET Framework $requiredDotNetFrameworkVersion or later"
-	}
+    #Run Prerequisites Config
+    Install-SitecoreConfiguration -Path $PrerequisitiesConfiguration
 }
 
 function Install-Assets {
-    #Register Assets PowerShell Repository
-    if ((Get-PSRepository | Where-Object {$_.Name -eq $AssetsPSRepositoryName}).count -eq 0) {
-        Register-PSRepository -Name $AssetsPSRepositoryName -SourceLocation $AssetsPSRepository -InstallationPolicy Trusted
-    }
-
-    #Sitecore Install Framework dependencies
-    Import-Module WebAdministration
-
-    #Install SIF
-    $module = Get-Module -FullyQualifiedName @{ModuleName="SitecoreInstallFramework";ModuleVersion=$InstallerVersion}
-    if (-not $module) {
-        write-host "Installing the Sitecore Install Framework, version $InstallerVersion" -ForegroundColor Green
-        Install-Module SitecoreInstallFramework -RequiredVersion $InstallerVersion -Scope CurrentUser -Repository $AssetsPSRepositoryName
-        Import-Module SitecoreInstallFramework -RequiredVersion $InstallerVersion
-    }
-
     #Verify that manual assets are present
     if (!(Test-Path $AssetsRoot)) {
         throw "$AssetsRoot not found"
@@ -173,129 +117,43 @@ function Install-Assets {
     }
 }
 
-function Install-XConnect {
-    #Install xConnect Solr
-    try
-    {
-        Install-SitecoreConfiguration $XConnectSolrConfiguration `
-                                      -SolrUrl $SolrUrl `
-                                      -SolrRoot $SolrRoot `
-                                      -SolrService $SolrService `
-                                      -CorePrefix $SolutionPrefix
+function Install-XP0SingleDeveloper {
+    Push-Location $AssetsRoot
+    $singleDeveloperParams = @{
+        Path = $SingleDeveloperConfiguration
+        SqlServer = $SqlServer
+        SqlAdminUser = $SqlAdminUser
+        SqlAdminPassword = $SqlAdminPassword
+        SolrUrl = $SolrUrl
+        SolrRoot = $SolrRoot
+        SolrService = $SolrService
+        Prefix = $SolutionPrefix
+        XConnectCertificateName = $XConnectSiteName
+        IdentityServerCertificateName = $IdentityServerSiteName
+        IdentityServerSiteName = $IdentityServerSiteName
+        LicenseFile = $LicenseFile
+        XConnectPackage = $XConnectPackage
+        SitecorePackage = $SitecorePackage
+        IdentityServerPackage = $IdentityServerPackage
+        XConnectSiteName = $XConnectSiteName
+        SitecoreSitename = $SitecoreSiteName
+        PasswordRecoveryUrl = $SitecoreSiteUrl
+        SitecoreIdentityAuthority = $IdentityServerUrl
+        XConnectCollectionService = $XConnectSiteUrl
+        ClientSecret = $IdentityClientSecret
+        AllowedCorsOrigins = $IdentityAllowedCorsOrigins
+        SitecoreAdminPassword = $SitecoreAdminPassword
+    }
+    try {
+        Install-SitecoreConfiguration @singleDeveloperParams *>&1 | Tee-Object XP0-SingleDeveloper.log
     }
     catch
     {
-        write-host "XConnect SOLR Failed" -ForegroundColor Red
+        write-host "Sitecore XP0 Single Developer Install Failed" -ForegroundColor Red
         throw
     }
-
-    #Generate xConnect client certificate
-    try
-    {
-        Install-SitecoreConfiguration $XConnectCertificateConfiguration `
-                                      -CertificateName $XConnectCert `
-                                      -CertPath $CertPath
-    }
-    catch
-    {
-        write-host "XConnect Certificate Creation Failed" -ForegroundColor Red
-        throw
-    }
-
-    #Install xConnect
-    try
-    {
-        Install-SitecoreConfiguration $XConnectConfiguration `
-                                      -Package $XConnectPackage `
-                                      -LicenseFile $LicenseFile `
-                                      -SiteName $XConnectSiteName `
-                                      -XConnectCert $XConnectCert `
-                                      -SqlDbPrefix $SolutionPrefix `
-                                      -SolrCorePrefix $SolutionPrefix `
-                                      -SqlAdminUser $SqlAdminUser `
-                                      -SqlAdminPassword $SqlAdminPassword `
-                                      -SqlServer $SqlServer `
-                                      -SqlCollectionUser $XConnectSqlCollectionUser `
-                                      -SqlCollectionPassword $XConnectSqlCollectionPassword `
-                                      -SolrUrl $SolrUrl
-    }
-    catch
-    {
-        write-host "XConnect Setup Failed" -ForegroundColor Red
-        throw
-    }
-                             
-
-    #Set rights on the xDB connection database
-    Write-Host "Setting Collection User rights" -ForegroundColor Green
-    try
-    {
-        $sqlVariables = "DatabasePrefix = $SolutionPrefix", "UserName = $XConnectSqlCollectionUser", "Password = $XConnectSqlCollectionPassword"
-        Invoke-Sqlcmd -ServerInstance $SqlServer `
-                      -Username $SqlAdminUser `
-                      -Password $SqlAdminPassword `
-                      -InputFile "$PSScriptRoot\build\database\collectionusergrant.sql" `
-                      -Variable $sqlVariables
-    }
-    catch
-    {
-        write-host "Set Collection User rights failed" -ForegroundColor Red
-        throw
-    }
-}
-
-function Install-Sitecore {
-
-    try
-    {
-        #Install Sitecore Solr
-        Install-SitecoreConfiguration $SitecoreSolrConfiguration `
-                                      -SolrUrl $SolrUrl `
-                                      -SolrRoot $SolrRoot `
-                                      -SolrService $SolrService `
-                                      -CorePrefix $SolutionPrefix
-    }
-    catch
-    {
-        write-host "Sitecore SOLR Failed" -ForegroundColor Red
-        throw
-    }
-
-    try
-    {
-        #Install Sitecore
-        Install-SitecoreConfiguration $SitecoreConfiguration `
-                                      -Package $SitecorePackage `
-                                      -LicenseFile $LicenseFile `
-                                      -SiteName $SitecoreSiteName `
-                                      -XConnectCert $XConnectCert `
-                                      -SqlDbPrefix $SolutionPrefix `
-                                      -SolrCorePrefix $SolutionPrefix `
-                                      -SqlAdminUser $SqlAdminUser `
-                                      -SqlAdminPassword $SqlAdminPassword `
-                                      -SqlServer $SqlServer `
-                                      -SolrUrl $SolrUrl `
-                                      -XConnectCollectionService "https://$XConnectSiteName" `
-                                      -XConnectReferenceDataService "https://$XConnectSiteName" `
-                                      -MarketingAutomationOperationsService "https://$XConnectSiteName" `
-                                      -MarketingAutomationReportingService "https://$XConnectSiteName"
-    }
-    catch
-    {
-        write-host "Sitecore Setup Failed" -ForegroundColor Red
-        throw
-    }
-
-    try
-    {
-        #Set web certificate on Sitecore site
-        Install-SitecoreConfiguration $SitecoreSSLConfiguration `
-                                      -SiteName $SitecoreSiteName
-    }
-    catch
-    {
-        write-host "Sitecore SSL Binding Failed" -ForegroundColor Red
-        throw
+    finally {
+        Pop-Location
     }
 }
 
@@ -323,17 +181,9 @@ function Add-AppPool-Membership {
     }
 }
 
-Install-Prerequisites
-Install-Assets
-Install-XConnect
-Install-Sitecore
+Import-SitecoreInstallFramework
+if (-not $SkipPrerequisites) {
+    Install-Prerequisites
+}
+Install-XP0SingleDeveloper
 Add-AppPool-Membership
-
-
-# TODO: 
-# Run optimization scripts
-# Deploy-Habitat
-# Deploy marketing definitions
-# Rebuild indexes
-# Rebuild links database
-# Test-Setup
