@@ -39,9 +39,7 @@
     <PackageReference Include="Castle.Core" Version="4.3.0" />
     <PackageReference Include="FluentAssertions" Version="5.4.0" />
     <PackageReference Include="Lucene.Net" Version="3.0.3" />
-    <PackageReference Include="Microsoft.AspNet.Mvc">
-      <Version>5.2.3</Version>
-    </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
     <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.3" />
     <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.2.3" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
@@ -57,9 +55,7 @@
     <PackageReference Include="NSubstitute" Version="3.1.0" />
     <PackageReference Include="SharpZipLib" Version="0.86.0" />
     <PackageReference Include="Sitecore.Analytics.NoReferences" Version="9.0.180604" />
-    <PackageReference Include="Sitecore.ContentSearch.Data.NoReferences">
-      <Version>9.0.180604</Version>
-    </PackageReference>
+    <PackageReference Include="Sitecore.ContentSearch.Data.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.ContentSearch.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.FakeDb" Version="1.7.2" />
     <PackageReference Include="Sitecore.FakeDb.AutoFixture" Version="1.7.2" />

@@ -53,9 +53,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
     <PackageReference Include="NSubstitute" Version="3.1.0" />
     <PackageReference Include="SharpZipLib" Version="0.86.0" />
-    <PackageReference Include="Sitecore.ContentSearch.Data.NoReferences">
-      <Version>9.0.180604</Version>
-    </PackageReference>
+    <PackageReference Include="Sitecore.ContentSearch.Data.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.ContentSearch.NoReferences" Version="9.0.180604" />
     <PackageReference Include="Sitecore.FakeDb" Version="1.7.2" />
     <PackageReference Include="Sitecore.FakeDb.AutoFixture" Version="1.7.2" />
