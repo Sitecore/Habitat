@@ -24,6 +24,8 @@ if (fs.existsSync("./gulp-config.js.user")) {
     config = require("./gulp-config.js")();
 }
 
+var buildConfigurationCsproj = "BuildConfiguration.csproj";
+
 module.exports.config = config;
 
 helix.header("The Habitat source code, tools and processes are examples of Sitecore Helix.",
@@ -53,6 +55,28 @@ gulp.task("deploy",
 /*****************************
   Initial setup
 *****************************/
+gulp.task("References-Local",
+    function(callback) {
+        var buildConfig = `<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <LocalReferences>true</LocalReferences>
+        <SitecorePath>${config.websiteRoot}</SitecorePath>
+    </PropertyGroup>
+</Project>`;
+        return fs.writeFile(buildConfigurationCsproj, buildConfig, callback);
+    });
+
+gulp.task("References-Nuget",
+    function(callback) {
+        return fs.exists(buildConfigurationCsproj, function(exists) {
+            if (!exists) {
+                return;
+            }
+            return fs.unlink(buildConfigurationCsproj, callback);
+        });
+    });
+
 gulp.task("Publish-All-Projects",
     function(callback) {
         return runSequence(
