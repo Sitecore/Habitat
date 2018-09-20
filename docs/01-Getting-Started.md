@@ -6,9 +6,9 @@ This version of Habitat uses the following versions of this software:
 
 | Software      | Version |
 | ---           | --- |
-| Sitecore      | 9.0.2 rev. 180604 (9.0 Update-2) |
-| Solr          | 6.6.2 |
-| Sitecore Installation Framework | 1.2.1 |
+| Sitecore      | 9.1.0 |
+| Solr          | 7.2.1 |
+| Sitecore Installation Framework | 2.0.0 |
 
 ## Locations and settings
 
@@ -18,7 +18,7 @@ This project assumes the following settings:
 | ---                 | ---                                                                        | --- |
 | Source location     | C:\projects\Habitat\                                                       | `Habitat.Dev.config` |
 | Website location    | C:\inetpub\wwwroot\habitat.dev.local\                                      | `gulp-config.js`, `settings.ps1`, `xconnect-XP0.json`, `sitecore-XP0.json` |
-| Website URL         | [https://habitat.dev.local/](https://habitat.dev.local/)                   | `publishsettings.targets`, `settings.ps1` |
+| Website URL         | [https://habitat.dev.local/](https://habitat.dev.local/)                   | `publishsettings.targets`, `settings.ps1`, `Habitat.Website.config` |
 | SQL Server          | .                                                                          | `settings.ps1` |
 | SQL Server Admin    | sa                                                                         | `settings.ps1` |
 | SQL Server Password | 12345                                                                      | `settings.ps1` |
@@ -29,6 +29,7 @@ This project assumes the following settings:
 <sup>1</sup> Files referred are:
 
 * `.\src\Project\Habitat\code\App_Config\Environment\Project\Habitat.Dev.config`
+* `.\src\Project\Habitat\code\App_Config\Include\Project\Habitat.Website.config`
 * `.\gulp-config.js`
 * `.\publishsettings.targets`
 * `.\settings.ps1`
@@ -43,7 +44,7 @@ This project assumes the following settings:
 * **Do check** the [Resources](./02-Resources.md) page for the tools needed
 * **Always** run your Visual Studio or PowerShell Command Line with elevated privileges or *As Administrator*
 
-The Sitecore install script will check some prerequisites.
+The Sitecore install script will check some prerequisites, including running the SIF `Prerequisites.json` configuration.
 
 ### Solr
 
@@ -75,13 +76,19 @@ If your Solr environment is not currently running with HTTPS, you can create an 
         * xConnect package: `.\build\assets\Sitecore X.X.X rev. XXXXXX (OnPrem)_xp0xconnect.scwdp.zip`
         * xConnect configuration: `.\build\assets\xconnect-XP0.json`
         * xConnect SOLR configuration: `.\build\assets\xconnect-solr.json`
-        * xConnect certificate configuration: `.\build\assets\xconnect-createcert.json`
+        * Identity Server package: `.\build\assets\Sitecore.IdentityServer X.X.X rev. XXXXXX (OnPrem)_identityserver.scwdp.zip`
+        * Identity Server configuration: `.\build\assets\IdentityServer.json`
+        * Certificate configuration: `.\build\assets\createcert.json`
+        * Prerequisites configuration: `.\build\assets\Prerequisites.json`
+        * Single Developer configuration: `.\build\assets\XP0-SingleDeveloper.json`
         * Sitecore license: `.\build\assets\license.xml`
 1. Are you using system settings other than the defaults specified at the top of this page?
     * If yes, you need to update the files accordingly.
     * **Include or omit trailing slashes as per the default setting in each file!**
 1. Open an elevated privileges PowerShell command prompt (started with **Run as administrator**)
+1. Import the `SitecoreInstallFramework` module as directed in the TP documentation.
 1. Run **`.\install-xp0.ps1`**
+    * On subsequent runs of the install, you may use the `-SkipPrerequisites` flag to skip prerequisite checks.
 
 ### 2. Build and Deploy Habitat
 
