@@ -1,0 +1,238 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7985416B-3C47-4ABF-8603-73CAB10BEB03}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebRoot</RootNamespace>
+    <AssemblyName>WebRoot</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\Habitat.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\feature\Accounts\code\Sitecore.Feature.Accounts.csproj">
+      <Project>{3f61c57d-50d9-4194-8196-ef5f7aa4cce5}</Project>
+      <Name>Sitecore.Feature.Accounts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Feature\demo\code\Sitecore.Feature.Demo.csproj">
+      <Project>{4dd516f2-d9e5-4775-b840-e00a71dd7e87}</Project>
+      <Name>Sitecore.Feature.Demo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Feature\faq\code\Sitecore.Feature.FAQ.csproj">
+      <Project>{c2e10220-2850-484f-8fca-dcdd1c6e3b53}</Project>
+      <Name>Sitecore.Feature.FAQ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\feature\Identity\code\Sitecore.Feature.Identity.csproj">
+      <Project>{0d0b809c-03ab-4ee1-898f-cfe28cf5b245}</Project>
+      <Name>Sitecore.Feature.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\feature\Language\code\Sitecore.Feature.Language.csproj">
+      <Project>{aca65632-ee93-422b-b25e-8e31969694f5}</Project>
+      <Name>Sitecore.Feature.Language</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Feature\Maps\code\Sitecore.Feature.Maps.csproj">
+      <Project>{19ce4259-bd16-4239-ac7c-22220fb26575}</Project>
+      <Name>Sitecore.Feature.Maps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\feature\Media\code\Sitecore.Feature.Media.csproj">
+      <Project>{1417b162-f987-4cbd-8642-ca4c4119e705}</Project>
+      <Name>Sitecore.Feature.Media</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\feature\Metadata\code\Sitecore.Feature.Metadata.csproj">
+      <Project>{2bbd157c-ad28-4055-a208-48a2da93bd04}</Project>
+      <Name>Sitecore.Feature.Metadata</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Feature\Multisite\code\Sitecore.Feature.Multisite.csproj">
+      <Project>{64cb17ee-49bf-44a6-98f0-4f72ee89073b}</Project>
+      <Name>Sitecore.Feature.Multisite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\feature\Navigation\code\Sitecore.Feature.Navigation.csproj">
+      <Project>{16003e7f-0faf-4dee-b13d-dd327e965a98}</Project>
+      <Name>Sitecore.Feature.Navigation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\feature\News\code\Sitecore.Feature.News.csproj">
+      <Project>{1aad6f22-9b6d-4688-8ea5-1ae7044031f7}</Project>
+      <Name>Sitecore.Feature.News</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\feature\PageContent\code\Sitecore.Feature.PageContent.csproj">
+      <Project>{da079e95-db53-4a66-ab35-2dab71d19276}</Project>
+      <Name>Sitecore.Feature.PageContent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Feature\Person\code\Sitecore.Feature.Person.csproj">
+      <Project>{452c63b5-6019-4ec2-9a9b-9b5dd3241485}</Project>
+      <Name>Sitecore.Feature.Person</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\feature\Search\code\Sitecore.Feature.Search.csproj">
+      <Project>{55b9c026-e106-4185-8213-9cdd53b44e1b}</Project>
+      <Name>Sitecore.Feature.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\feature\Social\code\Sitecore.Feature.Social.csproj">
+      <Project>{b018c183-6976-4766-b2c0-0cba4c064aed}</Project>
+      <Name>Sitecore.Feature.Social</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\feature\Teasers\code\Sitecore.Feature.Teasers.csproj">
+      <Project>{64c1c1ef-71cb-47bd-92f9-4e50ce35bd9f}</Project>
+      <Name>Sitecore.Feature.Teasers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foundation\Accounts\code\Sitecore.Foundation.Accounts.csproj">
+      <Project>{ce34a3b7-b91a-41ba-8b16-c1e131e1c621}</Project>
+      <Name>Sitecore.Foundation.Accounts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foundation\Alerts\code\Sitecore.Foundation.Alerts.csproj">
+      <Project>{5cf5fa06-ab27-4df5-a471-ed57ef3e4ae9}</Project>
+      <Name>Sitecore.Foundation.Alerts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\foundation\Assets\code\Sitecore.Foundation.Assets.csproj">
+      <Project>{7e46ff93-ee05-412c-ac47-2a59a13da73c}</Project>
+      <Name>Sitecore.Foundation.Assets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foundation\DependencyInjection\code\Sitecore.Foundation.DependencyInjection.csproj">
+      <Project>{366148b7-2392-4f42-80d6-786b7a3682ae}</Project>
+      <Name>Sitecore.Foundation.DependencyInjection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foundation\Dictionary\code\Sitecore.Foundation.Dictionary.csproj">
+      <Project>{0d6ba4d8-c469-4ae9-9ebb-93bdf7d7e78f}</Project>
+      <Name>Sitecore.Foundation.Dictionary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foundation\FieldEditor\code\Sitecore.Foundation.FieldEditor.csproj">
+      <Project>{812c16c9-1e8a-42dc-a1c0-6896d570f63a}</Project>
+      <Name>Sitecore.Foundation.FieldEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\foundation\Indexing\code\Sitecore.Foundation.Indexing.csproj">
+      <Project>{80213f24-577f-4f0b-a3b8-62485ea4d2f3}</Project>
+      <Name>Sitecore.Foundation.Indexing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foundation\Installer\code\Sitecore.Foundation.Installer.csproj">
+      <Project>{622ebd86-43a5-4857-965c-1724f714012a}</Project>
+      <Name>Sitecore.Foundation.Installer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foundation\LocalDatasource\code\Sitecore.Foundation.LocalDatasource.csproj">
+      <Project>{323ca7a6-6abb-4652-abe2-75dab139cbc0}</Project>
+      <Name>Sitecore.Foundation.LocalDatasource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foundation\Multisite\code\Sitecore.Foundation.Multisite.csproj">
+      <Project>{cfa2ae87-7f8d-4ca6-bb72-b16380190db7}</Project>
+      <Name>Sitecore.Foundation.Multisite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\foundation\Serialization\code\Sitecore.Foundation.Serialization.csproj">
+      <Project>{007cd5dc-0030-460d-91a3-3ddea9ab472f}</Project>
+      <Name>Sitecore.Foundation.Serialization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\foundation\SitecoreExtensions\code\Sitecore.Foundation.SitecoreExtensions.csproj">
+      <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
+      <Name>Sitecore.Foundation.SitecoreExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Foundation\Theming\code\Sitecore.Foundation.Theming.csproj">
+      <Project>{98de0d1d-26f1-4cca-847c-4e0fc2dba5fc}</Project>
+      <Name>Sitecore.Foundation.Theming</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project\Common\code\Sitecore.Common.Website.csproj">
+      <Project>{c98ead78-4d83-4789-a621-6011c3d7314d}</Project>
+      <Name>Sitecore.Common.Website</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <Version>2.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Import Project="Helix.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50303</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57741/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

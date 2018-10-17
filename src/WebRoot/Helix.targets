@@ -1,0 +1,23 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <PipelineCollectFilesPhaseDependsOn>
+            $(PipelineCollectFilesPhaseDependsOn);
+            CollectContentFilesFromHelixModules;
+        </PipelineCollectFilesPhaseDependsOn>
+    </PropertyGroup>
+
+    <Target Name="CollectContentFilesFromHelixModules">
+        <MSBuild Projects="@(ProjectReference)" Targets="ContentFilesProjectOutputGroup" BuildInParallel="$(BuildInParallel)">
+            <Output TaskParameter="TargetOutputs" ItemName="_ContentFilesFromHelixModules" />
+        </MSBuild>
+        <ItemGroup>
+            <ContentFilesFromHelixModules Include="@(_ContentFilesFromHelixModules)">
+                <DestinationRelativePath>%(TargetPath)</DestinationRelativePath>
+            </ContentFilesFromHelixModules>
+
+            <FilesForPackagingFromProject Include="@(ContentFilesFromHelixModules)" /> 
+        </ItemGroup>
+    </Target>
+
+</Project>
