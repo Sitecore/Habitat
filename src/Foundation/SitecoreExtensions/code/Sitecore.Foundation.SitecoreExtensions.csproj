@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -131,9 +131,14 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="App_Config\Include\Foundation\Foundation.SitecoreExtensions.Serialization.config" />
-    <None Include="App_Config\layers.config.xdt" />
+    <None Include="App_Config\Layers.config.xdt">
+      <ApplyTransformOnPublish>true</ApplyTransformOnPublish>
+    </None>
     <None Include="web.config" />
     <None Include="Properties\PublishProfiles\Standalone.pubxml" />
+    <None Include="Web.config.xdt">
+      <ApplyTransformOnPublish>true</ApplyTransformOnPublish>
+    </None>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
