@@ -196,6 +196,10 @@
       <Project>{c98ead78-4d83-4789-a621-6011c3d7314d}</Project>
       <Name>Sitecore.Common.Website</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Project\Habitat\code\Sitecore.Habitat.Website.csproj">
+      <Project>{86cadb26-5817-46b6-88c7-76d5753722c3}</Project>
+      <Name>Sitecore.Habitat.Website</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
