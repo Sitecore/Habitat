@@ -1,0 +1,21 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    
+    <!--Default values -->
+    <ItemDefinitionGroup>
+        <None>
+            <ApplyTransformOnPublish>false</ApplyTransformOnPublish>
+        </None>
+    </ItemDefinitionGroup>
+
+    <Target
+        Name="GetTransformFilesToApplyOnPublish"
+        DependsOnTargets="PrepareForBuild;AssignTargetPaths"
+        Returns="@(_TransformFilesToApplyOnPublish)">
+
+        <ItemGroup>
+            <_TransformFilesToApplyOnPublish Include="@(_NoneWithTargetPath->'%(FullPath)')" Condition="'%(ApplyTransformOnPublish)' == 'true'"/>
+        </ItemGroup>
+
+    </Target>
+
+</Project>
