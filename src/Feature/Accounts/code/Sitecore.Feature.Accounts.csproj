@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -109,7 +109,10 @@
     <Content Include="App_Config\Include\Feature\Feature.Accounts.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="App_Config\Security\Domains.config.xdt" />
+    <None Include="App_Config\Security\Domains.config.xdt">
+      <ApplyTransformOnPublish>True</ApplyTransformOnPublish>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\PublishProfiles\Standalone.pubxml" />
     <Content Include="Scripts\Accounts\Accounts.js" />
     <Content Include="Views\Accounts\Login.cshtml" />
