@@ -1,0 +1,7 @@
+﻿<Project>
+    <!-- Unicorn Settings -->
+    <PropertyGroup>
+        <UnicornControlPanelUrl>https://habitat.sc/unicorn.aspx</UnicornControlPanelUrl>
+        <UnicornSharedSecret>749CABBC85EAD20CE55E2C6066F1BE375D2115696C8A8B24DB6ED1FD60613086</UnicornSharedSecret>
+    </PropertyGroup>
+</Project>
