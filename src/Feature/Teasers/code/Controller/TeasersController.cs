@@ -13,7 +13,7 @@
     public ActionResult GetDynamicContent(string viewName)
     {
       var dataSourceItem = RenderingContext.Current.Rendering.Item;
-      if (!dataSourceItem?.IsDerived(Templates.DynamicTeaser.ID) ?? true)
+      if (!dataSourceItem?.DescendsFrom(Templates.DynamicTeaser.ID) ?? true)
       {
         return Context.PageMode.IsExperienceEditor ? this.InfoMessage(new InfoMessage(AlertTexts.InvalidDataSourceTemplateFriendlyMessage, InfoMessage.MessageType.Error)) : null;
       }

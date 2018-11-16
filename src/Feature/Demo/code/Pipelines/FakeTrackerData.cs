@@ -38,7 +38,7 @@ namespace Sitecore.Feature.Demo.Pipelines
 
         private static TrackerData CreateTrackerData()
         {
-            if (Sitecore.Context.Item == null || !Sitecore.Context.Item.IsDerived(Templates.DemoContent.ID))
+            if (Sitecore.Context.Item == null || !Sitecore.Context.Item.DescendsFrom(Templates.DemoContent.ID))
                 return null;
 
             var demoContent = new DemoContent(Sitecore.Context.Item);

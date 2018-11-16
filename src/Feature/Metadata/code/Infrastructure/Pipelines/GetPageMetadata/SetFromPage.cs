@@ -14,7 +14,7 @@
     {
         public void Process(GetPageMetadataArgs args)
         {
-            if (!args.Item.IsDerived(Templates.PageMetadata.ID))
+            if (!args.Item.DescendsFrom(Templates.PageMetadata.ID))
                 return;
 
             this.SetKeywords(args.Item, args.Metadata.KeywordsList);

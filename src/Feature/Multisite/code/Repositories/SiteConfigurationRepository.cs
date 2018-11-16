@@ -34,7 +34,7 @@
 
         private bool IsSiteConfigurationItem(Item item)
         {
-            return item.IsDerived(Multisite.Templates.SiteConfiguration.ID);
+            return item.DescendsFrom(Multisite.Templates.SiteConfiguration.ID);
         }
 
         private SiteConfigurations Create(IEnumerable<SiteDefinition> definitions)

@@ -6,7 +6,7 @@
 @using Sitecore.Mvc
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-@if (!Model?.Item?.IsDerived(Templates.FaqGroup.ID) ?? true)
+@if (!Model?.Item?.DescendsFrom(Templates.FaqGroup.ID) ?? true)
 {
   @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.FaqGroup.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;

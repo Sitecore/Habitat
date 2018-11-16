@@ -13,7 +13,7 @@
   var twitterFeedProperties = repository.Get<TwitterFeedRenderingProperties>(RenderingContext.Current.Rendering);
   var background = Model.Rendering.GetBackgroundClass();
 }
-@if (!Model?.Item?.IsDerived(Templates.TwitterFeed.ID) ?? true)
+@if (!Model?.Item?.DescendsFrom(Templates.TwitterFeed.ID) ?? true)
 {
   @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TwitterFeed.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;

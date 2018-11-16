@@ -56,7 +56,7 @@ namespace Sitecore.Feature.Demo.Controllers
         public ActionResult DemoContent()
         {
             var item = RenderingContext.Current?.Rendering?.Item ?? RenderingContext.Current?.ContextItem;
-            if (item == null || !item.IsDerived(Templates.DemoContent.ID))
+            if (item == null || !item.DescendsFrom(Templates.DemoContent.ID))
             {
                 throw new InvalidDataSourceItemException($"Item should be not null and derived from {nameof(Templates.DemoContent)} {Templates.DemoContent.ID} template");
             }

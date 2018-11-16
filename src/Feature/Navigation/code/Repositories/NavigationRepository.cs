@@ -69,7 +69,7 @@
 
         private bool IncludeInNavigation(Item item, bool forceShowInMenu = false)
         {
-            return item.HasContextLanguage() && item.IsDerived(Templates.Navigable.ID) && (forceShowInMenu || MainUtil.GetBool(item[Templates.Navigable.Fields.ShowInNavigation], false));
+            return item.HasContextLanguage() && item.DescendsFrom(Templates.Navigable.ID) && (forceShowInMenu || MainUtil.GetBool(item[Templates.Navigable.Fields.ShowInNavigation], false));
         }
 
         public NavigationItem GetSecondaryMenuItem()
@@ -116,15 +116,15 @@
 
         private NavigationItem CreateNavigationItem(Item item, int level, int maxLevel = -1)
         {
-            var targetItem = item.IsDerived(Templates.Link.ID) ? item.TargetItem(Templates.Link.Fields.Link) : item;
+            var targetItem = item.DescendsFrom(Templates.Link.ID) ? item.TargetItem(Templates.Link.Fields.Link) : item;
             return new NavigationItem
                    {
                        Item = item,
-                       Url = item.IsDerived(Templates.Link.ID) ? item.LinkFieldUrl(Templates.Link.Fields.Link) : item.Url(),
-                       Target = item.IsDerived(Templates.Link.ID) ? item.LinkFieldTarget(Templates.Link.Fields.Link) : "",
+                       Url = item.DescendsFrom(Templates.Link.ID) ? item.LinkFieldUrl(Templates.Link.Fields.Link) : item.Url(),
+                       Target = item.DescendsFrom(Templates.Link.ID) ? item.LinkFieldTarget(Templates.Link.Fields.Link) : "",
                        IsActive = this.IsItemActive(targetItem ?? item),
                        Children = this.GetChildNavigationItems(item, level + 1, maxLevel),
-                       ShowChildren = !item.IsDerived(Templates.Navigable.ID) || item.Fields[Templates.Navigable.Fields.ShowChildren].IsChecked()
+                       ShowChildren = !item.DescendsFrom(Templates.Navigable.ID) || item.Fields[Templates.Navigable.Fields.ShowChildren].IsChecked()
                    };
         }
 
