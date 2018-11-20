@@ -146,7 +146,6 @@
     <Compile Include="Services\GetFreeTextPredicateService.cs" />
     <Compile Include="Infrastructure\Fields\HasSearchResultFormatterComputedField.cs" />
     <Compile Include="Repositories\IndexingProviderRepository.cs" />
-    <Compile Include="Infrastructure\Fields\AllTemplatesComputedField.cs" />
     <Compile Include="Infrastructure\Fields\HasPresentationComputedField.cs" />
     <Compile Include="Models\IQueryPredicateProvider.cs" />
     <Compile Include="Models\ISearchResultFormatter.cs" />
