@@ -325,7 +325,7 @@ gulp.task("Auto-Publish-Assemblies",
         var roots = [root + "/**/code/**/bin"];
         var files = "/**/Sitecore.{Feature,Foundation,Habitat}.*.{dll,pdb}";;
         var destination = config.websiteRoot + "/bin/";
-        gulp.src(roots, { base: root }).pipe(
+        return gulp.src(roots, { base: root }).pipe(
             foreach(function(stream, rootFolder) {
                 gulp.watch(rootFolder.path + files,
                     function(event) {
