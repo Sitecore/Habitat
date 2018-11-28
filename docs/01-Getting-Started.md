@@ -86,7 +86,6 @@ If your Solr environment is not currently running with HTTPS, you can create an 
     * If yes, you need to update the files accordingly.
     * **Include or omit trailing slashes as per the default setting in each file!**
 1. Open an elevated privileges PowerShell command prompt (started with **Run as administrator**)
-1. Import the `SitecoreInstallFramework` module as directed in the TP documentation.
 1. Run **`.\install-xp0.ps1`**
     * On subsequent runs of the install, you may use the `-SkipPrerequisites` flag to skip prerequisite checks.
 

@@ -8,7 +8,7 @@ You must install these to get Habitat running on your computer:
 * [Visual Studio 2017](https://www.visualstudio.com/downloads/) and .NET 4.7.1.
   * **Be sure you are using VS17 v15.5 or higher in order to get necessary updates to MSBuild. Update your IDE if needed.**
   * Within VS2017, install these extensions:
-  * [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
+    * [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
 * ASP.NET MVC for the user interface patterns
   * On Windows 10, this is enabled by going to:
     * **Turn Windows Features On or Off**
