@@ -2,10 +2,11 @@
 
 These are the tools and practices currently used by the development team in Habitat.
 
-You must install these to get Habitat running on your computer:
+You must install these before installing Habitat:
 
 * [PowerShell version 5 or later](https://www.microsoft.com/en-us/download/details.aspx?id=50395)
-* [Visual Studio 2017](https://www.visualstudio.com/downloads/) and .NET 4.7.1.
+* [.NET Framework 4.7.1 Developer Pack](https://www.microsoft.com/en-us/download/details.aspx?id=56119)
+* [Visual Studio 2017](https://www.visualstudio.com/downloads/)
   * **Be sure you are using VS17 v15.5 or higher in order to get necessary updates to MSBuild. Update your IDE if needed.**
   * Within VS2017, install these extensions:
     * [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
