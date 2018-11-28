@@ -31,7 +31,7 @@ namespace Sitecore.Foundation.Indexing.Infrastructure.Fields
             if (item == null)
                 return null;
 
-            var formatter = IndexingProviderRepository.SearchResultFormatters.FirstOrDefault(provider => provider.SupportedTemplates.Any(item.IsDerived));
+            var formatter = IndexingProviderRepository.SearchResultFormatters.FirstOrDefault(provider => provider.SupportedTemplates.Any(item.DescendsFrom));
             if (formatter == null || formatter is FallbackSearchResultFormatter)
                 return null;
             return formatter.GetType().FullName;

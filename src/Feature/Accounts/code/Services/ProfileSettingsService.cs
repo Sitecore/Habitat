@@ -31,7 +31,7 @@
         {
             var item = GetSettingsItem(null);
 
-            return item?.TargetItem(Templates.ProfileSettigs.Fields.InterestsFolder)?.Children.Where(i => i.IsDerived(Templates.Interest.ID))?.Select(i => i.Fields[Templates.Interest.Fields.Title].Value) ?? Enumerable.Empty<string>();
+            return item?.TargetItem(Templates.ProfileSettigs.Fields.InterestsFolder)?.Children.Where(i => i.DescendsFrom(Templates.Interest.ID))?.Select(i => i.Fields[Templates.Interest.Fields.Title].Value) ?? Enumerable.Empty<string>();
         }
 
         private static Item GetSettingsItem(Item contextItem)

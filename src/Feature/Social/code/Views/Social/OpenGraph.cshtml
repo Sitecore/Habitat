@@ -5,7 +5,7 @@
 @using Sitecore.Links
 @using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
-@if (!Model?.Item?.IsDerived(Templates.OpenGraph.ID) ?? true)
+@if (!Model?.Item?.DescendsFrom(Templates.OpenGraph.ID) ?? true)
 {
   @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.OpenGraph.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;

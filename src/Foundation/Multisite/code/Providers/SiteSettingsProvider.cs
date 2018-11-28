@@ -35,7 +35,7 @@
 
             var definitionItem = currentDefinition.Item;
             var settingsFolder = definitionItem.Children[SettingsRootName];
-            var settingsRootItem = settingsFolder?.Children.FirstOrDefault(i => i.IsDerived(Templates.SiteSettings.ID) && i.Key.Equals(settingsName.ToLower()));
+            var settingsRootItem = settingsFolder?.Children.FirstOrDefault(i => i.DescendsFrom(Templates.SiteSettings.ID) && i.Key.Equals(settingsName.ToLower()));
             return settingsRootItem;
         }
     }

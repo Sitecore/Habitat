@@ -5,7 +5,7 @@
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
-@if (!Model?.Item?.IsDerived(Templates.HasMediaSelector.ID) ?? true)
+@if (!Model?.Item?.DescendsFrom(Templates.HasMediaSelector.ID) ?? true)
 {
   @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaSelector.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
@@ -32,7 +32,7 @@
     <div class="block-grid-item">
       <div class="thumbnail mosaic mosaic-circle lightbox-item lightbox-image">
         <div class="mosaic-overlay mosaic-overlay-no-pointer">
-          @if (element.Item.IsDerived(Templates.HasMediaVideo.ID))
+          @if (element.Item.DescendsFrom(Templates.HasMediaVideo.ID))
           {
             <span class="fa fa-play-circle icon-lg"></span>
           }
@@ -42,7 +42,7 @@
           }
         </div>
         <div class="mosaic-backdrop">
-          @if (element.Item.IsDerived(Templates.HasMediaVideo.ID))
+          @if (element.Item.DescendsFrom(Templates.HasMediaVideo.ID))
           {
             var linkFieldUrl = element.Item.LinkFieldUrl(Templates.HasMediaVideo.Fields.VideoLink);
             if (!string.IsNullOrWhiteSpace(linkFieldUrl))

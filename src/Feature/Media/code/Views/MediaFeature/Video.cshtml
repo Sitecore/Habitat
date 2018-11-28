@@ -8,7 +8,7 @@
 @using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
 
-@if (Model == null || (!Model.Item?.IsDerived(Templates.HasMediaVideo.ID) ?? true))
+@if (Model == null || (!Model.Item?.DescendsFrom(Templates.HasMediaVideo.ID) ?? true))
 {
     @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaVideo.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
     return;

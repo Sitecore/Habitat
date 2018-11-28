@@ -4,8 +4,10 @@ namespace Sitecore.Feature.Accounts.Infrastructure.Pipelines.IdentityProviders
 {
     using System.Security.Claims;
     using System.Threading.Tasks;
+    using Microsoft.Owin.Infrastructure;
     using Microsoft.Owin.Security;
     using Microsoft.Owin.Security.Facebook;
+    using Sitecore.Abstractions;
     using Sitecore.Configuration;
     using Sitecore.Diagnostics;
     using Sitecore.Owin.Authentication.Configuration;
@@ -15,7 +17,10 @@ namespace Sitecore.Feature.Accounts.Infrastructure.Pipelines.IdentityProviders
 
     public class Facebook : IdentityProvidersProcessor
     {
-        public Facebook(FederatedAuthenticationConfiguration federatedAuthenticationConfiguration) : base(federatedAuthenticationConfiguration)
+        public Facebook(FederatedAuthenticationConfiguration federatedAuthenticationConfiguration,
+                        ICookieManager cookieManager,
+                        BaseSettings settings)
+                        : base(federatedAuthenticationConfiguration, cookieManager, settings)
         {
         }
 

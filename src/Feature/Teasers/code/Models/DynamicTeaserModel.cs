@@ -40,7 +40,7 @@
 
     private DynamicTeaserItem[] CreateDynamicTeaserItems()
     {
-      var childItems = this.Item.Children.Where(i => i.IsDerived(Templates.TeaserHeadline.ID)).ToArray();
+      var childItems = this.Item.Children.Where(i => i.DescendsFrom(Templates.TeaserHeadline.ID)).ToArray();
       DynamicTeaserItem[] returnItems = {};
       if (childItems.Any())
       {

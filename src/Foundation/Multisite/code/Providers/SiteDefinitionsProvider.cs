@@ -91,7 +91,7 @@
             {
                 throw new ArgumentNullException(nameof(item));
             }
-            return item.IsDerived(Templates.Site.ID);
+            return item.DescendsFrom(Templates.Site.ID);
         }
 
         private Item GetSiteItemByHierarchy(Item item)

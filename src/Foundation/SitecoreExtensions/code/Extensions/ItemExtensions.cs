@@ -94,7 +94,7 @@
                 throw new ArgumentNullException(nameof(item));
             }
 
-            return item.IsDerived(templateID) ? item : item.Axes.GetAncestors().LastOrDefault(i => i.IsDerived(templateID));
+            return item.DescendsFrom(templateID) ? item : item.Axes.GetAncestors().LastOrDefault(i => i.DescendsFrom(templateID));
         }
 
         public static IList<Item> GetAncestorsAndSelfOfTemplate(this Item item, ID templateID)
@@ -105,12 +105,12 @@
             }
 
             var returnValue = new List<Item>();
-            if (item.IsDerived(templateID))
+            if (item.DescendsFrom(templateID))
             {
                 returnValue.Add(item);
             }
 
-            returnValue.AddRange(item.Axes.GetAncestors().Reverse().Where(i => i.IsDerived(templateID)));
+            returnValue.AddRange(item.Axes.GetAncestors().Reverse().Where(i => i.DescendsFrom(templateID)));
             return returnValue;
         }
 
@@ -187,33 +187,6 @@
         public static bool HasLayout(this Item item)
         {
             return item?.Visualization?.Layout != null;
-        }
-
-
-        public static bool IsDerived(this Item item, ID templateId)
-        {
-            if (item == null)
-            {
-                return false;
-            }
-
-            return !templateId.IsNull && item.IsDerived(item.Database.Templates[templateId]);
-        }
-
-        private static bool IsDerived(this Item item, Item templateItem)
-        {
-            if (item == null)
-            {
-                return false;
-            }
-
-            if (templateItem == null)
-            {
-                return false;
-            }
-
-            var itemTemplate = TemplateManager.GetTemplate(item);
-            return itemTemplate != null && (itemTemplate.ID == templateItem.ID || itemTemplate.DescendsFrom(templateItem.ID));
         }
 
         public static bool FieldHasValue(this Item item, ID fieldID)

@@ -8,7 +8,6 @@
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Data.Items;
-  using Sitecore.Analytics.Outcome.Extensions;
   using Sitecore.Analytics.Tracking;
   using Sitecore.Data;
   using Sitecore.Data.Items;

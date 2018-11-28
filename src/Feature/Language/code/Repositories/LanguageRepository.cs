@@ -41,7 +41,7 @@
             var languages = this.GetAll();
             var siteDefinition = this.SiteContext.GetSiteDefinition(Context.Item);
 
-            if (siteDefinition?.Item == null || !siteDefinition.Item.IsDerived(Feature.Language.Templates.LanguageSettings.ID))
+            if (siteDefinition?.Item == null || !siteDefinition.Item.DescendsFrom(Feature.Language.Templates.LanguageSettings.ID))
             {
                 return languages;
             }

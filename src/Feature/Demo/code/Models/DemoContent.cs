@@ -72,7 +72,7 @@ namespace Sitecore.Feature.Demo.Models
 
         private string[] GetReplacementTokens()
         {
-            return this.Item.Children.Where(i => i.IsDerived(Templates.Token.ID)).SelectMany(i => new[] {$"${i.Name}", i[Templates.Token.Fields.TokenValue]}).ToArray();
+            return this.Item.Children.Where(i => i.DescendsFrom(Templates.Token.ID)).SelectMany(i => new[] {$"${i.Name}", i[Templates.Token.Fields.TokenValue]}).ToArray();
         }
     }
 }

@@ -7,7 +7,7 @@
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @using Sitecore.Foundation.Theming.Extensions
 @model Sitecore.Mvc.Presentation.RenderingModel
-@if (!Model?.Item?.IsDerived(Templates.TeaserContent.ID) ?? true)
+@if (!Model?.Item?.DescendsFrom(Templates.TeaserContent.ID) ?? true)
 {
   @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.TeaserContent.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
@@ -30,7 +30,7 @@
 }
 
 <div class="jumbotron text-center @(isMedia ? "bg-media" : Model.Rendering.GetBackgroundClass())" style="background-image: @style">
-  @if (Model.Item.IsDerived(Templates.TeaserVideoContent.ID))
+  @if (Model.Item.DescendsFrom(Templates.TeaserVideoContent.ID))
   {
     <video autoplay="" loop="" muted="" class="video-bg img-responsive">
       <source src="@Model.Item.MediaUrl(Templates.TeaserVideoContent.Fields.VideoLink)" type="video/mp4">
