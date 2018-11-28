@@ -41,6 +41,8 @@ try {
 		Write-Host $path
 		if (Test-Path $path) {
 			$keytool = (Get-Command $path).Source
+		} else {
+			throw "Keytool not in JAVA_HOME or JAVA_HOME not defined"
 		}
 	} catch {
 		$keytool = Read-Host "keytool.exe not on path. Enter path to keytool (found in JRE bin folder)"
