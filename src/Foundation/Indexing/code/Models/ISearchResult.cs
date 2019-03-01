@@ -1,8 +1,6 @@
 namespace Sitecore.Foundation.Indexing.Models
 {
     using System;
-    using System.Web.Script.Serialization;
-    using System.Xml.Serialization;
     using Sitecore.Data.Items;
 
     public interface ISearchResult

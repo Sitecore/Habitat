@@ -1,19 +1,18 @@
 ﻿namespace Sitecore.Foundation.Dictionary.Tests
 {
-  using System.Web;
-  using FluentAssertions;
-  using NSubstitute;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-  using Sitecore.Foundation.Dictionary.Extensions;
-  using Sitecore.Foundation.Dictionary.Repositories;
-  using Sitecore.Foundation.Testing;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Sitecore.Mvc.Helpers;
-  using Xunit;
+    using System.Web;
+    using FluentAssertions;
+    using NSubstitute;
+    using Ploeh.AutoFixture.AutoNSubstitute;
+    using Sitecore.Data.Items;
+    using Sitecore.Foundation.Dictionary.Extensions;
+    using Sitecore.Foundation.Dictionary.Repositories;
+    using Sitecore.Foundation.Testing;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Sitecore.Mvc.Helpers;
+    using Xunit;
 
-  public class SitecoreExtensionsTests
+    public class SitecoreExtensionsTests
   {
     private IDictionaryPhraseRepository dictionaryPhraseRepository;
 

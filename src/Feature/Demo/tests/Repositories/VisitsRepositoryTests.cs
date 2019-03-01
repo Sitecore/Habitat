@@ -1,22 +1,21 @@
 ﻿namespace Sitecore.Feature.Demo.Tests.Repositories
 {
-  using System.Collections.Generic;
-  using System.Linq;
-  using FluentAssertions;
-  using NSubstitute;
-  using Ploeh.AutoFixture;
-  using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Analytics;
-  using Sitecore.Analytics.Model;
-  using Sitecore.Analytics.Tracking;
-  using Sitecore.Feature.Demo.Models;
-  using Sitecore.Feature.Demo.Repositories;
-  using Sitecore.Foundation.Accounts.Providers;
-  using Sitecore.Foundation.SitecoreExtensions.Services;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Xunit;
+    using System.Collections.Generic;
+    using System.Linq;
+    using FluentAssertions;
+    using NSubstitute;
+    using Ploeh.AutoFixture;
+    using Ploeh.AutoFixture.Xunit2;
+    using Sitecore.Analytics;
+    using Sitecore.Analytics.Model;
+    using Sitecore.Analytics.Tracking;
+    using Sitecore.Feature.Demo.Models;
+    using Sitecore.Feature.Demo.Repositories;
+    using Sitecore.Foundation.Accounts.Providers;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Xunit;
 
-  public class VisitsRepositoryTests
+    public class VisitsRepositoryTests
   {
     private void InitTracker(ITracker tracker)
     {

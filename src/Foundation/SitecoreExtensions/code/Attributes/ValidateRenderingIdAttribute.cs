@@ -1,14 +1,13 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Attributes
 {
-  using System;
-  using System.Linq;
-  using System.Reflection;
-  using System.Web;
-  using System.Web.Mvc;
-  using Sitecore.Mvc.Presentation;
+    using System;
+    using System.Linq;
+    using System.Reflection;
+    using System.Web.Mvc;
+    using Sitecore.Mvc.Presentation;
 
 
-  public class ValidateRenderingIdAttribute : ActionMethodSelectorAttribute
+    public class ValidateRenderingIdAttribute : ActionMethodSelectorAttribute
   {
     internal const string FormUniqueid = "uid";
 

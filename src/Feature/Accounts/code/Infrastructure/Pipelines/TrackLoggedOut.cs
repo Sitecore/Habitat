@@ -1,6 +1,5 @@
 ﻿namespace Sitecore.Feature.Accounts.Infrastructure.Pipelines
 {
-    using Sitecore.Analytics;
     using Sitecore.Feature.Accounts.Services;
     using Sitecore.Foundation.Accounts.Pipelines;
 

@@ -1,13 +1,11 @@
 namespace Sitecore.Feature.Demo.Repositories
 {
-    using System;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
     using Sitecore.Analytics;
     using Sitecore.Feature.Demo.Models;
     using Sitecore.Foundation.DependencyInjection;
-    using Sitecore.Marketing.Automation.Data;
     using Sitecore.Marketing.Definitions;
     using Sitecore.Marketing.Definitions.AutomationPlans.Model;
     using Sitecore.XConnect.Collection.Model;

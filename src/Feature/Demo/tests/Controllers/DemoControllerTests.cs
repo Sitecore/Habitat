@@ -12,7 +12,6 @@
     using Sitecore.Analytics.Model.Entities;
     using Sitecore.Analytics.Tracking;
     using Sitecore.Collections;
-    using Sitecore.Data;
     using Sitecore.Data.Items;
     using Sitecore.FakeDb;
     using Sitecore.FakeDb.AutoFixture;
@@ -20,12 +19,10 @@
     using Sitecore.Feature.Demo.Controllers;
     using Sitecore.Feature.Demo.Models;
     using Sitecore.Feature.Demo.Services;
-    using Sitecore.Foundation.Accounts.Providers;
     using Sitecore.Foundation.Alerts.Exceptions;
     using Sitecore.Foundation.Dictionary.Repositories;
     using Sitecore.Foundation.Testing;
     using Sitecore.Foundation.Testing.Attributes;
-    using Sitecore.Mvc.Common;
     using Sitecore.Mvc.Presentation;
     using Sitecore.Sites;
     using Xunit;

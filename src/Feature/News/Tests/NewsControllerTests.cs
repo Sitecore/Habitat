@@ -1,22 +1,17 @@
 ﻿namespace Sitecore.Feature.News.Tests
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
-  using System.Web.Mvc;
-  using FluentAssertions;
-  using Sitecore.Data;
-  using Sitecore.FakeDb;
-  using Sitecore.Feature.News.Controllers;
-  using Sitecore.Feature.News.Repositories;
-  using Sitecore.Feature.News.Tests.Extensions;
-  using Sitecore.Mvc.Common;
-  using Sitecore.Mvc.Presentation;
-  using Xunit;
+    using System.Web.Mvc;
+    using FluentAssertions;
+    using Sitecore.Data;
+    using Sitecore.FakeDb;
+    using Sitecore.Feature.News.Controllers;
+    using Sitecore.Feature.News.Repositories;
+    using Sitecore.Feature.News.Tests.Extensions;
+    using Sitecore.Mvc.Common;
+    using Sitecore.Mvc.Presentation;
+    using Xunit;
 
-  public class NewsControllerTests
+    public class NewsControllerTests
   {
     [Theory]
     [AutoDbData]

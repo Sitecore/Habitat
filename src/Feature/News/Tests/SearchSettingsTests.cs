@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Sitecore.Feature.News.Tests
+﻿namespace Sitecore.Feature.News.Tests
 {
-  using FluentAssertions;
-  using Sitecore.Data.Items;
-  using Sitecore.Feature.News.Tests.Extensions;
-  using Sitecore.Foundation.Indexing.Models;
-  using Xunit;
+    using FluentAssertions;
+    using Sitecore.Data.Items;
+    using Sitecore.Feature.News.Tests.Extensions;
+    using Sitecore.Foundation.Indexing.Models;
+    using Xunit;
 
-  public class SearchSettingsTests
+    public class SearchSettingsTests
   {
     [Theory]
     [AutoDbData]

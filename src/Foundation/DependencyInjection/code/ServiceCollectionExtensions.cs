@@ -10,7 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Sitecore.Foundation.DependencyInjection
 {
     using System.IO;
-    using Sitecore.Diagnostics;
 
     public static class ServiceCollectionExtensions
     {

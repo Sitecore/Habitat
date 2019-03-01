@@ -1,23 +1,22 @@
 ﻿namespace Sitecore.Feature.Accounts.Tests
 {
-  using System;
-  using FluentAssertions;
-  using NSubstitute;
-  using Sitecore;
-  using Sitecore.Collections;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-  using Sitecore.Exceptions;
-  using Sitecore.FakeDb;
-  using Sitecore.FakeDb.Sites;
-  using Sitecore.Feature.Accounts.Services;
-  using Sitecore.Feature.Accounts.Tests.Extensions;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Sitecore.Sites;
-  using Xunit;
+    using System;
+    using FluentAssertions;
+    using NSubstitute;
+    using Sitecore;
+    using Sitecore.Collections;
+    using Sitecore.Data;
+    using Sitecore.Data.Items;
+    using Sitecore.Exceptions;
+    using Sitecore.FakeDb;
+    using Sitecore.FakeDb.Sites;
+    using Sitecore.Feature.Accounts.Services;
+    using Sitecore.Foundation.SitecoreExtensions.Extensions;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Sitecore.Sites;
+    using Xunit;
 
-  public class AccountSettingsServiceTests
+    public class AccountSettingsServiceTests
   {
     [Theory]
     [AutoDbData]

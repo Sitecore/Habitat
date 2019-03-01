@@ -3,7 +3,6 @@
     using FluentAssertions;
     using Sitecore.Foundation.SitecoreExtensions.Repositories;
     using Sitecore.Foundation.Testing.Attributes;
-    using Sitecore.Mvc.Common;
     using Sitecore.Mvc.Presentation;
     using Xunit;
 

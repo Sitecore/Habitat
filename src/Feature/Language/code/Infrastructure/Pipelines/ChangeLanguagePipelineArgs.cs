@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Sitecore.Feature.Language.Infrastructure.Pipelines
+﻿namespace Sitecore.Feature.Language.Infrastructure.Pipelines
 {
     using Sitecore.Pipelines;
 

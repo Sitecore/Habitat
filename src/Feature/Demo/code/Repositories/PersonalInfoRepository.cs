@@ -6,7 +6,6 @@
     using System.Reflection;
     using Sitecore.Analytics.Model;
     using Sitecore.Analytics.Model.Entities;
-    using Sitecore.Analytics.Tracking;
     using Sitecore.Feature.Demo.Models;
     using Sitecore.Foundation.Accounts.Providers;
     using Sitecore.Foundation.DependencyInjection;

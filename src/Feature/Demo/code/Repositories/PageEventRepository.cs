@@ -6,16 +6,11 @@
     using System.Linq;
     using Sitecore.Analytics;
     using Sitecore.Analytics.Model;
-    using Sitecore.Analytics.Tracking;
-    using Sitecore.Common;
-    using Sitecore.Data;
     using Sitecore.Feature.Demo.Models;
     using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.Dictionary.Repositories;
     using Sitecore.Marketing.Definitions;
-    using Sitecore.Marketing.Definitions.Goals;
     using Sitecore.Marketing.Definitions.PageEvents;
-    using Sitecore.Marketing.Definitions.PageEvents.Data;
 
     [Service]
     public class PageEventRepository

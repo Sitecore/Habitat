@@ -1,20 +1,14 @@
 ﻿namespace Sitecore.Feature.Accounts.Tests
 {
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Threading.Tasks;
     using NSubstitute;
-    using Sitecore.Abstractions;
     using Sitecore.Analytics;
     using Sitecore.Analytics.Model;
     using Sitecore.Feature.Accounts.Services;
     using Sitecore.Feature.Accounts.Services.FacetUpdaters;
-    using Sitecore.Foundation.Accounts.Providers;
     using Sitecore.Foundation.Testing.Attributes;
-    using Sitecore.Security;
     using Sitecore.XConnect;
-    using Sitecore.XConnect.Collection.Model;
-    using Sitecore.XConnect.Operations;
     using Xunit;
     using Contact = Sitecore.Analytics.Tracking.Contact;
     using ContactIdentifier = Sitecore.Analytics.Model.Entities.ContactIdentifier;

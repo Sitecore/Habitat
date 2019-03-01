@@ -8,8 +8,6 @@
     using Sitecore.Data;
     using Sitecore.Data.Items;
     using Sitecore.Foundation.DependencyInjection;
-    using Sitecore.Foundation.SitecoreExtensions.Extensions;
-    using Sitecore.Sites;
     using Sitecore.Web;
 
     [Service(typeof(ISiteDefinitionsProvider))]

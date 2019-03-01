@@ -1,25 +1,16 @@
 ﻿namespace Sitecore.Feature.Accounts.Tests
 {
-  using System;
-  using System.Collections.Generic;
-  using FluentAssertions;
-  using NSubstitute;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Analytics;
-  using Sitecore.Analytics.Data.Items;
-  using Sitecore.Analytics.Tracking;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-  using Sitecore.FakeDb;
-  using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.Feature.Accounts.Services;
-  using Sitecore.Feature.Accounts.Tests.Extensions;
-  using Sitecore.Foundation.SitecoreExtensions.Services;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Xunit;
+    using NSubstitute;
+    using Ploeh.AutoFixture.Xunit2;
+    using Sitecore.Analytics;
+    using Sitecore.Data;
+    using Sitecore.Data.Items;
+    using Sitecore.Feature.Accounts.Services;
+    using Sitecore.Foundation.SitecoreExtensions.Services;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Xunit;
 
-  public class AccountTrackerServiceTests
+    public class AccountTrackerServiceTests
   {
     [Theory, AutoDbData]
     public void TrackLogin_Call_ShouldTrackLoginGoal(string source, string identifier, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)

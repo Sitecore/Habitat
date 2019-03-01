@@ -2,10 +2,8 @@
 {
     using FluentAssertions;
     using NSubstitute;
-    using Ploeh.AutoFixture.Xunit2;
     using Sitecore.Feature.Accounts.Services.FacetUpdaters;
     using Sitecore.Foundation.Testing.Attributes;
-    using Sitecore.Security;
     using Sitecore.XConnect;
     using Sitecore.XConnect.Collection.Model;
     using Sitecore.XConnect.Operations;

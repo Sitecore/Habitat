@@ -1,26 +1,23 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests.Services
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Globalization;
-  using FluentAssertions;
-  using NSubstitute;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Analytics;
-  using Sitecore.Analytics.Data;
-  using Sitecore.Analytics.Tracking;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-  using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.Foundation.SitecoreExtensions.Services;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Sitecore.Marketing.Definitions;
-  using Sitecore.Marketing.Definitions.Outcomes.Model;
-  using Sitecore.Marketing.Definitions.PageEvents;
-  using Xunit;
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
+    using NSubstitute;
+    using Ploeh.AutoFixture.AutoNSubstitute;
+    using Ploeh.AutoFixture.Xunit2;
+    using Sitecore.Analytics;
+    using Sitecore.Analytics.Tracking;
+    using Sitecore.Data;
+    using Sitecore.Data.Items;
+    using Sitecore.FakeDb.AutoFixture;
+    using Sitecore.Foundation.SitecoreExtensions.Services;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Sitecore.Marketing.Definitions.Outcomes.Model;
+    using Sitecore.Marketing.Definitions.PageEvents;
+    using Xunit;
 
-  public class TrackerServiceTests
+    public class TrackerServiceTests
   {
     [Theory, AutoDbData]
     public void TrackPageEvent_ValidID_ShouldTrackById(Database db, [Content] Item item, ITracker tracker, TrackerService trackerService, IPageEventDefinition pageEvent)

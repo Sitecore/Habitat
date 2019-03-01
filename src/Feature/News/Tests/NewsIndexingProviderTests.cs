@@ -1,33 +1,18 @@
 ﻿namespace Sitecore.Feature.News.Tests
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
-  using FluentAssertions;
-  using NSubstitute;
-  using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Data;
-  using Sitecore.FakeDb;
-  using Sitecore.Feature.News.Repositories;
-  using Sitecore.Feature.News.Tests.Extensions;
-  using Sitecore.Foundation.Indexing;
-  using Sitecore.Rules.Conditions.ItemConditions;
-  using Xunit;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Sitecore.Collections;
-  using Sitecore.ContentSearch.SearchTypes;
-  using Sitecore.Data.Items;
-  using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.FakeDb.Sites;
-  using Sitecore.Feature.News.Indexing;
-  using Sitecore.Foundation.Indexing.Models;
-  using Sitecore.Foundation.Indexing.Repositories;
-  using Sitecore.Search;
-  using Sitecore.Sites;
+    using FluentAssertions;
+    using NSubstitute;
+    using Sitecore.Feature.News.Tests.Extensions;
+    using Xunit;
+    using Sitecore.Collections;
+    using Sitecore.ContentSearch.SearchTypes;
+    using Sitecore.Data.Items;
+    using Sitecore.FakeDb.AutoFixture;
+    using Sitecore.FakeDb.Sites;
+    using Sitecore.Feature.News.Indexing;
+    using Sitecore.Foundation.Indexing.Models;
 
-  public class NewsIndexingProviderTests
+    public class NewsIndexingProviderTests
   {
     [Theory]
     [AutoDbData]

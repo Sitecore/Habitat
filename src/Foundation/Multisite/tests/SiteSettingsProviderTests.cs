@@ -1,22 +1,17 @@
 ﻿namespace Sitecore.Foundation.Multisite.Tests
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
-  using FluentAssertions;
-  using NSubstitute;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-  using Sitecore.FakeDb;
-  using Sitecore.Foundation.Multisite.Providers;
-  using Sitecore.Foundation.Multisite.Tests.Extensions;
-  using Xunit;
+    using FluentAssertions;
+    using NSubstitute;
+    using Ploeh.AutoFixture.AutoNSubstitute;
+    using Ploeh.AutoFixture.Xunit2;
+    using Sitecore.Data;
+    using Sitecore.Data.Items;
+    using Sitecore.FakeDb;
+    using Sitecore.Foundation.Multisite.Providers;
+    using Sitecore.Foundation.Multisite.Tests.Extensions;
+    using Xunit;
 
-  public class SiteSettingsProviderTests
+    public class SiteSettingsProviderTests
   {
     [Theory]
     [AutoDbData]

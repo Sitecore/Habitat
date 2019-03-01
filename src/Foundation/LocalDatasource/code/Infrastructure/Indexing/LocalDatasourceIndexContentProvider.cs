@@ -1,16 +1,15 @@
 ﻿namespace Sitecore.Foundation.LocalDatasource.Infrastructure.Indexing
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Configuration.Provider;
-  using System.Linq.Expressions;
-  using Sitecore.ContentSearch.SearchTypes;
-  using Sitecore.Data;
-  using Sitecore.Foundation.Indexing.Infrastructure;
-  using Sitecore.Foundation.Indexing.Models;
-  using Sitecore.Web.UI.WebControls;
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration.Provider;
+    using System.Linq.Expressions;
+    using Sitecore.ContentSearch.SearchTypes;
+    using Sitecore.Data;
+    using Sitecore.Foundation.Indexing.Infrastructure;
+    using Sitecore.Foundation.Indexing.Models;
 
-  public class LocalDatasourceQueryPredicateProvider : ProviderBase, IQueryPredicateProvider
+    public class LocalDatasourceQueryPredicateProvider : ProviderBase, IQueryPredicateProvider
   {
     public IEnumerable<ID> SupportedTemplates => new[]
     {

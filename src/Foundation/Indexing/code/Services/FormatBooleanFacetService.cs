@@ -1,6 +1,5 @@
 namespace Sitecore.Foundation.Indexing.Services
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
     using Sitecore.Foundation.DependencyInjection;

@@ -1,26 +1,24 @@
 ﻿namespace Sitecore.Feature.Accounts.Tests
 {
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Web;
-  using System.Web.Mvc;
-  using FluentAssertions;
-  using NSubstitute;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-  using Sitecore.FakeDb;
-  using Sitecore.Feature.Accounts.Models;
-  using Sitecore.Feature.Accounts.Services;
-  using Sitecore.Feature.Accounts.Tests.Extensions;
-  using Sitecore.Foundation.Dictionary.Repositories;
-  using Sitecore.Foundation.Testing;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Sitecore.Security;
-  using Xunit;
+    using System.Collections.Generic;
+    using System.Web;
+    using FluentAssertions;
+    using NSubstitute;
+    using Ploeh.AutoFixture.AutoNSubstitute;
+    using Ploeh.AutoFixture.Xunit2;
+    using Sitecore.Data;
+    using Sitecore.Data.Items;
+    using Sitecore.FakeDb;
+    using Sitecore.Feature.Accounts.Models;
+    using Sitecore.Feature.Accounts.Services;
+    using Sitecore.Feature.Accounts.Tests.Extensions;
+    using Sitecore.Foundation.Dictionary.Repositories;
+    using Sitecore.Foundation.Testing;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Sitecore.Security;
+    using Xunit;
 
-  public class UserProfileServiceTests
+    public class UserProfileServiceTests
   {
     public UserProfileServiceTests()
     {

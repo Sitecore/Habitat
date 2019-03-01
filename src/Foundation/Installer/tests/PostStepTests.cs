@@ -1,15 +1,14 @@
 ﻿namespace Sitecore.Foundation.Installer.Tests
 {
-  using System.Collections.Specialized;
-  using FluentAssertions;
-  using log4net.Appender;
-  using log4net.Config;
-  using log4net.spi;
-  using NSubstitute;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Xunit;
+    using System.Collections.Specialized;
+    using FluentAssertions;
+    using log4net.Appender;
+    using log4net.Config;
+    using log4net.spi;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Xunit;
 
-  public class PostStepTests
+    public class PostStepTests
   {
     [Theory]
     [AutoDbData]

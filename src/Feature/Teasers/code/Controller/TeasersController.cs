@@ -1,14 +1,13 @@
 ﻿namespace Sitecore.Feature.Teasers.Controller
 {
-  using System.Web.Mvc;
-  using Sitecore.Feature.Teasers.Models;
-  using Sitecore.Foundation.Alerts;
-  using Sitecore.Foundation.Alerts.Extensions;
-  using Sitecore.Foundation.Alerts.Models;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
-  using Sitecore.Mvc.Presentation;
+    using System.Web.Mvc;
+    using Sitecore.Feature.Teasers.Models;
+    using Sitecore.Foundation.Alerts;
+    using Sitecore.Foundation.Alerts.Extensions;
+    using Sitecore.Foundation.Alerts.Models;
+    using Sitecore.Mvc.Presentation;
 
-  public class TeasersController : Controller
+    public class TeasersController : Controller
   {
     public ActionResult GetDynamicContent(string viewName)
     {

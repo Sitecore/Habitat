@@ -1,26 +1,25 @@
 ﻿namespace Sitecore.Feature.Language.Tests
 {
-  using System.Linq;
-  using FluentAssertions;
-  using Moq;
-  using Sitecore.Abstractions;
-  using Sitecore.Collections;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-  using Sitecore.FakeDb;
-  using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.FakeDb.Sites;
-  using Sitecore.Feature.Language.Repositories;
-  using Sitecore.Feature.Language.Tests.Extensions;
-  using Sitecore.Foundation.Multisite;
-  using Sitecore.Foundation.Multisite.Providers;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Sitecore.Globalization;
-  using Sitecore.Links;
-  using Sitecore.Sites;
-  using Xunit;
+    using System.Linq;
+    using FluentAssertions;
+    using Moq;
+    using Sitecore.Abstractions;
+    using Sitecore.Collections;
+    using Sitecore.Data;
+    using Sitecore.Data.Items;
+    using Sitecore.FakeDb;
+    using Sitecore.FakeDb.AutoFixture;
+    using Sitecore.FakeDb.Sites;
+    using Sitecore.Feature.Language.Repositories;
+    using Sitecore.Feature.Language.Tests.Extensions;
+    using Sitecore.Foundation.Multisite;
+    using Sitecore.Foundation.Multisite.Providers;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Sitecore.Globalization;
+    using Sitecore.Links;
+    using Xunit;
 
-  public class LanguageRepositoryTests
+    public class LanguageRepositoryTests
   {
     [Theory]
     [AutoDbData]

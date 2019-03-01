@@ -1,7 +1,5 @@
 ﻿namespace Sitecore.Feature.Accounts.Models
 {
-    using System.Web.Mvc;
-
     public class AccountsMenuInfo
     {
         public bool IsLoggedIn { get; set; }

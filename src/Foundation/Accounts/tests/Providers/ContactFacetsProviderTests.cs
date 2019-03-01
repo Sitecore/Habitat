@@ -1,23 +1,21 @@
 ﻿namespace Sitecore.Foundation.Accounts.Tests.Providers
 {
-  using System.Collections.Generic;
-  using System.Collections.ObjectModel;
-  using FluentAssertions;
-  using NSubstitute;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Analytics;
-  using Sitecore.Analytics.Model.Entities;
-  using Sitecore.Analytics.Model.Framework;
-  using Sitecore.Analytics.Tracking;
-  using Sitecore.Analytics.XConnect.Facets;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Sitecore.XConnect.Collection.Model;
-  using Xunit;
-  using ContactFacetsProvider = Sitecore.Foundation.Accounts.Providers.ContactFacetsProvider;
-  using Facet = Sitecore.XConnect.Facet;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using FluentAssertions;
+    using NSubstitute;
+    using Ploeh.AutoFixture.AutoNSubstitute;
+    using Ploeh.AutoFixture.Xunit2;
+    using Sitecore.Analytics;
+    using Sitecore.Analytics.Tracking;
+    using Sitecore.Analytics.XConnect.Facets;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Sitecore.XConnect.Collection.Model;
+    using Xunit;
+    using ContactFacetsProvider = Sitecore.Foundation.Accounts.Providers.ContactFacetsProvider;
+    using Facet = Sitecore.XConnect.Facet;
 
-  public class ContactFacetsProviderTests
+    public class ContactFacetsProviderTests
   {
     [Theory]
     [AutoDbData]

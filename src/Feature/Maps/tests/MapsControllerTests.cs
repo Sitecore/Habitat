@@ -1,20 +1,18 @@
 ﻿namespace Sitecore.Feature.Maps.Tests
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Web.Mvc;
-  using Controllers;
-  using FakeDb;
-  using FluentAssertions;
-  using Repositories;
-  using Xunit;
-  using Foundation.Testing.Attributes;
-  using Models;
-  using NSubstitute;
-  using Pipelines;
+    using System;
+    using System.Collections.Generic;
+    using Controllers;
+    using FakeDb;
+    using FluentAssertions;
+    using Repositories;
+    using Xunit;
+    using Foundation.Testing.Attributes;
+    using Models;
+    using NSubstitute;
 
 
-  public class MapsControllerTests
+    public class MapsControllerTests
   {
     [Theory]
     [AutoDbData]

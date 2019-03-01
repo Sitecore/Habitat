@@ -6,7 +6,6 @@
     using System.Linq.Expressions;
     using Sitecore.ContentSearch.SearchTypes;
     using Sitecore.Data;
-    using Sitecore.Data.Fields;
     using Sitecore.Foundation.Dictionary.Repositories;
     using Sitecore.Foundation.Indexing.Infrastructure;
     using Sitecore.Foundation.Indexing.Models;

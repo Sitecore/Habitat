@@ -1,23 +1,22 @@
 ﻿namespace Sitecore.Feature.Accounts.Tests.Attributes
 {
-  using System.Reflection;
-  using System.Web.Mvc;
-  using FluentAssertions;
-  using NSubstitute;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Sitecore.Collections;
-  using Sitecore.Data;
-  using Sitecore.FakeDb;
-  using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.FakeDb.Sites;
-  using Sitecore.Feature.Accounts.Attributes;
-  using Sitecore.Feature.Accounts.Services;
-  using Sitecore.Feature.Accounts.Tests.Extensions;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Sitecore.Sites;
-  using Xunit;
+    using System.Reflection;
+    using System.Web.Mvc;
+    using FluentAssertions;
+    using NSubstitute;
+    using Ploeh.AutoFixture.AutoNSubstitute;
+    using Sitecore.Collections;
+    using Sitecore.Data;
+    using Sitecore.FakeDb;
+    using Sitecore.FakeDb.AutoFixture;
+    using Sitecore.FakeDb.Sites;
+    using Sitecore.Feature.Accounts.Attributes;
+    using Sitecore.Feature.Accounts.Services;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Sitecore.Sites;
+    using Xunit;
 
-  public class RedirectAuthenticatedAttributeTests
+    public class RedirectAuthenticatedAttributeTests
   {
     [Theory]
     [AutoDbData]

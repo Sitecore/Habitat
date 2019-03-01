@@ -1,9 +1,8 @@
 ﻿namespace Sitecore.Feature.Teasers.Models
 {
-  using System;
-  using Sitecore.Data.Fields;
-  using Sitecore.Data.Items;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
+    using System;
+    using Sitecore.Data.Items;
+    using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
     public class DynamicTeaserItem
   {

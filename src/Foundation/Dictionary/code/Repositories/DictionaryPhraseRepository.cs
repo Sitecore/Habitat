@@ -1,16 +1,13 @@
 ﻿namespace Sitecore.Foundation.Dictionary.Repositories
 {
-  using System;
-  using System.Linq;
-  using System.Web;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-  using Sitecore.Diagnostics;
-  using Sitecore.Foundation.Dictionary.Models;
-  using Sitecore.Foundation.Dictionary.Services;
-  using Sitecore.SecurityModel;
+    using System;
+    using System.Web;
+    using Sitecore.Data.Items;
+    using Sitecore.Diagnostics;
+    using Sitecore.Foundation.Dictionary.Models;
+    using Sitecore.Foundation.Dictionary.Services;
 
-  public class DictionaryPhraseRepository : IDictionaryPhraseRepository
+    public class DictionaryPhraseRepository : IDictionaryPhraseRepository
   {
     public Dictionary Dictionary { get; set; }
 

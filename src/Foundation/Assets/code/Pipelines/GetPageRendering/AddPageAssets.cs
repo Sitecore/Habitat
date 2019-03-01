@@ -5,7 +5,6 @@
     using Sitecore.Data.Items;
     using Sitecore.Foundation.Assets.Models;
     using Sitecore.Foundation.Assets.Repositories;
-    using Sitecore.Foundation.SitecoreExtensions.Extensions;
     using Sitecore.Mvc.Pipelines.Response.GetPageRendering;
     using Sitecore.Mvc.Presentation;
 

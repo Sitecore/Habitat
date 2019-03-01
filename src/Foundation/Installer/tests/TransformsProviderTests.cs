@@ -1,18 +1,14 @@
 ﻿namespace Sitecore.Foundation.Installer.Tests
 {
-  using System;
-  using System.Collections.Generic;
-  using System.IO;
-  using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
-  using FluentAssertions;
-  using NSubstitute;
-  using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Foundation.Installer.XmlTransform;
-  using Xunit;
+    using System.Collections.Generic;
+    using System.IO;
+    using FluentAssertions;
+    using NSubstitute;
+    using Ploeh.AutoFixture.Xunit2;
+    using Sitecore.Foundation.Installer.XmlTransform;
+    using Xunit;
 
-  public class TransformsProviderTests
+    public class TransformsProviderTests
   {
     [Theory]
     [AutoSububstituteData]

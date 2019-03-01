@@ -1,9 +1,8 @@
 ﻿namespace Sitecore.Foundation.Multisite
 {
-  using Sitecore.Data;
-  using Sitecore.Shell.Framework.Commands.Masters;
+    using Sitecore.Data;
 
-  public class Templates
+    public class Templates
   {
     public struct Site
     {

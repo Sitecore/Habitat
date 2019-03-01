@@ -4,7 +4,6 @@ namespace Sitecore.Foundation.Indexing.Models
     using Sitecore.ContentSearch.SearchTypes;
     using Sitecore.Data.Items;
     using Sitecore.Foundation.Indexing.Repositories;
-    using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
     public class SearchResultFactory
     {

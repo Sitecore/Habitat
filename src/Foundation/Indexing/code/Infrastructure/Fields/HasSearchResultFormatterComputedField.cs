@@ -6,13 +6,12 @@
 
 namespace Sitecore.Foundation.Indexing.Infrastructure.Fields
 {
-  using System.Linq;
-  using Sitecore.ContentSearch;
-  using Sitecore.ContentSearch.ComputedFields;
-  using Sitecore.Foundation.Indexing.Repositories;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
+    using System.Linq;
+    using Sitecore.ContentSearch;
+    using Sitecore.ContentSearch.ComputedFields;
+    using Sitecore.Foundation.Indexing.Repositories;
 
-  public class HasSearchResultFormatterComputedField : IComputedIndexField
+    public class HasSearchResultFormatterComputedField : IComputedIndexField
   {
     public string FieldName { get; set; }
     public string ReturnType { get; set; }

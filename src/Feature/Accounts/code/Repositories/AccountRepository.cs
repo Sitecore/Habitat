@@ -6,7 +6,6 @@
     using Sitecore.Feature.Accounts.Services;
     using Sitecore.Foundation.Accounts.Pipelines;
     using Sitecore.Foundation.DependencyInjection;
-    using Sitecore.Pipelines;
     using Sitecore.Security.Accounts;
     using Sitecore.Security.Authentication;
 
