@@ -96,6 +96,7 @@ If your Solr environment is not currently running with HTTPS, you can create an 
     * Open an elevated privileges command prompt (started with **Run as administrator**)
     * Run **`npm install`** in the root of repository.
 1. If gulp has not been installed globally, you can do so by running **`npm install -g gulp`**
+1. Set the path to your project in your `Habitat.Dev.config` file at `<sc.variable name="sourceFolder" value="C:\[Projects]\[Habitat]\src" />`
 1. Build and publish the solution using either:
     * Open an command prompt with elevated privileges and run **`gulp`** in the root of repository.
     * Use Visual Studio:
