@@ -24,8 +24,7 @@
       db.Add(new DbItem(siteName, siteDefinitionId, Templates.Site.ID) { item });
       var definitionItem = db.GetItem(siteDefinitionId);
 
-      var definition = new SiteDefinition();
-      definition.Item = definitionItem;
+      var definition = new SiteDefinition(siteInfo => true) {Item = definitionItem};
       provider.GetContextSiteDefinition(Arg.Any<Item>()).Returns(definition);
 
       var siteContext = new SiteContext(provider);

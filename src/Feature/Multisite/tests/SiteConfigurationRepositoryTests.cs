@@ -46,7 +46,7 @@
                            {"name", name},
                          };
 
-            siteDefinitionProvider.SiteDefinitions.Returns(new List<SiteDefinition> {new SiteDefinition {Item = item, Site = new SiteInfo(siteSettings) } });
+            siteDefinitionProvider.SiteDefinitions.Returns(new List<SiteDefinition> {new SiteDefinition (siteInfo => true) {Item = item, Site = new SiteInfo(siteSettings) } });
             var definitions = repository.Get();
             definitions.Should().BeOfType<SiteConfigurations>();
             var sites = definitions.Items.ToList();

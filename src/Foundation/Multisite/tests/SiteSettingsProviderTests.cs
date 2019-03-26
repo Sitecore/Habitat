@@ -37,7 +37,7 @@
              });
       var definitionItem = db.GetItem(definitionId);
       var setting = db.GetItem(settingItemId);
-      context.GetSiteDefinition(Arg.Any<Item>()).Returns(new SiteDefinition {Item = definitionItem });
+      context.GetSiteDefinition(Arg.Any<Item>()).Returns(new SiteDefinition(siteInfo => true) { Item = definitionItem });
       var settingItem = provider.GetSetting(contextItem, DatasourceProvider.DatasourceSettingsName, settingName);
       settingItem.ID.Should().BeEquivalentTo(setting.ID);
     }
