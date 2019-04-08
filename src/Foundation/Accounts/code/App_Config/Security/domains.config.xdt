@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<domains xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <domain xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" name="modules" />
+</domains>

@@ -1,0 +1,17 @@
+﻿---
+ID: "bb3472c7-e61e-4ed2-9b25-25b1e02f73aa"
+Parent: "07674169-6ecb-4534-9d90-f2bb2feb2bfa"
+Template: "04c34cf5-b7ea-4408-88e8-5fc851173dbd"
+Path: /sitecore/system/Settings/Feature/Maps/Map Types/hybrid
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20151214T093324Z
+    - ID: "4a724065-e4ca-4cdd-9027-f56ceef1b082"
+      Hint: Name
+      Value: hybrid

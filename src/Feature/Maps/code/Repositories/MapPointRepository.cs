@@ -22,14 +22,14 @@
             {
                 throw new ArgumentNullException(nameof(contextItem));
             }
-            if (Foundation.SitecoreExtensions.Extensions.ItemExtensions.IsDerived(contextItem, Templates.MapPoint.ID))
+            if (contextItem.DescendsFrom(Templates.MapPoint.ID))
             {
                 return new List<MapPoint>
                 {
                     new MapPoint(contextItem)
                 };
             }
-            if (!Foundation.SitecoreExtensions.Extensions.ItemExtensions.IsDerived(contextItem, Templates.MapPointsFolder.ID))
+            if (!contextItem.DescendsFrom(Templates.MapPointsFolder.ID))
             {
                 throw new ArgumentException("Item must derive from MapPointsFolder or MapPoint", nameof(contextItem));
             }

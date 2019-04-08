@@ -1,0 +1,40 @@
+﻿---
+Role: |
+  extranet\Project Habitat Modules Admin
+MemberOf:
+  Role: |
+    modules\Feature Multisite Admin
+  Role: |
+    modules\Feature News Admin
+  Role: |
+    modules\Feature Identity Admin
+  Role: |
+    modules\Feature Person Admin
+  Role: |
+    modules\Foundation Assets Admin
+  Role: |
+    modules\Feature FAQ Admin
+  Role: |
+    modules\Feature Search Admin
+  Role: |
+    modules\Feature Media Admin
+  Role: |
+    modules\Feature Demo Admin
+  Role: |
+    modules\Feature Metadata Admin
+  Role: |
+    modules\Feature Social Admin
+  Role: |
+    modules\Feature Teasers Admin
+  Role: |
+    modules\Feature Language Admin
+  Role: |
+    modules\Feature Maps Admin
+  Role: |
+    modules\Foundation Indexing Admin
+  Role: |
+    modules\Feature Navigation Admin
+  Role: |
+    modules\Feature Accounts Admin
+  Role: |
+    modules\Feature PageContent Admin

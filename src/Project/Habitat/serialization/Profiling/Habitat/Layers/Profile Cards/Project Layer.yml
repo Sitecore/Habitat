@@ -1,0 +1,32 @@
+﻿---
+ID: "f5a90133-93fc-4dca-92ae-e6e0b09acbda"
+Parent: "34fe5682-b766-4235-9fe7-56cfd3f075dd"
+Template: "0fc09ea4-8d87-4b0e-a5c9-8076ae863d9c"
+Path: /sitecore/system/Marketing Control Panel/Profiles/Habitat/Layers/Profile Cards/Project Layer
+DB: master
+SharedFields:
+- ID: "85970ab7-22ea-4206-be86-c0167178860b"
+  Hint: Profile Card Value
+  Value: |
+    <tracking>
+      <profile id="c4cc3ef6-a779-44ad-9021-01f1dae26270" name="Layers">
+        <key name="Feature" value="3" />
+        <key name="Foundation" value="0" />
+        <key name="Project" value="10" />
+      </profile>
+    </tracking>
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 50
+Languages:
+- Language: en
+  Fields:
+  - ID: "a26fc256-1db0-44aa-ba3d-1c830bf882a2"
+    Hint: Name
+    Value: Project Layer
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171005T141822Z

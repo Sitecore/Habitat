@@ -8,7 +8,7 @@
 @using Sitecore.Foundation.Theming.Extensions
 @using Sitecore.Resources.Media
 @model Sitecore.Mvc.Presentation.RenderingModel
-@if (!Model?.Item?.IsDerived(Templates.HasMediaSelector.ID) ?? true)
+@if (!Model?.Item?.DescendsFrom(Templates.HasMediaSelector.ID) ?? true)
 {
   @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.HasMediaSelector.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Model.Item?.ID, Model.Rendering.Item?.ID)
   return;
@@ -25,7 +25,7 @@
     {
         <li data-target="#@carouselId" data-slide-to="@i" class="@elements[i].Active"></li>
         int height;
-        var field = elements[i].Item.IsDerived(Templates.HasMediaVideo.ID) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
+        var field = elements[i].Item.DescendsFrom(Templates.HasMediaVideo.ID) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
         if (int.TryParse(((ImageField)elements[i].Item.Fields[field]).Height, out height) && height > (carouselHeight ?? 0))
         {
             carouselHeight = height;
@@ -39,7 +39,7 @@
       <div class="item @element.Active">
         @{
           var style = "background-image: ";
-          var field = element.Item.IsDerived(Templates.HasMediaVideo.ID) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
+          var field = element.Item.DescendsFrom(Templates.HasMediaVideo.ID) ? Templates.HasMedia.Fields.Thumbnail : Templates.HasMediaImage.Fields.Image;
           style += element.Item.ImageUrl(field, new MediaUrlOptions()).ToCssUrlValue();
           var fixedHeight = Model.Rendering.IsFixedHeight();
           if (fixedHeight && carouselHeight.HasValue)
@@ -49,7 +49,7 @@
         }
 
         <div class="jumbotron bg-media" style="@style">
-          @if (element.Item.IsDerived(Templates.HasMediaVideo.ID))
+          @if (element.Item.DescendsFrom(Templates.HasMediaVideo.ID))
           {
             <video autoplay="" loop="" muted="" class="video-bg img-responsive">
               <source src="@element.Item.MediaUrl(Templates.HasMediaVideo.Fields.VideoLink)" type="video/mp4">

@@ -1,0 +1,36 @@
+﻿---
+ID: "c28ff134-0f92-4b47-8b5b-d4b474d77df4"
+Parent: "8eac162b-96bc-43f1-95d6-99b83745b2f4"
+Template: "49c651ba-4004-40a9-9b0f-e95d0573f3ae"
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Demo/Fake IP Address
+DB: master
+SharedFields:
+- ID: "1618e249-e670-46a7-a198-6e85b7745726"
+  Hint: IP Address
+  Value: 52.197.31.124
+- ID: "d28efe17-c491-47c0-b62d-934dc9da38a4"
+  Hint: Referrer
+  Value: 
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0bc0aedf-a6d0-4f74-933c-bd1779cd40b2"
+      Hint: HTML Content
+      Value: |
+        <html>
+        <body>
+        <h1>Demo Page</h1>
+        <p>This page fakes the IP address. If IP geo lookup is enabled, the IP address will be used to lookup geo data.</p>
+        <p>The page is not tracked in xDB.<br/>After returning to a standard web page, use the panel in the right hand side to view the faked information.</p>
+        <p><a href="/">Return to the home page</a></p>
+        </body>
+        </html>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170530T230230Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

@@ -1,0 +1,1 @@
+Add install asset files to this directory. See the documentation for details.

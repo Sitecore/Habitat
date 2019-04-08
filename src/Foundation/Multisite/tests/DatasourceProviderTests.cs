@@ -123,7 +123,7 @@ namespace Sitecore.Foundation.Multisite.Tests
       siteSettingsProvider.GetSetting(Arg.Any<Item>(), Arg.Any<string>(), Arg.Any<string>()).Returns(settingItem);
       var sources = provider.GetDatasourceTemplate(item, name);
       sources.Should().NotBeNull();
-      sources.ID.ShouldBeEquivalentTo(sourceRootItem.ID);
+      sources.ID.Should().BeEquivalentTo(sourceRootItem.ID);
     }
 
     [Theory]

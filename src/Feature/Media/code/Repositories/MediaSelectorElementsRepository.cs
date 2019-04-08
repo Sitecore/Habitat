@@ -22,7 +22,7 @@
       var active = "active";
       foreach (var child in items)
       {
-        if (child.IsDerived(Templates.HasMediaVideo.ID) && child[Templates.HasMediaVideo.Fields.VideoLink].IsEmptyOrNull() && child[Templates.HasMedia.Fields.Thumbnail].IsEmptyOrNull())
+        if (child.DescendsFrom(Templates.HasMediaVideo.ID) && child[Templates.HasMediaVideo.Fields.VideoLink].IsEmptyOrNull() && child[Templates.HasMedia.Fields.Thumbnail].IsEmptyOrNull())
         {
           continue;
         }
@@ -38,13 +38,13 @@
 
     private static IEnumerable<Item> GetMediaFromChildren(Item item)
     {
-      return item.Children.Where(i => i.IsDerived(Templates.HasMedia.ID));
+      return item.Children.Where(i => i.DescendsFrom(Templates.HasMedia.ID));
     }
 
     private static IEnumerable<Item> GetMediaFromMultiList(Item item)
     {
       var multiListValues = item.GetMultiListValueItems(Templates.HasMediaSelector.Fields.MediaSelector);
-      return multiListValues.Where(i => i.IsDerived(Templates.HasMedia.ID));
+      return multiListValues.Where(i => i.DescendsFrom(Templates.HasMedia.ID));
     }
   }
 }

@@ -77,7 +77,7 @@
         private static Item GetDefaultSearchResultsPage()
         {
             var item = Context.Site?.GetStartItem().Children[DefaultSearchResultsName];
-            return item != null && item.IsDerived(Templates.SearchResults.ID) ? item : null;
+            return item != null && item.DescendsFrom(Templates.SearchResults.ID) ? item : null;
         }
 
         private static Item GetSearchResultsPageItemFromContext()
@@ -88,13 +88,13 @@
                 return null;
             }
             var searchResultsItem = item.TargetItem(Templates.SearchContext.Fields.SearchResultsPage);
-            return searchResultsItem != null && searchResultsItem.IsDerived(Templates.SearchResults.ID) ? searchResultsItem : null;
+            return searchResultsItem != null && searchResultsItem.DescendsFrom(Templates.SearchResults.ID) ? searchResultsItem : null;
         }
 
         private static Item GetSearchResultsPageItemFromRenderingContext()
         {           
             var item = RenderingContext.CurrentOrNull?.Rendering.Item;
-            return item != null && item.IsDerived(Templates.SearchResults.ID) ? item : null;
+            return item != null && item.DescendsFrom(Templates.SearchResults.ID) ? item : null;
         }
 
         private Item GetRootItem(Item configurationItem)

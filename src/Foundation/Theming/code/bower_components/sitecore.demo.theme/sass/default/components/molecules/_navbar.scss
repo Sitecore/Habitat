@@ -150,12 +150,12 @@
                     left: auto;
                     right: 0;
                     background-color: $navbar-dropdown-bg;
-                    li {
+                    > li {
                         float: none;
                     }
                 }
             }
-            li {
+            > li {
                 @media all and (max-width: $screen-xs-max) {
                     //display: inline-block;
                     float: left;
@@ -199,8 +199,8 @@
             }
         }
         &-search {
-            form,
-            a {
+            > form,
+            > a {
                 display: inline-block;
                 float: left;
             }
@@ -335,15 +335,14 @@
             float: none !important;
             display: inline-block;
         }
-        &>li {
+        & >li {
             &>a {
                 border: none;
                 .bg-white & {
                     color: $bg-white-color !important;
                 }
             }
-        }
-        li {
+
             &.open {
                 .dropdown-menu {
                     @media all and (max-width: $screen-xs-max) {
@@ -373,7 +372,7 @@
                 }
             }
             .dropdown-menu {
-                li {
+                >li {
                     &>a {
                         @media all and (max-width: $screen-xs-max) {
                             color: $navbar-default-link-color;
@@ -414,7 +413,7 @@
                 .dropdown-menu {
                     &>li {
                         &.disabled {
-                            a {
+                            >a {
                                 color: $navbar-default-disabled-color;
                                 &:hover {
                                     color: $navbar-default-disabled-color;
@@ -422,7 +421,7 @@
                             }
                         }
                         &.active {
-                            a {
+                            >a {
                                 color: $brand-primary;
                                 background-color: $navbar-default-bg;
                             }

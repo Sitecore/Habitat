@@ -4,7 +4,7 @@
 @using Sitecore.Foundation.SitecoreExtensions.Extensions
 @model Sitecore.Feature.Navigation.Models.NavigationItem
 @{
-  if (Model?.Children == null || !Model.Children.Items.Any())
+  if (Model?.Children == null || !Model.Children.NavItems.Any())
   {
     @Html.PageEditorInfo(Html.Sitecore().Dictionary("/Navigation/SecondaryMenu/No menu items", "No menu items found"))
     return;

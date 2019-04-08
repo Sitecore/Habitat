@@ -60,13 +60,17 @@
       padding: 15px;
       color: $text-color;
 
+      &-wide {
+        min-width: 600px;
+      }
+
       & > .active {
         & > a {
           color: $active-list-text-color;
           font-weight: $active-list-font-weight;
         }
       }
-      & > li {
+      & li {
         & > a {
           font-weight: $list-font-weight;
           color: $text-color;

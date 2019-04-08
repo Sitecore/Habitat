@@ -2,16 +2,14 @@
 {
     using System;
     using System.Web;
+    using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
+    [Service(typeof(IGetRedirectUrlService))]
     public class GetRedirectUrlService : IGetRedirectUrlService
     {
         private readonly IAccountsSettingsService accountsSettingsService;
         private const string ReturnUrlQuerystring = "ReturnUrl";
-
-        public GetRedirectUrlService() : this(new AccountsSettingsService())
-        {
-        }
 
         public GetRedirectUrlService(IAccountsSettingsService accountsSettingsService)
         {
@@ -39,9 +37,9 @@
             switch (status)
             {
                 case AuthenticationStatus.Unauthenticated:
-                    return this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.LoginPage, Context.Site.GetRootItem());
+                    return this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.LoginPage, Context.Site.GetStartItem());
                 case AuthenticationStatus.Authenticated:
-                    return this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetRootItem());
+                    return this.accountsSettingsService.GetPageLinkOrDefault(Context.Item, Templates.AccountsSettings.Fields.AfterLoginPage, Context.Site.GetStartItem());
                 default:
                     throw new ArgumentOutOfRangeException(nameof(status), status, null);
             }

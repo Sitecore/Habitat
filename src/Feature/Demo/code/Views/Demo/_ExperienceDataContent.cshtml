@@ -1,8 +1,20 @@
-﻿@model Sitecore.Feature.Demo.Models.ExperienceData
+﻿@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Feature.Demo.Models.ExperienceData
 
 <div class="panel-group" id="experiencedata">
-  @Html.Partial("_Visits", Model.Visits)
-  @Html.Partial("_PersonalInfo", Model.PersonalInfo)
-  @Html.Partial("_OnsiteBehavior", Model.OnsiteBehavior)
-  @Html.Partial("_Referral", Model.Referral)
+    @if (!Model.IsActive)
+    {
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    <span class="fa fa-warning"></span>
+                    @Html.Sitecore().DictionaryField("/Demo/Experience Content/No Active", "Tracking is not active!")
+                </h3>
+            </div>
+        </div>
+    }
+    @Html.Partial("_Visits", Model.Visits)
+    @Html.Partial("_PersonalInfo", Model.PersonalInfo)
+    @Html.Partial("_OnsiteBehavior", Model.OnsiteBehavior)
+    @Html.Partial("_Referral", Model.Referral)
 </div>

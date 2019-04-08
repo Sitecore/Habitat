@@ -1,76 +1,79 @@
 ﻿namespace Sitecore.Feature.Demo.Repositories
 {
+    using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using Sitecore.Analytics;
-    using Sitecore.Analytics.Outcome;
-    using Sitecore.Analytics.Outcome.Extensions;
-    using Sitecore.Analytics.Outcome.Model;
-    using Sitecore.Configuration;
-    using Sitecore.Data;
+    using Sitecore.Analytics.Model;
     using Sitecore.Feature.Demo.Models;
+    using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.Dictionary.Repositories;
     using Sitecore.Marketing.Definitions;
+    using Sitecore.Marketing.Definitions.Outcomes;
     using Sitecore.Marketing.Definitions.Outcomes.Model;
     using Sitecore.Marketing.Taxonomy;
     using Sitecore.Marketing.Taxonomy.Extensions;
 
-    internal class OutcomeRepository
+    [Service]
+    public class OutcomeRepository
     {
-        private readonly OutcomeManager outcomeManager;
+        private readonly IDefinitionManager<IOutcomeDefinition> outcomeDefinitionManager;
+        private readonly IOutcomeGroupTaxonomyManager outcomeGroupTaxonomyManager;
 
-        public OutcomeRepository(OutcomeManager outcomeManager)
+        public OutcomeRepository(IDefinitionManager<IOutcomeDefinition> outcomeDefinitionManager, ITaxonomyManagerProvider taxonomyManagerProvider)
         {
-            this.outcomeManager = outcomeManager;
-        }
-
-        public OutcomeRepository() : this(Factory.CreateObject("outcome/outcomeManager", true) as OutcomeManager)
-        {
+            this.outcomeDefinitionManager = outcomeDefinitionManager;
+            this.outcomeGroupTaxonomyManager = taxonomyManagerProvider.GetOutcomeGroupManager();
         }
 
         public IEnumerable<Outcome> GetAll()
         {
-            return this.GetCurrentOutcomes().Concat(this.GetHistoricalOutcomes()).Select(this.Create);
+            return this.GetCurrentOutcomes().Concat(this.GetHistoricalOutcomes());
         }
 
-        private Outcome Create(IOutcome outcome)
+        private Outcome Create(Guid outcomeDefinitionId, DateTime timeStamp, bool currentInteraction)
         {
-            var definition = GetOutcomeDefinition(outcome.DefinitionId);
+            var definition = GetOutcomeDefinition(outcomeDefinitionId);
             return new Outcome
-                   {
-                       Title = definition?.Name ?? DictionaryPhraseRepository.Current.Get("/Demo/Outcomes/Unknown Outcome", "(Unknown)"),
-                       Date = outcome.DateTime,
-                       IsCurrentVisit = outcome.InteractionId?.ToGuid() == Tracker.Current?.Interaction.InteractionId,
-                       OutcomeGroup = this.GetOutcomeGroup(definition)
-                   };
+            {
+                Title = definition?.Name ?? DictionaryPhraseRepository.Current.Get("/Demo/Outcomes/Unknown Outcome", "(Unknown)"),
+                Date = timeStamp,
+                IsCurrentVisit = currentInteraction,
+                OutcomeGroup = this.GetOutcomeGroup(definition)
+            };
         }
 
         private string GetOutcomeGroup(IOutcomeDefinition outcome)
         {
-            if (outcome?.OutcomeGroupUri == null)
+            if (outcome?.Id == null)
             {
                 return null;
             }
-            var outcomeGroupTaxonomyManager = TaxonomyManager.Provider.GetOutcomeGroupManager();
-            var outcomeGroup = outcomeGroupTaxonomyManager.GetOutcomeGroup(outcome.OutcomeGroupUri, Context.Language.CultureInfo);
-            return outcomeGroup == null ? null : outcomeGroupTaxonomyManager.GetFullName(outcomeGroup.Uri, "/");
+            var outcomeGroup = this.outcomeGroupTaxonomyManager.GetOutcomeGroup(outcome.OutcomeGroupUri, Context.Language.CultureInfo);
+            return outcomeGroup == null ? null : this.outcomeGroupTaxonomyManager.GetFullName(outcomeGroup.Uri, "/");
         }
 
-        private IEnumerable<IOutcome> GetCurrentOutcomes()
+        private IEnumerable<Outcome> GetCurrentOutcomes()
         {
-            return Tracker.Current != null ? Tracker.Current.GetContactOutcomes() : Enumerable.Empty<IOutcome>();
+            var interactionOutcomes = Tracker.Current?.Interaction?.Outcomes ?? Enumerable.Empty<OutcomeData>();
+            var pageOutcomes = Tracker.Current?.Interaction?.Pages.SelectMany(p => p.Outcomes) ?? Enumerable.Empty<OutcomeData>();
+            var allOutcomes = interactionOutcomes.Union(pageOutcomes).OrderByDescending(o => o.Timestamp);
+            return allOutcomes.Select(o => this.Create(o.OutcomeDefinitionId, o.Timestamp, true));
         }
 
-        private IEnumerable<IOutcome> GetHistoricalOutcomes()
+        private IEnumerable<Outcome> GetHistoricalOutcomes()
         {
-            return Tracker.Current != null ? this.outcomeManager.GetForEntity<IOutcome>(new ID(Tracker.Current.Contact.ContactId)) : Enumerable.Empty<IOutcome>();
+            var outcomes = Tracker.Current.Contact.KeyBehaviorCache.Outcomes;
+            foreach (var outcome in outcomes)
+            {
+                yield return this.Create(outcome.Id, outcome.DateTime, false);
+            }
         }
 
-        private static IOutcomeDefinition GetOutcomeDefinition(ID outcomeId)
+        private IOutcomeDefinition GetOutcomeDefinition(Guid outcomeId)
         {
-            var outcomes = DefinitionManagerFactory.Default.GetDefinitionManager<IOutcomeDefinition>();
-            var outcome = outcomes.Get(outcomeId, Context.Language.CultureInfo);
-            return outcome;
+            return outcomeDefinitionManager.Get(outcomeId, Context.Language.CultureInfo) ?? outcomeDefinitionManager.Get(outcomeId, CultureInfo.InvariantCulture);
         }
 
         public IEnumerable<Outcome> GetLatest()

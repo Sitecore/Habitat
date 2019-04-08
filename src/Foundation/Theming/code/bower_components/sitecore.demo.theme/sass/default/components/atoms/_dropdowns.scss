@@ -56,8 +56,8 @@
         font-weight: $active-list-font-weight;
       }
     }
-    li {
-      a {
+    >li {
+      >a {
         padding: 3px 20px;
         color: $text-color;
 

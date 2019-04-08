@@ -1,50 +1,43 @@
-﻿@using Sitecore.Feature.Accounts
-@using Sitecore.Feature.Accounts.Models
-@using Sitecore.Feature.Accounts.Services
-@using Sitecore.Foundation.Dictionary.Extensions
-@model Sitecore.Mvc.Presentation.RenderingModel
+﻿@using Sitecore.Foundation.Dictionary.Extensions
+@model Sitecore.Feature.Accounts.Models.AccountsMenuInfo
 
 @{
-  if (Model.Item == null)
-  {
-    return;
-  }
-  var accountSettings = AccountsSettingsService.Instance.GetAccountsSettingsItem(Model.Item);
-  if (accountSettings == null)
-  {
-    return;
-  }
+    if (Model == null)
+    {
+        return;
+    }
 }
-  <li class="dropdown hidden-xs">
+<li class="dropdown hidden-xs">
     <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
-      <i class="fa fa-user"></i>
+        <i class="fa fa-user"></i>
     </a>
     <div class="dropdown-menu">
-      @if (!(Sitecore.Context.IsLoggedIn && Sitecore.Context.PageMode.IsNormal))
-      {
-        <h4>@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Login", "Login")</h4>
-        <form id="loginModal">
-          @Html.Partial("~/Views/Accounts/_Login.cshtml", new LoginInfo())
-        </form>
-      }
-      else
-      {
-        using (Html.BeginForm("Logout", "Accounts", FormMethod.Post))
+        @if (!Model.IsLoggedIn)
         {
-          if (!string.IsNullOrWhiteSpace(Sitecore.Context.User.Profile.FullName))
-          {
-            <div class="form-group">
-              <label class="control-label">@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Email", "Name")</label>
-              <div class="form-control-static">@Sitecore.Context.User.Profile.FullName</div>
-            </div>
-          }
-          <div class="form-group">
-            <label class="control-label">@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Email", "E-mail")</label>
-            <div class="form-control-static">@Sitecore.Context.User.Profile.Email</div>
-          </div>
-          <a class="btn btn-block btn-primary" href="@AccountsSettingsService.Instance.GetPageLinkOrDefault(Model.Item, Templates.AccountsSettings.Fields.AccountsDetailsPage)">@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Edit Details", "Edit details")</a>
-          <button type="submit" class="btn btn-block btn-default">@Html.Sitecore().Dictionary("/Accounts/Accounts Menu/Logout", "Logout")</button>
+            <h4>@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Login", "Login")</h4>
+            <form id="loginModal">
+                @Html.Partial("~/Views/Accounts/_Login.cshtml", Model.LoginInfo)
+            </form>
+            @Html.Partial("~/Views/Accounts/_FedAuth.cshtml", Model.LoginInfo)
         }
-      }
+        else
+        {
+            using (Html.BeginForm("Logout", "Accounts", FormMethod.Post))
+            {
+                if (!string.IsNullOrWhiteSpace(Model.UserFullName))
+                {
+                    <div class="form-group">
+                        <label class="control-label">@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Name", "Name")</label>
+                        <div class="form-control-static">@Model.UserFullName</div>
+                    </div>
+                }
+                <div class="form-group">
+                    <label class="control-label">@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Email", "E-mail")</label>
+                    <div class="form-control-static">@Model.UserEmail</div>
+                </div>
+                <a class="btn btn-block btn-primary" href="@Model.AccountsDetailsPageUrl">@Html.Sitecore().DictionaryField("/Accounts/Accounts Menu/Edit Details", "Edit details")</a>
+                <button type="submit" class="btn btn-block btn-default">@Html.Sitecore().Dictionary("/Accounts/Accounts Menu/Logout", "Logout")</button>
+            }
+        }
     </div>
-  </li>
+</li>

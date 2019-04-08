@@ -20,8 +20,13 @@
 					The most common candidates for serialization are layout items and template items, but Unicorn can serialize any type of item or field including media.
 					
 					BEHAVIORS
-					Configurations can override the default dependencies defined in Unicorn.config's <defaults> to apply
-					custom behaviors to specific configurations. They behave like an inherited IoC container.
+					Configurations can override the default dependency types defined in Unicorn.config's <defaults> to apply
+					custom behaviors to specific configurations. 
+					
+					If no 'type' attribute is specified, the default dependency type is inherited (e.g. Unicorn.Predicates.SerializationPresetPredicate for a predicate).
+					Attributes set on a type-less dependency are added or replace those on the base type (e.g. setting transparent sync to on/off without specifying a type).
+					Child elements of a type-less dependency are appended to any defined on the base (e.g. you can add includes to a predicate using this).
+					Specifying a type attribute completely overwrites any definitions made in a parent configuration.
 					
 					DEPENDENCIES
 					Configurations may also depend on each other. Add a comma-delimited list of configuration names to depend on to the 'dependencies' attribute on the configuration.
@@ -32,9 +37,12 @@
 					Favor using several configurations over a single monolithic one.
 					Favor using more includes and fewer excludes in your predicates.
 					Start with minimal configurations and add includes as you need to serialize new things.
+					If you're using a convention-based system like Helix, you can create a base configuration that encodes your conventions using variables,
+						for example <include path="/sitecore/templates/$(layer)/$(module)" /> on the predicate. The base configuration will have 'abstract="true"' on the root element, and
+						inheritors will have 'extends="AbstractConfigName"' on their root element.
 				-->
-				<configuration name="My Site" description="Write something here about why this configuration exists and what it's for. Or remove the attribute; it's optional.">
-					<predicate type="Unicorn.Predicates.SerializationPresetPredicate, Unicorn" singleInstance="true">
+				<configuration name="Feature.Sample" description="Write something here about why this configuration exists and what it's for. Or remove the attribute; it's optional.">
+					<predicate>
 						<!--
 							PREDICATE
 							
@@ -46,6 +54,7 @@
 							NOTE: after changing what is included or excluded, you should reserialize all items, or at least the added items for additions.
 							NOTE: the "name" attribute controls the folder name the items will go into. If unspecified, the last path segment is used. Names must be unique across the configuration.
 							NOTE: You cannot use excludes with Transparent Sync. See https://github.com/kamsar/Unicorn/wiki/The-Transparent-Sync-Guide
+							NOTE: If your configuration is named in Helix format (Layer.Module), you can use $(layer) and $(module) here as variables.
 						-->
 						<include name="Layouts" database="master" path="/sitecore/layout/Layouts/YourSite" />
 						<include name="Templates" database="master" path="/sitecore/templates/YourSite" />
@@ -64,7 +73,7 @@
 						Transparent Sync (preferred) updates the state of Sitecore instantly as soon as changes to files occur. It is optimal for development purposes, but has a few limitations.
 						See the guide to help decide: https://github.com/kamsar/Unicorn/wiki/The-Transparent-Sync-Guide
 					-->
-					<dataProviderConfiguration enableTransparentSync="false" type="Unicorn.Data.DataProvider.DefaultUnicornDataProviderConfiguration, Unicorn" singleInstance="true" />
+					<dataProviderConfiguration enableTransparentSync="false" />
 
 					<!-- 
 						SYNC CONFIGURATION
@@ -75,17 +84,10 @@
 						UpdateSearchIndex: If true, the search index(es) containing the item will be updated with item changes after the sync has completed. If false, indexing will not be updated for performance.
 							Updating the index is important for content that relies on indexing, which may include most user-facing content items. Most of the time templates and renderings don't need indexing.
 						
-						MaxConcurrency: Controls how many threads Unicorn can use when syncing this configuration. Concurrency can usually increase sync speed 30-50% over single threading.
-							IF YOUR CONFIGURATION INCLUDES TEMPLATES YOU MUST SET THIS TO 1 OR YOUR SYNC WILL HANG INDEFINITELY DUE TO A SITECORE ISSUE
-							IF YOU ARE ON SITECORE 8.0 U2 OR EARLIER, YOU MUST SET THIS TO 1 DUE TO A SITECORE ISSUE
-						
-							This value can be set to significantly higher than the number of CPU cores, as these are largely I/O bound.
-							Use fewer threads for HDDs or slow SQL servers, and more threads for SSDs.
-							For a SSD workload on a quad-core CPU 16 seems to be a decent number.
-						
 						NOTE: UpdateLinkDatabase and UpdateSearchIndex also apply to items that are reloaded from disk when using Transparent Sync, as well as normal Sync.
+						NOTE: Updating the links and search indexes will cause significant performance degradation during syncing.
 					-->
-					<syncConfiguration updateLinkDatabase="false" updateSearchIndex="false" maxConcurrency="1" type="Unicorn.Loader.DefaultSyncConfiguration, Unicorn" singleInstance="true" />
+					<syncConfiguration updateLinkDatabase="false" updateSearchIndex="false" />
 				</configuration>
 			</configurations>
 		</unicorn>

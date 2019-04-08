@@ -3,9 +3,11 @@ namespace Sitecore.Feature.Demo.Controllers
     using System;
     using System.Net;
     using System.Web.Mvc;
+    using Microsoft.Extensions.DependencyInjection;
     using Sitecore.Analytics;
+    using Sitecore.DependencyInjection;
     using Sitecore.ExperienceEditor.Utils;
-    using Sitecore.ExperienceExplorer.Business.Managers;
+    using Sitecore.ExperienceExplorer.Core.State;
     using Sitecore.Feature.Demo.Models;
     using Sitecore.Feature.Demo.Services;
     using Sitecore.Foundation.Accounts.Providers;
@@ -19,47 +21,48 @@ namespace Sitecore.Feature.Demo.Controllers
     [SkipAnalyticsTracking]
     public class DemoController : SitecoreController
     {
-        private readonly IContactProfileProvider contactProfileProvider;
-        private readonly IProfileProvider profileProvider;
+        private IDemoStateService DemoStateService { get; }
+        private IExperienceDataFactory ExperienceDataFactory { get; }
 
-        public DemoController() : this(new ContactProfileProvider(), new ProfileProvider())
+        public DemoController(IDemoStateService demoStateService, IExperienceDataFactory experienceDataFactory)
         {
-        }
-
-        public DemoController(IContactProfileProvider contactProfileProvider, IProfileProvider profileProvider)
-        {
-            this.contactProfileProvider = contactProfileProvider;
-            this.profileProvider = profileProvider;
+            this.DemoStateService = demoStateService;
+            this.ExperienceDataFactory = experienceDataFactory;
         }
 
         public ActionResult ExperienceData()
         {
-            if (Tracker.Current == null || Tracker.Current.Interaction == null || this.IsDemoDisabled)
+            if (Tracker.Current == null || Tracker.Current.Interaction == null || !this.DemoStateService.IsDemoEnabled)
             {
                 return null;
             }
-            if (Context.Site.DisplayMode != DisplayMode.Normal || ModuleManager.IsExpViewModeActive || WebEditUtility.IsDebugActive(Context.Site))
+            var explorerContext = DependencyResolver.Current.GetService<IExplorerContext>();
+            var isInExperienceExplorer = explorerContext?.IsExplorerMode() ?? false;
+            if (Context.Site.DisplayMode != DisplayMode.Normal || WebEditUtility.IsDebugActive(Context.Site) || isInExperienceExplorer )
+            {
                 return new EmptyResult();
+            }
 
-            return this.View(new ExperienceData(this.contactProfileProvider, this.profileProvider));
+            var experienceData = this.ExperienceDataFactory.Get();
+            return this.View(experienceData);
         }
-
-        public bool IsDemoDisabled => this.HttpContext?.Request?.Headers["X-DisableDemo"]?.Equals(bool.TrueString, StringComparison.InvariantCultureIgnoreCase) ?? false;
 
         public ActionResult ExperienceDataContent()
         {
-            return this.View("_ExperienceDataContent", new ExperienceData(this.contactProfileProvider, this.profileProvider));
+            var experienceData = this.ExperienceDataFactory.Get();
+            return this.View("_ExperienceDataContent", experienceData);
         }
 
         public ActionResult DemoContent()
         {
             var item = RenderingContext.Current?.Rendering?.Item ?? RenderingContext.Current?.ContextItem;
-            if (item == null || !item.IsDerived(Templates.DemoContent.ID))
+            if (item == null || !item.DescendsFrom(Templates.DemoContent.ID))
             {
                 throw new InvalidDataSourceItemException($"Item should be not null and derived from {nameof(Templates.DemoContent)} {Templates.DemoContent.ID} template");
             }
 
-            return this.View("DemoContent", new DemoContent(item));
+            var demoContent = new DemoContent(item);
+            return this.View("DemoContent", demoContent);
         }
 
         public ActionResult EndVisit()

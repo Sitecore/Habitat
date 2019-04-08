@@ -4,7 +4,7 @@
 @{
     const int DefaultColumns = 4;
 
-    var children = Model.Item.Children.Where(i => i.IsDerived(Templates.HasPageContent.ID) && i.HasContextLanguage()).ToArray();
+    var children = Model.Item.Children.Where(i => i.DescendsFrom(Templates.HasPageContent.ID) && i.HasContextLanguage()).ToArray();
     var numColumns = children.Length >= DefaultColumns ? DefaultColumns : (children.Length <= 2 ? 2 : children.Length);
 }
 
@@ -13,10 +13,7 @@
     {
         <div class="block-grid-item">
             <div>
-                @using (Html.Sitecore().SwitchContextItem(item))
-                {
-                    @Html.Sitecore().ViewRendering("/Views/PageContent/PageTeaser")
-                }
+                @Html.Sitecore().Rendering(Renderings.PageTeaser.ToString(), new { Datasource = item.ID })
             </div>
         </div>
     }

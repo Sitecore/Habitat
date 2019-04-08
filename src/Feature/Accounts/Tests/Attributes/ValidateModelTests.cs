@@ -31,7 +31,7 @@
 
       validateModel.OnActionExecuting(filterContext);
 
-      filterContext.Result.Should().BeOfType<ViewResult>().Which.ViewData.ShouldBeEquivalentTo(filterContext.Controller.ViewData);
+      filterContext.Result.Should().BeOfType<ViewResult>().Which.ViewData.Should().BeEquivalentTo(filterContext.Controller.ViewData);
     }
   }
 }

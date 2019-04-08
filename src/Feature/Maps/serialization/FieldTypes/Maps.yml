@@ -1,0 +1,14 @@
+﻿---
+ID: "90eca743-f108-4883-9f24-85a237582f7f"
+Parent: "76e6d8c7-1f93-4712-872b-da3c96b808f2"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/system/Field types/Maps
+DB: core
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20151211T055224Z

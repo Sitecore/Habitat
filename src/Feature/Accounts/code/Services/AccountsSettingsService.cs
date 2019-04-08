@@ -8,8 +8,10 @@
     using Sitecore.Data.Items;
     using Sitecore.Diagnostics;
     using Sitecore.Exceptions;
+    using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
+    [Service(typeof(IAccountsSettingsService))]
     public class AccountsSettingsService : IAccountsSettingsService
     {
         public static readonly string PageNotFoundUrl = Settings.GetSetting("Sitecore.Feature.Accounts.PageNotFoundUrl", "/404");
@@ -46,7 +48,7 @@
             }
         }
 
-        public virtual ID GetRegistrationOutcome(Item contextItem)
+        public virtual Guid? GetRegistrationOutcome(Item contextItem)
         {
             var item = this.GetAccountsSettingsItem(contextItem);
 
@@ -56,7 +58,7 @@
             }
 
             ReferenceField field = item.Fields[Templates.AccountsSettings.Fields.RegisterOutcome];
-            return field?.TargetID;
+            return field?.TargetID?.ToGuid();
         }
 
         public MailMessage GetForgotPasswordMailTemplate()

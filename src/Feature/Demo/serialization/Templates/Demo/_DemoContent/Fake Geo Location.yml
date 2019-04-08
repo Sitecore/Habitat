@@ -1,0 +1,18 @@
+﻿---
+ID: "28fb416b-673b-4899-8ff2-9326a93454cc"
+Parent: "1224b40e-7b6c-42b3-a6d0-c40a6c61345c"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/Demo/_DemoContent/Fake Geo Location
+DB: master
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 300
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170530T232101Z

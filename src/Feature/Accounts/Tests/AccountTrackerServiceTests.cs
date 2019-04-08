@@ -8,7 +8,6 @@
   using Ploeh.AutoFixture.Xunit2;
   using Sitecore.Analytics;
   using Sitecore.Analytics.Data.Items;
-  using Sitecore.Analytics.Outcome.Extensions;
   using Sitecore.Analytics.Tracking;
   using Sitecore.Data;
   using Sitecore.Data.Items;
@@ -23,33 +22,28 @@
   public class AccountTrackerServiceTests
   {
     [Theory, AutoDbData]
-    public void TrackLogin_Call_ShouldTrackLoginGoal(string identifier, Db db, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
+    public void TrackLogin_Call_ShouldTrackLoginGoal(string source, string identifier, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
     {
-      //Arrange
-      db.Add(new DbItem("Item", AccountTrackerService.LoginGoalId));
-
       //Act
-      accountTrackerService.TrackLoginAndIdentifyContact(identifier);
+      accountTrackerService.TrackLoginAndIdentifyContact(source, identifier);
 
       //Assert
-      trackerService.Received().TrackPageEvent(Arg.Is<ID>(AccountTrackerService.LoginGoalId));
+      trackerService.Received(1).TrackGoal(AccountTrackerService.LoginGoalId, source);
+      trackerService.Received(1).IdentifyContact(source, identifier);
     }
 
     [Theory, AutoDbData]
-    public void TrackRegister_Call_ShouldTrackRegistrationGoal(Db db, ID outcomeID, ITracker tracker, [Frozen]IAccountsSettingsService accountsSettingsService, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
+    public void TrackRegister_Call_ShouldTrackRegistrationGoal(ID outcomeID, ITracker tracker, [Frozen]IAccountsSettingsService accountsSettingsService, [Frozen]ITrackerService trackerService, [Greedy]AccountTrackerService accountTrackerService)
     {
       // Arrange
-      accountsSettingsService.GetRegistrationOutcome(Arg.Any<Item>()).Returns(outcomeID);
-
-      db.Add(new DbItem("Item", AccountTrackerService.RegistrationGoalId));
-      db.Add(new DbItem("Item", AccountTrackerService.LoginGoalId));
+      accountsSettingsService.GetRegistrationOutcome(Arg.Any<Item>()).Returns(outcomeID.Guid);
 
       //Act
       accountTrackerService.TrackRegistration();
 
       //Assert
-      trackerService.Received().TrackPageEvent(AccountTrackerService.RegistrationGoalId);
-      trackerService.Received().TrackOutcome(outcomeID);
+      trackerService.Received(1).TrackGoal(AccountTrackerService.RegistrationGoalId);
+      trackerService.Received(1).TrackOutcome(outcomeID.Guid);
     }
   }
 }

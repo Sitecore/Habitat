@@ -1,0 +1,57 @@
+﻿---
+ID: "cb4d7b30-1359-4c1d-9b0e-16b019c92c97"
+Parent: "8eac162b-96bc-43f1-95d6-99b83745b2f4"
+Template: "49c651ba-4004-40a9-9b0f-e95d0573f3ae"
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Demo/Fake GeoData
+DB: master
+SharedFields:
+- ID: "0dbcdbcb-185a-4845-8acb-97d5a1e1c401"
+  Hint: Country
+  Value: Germany
+- ID: "2064b0fb-a738-467a-a262-3eb2e1e9e2f0"
+  Hint: ISP
+  Value: Vodafone GmbH
+- ID: "26ff4697-c334-49ee-8aae-9480dfeb40c3"
+  Hint: Region
+  Value: "Nordrhein-Westfalen"
+- ID: "666fe277-d4dd-435e-b2be-3a02612e8a5b"
+  Hint: Business Name
+  Value: Sitecore GmbH
+- ID: "d0a49d11-b9a3-43e1-af51-66804df3b63b"
+  Hint: Latitude
+  Value: 51.606010
+- ID: "d28efe17-c491-47c0-b62d-934dc9da38a4"
+  Hint: Referrer
+  Value: 
+- ID: "d34bef48-023b-4930-8360-a89beb8b3d82"
+  Hint: Longitude
+  Value: 7.149110
+- ID: "f0ffe350-6033-4e41-a99f-91ecca49bc7c"
+  Hint: Url
+  Value: www.sitecore.net
+- ID: "fb9e9f07-c887-45d8-8f34-f156f17c57c9"
+  Hint: City
+  Value: Disteln
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0bc0aedf-a6d0-4f74-933c-bd1779cd40b2"
+      Hint: HTML Content
+      Value: |
+        <html>
+        <body>
+        <h1>Demo Page</h1>
+        <p>This page fakes the geo location. Set the geo location by opening this page in the Sitecore content editor.</p>
+        <p>The page is not tracked in xDB.<br/>After returning to a standard web page, use the panel in the right hand side to view the faked information.</p>
+        <p><a href="/">Return to the home page</a></p>
+        </body>
+        </html>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170530T230230Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin

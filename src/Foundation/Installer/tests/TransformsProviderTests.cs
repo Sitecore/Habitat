@@ -24,7 +24,7 @@
       Directory.CreateDirectory("temp");
       Directory.CreateDirectory(transformsPath);
       Directory.CreateDirectory($"{transformsPath}/{layerName}");
-      var transformFilePath = $"{transformsPath}\\{layerName}\\{transformFileName}.transform";
+      var transformFilePath = $"{transformsPath}\\{layerName}\\{transformFileName}.xdt";
       File.CreateText(transformFilePath);
       var transforms = provider.GetTransformsByLayer(layerName);
       transforms.Should().Contain(new List<string>() { transformFilePath });

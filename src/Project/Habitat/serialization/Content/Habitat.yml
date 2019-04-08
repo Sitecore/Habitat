@@ -1,0 +1,193 @@
+﻿---
+ID: "725a45e3-e307-4b95-b363-2782b059df06"
+Parent: "0de95ae4-41ab-4d01-9eb0-67441b7c2450"
+Template: "0643d9d4-f30b-4b07-91d0-289cc324c9cf"
+Path: /sitecore/content/Habitat
+DB: master
+SharedFields:
+- ID: "12537182-f35c-403f-afb5-747d55c450b8"
+  Hint: ShowInMenu
+  Type: Checkbox
+  Value: 1
+- ID: "1c843e6a-02b9-4aa0-9fed-fdfddc419ae3"
+  Hint: Search Results Page
+  Value: /sitecore/content/Habitat/Home/Search
+- ID: "365254c4-1c1c-493a-9710-671574717898"
+  Hint: Forgot Password Mail Template
+  Value: /sitecore/content/Habitat/Global/Registration/Forgot Password Mail
+- ID: "5f115b6d-6052-4c7e-b442-ae923a7e9bd2"
+  Hint: SupportedLanguages
+  Type: Multilist
+  Value: |
+    {AF584191-45C9-4201-8740-5409F4CF8BDD}
+    {DCACA62F-1FD9-4B2D-AC1F-4EAA58D317B2}
+    {2403D44D-A04E-4C4F-B00B-5CE8CF531254}
+- ID: "60745023-ffd5-400e-8f80-4bca9f2abb29"
+  Hint: Login Page
+  Value: /sitecore/content/Habitat/Home/Login
+- ID: "71962360-10d8-4b98-bb8d-57660ce11127"
+  Hint: Register Page
+  Value: /sitecore/content/Habitat/Home/Register
+- ID: "b128e2b3-3865-4f1c-a147-5f248676d3f5"
+  Hint: After Login Page
+  Value: /sitecore/content/Habitat/Home/Edit Profile
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 999
+- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
+  Hint: __Security
+  Value: |
+    ar|extranet\Project Habitat Content Author|pe|+item:write|+item:read|!*|pd|+item:write|+item:read|!*|
+- ID: "ed71d374-8c33-4561-991d-77482ae01330"
+  Hint: Accounts Details Page
+  Value: /sitecore/content/Habitat/Home/Edit Profile
+- ID: "f3cd2bb8-472b-4df0-87c0-a13098e391ca"
+  Hint: Forgot Password Page
+  Value: /sitecore/content/Habitat/Home/Login/Forgot Password
+Languages:
+- Language: da
+  Fields:
+  - ID: "53b5af0a-265f-4e60-b2b2-4576ce0beccf"
+    Hint: Theme
+    Value: "{9025588B-C765-458B-829C-1886A98AD3A7}"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "02115632-fe1e-4b3d-9ad4-a4ddf1f782f0"
+      Hint: Copyright
+      Value: |
+        Copyright &copy; 2015 <a href="http://sitecore.net" target="_blank" title="Opens in a new window">Sitecore Corporation A/S</a>
+    - ID: "235ae392-97ac-4822-be38-837da3e7724e"
+      Hint: SiteBrowserTitle
+      Value: " - Habitat Sitecore Framework Rammer"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160105T102340Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "e748d808-64c1-4dec-9718-f35cf9689e4b"
+      Hint: Logo
+      Value: |
+        <image mediapath="/Default Website/sc_logo" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Default Website/sc_logo" mediaid="{6C33AFC0-606E-4A18-A8DB-679620D5B409}" />
+- Language: en
+  Fields:
+  - ID: "2a84eca4-68bb-4451-b4ac-98ea71a5a3dc"
+    Hint: SiteProfiles
+    Type: Multilist
+    Value: "{C4CC3EF6-A779-44AD-9021-01F1DAE26270}"
+  - ID: "53b5af0a-265f-4e60-b2b2-4576ce0beccf"
+    Hint: Theme
+    Value: "{9025588B-C765-458B-829C-1886A98AD3A7}"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "005ed83c-2d2f-4d07-a7a9-eb64d873de46"
+      Hint: OrganisationPhone
+      Value: +1 415 380 0600
+    - ID: "02115632-fe1e-4b3d-9ad4-a4ddf1f782f0"
+      Hint: Copyright
+      Value: |
+        <p>© Copyright 2018, <a href="http://sitecore.net" target="_blank" title="Opens in a new window">Sitecore</a>. All Rights Reserved<br />
+        <small>&ldquo;Habitat&rdquo; as used here is for demonstration purposes only and to represent the software and services provided by Sitecore further described at www.sitecore.net.</small></p>
+        
+        <p><small>The Habitat demonstration site is provided for example/reference purposes only. It is not supported by Sitecore and should not be used as a starter kit.</small></p>
+    - ID: "021aa3f7-206f-4acc-9538-f6d7fe86b168"
+      Hint: Interests Folder
+      Value: "{A74EE096-F225-4568-8D81-2F71ABBC8118}"
+    - ID: "235ae392-97ac-4822-be38-837da3e7724e"
+      Hint: SiteBrowserTitle
+      Value: " - Habitat Sitecore Example Site"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20150824T171748Z
+    - ID: "31d027bb-fab5-4e1a-a66d-9f5b0fd4f005"
+      Hint: Logo Tagline
+      Value: 
+    - ID: "378b7d87-5775-4eb6-86b7-282d5359b1c6"
+      Hint: User Profile
+      Value: "{14523428-879D-491C-9DF0-1417E82A4311}"
+    - ID: "835fa523-d28a-46a2-a589-6aa4a5bf0846"
+      Hint: Register Outcome
+      Value: "{C2D9DFBC-E465-45FD-BA21-0A06EBE942D6}"
+    - ID: "9c428556-5d7b-46ac-b0bb-b06a4f4c9591"
+      Hint: OrganisationEmail
+      Value: "<link text='sales@sitecore.net' linktype='mailto' style='' url='mailto:sales@sitecore.net'  title='' />"
+    - ID: "a24df48f-c8a3-4163-966c-8c24bd8760b2"
+      Hint: OrganisationAddress
+      Value: |
+        101 California Street 
+        Suite 1600 
+        San Francisco, CA 94111
+        USA
+    - ID: "e748d808-64c1-4dec-9718-f35cf9689e4b"
+      Hint: Logo
+      Value: |
+        <image mediaid="{6C33AFC0-606E-4A18-A8DB-679620D5B409}" alt="" height="" width="" hspace="" vspace="" />
+    - ID: "efd4980a-030c-497c-8880-40b6030ac28b"
+      Hint: OrganisationName
+      Value: Sitecore Corporation
+    - ID: "f07811d3-41e9-440a-9d81-310c1d78bed6"
+      Hint: Title
+      Value: About Habitat
+- Language: "ja-JP"
+  Fields:
+  - ID: "2a84eca4-68bb-4451-b4ac-98ea71a5a3dc"
+    Hint: SiteProfiles
+    Type: Multilist
+    Value: "{24DFF2CF-B30A-4B75-8967-2FE3DED82271}"
+  - ID: "53b5af0a-265f-4e60-b2b2-4576ce0beccf"
+    Hint: Theme
+    Value: "{9025588B-C765-458B-829C-1886A98AD3A7}"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "005ed83c-2d2f-4d07-a7a9-eb64d873de46"
+      Hint: OrganisationPhone
+      Value: "03-5413-6900"
+    - ID: "02115632-fe1e-4b3d-9ad4-a4ddf1f782f0"
+      Hint: Copyright
+      Value: |
+        <p>© Copyright 2017, <a href="http://sitecore.net" target="_blank" title="Opens in a new window">Sitecore</a>. All Rights Reserved<br />
+        <small>&ldquo; Habitat&rdquo; とはデモンストレーション目的のみで利用しており、Sitecoreが提供するソフトウェアとサービスに関しては www.sitecore.net で詳しく説明しています。</small></p>
+    - ID: "021aa3f7-206f-4acc-9538-f6d7fe86b168"
+      Hint: Interests Folder
+      Value: "{A74EE096-F225-4568-8D81-2F71ABBC8118}"
+    - ID: "235ae392-97ac-4822-be38-837da3e7724e"
+      Hint: SiteBrowserTitle
+      Value: " - Habitat Sitecore Framework"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054524Z
+    - ID: "378b7d87-5775-4eb6-86b7-282d5359b1c6"
+      Hint: User Profile
+      Value: "{14523428-879D-491C-9DF0-1417E82A4311}"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "835fa523-d28a-46a2-a589-6aa4a5bf0846"
+      Hint: Register Outcome
+      Value: "{C2D9DFBC-E465-45FD-BA21-0A06EBE942D6}"
+    - ID: "9c428556-5d7b-46ac-b0bb-b06a4f4c9591"
+      Hint: OrganisationEmail
+      Value: |
+        <link text="sales@sitecore.net" linktype="mailto" style="" url="mailto:info-jp@sitecore.net" title="" />
+    - ID: "a24df48f-c8a3-4163-966c-8c24bd8760b2"
+      Hint: OrganisationAddress
+      Value: |
+        〒107-0062
+        東京都港区 
+        南青山2-11-16 
+        
+    - ID: "e748d808-64c1-4dec-9718-f35cf9689e4b"
+      Hint: Logo
+      Value: |
+        <image mediaid="{93AB35C2-44A0-4D5D-9EC0-B857D37F8B08}" alt="" height="" width="" hspace="" vspace="" />
+    - ID: "efd4980a-030c-497c-8880-40b6030ac28b"
+      Hint: OrganisationName
+      Value: サイトコア株式会社
+    - ID: "f07811d3-41e9-440a-9d81-310c1d78bed6"
+      Hint: Title
+      Value: Habitat について

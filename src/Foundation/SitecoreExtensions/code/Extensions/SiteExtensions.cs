@@ -4,8 +4,7 @@
   using Sitecore;
   using Sitecore.Data;
   using Sitecore.Data.Items;
-  using Sitecore.ExperienceEditor.Utils;
-  using Sitecore.ExperienceExplorer.Business.Managers;
+
   using Sitecore.Sites;
 
   public static class SiteExtensions
@@ -24,7 +23,7 @@
       if (site == null)
         throw new ArgumentNullException(nameof(site));
 
-      return site.Database.GetItem(Context.Site.RootPath);
+      return site.Database.GetItem(site.RootPath);
     }
 
     public static Item GetStartItem(this SiteContext site)
@@ -32,7 +31,7 @@
       if (site == null)
         throw new ArgumentNullException(nameof(site));
 
-      return site.Database.GetItem(Context.Site.StartPath);
+      return site.Database.GetItem(site.StartPath);
     }
   }
 }

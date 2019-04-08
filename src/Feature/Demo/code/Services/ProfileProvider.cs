@@ -9,9 +9,11 @@
     using Sitecore.Data.Fields;
     using Sitecore.Diagnostics;
     using Sitecore.Feature.Demo.Models;
+    using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
     using Sitecore.Resources.Media;
 
+    [Service(typeof(IProfileProvider))]
     public class ProfileProvider : IProfileProvider
     {
         public IEnumerable<ProfileItem> GetSiteProfiles()
@@ -43,13 +45,13 @@
         {
             Assert.ArgumentNotNull(visibleProfile, nameof(visibleProfile));
 
-            var userPattern = type == ProfilingTypes.Historic ? this.GetHistoricMatchedPattern(visibleProfile) : this.GetActiveMatchedPattern(visibleProfile);
+            var userPattern = type == ProfilingTypes.Historic ? this.GetHistoricMatchedPattern(visibleProfile) : this.GetCurrentlyMatchedPattern(visibleProfile);
 
             var patterns = PopulateProfilePatternMatchesWithXdbData.GetPatternsWithGravityShare(visibleProfile, userPattern);
             return patterns.Select(patternKeyValuePair => CreatePatternMatch(visibleProfile, patternKeyValuePair)).OrderByDescending(pm => pm.MatchPercentage);
         }
 
-        private Pattern GetActiveMatchedPattern(ProfileItem visibleProfile)
+        private Pattern GetCurrentlyMatchedPattern(ProfileItem visibleProfile)
         {
             return visibleProfile.PatternSpace.CreatePattern(Tracker.Current.Interaction.Profiles[visibleProfile.Name]);
         }

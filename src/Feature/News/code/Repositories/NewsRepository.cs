@@ -25,7 +25,7 @@
             {
                 throw new ArgumentNullException(nameof(contextItem));
             }
-            if (!contextItem.IsDerived(Templates.NewsFolder.ID))
+            if (!contextItem.DescendsFrom(Templates.NewsFolder.ID))
             {
                 throw new ArgumentException("Item must derive from NewsFolder", nameof(contextItem));
             }

@@ -78,7 +78,7 @@
         Log.Warn($"Cannot find the local datasource folder template '{Settings.LocalDatasourceFolderTemplate}'", dataSourceItem);
         return null;
       }
-      return dataSourceItem.Axes.GetAncestors().LastOrDefault(i => i.IsDerived(template.ID));
+      return dataSourceItem.Axes.GetAncestors().LastOrDefault(i => i.DescendsFrom(template.ID));
     }
   }
 }

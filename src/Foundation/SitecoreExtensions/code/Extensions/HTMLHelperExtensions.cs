@@ -5,7 +5,6 @@
   using System.Web;
   using System.Web.Mvc;
   using System.Web.Mvc.Html;
-  using DynamicPlaceholders.Mvc.Extensions;
   using Sitecore.Data;
   using Sitecore.Data.Items;
   using Sitecore.Diagnostics;
@@ -57,7 +56,7 @@
 
     public static HtmlString DynamicPlaceholder(this SitecoreHelper helper, string placeholderName, bool useStaticPlaceholderNames = false)
     {
-      return useStaticPlaceholderNames ? helper.Placeholder(placeholderName) : SitecoreHelperExtensions.DynamicPlaceholder(helper, placeholderName);
+      return useStaticPlaceholderNames ? helper.Placeholder(placeholderName) : helper.DynamicPlaceholder(placeholderName);
     }
 
     public static HtmlString Field(this SitecoreHelper helper, ID fieldID)

@@ -1,0 +1,18 @@
+﻿---
+ID: "ce256a2c-fb6f-4846-ae3c-688a8fa8943d"
+Parent: "5b6f8720-3a93-4da1-92a0-c3e85e01219a"
+Template: "5b6f8720-3a93-4da1-92a0-c3e85e01219a"
+Path: /sitecore/templates/Foundation/Assets/_HasTheme/__Standard Values
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20161212T014151Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

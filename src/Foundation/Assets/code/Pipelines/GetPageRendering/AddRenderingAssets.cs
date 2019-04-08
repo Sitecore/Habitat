@@ -32,7 +32,7 @@
 
         protected static void AddAssetsFromItem(Item renderingItem)
         {
-            if (!renderingItem.IsDerived(Templates.RenderingAssets.ID))
+            if (!renderingItem.DescendsFrom(Templates.RenderingAssets.ID))
                 return;
             AddScriptAssetsFromRendering(renderingItem);
             AddInlineScriptFromRendering(renderingItem);

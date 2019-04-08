@@ -7,8 +7,46 @@
 *.less text=auto
 *.js text=auto
 *.sql text=auto
-
 *.csproj text=auto merge=union 
 *.sln text=auto eol=crlf merge=union 
-
 *.item -text
+
+# Disable conversion for all content
+* -text
+
+# Binary files that should not be normalized or diffed
+
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.bmp    binary
+*.ico    binary
+*.pdf    binary
+*.docx   binary
+*.doc    binary
+*.pptx   binary
+*.xlsx   binary
+*.vsd    binary
+*.chm	 binary
+*.chw    binary
+*.xmind  binary
+
+*.xap	 binary
+*.nupkg  binary
+*.pfx    binary
+*.snk    binary
+*.dll    binary
+*.exe    binary
+*.lib    binary
+*.exp    binary
+*.pdb    binary
+*.sdf    binary
+*.7z     binary
+*.zip    binary
+*.mdf    binary
+*.ldf    binary
+*.cab    binary
+*.mp3    binary
+
+

@@ -5,18 +5,16 @@
     using Sitecore.Configuration;
     using Sitecore.Data.Items;
     using Sitecore.Feature.Multisite.Models;
+    using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.Multisite;
     using Sitecore.Foundation.Multisite.Providers;
     using Sitecore.Foundation.SitecoreExtensions.Extensions;
     using Sitecore.Globalization;
 
+    [Service(typeof(ISiteConfigurationRepository))]
     public class SiteConfigurationRepository : ISiteConfigurationRepository
     {
         private readonly ISiteDefinitionsProvider siteDefinitionsProvider;
-
-        public SiteConfigurationRepository() : this(new SiteDefinitionsProvider())
-        {
-        }
 
         public SiteConfigurationRepository(ISiteDefinitionsProvider itemSiteDefinitionsProvider)
         {
@@ -36,7 +34,7 @@
 
         private bool IsSiteConfigurationItem(Item item)
         {
-            return item.IsDerived(Multisite.Templates.SiteConfiguration.ID);
+            return item.DescendsFrom(Multisite.Templates.SiteConfiguration.ID);
         }
 
         private SiteConfigurations Create(IEnumerable<SiteDefinition> definitions)

@@ -1,0 +1,14 @@
+﻿---
+ID: "18e78e3b-b4e2-4598-bd35-6c14fadab2a1"
+Parent: "8f3befa9-62a4-42b8-9805-e27e836dc950"
+Template: "a87a00b1-e6db-45ab-8b54-636fec3b5523"
+Path: /sitecore/system/Settings/Buckets/Facets/Foundation/Indexing
+DB: master
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170424T113441Z

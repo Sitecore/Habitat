@@ -11,7 +11,6 @@ habitat.getConfiguration = function getConfigFile(filename) {
   var content;
   parser.parseString(data, function (err, result) {
     if (err !== null) throw err;
-
     content = result;
   });
   return content;
@@ -20,7 +19,7 @@ habitat.getConfiguration = function getConfigFile(filename) {
 habitat.getSiteUrl = function getSiteUrl(options) {
   if (!options) options = {};
 
-  var publishFile = options.publishingSettingsFile ? options.publishingSettingsFile : "./publishsettings.targets";
+    var publishFile = options.publishingSettingsFile ? options.publishingSettingsFile : habitat.getPublishingSettingsFile();
   try {
     var configuration = habitat.getConfiguration(publishFile);
     return configuration.Project.PropertyGroup[0].publishUrl[0];
@@ -29,5 +28,11 @@ habitat.getSiteUrl = function getSiteUrl(options) {
     throw(error);
   }
 };
+
+habitat.getPublishingSettingsFile = function getPublishingSettingsFile() {
+    if (fs.existsSync("./publishsettings.targets.user"))
+        return "./publishsettings.targets.user";
+    return "./publishsettings.targets";
+}
 
 module.exports = habitat;

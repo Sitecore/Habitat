@@ -1,0 +1,25 @@
+﻿---
+ID: "d4241733-835f-40fc-b307-7cdcc976e44a"
+Parent: "c4cc3ef6-a779-44ad-9021-01f1dae26270"
+Template: "44ab5107-3c73-42f0-a427-bec549f944b9"
+Path: /sitecore/system/Marketing Control Panel/Profiles/Habitat/Layers/Feature
+DB: master
+SharedFields:
+- ID: "12e2c64a-5f08-4948-86c8-55ae06afeef8"
+  Hint: MaxValue
+  Value: 10
+- ID: "271d7b0f-446c-4f24-bfe7-e33c20bf7a41"
+  Hint: MinValue
+  Value: 0
+Languages:
+- Language: en
+  Fields:
+  - ID: "2e1a9aab-f7c1-49ee-b032-28b98d3688d6"
+    Hint: Name
+    Value: Feature
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171005T141742Z

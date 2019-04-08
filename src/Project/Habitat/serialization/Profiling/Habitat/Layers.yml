@@ -1,0 +1,28 @@
+﻿---
+ID: "c4cc3ef6-a779-44ad-9021-01f1dae26270"
+Parent: "5411eb5c-8a94-4eae-922f-4b20f1fbe164"
+Template: "8e0c1738-3591-4c60-8151-54abcc9807d1"
+Path: /sitecore/system/Marketing Control Panel/Profiles/Habitat/Layers
+DB: master
+BranchID: "07624a03-bb2f-45d8-abe1-15e2b1705ff3"
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{689E2994-4656-4C58-9112-7826CB46EE69}"
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{67759D75-62E4-4945-8199-913BBECD1879}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20171005T141720Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{39156DC0-21C6-4F64-B641-31E85C8F5DFE}"
+    - ID: "5d9fe5d7-4c45-4a98-a1f5-4796a6da428b"
+      Hint: Name
+      Value: Layers

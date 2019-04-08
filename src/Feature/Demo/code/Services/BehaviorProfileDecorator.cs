@@ -19,14 +19,14 @@ namespace Sitecore.Feature.Demo.Services
       this.behaviorProfile = behaviorProfile;
     }
 
-    public IEnumerator<KeyValuePair<string, float>> GetEnumerator()
+    public IEnumerator<KeyValuePair<string, double>> GetEnumerator()
     {
       return this.GetScores().GetEnumerator();
     }
 
-    private IEnumerable<KeyValuePair<string, float>> GetScores()
+    private IEnumerable<KeyValuePair<string, double>> GetScores()
     {
-      return this.behaviorProfile.Scores.Select(score => new KeyValuePair<string, float>(this.GetProfileKeyName(score.Key), score.Value));
+      return this.behaviorProfile.Scores.Select(score => new KeyValuePair<string, double>(this.GetProfileKeyName(score.Key), score.Value));
     }
 
     private string GetProfileKeyName(ID key)
@@ -42,9 +42,9 @@ namespace Sitecore.Feature.Demo.Services
 
     public int Count => this.behaviorProfile.NumberOfTimesScored;
 
-    public float Total => (float)this.behaviorProfile.Total;
+    public double Total => (float)this.behaviorProfile.Total;
 
-    public float this[string key]
+    public double this[string key]
     {
       get
       {

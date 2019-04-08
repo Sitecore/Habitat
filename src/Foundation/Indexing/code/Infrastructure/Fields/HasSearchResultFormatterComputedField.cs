@@ -26,7 +26,7 @@ namespace Sitecore.Foundation.Indexing.Infrastructure.Fields
       }
       var item = indexItem.Item;
 
-      return IndexingProviderRepository.SearchResultFormatters.Any(p => p.SupportedTemplates.Any(id => item.IsDerived(id)));
+      return IndexingProviderRepository.SearchResultFormatters.Any(p => p.SupportedTemplates.Any(id => item.DescendsFrom(id)));
     }
   }
 }

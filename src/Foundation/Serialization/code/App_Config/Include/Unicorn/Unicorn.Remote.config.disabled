@@ -11,8 +11,8 @@
 	http://github.com/kamsar/Unicorn
 	https://github.com/BerserkerDotNet/Unicorn.VisualStudio
 -->
-<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
-	<sitecore>
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:role="http://www.sitecore.net/xmlconfig/role/">
+    <sitecore role:require="Standalone or ContentManagement">
 		<pipelines>
 				<unicornControlPanelRequest>
 					<processor type="Unicorn.ControlPanel.VisualStudio.Pipelines.UnicornControlPanelRequest.VSSyncVerb, Unicorn" patch:after="processor[1]" />

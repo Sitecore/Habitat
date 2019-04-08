@@ -1,0 +1,98 @@
+﻿---
+ID: "83458bd1-1b73-4ea4-aabb-8e6aa4b40ef1"
+Parent: "f7434df7-e32e-4f8c-a50e-27c476f4dc32"
+Template: "94a8c8e9-690b-4e65-98e7-f95800222767"
+Path: /sitecore/content/Habitat/Home/Modules/Feature/Search
+DB: master
+SharedFields:
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="c4cc3ef6-a779-44ad-9021-01f1dae26270"
+        name="Layers"
+        presets="freddy the feature layer|100||">
+        <key
+          name="Feature"
+          value="10" />
+        <key
+          name="Foundation"
+          value="2" />
+        <key
+          name="Project"
+          value="0" />
+      </profile>
+    </tracking>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: Search
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20151116T023644Z
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
+      Hint: Image
+      Value: |
+        <image mediaid="{1C842036-A0D0-444C-A2AD-795FAF33EF42}" />
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
+      Hint: Summary
+      Value: The visual components for search functionality on the website is contained in the Search module.
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: Search
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: Search
+    - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
+      Hint: Body
+      Value: |
+        <p><span style="line-height: 24.2857px;">The visual components for search functionality on the website is contained in the Search module. This includes:</span></p>
+        <ul>
+            <li><span style="line-height: 24.2857px;">Global search box</span></li>
+            <li><span style="line-height: 24.2857px;">Search results</span></li>
+            <li><span style="line-height: 24.2857px;">Search facets</span></li>
+        </ul>
+        <p><span style="line-height: 24.2857px;">The search module uses the <a href="~/link.aspx?_id=F313739414884E72BDAF23C1EAAE0A83&amp;_z=z">Foundation.Indexing</a> module to execute the actual search.</span></p>
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: Search
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054552Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
+      Hint: Image
+      Value: |
+        <image mediaid="{1C842036-A0D0-444C-A2AD-795FAF33EF42}" />
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
+      Hint: Summary
+      Value: The visual components for search functionality on the website is contained in the Search module.
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: Search
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: Search
+    - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
+      Hint: Body
+      Value: |
+        <p><span style="line-height: 24.2857px;">The visual components for search functionality on the website is contained in the Search module. This includes:</span></p>
+        <ul>
+            <li><span style="line-height: 24.2857px;">Global search box</span></li>
+            <li><span style="line-height: 24.2857px;">Search results</span></li>
+            <li><span style="line-height: 24.2857px;">Search facets</span></li>
+        </ul>
+        <p><span style="line-height: 24.2857px;">The search module uses the <a href="~/link.aspx?_id=F313739414884E72BDAF23C1EAAE0A83&amp;_z=z">Foundation.Indexing</a> module to execute the actual search.</span></p>

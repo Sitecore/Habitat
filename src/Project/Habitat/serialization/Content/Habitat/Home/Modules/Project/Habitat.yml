@@ -1,0 +1,110 @@
+﻿---
+ID: "a9fab072-6c2f-4379-ae7e-bc8b5a00e66b"
+Parent: "8d8edb18-b641-4277-bad3-9c6cf89f9fe3"
+Template: "94a8c8e9-690b-4e65-98e7-f95800222767"
+Path: /sitecore/content/Habitat/Home/Modules/Project/Habitat
+DB: master
+SharedFields:
+- ID: "b0a67b2a-8b07-4e0b-8809-69f751709806"
+  Hint: __Tracking
+  Type: Tracking
+  Value: |
+    <tracking>
+      <profile
+        id="24dff2cf-b30a-4b75-8967-2fe3ded82271"
+        name="Focus"
+        presets="development|100||">
+        <key
+          name="Background"
+          value="0" />
+        <key
+          name="Practical"
+          value="8" />
+        <key
+          name="Process"
+          value="2" />
+        <key
+          name="Scope"
+          value="5" />
+      </profile>
+      <profile
+        id="c4cc3ef6-a779-44ad-9021-01f1dae26270"
+        name="Layers"
+        presets="pam the project layer|100||">
+        <key
+          name="Feature"
+          value="3" />
+        <key
+          name="Foundation"
+          value="0" />
+        <key
+          name="Project"
+          value="10" />
+      </profile>
+    </tracking>
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 200
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: Habitat
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20151026T041927Z
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
+      Hint: Image
+      Value: |
+        <image mediaid="{0BC5AD71-EDBC-4C9F-BC5A-424A5F1FC84B}" />
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
+      Hint: Summary
+      Value: "The Habitat module in the example implementation contains the page types, layouts - and even the content of the website you are browsing now."
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: Habitat
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: Design
+    - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
+      Hint: Body
+      Value: |
+        <p><span style="line-height: 24.2857px;">The Habitat module in the example implementation contains the page types, layouts - and even the content of the website you are browsing now.</span></p>
+        <p><span style="line-height: 24.2857px;">In other words, the Habitat module <strong>is</strong> the Habitat website. This brings together all the features and functionalities in the solution into page types and content.<br>
+        </span></p>
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1b483e91-d8c4-4d19-ba03-462074b55936"
+      Hint: NavigationTitle
+      Value: Habitat
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170323T054533Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "9492e0bb-9df9-46e7-8188-ec795c4ade44"
+      Hint: Image
+      Value: |
+        <image mediaid="{0BC5AD71-EDBC-4C9F-BC5A-424A5F1FC84B}" />
+    - ID: "ac3fd4db-8266-476d-9635-67814d91e901"
+      Hint: Summary
+      Value: サンプル実装のHabitatモジュールには、ページタイプ、レイアウト、および現在参照しているWebサイトのコンテンツまで含まれています。
+    - ID: "c30a013f-3cc8-4961-9837-1c483277084a"
+      Hint: Title
+      Value: Habitat
+    - ID: "ca0479ce-0bfe-4522-83de-ba688b380a78"
+      Hint: BrowserTitle
+      Value: Habitat
+    - ID: "d74f396d-5c5e-4916-bd0a-bfd58b6b1967"
+      Hint: Body
+      Value: |
+        <p><span style="line-height: 24.2857px;">サンプル実装のHabitatモジュールには、ページタイプ、レイアウト、および現在参照しているWebサイトのコンテンツまで含まれています。</span></p>
+        <p><span style="line-height: 24.2857px;">つまり、HabitatモジュールはHabitatのWebサイトです。 これにより、ソリューションのすべての機能と機能がページタイプとコンテンツにまとめられます。<br />
+        </span></p>

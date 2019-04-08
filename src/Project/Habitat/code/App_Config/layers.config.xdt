@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layers xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <layer name="Custom" xdt:Locator="Match(name)">
+        <loadOrder xdt:Transform="InsertIfMissing">
+            <add path="MakeSureAtLeastOneElementExists" xdt:Transform="InsertIfMissing" xdt:Locator="Match(path)"/>
+            <add path="Unicorn" xdt:Transform="RemoveAll" xdt:Locator="Match(path)"/>
+            <add path="Unicorn" type="Folder" xdt:Transform="InsertBefore(/layers/layer[@name='Custom']/loadOrder/*[1])" />
+            <add path="MakeSureAtLeastOneElementExists" xdt:Transform="RemoveAll" xdt:Locator="Match(path)"/>
+        </loadOrder>
+    </layer>
+</layers>
+        

@@ -37,7 +37,7 @@
 
         private string GetPageAssetValue(Item item, ID assetField)
         {
-            if (item.IsDerived(Templates.PageAssets.ID))
+            if (item.DescendsFrom(Templates.PageAssets.ID))
             {
                 var assetValue = item[assetField];
                 if (!string.IsNullOrWhiteSpace(assetValue))
@@ -51,7 +51,7 @@
 
         private static string GetInheritedPageAssetValue(Item item, ID assetField)
         {
-            var inheritedAssetItem = item.Axes.GetAncestors().FirstOrDefault(i => i.IsDerived(Templates.PageAssets.ID) && MainUtil.GetBool(item[Templates.PageAssets.Fields.InheritAssets], false) && string.IsNullOrWhiteSpace(item[assetField]));
+            var inheritedAssetItem = item.Axes.GetAncestors().FirstOrDefault(i => i.DescendsFrom(Templates.PageAssets.ID) && MainUtil.GetBool(item[Templates.PageAssets.Fields.InheritAssets], false) && string.IsNullOrWhiteSpace(item[assetField]));
             return inheritedAssetItem?[assetField];
         }
     }

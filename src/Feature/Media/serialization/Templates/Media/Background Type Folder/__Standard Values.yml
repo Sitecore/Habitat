@@ -1,0 +1,23 @@
+﻿---
+ID: "efbef841-5781-4ba9-a8e2-33505b78d852"
+Parent: "1fd75c49-f524-4c15-9f82-dcb2d4cf2fa9"
+Template: "1fd75c49-f524-4c15-9f82-dcb2d4cf2fa9"
+Path: /sitecore/templates/Feature/Media/Background Type Folder/__Standard Values
+DB: master
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Type: TreelistEx
+  Value: "{55A5BDAD-EB69-40F5-8195-CDA182E48EE4}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20160204T104436Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin

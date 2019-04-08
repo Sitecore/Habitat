@@ -25,7 +25,7 @@ namespace Sitecore.Foundation.Indexing.Models
 
         private static ISearchResultFormatter FindFirstSupportedFormatter(Item item)
         {
-            return IndexingProviderRepository.SearchResultFormatters.FirstOrDefault(provider => provider.SupportedTemplates.Any(item.IsDerived));
+            return IndexingProviderRepository.SearchResultFormatters.FirstOrDefault(provider => provider.SupportedTemplates.Any(item.DescendsFrom));
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Sitecore.Foundation.Indexing.Tests.Services
       //Arrange
       //Act
       Action a = () => { var item = searchService.ContextItem; };
-      a.ShouldThrow<Exception>();
+      a.Should().Throw<Exception>();
       //Assert      
     }
 
@@ -39,7 +39,7 @@ namespace Sitecore.Foundation.Indexing.Tests.Services
       //Act
       var item = searchService.ContextItem;
       //Assert      
-      item.Item.ID.ShouldBeEquivalentTo(rootItem.ID);
+      item.Item.ID.Should().BeEquivalentTo(rootItem.ID);
     }
   }
 }

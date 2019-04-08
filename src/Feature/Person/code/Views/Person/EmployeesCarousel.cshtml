@@ -8,7 +8,7 @@
 @model IEnumerable<Sitecore.Data.Items.Item>
 
 @{
-  if (Model == null || !Model.All(i => i.IsDerived(Templates.Person.ID)) || !Model.Any())
+  if (Model == null || !Model.All(i => i.DescendsFrom(Templates.Person.ID)) || !Model.Any())
   {
     @Html.PageEditorError(AlertTexts.InvalidDataSourceTemplate(Templates.Person.ID), AlertTexts.InvalidDataSourceTemplateFriendlyMessage, Html.Sitecore().CurrentItem?.ID, Html.Sitecore().CurrentRendering.Item?.ID)
     return;
