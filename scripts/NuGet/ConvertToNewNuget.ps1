@@ -1,9 +1,9 @@
 ## Nuget v2 URL for the target platform, and the target marketing version
-$SitecoreNuget = "https://sitecore.myget.org/F/sc-platform-9-1/api/v2"
-$TargetVersion = "9.1.0"
+$SitecoreNuget = "https://sitecore.myget.org/F/sc-packages/api/v2"
+$TargetVersion = "9.1.1"
 
 ## Nuget URL to retrieve package metadata, including dependencies
-$MetaPackage = "$SitecoreNuget/Packages(Id='Sitecore.Experience.Platform',Version='$TargetVersion')"
+$MetaPackage = "$SitecoreNuget/Packages(Id='Sitecore',Version='$TargetVersion')"
 
 ## Retrieve the package metadata from nuget (no nice way of doing this via CLI)
 $PackageMetadata = [xml](Invoke-WebRequest $MetaPackage).Content
