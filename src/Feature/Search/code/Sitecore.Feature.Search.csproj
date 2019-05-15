@@ -92,10 +92,10 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Sitecore.Analytics" Version="[12.0.0]" />
-        <PackageReference Include="Sitecore.Buckets" Version="[4.0.0]" />
-        <PackageReference Include="Sitecore.Kernel" Version="[12.0.0]" />
-        <PackageReference Include="Sitecore.Mvc" Version="[3.0.0]" />
+        <PackageReference Include="Sitecore.Analytics" Version="[9.1.1]" />
+        <PackageReference Include="Sitecore.Buckets" Version="[9.1.1]" />
+        <PackageReference Include="Sitecore.Kernel" Version="[9.1.1]" />
+        <PackageReference Include="Sitecore.Mvc" Version="[9.1.1]" />
       </ItemGroup>
     </Otherwise>
   </Choose>
