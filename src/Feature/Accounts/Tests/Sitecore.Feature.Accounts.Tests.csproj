@@ -151,7 +151,7 @@
         <PackageReference Include="Sitecore.Analytics.DataAccess" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.Analytics.Model" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.Analytics" Version="[9.1.1]" />
-        <PackageReference Include="Sitecore.Framework.Conditions" Version="" />
+        <PackageReference Include="Sitecore.Framework.Conditions" Version="[3.1.0]" />
         <PackageReference Include="Sitecore.Kernel" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.Logging" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.Nexus" Version="[9.1.1]" />

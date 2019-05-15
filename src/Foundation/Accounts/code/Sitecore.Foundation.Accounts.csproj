@@ -178,7 +178,7 @@
         <PackageReference Include="Sitecore.Analytics.Model" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.Analytics" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.Analytics.XConnect" Version="[9.1.1]" />
-        <PackageReference Include="Sitecore.Framework.Conditions" Version="" />
+        <PackageReference Include="Sitecore.Framework.Conditions" Version="[3.1.0]" />
         <PackageReference Include="Sitecore.Kernel" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.Marketing" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.Marketing.Core" Version="[9.1.1]" />

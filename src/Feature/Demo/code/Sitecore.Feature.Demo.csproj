@@ -220,7 +220,7 @@
         <PackageReference Include="Sitecore.ExperienceAnalytics.Api" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.ExperienceAnalytics.Core" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.ExperienceExplorer.Core" Version="[9.1.1]" />
-        <PackageReference Include="Sitecore.Framework.Conditions" Version="" />
+        <PackageReference Include="Sitecore.Framework.Conditions" Version="[3.1.0]" />
         <PackageReference Include="Sitecore.Kernel" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.Mvc" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.Marketing" Version="[9.1.1]" />

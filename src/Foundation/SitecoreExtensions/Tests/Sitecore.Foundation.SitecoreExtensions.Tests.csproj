@@ -175,7 +175,7 @@
         <PackageReference Include="Sitecore.Analytics.XConnect" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.ContentSearch.Linq" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.ContentSearch" Version="[9.1.1]" />
-        <PackageReference Include="Sitecore.Framework.Conditions" Version="" />
+        <PackageReference Include="Sitecore.Framework.Conditions" Version="[3.1.0]" />
         <PackageReference Include="Sitecore.Kernel" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.Logging" Version="[9.1.1]" />
         <PackageReference Include="Sitecore.Marketing" Version="[9.1.1]" />
