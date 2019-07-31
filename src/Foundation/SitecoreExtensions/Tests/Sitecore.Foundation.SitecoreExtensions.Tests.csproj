@@ -119,7 +119,6 @@
           <HintPath>$(SitecorePath)\bin\Sitecore.ContentSearch.dll</HintPath>
           <Private>True</Private>
         </Reference>
-
         <Reference Include="Sitecore.Kernel">
           <HintPath>$(SitecorePath)\bin\Sitecore.Kernel.dll</HintPath>
           <Private>True</Private>
@@ -164,25 +163,24 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Sitecore.Abstractions" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics.Core" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics.DataAccess" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics.Model" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics.XConnect" Version="9.1.0" />
-        <PackageReference Include="Sitecore.ContentSearch.Linq" Version="9.1.0" />
-        <PackageReference Include="Sitecore.ContentSearch" Version="9.1.0" />
-
-        <PackageReference Include="Sitecore.Kernel" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Logging" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Marketing" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Marketing.Core" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Marketing.Core" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Marketing.Taxonomy" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Marketing.xMgmt" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Mvc" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Nexus" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Xdb.Configuration" Version="9.1.0" />
+        <PackageReference Include="Sitecore.Abstractions" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics.Core" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics.DataAccess" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics.Model" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics.XConnect" Version="9.2.0" />
+        <PackageReference Include="Sitecore.ContentSearch.Linq" Version="9.2.0" />
+        <PackageReference Include="Sitecore.ContentSearch" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Kernel" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Logging" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Marketing" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Marketing.Core" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Marketing.Core" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Marketing.Taxonomy" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Marketing.xMgmt" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Mvc" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Nexus" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Xdb.Configuration" Version="9.2.0" />
       </ItemGroup>
     </Otherwise>
   </Choose>

@@ -23,7 +23,7 @@
     {
       var jobCategory = typeof(UpdateLocalDatasourceReferencesService).Name;
       var siteName = Context.Site == null ? "No Site Context" : Context.Site.Name;
-      var jobOptions = new JobOptions(this.GetJobName(), jobCategory, siteName, this, nameof(this.Update));
+      var jobOptions = new DefaultJobOptions(this.GetJobName(), jobCategory, siteName, this, nameof(this.Update));
       JobManager.Start(jobOptions);
     }
 

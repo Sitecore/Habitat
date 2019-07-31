@@ -9,7 +9,7 @@
 
   public static class ItemExtensions
   {
-    public static bool HasLocalDatasourceFolder([NotNull] this Item item)
+    public static bool HasLocalDatasourceFolder(this Item item)
     {
       if (item == null)
       {
@@ -19,7 +19,7 @@
       return item.Children[Settings.LocalDatasourceFolderName] != null;
     }
 
-    public static Item GetLocalDatasourceFolder([NotNull] this Item item)
+    public static Item GetLocalDatasourceFolder(this Item item)
     {
       if (item == null)
       {
@@ -41,7 +41,7 @@
       return itemLinks.Select(l => l.GetTargetItem()).Where(i => i != null && i.IsLocalDatasourceItem(item)).Distinct().ToArray();
     }
 
-    public static bool IsLocalDatasourceItem([NotNull] this Item dataSourceItem, Item ofItem)
+    public static bool IsLocalDatasourceItem(this Item dataSourceItem, Item ofItem)
     {
       if (dataSourceItem == null)
       {
@@ -51,7 +51,7 @@
       return datasourceFolder != null && dataSourceItem.Axes.IsDescendantOf(datasourceFolder);
     }
 
-    public static bool IsLocalDatasourceItem([NotNull] this Item dataSourceItem)
+    public static bool IsLocalDatasourceItem(this Item dataSourceItem)
     {
       if (dataSourceItem == null)
       {
@@ -65,7 +65,7 @@
       return dataSourceItem.Parent?.TemplateName.Equals(Settings.LocalDatasourceFolderTemplate, StringComparison.InvariantCultureIgnoreCase) ?? false;
     }
 
-    public static Item GetParentLocalDatasourceFolder([NotNull] this Item dataSourceItem)
+    public static Item GetParentLocalDatasourceFolder(this Item dataSourceItem)
     {
       if (dataSourceItem == null)
       {

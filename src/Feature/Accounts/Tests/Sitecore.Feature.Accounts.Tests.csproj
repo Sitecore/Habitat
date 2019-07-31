@@ -107,7 +107,6 @@
           <HintPath>$(SitecorePath)\bin\Sitecore.Analytics.dll</HintPath>
           <Private>True</Private>
         </Reference>
-
         <Reference Include="Sitecore.Kernel">
           <HintPath>$(SitecorePath)\bin\Sitecore.Kernel.dll</HintPath>
           <Private>True</Private>
@@ -144,19 +143,18 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Sitecore.Analytics.Core" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics.DataAccess" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics.Model" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics" Version="9.1.0" />
-
-        <PackageReference Include="Sitecore.Kernel" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Logging" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Nexus" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Collection.Model" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Search" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Xdb.Common.Web" Version="9.1.0" />
+        <PackageReference Include="Sitecore.Analytics.Core" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics.DataAccess" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics.Model" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Kernel" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Logging" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Nexus" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Collection.Model" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Search" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Xdb.Common.Web" Version="9.2.0" />
       </ItemGroup>
     </Otherwise>
   </Choose>

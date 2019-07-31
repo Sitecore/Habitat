@@ -1,4 +1,4 @@
-$TargetVersion = "9.1.0"
+$TargetVersion = "9.2.0"
 
 ## Find all Visual Studio projects and parse their XML
 Get-ChildItem *.csproj -recurse | % {

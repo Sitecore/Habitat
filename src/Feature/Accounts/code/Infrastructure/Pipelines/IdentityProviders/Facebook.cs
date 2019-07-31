@@ -26,7 +26,7 @@ namespace Sitecore.Feature.Accounts.Infrastructure.Pipelines.IdentityProviders
 
         protected override string IdentityProviderName => "Facebook";
 
-        protected override void ProcessCore([NotNull] IdentityProvidersArgs args)
+        protected override void ProcessCore(IdentityProvidersArgs args)
         {
             Assert.ArgumentNotNull(args, nameof(args));
 

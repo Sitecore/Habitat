@@ -121,16 +121,16 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Sitecore.Analytics.Core" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics.Model" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Kernel" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Owin.Authentication" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Owin" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Client.Configuration" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Client" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Collection.Model" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect" Version="9.1.0" />
+        <PackageReference Include="Sitecore.Analytics.Core" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics.Model" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Kernel" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Owin.Authentication" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Owin" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Client.Configuration" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Client" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Collection.Model" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect" Version="9.2.0" />
       </ItemGroup>
     </Otherwise>
   </Choose>

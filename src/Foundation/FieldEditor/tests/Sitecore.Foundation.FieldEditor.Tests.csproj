@@ -106,11 +106,11 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Sitecore.Client" Version="9.1.0" />
-        <PackageReference Include="Sitecore.ExperienceEditor" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Kernel" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Logging" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Nexus" Version="9.1.0" />
+        <PackageReference Include="Sitecore.Client" Version="9.2.0" />
+        <PackageReference Include="Sitecore.ExperienceEditor" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Kernel" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Logging" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Nexus" Version="9.2.0" />
       </ItemGroup>
     </Otherwise>
   </Choose>

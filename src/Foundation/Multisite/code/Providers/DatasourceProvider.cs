@@ -54,7 +54,7 @@
             return root != null ? new[] {root} : new Item[] { };
         }
 
-        private Item[] GetRootsFromQuery([NotNull] Item contextItem, string query)
+        private Item[] GetRootsFromQuery(Item contextItem, string query)
         {
             if (contextItem == null)
             {

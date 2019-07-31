@@ -10,7 +10,7 @@
   {
     private DynamicTeaserItem[] _items;
 
-    public DynamicTeaserModel([NotNull] Item dynamicTeaser)
+    public DynamicTeaserModel(Item dynamicTeaser)
     {
       if (dynamicTeaser == null)
       {

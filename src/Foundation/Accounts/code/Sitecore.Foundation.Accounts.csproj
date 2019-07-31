@@ -174,30 +174,29 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Sitecore.Analytics.Core" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics.Model" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Analytics.XConnect" Version="9.1.0" />
-
-        <PackageReference Include="Sitecore.Kernel" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Marketing" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Marketing.Core" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Marketing.Taxonomy" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Client.Configuration" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Client" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Collection.Model" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Diagnostics" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Search" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Search" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Segmentation.Conditions" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Segmentation.Engine" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Segmentation.ExpressionBuilder.Model" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Segmentation.Predicates.Model" Version="9.1.0" />
-        <PackageReference Include="Sitecore.XConnect.Segmentation.Predicates" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Xdb.MarketingAutomation.Tracking" Version="9.1.0" />
-        <PackageReference Include="Sitecore.Xdb.ReferenceData.Core" Version="9.1.0" />
+        <PackageReference Include="Sitecore.Analytics.Core" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics.Model" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Analytics.XConnect" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Kernel" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Marketing" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Marketing.Core" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Marketing.Taxonomy" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Client.Configuration" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Client" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Collection.Model" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Diagnostics" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Search" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Search" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Segmentation.Conditions" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Segmentation.Engine" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Segmentation.ExpressionBuilder.Model" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Segmentation.Predicates.Model" Version="9.2.0" />
+        <PackageReference Include="Sitecore.XConnect.Segmentation.Predicates" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Xdb.MarketingAutomation.Tracking" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Xdb.ReferenceData.Core" Version="9.2.0" />
       </ItemGroup>
     </Otherwise>
   </Choose>

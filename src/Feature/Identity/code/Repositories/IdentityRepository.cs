@@ -6,7 +6,7 @@
 
   public static class IdentityRepository
   {
-    public static Item Get([NotNull] Item contextItem)
+    public static Item Get(Item contextItem)
     {
       if (contextItem == null)
         throw new ArgumentNullException(nameof(contextItem));

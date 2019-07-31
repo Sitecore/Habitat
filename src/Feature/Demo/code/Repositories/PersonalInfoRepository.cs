@@ -207,7 +207,7 @@
             }
         }
 
-        [NotNull]
+        
         private IEnumerable<KeyValuePair<string, string>> GetTagsProperties()
         {
             return this.contactFacetsProvider?.Contact?.Tags?.GetAll().Select(this.GetTagValue) ?? Enumerable.Empty<KeyValuePair<string, string>>();

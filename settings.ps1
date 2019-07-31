@@ -18,9 +18,10 @@ $LicenseFile = "$AssetsRoot\license.xml"
 $CertPath = Join-Path "$AssetsRoot" "Certificates"
 
 # SQL Parameters
-$SqlServer = "."
-$SqlAdminUser = "sa"
-$SqlAdminPassword = "12345"
+$SqlServer = ".\sqlexpress2016"
+$SqlAdminUser = "sitecore"
+$SqlAdminPassword = "wreath8.feeder5.lamp2"
+
 # Prerequisities Check
 $PrerequisitiesConfiguration = "$AssetsRoot\Prerequisites.json"
 

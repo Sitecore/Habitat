@@ -10,7 +10,7 @@
 
   public static class MediaSelectorElementsRepository
   {
-    public static IEnumerable<MediaSelectorElement> Get([NotNull] Item item)
+    public static IEnumerable<MediaSelectorElement> Get(Item item)
     {
       if (item == null)
         throw new ArgumentNullException(nameof(item));
