@@ -240,6 +240,7 @@
     <Content Include="styles\dayfrost\components\_atoms.scss" />
     <None Include="Views\Web.config" />
     <None Include="web.config" />
+    <Content Include="Web.config.xdt" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

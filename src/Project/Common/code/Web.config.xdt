@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <runtime>
+        <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+            <!-- Remove problematic assembly redirect found in 9.2. -->
+            <dependentAssembly xdt:Transform="RemoveAll"
+                               xdt:Locator="Condition(./_defaultNamespace:assemblyIdentity/@name='System.Buffers')"></dependentAssembly>
+        </assemblyBinding>
+    </runtime>
+</configuration>
