@@ -1,6 +1,6 @@
 /// <binding />
 var gulp = require("gulp");
-var msbuild = require("gulp-msbuild");
+var _msbuild = require("msbuild");
 var debug = require("gulp-debug");
 var foreach = require("gulp-foreach");
 var rename = require("gulp-rename");
@@ -16,6 +16,7 @@ var path = require("path");
 var rimrafDir = require("rimraf");
 var rimraf = require("gulp-rimraf");
 var xmlpoke = require("xmlpoke");
+var glob = require("glob");
 
 var config;
 if (fs.existsSync("./gulp-config.js.user")) {
@@ -79,43 +80,74 @@ gulp.task("References-Nuget",
 
 gulp.task("Publish-All-Projects",
     function(callback) {
-        return runSequence(
-            "Build-Solution",
-            "Publish-Foundation-Projects",
-            "Publish-Feature-Projects",
-            "Publish-Project-Projects",
-            callback);
+        var msbuild = new _msbuild(callback);
+        msbuild.solutionName = config.solutionName + '.sln';
+        var overrideParams = [];
+        overrideParams.push('/p:Configuration=' + config.buildConfiguration);
+        overrideParams.push('/p:DeployOnBuild=true');
+        overrideParams.push('/p:DeployDefaultTarget=WebPublish');
+        overrideParams.push('/p:WebPublishMethod=FileSystem');
+        overrideParams.push('/p:DeleteExistingFiles=false');
+        overrideParams.push('/p:publishUrl=' + config.websiteRoot);
+        overrideParams.push('/m');
+        overrideParams.push('/restore');
+        msbuild.config('overrideParams', overrideParams);
+        msbuild.config('version', config.buildToolsVersion);
+        msbuild.build();
     });
 
 gulp.task("Apply-Xml-Transform",
     function() {
+        // Need to apply these synchronously or risk trying to write the same destination file in parallel
         var layerPathFilters = [
-            "./src/Foundation/**/*.xdt", "./src/Feature/**/*.xdt", "./src/Project/**/*.xdt",
-            "!./src/**/obj/**/*.xdt", "!./src/**/bin/**/*.xdt"
+            "./src/Foundation/**/*.xdt", "./src/Feature/**/*.xdt", "./src/Project/**/*.xdt"
         ];
-        return gulp.src(layerPathFilters)
-            .pipe(foreach(function(stream, file) {
-                var fileToTransform = file.path.replace(/.+code\\(.+)\.xdt/, "$1");
-                util.log("Applying configuration transform: " + file.path);
-                return gulp.src("./scripts/applytransform.targets")
-                    .pipe(msbuild({
-                        targets: ["ApplyTransform"],
-                        configuration: config.buildConfiguration,
-                        logCommand: false,
-                        verbosity: config.buildVerbosity,
-                        stdout: true,
-                        errorOnFail: true,
-                        maxcpucount: config.buildMaxCpuCount,
-                        nodeReuse: false,
-                        toolsVersion: config.buildToolsVersion,
-                        properties: {
-                            Platform: config.buildPlatform,
-                            WebConfigToTransform: config.websiteRoot,
-                            TransformFile: file.path,
-                            FileToTransform: fileToTransform
-                        }
-                    }));
-            }));
+        // Collect all the transforms into an array
+        var transforms = layerPathFilters.reduce(function (files, path) {
+            glob.sync(path, {absolute: true}).forEach(function(file) {
+                files.push(file);
+            });
+            return files;
+        }, []);
+        // Remove any transforms that ended up in compiled output
+        transforms = transforms.filter(function(path) {
+            return !path.includes('bin') && !path.includes('obj');
+        });
+        util.log("Discovered transforms: " + JSON.stringify(transforms));
+
+        // return a promise since we're not using gulp streams
+        return new Promise(function(resolve, reject) {
+
+            // use transform list as a queue and process each sequentially
+            var processTransforms = function() {
+                var next = transforms.shift();
+                if (next) {
+                    applyTransform(next);
+                } else {
+                    // no more transforms, let gulp know we're done
+                    resolve('done');
+                }
+            }
+
+            var applyTransform = function(transformFile) {
+                var fileToTransform = transformFile.replace(/.+code\/(.+)\.xdt/, "$1");
+
+                // _msbuild will call back to the function above to apply the next transform when finished
+                var msbuild = new _msbuild(processTransforms);
+                msbuild.sourcePath = './scripts/applytransform.targets';
+                msbuild.targets = ['ApplyTransform'];
+                msbuild.configuration = config.buildConfiguration;
+                var overrideParams = [];
+                overrideParams.push('/p:WebConfigToTransform=' + config.websiteRoot);
+                overrideParams.push('/p:TransformFile=' + transformFile.replace(/\//g, "\\"));
+                overrideParams.push('/p:FileToTransform=' + fileToTransform.replace(/\//g, "\\"));
+                msbuild.config('overrideParams', overrideParams);
+                msbuild.config('version', config.buildToolsVersion);
+                msbuild.build();
+            };
+
+            processTransforms();
+        });
     });
 
 gulp.task("Publish-Transforms",
@@ -133,170 +165,8 @@ gulp.task("Sync-Unicorn",
         unicorn(function() { return callback() }, options);
     });
 
-/*****************************
-  Copy assemblies to all local projects
-*****************************/
-gulp.task("Copy-Local-Assemblies",
-    function() {
-        console.log("Copying site assemblies to all local projects");
-        var files = config.sitecoreLibraries + "/**/*";
 
-        var root = "./src";
-        var projects = root + "/**/code/bin";
-        return gulp.src(projects, { base: root })
-            .pipe(foreach(function(stream, file) {
-                console.log("copying to " + file.path);
-                gulp.src(files)
-                    .pipe(gulp.dest(file.path));
-                return stream;
-            }));
-    });
 
-/*****************************
-  Publish
-*****************************/
-var publishStream = function(stream, dest) {
-    var targets = ["Build"];
-
-    return stream
-        .pipe(debug({ title: "Building project:" }))
-        .pipe(msbuild({
-            targets: targets,
-            configuration: config.buildConfiguration,
-            logCommand: false,
-            verbosity: config.buildVerbosity,
-            stdout: true,
-            errorOnFail: true,
-            maxcpucount: config.buildMaxCpuCount,
-            nodeReuse: false,
-            toolsVersion: config.buildToolsVersion,
-            properties: {
-                Platform: config.publishPlatform,
-                DeployOnBuild: "true",
-                DeployDefaultTarget: "WebPublish",
-                WebPublishMethod: "FileSystem",
-                BuildProjectReferences: "false",
-                DeleteExistingFiles: "false",
-                publishUrl: dest
-            }
-        }));
-};
-var publishProject = function(location, dest) {
-    dest = dest || config.websiteRoot;
-
-    console.log("publish to " + dest + " folder");
-    return gulp.src(["./src/" + location + "/code/*.csproj"])
-        .pipe(foreach(function(stream, file) {
-            return publishStream(stream, dest);
-        }));
-};
-var publishProjects = function(location, dest) {
-    dest = dest || config.websiteRoot;
-
-    console.log("publish to " + dest + " folder");
-    return gulp.src([location + "/**/code/*.csproj"])
-        .pipe(foreach(function(stream, file) {
-            return publishStream(stream, dest);
-        }));
-};
-
-gulp.task("Build-Solution",
-    function() {
-        var targets = ["Build"];
-        if (config.runCleanBuilds) {
-            targets = ["Clean", "Build"];
-        }
-
-        var solution = "./" + config.solutionName + ".sln";
-        return gulp.src(solution)
-            .pipe(msbuild({
-                targets: targets,
-                configuration: config.buildConfiguration,
-                logCommand: false,
-                verbosity: config.buildVerbosity,
-                stdout: true,
-                errorOnFail: true,
-                maxcpucount: config.buildMaxCpuCount,
-                nodeReuse: false,
-                toolsVersion: config.buildToolsVersion,
-                properties: {
-                    Platform: config.buildPlatform
-                },
-                customArgs: [ "/restore" ]
-            }));
-    });
-
-gulp.task("Publish-Foundation-Projects",
-    function() {
-        return publishProjects("./src/Foundation");
-    });
-
-gulp.task("Publish-Feature-Projects",
-    function() {
-        return publishProjects("./src/Feature");
-    });
-
-gulp.task("Publish-Project-Projects",
-    function() {
-        return publishProjects("./src/Project");
-    });
-
-gulp.task("Publish-Project",
-    function() {
-        if (yargs && yargs.m && typeof(yargs.m) == "string") {
-            return publishProject(yargs.m);
-        } else {
-            throw "\n\n------\n USAGE: -m Layer/Module \n------\n\n";
-        }
-    });
-
-gulp.task("Publish-Assemblies",
-    function() {
-        var root = "./src";
-        var binFiles = root + "/**/code/**/bin/Sitecore.{Feature,Foundation,Habitat}.*.{dll,pdb}";
-        var destination = config.websiteRoot + "/bin/";
-        return gulp.src(binFiles, { base: root })
-            .pipe(rename({ dirname: "" }))
-            .pipe(newer(destination))
-            .pipe(debug({ title: "Copying " }))
-            .pipe(gulp.dest(destination));
-    });
-
-gulp.task("Publish-All-Views",
-    function() {
-        var root = "./src";
-        var roots = [root + "/**/Views", "!" + root + "/**/obj/**/Views"];
-        var files = "/**/*.cshtml";
-        var destination = config.websiteRoot + "\\Views";
-        return gulp.src(roots, { base: root }).pipe(
-            foreach(function(stream, file) {
-                console.log("Publishing from " + file.path);
-                gulp.src(file.path + files, { base: file.path })
-                    .pipe(newer(destination))
-                    .pipe(debug({ title: "Copying " }))
-                    .pipe(gulp.dest(destination));
-                return stream;
-            })
-        );
-    });
-
-gulp.task("Publish-All-Configs",
-    function() {
-        var root = "./src";
-        var roots = [root + "/**/App_Config", "!" + root + "/**/tests/App_Config", "!" + root + "/**/obj/**/App_Config"];
-        var files = "/**/*.config";
-        var destination = config.websiteRoot + "\\App_Config";
-        return gulp.src(roots, { base: root }).pipe(
-            foreach(function(stream, file) {
-                console.log("Publishing from " + file.path);
-                gulp.src(file.path + files, { base: file.path })
-                    .pipe(newer(destination))
-                    .pipe(debug({ title: "Copying " }))
-                    .pipe(gulp.dest(destination));
-                return stream;
-            })
-        );
-    });
 
 /*****************************
  Watchers
