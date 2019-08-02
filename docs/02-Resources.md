@@ -6,9 +6,9 @@ You must install these before installing Habitat:
 
 * [PowerShell version 5 or later](https://www.microsoft.com/en-us/download/details.aspx?id=50395)
 * [.NET Framework 4.7.1 Developer Pack](https://www.microsoft.com/en-us/download/details.aspx?id=56119)
-* [Visual Studio 2017](https://www.visualstudio.com/downloads/)
-  * **Be sure you are using VS17 v15.5 or higher in order to get necessary updates to MSBuild. Update your IDE if needed.**
-  * Within VS2017, install these extensions:
+* [Visual Studio 2019](https://www.visualstudio.com/downloads/)
+  * **Be sure you are using VS19 v16.1.6 or higher. Update your IDE if needed.**
+  * Within VS2019, install these extensions:
     * [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
 * ASP.NET MVC for the user interface patterns
   * On Windows 10, this is enabled by going to:
@@ -22,8 +22,7 @@ These are additional tools used in Habitat's creation. You do not need to instal
 * Front end framework: [Bootstrap 3](http://getbootstrap.com/)
 * Package management: NuGet, [Node (npm)](https://nodejs.org/) and [Bower](https://www.bower.io/)
 * Build scripts: [Gulp](http://gulpjs.com/)
-* Item serialisation: [Unicorn 4](https://github.com/kamsar/Unicorn)
-  * Windows PowerShell 4.0+ required to sync Unicorn via Gulp task
+* Item serialization: [Unicorn](https://github.com/kamsar/Unicorn)
 * Bug-tracking: [GitHub](https://github.com/Sitecore/Habitat/issues)
 * CI server: TeamCity
 * Unit tests: xUnit
