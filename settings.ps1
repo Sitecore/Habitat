@@ -3,9 +3,9 @@ $SolutionPrefix = "habitat"
 $SitePostFix = "dev.local"
 $webroot = "C:\inetpub\wwwroot"
 
-$SitecoreVersion = "9.1.0 rev. 001564"
-$IdentityServerVersion = "2.0.0 rev. 00157"
-$InstallerVersion = "2.0.0"
+$SitecoreVersion = "9.2.0 rev. 002893"
+$IdentityServerVersion = "3.0.0 rev. 00211"
+$InstallerVersion = "2.1.0"
 
 # Assets and prerequisites
 $AssetsRoot = "$PSScriptRoot\build\assets"
@@ -21,6 +21,7 @@ $CertPath = Join-Path "$AssetsRoot" "Certificates"
 $SqlServer = "."
 $SqlAdminUser = "sa"
 $SqlAdminPassword = "12345"
+
 # Prerequisities Check
 $PrerequisitiesConfiguration = "$AssetsRoot\Prerequisites.json"
 
@@ -49,6 +50,6 @@ $IdentityAllowedCorsOrigins = $SitecoreSiteUrl
 $IdentityServerSiteRoot = Join-Path $webroot -ChildPath $IdentityServerSiteName
 
 # Solr Parameters
-$SolrUrl = "https://localhost:8983/solr"
-$SolrRoot = "c:\\solr"
-$SolrService = "Solr"
+$SolrUrl = "https://solr750:8750/solr"
+$SolrRoot = "C:\\solr\\solr-7.5.0"
+$SolrService = "Solr-7.5.0"

@@ -57,10 +57,10 @@
     <PackageReference Include="Microsoft.Net.Compilers" Version="1.3.2" />
     <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Rainbow" Version="2.0.0" />
-    <PackageReference Include="Rainbow.Core" Version="2.0.0" />
-    <PackageReference Include="Rainbow.Storage.Sc" Version="2.0.0" />
-    <PackageReference Include="Rainbow.Storage.Yaml" Version="2.0.0" />
+    <PackageReference Include="Rainbow" Version="2.1.1" />
+    <PackageReference Include="Rainbow.Core" Version="2.1.1" />
+    <PackageReference Include="Rainbow.Storage.Sc" Version="2.1.1" />
+    <PackageReference Include="Rainbow.Storage.Yaml" Version="2.1.1" />
     <PackageReference Include="System.ComponentModel" Version="4.0.1" />
     <PackageReference Include="System.Diagnostics.Debug" Version="4.0.11" />
     <PackageReference Include="System.Globalization" Version="4.0.11" />
@@ -68,12 +68,12 @@
     <PackageReference Include="System.Linq.Expressions" Version="4.1.0" />
     <PackageReference Include="System.Reflection" Version="4.1.0" />
     <PackageReference Include="System.Resources.ResourceManager" Version="4.0.1" />
-    <PackageReference Include="Unicorn" Version="4.0.3" />
-    <PackageReference Include="Unicorn.Core" Version="4.0.3" />
-    <PackageReference Include="Unicorn.Roles" Version="4.0.3" />
-    <PackageReference Include="Unicorn.Roles.Core" Version="4.0.3" />
-    <PackageReference Include="Unicorn.Users" Version="4.0.3" />
-    <PackageReference Include="Unicorn.Users.Core" Version="4.0.3" />
+    <PackageReference Include="Unicorn" Version="4.1.1" />
+    <PackageReference Include="Unicorn.Core" Version="4.1.1" />
+    <PackageReference Include="Unicorn.Roles" Version="4.1.1" />
+    <PackageReference Include="Unicorn.Roles.Core" Version="4.1.1" />
+    <PackageReference Include="Unicorn.Users" Version="4.1.1" />
+    <PackageReference Include="Unicorn.Users.Core" Version="4.1.1" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(LocalReferences)' == 'true'">
@@ -86,7 +86,7 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Sitecore.Kernel" Version="[12.0.0]" />
+        <PackageReference Include="Sitecore.Kernel" Version="9.2.0" />
       </ItemGroup>
     </Otherwise>
   </Choose>

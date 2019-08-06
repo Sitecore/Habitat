@@ -15,7 +15,7 @@
             this.siteDefinitionsProvider = siteDefinitionsProvider;
         }
 
-        public virtual SiteDefinition GetSiteDefinition([NotNull] Item item)
+        public virtual SiteDefinition GetSiteDefinition(Item item)
         {
             Assert.ArgumentNotNull(item, nameof(item));
 

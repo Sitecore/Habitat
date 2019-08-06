@@ -26,7 +26,7 @@
 	http://github.com/kamsar/Unicorn
 -->
 <configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:role="http://www.sitecore.net/xmlconfig/role/">
-    <sitecore role:require="Standalone or ContentManagement">
+	<sitecore role:require="Standalone or ContentManagement">
 		<unicorn>
 			<defaults>
 				<!-- 

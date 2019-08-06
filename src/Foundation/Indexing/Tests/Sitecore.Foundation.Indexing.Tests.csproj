@@ -115,13 +115,13 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Sitecore.Abstractions" Version="[12.0.0]" />
-        <PackageReference Include="Sitecore.ContentSearch.Linq" Version="[4.0.0]" />
-        <PackageReference Include="Sitecore.ContentSearch" Version="[4.0.0]" />
-        <PackageReference Include="Sitecore.Kernel" Version="[12.0.0]" />
-        <PackageReference Include="Sitecore.Logging" Version="[12.0.0]" />
-        <PackageReference Include="Sitecore.Mvc" Version="[3.0.0]" />
-        <PackageReference Include="Sitecore.Nexus" Version="[3.0.0]" />
+        <PackageReference Include="Sitecore.Abstractions" Version="9.2.0" />
+        <PackageReference Include="Sitecore.ContentSearch.Linq" Version="9.2.0" />
+        <PackageReference Include="Sitecore.ContentSearch" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Kernel" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Logging" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Mvc" Version="9.2.0" />
+        <PackageReference Include="Sitecore.Nexus" Version="9.2.0" />
       </ItemGroup>
     </Otherwise>
   </Choose>

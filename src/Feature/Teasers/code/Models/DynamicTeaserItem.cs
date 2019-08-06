@@ -25,13 +25,13 @@
       this.PanelId = $"panel{Guid.NewGuid().ToString("N")}";
     }
 
-    [CanBeNull]
+    
     public Item Item { get; set; }
 
-    [CanBeNull]
+    
     public string Title { get; private set; }
 
-    [CanBeNull]
+    
     public string Icon { get; set; }
 
     public bool IsActive { get; set; }

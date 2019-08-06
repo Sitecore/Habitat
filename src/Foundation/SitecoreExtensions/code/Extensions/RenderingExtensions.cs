@@ -24,7 +24,7 @@
       return !int.TryParse(parameter, out returnValue) ? defaultValue : returnValue;
     }
 
-    public static bool GetUseStaticPlaceholderNames([NotNull] this Rendering rendering)
+    public static bool GetUseStaticPlaceholderNames(this Rendering rendering)
     {
       return MainUtil.GetBool(rendering.Parameters[Constants.DynamicPlaceholdersLayoutParameters.UseStaticPlaceholderNames], false);
     }

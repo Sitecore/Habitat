@@ -40,7 +40,7 @@
       return returnValue;
     }
 
-    public string Get([NotNull] string relativePath, string defaultValue)
+    public string Get(string relativePath, string defaultValue)
     {
       if (relativePath == null)
       {
@@ -60,7 +60,7 @@
       return dictionaryItem.Fields[Templates.DictionaryEntry.Fields.Phrase].Value ?? defaultValue;
     }
 
-    public Item GetItem([NotNull] string relativePath, string defaultValue = "")
+    public Item GetItem(string relativePath, string defaultValue = "")
     {
       if (relativePath == null)
       {
@@ -75,7 +75,7 @@
       return item;
     }
 
-    private Item GetOrAutoCreateItem([NotNull]string relativePath, [CanBeNull]string defaultValue)
+    private Item GetOrAutoCreateItem(string relativePath, string defaultValue)
     {
       relativePath = AssertRelativePath(relativePath);
 

@@ -8,7 +8,7 @@
 
 	See Unicorn.config for commentary on how configurations operate, or https://github.com/kamsar/Unicorn/blob/master/README.md
 -->
-<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:role="http://www.sitecore.net/xmlconfig/role/">
 	<sitecore>
 		<unicorn>
 			<configurations>
@@ -65,7 +65,38 @@
 						<include database="master" path="/sitecore/system/Workflows" />
 						<include database="master" path="/sitecore/system/Settings" />
 					</predicate>
-					
+
+					<!--
+						PREDICATE AND INCLUDE FIELD TRANSFORMS
+						
+						- These transforms ONLY APPLY to what gets deserialized into Sitecore. Field values on disk/serialized datastore remain complete - respecting only the Rainbow field filter settings
+						
+						IN OTHER WORDS:
+						
+						Example: "-title, -text, +ApiUrl[{$apiUrlToken$}]" => All fields get deployed as normal, except "title" and "text". And "ApiUrl" gets a forced value.
+						Example: "!title, -text" => "Title" gets reset (to standard value), "Text" gets ignored.
+						Example: "?title, ?text" => ALL fields gets deployed, but fields "Title" and "Text" will only get their value deployed if target field value is empty
+						Example: "?title, ?text, !apiUrl" => As above, but field "apiUrl" is reset
+						
+						"!field" => Reset this field unconditionally
+						"-field" => Ignore this field unconditionally
+						"?field" => Deploy this field if it has no value in target data store (Sitecore)
+						"+field[value]" => Force a new value into this field on target data store (Sitecore)
+						";field" => Force a "Lorem ipsum dolor" value into the field
+						":field" => Force a longer Lorem ipsum based HTML string into the field (around 2075 characters of Lorem Ipsum, broken up with <p> into sentences).
+						"$field[settingName]" => Grab the value of the Sitecore Setting `settingName` and force it as a value
+					-->
+					<predicate fieldTransforms=";Title,:Text,!Include In Sitemap,+Api Endpoint[{$apiEndPoint$}],?Default Product">
+						<include name="Sample Data" database="master" path="/sitecore/content/global/sample" fieldTransforms="-Title" /> /* Predicate transforms apply, but "Title" gets ignored on this include definition */
+					</predicate>
+
+
+					<!-- Clear Workflow fields on local development environments, but force a specific state upstream -->
+					<predicate>
+						<include role:require="Standalone" name="Sample Data" database="master" path="/sitecore/content/global/sample" fieldTransforms="!Workflow,!Workflow State" />
+						<include role:require="ContentManagement" name="Sample Data" database="master" path="/sitecore/content/global/sample" fieldTransforms="+Workflow[{2DE02B52-B95F-404A-A955-C36B290F1B57}],+Workflow State[{5ACE9C7F-8A18-4C77-BC30-03BE5A40E6B6}]"/>
+					</predicate>
+
 					<!--
 						SYNC TYPE
 						

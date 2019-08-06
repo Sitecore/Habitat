@@ -8,7 +8,7 @@
 
   public static class FaqRepository
   {
-    public static IEnumerable<Item> Get([NotNull] Item item)
+    public static IEnumerable<Item> Get(Item item)
     {
       if (item == null)
         throw new ArgumentNullException(nameof(item));

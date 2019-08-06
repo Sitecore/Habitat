@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <runtime>
+        <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+            <!-- Remove problematic assembly redirect found in 9.2. -->
+            <dependentAssembly xdt:Transform="RemoveAll"
+                               xdt:Locator="Condition(./_defaultNamespace:assemblyIdentity/@name='System.Buffers')"></dependentAssembly>
+
+            <!-- Update aseembly binding to resolve 9.2 w3wp crash in some environments. Related to https://kb.sitecore.net/articles/494291 -->
+            <dependentAssembly xdt:Transform="RemoveAll"
+                               xdt:Locator="Condition(./_defaultNamespace:assemblyIdentity/@name='System.Security.Cryptography.Algorithms')"></dependentAssembly>
+            <dependentAssembly xdt:Transform="Insert">
+                <assemblyIdentity name="System.Security.Cryptography.Algorithms" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" xmlns="urn:schemas-microsoft-com:asm.v1" />
+                <bindingRedirect oldVersion="0.0.0.0-4.3.0.0" newVersion="4.0.0.0" xmlns="urn:schemas-microsoft-com:asm.v1" />
+            </dependentAssembly>
+        </assemblyBinding>
+    </runtime>
+</configuration>

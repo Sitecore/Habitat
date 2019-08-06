@@ -47,8 +47,8 @@
 						NOTE: if you do not alter the default values you can remove this entirely and use the defaults set in Unicorn.Users.config
 						
 						removeOrphans:
-						If you set RemoveOrphans to true, role syncing will delete matching roles that are not serialized, like item syncing does.
-						If set to false, roles are only ever added or updated (similar to New Items Only item syncing but updates are also synced)
+						If you set RemoveOrphans to true, user syncing will delete matching users that are not serialized, like item syncing does.
+						If set to false, users are only ever added or updated (similar to New Items Only item syncing but updates are also synced)
 					
 						defaultPassword:
 						When NEW users are deserialized, their passwords will be set to this value. 

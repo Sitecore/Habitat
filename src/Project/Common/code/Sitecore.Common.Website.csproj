@@ -79,7 +79,7 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <PackageReference Include="Sitecore.Kernel" Version="[12.0.0]" />
+        <PackageReference Include="Sitecore.Kernel" Version="9.2.0" />
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -240,6 +240,7 @@
     <Content Include="styles\dayfrost\components\_atoms.scss" />
     <None Include="Views\Web.config" />
     <None Include="web.config" />
+    <Content Include="Web.config.xdt" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

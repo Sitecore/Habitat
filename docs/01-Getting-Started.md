@@ -2,13 +2,14 @@
 
 ## Software Versions
 
-This version of Habitat uses the following versions of this software:
+This version of Habitat uses the following software versions:
 
 | Software      | Version |
 | ---           | --- |
-| Sitecore      | 9.1.0 |
-| Solr          | 7.2.1 |
-| Sitecore Installation Framework | 2.0.0 |
+| Sitecore      | 9.2.0 |
+| Solr          | 7.5.0 |
+| Sitecore Installation Framework | 2.1.0 |
+| Visual Studio / MSBuild | 2019 / 16.x |
 
 ## Locations and settings
 
@@ -22,9 +23,9 @@ This project assumes the following settings:
 | SQL Server          | .                                                                          | `settings.ps1` |
 | SQL Server Admin    | sa                                                                         | `settings.ps1` |
 | SQL Server Password | 12345                                                                      | `settings.ps1` |
-| SOLR Location       | c:\solr\                                                                   | `settings.ps1` |
-| SOLR URL            | [https://localhost:8983/solr](https://localhost:8983/solr) (*Note https*)  | `settings.ps1` |
-| SOLR Windows Service Name   | Solr                                                               | `settings.ps1` |
+| SOLR Location       | C:\solr\solr-7.5.0                                                         | `settings.ps1` |
+| SOLR URL            | [https://solr750:8750/solr](https://solr750:8750/solr) (*Note https*)      | `settings.ps1` |
+| SOLR Windows Service Name   | Solr-7.5.0                                                         | `settings.ps1` |
 
 <sup>1</sup> Files referred are:
 
@@ -65,7 +66,7 @@ If your Solr environment is not currently running with HTTPS, you can create an 
 
 ### 1. Installing Sitecore
 
-1. **Clone** the [Habitat repository](https://github.com/Sitecore/Habitat/) to your local file system.
+1. **Clone or Download** the [Habitat repository](https://github.com/Sitecore/Habitat/) to your local file system.
 1. Download the correct version of Sitecore from [dev.sitecore.net](https://dev.sitecore.net/Downloads.aspx) and place it in the `.\build\assets` folder.
     * Habitat will install by default on an *Sitecore XP Single*, i.e. a standalone version of Sitecore CMS including xConnect.
     * The currently supported version is defined in the `.\settings.ps1` file
@@ -98,9 +99,9 @@ If your Solr environment is not currently running with HTTPS, you can create an 
 1. Build and publish the solution using either:
     * Open an command prompt with elevated privileges and run **`gulp`** in the root of repository.
     * Use Visual Studio:
-      * Open **Visual Studio 2017** in administrator mode by right-clicking on its icon and selecting **Run as administrator**.
+      * Open **Visual Studio 2019** in administrator mode by right-clicking on its icon and selecting **Run as administrator**.
       * Open the Habitat solution.
-      * Open the **Visual Studio 2017** Task Runner Explorer pane (**View** | **Other Windows** | **Task Runner Explorer**).
+      * Open the **Visual Studio 2019** Task Runner Explorer pane (**View** | **Other Windows** | **Task Runner Explorer**).
       * Switch to "Solution 'Habitat'"
         * Run the "default" task
 
@@ -127,7 +128,6 @@ In the initial installation running the **default** task will execute all the co
   * The **Auto-Publish-Css** automatically publishes .css files when changed (Configure Sass compilation in Visual Studio)
   * The **Auto-Publish-Assemblies** task publishes assemblies as they are built using the standard Visual Studio build process
   * The **Auto-Publish-Views** task publishes .cshtml files when they are changed.
-* The **Publish-[...]** tasks helps you by manually publishing different types of files or project types to your website.
 
 ### SMTP Settings
 
@@ -150,6 +150,7 @@ For this to work, you need to set the SMTP settings in Sitecore.config.
 
 Habitat demonstrates utilizing the Federated Authentication features of Sitecore to allow login via Facebook account. To enable this functionality:
 
+1. Use IIS to add an SSL certificate and binding to your Habitat site (required by Facebook).
 1. [Register a Facebook App](https://developers.facebook.com/docs/apps/register/) using a Facebook Developer Account. 
-2. Add the domain under which you are running Habitat to the *App Domains* setting of your Facebook App. By default this is `habitat.dev.local`.
-3. Use the *App ID* and *App Secret* from your app settings to populate the `Sitecore.Feature.Accounts.Facebook.AppId` and `Sitecore.Feature.Accounts.Facebook.AppSecret` settings, by default found in `Feature\Accounts\code\App_Config\Include\Feature\Feature.Accounts.config`.
+1. Add the domain under which you are running Habitat to the *App Domains* setting of your Facebook App. By default this is `habitat.dev.local`.
+1. Use the *App ID* and *App Secret* from your app settings to populate the `Sitecore.Feature.Accounts.Facebook.AppId` and `Sitecore.Feature.Accounts.Facebook.AppSecret` settings, by default found in `Feature\Accounts\code\App_Config\Include\Feature\Feature.Accounts.config`.

@@ -30,7 +30,7 @@
             return this.GetSiteByHierarchy(item) ?? this.SiteDefinitions.FirstOrDefault(s => s.IsCurrent);
         }
 
-        private bool IsValidSite([NotNull] SiteInfo site)
+        private bool IsValidSite(SiteInfo site)
         {
             return this.GetSiteRootItem(site) != null;
         }
@@ -54,7 +54,7 @@
             return item;
         }
 
-        private SiteDefinition Create([NotNull] SiteInfo site)
+        private SiteDefinition Create(SiteInfo site)
         {
             if (site == null)
             {
@@ -85,7 +85,7 @@
             throw new ConfigurationErrorsException($"Cannot determine hostname for site '{site}'");
         }
 
-        private static bool IsSite([NotNull] Item item)
+        private static bool IsSite(Item item)
         {
             if (item == null)
             {
