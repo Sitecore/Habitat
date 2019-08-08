@@ -62,6 +62,8 @@
     <PackageReference Include="Microsoft.Web.Infrastructure" Version="1.0.0.0" />
     <PackageReference Include="Microsoft.Web.Xdt" Version="2.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <!-- Need to explicitly reference to ensure compatible version: https://sitecore.stackexchange.com/questions/20379/sitecore-9-2-could-not-load-file-or-assembly-system-buffers-or-one-of-its-dep/20380#20380 -->
+    <PackageReference Include="System.Buffers" Version="4.5.0" />
     <PackageReference Include="System.ComponentModel" Version="4.0.1" />
     <PackageReference Include="System.Diagnostics.Debug" Version="4.0.11" />
     <PackageReference Include="System.Globalization" Version="4.0.11" />
@@ -170,6 +172,10 @@
       <Project>{b535703f-8d07-4f23-a533-2974bb4cc7b1}</Project>
       <Name>Sitecore.Foundation.SitecoreExtensions</Name>
       <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\code\Sitecore.Common.Website.csproj">
+      <Project>{c98ead78-4d83-4789-a621-6011c3d7314d}</Project>
+      <Name>Sitecore.Common.Website</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
