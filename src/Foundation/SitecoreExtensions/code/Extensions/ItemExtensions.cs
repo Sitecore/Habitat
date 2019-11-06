@@ -63,7 +63,7 @@
             {
                 throw new ArgumentNullException(nameof(item));
             }
-            if (item.Fields[linkFieldId] == null || !item.Fields[linkFieldId].HasValue)
+            if (item.Fields[linkFieldId] == null || !item.FieldHasValue(linkFieldId))
             {
                 return null;
             }
