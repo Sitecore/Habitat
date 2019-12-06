@@ -1,3 +1,13 @@
+# Sitecore Habitat is No Longer Maintained
+
+This "original" Sitecore Habitat is no longer being updated or maintained, and is being replaced with [Sitecore Helix Examples](https://sitecore.github.io/Helix.Examples/). It's still a valuable reference for aspects of Helix which are not yet reflected in the new examples, but there will be no further releases of Habitat.
+
+You are free to fork this repository for further update, but please rename it if you do so, as to not create further confusion with the still maintained Habitat Home demo site collection.
+
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors)
+
+<hr />
+
 # Sitecore Habitat
 
 Habitat is an example Sitecore solution built on the [Helix architecture principles](http://helix.sitecore.net). It is designed to show how a Helix-based solution can be architected, and to demonstrate how tooling can be used to accomplish publishing, serialization, and testing. Habitat **is not intended** to be a starter solution, or as a recommendation of tools for your solutions.
