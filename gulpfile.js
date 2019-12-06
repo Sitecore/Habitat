@@ -81,7 +81,7 @@ gulp.task("References-Nuget",
 gulp.task("Publish-All-Projects",
     function(callback) {
         var msbuild = new _msbuild(callback);
-        msbuild.solutionName = config.solutionName + '.sln';
+        msbuild.sourcePath = config.solutionName + '.sln';
         var overrideParams = [];
         overrideParams.push('/p:Configuration=' + config.buildConfiguration);
         overrideParams.push('/p:DeployOnBuild=true');
