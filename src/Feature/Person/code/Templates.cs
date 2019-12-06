@@ -2,13 +2,13 @@
 {
   using Sitecore.Data;
 
-  public struct Templates
+  public static class Templates
   {
-    public struct Person
+    public static class Person
     {
       public static readonly ID ID = new ID("{7ACA6ECF-1A80-4E35-97F5-DBAA8E3EC617}");
 
-      public struct Fields
+      public static class Fields
       {
         public static readonly ID Name = new ID("{26CD59AB-3639-488F-BAFD-58D2B217755A}");
         public static readonly ID Title = new ID("{76972FCD-4BB0-4255-864E-077745EFDF50}");
@@ -20,22 +20,22 @@
       }
     }
 
-    public struct Quote
+    public static class Quote
     {
       public static readonly ID ID = new ID("{755F1188-D385-4717-8681-EF45F2258575}");
 
-      public struct Fields
+      public static class Fields
       {
         public static readonly ID CiteOrigin = new ID("{BF83983A-473F-4A49-BE8E-7D563AA5687E}");
         public static readonly ID Quote = new ID("{0DE53078-0DA4-40CC-BBCA-63AA96A0A1EF}");
       }
     }
 
-    public struct Employee
+    public static class Employee
     {
       public static readonly ID ID = new ID("{745652AE-3298-48B1-9BE1-99012D91F3AC}");
 
-      public struct Fields
+      public static class Fields
       {
         public static readonly ID Biography = new ID("{0CC9785E-54FE-4FAE-93E4-D0D2AE75F339}");
         public static readonly ID Telephone = new ID("{8D0E8EE3-21C4-4AE2-A2F1-53D3F3EBE501}");

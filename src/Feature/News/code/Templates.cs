@@ -2,13 +2,13 @@
 {
   using Sitecore.Data;
 
-  public struct Templates
+  public static class Templates
   {
-    public struct NewsArticle
+    public static class NewsArticle
     {
       public static readonly ID ID = new ID("{2F75C8AF-35FC-4A88-B585-7595203F442C}");
 
-      public struct Fields
+      public static class Fields
       {
         public static readonly ID Title = new ID("{BD9ECD4A-C0B0-4233-A3CD-D995519AC87B}");
         public const string Title_FieldName = "NewsTitle";
@@ -25,7 +25,7 @@
       }
     }
 
-    public struct NewsFolder
+    public static class NewsFolder
     {
       public static readonly ID ID = new ID("{74889B26-061C-4D6A-8CDB-422665FC34EC}");
     }

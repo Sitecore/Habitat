@@ -2,13 +2,13 @@
 {
   using Sitecore.Data;
 
-  public struct Templates
+  public static class Templates
   {
-    public struct OpenGraph
+    public static class OpenGraph
     {
       public static ID ID = new ID("{BDD24F35-05E8-4466-8798-7D3DD6A6C991}");
 
-      public struct Fields
+      public static class Fields
       {
         public static readonly ID Title = new ID("{0EE2F208-1FEE-42FC-8051-6696D49A92BF}");
         public static readonly ID Description = new ID("{A12D5346-87EE-484D-83C5-F1E8E1B99666}");
@@ -16,11 +16,11 @@
       }
     }
 
-    public struct TwitterFeed
+    public static class TwitterFeed
     {
       public static ID ID = new ID("{89D988BC-A9A7-43F5-A9FD-A05B0B164720}");
 
-      public struct Fields
+      public static class Fields
       {
         public static readonly ID FeedTitle = new ID("{099E4085-150C-4073-88D9-8B159D9A8B01}");
         public static readonly ID TwitterUrl = new ID("{92EF8986-45E2-42DE-913F-B91FD960297A}");
