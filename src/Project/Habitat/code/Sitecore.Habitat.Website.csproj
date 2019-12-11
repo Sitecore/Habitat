@@ -140,7 +140,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="favicon.ico" />
-    <None Include="App_Config\layers.config.xdt" />
+    <None Include="App_Config\Layers.config.xdt">
+      <ApplyTransformOnPublish>true</ApplyTransformOnPublish>
+    </None>
     <None Include="App_Data\packages\Habitat.xml" />
     <None Include="Properties\PublishProfiles\Standalone.pubxml" />
     <Content Include="App_Config\Environment\Project\Habitat.Dev.config">

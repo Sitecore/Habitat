@@ -221,7 +221,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\Foundation.Accounts.config" />
-    <None Include="App_Config\Security\domains.config.xdt" />
+    <None Include="App_Config\Security\Domains.config.xdt">
+      <ApplyTransformOnPublish>true</ApplyTransformOnPublish>
+    </None>
     <None Include="Properties\PublishProfiles\Standalone.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

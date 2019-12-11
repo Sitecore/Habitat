@@ -199,6 +199,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Accounts.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.Feature.Demo.Tests", "src\Feature\Demo\tests\Sitecore.Feature.Demo.Tests.csproj", "{0CF1F7D9-121A-4E40-844C-612EC40345F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRoot", "src\WebRoot\WebRoot.csproj", "{7985416B-3C47-4ABF-8603-73CAB10BEB03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -613,6 +615,14 @@ Global
 		{0CF1F7D9-121A-4E40-844C-612EC40345F5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0CF1F7D9-121A-4E40-844C-612EC40345F5}.Release|x64.ActiveCfg = Release|Any CPU
 		{0CF1F7D9-121A-4E40-844C-612EC40345F5}.Release|x64.Build.0 = Release|Any CPU
+		{7985416B-3C47-4ABF-8603-73CAB10BEB03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7985416B-3C47-4ABF-8603-73CAB10BEB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7985416B-3C47-4ABF-8603-73CAB10BEB03}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7985416B-3C47-4ABF-8603-73CAB10BEB03}.Debug|x64.Build.0 = Debug|Any CPU
+		{7985416B-3C47-4ABF-8603-73CAB10BEB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7985416B-3C47-4ABF-8603-73CAB10BEB03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7985416B-3C47-4ABF-8603-73CAB10BEB03}.Release|x64.ActiveCfg = Release|Any CPU
+		{7985416B-3C47-4ABF-8603-73CAB10BEB03}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

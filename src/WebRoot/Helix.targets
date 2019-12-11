@@ -1,0 +1,76 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <!-- Content Files-->
+
+    <PropertyGroup>
+        <PipelineCollectFilesPhaseDependsOn>
+            $(PipelineCollectFilesPhaseDependsOn);
+            CollectContentFilesFromHelixModules;
+        </PipelineCollectFilesPhaseDependsOn>
+    </PropertyGroup>
+
+    <Target Name="CollectContentFilesFromHelixModules">
+        <MSBuild Projects="@(ProjectReference)" Targets="ContentFilesProjectOutputGroup" BuildInParallel="$(BuildInParallel)">
+            <Output TaskParameter="TargetOutputs" ItemName="ContentFilesFromHelixModules" />
+        </MSBuild>
+        <ItemGroup>
+            <ContentFilesFromHelixModules>
+                <DestinationRelativePath>%(TargetPath)</DestinationRelativePath>
+            </ContentFilesFromHelixModules>
+
+            <FilesForPackagingFromProject Include="@(ContentFilesFromHelixModules)" />
+        </ItemGroup>
+    </Target>
+
+    <!-- Transform Files (extending Slow Cheetah)-->
+
+    <PropertyGroup>
+        <PipelineCollectFilesPhaseDependsOn>
+            $(PipelineCollectFilesPhaseDependsOn);
+            CollectTransformFilesToApplyOnPublish;
+        </PipelineCollectFilesPhaseDependsOn>
+    </PropertyGroup>
+
+    <Target Name="CollectTransformFilesToApplyOnPublish">
+        <MSBuild Projects="@(ProjectReference)" Targets="GetTransformFilesToApplyOnPublish" BuildInParallel="$(BuildInParallel)" Properties="CustomBeforeMicrosoftCSharpTargets=$(MSBuildThisFileDirectory)Helix.Module.targets">
+            <Output TaskParameter="TargetOutputs" ItemName="TransformFilesToApplyOnPublish" />
+        </MSBuild>
+
+        <ItemGroup>
+            <TransformFilesToApplyOnPublish>
+                <TransformFile>%(FullPath)</TransformFile>
+                <TargetPathToFileToTransform>$([System.IO.Path]::Combine($([System.IO.Path]::GetDirectoryName(%(TargetPath))),%(Filename)))</TargetPathToFileToTransform>
+            </TransformFilesToApplyOnPublish>
+
+            <TransformFilesToApplyOnPublish>
+                <DestinationFileInPackageDir>$(_PackageTempDir)\%(TargetPathToFileToTransform)</DestinationFileInPackageDir>
+                <DestinationFileInPublishDir>$(PublishUrl)\%(TargetPathToFileToTransform)</DestinationFileInPublishDir>
+            </TransformFilesToApplyOnPublish>
+        </ItemGroup>
+
+        <Message Text="Transform file to apply on publish: %(TransformFilesToApplyOnPublish.TransformFile) %(DestinationFileInPackageDir) %(DestinationFileInPublishDir)" Importance="normal" Condition="@(TransformFilesToApplyOnPublish) != ''"/>
+
+        <ItemGroup>
+            <FilesToCopyFromPublishDirToPackageDir Include="@(TransformFilesToApplyOnPublish -> '%(DestinationFileInPublishDir)')" Condition="Exists('%(DestinationFileInPublishDir)')">
+                <DestinationRelativePath>%(TargetPathToFileToTransform)</DestinationRelativePath>
+            </FilesToCopyFromPublishDirToPackageDir>
+            <FilesToCopyFromPublishDirToPackageDir Remove="@(FilesToCopyFromPublishDirToPackageDir)" Condition="@(FilesToCopyFromPublishDirToPackageDir) != '' and @(FilesForPackagingFromProject) != '' and %(DestinationRelativePath) != ''"/>
+
+            <FilesForPackagingFromProject Include="@(FilesToCopyFromPublishDirToPackageDir)" Condition=""/>
+        </ItemGroup>
+
+        <Message Text="File copied to package dir: %(FilesToCopyFromPublishDirToPackageDir.Identity)" Importance="normal" Condition="@(FilesToCopyFromPublishDirToPackageDir) != ''"/>
+    </Target>
+
+    <Target Name="ApplyTransformsOnPublish" AfterTargets="ScApplyWebTransforms" DependsOnTargets="CollectTransformFilesToApplyOnPublish">
+
+        <SlowCheetah.TransformTask Source="%(TransformFilesToApplyOnPublish.DestinationFileInPackageDir)"
+                                   Transform="%(TransformFile)"
+                                   Destination="%(DestinationFileInPackageDir)"
+                                   Condition="Exists('%(TransformFile)') and Exists('%(DestinationFileInPackageDir)')" />
+
+        <Message Text="Transformed %(TransformFilesToApplyOnPublish.DestinationFileInPackageDir) using %(TransformFile) into %(DestinationFileInPackageDir)" Importance="high" Condition="Exists('%(TransformFile)') and Exists('%(DestinationFileInPackageDir)')"/>
+
+    </Target>
+
+</Project>
