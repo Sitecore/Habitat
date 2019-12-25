@@ -1,0 +1,9 @@
+﻿<ProjectConfiguration>
+  <Settings>
+    <AdditionalFilesToIncludeForProject>
+      <Value>bower_components\sitecore.demo.theme\sass\default.scss</Value>
+      <Value>bower_components\sitecore.demo.theme\sass\editor.scss</Value>
+    </AdditionalFilesToIncludeForProject>
+    <HiddenComponentWarnings />
+  </Settings>
+</ProjectConfiguration>
