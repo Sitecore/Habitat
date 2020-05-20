@@ -75,7 +75,7 @@
       linkManager.Setup(x => x.GetItemUrl(contextItem, It.IsAny<UrlOptions>())).Returns(url);
 
       var siteContext = new Mock<Foundation.Multisite.SiteContext>(siteProvider);
-      siteContext.Setup(x => x.GetSiteDefinition(contextItem)).Returns(new SiteDefinition
+      siteContext.Setup(x => x.GetSiteDefinition(contextItem)).Returns(new SiteDefinition(siteInfo => true)
       {
           Item = db.GetItem(siteRootId)
       });
@@ -122,7 +122,7 @@
       var contextItem = db.GetItem(item.ID);
 
       var siteContext = new Mock<Foundation.Multisite.SiteContext>(siteProvider);
-      siteContext.Setup(x => x.GetSiteDefinition(contextItem)).Returns(new SiteDefinition
+      siteContext.Setup(x => x.GetSiteDefinition(contextItem)).Returns(new SiteDefinition(siteInfo => true)
       {
           Item = db.GetItem(siteRootId)
       });

@@ -62,12 +62,11 @@
             }
 
             var siteItem = this.GetSiteRootItem(site);
-            return new SiteDefinition
-            {
+            return new SiteDefinition(this.IsCurrent)
+            { 
                 Item = siteItem,
                 Name = site.Name,
                 HostName = GetHostName(site),
-                IsCurrent = this.IsCurrent(site),
                 Site = site
             };
         }
