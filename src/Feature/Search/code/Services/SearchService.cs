@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Sitecore.Feature.Search.Services
+﻿namespace Sitecore.Feature.Search.Services
 {
     using Sitecore.Analytics;
-    using Sitecore.Analytics.Data;
     using Sitecore.Feature.Search.Factories;
     using Sitecore.Feature.Search.Models;
     using Sitecore.Feature.Search.Repositories;
@@ -14,7 +8,6 @@ namespace Sitecore.Feature.Search.Services
     using Sitecore.Foundation.Indexing.Models;
     using Sitecore.Foundation.Indexing.Repositories;
     using Sitecore.Foundation.SitecoreExtensions.Services;
-    using Sitecore.Mvc.Presentation;
 
     [Service]
     public class SearchService

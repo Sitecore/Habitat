@@ -6,13 +6,8 @@
     using Sitecore.Analytics.Model;
     using Sitecore.Analytics.Tracking;
     using Sitecore.Analytics.XConnect.Facets;
-    using Sitecore.Configuration;
-    using Sitecore.Data;
     using Sitecore.Foundation.DependencyInjection;
-    using Sitecore.Shell.Framework.Commands.Masters;
     using Sitecore.XConnect;
-    using Sitecore.XConnect.Client;
-    using Sitecore.XConnect.Client.Configuration;
     using Sitecore.XConnect.Collection.Model;
 
     [Service(typeof(IContactFacetsProvider), Lifetime = Lifetime.Transient)]

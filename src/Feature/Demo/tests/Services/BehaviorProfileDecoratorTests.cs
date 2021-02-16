@@ -1,23 +1,21 @@
 ﻿namespace Sitecore.Feature.Demo.Tests.Services
 {
-  using System.Collections;
-  using NSubstitute;
-  using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Analytics.Data.Items;
-  using Sitecore.Analytics.Tracking;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-  using Sitecore.FakeDb;
-  using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.Feature.Demo.Services;
-  using Sitecore.Foundation.Testing.Attributes;
-  using System.Collections.Generic;
-  using System.Linq;
-  using FluentAssertions;
-  using Sitecore.SecurityModel;
-  using Xunit;
+    using NSubstitute;
+    using Sitecore.Analytics.Data.Items;
+    using Sitecore.Analytics.Tracking;
+    using Sitecore.Data;
+    using Sitecore.Data.Items;
+    using Sitecore.FakeDb;
+    using Sitecore.FakeDb.AutoFixture;
+    using Sitecore.Feature.Demo.Services;
+    using Sitecore.Foundation.Testing.Attributes;
+    using System.Collections.Generic;
+    using System.Linq;
+    using FluentAssertions;
+    using Sitecore.SecurityModel;
+    using Xunit;
 
-  public class BehaviorProfileDecoratorTests
+    public class BehaviorProfileDecoratorTests
   {
     [Theory]
     [AutoDbData]

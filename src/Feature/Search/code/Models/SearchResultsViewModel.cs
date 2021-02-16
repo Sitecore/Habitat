@@ -1,6 +1,5 @@
 ﻿namespace Sitecore.Feature.Search.Models
 {
-    using System;
     using Sitecore.Foundation.Indexing.Models;
 
     public class SearchResultsViewModel

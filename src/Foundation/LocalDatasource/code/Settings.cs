@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Sitecore.Foundation.LocalDatasource
+﻿namespace Sitecore.Foundation.LocalDatasource
 {
-  public static class Settings
+    public static class Settings
   {
     private static string LocalDatasourceFolderNameSetting = "Foundation.LocalDatasource.LocalDatasourceFolderName";
     private static string LocalDatasourceFolderNameDefault = "_Local";

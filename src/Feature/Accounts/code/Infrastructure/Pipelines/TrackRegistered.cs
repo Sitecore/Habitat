@@ -2,7 +2,6 @@
 {
     using Sitecore.Feature.Accounts.Services;
     using Sitecore.Foundation.Accounts.Pipelines;
-    using Sitecore.Foundation.DependencyInjection;
 
     public class TrackRegistered
     {

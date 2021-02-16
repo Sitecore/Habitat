@@ -2,7 +2,6 @@
 {
     using System.Linq;
     using Sitecore.Feature.Demo.Models;
-    using Sitecore.Feature.Demo.Services;
     using Sitecore.Foundation.DependencyInjection;
 
     [Service(typeof(IOnsiteBehaviorRepository))]

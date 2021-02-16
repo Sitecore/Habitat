@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 
 namespace Sitecore.Feature.Demo.Pipelines
@@ -9,10 +7,8 @@ namespace Sitecore.Feature.Demo.Pipelines
     using Sitecore.Analytics;
     using Sitecore.Analytics.Model;
     using Sitecore.Analytics.Pipelines.ParseReferrer;
-    using Sitecore.Feature.Demo.Controllers;
     using Sitecore.Feature.Demo.Models;
     using Sitecore.Feature.Demo.Services;
-    using Sitecore.Foundation.SitecoreExtensions.Extensions;
     using Sitecore.Pipelines;
 
     public class FakeTrackerData

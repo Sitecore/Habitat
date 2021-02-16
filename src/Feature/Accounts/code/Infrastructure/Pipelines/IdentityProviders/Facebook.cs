@@ -8,7 +8,6 @@ namespace Sitecore.Feature.Accounts.Infrastructure.Pipelines.IdentityProviders
     using Microsoft.Owin.Security;
     using Microsoft.Owin.Security.Facebook;
     using Sitecore.Abstractions;
-    using Sitecore.Configuration;
     using Sitecore.Diagnostics;
     using Sitecore.Owin.Authentication.Configuration;
     using Sitecore.Owin.Authentication.Extensions;

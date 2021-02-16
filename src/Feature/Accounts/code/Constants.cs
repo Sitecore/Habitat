@@ -1,7 +1,5 @@
 ﻿namespace Sitecore.Feature.Accounts
 {
-    using Sitecore.Data;
-
     public struct Constants
     {
 

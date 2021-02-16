@@ -1,6 +1,5 @@
 namespace Sitecore.Feature.Demo.Repositories
 {
-    using System;
     using System.Globalization;
     using Sitecore.Analytics;
     using Sitecore.Analytics.Tracking;

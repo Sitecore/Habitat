@@ -1,6 +1,5 @@
 ﻿namespace Sitecore.Foundation.Multisite
 {
-    using System.Linq;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.DependencyInjection.Extensions;
     using Sitecore.Abstractions;

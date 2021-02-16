@@ -1,13 +1,12 @@
 ﻿namespace Sitecore.Foundation.LocalDatasource.Extensions
 {
-  using System;
-  using System.Linq;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-  using Sitecore.Diagnostics;
-  using Sitecore.Foundation.SitecoreExtensions.Extensions;
+    using System;
+    using System.Linq;
+    using Sitecore.Data;
+    using Sitecore.Data.Items;
+    using Sitecore.Diagnostics;
 
-  public static class ItemExtensions
+    public static class ItemExtensions
   {
     public static bool HasLocalDatasourceFolder(this Item item)
     {

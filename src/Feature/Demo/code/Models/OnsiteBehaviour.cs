@@ -1,7 +1,6 @@
 ﻿namespace Sitecore.Feature.Demo.Models
 {
     using System.Collections.Generic;
-    using Sitecore.XConnect;
 
     public class OnsiteBehavior
     {

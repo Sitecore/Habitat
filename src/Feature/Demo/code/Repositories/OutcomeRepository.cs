@@ -10,7 +10,6 @@
     using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.Dictionary.Repositories;
     using Sitecore.Marketing.Definitions;
-    using Sitecore.Marketing.Definitions.Outcomes;
     using Sitecore.Marketing.Definitions.Outcomes.Model;
     using Sitecore.Marketing.Taxonomy;
     using Sitecore.Marketing.Taxonomy.Extensions;

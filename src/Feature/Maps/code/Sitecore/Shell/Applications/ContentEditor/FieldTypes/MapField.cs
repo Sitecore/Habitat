@@ -4,13 +4,12 @@ using Sitecore_Context = Sitecore.Context;
 
 namespace Sitecore.Feature.Maps.Sitecore.Shell.Applications.ContentEditor.FieldTypes
 {
-  using System.Diagnostics.CodeAnalysis;
-  using System.Linq;
-  using System.Web.UI;
-  using System.Web.UI.WebControls;
-  using Diagnostics;
+    using System.Linq;
+    using System.Web.UI;
+    using System.Web.UI.WebControls;
+    using Diagnostics;
 
-  public class MapField : ContentEditor_Text, IContentField
+    public class MapField : ContentEditor_Text, IContentField
   {
     private readonly int mapWidth = 600;
     private readonly int mapHeight = 150;

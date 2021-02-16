@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Sitecore.Feature.Search.Factories
+﻿namespace Sitecore.Feature.Search.Factories
 {
     using Sitecore.Feature.Search.Models;
     using Sitecore.Feature.Search.Services;

@@ -7,7 +7,6 @@
     using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.Indexing.Models;
     using Sitecore.Foundation.Indexing.Repositories;
-    using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
     [Service(typeof(INewsRepository))]
     public class NewsRepository : INewsRepository

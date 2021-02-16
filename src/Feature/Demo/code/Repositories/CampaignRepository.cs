@@ -4,8 +4,6 @@
     using System.Collections.Generic;
     using System.Globalization;
     using Sitecore.Analytics;
-    using Sitecore.Common;
-    using Sitecore.Data;
     using Sitecore.Feature.Demo.Models;
     using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.Dictionary.Repositories;

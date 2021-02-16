@@ -1,20 +1,13 @@
 ﻿namespace Sitecore.Feature.News.Tests
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using FluentAssertions;
-    using NSubstitute;
-    using Ploeh.AutoFixture.AutoNSubstitute;
     using Ploeh.AutoFixture.Xunit2;
-    using Sitecore.Data;
     using Sitecore.Data.Items;
-    using Sitecore.FakeDb;
     using Sitecore.Feature.News.Repositories;
     using Sitecore.Feature.News.Tests.Extensions;
     using Sitecore.Foundation.Indexing.Models;
     using Sitecore.Foundation.Indexing.Repositories;
-    using Sitecore.Foundation.Indexing.Services;
     using Xunit;
 
     public class NewsRepositoryTests

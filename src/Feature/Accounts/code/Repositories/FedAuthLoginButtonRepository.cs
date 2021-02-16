@@ -9,7 +9,6 @@
     using Sitecore.Feature.Accounts.Services;
     using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Foundation.Dictionary.Repositories;
-    using Sitecore.Foundation.SitecoreExtensions.Extensions;
     using Sitecore.Pipelines.GetSignInUrlInfo;
 
     [Service(typeof(IFedAuthLoginButtonRepository))]

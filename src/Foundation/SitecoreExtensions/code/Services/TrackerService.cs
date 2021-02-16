@@ -3,8 +3,6 @@
     using System;
     using System.Globalization;
     using Sitecore.Analytics;
-    using Sitecore.Analytics.Tracking;
-    using Sitecore.Configuration;
     using Sitecore.Diagnostics;
     using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Marketing.Definitions;

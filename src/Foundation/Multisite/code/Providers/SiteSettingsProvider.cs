@@ -4,7 +4,6 @@
     using Sitecore.Configuration;
     using Sitecore.Data.Items;
     using Sitecore.Foundation.DependencyInjection;
-    using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
     [Service(typeof(ISiteSettingsProvider))]
     public class SiteSettingsProvider : ISiteSettingsProvider

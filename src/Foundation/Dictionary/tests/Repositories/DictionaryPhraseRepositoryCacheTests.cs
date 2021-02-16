@@ -1,18 +1,17 @@
 ﻿namespace Sitecore.Foundation.Dictionary.Tests.Repositories
 {
-  using System;
-  using System.Web;
-  using FluentAssertions;
-  using Sitecore.Collections;
-  using Sitecore.FakeDb;
-  using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.FakeDb.Sites;
-  using Sitecore.Foundation.Dictionary.Repositories;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Sitecore.Sites;
-  using Xunit;
+    using System.Web;
+    using FluentAssertions;
+    using Sitecore.Collections;
+    using Sitecore.FakeDb;
+    using Sitecore.FakeDb.AutoFixture;
+    using Sitecore.FakeDb.Sites;
+    using Sitecore.Foundation.Dictionary.Repositories;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Sitecore.Sites;
+    using Xunit;
 
-  public class DictionaryPhraseRepositoryCacheTests
+    public class DictionaryPhraseRepositoryCacheTests
   {
     [Theory]
     [AutoDbData]

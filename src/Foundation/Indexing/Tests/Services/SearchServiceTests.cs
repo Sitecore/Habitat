@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sitecore.Foundation.Indexing.Tests.Services
 {
-  using FluentAssertions;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.FakeDb;
-  using Sitecore.Foundation.Indexing.Models;
-  using Sitecore.Foundation.Indexing.Services;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Xunit;
+    using FluentAssertions;
+    using Ploeh.AutoFixture.AutoNSubstitute;
+    using Ploeh.AutoFixture.Xunit2;
+    using Sitecore.FakeDb;
+    using Sitecore.Foundation.Indexing.Models;
+    using Sitecore.Foundation.Indexing.Services;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Xunit;
 
-  public class SearchServiceTests
+    public class SearchServiceTests
   {
     [Theory]
     [AutoDbData]

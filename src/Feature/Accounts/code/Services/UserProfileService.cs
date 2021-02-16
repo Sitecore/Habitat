@@ -1,17 +1,10 @@
 ﻿namespace Sitecore.Feature.Accounts.Services
 {
-    using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Web.Mvc;
-    using Sitecore.Data;
-    using Sitecore.Data.Items;
     using Sitecore.Feature.Accounts.Models;
     using Sitecore.Foundation.DependencyInjection;
-    using Sitecore.Foundation.Dictionary.Repositories;
     using Sitecore.Security;
     using Sitecore.Security.Accounts;
-    using Sitecore.SecurityModel;
 
     [Service(typeof(IUserProfileService))]
     public class UserProfileService : IUserProfileService

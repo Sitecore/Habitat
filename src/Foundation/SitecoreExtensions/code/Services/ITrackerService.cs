@@ -1,7 +1,6 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Services
 {
     using System;
-    using Sitecore.Data;
 
     public interface ITrackerService
     {

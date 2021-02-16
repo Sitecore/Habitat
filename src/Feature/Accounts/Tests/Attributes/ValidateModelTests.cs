@@ -1,15 +1,14 @@
 ﻿namespace Sitecore.Feature.Accounts.Tests.Attributes
 {
-  using System.Web.Mvc;
-  using FluentAssertions;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Feature.Accounts.Attributes;
-  using Sitecore.Feature.Accounts.Tests.Extensions;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Xunit;
+    using System.Web.Mvc;
+    using FluentAssertions;
+    using Ploeh.AutoFixture.AutoNSubstitute;
+    using Ploeh.AutoFixture.Xunit2;
+    using Sitecore.Feature.Accounts.Attributes;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Xunit;
 
-  public class ValidateModelTests
+    public class ValidateModelTests
   {
     [Theory]
     [AutoDbData]

@@ -1,11 +1,9 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Extensions
 {
-  using System;
-  using Sitecore.Mvc.Presentation;
-  using Sitecore.Resources.Media;
-  using Sitecore.Xml;
+    using System;
+    using Sitecore.Mvc.Presentation;
 
-  public static class RenderingExtensions
+    public static class RenderingExtensions
   {
     public static int GetIntegerParameter(this Rendering rendering, string parameterName, int defaultValue = 0)
     {

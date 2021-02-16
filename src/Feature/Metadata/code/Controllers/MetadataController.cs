@@ -2,7 +2,6 @@
 {
     using System.Web.Mvc;
     using Sitecore.Feature.Metadata.Repositories;
-    using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Mvc.Controllers;
     using Sitecore.Mvc.Presentation;
 

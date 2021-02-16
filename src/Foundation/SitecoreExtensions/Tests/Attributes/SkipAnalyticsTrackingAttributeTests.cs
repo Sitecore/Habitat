@@ -1,18 +1,16 @@
 ﻿namespace Sitecore.Foundation.SitecoreExtensions.Tests.Attributes
 {
-  using System;
-  using System.Collections.Specialized;
-  using System.Web.Mvc;
-  using FluentAssertions;
-  using NSubstitute;
-  using Sitecore.Analytics;
-  using Sitecore.Analytics.Tracking;
-  using Sitecore.Foundation.SitecoreExtensions.Attributes;
-  using Sitecore.Mvc.Common;
-  using Sitecore.Mvc.Presentation;
-  using Xunit;
+    using System;
+    using System.Collections.Specialized;
+    using System.Web.Mvc;
+    using FluentAssertions;
+    using NSubstitute;
+    using Sitecore.Analytics;
+    using Sitecore.Analytics.Tracking;
+    using Sitecore.Foundation.SitecoreExtensions.Attributes;
+    using Xunit;
 
-  public class SkipAnalyticsTrackingAttributeTests
+    public class SkipAnalyticsTrackingAttributeTests
   {
     [Theory]
     [AutoDbMvcData]

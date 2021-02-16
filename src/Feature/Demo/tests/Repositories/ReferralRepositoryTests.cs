@@ -1,6 +1,5 @@
 ﻿namespace Sitecore.Feature.Demo.Tests.Repositories
 {
-    using System;
     using System.Linq;
     using System.Web;
     using FluentAssertions;

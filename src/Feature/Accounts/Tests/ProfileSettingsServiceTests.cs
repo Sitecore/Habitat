@@ -1,20 +1,19 @@
 ﻿namespace Sitecore.Feature.Accounts.Tests
 {
-  using System.Collections.Generic;
-  using System.Linq;
-  using FluentAssertions;
-  using Sitecore;
-  using Sitecore.Collections;
-  using Sitecore.Data;
-  using Sitecore.FakeDb;
-  using Sitecore.FakeDb.Sites;
-  using Sitecore.Feature.Accounts.Services;
-  using Sitecore.Feature.Accounts.Tests.Extensions;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Sitecore.Sites;
-  using Xunit;
+    using System.Collections.Generic;
+    using System.Linq;
+    using FluentAssertions;
+    using Sitecore;
+    using Sitecore.Collections;
+    using Sitecore.Data;
+    using Sitecore.FakeDb;
+    using Sitecore.FakeDb.Sites;
+    using Sitecore.Feature.Accounts.Services;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Sitecore.Sites;
+    using Xunit;
 
-  public class ProfileSettingsServiceTests
+    public class ProfileSettingsServiceTests
   {
     [Theory, AutoDbData]
     public void GetUserDefaultProfileShoulReturnProfileItem(Db db, ID profileId, ID interestFolderId, ProfileSettingsService profileSettingsService, IEnumerable<string> interests)

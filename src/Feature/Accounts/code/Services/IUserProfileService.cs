@@ -1,7 +1,6 @@
 ﻿namespace Sitecore.Feature.Accounts.Services
 {
     using System.Collections.Generic;
-    using System.Web.Mvc;
     using Sitecore.Feature.Accounts.Models;
     using Sitecore.Security;
     using Sitecore.Security.Accounts;

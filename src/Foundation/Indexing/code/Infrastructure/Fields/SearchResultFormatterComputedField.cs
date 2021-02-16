@@ -6,18 +6,14 @@ namespace Sitecore.Foundation.Indexing.Infrastructure.Fields
 {
     using System;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Linq;
     using Sitecore.ContentSearch;
     using Sitecore.ContentSearch.ComputedFields;
     using Sitecore.ContentSearch.Linq.Common;
-    using Sitecore.ContentSearch.Linq.Methods;
     using Sitecore.ContentSearch.Pipelines.GetFacets;
     using Sitecore.ContentSearch.Pipelines.ProcessFacets;
     using Sitecore.Foundation.Indexing.Infrastructure.Providers;
-    using Sitecore.Foundation.Indexing.Models;
     using Sitecore.Foundation.Indexing.Repositories;
-    using Sitecore.Foundation.SitecoreExtensions.Extensions;
 
     public class SearchResultFormatterComputedField : IVirtualFieldProcessor, IComputedIndexField
     {

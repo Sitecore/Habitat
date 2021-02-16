@@ -1,23 +1,14 @@
 ﻿namespace Sitecore.Feature.Accounts.Services
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Net;
-    using Sitecore.Abstractions;
     using Sitecore.Analytics;
-    using Sitecore.Analytics.Model;
-    using Sitecore.Analytics.Tracking;
-    using Sitecore.Configuration;
     using Sitecore.Diagnostics;
     using Sitecore.Feature.Accounts.Services.FacetUpdaters;
-    using Sitecore.Foundation.Accounts.Providers;
     using Sitecore.Foundation.DependencyInjection;
     using Sitecore.Security;
     using Sitecore.XConnect;
     using Sitecore.XConnect.Client;
-    using Sitecore.XConnect.Client.Configuration;
-    using Sitecore.XConnect.Collection.Model;
 
     [Service(typeof(IUpdateContactFacetsService))]
     public class UpdateContactFacetsService : IUpdateContactFacetsService

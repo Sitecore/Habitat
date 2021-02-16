@@ -2,7 +2,6 @@
 {
     using System.Web.Mvc;
     using Sitecore.Feature.Person.Repositories;
-    using Sitecore.Foundation.SitecoreExtensions.Extensions;
     using Sitecore.Mvc.Presentation;
 
     public class PersonController : Controller

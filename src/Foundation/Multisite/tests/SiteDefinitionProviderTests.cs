@@ -1,23 +1,20 @@
 ﻿namespace Sitecore.Foundation.Multisite.Tests
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Configuration;
-  using System.Linq;
-  using System.Xml;
-  using FluentAssertions;
-  using Sitecore.Collections;
-  using Sitecore.Data;
-  using Sitecore.FakeDb;
-  using Sitecore.FakeDb.Sites;
-  using Sitecore.Foundation.Multisite.Providers;
-  using Sitecore.Foundation.Multisite.Tests.Extensions;
-  using Sitecore.Sites;
-  using Sitecore.Web;
-  using Xunit;
-  using Moq;
-  using NSubstitute;
-  using Sitecore.Abstractions;
+    using System;
+    using System.Collections.Generic;
+    using System.Configuration;
+    using System.Linq;
+    using FluentAssertions;
+    using Sitecore.Collections;
+    using Sitecore.Data;
+    using Sitecore.FakeDb;
+    using Sitecore.Foundation.Multisite.Providers;
+    using Sitecore.Foundation.Multisite.Tests.Extensions;
+    using Sitecore.Sites;
+    using Sitecore.Web;
+    using Xunit;
+    using Moq;
+    using Sitecore.Abstractions;
 
     public class SiteDefinitionProviderTests
   {

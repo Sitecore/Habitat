@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 
 namespace Sitecore.Feature.Language.Controllers
 {
-    using System.Net;
     using System.Web.Mvc;
     using Sitecore.Abstractions;
     using Sitecore.Feature.Language.Infrastructure.Pipelines;
     using Sitecore.Feature.Language.Models;
     using Sitecore.Feature.Language.Repositories;
     using Sitecore.Foundation.SitecoreExtensions.Attributes;
-    using Sitecore.Pipelines;
 
     public class LanguageController : Controller
     {

@@ -1,24 +1,17 @@
 ﻿namespace Sitecore.Foundation.Theming.Tests
 {
-  using System;
-  using System.Collections.Generic;
-  using System.Linq;
-  using System.Text;
-  using System.Threading.Tasks;
-  using FluentAssertions;
-  using NSubstitute;
-  using Sitecore.Foundation.Theming.Extensions;
-  using Sitecore.Foundation.Theming.Tests.Extensions;
-  using Sitecore.Mvc.Presentation;
-  using Xunit;
-  using Ploeh.AutoFixture.AutoNSubstitute;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-  using Sitecore.FakeDb;
-  using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.SecurityModel;
+    using FluentAssertions;
+    using NSubstitute;
+    using Sitecore.Foundation.Theming.Extensions;
+    using Sitecore.Foundation.Theming.Tests.Extensions;
+    using Sitecore.Mvc.Presentation;
+    using Xunit;
+    using Ploeh.AutoFixture.AutoNSubstitute;
+    using Sitecore.Data;
+    using Sitecore.FakeDb;
+    using Sitecore.FakeDb.AutoFixture;
 
-  public class RenderingExtensionsTests
+    public class RenderingExtensionsTests
   {
     [Theory]
     [AutoDbData]

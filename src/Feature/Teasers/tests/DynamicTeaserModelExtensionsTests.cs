@@ -1,18 +1,14 @@
 ﻿namespace Sitecore.Feature.Teasers.Tests
 {
-  using FluentAssertions;
-  using Ploeh.AutoFixture.Xunit2;
-  using Sitecore.Data;
-  using Sitecore.Data.Fields;
-  using Sitecore.Data.Items;
-  using Sitecore.FakeDb;
-  using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.Feature.Teasers.Extensions;
-  using Sitecore.Feature.Teasers.Models;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Xunit;
+    using FluentAssertions;
+    using Sitecore.Data;
+    using Sitecore.FakeDb;
+    using Sitecore.Feature.Teasers.Extensions;
+    using Sitecore.Feature.Teasers.Models;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Xunit;
 
-  public class DynamicTeaserModelExtensionsTests
+    public class DynamicTeaserModelExtensionsTests
   {
     [Theory]
     [AutoDbData]

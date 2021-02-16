@@ -1,10 +1,9 @@
 ﻿namespace Sitecore.Foundation.Multisite.Providers
 {
-  using System.Collections.Generic;
-  using Sitecore.Data.Items;
-  using Sitecore.Web;
+    using System.Collections.Generic;
+    using Sitecore.Data.Items;
 
-  public interface ISiteDefinitionsProvider
+    public interface ISiteDefinitionsProvider
   {
     IEnumerable<SiteDefinition> SiteDefinitions { get; }
     SiteDefinition GetContextSiteDefinition(Item item);

@@ -1,12 +1,10 @@
 ﻿namespace Sitecore.Foundation.Theming.Extensions.Controls
 {
-  using System;
-  using System.IO;
-  using System.Web.UI;
-  using Sitecore.Foundation.SitecoreExtensions.Controls;
-  using Sitecore.Web.UI.WebControls;
+    using System;
+    using System.IO;
+    using System.Web.UI;
 
-  public class BackgroundRendering : IDisposable
+    public class BackgroundRendering : IDisposable
   {
     /// <summary>
     ///   The html writer

@@ -1,19 +1,15 @@
 ﻿namespace Sitecore.Foundation.FieldEditor.Tests.Services
 {
-  using System;
-  using System.Collections.Specialized;
-  using System.Linq;
-  using FluentAssertions;
-  using Sitecore.Data;
-  using Sitecore.Data.Items;
-  using Sitecore.ExperienceEditor.Abstractions;
-  using Sitecore.FakeDb;
-  using Sitecore.FakeDb.AutoFixture;
-  using Sitecore.Foundation.FieldEditor.Services;
-  using Sitecore.Foundation.Testing.Attributes;
-  using Xunit;
+    using System.Collections.Specialized;
+    using FluentAssertions;
+    using Sitecore.ExperienceEditor.Abstractions;
+    using Sitecore.FakeDb;
+    using Sitecore.FakeDb.AutoFixture;
+    using Sitecore.Foundation.FieldEditor.Services;
+    using Sitecore.Foundation.Testing.Attributes;
+    using Xunit;
 
-  public class GetFieldsToEditServiceTests
+    public class GetFieldsToEditServiceTests
   {
     [Theory]
     [AutoDbData]

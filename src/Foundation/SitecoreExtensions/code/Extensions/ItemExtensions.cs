@@ -8,7 +8,6 @@
     using Sitecore.Data;
     using Sitecore.Data.Fields;
     using Sitecore.Data.Items;
-    using Sitecore.Data.Managers;
     using Sitecore.Diagnostics;
     using Sitecore.Foundation.SitecoreExtensions.Services;
     using Sitecore.Links;

@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Sitecore.Foundation.LocalDatasource.Infrastructure.Events
 {
-  using Sitecore.Data.Items;
-  using Sitecore.Events;
-  using Sitecore.Foundation.LocalDatasource.Services;
+    using Sitecore.Data.Items;
+    using Sitecore.Events;
+    using Sitecore.Foundation.LocalDatasource.Services;
 
-  /// <summary>
-  /// Updates references to local datasource items when item is being copied or created from a branch
-  /// https://reasoncodeexample.com/2013/01/13/changing-sitecore-item-references-when-creating-copying-duplicating-and-cloning/
-  /// Thanks Uli!
-  /// </summary>
-  public class UpdateLocalDatasourceReferences
+    /// <summary>
+    /// Updates references to local datasource items when item is being copied or created from a branch
+    /// https://reasoncodeexample.com/2013/01/13/changing-sitecore-item-references-when-creating-copying-duplicating-and-cloning/
+    /// Thanks Uli!
+    /// </summary>
+    public class UpdateLocalDatasourceReferences
   {
     protected void OnItemCopied(object sender, EventArgs args)
     {

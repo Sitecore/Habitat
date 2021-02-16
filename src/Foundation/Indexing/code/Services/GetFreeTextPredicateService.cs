@@ -1,9 +1,7 @@
 namespace Sitecore.Foundation.Indexing.Infrastructure
 {
     using System;
-    using System.Linq;
     using System.Linq.Expressions;
-    using Sitecore.ContentSearch.Linq;
     using Sitecore.ContentSearch.Linq.Utilities;
     using Sitecore.ContentSearch.SearchTypes;
     using Sitecore.Foundation.Indexing.Models;
